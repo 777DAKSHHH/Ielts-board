@@ -1,0 +1,159 @@
+/* ==========================================================================
+   APPLE HIG DESIGN SYSTEM TOKENS - IELTS SMARTBOARD OS
+   ========================================================================== */
+
+:root {
+  /* System Typography */
+  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+
+  /* Monochromatic Slate Palette */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  /* Apple Accent Colors */
+  --apple-blue: #0071e3;
+  --apple-blue-hover: #0077ed;
+  --apple-teal: #06b6d4;
+  --apple-green: #34c759;
+  --apple-orange: #ff9500;
+  --apple-red: #ff3b30;
+  --apple-purple: #af52de;
+
+  /* Semantic UI Surfaces */
+  --bg-canvas: #f8fafc;
+  --surface-card: #ffffff;
+  --surface-card-muted: #f1f5f9;
+  --surface-overlay: rgba(15, 23, 42, 0.5);
+
+  /* Apple Frosted Glass */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-blur: blur(24px);
+
+  /* Borders & Dividers */
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-focus: #0f172a;
+
+  /* Shadows (Apple Smooth Elevation) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-dock: 0 20px 40px rgba(15, 23, 42, 0.12), 0 1px 3px rgba(15, 23, 42, 0.06);
+
+  /* Apple Motion Physics */
+  --spring-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  --spring-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-natural: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Smartboard Touch Target Metrics */
+  --touch-min-height: 54px;
+  --touch-padding-x: 24px;
+  --touch-radius: 16px;
+  --card-radius: 20px;
+}
+
+/* Reset & Base Stage Layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-canvas);
+  color: var(--slate-900);
+  font-family: var(--font-system);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Touch Interactive States */
+button, [role="button"] {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  touch-action: manipulation;
+}
+
+.apple-touch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-min-height);
+  padding: 0 var(--touch-padding-x);
+  border-radius: var(--touch-radius);
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: transform 0.12s var(--spring-bounce), background-color 0.15s ease, box-shadow 0.15s ease;
+  will-change: transform;
+}
+
+.apple-touch-btn:active {
+  transform: scale(0.96);
+}
+
+.apple-touch-btn.primary {
+  background-color: var(--slate-900);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.apple-touch-btn.primary:hover {
+  background-color: var(--slate-800);
+  box-shadow: var(--shadow-md);
+}
+
+.apple-touch-btn.secondary {
+  background-color: var(--slate-100);
+  color: var(--slate-800);
+  border: 1px solid var(--border-subtle);
+}
+
+.apple-touch-btn.secondary:hover {
+  background-color: var(--slate-200);
+}
+
+/* Frosted Glass Floating Panels */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--card-radius);
+}
+
+/* Custom Scrollbar for inner cards if needed */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--slate-300);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--slate-400);
+}
