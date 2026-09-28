@@ -28,19 +28,20 @@ export const TouchDock: React.FC<TouchDockProps> = ({
         disabled={!canPrev}
         className="apple-touch-btn secondary"
         style={{
-          minHeight: "52px",
-          padding: "0 22px",
-          gap: "8px",
+          minHeight: "36px",
+          padding: "0 16px",
+          gap: "6px",
+          fontSize: "0.85rem",
           opacity: canPrev ? 1 : 0.45,
           cursor: canPrev ? "pointer" : "not-allowed"
         }}
       >
-        <ChevronLeft size={20} />
+        <ChevronLeft size={16} />
         <span>Previous</span>
       </button>
 
       {/* Step Dot Indicators */}
-      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "7px" }}>
         {Array.from({ length: totalSteps }, (_, i) => i + 1).map((stepNum) => {
           const isActive = stepNum === currentStep;
           const isPassed = stepNum < currentStep;
@@ -51,8 +52,8 @@ export const TouchDock: React.FC<TouchDockProps> = ({
               onClick={() => onSelectStep(stepNum)}
               title={`Go to Step ${stepNum}`}
               style={{
-                width: isActive ? "32px" : "12px",
-                height: "12px",
+                width: isActive ? "22px" : "7px",
+                height: "6px",
                 borderRadius: "999px",
                 background: isActive
                   ? "var(--slate-900)"
@@ -72,15 +73,16 @@ export const TouchDock: React.FC<TouchDockProps> = ({
         disabled={!canNext}
         className="apple-touch-btn primary"
         style={{
-          minHeight: "52px",
-          padding: "0 24px",
-          gap: "8px",
+          minHeight: "36px",
+          padding: "0 18px",
+          gap: "6px",
+          fontSize: "0.85rem",
           opacity: canNext ? 1 : 0.45,
           cursor: canNext ? "pointer" : "not-allowed"
         }}
       >
         <span>{currentStep === totalSteps ? "Finish Lesson" : "Next Step"}</span>
-        {currentStep === totalSteps ? <CheckCircle2 size={20} /> : <ChevronRight size={20} />}
+        {currentStep === totalSteps ? <CheckCircle2 size={16} /> : <ChevronRight size={16} />}
       </button>
     </footer>
   );

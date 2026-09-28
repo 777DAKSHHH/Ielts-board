@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, CheckCircle, ArrowRight, HelpCircle, FileText, QrCode } from "lucide-react";
+import { X, CheckCircle, ArrowRight, HelpCircle, FileText } from "lucide-react";
 
 interface QuickJumpMenuProps {
   isOpen: boolean;

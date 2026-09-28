@@ -1,12 +1,26 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { X, FileText, CheckCircle2, Search, Users } from "lucide-react";
+import { X, FileText, Search } from "lucide-react";
 
 interface TutorReportModalProps {
   isOpen: boolean;
   onClose: () => void;
   currentModule: "task1" | "task2";
 }
+
+const TASK1_SUBMISSIONS = [
+  { student: "Aarav Sharma", type: "Comparative Maps", topic: "Kimsville town redevelopment using city centre anchor (2002 vs today)", accuracy: "High" },
+  { student: "Pooja Patel", type: "Map Transformation", topic: "Top-left housing & railway station additions left of city centre", accuracy: "High" },
+  { student: "Rohan Verma", type: "Two Maps", topic: "Industrial factory replacement by software tech offices right of city centre", accuracy: "Moderate" },
+  { student: "Ananya Iyer", type: "Comparative Maps", topic: "Old cinema conversion to pub & bottom-left football stadium", accuracy: "High" }
+];
+
+const TASK2_SUBMISSIONS = [
+  { student: "Aarav Sharma", type: "Discussion Essay", topic: "High salary taxation for public roads and schools vs individual wealth retention", accuracy: "High" },
+  { student: "Pooja Patel", type: "Balanced Opinion", topic: "State funding for essential infrastructure and wealth redistribution", accuracy: "High" },
+  { student: "Rohan Verma", type: "Discuss Both Views", topic: "Economic disincentives of excessive income tax vs civic public goods", accuracy: "Moderate" },
+  { student: "Ananya Iyer", type: "Discussion + Opinion", topic: "Progressive taxation for universal healthcare/schools vs economic liberty", accuracy: "High" }
+];
 
 export const TutorReportModal: React.FC<TutorReportModalProps> = ({
   isOpen,
@@ -17,13 +31,13 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
 
   if (!isOpen) return null;
 
-  // Mock live student submissions for demonstration
-  const submissions = [
-    { student: "Aarav Sharma", type: "Table Chart", topic: "Airline passenger features (legroom vs entertainment)", accuracy: "High" },
-    { student: "Pooja Patel", type: "Survey Report", topic: "Gender preferences in flight travel", accuracy: "High" },
-    { student: "Rohan Verma", type: "Bar Graph", topic: "Airplane ticket booking habits", accuracy: "Moderate" },
-    { student: "Ananya Iyer", type: "Table Comparison", topic: "Airline amenities prioritization", accuracy: "High" }
-  ];
+  const dataset = currentModule === "task1" ? TASK1_SUBMISSIONS : TASK2_SUBMISSIONS;
+  const submissions = dataset.filter(
+    (sub) =>
+      sub.student.toLowerCase().includes(filterTerm.toLowerCase()) ||
+      sub.topic.toLowerCase().includes(filterTerm.toLowerCase()) ||
+      sub.type.toLowerCase().includes(filterTerm.toLowerCase())
+  );
 
   return (
     <div

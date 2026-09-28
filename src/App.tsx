@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
-// Styles
-import "./styles/tokens.css";
-import "./styles/app.css";
-
 // Hooks
 import { useGatekeeper } from "./hooks/useGatekeeper";
 import { useTimer } from "./hooks/useTimer";
@@ -28,49 +24,29 @@ import { Step4IntroOverview } from "./components/task1/Step4IntroOverview";
 import { Step5Bifurcation } from "./components/task1/Step5Bifurcation";
 import { Step6FlowBreakdown } from "./components/task1/Step6FlowBreakdown";
 import { Step7ModelAnalysis } from "./components/task1/Step7ModelAnalysis";
-import { Step8Submission } from "./components/task1/Step8Submission";
+import { Step8Connectors } from "./components/task1/Step8Connectors";
 
 // Task 2 Steps
 import { Step1OverviewT2 } from "./components/task2/Step1Overview";
 import { Step2BrainstormT2 } from "./components/task2/Step2Brainstorm";
 import { Step3BrainstormChallengeT2 } from "./components/task2/Step3BrainstormChallenge";
-import { Step3VocabT2 } from "./components/task2/Step3Vocab";
-import { Step4IntroStructureT2 } from "./components/task2/Step4IntroStructure";
-import { Step5CausesT2 } from "./components/task2/Step5Causes";
+import { Step4VocabT2 } from "./components/task2/Step4Vocab";
+import { Step5IntroStructureT2 } from "./components/task2/Step5IntroStructure";
 import { Step6ConsequencesT2 } from "./components/task2/Step6Consequences";
-import { Step7ConclusionT2 } from "./components/task2/Step7Conclusion";
-import { Step8SubmissionT2 } from "./components/task2/Step8Submission";
+import { Step7EvaluationT2 } from "./components/task2/Step7Evaluation";
+import { Step8ConclusionT2 } from "./components/task2/Step8Conclusion";
+import { Step9SubmissionT2 } from "./components/task2/Step9Submission";
 
-// Titles configuration
-const TASK1_TITLES = [
-  "Cryptic Audio Guess",
-  "Task Prompt & Process Analysis",
-  "Workbook Vocabulary",
-  "Sample Introduction & Overview",
-  "Body 1: Raw Material → Clean Pulp",
-  "Body 2: Two Production Routes",
-  "The Best Processing",
-  "Connectors"
-];
-
-const TASK2_TITLES = [
-  "Audio Briefing & Guess",
-  "Task 2 Question & Analysis",
-  "Guided Brainstorm Challenge",
-  "Workbook Vocabulary",
-  "Introduction & Thesis",
-  "Body 1: Consequences",
-  "Body 2: Good or Bad?",
-  "Conclusion & Faculty Angles",
-  "Final Submission & Wrap-up"
-];
+// Types & Config
+import type { ModuleType } from "./types";
+import { TASK1_STEPS, TASK1_TITLES, TASK2_STEPS, TASK2_TITLES } from "./config";
 
 export function App() {
   // Gatekeeper Auth
   const { isUnlocked, errorMsg, unlock, lock, setErrorMsg } = useGatekeeper();
 
   // State Management
-  const [currentModule, setCurrentModule] = useState<"task1" | "task2">("task1");
+  const [currentModule, setCurrentModule] = useState<ModuleType>("task1");
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [direction, setDirection] = useState<number>(1);
 
@@ -83,7 +59,7 @@ export function App() {
   const timer = useTimer(180);
   const speech = useSpeech();
 
-  const totalSteps = currentModule === "task1" ? 8 : 9;
+  const totalSteps = currentModule === "task1" ? TASK1_STEPS.length : TASK2_STEPS.length;
   const stepTitles = currentModule === "task1" ? TASK1_TITLES : TASK2_TITLES;
   const currentStepTitle = stepTitles[currentStep - 1];
 
@@ -140,7 +116,7 @@ export function App() {
         case 7:
           return <Step7ModelAnalysis />;
         case 8:
-          return <Step8Submission />;
+          return <Step8Connectors />;
         default:
           return null;
       }
@@ -161,17 +137,17 @@ export function App() {
         case 3:
           return <Step3BrainstormChallengeT2 />;
         case 4:
-          return <Step3VocabT2 onSpeak={speech.speak} accent={speech.accent} setAccent={speech.setAccent} />;
+          return <Step4VocabT2 onSpeak={speech.speak} accent={speech.accent} setAccent={speech.setAccent} />;
         case 5:
-          return <Step4IntroStructureT2 />;
+          return <Step5IntroStructureT2 />;
         case 6:
-          return <Step5CausesT2 />;
-        case 7:
           return <Step6ConsequencesT2 />;
+        case 7:
+          return <Step7EvaluationT2 />;
         case 8:
-          return <Step7ConclusionT2 />;
+          return <Step8ConclusionT2 />;
         case 9:
-          return <Step8SubmissionT2 />;
+          return <Step9SubmissionT2 />;
         default:
           return null;
       }

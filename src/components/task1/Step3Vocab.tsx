@@ -13,10 +13,10 @@ export const Step3Vocab: React.FC<Step3VocabProps> = ({ onSpeak, accent, setAcce
   <div className="stage-card-wrapper">
     <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "16px" }}>
       <div>
-        <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 03 / 08 • Workbook Vocabulary</span>
-        <h2 className="stage-title">Process Vocabulary</h2>
+        <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 03 / 08 • Lexical Resource</span>
+        <h2 className="stage-title">Map Transformation Vocabulary</h2>
         <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-          Use the expressions from the workbook to describe processing, branching, sequence and results accurately.
+          Essential collocations and academic terminology for urban redevelopment, demolition, adaptive reuse, and spatial location.
         </p>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "var(--slate-100)", padding: "6px 10px", borderRadius: "12px" }}>
@@ -29,7 +29,7 @@ export const Step3Vocab: React.FC<Step3VocabProps> = ({ onSpeak, accent, setAcce
       </div>
     </div>
     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "14px", color: "var(--slate-700)" }}>
-      <BookOpen size={18} /> <strong>10 expressions from the PDF workbook</strong>
+      <BookOpen size={18} /> <strong>10 essential academic map collocations</strong>
     </div>
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px", overflowY: "auto", paddingRight: "4px" }}>
       {TASK1_DATA.vocabList.map((vocab, index) => <VocabCard key={vocab.word} vocab={vocab} onSpeak={onSpeak} index={index} />)}

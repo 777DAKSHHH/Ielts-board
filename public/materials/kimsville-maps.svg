@@ -1,0 +1,311 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1760 1320" width="1760" height="1320">
+  <defs>
+    <!-- Gradients & Filters -->
+    <linearGradient id="cityCenterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="50%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+
+    <linearGradient id="mapBgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FEFBF6"/>
+      <stop offset="100%" stop-color="#FDF3E7"/>
+    </linearGradient>
+
+    <linearGradient id="smokeGrad" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#475569" stop-opacity="0.85"/>
+      <stop offset="60%" stop-color="#94A3B8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#E2E8F0" stop-opacity="0.15"/>
+    </linearGradient>
+
+    <linearGradient id="softwareTowerGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="40%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+
+    <linearGradient id="softwareTowerGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7DD3FC"/>
+      <stop offset="50%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <linearGradient id="stationRoofGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+
+    <filter id="buildingShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+
+    <!-- Tree Cluster Symbol -->
+    <g id="treeCluster">
+      <!-- Back trees -->
+      <circle cx="-28" cy="-14" r="28" fill="#15803D" opacity="0.95"/>
+      <circle cx="28" cy="-16" r="26" fill="#166534" opacity="0.95"/>
+      <!-- Front trees -->
+      <circle cx="-12" cy="10" r="30" fill="#16A34A"/>
+      <circle cx="20" cy="12" r="28" fill="#22C55E"/>
+      <!-- Tree highlight textures -->
+      <circle cx="-16" cy="4" r="18" fill="#4ADE80" opacity="0.3"/>
+      <circle cx="16" cy="6" r="16" fill="#86EFAC" opacity="0.35"/>
+      <!-- Trunks -->
+      <rect x="-15" y="32" width="6" height="16" rx="2" fill="#78350F"/>
+      <rect x="17" y="32" width="6" height="16" rx="2" fill="#78350F"/>
+    </g>
+
+    <!-- Shopping Centre Symbol -->
+    <g id="shoppingCenterBuilding" filter="url(#buildingShadow)">
+      <rect x="-55" y="-45" width="110" height="75" rx="4" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+      <!-- Roof pediment -->
+      <polygon points="-58,-45 0,-62 58,-45" fill="#B45309" stroke="#78350F" stroke-width="2"/>
+      <!-- Windows 2nd floor -->
+      <rect x="-42" y="-34" width="18" height="16" rx="2" fill="#38BDF8" stroke="#0284C7" stroke-width="1.5"/>
+      <rect x="-10" y="-34" width="20" height="16" rx="2" fill="#38BDF8" stroke="#0284C7" stroke-width="1.5"/>
+      <rect x="24" y="-34" width="18" height="16" rx="2" fill="#38BDF8" stroke="#0284C7" stroke-width="1.5"/>
+      <!-- Windows 1st floor -->
+      <rect x="-42" y="-10" width="18" height="16" rx="2" fill="#38BDF8" stroke="#0284C7" stroke-width="1.5"/>
+      <rect x="-10" y="-10" width="20" height="16" rx="2" fill="#38BDF8" stroke="#0284C7" stroke-width="1.5"/>
+      <rect x="24" y="-10" width="18" height="16" rx="2" fill="#38BDF8" stroke="#0284C7" stroke-width="1.5"/>
+      <!-- Glass Entrance Doors -->
+      <rect x="-16" y="12" width="32" height="18" rx="1" fill="#0284C7" stroke="#0369A1" stroke-width="1.5"/>
+      <line x1="0" y1="12" x2="0" y2="30" stroke="#FFFFFF" stroke-width="1.5"/>
+      <rect x="-48" y="16" width="24" height="14" rx="1" fill="#FDE68A" stroke="#D97706" stroke-width="1"/>
+      <rect x="24" y="16" width="24" height="14" rx="1" fill="#FDE68A" stroke="#D97706" stroke-width="1"/>
+    </g>
+
+    <!-- Cinema / Pub Building Base Structure -->
+    <g id="heritageBuilding" filter="url(#buildingShadow)">
+      <!-- Main Hall -->
+      <rect x="-60" y="-30" width="120" height="60" rx="4" fill="#F8FAFC" stroke="#64748B" stroke-width="2"/>
+      <!-- Classical Dome & Arches -->
+      <ellipse cx="0" cy="-30" rx="34" ry="24" fill="#475569" stroke="#334155" stroke-width="2"/>
+      <ellipse cx="0" cy="-30" rx="24" ry="16" fill="#0EA5E9" opacity="0.3"/>
+      <!-- Left & Right Wing Towers -->
+      <rect x="-65" y="-40" width="22" height="70" rx="3" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+      <rect x="43" y="-40" width="22" height="70" rx="3" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+      <polygon points="-67,-40 -54,-52 -41,-40" fill="#B45309" stroke="#78350F" stroke-width="1.5"/>
+      <polygon points="41,-40 54,-52 67,-40" fill="#B45309" stroke="#78350F" stroke-width="1.5"/>
+      <!-- Entrance Arch -->
+      <path d="M-18,30 L-18,6 A18,18 0 0,1 18,6 L18,30 Z" fill="#94A3B8" stroke="#475569" stroke-width="1.5"/>
+      <circle cx="0" cy="-6" r="6" fill="#FDE68A"/>
+    </g>
+  </defs>
+
+  <!-- Canvas Outer Background -->
+  <rect width="1760" height="1320" fill="#F1F5F9"/>
+
+  <!-- ============================================================ -->
+  <!-- LEFT PANEL: Kimsville, 2002 (NO COMPASS as per authentic task) -->
+  <!-- ============================================================ -->
+  <g transform="translate(60, 40)">
+    <!-- Map Canvas Card -->
+    <rect width="800" height="1240" rx="24" fill="url(#mapBgGrad)" stroke="#CBD5E1" stroke-width="3" filter="url(#softShadow)"/>
+
+    <!-- Map Header Tag -->
+    <rect x="24" y="24" width="240" height="48" rx="10" fill="#0F172A"/>
+    <text x="38" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">Kimsville, 2002</text>
+
+    <!-- ================= CITY CENTRE (2002) - CENTRAL ANCHOR ===== -->
+    <!-- Road connection hints -->
+    <rect x="340" y="190" width="120" height="230" fill="#E2E8F0" opacity="0.6" rx="4"/>
+    <rect x="340" y="800" width="120" height="200" fill="#E2E8F0" opacity="0.6" rx="4"/>
+    <rect x="490" y="520" width="130" height="80" fill="#E2E8F0" opacity="0.6" rx="4"/>
+
+    <!-- City Centre Rectangle (The Fixed Spatial Anchor) -->
+    <rect x="300" y="420" width="200" height="380" rx="14" fill="url(#cityCenterGrad)" stroke="#C2410C" stroke-width="3" filter="url(#buildingShadow)"/>
+    <text x="400" y="605" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="28" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="0.5">city</text>
+    <text x="400" y="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="28" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="0.5">centre</text>
+
+    <!-- ================= TOP-LEFT CORNER: TREES (2002) ============ -->
+    <g transform="translate(150, 160)">
+      <use href="#treeCluster"/>
+    </g>
+
+    <!-- ================= TOP-RIGHT CORNER: TREES (2002) =========== -->
+    <g transform="translate(650, 160)">
+      <use href="#treeCluster"/>
+    </g>
+
+    <!-- ================= DIRECTLY ABOVE: SHOPPING CENTRE (2002) === -->
+    <g transform="translate(400, 175)">
+      <use href="#shoppingCenterBuilding"/>
+      <text x="0" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="20" font-weight="750" fill="#0F172A" text-anchor="middle">shopping</text>
+      <text x="0" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="20" font-weight="750" fill="#0F172A" text-anchor="middle">centre</text>
+    </g>
+
+    <!-- ================= TO THE RIGHT: FACTORY (2002) ============= -->
+    <g transform="translate(640, 600)" filter="url(#buildingShadow)">
+      <!-- Smoke Plume -->
+      <path d="M25,-85 Q50,-130 90,-155 Q130,-175 160,-160 Q175,-140 145,-120 Q110,-105 70,-80 Z" fill="url(#smokeGrad)"/>
+      <path d="M20,-75 Q40,-115 75,-135 Q105,-150 120,-135 Q110,-115 65,-80 Z" fill="url(#smokeGrad)" opacity="0.7"/>
+
+      <!-- Chimney -->
+      <polygon points="12,-15 15,-80 35,-80 38,-15" fill="#78350F" stroke="#451A03" stroke-width="2"/>
+      <rect x="13" y="-83" width="24" height="6" rx="1" fill="#451A03"/>
+
+      <!-- Sawtooth Factory Building -->
+      <path d="M-75,45 L-75,-15 L-35,-35 L-35,-15 L5,-35 L5,-15 L45,-35 L45,45 Z" fill="#334155" stroke="#0F172A" stroke-width="2.5"/>
+      <polygon points="-73,-13 -37,-31 -37,-15" fill="#38BDF8" opacity="0.6"/>
+      <polygon points="-33,-13 3,-31 3,-15" fill="#38BDF8" opacity="0.6"/>
+      <polygon points="7,-13 43,-31 43,-15" fill="#38BDF8" opacity="0.6"/>
+      <rect x="-60" y="10" width="24" height="35" fill="#1E293B" stroke="#0F172A" stroke-width="1.5"/>
+      <rect x="-20" y="15" width="20" height="15" fill="#FDE68A" stroke="#B45309" stroke-width="1"/>
+      <rect x="10" y="15" width="20" height="15" fill="#FDE68A" stroke="#B45309" stroke-width="1"/>
+
+      <!-- Factory Label -->
+      <text x="-15" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" font-weight="800" fill="#0F172A" text-anchor="middle">factory</text>
+    </g>
+
+    <!-- ================= DIRECTLY BELOW: OLD CINEMA (2002) ======== -->
+    <g transform="translate(400, 1020)">
+      <use href="#heritageBuilding"/>
+      <text x="0" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" font-weight="800" fill="#0F172A" text-anchor="middle">old cinema</text>
+    </g>
+
+    <!-- ================= BOTTOM-LEFT CORNER: TREES (2002) ======== -->
+    <g transform="translate(150, 1060)">
+      <use href="#treeCluster"/>
+    </g>
+
+    <!-- ================= BOTTOM-RIGHT CORNER: TREES (2002) ======= -->
+    <g transform="translate(650, 1060)">
+      <use href="#treeCluster"/>
+    </g>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- RIGHT PANEL: Kimsville, today (NO COMPASS as per authentic)  -->
+  <!-- ============================================================ -->
+  <g transform="translate(900, 40)">
+    <!-- Map Canvas Card -->
+    <rect width="800" height="1240" rx="24" fill="url(#mapBgGrad)" stroke="#CBD5E1" stroke-width="3" filter="url(#softShadow)"/>
+
+    <!-- Map Header Tag -->
+    <rect x="24" y="24" width="240" height="48" rx="10" fill="#0F172A"/>
+    <text x="38" y="56" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">Kimsville, today</text>
+
+    <!-- ================= CITY CENTRE (TODAY) - CONSTANT ANCHOR === -->
+    <rect x="340" y="190" width="120" height="230" fill="#E2E8F0" opacity="0.6" rx="4"/>
+    <rect x="340" y="800" width="120" height="200" fill="#E2E8F0" opacity="0.6" rx="4"/>
+    <rect x="180" y="580" width="120" height="80" fill="#E2E8F0" opacity="0.6" rx="4"/>
+    <rect x="490" y="520" width="130" height="80" fill="#E2E8F0" opacity="0.6" rx="4"/>
+
+    <!-- City Centre Rectangle (Identical Preserved Anchor) -->
+    <rect x="300" y="420" width="200" height="380" rx="14" fill="url(#cityCenterGrad)" stroke="#C2410C" stroke-width="3" filter="url(#buildingShadow)"/>
+    <text x="400" y="605" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="28" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="0.5">city</text>
+    <text x="400" y="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="28" font-weight="800" fill="#0F172A" text-anchor="middle" letter-spacing="0.5">centre</text>
+
+    <!-- ================= TOP-LEFT CORNER: NEW APARTMENTS (TODAY) == -->
+    <g transform="translate(150, 160)" filter="url(#buildingShadow)">
+      <rect x="-42" y="-70" width="84" height="120" rx="4" fill="#334155" stroke="#1E293B" stroke-width="2.5"/>
+      <rect x="-24" y="-85" width="48" height="16" rx="2" fill="#475569" stroke="#1E293B" stroke-width="1.5"/>
+      <rect x="-32" y="-62" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-8" y="-62" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="16" y="-62" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-32" y="-45" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-8" y="-45" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="16" y="-45" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-32" y="-28" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-8" y="-28" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="16" y="-28" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-32" y="-11" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-8" y="-11" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="16" y="-11" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-32" y="6" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-8" y="6" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="16" y="6" width="16" height="11" rx="1" fill="#93C5FD"/>
+      <rect x="-14" y="26" width="28" height="24" rx="2" fill="#0284C7" stroke="#0369A1" stroke-width="1.5"/>
+
+      <text x="0" y="78" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" font-weight="800" fill="#0F172A" text-anchor="middle">new apartments</text>
+    </g>
+
+    <!-- ================= TOP-RIGHT CORNER: TREES (PRESERVED) ====== -->
+    <g transform="translate(650, 160)">
+      <use href="#treeCluster"/>
+    </g>
+
+    <!-- ================= DIRECTLY ABOVE: SHOPPING CENTRE (PRESERVED) -->
+    <g transform="translate(400, 175)">
+      <use href="#shoppingCenterBuilding"/>
+      <text x="0" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="20" font-weight="750" fill="#0F172A" text-anchor="middle">shopping</text>
+      <text x="0" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="20" font-weight="750" fill="#0F172A" text-anchor="middle">centre</text>
+    </g>
+
+    <!-- ================= TO THE LEFT: NEW TRAIN STATION (TODAY) === -->
+    <g transform="translate(150, 640)" filter="url(#buildingShadow)">
+      <path d="M-70,30 Q-70,-45 0,-45 Q70,-45 70,30 Z" fill="url(#stationRoofGrad)" stroke="#0F172A" stroke-width="2.5"/>
+      <path d="M-55,30 L-55,-5 A16,16 0 0,1 -23,-5 L-23,30 Z" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+      <path d="M-16,30 L-16,-12 A16,16 0 0,1 16,-12 L16,30 Z" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+      <path d="M23,30 L23,-5 A16,16 0 0,1 55,-5 L55,30 Z" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+
+      <circle cx="0" cy="-24" r="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="1.5"/>
+      <line x1="0" y1="-24" x2="0" y2="-28" stroke="#0F172A" stroke-width="1.5"/>
+      <line x1="0" y1="-24" x2="3" y2="-24" stroke="#0F172A" stroke-width="1.5"/>
+
+      <line x1="-120" y1="20" x2="-70" y2="20" stroke="#475569" stroke-width="3"/>
+      <line x1="-120" y1="30" x2="-70" y2="30" stroke="#475569" stroke-width="3"/>
+      <line x1="-115" y1="16" x2="-115" y2="34" stroke="#64748B" stroke-width="2"/>
+      <line x1="-100" y1="16" x2="-100" y2="34" stroke="#64748B" stroke-width="2"/>
+      <line x1="-85" y1="16" x2="-85" y2="34" stroke="#64748B" stroke-width="2"/>
+
+      <text x="0" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" font-weight="800" fill="#0F172A" text-anchor="middle">new train station</text>
+    </g>
+
+    <!-- ================= TO THE RIGHT: SOFTWARE COMPANY (TODAY) === -->
+    <g transform="translate(650, 610)" filter="url(#buildingShadow)">
+      <polygon points="5,-80 45,-105 85,-80 85,50 5,50" fill="url(#softwareTowerGrad2)" stroke="#0369A1" stroke-width="2"/>
+      <line x1="15" y1="-70" x2="75" y2="-70" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+      <line x1="15" y1="-50" x2="75" y2="-50" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+      <line x1="15" y1="-30" x2="75" y2="-30" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+      <line x1="15" y1="-10" x2="75" y2="-10" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+      <line x1="15" y1="10" x2="75" y2="10" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+      <line x1="15" y1="30" x2="75" y2="30" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+
+      <polygon points="-55,-60 -15,-85 25,-60 25,50 -55,50" fill="url(#softwareTowerGrad)" stroke="#0C4A6E" stroke-width="2.5"/>
+      <rect x="-47" y="-50" width="64" height="6" rx="1" fill="#E0F2FE"/>
+      <rect x="-47" y="-36" width="64" height="6" rx="1" fill="#E0F2FE"/>
+      <rect x="-47" y="-22" width="64" height="6" rx="1" fill="#E0F2FE"/>
+      <rect x="-47" y="-8" width="64" height="6" rx="1" fill="#E0F2FE"/>
+      <rect x="-47" y="6" width="64" height="6" rx="1" fill="#E0F2FE"/>
+      <rect x="-47" y="20" width="64" height="6" rx="1" fill="#E0F2FE"/>
+      <rect x="-47" y="34" width="64" height="6" rx="1" fill="#E0F2FE"/>
+
+      <line x1="-15" y1="-85" x2="-15" y2="-115" stroke="#0284C7" stroke-width="2.5"/>
+      <circle cx="-15" cy="-115" r="3" fill="#EF4444"/>
+
+      <text x="10" y="80" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" font-weight="800" fill="#0F172A" text-anchor="middle">software</text>
+      <text x="10" y="104" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" font-weight="800" fill="#0F172A" text-anchor="middle">company</text>
+    </g>
+
+    <!-- ================= DIRECTLY BELOW: PUB (REPURPOSED CINEMA) == -->
+    <g transform="translate(400, 1020)">
+      <use href="#heritageBuilding"/>
+      <text x="0" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="24" font-weight="800" fill="#0F172A" text-anchor="middle">pub</text>
+    </g>
+
+    <!-- ================= BOTTOM-LEFT CORNER: FOOTBALL STADIUM ==== -->
+    <g transform="translate(150, 1050)" filter="url(#buildingShadow)">
+      <rect x="-70" y="-35" width="140" height="70" rx="14" fill="#334155" stroke="#1E293B" stroke-width="3"/>
+      <rect x="-65" y="-30" width="130" height="15" fill="#475569" rx="4"/>
+      <rect x="-65" y="15" width="130" height="15" fill="#475569" rx="4"/>
+      <rect x="-50" y="-12" width="100" height="24" rx="2" fill="#15803D" stroke="#FFFFFF" stroke-width="1.5"/>
+      <line x1="0" y1="-12" x2="0" y2="12" stroke="#FFFFFF" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="6" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+      <rect x="-50" y="-6" width="10" height="12" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+      <rect x="40" y="-6" width="10" height="12" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+
+      <text x="0" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="22" font-weight="800" fill="#0F172A" text-anchor="middle">football stadium</text>
+    </g>
+
+    <!-- ================= BOTTOM-RIGHT CORNER: TREES (PRESERVED) == -->
+    <g transform="translate(650, 1060)">
+      <use href="#treeCluster"/>
+    </g>
+  </g>
+</svg>

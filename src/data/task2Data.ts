@@ -1,426 +1,318 @@
-import { VocabItem } from "./task1Data";
+import type {
+  BrainstormCard,
+  ConsequenceItem,
+  EvaluationArgument,
+  FacultyAngle,
+  Task2Data,
+  VocabItem
+} from "../types";
 
-export interface ConsequenceItem {
-  type: "positive" | "negative";
-  title: string;
-  desc: string;
-  example: string;
-}
-
-export interface EvaluationArgument {
-  title: string;
-  reason: string;
-  development: string;
-  example: string;
-  type: "argument" | "counterpoint";
-}
-
-export interface FacultyAngle {
-  title: string;
-  development: string;
-}
-
-export interface BrainstormCard {
-  question: string;
-  thinkingLens: string;
-  selfCheck: string;
-  idea: string;
-}
-
-export interface Task2Data {
-  id: string;
-  taskType: string;
-  title: string;
-  questionText: string;
-  audioUrl: string;
-  timingSeconds: number;
-  sampleIntro: string;
-  sampleConclusion: string;
-  vocabList: VocabItem[];
-  vocabHunt: string[];
-  consequences: ConsequenceItem[];
-  evaluationArguments: EvaluationArgument[];
-  facultyAngles: FacultyAngle[];
-  powerExpressions: {
-    expression: string;
-    meaning: string;
-    example: string;
-  }[];
-  brainstormCards: BrainstormCard[];
-  connectorsTier: {
-    sTier: string[];
-    aTier: string[];
-    bTier: string[];
-  };
-}
+export type {
+  BrainstormCard,
+  ConsequenceItem,
+  EvaluationArgument,
+  FacultyAngle,
+  Task2Data,
+  VocabItem
+};
 
 export const TASK2_DATA: Task2Data = {
-  id: "anti-ageing-products-task2",
+  id: "taxation-and-public-services-task2",
 
-  taskType: "Hybrid: Consequences + Good/Bad",
+  taskType: "Discussion Essay: Discuss Both Views + Opinion",
 
-  title: "The Trend Towards Looking Younger",
+  title: "Income Taxation vs. Essential Public Services",
 
   questionText:
-    "Nowadays it is possible for people to buy many products or pay for treatments that help them look younger.\n\nWhat are the consequences of this trend?\nIs this a good or a bad thing?",
+    "Some people feel that the government should take a large proportion of people’s salaries to pay for necessary public services such as roads and schools. Others feel that high taxes are a bad thing.\n\nDiscuss both the views and give your opinion.",
 
-  audioUrl: "materials/Staying_Young_as_a_Survival_Tactic.m4a",
+  audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
 
   timingSeconds: 180,
 
   sampleIntro:
-    "The growing availability of cosmetic products and treatments designed to maintain a youthful appearance has made attempts to delay the visible signs of ageing increasingly commonplace. While this development can enhance people's confidence and provide greater freedom of personal choice, I believe its wider consequences are predominantly negative because it can intensify appearance-related pressure and unrealistic expectations about ageing.",
+    "While some argue that governments should claim a large share of citizens’ earnings to fund essential services like roads and schools, others believe that high taxes are harmful. In my opinion, high taxation is necessary to ensure equal access to vital infrastructure, provided that tax brackets remain progressive.",
 
   sampleConclusion:
-    "In conclusion, the growing accessibility of anti-ageing products and treatments can help some individuals feel more confident about their appearance and exercise greater control over their personal choices. Nevertheless, the resulting pressure to maintain a youthful appearance, together with unrealistic expectations about ageing, makes this trend more detrimental than beneficial overall.",
+    "In conclusion, while excessively high taxes risk eroding work motivation and shrinking household purchasing power, the collective necessity of modern roads, robust healthcare, and free universal education far outweighs these concerns. I believe that governments must retain a progressive taxation model—ensuring the affluent contribute proportionately while shielding lower earners—provided that public expenditures are managed with uncompromising fiscal transparency.",
 
   vocabList: [
     {
-      word: "proliferation of",
-      meaning: "A rapid increase or spread of something.",
+      word: "progressive taxation",
+      meaning: "A fiscal system wherein tax rates increase proportionately with an individual's income level.",
       example:
-        "The proliferation of anti-ageing products has changed attitudes towards ageing.",
+        "A system of progressive taxation ensures that wealthier individuals contribute a fairer share toward civic infrastructure."
     },
     {
-      word: "appearance-conscious",
-      meaning: "Highly concerned about appearance.",
+      word: "essential public amenities",
+      meaning: "Fundamental services and facilities provided by the state for the welfare of all citizens.",
       example:
-        "Modern societies are becoming increasingly appearance-conscious.",
+        "Without state intervention, essential public amenities such as motorways and primary schools would suffer chronic underfunding."
     },
     {
-      word: "age-related changes",
-      meaning: "Natural physical changes associated with ageing.",
+      word: "stifle entrepreneurial initiative",
+      meaning: "Discourage individuals from innovating, investing, or founding commercial enterprises.",
       example:
-        "People may become dissatisfied with normal age-related changes.",
+        "Exorbitant corporate and personal income taxes can stifle entrepreneurial initiative and drive startups offshore."
     },
     {
-      word: "cultivate unrealistic expectations",
-      meaning:
-        "Develop or encourage ideas that are not realistic.",
+      word: "wealth redistribution",
+      meaning: "The transfer of income from richer citizens to public services and lower-income groups.",
       example:
-        "Social media can cultivate unrealistic expectations about youthful appearance.",
+        "Income taxation acts as a crucial instrument for wealth redistribution, narrowing the divide between rich and poor."
     },
     {
-      word: "commodify ageing",
-      meaning:
-        "Turn ageing into something that can be commercially exploited.",
+      word: "fiscal accountability",
+      meaning: "The transparent, responsible stewardship of public tax revenue by government officials.",
       example:
-        "The beauty industry can commodify ageing by presenting natural changes as problems requiring products.",
+        "Public willingness to pay substantial taxes depends directly on the government demonstrating strict fiscal accountability."
     },
     {
-      word: "perpetuate an ideal",
-      meaning:
-        "Cause an ideal or belief to continue.",
+      word: "erode purchasing power",
+      meaning: "Diminish the real volume of goods and services that households can afford with their earnings.",
       example:
-        "Advertising may perpetuate an ideal of perpetual youth.",
+        "Heavy tax deductions on middle-class salaries can severely erode purchasing power during times of inflation."
     },
     {
-      word: "succumb to pressure",
-      meaning:
-        "Give in to pressure from other people or society.",
+      word: "disincentivise productivity",
+      meaning: "Reduce workers' willingness to perform overtime, seek promotions, or work harder.",
       example:
-        "Some consumers may succumb to social pressure to maintain a youthful appearance.",
+        "When marginal tax rates approach fifty percent, they often disincentivise productivity among ambitious professionals."
     },
     {
-      word: "normalise cosmetic intervention",
-      meaning:
-        "Make cosmetic procedures seem ordinary or expected.",
+      word: "civic social contract",
+      meaning: "The unwritten mutual pact between citizens who contribute revenue and the state that provides protection and services.",
       example:
-        "Widespread treatment can normalise cosmetic intervention at increasingly younger ages.",
+        "Paying taxes to maintain common roads and schools is fundamental to upholding the modern civic social contract."
     },
     {
-      word: "acceptance of natural ageing",
-      meaning:
-        "Willingness to regard ageing as a normal part of life.",
+      word: "subsidised education and healthcare",
+      meaning: "Vital social provisions funded wholly or partially by public revenue rather than commercial market rates.",
       example:
-        "Society should encourage greater acceptance of natural ageing.",
+        "Heavily subsidised education and healthcare ensure that underprivileged youth have equal opportunities to excel."
     },
     {
-      word: "exercise personal autonomy",
-      meaning:
-        "Make one's own decisions about a matter.",
+      word: "bureaucratic inefficiency",
+      meaning: "Wasteful, convoluted, or incompetent administration of public resources by government agencies.",
       example:
-        "Adults should be free to exercise personal autonomy over their appearance.",
-    },
+        "Critics contend that high tax yields are squandered through bureaucratic inefficiency rather than invested in roads."
+    }
   ],
 
   vocabHunt: [
-    "proliferation of",
-    "appearance-conscious",
-    "cultivate unrealistic expectations",
-    "commodify ageing",
-    "perpetuate an ideal",
-    "succumb to pressure",
-    "normalise cosmetic intervention",
-    "exercise personal autonomy",
+    "progressive taxation",
+    "essential public amenities",
+    "stifle entrepreneurial initiative",
+    "wealth redistribution",
+    "fiscal accountability",
+    "erode purchasing power",
+    "disincentivise productivity",
+    "bureaucratic inefficiency"
   ],
 
   consequences: [
     {
       type: "positive",
-      title: "Greater confidence",
+      title: "Foundational Infrastructure & Transit",
       desc:
-        "People who are unhappy with visible signs of ageing may feel more comfortable with their appearance after using cosmetic products or treatments.",
+        "Massive capital projects—such as expressway networks, bridges, and public transit—require continuous public funding that private corporations cannot equitably deliver.",
       example:
-        "Someone concerned about wrinkles may use skincare or a non-surgical treatment and subsequently feel more confident at work or in social situations.",
+        "High tax revenues enable the construction of nationwide transport links that lower logistics costs and stimulate commercial trade."
     },
     {
       type: "positive",
-      title: "Greater personal choice",
+      title: "Universal Access to Quality Education",
       desc:
-        "Technological and cosmetic advances allow individuals to decide how they want to manage their appearance rather than simply accepting age-related changes.",
+        "Publicly funded schools guarantee that every child receives quality schooling regardless of household income, fostering social mobility and national productivity.",
       example:
-        "An individual can choose between skincare, cosmetic procedures or doing nothing according to their own preferences.",
+        "State-financed schools and vocational colleges equip youth from modest backgrounds with market-ready qualifications."
+    },
+    {
+      type: "positive",
+      title: "Social Cohesion & Wealth Redistribution",
+      desc:
+        "Using income tax revenues to fund universal public services prevents extreme wealth disparity, establishing an essential safety net for vulnerable citizens.",
+      example:
+        "Tax-funded healthcare subsidies and welfare programmes safeguard low-income families during macroeconomic downturns."
     },
     {
       type: "negative",
-      title: "Appearance-related pressure",
+      title: "Risk of State Monopoly on Services",
       desc:
-        "As anti-ageing options become increasingly normalised, people may feel that looking older is undesirable and something that should be corrected.",
+        "When government bodies monopolise the provision of schools or roads, the absence of market competition can sometimes slow down modernization.",
       example:
-        "A middle-aged person may feel pressured to undergo cosmetic treatment because colleagues or social-media personalities appear significantly younger.",
+        "Public school systems may lag behind private academies in adopting cutting-edge educational technology."
     },
     {
       type: "negative",
-      title: "Unrealistic expectations about ageing",
+      title: "Tax Avoidance & Offshore Loopholes",
       desc:
-        "Constant exposure to youthful-looking celebrities and edited online images can make natural ageing appear abnormal or unattractive.",
+        "When income tax brackets are perceived as excessively high, affluent individuals and corporations actively exploit offshore tax havens.",
       example:
-        "Someone may compare their appearance with heavily edited photographs and become dissatisfied with completely normal signs of ageing.",
-    },
-    {
-      type: "negative",
-      title: "Financial and social pressure",
-      desc:
-        "Repeated treatments can place financial strain on individuals while wider social expectations may make appearance maintenance feel necessary.",
-      example:
-        "Someone may repeatedly pay for cosmetic procedures while cutting back on savings or other household expenditure.",
-    },
+        "High earners may shelter capital in overseas accounts, shrinking the actual domestic tax revenue collected."
+    }
   ],
 
   /*
-   * BALANCED GOOD / BAD EVALUATION BANK
-   *
-   * GOOD / POTENTIAL BENEFITS
-   * 1. Greater confidence
-   * 2. Personal autonomy
-   * 3. Greater control over appearance
-   * 4. Genuine personal satisfaction
-   *
-   * BAD / POTENTIAL DRAWBACKS
-   * 1. Commercial pressure
-   * 2. Financial burden
-   * 3. Appearance-related social pressure
-   * 4. Unrealistic expectations
-   * 5. Negative attitudes towards ageing
-   * 6. Workplace pressure
+   * BALANCED DISCUSSION EVALUATION BANK
    */
   evaluationArguments: [
     {
+      type: "argument",
+      title: "Erosion of Work Incentives",
+      reason:
+        "Taking a large proportion of earned salaries diminishes the direct financial reward for extra effort, skill acquisition, and longer hours.",
+      development:
+        "When workers realise that a major share of their overtime or promotion pay is absorbed by taxes, they often choose to work less or decline added responsibilities.",
+      example:
+        "Surgeons, engineers, and entrepreneurs may cap their billable hours or decline demanding leadership promotions to avoid higher tax brackets."
+    },
+    {
+      type: "argument",
+      title: "Reduction in Household Purchasing Power",
+      reason:
+        "High taxation directly deprives families of capital they could otherwise allocate towards personal savings, mortgages, and family investments.",
+      development:
+        "In periods of rising inflation or escalating living costs, heavy salary deductions can push middle-income households into severe financial strain.",
+      example:
+        "Working parents may struggle to afford basic private childcare or home ownership because a large portion of their paycheck is withheld at source."
+    },
+    {
+      type: "argument",
+      title: "Brain Drain and Capital Flight",
+      reason:
+        "Highly skilled professionals and innovative entrepreneurs have international mobility and will migrate to countries with lighter tax burdens.",
+      development:
+        "When a nation imposes punitive tax rates, it risks losing its most productive minds and innovative corporations to tax-friendly jurisdictions.",
+      example:
+        "Technology founders and medical specialists relocating from high-tax European nations to competitive hubs like Singapore or Dubai."
+    },
+    {
+      type: "argument",
+      title: "Bureaucratic Inefficiency & Squandered Revenue",
+      reason:
+        "Governments are rarely as cost-effective or accountable as private managers in deploying capital.",
+      development:
+        "Without the discipline of market competition, public agencies frequently suffer from cost overruns, administrative bloat, and corrupt tender processes.",
+      example:
+        "Civic road-resurfacing projects that take years to complete and cost twice the original budget due to bureaucratic mismanagement."
+    },
+    {
       type: "counterpoint",
-      title: "Greater confidence",
+      title: "Market Failure of Pure Privatisation",
       reason:
-        "Some individuals may feel uncomfortable about visible signs of ageing and may gain confidence after using products or treatments.",
+        "Leaving roads and schools purely to private profit motives would deny access to the poor and leave unprofitable rural regions abandoned.",
       development:
-        "If a person feels more comfortable with their appearance, this may improve their confidence in social or professional situations.",
+        "Private road operators would erect toll booths everywhere, and private schools would price out ordinary families, destroying equal opportunity.",
       example:
-        "Someone who is particularly concerned about wrinkles may use skincare or a non-surgical treatment and subsequently feel more confident at work or in social settings.",
+        "In countries without universal state-funded schooling, illiteracy rates remain high among low-income and rural populations."
     },
-
     {
       type: "counterpoint",
-      title: "Personal autonomy",
+      title: "The Nordic High-Trust Model",
       reason:
-        "Adults should generally have the freedom to decide how they manage their own appearance.",
+        "High taxation is proven to generate exceptional quality of life when paired with transparency, equality, and high social trust.",
       development:
-        "If a person voluntarily chooses a treatment and understands its costs and limitations, the availability of that choice can be considered a benefit.",
+        "Nations with higher tax rates frequently top global indexes for happiness, health, and social stability because citizens receive outstanding public value in return.",
       example:
-        "An individual may choose skincare, a cosmetic procedure or no intervention at all according to personal preferences.",
-    },
-
-    {
-      type: "counterpoint",
-      title: "Greater control over appearance",
-      reason:
-        "Technological and cosmetic advances give individuals more options for managing age-related changes.",
-      development:
-        "Rather than simply accepting visible changes, people can choose from a range of approaches depending on their preferences.",
-      example:
-        "A person may combine skincare, exercise and a cosmetic treatment to manage their appearance in a way that makes them feel comfortable.",
-    },
-
-    {
-      type: "counterpoint",
-      title: "Genuine personal satisfaction",
-      reason:
-        "Cosmetic treatments can provide a genuine psychological benefit when they are chosen freely rather than because of external pressure.",
-      development:
-        "For some people, satisfaction with their appearance may improve their overall confidence and sense of personal control.",
-      example:
-        "Someone who voluntarily chooses a treatment because it makes them feel happier about their appearance may experience a genuine personal benefit.",
-    },
-
-    {
-      type: "argument",
-      title: "Commercial pressure",
-      reason:
-        "The beauty industry has a financial incentive to convince consumers that ordinary signs of ageing are problems requiring correction.",
-      development:
-        "This can turn natural ageing into a source of insecurity and encourage repeated spending on products and procedures.",
-      example:
-        "A consumer may continually purchase increasingly expensive creams or treatments because advertisements suggest that visible ageing reflects poor self-care.",
-    },
-
-    {
-      type: "argument",
-      title: "Financial burden",
-      reason:
-        "Some treatments are expensive and may require repeated procedures to maintain their effects.",
-      development:
-        "People can end up spending substantial amounts of disposable income on appearance rather than more essential priorities.",
-      example:
-        "Someone may repeatedly pay for cosmetic procedures while simultaneously cutting back on savings or other household expenditure.",
-    },
-
-    {
-      type: "argument",
-      title: "Appearance-related social pressure",
-      reason:
-        "As anti-ageing treatments become increasingly normalised, people may feel that looking older is undesirable.",
-      development:
-        "This can make individuals feel that they must actively maintain a youthful appearance in order to fit social expectations.",
-      example:
-        "A middle-aged person may feel pressured to undergo cosmetic treatment because colleagues or social-media personalities appear significantly younger.",
-    },
-
-    {
-      type: "argument",
-      title: "Unrealistic expectations about ageing",
-      reason:
-        "Constant exposure to youthful-looking celebrities and edited online images can distort perceptions of normal ageing.",
-      development:
-        "People may begin to view ordinary age-related changes as unattractive or abnormal and become increasingly dissatisfied with their appearance.",
-      example:
-        "Someone may compare their appearance with heavily edited photographs and become dissatisfied with completely normal signs of ageing.",
-    },
-
-    {
-      type: "argument",
-      title: "Negative attitudes towards ageing",
-      reason:
-        "Normalising anti-ageing treatments may reinforce the idea that growing older is embarrassing or undesirable.",
-      development:
-        "This can reduce acceptance of natural ageing and place greater pressure on older people to appear younger.",
-      example:
-        "Older adults may feel that they are expected to maintain a youthful appearance because society increasingly associates youth with attractiveness and relevance.",
-    },
-
-    {
-      type: "argument",
-      title: "Workplace pressure",
-      reason:
-        "If youthful appearance becomes associated with professionalism or attractiveness, older employees may experience subtle pressure to conceal their age.",
-      development:
-        "This can create an unfair expectation that workers should maintain a particular appearance rather than being judged primarily on their abilities.",
-      example:
-        "An older employee may feel compelled to spend money on cosmetic treatments because they believe a younger appearance will help them fit workplace expectations.",
-    },
+        "Scandinavian nations such as Denmark and Norway combine substantial income taxes with world-leading infrastructure and virtually free education."
+    }
   ],
 
   facultyAngles: [
     {
-      title: "Employment implications",
+      title: "The Nordic Model vs. Free-Market Capitalism",
       development:
-        "If youthful appearance becomes associated with professionalism or attractiveness, older workers may experience subtle pressure to conceal their age.",
+        "Examine why high taxes work brilliantly in high-trust Scandinavian societies (Denmark, Norway) with transparent institutions, but often fail or breed resentment in countries plagued by bureaucratic corruption."
     },
     {
-      title: "Intergenerational attitudes",
+      title: "The Laffer Curve & Optimal Revenue",
       development:
-        "A culture that excessively celebrates youth may unintentionally portray older generations as less attractive, relevant or socially desirable.",
+        "Discuss the economic principle that taxing beyond an optimal rate actually reduces total tax revenue by encouraging tax avoidance, capital flight, and diminished workforce participation."
     },
     {
-      title: "Medicalisation of normal ageing",
+      title: "Hypothecated (Earmarked) Taxation",
       development:
-        "Ordinary biological changes may increasingly be treated as conditions requiring intervention rather than accepted as a normal part of life.",
+        "Consider whether citizens would be more willing to accept high deductions if governments legally ring-fenced funds specifically for visible local schools and road maintenance rather than general treasury pools."
     },
     {
-      title: "Accessibility and inequality",
+      title: "Progressive Brackets vs. Flat Tax Rates",
       development:
-        "Expensive treatments may create a visible divide between people who can afford to maintain a youthful appearance and those who cannot.",
+        "Analyze how tiered tax systems protect low and middle earners while ensuring high-net-worth individuals shoulder the primary burden of national public service financing."
     },
     {
-      title: "Psychological dependence",
+      title: "Intergenerational Equity & Future Infrastructure",
       development:
-        "Repeated cosmetic interventions may lead some consumers to become increasingly dissatisfied with their appearance and seek further procedures.",
+        "Explore the perspective that today's high taxes fund long-term infrastructure (green energy grids, high-speed rail, modern digital schools) that will benefit future generations decades later."
     },
     {
-      title: "Consumer freedom vs social pressure",
+      title: "Direct Income Tax vs. Indirect Consumption Tax (VAT)",
       development:
-        "The availability of choice can be positive, but the same market can create pressure by constantly presenting ageing as a defect that should be corrected.",
-    },
+        "Debate whether governments should collect revenue from consumption (luxury taxes, sales taxes) rather than penalizing productive labor and income generation directly."
+    }
   ],
 
   powerExpressions: [
     {
-      expression: "proliferation of",
-      meaning: "rapid increase/spread",
+      expression: "progressive taxation",
+      meaning: "system where tax rates rise with income",
       example:
-        "The proliferation of anti-ageing products has changed attitudes towards ageing.",
+        "A system of progressive taxation ensures that wealthier individuals contribute a fairer share toward civic infrastructure."
     },
     {
-      expression: "appearance-conscious",
-      meaning: "highly concerned about appearance",
+      expression: "essential public amenities",
+      meaning: "fundamental state-provided services",
       example:
-        "Modern societies are becoming increasingly appearance-conscious.",
+        "Without state intervention, essential public amenities such as motorways and primary schools would suffer chronic underfunding."
     },
     {
-      expression: "age-related changes",
-      meaning: "natural changes associated with ageing",
+      expression: "stifle entrepreneurial initiative",
+      meaning: "discourage enterprise, innovation and investment",
       example:
-        "People may become dissatisfied with normal age-related changes.",
+        "Exorbitant corporate and personal income taxes can stifle entrepreneurial initiative and drive startups offshore."
     },
     {
-      expression: "cultivate unrealistic expectations",
-      meaning: "develop unrealistic ideas",
+      expression: "wealth redistribution",
+      meaning: "transfer of wealth to balance inequality",
       example:
-        "Social media can cultivate unrealistic expectations about youthful appearance.",
+        "Income taxation acts as a crucial instrument for wealth redistribution, narrowing the divide between rich and poor."
     },
     {
-      expression: "commodify ageing",
-      meaning: "turn ageing into something commercially exploited",
+      expression: "fiscal accountability",
+      meaning: "transparent and responsible public fund management",
       example:
-        "The beauty industry can commodify ageing by presenting natural changes as problems requiring products.",
+        "Public willingness to pay substantial taxes depends directly on the government demonstrating strict fiscal accountability."
     },
     {
-      expression: "perpetuate an ideal",
-      meaning: "cause an ideal to continue",
+      expression: "erode purchasing power",
+      meaning: "reduce real volume of goods income can buy",
       example:
-        "Advertising may perpetuate an ideal of perpetual youth.",
+        "Heavy tax deductions on middle-class salaries can severely erode purchasing power during times of inflation."
     },
     {
-      expression: "succumb to pressure",
-      meaning: "give in to pressure",
+      expression: "disincentivise productivity",
+      meaning: "discourage extra work, overtime and ambition",
       example:
-        "Some consumers may succumb to social pressure to maintain a youthful appearance.",
+        "When marginal tax rates approach fifty percent, they often disincentivise productivity among ambitious professionals."
     },
     {
-      expression: "normalise cosmetic intervention",
-      meaning: "make cosmetic procedures seem ordinary/expected",
+      expression: "civic social contract",
+      meaning: "mutual agreement between citizens and the state",
       example:
-        "Widespread treatment can normalise cosmetic intervention at increasingly younger ages.",
+        "Paying taxes to maintain common roads and schools is fundamental to upholding the modern civic social contract."
     },
     {
-      expression: "acceptance of natural ageing",
-      meaning: "willingness to accept ageing as normal",
+      expression: "subsidised education and healthcare",
+      meaning: "services funded through state revenue",
       example:
-        "Society should encourage greater acceptance of natural ageing.",
+        "Heavily subsidised education and healthcare ensure that underprivileged youth have equal opportunities to excel."
     },
     {
-      expression: "exercise personal autonomy",
-      meaning: "make one's own decisions",
+      expression: "bureaucratic inefficiency",
+      meaning: "wasteful or corrupt administrative procedures",
       example:
-        "Adults should be free to exercise personal autonomy over their appearance.",
-    },
+        "Critics contend that high tax yields are squandered through bureaucratic inefficiency rather than invested in roads."
+    }
   ],
 
   /*
@@ -430,180 +322,132 @@ export const TASK2_DATA: Task2Data = {
    *
    * The student sees:
    *
-   * SIDE 1
-   * Question
-   *
-   * SIDE 2
-   * Thinking Lens
-   *
-   * SIDE 3
-   * One Possible Developable Idea
-   *
-   * The third side deliberately does NOT say "the correct answer".
-   * It is one possible direction students could have generated.
+   * SIDE 1: Question
+   * SIDE 2: Thinking Lens
+   * SIDE 3: One Possible Developable Idea
    */
-
   brainstormCards: [
     {
       question:
-        "What is actually changing in society in this topic?",
-
+        "What is the foundational clash between the two viewpoints in this prompt?",
       thinkingLens:
-        "Describe the trend before judging it. Ask: what is becoming more available, common or socially visible?",
-
+        "Frame the topic as a philosophical tension between collective welfare (public goods) and individual financial liberty (property & rewards for effort).",
       selfCheck:
-        "You should be able to state the trend in one neutral sentence without giving an opinion.",
-
+        "State the conflict in one balanced, neutral sentence without taking sides yet.",
       idea:
-        "Anti-ageing products and treatments are becoming increasingly available and socially common, allowing more people to actively delay or disguise visible signs of ageing.",
+        "The debate centers on whether citizens should sacrifice a large portion of personal earnings to secure universal public goods and social equity, or whether excessive taxation punishes individual diligence and harms economic freedom."
     },
-
     {
       question:
-        "Who might benefit personally from this trend, and why?",
-
+        "Why do proponents believe roads, schools, and hospitals require substantial government funding rather than private markets?",
       thinkingLens:
-        "Think at the individual level first. Consider feelings, confidence, choice and control over appearance.",
-
+        "Consider 'public goods' in economics—vital infrastructure that must remain accessible to everyone regardless of their wealth.",
       selfCheck:
-        "Your point should explain a mechanism: trend → personal effect → why that effect matters.",
-
+        "Explain what happens if roads and schools are left entirely to profit-driven corporations.",
       idea:
-        "Some people may gain greater confidence and feel more comfortable with their appearance, while also having greater personal choice over how they manage age-related changes.",
+        "Major infrastructure like highways and universal schools requires massive capital and cannot be equitably operated for profit; if privatised, remote regions and low-income families would be excluded from essential services."
     },
-
     {
       question:
-        "Could the same trend create pressure rather than freedom? How?",
-
+        "How does state-funded education and transit stimulate long-term economic growth?",
       thinkingLens:
-        "Look for the tension between voluntary choice and social expectations.",
-
+        "Trace the chain reaction: tax revenue → modern transit + educated workforce → increased productivity and business growth.",
       selfCheck:
-        "A strong response identifies what creates the pressure and who may experience it.",
-
+        "Connect the initial deduction from workers' paychecks to a tangible national economic benefit.",
       idea:
-        "As anti-ageing treatments become normalised, people may feel pressure to look younger because ageing can increasingly be presented as something undesirable that should be corrected.",
+        "Reliable roads reduce transportation costs for commercial enterprises, while free public education produces an educated, skilled workforce that drives national innovation and lifts citizens out of poverty."
     },
-
     {
       question:
-        "Who has a financial incentive to encourage people to look younger?",
-
+        "What is the psychological argument that high income taxes are a 'bad thing'?",
       thinkingLens:
-        "Move from the individual to the market. Ask who benefits when people see ageing as a problem to solve.",
-
+        "Focus on human motivation, incentives to work hard, and the perception of fairness.",
       selfCheck:
-        "Do not stop at 'companies make money'; explain how marketing can influence behaviour.",
-
+        "Avoid simply saying 'people dislike paying taxes'; explain the behavioural consequence on workers.",
       idea:
-        "The beauty industry has a financial incentive to present ordinary signs of ageing as problems requiring correction, which can create insecurity and encourage repeated purchases.",
+        "When governments deduct a huge portion of incremental salary, ambitious professionals feel their diligence is penalised, which can disincentivise productivity, reduce willingness to do overtime, and breed resentment."
     },
-
     {
       question:
-        "What happens if appearance becomes an ongoing expense?",
-
+        "How does taking a large proportion of salaries affect household living standards and consumer spending?",
       thinkingLens:
-        "Explore repeated costs rather than only the price of one product or treatment.",
-
+        "Look at disposable income, cost-of-living pressures, and wider retail commerce.",
       selfCheck:
-        "Consider opportunity cost: what else might the money have been used for?",
-
+        "Trace what happens to the broader economy when families have significantly less money in their pockets.",
       idea:
-        "Repeated cosmetic products and procedures can create a substantial financial burden, causing people to spend disposable income on appearance instead of savings or other essential priorities.",
+        "Heavy income tax deductions shrink household disposable income, making it harder for families to save or cope with inflation, which in turn dampens consumer demand across local shops and service industries."
     },
-
     {
       question:
-        "How could social media change people's expectations of normal ageing?",
-
+        "Why do taxpayers often grow cynical or resentful about paying high taxes?",
       thinkingLens:
-        "Think about edited images, celebrity culture, comparison and what people begin to regard as normal.",
-
+        "Distinguish the theoretical principle of taxation from the daily reality of public administration.",
       selfCheck:
-        "Link exposure to images with a change in expectations, then to a consequence.",
-
+        "Identify the specific grievance citizens have with how public funds are managed.",
       idea:
-        "Constant exposure to youthful-looking celebrities and edited online images can cultivate unrealistic expectations, making normal age-related changes appear unattractive or abnormal.",
+        "Taxpayers frequently resent high deductions when bureaucratic inefficiency, waste, or corruption results in potholed roads, overcrowded hospitals, and underperforming schools despite astronomical state budgets."
     },
-
     {
       question:
-        "Could this affect older people at work or in wider society?",
-
+        "Can high income taxes trigger 'brain drain' or 'capital flight'? How?",
       thinkingLens:
-        "Look beyond beauty and consider employability, professionalism, attractiveness and age-related stereotypes.",
-
+        "Consider global mobility: highly qualified doctors, researchers, tech specialists, and investors can move internationally.",
       selfCheck:
-        "Your idea should identify a social setting and explain the pressure or attitude created there.",
-
+        "Explain the cross-border consequence of uncompetitive national taxation.",
       idea:
-        "If youthful appearance becomes associated with professionalism or attractiveness, older workers may experience subtle pressure to conceal their age or maintain a younger appearance.",
+        "Punitive personal income taxes can prompt top surgeons, engineers, and entrepreneurs to emigrate to lower-tax nations, depriving the domestic economy of vital skills, business investments, and future tax revenue."
     },
-
     {
       question:
-        "What could happen if society increasingly treats natural ageing as a defect?",
-
+        "What real-world evidence shows that high taxation can lead to an exceptional standard of living?",
       thinkingLens:
-        "Explore cultural attitudes and whether normal biological changes become something people feel they must hide.",
-
+        "Draw upon comparative international examples such as the Nordic/Scandinavian model.",
       selfCheck:
-        "Distinguish the change in attitude from its psychological or social consequence.",
-
+        "Show the link between high tax rates, social trust, and public service quality.",
       idea:
-        "Treating natural ageing as a defect can reduce acceptance of ageing and reinforce the idea that growing older is embarrassing or undesirable.",
+        "Countries like Denmark and Sweden levy substantial income taxes, yet consistently rank among the world's happiest and most prosperous nations because their revenues are transparently reinvested into world-class healthcare, childcare, and infrastructure."
     },
-
     {
       question:
-        "Is the availability of a treatment itself the problem, or could the pressure to use it be the problem?",
-
+        "How can an IELTS candidate synthesize these opposing views to form a nuanced, Band 9 opinion?",
       thinkingLens:
-        "Test both sides instead of assuming every cosmetic treatment is harmful.",
-
+        "Avoid an extreme 'taxes should be abolished' or 'the state should take 70% of all salaries' stance. Build a balanced, realistic policy compromise.",
       selfCheck:
-        "A nuanced answer can recognise personal autonomy while still evaluating social pressure.",
-
+        "Ensure your thesis explicitly addresses both prompt views while providing a clear resolution.",
       idea:
-        "The availability of anti-ageing treatments is not necessarily harmful in itself; the more significant concern is when social or commercial pressure makes people feel they must use them to conform to a youthful ideal.",
+        "A compelling thesis argues that while excessive flat taxation is economically destructive, a progressive tax system—paired with rigorous fiscal transparency and targeted exemptions—is essential to uphold civilised society without stifling enterprise."
     },
-
     {
       question:
-        "Choose two consequences and decide which one is easier to develop with a reason and example. Why?",
-
+        "How should Body Paragraph 1 and Body Paragraph 2 be structured in this Discussion Essay?",
       thinkingLens:
-        "Practise exam strategy: choose ideas you can explain, not merely ideas that sound impressive.",
-
+        "Dedicate one body paragraph to View 1 (case for public services) and one to View 2 (case against high taxes), integrating your balanced evaluation logically.",
       selfCheck:
-        "You should be able to produce: point → why/how → concrete example → consequence.",
-
+        "Make sure neither perspective is treated superficially; each must have a topic sentence, explanation, and concrete evidence.",
       idea:
-        "Strong developable directions include confidence and personal autonomy on the positive side, and appearance pressure or financial burden on the negative side, because each can be developed through a clear cause-and-effect chain.",
-    },
+        "Body 1 should explore why modern public goods demand large collective revenue, Body 2 should examine the economic hazards and individual burdens of excessive taxation, paving the way for a reasoned conclusion supporting progressive taxation."
+    }
   ],
 
   connectorsTier: {
     sTier: [
-      "Nevertheless",
-      "The key issue is not",
-      "Predominantly",
-      "More detrimental than beneficial",
+      "It is widely contended that",
+      "Conversely, critics argue with equal justification",
+      "Notwithstanding these legitimate concerns",
+      "A compelling case can be made that"
     ],
 
     aTier: [
+      "Proponents maintain that",
+      "In sharp contrast",
       "Consequently",
-      "Furthermore",
-      "In contrast",
-      "Conversely",
+      "On the other hand"
     ],
 
     bTier: [
       "Also",
-      "Because of this",
-      "In conclusion",
-    ],
-  },
+      "Furthermore",
+      "In conclusion"
+    ]
+  }
 };

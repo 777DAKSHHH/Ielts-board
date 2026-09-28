@@ -58,10 +58,10 @@
   --ease-natural: cubic-bezier(0.25, 1, 0.5, 1);
 
   /* Smartboard Touch Target Metrics */
-  --touch-min-height: 54px;
-  --touch-padding-x: 24px;
-  --touch-radius: 16px;
-  --card-radius: 20px;
+  --touch-min-height: 42px;
+  --touch-padding-x: 18px;
+  --touch-radius: 12px;
+  --card-radius: 18px;
 }
 
 /* Reset & Base Stage Layout */

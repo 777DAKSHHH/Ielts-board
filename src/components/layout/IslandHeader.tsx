@@ -1,5 +1,5 @@
 import React from "react";
-import { Layers, Clock, LockKeyhole, LayoutGrid } from "lucide-react";
+import { Clock, LockKeyhole, LayoutGrid } from "lucide-react";
 
 interface IslandHeaderProps {
   currentModule: "task1" | "task2";
@@ -31,45 +31,45 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
   return (
     <header className="island-header glass-panel">
       {/* Left: Apple-Style Module Switcher */}
-      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
         <div
           style={{
             display: "inline-flex",
-            padding: "4px",
+            padding: "2px",
             background: "var(--slate-100)",
-            borderRadius: "14px",
+            borderRadius: "10px",
             border: "1px solid var(--border-subtle)"
           }}
         >
           <button
             onClick={() => onSelectModule("task1")}
             style={{
-              padding: "8px 18px",
-              borderRadius: "10px",
-              fontSize: "0.95rem",
-              fontWeight: 600,
+              padding: "4px 12px",
+              borderRadius: "8px",
+              fontSize: "0.82rem",
+              fontWeight: 650,
               color: currentModule === "task1" ? "var(--slate-900)" : "var(--slate-500)",
               background: currentModule === "task1" ? "#ffffff" : "transparent",
-              boxShadow: currentModule === "task1" ? "0 2px 8px rgba(0,0,0,0.06)" : "none",
+              boxShadow: currentModule === "task1" ? "0 1px 4px rgba(0,0,0,0.06)" : "none",
               transition: "all 0.15s ease"
             }}
           >
-            Task 1 Report
+            Task 1
           </button>
           <button
             onClick={() => onSelectModule("task2")}
             style={{
-              padding: "8px 18px",
-              borderRadius: "10px",
-              fontSize: "0.95rem",
-              fontWeight: 600,
+              padding: "4px 12px",
+              borderRadius: "8px",
+              fontSize: "0.82rem",
+              fontWeight: 650,
               color: currentModule === "task2" ? "var(--slate-900)" : "var(--slate-500)",
               background: currentModule === "task2" ? "#ffffff" : "transparent",
-              boxShadow: currentModule === "task2" ? "0 2px 8px rgba(0,0,0,0.06)" : "none",
+              boxShadow: currentModule === "task2" ? "0 1px 4px rgba(0,0,0,0.06)" : "none",
               transition: "all 0.15s ease"
             }}
           >
-            Task 2 Essay
+            Task 2
           </button>
         </div>
 
@@ -78,44 +78,44 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "10px",
+            gap: "8px",
             paddingLeft: "6px",
             borderLeft: "1px solid var(--border-subtle)"
           }}
         >
           <div
             style={{
-              width: "32px",
-              height: "32px",
+              width: "24px",
+              height: "24px",
               borderRadius: "999px",
               background: "var(--slate-900)",
               color: "#ffffff",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "0.9rem",
+              fontSize: "0.78rem",
               fontWeight: 700
             }}
           >
             {currentStep}
           </div>
           <div>
-            <div style={{ fontSize: "1.02rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.2 }}>
+            <div style={{ fontSize: "0.88rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.15 }}>
               {stepTitle}
             </div>
-            <div style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 500 }}>
-              Step {currentStep} of {totalSteps}
+            <div style={{ fontSize: "0.72rem", color: "var(--slate-500)", fontWeight: 500 }}>
+              Step {currentStep} / {totalSteps}
             </div>
           </div>
         </div>
       </div>
 
       {/* Center: Slim Progress Bar */}
-      <div style={{ width: "24%", display: "flex", alignItems: "center", gap: "12px" }}>
+      <div style={{ width: "20%", display: "flex", alignItems: "center", gap: "10px" }}>
         <div
           style={{
             flex: 1,
-            height: "8px",
+            height: "5px",
             background: "var(--slate-200)",
             borderRadius: "999px",
             overflow: "hidden"
@@ -131,29 +131,29 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
             }}
           />
         </div>
-        <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--slate-500)", minWidth: "36px" }}>
+        <span style={{ fontSize: "0.78rem", fontWeight: 600, color: "var(--slate-500)", minWidth: "30px" }}>
           {progressPercent}%
         </span>
       </div>
 
       {/* Right Controls: Quick Timer Badge, Stage Menu, Lock */}
-      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         {/* Quick Focus Timer */}
         <button
           onClick={onTimerToggle}
           className="apple-touch-btn"
           style={{
-            minHeight: "44px",
-            padding: "0 14px",
+            minHeight: "34px",
+            padding: "0 10px",
             background: isTimerRunning ? "#fee2e2" : "var(--slate-100)",
             color: isTimerRunning ? "var(--apple-red)" : "var(--slate-700)",
             border: isTimerRunning ? "1px solid #fca5a5" : "1px solid var(--border-subtle)",
-            fontSize: "0.95rem",
-            gap: "8px"
+            fontSize: "0.82rem",
+            gap: "6px"
           }}
           title="Toggle 3-min countdown timer"
         >
-          <Clock size={18} />
+          <Clock size={15} />
           <span style={{ fontFamily: "var(--font-mono)", fontWeight: 700 }}>{formattedTime}</span>
         </button>
 
@@ -161,10 +161,10 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
         <button
           onClick={onOpenQuickJump}
           className="apple-touch-btn secondary"
-          style={{ minHeight: "44px", padding: "0 14px", fontSize: "0.95rem", gap: "8px" }}
+          style={{ minHeight: "34px", padding: "0 10px", fontSize: "0.82rem", gap: "6px" }}
           title="Jump directly to any step"
         >
-          <LayoutGrid size={18} />
+          <LayoutGrid size={15} />
           <span>Stages</span>
         </button>
 
@@ -173,8 +173,8 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
           onClick={onLock}
           className="apple-touch-btn"
           style={{
-            minHeight: "44px",
-            width: "44px",
+            minHeight: "34px",
+            width: "34px",
             padding: 0,
             background: "var(--slate-100)",
             color: "var(--slate-600)",
@@ -182,7 +182,7 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
           }}
           title="Lock Workstation"
         >
-          <LockKeyhole size={18} />
+          <LockKeyhole size={15} />
         </button>
       </div>
     </header>

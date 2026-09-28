@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { X, HelpCircle, CheckCircle, RotateCcw, Volume2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { X, HelpCircle, Volume2 } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 import { TASK2_DATA } from "../../data/task2Data";
 
