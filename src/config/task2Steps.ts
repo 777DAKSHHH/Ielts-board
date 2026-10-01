@@ -11,9 +11,9 @@ export const TASK2_STEPS: StepDefinition[] = [
   {
     id: "task2-step2",
     stepNumber: 2,
-    title: "Task 2 Question & Analysis",
-    badge: "Step 02 / 09 • Task Reveal & Analysis",
-    description: "Deconstruct the Discussion Prompt"
+    title: "Task 2 Question & Format",
+    badge: "Step 02 / 09 • Task Reveal & 4-Para Format",
+    description: "Deconstruct the Opinion Prompt (Agree or Disagree)"
   },
   {
     id: "task2-step3",
@@ -27,35 +27,35 @@ export const TASK2_STEPS: StepDefinition[] = [
     stepNumber: 4,
     title: "Academic Power Vocabulary",
     badge: "Step 04 / 09 • Lexical Resource",
-    description: "High-Band Economic & Civic Collocations"
+    description: "Cultural Repatriation & Historical Justice Collocations"
   },
   {
     id: "task2-step5",
     stepNumber: 5,
     title: "Introduction & Thesis",
-    badge: "Step 05 / 09 • Introduction & Thesis",
-    description: "Paraphrase, Balanced Scope & Nuanced Thesis"
+    badge: "Step 05 / 09 • Introduction & Opinion",
+    description: "Paraphrase the Question + Direct Opinion Statement"
   },
   {
     id: "task2-step6",
     stepNumber: 6,
-    title: "Body 1: Case for High Taxes",
-    badge: "Step 06 / 09 • Body 1 — View 1: Public Services",
-    description: "Funding Essential Infrastructure & Universal Equity"
+    title: "Agree Points: Repatriation",
+    badge: "Step 06 / 09 • Agree Points (Return to Origin)",
+    description: "Levelled Arguments: Living Identity, Colonial Justice, Contextual Reunification"
   },
   {
     id: "task2-step7",
     stepNumber: 7,
-    title: "Body 2: Case Against High Taxes",
-    badge: "Step 07 / 09 • Body 2 — View 2: High Taxes as Harmful",
-    description: "Economic Disincentive, Purchasing Power & Inefficiency"
+    title: "Disagree Points: Global Retention",
+    badge: "Step 07 / 09 • Disagree Points (Keep in Global Museums)",
+    description: "Levelled Arguments: Universal Access, Conservation, Shared Human Heritage"
   },
   {
     id: "task2-step8",
     stepNumber: 8,
     title: "Conclusion & Faculty Angles",
     badge: "Step 08 / 09 • Conclusion + Faculty Extension",
-    description: "Synthesise Both Views & Deepen Discussion"
+    description: "Sum-up Main Reasons, Restate Opinion & Policy Angles"
   },
   {
     id: "task2-step9",

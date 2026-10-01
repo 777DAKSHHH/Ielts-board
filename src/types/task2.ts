@@ -5,6 +5,9 @@ export interface ConsequenceItem {
   title: string;
   desc: string;
   example: string;
+  level?: string;
+  simpleTakeaway?: string;
+  collocation?: string;
 }
 
 export interface EvaluationArgument {
@@ -13,6 +16,9 @@ export interface EvaluationArgument {
   development: string;
   example: string;
   type: "argument" | "counterpoint";
+  level?: string;
+  simpleTakeaway?: string;
+  collocation?: string;
 }
 
 export interface FacultyAngle {

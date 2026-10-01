@@ -17,437 +17,443 @@ export type {
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "taxation-and-public-services-task2",
+  id: "historical-objects-repatriation-task2",
 
-  taskType: "Discussion Essay: Discuss Both Views + Opinion",
+  taskType: "Opinion Essay: Agree or Disagree",
 
-  title: "Income Taxation vs. Essential Public Services",
+  title: "Repatriation of Historical Objects to Countries of Origin",
 
   questionText:
-    "Some people feel that the government should take a large proportion of people’s salaries to pay for necessary public services such as roads and schools. Others feel that high taxes are a bad thing.\n\nDiscuss both the views and give your opinion.",
+    "Historical objects should be brought back to their country of origin.\n\nDo you agree or disagree with this statement.",
 
-  audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
+  audioUrl: "materials/historical-objects-repatriation-briefing.m4a",
 
   timingSeconds: 180,
 
   sampleIntro:
-    "While some argue that governments should claim a large share of citizens’ earnings to fund essential services like roads and schools, others believe that high taxes are harmful. In my opinion, high taxation is necessary to ensure equal access to vital infrastructure, provided that tax brackets remain progressive.",
+    "It is often asserted that ancient artifacts and cultural treasures currently held in foreign museums ought to be returned to their countries of origin. I firmly agree with this statement, as historical objects embody the cultural soul of their native civilizations and their repatriation is essential for both moral justice and the economic sovereignty of source nations.",
 
   sampleConclusion:
-    "In conclusion, while excessively high taxes risk eroding work motivation and shrinking household purchasing power, the collective necessity of modern roads, robust healthcare, and free universal education far outweighs these concerns. I believe that governments must retain a progressive taxation model—ensuring the affluent contribute proportionately while shielding lower earners—provided that public expenditures are managed with uncompromising fiscal transparency.",
+    "In conclusion, I wholeheartedly agree that historical treasures should be repatriated to their nations of origin. This step is indispensable not only for restoring cultural dignity and redressing colonial plunder, but also for granting origin societies rightful academic access and vital heritage tourism revenue.",
 
   vocabList: [
     {
-      word: "progressive taxation",
-      meaning: "A fiscal system wherein tax rates increase proportionately with an individual's income level.",
+      word: "cultural repatriation",
+      meaning: "The formal process of returning cultural artifacts and sacred objects to their legitimate country of origin.",
       example:
-        "A system of progressive taxation ensures that wealthier individuals contribute a fairer share toward civic infrastructure."
+        "Developing nations are actively lobbying international tribunals for the cultural repatriation of their ancestral treasures."
     },
     {
-      word: "essential public amenities",
-      meaning: "Fundamental services and facilities provided by the state for the welfare of all citizens.",
+      word: "ancestral heritage",
+      meaning: "The traditions, monuments, and historical relics inherited from past generations of a specific society.",
       example:
-        "Without state intervention, essential public amenities such as motorways and primary schools would suffer chronic underfunding."
+        "Depriving a community of its ancestral heritage creates a painful sense of cultural alienation among younger generations."
     },
     {
-      word: "stifle entrepreneurial initiative",
-      meaning: "Discourage individuals from innovating, investing, or founding commercial enterprises.",
+      word: "illicitly plundered",
+      meaning: "Looted, stolen, or taken by force through military aggression, colonization, or unauthorized excavation.",
       example:
-        "Exorbitant corporate and personal income taxes can stifle entrepreneurial initiative and drive startups offshore."
+        "Many masterpieces showcased in Western capitals were illicitly plundered during 19th-century imperial expeditions."
     },
     {
-      word: "wealth redistribution",
-      meaning: "The transfer of income from richer citizens to public services and lower-income groups.",
+      word: "rightful custody",
+      meaning: "Lawful and morally legitimate ownership, stewardship, and preservation of historic treasures.",
       example:
-        "Income taxation acts as a crucial instrument for wealth redistribution, narrowing the divide between rich and poor."
+        "International law increasingly recognizes that source nations hold rightful custody over their national heritage."
     },
     {
-      word: "fiscal accountability",
-      meaning: "The transparent, responsible stewardship of public tax revenue by government officials.",
+      word: "rectify colonial injustices",
+      meaning: "Remedy or make moral amends for historical crimes, exploitation, and theft committed during imperial rule.",
       example:
-        "Public willingness to pay substantial taxes depends directly on the government demonstrating strict fiscal accountability."
+        "Returning royal artifacts is a tangible step forward to rectify colonial injustices and restore diplomatic trust."
     },
     {
-      word: "erode purchasing power",
-      meaning: "Diminish the real volume of goods and services that households can afford with their earnings.",
+      word: "spiritual and ceremonial significance",
+      meaning: "Possessing profound religious, ancestral, or traditional sanctity within indigenous community rituals.",
       example:
-        "Heavy tax deductions on middle-class salaries can severely erode purchasing power during times of inflation."
+        "Sacred totems and royal regalia carry deep spiritual and ceremonial significance that cannot be experienced behind museum glass."
     },
     {
-      word: "disincentivise productivity",
-      meaning: "Reduce workers' willingness to perform overtime, seek promotions, or work harder.",
+      word: "cultural sovereignty",
+      meaning: "The autonomy and right of a nation or indigenous people to curate, manage, and celebrate their own history.",
       example:
-        "When marginal tax rates approach fifty percent, they often disincentivise productivity among ambitious professionals."
+        "Demanding the return of antiquity collections is an assertion of cultural sovereignty by post-colonial states."
     },
     {
-      word: "civic social contract",
-      meaning: "The unwritten mutual pact between citizens who contribute revenue and the state that provides protection and services.",
+      word: "deprive native scholars",
+      meaning: "Prevent local researchers, historians, and students from accessing their own history due to geographic and financial barriers.",
       example:
-        "Paying taxes to maintain common roads and schools is fundamental to upholding the modern civic social contract."
+        "Housing artifacts overseas deprives native scholars of firsthand academic research opportunities."
     },
     {
-      word: "subsidised education and healthcare",
-      meaning: "Vital social provisions funded wholly or partially by public revenue rather than commercial market rates.",
+      word: "state-of-the-art conservation",
+      meaning: "Cutting-edge museum facilities equipped with advanced climate control, digital security, and preservation technology.",
       example:
-        "Heavily subsidised education and healthcare ensure that underprivileged youth have equal opportunities to excel."
+        "The newly constructed Grand Egyptian Museum features state-of-the-art conservation labs rivaling any European institution."
     },
     {
-      word: "bureaucratic inefficiency",
-      meaning: "Wasteful, convoluted, or incompetent administration of public resources by government agencies.",
+      word: "heritage tourism revenue",
+      meaning: "Economic dividends generated by museum admission, cultural exhibits, and international traveler visits.",
       example:
-        "Critics contend that high tax yields are squandered through bureaucratic inefficiency rather than invested in roads."
+        "Repatriated antiquities stimulate local economies by channeling heritage tourism revenue directly to origin nations."
     }
   ],
 
   vocabHunt: [
-    "progressive taxation",
-    "essential public amenities",
-    "stifle entrepreneurial initiative",
-    "wealth redistribution",
-    "fiscal accountability",
-    "erode purchasing power",
-    "disincentivise productivity",
-    "bureaucratic inefficiency"
+    "cultural repatriation",
+    "ancestral heritage",
+    "illicitly plundered",
+    "rightful custody",
+    "rectify colonial injustices",
+    "spiritual and ceremonial significance",
+    "cultural sovereignty",
+    "heritage tourism revenue"
   ],
 
+  /*
+   * BODY 1 — AGREE (Cultural Identity, Sacred Value & Moral Justice)
+   */
+  /*
+   * ================================================================
+   * STEP 6: AGREE POINTS — WHY ARTIFACTS SHOULD BE REPATRIATED
+   * ================================================================
+   * Levelled points for students:
+   * Level 1: Core Claim & Cultural Identity (High Impact)
+   * Level 2: Economic & Architectural Wholeness (Strategic Depth)
+   * Level 3: Academic Equity & Global Human Rights (Advanced)
+   * Plus 4 Nuances & Practical Caveats
+   */
   consequences: [
     {
       type: "positive",
-      title: "Foundational Infrastructure & Transit",
+      level: "Level 1: High Impact (Identity)",
+      simpleTakeaway: "Historical relics are sacred symbols of living identity and ancestral worship, not decorative art in foreign display cases.",
+      collocation: "living cultural heritage",
+      title: "Embodiment of Cultural Identity & Living Traditions",
       desc:
-        "Massive capital projects—such as expressway networks, bridges, and public transit—require continuous public funding that private corporations cannot equitably deliver.",
+        "Historical relics are not mere decorative museum art; they embody the spiritual soul, living religious consciousness, and collective identity of the civilizations that produced them.",
       example:
-        "High tax revenues enable the construction of nationwide transport links that lower logistics costs and stimulate commercial trade."
+        "Sacred Maori ancestral heads returned from European vaults to New Zealand enabled native communities to conduct vital funeral rites and restore tribal dignity."
     },
     {
       type: "positive",
-      title: "Universal Access to Quality Education",
+      level: "Level 1: High Impact (Justice)",
+      simpleTakeaway: "Most overseas antiquities were seized through violent colonial military raids and imperial extortion, not ethical trade.",
+      collocation: "illicit colonial expropriation",
+      title: "Moral Restitution for Colonial Looting & Coercion",
       desc:
-        "Publicly funded schools guarantee that every child receives quality schooling regardless of household income, fostering social mobility and national productivity.",
+        "An overwhelming majority of non-Western artifacts residing in metropolitan museums were acquired through violent military invasions, punitive expeditions, or colonial extortion rather than lawful trade.",
       example:
-        "State-financed schools and vocational colleges equip youth from modest backgrounds with market-ready qualifications."
+        "During the 1897 British punitive expedition against the Kingdom of Benin, thousands of sacred royal bronzes were systematically looted from royal palaces and auctioned."
     },
     {
       type: "positive",
-      title: "Social Cohesion & Wealth Redistribution",
+      level: "Level 2: Strategic Depth (Economy)",
+      simpleTakeaway: "Origin countries are unfairly denied the vast tourism and hospitality revenues generated by their own cultural heritage.",
+      collocation: "economic sovereignty",
+      title: "Economic Sovereignty & Heritage Tourism Dividends",
       desc:
-        "Using income tax revenues to fund universal public services prevents extreme wealth disparity, establishing an essential safety net for vulnerable citizens.",
+        "Western institutions profit immensely from ticket admissions, merchandise, and hotel bookings drawn by foreign antiquities, while source nations remain economically disadvantaged.",
       example:
-        "Tax-funded healthcare subsidies and welfare programmes safeguard low-income families during macroeconomic downturns."
+        "Greece could substantially expand its cultural economy if the Parthenon Marbles were displayed in Athens rather than driving commercial footfall in London."
+    },
+    {
+      type: "positive",
+      level: "Level 2: Strategic Depth (Context)",
+      simpleTakeaway: "Sculptures and temple friezes lose their narrative story when ripped out of their original architectural setting.",
+      collocation: "contextual integrity",
+      title: "Architectural & Contextual Narrative Wholeness",
+      desc:
+        "Ancient monuments were conceived as continuous artistic narratives; severing friezes and statues across foreign continents diminishes their educational and aesthetic value.",
+      example:
+        "The Parthenon frieze can only be fully comprehended when viewed in direct sight of the Acropolis temple under natural Mediterranean light."
+    },
+    {
+      type: "positive",
+      level: "Level 3: Global Dimension (Equity)",
+      simpleTakeaway: "Native students and researchers face visa denials and prohibitive flight costs to study their own ancestors' creations.",
+      collocation: "equitable scholarly access",
+      title: "Academic Access for Native Scholars & Students",
+      desc:
+        "Holding primary historical sources in foreign capitals severely disadvantages local researchers and archaeologists from source nations due to visa restrictions and prohibitive costs.",
+      example:
+        "African historians frequently struggle to obtain European visas to access pre-colonial manuscripts and artifacts stored in European archives."
     },
     {
       type: "negative",
-      title: "Risk of State Monopoly on Services",
+      level: "Nuance 1: Fallacy Refuted",
+      simpleTakeaway: "Safety concerns are outdated because origin countries now possess world-class museum facilities.",
+      collocation: "conservation parity",
+      title: "Refuting the 'Paternalistic Protection' Fallacy",
       desc:
-        "When government bodies monopolise the provision of schools or roads, the absence of market competition can sometimes slow down modernization.",
+        "Western institutions often cite historical safety concerns, but this paternalistic defense is rendered obsolete by modern origin-nation investments.",
       example:
-        "Public school systems may lag behind private academies in adopting cutting-edge educational technology."
+        "Nigeria's planned Edo Museum of West African Art and Greece's Acropolis Museum provide preservation standards equal to or exceeding traditional Western vaults."
     },
     {
       type: "negative",
-      title: "Tax Avoidance & Offshore Loopholes",
+      level: "Nuance 2: Diplomatic Solution",
+      simpleTakeaway: "Repatriation doesn't stop global exhibition; origin nations can arrange reciprocal rotating loans.",
+      collocation: "bilateral cultural treaties",
+      title: "Diplomatic Feasibility: Bilateral Loan Treaties over Isolation",
       desc:
-        "When income tax brackets are perceived as excessively high, affluent individuals and corporations actively exploit offshore tax havens.",
+        "Repatriation does not necessitate global cultural isolation; once legal ownership is restored to origin countries, reciprocal loan agreements can still facilitate global exhibition.",
       example:
-        "High earners may shelter capital in overseas accounts, shrinking the actual domestic tax revenue collected."
+        "Italy regularly loans repatriated Roman artifacts to global museums on temporary rotating schedules while retaining sovereign title."
+    },
+    {
+      type: "negative",
+      level: "Nuance 3: Ethical Custodianship",
+      simpleTakeaway: "Universal museums cannot claim to be global educational centers while holding onto unreturned wartime plunder.",
+      collocation: "ethical custodianship",
+      title: "The Universal Museum Fallacy vs. Ethical Custodianship",
+      desc:
+        "Encyclopedic museums claim global educational value, yet this principle cannot justify retaining antiquities acquired through colonial force or illicit excavation.",
+      example:
+        "The British Museum holds over eight million items in storage while source communities are entirely deprived of experiencing their ancestral masterpieces."
+    },
+    {
+      type: "negative",
+      level: "Nuance 4: Legal Precedent",
+      simpleTakeaway: "Returning state-held stolen antiquities shrinks the black market and deters future illegal looting.",
+      collocation: "deterring black-market trade",
+      title: "Precedent for Restitution: Deterring Illicit Antiquity Markets",
+      desc:
+        "Returning unprovenanced artifacts establishes vital international legal accountability, systematically shrinking the black-market demand for looted antiquities.",
+      example:
+        "Strict repatriation pacts between Italy and US institutions have dramatically curtailed the trade of stolen Etruscan artifacts."
     }
   ],
 
   /*
-   * BALANCED DISCUSSION EVALUATION BANK
+   * ================================================================
+   * STEP 7: DISAGREE POINTS — WHY ARTIFACTS SHOULD REMAIN IN GLOBAL MUSEUMS
+   * ================================================================
+   * Levelled points for students:
+   * Level 1: Global Exposure & World Education (High Impact)
+   * Level 2: Advanced Conservation & War Safety (Strategic Depth)
+   * Level 3: Common Heritage of Mankind (Philosophical Depth)
+   * Level 4: Preventing Diplomatic Gridlock (Practical Reality)
+   * Plus 4 Critical Rebuttals & Evaluation Perspectives
    */
   evaluationArguments: [
     {
       type: "argument",
-      title: "Erosion of Work Incentives",
+      level: "Level 1: High Impact (Global Access)",
+      simpleTakeaway: "Universal museums allow millions of international citizens from all countries to experience world cultures under one roof.",
+      collocation: "universal encyclopedic curation",
+      title: "Universal Museums & Maximized Global Cultural Exposure",
       reason:
-        "Taking a large proportion of earned salaries diminishes the direct financial reward for extra effort, skill acquisition, and longer hours.",
+        "Centralizing world cultural treasures in accessible global hub cities ensures that millions of international visitors can learn about diverse civilizations in a single visit.",
       development:
-        "When workers realise that a major share of their overtime or promotion pay is absorbed by taxes, they often choose to work less or decline added responsibilities.",
+        "Metropolitan museums like the British Museum, the Louvre, and the Metropolitan Museum of Art offer free or low-cost admission to millions of visitors who could never afford to travel to dozens of individual origin nations. This fosters international empathy, cross-cultural literacy, and mutual respect among global citizens.",
       example:
-        "Surgeons, engineers, and entrepreneurs may cap their billable hours or decline demanding leadership promotions to avoid higher tax brackets."
+        "Over six million visitors of all nationalities view the Rosetta Stone and Parthenon sculptures annually in London, creating worldwide appreciation for Egyptian and Greek heritage on a scale unattainable in local regional museums."
     },
     {
       type: "argument",
-      title: "Reduction in Household Purchasing Power",
+      level: "Level 1: High Impact (Preservation)",
+      simpleTakeaway: "Leading international institutions have cutting-edge conservation technology and protect fragile relics from regional conflicts.",
+      collocation: "climate-controlled preservation",
+      title: "Advanced Conservation Infrastructure & Geopolitical Safety",
       reason:
-        "High taxation directly deprives families of capital they could otherwise allocate towards personal savings, mortgages, and family investments.",
+        "Major international museums possess multi-million-dollar conservation facilities and political stability that protect delicate artifacts from decay, warfare, or political unrest.",
       development:
-        "In periods of rising inflation or escalating living costs, heavy salary deductions can push middle-income households into severe financial strain.",
+        "Ancient relics are extraordinarily delicate and prone to irreversible environmental decay. Prominent world museums employ computerized climate-controlled display cases, advanced laser cleaning, and 24/7 security. Distributing cultural artifacts across secure international institutions prevents catastrophic destruction during civil wars, regime changes, or economic crises.",
       example:
-        "Working parents may struggle to afford basic private childcare or home ownership because a large portion of their paycheck is withheld at source."
+        "Treasures preserved in foreign museums survived intact, whereas ancient historical artifacts housed in Mosul, Palmyra, and Baghdad were tragically looted or demolished during regional geopolitical instability."
     },
     {
       type: "argument",
-      title: "Brain Drain and Capital Flight",
+      level: "Level 2: Strategic Depth (Shared Humanity)",
+      simpleTakeaway: "Ancient civilizations existed long before modern borders; their creations belong to the collective human family, not one modern government.",
+      collocation: "common heritage of mankind",
+      title: "Universal Human Heritage Transcending Modern Nation-States",
       reason:
-        "Highly skilled professionals and innovative entrepreneurs have international mobility and will migrate to countries with lighter tax burdens.",
+        "The achievements of ancient civilizations belong to the shared legacy of humanity rather than the exclusive property of any modern political entity.",
       development:
-        "When a nation imposes punitive tax rates, it risks losing its most productive minds and innovative corporations to tax-friendly jurisdictions.",
+        "Modern nation-states are recent political constructs that did not exist when these ancient objects were sculpted millennia ago. Great civilizations such as ancient Mesopotamia, Greece, and Egypt laid the philosophical, scientific, and artistic foundations of our shared world. Restricting artifacts strictly within modern political borders reduces universal human milestones into narrow nationalistic assets.",
       example:
-        "Technology founders and medical specialists relocating from high-tax European nations to competitive hubs like Singapore or Dubai."
+        "Classical Greco-Roman and ancient Egyptian civilizations shaped global philosophy, medicine, and architecture; viewing their relics as universal human milestones reinforces our common global heritage."
     },
     {
       type: "argument",
-      title: "Bureaucratic Inefficiency & Squandered Revenue",
+      level: "Level 2: Strategic Depth (Practicality & Law)",
+      simpleTakeaway: "Unconditional repatriation would spark endless legal border disputes over extinct empires and empty global cultural hubs.",
+      collocation: "diplomatic impasse",
+      title: "Avoiding Diplomatic Chaos & Arbitrary Ownership Disputes",
       reason:
-        "Governments are rarely as cost-effective or accountable as private managers in deploying capital.",
+        "Mandating the blanket return of all foreign objects would ignite intractable international legal disputes and dismantle global museum cooperation.",
       development:
-        "Without the discipline of market competition, public agencies frequently suffer from cost overruns, administrative bloat, and corrupt tender processes.",
+        "Many ancient empires (e.g. Ottoman, Roman, Byzantine, Mughal) spanned dozens of modern countries with competing historical claims. Determining which modern country has the 'true' legal right to a 2,000-year-old relic is legally arbitrary and politically contentious. Furthermore, emptying encyclopedic collections would terminate international exhibitions, scholarly loans, and global cultural education.",
       example:
-        "Civic road-resurfacing projects that take years to complete and cost twice the original budget due to bureaucratic mismanagement."
+        "Attempting to determine whether an ancient Roman artifact belongs to modern Italy, Tunisia, Turkey, or France would cause diplomatic deadlock rather than cooperative cultural exchange."
     },
     {
       type: "counterpoint",
-      title: "Market Failure of Pure Privatisation",
+      level: "Evaluation 1: Loan Treaties",
+      simpleTakeaway: "Returning legal ownership doesn't empty museums; origin countries readily offer rotating bilateral loans.",
+      collocation: "bilateral rotating loans",
+      title: "Bilateral Loan Treaties vs. Permanent Retention",
       reason:
-        "Leaving roads and schools purely to private profit motives would deny access to the poor and leave unprofitable rural regions abandoned.",
+        "The fear of empty museums is overstated because origin countries are eager to sign long-term rotating loan agreements once their legal ownership is formally recognized.",
       development:
-        "Private road operators would erect toll booths everywhere, and private schools would price out ordinary families, destroying equal opportunity.",
+        "Restoring sovereign title transforms contentious colonial possession into voluntary cultural diplomacy. Origin nations can loan duplicates and rotating collections to global capitals while keeping core spiritual icons in their homeland.",
       example:
-        "In countries without universal state-funded schooling, illiteracy rates remain high among low-income and rural populations."
+        "Italy's bilateral agreements with American museums show that repatriating looted artifacts actually strengthens cultural diplomacy and rotating loan exhibitions."
     },
     {
       type: "counterpoint",
-      title: "The Nordic High-Trust Model",
+      level: "Evaluation 2: Conservation Parity",
+      simpleTakeaway: "Origin nations now build facilities that match or surpass Western conservation standards.",
+      collocation: "world-class domestic infrastructure",
+      title: "Modern Conservation Standards in Origin Nations",
       reason:
-        "High taxation is proven to generate exceptional quality of life when paired with transparency, equality, and high social trust.",
+        "The assertion that developing nations cannot safeguard delicate historical artifacts is refuted by modern world-class conservation facilities.",
       development:
-        "Nations with higher tax rates frequently top global indexes for happiness, health, and social stability because citizens receive outstanding public value in return.",
+        "Origin countries possess computerized humidity control, laser restoration laboratories, and specialized curatorial staff matching European standards.",
       example:
-        "Scandinavian nations such as Denmark and Norway combine substantial income taxes with world-leading infrastructure and virtually free education."
+        "The Grand Egyptian Museum in Cairo and the Acropolis Museum in Athens feature preservation technology equal to or surpassing traditional Western facilities."
+    },
+    {
+      type: "counterpoint",
+      level: "Evaluation 3: Digital Replicas",
+      simpleTakeaway: "3D virtual scans and exact replicas can educate global visitors while original relics return home.",
+      collocation: "high-fidelity 3D facsimiles",
+      title: "High-Resolution Digital Replicas for Universal Education",
+      reason:
+        "Modern 3D scanning and holographic technologies enable global museums to fulfill their educational missions without keeping original sacred relics.",
+      development:
+        "Ultra-precise facsimiles and interactive digital galleries can bring foreign cultures to life for students in Western hubs while the original, spiritually potent artifacts return to source communities.",
+      example:
+        "Major global institutions increasingly use full-scale 3D scans and laser facsimiles of ancient tomb paintings for public exhibition and tactile study."
+    },
+    {
+      type: "counterpoint",
+      level: "Evaluation 4: Moral Principle",
+      simpleTakeaway: "Educational utility cannot justify keeping property that was stolen through wartime violence.",
+      collocation: "unconditional restitution of looted art",
+      title: "The Invalidation of Wartime Plunder by Educational Utility",
+      reason:
+        "No matter how educational a museum display is, international ethics dictate that property acquired through violent military conquest must be returned.",
+      development:
+        "Just as modern international law strictly mandates the restitution of artworks confiscated during World War II, colonial-era loot should not be exempt from restitution under the guise of public education.",
+      example:
+        "International law courts consistently rule that stolen cultural property must be returned to rightful heirs regardless of current curation quality."
     }
   ],
 
   facultyAngles: [
     {
-      title: "The Nordic Model vs. Free-Market Capitalism",
+      title: "The 1970 UNESCO Convention & Retroactive Justice",
       development:
-        "Examine why high taxes work brilliantly in high-trust Scandinavian societies (Denmark, Norway) with transparent institutions, but often fail or breed resentment in countries plagued by bureaucratic corruption."
+        "Examine how the 1970 UNESCO Convention on the Means of Prohibiting and Preventing the Illicit Import, Export and Transfer of Cultural Property established modern norms, and debate whether international treaties should retroactively enforce the return of pre-1970 colonial loot."
     },
     {
-      title: "The Laffer Curve & Optimal Revenue",
+      title: "Digital Repatriation vs. Physical Restitution",
       development:
-        "Discuss the economic principle that taxing beyond an optimal rate actually reduces total tax revenue by encouraging tax avoidance, capital flight, and diminished workforce participation."
+        "Critique whether ultra-high-definition 3D scans and laser-replicated facsimiles can fulfill Western museums' educational missions while returning the original sacred physical artifacts to their native lands."
     },
     {
-      title: "Hypothecated (Earmarked) Taxation",
+      title: "The Acropolis Museum Model: Debunking Conservation Excuses",
       development:
-        "Consider whether citizens would be more willing to accept high deductions if governments legally ring-fenced funds specifically for visible local schools and road maintenance rather than general treasury pools."
+        "Analyze how Greece purpose-built the state-of-the-art Acropolis Museum in Athens—featuring advanced seismic dampers and climate-controlled glass galleries—specifically dismantling the British Museum's claim that Athens could not safeguard the Parthenon Sculptures."
     },
     {
-      title: "Progressive Brackets vs. Flat Tax Rates",
+      title: "The Ethics of the 'Universal Encyclopedic Museum'",
       development:
-        "Analyze how tiered tax systems protect low and middle earners while ensuring high-net-worth individuals shoulder the primary burden of national public service financing."
+        "Deconstruct the imperial philosophy behind institutions like the British Museum, Louvre, and Met, questioning whether claiming to represent 'shared human civilization' justifies hoarding looted treasures of colonized peoples."
     },
     {
-      title: "Intergenerational Equity & Future Infrastructure",
+      title: "Bilateral Long-Term Loan Treaties as a Diplomatic Bridge",
       development:
-        "Explore the perspective that today's high taxes fund long-term infrastructure (green energy grids, high-speed rail, modern digital schools) that will benefit future generations decades later."
+        "Explore legal frameworks where sovereign title is formally transferred back to the country of origin, followed by reciprocal long-term loans that guarantee ongoing international public exposure."
     },
     {
-      title: "Direct Income Tax vs. Indirect Consumption Tax (VAT)",
+      title: "The Illicit Black Market & Modern Antiquity Looting",
       development:
-        "Debate whether governments should collect revenue from consumption (luxury taxes, sales taxes) rather than penalizing productive labor and income generation directly."
+        "Discuss how strict institutional repatriation policies deter ongoing tomb raiding and black-market antiquities smuggling by removing Western commercial demand for illicit artifacts."
+    }
+  ],
+
+  brainstormCards: [
+    {
+      question: "Why is an ancient artifact considered far more than decorative art to its native culture?",
+      thinkingLens: "Cultural, Spiritual & Religious Identity",
+      selfCheck: "Did you consider sacred rituals, ancestral connection, and community identity?",
+      idea: "Historical relics embody the living soul, spiritual traditions, and national pride of their people; their absence alienates native populations from their historical roots."
+    },
+    {
+      question: "Under what historical circumstances were the vast majority of contested museum pieces taken?",
+      thinkingLens: "Colonial Subjugation & Military Plunder",
+      selfCheck: "Did you examine imperial power imbalances, lootings, and unequal treaties?",
+      idea: "Most items were seized through military invasion, punitive raids, or colonial coercion, meaning retention in foreign institutions perpetuates historical injustice."
+    },
+    {
+      question: "What financial and educational harm do origin countries suffer when their treasures are held abroad?",
+      thinkingLens: "Economic Sovereignty & Native Academic Access",
+      selfCheck: "Did you link museum ticket sales and scholar travel barriers to inequality?",
+      idea: "Western museums capture millions in heritage tourism profits, while local students and native scholars are priced out of researching their own history due to foreign travel costs."
+    },
+    {
+      question: "How can origin nations effectively disprove the argument that Western museums offer safer preservation?",
+      thinkingLens: "Modern Infrastructure & Bilateral Loan Treaties",
+      selfCheck: "Can you cite real-world modern museums in Greece, Egypt, or Nigeria?",
+      idea: "Developing and Mediterranean nations now build cutting-edge facilities (e.g. Acropolis Museum, Grand Egyptian Museum) that rival Western vaults, while rotating loans ensure global sharing."
     }
   ],
 
   powerExpressions: [
     {
-      expression: "progressive taxation",
-      meaning: "system where tax rates rise with income",
-      example:
-        "A system of progressive taxation ensures that wealthier individuals contribute a fairer share toward civic infrastructure."
+      expression: "rightful cultural custodianship",
+      meaning: "Legitimate and lawful authority over the care and display of a society's heritage.",
+      example: "International tribunals increasingly advocate for the rightful cultural custodianship of source nations."
     },
     {
-      expression: "essential public amenities",
-      meaning: "fundamental state-provided services",
-      example:
-        "Without state intervention, essential public amenities such as motorways and primary schools would suffer chronic underfunding."
+      expression: "rectify historical injustices of colonial plunder",
+      meaning: "Make moral and material restitution for goods stolen during imperial conquests.",
+      example: "Repatriating the bronzes helps rectify historical injustices of colonial plunder in West Africa."
     },
     {
-      expression: "stifle entrepreneurial initiative",
-      meaning: "discourage enterprise, innovation and investment",
-      example:
-        "Exorbitant corporate and personal income taxes can stifle entrepreneurial initiative and drive startups offshore."
+      expression: "living embodiment of ancestral identity",
+      meaning: "Physical objects that represent the active, continuing spirit and history of a community.",
+      example: "Indigenous totems are not dead relics, but the living embodiment of ancestral identity."
     },
     {
-      expression: "wealth redistribution",
-      meaning: "transfer of wealth to balance inequality",
-      example:
-        "Income taxation acts as a crucial instrument for wealth redistribution, narrowing the divide between rich and poor."
+      expression: "monopolize heritage tourism revenues",
+      meaning: "Capture all economic profits from cultural tourism to the exclusion of the creators.",
+      example: "European museums should not monopolize heritage tourism revenues derived from foreign antiquities."
     },
     {
-      expression: "fiscal accountability",
-      meaning: "transparent and responsible public fund management",
-      example:
-        "Public willingness to pay substantial taxes depends directly on the government demonstrating strict fiscal accountability."
+      expression: "state-of-the-art conservation standards",
+      meaning: "Modern technological measures ensuring optimal climate, security, and restoration.",
+      example: "Athens demonstrated state-of-the-art conservation standards in its dedicated Acropolis Museum."
     },
     {
-      expression: "erode purchasing power",
-      meaning: "reduce real volume of goods income can buy",
-      example:
-        "Heavy tax deductions on middle-class salaries can severely erode purchasing power during times of inflation."
-    },
-    {
-      expression: "disincentivise productivity",
-      meaning: "discourage extra work, overtime and ambition",
-      example:
-        "When marginal tax rates approach fifty percent, they often disincentivise productivity among ambitious professionals."
-    },
-    {
-      expression: "civic social contract",
-      meaning: "mutual agreement between citizens and the state",
-      example:
-        "Paying taxes to maintain common roads and schools is fundamental to upholding the modern civic social contract."
-    },
-    {
-      expression: "subsidised education and healthcare",
-      meaning: "services funded through state revenue",
-      example:
-        "Heavily subsidised education and healthcare ensure that underprivileged youth have equal opportunities to excel."
-    },
-    {
-      expression: "bureaucratic inefficiency",
-      meaning: "wasteful or corrupt administrative procedures",
-      example:
-        "Critics contend that high tax yields are squandered through bureaucratic inefficiency rather than invested in roads."
-    }
-  ],
-
-  /*
-   * ================================================================
-   * GUIDED BRAINSTORM CHALLENGES
-   * ================================================================
-   *
-   * The student sees:
-   *
-   * SIDE 1: Question
-   * SIDE 2: Thinking Lens
-   * SIDE 3: One Possible Developable Idea
-   */
-  brainstormCards: [
-    {
-      question:
-        "What is the foundational clash between the two viewpoints in this prompt?",
-      thinkingLens:
-        "Frame the topic as a philosophical tension between collective welfare (public goods) and individual financial liberty (property & rewards for effort).",
-      selfCheck:
-        "State the conflict in one balanced, neutral sentence without taking sides yet.",
-      idea:
-        "The debate centers on whether citizens should sacrifice a large portion of personal earnings to secure universal public goods and social equity, or whether excessive taxation punishes individual diligence and harms economic freedom."
-    },
-    {
-      question:
-        "Why do proponents believe roads, schools, and hospitals require substantial government funding rather than private markets?",
-      thinkingLens:
-        "Consider 'public goods' in economics—vital infrastructure that must remain accessible to everyone regardless of their wealth.",
-      selfCheck:
-        "Explain what happens if roads and schools are left entirely to profit-driven corporations.",
-      idea:
-        "Major infrastructure like highways and universal schools requires massive capital and cannot be equitably operated for profit; if privatised, remote regions and low-income families would be excluded from essential services."
-    },
-    {
-      question:
-        "How does state-funded education and transit stimulate long-term economic growth?",
-      thinkingLens:
-        "Trace the chain reaction: tax revenue → modern transit + educated workforce → increased productivity and business growth.",
-      selfCheck:
-        "Connect the initial deduction from workers' paychecks to a tangible national economic benefit.",
-      idea:
-        "Reliable roads reduce transportation costs for commercial enterprises, while free public education produces an educated, skilled workforce that drives national innovation and lifts citizens out of poverty."
-    },
-    {
-      question:
-        "What is the psychological argument that high income taxes are a 'bad thing'?",
-      thinkingLens:
-        "Focus on human motivation, incentives to work hard, and the perception of fairness.",
-      selfCheck:
-        "Avoid simply saying 'people dislike paying taxes'; explain the behavioural consequence on workers.",
-      idea:
-        "When governments deduct a huge portion of incremental salary, ambitious professionals feel their diligence is penalised, which can disincentivise productivity, reduce willingness to do overtime, and breed resentment."
-    },
-    {
-      question:
-        "How does taking a large proportion of salaries affect household living standards and consumer spending?",
-      thinkingLens:
-        "Look at disposable income, cost-of-living pressures, and wider retail commerce.",
-      selfCheck:
-        "Trace what happens to the broader economy when families have significantly less money in their pockets.",
-      idea:
-        "Heavy income tax deductions shrink household disposable income, making it harder for families to save or cope with inflation, which in turn dampens consumer demand across local shops and service industries."
-    },
-    {
-      question:
-        "Why do taxpayers often grow cynical or resentful about paying high taxes?",
-      thinkingLens:
-        "Distinguish the theoretical principle of taxation from the daily reality of public administration.",
-      selfCheck:
-        "Identify the specific grievance citizens have with how public funds are managed.",
-      idea:
-        "Taxpayers frequently resent high deductions when bureaucratic inefficiency, waste, or corruption results in potholed roads, overcrowded hospitals, and underperforming schools despite astronomical state budgets."
-    },
-    {
-      question:
-        "Can high income taxes trigger 'brain drain' or 'capital flight'? How?",
-      thinkingLens:
-        "Consider global mobility: highly qualified doctors, researchers, tech specialists, and investors can move internationally.",
-      selfCheck:
-        "Explain the cross-border consequence of uncompetitive national taxation.",
-      idea:
-        "Punitive personal income taxes can prompt top surgeons, engineers, and entrepreneurs to emigrate to lower-tax nations, depriving the domestic economy of vital skills, business investments, and future tax revenue."
-    },
-    {
-      question:
-        "What real-world evidence shows that high taxation can lead to an exceptional standard of living?",
-      thinkingLens:
-        "Draw upon comparative international examples such as the Nordic/Scandinavian model.",
-      selfCheck:
-        "Show the link between high tax rates, social trust, and public service quality.",
-      idea:
-        "Countries like Denmark and Sweden levy substantial income taxes, yet consistently rank among the world's happiest and most prosperous nations because their revenues are transparently reinvested into world-class healthcare, childcare, and infrastructure."
-    },
-    {
-      question:
-        "How can an IELTS candidate synthesize these opposing views to form a nuanced, Band 9 opinion?",
-      thinkingLens:
-        "Avoid an extreme 'taxes should be abolished' or 'the state should take 70% of all salaries' stance. Build a balanced, realistic policy compromise.",
-      selfCheck:
-        "Ensure your thesis explicitly addresses both prompt views while providing a clear resolution.",
-      idea:
-        "A compelling thesis argues that while excessive flat taxation is economically destructive, a progressive tax system—paired with rigorous fiscal transparency and targeted exemptions—is essential to uphold civilised society without stifling enterprise."
-    },
-    {
-      question:
-        "How should Body Paragraph 1 and Body Paragraph 2 be structured in this Discussion Essay?",
-      thinkingLens:
-        "Dedicate one body paragraph to View 1 (case for public services) and one to View 2 (case against high taxes), integrating your balanced evaluation logically.",
-      selfCheck:
-        "Make sure neither perspective is treated superficially; each must have a topic sentence, explanation, and concrete evidence.",
-      idea:
-        "Body 1 should explore why modern public goods demand large collective revenue, Body 2 should examine the economic hazards and individual burdens of excessive taxation, paving the way for a reasoned conclusion supporting progressive taxation."
+      expression: "sever the spiritual link to native traditions",
+      meaning: "Break the connection between current generations and their ancestral rites.",
+      example: "Exhibiting sacred masks behind glass severs the spiritual link to native traditions."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "It is widely contended that",
-      "Conversely, critics argue with equal justification",
-      "Notwithstanding these legitimate concerns",
-      "A compelling case can be made that"
+      "It is undeniable that historical treasures embody the soul of their creators...",
+      "Under the moral imperative of redressing colonial subjugation...",
+      "Crucially, returning these relics restores economic and academic sovereignty...",
+      "By reuniting fragmented artifacts with their native soil..."
     ],
-
     aTier: [
-      "Proponents maintain that",
-      "In sharp contrast",
-      "Consequently",
-      "On the other hand"
+      "In light of these historical realities",
+      "Consequently, origin nations deserve rightful custody",
+      "Moreover, from an economic standpoint",
+      "While opponents cite preservation concerns, this argument is disproven by modern facilities"
     ],
-
     bTier: [
-      "Also",
-      "Furthermore",
-      "In conclusion"
+      "First and foremost",
+      "In addition to this",
+      "For instance",
+      "Ultimately, in conclusion"
     ]
   }
 };

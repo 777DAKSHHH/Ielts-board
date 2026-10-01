@@ -10,7 +10,7 @@ export const Step5IntroStructureT2: React.FC = () => (
       </span>
       <h2 className="stage-title">Build the Introduction</h2>
       <p className="stage-subtitle">
-        Ideal IELTS Introduction: Paraphrase the question in sentence 1 + state your clear opinion on either side in sentence 2.
+        Ideal IELTS Opinion Introduction: Paraphrase the question in sentence 1 + state your clear unequivocal opinion in sentence 2.
       </p>
     </div>
     <div className="stage-grid-2col">
@@ -41,24 +41,24 @@ export const Step5IntroStructureT2: React.FC = () => (
           {TASK2_DATA.sampleIntro}
         </div>
         <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
-          <Clock size={15} /> 50 words • 2 sentences • Optimal IELTS exam timing (~3-4 mins)
+          <Clock size={15} /> ~50 words • 2 sentences • Optimal IELTS exam timing (~3-4 mins)
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="1. Paraphrase the Question"
-          text="State both views in a single balanced sentence: state funding for essential services (roads and schools) vs. the belief that high taxes are harmful."
+          text="Restate the prompt in sentence 1: that ancient artifacts and cultural treasures held abroad should be returned to their countries of origin using varied academic vocabulary."
         />
         <StructureCard
           icon={<Award size={18} />}
-          title="2. Opinion on Either Side"
-          text="State your direct stance right away: high taxation is necessary to ensure universal access to vital infrastructure, provided tax brackets remain progressive."
+          title="2. State Your Direct Opinion (Agree or Disagree)"
+          text="State your clear stance in sentence 2: whether you AGREE (repatriation restores living cultural identity and rectifies colonial plunder) or DISAGREE (universal museums maximize global educational exposure and conservation security)."
         />
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="3. Ideal Introduction Length"
-          text="Keep the introduction concise (~45-50 words). Avoid overly long background statements so you have maximum time and energy for your body paragraphs."
+          text="Keep the introduction concise (~45-52 words). Avoid rambling background narratives so you conserve time and word count for deep body paragraph analysis."
         />
       </div>
     </div>

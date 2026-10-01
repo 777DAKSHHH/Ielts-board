@@ -16,10 +16,10 @@ const TASK1_SUBMISSIONS = [
 ];
 
 const TASK2_SUBMISSIONS = [
-  { student: "Aarav Sharma", type: "Discussion Essay", topic: "High salary taxation for public roads and schools vs individual wealth retention", accuracy: "High" },
-  { student: "Pooja Patel", type: "Balanced Opinion", topic: "State funding for essential infrastructure and wealth redistribution", accuracy: "High" },
-  { student: "Rohan Verma", type: "Discuss Both Views", topic: "Economic disincentives of excessive income tax vs civic public goods", accuracy: "Moderate" },
-  { student: "Ananya Iyer", type: "Discussion + Opinion", topic: "Progressive taxation for universal healthcare/schools vs economic liberty", accuracy: "High" }
+  { student: "Aarav Sharma", type: "Opinion Essay", topic: "Repatriation of Benin Bronzes & rectifying colonial plunder", accuracy: "High" },
+  { student: "Pooja Patel", type: "Agree / Disagree", topic: "Cultural identity restitution & spiritual living heritage", accuracy: "High" },
+  { student: "Rohan Verma", type: "Opinion Essay", topic: "Acropolis Museum & tourism sovereignty for origin nations", accuracy: "Moderate" },
+  { student: "Ananya Iyer", type: "Agree / Disagree", topic: "Academic access for native researchers & heritage rights", accuracy: "High" }
 ];
 
 export const TutorReportModal: React.FC<TutorReportModalProps> = ({

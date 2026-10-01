@@ -25,31 +25,25 @@ const ESSAY_FORMAT_STEPS = [
     label: "Introduction",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    instruction: "Paraphrase the question + opinion on either side"
+    instruction: "Paraphrase the question + opinion"
   },
   {
     label: "Body Para 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    instruction: "Write on view 1 (Why government needs high taxes for roads & schools)"
+    instruction: "1 main reason + supporting reasons + example"
   },
   {
     label: "Body Para 2",
-    badgeBg: "rgba(220, 38, 38, 0.12)",
-    badgeColor: "#b91c1c",
-    instruction: "Write on view 2 (Why high taxes are a bad thing)"
-  },
-  {
-    label: "Body Para 3",
     badgeBg: "rgba(16, 185, 129, 0.12)",
     badgeColor: "#047857",
-    instruction: "Write on your opinion (Your reasoned stance & balanced synthesis)"
+    instruction: "1 main reason + supporting reasons + example"
   },
   {
     label: "Conclusion",
     badgeBg: "rgba(100, 116, 139, 0.15)",
     badgeColor: "#334155",
-    instruction: "Sum-up the main reasons + restate opinion"
+    instruction: "Sum-up all the main reasons + restate opinion"
   }
 ];
 
@@ -66,11 +60,11 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 09 • Task Reveal & Analysis
+          Step 02 / 09 • Task Reveal & 4-Para Format
         </span>
-        <h2 className="stage-title">Deconstruct the Discussion Prompt</h2>
+        <h2 className="stage-title">Deconstruct the Opinion Prompt (Agree or Disagree)</h2>
         <p className="stage-subtitle">
-          Students have made their predictions. Now expose the exact exam wording, analyze both views, and reveal the required 5-paragraph structure.
+          Examine the prompt wording, establish your clear opinion (Agree), and reveal the required 4-paragraph essay architecture with 1 main reason, support, and example per body paragraph.
         </p>
       </div>
 
@@ -81,7 +75,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Spend a short planning window identifying what each viewpoint requires before writing."
+          instruction="Focus Timer: Plan your thesis and frame 1 main reason + supporting details + example for each body paragraph."
         />
       </div>
 
@@ -171,7 +165,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span className="apple-badge neutral" style={{ fontSize: "0.74rem" }}>
-                  5 Paragraphs
+                  4 Paragraphs (Agree / Disagree Architecture)
                 </span>
                 {isRevealed && (
                   <button
@@ -291,7 +285,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                     gap: "4px"
                   }}
                 >
-                  <Sparkles size={13} color="var(--apple-blue)" /> Tap to reveal the required paragraph architecture
+                  <Sparkles size={13} color="var(--apple-blue)" /> Tap to reveal the required 4-paragraph architecture
                 </span>
               </div>
             )}
@@ -319,36 +313,10 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <Building2 size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>View 1 — Necessary Public Services</h5>
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Agree or Disagree</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              Students must analyze the case for high taxation: funding essential, non-excludable infrastructure (highways, railways, free state schools, healthcare) that private enterprise cannot equitably provide.
-            </p>
-          </div>
-
-          <div
-            style={{
-              background: "#fff",
-              border: "1.5px solid var(--border-subtle)",
-              borderRadius: "18px",
-              padding: "18px 20px",
-              boxShadow: "var(--shadow-sm)"
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                color: "var(--apple-red)",
-                marginBottom: "8px"
-              }}
-            >
-              <TrendingDown size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>View 2 — High Taxes as Detrimental</h5>
-            </div>
-            <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              Students must deconstruct why high taxes are viewed negatively: diminishing work motivation, shrinking household disposable income, triggering brain drain, and the frustration of bureaucratic waste.
+              The question directly asks: <em>“Historical objects should be brought back to their country of origin. Do you agree or disagree?”</em> This is a single-sided opinion essay. You must take an unequivocal stance right from the introduction.
             </p>
           </div>
 
@@ -371,10 +339,42 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <Scale size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Requirement — Give Your Opinion</h5>
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Choosing Your Stance — Agree vs. Disagree</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              The prompt mandates "give your opinion". In this format, students present their independent opinion in dedicated Body Paragraph 3, while also stating it in the introduction and restating it in the conclusion.
+              This board equips you with levelled points for <strong>both</strong> perspectives so students can master either stance:
+              <br />
+              • <strong>If you AGREE:</strong> Pick 2 main arguments from <strong>Step 6 (Agree Points: Repatriation)</strong>.
+              <br />
+              • <strong>If you DISAGREE:</strong> Pick 2 main arguments from <strong>Step 7 (Disagree Points: Global Museums)</strong>.
+              <br />
+              • <strong>If BALANCED:</strong> Contrast 1 argument from Step 6 against 1 argument from Step 7 before establishing your stance.
+            </p>
+          </div>
+
+          <div
+            style={{
+              background: "#fff",
+              border: "1.5px solid var(--border-subtle)",
+              borderRadius: "18px",
+              padding: "18px 20px",
+              boxShadow: "var(--shadow-sm)"
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                color: "var(--apple-purple)",
+                marginBottom: "8px"
+              }}
+            >
+              <TrendingDown size={18} />
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Paragraph Rule — 1 Main Reason + Support + Example</h5>
+            </div>
+            <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
+              Never list random bullet points. In each body paragraph, introduce <strong>1 distinct main reason</strong>, unpack its causal mechanism with supporting elaboration, and validate it with a concrete real-world example (e.g., the Benin Bronzes, the Acropolis Museum).
             </p>
           </div>
         </div>

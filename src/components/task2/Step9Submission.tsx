@@ -9,7 +9,7 @@ export const Step9SubmissionT2: React.FC = () => (
       </span>
       <h2 className="stage-title">From Guided Thinking to Independent Writing</h2>
       <p className="stage-subtitle">
-        The scaffolding has now been removed. Students should write the complete Discussion Essay using their selected arguments, causal chains, and academic collocations.
+        The scaffolding has now been removed. Students should write the complete Opinion Essay (Agree/Disagree) using their selected arguments, causal chains, and academic collocations.
       </p>
     </div>
 
@@ -24,18 +24,18 @@ export const Step9SubmissionT2: React.FC = () => (
       {[
         {
           n: "01",
-          t: "Balance Both Views",
-          d: "Dedicate full developmental depth to both why governments require high tax yields and why critics perceive heavy taxation as detrimental."
+          t: "Opinion Alignment Across Bodies",
+          d: "Ensure both body paragraphs consistently champion your chosen stance: if Agree, pick 2 arguments from Step 6 (Identity & justice); if Disagree, pick 2 arguments from Step 7 (Universal access & conservation)."
         },
         {
           n: "02",
-          t: "Establish Causal Links",
-          d: "Build each paragraph with a coherent chain: topic claim → causal mechanism → concrete real-world example → societal outcome."
+          t: "1 Reason + Support + Example",
+          d: "Dedicate each body paragraph to 1 clear core reason, explain its causal mechanism with depth, and substantiate it with a verifiable historical case study."
         },
         {
           n: "03",
-          t: "Sustain Your Stance",
-          d: "Deliver a nuanced personal opinion (e.g. progressive taxation with stringent fiscal transparency) that remains consistent throughout."
+          t: "Sustained Stance Throughout",
+          d: "Deliver an unequivocal position in your introduction, reinforce it in both body paragraphs, and reassert it powerfully in your conclusion."
         }
       ].map((x) => (
         <div
@@ -73,7 +73,7 @@ export const Step9SubmissionT2: React.FC = () => (
       <div>
         <h4 style={{ fontSize: "1.12rem", fontWeight: 700 }}>Teacher Checkpoint</h4>
         <p style={{ color: "#cbd5e1", lineHeight: 1.5, marginTop: "4px", fontSize: "0.92rem" }}>
-          Before students begin writing, ask them to explain both perspectives and their personal resolution aloud in under 60 seconds without checking their notes. This verbal recall check verifies that the concepts have translated into independent reasoning.
+          Before students begin writing, ask them to explain their two main reasons and supporting real-world examples aloud in under 60 seconds without checking their notes. This verbal recall check verifies that the concepts have translated into independent reasoning.
         </p>
       </div>
       <ArrowRight size={22} style={{ marginLeft: "auto", flexShrink: 0, color: "#94a3b8" }} />

@@ -96,14 +96,14 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       padding: "2px 8px"
                     }}
                   >
-                    EXAMINER'S SECRET WEAPON
+                    OPINION ESSAY MASTERCLASS
                   </span>
                   <span style={{ fontSize: "0.85rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                    Step 06 Deep Dive • Body Paragraph 1 Strategy
+                    Step 06 Deep Dive • 1 Main Reason + Support + Example
                   </span>
                 </div>
                 <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--slate-900)", margin: "3px 0 0" }}>
-                  Why Include "Nuances & Practical Caveats" in Body 1?
+                  Mastering the "1 Main Reason + Support + Example" Formula
                 </h3>
               </div>
             </div>
@@ -138,9 +138,9 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
           >
             {[
               { id: "rationale", label: "1. Examiner's Mindset", icon: <Award size={15} /> },
-              { id: "method", label: "2. The 3-Step Student Model", icon: <Lightbulb size={15} /> },
+              { id: "method", label: "2. The 3-Tier Body Architecture", icon: <Lightbulb size={15} /> },
               { id: "comparisons", label: "3. Band 6 vs Band 8.5+ Sentences", icon: <GitBranch size={15} /> },
-              { id: "formulas", label: "4. Plug & Play Templates", icon: <BookOpen size={15} /> }
+              { id: "formulas", label: "4. Plug & Play Formulas", icon: <BookOpen size={15} /> }
             ].map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -200,10 +200,10 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   <AlertTriangle size={22} color="#d97706" style={{ flexShrink: 0, marginTop: "2px" }} />
                   <div>
                     <h5 style={{ fontSize: "1rem", fontWeight: 800, color: "#92400e", margin: "0 0 4px" }}>
-                      The "Blind Cheerleading" Trap (Band 6.0 Mistake)
+                      The "Laundry List" Mistake (Band 6.0 Trap)
                     </h5>
                     <p style={{ fontSize: "0.9rem", color: "#78350f", margin: 0, lineHeight: 1.55 }}>
-                      Weak candidates assume that because Body 1 is defending View 1, they must praise high taxes blindly (*"High taxes build roads and schools, so high taxes are 100% positive"*). IELTS examiners penalize this as simplistic, one-dimensional thinking. Real academics always test the boundary conditions of an argument.
+                      Band 6 candidates dump 3 or 4 rushed ideas in one paragraph without developing any of them (*"Artifacts should be returned because it is their culture, and also museums are far, and also it helps poor countries"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
                     </p>
                   </div>
                 </div>
@@ -220,11 +220,11 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                       <CheckCircle2 size={18} color="var(--apple-blue)" />
                       <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                        1. Conditionality & Qualification
+                        1. One Main Reason = Depth Over Breadth
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      Under the <strong>Band 8/9 Task Achievement</strong> rubric, candidates must present a <em>“well-developed response to the question with relevant, extended and supported ideas.”</em> Adding a caveat proves that the student understands public funding only works under certain real-world conditions (e.g. transparency, efficiency).
+                      By focusing on <strong>1 main reason per body paragraph</strong> (Body 1: Cultural Identity & Moral Justice; Body 2: Sovereignty & Economic Equity), students have the space to unpack the causal logic thoroughly instead of superficial skimming.
                     </p>
                   </div>
 
@@ -239,18 +239,18 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                       <CheckCircle2 size={18} color="#059669" />
                       <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                        2. The Natural Bridge to Body 2
+                        2. Verifiable Evidence vs. Vague Statements
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      Body 2 will discuss <em>why critics consider high taxes harmful</em>. By acknowledging the caveats in Body 1 (such as bureaucratic monopoly and tax avoidance), you create an effortless, organic transition into Body 2 instead of writing two disconnected paragraphs.
+                      Examiners look for specific real-world grounding. Citing the <em>Benin Bronzes looted from Nigeria</em> or the <em>Acropolis Museum in Athens</em> demonstrates genuine academic command and scores Band 9 in Task Achievement.
                     </p>
                   </div>
                 </div>
               </motion.div>
             )}
 
-            {/* TAB 2: THE 3-STEP TEACHING METHOD */}
+            {/* TAB 2: THE 3-TIER ARCHITECTURE */}
             {activeTab === "method" && (
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
@@ -259,31 +259,31 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 <div style={{ background: "var(--slate-50)", borderRadius: "16px", padding: "16px 20px", border: "1px solid var(--border-subtle)" }}>
                   <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-                    <strong>Teacher's Classroom Script:</strong> When teaching Step 6 on the Smart Board, walk students through these 3 conceptual steps in under two minutes:
+                    <strong>The 3-Tier Body Paragraph Blueprint:</strong> Teach students to construct every body paragraph like an inverted pyramid of logic:
                   </p>
                 </div>
 
                 {[
                   {
-                    step: "Step 01",
-                    badge: "The Provocation",
-                    title: "Challenge the Obvious",
-                    say: "“Class, look at the left column: roads, schools, hospitals. Anyone can say public services are good. That is a Band 6 observation. But what happens if a government takes 50% of your salary and the roads remain full of potholes and the schools are falling apart? Is high taxation still justified?”",
-                    takeaway: "Students immediately realize that public funding is not an absolute good—it depends on execution."
+                    step: "Tier 01",
+                    badge: "Topic Sentence",
+                    title: "State 1 Clear Main Reason",
+                    say: "“First and foremost, historical treasures embody the living cultural identity and spiritual soul of their native civilizations, making their repatriation a non-negotiable moral duty.”",
+                    takeaway: "Direct, unequivocal claim that immediately answers the prompt."
                   },
                   {
-                    step: "Step 02",
-                    badge: "The Definition",
-                    title: "Define What a 'Caveat' Is",
-                    say: "“A caveat is a condition for success. We are telling the examiner: 'Yes, heavy taxation is necessary for major infrastructure, BUT it only works IF the state avoids bureaucratic monopoly and prevents rich corporations from exploiting offshore tax loopholes.'”",
-                    takeaway: "Students learn that 'caveats' are not contradictions, but mature academic conditions."
+                    step: "Tier 02",
+                    badge: "Supporting Causal Engine",
+                    title: "Unpack WHY and HOW with Supporting Reasons",
+                    say: "“An overwhelming majority of non-Western antiquities were plundered during colonial military raids. Retaining them in foreign institutions perpetuates historical humiliation and severs descendant generations from their living traditions.”",
+                    takeaway: "Explains the underlying historical mechanism and psychological harm."
                   },
                   {
-                    step: "Step 03",
-                    badge: "The Handoff",
-                    title: "Build the Bridge to Body 2",
-                    say: "“When you conclude Body 1 by admitting these practical dangers, you have already built the bridge to Body 2! In Body 2, you can start: 'These very inefficiencies are why critics vehemently oppose high taxes...'”",
-                    takeaway: "Ensures seamless Coherence & Cohesion between conflicting viewpoints."
+                    step: "Tier 03",
+                    badge: "Concrete Real-World Anchor",
+                    title: "Substantiate with Specific Evidence",
+                    say: "“A prominent illustration is the ongoing repatriation of the Benin Bronzes to Nigeria and sacred Maori ancestral remains to New Zealand, which has enabled indigenous communities to restore sacred ceremonial rites and reclaim their heritage.”",
+                    takeaway: "Pins the theoretical argument to a famous, undeniable historical case study."
                   }
                 ].map((item) => (
                   <div
@@ -308,7 +308,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       {item.say}
                     </p>
                     <p style={{ fontSize: "0.82rem", color: "var(--slate-500)", margin: 0 }}>
-                      <strong>Student Takeaway:</strong> {item.takeaway}
+                      <strong>Function in Essay:</strong> {item.takeaway}
                     </p>
                   </div>
                 ))}
@@ -322,10 +322,6 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                 animate={{ opacity: 1, y: 0 }}
                 style={{ display: "flex", flexDirection: "column", gap: "16px" }}
               >
-                <p style={{ margin: 0, fontSize: "0.9rem", color: "var(--slate-600)" }}>
-                  Show students how adding a caveat elevates their grammatical range, lexical resource, and critical thinking:
-                </p>
-
                 <div
                   style={{
                     background: "#ffffff",
@@ -348,13 +344,13 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <span className="apple-badge" style={{ background: "#ef4444", color: "#fff", fontSize: "0.72rem" }}>
                       BAND 6.0
                     </span>
-                    <strong style={{ color: "#991b1b", fontSize: "0.9rem" }}>Basic / One-Dimensional (No Caveats)</strong>
+                    <strong style={{ color: "#991b1b", fontSize: "0.9rem" }}>Vague & Superficial (No Depth or Specificity)</strong>
                   </div>
                   <div style={{ padding: "14px 18px", fontSize: "0.92rem", color: "#475569", lineHeight: 1.5 }}>
-                    “Governments should take a large share of citizens’ salaries because building expressways and schools requires a lot of public money, which benefits everybody in society.”
+                    “Historical objects must be given back because they were stolen in old wars. People want their history back so they can see it in their own countries.”
                   </div>
                   <div style={{ padding: "8px 18px 14px", fontSize: "0.8rem", color: "#dc2626" }}>
-                    ❌ <em>Problem: Simplistic cause-and-effect; assumes state spending is always flawless; zero qualification.</em>
+                    ❌ <em>Weak vocabulary ('stolen in old wars', 'given back'); zero causal development; lacks any specific historical example.</em>
                   </div>
                 </div>
 
@@ -380,13 +376,13 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <span className="apple-badge success" style={{ fontSize: "0.72rem" }}>
                       BAND 8.5+
                     </span>
-                    <strong style={{ color: "#166534", fontSize: "0.9rem" }}>Qualified & Nuanced (With Caveat Integration)</strong>
+                    <strong style={{ color: "#166534", fontSize: "0.9rem" }}>Fully Extended & Real-World Evidenced</strong>
                   </div>
                   <div style={{ padding: "14px 18px", fontSize: "0.95rem", color: "#1e293b", lineHeight: 1.6 }}>
-                    “While claiming a substantial portion of earnings is indispensable for funding nationwide transit networks and universal education, <span style={{ background: "#fef3c7", padding: "2px 6px", borderRadius: "4px", color: "#92400e", fontWeight: 700 }}>this policy is only justifiable if governments actively curb bureaucratic monopolies and close offshore tax evasion loopholes</span>.”
+                    “Chief among the arguments for restitution is that historical relics represent the living cultural identity of their creators, making their repatriation essential to rectifying colonial injustices. Because the majority of these artifacts were illicitly plundered during 19th-century imperial expeditions, returning them restores ancestral dignity—a truth exemplified by the recent restitution of the Benin Bronzes to Nigeria.”
                   </div>
                   <div style={{ padding: "8px 18px 14px", fontSize: "0.82rem", color: "#15803d" }}>
-                    ✓ <em>Examiner impact: Demonstrates conditionality, complex subordinate clauses, and mature academic evaluation.</em>
+                    ✓ <em>Examiner impact: Advanced collocations ('illicitly plundered', 'ancestral dignity'), seamless causal subordination, and concrete historical validation.</em>
                   </div>
                 </div>
               </motion.div>
@@ -401,25 +397,25 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 <div style={{ background: "var(--slate-50)", borderRadius: "14px", padding: "14px 18px", border: "1px solid var(--border-subtle)" }}>
                   <p style={{ margin: 0, fontSize: "0.9rem", color: "var(--slate-700)" }}>
-                    Students can memorize these <strong>3 plug-and-play concession formulas</strong> to add caveats effortlessly in their IELTS exam:
+                    Students can memorize these <strong>3 plug-and-play body paragraph templates</strong>:
                   </p>
                 </div>
 
                 {[
                   {
-                    title: "Formula 1: The 'Provided that' Anchor",
-                    pattern: "While [View 1 benefit] is undeniably vital, this policy remains viable only provided that [Caveat condition].",
-                    example: "“While state funding for expressways and primary schools is undeniably vital, this policy remains viable only provided that revenue is shielded from bureaucratic leakage.”"
+                    title: "Formula 1: The Topic Sentence Frame (1 Main Reason)",
+                    pattern: "The primary justification for [opinion stance] is that [1 Main Reason], which in turn [broader cultural or economic impact].",
+                    example: "“The primary justification for repatriating historical objects is that ancestral treasures embody the spiritual identity of their creators, which in turn heals the enduring trauma of imperial exploitation.”"
                   },
                   {
-                    title: "Formula 2: The 'Albeit with the caveat' Clause",
-                    pattern: "[View 1 core claim], albeit with the significant caveat that [Caveat hazard].",
-                    example: "“Governments have a compelling mandate to pool societal wealth for universal amenities, albeit with the significant caveat that excessive rates risk provoking corporate capital flight.”"
+                    title: "Formula 2: The Causal Supporting Explanation",
+                    pattern: "When [situation occurs], it inevitably [negative outcome]; conversely, by [taking action], origin nations [positive resolution].",
+                    example: "“When antiquities are sequestered in overseas institutions, native populations are estranged from their cultural roots; conversely, by returning rightful custodianship, communities can revive sacred ancestral traditions.”"
                   },
                   {
-                    title: "Formula 3: The Handoff Pivot (Body 1 Conclusion)",
-                    pattern: "Nonetheless, the success of this model hinges on fiscal accountability, without which high taxation risks becoming counterproductive.",
-                    example: "“Nonetheless, the civic success of public spending hinges on strict fiscal accountability, without which substantial taxation breeds public resentment—a concern championed by its critics.”"
+                    title: "Formula 3: The Concrete Case-Study Clincher",
+                    pattern: "This principle is powerfully illustrated by [Specific Case Study], where [action taken] successfully [tangible result achieved].",
+                    example: "“This principle is powerfully illustrated by Greece's purpose-built Acropolis Museum, which dismantled conservation excuses and demonstrated that origin nations can safeguard their own antiquities.”"
                   }
                 ].map((item, idx) => (
                   <div
@@ -460,7 +456,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
               <Sparkles size={15} color="#d97706" />
-              <span>Use this masterclass to explain caveats on the Senses Smartboard during Step 06</span>
+              <span>Use this masterclass on the Senses Smartboard to train students on paragraph depth</span>
             </div>
             <button
               onClick={onClose}

@@ -31,7 +31,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
         </span>
         <h2 className="stage-title">Listen First: Guess the Essay Topic</h2>
         <p className="stage-subtitle">
-          Play the briefing before revealing the actual IELTS question. Students should infer the topic, the economic trade-offs, and possible arguments on both sides.
+          Play the briefing before revealing the actual IELTS question. Students should infer the controversy surrounding colonial loot, museum collections, and national heritage.
         </p>
       </div>
 
@@ -65,7 +65,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             <div>
               <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Cryptic Audio Briefing</h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)" }}>
-                The Price of Civilization • Taxation & Public Goods • ~1:15
+                Treasures of Antiquity • Cultural Repatriation & Colonial Heritage • ~1:15
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               lineHeight: 1.55
             }}
           >
-            <strong style={{ color: "var(--slate-900)" }}>Teacher move:</strong> Do not show the task yet. Ask students to listen, discuss their prediction, and justify what clues led them there.
+            <strong style={{ color: "var(--slate-900)" }}>Teacher move:</strong> Do not show the task yet. Ask students to listen, discuss their prediction, and justify what clues led them to the theme of cultural heritage restitution.
           </div>
         </div>
 
@@ -109,10 +109,10 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Student Guess Board</h4>
           </div>
           {[
-            "What broad economic dilemma is the speaker outlining?",
-            "Who is responsible for financing roads, schools, and essential infrastructure?",
-            "Why might citizens resent surrendering a large percentage of their earnings?",
-            "Can you foresee a viable compromise between state funding and individual financial liberty?"
+            "What global dispute involving world-famous museums and foreign treasures is being described?",
+            "Under what historical circumstances were these sacred statues, bronzes, and relics originally taken?",
+            "Why do origin nations feel deeply alienated when their ancestral heritage remains displayed overseas?",
+            "What moral, academic, and economic arguments justify returning historical objects to their homelands?"
           ].map((question, index) => (
             <div
               key={question}
