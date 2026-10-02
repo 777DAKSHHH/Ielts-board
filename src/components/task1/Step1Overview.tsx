@@ -18,9 +18,9 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 08 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: Guess the Town Transformation</h2>
+        <h2 className="stage-title">Listen First: Guess the Ecological Energy Flow</h2>
         <p className="stage-subtitle">
-          Play the cryptic briefing before showing the maps. Students should deduce the shift from industrial manufacturing to technology, the added transport link, and repurposed facilities.
+          Play the cryptic briefing before showing the diagram. Students should deduce the five biological feeding tiers, the tenfold energy reduction rule, and the role of decomposers.
         </p>
       </div>
 
@@ -56,7 +56,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
                 Cryptic Audio Briefing
               </h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)" }}>
-                Kimsville Urban Evolution • 2002 vs Today • ~1:10
+                Food Chain Energy Pyramid • 5 Trophic Tiers • ~1:10
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           <div style={{ background: "#ffffff", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "16px", color: "var(--slate-700)", lineHeight: 1.55 }}>
-            <strong style={{ color: "var(--slate-900)" }}>Do not reveal yet:</strong> ask students to identify which industry disappeared, which central feature stayed untouched, and what new amenities appeared.
+            <strong style={{ color: "var(--slate-900)" }}>Do not reveal yet:</strong> ask students to calculate the rate of energy loss between tiers, identify where dissipated heat goes, and explain the circular role of decomposers.
           </div>
         </div>
 
@@ -112,10 +112,10 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           {[
-            "What type of visual task is described (maps, chart, or process diagram)?",
-            "What happened to the industrial factory with the smoking chimney?",
-            "Which central landmark remained the constant geographic anchor for the town?",
-            "What public transportation and leisure amenities were newly introduced?"
+            "What natural scientific structure is being depicted in this diagram?",
+            "How much energy (or what percentage) is retained as you ascend each trophic tier?",
+            "What happens to the 90% of energy that is not incorporated as stored biomass?",
+            "What biological group breaks down organic waste and dead matter to recycle nutrients?"
           ].map((question, index) => (
             <div key={question} style={{ background: "#ffffff", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "15px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
               <span className="apple-badge neutral" style={{ minWidth: "30px", justifyContent: "center" }}>{index + 1}</span>
@@ -134,12 +134,12 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             className="apple-touch-btn primary"
             style={{ minHeight: "50px", gap: "8px", marginTop: "auto" }}
           >
-            <Sparkles size={18} /> {revealed ? "Continue to Map Analysis" : "Reveal Task"}
+            <Sparkles size={18} /> {revealed ? "Continue to Diagram Analysis" : "Reveal Task"}
           </button>
 
           {revealed && (
             <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "14px", padding: "14px 16px", color: "#1e3a8a", fontSize: "0.9rem", lineHeight: 1.5 }}>
-              The full task prompt and comparative maps of Kimsville (2002 vs today) are revealed in Step 02.
+              The full task prompt and ecological energy pyramid diagram are revealed in Step 02.
             </div>
           )}
         </div>

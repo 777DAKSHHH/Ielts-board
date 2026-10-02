@@ -1,24 +1,92 @@
 import React from "react";
-import { Factory, Trophy, CheckCircle2, ArrowRight } from "lucide-react";
+import { Flame, Recycle, CheckCircle2, ArrowRight, RefreshCw, Zap } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step6FlowBreakdown: React.FC = () => {
-  const rightAndLower = TASK1_DATA.mapData.rightAndLowerZone;
+  const decomposers = TASK1_DATA.diagramData.decomposerCycle;
 
   return (
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 06 / 08 • Body 2 — Right-Hand & Lower Sectors
+          Step 06 / 08 • Body 2 — Energy Dissipation &amp; Waste Processing
         </span>
-        <h2 className="stage-title">Commercial, Leisure & Industrial Shift</h2>
+        <h2 className="stage-title">Metabolic Heat Loss &amp; Decomposer Detritus Flow</h2>
         <p className="stage-subtitle">
-          Examine the right-hand and lower sections relative to the city centre: the industrial factory replaced by a high-tech software company, the cinema converted into a pub, and a new football stadium.
+          Examine the two parallel processes: continuous metabolic heat dissipation expelled into the atmosphere at every tier, alongside the convergence of waste and dead matter into decomposers.
         </p>
       </div>
 
       <div className="stage-grid-2col">
-        {/* Right-Hand Sector Card */}
+        {/* Left Column: Heat Dissipation & Decomposer Waste Flow */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+          {/* Card 1: Metabolic Heat Loss */}
+          <div
+            style={{
+              background: "var(--slate-50)",
+              border: "1.5px solid var(--border-subtle)",
+              borderRadius: "20px",
+              padding: "20px 22px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Flame size={20} color="#ea580c" />
+              <h4 style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--slate-900)" }}>
+                Continuous Metabolic Heat Dissipation
+              </h4>
+            </div>
+            <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.5 }}>
+              Squiggly arrows at <strong>every single trophic tier</strong> (primary producers, all 4 consumer tiers, and decomposers) indicate that chemical energy is constantly converted into thermal heat through cellular respiration and locomotion, radiating irreversibly into the atmosphere.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "2px" }}>
+              {["Producers Heat", "Primary Consumers Heat", "Secondary Consumers Heat", "Tertiary Heat", "Quaternary Heat", "Decomposers Heat"].map((label) => (
+                <span key={label} className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "rgba(234, 88, 12, 0.1)", color: "#c2410c", border: "1px solid rgba(234, 88, 12, 0.2)" }}>
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Card 2: Decomposer Detritus Flow */}
+          <div
+            style={{
+              background: "var(--slate-50)",
+              border: "1.5px solid var(--border-subtle)",
+              borderRadius: "20px",
+              padding: "20px 22px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <Recycle size={20} color="#16a34a" />
+              <h4 style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--slate-900)" }}>
+                Decomposers &amp; Waste Convergence
+              </h4>
+            </div>
+            <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.5 }}>
+              {decomposers.description}
+            </p>
+            <div style={{ background: "#ffffff", borderRadius: "12px", padding: "12px", border: "1px solid var(--border-subtle)", display: "flex", flexDirection: "column", gap: "6px" }}>
+              <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--slate-800)" }}>
+                Detritus Flow Sequence:
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.82rem", color: "var(--slate-600)", flexWrap: "wrap" }}>
+                <span className="apple-badge neutral" style={{ padding: "2px 8px" }}>Tiers 1–5 Waste &amp; Dead Matter</span>
+                <ArrowRight size={13} />
+                <span className="apple-badge success" style={{ padding: "2px 8px" }}>DECOMPOSERS</span>
+                <ArrowRight size={13} />
+                <span className="apple-badge neutral" style={{ padding: "2px 8px", background: "rgba(234, 88, 12, 0.1)", color: "#c2410c" }}>Metabolic Heat</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Model Paragraph & Analytical Highlights */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
           <div
             style={{
@@ -28,156 +96,66 @@ export const Step6FlowBreakdown: React.FC = () => {
               padding: "24px",
               display: "flex",
               flexDirection: "column",
-              gap: "14px"
+              gap: "12px"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Factory size={20} color="#b91c1c" />
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <RefreshCw size={20} color="var(--apple-blue)" />
               <h4 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--slate-900)" }}>
-                Right-Hand Sector (Industrial to Tech Shift)
+                Band 9 Model Body Paragraph 2
               </h4>
             </div>
-            <p style={{ fontSize: "0.88rem", color: "var(--slate-500)", margin: 0 }}>
-              Complete demolition of heavy manufacturing in favour of modern corporate technology towers.
-            </p>
 
             <div
               style={{
                 background: "#ffffff",
                 border: "1px solid var(--border-subtle)",
                 borderRadius: "14px",
-                padding: "16px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px"
+                padding: "18px",
+                fontSize: "0.98rem",
+                color: "var(--slate-800)",
+                lineHeight: 1.65,
+                boxShadow: "var(--shadow-sm)"
               }}
             >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span className="apple-badge neutral" style={{ fontSize: "0.8rem", fontWeight: 700 }}>
-                  To the Right of City Centre
-                </span>
-                <span
-                  style={{
-                    fontSize: "0.76rem",
-                    fontWeight: 700,
-                    padding: "3px 9px",
-                    borderRadius: "6px",
-                    background: "rgba(220, 38, 38, 0.12)",
-                    color: "#b91c1c"
-                  }}
-                >
-                  DEMOLISHED & REPLACED
-                </span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.95rem", fontWeight: 700 }}>
-                <span style={{ color: "#b91c1c" }}>2002: Factory (Smokestack)</span>
-                <ArrowRight size={14} color="var(--slate-400)" />
-                <span style={{ color: "var(--apple-blue)" }}>Today: Software Company</span>
-              </div>
-              <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-                The polluting manufacturing plant to the right of the city centre was completely torn down, replaced by modern multi-storey office towers accommodating a software firm.
-              </p>
+              “In addition to upward trophic transfers, significant energy is lost across all stages via metabolic heat. Squiggly indicators demonstrate that primary producers, all four consumer levels, and decomposers continuously expel thermal energy into the atmosphere. Simultaneously, non-living organic detritus—designated as 'waste and dead matter'—is channeled into decomposers from across the pyramid, including decaying vegetation from primary producers and deceased remains from consumers. Decomposers process this biological matter, which in turn radiates further metabolic heat into the surrounding environment.”
             </div>
           </div>
 
+          {/* Key Analytical Takeaways */}
           <div
             style={{
               background: "#ffffff",
               border: "1.5px solid var(--border-subtle)",
               borderRadius: "18px",
-              padding: "18px 20px",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
               boxShadow: "var(--shadow-sm)"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-              <CheckCircle2 size={17} color="#16a34a" />
-              <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>Body Paragraph 2 Model Draft</strong>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <CheckCircle2 size={18} color="#16a34a" />
+              <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>
+                Band 9 Body 2 Analytical Highlights
+              </strong>
             </div>
-            <p style={{ fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.55, margin: 0 }}>
-              “Turning to the remaining areas, the factory to the right of the city centre was demolished and replaced by modern software company offices. Directly below the central core, the old cinema building was converted into a pub, while the trees in the bottom-left corner were cleared to make way for a football stadium. The bottom-right woodland and the central city centre itself remained untouched throughout the period.”
-            </p>
-          </div>
-        </div>
 
-        {/* Lower Sector Card */}
-        <div
-          style={{
-            background: "var(--slate-50)",
-            border: "1.5px solid var(--border-subtle)",
-            borderRadius: "20px",
-            padding: "24px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "14px"
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Trophy size={20} color="#059669" />
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--slate-900)" }}>
-              Lower Sectors (Leisure & Conversion)
-            </h4>
-          </div>
-          <p style={{ fontSize: "0.88rem", color: "var(--slate-500)", margin: 0 }}>
-            Adaptive reuse of cultural amenities and introduction of sports infrastructure.
-          </p>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            {rightAndLower.slice(1).map((item) => (
-              <div
-                key={item.location}
-                style={{
-                  background: "#ffffff",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "14px",
-                  padding: "12px 14px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "5px"
-                }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span className="apple-badge neutral" style={{ fontSize: "0.78rem", fontWeight: 700 }}>
-                    {item.location}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: "0.74rem",
-                      fontWeight: 700,
-                      padding: "2px 8px",
-                      borderRadius: "6px",
-                      background:
-                        item.changeType === "repurposed"
-                          ? "rgba(147, 51, 234, 0.12)"
-                          : item.changeType === "constructed"
-                          ? "rgba(37, 99, 235, 0.12)"
-                          : "rgba(16, 185, 129, 0.12)",
-                      color:
-                        item.changeType === "repurposed"
-                          ? "#7e22ce"
-                          : item.changeType === "constructed"
-                          ? "var(--apple-blue)"
-                          : "#047857"
-                    }}
-                  >
-                    {item.changeType === "repurposed"
-                      ? "CONVERTED"
-                      : item.changeType === "constructed"
-                      ? "NEW FACILITY"
-                      : "PRESERVED"}
-                  </span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.9rem", fontWeight: 650, color: "var(--slate-800)" }}>
-                  <span>2002: {item.in2002}</span>
-                  <ArrowRight size={13} color="var(--slate-400)" />
-                  <span style={{ color: item.changeType === "repurposed" ? "#7e22ce" : item.changeType === "constructed" ? "var(--apple-blue)" : "inherit" }}>
-                    Today: {item.today}
-                  </span>
-                </div>
-                <p style={{ fontSize: "0.82rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.35 }}>
-                  {item.description}
-                </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
+                <Flame size={15} color="#c2410c" />
+                <span><strong>Universal Heat Loss:</strong> Note that every trophic level and decomposers all vent metabolic heat to the environment.</span>
               </div>
-            ))}
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
+                <Zap size={15} color="#ea580c" />
+                <span><strong>Convergence on Decomposers:</strong> Four colored conduits direct waste from Quaternary, Secondary, Primary consumers, and Primary producers into decomposers.</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
+                <Recycle size={15} color="#16a34a" />
+                <span><strong>Terminal Dissipation:</strong> Decomposers process the biological detritus and release metabolic heat.</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

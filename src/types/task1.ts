@@ -1,17 +1,37 @@
 import { VocabItem } from "./vocab";
 
-export interface MapZoneFeature {
-  location: string;
-  in2002: string;
-  today: string;
-  changeType: "constructed" | "demolished_replaced" | "repurposed" | "preserved";
+export interface TrophicTier {
+  id: string;
+  tierNumber: number;
+  name: string;
+  badge: string;
+  category: "producers" | "primary_consumers" | "secondary_consumers" | "tertiary_consumers" | "quaternary_consumers" | "decomposers";
+  energyKcal: number | string;
+  energyPercentOfBase: string;
+  organisms: string;
+  heatLoss: string;
+  wasteToDecomposers: string;
   description: string;
-  category: "residential" | "commercial" | "industrial" | "transport" | "leisure" | "greenery";
+  band9Phrase: string;
 }
 
-export interface Task1MapData {
-  leftAndUpperZone: MapZoneFeature[];
-  rightAndLowerZone: MapZoneFeature[];
+export interface Task1DiagramData {
+  trophicTiers: TrophicTier[];
+  decomposerCycle: {
+    title: string;
+    inputs: string[];
+    outputs: string[];
+    role: string;
+    description: string;
+    band9Phrase: string;
+  };
+  energyLossSummary: {
+    retentionRate: string;
+    lossRate: string;
+    baseEnergy: string;
+    apexEnergy: string;
+    lossMultiplier: string;
+  };
 }
 
 export interface BpSection {
@@ -44,7 +64,7 @@ export interface Task1Data {
   sampleIntro: string;
   sampleOverview: string;
   timingSeconds: number;
-  mapData: Task1MapData;
+  diagramData: Task1DiagramData;
   vocabList: VocabItem[];
   vocabHunt: string[];
   bp1: BpSection;

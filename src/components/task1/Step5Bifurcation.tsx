@@ -1,24 +1,24 @@
 import React from "react";
-import { Building, Train, CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, ArrowRight, Sun, TrendingDown, Layers } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step5Bifurcation: React.FC = () => {
-  const leftAndUpper = TASK1_DATA.mapData.leftAndUpperZone;
+  const tiers = TASK1_DATA.diagramData.trophicTiers;
 
   return (
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 05 / 08 • Body 1 — Left-Hand & Upper Sectors
+          Step 05 / 08 • Body 1 — Trophic Hierarchy & Stored Biomass
         </span>
-        <h2 className="stage-title">Housing, Transit & Preserved Amenities</h2>
+        <h2 className="stage-title">Ascending Energy Transfer: From Sunlight to Apex Raptors</h2>
         <p className="stage-subtitle">
-          Detail the developments situated to the left of and directly above the central city centre: woodland cleared for residential apartments in the top-left, a new railway station constructed on the left flank, alongside the preserved shopping centre and top-right trees.
+          Detail the sequential energy passage across all five trophic tiers: photosynthetic primary producers generating 20,000 kcal/m²/yr, followed by consecutive tenfold reductions up to apex raptors at 2 kcal/m²/yr.
         </p>
       </div>
 
       <div className="stage-grid-2col">
-        {/* Upper Sector Card */}
+        {/* Left Column: Trophic Tier Progression Card */}
         <div
           style={{
             background: "var(--slate-50)",
@@ -31,32 +31,33 @@ export const Step5Bifurcation: React.FC = () => {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Building size={20} color="var(--apple-blue)" />
+            <Layers size={20} color="var(--apple-blue)" />
             <h4 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--slate-900)" }}>
-              Upper Sectors (Residential & Retail)
+              The 5 Ascending Trophic Tiers
             </h4>
           </div>
           <p style={{ fontSize: "0.88rem", color: "var(--slate-500)", margin: 0 }}>
-            Woodland cleared for high-density housing in the top-left, while commercial shopping directly above the centre and top-right trees remained unchanged.
+            Every step represents an exact 90% energy loss, meaning only 10% is incorporated into living biomass.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            {leftAndUpper.slice(0, 3).map((item) => (
+            {tiers.map((tier) => (
               <div
-                key={item.location}
+                key={tier.id}
                 style={{
                   background: "#ffffff",
                   border: "1px solid var(--border-subtle)",
                   borderRadius: "14px",
-                  padding: "14px 16px",
+                  padding: "13px 16px",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "6px"
+                  gap: "6px",
+                  boxShadow: "var(--shadow-sm)"
                 }}
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span className="apple-badge neutral" style={{ fontSize: "0.8rem", fontWeight: 700 }}>
-                    {item.location}
+                  <span className="apple-badge neutral" style={{ fontSize: "0.8rem", fontWeight: 750 }}>
+                    Tier {tier.tierNumber}: {tier.name}
                   </span>
                   <span
                     style={{
@@ -65,32 +66,39 @@ export const Step5Bifurcation: React.FC = () => {
                       padding: "3px 9px",
                       borderRadius: "6px",
                       background:
-                        item.changeType === "constructed"
-                          ? "rgba(37, 99, 235, 0.12)"
-                          : "rgba(16, 185, 129, 0.12)",
-                      color: item.changeType === "constructed" ? "var(--apple-blue)" : "#047857"
+                        tier.tierNumber === 1
+                          ? "rgba(22, 163, 74, 0.12)"
+                          : tier.tierNumber === 5
+                          ? "rgba(239, 68, 68, 0.12)"
+                          : "rgba(0, 113, 227, 0.12)",
+                      color:
+                        tier.tierNumber === 1
+                          ? "#15803d"
+                          : tier.tierNumber === 5
+                          ? "#b91c1c"
+                          : "var(--apple-blue)"
                     }}
                   >
-                    {item.changeType === "constructed" ? "NEW HOUSING" : "PRESERVED"}
+                    {tier.energyPercentOfBase} of Base
                   </span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.92rem", fontWeight: 650, color: "var(--slate-800)" }}>
-                  <span>2002: {item.in2002}</span>
-                  <ArrowRight size={14} color="var(--slate-400)" />
-                  <span style={{ color: item.changeType === "constructed" ? "var(--apple-blue)" : "inherit" }}>
-                    Today: {item.today}
-                  </span>
+
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "0.92rem", fontWeight: 700, color: "var(--slate-900)" }}>
+                  <span>{tier.organisms}</span>
+                  <span style={{ color: "var(--apple-blue)", fontFamily: "monospace" }}>{tier.energyKcal}</span>
                 </div>
-                <p style={{ fontSize: "0.84rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.4 }}>
-                  {item.description}
+
+                <p style={{ fontSize: "0.83rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.4 }}>
+                  {tier.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Left Flank Sector Card & Model Sentence */}
+        {/* Right Column: Model Paragraph & Analytical Formula */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+          {/* Band 9 Model Paragraph */}
           <div
             style={{
               background: "var(--slate-50)",
@@ -99,65 +107,66 @@ export const Step5Bifurcation: React.FC = () => {
               padding: "24px",
               display: "flex",
               flexDirection: "column",
-              gap: "14px"
+              gap: "12px"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <Train size={20} color="#0284c7" />
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <Sun size={20} color="#d97706" />
               <h4 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--slate-900)" }}>
-                Left Flank (Transit Infrastructure)
+                Band 9 Model Body Paragraph 1
               </h4>
             </div>
-            <p style={{ fontSize: "0.88rem", color: "var(--slate-500)", margin: 0 }}>
-              Direct integration of rail transportation to serve the expanding town population.
-            </p>
 
             <div
               style={{
                 background: "#ffffff",
                 border: "1px solid var(--border-subtle)",
                 borderRadius: "14px",
-                padding: "16px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px"
+                padding: "18px",
+                fontSize: "0.98rem",
+                color: "var(--slate-800)",
+                lineHeight: 1.65,
+                boxShadow: "var(--shadow-sm)"
               }}
             >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span className="apple-badge neutral" style={{ fontSize: "0.8rem", fontWeight: 700 }}>
-                  To the Left of City Centre
-                </span>
-                <span className="apple-badge success" style={{ fontSize: "0.76rem" }}>
-                  NEW INFRASTRUCTURE
-                </span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.95rem", fontWeight: 700, color: "var(--slate-900)" }}>
-                <span style={{ color: "var(--slate-500)" }}>2002: Open Land</span>
-                <ArrowRight size={14} color="var(--slate-400)" />
-                <span style={{ color: "#0284c7" }}>Today: New Train Station</span>
-              </div>
-              <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-                An arched railway station was erected on open ground directly to the left of the city centre, granting local residents direct access to rail transit.
-              </p>
+              “In terms of upward energy transfer, the ecological pyramid commences at the base with primary producers, which harness incoming solar radiation to synthesize an initial 20,000 kcal/m²/yr of living biomass. This chemical energy is subsequently transferred to primary consumers—predominantly herbivorous insects and small rodents—which assimilate exactly 2,000 kcal/m²/yr. Moving up to the third trophic tier, secondary consumers including insectivorous birds, frogs, and small mammals register a further tenfold reduction to 200 kcal/m²/yr. This progressive decline continues through tertiary predatory snakes at 20 kcal/m²/yr, ultimately terminating at the pinnacle with quaternary apex raptors, where a minuscule 2 kcal/m²/yr is retained—representing a 99.99% overall dissipation of the foundational energy.”
             </div>
           </div>
 
+          {/* Key Analytical Takeaways */}
           <div
             style={{
               background: "#ffffff",
               border: "1.5px solid var(--border-subtle)",
               borderRadius: "18px",
-              padding: "18px 20px",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
               boxShadow: "var(--shadow-sm)"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-              <CheckCircle2 size={17} color="#16a34a" />
-              <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>Body Paragraph 1 Model Draft</strong>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <CheckCircle2 size={18} color="#16a34a" />
+              <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>
+                Band 9 Body 1 Analytical Highlights
+              </strong>
             </div>
-            <p style={{ fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.55, margin: 0 }}>
-              “Looking first at the left-hand and upper sections relative to the city centre, the trees in the top-left corner were cleared to make way for a block of new apartments. Directly beneath this, on the left flank of the central area, a new train station was constructed on previously open land. By contrast, the shopping centre situated directly above the city centre remained unchanged, as did the wooded area in the top-right corner.”
-            </p>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
+                <TrendingDown size={15} color="#b91c1c" />
+                <span><strong>The 10% Rule:</strong> Highlight that energy drops by an order of magnitude (tenfold / 90% loss) at every tier.</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
+                <ArrowRight size={15} color="var(--apple-blue)" />
+                <span><strong>Comparative Ratio:</strong> Note that apex eagles possess only 1/10,000th (0.01%) of the initial solar energy captured by vegetation.</span>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
+                <ArrowUpRight size={15} color="#16a34a" />
+                <span><strong>Organism Categorization:</strong> Explicitly mention key biological representatives (plants → insects/mice → birds/frogs → snakes → eagles).</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

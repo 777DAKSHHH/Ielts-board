@@ -6,56 +6,56 @@ export const TASK1_STEPS: StepDefinition[] = [
     stepNumber: 1,
     title: "Cryptic Audio Guess",
     badge: "Step 01 / 08 • Cryptic Audio Guess",
-    description: "Listen First: Guess the Anchor-Based Transformation"
+    description: "Listen First: Guess the Energy Flow & Trophic Levels"
   },
   {
     id: "task1-step2",
     stepNumber: 2,
-    title: "Task Prompt & Map Analysis",
-    badge: "Step 02 / 08 • Task Prompt & Map Analysis",
-    description: "Analyse Maps Using the City Centre Anchor (No Compass)"
+    title: "Task Prompt & Pyramid Analysis",
+    badge: "Step 02 / 08 • Task Prompt & Diagram Analysis",
+    description: "Analyse Trophic Levels, 10% Biomass Rule & Nutrient Cycles"
   },
   {
     id: "task1-step3",
     stepNumber: 3,
-    title: "Anchor-Based Spatial Vocabulary",
+    title: "Ecological Power Vocabulary",
     badge: "Step 03 / 08 • Lexical Resource",
-    description: "Relational Positioning & Redevelopment Collocations"
+    description: "Trophic Levels, Biomass Transfer & Heat Dissipation Collocations"
   },
   {
     id: "task1-step4",
     stepNumber: 4,
     title: "Sample Introduction & Overview",
     badge: "Step 04 / 08 • Sample Introduction & Overview",
-    description: "Build Paraphrase & Macro Overview (Zero Cardinal Points)"
+    description: "Build Paraphrase & Macro Overview (Unidirectional Energy Flow)"
   },
   {
     id: "task1-step5",
     stepNumber: 5,
-    title: "Body 1: Left & Upper Sectors",
-    badge: "Step 05 / 08 • Body 1 — Left & Upper Sectors (Anchor-Based)",
-    description: "Apartments, Railway Station & Preserved Amenities"
+    title: "Body 1: Upward Trophic Transfer",
+    badge: "Step 05 / 08 • Body 1 — Trophic Hierarchy & Stored Biomass",
+    description: "From Primary Producers (20,000 kcal) to Apex Raptors (2 kcal)"
   },
   {
     id: "task1-step6",
     stepNumber: 6,
-    title: "Body 2: Right & Lower Sectors",
-    badge: "Step 06 / 08 • Body 2 — Right & Lower Sectors (Anchor-Based)",
-    description: "Software Offices, Pub Conversion & Football Stadium"
+    title: "Body 2: Heat Loss & Decomposers",
+    badge: "Step 06 / 08 • Body 2 — Energy Dissipation & Nutrient Recycling",
+    description: "Continuous Heat Dissipation & Closed-Loop Decomposer Cycling"
   },
   {
     id: "task1-step7",
     stepNumber: 7,
-    title: "Anchor-Based Spatial Structures",
-    badge: "Step 07 / 08 • Anchor-Based Spatial Language (No Compass)",
-    description: "Relational Positioning, Demolition & Adaptive Reuse"
+    title: "Diagrammatic Analytical Structures",
+    badge: "Step 07 / 08 • Scientific Process Language & Passive Voice",
+    description: "Energy Metrics (kcal/m²/yr), Energy Reduction & Natural Systems"
   },
   {
     id: "task1-step8",
     stepNumber: 8,
-    title: "Cohesive Spatial Transitions",
-    badge: "Step 08 / 08 • Academic Transitions & Relational Flow",
-    description: "Connect Spatial Changes Using the Anchor Framework"
+    title: "Cohesive Stage Transitions",
+    badge: "Step 08 / 08 • Academic Transitions & Biological Cycling",
+    description: "Sequence Ascending Trophic Tiers & Closed Ecological Loops"
   }
 ];
 

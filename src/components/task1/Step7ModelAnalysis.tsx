@@ -6,11 +6,11 @@ export const Step7ModelAnalysis: React.FC = () => (
   <div className="stage-card-wrapper">
     <div>
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-        Step 07 / 08 • Analytical Grouping & Map Language
+        Step 07 / 08 • Scientific Process Language &amp; Passive Voice
       </span>
-      <h2 className="stage-title">Demolition, Adaptive Reuse & Spatial Language</h2>
+      <h2 className="stage-title">Trophic Metrics, Passive Structures &amp; Biological Flows</h2>
       <p className="stage-subtitle">
-        Master the three essential grammatical and lexical groups required to describe comparative map transformations with Band 9 precision.
+        Master the three essential grammatical and lexical groups required to describe ecological energy pyramids and natural flows with Band 9 precision.
       </p>
     </div>
     <div className="stage-grid-2col" style={{ gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
@@ -33,10 +33,10 @@ export const Step7ModelAnalysis: React.FC = () => (
     <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "20px", boxShadow: "var(--shadow-sm)" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
         <CheckCircle2 size={18} color="#16a34a" />
-        <strong style={{ color: "var(--slate-900)" }}>Band 9 Model Map Synthesis Sentence</strong>
+        <strong style={{ color: "var(--slate-900)" }}>Band 9 Model Ecological Synthesis Sentence</strong>
       </div>
       <p style={{ margin: 0, fontSize: "1.02rem", lineHeight: 1.65, color: "var(--slate-800)" }}>
-        “While the central city core and the shopping centre directly above it remained entirely unchanged over the period, the town underwent extensive modernisation as industrial and green areas were redeveloped into modern residential apartments, commercial software offices, and sports facilities.”
+        “While energy moves upward through the five trophic tiers and experiences a dramatic tenfold reduction from 20,000 to just 2 kcal/m²/yr, unassimilated metabolic heat is continuously dissipated into the atmosphere at all levels, and biological waste from across the pyramid converges on decomposers.”
       </p>
     </div>
   </div>

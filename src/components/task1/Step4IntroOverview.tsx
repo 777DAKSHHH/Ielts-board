@@ -21,22 +21,22 @@ const QuoteCard: React.FC<{ icon: React.ReactNode; title: string; text: string; 
 export const Step4IntroOverview: React.FC = () => (
   <div className="stage-card-wrapper">
     <div>
-      <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction & Overview</span>
+      <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction &amp; Overview</span>
       <h2 className="stage-title">Build the Introduction and Overview</h2>
-      <p className="stage-subtitle">Master the Band 9 approach for map tasks: paraphrase the timeframe and spatial setting, then synthesize the macro urban transformation.</p>
+      <p className="stage-subtitle">Master the Band 9 approach for natural diagrams: state the biological system, then synthesize the macro energy gradient and the waste/heat flows.</p>
     </div>
     <div className="stage-grid-2col">
       <QuoteCard
         icon={<BookOpen size={20} color="var(--slate-800)" />}
         title="1. Sample Introduction"
         text={TASK1_DATA.sampleIntro}
-        annotation="Paraphrases 'maps show changes made in Kimsville' into 'illustrate the principal infrastructural and architectural transformations that have taken place in the town of Kimsville between 2002 and the present day'."
+        annotation="Paraphrases 'stages in the food production chain' into the five trophic tiers of the ecological food chain, quantifying energy flow alongside continuous heat dissipation and detritus channeling to decomposers."
       />
       <QuoteCard
         icon={<Sparkles size={20} color="var(--slate-800)" />}
         title="2. Sample Overview"
         text={TASK1_DATA.sampleOverview}
-        annotation="Captures the macro shift: 1) Kimsville evolved from an industrial/semi-rural town into a modern commercial/residential hub, 2) Key additions (apartments, software company, rail station, stadium), and 3) Explicitly cites what remained unchanged (city centre, shopping centre, two woodland zones)."
+        annotation="Captures the macro features: 1) Upward energy flow from light energy through 5 tiers with an exact tenfold (90%) reduction per tier (20,000 down to 2 kcal/m²/yr), 2) Continuous metabolic heat loss into the atmosphere at every level, and 3) Organic waste and dead matter from across the pyramid converging into decomposers."
       />
     </div>
   </div>

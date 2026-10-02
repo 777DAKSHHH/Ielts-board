@@ -6,11 +6,11 @@ export const Step8Connectors: React.FC = () => (
   <div className="stage-card-wrapper">
     <div>
       <span className="apple-badge success" style={{ marginBottom: "8px" }}>
-        Step 08 / 08 • Academic Transitions & Spatial Flow
+        Step 08 / 08 • Academic Transitions &amp; Trophic Sequencing
       </span>
-      <h2 className="stage-title">Sequence Map Changes and Highlight Contrasts</h2>
+      <h2 className="stage-title">Sequence Trophic Stages and Connect Dissipation Flows</h2>
       <p className="stage-subtitle">
-        Use academic spatial and temporal linking devices to anchor descriptions around the central core, connect demolitions with replacements, and transition smoothly between town sectors.
+        Use academic linking phrases to sequence energy passage across ascending trophic levels, quantify tenfold reductions, and connect parallel heat dissipation with decomposer waste convergence.
       </p>
     </div>
 
@@ -32,10 +32,10 @@ export const Step8Connectors: React.FC = () => (
     <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "20px", display: "flex", flexDirection: "column", gap: "12px", boxShadow: "var(--shadow-sm)" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         <CheckCircle2 size={18} color="#16a34a" />
-        <strong style={{ color: "var(--slate-900)" }}>Recommended Cohesive Flow for Comparative Town Maps</strong>
+        <strong style={{ color: "var(--slate-900)" }}>Recommended Cohesive Flow for Natural Ecological Diagrams</strong>
       </div>
       <p style={{ margin: 0, color: "var(--slate-700)", lineHeight: 1.55, fontSize: "0.94rem" }}>
-        Taking the city centre as an anchor <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> In place of the former <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> Directly to the left of the central core <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> Underwent adaptive reuse <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> In stark contrast to these changes <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> To accommodate growing demand for <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> Ultimately.
+        Commencing at the foundation (Primary Producers) <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> Transferred sequentially to (Herbivores) <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> Diminishing by an order of magnitude (Secondary Consumers) <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> Continuing through tertiary predators <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> At the summit of the hierarchy (Apex Raptors) <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> Concurrently dissipated as metabolic heat <ArrowRight size={14} style={{ verticalAlign: "middle" }} /> Simultaneously channeling waste to decomposers.
       </p>
     </div>
   </div>
