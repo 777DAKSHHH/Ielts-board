@@ -25,7 +25,7 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
         </span>
         <h2 className="stage-title">Academic Power Expressions</h2>
         <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-          Use precise academic collocations to articulate complex economic and civic concepts effectively.
+          Master high-impact academic collocations for organizational psychology, corporate incentive structures, and workplace motivation.
         </p>
       </div>
       <div

@@ -6,11 +6,11 @@ export const Step5IntroStructureT2: React.FC = () => (
   <div className="stage-card-wrapper">
     <div>
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-        Step 05 / 09 • Introduction & Thesis
+        Step 05 / 09 • Introduction & 2-Part Thesis
       </span>
-      <h2 className="stage-title">Build the Introduction</h2>
+      <h2 className="stage-title">Build the Introduction & 2-Part Thesis</h2>
       <p className="stage-subtitle">
-        Ideal IELTS Opinion Introduction: Paraphrase the question in sentence 1 + state your clear unequivocal opinion in sentence 2.
+        Ideal IELTS 2-Part Introduction: Paraphrase the prompt in sentence 1 + deliver a clear 2-part thesis answering both questions in sentence 2.
       </p>
     </div>
     <div className="stage-grid-2col">
@@ -41,24 +41,24 @@ export const Step5IntroStructureT2: React.FC = () => (
           {TASK2_DATA.sampleIntro}
         </div>
         <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
-          <Clock size={15} /> ~50 words • 2 sentences • Optimal IELTS exam timing (~3-4 mins)
+          <Clock size={15} /> ~52 words • 2 sentences • Optimal IELTS exam timing (~3-4 mins)
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="1. Paraphrase the Question"
-          text="Restate the prompt in sentence 1: that ancient artifacts and cultural treasures held abroad should be returned to their countries of origin using varied academic vocabulary."
+          text="Restate the prompt in sentence 1: that many enterprises reward top-performing staff with additional monetary bonuses, using elevated academic vocabulary."
         />
         <StructureCard
           icon={<Award size={18} />}
-          title="2. State Your Direct Opinion (Agree or Disagree)"
-          text="State your clear stance in sentence 2: whether you AGREE (repatriation restores living cultural identity and rectifies colonial plunder) or DISAGREE (universal museums maximize global educational exposure and conservation security)."
+          title="2. Direct 2-Part Thesis Statement"
+          text="Answer both questions in sentence 2: evaluate the extent to which monetary bonuses work (effective for short-term targets but limited long-term) and name superior alternatives (professional autonomy, structured career paths, and authentic recognition)."
         />
         <StructureCard
           icon={<CheckCircle2 size={18} />}
-          title="3. Ideal Introduction Length"
-          text="Keep the introduction concise (~45-52 words). Avoid rambling background narratives so you conserve time and word count for deep body paragraph analysis."
+          title="3. Optimal Word Count & Timing"
+          text="Keep the introduction around 50 words across 2 sentences (~3-4 minutes). A sharp, direct thesis guarantees top Band scores for Task Achievement without wasting time."
         />
       </div>
     </div>

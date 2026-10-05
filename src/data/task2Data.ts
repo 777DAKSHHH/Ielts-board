@@ -17,442 +17,479 @@ export type {
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "historical-objects-repatriation-task2",
+  id: "employee-bonuses-and-motivation-task2",
 
-  taskType: "Opinion Essay: Agree or Disagree",
+  taskType: "Two-Part / Direct Question Essay",
 
-  title: "Repatriation of Historical Objects to Countries of Origin",
+  title: "Rewarding Staff with Financial Bonuses vs. Superior Motivational Strategies",
 
   questionText:
-    "Historical objects should be brought back to their country of origin.\n\nDo you agree or disagree with this statement.",
+    "Some employers reward members of staff for their exceptional contribution to the company by giving them extra money.\n\n- To what extent is this style of management effective?\n- What are the better ways of encouraging employees to work hard?",
 
-  audioUrl: "materials/historical-objects-repatriation-briefing.m4a",
+  audioUrl: "materials/staff-bonus-motivation-briefing.m4a",
 
   timingSeconds: 180,
 
   sampleIntro:
-    "It is often asserted that ancient artifacts and cultural treasures currently held in foreign museums ought to be returned to their countries of origin. I firmly agree with this statement, as historical objects embody the cultural soul of their native civilizations and their repatriation is essential for both moral justice and the economic sovereignty of source nations.",
+    "It is increasingly common for enterprises to incentivize high-performing personnel by providing supplementary financial bonuses. In my view, while cash incentives are moderately effective in driving immediate, quantifiable commercial targets, their long-term efficacy is constrained; sustainable employee dedication is far better cultivated through professional autonomy, structured career progression, and sincere organizational recognition.",
 
   sampleConclusion:
-    "In conclusion, I wholeheartedly agree that historical treasures should be repatriated to their nations of origin. This step is indispensable not only for restoring cultural dignity and redressing colonial plunder, but also for granting origin societies rightful academic access and vital heritage tourism revenue.",
+    "In conclusion, financial rewards remain a pragmatic tool for boosting short-term output, yet their effectiveness is limited by diminishing psychological returns and potential workplace friction. Employers seeking profound and lasting dedication should instead prioritize non-monetary incentives, specifically empowering staff with operational autonomy, transparent promotion ladders, and meaningful social recognition.",
 
   vocabList: [
     {
-      word: "cultural repatriation",
-      meaning: "The formal process of returning cultural artifacts and sacred objects to their legitimate country of origin.",
+      word: "monetary remuneration",
+      meaning:
+        "Direct financial compensation or cash bonuses distributed in exchange for labor or extraordinary achievements.",
       example:
-        "Developing nations are actively lobbying international tribunals for the cultural repatriation of their ancestral treasures."
+        "Relying purely on monetary remuneration fails to address employees' deeper psychological desires for purpose and creative autonomy."
     },
     {
-      word: "ancestral heritage",
-      meaning: "The traditions, monuments, and historical relics inherited from past generations of a specific society.",
+      word: "extrinsic reward systems",
+      meaning:
+        "Incentive structures that rely on external tangible payouts, such as cash bonuses or prizes, to drive performance.",
       example:
-        "Depriving a community of its ancestral heritage creates a painful sense of cultural alienation among younger generations."
+        "While extrinsic reward systems can boost quarterly sales metrics, they rarely foster genuine, enduring innovation."
     },
     {
-      word: "illicitly plundered",
-      meaning: "Looted, stolen, or taken by force through military aggression, colonization, or unauthorized excavation.",
+      word: "intrinsic motivation",
+      meaning:
+        "An internal psychological drive to perform an activity for its inherent satisfaction, personal fulfillment, or professional mastery.",
       example:
-        "Many masterpieces showcased in Western capitals were illicitly plundered during 19th-century imperial expeditions."
+        "Cultivating intrinsic motivation produces higher workforce resilience and problem-solving tenacity than transient cash stipends."
     },
     {
-      word: "rightful custody",
-      meaning: "Lawful and morally legitimate ownership, stewardship, and preservation of historic treasures.",
+      word: "performance-related bonuses",
+      meaning:
+        "Additional variable cash disbursements allocated to staff who meet or exceed predetermined corporate quotas or milestones.",
       example:
-        "International law increasingly recognizes that source nations hold rightful custody over their national heritage."
+        "High-pressure investment firms frequently utilize performance-related bonuses to drive individual productivity."
     },
     {
-      word: "rectify colonial injustices",
-      meaning: "Remedy or make moral amends for historical crimes, exploitation, and theft committed during imperial rule.",
+      word: "professional autonomy",
+      meaning:
+        "The independence and authority granted to employees to make decisions, direct their own projects, and control their workflow.",
       example:
-        "Returning royal artifacts is a tangible step forward to rectify colonial injustices and restore diplomatic trust."
+        "Providing talented software engineers with greater professional autonomy stimulates breakthrough innovation far more effectively than annual cash perks."
     },
     {
-      word: "spiritual and ceremonial significance",
-      meaning: "Possessing profound religious, ancestral, or traditional sanctity within indigenous community rituals.",
+      word: "meritocratic career progression",
+      meaning:
+        "Transparent advancement frameworks where promotions and leadership roles are awarded strictly on proven competence and skill.",
       example:
-        "Sacred totems and royal regalia carry deep spiritual and ceremonial significance that cannot be experienced behind museum glass."
+        "Ambitious young professionals prioritize organizations that guarantee clear, meritocratic career progression over those offering one-off cash bonuses."
     },
     {
-      word: "cultural sovereignty",
-      meaning: "The autonomy and right of a nation or indigenous people to curate, manage, and celebrate their own history.",
+      word: "the overjustification effect",
+      meaning:
+        "A psychological phenomenon whereby introducing external financial rewards diminishes a person's pre-existing, natural passion for a task.",
       example:
-        "Demanding the return of antiquity collections is an assertion of cultural sovereignty by post-colonial states."
+        "Organizational psychologists caution that the overjustification effect can transform genuine creative passion into transactional compliance."
     },
     {
-      word: "deprive native scholars",
-      meaning: "Prevent local researchers, historians, and students from accessing their own history due to geographic and financial barriers.",
+      word: "cultivate organizational loyalty",
+      meaning:
+        "Build deep employee commitment, institutional pride, and multi-year retention toward the company and its broader mission.",
       example:
-        "Housing artifacts overseas deprives native scholars of firsthand academic research opportunities."
+        "Empathetic leadership and structured mentorship do far more to cultivate organizational loyalty than occasional financial payouts."
     },
     {
-      word: "state-of-the-art conservation",
-      meaning: "Cutting-edge museum facilities equipped with advanced climate control, digital security, and preservation technology.",
+      word: "foster a collaborative culture",
+      meaning:
+        "Establish a cooperative workplace climate where knowledge sharing, teamwork, and mutual support replace toxic rivalry.",
       example:
-        "The newly constructed Grand Egyptian Museum features state-of-the-art conservation labs rivaling any European institution."
+        "Individual monetary bonuses often spark internal friction, whereas shared recognition helps foster a collaborative culture."
     },
     {
-      word: "heritage tourism revenue",
-      meaning: "Economic dividends generated by museum admission, cultural exhibits, and international traveler visits.",
+      word: "continuing professional development",
+      meaning:
+        "Systematic institutional investment in training, skill workshops, executive coaching, and academic credentials for employees.",
       example:
-        "Repatriated antiquities stimulate local economies by channeling heritage tourism revenue directly to origin nations."
+        "Funding continuing professional development equips workers with future-proof capabilities while proving institutional faith in their potential."
     }
   ],
 
   vocabHunt: [
-    "cultural repatriation",
-    "ancestral heritage",
-    "illicitly plundered",
-    "rightful custody",
-    "rectify colonial injustices",
-    "spiritual and ceremonial significance",
-    "cultural sovereignty",
-    "heritage tourism revenue"
+    "monetary remuneration",
+    "extrinsic reward systems",
+    "intrinsic motivation",
+    "performance-related bonuses",
+    "professional autonomy",
+    "meritocratic career progression",
+    "the overjustification effect",
+    "cultivate organizational loyalty"
   ],
 
   /*
-   * BODY 1 — AGREE (Cultural Identity, Sacred Value & Moral Justice)
-   */
-  /*
    * ================================================================
-   * STEP 6: AGREE POINTS — WHY ARTIFACTS SHOULD BE REPATRIATED
+   * STEP 6: QUESTION 1 — TO WHAT EXTENT IS THIS EFFECTIVE?
    * ================================================================
-   * Levelled points for students:
-   * Level 1: Core Claim & Cultural Identity (High Impact)
-   * Level 2: Economic & Architectural Wholeness (Strategic Depth)
-   * Level 3: Academic Equity & Global Human Rights (Advanced)
-   * Plus 4 Nuances & Practical Caveats
+   * Levelled points evaluating monetary bonuses:
+   * Level 1: Immediate Output & Metrics (High Impact Positive)
+   * Level 1: Competitive Talent Acquisition (High Impact Positive)
+   * Level 2: Tangible Sacrifice Validation (Strategic Positive)
+   * Level 3: Diminishing Marginal Returns (Psychological Limit)
+   * Plus 4 Nuances & Practical Caveats (Overjustification, Rivalry, Metric Gaming, Burnout)
    */
   consequences: [
     {
       type: "positive",
-      level: "Level 1: High Impact (Identity)",
-      simpleTakeaway: "Historical relics are sacred symbols of living identity and ancestral worship, not decorative art in foreign display cases.",
-      collocation: "living cultural heritage",
-      title: "Embodiment of Cultural Identity & Living Traditions",
+      level: "Level 1: High Impact (Target Metrics)",
+      simpleTakeaway:
+        "Cash bonuses generate immediate, measurable spikes in repetitive and quantifiable performance targets.",
+      collocation: "quantifiable performance metrics",
+      title: "Immediate Stimulation of Target-Driven Productivity",
       desc:
-        "Historical relics are not mere decorative museum art; they embody the spiritual soul, living religious consciousness, and collective identity of the civilizations that produced them.",
+        "Monetary bonuses exert a powerful, immediate psychological stimulus on employees assigned to quantifiable, metrics-driven roles such as corporate sales and routine operations. When financial compensation is visibly tied to clear quotas, staff expend extra discretionary effort to secure tangible rewards.",
       example:
-        "Sacred Maori ancestral heads returned from European vaults to New Zealand enabled native communities to conduct vital funeral rites and restore tribal dignity."
+        "Corporate sales representatives offered commission bonuses routinely accelerate contract closing rates before fiscal quarter-ends to maximize their take-home earnings."
     },
     {
       type: "positive",
-      level: "Level 1: High Impact (Justice)",
-      simpleTakeaway: "Most overseas antiquities were seized through violent colonial military raids and imperial extortion, not ethical trade.",
-      collocation: "illicit colonial expropriation",
-      title: "Moral Restitution for Colonial Looting & Coercion",
+      level: "Level 1: High Impact (Recruitment)",
+      simpleTakeaway:
+        "Lucrative bonus packages attract and briefly secure high-performing external specialists in competitive markets.",
+      collocation: "competitive talent acquisition",
+      title: "Competitive Talent Acquisition & External Recruitment",
       desc:
-        "An overwhelming majority of non-Western artifacts residing in metropolitan museums were acquired through violent military invasions, punitive expeditions, or colonial extortion rather than lawful trade.",
+        "In highly competitive industries such as investment banking and software engineering, generous performance bonuses serve as a critical differentiator that convinces elite professionals to join a firm and meet aggressive operational benchmarks.",
       example:
-        "During the 1897 British punitive expedition against the Kingdom of Benin, thousands of sacred royal bronzes were systematically looted from royal palaces and auctioned."
+        "Tech startups frequently leverage signing bonuses and lucrative milestone payouts to lure top-tier artificial intelligence researchers from established corporate competitors."
     },
     {
       type: "positive",
-      level: "Level 2: Strategic Depth (Economy)",
-      simpleTakeaway: "Origin countries are unfairly denied the vast tourism and hospitality revenues generated by their own cultural heritage.",
-      collocation: "economic sovereignty",
-      title: "Economic Sovereignty & Heritage Tourism Dividends",
+      level: "Level 2: Strategic Depth (Fair Restitution)",
+      simpleTakeaway:
+        "Bonuses provide immediate, tangible validation for extraordinary personal sacrifices during critical company emergencies.",
+      collocation: "tangible financial restitution",
+      title: "Tangible Restitution for Extraordinary Overtime & Strain",
       desc:
-        "Western institutions profit immensely from ticket admissions, merchandise, and hotel bookings drawn by foreign antiquities, while source nations remain economically disadvantaged.",
+        "When staff undertake weeks of arduous overtime to rescue failing projects or execute urgent product launches, extra money functions as fair restitution. Failing to compensate extra labor financially breeds deep resentment and demoralization.",
       example:
-        "Greece could substantially expand its cultural economy if the Parthenon Marbles were displayed in Athens rather than driving commercial footfall in London."
+        "Engineering teams that worked around the clock to fix critical system outages viewed special crisis bonuses as rightful validation of their physical and mental strain."
     },
     {
       type: "positive",
-      level: "Level 2: Strategic Depth (Context)",
-      simpleTakeaway: "Sculptures and temple friezes lose their narrative story when ripped out of their original architectural setting.",
-      collocation: "contextual integrity",
-      title: "Architectural & Contextual Narrative Wholeness",
+      level: "Level 3: Psychological Limit (Habituation)",
+      simpleTakeaway:
+        "Cash bonuses suffer from diminishing returns because workers quickly normalize higher pay as an expected entitlement.",
+      collocation: "hedonic habituation",
+      title: "Psychological Habituation & Diminishing Marginal Returns",
       desc:
-        "Ancient monuments were conceived as continuous artistic narratives; severing friezes and statues across foreign continents diminishes their educational and aesthetic value.",
+        "The motivational potency of cash incentives erodes rapidly over time due to hedonic treadmill effects. Once a monetary reward is received, it becomes the baseline expectation rather than a fresh motivator, requiring ever-larger financial disbursements to generate equivalent effort.",
       example:
-        "The Parthenon frieze can only be fully comprehended when viewed in direct sight of the Acropolis temple under natural Mediterranean light."
-    },
-    {
-      type: "positive",
-      level: "Level 3: Global Dimension (Equity)",
-      simpleTakeaway: "Native students and researchers face visa denials and prohibitive flight costs to study their own ancestors' creations.",
-      collocation: "equitable scholarly access",
-      title: "Academic Access for Native Scholars & Students",
-      desc:
-        "Holding primary historical sources in foreign capitals severely disadvantages local researchers and archaeologists from source nations due to visa restrictions and prohibitive costs.",
-      example:
-        "African historians frequently struggle to obtain European visas to access pre-colonial manuscripts and artifacts stored in European archives."
+        "Wall Street compensation studies reveal that annual cash bonuses lose their motivational impact within three months as bankers adjust their lifestyle spending to the higher income."
     },
     {
       type: "negative",
-      level: "Nuance 1: Fallacy Refuted",
-      simpleTakeaway: "Safety concerns are outdated because origin countries now possess world-class museum facilities.",
-      collocation: "conservation parity",
-      title: "Refuting the 'Paternalistic Protection' Fallacy",
+      level: "Nuance 1: The Overjustification Trap",
+      simpleTakeaway:
+        "Paying cash for complex problem-solving reduces natural curiosity and turns enjoyable challenges into transactional chores.",
+      collocation: "the overjustification effect",
+      title: "The Overjustification Trap: Eradicating Intrinsic Passion",
       desc:
-        "Western institutions often cite historical safety concerns, but this paternalistic defense is rendered obsolete by modern origin-nation investments.",
+        "When management attaches financial payouts to creative problem-solving or artistic innovation, staff begin to view their work through an extrinsic lens, paradoxically stifling deep curiosity and willingness to take bold intellectual risks.",
       example:
-        "Nigeria's planned Edo Museum of West African Art and Greece's Acropolis Museum provide preservation standards equal to or exceeding traditional Western vaults."
+        "Research in behavioral economics demonstrates that oversized monetary incentives actually degrade performance on complex cognitive and creative tasks."
     },
     {
       type: "negative",
-      level: "Nuance 2: Diplomatic Solution",
-      simpleTakeaway: "Repatriation doesn't stop global exhibition; origin nations can arrange reciprocal rotating loans.",
-      collocation: "bilateral cultural treaties",
-      title: "Diplomatic Feasibility: Bilateral Loan Treaties over Isolation",
+      level: "Nuance 2: Toxic Workplace Rivalry",
+      simpleTakeaway:
+        "Individual bonuses pit colleagues against one another, destroying teamwork and encouraging information hoarding.",
+      collocation: "destructive internal friction",
+      title: "Destructive Workplace Rivalry & Knowledge Hoarding",
       desc:
-        "Repatriation does not necessitate global cultural isolation; once legal ownership is restored to origin countries, reciprocal loan agreements can still facilitate global exhibition.",
+        "Rewarding individual high-performers with exclusive cash bonuses breeds jealousy and undermines peer cooperation. Colleagues withhold vital client data or sabotage shared workflows to protect their individual bonus rankings.",
       example:
-        "Italy regularly loans repatriated Roman artifacts to global museums on temporary rotating schedules while retaining sovereign title."
+        "Retail banking scandals revealed that aggressive individual bonus targets motivated staff to undermine team members and engage in cutthroat internal politics."
     },
     {
       type: "negative",
-      level: "Nuance 3: Ethical Custodianship",
-      simpleTakeaway: "Universal museums cannot claim to be global educational centers while holding onto unreturned wartime plunder.",
-      collocation: "ethical custodianship",
-      title: "The Universal Museum Fallacy vs. Ethical Custodianship",
+      level: "Nuance 3: Metric Gaming & Shortcuts",
+      simpleTakeaway:
+        "Aggressive financial incentives incentivize employees to exploit loopholes, sacrifice product quality, or fudge data.",
+      collocation: "perverse incentive structures",
+      title: "Perverse Incentives: Prioritizing Short-Term Numbers over Quality",
       desc:
-        "Encyclopedic museums claim global educational value, yet this principle cannot justify retaining antiquities acquired through colonial force or illicit excavation.",
+        "When extra money is strictly linked to numerical targets, workers inevitably game the system—slashing long-term safety, neglecting customer service, or falsifying numbers to hit the payout threshold.",
       example:
-        "The British Museum holds over eight million items in storage while source communities are entirely deprived of experiencing their ancestral masterpieces."
+        "The Wells Fargo retail banking controversy occurred because employees faced extreme cash-linked quotas, leading them to open millions of unauthorized accounts without customer consent."
     },
     {
       type: "negative",
-      level: "Nuance 4: Legal Precedent",
-      simpleTakeaway: "Returning state-held stolen antiquities shrinks the black market and deters future illegal looting.",
-      collocation: "deterring black-market trade",
-      title: "Precedent for Restitution: Deterring Illicit Antiquity Markets",
+      level: "Nuance 4: Chronic Burnout & Churn",
+      simpleTakeaway:
+        "Chasing financial targets causes severe chronic stress, leading to high staff turnover once workers burn out.",
+      collocation: "occupational exhaustion and attrition",
+      title: "Chronic Occupational Stress & Accelerated Workforce Churn",
       desc:
-        "Returning unprovenanced artifacts establishes vital international legal accountability, systematically shrinking the black-market demand for looted antiquities.",
+        "A workplace culture reliant exclusively on monetary incentives treats human labor as a transactional commodity. Employees endure unsustainable workloads to capture bonuses, eventually suffering severe burnout and leaving the organization as soon as their health deteriorates.",
       example:
-        "Strict repatriation pacts between Italy and US institutions have dramatically curtailed the trade of stolen Etruscan artifacts."
+        "Consulting firms that emphasize high bonus culture often experience 25% annual staff turnover as young associates exit due to sleep deprivation and emotional exhaustion."
     }
   ],
 
   /*
    * ================================================================
-   * STEP 7: DISAGREE POINTS — WHY ARTIFACTS SHOULD REMAIN IN GLOBAL MUSEUMS
+   * STEP 7: QUESTION 2 — WHAT ARE THE BETTER WAYS TO MOTIVATE?
    * ================================================================
-   * Levelled points for students:
-   * Level 1: Global Exposure & World Education (High Impact)
-   * Level 2: Advanced Conservation & War Safety (Strategic Depth)
-   * Level 3: Common Heritage of Mankind (Philosophical Depth)
-   * Level 4: Preventing Diplomatic Gridlock (Practical Reality)
-   * Plus 4 Critical Rebuttals & Evaluation Perspectives
+   * Levelled points for alternative, superior motivators:
+   * Level 1: Career Advancement & Promotion Pathways (High Impact)
+   * Level 1: Autonomy, Ownership & Flexible Working (High Impact)
+   * Level 2: Authentic Social Recognition & Status (Strategic Depth)
+   * Level 2: Psychologically Safe Corporate Culture (Strategic Depth)
+   * Plus 4 Evaluative Strategic Implementations (Upskilling, Purpose, Mentorship, Hybrid Baseline)
    */
   evaluationArguments: [
     {
       type: "argument",
-      level: "Level 1: High Impact (Global Access)",
-      simpleTakeaway: "Universal museums allow millions of international citizens from all countries to experience world cultures under one roof.",
-      collocation: "universal encyclopedic curation",
-      title: "Universal Museums & Maximized Global Cultural Exposure",
+      level: "Level 1: High Impact (Career Advancement)",
+      simpleTakeaway:
+        "Clear promotion tracks and skill development give employees a durable, long-term reason to commit to the company.",
+      collocation: "meritocratic promotion ladders",
+      title: "Structured Career Progression & Transparent Promotion Pathways",
       reason:
-        "Centralizing world cultural treasures in accessible global hub cities ensures that millions of international visitors can learn about diverse civilizations in a single visit.",
+        "Employees invest far greater long-term energy when they see a predictable, transparent path to career advancement and leadership within the organization.",
       development:
-        "Metropolitan museums like the British Museum, the Louvre, and the Metropolitan Museum of Art offer free or low-cost admission to millions of visitors who could never afford to travel to dozens of individual origin nations. This fosters international empathy, cross-cultural literacy, and mutual respect among global citizens.",
+        "Unlike a one-off cash bonus that is quickly spent and forgotten, the prospect of ascending to higher managerial ranks, expanding professional authority, and building long-term career capital provides continuous, multi-year motivation. When workers know that hard work directly translates into higher organizational standing, their dedication remains steadfast through daily challenges.",
       example:
-        "Over six million visitors of all nationalities view the Rosetta Stone and Parthenon sculptures annually in London, creating worldwide appreciation for Egyptian and Greek heritage on a scale unattainable in local regional museums."
+        "Multinational corporations such as Unilever and Google achieve superior retention by mapping 5-year leadership development tracks that guarantee executive mentorship for dedicated staff."
     },
     {
       type: "argument",
-      level: "Level 1: High Impact (Preservation)",
-      simpleTakeaway: "Leading international institutions have cutting-edge conservation technology and protect fragile relics from regional conflicts.",
-      collocation: "climate-controlled preservation",
-      title: "Advanced Conservation Infrastructure & Geopolitical Safety",
+      level: "Level 1: High Impact (Autonomy & Trust)",
+      simpleTakeaway:
+        "Granting employees ownership over their schedules and decisions unleashes genuine personal responsibility and creative pride.",
+      collocation: "operational autonomy and flexibility",
+      title: "Professional Autonomy, Project Ownership & Flexible Working",
       reason:
-        "Major international museums possess multi-million-dollar conservation facilities and political stability that protect delicate artifacts from decay, warfare, or political unrest.",
+        "Empowering personnel with decision-making independence and flexible working conditions inspires profound personal pride in work quality.",
       development:
-        "Ancient relics are extraordinarily delicate and prone to irreversible environmental decay. Prominent world museums employ computerized climate-controlled display cases, advanced laser cleaning, and 24/7 security. Distributing cultural artifacts across secure international institutions prevents catastrophic destruction during civil wars, regime changes, or economic crises.",
+        "Micromanagement and rigid surveillance crush motivation. When leaders entrust staff to manage their own deadlines, explore novel methodologies, and choose hybrid working arrangements, employees develop a deep sense of ownership over the end product. They work diligently not because a supervisor is watching or a bonus is dangling, but because their professional self-esteem is invested in the outcome.",
       example:
-        "Treasures preserved in foreign museums survived intact, whereas ancient historical artifacts housed in Mosul, Palmyra, and Baghdad were tragically looted or demolished during regional geopolitical instability."
+        "Tech firms like Atlassian that allow engineers 'ShipIt Days'—24 hours of total autonomy to develop any company project—generate groundbreaking features while driving record employee engagement."
     },
     {
       type: "argument",
-      level: "Level 2: Strategic Depth (Shared Humanity)",
-      simpleTakeaway: "Ancient civilizations existed long before modern borders; their creations belong to the collective human family, not one modern government.",
-      collocation: "common heritage of mankind",
-      title: "Universal Human Heritage Transcending Modern Nation-States",
+      level: "Level 2: Strategic Depth (Authentic Recognition)",
+      simpleTakeaway:
+        "Sincere public and private praise fulfills the human psychological need for validation and belonging far better than money.",
+      collocation: "meaningful peer-to-peer recognition",
+      title: "Authentic Social Recognition & Public Validation of Contribution",
       reason:
-        "The achievements of ancient civilizations belong to the shared legacy of humanity rather than the exclusive property of any modern political entity.",
+        "Human beings possess an innate psychological hunger for respect, appreciation, and status from their leaders and peers.",
       development:
-        "Modern nation-states are recent political constructs that did not exist when these ancient objects were sculpted millennia ago. Great civilizations such as ancient Mesopotamia, Greece, and Egypt laid the philosophical, scientific, and artistic foundations of our shared world. Restricting artifacts strictly within modern political borders reduces universal human milestones into narrow nationalistic assets.",
+        "Psychological studies consistently show that sincere verbal recognition from senior management, executive shout-outs during company summits, and peer-nominated excellence awards provide a deeper dopamine release and greater emotional satisfaction than anonymous cash transfers. When employees feel genuinely seen and valued as individuals, their organizational commitment becomes personal rather than transactional.",
       example:
-        "Classical Greco-Roman and ancient Egyptian civilizations shaped global philosophy, medicine, and architecture; viewing their relics as universal human milestones reinforces our common global heritage."
+        "Healthcare and non-profit organizations where leaders regularly write personalized handwritten appreciation notes report significantly higher staff morale and lower turnover than commercial firms with cash bonuses."
     },
     {
       type: "argument",
-      level: "Level 2: Strategic Depth (Practicality & Law)",
-      simpleTakeaway: "Unconditional repatriation would spark endless legal border disputes over extinct empires and empty global cultural hubs.",
-      collocation: "diplomatic impasse",
-      title: "Avoiding Diplomatic Chaos & Arbitrary Ownership Disputes",
+      level: "Level 2: Strategic Depth (Supportive Culture)",
+      simpleTakeaway:
+        "A healthy work-life balance, mental health support, and psychological safety inspire sustainable high performance without burnout.",
+      collocation: "psychologically safe workplace culture",
+      title: "Psychologically Safe Corporate Culture & Comprehensive Well-Being",
       reason:
-        "Mandating the blanket return of all foreign objects would ignite intractable international legal disputes and dismantle global museum cooperation.",
+        "A workplace characterized by psychological safety, manageable workloads, and holistic well-being prevents burnout and sustains enduring excellence.",
       development:
-        "Many ancient empires (e.g. Ottoman, Roman, Byzantine, Mughal) spanned dozens of modern countries with competing historical claims. Determining which modern country has the 'true' legal right to a 2,000-year-old relic is legally arbitrary and politically contentious. Furthermore, emptying encyclopedic collections would terminate international exhibitions, scholarly loans, and global cultural education.",
+        "Employees work hardest in environments where they do not fear reprisal for asking questions, experimenting, or admitting mistakes. Providing generous paid leave, mental health resources, wellness allowances, and manageable work hours ensures staff remain physically energized and cognitively sharp, allowing them to perform at their peak year after year.",
       example:
-        "Attempting to determine whether an ancient Roman artifact belongs to modern Italy, Tunisia, Turkey, or France would cause diplomatic deadlock rather than cooperative cultural exchange."
+        "Scandinavian enterprises consistently rank among the most productive global workforces despite shorter working weeks, precisely because comprehensive well-being policies prevent chronic fatigue."
     },
     {
       type: "counterpoint",
-      level: "Evaluation 1: Loan Treaties",
-      simpleTakeaway: "Returning legal ownership doesn't empty museums; origin countries readily offer rotating bilateral loans.",
-      collocation: "bilateral rotating loans",
-      title: "Bilateral Loan Treaties vs. Permanent Retention",
+      level: "Evaluation 1: Continuous Upskilling",
+      simpleTakeaway:
+        "Sponsoring higher education, certifications, and industry conferences builds mutual loyalty and high skill capability.",
+      collocation: "sponsored continuous upskilling",
+      title: "Investment in Continuing Education & Sponsored Upskilling",
       reason:
-        "The fear of empty museums is overstated because origin countries are eager to sign long-term rotating loan agreements once their legal ownership is formally recognized.",
+        "Financing advanced degrees, industry certifications, and executive workshops proves that the company values the employee's future.",
       development:
-        "Restoring sovereign title transforms contentious colonial possession into voluntary cultural diplomacy. Origin nations can loan duplicates and rotating collections to global capitals while keeping core spiritual icons in their homeland.",
+        "When organizations sponsor MBAs, technical certifications, or international conference attendance, workers reciprocate with profound loyalty and applied expertise. This creates a virtuous cycle where the company gains cutting-edge capabilities while the employee feels continuously stimulated.",
       example:
-        "Italy's bilateral agreements with American museums show that repatriating looted artifacts actually strengthens cultural diplomacy and rotating loan exhibitions."
+        "Leading biotech companies that fully reimburse postgraduate tuition achieve significantly higher tenure rates than competitors relying on annual cash allowances."
     },
     {
       type: "counterpoint",
-      level: "Evaluation 2: Conservation Parity",
-      simpleTakeaway: "Origin nations now build facilities that match or surpass Western conservation standards.",
-      collocation: "world-class domestic infrastructure",
-      title: "Modern Conservation Standards in Origin Nations",
+      level: "Evaluation 2: Purpose & Mission",
+      simpleTakeaway:
+        "Connecting daily duties to a meaningful corporate purpose inspires deeper effort than chasing corporate profit alone.",
+      collocation: "purpose-driven organizational mission",
+      title: "Alignment with a Compelling Organizational Mission & Social Impact",
       reason:
-        "The assertion that developing nations cannot safeguard delicate historical artifacts is refuted by modern world-class conservation facilities.",
+        "Staff exert extraordinary effort when they understand how their daily tasks contribute to societal well-being or ethical breakthroughs.",
       development:
-        "Origin countries possess computerized humidity control, laser restoration laboratories, and specialized curatorial staff matching European standards.",
+        "Modern professionals, particularly younger demographics, seek meaning in their labor. Transparent communication of how the enterprise improves customer lives, protects the environment, or advances science transforms mundane work into a shared moral mission.",
       example:
-        "The Grand Egyptian Museum in Cairo and the Acropolis Museum in Athens feature preservation technology equal to or surpassing traditional Western facilities."
+        "Aerospace engineers at space exploration firms routinely work grueling hours without monetary bonuses because they are inspired by the historic mission of space discovery."
     },
     {
       type: "counterpoint",
-      level: "Evaluation 3: Digital Replicas",
-      simpleTakeaway: "3D virtual scans and exact replicas can educate global visitors while original relics return home.",
-      collocation: "high-fidelity 3D facsimiles",
-      title: "High-Resolution Digital Replicas for Universal Education",
+      level: "Evaluation 3: Active Mentorship",
+      simpleTakeaway:
+        "Regular developmental feedback from respected leaders builds confidence and mastery faster than periodic monetary reviews.",
+      collocation: "transformative executive mentorship",
+      title: "Dedicated Executive Mentorship & Continuous Formative Feedback",
       reason:
-        "Modern 3D scanning and holographic technologies enable global museums to fulfill their educational missions without keeping original sacred relics.",
+        "One-on-one coaching from experienced leaders provides actionable guidance that accelerates mastery and builds personal connection.",
       development:
-        "Ultra-precise facsimiles and interactive digital galleries can bring foreign cultures to life for students in Western hubs while the original, spiritually potent artifacts return to source communities.",
+        "Annual bonus reviews come too late to guide professional growth. In contrast, weekly or biweekly developmental coaching sessions help employees navigate obstacles, refine technical acumen, and feel actively nurtured by leadership.",
       example:
-        "Major global institutions increasingly use full-scale 3D scans and laser facsimiles of ancient tomb paintings for public exhibition and tactile study."
+        "Professional service firms utilizing structured apprenticeship models retain their top junior associates far more effectively than firms using purely billable-hour financial incentives."
     },
     {
       type: "counterpoint",
-      level: "Evaluation 4: Moral Principle",
-      simpleTakeaway: "Educational utility cannot justify keeping property that was stolen through wartime violence.",
-      collocation: "unconditional restitution of looted art",
-      title: "The Invalidation of Wartime Plunder by Educational Utility",
+      level: "Evaluation 4: The Baseline Factor",
+      simpleTakeaway:
+        "While non-monetary motivators are superior for drive, baseline compensation must still be fair and competitive.",
+      collocation: "hygiene factor baseline parity",
+      title: "The Hybrid Reality: Fair Base Salaries Combined with Intrinsic Catalysts",
       reason:
-        "No matter how educational a museum display is, international ethics dictate that property acquired through violent military conquest must be returned.",
+        "Non-monetary motivators only succeed when an employee's fundamental financial security is already established.",
       development:
-        "Just as modern international law strictly mandates the restitution of artworks confiscated during World War II, colonial-era loot should not be exempt from restitution under the guise of public education.",
+        "According to Herzberg's motivation-hygiene theory, base salary is a hygiene factor—inadequate pay breeds dissatisfaction, but excess cash does not generate passion. Employers must pay competitive, dignified base wages first, and then rely on autonomy, progression, and culture to ignite extraordinary effort.",
       example:
-        "International law courts consistently rule that stolen cultural property must be returned to rightful heirs regardless of current curation quality."
+        "Companies that pay fair baseline wages but invest heavily in culture and autonomy consistently outperform Wall Street firms in employee satisfaction surveys."
     }
   ],
 
   facultyAngles: [
     {
-      title: "The 1970 UNESCO Convention & Retroactive Justice",
+      title: "Herzberg's Two-Factor Theory & The Hygiene Fallacy",
       development:
-        "Examine how the 1970 UNESCO Convention on the Means of Prohibiting and Preventing the Illicit Import, Export and Transfer of Cultural Property established modern norms, and debate whether international treaties should retroactively enforce the return of pre-1970 colonial loot."
+        "Analyze Frederick Herzberg's motivation-hygiene theory, dissecting why monetary bonuses act merely as an extrinsic hygiene factor that eliminates temporary dissatisfaction, while intrinsic motivators like responsibility, personal growth, and achievement are the true drivers of sustained high performance."
     },
     {
-      title: "Digital Repatriation vs. Physical Restitution",
+      title: "Deci & Ryan's Self-Determination Theory (SDT)",
       development:
-        "Critique whether ultra-high-definition 3D scans and laser-replicated facsimiles can fulfill Western museums' educational missions while returning the original sacred physical artifacts to their native lands."
+        "Evaluate how Self-Determination Theory proves that human motivation flourishes under three core psychological conditions: Autonomy (freedom to choose), Competence (feeling capable and effective), and Relatedness (feeling a sense of social belonging). When companies rely strictly on cash bonuses, they neglect all three pillars."
     },
     {
-      title: "The Acropolis Museum Model: Debunking Conservation Excuses",
+      title: "The Wells Fargo Case Study: Perverse Incentives & Ethical Collapse",
       development:
-        "Analyze how Greece purpose-built the state-of-the-art Acropolis Museum in Athens—featuring advanced seismic dampers and climate-controlled glass galleries—specifically dismantling the British Museum's claim that Athens could not safeguard the Parthenon Sculptures."
+        "Examine the corporate fallout when executive leadership tied employee bonuses to hyper-aggressive account-opening quotas, resulting in thousands of employees systematically defrauding customers to hit financial thresholds—demonstrating how cash incentives can corrupt organizational culture."
     },
     {
-      title: "The Ethics of the 'Universal Encyclopedic Museum'",
+      title: "Daniel Pink's 'Drive': The Mismatch Between Science and Business",
       development:
-        "Deconstruct the imperial philosophy behind institutions like the British Museum, Louvre, and Met, questioning whether claiming to represent 'shared human civilization' justifies hoarding looted treasures of colonized peoples."
+        "Deconstruct Daniel Pink's findings showing that for any task requiring even rudimentary cognitive skill or conceptual thinking, higher financial rewards lead to poorer performance, whereas autonomy, mastery, and purpose consistently produce superior outcomes."
     },
     {
-      title: "Bilateral Long-Term Loan Treaties as a Diplomatic Bridge",
+      title: "Nordic Work Culture: High Productivity Without Bonus-Chasing",
       development:
-        "Explore legal frameworks where sovereign title is formally transferred back to the country of origin, followed by reciprocal long-term loans that guarantee ongoing international public exposure."
+        "Investigate how enterprises in Denmark, Sweden, and Finland achieve some of the world's highest worker productivity and innovation metrics with virtually no individual cash-bonus culture, relying instead on flat hierarchies, high trust, flexible schedules, and collective well-being."
     },
     {
-      title: "The Illicit Black Market & Modern Antiquity Looting",
+      title: "Discretionary Bonus Allocation & In-Group Favoritism",
       development:
-        "Discuss how strict institutional repatriation policies deter ongoing tomb raiding and black-market antiquities smuggling by removing Western commercial demand for illicit artifacts."
+        "Explore how discretionary managerial bonuses frequently trigger allegations of bias, nepotism, and discrimination, severely alienating marginalized employees and damaging workplace diversity compared to transparent, objective career advancement benchmarks."
     }
   ],
 
   brainstormCards: [
     {
-      question: "Why is an ancient artifact considered far more than decorative art to its native culture?",
-      thinkingLens: "Cultural, Spiritual & Religious Identity",
-      selfCheck: "Did you consider sacred rituals, ancestral connection, and community identity?",
-      idea: "Historical relics embody the living soul, spiritual traditions, and national pride of their people; their absence alienates native populations from their historical roots."
+      question:
+        "Why do monetary bonuses often trigger an immediate boost in output, but fail to maintain long-term employee dedication?",
+      thinkingLens: "Extrinsic Habituation & The Hedonic Treadmill",
+      selfCheck:
+        "Did you consider how quickly extra cash is normalized into an employee's regular baseline expectation?",
+      idea:
+        "Cash rewards create a brief spike in effort for simple, quantifiable targets, but employees quickly become habituated to the extra money, viewing it as an entitlement and requiring escalating bonuses to sustain the same work pace."
     },
     {
-      question: "Under what historical circumstances were the vast majority of contested museum pieces taken?",
-      thinkingLens: "Colonial Subjugation & Military Plunder",
-      selfCheck: "Did you examine imperial power imbalances, lootings, and unequal treaties?",
-      idea: "Most items were seized through military invasion, punitive raids, or colonial coercion, meaning retention in foreign institutions perpetuates historical injustice."
+      question:
+        "In what ways can individual performance bonuses actually damage teamwork and organizational culture?",
+      thinkingLens: "Internal Rivalry & Knowledge Hoarding",
+      selfCheck:
+        "Did you examine how pitting colleagues against each other harms collaboration and mutual trust?",
+      idea:
+        "When cash payouts are tied to individual performance rankings, workers are disincentivized from collaborating; they hoard information, undermine peers, and avoid helping newcomers to protect their personal bonus scores."
     },
     {
-      question: "What financial and educational harm do origin countries suffer when their treasures are held abroad?",
-      thinkingLens: "Economic Sovereignty & Native Academic Access",
-      selfCheck: "Did you link museum ticket sales and scholar travel barriers to inequality?",
-      idea: "Western museums capture millions in heritage tourism profits, while local students and native scholars are priced out of researching their own history due to foreign travel costs."
+      question:
+        "What psychological factors make career progression and professional autonomy far more inspiring than financial bonuses?",
+      thinkingLens: "Self-Determination & Long-Term Professional Self-Worth",
+      selfCheck:
+        "Did you link autonomy, mastery, and upward mobility to intrinsic human motivation?",
+      idea:
+        "Autonomy grants employees trusted ownership of their projects, while clear promotion paths offer durable status and personal growth. These satisfy deep psychological needs for mastery and respect that money cannot fulfill."
     },
     {
-      question: "How can origin nations effectively disprove the argument that Western museums offer safer preservation?",
-      thinkingLens: "Modern Infrastructure & Bilateral Loan Treaties",
-      selfCheck: "Can you cite real-world modern museums in Greece, Egypt, or Nigeria?",
-      idea: "Developing and Mediterranean nations now build cutting-edge facilities (e.g. Acropolis Museum, Grand Egyptian Museum) that rival Western vaults, while rotating loans ensure global sharing."
+      question:
+        "How can modern organizations effectively recognize exceptional contribution without relying purely on financial payouts?",
+      thinkingLens: "Social Recognition, Sponsored Upskilling & Work-Life Well-Being",
+      selfCheck:
+        "Can you cite real-world workplace practices like mentorship, peer awards, or flexible hours?",
+      idea:
+        "Companies can reward outstanding work by offering executive mentorship, public recognition from leadership, sponsorship for professional certifications, and greater flexibility such as remote working or sabbatical options."
     }
   ],
 
   powerExpressions: [
     {
-      expression: "rightful cultural custodianship",
-      meaning: "Legitimate and lawful authority over the care and display of a society's heritage.",
-      example: "International tribunals increasingly advocate for the rightful cultural custodianship of source nations."
+      expression: "monetary remuneration as a transient catalyst",
+      meaning:
+        "Cash compensation that sparks only brief, fleeting effort rather than sustained institutional loyalty.",
+      example:
+        "Management must recognize monetary remuneration as a transient catalyst rather than an enduring motivational strategy."
     },
     {
-      expression: "rectify historical injustices of colonial plunder",
-      meaning: "Make moral and material restitution for goods stolen during imperial conquests.",
-      example: "Repatriating the bronzes helps rectify historical injustices of colonial plunder in West Africa."
+      expression: "cultivate enduring intrinsic motivation",
+      meaning:
+        "Nurture deep internal passion, personal craft pride, and purpose in an employee's daily responsibilities.",
+      example:
+        "Progressive tech firms cultivate enduring intrinsic motivation by giving engineers creative project ownership."
     },
     {
-      expression: "living embodiment of ancestral identity",
-      meaning: "Physical objects that represent the active, continuing spirit and history of a community.",
-      example: "Indigenous totems are not dead relics, but the living embodiment of ancestral identity."
+      expression: "suffer from diminishing psychological returns",
+      meaning:
+        "Produce progressively less emotional satisfaction, engagement, or motivational drive over time.",
+      example:
+        "Financial bonuses suffer from diminishing psychological returns once an employee's basic lifestyle needs are met."
     },
     {
-      expression: "monopolize heritage tourism revenues",
-      meaning: "Capture all economic profits from cultural tourism to the exclusion of the creators.",
-      example: "European museums should not monopolize heritage tourism revenues derived from foreign antiquities."
+      expression: "foster a cutthroat and siloed workplace culture",
+      meaning:
+        "Create an environment where employees compete destructively, hoard information, and refuse to collaborate.",
+      example:
+        "Ranking workers by individual bonus tiers tends to foster a cutthroat and siloed workplace culture."
     },
     {
-      expression: "state-of-the-art conservation standards",
-      meaning: "Modern technological measures ensuring optimal climate, security, and restoration.",
-      example: "Athens demonstrated state-of-the-art conservation standards in its dedicated Acropolis Museum."
+      expression: "transparent meritocratic advancement pathways",
+      meaning:
+        "Clear, impartial promotion routes based on verifiable skill, excellence, and organizational contribution.",
+      example:
+        "Top graduates choose employers that provide transparent meritocratic advancement pathways."
     },
     {
-      expression: "sever the spiritual link to native traditions",
-      meaning: "Break the connection between current generations and their ancestral rites.",
-      example: "Exhibiting sacred masks behind glass severs the spiritual link to native traditions."
+      expression: "empower staff with operational autonomy",
+      meaning:
+        "Grant workers decision-making authority, scheduling flexibility, and trusted ownership of their workflows.",
+      example:
+        "Rather than monitoring hours, forward-thinking managers empower staff with operational autonomy."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "It is undeniable that historical treasures embody the soul of their creators...",
-      "Under the moral imperative of redressing colonial subjugation...",
-      "Crucially, returning these relics restores economic and academic sovereignty...",
-      "By reuniting fragmented artifacts with their native soil..."
+      "While financial bonuses undeniably stimulate short-term commercial quotas...",
+      "Crucially, sustainable workplace dedication is rooted in intrinsic psychological fulfillment...",
+      "By granting employees meaningful operational autonomy and transparent career ladders...",
+      "From an organizational psychology standpoint, cash incentives suffer from rapid habituation..."
     ],
     aTier: [
-      "In light of these historical realities",
-      "Consequently, origin nations deserve rightful custody",
-      "Moreover, from an economic standpoint",
-      "While opponents cite preservation concerns, this argument is disproven by modern facilities"
+      "In terms of managerial effectiveness",
+      "Consequently, exclusive reliance on monetary rewards often backfires",
+      "In contrast, non-financial incentives foster genuine institutional loyalty",
+      "As psychological research consistently illustrates"
     ],
     bTier: [
       "First and foremost",
       "In addition to this",
-      "For instance",
+      "For example",
       "Ultimately, in conclusion"
     ]
   }

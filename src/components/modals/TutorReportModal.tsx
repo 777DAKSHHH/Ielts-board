@@ -16,10 +16,10 @@ const TASK1_SUBMISSIONS = [
 ];
 
 const TASK2_SUBMISSIONS = [
-  { student: "Aarav Sharma", type: "Opinion Essay", topic: "Repatriation of Benin Bronzes & rectifying colonial plunder", accuracy: "High" },
-  { student: "Pooja Patel", type: "Agree / Disagree", topic: "Cultural identity restitution & spiritual living heritage", accuracy: "High" },
-  { student: "Rohan Verma", type: "Opinion Essay", topic: "Acropolis Museum & tourism sovereignty for origin nations", accuracy: "Moderate" },
-  { student: "Ananya Iyer", type: "Agree / Disagree", topic: "Academic access for native researchers & heritage rights", accuracy: "High" }
+  { student: "Aarav Sharma", type: "Two-Part Essay", topic: "Monetary bonuses for short-term sales vs hedonic habituation", accuracy: "High" },
+  { student: "Pooja Patel", type: "Two-Part Essay", topic: "Professional autonomy and career ladders as superior motivators", accuracy: "High" },
+  { student: "Rohan Verma", type: "Two-Part Essay", topic: "Wells Fargo quota case study & risks of toxic internal rivalry", accuracy: "Moderate" },
+  { student: "Ananya Iyer", type: "Two-Part Essay", topic: "Authentic recognition and psychological well-being over cash perks", accuracy: "High" }
 ];
 
 export const TutorReportModal: React.FC<TutorReportModalProps> = ({

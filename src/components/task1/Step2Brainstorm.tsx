@@ -11,17 +11,16 @@ import {
   Map,
   HelpCircle,
   ImageIcon,
-  Zap,
-  Flame,
-  Recycle,
-  Sun,
-  ArrowUpRight
+  GitCommit,
+  Columns,
+  Maximize
 } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 import { TouchTimer } from "../common/TouchTimer";
-import { SmartBoardPyramidSvg, HighlightMode } from "./SmartBoardPyramidSvg";
+import { SmartBoardGraphSvg, GraphHighlightMode } from "./SmartBoardGraphSvg";
 import { BitsAndPiecesMindmap } from "./BitsAndPiecesMindmap";
 import { BitsAndPiecesFlashcards } from "./BitsAndPiecesFlashcards";
+import { CountryData } from "../../types/task1";
 
 interface Step2BrainstormProps {
   formattedTime: string;
@@ -31,73 +30,6 @@ interface Step2BrainstormProps {
   onTimerReset: () => void;
 }
 
-export interface TrophicHighlight {
-  id: string;
-  name: string;
-  badge: string;
-  energyKcal: string;
-  organisms: string;
-  heatLoss: string;
-  band9Phrase: string;
-}
-
-const TROPHIC_HIGHLIGHTS: TrophicHighlight[] = [
-  {
-    id: "tier1",
-    name: "Tier 1: Primary Producers",
-    badge: "100% Baseline Energy",
-    energyKcal: "20,000 kcal/m²/yr",
-    organisms: "Flora, trees, and vegetation (autotrophs)",
-    heatLoss: "Metabolic heat via plant respiration",
-    band9Phrase: "“Primary producers capture 20,000 kcal/m²/yr of solar energy through photosynthesis, forming the foundational biomass of the ecosystem.”"
-  },
-  {
-    id: "tier2",
-    name: "Tier 2: Primary Consumers",
-    badge: "10% Retained (90% Lost)",
-    energyKcal: "2,000 kcal/m²/yr",
-    organisms: "Herbivores & insects: mice, grasshoppers, butterflies, caterpillars, ants",
-    heatLoss: "Kinetic energy & body heat",
-    band9Phrase: "“Primary consumers assimilate only 2,000 kcal/m²/yr, representing an immediate 90% dissipation of caloric energy.”"
-  },
-  {
-    id: "tier3",
-    name: "Tier 3: Secondary Consumers",
-    badge: "1% of Base Retained",
-    energyKcal: "200 kcal/m²/yr",
-    organisms: "Mesopredators: rodents, insectivorous birds, frogs",
-    heatLoss: "Thermoregulation & foraging heat",
-    band9Phrase: "“Secondary consumers retain a further diminished 200 kcal/m²/yr, sustaining the factor-of-ten attenuation rule.”"
-  },
-  {
-    id: "tier4",
-    name: "Tier 4: Tertiary Consumers",
-    badge: "0.1% of Base Retained",
-    energyKcal: "20 kcal/m²/yr",
-    organisms: "Predatory reptiles: snakes",
-    heatLoss: "Predatory metabolism",
-    band9Phrase: "“Tertiary consumers assimilate a modest 20 kcal/m²/yr, as energy becomes progressively scarcer.”"
-  },
-  {
-    id: "tier5",
-    name: "Tier 5: Quaternary Consumers",
-    badge: "0.01% Apex Biomass",
-    energyKcal: "2 kcal/m²/yr",
-    organisms: "Apex raptors: eagles and hawks",
-    heatLoss: "Apex metabolic dissipation",
-    band9Phrase: "“At the pyramid's pinnacle, quaternary consumers receive a mere 2 kcal/m²/yr—one ten-thousandth of the baseline energy.”"
-  },
-  {
-    id: "decomposers",
-    name: "Decomposers & Detritus Processing",
-    badge: "Waste Sink",
-    energyKcal: "Receives waste from all 5 tiers",
-    organisms: "Bacteria, fungi, and detritivores",
-    heatLoss: "Microbial decomposition heat",
-    band9Phrase: "“Concurrently, biological waste and dead matter from all levels of the pyramid are funneled into decomposers, which also radiate metabolic heat into the atmosphere.”"
-  }
-];
-
 export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   formattedTime,
   isRunning,
@@ -105,15 +37,19 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   onTimerToggle,
   onTimerReset
 }) => {
-  const [viewMode, setViewMode] = useState<"smartboard_vector" | "mindmap" | "flashcards" | "original_image">("smartboard_vector");
+  const [viewMode, setViewMode] = useState<
+    "smartboard_vector" | "mindmap" | "flashcards" | "original_image"
+  >("smartboard_vector");
+  const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
   const [isEnlarged, setIsEnlarged] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
-  const [selectedTier, setSelectedTier] = useState<TrophicHighlight | null>(TROPHIC_HIGHLIGHTS[0]);
-  const [highlightMode, setHighlightMode] = useState<HighlightMode>("all");
+  const [selectedCountry, setSelectedCountry] = useState<CountryData>(
+    TASK1_DATA.graphData.countries[0]
+  );
+  const [highlightMode, setHighlightMode] = useState<GraphHighlightMode>("all");
 
   // Fullscreen specific toggles
   const [fullscreenShowInspector, setFullscreenShowInspector] = useState(true);
-  const [fullscreenGraphicMode, setFullscreenGraphicMode] = useState<"vector" | "original">("vector");
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -127,22 +63,37 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isEnlarged]);
 
-  const handleSvgSelectTier = (tierId: string) => {
-    const found = TROPHIC_HIGHLIGHTS.find((t) => t.id === tierId);
-    if (found) {
-      setSelectedTier(found);
+  // When switching to mindmap or flashcards in embedded view, full_width gives optimal readability
+  const handleSelectViewMode = (
+    mode: "smartboard_vector" | "mindmap" | "flashcards" | "original_image"
+  ) => {
+    setViewMode(mode);
+    if (mode === "mindmap" || mode === "flashcards") {
+      setStageLayout("full_width");
     }
+  };
+
+  const handleSvgSelectCountry = (countryId: string) => {
+    const found = TASK1_DATA.graphData.countries.find((c) => c.id === countryId);
+    if (found) {
+      setSelectedCountry(found);
+    }
+  };
+
+  const openFullscreen = () => {
+    setZoomLevel(1);
+    setIsEnlarged(true);
   };
 
   return (
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; Pyramid Analysis
+          Step 02 / 08 • Task Prompt &amp; Graph Analysis
         </span>
-        <h2 className="stage-title">Deconstruct the Ecological Food Chain &amp; Energy Pyramid</h2>
+        <h2 className="stage-title">Deconstruct the 40-Year CO2 Emissions Line Graph</h2>
         <p className="stage-subtitle">
-          Examine the prompt, identify the 5 ascending trophic tiers, the 10% biomass rule, metabolic heat dissipation, and the decomposer waste flow.
+          Examine the prompt, identify the two distinct 20-year trajectories (UK &amp; Sweden falling vs. Italy &amp; Portugal rising), and note critical crossover and convergence milestones.
         </p>
       </div>
 
@@ -153,11 +104,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyse the ascending energy metrics (20,000 down to 2 kcal), heat loss arrows, and decomposers."
+          instruction="Focus Timer: 3 minutes to analyze the two diverging groups (net decline vs net growth) and pinpoint the 1987 and 2007 intersection points."
         />
       </div>
 
-      {/* SMART BOARD PEDAGOGICAL MODE SWITCHER */}
+      {/* SMART BOARD VIEW SWITCHER & CONTROL STRIP */}
       <div
         style={{
           display: "flex",
@@ -173,6 +124,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           boxShadow: "var(--shadow-sm)"
         }}
       >
+        {/* 4 View Mode Buttons */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
           <span style={{ fontSize: "0.8rem", fontWeight: 800, color: "var(--slate-800)", marginRight: "4px" }}>
             BOARD TEACHING VIEW:
@@ -180,7 +132,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
           <button
             type="button"
-            onClick={() => setViewMode("smartboard_vector")}
+            onClick={() => handleSelectViewMode("smartboard_vector")}
             className="apple-touch-btn"
             style={{
               padding: "7px 14px",
@@ -200,14 +152,14 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
           <button
             type="button"
-            onClick={() => setViewMode("mindmap")}
+            onClick={() => handleSelectViewMode("mindmap")}
             className="apple-touch-btn"
             style={{
               padding: "7px 14px",
               fontSize: "0.78rem",
               fontWeight: 750,
-              background: viewMode === "mindmap" ? "#0284c7" : "var(--slate-100)",
-              color: viewMode === "mindmap" ? "#ffffff" : "#0369a1",
+              background: viewMode === "mindmap" ? "var(--slate-900)" : "var(--slate-100)",
+              color: viewMode === "mindmap" ? "#ffffff" : "var(--slate-700)",
               border: "1px solid var(--border-subtle)",
               borderRadius: "10px",
               display: "flex",
@@ -220,14 +172,14 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
           <button
             type="button"
-            onClick={() => setViewMode("flashcards")}
+            onClick={() => handleSelectViewMode("flashcards")}
             className="apple-touch-btn"
             style={{
               padding: "7px 14px",
               fontSize: "0.78rem",
               fontWeight: 750,
-              background: viewMode === "flashcards" ? "#8b5cf6" : "var(--slate-100)",
-              color: viewMode === "flashcards" ? "#ffffff" : "#6d28d9",
+              background: viewMode === "flashcards" ? "var(--slate-900)" : "var(--slate-100)",
+              color: viewMode === "flashcards" ? "#ffffff" : "var(--slate-700)",
               border: "1px solid var(--border-subtle)",
               borderRadius: "10px",
               display: "flex",
@@ -235,19 +187,19 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <HelpCircle size={14} /> Classroom Flashcards (6)
+            <HelpCircle size={14} /> Bits &amp; Pieces Flashcards
           </button>
 
           <button
             type="button"
-            onClick={() => setViewMode("original_image")}
+            onClick={() => handleSelectViewMode("original_image")}
             className="apple-touch-btn"
             style={{
               padding: "7px 14px",
               fontSize: "0.78rem",
               fontWeight: 750,
-              background: viewMode === "original_image" ? "#475569" : "var(--slate-100)",
-              color: viewMode === "original_image" ? "#ffffff" : "var(--slate-600)",
+              background: viewMode === "original_image" ? "var(--slate-900)" : "var(--slate-100)",
+              color: viewMode === "original_image" ? "#ffffff" : "var(--slate-700)",
               border: "1px solid var(--border-subtle)",
               borderRadius: "10px",
               display: "flex",
@@ -255,706 +207,858 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <ImageIcon size={14} /> Original Exam Drawing
+            <ImageIcon size={14} /> Original Test Graph
           </button>
         </div>
 
-        <button
-          type="button"
-          onClick={() => {
-            setFullscreenGraphicMode(viewMode === "original_image" ? "original" : "vector");
-            setIsEnlarged(true);
-            setZoomLevel(1);
-          }}
-          className="apple-touch-btn primary"
-          style={{
-            fontSize: "0.76rem",
-            padding: "6px 14px",
-            display: "flex",
-            alignItems: "center",
-            gap: "6px"
-          }}
-        >
-          <Maximize2 size={13} /> Fullscreen Cinema View
-        </button>
+        {/* Layout & Entire Screen Triggers */}
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          {/* Embedded Split vs Full Width Toggle */}
+          <button
+            type="button"
+            onClick={() => setStageLayout((l) => (l === "split" ? "full_width" : "split"))}
+            className="apple-touch-btn secondary"
+            style={{
+              padding: "7px 12px",
+              fontSize: "0.78rem",
+              fontWeight: 700,
+              gap: "5px",
+              display: "flex",
+              alignItems: "center"
+            }}
+            title={stageLayout === "split" ? "Expand Visual to Full Stage Width" : "Switch to 2-Column Split View"}
+          >
+            {stageLayout === "split" ? (
+              <>
+                <Maximize size={13} /> Full Width Stage
+              </>
+            ) : (
+              <>
+                <Columns size={13} /> Split View
+              </>
+            )}
+          </button>
+
+          {/* Fullscreen Smart Board Button */}
+          <button
+            type="button"
+            onClick={openFullscreen}
+            className="apple-touch-btn primary"
+            style={{
+              padding: "7px 16px",
+              fontSize: "0.78rem",
+              fontWeight: 750,
+              gap: "6px",
+              boxShadow: "0 2px 8px rgba(0, 113, 227, 0.25)"
+            }}
+            title="Open Current Sub-Topic Across Entire Screen"
+          >
+            <Maximize2 size={14} /> Entire Screen Mode
+          </button>
+        </div>
       </div>
 
-      {/* CONDITIONAL DISPLAY BASED ON ACTIVE TEACHING VIEW */}
-      {viewMode === "mindmap" && (
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-          <BitsAndPiecesMindmap />
-        </motion.div>
-      )}
-
-      {viewMode === "flashcards" && (
-        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}>
-          <BitsAndPiecesFlashcards />
-        </motion.div>
-      )}
-
-      {(viewMode === "smartboard_vector" || viewMode === "original_image") && (
-        <div className="stage-grid-2col" style={{ alignItems: "start" }}>
-          {/* Left Column: Prompt & Essay Structure */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-            {/* Prompt Box */}
-            <div style={{ background: "var(--slate-50)", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "18px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
-                <FileText size={18} color="var(--slate-800)" />
-                <h4 style={{ fontSize: "1.02rem", fontWeight: 700, color: "var(--slate-900)" }}>IELTS Academic Writing Task 1</h4>
-              </div>
-              <div style={{ background: "#ffffff", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "14px 16px", fontSize: "0.95rem", fontWeight: 600, color: "var(--slate-900)", lineHeight: 1.55, boxShadow: "var(--shadow-sm)" }}>
-                {TASK1_DATA.questionText.split("\n\n").map((chunk, index) => (
-                  <p key={index} style={{ margin: index === TASK1_DATA.questionText.split("\n\n").length - 1 ? 0 : "10px 0" }}>{chunk}</p>
-                ))}
-              </div>
-            </div>
-
-            {/* IELTS Ecological Process Architecture Card */}
-            <div
-              style={{
-                background: "#f0fdf4",
-                border: "1.5px solid #bbf7d0",
-                borderRadius: "18px",
-                padding: "16px 18px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span
-                  style={{
-                    background: "#16a34a",
-                    color: "#ffffff",
-                    fontSize: "0.72rem",
-                    fontWeight: 800,
-                    padding: "3px 8px",
-                    borderRadius: "6px",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.5px"
-                  }}
-                >
-                  IELTS Process Rule
-                </span>
-                <span style={{ fontSize: "0.88rem", fontWeight: 750, color: "#166534" }}>
-                  Two Parallel Phenomena: Energy Gradient + Waste Processing
-                </span>
-              </div>
-              <p style={{ margin: 0, fontSize: "0.82rem", color: "#14532d", lineHeight: 1.5 }}>
-                A Band 9 overview <strong>must report both systems</strong>: (1) The vertical upward trophic transfer featuring an exact 90% energy drop per tier, and (2) Continuous metabolic heat loss alongside biological waste channeling from all tiers into decomposers.
-              </p>
-            </div>
-
-            {/* Essay Planning Strategy Card */}
-            <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "16px 18px", boxShadow: "var(--shadow-sm)", display: "flex", flexDirection: "column", gap: "10px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Layers size={18} color="var(--apple-blue)" />
-                <h5 style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--slate-900)" }}>Recommended 4-Paragraph Structure</h5>
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "0.82rem" }}>
-                <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
-                  <strong style={{ color: "var(--apple-blue)" }}>Intro + Overview:</strong>
-                  <p style={{ margin: "4px 0 0 0", color: "var(--slate-600)" }}>Paraphrase prompt + highlight 5 trophic tiers, 10% biomass rule, and heat/waste flows.</p>
-                </div>
-                <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
-                  <strong style={{ color: "var(--apple-blue)" }}>Body 1 (Upward Energy):</strong>
-                  <p style={{ margin: "4px 0 0 0", color: "var(--slate-600)" }}>Detail Tier 1 (Producers, 20,000 kcal) up to Tier 5 (Apex raptors, 2 kcal) with tenfold decreases.</p>
-                </div>
-                <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
-                  <strong style={{ color: "#d97706" }}>Body 2 (Heat Loss):</strong>
-                  <p style={{ margin: "4px 0 0 0", color: "var(--slate-600)" }}>Describe metabolic heat dissipation escaping to the atmosphere across all levels.</p>
-                </div>
-                <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
-                  <strong style={{ color: "#16a34a" }}>Body 2 (Decomposers):</strong>
-                  <p style={{ margin: "4px 0 0 0", color: "var(--slate-600)" }}>Explain waste/dead matter from all 5 tiers channeling into decomposers, releasing heat.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Diagram with Smart Board 4K Vector or Original Image & Trophic Inspector */}
-          <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "14px", boxShadow: "var(--shadow-sm)", display: "flex", flexDirection: "column", gap: "12px" }}>
-            {/* View Header */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "2px 4px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <Tv size={16} color="var(--apple-blue)" />
-                <span style={{ fontSize: "0.85rem", fontWeight: 750, color: "var(--slate-800)" }}>
-                  {viewMode === "smartboard_vector" ? "Ultra-HD 4K Smart Board Vector (Zero-Loss Scalability)" : "Original Exam Paper Drawing"}
-                </span>
-              </div>
-              <span className="apple-badge success" style={{ fontSize: "0.72rem", padding: "2px 8px" }}>
-                {viewMode === "smartboard_vector" ? "100% Exact Wording" : "Scanned Original"}
-              </span>
-            </div>
-
-            {/* Display Component */}
-            {viewMode === "smartboard_vector" ? (
-              <SmartBoardPyramidSvg
-                onSelectTier={handleSvgSelectTier}
-                selectedTierId={selectedTier?.id}
-                highlightMode={highlightMode}
-                onHighlightModeChange={setHighlightMode}
-                showInternalToolbar={true}
-              />
-            ) : (
-              <div
-                onClick={() => {
-                  setFullscreenGraphicMode("original");
-                  setIsEnlarged(true);
-                  setZoomLevel(1);
-                }}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setFullscreenGraphicMode("original");
-                    setIsEnlarged(true);
-                    setZoomLevel(1);
-                  }
-                }}
-                title="Click or tap to enlarge diagram to fullscreen projection"
-                style={{
-                  position: "relative",
-                  borderRadius: "14px",
-                  overflow: "hidden",
-                  cursor: "zoom-in",
-                  border: "1.5px solid var(--border-subtle)",
-                  background: "#ffffff"
-                }}
-              >
-                <img
-                  src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="Food production chain and energy pyramid diagram"
-                  style={{
-                    display: "block",
-                    width: "100%",
-                    maxHeight: "440px",
-                    objectFit: "contain",
-                    transition: "transform 0.2s ease"
-                  }}
+      {/* STAGE VIEWPORT (Split Mode vs Full Width Mode) */}
+      {stageLayout === "split" ? (
+        /* Standard 2-Column Split */
+        <div className="stage-grid-2col" style={{ alignItems: "stretch", minHeight: "540px" }}>
+          {/* Left Column: Visual Display Container */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1.5px solid var(--border-subtle)",
+              borderRadius: "20px",
+              padding: viewMode === "smartboard_vector" ? "0" : "18px",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
+              boxShadow: "var(--shadow-sm)",
+              minHeight: "530px"
+            }}
+          >
+            {viewMode === "smartboard_vector" && (
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
+                <SmartBoardGraphSvg
+                  selectedCountryId={selectedCountry.id}
+                  onSelectCountry={handleSvgSelectCountry}
+                  highlightMode={highlightMode}
+                  onHighlightModeChange={setHighlightMode}
+                  showInternalToolbar={true}
                 />
-
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "10px",
-                    right: "10px",
-                    background: "rgba(15, 23, 42, 0.85)",
-                    backdropFilter: "blur(8px)",
-                    color: "#ffffff",
-                    padding: "6px 12px",
-                    borderRadius: "999px",
-                    fontSize: "0.78rem",
-                    fontWeight: 650,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    boxShadow: "0 4px 14px rgba(0,0,0,0.22)",
-                    pointerEvents: "none"
-                  }}
-                >
-                  <Maximize2 size={13} /> Tap to Project Fullscreen
-                </div>
               </div>
             )}
 
-            {/* Touch-Friendly Trophic Inspector for Smartboard */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "2px" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--slate-600)" }}>
-                  Interactive Trophic Inspector:
-                </span>
-                <span style={{ fontSize: "0.74rem", color: "var(--slate-400)" }}>
-                  Tap any tier to inspect
-                </span>
+            {viewMode === "mindmap" && (
+              <div style={{ flex: 1, minHeight: "480px" }}>
+                <BitsAndPiecesMindmap onToggleFullscreen={openFullscreen} />
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "6px" }}>
-                {TROPHIC_HIGHLIGHTS.map((tier) => (
-                  <button
-                    key={tier.id}
-                    type="button"
-                    onClick={() => setSelectedTier(tier)}
-                    className="apple-touch-btn secondary"
-                    style={{
-                      minHeight: "36px",
-                      padding: "6px 8px",
-                      fontSize: "0.76rem",
-                      fontWeight: 700,
-                      textAlign: "center",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: selectedTier?.id === tier.id ? "var(--slate-900)" : "#ffffff",
-                      color: selectedTier?.id === tier.id ? "#ffffff" : "var(--slate-800)",
-                      border: selectedTier?.id === tier.id ? "1.5px solid var(--slate-900)" : "1px solid var(--border-subtle)",
-                      boxShadow: selectedTier?.id === tier.id ? "0 2px 8px rgba(0,0,0,0.15)" : "none"
-                    }}
-                  >
-                    <span>{tier.name.split(":")[0]}</span>
-                    <span style={{ fontSize: "0.68rem", opacity: 0.85 }}>{tier.energyKcal.split(" ")[0]}</span>
-                  </button>
-                ))}
+            )}
+
+            {viewMode === "flashcards" && (
+              <div style={{ flex: 1, minHeight: "480px" }}>
+                <BitsAndPiecesFlashcards onToggleFullscreen={openFullscreen} />
               </div>
+            )}
 
-              {selectedTier && (
-                <motion.div
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  style={{
-                    background: "var(--slate-50)",
-                    border: "1.5px solid var(--apple-blue)",
-                    borderRadius: "12px",
-                    padding: "12px 14px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "6px"
-                  }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>
-                      {selectedTier.name}
-                    </strong>
-                    <span className="apple-badge accent" style={{ fontSize: "0.7rem", padding: "2px 8px" }}>
-                      {selectedTier.badge}
-                    </span>
-                  </div>
-                  <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
-                    <div><strong>Biomass Energy:</strong> {selectedTier.energyKcal}</div>
-                    <div><strong>Organisms:</strong> {selectedTier.organisms}</div>
-                    <div><strong>Thermal Loss:</strong> {selectedTier.heatLoss}</div>
-                  </div>
-                  <div style={{ fontSize: "0.82rem", color: "var(--apple-blue)", fontStyle: "italic", background: "#ffffff", padding: "8px 10px", borderRadius: "8px", border: "1px solid var(--border-subtle)" }}>
-                    {selectedTier.band9Phrase}
-                  </div>
-                </motion.div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* FULLSCREEN CINEMA VIEW — COMPLETE SMART BOARD WORKSTATION */}
-      <AnimatePresence>
-        {isEnlarged && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 99999,
-              background: "rgba(15, 23, 42, 0.96)",
-              backdropFilter: "blur(18px)",
-              display: "flex",
-              flexDirection: "column",
-              padding: "14px"
-            }}
-          >
-            {/* Modal Top Interactive Control Bar */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                flexWrap: "wrap",
-                gap: "10px",
-                padding: "10px 14px",
-                background: "rgba(30, 41, 59, 0.9)",
-                borderRadius: "16px",
-                marginBottom: "12px",
-                border: "1px solid rgba(255,255,255,0.12)"
-              }}
-            >
-              {/* Title & Graphic Switcher */}
-              <div style={{ display: "flex", alignItems: "center", gap: "10px", color: "#ffffff", flexWrap: "wrap" }}>
-                <Tv size={20} color="var(--apple-blue)" />
-                <span style={{ fontSize: "0.98rem", fontWeight: 750 }}>
-                  Smartboard Cinema View
-                </span>
-
-                {/* Switch between Vector and Original Drawing */}
-                <div style={{ display: "flex", alignItems: "center", background: "rgba(255,255,255,0.1)", borderRadius: "8px", padding: "2px" }}>
-                  <button
-                    type="button"
-                    onClick={() => setFullscreenGraphicMode("vector")}
-                    style={{
-                      padding: "4px 10px",
-                      fontSize: "0.74rem",
-                      fontWeight: 700,
-                      borderRadius: "6px",
-                      border: "none",
-                      cursor: "pointer",
-                      background: fullscreenGraphicMode === "vector" ? "var(--apple-blue)" : "transparent",
-                      color: "#ffffff"
-                    }}
-                  >
-                    4K Vector
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFullscreenGraphicMode("original")}
-                    style={{
-                      padding: "4px 10px",
-                      fontSize: "0.74rem",
-                      fontWeight: 700,
-                      borderRadius: "6px",
-                      border: "none",
-                      cursor: "pointer",
-                      background: fullscreenGraphicMode === "original" ? "var(--apple-blue)" : "transparent",
-                      color: "#ffffff"
-                    }}
-                  >
-                    Original Drawing
-                  </button>
-                </div>
-
-                {/* Smart Board Focus Toolbar in Fullscreen */}
-                {fullscreenGraphicMode === "vector" && (
-                  <div style={{ display: "flex", alignItems: "center", gap: "4px", background: "rgba(0,0,0,0.35)", padding: "3px 6px", borderRadius: "8px", flexWrap: "wrap" }}>
-                    <button
-                      type="button"
-                      onClick={() => setHighlightMode("all")}
-                      style={{
-                        padding: "3px 8px",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        borderRadius: "5px",
-                        border: "none",
-                        cursor: "pointer",
-                        background: highlightMode === "all" ? "#ffffff" : "transparent",
-                        color: highlightMode === "all" ? "#0f172a" : "#cbd5e1"
-                      }}
-                    >
-                      All
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setHighlightMode("light_energy")}
-                      style={{
-                        padding: "3px 8px",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        borderRadius: "5px",
-                        border: "none",
-                        cursor: "pointer",
-                        background: highlightMode === "light_energy" ? "#ca8a04" : "transparent",
-                        color: "#ffffff",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "3px"
-                      }}
-                    >
-                      <Sun size={10} /> Light energy
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setHighlightMode("biomass")}
-                      style={{
-                        padding: "3px 8px",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        borderRadius: "5px",
-                        border: "none",
-                        cursor: "pointer",
-                        background: highlightMode === "biomass" ? "#0284c7" : "transparent",
-                        color: "#ffffff",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "3px"
-                      }}
-                    >
-                      <Zap size={10} /> Biomass (10×)
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setHighlightMode("heat")}
-                      style={{
-                        padding: "3px 8px",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        borderRadius: "5px",
-                        border: "none",
-                        cursor: "pointer",
-                        background: highlightMode === "heat" ? "#ea580c" : "transparent",
-                        color: "#ffffff",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "3px"
-                      }}
-                    >
-                      <Flame size={10} /> Heat
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setHighlightMode("waste")}
-                      style={{
-                        padding: "3px 8px",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        borderRadius: "5px",
-                        border: "none",
-                        cursor: "pointer",
-                        background: highlightMode === "waste" ? "#e11d48" : "transparent",
-                        color: "#ffffff",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "3px"
-                      }}
-                    >
-                      <ArrowUpRight size={10} /> Waste &amp; dead matter
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setHighlightMode("decomposers")}
-                      style={{
-                        padding: "3px 8px",
-                        fontSize: "0.7rem",
-                        fontWeight: 700,
-                        borderRadius: "5px",
-                        border: "none",
-                        cursor: "pointer",
-                        background: highlightMode === "decomposers" ? "#16a34a" : "transparent",
-                        color: "#ffffff",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "3px"
-                      }}
-                    >
-                      <Recycle size={10} /> DECOMPOSERS
-                    </button>
-                  </div>
-                )}
-              </div>
-
-              {/* Action Buttons: Inspector Toggle, Zoom Controls, Close */}
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
-                <button
-                  type="button"
-                  onClick={() => setFullscreenShowInspector(!fullscreenShowInspector)}
-                  className="apple-touch-btn"
-                  style={{
-                    minHeight: "34px",
-                    padding: "0 10px",
-                    background: fullscreenShowInspector ? "var(--apple-blue)" : "rgba(255,255,255,0.12)",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "8px",
-                    fontSize: "0.76rem",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px"
-                  }}
-                  title="Toggle Trophic Inspector Panel"
-                >
-                  <Layers size={13} /> {fullscreenShowInspector ? "Hide Inspector" : "Show Inspector"}
-                </button>
-
-                {/* Zoom Controls */}
-                <div style={{ display: "flex", alignItems: "center", gap: "4px", background: "rgba(255,255,255,0.1)", borderRadius: "8px", padding: "2px" }}>
-                  <button
-                    type="button"
-                    onClick={() => setZoomLevel((z) => Math.max(0.7, z - 0.2))}
-                    style={{ background: "none", border: "none", color: "#fff", cursor: "pointer", padding: "4px 8px" }}
-                    title="Zoom Out"
-                  >
-                    <ZoomOut size={15} />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setZoomLevel(1)}
-                    style={{ background: "none", border: "none", color: "#fff", cursor: "pointer", padding: "4px 8px", fontSize: "0.72rem", fontWeight: 700 }}
-                    title="Reset Zoom"
-                  >
-                    {Math.round(zoomLevel * 100)}%
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setZoomLevel((z) => Math.min(2.5, z + 0.2))}
-                    style={{ background: "none", border: "none", color: "#fff", cursor: "pointer", padding: "4px 8px" }}
-                    title="Zoom In"
-                  >
-                    <ZoomIn size={15} />
-                  </button>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={() => setIsEnlarged(false)}
-                  className="apple-touch-btn primary"
-                  style={{ minHeight: "34px", padding: "0 14px", gap: "6px", background: "#ef4444", border: "none", fontSize: "0.76rem" }}
-                  title="Close Fullscreen (Esc)"
-                >
-                  <X size={15} /> Close
-                </button>
-              </div>
-            </div>
-
-            {/* Modal Body: Diagram Stage + Interactive Smart Board Panels */}
-            <div style={{ flex: 1, display: "flex", gap: "14px", overflow: "hidden", position: "relative" }}>
-              {/* Graphic Center Stage */}
+            {viewMode === "original_image" && (
               <div
                 style={{
                   flex: 1,
                   display: "flex",
+                  flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  overflow: "auto",
-                  borderRadius: "18px",
-                  background: "#ffffff",
                   padding: "16px",
+                  background: "#f8fafc",
+                  borderRadius: "14px",
                   position: "relative"
                 }}
               >
-                {fullscreenGraphicMode === "vector" ? (
-                  <div
-                    style={{
-                      transform: `scale(${zoomLevel})`,
-                      transformOrigin: "center center",
-                      transition: "transform 0.15s ease-out",
-                      width: "100%",
-                      maxWidth: "1080px"
-                    }}
-                  >
-                    <SmartBoardPyramidSvg
-                      onSelectTier={handleSvgSelectTier}
-                      selectedTierId={selectedTier?.id}
-                      highlightMode={highlightMode}
-                      onHighlightModeChange={setHighlightMode}
-                      showInternalToolbar={false}
-                    />
-                  </div>
-                ) : (
-                  <img
-                    src={`materials/${TASK1_DATA.imageFileName}`}
-                    alt="Food production chain and energy pyramid diagram fullscreen"
-                    style={{
-                      transform: `scale(${zoomLevel})`,
-                      transformOrigin: "center center",
-                      transition: "transform 0.15s ease-out",
-                      maxWidth: "100%",
-                      maxHeight: "82vh",
-                      objectFit: "contain",
-                      boxShadow: "0 20px 50px rgba(0,0,0,0.3)"
-                    }}
-                  />
-                )}
-              </div>
-
-              {/* Right Panel: Interactive Trophic Inspector in Fullscreen */}
-              {fullscreenShowInspector && (
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
+                <img
+                  src={`materials/${TASK1_DATA.imageFileName}`}
+                  alt="Original IELTS Task 1 Test Paper Graph"
                   style={{
-                    width: "360px",
-                    background: "rgba(30, 41, 59, 0.95)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    borderRadius: "18px",
-                    padding: "16px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "12px",
-                    overflowY: "auto",
-                    color: "#ffffff"
+                    maxWidth: "100%",
+                    maxHeight: "460px",
+                    objectFit: "contain",
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.08)"
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "12px",
+                    background: "rgba(15, 23, 42, 0.8)",
+                    color: "#ffffff",
+                    padding: "4px 12px",
+                    borderRadius: "20px",
+                    fontSize: "0.76rem",
+                    fontWeight: 600,
+                    backdropFilter: "blur(4px)"
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                      <Layers size={16} color="var(--apple-blue)" />
-                      <strong style={{ fontSize: "0.92rem" }}>Trophic Inspector</strong>
-                    </div>
-                    <span style={{ fontSize: "0.72rem", color: "#94a3b8" }}>Tap tier to inspect</span>
-                  </div>
+                  Original Exam Paper Reproduction
+                </div>
+              </div>
+            )}
+          </div>
 
-                  {/* 6 Tier Buttons */}
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
-                    {TROPHIC_HIGHLIGHTS.map((tier) => (
-                      <button
-                        key={tier.id}
-                        type="button"
-                        onClick={() => setSelectedTier(tier)}
-                        style={{
-                          padding: "8px 6px",
-                          borderRadius: "10px",
-                          border: selectedTier?.id === tier.id ? "2px solid #38bdf8" : "1px solid rgba(255,255,255,0.12)",
-                          background: selectedTier?.id === tier.id ? "rgba(56, 189, 248, 0.2)" : "rgba(255,255,255,0.05)",
-                          color: selectedTier?.id === tier.id ? "#38bdf8" : "#e2e8f0",
-                          cursor: "pointer",
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          fontSize: "0.74rem",
-                          fontWeight: 700,
-                          textAlign: "center"
-                        }}
-                      >
-                        <span>{tier.name.split(":")[0]}</span>
-                        <span style={{ fontSize: "0.68rem", opacity: 0.8 }}>{tier.energyKcal.split(" ")[0]}</span>
-                      </button>
-                    ))}
-                  </div>
+          {/* Right Column: Prompt Card + Country Tier Inspector */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            {/* Main Task Prompt */}
+            <div
+              style={{
+                background: "var(--slate-50)",
+                border: "1.5px solid var(--border-subtle)",
+                borderRadius: "20px",
+                padding: "20px 22px"
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  marginBottom: "12px"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "9px" }}>
+                  <FileText size={18} color="var(--slate-800)" />
+                  <h4 style={{ fontSize: "1.05rem", fontWeight: 700 }}>IELTS Academic Writing Task 1</h4>
+                </div>
+                <span className="apple-badge accent">{TASK1_DATA.taskType}</span>
+              </div>
+              <div
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid var(--border-subtle)",
+                  borderRadius: "14px",
+                  padding: "16px 18px",
+                  fontSize: "1.05rem",
+                  fontWeight: 650,
+                  lineHeight: 1.55,
+                  boxShadow: "var(--shadow-sm)",
+                  color: "var(--slate-900)"
+                }}
+              >
+                {TASK1_DATA.questionText.split("\n\n").map((chunk, i) => (
+                  <p key={i} style={{ marginBottom: i < 2 ? "8px" : 0 }}>
+                    {chunk}
+                  </p>
+                ))}
+              </div>
+            </div>
 
-                  {/* Active Tier Inspector Details Card */}
-                  {selectedTier && (
-                    <div
+            {/* Interactive Country Inspector */}
+            <div
+              style={{
+                background: "#ffffff",
+                border: "1.5px solid var(--border-subtle)",
+                borderRadius: "20px",
+                padding: "18px 20px",
+                boxShadow: "var(--shadow-sm)",
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <Layers size={18} color="var(--apple-blue)" />
+                  <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--slate-900)" }}>
+                    Country Data Inspector
+                  </h4>
+                </div>
+                <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
+                  Select country to view data
+                </span>
+              </div>
+
+              {/* Country Selector Pills */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "6px" }}>
+                {TASK1_DATA.graphData.countries.map((c) => {
+                  const isSelected = selectedCountry.id === c.id;
+                  return (
+                    <button
+                      key={c.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedCountry(c);
+                        setHighlightMode(c.id as GraphHighlightMode);
+                      }}
                       style={{
-                        background: "rgba(15, 23, 42, 0.8)",
-                        border: "1px solid rgba(56, 189, 248, 0.3)",
-                        borderRadius: "14px",
-                        padding: "14px",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "8px"
+                        padding: "8px 4px",
+                        borderRadius: "10px",
+                        fontSize: "0.78rem",
+                        fontWeight: 750,
+                        border: isSelected ? `2px solid ${c.color}` : "1.5px solid var(--border-subtle)",
+                        background: isSelected ? c.color : "var(--slate-50)",
+                        color: isSelected ? "#ffffff" : "var(--slate-800)",
+                        cursor: "pointer",
+                        textAlign: "center",
+                        transition: "all 0.15s ease",
+                        boxShadow: isSelected ? "0 2px 6px rgba(0,0,0,0.12)" : "none"
                       }}
                     >
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                        <span style={{ fontSize: "0.92rem", fontWeight: 800, color: "#38bdf8" }}>
-                          {selectedTier.name}
-                        </span>
-                        <span
-                          style={{
-                            background: "rgba(56, 189, 248, 0.2)",
-                            color: "#38bdf8",
-                            fontSize: "0.68rem",
-                            fontWeight: 800,
-                            padding: "2px 6px",
-                            borderRadius: "4px"
-                          }}
-                        >
-                          {selectedTier.badge}
-                        </span>
-                      </div>
+                      {c.name.split(" ")[0]}
+                    </button>
+                  );
+                })}
+              </div>
 
-                      <div style={{ fontSize: "0.8rem", color: "#cbd5e1", lineHeight: 1.5, display: "flex", flexDirection: "column", gap: "4px" }}>
-                        <div><strong style={{ color: "#ffffff" }}>Biomass Energy:</strong> {selectedTier.energyKcal}</div>
-                        <div><strong style={{ color: "#ffffff" }}>Organisms:</strong> {selectedTier.organisms}</div>
-                        <div><strong style={{ color: "#ffffff" }}>Thermal Loss:</strong> {selectedTier.heatLoss}</div>
-                      </div>
+              {/* Active Country Detail Box */}
+              <div
+                style={{
+                  background: "var(--slate-50)",
+                  border: `1.5px solid ${selectedCountry.color}`,
+                  borderRadius: "14px",
+                  padding: "14px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
+                  <strong style={{ fontSize: "1.02rem", color: selectedCountry.color }}>
+                    {selectedCountry.name}
+                  </strong>
+                  <span
+                    style={{
+                      fontSize: "0.74rem",
+                      fontWeight: 755,
+                      background: "#ffffff",
+                      padding: "2px 8px",
+                      borderRadius: "6px",
+                      border: "1px solid var(--border-subtle)",
+                      color: "var(--slate-700)"
+                    }}
+                  >
+                    {selectedCountry.netChange}
+                  </span>
+                </div>
 
-                      <div
-                        style={{
-                          background: "rgba(255, 255, 255, 0.05)",
-                          border: "1px solid rgba(255, 255, 255, 0.1)",
-                          borderRadius: "8px",
-                          padding: "8px 10px",
-                          fontSize: "0.78rem",
-                          color: "#93c5fd",
-                          fontStyle: "italic",
-                          lineHeight: 1.45
-                        }}
-                      >
-                        {selectedTier.band9Phrase}
+                {/* Data points summary row */}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(5, 1fr)",
+                    gap: "4px",
+                    background: "#ffffff",
+                    padding: "8px",
+                    borderRadius: "10px",
+                    border: "1px solid var(--border-subtle)",
+                    textAlign: "center"
+                  }}
+                >
+                  {selectedCountry.dataPoints.map((pt) => (
+                    <div key={pt.year}>
+                      <div style={{ fontSize: "0.68rem", fontWeight: 700, color: "var(--slate-500)" }}>
+                        {pt.year}
+                      </div>
+                      <div style={{ fontSize: "0.9rem", fontWeight: 800, color: selectedCountry.color }}>
+                        {pt.value}t
                       </div>
                     </div>
-                  )}
-                </motion.div>
-              )}
+                  ))}
+                </div>
+
+                <p style={{ fontSize: "0.85rem", color: "var(--slate-700)", margin: 0, lineHeight: 1.45 }}>
+                  {selectedCountry.trendSummary}
+                </p>
+
+                <div
+                  style={{
+                    background: "#ffffff",
+                    borderRadius: "8px",
+                    padding: "8px 12px",
+                    borderLeft: `3px solid ${selectedCountry.color}`,
+                    fontSize: "0.82rem",
+                    fontStyle: "italic",
+                    color: "var(--slate-800)",
+                    lineHeight: 1.4
+                  }}
+                >
+                  {selectedCountry.band9Phrase}
+                </div>
+              </div>
             </div>
-          </motion.div>
+          </div>
+        </div>
+      ) : (
+        /* Full Width Stage Layout (Maximum horizontal space for Mindmap/Visual) */
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          {/* Main Visual Display Full Width */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1.5px solid var(--border-subtle)",
+              borderRadius: "20px",
+              padding: viewMode === "smartboard_vector" ? "0" : "20px",
+              boxShadow: "var(--shadow-sm)",
+              minHeight: "560px",
+              display: "flex",
+              flexDirection: "column"
+            }}
+          >
+            {viewMode === "smartboard_vector" && (
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%", minHeight: "560px" }}>
+                <SmartBoardGraphSvg
+                  selectedCountryId={selectedCountry.id}
+                  onSelectCountry={handleSvgSelectCountry}
+                  highlightMode={highlightMode}
+                  onHighlightModeChange={setHighlightMode}
+                  showInternalToolbar={true}
+                />
+              </div>
+            )}
+
+            {viewMode === "mindmap" && (
+              <div style={{ flex: 1, minHeight: "540px" }}>
+                <BitsAndPiecesMindmap isEntireScreen={false} onToggleFullscreen={openFullscreen} />
+              </div>
+            )}
+
+            {viewMode === "flashcards" && (
+              <div style={{ flex: 1, minHeight: "500px" }}>
+                <BitsAndPiecesFlashcards isEntireScreen={false} onToggleFullscreen={openFullscreen} />
+              </div>
+            )}
+
+            {viewMode === "original_image" && (
+              <div
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "20px",
+                  background: "#f8fafc",
+                  borderRadius: "16px"
+                }}
+              >
+                <img
+                  src={`materials/${TASK1_DATA.imageFileName}`}
+                  alt="Original IELTS Task 1 Test Paper Graph"
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "520px",
+                    objectFit: "contain",
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.08)"
+                  }}
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Collapsible Lower Section: Prompt & Inspector Side-by-Side */}
+          <div className="stage-grid-2col" style={{ alignItems: "stretch" }}>
+            {/* Prompt */}
+            <div
+              style={{
+                background: "var(--slate-50)",
+                border: "1.5px solid var(--border-subtle)",
+                borderRadius: "18px",
+                padding: "18px 20px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                <FileText size={17} color="var(--slate-800)" />
+                <h4 style={{ fontSize: "1rem", fontWeight: 750, margin: 0 }}>Task 1 Prompt</h4>
+                <span className="apple-badge accent" style={{ marginLeft: "auto", fontSize: "0.72rem" }}>
+                  {TASK1_DATA.taskType}
+                </span>
+              </div>
+              <p style={{ margin: 0, fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.5 }}>
+                {TASK1_DATA.questionText}
+              </p>
+            </div>
+
+            {/* Compact Country Inspector */}
+            <div
+              style={{
+                background: "#ffffff",
+                border: "1.5px solid var(--border-subtle)",
+                borderRadius: "18px",
+                padding: "18px 20px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>Country Quick Inspector</strong>
+                <div style={{ display: "flex", gap: "4px" }}>
+                  {TASK1_DATA.graphData.countries.map((c) => (
+                    <button
+                      key={c.id}
+                      onClick={() => {
+                        setSelectedCountry(c);
+                        setHighlightMode(c.id as GraphHighlightMode);
+                      }}
+                      style={{
+                        padding: "3px 8px",
+                        borderRadius: "6px",
+                        fontSize: "0.74rem",
+                        fontWeight: 750,
+                        border: selectedCountry.id === c.id ? `2px solid ${c.color}` : "1px solid var(--border-subtle)",
+                        background: selectedCountry.id === c.id ? c.color : "#ffffff",
+                        color: selectedCountry.id === c.id ? "#ffffff" : "var(--slate-700)",
+                        cursor: "pointer"
+                      }}
+                    >
+                      {c.name.split(" ")[0]}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div style={{ fontSize: "0.86rem", color: "var(--slate-700)" }}>
+                <strong style={{ color: selectedCountry.color }}>{selectedCountry.name}:</strong> {selectedCountry.trendSummary} ({selectedCountry.netChange})
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* FULLSCREEN SMART BOARD MODAL (Supports ALL 4 Sub-topics across entire screen) */}
+      <AnimatePresence>
+        {isEnlarged && (
+          <div
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 99999,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "rgba(15, 23, 42, 0.88)",
+              backdropFilter: "blur(16px)",
+              padding: "12px"
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.94 }}
+              style={{
+                width: "99vw",
+                height: "96vh",
+                background: "#ffffff",
+                borderRadius: "22px",
+                display: "flex",
+                flexDirection: "column",
+                overflow: "hidden",
+                boxShadow: "0 25px 60px rgba(0,0,0,0.5)"
+              }}
+            >
+              {/* Fullscreen Header Bar */}
+              <div
+                style={{
+                  padding: "10px 20px",
+                  background: "var(--slate-900)",
+                  color: "#ffffff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  flexShrink: 0,
+                  flexWrap: "wrap",
+                  gap: "10px"
+                }}
+              >
+                {/* Title */}
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <Tv size={20} color="var(--apple-blue)" />
+                  <div>
+                    <h3 style={{ fontSize: "1rem", fontWeight: 800, margin: 0, color: "#ffffff" }}>
+                      Smart Board Entire Screen Engine • CO2 Emissions (1967–2007)
+                    </h3>
+                    <p style={{ fontSize: "0.74rem", color: "#94a3b8", margin: 0 }}>
+                      United Kingdom, Sweden, Italy, Portugal • Units: Metric Tonnes per person
+                    </p>
+                  </div>
+                </div>
+
+                {/* Sub-Topic Switcher Strip Inside Fullscreen */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "4px",
+                    background: "rgba(255,255,255,0.1)",
+                    borderRadius: "10px",
+                    padding: "3px"
+                  }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setViewMode("smartboard_vector")}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px",
+                      padding: "6px 12px",
+                      fontSize: "0.78rem",
+                      fontWeight: 750,
+                      borderRadius: "8px",
+                      border: "none",
+                      background: viewMode === "smartboard_vector" ? "var(--apple-blue)" : "transparent",
+                      color: "#ffffff",
+                      cursor: "pointer"
+                    }}
+                  >
+                    <Tv size={13} /> 4K Vector Graph
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setViewMode("mindmap")}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px",
+                      padding: "6px 12px",
+                      fontSize: "0.78rem",
+                      fontWeight: 750,
+                      borderRadius: "8px",
+                      border: "none",
+                      background: viewMode === "mindmap" ? "var(--apple-blue)" : "transparent",
+                      color: "#ffffff",
+                      cursor: "pointer"
+                    }}
+                  >
+                    <Map size={13} /> Bits &amp; Pieces Mindmap
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setViewMode("flashcards")}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px",
+                      padding: "6px 12px",
+                      fontSize: "0.78rem",
+                      fontWeight: 750,
+                      borderRadius: "8px",
+                      border: "none",
+                      background: viewMode === "flashcards" ? "var(--apple-blue)" : "transparent",
+                      color: "#ffffff",
+                      cursor: "pointer"
+                    }}
+                  >
+                    <HelpCircle size={13} /> Bits &amp; Pieces Flashcards
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setViewMode("original_image")}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px",
+                      padding: "6px 12px",
+                      fontSize: "0.78rem",
+                      fontWeight: 750,
+                      borderRadius: "8px",
+                      border: "none",
+                      background: viewMode === "original_image" ? "var(--apple-blue)" : "transparent",
+                      color: "#ffffff",
+                      cursor: "pointer"
+                    }}
+                  >
+                    <ImageIcon size={13} /> Original Exam Graph
+                  </button>
+                </div>
+
+                {/* Right Contextual Controls */}
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  {/* Zoom controls for vector or image */}
+                  {(viewMode === "smartboard_vector" || viewMode === "original_image") && (
+                    <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                      <button
+                        type="button"
+                        onClick={() => setZoomLevel((z) => Math.max(0.7, z - 0.1))}
+                        className="apple-touch-btn secondary"
+                        style={{ minHeight: "30px", width: "30px", padding: 0 }}
+                        title="Zoom Out"
+                      >
+                        <ZoomOut size={14} />
+                      </button>
+                      <span style={{ fontSize: "0.76rem", color: "#cbd5e1", minWidth: "36px", textAlign: "center" }}>
+                        {Math.round(zoomLevel * 100)}%
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setZoomLevel((z) => Math.min(1.8, z + 0.1))}
+                        className="apple-touch-btn secondary"
+                        style={{ minHeight: "30px", width: "30px", padding: 0 }}
+                        title="Zoom In"
+                      >
+                        <ZoomIn size={14} />
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Inspector Toggle for Vector Mode */}
+                  {viewMode === "smartboard_vector" && (
+                    <button
+                      type="button"
+                      onClick={() => setFullscreenShowInspector(!fullscreenShowInspector)}
+                      className="apple-touch-btn secondary"
+                      style={{ minHeight: "30px", padding: "0 10px", fontSize: "0.76rem" }}
+                    >
+                      {fullscreenShowInspector ? "Hide Inspector" : "Show Inspector"}
+                    </button>
+                  )}
+
+                  {/* Close Fullscreen Button */}
+                  <button
+                    type="button"
+                    onClick={() => setIsEnlarged(false)}
+                    className="apple-touch-btn secondary"
+                    style={{ minHeight: "32px", width: "32px", padding: 0, borderRadius: "50%" }}
+                    title="Close Fullscreen (Esc)"
+                  >
+                    <X size={17} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Fullscreen Body */}
+              <div style={{ flex: 1, display: "flex", overflow: "hidden", minHeight: 0 }}>
+                {/* 1. Vector Graph in Fullscreen */}
+                {viewMode === "smartboard_vector" && (
+                  <>
+                    <div
+                      style={{
+                        flex: 1,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "#ffffff",
+                        overflow: "auto",
+                        padding: "16px"
+                      }}
+                    >
+                      <div
+                        style={{
+                          transform: `scale(${zoomLevel})`,
+                          transformOrigin: "center center",
+                          transition: "transform 0.15s ease",
+                          width: "100%",
+                          maxWidth: "1150px",
+                          height: "100%"
+                        }}
+                      >
+                        <SmartBoardGraphSvg
+                          selectedCountryId={selectedCountry.id}
+                          onSelectCountry={handleSvgSelectCountry}
+                          highlightMode={highlightMode}
+                          onHighlightModeChange={setHighlightMode}
+                          showInternalToolbar={true}
+                        />
+                      </div>
+                    </div>
+
+                    {fullscreenShowInspector && (
+                      <div
+                        style={{
+                          width: "340px",
+                          borderLeft: "1.5px solid var(--border-subtle)",
+                          background: "var(--slate-50)",
+                          padding: "20px",
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "14px",
+                          overflowY: "auto",
+                          flexShrink: 0
+                        }}
+                      >
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                          <Layers size={18} color="var(--apple-blue)" />
+                          <h4 style={{ fontSize: "1rem", fontWeight: 800, margin: 0 }}>
+                            Country Inspector
+                          </h4>
+                        </div>
+
+                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
+                          {TASK1_DATA.graphData.countries.map((c) => {
+                            const isSelected = selectedCountry.id === c.id;
+                            return (
+                              <button
+                                key={c.id}
+                                type="button"
+                                onClick={() => {
+                                  setSelectedCountry(c);
+                                  setHighlightMode(c.id as GraphHighlightMode);
+                                }}
+                                style={{
+                                  padding: "8px",
+                                  borderRadius: "8px",
+                                  fontSize: "0.8rem",
+                                  fontWeight: 750,
+                                  background: isSelected ? c.color : "#ffffff",
+                                  color: isSelected ? "#ffffff" : "var(--slate-800)",
+                                  border: isSelected ? `2px solid ${c.color}` : "1px solid var(--border-subtle)",
+                                  cursor: "pointer"
+                                }}
+                              >
+                                {c.name}
+                              </button>
+                            );
+                          })}
+                        </div>
+
+                        <div
+                          style={{
+                            background: "#ffffff",
+                            border: `1.5px solid ${selectedCountry.color}`,
+                            borderRadius: "14px",
+                            padding: "16px",
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: "10px"
+                          }}
+                        >
+                          <strong style={{ fontSize: "1.1rem", color: selectedCountry.color }}>
+                            {selectedCountry.name}
+                          </strong>
+                          <span className="apple-badge neutral" style={{ alignSelf: "flex-start", fontSize: "0.72rem" }}>
+                            {selectedCountry.badge}
+                          </span>
+
+                          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "4px", background: "var(--slate-50)", padding: "8px", borderRadius: "8px", textAlign: "center" }}>
+                            {selectedCountry.dataPoints.map((pt) => (
+                              <div key={pt.year}>
+                                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>{pt.year}</div>
+                                <div style={{ fontSize: "0.88rem", fontWeight: 800, color: selectedCountry.color }}>{pt.value}t</div>
+                              </div>
+                            ))}
+                          </div>
+
+                          <p style={{ fontSize: "0.85rem", color: "var(--slate-700)", margin: 0, lineHeight: 1.45 }}>
+                            {selectedCountry.trendSummary}
+                          </p>
+
+                          <div style={{ fontSize: "0.82rem", fontStyle: "italic", color: "var(--slate-800)", borderLeft: `3px solid ${selectedCountry.color}`, paddingLeft: "8px" }}>
+                            {selectedCountry.band9Phrase}
+                          </div>
+                        </div>
+
+                        {/* Quick Crossovers Card */}
+                        <div style={{ background: "#ffffff", border: "1.5px solid #fde68a", borderRadius: "14px", padding: "14px" }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "6px", color: "#92400e" }}>
+                            <GitCommit size={15} />
+                            <strong style={{ fontSize: "0.88rem" }}>Key Inflection Points:</strong>
+                          </div>
+                          <div style={{ fontSize: "0.8rem", color: "#78350f", lineHeight: 1.45 }}>
+                            • <strong>1987:</strong> Italy overtakes Sweden (~6.8t)<br />
+                            • <strong>2007:</strong> Sweden &amp; Portugal converge (5.4t)
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                )}
+
+                {/* 2. Bits & Pieces Mindmap in Entire Screen */}
+                {viewMode === "mindmap" && (
+                  <div style={{ flex: 1, height: "100%", overflow: "hidden" }}>
+                    <BitsAndPiecesMindmap isEntireScreen={true} />
+                  </div>
+                )}
+
+                {/* 3. Bits & Pieces Flashcards in Entire Screen */}
+                {viewMode === "flashcards" && (
+                  <div style={{ flex: 1, height: "100%", overflow: "hidden", display: "flex", justifyContent: "center" }}>
+                    <div style={{ width: "100%", maxWidth: "1200px", height: "100%" }}>
+                      <BitsAndPiecesFlashcards isEntireScreen={true} />
+                    </div>
+                  </div>
+                )}
+
+                {/* 4. Original Exam Graph in Entire Screen */}
+                {viewMode === "original_image" && (
+                  <div
+                    style={{
+                      flex: 1,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "#0f172a",
+                      overflow: "auto",
+                      padding: "20px"
+                    }}
+                  >
+                    <div
+                      style={{
+                        transform: `scale(${zoomLevel})`,
+                        transformOrigin: "center center",
+                        transition: "transform 0.15s ease",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                      }}
+                    >
+                      <img
+                        src={`materials/${TASK1_DATA.imageFileName}`}
+                        alt="Original IELTS Task 1 Test Paper Graph"
+                        style={{
+                          maxWidth: "90vw",
+                          maxHeight: "85vh",
+                          objectFit: "contain",
+                          borderRadius: "10px",
+                          boxShadow: "0 10px 40px rgba(0,0,0,0.6)"
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </div>

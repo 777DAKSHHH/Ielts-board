@@ -31,7 +31,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
         </span>
         <h2 className="stage-title">Listen First: Guess the Essay Topic</h2>
         <p className="stage-subtitle">
-          Play the briefing before revealing the actual IELTS question. Students should infer the controversy surrounding colonial loot, museum collections, and national heritage.
+          Play the briefing before revealing the actual IELTS question. Listen to the workplace debate regarding cash bonuses, employee motivation, and alternative incentives.
         </p>
       </div>
 
@@ -65,7 +65,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             <div>
               <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Cryptic Audio Briefing</h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)" }}>
-                Treasures of Antiquity • Cultural Repatriation & Colonial Heritage • ~1:15
+                Corporate Management • Cash Bonuses vs. Non-Monetary Workplace Incentives • ~1:02
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               lineHeight: 1.55
             }}
           >
-            <strong style={{ color: "var(--slate-900)" }}>Teacher move:</strong> Do not show the task yet. Ask students to listen, discuss their prediction, and justify what clues led them to the theme of cultural heritage restitution.
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. What managerial dilemma is being explored regarding monetary rewards, and what alternative approaches to employee motivation are implied?
           </div>
         </div>
 
@@ -109,10 +109,10 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Student Guess Board</h4>
           </div>
           {[
-            "What global dispute involving world-famous museums and foreign treasures is being described?",
-            "Under what historical circumstances were these sacred statues, bronzes, and relics originally taken?",
-            "Why do origin nations feel deeply alienated when their ancestral heritage remains displayed overseas?",
-            "What moral, academic, and economic arguments justify returning historical objects to their homelands?"
+            "What corporate practice regarding staff rewards and financial compensation is being scrutinized?",
+            "To what extent can monetary bonuses stimulate short-term output versus enduring employee dedication?",
+            "What unintended consequences or negative side-effects (e.g. rivalry, metric gaming, burnout) might arise from extra money?",
+            "What superior non-monetary incentives can modern leaders offer to encourage staff to work hard?"
           ].map((question, index) => (
             <div
               key={question}

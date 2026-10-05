@@ -1,16 +1,16 @@
 import React from "react";
-import { CheckCircle2, Globe, ShieldCheck, Scale, AlertTriangle, BookOpen, CircleCheck } from "lucide-react";
+import { CheckCircle2, Award, Compass, HeartHandshake, Star, BookOpen, CircleCheck } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 
 export const Step7EvaluationT2: React.FC = () => (
   <div className="stage-card-wrapper">
     <div>
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-        Step 07 / 09 • Disagree Stance: Retention in Universal Museums
+        Step 07 / 09 • Question 2: Better Ways to Motivate Staff
       </span>
-      <h2 className="stage-title">Disagree Points: Why Historical Objects Belong in Global Hubs</h2>
+      <h2 className="stage-title">Question 2: Superior Non-Monetary Strategies to Inspire Employees</h2>
       <p className="stage-subtitle">
-        Levelled arguments against unconditional repatriation. If you choose the <strong>DISAGREE</strong> stance, select 2 distinct main arguments from this step to structure your two body paragraphs.
+        Levelled arguments for alternative incentives. Select 1 or 2 superior motivational strategies—such as career progression, autonomy, recognition, or supportive culture—to structure Body Paragraph 2.
       </p>
     </div>
 
@@ -48,7 +48,7 @@ export const Step7EvaluationT2: React.FC = () => (
                 border: item.type === "argument" ? "1px solid rgba(147, 51, 234, 0.25)" : "1px solid rgba(5, 150, 105, 0.25)"
               }}
             >
-              {item.level || (item.type === "argument" ? "Disagree Argument" : "Critical Evaluation")}
+              {item.level || (item.type === "argument" ? "Core Motivator" : "Strategic Implementation")}
             </span>
             {item.collocation && (
               <span
@@ -78,13 +78,13 @@ export const Step7EvaluationT2: React.FC = () => (
             {item.type === "counterpoint" ? (
               <CheckCircle2 size={19} style={{ flexShrink: 0 }} />
             ) : idx === 0 ? (
-              <Globe size={19} style={{ flexShrink: 0 }} />
+              <Award size={19} style={{ flexShrink: 0 }} />
             ) : idx === 1 ? (
-              <ShieldCheck size={19} style={{ flexShrink: 0 }} />
+              <Compass size={19} style={{ flexShrink: 0 }} />
             ) : idx === 2 ? (
-              <Scale size={19} style={{ flexShrink: 0 }} />
+              <Star size={19} style={{ flexShrink: 0 }} />
             ) : (
-              <AlertTriangle size={19} style={{ flexShrink: 0 }} />
+              <HeartHandshake size={19} style={{ flexShrink: 0 }} />
             )}
             <h4 style={{ fontSize: "1.02rem", fontWeight: 750, color: "var(--slate-900)" }}>{item.title}</h4>
           </div>

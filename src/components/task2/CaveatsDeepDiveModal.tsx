@@ -96,14 +96,14 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       padding: "2px 8px"
                     }}
                   >
-                    OPINION ESSAY MASTERCLASS
+                    TWO-PART ESSAY MASTERCLASS
                   </span>
                   <span style={{ fontSize: "0.85rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                    Step 06 Deep Dive • 1 Main Reason + Support + Example
+                    Step 06 Deep Dive • Nuances & 1 Reason + Support + Example
                   </span>
                 </div>
                 <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--slate-900)", margin: "3px 0 0" }}>
-                  Mastering the "1 Main Reason + Support + Example" Formula
+                  Mastering Nuances & The "1 Reason + Support + Example" Architecture
                 </h3>
               </div>
             </div>
@@ -203,7 +203,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       The "Laundry List" Mistake (Band 6.0 Trap)
                     </h5>
                     <p style={{ fontSize: "0.9rem", color: "#78350f", margin: 0, lineHeight: 1.55 }}>
-                      Band 6 candidates dump 3 or 4 rushed ideas in one paragraph without developing any of them (*"Artifacts should be returned because it is their culture, and also museums are far, and also it helps poor countries"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
+                      Band 6 candidates dump 3 or 4 rushed ideas in one paragraph without developing any of them (*"Bonuses motivate people because they like money, and also it helps buy things, and also companies grow"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
                     </p>
                   </div>
                 </div>
@@ -224,7 +224,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      By focusing on <strong>1 main reason per body paragraph</strong> (Body 1: Cultural Identity & Moral Justice; Body 2: Sovereignty & Economic Equity), students have the space to unpack the causal logic thoroughly instead of superficial skimming.
+                      By focusing on <strong>1 main reason per body paragraph</strong> (Body 1: Monetary Rewards & Diminishing Psychological Returns; Body 2: Superior Intrinsic Motivators like Autonomy & Career Progression), students have the space to unpack the causal logic thoroughly instead of superficial skimming.
                     </p>
                   </div>
 
@@ -243,7 +243,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      Examiners look for specific real-world grounding. Citing the <em>Benin Bronzes looted from Nigeria</em> or the <em>Acropolis Museum in Athens</em> demonstrates genuine academic command and scores Band 9 in Task Achievement.
+                      Examiners look for specific real-world grounding. Citing the <em>Wells Fargo aggressive sales quota scandal</em> or <em>Atlassian's autonomous ShipIt hackathons</em> demonstrates genuine academic command and scores Band 9 in Task Achievement.
                     </p>
                   </div>
                 </div>
@@ -259,7 +259,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 <div style={{ background: "var(--slate-50)", borderRadius: "16px", padding: "16px 20px", border: "1px solid var(--border-subtle)" }}>
                   <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-                    <strong>The 3-Tier Body Paragraph Blueprint:</strong> Teach students to construct every body paragraph like an inverted pyramid of logic:
+                    <strong>The 3-Tier Body Paragraph Blueprint:</strong> Construct every body paragraph like an inverted pyramid of logic:
                   </p>
                 </div>
 
@@ -267,23 +267,23 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   {
                     step: "Tier 01",
                     badge: "Topic Sentence",
-                    title: "State 1 Clear Main Reason",
-                    say: "“First and foremost, historical treasures embody the living cultural identity and spiritual soul of their native civilizations, making their repatriation a non-negotiable moral duty.”",
-                    takeaway: "Direct, unequivocal claim that immediately answers the prompt."
+                    title: "State 1 Clear Evaluative Reason",
+                    say: "“First and foremost, while financial bonuses undeniably stimulate short-term productivity in metric-driven roles, their long-term effectiveness is constrained by hedonic habituation.”",
+                    takeaway: "Direct, unequivocal claim that immediately answers Question 1."
                   },
                   {
                     step: "Tier 02",
                     badge: "Supporting Causal Engine",
                     title: "Unpack WHY and HOW with Supporting Reasons",
-                    say: "“An overwhelming majority of non-Western antiquities were plundered during colonial military raids. Retaining them in foreign institutions perpetuates historical humiliation and severs descendant generations from their living traditions.”",
-                    takeaway: "Explains the underlying historical mechanism and psychological harm."
+                    say: "“When cash rewards are repeatedly disbursed, employees quickly assimilate the extra income into their baseline standard of living, viewing future bonuses as an entitlement rather than a fresh incentive to excel.”",
+                    takeaway: "Explains the underlying psychological mechanism and hedonic treadmill effect."
                   },
                   {
                     step: "Tier 03",
                     badge: "Concrete Real-World Anchor",
                     title: "Substantiate with Specific Evidence",
-                    say: "“A prominent illustration is the ongoing repatriation of the Benin Bronzes to Nigeria and sacred Maori ancestral remains to New Zealand, which has enabled indigenous communities to restore sacred ceremonial rites and reclaim their heritage.”",
-                    takeaway: "Pins the theoretical argument to a famous, undeniable historical case study."
+                    say: "“This dynamic is clearly visible in high-pressure financial institutions, where annual bonus payouts yield rapidly diminishing motivational returns within weeks, requiring escalating monetary sums to generate equivalent effort.”",
+                    takeaway: "Pins the theoretical argument to a famous, undeniable corporate workplace reality."
                   }
                 ].map((item) => (
                   <div
@@ -347,10 +347,10 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <strong style={{ color: "#991b1b", fontSize: "0.9rem" }}>Vague & Superficial (No Depth or Specificity)</strong>
                   </div>
                   <div style={{ padding: "14px 18px", fontSize: "0.92rem", color: "#475569", lineHeight: 1.5 }}>
-                    “Historical objects must be given back because they were stolen in old wars. People want their history back so they can see it in their own countries.”
+                    “Giving workers extra money is good because everyone wants to be rich. But sometimes it makes them fight with their friends at work.”
                   </div>
                   <div style={{ padding: "8px 18px 14px", fontSize: "0.8rem", color: "#dc2626" }}>
-                    ❌ <em>Weak vocabulary ('stolen in old wars', 'given back'); zero causal development; lacks any specific historical example.</em>
+                    ❌ <em>Weak vocabulary ('good', 'everyone wants to be rich'); zero causal mechanism; lacks organizational depth.</em>
                   </div>
                 </div>
 
@@ -379,10 +379,10 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <strong style={{ color: "#166534", fontSize: "0.9rem" }}>Fully Extended & Real-World Evidenced</strong>
                   </div>
                   <div style={{ padding: "14px 18px", fontSize: "0.95rem", color: "#1e293b", lineHeight: 1.6 }}>
-                    “Chief among the arguments for restitution is that historical relics represent the living cultural identity of their creators, making their repatriation essential to rectifying colonial injustices. Because the majority of these artifacts were illicitly plundered during 19th-century imperial expeditions, returning them restores ancestral dignity—a truth exemplified by the recent restitution of the Benin Bronzes to Nigeria.”
+                    “Although monetary bonuses can trigger an immediate surge in quantifiable output, their efficacy as a management tool is strictly limited. Over time, exclusive reliance on financial incentives erodes intrinsic motivation and sparks destructive internal rivalry, as exemplified by the Wells Fargo banking controversy where aggressive quotas prompted staff to open unauthorized accounts.”
                   </div>
                   <div style={{ padding: "8px 18px 14px", fontSize: "0.82rem", color: "#15803d" }}>
-                    ✓ <em>Examiner impact: Advanced collocations ('illicitly plundered', 'ancestral dignity'), seamless causal subordination, and concrete historical validation.</em>
+                    ✓ <em>Examiner impact: Academic collocations ('quantifiable output', 'erodes intrinsic motivation', 'destructive internal rivalry'), complex sentence coordination, and a verifiable corporate case study.</em>
                   </div>
                 </div>
               </motion.div>
@@ -397,25 +397,25 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 <div style={{ background: "var(--slate-50)", borderRadius: "14px", padding: "14px 18px", border: "1px solid var(--border-subtle)" }}>
                   <p style={{ margin: 0, fontSize: "0.9rem", color: "var(--slate-700)" }}>
-                    Students can memorize these <strong>3 plug-and-play body paragraph templates</strong>:
+                    Master these <strong>3 plug-and-play body paragraph templates</strong>:
                   </p>
                 </div>
 
                 {[
                   {
                     title: "Formula 1: The Topic Sentence Frame (1 Main Reason)",
-                    pattern: "The primary justification for [opinion stance] is that [1 Main Reason], which in turn [broader cultural or economic impact].",
-                    example: "“The primary justification for repatriating historical objects is that ancestral treasures embody the spiritual identity of their creators, which in turn heals the enduring trauma of imperial exploitation.”"
+                    pattern: "The primary limitation of [management practice] is that [1 Core Reason], which ultimately [organizational consequence].",
+                    example: "“The primary limitation of performance-related bonuses is that employees become psychologically habituated to cash payouts, which ultimately erodes their genuine passion for the work itself.”"
                   },
                   {
                     title: "Formula 2: The Causal Supporting Explanation",
-                    pattern: "When [situation occurs], it inevitably [negative outcome]; conversely, by [taking action], origin nations [positive resolution].",
-                    example: "“When antiquities are sequestered in overseas institutions, native populations are estranged from their cultural roots; conversely, by returning rightful custodianship, communities can revive sacred ancestral traditions.”"
+                    pattern: "When management relies exclusively on [incentive type], workers inevitably [suboptimal behavior]; conversely, by cultivating [intrinsic motivator], enterprises foster [long-term benefit].",
+                    example: "“When management relies exclusively on monetary compensation, workers inevitably adopt a transactional mindset; conversely, by granting operational autonomy, enterprises foster proactive innovation and institutional loyalty.”"
                   },
                   {
                     title: "Formula 3: The Concrete Case-Study Clincher",
-                    pattern: "This principle is powerfully illustrated by [Specific Case Study], where [action taken] successfully [tangible result achieved].",
-                    example: "“This principle is powerfully illustrated by Greece's purpose-built Acropolis Museum, which dismantled conservation excuses and demonstrated that origin nations can safeguard their own antiquities.”"
+                    pattern: "This principle is substantiated by [Corporate Case Study], where [management strategy] successfully [measurable outcome achieved].",
+                    example: "“This principle is substantiated by technology leaders like Atlassian, where dedicating structured time for autonomous employee projects consistently produces higher engagement and breakthrough software products than annual cash perks.”"
                   }
                 ].map((item, idx) => (
                   <div

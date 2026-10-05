@@ -5,7 +5,7 @@ import {
   ChevronRight,
   Sparkles,
   CheckCircle2,
-  AlertTriangle
+  Maximize2
 } from "lucide-react";
 
 interface FlashcardItem {
@@ -22,112 +22,135 @@ interface FlashcardItem {
 const FLASHCARDS: FlashcardItem[] = [
   {
     id: 1,
-    category: "Piece 1: Solar Fuel & Base",
-    badgeColor: "#16a34a",
-    question: "Where does the food chain get its energy, and how much biomass is stored at the base?",
-    answerTitle: "Light Energy fuels Primary Producers (20,000 kcal/m²/yr)",
+    category: "Piece 1: The Macro Dichotomy",
+    badgeColor: "#0284c7",
+    question: "What is the single most important macro feature shown across the 40-year timeframe?",
+    answerTitle: "Two Decreased (UK & Sweden) vs. Two Increased (Italy & Portugal)",
     bulletPoints: [
-      "Solar radiation enters at the base marked 'Light energy'.",
-      "Tier 1 'Primary producers' (vegetation/trees) synthesise this light into 20,000 kcal/m²/yr.",
-      "This represents 100% of the baseline biomass energy for the entire ecosystem."
+      "The United Kingdom and Sweden both experienced overall net reductions from their 1967 baselines.",
+      "Italy and Portugal both underwent continuous, substantial per capita growth.",
+      "This natural division gives the ideal 2-grouping architecture for your two body paragraphs!"
     ],
-    band9Phrase: "Primary producers synthesize the baseline biomass, capturing 20,000 kcal/m²/yr from solar radiation."
+    band9Phrase:
+      "Overall, per capita emissions in the United Kingdom and Sweden followed a downward trajectory, whereas Italy and Portugal experienced substantial growth."
   },
   {
     id: 2,
-    category: "Piece 2: The 10% Trophic Rule",
-    badgeColor: "#0284c7",
-    question: "Why do the energy figures change from 2,000 to 200 to 20 to 2 kcal/m²/yr as we move up?",
-    answerTitle: "Exact 10-Fold (90%) Reduction at Every Tier",
+    category: "Piece 2: UK's Unbroken Dominance",
+    badgeColor: "#9333ea",
+    question: "Which nation emitted the most carbon dioxide per person, and how did its numbers change?",
+    answerTitle: "The UK Remained Highest in Every Single Year (~10.8 to ~8.7 Tonnes)",
     bulletPoints: [
-      "Primary consumers (insects, mice) retain 2,000 kcal/m²/yr (10% of base).",
-      "Secondary consumers (birds, frogs) retain 200 kcal/m²/yr (1% of base).",
-      "Tertiary consumers (snakes) assimilate 20 kcal/m²/yr (0.1% of base).",
-      "Quaternary apex raptors receive a mere 2 kcal/m²/yr (1/10,000th of base)."
+      "Started at ~10.8 metric tonnes in 1967—higher than any other nation.",
+      "Hovered near 10.7 tonnes in 1977, before embarking on an unbroken, gradual descent.",
+      "Declined to 10.0 tonnes (1987), 9.6 tonnes (1997), and concluded at roughly 8.7 tonnes (2007).",
+      "Never surrendered first position, despite decreasing by nearly 20% overall."
     ],
-    band9Phrase: "Each ascending stage exhibits a tenfold caloric reduction, culminating in apex quaternary consumers receiving a mere 2 kcal/m²/yr."
+    band9Phrase:
+      "The United Kingdom was the dominant emitter throughout the four-decade span, despite a steady and continuous reduction from nearly 11 to under 9 metric tonnes."
   },
   {
     id: 3,
-    category: "Piece 3: Energy Leakage",
-    badgeColor: "#ea580c",
-    question: "Where does the 90% missing energy go, and can it ever be re-used by plants?",
-    answerTitle: "Metabolic Heat Dissipation (Unidirectional & Irreversible)",
+    category: "Piece 3: Sweden's Volatile Rollercoaster",
+    badgeColor: "#0284c7",
+    question: "Why is Sweden's trajectory the most visually erratic and dramatic on the graph?",
+    answerTitle: "Sharp 1977 Peak (~10.2 Tonnes) Followed by a 30-Year Collapse (to 5.4 Tonnes)",
     bulletPoints: [
-      "Squiggly arrows labeled 'Heat' radiate from ALL 5 tiers and from DECOMPOSERS.",
-      "Energy is lost via cellular respiration, thermal regulation, and physical movement.",
-      "Heat is radiated into the atmosphere and is permanently lost (never recycled back to plants)."
+      "Began second highest at 8.6 tonnes in 1967.",
+      "Surged rapidly to an apex above 10 tonnes in 1977, briefly rivaling the UK.",
+      "Plunged precipitously for the next thirty years: 7.0 tonnes (1987), 6.0 (1997), 5.4 (2007).",
+      "Nearly halved (-47%) from its 1977 peak, dropping from 2nd position to tied-for-lowest."
     ],
-    band9Phrase: "Concurrently, metabolic heat is continuously dissipated into the atmosphere across all levels, representing an irreversible thermal loss."
+    band9Phrase:
+      "Sweden exhibited the most volatile trajectory, climbing sharply to an apex of roughly 10.2 tonnes in 1977 before plunging precipitously to finish at 5.4 tonnes."
   },
   {
     id: 4,
-    category: "Piece 4: Biological Detritus Flow",
-    badgeColor: "#15803d",
-    question: "Where do the arrows labeled 'Waste & dead matter' go, and what happens at DECOMPOSERS?",
-    answerTitle: "All Pyramid Tiers Channel Waste & Dead Matter to DECOMPOSERS",
+    category: "Piece 4: Italy's Overtaking Ascent",
+    badgeColor: "#b91c1c",
+    question: "How did Italy progress over time, and what major milestone occurred in the late 1980s?",
+    answerTitle: "Steady 30-Year Growth (+81%), Overtaking Sweden in 1987, and Plateauing at 7.6 Tonnes",
     bulletPoints: [
-      "Arrows from Quaternary raptors (pink), Secondary consumers (yellow), Primary consumers (cyan), and Primary producers (green) all converge on DECOMPOSERS.",
-      "Decomposers process decaying matter and carcasses from all biological tiers.",
-      "Decomposers release their own metabolic heat into the atmosphere during biological decomposition."
+      "Began in third position at 4.2 tonnes in 1967.",
+      "Climbed steadily to 6.2 tonnes in 1977 and 6.7 tonnes in 1987.",
+      "In approximately 1987, Italy intersected and overtook Sweden's declining line.",
+      "Reached 7.6 tonnes in 1997, where it remained completely static and plateaued through 2007."
     ],
-    band9Phrase: "Dead matter and biological waste from all five trophic tiers are funneled into decomposers, which subsequently release metabolic heat."
+    band9Phrase:
+      "Italy witnessed a consistent upward climb from 4.2 tonnes, surpassing Sweden around 1987 before plateauing identically at 7.6 tonnes from 1997 onwards."
   },
   {
     id: 5,
-    category: "Piece 5: Band 9 Macro Overview",
-    badgeColor: "#8b5cf6",
-    question: "What are the TWO primary features to report in the macro overview?",
-    answerTitle: "Upward Tenfold Energy Reduction & Multilevel Heat/Waste Dissipation",
+    category: "Piece 5: Portugal's Four-Fold Surge",
+    badgeColor: "#1e293b",
+    question: "Which nation grew the fastest in proportional terms, and where did it finish?",
+    answerTitle: "Portugal Quadrupled from 1.2 to 5.4 Tonnes (+350%), Equalizing with Sweden in 2007",
     bulletPoints: [
-      "Feature 1: Linear upward trophic diminution (tenfold reduction from 20,000 down to 2 kcal/m²/yr).",
-      "Feature 2: Dissipation of metabolic heat across all levels alongside waste channeling to decomposers."
+      "Lowest emitter by far in 1967, generating a mere 1.2 metric tonnes per person.",
+      "Ascended continuously across all four decades: 2.2t (1977), 3.6t (1987), 5.3t (1997).",
+      "Finished at 5.4 tonnes in 2007—a more than four-fold surge (+350%).",
+      "Completely bridged the historical gap, converging identically with Sweden by 2007."
     ],
-    band9Phrase: "Overall, energy transfers upward through five distinct tiers with an exponential tenfold reduction, while metabolic heat escapes continuously and biological detritus flows into decomposers."
+    band9Phrase:
+      "Starting at a negligible 1.2 metric tonnes in 1967, Portugal registered more than a four-fold surge to converge directly with Sweden at 5.4 tonnes by 2007."
   },
   {
     id: 6,
-    category: "Piece 6: IELTS Title Trap Alert",
-    badgeColor: "#dc2626",
-    isWarning: true,
-    question: "The prompt mentions 'food production chain of the United States' — should you write about farms, factories, or food logistics?",
-    answerTitle: "DO NOT Write About Industrial Agriculture or Factories!",
+    category: "Piece 6: Critical Inflections & Crossovers",
+    badgeColor: "#ea580c",
+    question: "What two exact intersection events must you report to achieve Band 8+ in Task Achievement?",
+    answerTitle: "1987 Overtake (~6.8t) and 2007 Convergence (5.4t)",
     bulletPoints: [
-      "The diagram is strictly an ecological energy pyramid and food web.",
-      "Writing about tractors, slaughterhouses, packaging, or supermarkets will cause a severe penalty under Task Achievement.",
-      "Report ONLY the scientific entities shown: trophic levels, kcal/m²/yr values, heat loss, and decomposer waste processing."
+      "Milestone 1 (~1987): Italy crosses above Sweden's line at approximately 6.8 metric tonnes.",
+      "Milestone 2 (2007): Sweden and Portugal converge at an identical figure of 5.4 metric tonnes.",
+      "Reporting these exact intersection moments proves you can analyze relative shifts rather than just reciting lists of numbers!"
     ],
-    band9Phrase: "The visual illustrates an ecological food web rather than industrial processing; stick strictly to the trophic tiers and energy metrics."
+    band9Phrase:
+      "Italy overtook Sweden around 1987 at approximately 6.8 metric tonnes, while Portugal and Sweden concluded the period by converging at an identical 5.4 tonnes in 2007."
   }
 ];
 
-export const BitsAndPiecesFlashcards: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [isFlipped, setIsFlipped] = useState<boolean>(false);
-  const [masteredIds, setMasteredIds] = useState<number[]>([]);
+interface BitsAndPiecesFlashcardsProps {
+  isEntireScreen?: boolean;
+  onToggleFullscreen?: () => void;
+}
 
-  const card = FLASHCARDS[currentIndex];
-  const isMastered = masteredIds.includes(card.id);
+export const BitsAndPiecesFlashcards: React.FC<BitsAndPiecesFlashcardsProps> = ({
+  isEntireScreen = false,
+  onToggleFullscreen
+}) => {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleNext = () => {
+  const card = FLASHCARDS[activeIdx];
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setIsFlipped(false);
-    setCurrentIndex((prev) => (prev + 1) % FLASHCARDS.length);
+    setActiveIdx((prev) => (prev + 1) % FLASHCARDS.length);
   };
 
-  const handlePrev = () => {
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setIsFlipped(false);
-    setCurrentIndex((prev) => (prev - 1 + FLASHCARDS.length) % FLASHCARDS.length);
-  };
-
-  const toggleMastered = (id: number) => {
-    setMasteredIds((prev) =>
-      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
-    );
+    setActiveIdx((prev) => (prev - 1 + FLASHCARDS.length) % FLASHCARDS.length);
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "14px", width: "100%" }}>
-      {/* Header Bar */}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: "100%",
+        height: "100%",
+        padding: isEntireScreen ? "20px 28px" : "16px",
+        background: isEntireScreen ? "#f8fafc" : "var(--slate-50)",
+        borderRadius: isEntireScreen ? "0" : "18px",
+        overflowY: "auto",
+        boxSizing: "border-box"
+      }}
+    >
+      {/* Top Header Bar */}
       <div
         style={{
           display: "flex",
@@ -135,285 +158,320 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
           justifyContent: "space-between",
           flexWrap: "wrap",
           gap: "10px",
-          background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
+          marginBottom: "14px",
+          background: "#ffffff",
+          padding: "10px 16px",
+          borderRadius: "14px",
           border: "1.5px solid var(--border-subtle)",
-          borderRadius: "16px",
-          padding: "14px 20px"
+          boxShadow: "var(--shadow-sm)"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <div
+        <div>
+          <span
+            className="apple-badge neutral"
             style={{
-              width: "36px",
-              height: "36px",
-              borderRadius: "10px",
-              background: "#0284c7",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              fontSize: "0.72rem",
+              fontWeight: 800,
+              background: card.badgeColor,
               color: "#ffffff"
             }}
           >
-            <Sparkles size={18} />
-          </div>
-          <div>
-            <h4 style={{ margin: 0, fontSize: "1.05rem", fontWeight: 800, color: "var(--slate-900)" }}>
-              Interactive Question Deciphering Flashcards
-            </h4>
-            <p style={{ margin: "2px 0 0 0", fontSize: "0.82rem", color: "var(--slate-600)" }}>
-              Tap anywhere on the card to flip between Question and IELTS Breakdown.
-            </p>
-          </div>
+            {card.category}
+          </span>
+          <h3
+            style={{
+              fontSize: isEntireScreen ? "1.25rem" : "1.08rem",
+              fontWeight: 800,
+              color: "var(--slate-900)",
+              margin: "3px 0 0"
+            }}
+          >
+            Bits &amp; Pieces: Active Flashcard Recall
+          </h3>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span style={{ fontSize: "0.82rem", fontWeight: 750, color: "var(--slate-600)" }}>
-            Card {currentIndex + 1} of {FLASHCARDS.length}
+          <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--slate-500)" }}>
+            Card {activeIdx + 1} of {FLASHCARDS.length}
           </span>
-          <span
-            style={{
-              background: isMastered ? "#16a34a" : "#f1f5f9",
-              color: isMastered ? "#ffffff" : "var(--slate-700)",
-              fontSize: "0.75rem",
-              fontWeight: 800,
-              padding: "4px 10px",
-              borderRadius: "999px"
-            }}
-          >
-            {isMastered ? "Mastered ✓" : "In Progress"}
-          </span>
+          <div style={{ display: "flex", gap: "4px" }}>
+            <button
+              onClick={handlePrev}
+              className="apple-touch-btn secondary"
+              style={{ minHeight: "34px", width: "34px", padding: 0, borderRadius: "8px" }}
+              title="Previous card"
+            >
+              <ChevronLeft size={16} />
+            </button>
+            <button
+              onClick={handleNext}
+              className="apple-touch-btn secondary"
+              style={{ minHeight: "34px", width: "34px", padding: 0, borderRadius: "8px" }}
+              title="Next card"
+            >
+              <ChevronRight size={16} />
+            </button>
+          </div>
+
+          {!isEntireScreen && onToggleFullscreen && (
+            <button
+              type="button"
+              onClick={onToggleFullscreen}
+              className="apple-touch-btn primary"
+              style={{
+                padding: "6px 14px",
+                fontSize: "0.78rem",
+                fontWeight: 750,
+                gap: "5px",
+                boxShadow: "0 2px 6px rgba(0, 113, 227, 0.2)"
+              }}
+            >
+              <Maximize2 size={13} /> Entire Screen
+            </button>
+          )}
         </div>
       </div>
 
-      {/* 3D Flip Card Container */}
+      {/* Card Quick-Jumper Chips */}
       <div
-        onClick={() => setIsFlipped(!isFlipped)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            setIsFlipped(!isFlipped);
-          }
-        }}
         style={{
-          perspective: "1000px",
-          cursor: "pointer",
-          width: "100%",
-          minHeight: "340px"
+          display: "flex",
+          gap: "8px",
+          overflowX: "auto",
+          paddingBottom: "8px",
+          marginBottom: "12px"
         }}
       >
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            minHeight: "340px",
-            textAlign: "left",
-            transition: "transform 0.4s ease",
-            transformStyle: "preserve-3d",
-            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
-          }}
-        >
-          {/* ================= FRONT SIDE (QUESTION) ================= */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backfaceVisibility: "hidden",
-              WebkitBackfaceVisibility: "hidden",
-              background: "#ffffff",
-              border: `2px solid ${card.badgeColor}`,
-              borderRadius: "20px",
-              padding: "26px 30px",
-              boxShadow: "0 10px 25px -5px rgba(0,0,0,0.06), 0 8px 10px -6px rgba(0,0,0,0.04)",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between"
-            }}
-          >
-            <div>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "16px" }}>
-                <span
-                  style={{
-                    background: card.badgeColor,
-                    color: "#ffffff",
-                    fontSize: "0.76rem",
-                    fontWeight: 800,
-                    padding: "4px 12px",
-                    borderRadius: "8px",
-                    letterSpacing: "0.5px"
-                  }}
-                >
-                  {card.category}
-                </span>
-
-                <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--slate-400)", fontSize: "0.78rem" }}>
-                  <RotateCw size={14} /> Tap card to flip
-                </div>
-              </div>
-
-              <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "var(--slate-900)", lineHeight: 1.4, margin: "14px 0" }}>
-                {card.question}
-              </h3>
-            </div>
-
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "20px", paddingTop: "14px", borderTop: "1px solid var(--border-subtle)" }}>
-              <span style={{ fontSize: "0.8rem", color: "var(--slate-500)" }}>
-                Touch anywhere on card to reveal the breakdown
-              </span>
-              <button
-                type="button"
-                className="apple-touch-btn primary"
-                style={{ fontSize: "0.78rem", padding: "6px 14px", display: "flex", alignItems: "center", gap: "6px" }}
-              >
-                <RotateCw size={13} /> Reveal Answer
-              </button>
-            </div>
-          </div>
-
-          {/* ================= BACK SIDE (ANSWER & BAND 9 DECONSTRUCTION) ================= */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              backfaceVisibility: "hidden",
-              WebkitBackfaceVisibility: "hidden",
-              transform: "rotateY(180deg)",
-              background: card.isWarning ? "#fef2f2" : "#ffffff",
-              border: `2px solid ${card.badgeColor}`,
-              borderRadius: "20px",
-              padding: "24px 28px",
-              boxShadow: "0 10px 25px -5px rgba(0,0,0,0.06), 0 8px 10px -6px rgba(0,0,0,0.04)",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              overflowY: "auto"
-            }}
-          >
-            <div>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  {card.isWarning ? <AlertTriangle size={18} color="#dc2626" /> : <CheckCircle2 size={18} color={card.badgeColor} />}
-                  <span
-                    style={{
-                      fontSize: "0.78rem",
-                      fontWeight: 800,
-                      color: card.badgeColor,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.5px"
-                    }}
-                  >
-                    {card.category} • Solution
-                  </span>
-                </div>
-
-                <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--slate-400)", fontSize: "0.78rem" }}>
-                  <RotateCw size={14} /> Tap to flip back
-                </div>
-              </div>
-
-              <h4 style={{ fontSize: "1.15rem", fontWeight: 800, color: card.isWarning ? "#991b1b" : "var(--slate-900)", margin: "4px 0 10px 0" }}>
-                {card.answerTitle}
-              </h4>
-
-              {/* Bullet points */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "6px", margin: "10px 0" }}>
-                {card.bulletPoints.map((point, idx) => (
-                  <div key={idx} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.85rem", color: "var(--slate-700)" }}>
-                    <span style={{ color: card.badgeColor, fontWeight: 800, lineHeight: 1 }}>•</span>
-                    <span>{point}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Band 9 Phrasing */}
-              <div
-                style={{
-                  background: card.isWarning ? "#fee2e2" : "var(--slate-50)",
-                  border: `1px solid ${card.isWarning ? "#fca5a5" : "var(--border-subtle)"}`,
-                  borderRadius: "10px",
-                  padding: "10px 14px",
-                  marginTop: "8px",
-                  fontSize: "0.82rem",
-                  color: "var(--slate-800)",
-                  fontStyle: "italic"
-                }}
-              >
-                <strong style={{ color: card.badgeColor, fontStyle: "normal" }}>Band 9 Phrasing: </strong>
-                "{card.band9Phrase}"
-              </div>
-            </div>
-
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "14px", paddingTop: "10px", borderTop: "1px solid var(--border-subtle)" }}>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleMastered(card.id);
-                }}
-                className={`apple-touch-btn ${isMastered ? "success" : "secondary"}`}
-                style={{ fontSize: "0.76rem", padding: "6px 12px" }}
-              >
-                {isMastered ? "Mastered ✓ (Tap to Undo)" : "Mark as Mastered"}
-              </button>
-
-              <span style={{ fontSize: "0.78rem", color: "var(--slate-400)" }}>
-                Card {currentIndex + 1} of {FLASHCARDS.length}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Navigation Buttons */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "10px" }}>
-        <button
-          type="button"
-          onClick={handlePrev}
-          className="apple-touch-btn secondary"
-          style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 18px", fontSize: "0.88rem" }}
-        >
-          <ChevronLeft size={16} /> Previous Card
-        </button>
-
-        {/* Card Indicator Dots */}
-        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-          {FLASHCARDS.map((fc, idx) => (
+        {FLASHCARDS.map((f, i) => {
+          const isSelected = activeIdx === i;
+          return (
             <button
-              key={fc.id}
+              key={f.id}
               type="button"
               onClick={() => {
                 setIsFlipped(false);
-                setCurrentIndex(idx);
+                setActiveIdx(i);
               }}
               style={{
-                width: idx === currentIndex ? "24px" : "10px",
-                height: "10px",
-                borderRadius: "999px",
-                background: idx === currentIndex ? "var(--slate-900)" : masteredIds.includes(fc.id) ? "#16a34a" : "var(--slate-300)",
-                border: "none",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                padding: "6px 12px",
+                borderRadius: "10px",
+                border: isSelected ? `1.5px solid ${f.badgeColor}` : "1px solid var(--border-subtle)",
+                background: isSelected ? "#ffffff" : "var(--slate-100)",
+                color: isSelected ? f.badgeColor : "var(--slate-700)",
+                fontSize: "0.78rem",
+                fontWeight: 750,
                 cursor: "pointer",
-                transition: "all 0.2s ease"
+                whiteSpace: "nowrap",
+                transition: "all 0.15s ease",
+                boxShadow: isSelected ? "var(--shadow-sm)" : "none"
               }}
-              title={`Card ${idx + 1}`}
-            />
-          ))}
+            >
+              <span
+                style={{
+                  width: "7px",
+                  height: "7px",
+                  borderRadius: "50%",
+                  background: f.badgeColor
+                }}
+              />
+              Card {f.id}: {f.category.split(":")[1]?.trim() || f.category}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Main Flashcard Card (Interactive Flip on Click) */}
+      <div
+        onClick={() => setIsFlipped(!isFlipped)}
+        style={{
+          flex: 1,
+          minHeight: isEntireScreen ? "440px" : "320px",
+          background: "#ffffff",
+          border: `2.5px solid ${isFlipped ? card.badgeColor : "var(--border-subtle)"}`,
+          borderRadius: "20px",
+          padding: isEntireScreen ? "32px 38px" : "22px 26px",
+          boxShadow: isFlipped
+            ? "0 18px 40px rgba(0, 0, 0, 0.09)"
+            : "0 4px 16px rgba(0, 0, 0, 0.04)",
+          cursor: "pointer",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          transition: "all 0.25s ease",
+          position: "relative"
+        }}
+      >
+        {/* Flip Indicator */}
+        <div
+          style={{
+            position: "absolute",
+            top: isEntireScreen ? "20px" : "16px",
+            right: isEntireScreen ? "24px" : "20px",
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
+            fontSize: isEntireScreen ? "0.85rem" : "0.78rem",
+            fontWeight: 750,
+            background: isFlipped ? `${card.badgeColor}15` : "var(--slate-100)",
+            padding: "4px 10px",
+            borderRadius: "8px",
+            color: isFlipped ? card.badgeColor : "var(--slate-600)"
+          }}
+        >
+          <RotateCw size={14} />
+          <span>{isFlipped ? "Tap card to flip back to question" : "Tap card to reveal answer"}</span>
         </div>
 
-        <button
-          type="button"
-          onClick={handleNext}
-          className="apple-touch-btn primary"
-          style={{ display: "flex", alignItems: "center", gap: "6px", padding: "10px 18px", fontSize: "0.88rem" }}
+        {/* Content Side A (Question) vs Side B (Answer) */}
+        {!isFlipped ? (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              flex: 1,
+              paddingRight: "40px"
+            }}
+          >
+            <span
+              style={{
+                fontSize: isEntireScreen ? "0.95rem" : "0.82rem",
+                fontWeight: 800,
+                color: card.badgeColor,
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+                marginBottom: "12px"
+              }}
+            >
+              Concept Challenge #{card.id}:
+            </span>
+            <h4
+              style={{
+                fontSize: isEntireScreen ? "1.65rem" : "1.3rem",
+                fontWeight: 850,
+                color: "var(--slate-900)",
+                lineHeight: 1.45,
+                margin: 0
+              }}
+            >
+              {card.question}
+            </h4>
+            <p
+              style={{
+                marginTop: "18px",
+                fontSize: isEntireScreen ? "1.05rem" : "0.9rem",
+                color: "var(--slate-500)",
+                fontStyle: "italic"
+              }}
+            >
+              💡 Smart Board Tip: Have students decipher the graph independently, then tap anywhere on this card to verify the Band 9 answer.
+            </p>
+          </div>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: isEntireScreen ? "18px" : "12px", flex: 1 }}>
+            <div>
+              <span
+                style={{
+                  fontSize: isEntireScreen ? "0.88rem" : "0.78rem",
+                  fontWeight: 800,
+                  color: card.badgeColor,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em"
+                }}
+              >
+                Key Insight &amp; Deciphered Data:
+              </span>
+              <h4
+                style={{
+                  fontSize: isEntireScreen ? "1.38rem" : "1.15rem",
+                  fontWeight: 850,
+                  color: "var(--slate-900)",
+                  margin: "6px 0 0"
+                }}
+              >
+                {card.answerTitle}
+              </h4>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: isEntireScreen ? "10px" : "7px" }}>
+              {card.bulletPoints.map((pt, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                  <CheckCircle2
+                    size={isEntireScreen ? 18 : 16}
+                    color={card.badgeColor}
+                    style={{ flexShrink: 0, marginTop: "3px" }}
+                  />
+                  <span
+                    style={{
+                      fontSize: isEntireScreen ? "1.05rem" : "0.92rem",
+                      color: "var(--slate-700)",
+                      lineHeight: 1.55
+                    }}
+                  >
+                    {pt}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div
+              style={{
+                marginTop: "auto",
+                background: "var(--slate-50)",
+                borderLeft: `4px solid ${card.badgeColor}`,
+                borderRadius: "0 12px 12px 0",
+                padding: isEntireScreen ? "14px 18px" : "10px 14px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "3px" }}>
+                <Sparkles size={14} color={card.badgeColor} />
+                <span
+                  style={{
+                    fontSize: isEntireScreen ? "0.8rem" : "0.72rem",
+                    fontWeight: 800,
+                    color: "var(--slate-700)",
+                    textTransform: "uppercase"
+                  }}
+                >
+                  Band 9 Report Phrasing:
+                </span>
+              </div>
+              <p
+                style={{
+                  fontSize: isEntireScreen ? "1rem" : "0.88rem",
+                  fontStyle: "italic",
+                  color: "var(--slate-800)",
+                  margin: 0,
+                  lineHeight: 1.5
+                }}
+              >
+                “{card.band9Phrase}”
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Bottom Card Footer */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop: "16px",
+            paddingTop: "12px",
+            borderTop: "1px solid var(--border-subtle)",
+            fontSize: isEntireScreen ? "0.88rem" : "0.8rem",
+            color: "var(--slate-500)"
+          }}
         >
-          Next Card <ChevronRight size={16} />
-        </button>
+          <span>Active recall check • Tap card to toggle</span>
+          <span style={{ fontWeight: 800, color: card.badgeColor }}>
+            Piece {card.id} of {FLASHCARDS.length}
+          </span>
+        </div>
       </div>
     </div>
   );

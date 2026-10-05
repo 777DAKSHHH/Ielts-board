@@ -1,36 +1,51 @@
 import { VocabItem } from "./vocab";
 
-export interface TrophicTier {
+export interface DataPoint {
+  year: number;
+  value: number;
+  annotation?: string;
+}
+
+export interface CountryData {
   id: string;
-  tierNumber: number;
   name: string;
+  originalLegendName: string;
+  color: string;
+  lineStyle: "dash-dot" | "dashed" | "solid" | "dotted";
+  strokeDashArray: string;
+  group: "net_decrease" | "net_increase";
   badge: string;
-  category: "producers" | "primary_consumers" | "secondary_consumers" | "tertiary_consumers" | "quaternary_consumers" | "decomposers";
-  energyKcal: number | string;
-  energyPercentOfBase: string;
-  organisms: string;
-  heatLoss: string;
-  wasteToDecomposers: string;
+  startValue: number;
+  peakOrPlateauValue?: number;
+  endValue: number;
+  netChange: string;
+  dataPoints: DataPoint[];
+  trendSummary: string;
+  band9Phrase: string;
+  description: string;
+}
+
+export interface IntersectionPoint {
+  id: string;
+  year: number;
+  approxValue: number;
+  countries: [string, string];
+  title: string;
   description: string;
   band9Phrase: string;
 }
 
-export interface Task1DiagramData {
-  trophicTiers: TrophicTier[];
-  decomposerCycle: {
-    title: string;
-    inputs: string[];
-    outputs: string[];
-    role: string;
-    description: string;
-    band9Phrase: string;
-  };
-  energyLossSummary: {
-    retentionRate: string;
-    lossRate: string;
-    baseEnergy: string;
-    apexEnergy: string;
-    lossMultiplier: string;
+export interface Task1GraphData {
+  years: number[];
+  unit: string;
+  yRange: { min: number; max: number; step: number };
+  countries: CountryData[];
+  intersections: IntersectionPoint[];
+  comparisonsSummary: {
+    dominantEmitter: string;
+    mostVolatile: string;
+    steepestGrowth: string;
+    convergences: string;
   };
 }
 
@@ -64,11 +79,21 @@ export interface Task1Data {
   sampleIntro: string;
   sampleOverview: string;
   timingSeconds: number;
-  diagramData: Task1DiagramData;
+  graphData: Task1GraphData;
   vocabList: VocabItem[];
   vocabHunt: string[];
   bp1: BpSection;
   bp2: BpSection;
   processingGroups: ProcessingGroup[];
   connectors: ConnectorItem[];
+  modelReport?: {
+    wordCount: number;
+    paragraphs: {
+      id: string;
+      title: string;
+      text: string;
+      wordCount: number;
+      badges: string[];
+    }[];
+  };
 }

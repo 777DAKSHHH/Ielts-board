@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CircleCheck, Landmark, AlertCircle, Sparkles, BookOpen } from "lucide-react";
+import { CircleCheck, AlertCircle, Sparkles, BookOpen } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { CaveatsDeepDiveModal } from "./CaveatsDeepDiveModal";
 
@@ -12,22 +12,22 @@ export const Step6ConsequencesT2: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 06 / 09 • Agree Stance: Repatriation to Origin Countries
+          Step 06 / 09 • Question 1: Monetary Rewards & Efficacy
         </span>
-        <h2 className="stage-title">Agree Points: Why Historical Objects Belong in Their Homeland</h2>
+        <h2 className="stage-title">Question 1: To What Extent Are Monetary Rewards Effective?</h2>
         <p className="stage-subtitle">
-          Levelled arguments supporting repatriation. If you choose the <strong>AGREE</strong> stance, select 2 distinct main arguments from this step to structure your two body paragraphs.
+          Levelled arguments evaluating financial bonuses. Examine where extra money succeeds in boosting quantifiable targets, and where it falls short due to habituation and negative workplace side effects.
         </p>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px", overflowY: "auto" }}>
         <EffectColumn
-          title="Core Justifications for Repatriation (Agree)"
-          icon={<Landmark size={20} color="var(--apple-blue)" />}
+          title="Where Bonuses Succeed: Short-Term Output & Quotas"
+          icon={<CircleCheck size={20} color="var(--apple-blue)" />}
           items={coreArguments}
         />
         <EffectColumn
-          title="Nuances & Practical Caveats"
+          title="Critical Limits, Nuances & Practical Caveats"
           icon={<AlertCircle size={20} color="#d97706" />}
           items={caveats}
           actionButton={

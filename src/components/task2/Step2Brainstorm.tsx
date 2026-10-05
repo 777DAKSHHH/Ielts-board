@@ -25,25 +25,25 @@ const ESSAY_FORMAT_STEPS = [
     label: "Introduction",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    instruction: "Paraphrase the question + opinion"
+    instruction: "Paraphrase the question + outline answers to both prompts"
   },
   {
     label: "Body Para 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    instruction: "1 main reason + supporting reasons + example"
+    instruction: "1 main reason + supporting reasons + example (Evaluating financial rewards)"
   },
   {
     label: "Body Para 2",
     badgeBg: "rgba(16, 185, 129, 0.12)",
     badgeColor: "#047857",
-    instruction: "1 main reason + supporting reasons + example"
+    instruction: "1 main reason + supporting reasons + example (Superior alternative incentives)"
   },
   {
     label: "Conclusion",
     badgeBg: "rgba(100, 116, 139, 0.15)",
     badgeColor: "#334155",
-    instruction: "Sum-up all the main reasons + restate opinion"
+    instruction: "Sum-up all the main reasons + restate answers to both questions"
   }
 ];
 
@@ -62,9 +62,9 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 02 / 09 • Task Reveal & 4-Para Format
         </span>
-        <h2 className="stage-title">Deconstruct the Opinion Prompt (Agree or Disagree)</h2>
+        <h2 className="stage-title">Deconstruct the 2-Part Management Prompt</h2>
         <p className="stage-subtitle">
-          Examine the prompt wording, establish your clear opinion (Agree), and reveal the required 4-paragraph essay architecture with 1 main reason, support, and example per body paragraph.
+          Examine the prompt wording, establish your 2-part thesis, and reveal the required 4-paragraph essay architecture with 1 main reason, support, and example per body paragraph.
         </p>
       </div>
 
@@ -165,7 +165,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span className="apple-badge neutral" style={{ fontSize: "0.74rem" }}>
-                  4 Paragraphs (Agree / Disagree Architecture)
+                  4 Paragraphs (Two-Part Essay Architecture)
                 </span>
                 {isRevealed && (
                   <button
@@ -313,10 +313,10 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <Building2 size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Agree or Disagree</h5>
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Two-Part / Direct Question Essay</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              The question directly asks: <em>“Historical objects should be brought back to their country of origin. Do you agree or disagree?”</em> This is a single-sided opinion essay. You must take an unequivocal stance right from the introduction.
+              The prompt contains two specific, connected inquiries: 1) <em>“To what extent is this style of management effective?”</em> and 2) <em>“What are the better ways of encouraging employees to work hard?”</em> You must address both questions in balanced depth.
             </p>
           </div>
 
@@ -339,16 +339,16 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <Scale size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Choosing Your Stance — Agree vs. Disagree</h5>
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Structuring Your Two-Question Argument</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              This board equips you with levelled points for <strong>both</strong> perspectives so students can master either stance:
+              This board equips you with levelled points for both dimensions of the question:
               <br />
-              • <strong>If you AGREE:</strong> Pick 2 main arguments from <strong>Step 6 (Agree Points: Repatriation)</strong>.
+              • <strong>Question 1 (Body Para 1):</strong> Evaluate monetary rewards using <strong>Step 6 (Q1: Financial Rewards & Limits)</strong>.
               <br />
-              • <strong>If you DISAGREE:</strong> Pick 2 main arguments from <strong>Step 7 (Disagree Points: Global Museums)</strong>.
+              • <strong>Question 2 (Body Para 2):</strong> Propose superior non-monetary motivators from <strong>Step 7 (Q2: Superior Motivators)</strong>.
               <br />
-              • <strong>If BALANCED:</strong> Contrast 1 argument from Step 6 against 1 argument from Step 7 before establishing your stance.
+              • <strong>Synthesis:</strong> Show mature balance—acknowledge short-term metric gains while championing intrinsic catalysts.
             </p>
           </div>
 
@@ -374,7 +374,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Paragraph Rule — 1 Main Reason + Support + Example</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              Never list random bullet points. In each body paragraph, introduce <strong>1 distinct main reason</strong>, unpack its causal mechanism with supporting elaboration, and validate it with a concrete real-world example (e.g., the Benin Bronzes, the Acropolis Museum).
+              Never dump unstructured perk lists. In Body 1, elaborate on <strong>1 main evaluative insight</strong> (e.g. initial sales surge vs. hedonic habituation) with support and real-world example. In Body 2, present <strong>1 major alternative</strong> (e.g. professional autonomy and career ladders) with concrete corporate evidence.
             </p>
           </div>
         </div>

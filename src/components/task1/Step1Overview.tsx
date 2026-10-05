@@ -18,9 +18,9 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 08 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: Guess the Ecological Energy Flow</h2>
+        <h2 className="stage-title">Listen First: Guess the 40-Year Emissions Trajectories</h2>
         <p className="stage-subtitle">
-          Play the cryptic briefing before showing the diagram. Students should deduce the five biological feeding tiers, the tenfold energy reduction rule, and the role of decomposers.
+          Play the cryptic briefing before revealing the line graph. Students should deduce the four European countries, the two contrasting trends, and the two major crossover points.
         </p>
       </div>
 
@@ -56,7 +56,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
                 Cryptic Audio Briefing
               </h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)" }}>
-                Food Chain Energy Pyramid • 5 Trophic Tiers • ~1:10
+                Dynamic Line Graph • 4 European Nations • ~1:21
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           <div style={{ background: "#ffffff", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "16px", color: "var(--slate-700)", lineHeight: 1.55 }}>
-            <strong style={{ color: "var(--slate-900)" }}>Do not reveal yet:</strong> ask students to calculate the rate of energy loss between tiers, identify where dissipated heat goes, and explain the circular role of decomposers.
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify which two nations experienced net declines, which two underwent sustained increases, and where the two major intersection points occurred.
           </div>
         </div>
 
@@ -112,10 +112,10 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           {[
-            "What natural scientific structure is being depicted in this diagram?",
-            "How much energy (or what percentage) is retained as you ascend each trophic tier?",
-            "What happens to the 90% of energy that is not incorporated as stored biomass?",
-            "What biological group breaks down organic waste and dead matter to recycle nutrients?"
+            "What environmental metric is being measured across the 40-year timeframe from 1967 to 2007?",
+            "Which nation remained the dominant, highest per capita emitter in every single year measured?",
+            "Which country displayed the most volatile pattern—a sharp rise to a 1977 peak followed by a 30-year plunge?",
+            "Which nation began with the lowest emissions by far, but underwent a more than four-fold surge to converge with another nation in 2007?"
           ].map((question, index) => (
             <div key={question} style={{ background: "#ffffff", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "15px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
               <span className="apple-badge neutral" style={{ minWidth: "30px", justifyContent: "center" }}>{index + 1}</span>
@@ -134,12 +134,12 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             className="apple-touch-btn primary"
             style={{ minHeight: "50px", gap: "8px", marginTop: "auto" }}
           >
-            <Sparkles size={18} /> {revealed ? "Continue to Diagram Analysis" : "Reveal Task"}
+            <Sparkles size={18} /> {revealed ? "Continue to Line Graph Analysis" : "Reveal Task"}
           </button>
 
           {revealed && (
             <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "14px", padding: "14px 16px", color: "#1e3a8a", fontSize: "0.9rem", lineHeight: 1.5 }}>
-              The full task prompt and ecological energy pyramid diagram are revealed in Step 02.
+              The full task prompt and dynamic CO2 line graph are revealed in Step 02.
             </div>
           )}
         </div>

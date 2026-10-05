@@ -2,305 +2,389 @@ import type { Task1Data, VocabItem } from "../types";
 export type { Task1Data, VocabItem };
 
 export const TASK1_DATA: Task1Data = {
-  id: "food-chain-energy-pyramid-task1",
-  taskType: "Natural Process & Ecological Flow Diagram (Energy Pyramid)",
-  title: "Trophic Levels and Energy Flow in a Food Chain",
+  id: "co2-emissions-per-person-task1",
+  taskType: "Dynamic Line Graph (40-Year Comparative Trends)",
+  title: "Average Carbon Dioxide (CO2) Emissions per Person (1967–2007)",
   questionText:
-    "The diagram below shows the stages in the food production chain of the United States.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
-  imageFileName: "food-chain-energy-pyramid.png",
-  audioUrl: "materials/food-chain-energy-pyramid-briefing.m4a",
+    "The line graph shows the average carbon dioxide emission.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+  imageFileName: "co2-emissions-per-person.png",
+  audioUrl: "materials/co2-emissions-line-graph-briefing.m4a",
   audioClueText:
-    "Today's visual task presents an ecological energy pyramid detailing the flow of energy and biomass across successive trophic levels in a food chain. At the foundation of the ecosystem, primary producers absorb light energy, generating twenty thousand kilocalories per square meter per year. As energy ascends through the biological hierarchy, from primary consumers like insects and mice, to secondary consumers such as birds and frogs, to tertiary snake predators, and finally reaching apex quaternary raptors, the stored biomass drops by an exact factor of ten at each consecutive stage, leaving a mere two kilocalories at the summit. Concurrently, metabolic heat is dissipated into the environment at every single tier, while organic waste and dead matter from all levels of the pyramid are channeled into decomposers, which also release metabolic heat into the atmosphere.",
+    "Today's visual task features a dynamic line graph tracking average carbon dioxide emissions per person across four European nations: the United Kingdom, Sweden, Italy, and Portugal, spanning a forty-year timeframe from 1967 to 2007, measured in metric tonnes. Notice the striking dichotomy in trajectories. While the United Kingdom remained the highest emitter throughout the period, falling gradually from nearly eleven to under nine tonnes, Sweden exhibited the most volatile trend, surging to a dramatic peak above ten tonnes in 1977 before plunging steeply down to approximately five point four tonnes. Conversely, Italy and Portugal both experienced continuous upward growth. Italy climbed steadily from four point two tonnes to plateau at around seven point six tonnes, overtaking Sweden by the late 1980s. Meanwhile, Portugal registered the steepest proportional rise, more than quadrupling its per capita emissions from a modest one point two tonnes to converge directly with Sweden at five point four tonnes by 2007.",
   timingSeconds: 180,
   sampleIntro:
-    "The diagram illustrates the stages and energy flows across five distinct trophic levels in an ecological food chain, alongside the continuous dissipation of metabolic heat and the funneling of waste and dead matter to decomposers.",
+    "The line graph illustrates average carbon dioxide (CO2) emissions per person across four European countries—the United Kingdom, Sweden, Italy, and Portugal—over a forty-year period from 1967 to 2007, measured in metric tonnes.",
   sampleOverview:
-    "Overall, energy enters the system as light energy and transfers upward from primary producers to quaternary consumers, diminishing tenfold at each successive tier. Concurrently, metabolic heat is dissipated into the atmosphere at every level, while biological waste and dead matter from across the pyramid are channeled into decomposers, which also release heat.",
+    "Overall, per capita emissions in the United Kingdom and Sweden followed an overall downward trajectory over the four decades, whereas Italy and Portugal experienced substantial growth. Furthermore, although the United Kingdom consistently recorded the highest emissions throughout the timeframe, Sweden exhibited the most volatile fluctuation, while Portugal registered the steepest proportional increase to converge with Sweden by 2007.",
 
-  diagramData: {
-    trophicTiers: [
+  graphData: {
+    years: [1967, 1977, 1987, 1997, 2007],
+    unit: "Metric Tonnes per person",
+    yRange: { min: 0, max: 12, step: 2 },
+    countries: [
       {
-        id: "tier-1-producers",
-        tierNumber: 1,
-        name: "Primary Producers",
-        badge: "Trophic Base (100% Energy)",
-        category: "producers",
-        energyKcal: "20,000 kcal/m²/yr",
-        energyPercentOfBase: "100%",
-        organisms: "Grass, trees, shrubs, and terrestrial vegetation",
-        heatLoss: "Metabolic and cellular respiration heat",
-        wasteToDecomposers: "Channels decaying plant tissue into decomposers (green arrow)",
-        description:
-          "Photosynthetic plants capturing incoming light energy and serving as the foundational energy source for the entire ecosystem.",
+        id: "uk",
+        name: "United Kingdom",
+        originalLegendName: "United Kingdom",
+        color: "#9333ea",
+        lineStyle: "dash-dot",
+        strokeDashArray: "10 4 2 4",
+        group: "net_decrease",
+        badge: "Highest Emitter Throughout (Net Decrease)",
+        startValue: 10.8,
+        endValue: 8.7,
+        netChange: "-2.1 metric tonnes (-19.4%)",
+        dataPoints: [
+          { year: 1967, value: 10.8, annotation: "Highest starting figure (~10.8 tonnes)" },
+          { year: 1977, value: 10.7, annotation: "Near stable plateau (~10.7 tonnes)" },
+          { year: 1987, value: 10.0, annotation: "Declined to exactly 10.0 tonnes" },
+          { year: 1997, value: 9.6, annotation: "Gradual descent to 9.6 tonnes" },
+          { year: 2007, value: 8.7, annotation: "Finished as highest emitter at ~8.7 tonnes" }
+        ],
+        trendSummary:
+          "Maintained the dominant emitter position throughout the entire 40-year timeframe, declining steadily from nearly 11 tonnes to 8.7 tonnes.",
         band9Phrase:
-          "“At the base of the trophic hierarchy, primary producers capture solar light energy to generate an initial 20,000 kcal/m²/yr of biomass.”"
+          "“The United Kingdom was the dominant emitter throughout the entire four-decade span, despite a steady and continuous reduction from nearly 11 metric tonnes per capita in 1967 to just under 9 tonnes by 2007.”",
+        description:
+          "A gradual, unbroken descent over 40 years without sharp swings, remaining higher than all three other nations at every single recorded interval."
       },
       {
-        id: "tier-2-primary-consumers",
-        tierNumber: 2,
-        name: "Primary Consumers",
-        badge: "Herbivores & Insects (10%)",
-        category: "primary_consumers",
-        energyKcal: "2,000 kcal/m²/yr",
-        energyPercentOfBase: "10%",
-        organisms: "Rodents/mice, grasshoppers, butterflies, moths, caterpillars, and ants",
-        heatLoss: "Locomotive and body heat loss",
-        wasteToDecomposers: "Excretory waste and dead tissue channeled to decomposers (cyan arrow)",
-        description:
-          "Herbivores and small rodents feeding directly on primary vegetation, retaining exactly 10% of the foundational biomass energy.",
+        id: "sweden",
+        name: "Sweden",
+        originalLegendName: "Sweden",
+        color: "#0284c7",
+        lineStyle: "dashed",
+        strokeDashArray: "8 6",
+        group: "net_decrease",
+        badge: "Most Volatile: Peak & Plunge (Net Decrease)",
+        startValue: 8.6,
+        peakOrPlateauValue: 10.2,
+        endValue: 5.4,
+        netChange: "-3.2 metric tonnes (-37.2% overall; -47% from peak)",
+        dataPoints: [
+          { year: 1967, value: 8.6, annotation: "Second highest starter at 8.6 tonnes" },
+          { year: 1977, value: 10.2, annotation: "Dramatic apex above 10 tonnes (~10.2 tonnes)" },
+          { year: 1987, value: 7.0, annotation: "Plunged to 7.0 tonnes, overtaken by Italy" },
+          { year: 1997, value: 6.0, annotation: "Continued steep descent to 6.0 tonnes" },
+          { year: 2007, value: 5.4, annotation: "Finished at 5.4 tonnes, converging with Portugal" }
+        ],
+        trendSummary:
+          "Experienced a roller-coaster trajectory: a sharp 10-year climb to a peak above 10 tonnes in 1977, followed by a precipitous 30-year plunge nearly halving its emissions.",
         band9Phrase:
-          "“Primary consumers, comprising herbivorous insects and small rodents, incorporate this energy but store only 2,000 kcal/m²/yr as biomass.”"
+          "“Sweden exhibited the most volatile trajectory, climbing sharply to an apex of approximately 10.2 metric tonnes in 1977 before plunging precipitously over the subsequent thirty years to finish at 5.4 tonnes.”",
+        description:
+          "The only nation to display both a sharp upward surge and an aggressive downward crash, dropping from second to tied-for-lowest by 2007."
       },
       {
-        id: "tier-3-secondary-consumers",
-        tierNumber: 3,
-        name: "Secondary Consumers",
-        badge: "Carnivores / Insectivores (1%)",
-        category: "secondary_consumers",
-        energyKcal: "200 kcal/m²/yr",
-        energyPercentOfBase: "1%",
-        organisms: "Insectivorous birds, frogs/toads, and small mammals (moles/rats)",
-        heatLoss: "Respiratory thermal heat loss",
-        wasteToDecomposers: "Organic waste and decaying matter channeled to decomposers (yellow arrow)",
-        description:
-          "Carnivorous and insectivorous animals feeding on primary consumers, registering another tenfold diminution in available biomass.",
+        id: "italy",
+        name: "Italy",
+        originalLegendName: "Italy",
+        color: "#b91c1c",
+        lineStyle: "solid",
+        strokeDashArray: "none",
+        group: "net_increase",
+        badge: "Steady Growth & Plateau (Net Increase)",
+        startValue: 4.2,
+        peakOrPlateauValue: 7.6,
+        endValue: 7.6,
+        netChange: "+3.4 metric tonnes (+81%)",
+        dataPoints: [
+          { year: 1967, value: 4.2, annotation: "Started third at 4.2 tonnes" },
+          { year: 1977, value: 6.2, annotation: "Rapid initial rise to 6.2 tonnes" },
+          { year: 1987, value: 6.7, annotation: "Reached 6.7 tonnes, overtaking Sweden" },
+          { year: 1997, value: 7.6, annotation: "Climbed to 7.6 tonnes" },
+          { year: 2007, value: 7.6, annotation: "Completely stable plateau at 7.6 tonnes" }
+        ],
+        trendSummary:
+          "Grew substantially over the first 30 years from 4.2 to 7.6 tonnes, overtaking Sweden by 1987, before plateauing identically between 1997 and 2007.",
         band9Phrase:
-          "“Secondary consumers—including frogs, birds, and small mammals—store 200 kcal/m²/yr, representing another tenfold diminution.”"
+          "“Italy witnessed a consistent upward climb from 4.2 metric tonnes in 1967, overtaking Sweden in the late 1980s, before plateauing at approximately 7.6 tonnes from 1997 onwards.”",
+        description:
+          "Almost doubled its per capita emissions (+81%) to emerge as the second highest emitter by the end of the timeframe."
       },
       {
-        id: "tier-4-tertiary-consumers",
-        tierNumber: 4,
-        name: "Tertiary Consumers",
-        badge: "Secondary Predators (0.1%)",
-        category: "tertiary_consumers",
-        energyKcal: "20 kcal/m²/yr",
-        energyPercentOfBase: "0.1%",
-        organisms: "Predatory reptiles (snakes)",
-        heatLoss: "Radiant metabolic heat loss",
-        wasteToDecomposers: "Waste and carcasses channeled to decomposers",
-        description:
-          "Mid-level predatory carnivores preying on secondary consumers with a biomass yield of 20 kcal/m²/yr.",
+        id: "portugal",
+        name: "Portugal",
+        originalLegendName: "Portgual",
+        color: "#1e293b",
+        lineStyle: "dotted",
+        strokeDashArray: "3 4",
+        group: "net_increase",
+        badge: "Steepest Relative Growth (4-Fold Surge)",
+        startValue: 1.2,
+        peakOrPlateauValue: 5.4,
+        endValue: 5.4,
+        netChange: "+4.2 metric tonnes (+350%, >4x growth)",
+        dataPoints: [
+          { year: 1967, value: 1.2, annotation: "Lowest emitter by far at 1.2 tonnes" },
+          { year: 1977, value: 2.2, annotation: "Rose to 2.2 tonnes" },
+          { year: 1987, value: 3.6, annotation: "Steepened climb to 3.6 tonnes" },
+          { year: 1997, value: 5.3, annotation: "Surged to 5.3 tonnes" },
+          { year: 2007, value: 5.4, annotation: "Reached 5.4 tonnes, converging with Sweden" }
+        ],
+        trendSummary:
+          "Demonstrated the steepest proportional surge on the chart, quadrupling from a baseline of 1.2 tonnes to converge directly with Sweden at 5.4 tonnes by 2007.",
         band9Phrase:
-          "“Tertiary consumers, represented by snakes, retain a mere 20 kcal/m²/yr of biomass energy.”"
-      },
-      {
-        id: "tier-5-quaternary-consumers",
-        tierNumber: 5,
-        name: "Quaternary Consumers",
-        badge: "Apex Raptors (0.01%)",
-        category: "quaternary_consumers",
-        energyKcal: "2 kcal/m²/yr",
-        energyPercentOfBase: "0.01%",
-        organisms: "Apex birds of prey (eagles / raptors)",
-        heatLoss: "Flight exertion and body heat dissipation",
-        wasteToDecomposers: "Organic remains channeled to decomposers upon death (pink arrow)",
+          "“Starting at a negligible 1.2 metric tonnes in 1967, Portugal registered more than a four-fold increase, surging to 5.4 tonnes in 2007 to match Sweden’s terminal figure.”",
         description:
-          "Apex predators residing at the pyramid pinnacle, retaining just 1/10,000th of the initial base energy.",
-        band9Phrase:
-          "“At the pinnacle of the pyramid, quaternary apex predators such as eagles retain just 2 kcal/m²/yr—one ten-thousandth of the initial base energy.”"
+          "The fastest expanding emitter in relative terms (+350%), closing a 7.4-tonne gap with Sweden to finish tied at 5.4 tonnes."
       }
     ],
-
-    decomposerCycle: {
-      title: "Decomposers & Waste Processing",
-      inputs: [
-        "Waste and dead tissue from quaternary apex raptors (pink arrow)",
-        "Dead matter from secondary consumers (yellow arrow)",
-        "Excretory waste from primary consumers (cyan arrow)",
-        "Decaying plant matter from primary producers (green arrow)"
-      ],
-      outputs: [
-        "Metabolic heat released into the atmosphere"
-      ],
-      role: "Biological decomposition of organic waste from all pyramid tiers",
-      description:
-        "Decomposers (bacteria and fungi) receive organic waste and dead matter from every trophic level—from foundational plants up to apex predators—and subsequently release metabolic heat.",
-      band9Phrase:
-        "“Biological waste and deceased matter from all tiers of the pyramid converge on decomposers, which in turn dissipate heat into the atmosphere.”"
-    },
-
-    energyLossSummary: {
-      retentionRate: "10% per trophic tier (Lindeman's 10% Ecological Law)",
-      lossRate: "90% dissipated as metabolic heat and unassimilated waste",
-      baseEnergy: "20,000 kcal/m²/yr (Primary Producers)",
-      apexEnergy: "2 kcal/m²/yr (Quaternary Apex Consumers)",
-      lossMultiplier: "10,000-fold overall energy reduction (99.99% net dissipation)"
+    intersections: [
+      {
+        id: "italy-sweden-1987",
+        year: 1987,
+        approxValue: 6.8,
+        countries: ["Italy", "Sweden"],
+        title: "1987: Italy Overtakes Sweden",
+        description:
+          "Around 1987, Italy's ascending trajectory crossed Sweden's rapidly descending line at approximately 6.8 metric tonnes.",
+        band9Phrase:
+          "“In approximately 1987, Italy's steadily rising emissions intersected Sweden's declining line at roughly 6.8 metric tonnes, after which Italy assumed second position.”"
+      },
+      {
+        id: "sweden-portugal-2007",
+        year: 2007,
+        approxValue: 5.4,
+        countries: ["Sweden", "Portugal"],
+        title: "2007: Sweden & Portugal Convergence",
+        description:
+          "By 2007, Sweden's 30-year plunge and Portugal's 40-year climb met precisely at 5.4 metric tonnes per person.",
+        band9Phrase:
+          "“By 2007, Sweden's protracted descent and Portugal's prolonged surge converged at an identical figure of approximately 5.4 metric tonnes per person.”"
+      }
+    ],
+    comparisonsSummary: {
+      dominantEmitter: "United Kingdom (consistently highest from ~10.8 down to 8.7 tonnes)",
+      mostVolatile: "Sweden (peaked at 10.2 tonnes in 1977, then plunged by nearly 50% to 5.4 tonnes)",
+      steepestGrowth: "Portugal (quadrupled from 1.2 tonnes to 5.4 tonnes, >350% increase)",
+      convergences: "Italy overtook Sweden around 1987; Sweden and Portugal met at 5.4 tonnes in 2007"
     }
   },
 
   vocabList: [
     {
-      word: "trophic levels",
-      meaning: "The hierarchical feeding positions occupied by organisms in a food web or energy pyramid.",
+      word: "per capita carbon emissions",
+      meaning:
+        "The average quantity of carbon dioxide released into the atmosphere by a single individual within a country.",
       example:
-        "Energy diminishes significantly as it ascends across consecutive trophic levels in the food chain."
+        "The graph tracks fluctuations in per capita carbon emissions across four industrialized European nations."
     },
     {
-      word: "biomass energy transfer",
-      meaning: "The conversion and passage of organic chemical energy from one biological tier to the next.",
+      word: "exhibit an overall downward trajectory",
+      meaning:
+        "Show a general, long-term decreasing pattern from the start of the timeframe to the finish.",
       example:
-        "The diagram illustrates the efficiency of biomass energy transfer between primary producers and herbivores."
+        "Both the United Kingdom and Sweden exhibited an overall downward trajectory over the four-decade timeline."
     },
     {
-      word: "tenfold reduction",
-      meaning: "A dramatic decrease by a factor of ten (90% loss, leaving 10% retained) at each successive tier.",
+      word: "experience a dramatic precipitous decline",
+      meaning:
+        "Undergo an exceptionally steep, rapid, and sustained reduction in numerical value.",
       example:
-        "Each stage in the ecological pyramid exhibits an exact tenfold reduction in stored kilocalories."
+        "Following its 1977 peak, Sweden experienced a dramatic precipitous decline over the subsequent thirty years."
     },
     {
-      word: "primary producers",
-      meaning: "Autotrophic vegetation that synthesises organic compounds from solar radiation via photosynthesis.",
+      word: "witness a four-fold increase",
+      meaning:
+        "Multiply by a factor of four (a 300% to 400% surge compared to the original baseline figure).",
       example:
-        "Primary producers form the broad foundation of the pyramid, generating twenty thousand kilocalories annually."
+        "Portuguese per capita emissions witnessed more than a four-fold increase, soaring from 1.2 to 5.4 tonnes."
     },
     {
-      word: "herbivorous primary consumers",
-      meaning: "Organisms that feed directly on photosynthetic plants and vegetation.",
+      word: "reach an unprecedented peak",
+      meaning:
+        "Ascend to the highest recorded apex value throughout the historical period.",
       example:
-        "Insects and rodents act as herbivorous primary consumers, sustaining the secondary predators above them."
+        "Sweden reached an unprecedented peak of just over ten metric tonnes in 1977 before reversing course."
     },
     {
-      word: "apex quaternary predator",
-      meaning: "The top-tier carnivore situated at the summit of the food pyramid with no natural predators.",
+      word: "surpass and overtake",
+      meaning:
+        "Exceed another nation's value, crossing above it on the graphical scale.",
       example:
-        "Eagles function as the apex quaternary predator, receiving only two kilocalories per square metre annually."
+        "By the late 1980s, Italy managed to surpass and overtake Sweden's declining emissions figure."
     },
     {
-      word: "metabolic heat dissipation",
-      meaning: "The loss of thermal energy to the surrounding environment resulting from cellular respiration.",
+      word: "converge at an identical figure",
+      meaning:
+        "Meet at the exact same statistical value or data point at the end of a timeframe.",
       example:
-        "At every single trophic level, a substantial volume of chemical energy is lost through metabolic heat dissipation."
+        "By the end of the recording period in 2007, Sweden and Portugal converged at an identical figure of 5.4 tonnes."
     },
     {
-      word: "saprophytic decomposers",
-      meaning: "Microorganisms such as bacteria and fungi that break down non-living organic detritus and dead tissue.",
+      word: "plateau and level off",
+      meaning:
+        "Reach a state of little or no change following a prior period of steady growth or decline.",
       example:
-        "Saprophytic decomposers receive biological waste from all tiers, converting decaying matter while releasing heat."
+        "Italian emissions plateaued and leveled off at approximately 7.6 metric tonnes between 1997 and 2007."
     },
     {
-      word: "unidirectional energy flow",
-      meaning: "The non-cyclical, one-way movement of energy through an ecosystem from solar input to thermal dissipation.",
+      word: "remain the dominant contributor",
+      meaning:
+        "Maintain the primary, highest-ranking statistical position across all measured intervals.",
       example:
-        "Energy exhibits an irreversible unidirectional flow, leaking outward into the environment at each consumer stage."
+        "The United Kingdom remained the dominant contributor throughout the entirety of the survey period."
     },
     {
-      word: "organic detritus",
-      meaning: "Non-living particulate organic material including animal waste and decaying carcasses.",
+      word: "a marked divergence in trajectories",
+      meaning:
+        "A clear, noticeable separation in directional movement (e.g. one group rising while another falls).",
       example:
-        "Organic detritus from every trophic tier is channeled directly to decomposers positioned beside the base."
+        "The visual highlights a marked divergence in trajectories between the established industrial powers and southern Europe."
     }
   ],
 
   vocabHunt: [
-    "trophic levels",
-    "biomass energy transfer",
-    "tenfold reduction",
-    "primary producers",
-    "herbivorous primary consumers",
-    "apex quaternary predator",
-    "metabolic heat dissipation",
-    "saprophytic decomposers",
-    "unidirectional energy flow",
-    "organic detritus"
+    "per capita carbon emissions",
+    "exhibit an overall downward trajectory",
+    "experience a dramatic precipitous decline",
+    "witness a four-fold increase",
+    "reach an unprecedented peak",
+    "surpass and overtake",
+    "converge at an identical figure",
+    "plateau and level off",
+    "remain the dominant contributor",
+    "a marked divergence in trajectories"
   ],
 
   bp1: {
-    title: "Vertical Trophic Hierarchy & Stored Biomass (10% Transfer)",
-    focus: "Upward progression from Primary Producers (20,000 kcal) to Apex Predators (2 kcal)",
+    title: "Body 1: The Net Decreasers (United Kingdom & Sweden)",
+    focus: "Higher initial baselines experiencing long-term net reductions (UK descent & Sweden's roller-coaster)",
     points: [
-      "Light energy fuels primary producers at the base, yielding 20,000 kcal/m²/yr of stored biomass.",
-      "Herbivorous primary consumers (insects and mice) incorporate 2,000 kcal/m²/yr (exactly 10%).",
-      "Secondary consumers (frogs, birds, small mammals) register 200 kcal/m²/yr.",
-      "Tertiary consumers (snakes) store 20 kcal/m²/yr.",
-      "Quaternary apex raptors (eagles) receive only 2 kcal/m²/yr—a 99.99% overall loss from the base."
+      "The United Kingdom maintained the highest per capita emissions in every single decade recorded.",
+      "British emissions began at approximately 10.8 metric tonnes in 1967 and hovered near 10.7 tonnes in 1977.",
+      "Thereafter, UK output declined steadily to 10.0 tonnes in 1987, 9.6 tonnes in 1997, and ended at roughly 8.7 tonnes in 2007.",
+      "Sweden started as the second highest emitter at 8.6 metric tonnes in 1967.",
+      "Swedish emissions spiked sharply to a peak of roughly 10.2 tonnes in 1977, briefly rivaling the UK.",
+      "Subsequently, Sweden experienced a dramatic 30-year plunge, dropping to 7.0 tonnes in 1987, 6.0 in 1997, and 5.4 in 2007 (nearly halving from its peak)."
     ],
     takeaways: [
-      "10% transfer rule: exactly one-tenth of energy is stored as biomass at each tier",
-      "Base energy of 20,000 kcal/m²/yr shrinks to a minuscule 2 kcal/m²/yr at the summit"
+      "UK: Unbroken dominance, steady decline from ~11 to ~8.7 tonnes (-2.1 tonnes)",
+      "Sweden: Most volatile trajectory, sharp peak at ~10.2 in 1977 followed by an aggressive collapse to 5.4 tonnes"
     ]
   },
 
   bp2: {
-    title: "Energy Dissipation (Heat) & Decomposer Detritus Flow",
-    focus: "Metabolic heat loss at all levels alongside waste channeling into decomposers",
+    title: "Body 2: The Net Increasers (Italy & Portugal)",
+    focus: "Lower initial baselines undergoing sustained upward growth and strategic crossovers",
     points: [
-      "Metabolic heat is continuously lost to the atmosphere at every single trophic tier.",
-      "Dead organic matter and waste from all levels—including primary producers—are channeled into decomposers.",
-      "Decomposers process this biological detritus and release further metabolic heat.",
-      "No direct return flow is depicted from decomposers back into the pyramid."
+      "Italy began in third position at 4.2 metric tonnes in 1967 and experienced consistent, unbroken growth.",
+      "Italian emissions climbed to 6.2 tonnes in 1977 and reached 6.7 tonnes in 1987, officially overtaking Sweden.",
+      "Italy's output rose to 7.6 metric tonnes in 1997, where it remained completely static through 2007.",
+      "Portugal started with the lowest emissions by a wide margin, registering a mere 1.2 metric tonnes in 1967.",
+      "Over the next four decades, Portuguese emissions underwent a dramatic, more than four-fold surge.",
+      "Portugal climbed to 2.2 tonnes (1977), 3.6 tonnes (1987), and 5.3 tonnes (1997), finishing at 5.4 tonnes in 2007 to converge with Sweden."
     ],
     takeaways: [
-      "Heat loss is continuous across all 5 tiers as well as from decomposers",
-      "Decomposers serve as the final processing sink for waste and dead matter from all stages"
+      "Italy: Consistent expansion from 4.2 to 7.6 tonnes (+81%), surpassing Sweden in 1987 and plateauing after 1997",
+      "Portugal: Steepest proportional growth (>4x increase from 1.2 to 5.4 tonnes), meeting Sweden's descending figure in 2007"
     ]
   },
 
   processingGroups: [
     {
-      title: "Trophic & Energy Metrics",
+      title: "Trajectory Verbs & Movement Dynamics",
       items: [
-        "kcal/m²/yr (kilocalories per square metre per year)",
-        "Tenfold reduction / order of magnitude drop",
-        "Ten percent (10%) trophic efficiency rule",
-        "One ten-thousandth (0.01%) retained at the apex"
+        "Stood at approximately 10.8 metric tonnes in 1967",
+        "Hovered near 10.7 metric tonnes before continuing a gradual descent",
+        "Surged sharply to an apex of roughly 10.2 tonnes in 1977",
+        "Plummeted precipitously over the subsequent three decades",
+        "Plateaued identically at 7.6 metric tonnes between 1997 and 2007"
       ]
     },
     {
-      title: "Passive Voice for Natural Ecosystems",
+      title: "Comparative Relationships & Crossovers",
       items: [
-        "Light energy is absorbed by primary producers",
-        "Biomass is assimilated by herbivorous consumers",
-        "Thermal energy is dissipated as metabolic heat",
-        "Organic matter is funneled to decomposers"
+        "Consistently recorded the highest per capita emissions throughout the period",
+        "Overtook and surpassed Sweden around the year 1987",
+        "Converged at an identical terminal figure of 5.4 tonnes in 2007",
+        "Closed a substantial 7.4-tonne gap between 1967 and 2007",
+        "Demonstrated a marked divergence between northern and southern European trajectories"
       ]
     },
     {
-      title: "Sequential & Dissipative Connectors",
+      title: "Proportional Shifts & Multiplier Language",
       items: [
-        "Commencing with solar irradiation at the base",
-        "Sequentially ascending through higher consumer tiers",
-        "Concurrently expelling metabolic heat into the environment",
-        "Simultaneously channeling waste to decomposers"
+        "Registered more than a four-fold increase from its baseline figure (+350%)",
+        "Nearly halved its per capita carbon footprint relative to its 1977 peak",
+        "Expanded by roughly 81% before leveling off completely",
+        "Initiated the timeframe as the lowest contributor by a significant margin",
+        "Exhibited a net contraction of 2.1 metric tonnes across forty years"
       ]
     }
   ],
 
   connectors: [
     {
-      phrase: "Commencing at the foundation",
-      purpose: "Initiating the trophic description",
+      phrase: "Regarding the nations experiencing a net decline,...",
+      purpose: "Topic sentence transition to open Body Paragraph 1 (the downward group).",
       example:
-        "Commencing at the foundation, primary producers absorb light energy to generate an initial 20,000 kcal/m²/yr."
+        "“Regarding the nations experiencing a net decline, the United Kingdom was consistently the highest emitter over the entire forty-year period.”"
     },
     {
-      phrase: "Transferred sequentially to",
-      purpose: "Ascending to the next biological level",
+      phrase: "By contrast, Sweden demonstrated the most erratic pattern...",
+      purpose: "Contrastive linker highlighting the difference between UK's steady trend and Sweden's peak.",
       example:
-        "This chemical energy is transferred sequentially to primary consumers, who store exactly 2,000 kcal/m²/yr."
+        "“By contrast, Sweden demonstrated the most erratic pattern on the graph, surging to an apex before collapsing.”"
     },
     {
-      phrase: "Diminishing by an order of magnitude",
-      purpose: "Quantifying the tenfold reduction",
+      phrase: "Turning to the countries with rising emissions,...",
+      purpose: "Macro transition pivoting from Body Paragraph 1 to Body Paragraph 2 (the upward group).",
       example:
-        "Stored biomass diminishes by an order of magnitude at each stage, dropping from 200 to 20 kcal/m²/yr."
+        "“Turning to the countries with rising per capita emissions, Italy and Portugal both saw substantial increases.”"
     },
     {
-      phrase: "At the summit of the hierarchy",
-      purpose: "Highlighting the apex predator level",
+      phrase: "At which point it surpassed Sweden...",
+      purpose: "Pinpointing a historical intersection and ranking shift between two data series.",
       example:
-        "At the summit of the hierarchy, quaternary raptors incorporate a mere 2 kcal/m²/yr of biological energy."
+        "“Italian output reached 6.7 metric tonnes in 1987, at which point it surpassed Sweden.”"
     },
     {
-      phrase: "Concurrently dissipated as metabolic heat",
-      purpose: "Describing parallel thermal losses",
+      phrase: "Meanwhile, Portugal initiated the period as the lowest contributor...",
+      purpose: "Parallel contrast introducing the nation with the lowest baseline figure.",
       example:
-        "At every single tier, unassimilated energy is concurrently dissipated as metabolic heat into the atmosphere."
+        "“Meanwhile, Portugal initiated the period as the lowest contributor by a wide margin, generating a mere 1.2 tonnes.”"
     },
     {
-      phrase: "Channeling detritus to decomposers",
-      purpose: "Describing the flow of dead matter into decomposers",
+      phrase: "Precisely converging with Sweden's final level...",
+      purpose: "Synthesizing a terminal data point where two separate lines meet.",
       example:
-        "Organic waste and dead matter from across the pyramid are channeled directly into decomposers, which concurrently radiate metabolic heat."
+        "“Portuguese emissions ascended steadily to 5.4 metric tonnes in 2007, precisely converging with Sweden's final level.”"
     }
-  ]
+  ],
+
+  modelReport: {
+    wordCount: 228,
+    paragraphs: [
+      {
+        id: "intro",
+        title: "Introduction",
+        wordCount: 31,
+        badges: ["Paraphrase", "Parameters", "Unit"],
+        text: "The line graph illustrates average carbon dioxide (CO2) emissions per person across four European countries—the United Kingdom, Sweden, Italy, and Portugal—over a forty-year period from 1967 to 2007, measured in metric tonnes."
+      },
+      {
+        id: "overview",
+        title: "Overview",
+        wordCount: 52,
+        badges: ["Macro Split", "Dominant Emitter", "Volatile Outlier", "Convergence"],
+        text: "Overall, per capita emissions in the United Kingdom and Sweden followed an overall downward trajectory over the four decades, whereas Italy and Portugal experienced substantial growth. Furthermore, although the United Kingdom consistently recorded the highest emissions throughout the timeframe, Sweden exhibited the most volatile fluctuation, while Portugal registered the steepest proportional increase to converge with Sweden by 2007."
+      },
+      {
+        id: "body1",
+        title: "Body Paragraph 1: Net Decreasers (UK & Sweden)",
+        wordCount: 74,
+        badges: ["UK Dominance", "Steady Decline", "Sweden Peak & Plunge", "1977 Apex"],
+        text: "Regarding the nations with decreasing emissions, the United Kingdom consistently generated the highest levels throughout the entire period. Starting at approximately 10.8 metric tonnes per person in 1967, British emissions remained nearly unchanged in 1977 before undergoing a steady, uninterrupted decline to 10.0 tonnes in 1987, 9.6 tonnes in 1997, and finally 8.7 tonnes by 2007. Sweden began as the second-highest emitter at 8.6 metric tonnes and climbed sharply to peak at approximately 10.2 tonnes in 1977, briefly challenging the UK. Thereafter, Swedish emissions plummeted precipitously over the remaining thirty years, falling to 7.0 tonnes in 1987 and continuing downward to 5.4 tonnes by 2007—nearly half its peak value."
+      },
+      {
+        id: "body2",
+        title: "Body Paragraph 2: Net Increasers (Italy & Portugal)",
+        wordCount: 71,
+        badges: ["Italy Crossover", "10-Year Plateau", "Portugal 4-Fold Surge", "2007 Meeting"],
+        text: "Turning to the nations with upward trends, Italy initially produced 4.2 metric tonnes per capita in 1967. Italian emissions expanded steadily over the following three decades to 6.2 tonnes in 1977 and 6.7 tonnes in 1987, at which point Italy overtook Sweden. After reaching 7.6 metric tonnes in 1997, Italy's emissions plateaued identically through 2007. Meanwhile, Portugal commenced the period as the lowest contributor by a substantial margin, generating a modest 1.2 metric tonnes per person. Over the subsequent four decades, Portuguese emissions underwent a dramatic, more than four-fold surge, ascending steadily to 2.2 tonnes in 1977, 3.6 tonnes in 1987, and 5.3 tonnes in 1997, before finishing at 5.4 metric tonnes in 2007, precisely converging with Sweden."
+      }
+    ]
+  }
 };

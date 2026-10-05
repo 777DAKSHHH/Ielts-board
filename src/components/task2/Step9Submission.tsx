@@ -9,7 +9,7 @@ export const Step9SubmissionT2: React.FC = () => (
       </span>
       <h2 className="stage-title">From Guided Thinking to Independent Writing</h2>
       <p className="stage-subtitle">
-        The scaffolding has now been removed. Students should write the complete Opinion Essay (Agree/Disagree) using their selected arguments, causal chains, and academic collocations.
+        The scaffolding is complete. Write the full Two-Part essay directly answering both prompt questions with academic collocations and well-developed paragraphs.
       </p>
     </div>
 
@@ -24,18 +24,18 @@ export const Step9SubmissionT2: React.FC = () => (
       {[
         {
           n: "01",
-          t: "Opinion Alignment Across Bodies",
-          d: "Ensure both body paragraphs consistently champion your chosen stance: if Agree, pick 2 arguments from Step 6 (Identity & justice); if Disagree, pick 2 arguments from Step 7 (Universal access & conservation)."
+          t: "Balanced 2-Question Coverage",
+          d: "Dedicate Body 1 to evaluating the extent to which monetary bonuses work (short-term output vs. diminishing returns), and Body 2 to presenting superior non-monetary alternatives (autonomy, promotion ladders, recognition)."
         },
         {
           n: "02",
           t: "1 Reason + Support + Example",
-          d: "Dedicate each body paragraph to 1 clear core reason, explain its causal mechanism with depth, and substantiate it with a verifiable historical case study."
+          d: "Dedicate each body paragraph to 1 clear core reason, explain its causal mechanism with depth, and substantiate it with a concrete workplace or corporate case study."
         },
         {
           n: "03",
-          t: "Sustained Stance Throughout",
-          d: "Deliver an unequivocal position in your introduction, reinforce it in both body paragraphs, and reassert it powerfully in your conclusion."
+          t: "Academic Tone & Cohesion",
+          d: "Connect your evaluation smoothly using advanced transitions and precise organizational psychology collocations (e.g. intrinsic motivation, meritocratic career progression)."
         }
       ].map((x) => (
         <div
@@ -71,9 +71,9 @@ export const Step9SubmissionT2: React.FC = () => (
     >
       <ClipboardCheck size={28} style={{ flexShrink: 0, color: "var(--apple-blue)" }} />
       <div>
-        <h4 style={{ fontSize: "1.12rem", fontWeight: 700 }}>Teacher Checkpoint</h4>
+        <h4 style={{ fontSize: "1.12rem", fontWeight: 700 }}>Board Writing Checkpoint</h4>
         <p style={{ color: "#cbd5e1", lineHeight: 1.5, marginTop: "4px", fontSize: "0.92rem" }}>
-          Before students begin writing, ask them to explain their two main reasons and supporting real-world examples aloud in under 60 seconds without checking their notes. This verbal recall check verifies that the concepts have translated into independent reasoning.
+          Before you write, challenge yourself to explain your answers to both prompt questions aloud in under 60 seconds without checking your notes. This verbal recall check verifies that your arguments, causal links, and real-world examples are fully internalized.
         </p>
       </div>
       <ArrowRight size={22} style={{ marginLeft: "auto", flexShrink: 0, color: "#94a3b8" }} />
