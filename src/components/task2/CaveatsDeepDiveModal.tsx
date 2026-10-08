@@ -137,7 +137,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
             }}
           >
             {[
-              { id: "rationale", label: "1. Examiner's Mindset", icon: <Award size={15} /> },
+              { id: "rationale", label: "1. Core Argument Logic", icon: <Award size={15} /> },
               { id: "method", label: "2. The 3-Tier Body Architecture", icon: <Lightbulb size={15} /> },
               { id: "comparisons", label: "3. Band 6 vs Band 8.5+ Sentences", icon: <GitBranch size={15} /> },
               { id: "formulas", label: "4. Plug & Play Formulas", icon: <BookOpen size={15} /> }
@@ -190,11 +190,11 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   style={{
                     background: "#fffbeb",
                     border: "1.5px solid #fde68a",
-                    borderRadius: "16px",
-                    padding: "16px 20px",
+                    borderRadius: "18px",
+                    padding: "18px 22px",
                     display: "flex",
                     alignItems: "flex-start",
-                    gap: "12px"
+                    gap: "14px"
                   }}
                 >
                   <AlertTriangle size={22} color="#d97706" style={{ flexShrink: 0, marginTop: "2px" }} />
@@ -203,7 +203,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       The "Laundry List" Mistake (Band 6.0 Trap)
                     </h5>
                     <p style={{ fontSize: "0.9rem", color: "#78350f", margin: 0, lineHeight: 1.55 }}>
-                      Band 6 candidates dump 3 or 4 rushed ideas in one paragraph without developing any of them (*"Bonuses motivate people because they like money, and also it helps buy things, and also companies grow"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
+                      Band 6 candidates dump 3 or 4 rushed ideas in one paragraph without developing any of them (*"People are fat because of burgers, and they don't walk, and hospitals have no beds, and economies suffer"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
                     </p>
                   </div>
                 </div>
@@ -224,7 +224,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      By focusing on <strong>1 main reason per body paragraph</strong> (Body 1: Monetary Rewards & Diminishing Psychological Returns; Body 2: Superior Intrinsic Motivators like Autonomy & Career Progression), students have the space to unpack the causal logic thoroughly instead of superficial skimming.
+                      By focusing on <strong>1 main reason per body paragraph</strong> in the paired format <code>[ Effect + Solution + Example ]</code> (Body 1: Healthcare Fiscal Strain paired with Fiscal Sugar Levies; Body 2: Workforce Inactivity paired with Active Transit Infrastructure), students have the space to unpack the causal chain thoroughly instead of superficial skimming.
                     </p>
                   </div>
 
@@ -243,7 +243,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      Examiners look for specific real-world grounding. Citing the <em>Wells Fargo aggressive sales quota scandal</em> or <em>Atlassian's autonomous ShipIt hackathons</em> demonstrates genuine academic command and scores Band 9 in Task Achievement.
+                      Effective essays provide specific real-world grounding. Citing the <em>UK NHS £6 billion obesity expenditure</em> or <em>Mexico's sugar tax and Copenhagen's cycle highways</em> demonstrates genuine academic command and direct prompt response.
                     </p>
                   </div>
                 </div>
@@ -267,23 +267,23 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   {
                     step: "Tier 01",
                     badge: "Topic Sentence",
-                    title: "State 1 Clear Evaluative Reason",
-                    say: "“First and foremost, while financial bonuses undeniably stimulate short-term productivity in metric-driven roles, their long-term effectiveness is constrained by hedonic habituation.”",
+                    title: "State 1 Clear Primary Consequence",
+                    say: "“First and foremost, the primary societal repercussion of escalating obesity rates is the unsustainable financial and operational burden placed on public healthcare infrastructures.”",
                     takeaway: "Direct, unequivocal claim that immediately answers Question 1."
                   },
                   {
                     step: "Tier 02",
                     badge: "Supporting Causal Engine",
                     title: "Unpack WHY and HOW with Supporting Reasons",
-                    say: "“When cash rewards are repeatedly disbursed, employees quickly assimilate the extra income into their baseline standard of living, viewing future bonuses as an entitlement rather than a fresh incentive to excel.”",
-                    takeaway: "Explains the underlying psychological mechanism and hedonic treadmill effect."
+                    say: "“As sedentary habits and hyper-processed diets proliferate, populations experience an exponential increase in preventable non-communicable conditions like type-2 diabetes and cardiovascular disease, forcing hospitals to divert billions toward continuous palliative treatments rather than acute emergency medicine.”",
+                    takeaway: "Explains the underlying epidemiological mechanism and fiscal diversion effect."
                   },
                   {
                     step: "Tier 03",
                     badge: "Concrete Real-World Anchor",
                     title: "Substantiate with Specific Evidence",
-                    say: "“This dynamic is clearly visible in high-pressure financial institutions, where annual bonus payouts yield rapidly diminishing motivational returns within weeks, requiring escalating monetary sums to generate equivalent effort.”",
-                    takeaway: "Pins the theoretical argument to a famous, undeniable corporate workplace reality."
+                    say: "“This fiscal crisis is exemplified in the United Kingdom, where the National Health Service expends over £6 billion annually managing obesity-related pathology—a figure outstripping the entire national public budget for emergency policing services.”",
+                    takeaway: "Pins the theoretical argument to an undeniable, verified public health reality."
                   }
                 ].map((item) => (
                   <div
@@ -344,13 +344,13 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <span className="apple-badge" style={{ background: "#ef4444", color: "#fff", fontSize: "0.72rem" }}>
                       BAND 6.0
                     </span>
-                    <strong style={{ color: "#991b1b", fontSize: "0.9rem" }}>Vague & Superficial (No Depth or Specificity)</strong>
+                    <strong style={{ color: "#991b1b", fontSize: "0.9rem" }}>Vague &amp; Superficial (No Causal Depth or Specificity)</strong>
                   </div>
                   <div style={{ padding: "14px 18px", fontSize: "0.92rem", color: "#475569", lineHeight: 1.5 }}>
-                    “Giving workers extra money is good because everyone wants to be rich. But sometimes it makes them fight with their friends at work.”
+                    “People are getting fatter and unhealthier because they eat junk food and sit on chairs all day. This causes big problems for hospitals and makes economies poor.”
                   </div>
                   <div style={{ padding: "8px 18px 14px", fontSize: "0.8rem", color: "#dc2626" }}>
-                    ❌ <em>Weak vocabulary ('good', 'everyone wants to be rich'); zero causal mechanism; lacks organizational depth.</em>
+                    ❌ <em>Weak vocabulary ('getting fatter', 'sit on chairs', 'makes economies poor'); zero causal mechanism; completely lacks academic precision.</em>
                   </div>
                 </div>
 
@@ -376,13 +376,13 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <span className="apple-badge success" style={{ fontSize: "0.72rem" }}>
                       BAND 8.5+
                     </span>
-                    <strong style={{ color: "#166534", fontSize: "0.9rem" }}>Fully Extended & Real-World Evidenced</strong>
+                    <strong style={{ color: "#166534", fontSize: "0.9rem" }}>Fully Extended &amp; Empirically Grounded</strong>
                   </div>
                   <div style={{ padding: "14px 18px", fontSize: "0.95rem", color: "#1e293b", lineHeight: 1.6 }}>
-                    “Although monetary bonuses can trigger an immediate surge in quantifiable output, their efficacy as a management tool is strictly limited. Over time, exclusive reliance on financial incentives erodes intrinsic motivation and sparks destructive internal rivalry, as exemplified by the Wells Fargo banking controversy where aggressive quotas prompted staff to open unauthorized accounts.”
+                    “The alarming escalation in average body weight combined with pervasive physical inactivity imposes an unsustainable fiscal burden on state medical infrastructures. Specifically, as preventable chronic non-communicable illnesses like type-2 diabetes and cardiovascular disease surge, public healthcare systems must allocate billions toward palliative treatments, exemplified by the UK NHS expending over £6 billion annually managing obesity-related pathology.”
                   </div>
                   <div style={{ padding: "8px 18px 14px", fontSize: "0.82rem", color: "#15803d" }}>
-                    ✓ <em>Examiner impact: Academic collocations ('quantifiable output', 'erodes intrinsic motivation', 'destructive internal rivalry'), complex sentence coordination, and a verifiable corporate case study.</em>
+                    ✓ <em>Key strengths: Academic collocations ('pervasive physical inactivity', 'unsustainable fiscal burden', 'chronic non-communicable illnesses'), complex sentence coordination, and a verifiable empirical health benchmark.</em>
                   </div>
                 </div>
               </motion.div>
@@ -403,19 +403,19 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
 
                 {[
                   {
-                    title: "Formula 1: The Topic Sentence Frame (1 Main Reason)",
-                    pattern: "The primary limitation of [management practice] is that [1 Core Reason], which ultimately [organizational consequence].",
-                    example: "“The primary limitation of performance-related bonuses is that employees become psychologically habituated to cash payouts, which ultimately erodes their genuine passion for the work itself.”"
+                    title: "Formula 1: The Topic Sentence Frame (1 Primary Consequence)",
+                    pattern: "The primary consequence of [escalating weight / declining fitness] is that [1 Core Repercussion], which ultimately [societal / fiscal consequence].",
+                    example: "“The primary consequence of escalating population obesity is the unsustainable fiscal burden placed on public health services, which ultimately starves other vital medical sectors of essential capital.”"
                   },
                   {
                     title: "Formula 2: The Causal Supporting Explanation",
-                    pattern: "When management relies exclusively on [incentive type], workers inevitably [suboptimal behavior]; conversely, by cultivating [intrinsic motivator], enterprises foster [long-term benefit].",
-                    example: "“When management relies exclusively on monetary compensation, workers inevitably adopt a transactional mindset; conversely, by granting operational autonomy, enterprises foster proactive innovation and institutional loyalty.”"
+                    pattern: "When populations succumb to [lifestyle driver], individuals inevitably [pathological outcome]; conversely, by enacting [targeted intervention], governments can [preventative health benefit].",
+                    example: "“When populations succumb to sedentary routines and hyper-palatable diets, individuals inevitably develop chronic metabolic disorders; conversely, by instituting targeted fiscal sugar levies, governments can curb harmful consumption and incentivize healthier eating habits.”"
                   },
                   {
                     title: "Formula 3: The Concrete Case-Study Clincher",
-                    pattern: "This principle is substantiated by [Corporate Case Study], where [management strategy] successfully [measurable outcome achieved].",
-                    example: "“This principle is substantiated by technology leaders like Atlassian, where dedicating structured time for autonomous employee projects consistently produces higher engagement and breakthrough software products than annual cash perks.”"
+                    pattern: "This dynamic is substantiated by [Public Health / Policy Precedent], where [regulatory / infrastructure measure] successfully [quantifiable health outcome achieved].",
+                    example: "“This dynamic is substantiated by municipal infrastructure investments in Copenhagen, where dedicated cycling highways enable over 40% of residents to commute actively by bicycle, driving significant reductions in national cardiovascular morbidity.”"
                   }
                 ].map((item, idx) => (
                   <div
@@ -456,7 +456,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
               <Sparkles size={15} color="#d97706" />
-              <span>Use this masterclass on the Senses Smartboard to train students on paragraph depth</span>
+              <span>Review this breakdown for paragraph depth and analytical logic</span>
             </div>
             <button
               onClick={onClose}

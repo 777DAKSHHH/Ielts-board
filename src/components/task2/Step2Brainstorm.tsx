@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import {
   FileText,
-  Building2,
-  TrendingDown,
+  Activity,
+  HeartPulse,
   Scale,
   Eye,
   EyeOff,
@@ -25,19 +25,19 @@ const ESSAY_FORMAT_STEPS = [
     label: "Introduction",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    instruction: "Paraphrase the question + outline answers to both prompts"
+    instruction: "Paraphrase the prompt + outline paired effects and solutions in a concise thesis"
   },
   {
     label: "Body Para 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    instruction: "1 main reason + supporting reasons + example (Evaluating financial rewards)"
+    instruction: "1 main reason + supporting reasons + example [ Effect 1 + Solution + Example ]"
   },
   {
     label: "Body Para 2",
     badgeBg: "rgba(16, 185, 129, 0.12)",
     badgeColor: "#047857",
-    instruction: "1 main reason + supporting reasons + example (Superior alternative incentives)"
+    instruction: "1 main reason + supporting reasons + example [ Effect 2 + Solution + Example ]"
   },
   {
     label: "Conclusion",
@@ -60,11 +60,11 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 09 • Task Reveal & 4-Para Format
+          Step 02 / 09 • Task Reveal &amp; 4-Para Format
         </span>
-        <h2 className="stage-title">Deconstruct the 2-Part Management Prompt</h2>
+        <h2 className="stage-title">Deconstruct the Effects &amp; Solutions Prompt</h2>
         <p className="stage-subtitle">
-          Examine the prompt wording, establish your 2-part thesis, and reveal the required 4-paragraph essay architecture with 1 main reason, support, and example per body paragraph.
+          Examine the prompt wording, establish your 2-part thesis, and reveal the required 4-paragraph essay architecture with 1 main reason, supporting reasons, and concrete example [Effect + Solution + Example] per body paragraph.
         </p>
       </div>
 
@@ -75,7 +75,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: Plan your thesis and frame 1 main reason + supporting details + example for each body paragraph."
+          instruction="Focus Timer: Plan your thesis and frame 1 main reason + supporting reasons + example [Effect + Solution + Example] for each body paragraph."
         />
       </div>
 
@@ -165,7 +165,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span className="apple-badge neutral" style={{ fontSize: "0.74rem" }}>
-                  4 Paragraphs (Two-Part Essay Architecture)
+                  4 Paragraphs (Effects &amp; Solutions Architecture)
                 </span>
                 {isRevealed && (
                   <button
@@ -312,11 +312,11 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 marginBottom: "8px"
               }}
             >
-              <Building2 size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Two-Part / Direct Question Essay</h5>
+              <Activity size={18} />
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Two-Part / Direct Question (Effects &amp; Solutions)</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              The prompt contains two specific, connected inquiries: 1) <em>“To what extent is this style of management effective?”</em> and 2) <em>“What are the better ways of encouraging employees to work hard?”</em> You must address both questions in balanced depth.
+              The prompt contains two specific, interconnected inquiries: 1) <em>“What are the effects of this?”</em> and 2) <em>“What measures could be taken to solve them?”</em> You must address both questions with balanced, fully-developed paragraphs.
             </p>
           </div>
 
@@ -342,13 +342,13 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Structuring Your Two-Question Argument</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              This board equips you with levelled points for both dimensions of the question:
+              Use the proven paired architecture: address each major effect directly alongside its counter-solution:
               <br />
-              • <strong>Question 1 (Body Para 1):</strong> Evaluate monetary rewards using <strong>Step 6 (Q1: Financial Rewards & Limits)</strong>.
+              • <strong>Body Para 1 [ Effect 1 + Solution + Example ]:</strong> Focus on <em>Healthcare Fiscal Strain &amp; Chronic Diseases</em> (Effect 1) paired with <em>Targeted Fiscal Sugar Levies</em> (Solution 1) + Empirical Example (e.g. Mexico soda tax / NHS data).
               <br />
-              • <strong>Question 2 (Body Para 2):</strong> Propose superior non-monetary motivators from <strong>Step 7 (Q2: Superior Motivators)</strong>.
+              • <strong>Body Para 2 [ Effect 2 + Solution + Example ]:</strong> Focus on <em>Sedentary Workforce Productivity Losses</em> (Effect 2) paired with <em>Active Municipal Transit &amp; Workplace Mandates</em> (Solution 2) + Empirical Example (e.g. Copenhagen bicycle corridors).
               <br />
-              • <strong>Synthesis:</strong> Show mature balance—acknowledge short-term metric gains while championing intrinsic catalysts.
+              • <strong>Synthesis:</strong> Directly coupling each crisis with its targeted countermeasure creates an impenetrable, logical argument.
             </p>
           </div>
 
@@ -366,15 +366,15 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 display: "flex",
                 alignItems: "center",
                 gap: "8px",
-                color: "var(--apple-purple)",
+                color: "#9333ea",
                 marginBottom: "8px"
               }}
             >
-              <TrendingDown size={18} />
+              <HeartPulse size={18} />
               <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Paragraph Rule — 1 Main Reason + Support + Example</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              Never dump unstructured perk lists. In Body 1, elaborate on <strong>1 main evaluative insight</strong> (e.g. initial sales surge vs. hedonic habituation) with support and real-world example. In Body 2, present <strong>1 major alternative</strong> (e.g. professional autonomy and career ladders) with concrete corporate evidence.
+              Never dump disjointed symptom lists. Maintain strict paragraph depth: in Body 1, elaborate on <strong>1 main reason</strong> (Effect 1: unsustainable healthcare expenditure caused by chronic non-communicable diseases), explain the causal chain, present the direct policy remedy (Solution 1: fiscal sugar levies), and anchor it with verified evidence. In Body 2, follow the <strong>identical format</strong> for Effect 2 (macroeconomic productivity loss from sedentary work habits) + Solution 2 (active municipal infrastructure).
             </p>
           </div>
         </div>

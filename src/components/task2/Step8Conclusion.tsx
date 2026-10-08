@@ -15,7 +15,7 @@ export const Step8ConclusionT2: React.FC = () => {
         </span>
         <h2 className="stage-title">Close the Argument — Then Go Deeper</h2>
         <p className="stage-subtitle">
-          Examine the model Band 9 conclusion, then explore advanced organizational psychology and management theory in the Faculty Idea Bank.
+          Examine the model Band 9 conclusion, then explore advanced multidisciplinary angles on public health economics, behavioral nudges, and built environment determinism in the Faculty Idea Bank.
         </p>
       </div>
 
@@ -46,10 +46,10 @@ export const Step8ConclusionT2: React.FC = () => {
           </div>
           <div style={{ marginTop: "16px", display: "flex", flexDirection: "column", gap: "8px" }}>
             <span className="apple-badge success">
-              <CheckCircle2 size={14} /> Answers Question 1: Evaluates financial rewards as a pragmatic but limited tool
+              <CheckCircle2 size={14} /> Answers Question 1: Synthesizes severe healthcare fiscal burdens &amp; chronic non-communicable diseases
             </span>
             <span className="apple-badge success">
-              <CheckCircle2 size={14} /> Answers Question 2: Reasserts superior alternatives (autonomy, progression, recognition)
+              <CheckCircle2 size={14} /> Answers Question 2: Reasserts multi-level policy solutions (sugar levies, active transit, wellness mandates)
             </span>
             <span className="apple-badge neutral">
               Synthesizes both core dimensions without introducing new unsupported claims
@@ -81,7 +81,7 @@ export const Step8ConclusionT2: React.FC = () => {
             >
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <Sparkles size={18} color="var(--apple-blue)" />
-                <h4 style={{ fontSize: "1.05rem", fontWeight: 700 }}>Faculty Idea Bank — Advanced HR & Organizational Psychology</h4>
+                <h4 style={{ fontSize: "1.05rem", fontWeight: 700 }}>Faculty Idea Bank — Advanced Public Health, Economics &amp; Built Environment</h4>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span className="apple-badge neutral" style={{ fontSize: "0.74rem" }}>

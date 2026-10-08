@@ -6,11 +6,11 @@ export const Step7EvaluationT2: React.FC = () => (
   <div className="stage-card-wrapper">
     <div>
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-        Step 07 / 09 • Question 2: Better Ways to Motivate Staff
+        Step 07 / 09 • Question 2: Remedial Measures &amp; Strategic Interventions
       </span>
-      <h2 className="stage-title">Question 2: Superior Non-Monetary Strategies to Inspire Employees</h2>
+      <h2 className="stage-title">Question 2: Comprehensive Remedial Measures &amp; Public Health Solutions</h2>
       <p className="stage-subtitle">
-        Levelled arguments for alternative incentives. Select 1 or 2 superior motivational strategies—such as career progression, autonomy, recognition, or supportive culture—to structure Body Paragraph 2.
+        Levelled arguments for strategic interventions. Pair core policy solutions—such as targeted fiscal sugar levies for Body 1 (Healthcare Strain) and active municipal transit for Body 2 (Workforce Inactivity)—to build an integrated, paired argument.
       </p>
     </div>
 

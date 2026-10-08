@@ -45,6 +45,27 @@ export interface ConnectorsTier {
   bTier: string[];
 }
 
+export interface StrategicLinkerGroup {
+  zone: string;
+  badge: string;
+  placementRule: string;
+  items: {
+    phrase: string;
+    functionDesc: string;
+    example: string;
+  }[];
+}
+
+export interface FluidVocabItem {
+  word: string;
+  pos: string;
+  meaning: string;
+  naturalCollocation: string;
+  organicExample: string;
+  mechanicalPitfall: string;
+  examinerInsight?: string;
+}
+
 export interface Task2Data {
   id: string;
   taskType: string;
@@ -62,4 +83,6 @@ export interface Task2Data {
   powerExpressions: PowerExpression[];
   brainstormCards: BrainstormCard[];
   connectorsTier: ConnectorsTier;
+  strategicLinkers?: StrategicLinkerGroup[];
+  fluidVocab?: FluidVocabItem[];
 }

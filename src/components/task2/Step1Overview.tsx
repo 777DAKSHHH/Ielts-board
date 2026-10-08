@@ -29,9 +29,9 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 09 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: Guess the Essay Topic</h2>
+        <h2 className="stage-title">Listen First: Guess the Public Health Topic</h2>
         <p className="stage-subtitle">
-          Play the briefing before revealing the actual IELTS question. Listen to the workplace debate regarding cash bonuses, employee motivation, and alternative incentives.
+          Play the briefing before revealing the actual IELTS question. Listen to the global discussion regarding escalating body weight, deteriorating physical fitness, and strategic remedial measures.
         </p>
       </div>
 
@@ -65,7 +65,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             <div>
               <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Cryptic Audio Briefing</h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)" }}>
-                Corporate Management • Cash Bonuses vs. Non-Monetary Workplace Incentives • ~1:02
+                Public Health &amp; Epidemiology • Rising Obesity vs. Remedial Interventions • ~1:05
               </p>
             </div>
           </div>
@@ -89,7 +89,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               lineHeight: 1.55
             }}
           >
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. What managerial dilemma is being explored regarding monetary rewards, and what alternative approaches to employee motivation are implied?
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. What societal crisis is unfolding regarding physical health and weight, what compounding repercussions are identified, and what multi-level solutions are proposed?
           </div>
         </div>
 
@@ -109,10 +109,10 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Student Guess Board</h4>
           </div>
           {[
-            "What corporate practice regarding staff rewards and financial compensation is being scrutinized?",
-            "To what extent can monetary bonuses stimulate short-term output versus enduring employee dedication?",
-            "What unintended consequences or negative side-effects (e.g. rivalry, metric gaming, burnout) might arise from extra money?",
-            "What superior non-monetary incentives can modern leaders offer to encourage staff to work hard?"
+            "What global epidemiological trend regarding population body weight and physical fitness is being highlighted?",
+            "What severe repercussions does increasing weight inflict upon public healthcare systems and economic productivity?",
+            "What physiological and psychological non-communicable illnesses arise from chronic sedentary lifestyles?",
+            "What decisive interventions—from government taxation to urban redesign and institutional mandates—could solve this crisis?"
           ].map((question, index) => (
             <div
               key={question}

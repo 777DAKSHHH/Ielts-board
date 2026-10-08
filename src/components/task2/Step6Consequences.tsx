@@ -12,22 +12,22 @@ export const Step6ConsequencesT2: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 06 / 09 • Question 1: Monetary Rewards & Efficacy
+          Step 06 / 09 • Question 1: Health Repercussions & Societal Toll
         </span>
-        <h2 className="stage-title">Question 1: To What Extent Are Monetary Rewards Effective?</h2>
+        <h2 className="stage-title">Question 1: What Are the Severe Effects of Increasing Weight &amp; Declining Fitness?</h2>
         <p className="stage-subtitle">
-          Levelled arguments evaluating financial bonuses. Examine where extra money succeeds in boosting quantifiable targets, and where it falls short due to habituation and negative workplace side effects.
+          Levelled arguments evaluating multidimensional repercussions. Examine the direct healthcare burdens, chronic disease proliferation, economic productivity depletion, and psychological tolls.
         </p>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px", overflowY: "auto" }}>
         <EffectColumn
-          title="Where Bonuses Succeed: Short-Term Output & Quotas"
+          title="Core Societal & Pathological Effects (Body 1 Anchors)"
           icon={<CircleCheck size={20} color="var(--apple-blue)" />}
           items={coreArguments}
         />
         <EffectColumn
-          title="Critical Limits, Nuances & Practical Caveats"
+          title="Systemic Nuances, Cascades & Hidden Ramifications"
           icon={<AlertCircle size={20} color="#d97706" />}
           items={caveats}
           actionButton={

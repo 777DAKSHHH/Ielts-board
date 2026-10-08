@@ -41,24 +41,24 @@ export const Step5IntroStructureT2: React.FC = () => (
           {TASK2_DATA.sampleIntro}
         </div>
         <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
-          <Clock size={15} /> ~52 words • 2 sentences • Optimal IELTS exam timing (~3-4 mins)
+          <Clock size={15} /> 39 words • 2 sentences • Rapid exam timing (~2.5-3 mins)
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
         <StructureCard
           icon={<CheckCircle2 size={18} />}
-          title="1. Paraphrase the Question"
-          text="Restate the prompt in sentence 1: that many enterprises reward top-performing staff with additional monetary bonuses, using elevated academic vocabulary."
+          title="1. Crisp Prompt Paraphrase (Sentence 1)"
+          text="Restate the prompt cleanly without fluff: that in many nations, rising average body weight and declining physical fitness have emerged as alarming public health concerns."
         />
         <StructureCard
           icon={<Award size={18} />}
-          title="2. Direct 2-Part Thesis Statement"
-          text="Answer both questions in sentence 2: evaluate the extent to which monetary bonuses work (effective for short-term targets but limited long-term) and name superior alternatives (professional autonomy, structured career paths, and authentic recognition)."
+          title="2. Paired 2-Part Thesis (Sentence 2)"
+          text="Directly outline paired answers to both questions: state the two primary repercussions (healthcare strain and curtailed economic productivity) and propose the counter-solutions (fiscal sugar levies and active transit infrastructure)."
         />
         <StructureCard
           icon={<CheckCircle2 size={18} />}
-          title="3. Optimal Word Count & Timing"
-          text="Keep the introduction around 50 words across 2 sentences (~3-4 minutes). A sharp, direct thesis guarantees top Band scores for Task Achievement without wasting time."
+          title="3. Word Economy & Exam Time Management"
+          text="Keep the introduction concise (~38–42 words across 2 sentences in ~2.5–3 mins). A punchy, focused introduction avoids fluff, secures full marks for Task Achievement, and saves vital minutes for in-depth body paragraph development."
         />
       </div>
     </div>
