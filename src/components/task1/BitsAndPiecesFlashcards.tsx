@@ -22,91 +22,105 @@ interface FlashcardItem {
 const FLASHCARDS: FlashcardItem[] = [
   {
     id: 1,
-    category: "Piece 1: The Macro Dichotomy",
+    category: "Piece 1: The Macro Overview Split",
     badgeColor: "#0284c7",
-    question: "What is the single most important macro feature shown across the 40-year timeframe?",
-    answerTitle: "Two Decreased (UK & Sweden) vs. Two Increased (Italy & Portugal)",
+    question: "What is the single most important macro feature shown across the 1995–2000 timeframe?",
+    answerTitle: "Four Rose vs. One Solitary Decliner (Greystone High)",
     bulletPoints: [
-      "The United Kingdom and Sweden both experienced overall net reductions from their 1967 baselines.",
-      "Italy and Portugal both underwent continuous, substantial per capita growth.",
-      "This natural division gives the ideal 2-grouping architecture for your two body paragraphs!"
+      "Higher education admission expanded across four of the five schools (Harble, Fairfield, Royston, Crackend).",
+      "Greystone High was the SOLE institution to undergo an uninterrupted downward decline.",
+      "Harble Secondary showed the most dramatic surge (+50% pts), while Crackend Boys displayed near-total stability."
     ],
     band9Phrase:
-      "Overall, per capita emissions in the United Kingdom and Sweden followed a downward trajectory, whereas Italy and Portugal experienced substantial growth."
+      "Overall, higher education entry rates rose in four out of the five secondary schools, with Greystone High being the sole institution to experience a continuous downward trend."
   },
   {
     id: 2,
-    category: "Piece 2: UK's Unbroken Dominance",
-    badgeColor: "#9333ea",
-    question: "Which nation emitted the most carbon dioxide per person, and how did its numbers change?",
-    answerTitle: "The UK Remained Highest in Every Single Year (~10.8 to ~8.7 Tonnes)",
+    category: "Piece 2: Harble Secondary's Meteoric Leap",
+    badgeColor: "#059669",
+    question: "How did Harble Secondary transform across the 6-year period, and why is it the table's biggest highlight?",
+    answerTitle: "Vaulted from Last to First (30% → 80%), Nearly Tripling its Initial Proportion",
     bulletPoints: [
-      "Started at ~10.8 metric tonnes in 1967—higher than any other nation.",
-      "Hovered near 10.7 tonnes in 1977, before embarking on an unbroken, gradual descent.",
-      "Declined to 10.0 tonnes (1987), 9.6 tonnes (1997), and concluded at roughly 8.7 tonnes (2007).",
-      "Never surrendered first position, despite decreasing by nearly 20% overall."
+      "Started lowest in 1995 at 30%—less than half of Fairfield and one-third of Greystone.",
+      "Rose by 5% increments to 35% (1996) and 40% (1997), then accelerated to 50% (1998) and 60% (1999).",
+      "In 2000, leaped by an extraordinary 20 percentage points to peak at 80%.",
+      "Achieved a massive net gain of +50 percentage points (+167% relative surge)."
     ],
     band9Phrase:
-      "The United Kingdom was the dominant emitter throughout the four-decade span, despite a steady and continuous reduction from nearly 11 to under 9 metric tonnes."
+      "Harble Secondary registered the most dramatic surge, nearly tripling from a baseline of 30% in 1995 to emerge as the top performer at 80% in 2000."
   },
   {
     id: 3,
-    category: "Piece 3: Sweden's Volatile Rollercoaster",
-    badgeColor: "#0284c7",
-    question: "Why is Sweden's trajectory the most visually erratic and dramatic on the graph?",
-    answerTitle: "Sharp 1977 Peak (~10.2 Tonnes) Followed by a 30-Year Collapse (to 5.4 Tonnes)",
+    category: "Piece 3: Fairfield Girls' Ascent & Rebound",
+    badgeColor: "#4f46e5",
+    question: "What was Fairfield Girls' trajectory, and what happened in 1997, 1998, and 1999?",
+    answerTitle: "Steady Rise (65% → 79%), Catching Greystone in 1997 and Rebounding to 2nd Place",
     bulletPoints: [
-      "Began second highest at 8.6 tonnes in 1967.",
-      "Surged rapidly to an apex above 10 tonnes in 1977, briefly rivaling the UK.",
-      "Plunged precipitously for the next thirty years: 7.0 tonnes (1987), 6.0 (1997), 5.4 (2007).",
-      "Nearly halved (-47%) from its 1977 peak, dropping from 2nd position to tied-for-lowest."
+      "Started second highest at 65% in 1995.",
+      "Climbed to 75% in 1997, equalizing with Greystone High, and held 75% in 1998 to take the sole lead.",
+      "Experienced a temporary 5-point dip to 70% in 1999 before rebounding sharply to 79% in 2000.",
+      "Finished in second place overall, just 1 percentage point behind Harble Secondary."
     ],
     band9Phrase:
-      "Sweden exhibited the most volatile trajectory, climbing sharply to an apex of roughly 10.2 tonnes in 1977 before plunging precipitously to finish at 5.4 tonnes."
+      "Fairfield Girls climbed from 65% in 1995 to equalize with Greystone at 75% in 1997, before rebounding from a transient dip in 1999 to conclude at 79%."
   },
   {
     id: 4,
-    category: "Piece 4: Italy's Overtaking Ascent",
-    badgeColor: "#b91c1c",
-    question: "How did Italy progress over time, and what major milestone occurred in the late 1980s?",
-    answerTitle: "Steady 30-Year Growth (+81%), Overtaking Sweden in 1987, and Plateauing at 7.6 Tonnes",
+    category: "Piece 4: Greystone High's Continuous Decline",
+    badgeColor: "#dc2626",
+    question: "What happened to Greystone High after holding a commanding lead at the start?",
+    answerTitle: "Uninterrupted Downward Slide (-20% pts), Falling from 1st (90%) to 3rd (70%)",
     bulletPoints: [
-      "Began in third position at 4.2 tonnes in 1967.",
-      "Climbed steadily to 6.2 tonnes in 1977 and 6.7 tonnes in 1987.",
-      "In approximately 1987, Italy intersected and overtook Sweden's declining line.",
-      "Reached 7.6 tonnes in 1997, where it remained completely static and plateaued through 2007."
+      "Commenced 1995 with an immense 25-percentage-point lead over second place (90% vs. 65%).",
+      "Fell sharply by 10 points to 80% in 1996 and 75% in 1997 (caught by Fairfield).",
+      "Continued declining to 73% (1998), 72% (1999), and finished at 70% in 2000.",
+      "The ONLY school that did not experience any period of growth."
     ],
     band9Phrase:
-      "Italy witnessed a consistent upward climb from 4.2 tonnes, surpassing Sweden around 1987 before plateauing identically at 7.6 tonnes from 1997 onwards."
+      "Greystone High was the sole institution to experience a continuous downward trend, surrendering its commanding 90% lead to finish third at 70%."
   },
   {
     id: 5,
-    category: "Piece 5: Portugal's Four-Fold Surge",
-    badgeColor: "#1e293b",
-    question: "Which nation grew the fastest in proportional terms, and where did it finish?",
-    answerTitle: "Portugal Quadrupled from 1.2 to 5.4 Tonnes (+350%), Equalizing with Sweden in 2007",
+    category: "Piece 5: Royston Academy's Stepped Growth",
+    badgeColor: "#d97706",
+    question: "How did Royston Academy progress, and what pattern did its trajectory follow?",
+    answerTitle: "Stepped Pattern with Two Multi-Year Plateaus (50% → 60%, +10% pts Net)",
     bulletPoints: [
-      "Lowest emitter by far in 1967, generating a mere 1.2 metric tonnes per person.",
-      "Ascended continuously across all four decades: 2.2t (1977), 3.6t (1987), 5.3t (1997).",
-      "Finished at 5.4 tonnes in 2007—a more than four-fold surge (+350%).",
-      "Completely bridged the historical gap, converging identically with Sweden by 2007."
+      "Started at 50% in 1995 and climbed to 52% in 1996 and 54% in 1997.",
+      "Plateaued identically at 54% in 1998.",
+      "Stepped up to 60% in 1999, where it leveled off again through 2000.",
+      "Demonstrated a disciplined, stepped pattern rather than continuous linear growth."
     ],
     band9Phrase:
-      "Starting at a negligible 1.2 metric tonnes in 1967, Portugal registered more than a four-fold surge to converge directly with Sweden at 5.4 tonnes by 2007."
+      "Royston Academy progressed in a stepped manner, rising from 50% to plateau at 54% in 1997–1998 before leveling off at 60% from 1999 onwards."
   },
   {
     id: 6,
-    category: "Piece 6: Critical Inflections & Crossovers",
-    badgeColor: "#ea580c",
-    question: "What two exact intersection events must you report to achieve Band 8+ in Task Achievement?",
-    answerTitle: "1987 Overtake (~6.8t) and 2007 Convergence (5.4t)",
+    category: "Piece 6: Crackend Boys' Static Stability",
+    badgeColor: "#475569",
+    question: "How did Crackend Boys behave across the timeframe, and why is this notable for Band 9?",
+    answerTitle: "Virtually Static Baseline Oscillating Tightly Between 59% and 62%",
     bulletPoints: [
-      "Milestone 1 (~1987): Italy crosses above Sweden's line at approximately 6.8 metric tonnes.",
-      "Milestone 2 (2007): Sweden and Portugal converge at an identical figure of 5.4 metric tonnes.",
-      "Reporting these exact intersection moments proves you can analyze relative shifts rather than just reciting lists of numbers!"
+      "Registered 60% in 1995, 59% in 1996, 60% in 1997, 61% in 1998, 60% in 1999, and 62% in 2000.",
+      "Total net variation was only +2 percentage points over the entire six years.",
+      "Contrasts sharply with the dynamic volatility of Harble (+50%) and Greystone (-20%)."
     ],
     band9Phrase:
-      "Italy overtook Sweden around 1987 at approximately 6.8 metric tonnes, while Portugal and Sweden concluded the period by converging at an identical 5.4 tonnes in 2007."
+      "Crackend Boys displayed remarkable stability, fluctuating narrowly within a three-point band of 59% to 62% across the entire timeframe."
+  },
+  {
+    id: 7,
+    category: "Piece 7: Critical Intersections & Milestones",
+    badgeColor: "#7c3aed",
+    question: "What two exact intersection milestones must you report to demonstrate Band 9 comparative analysis?",
+    answerTitle: "1997 Crossover at 75% and 1999 Triple Convergence at 60%",
+    bulletPoints: [
+      "Milestone 1 (1997): Fairfield Girls and Greystone High tied at exactly 75%.",
+      "Milestone 2 (1999): Royston Academy, Harble Secondary, and Crackend Boys all met at precisely 60%.",
+      "Hierarchical Inversion (2000): Harble vaulted from 5th to 1st (80%), while Greystone slipped from 1st to 3rd (70%)."
+    ],
+    band9Phrase:
+      "In 1997, Fairfield Girls equalized with Greystone High at 75%, while in 1999, Royston, Harble, and Crackend all converged at an identical 60%."
   }
 ];
 
@@ -198,16 +212,16 @@ export const BitsAndPiecesFlashcards: React.FC<BitsAndPiecesFlashcardsProps> = (
             <button
               onClick={handlePrev}
               className="apple-touch-btn secondary"
-              style={{ minHeight: "34px", width: "34px", padding: 0, borderRadius: "8px" }}
-              title="Previous card"
+              style={{ padding: "6px 10px", minHeight: "32px" }}
+              aria-label="Previous Flashcard"
             >
               <ChevronLeft size={16} />
             </button>
             <button
               onClick={handleNext}
               className="apple-touch-btn secondary"
-              style={{ minHeight: "34px", width: "34px", padding: 0, borderRadius: "8px" }}
-              title="Next card"
+              style={{ padding: "6px 10px", minHeight: "32px" }}
+              aria-label="Next Flashcard"
             >
               <ChevronRight size={16} />
             </button>
@@ -223,7 +237,7 @@ export const BitsAndPiecesFlashcards: React.FC<BitsAndPiecesFlashcardsProps> = (
                 fontSize: "0.78rem",
                 fontWeight: 750,
                 gap: "5px",
-                boxShadow: "0 2px 6px rgba(0, 113, 227, 0.2)"
+                marginLeft: "6px"
               }}
             >
               <Maximize2 size={13} /> Entire Screen
@@ -232,245 +246,225 @@ export const BitsAndPiecesFlashcards: React.FC<BitsAndPiecesFlashcardsProps> = (
         </div>
       </div>
 
-      {/* Card Quick-Jumper Chips */}
+      {/* Main Flashcard Interactive Area */}
       <div
-        style={{
-          display: "flex",
-          gap: "8px",
-          overflowX: "auto",
-          paddingBottom: "8px",
-          marginBottom: "12px"
-        }}
-      >
-        {FLASHCARDS.map((f, i) => {
-          const isSelected = activeIdx === i;
-          return (
-            <button
-              key={f.id}
-              type="button"
-              onClick={() => {
-                setIsFlipped(false);
-                setActiveIdx(i);
-              }}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-                padding: "6px 12px",
-                borderRadius: "10px",
-                border: isSelected ? `1.5px solid ${f.badgeColor}` : "1px solid var(--border-subtle)",
-                background: isSelected ? "#ffffff" : "var(--slate-100)",
-                color: isSelected ? f.badgeColor : "var(--slate-700)",
-                fontSize: "0.78rem",
-                fontWeight: 750,
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-                transition: "all 0.15s ease",
-                boxShadow: isSelected ? "var(--shadow-sm)" : "none"
-              }}
-            >
-              <span
-                style={{
-                  width: "7px",
-                  height: "7px",
-                  borderRadius: "50%",
-                  background: f.badgeColor
-                }}
-              />
-              Card {f.id}: {f.category.split(":")[1]?.trim() || f.category}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Main Flashcard Card (Interactive Flip on Click) */}
-      <div
-        onClick={() => setIsFlipped(!isFlipped)}
         style={{
           flex: 1,
-          minHeight: isEntireScreen ? "440px" : "320px",
-          background: "#ffffff",
-          border: `2.5px solid ${isFlipped ? card.badgeColor : "var(--border-subtle)"}`,
-          borderRadius: "20px",
-          padding: isEntireScreen ? "32px 38px" : "22px 26px",
-          boxShadow: isFlipped
-            ? "0 18px 40px rgba(0, 0, 0, 0.09)"
-            : "0 4px 16px rgba(0, 0, 0, 0.04)",
-          cursor: "pointer",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          transition: "all 0.25s ease",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "440px",
           position: "relative"
         }}
       >
-        {/* Flip Indicator */}
         <div
+          onClick={() => setIsFlipped((prev) => !prev)}
           style={{
-            position: "absolute",
-            top: isEntireScreen ? "20px" : "16px",
-            right: isEntireScreen ? "24px" : "20px",
+            width: "100%",
+            maxWidth: "760px",
+            minHeight: "360px",
+            background: "#ffffff",
+            borderRadius: "20px",
+            border: `2px solid ${card.badgeColor}`,
+            boxShadow: "0 10px 25px rgba(0,0,0,0.06)",
+            padding: "32px 36px",
+            cursor: "pointer",
             display: "flex",
-            alignItems: "center",
-            gap: "6px",
-            fontSize: isEntireScreen ? "0.85rem" : "0.78rem",
-            fontWeight: 750,
-            background: isFlipped ? `${card.badgeColor}15` : "var(--slate-100)",
-            padding: "4px 10px",
-            borderRadius: "8px",
-            color: isFlipped ? card.badgeColor : "var(--slate-600)"
+            flexDirection: "column",
+            justifyContent: "space-between",
+            position: "relative",
+            transition: "all 0.25s ease",
+            boxSizing: "border-box"
           }}
         >
-          <RotateCw size={14} />
-          <span>{isFlipped ? "Tap card to flip back to question" : "Tap card to reveal answer"}</span>
-        </div>
-
-        {/* Content Side A (Question) vs Side B (Answer) */}
-        {!isFlipped ? (
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              flex: 1,
-              paddingRight: "40px"
-            }}
-          >
+          {/* Top Row on Card */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <span
               style={{
-                fontSize: isEntireScreen ? "0.95rem" : "0.82rem",
+                fontSize: "0.76rem",
                 fontWeight: 800,
-                color: card.badgeColor,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-                marginBottom: "12px"
+                padding: "3px 10px",
+                borderRadius: "8px",
+                background: `${card.badgeColor}18`,
+                color: card.badgeColor
               }}
             >
-              Concept Challenge #{card.id}:
+              {isFlipped ? "Band 9 Synthesis & Model Formula" : "Architectural Investigation"}
             </span>
-            <h4
-              style={{
-                fontSize: isEntireScreen ? "1.65rem" : "1.3rem",
-                fontWeight: 850,
-                color: "var(--slate-900)",
-                lineHeight: 1.45,
-                margin: 0
-              }}
-            >
-              {card.question}
-            </h4>
-            <p
-              style={{
-                marginTop: "18px",
-                fontSize: isEntireScreen ? "1.05rem" : "0.9rem",
-                color: "var(--slate-500)",
-                fontStyle: "italic"
-              }}
-            >
-              💡 Smart Board Tip: Have students decipher the graph independently, then tap anywhere on this card to verify the Band 9 answer.
-            </p>
-          </div>
-        ) : (
-          <div style={{ display: "flex", flexDirection: "column", gap: isEntireScreen ? "18px" : "12px", flex: 1 }}>
-            <div>
-              <span
-                style={{
-                  fontSize: isEntireScreen ? "0.88rem" : "0.78rem",
-                  fontWeight: 800,
-                  color: card.badgeColor,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em"
-                }}
-              >
-                Key Insight &amp; Deciphered Data:
-              </span>
-              <h4
-                style={{
-                  fontSize: isEntireScreen ? "1.38rem" : "1.15rem",
-                  fontWeight: 850,
-                  color: "var(--slate-900)",
-                  margin: "6px 0 0"
-                }}
-              >
-                {card.answerTitle}
-              </h4>
-            </div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: isEntireScreen ? "10px" : "7px" }}>
-              {card.bulletPoints.map((pt, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
-                  <CheckCircle2
-                    size={isEntireScreen ? 18 : 16}
-                    color={card.badgeColor}
-                    style={{ flexShrink: 0, marginTop: "3px" }}
-                  />
-                  <span
-                    style={{
-                      fontSize: isEntireScreen ? "1.05rem" : "0.92rem",
-                      color: "var(--slate-700)",
-                      lineHeight: 1.55
-                    }}
-                  >
-                    {pt}
-                  </span>
-                </div>
-              ))}
-            </div>
 
             <div
               style={{
-                marginTop: "auto",
-                background: "var(--slate-50)",
-                borderLeft: `4px solid ${card.badgeColor}`,
-                borderRadius: "0 12px 12px 0",
-                padding: isEntireScreen ? "14px 18px" : "10px 14px"
+                display: "flex",
+                alignItems: "center",
+                gap: "5px",
+                fontSize: "0.76rem",
+                fontWeight: 700,
+                color: "var(--slate-400)"
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "3px" }}>
-                <Sparkles size={14} color={card.badgeColor} />
-                <span
-                  style={{
-                    fontSize: isEntireScreen ? "0.8rem" : "0.72rem",
-                    fontWeight: 800,
-                    color: "var(--slate-700)",
-                    textTransform: "uppercase"
-                  }}
-                >
-                  Band 9 Report Phrasing:
-                </span>
-              </div>
-              <p
-                style={{
-                  fontSize: isEntireScreen ? "1rem" : "0.88rem",
-                  fontStyle: "italic",
-                  color: "var(--slate-800)",
-                  margin: 0,
-                  lineHeight: 1.5
-                }}
-              >
-                “{card.band9Phrase}”
-              </p>
+              <RotateCw size={13} /> Tap card to {isFlipped ? "view question" : "reveal answer"}
             </div>
           </div>
-        )}
 
-        {/* Bottom Card Footer */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            marginTop: "16px",
-            paddingTop: "12px",
-            borderTop: "1px solid var(--border-subtle)",
-            fontSize: isEntireScreen ? "0.88rem" : "0.8rem",
-            color: "var(--slate-500)"
-          }}
-        >
-          <span>Active recall check • Tap card to toggle</span>
-          <span style={{ fontWeight: 800, color: card.badgeColor }}>
-            Piece {card.id} of {FLASHCARDS.length}
-          </span>
+          {/* Card Body */}
+          {!isFlipped ? (
+            <div style={{ margin: "auto 0", padding: "16px 0" }}>
+              <div
+                style={{
+                  fontSize: "0.85rem",
+                  fontWeight: 800,
+                  color: card.badgeColor,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                  marginBottom: "8px"
+                }}
+              >
+                Question Prompt
+              </div>
+              <h2
+                style={{
+                  fontSize: isEntireScreen ? "1.65rem" : "1.35rem",
+                  fontWeight: 800,
+                  color: "var(--slate-900)",
+                  lineHeight: 1.45,
+                  margin: 0
+                }}
+              >
+                {card.question}
+              </h2>
+            </div>
+          ) : (
+            <div style={{ margin: "auto 0", padding: "12px 0", display: "flex", flexDirection: "column", gap: "14px" }}>
+              <div>
+                <div
+                  style={{
+                    fontSize: "0.82rem",
+                    fontWeight: 800,
+                    color: card.badgeColor,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                    marginBottom: "4px"
+                  }}
+                >
+                  Key Architectural Finding
+                </div>
+                <h3
+                  style={{
+                    fontSize: isEntireScreen ? "1.25rem" : "1.1rem",
+                    fontWeight: 800,
+                    color: "var(--slate-900)",
+                    margin: 0
+                  }}
+                >
+                  {card.answerTitle}
+                </h3>
+              </div>
+
+              {/* Bullet Points */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                {card.bulletPoints.map((pt, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
+                    <CheckCircle2
+                      size={15}
+                      color={card.badgeColor}
+                      style={{ flexShrink: 0, marginTop: "2px" }}
+                    />
+                    <span style={{ fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
+                      {pt}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Band 9 Application Quote */}
+              <div
+                style={{
+                  background: "var(--slate-50)",
+                  borderRadius: "12px",
+                  padding: "12px 14px",
+                  border: "1px solid var(--border-subtle)",
+                  marginTop: "4px"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+                  <Sparkles size={13} color={card.badgeColor} />
+                  <span
+                    style={{
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      color: card.badgeColor,
+                      textTransform: "uppercase"
+                    }}
+                  >
+                    Band 9 Application Sentence
+                  </span>
+                </div>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: "0.88rem",
+                    fontStyle: "italic",
+                    color: "var(--slate-800)",
+                    lineHeight: 1.5
+                  }}
+                >
+                  “{card.band9Phrase}”
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Bottom Card Navigation Indicator */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              borderTop: "1px solid var(--border-subtle)",
+              paddingTop: "12px",
+              marginTop: "12px"
+            }}
+          >
+            <div style={{ display: "flex", gap: "6px" }}>
+              {FLASHCARDS.map((_, i) => (
+                <span
+                  key={i}
+                  style={{
+                    width: i === activeIdx ? "20px" : "6px",
+                    height: "6px",
+                    borderRadius: "3px",
+                    background: i === activeIdx ? card.badgeColor : "var(--slate-200)",
+                    transition: "all 0.2s ease"
+                  }}
+                />
+              ))}
+            </div>
+
+            <div style={{ display: "flex", gap: "6px" }}>
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="apple-touch-btn secondary"
+                style={{ padding: "4px 10px", fontSize: "0.75rem", minHeight: "30px" }}
+              >
+                Previous
+              </button>
+              <button
+                type="button"
+                onClick={handleNext}
+                className="apple-touch-btn primary"
+                style={{
+                  padding: "4px 14px",
+                  fontSize: "0.75rem",
+                  minHeight: "30px",
+                  background: card.badgeColor
+                }}
+              >
+                Next Card
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

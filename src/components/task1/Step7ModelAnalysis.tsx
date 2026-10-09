@@ -10,11 +10,11 @@ export const Step7ModelAnalysis: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 07 / 08 • Grammatical Structures &amp; Full Model Report
+          Step 07 / 08 • Analytical Language &amp; Full Model Report
         </span>
         <h2 className="stage-title">Data Reporting Structures &amp; Complete Band 9 Response</h2>
         <p className="stage-subtitle">
-          Master the three essential grammatical and lexical groupings for dynamic line graphs, alongside the complete 228-word Band 9 model report organized across four balanced paragraphs.
+          Master the three essential grammatical and lexical groupings for statistical tables and dynamic trends, alongside the complete 194-word Band 9 model report organized across four balanced paragraphs.
         </p>
       </div>
 
@@ -188,7 +188,7 @@ export const Step7ModelAnalysis: React.FC = () => {
           </strong>
         </div>
         <p style={{ margin: 0, fontSize: "0.96rem", lineHeight: 1.6, color: "var(--slate-800)" }}>
-          “While per capita carbon emissions in the United Kingdom and Sweden followed long-term downward paths—with the UK retaining the top rank and Sweden plummeting after an initial spike—Italy and Portugal experienced unbroken growth, culminating in Italy plateauing at 7.6 tonnes and Portugal quadrupling to converge with Sweden at 5.4 tonnes.”
+          “While higher education progression rates increased across four of the five secondary institutions—culminating in Harble Secondary vaulting from 30% to 80% and Fairfield Girls rebounding to 79%—Greystone High stood alone in suffering an uninterrupted decline from 90% to 70%, while Crackend Boys maintained remarkable consistency around 60%.”
         </p>
       </div>
     </div>

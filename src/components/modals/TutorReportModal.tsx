@@ -9,17 +9,17 @@ interface TutorReportModalProps {
 }
 
 const TASK1_SUBMISSIONS = [
-  { student: "Aarav Sharma", type: "Comparative Maps", topic: "Kimsville town redevelopment using city centre anchor (2002 vs today)", accuracy: "High" },
-  { student: "Pooja Patel", type: "Map Transformation", topic: "Top-left housing & railway station additions left of city centre", accuracy: "High" },
-  { student: "Rohan Verma", type: "Two Maps", topic: "Industrial factory replacement by software tech offices right of city centre", accuracy: "Moderate" },
-  { student: "Ananya Iyer", type: "Comparative Maps", topic: "Old cinema conversion to pub & bottom-left football stadium", accuracy: "High" }
+  { student: "Aarav Sharma", type: "Statistical Table", topic: "Macro 4-to-1 split & Harble Secondary's meteoric leap from 30% to 80%", accuracy: "High" },
+  { student: "Pooja Patel", type: "Statistical Table", topic: "Fairfield Girls & Greystone High equalising at 75% in 1997", accuracy: "High" },
+  { student: "Rohan Verma", type: "Statistical Table", topic: "1999 triple convergence at exactly 60% (Royston, Harble, Crackend)", accuracy: "High" },
+  { student: "Ananya Iyer", type: "Statistical Table", topic: "Greystone High as the sole uninterrupted decliner (90% down to 70%)", accuracy: "High" }
 ];
 
 const TASK2_SUBMISSIONS = [
-  { student: "Aarav Sharma", type: "Two-Part Essay", topic: "Monetary bonuses for short-term sales vs hedonic habituation", accuracy: "High" },
-  { student: "Pooja Patel", type: "Two-Part Essay", topic: "Professional autonomy and career ladders as superior motivators", accuracy: "High" },
-  { student: "Rohan Verma", type: "Two-Part Essay", topic: "Wells Fargo quota case study & risks of toxic internal rivalry", accuracy: "Moderate" },
-  { student: "Ananya Iyer", type: "Two-Part Essay", topic: "Authentic recognition and psychological well-being over cash perks", accuracy: "High" }
+  { student: "Aarav Sharma", type: "Two-Part Essay", topic: "Healthcare fiscal expenditure strain caused by chronic non-communicable diseases", accuracy: "High" },
+  { student: "Pooja Patel", type: "Two-Part Essay", topic: "Targeted fiscal sugar levies and statutory marketing curbs on processed foods", accuracy: "High" },
+  { student: "Rohan Verma", type: "Two-Part Essay", topic: "Sedentary automation reducing physical fitness & municipal cycleway expansion", accuracy: "Moderate" },
+  { student: "Ananya Iyer", type: "Two-Part Essay", topic: "Nordic civic physical activity initiatives & workplace ergonomic health mandates", accuracy: "High" }
 ];
 
 export const TutorReportModal: React.FC<TutorReportModalProps> = ({

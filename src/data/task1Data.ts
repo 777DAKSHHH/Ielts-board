@@ -1,389 +1,430 @@
-import type { Task1Data, VocabItem } from "../types";
-export type { Task1Data, VocabItem };
+import type { Task1Data, VocabItem, SchoolData, ConvergenceMilestone, Task1TableData } from "../types";
+export type { Task1Data, VocabItem, SchoolData, ConvergenceMilestone, Task1TableData };
+
+export const SCHOOLS_DATA: SchoolData[] = [
+  {
+    id: "royston",
+    name: "Royston Academy",
+    originalLegendName: "ROYSTON ACADEMY",
+    originalTableName: "ROYSTON ACADEMY",
+    color: "#d97706",
+    group: "net_increase",
+    badge: "Stepped Climber (50% → 60%, +10% pts)",
+    startValue: 50,
+    peakOrPlateauValue: 60,
+    endValue: 60,
+    netChange: "+10 percentage points (+20% increase)",
+    dataPoints: [
+      { year: 1995, value: 50, annotation: "Began at exactly 50%" },
+      { year: 1996, value: 52, annotation: "Marginal rise to 52%" },
+      { year: 1997, value: 54, annotation: "Rose to 54%" },
+      { year: 1998, value: 54, annotation: "Plateaued identically at 54%" },
+      { year: 1999, value: 60, annotation: "Stepped up to 60%, joining Harble and Crackend" },
+      { year: 2000, value: 60, annotation: "Level at 60% for a second consecutive year" }
+    ],
+    trendSummary:
+      "Showed stepped growth, rising from 50% to 54% (1997–98) before stepping up to 60% (1999–2000).",
+    band9Phrase:
+      "“Royston Academy progressed in a stepped fashion, rising from 50% to plateau at 54% in 1997–1998 before leveling off at 60% by the end of the century.”",
+    description:
+      "Grew modestly by 10 percentage points overall, featuring two distinct two-year periods of stability at 54% and 60%."
+  },
+  {
+    id: "greystone",
+    name: "Greystone High",
+    originalLegendName: "GREYSTONE HIGH",
+    originalTableName: "GREYSTONE HIGH",
+    color: "#dc2626",
+    group: "net_decrease",
+    badge: "Sole Decliner: Lost Dominance (90% → 70%)",
+    startValue: 90,
+    peakOrPlateauValue: 90,
+    endValue: 70,
+    netChange: "-20 percentage points (-22.2% decline)",
+    dataPoints: [
+      { year: 1995, value: 90, annotation: "Commanding lead at 90%, 25 points ahead of 2nd" },
+      { year: 1996, value: 80, annotation: "Steep drop by 10 points to 80%" },
+      { year: 1997, value: 75, annotation: "Fell to 75%, caught by Fairfield Girls" },
+      { year: 1998, value: 73, annotation: "Dropped to 73%, falling behind Fairfield" },
+      { year: 1999, value: 72, annotation: "Marginal decline to 72%" },
+      { year: 2000, value: 70, annotation: "Concluded at 70%, slipping to third place" }
+    ],
+    trendSummary:
+      "The only school to decline, suffering an uninterrupted downward slide from 90% down to 70% and dropping from 1st to 3rd place.",
+    band9Phrase:
+      "“Greystone High was the sole institution to experience a continuous downward trend, surrendering its commanding 90% lead to finish third at 70%.”",
+    description:
+      "Fell sharply by 15 points in the first two years, followed by a slower steady descent to drop from 1st to 3rd place."
+  },
+  {
+    id: "harble",
+    name: "Harble Secondary",
+    originalLegendName: "HARBLE SECONDARY",
+    originalTableName: "HARBLE SECONDARY",
+    color: "#059669",
+    group: "net_increase",
+    badge: "Most Dramatic Surge (30% → 80%, Nearly Tripled)",
+    startValue: 30,
+    peakOrPlateauValue: 80,
+    endValue: 80,
+    netChange: "+50 percentage points (+167% relative surge)",
+    dataPoints: [
+      { year: 1995, value: 30, annotation: "Lowest initial percentage at 30%" },
+      { year: 1996, value: 35, annotation: "Rose to 35% (+5%)" },
+      { year: 1997, value: 40, annotation: "Climbed to 40% (+5%)" },
+      { year: 1998, value: 50, annotation: "Accelerated to 50% (+10%)" },
+      { year: 1999, value: 60, annotation: "Reached 60%, converging with Royston and Crackend" },
+      { year: 2000, value: 80, annotation: "Jumped by 20% to finish 1st overall at 80%" }
+    ],
+    trendSummary:
+      "Underwent an uninterrupted, accelerating climb, vaulting from last place at 30% to first place at 80%—nearly tripling its baseline.",
+    band9Phrase:
+      "“Harble Secondary registered the most dramatic surge, nearly tripling from a baseline of 30% in 1995 to emerge as the top performer at 80% in 2000.”",
+    description:
+      "Rose by 5% annually for two years, then accelerated by 10% in 1998 and 1999, before jumping by an extraordinary 20 percentage points in the final year."
+  },
+  {
+    id: "fairfield",
+    name: "Fairfield Girls",
+    originalLegendName: "FAIRFIELD GIRLS",
+    originalTableName: "FAIRFIELD GIRLS",
+    color: "#4f46e5",
+    group: "net_increase",
+    badge: "Strong Climber (65% → 79%, 2nd Place)",
+    startValue: 65,
+    peakOrPlateauValue: 79,
+    endValue: 79,
+    netChange: "+14 percentage points (+21.5% growth)",
+    dataPoints: [
+      { year: 1995, value: 65, annotation: "Started second highest at 65%" },
+      { year: 1996, value: 70, annotation: "Rose to 70% (+5%)" },
+      { year: 1997, value: 75, annotation: "Equalized with Greystone High at 75%" },
+      { year: 1998, value: 75, annotation: "Plateaued at 75%, surpassing Greystone High" },
+      { year: 1999, value: 70, annotation: "Experienced a temporary 5% contraction to 70%" },
+      { year: 2000, value: 79, annotation: "Rebounded sharply to finish in second place at 79%" }
+    ],
+    trendSummary:
+      "Grew from 65% to 75% by 1997, overtook Greystone in 1998, and rebounded from a 1999 dip to conclude at 79% (just 1% behind Harble).",
+    band9Phrase:
+      "“Fairfield Girls climbed steadily from 65% to 75% in 1997, overtook Greystone in 1998, and rebounded from a transient dip in 1999 to conclude at 79%.”",
+    description:
+      "Maintained second place initially, briefly tied for first in 1997, held the sole lead in 1998, and concluded just one point shy of Harble."
+  },
+  {
+    id: "crackend",
+    name: "Crackend Boys",
+    originalLegendName: "CRACKEND BOYS",
+    originalTableName: "CRACKEND BOYS",
+    color: "#475569",
+    group: "steady",
+    badge: "Static / Stable Baseline (59% – 62%)",
+    startValue: 60,
+    peakOrPlateauValue: 62,
+    endValue: 62,
+    netChange: "+2 percentage points (negligible change)",
+    dataPoints: [
+      { year: 1995, value: 60, annotation: "Began at 60%" },
+      { year: 1996, value: 59, annotation: "Slight dip to 59%" },
+      { year: 1997, value: 60, annotation: "Returned to 60%" },
+      { year: 1998, value: 61, annotation: "Marginal uptick to 61%" },
+      { year: 1999, value: 60, annotation: "Returned to 60%, part of the triple tie" },
+      { year: 2000, value: 62, annotation: "Finished slightly higher at 62%" }
+    ],
+    trendSummary:
+      "Maintained virtually static numbers across the entire six-year span, fluctuating within a tight band between 59% and 62%.",
+    band9Phrase:
+      "“Crackend Boys exhibited remarkable stability, oscillating within a narrow band of 59% to 62% throughout the six-year period.”",
+    description:
+      "Demonstrated near-total stability, never deviating by more than two percentage points from its initial 60% baseline."
+  }
+];
+
+export const CONVERGENCES_DATA: ConvergenceMilestone[] = [
+  {
+    id: "fairfield-greystone-1997",
+    year: 1997,
+    approxValue: 75,
+    schools: ["Fairfield Girls", "Greystone High"],
+    countries: ["Fairfield Girls", "Greystone High"],
+    title: "1997: Fairfield Girls Equalizes with Greystone High (75%)",
+    description:
+      "Fairfield's climb (+10 points) and Greystone's descent (-15 points) met at precisely 75% in 1997, prior to Fairfield taking the lead in 1998.",
+    band9Phrase:
+      "“In 1997, Fairfield Girls' ascending rate equalized with Greystone High's declining figure at exactly 75%.”"
+  },
+  {
+    id: "triple-tie-1999",
+    year: 1999,
+    approxValue: 60,
+    schools: ["Royston Academy", "Harble Secondary", "Crackend Boys"],
+    countries: ["Royston Academy", "Harble Secondary", "Crackend Boys"],
+    title: "1999: Triple Convergence at 60%",
+    description:
+      "In 1999, Royston Academy's stepped climb, Harble's rapid surge, and Crackend's stable rate all converged at precisely 60%.",
+    band9Phrase:
+      "“Remarkably, in 1999, Royston Academy, Harble Secondary, and Crackend Boys all converged at an identical figure of exactly 60%.”"
+  }
+];
+
+const TABLE_DATA_PAYLOAD: Task1TableData = {
+  years: [1995, 1996, 1997, 1998, 1999, 2000],
+  unit: "% of pupils entering higher education",
+  schools: SCHOOLS_DATA,
+  countries: SCHOOLS_DATA,
+  convergences: CONVERGENCES_DATA,
+  intersections: CONVERGENCES_DATA,
+  comparisonsSummary: {
+    highestStarter: "Greystone High (90% in 1995, falling to 70% in 2000)",
+    mostDramaticSurge: "Harble Secondary (surged from 30% to 80%, nearly tripling)",
+    soleDecliner: "Greystone High (dropped 20 percentage points, falling from 1st to 3rd)",
+    mostStable: "Crackend Boys (fluctuated minimally between 59% and 62%)",
+    convergences: "Fairfield & Greystone tied at 75% in 1997; Royston, Harble & Crackend tied at 60% in 1999"
+  }
+};
 
 export const TASK1_DATA: Task1Data = {
-  id: "co2-emissions-per-person-task1",
-  taskType: "Dynamic Line Graph (40-Year Comparative Trends)",
-  title: "Average Carbon Dioxide (CO2) Emissions per Person (1967–2007)",
+  id: "higher-education-pupils-task1",
+  taskType: "Statistical Table & Progression Trends (1995–2000)",
+  title: "Percentage of Pupils Entering Higher Education from Five Secondary Schools (1995–2000)",
   questionText:
-    "The line graph shows the average carbon dioxide emission.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
-  imageFileName: "co2-emissions-per-person.png",
-  audioUrl: "materials/co2-emissions-line-graph-briefing.m4a",
+    "The table shows the percentage of pupils who entered higher education from five secondary school between 1995 and 2000.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+  imageFileName: "higher-education-pupils-table.png",
+  audioUrl: "materials/weight-health-fitness-briefing.m4a",
   audioClueText:
-    "Today's visual task features a dynamic line graph tracking average carbon dioxide emissions per person across four European nations: the United Kingdom, Sweden, Italy, and Portugal, spanning a forty-year timeframe from 1967 to 2007, measured in metric tonnes. Notice the striking dichotomy in trajectories. While the United Kingdom remained the highest emitter throughout the period, falling gradually from nearly eleven to under nine tonnes, Sweden exhibited the most volatile trend, surging to a dramatic peak above ten tonnes in 1977 before plunging steeply down to approximately five point four tonnes. Conversely, Italy and Portugal both experienced continuous upward growth. Italy climbed steadily from four point two tonnes to plateau at around seven point six tonnes, overtaking Sweden by the late 1980s. Meanwhile, Portugal registered the steepest proportional rise, more than quadrupling its per capita emissions from a modest one point two tonnes to converge directly with Sweden at five point four tonnes by 2007.",
+    "Today's visual task presents a statistical table detailing the percentage of secondary school leavers entering higher education across five distinct institutions: Royston Academy, Greystone High, Harble Secondary, Fairfield Girls, and Crackend Boys, spanning from 1995 to 2000. Over this six-year timeframe, four of the five institutions recorded overall increases, while only one experienced a continuous decline. Greystone High commenced the period with a dominant lead of ninety percent, but steadily fell by twenty percentage points to finish at seventy percent. In stark contrast, Harble Secondary achieved the most remarkable leap, ascending from a baseline of just thirty percent to finish as the frontrunner at eighty percent—nearly tripling its baseline. Fairfield Girls followed an upward trajectory, rising from sixty-five percent to seventy-nine percent, briefly tying with Greystone at seventy-five percent in 1997 before overtaking it. Meanwhile, Royston Academy progressed moderately from fifty to sixty percent, and Crackend Boys demonstrated near-total stability, hovering between fifty-nine and sixty-two percent. Notably, in 1999, Royston, Crackend, and Harble all intersected at exactly sixty percent.",
   timingSeconds: 180,
   sampleIntro:
-    "The line graph illustrates average carbon dioxide (CO2) emissions per person across four European countries—the United Kingdom, Sweden, Italy, and Portugal—over a forty-year period from 1967 to 2007, measured in metric tonnes.",
+    "The table illustrates the proportion of pupils who proceeded to tertiary education from five secondary schools—Royston Academy, Greystone High, Harble Secondary, Fairfield Girls, and Crackend Boys—between 1995 and 2000.",
   sampleOverview:
-    "Overall, per capita emissions in the United Kingdom and Sweden followed an overall downward trajectory over the four decades, whereas Italy and Portugal experienced substantial growth. Furthermore, although the United Kingdom consistently recorded the highest emissions throughout the timeframe, Sweden exhibited the most volatile fluctuation, while Portugal registered the steepest proportional increase to converge with Sweden by 2007.",
+    "Overall, higher education entry rates rose in four out of the five secondary schools, with Greystone High being the sole institution to experience a continuous downward trend. Furthermore, while Harble Secondary exhibited the most dramatic expansion to finish with the highest percentage, Crackend Boys maintained notable consistency throughout the six-year period.",
 
-  graphData: {
-    years: [1967, 1977, 1987, 1997, 2007],
-    unit: "Metric Tonnes per person",
-    yRange: { min: 0, max: 12, step: 2 },
-    countries: [
-      {
-        id: "uk",
-        name: "United Kingdom",
-        originalLegendName: "United Kingdom",
-        color: "#9333ea",
-        lineStyle: "dash-dot",
-        strokeDashArray: "10 4 2 4",
-        group: "net_decrease",
-        badge: "Highest Emitter Throughout (Net Decrease)",
-        startValue: 10.8,
-        endValue: 8.7,
-        netChange: "-2.1 metric tonnes (-19.4%)",
-        dataPoints: [
-          { year: 1967, value: 10.8, annotation: "Highest starting figure (~10.8 tonnes)" },
-          { year: 1977, value: 10.7, annotation: "Near stable plateau (~10.7 tonnes)" },
-          { year: 1987, value: 10.0, annotation: "Declined to exactly 10.0 tonnes" },
-          { year: 1997, value: 9.6, annotation: "Gradual descent to 9.6 tonnes" },
-          { year: 2007, value: 8.7, annotation: "Finished as highest emitter at ~8.7 tonnes" }
-        ],
-        trendSummary:
-          "Maintained the dominant emitter position throughout the entire 40-year timeframe, declining steadily from nearly 11 tonnes to 8.7 tonnes.",
-        band9Phrase:
-          "“The United Kingdom was the dominant emitter throughout the entire four-decade span, despite a steady and continuous reduction from nearly 11 metric tonnes per capita in 1967 to just under 9 tonnes by 2007.”",
-        description:
-          "A gradual, unbroken descent over 40 years without sharp swings, remaining higher than all three other nations at every single recorded interval."
-      },
-      {
-        id: "sweden",
-        name: "Sweden",
-        originalLegendName: "Sweden",
-        color: "#0284c7",
-        lineStyle: "dashed",
-        strokeDashArray: "8 6",
-        group: "net_decrease",
-        badge: "Most Volatile: Peak & Plunge (Net Decrease)",
-        startValue: 8.6,
-        peakOrPlateauValue: 10.2,
-        endValue: 5.4,
-        netChange: "-3.2 metric tonnes (-37.2% overall; -47% from peak)",
-        dataPoints: [
-          { year: 1967, value: 8.6, annotation: "Second highest starter at 8.6 tonnes" },
-          { year: 1977, value: 10.2, annotation: "Dramatic apex above 10 tonnes (~10.2 tonnes)" },
-          { year: 1987, value: 7.0, annotation: "Plunged to 7.0 tonnes, overtaken by Italy" },
-          { year: 1997, value: 6.0, annotation: "Continued steep descent to 6.0 tonnes" },
-          { year: 2007, value: 5.4, annotation: "Finished at 5.4 tonnes, converging with Portugal" }
-        ],
-        trendSummary:
-          "Experienced a roller-coaster trajectory: a sharp 10-year climb to a peak above 10 tonnes in 1977, followed by a precipitous 30-year plunge nearly halving its emissions.",
-        band9Phrase:
-          "“Sweden exhibited the most volatile trajectory, climbing sharply to an apex of approximately 10.2 metric tonnes in 1977 before plunging precipitously over the subsequent thirty years to finish at 5.4 tonnes.”",
-        description:
-          "The only nation to display both a sharp upward surge and an aggressive downward crash, dropping from second to tied-for-lowest by 2007."
-      },
-      {
-        id: "italy",
-        name: "Italy",
-        originalLegendName: "Italy",
-        color: "#b91c1c",
-        lineStyle: "solid",
-        strokeDashArray: "none",
-        group: "net_increase",
-        badge: "Steady Growth & Plateau (Net Increase)",
-        startValue: 4.2,
-        peakOrPlateauValue: 7.6,
-        endValue: 7.6,
-        netChange: "+3.4 metric tonnes (+81%)",
-        dataPoints: [
-          { year: 1967, value: 4.2, annotation: "Started third at 4.2 tonnes" },
-          { year: 1977, value: 6.2, annotation: "Rapid initial rise to 6.2 tonnes" },
-          { year: 1987, value: 6.7, annotation: "Reached 6.7 tonnes, overtaking Sweden" },
-          { year: 1997, value: 7.6, annotation: "Climbed to 7.6 tonnes" },
-          { year: 2007, value: 7.6, annotation: "Completely stable plateau at 7.6 tonnes" }
-        ],
-        trendSummary:
-          "Grew substantially over the first 30 years from 4.2 to 7.6 tonnes, overtaking Sweden by 1987, before plateauing identically between 1997 and 2007.",
-        band9Phrase:
-          "“Italy witnessed a consistent upward climb from 4.2 metric tonnes in 1967, overtaking Sweden in the late 1980s, before plateauing at approximately 7.6 tonnes from 1997 onwards.”",
-        description:
-          "Almost doubled its per capita emissions (+81%) to emerge as the second highest emitter by the end of the timeframe."
-      },
-      {
-        id: "portugal",
-        name: "Portugal",
-        originalLegendName: "Portgual",
-        color: "#1e293b",
-        lineStyle: "dotted",
-        strokeDashArray: "3 4",
-        group: "net_increase",
-        badge: "Steepest Relative Growth (4-Fold Surge)",
-        startValue: 1.2,
-        peakOrPlateauValue: 5.4,
-        endValue: 5.4,
-        netChange: "+4.2 metric tonnes (+350%, >4x growth)",
-        dataPoints: [
-          { year: 1967, value: 1.2, annotation: "Lowest emitter by far at 1.2 tonnes" },
-          { year: 1977, value: 2.2, annotation: "Rose to 2.2 tonnes" },
-          { year: 1987, value: 3.6, annotation: "Steepened climb to 3.6 tonnes" },
-          { year: 1997, value: 5.3, annotation: "Surged to 5.3 tonnes" },
-          { year: 2007, value: 5.4, annotation: "Reached 5.4 tonnes, converging with Sweden" }
-        ],
-        trendSummary:
-          "Demonstrated the steepest proportional surge on the chart, quadrupling from a baseline of 1.2 tonnes to converge directly with Sweden at 5.4 tonnes by 2007.",
-        band9Phrase:
-          "“Starting at a negligible 1.2 metric tonnes in 1967, Portugal registered more than a four-fold increase, surging to 5.4 tonnes in 2007 to match Sweden’s terminal figure.”",
-        description:
-          "The fastest expanding emitter in relative terms (+350%), closing a 7.4-tonne gap with Sweden to finish tied at 5.4 tonnes."
-      }
-    ],
-    intersections: [
-      {
-        id: "italy-sweden-1987",
-        year: 1987,
-        approxValue: 6.8,
-        countries: ["Italy", "Sweden"],
-        title: "1987: Italy Overtakes Sweden",
-        description:
-          "Around 1987, Italy's ascending trajectory crossed Sweden's rapidly descending line at approximately 6.8 metric tonnes.",
-        band9Phrase:
-          "“In approximately 1987, Italy's steadily rising emissions intersected Sweden's declining line at roughly 6.8 metric tonnes, after which Italy assumed second position.”"
-      },
-      {
-        id: "sweden-portugal-2007",
-        year: 2007,
-        approxValue: 5.4,
-        countries: ["Sweden", "Portugal"],
-        title: "2007: Sweden & Portugal Convergence",
-        description:
-          "By 2007, Sweden's 30-year plunge and Portugal's 40-year climb met precisely at 5.4 metric tonnes per person.",
-        band9Phrase:
-          "“By 2007, Sweden's protracted descent and Portugal's prolonged surge converged at an identical figure of approximately 5.4 metric tonnes per person.”"
-      }
-    ],
-    comparisonsSummary: {
-      dominantEmitter: "United Kingdom (consistently highest from ~10.8 down to 8.7 tonnes)",
-      mostVolatile: "Sweden (peaked at 10.2 tonnes in 1977, then plunged by nearly 50% to 5.4 tonnes)",
-      steepestGrowth: "Portugal (quadrupled from 1.2 tonnes to 5.4 tonnes, >350% increase)",
-      convergences: "Italy overtook Sweden around 1987; Sweden and Portugal met at 5.4 tonnes in 2007"
-    }
-  },
+  tableData: TABLE_DATA_PAYLOAD,
+  graphData: TABLE_DATA_PAYLOAD,
 
   vocabList: [
     {
-      word: "per capita carbon emissions",
+      word: "tertiary education entry rate",
       meaning:
-        "The average quantity of carbon dioxide released into the atmosphere by a single individual within a country.",
+        "The proportion or percentage of secondary school leavers who gain admission and enroll in university or higher education.",
       example:
-        "The graph tracks fluctuations in per capita carbon emissions across four industrialized European nations."
+        "The table tracks variations in tertiary education entry rates across five secondary schools between 1995 and 2000."
     },
     {
-      word: "exhibit an overall downward trajectory",
+      word: "register an uninterrupted downward trend",
       meaning:
-        "Show a general, long-term decreasing pattern from the start of the timeframe to the finish.",
+        "Continuously decrease year over year without experiencing any rebound or leveling off.",
       example:
-        "Both the United Kingdom and Sweden exhibited an overall downward trajectory over the four-decade timeline."
+        "Greystone High was the only school to register an uninterrupted downward trend, falling every single year."
     },
     {
-      word: "experience a dramatic precipitous decline",
+      word: "experience a meteoric surge",
       meaning:
-        "Undergo an exceptionally steep, rapid, and sustained reduction in numerical value.",
+        "Undergo an extraordinarily swift, steep, and dramatic upward climb in statistical value.",
       example:
-        "Following its 1977 peak, Sweden experienced a dramatic precipitous decline over the subsequent thirty years."
+        "Harble Secondary experienced a meteoric surge, vaulting from thirty percent in 1995 to eighty percent in 2000."
     },
     {
-      word: "witness a four-fold increase",
+      word: "nearly triple its initial baseline",
       meaning:
-        "Multiply by a factor of four (a 300% to 400% surge compared to the original baseline figure).",
+        "Multiply by almost a factor of three relative to the starting figure at the beginning of the timeframe.",
       example:
-        "Portuguese per capita emissions witnessed more than a four-fold increase, soaring from 1.2 to 5.4 tonnes."
+        "By soaring from 30% to 80%, Harble Secondary nearly tripled its initial baseline over the six-year period."
     },
     {
-      word: "reach an unprecedented peak",
+      word: "surrender a commanding lead",
       meaning:
-        "Ascend to the highest recorded apex value throughout the historical period.",
+        "Relinquish the undisputed top-ranked position after holding a substantial numerical advantage.",
       example:
-        "Sweden reached an unprecedented peak of just over ten metric tonnes in 1977 before reversing course."
+        "Greystone High surrendered its commanding 25-point lead, eventually slipping to third place by the end of the survey."
     },
     {
-      word: "surpass and overtake",
+      word: "converge at an identical proportion",
       meaning:
-        "Exceed another nation's value, crossing above it on the graphical scale.",
+        "Align at the exact same percentage figure across separate data series in a specific year.",
       example:
-        "By the late 1980s, Italy managed to surpass and overtake Sweden's declining emissions figure."
+        "In 1999, Royston Academy, Harble Secondary, and Crackend Boys converged at an identical proportion of 60%."
     },
     {
-      word: "converge at an identical figure",
+      word: "oscillate within a narrow band",
       meaning:
-        "Meet at the exact same statistical value or data point at the end of a timeframe.",
+        "Fluctuate slightly up and down within very tight numerical limits, demonstrating high stability.",
       example:
-        "By the end of the recording period in 2007, Sweden and Portugal converged at an identical figure of 5.4 tonnes."
+        "Crackend Boys oscillated within a narrow band of 59% to 62%, exhibiting near-total stability."
     },
     {
-      word: "plateau and level off",
+      word: "exhibit a stepped upward pattern",
       meaning:
-        "Reach a state of little or no change following a prior period of steady growth or decline.",
+        "Progress through alternating periods of growth followed by short multi-year plateaus.",
       example:
-        "Italian emissions plateaued and leveled off at approximately 7.6 metric tonnes between 1997 and 2007."
+        "Royston Academy exhibited a stepped upward pattern, pausing at 54% in 1997–98 before leveling at 60%."
     },
     {
-      word: "remain the dominant contributor",
+      word: "rebound following a transient dip",
       meaning:
-        "Maintain the primary, highest-ranking statistical position across all measured intervals.",
+        "Recover strongly after experiencing a brief, temporary downward decline.",
       example:
-        "The United Kingdom remained the dominant contributor throughout the entirety of the survey period."
+        "Fairfield Girls rebounded following a transient dip to 70% in 1999, concluding at 79% in 2000."
     },
     {
-      word: "a marked divergence in trajectories",
+      word: "overtake and displace from first place",
       meaning:
-        "A clear, noticeable separation in directional movement (e.g. one group rising while another falls).",
+        "Surpass a higher-ranked entity and take over the leading position.",
       example:
-        "The visual highlights a marked divergence in trajectories between the established industrial powers and southern Europe."
+        "By 1998, Fairfield Girls had overtaken Greystone High, temporarily holding the highest progression rate."
     }
   ],
 
   vocabHunt: [
-    "per capita carbon emissions",
-    "exhibit an overall downward trajectory",
-    "experience a dramatic precipitous decline",
-    "witness a four-fold increase",
-    "reach an unprecedented peak",
-    "surpass and overtake",
-    "converge at an identical figure",
-    "plateau and level off",
-    "remain the dominant contributor",
-    "a marked divergence in trajectories"
+    "tertiary education entry rate",
+    "register an uninterrupted downward trend",
+    "experience a meteoric surge",
+    "nearly triple its initial baseline",
+    "surrender a commanding lead",
+    "converge at an identical proportion",
+    "oscillate within a narrow band",
+    "exhibit a stepped upward pattern",
+    "rebound following a transient dip",
+    "overtake and displace from first place"
   ],
 
   bp1: {
-    title: "Body 1: The Net Decreasers (United Kingdom & Sweden)",
-    focus: "Higher initial baselines experiencing long-term net reductions (UK descent & Sweden's roller-coaster)",
+    title: "Body 1: The Surging Risers & Frontrunners (Harble Secondary & Fairfield Girls)",
+    focus: "Harble's meteoric leap from last to first (30% to 80%) and Fairfield's progression to second place (65% to 79%)",
     points: [
-      "The United Kingdom maintained the highest per capita emissions in every single decade recorded.",
-      "British emissions began at approximately 10.8 metric tonnes in 1967 and hovered near 10.7 tonnes in 1977.",
-      "Thereafter, UK output declined steadily to 10.0 tonnes in 1987, 9.6 tonnes in 1997, and ended at roughly 8.7 tonnes in 2007.",
-      "Sweden started as the second highest emitter at 8.6 metric tonnes in 1967.",
-      "Swedish emissions spiked sharply to a peak of roughly 10.2 tonnes in 1977, briefly rivaling the UK.",
-      "Subsequently, Sweden experienced a dramatic 30-year plunge, dropping to 7.0 tonnes in 1987, 6.0 in 1997, and 5.4 in 2007 (nearly halving from its peak)."
+      "Harble Secondary started as the lowest-ranking institution at 30% in 1995.",
+      "It rose steadily by 5% annually to 35% in 1996 and 40% in 1997, before accelerating to 50% in 1998 and 60% in 1999.",
+      "In the final year, Harble leaped by an extraordinary 20 percentage points to capture the top rank at 80% (nearly tripling its baseline).",
+      "Fairfield Girls commenced in second position at 65% in 1995, climbing to 70% in 1996.",
+      "In 1997, Fairfield reached 75%, equalizing with Greystone High, and held this level in 1998 to take the sole lead.",
+      "After a brief 5% dip to 70% in 1999, Fairfield rebounded sharply to finish in second place at 79% in 2000 (just 1% behind Harble)."
     ],
     takeaways: [
-      "UK: Unbroken dominance, steady decline from ~11 to ~8.7 tonnes (-2.1 tonnes)",
-      "Sweden: Most volatile trajectory, sharp peak at ~10.2 in 1977 followed by an aggressive collapse to 5.4 tonnes"
+      "Harble: Meteoric surge from 30% to 80% (+50% pts, +167%), vaulting from 5th to 1st place",
+      "Fairfield: Strong rise from 65% to 79% (+14% pts), briefly leading in 1998 and rebounding to 2nd place"
     ]
   },
 
   bp2: {
-    title: "Body 2: The Net Increasers (Italy & Portugal)",
-    focus: "Lower initial baselines undergoing sustained upward growth and strategic crossovers",
+    title: "Body 2: The Sole Decliner, Stepped Climber & Static Baseline (Greystone, Royston, Crackend)",
+    focus: "Greystone's continuous decline (-20% pts), Royston's stepped rise (50% to 60%), Crackend's flatline (59%–62%), and the 1999 triple tie at 60%",
     points: [
-      "Italy began in third position at 4.2 metric tonnes in 1967 and experienced consistent, unbroken growth.",
-      "Italian emissions climbed to 6.2 tonnes in 1977 and reached 6.7 tonnes in 1987, officially overtaking Sweden.",
-      "Italy's output rose to 7.6 metric tonnes in 1997, where it remained completely static through 2007.",
-      "Portugal started with the lowest emissions by a wide margin, registering a mere 1.2 metric tonnes in 1967.",
-      "Over the next four decades, Portuguese emissions underwent a dramatic, more than four-fold surge.",
-      "Portugal climbed to 2.2 tonnes (1977), 3.6 tonnes (1987), and 5.3 tonnes (1997), finishing at 5.4 tonnes in 2007 to converge with Sweden."
+      "Greystone High began with a commanding 25-point lead at 90% in 1995, but was the sole school to decrease.",
+      "It dropped sharply to 80% in 1996 and 75% in 1997, followed by gradual declines to 73% (1998), 72% (1999), and 70% (2000), slipping to third place.",
+      "Royston Academy progressed in a stepped manner, rising from 50% to 52% in 1996 and 54% in 1997, where it plateaued in 1998.",
+      "It stepped up to 60% in 1999 and remained level in 2000 (+10% pts net).",
+      "Crackend Boys exhibited remarkable stability, oscillating between 59% and 62% across the entire period (ending at 62%, +2% pts).",
+      "In 1999, Royston Academy, Harble Secondary, and Crackend Boys all converged at an identical figure of exactly 60%."
     ],
     takeaways: [
-      "Italy: Consistent expansion from 4.2 to 7.6 tonnes (+81%), surpassing Sweden in 1987 and plateauing after 1997",
-      "Portugal: Steepest proportional growth (>4x increase from 1.2 to 5.4 tonnes), meeting Sweden's descending figure in 2007"
+      "Greystone: Continuous decline from 90% to 70% (-20% pts), surrendering its lead to finish 3rd",
+      "Royston: Stepped growth from 50% to 60% (+10% pts) with plateaus in 1997–98 (54%) and 1999–2000 (60%)",
+      "Crackend: Virtually static baseline hovering tightly between 59% and 62%",
+      "1999 Milestone: Triple convergence at exactly 60% among Royston, Harble, and Crackend"
     ]
   },
 
   processingGroups: [
     {
-      title: "Trajectory Verbs & Movement Dynamics",
+      title: "Ascending Trends & Exponential Growth",
       items: [
-        "Stood at approximately 10.8 metric tonnes in 1967",
-        "Hovered near 10.7 metric tonnes before continuing a gradual descent",
-        "Surged sharply to an apex of roughly 10.2 tonnes in 1977",
-        "Plummeted precipitously over the subsequent three decades",
-        "Plateaued identically at 7.6 metric tonnes between 1997 and 2007"
+        "Soared from 30% to finish at a peak of 80% in 2000",
+        "Nearly tripled its initial baseline over the six-year period",
+        "Jumped by an extraordinary 20 percentage points in a single year",
+        "Vaulted from the lowest-ranked institution to the frontrunner position",
+        "Rebounded sharply following a transient 5% contraction"
       ]
     },
     {
-      title: "Comparative Relationships & Crossovers",
+      title: "Decline, Stagnation & Stepped Plateaus",
       items: [
-        "Consistently recorded the highest per capita emissions throughout the period",
-        "Overtook and surpassed Sweden around the year 1987",
-        "Converged at an identical terminal figure of 5.4 tonnes in 2007",
-        "Closed a substantial 7.4-tonne gap between 1967 and 2007",
-        "Demonstrated a marked divergence between northern and southern European trajectories"
+        "Was the sole institution to register an uninterrupted downward trend",
+        "Surrendered its commanding 25-point lead, slipping from 1st to 3rd place",
+        "Progressed in a stepped manner, featuring distinct multi-year plateaus",
+        "Hovered tightly within a narrow 3% band between 59% and 62%",
+        "Maintained notable consistency throughout the recording timeframe"
       ]
     },
     {
-      title: "Proportional Shifts & Multiplier Language",
+      title: "Comparative Crossovers & Convergences",
       items: [
-        "Registered more than a four-fold increase from its baseline figure (+350%)",
-        "Nearly halved its per capita carbon footprint relative to its 1977 peak",
-        "Expanded by roughly 81% before leveling off completely",
-        "Initiated the timeframe as the lowest contributor by a significant margin",
-        "Exhibited a net contraction of 2.1 metric tonnes across forty years"
+        "Equalized with Greystone High at exactly 75% in 1997",
+        "Overtook the former leader to claim the sole lead in 1998",
+        "Converged at an identical figure of precisely 60% in 1999",
+        "Concluded the period just one percentage point behind the top performer",
+        "Inverted the historical hierarchy between first and last place by 2000"
       ]
     }
   ],
 
   connectors: [
     {
-      phrase: "Regarding the nations experiencing a net decline,...",
-      purpose: "Topic sentence transition to open Body Paragraph 1 (the downward group).",
+      phrase: "Turning first to the two highest-performing institutions by 2000,...",
+      purpose: "Topic sentence transition opening Body Paragraph 1 (the surging risers).",
       example:
-        "“Regarding the nations experiencing a net decline, the United Kingdom was consistently the highest emitter over the entire forty-year period.”"
+        "“Turning first to the two highest-performing institutions by 2000, Harble Secondary and Fairfield Girls recorded substantial growth.”"
     },
     {
-      phrase: "By contrast, Sweden demonstrated the most erratic pattern...",
-      purpose: "Contrastive linker highlighting the difference between UK's steady trend and Sweden's peak.",
+      phrase: "Starting with the lowest figure of 30% in 1995,...",
+      purpose: "Introducing the baseline figure for the most dramatic climber.",
       example:
-        "“By contrast, Sweden demonstrated the most erratic pattern on the graph, surging to an apex before collapsing.”"
+        "“Starting with the lowest figure of 30% in 1995, Harble Secondary rose steadily before accelerating rapidly.”"
     },
     {
-      phrase: "Turning to the countries with rising emissions,...",
-      purpose: "Macro transition pivoting from Body Paragraph 1 to Body Paragraph 2 (the upward group).",
+      phrase: "Despite a transient dip in 1999,...",
+      purpose: "Concessive linker introducing a temporary reversal before a final recovery.",
       example:
-        "“Turning to the countries with rising per capita emissions, Italy and Portugal both saw substantial increases.”"
+        "“Despite a transient dip to 70% in 1999, Fairfield Girls rebounded to conclude at 79%.”"
     },
     {
-      phrase: "At which point it surpassed Sweden...",
-      purpose: "Pinpointing a historical intersection and ranking shift between two data series.",
+      phrase: "In contrast, Greystone High was the only school to decline,...",
+      purpose: "Contrastive macro transition opening Body Paragraph 2 (the falling and steady group).",
       example:
-        "“Italian output reached 6.7 metric tonnes in 1987, at which point it surpassed Sweden.”"
+        "“In contrast, Greystone High was the only school to decline, surrendering its commanding initial lead of 90%.”"
     },
     {
-      phrase: "Meanwhile, Portugal initiated the period as the lowest contributor...",
-      purpose: "Parallel contrast introducing the nation with the lowest baseline figure.",
+      phrase: "Meanwhile, Royston Academy progressed in a stepped manner,...",
+      purpose: "Parallel connector introducing moderate, stepped upward growth.",
       example:
-        "“Meanwhile, Portugal initiated the period as the lowest contributor by a wide margin, generating a mere 1.2 tonnes.”"
+        "“Meanwhile, Royston Academy progressed in a stepped manner from 50% to plateau at 54%.”"
     },
     {
-      phrase: "Precisely converging with Sweden's final level...",
-      purpose: "Synthesizing a terminal data point where two separate lines meet.",
+      phrase: "Notably, in 1999, three institutions converged at exactly 60%...",
+      purpose: "Highlighting a major multi-school convergence milestone.",
       example:
-        "“Portuguese emissions ascended steadily to 5.4 metric tonnes in 2007, precisely converging with Sweden's final level.”"
+        "“Notably, in 1999, Royston, Harble, and Crackend all converged at an identical proportion of 60%.”"
     }
   ],
 
   modelReport: {
-    wordCount: 228,
+    wordCount: 194,
     paragraphs: [
       {
         id: "intro",
         title: "Introduction",
-        wordCount: 31,
-        badges: ["Paraphrase", "Parameters", "Unit"],
-        text: "The line graph illustrates average carbon dioxide (CO2) emissions per person across four European countries—the United Kingdom, Sweden, Italy, and Portugal—over a forty-year period from 1967 to 2007, measured in metric tonnes."
+        wordCount: 27,
+        badges: ["Paraphrase", "Parameters", "Schools Listed"],
+        text: "The table illustrates the proportion of pupils who proceeded to tertiary education from five secondary schools—Royston Academy, Greystone High, Harble Secondary, Fairfield Girls, and Crackend Boys—between 1995 and 2000."
       },
       {
         id: "overview",
         title: "Overview",
-        wordCount: 52,
-        badges: ["Macro Split", "Dominant Emitter", "Volatile Outlier", "Convergence"],
-        text: "Overall, per capita emissions in the United Kingdom and Sweden followed an overall downward trajectory over the four decades, whereas Italy and Portugal experienced substantial growth. Furthermore, although the United Kingdom consistently recorded the highest emissions throughout the timeframe, Sweden exhibited the most volatile fluctuation, while Portugal registered the steepest proportional increase to converge with Sweden by 2007."
+        wordCount: 47,
+        badges: ["Macro Dichotomy", "Sole Decliner", "Meteoric Surge", "Static Baseline"],
+        text: "Overall, higher education entry rates rose in four out of the five secondary schools, with Greystone High being the sole institution to experience a continuous downward trend. Furthermore, while Harble Secondary exhibited the most dramatic expansion to finish with the highest percentage, Crackend Boys maintained notable consistency throughout the six-year period."
       },
       {
         id: "body1",
-        title: "Body Paragraph 1: Net Decreasers (UK & Sweden)",
-        wordCount: 74,
-        badges: ["UK Dominance", "Steady Decline", "Sweden Peak & Plunge", "1977 Apex"],
-        text: "Regarding the nations with decreasing emissions, the United Kingdom consistently generated the highest levels throughout the entire period. Starting at approximately 10.8 metric tonnes per person in 1967, British emissions remained nearly unchanged in 1977 before undergoing a steady, uninterrupted decline to 10.0 tonnes in 1987, 9.6 tonnes in 1997, and finally 8.7 tonnes by 2007. Sweden began as the second-highest emitter at 8.6 metric tonnes and climbed sharply to peak at approximately 10.2 tonnes in 1977, briefly challenging the UK. Thereafter, Swedish emissions plummeted precipitously over the remaining thirty years, falling to 7.0 tonnes in 1987 and continuing downward to 5.4 tonnes by 2007—nearly half its peak value."
+        title: "Body Paragraph 1: Surging Risers (Harble & Fairfield)",
+        wordCount: 60,
+        badges: ["Harble Leap", "Nearly Tripled", "Fairfield 1997 Tie", "1999 Dip & Rebound"],
+        text: "Turning first to the two highest-performing institutions by 2000, Harble Secondary recorded a meteoric ascent. Starting with the lowest figure of 30% in 1995, it rose steadily to 40% in 1997 and 60% in 1999, before jumping by 20 percentage points to finish at a peak of 80%—nearly tripling its baseline. Fairfield Girls also followed an upward trajectory, climbing from 65% in 1995 to equalize with Greystone at 75% in 1997. Despite a transient dip to 70% in 1999, Fairfield rebounded to conclude at 79%, securing second position."
       },
       {
         id: "body2",
-        title: "Body Paragraph 2: Net Increasers (Italy & Portugal)",
-        wordCount: 71,
-        badges: ["Italy Crossover", "10-Year Plateau", "Portugal 4-Fold Surge", "2007 Meeting"],
-        text: "Turning to the nations with upward trends, Italy initially produced 4.2 metric tonnes per capita in 1967. Italian emissions expanded steadily over the following three decades to 6.2 tonnes in 1977 and 6.7 tonnes in 1987, at which point Italy overtook Sweden. After reaching 7.6 metric tonnes in 1997, Italy's emissions plateaued identically through 2007. Meanwhile, Portugal commenced the period as the lowest contributor by a substantial margin, generating a modest 1.2 metric tonnes per person. Over the subsequent four decades, Portuguese emissions underwent a dramatic, more than four-fold surge, ascending steadily to 2.2 tonnes in 1977, 3.6 tonnes in 1987, and 5.3 tonnes in 1997, before finishing at 5.4 metric tonnes in 2007, precisely converging with Sweden."
+        title: "Body Paragraph 2: Decliner & Moderates (Greystone, Royston, Crackend)",
+        wordCount: 60,
+        badges: ["Greystone Fall", "Stepped Growth", "Crackend Stability", "1999 Triple Convergence"],
+        text: "In contrast, Greystone High was the only school to decline, surrendering its commanding initial lead of 90% as it fell consecutively each year to end at 70%. Meanwhile, Royston Academy progressed in a stepped manner from 50% to plateau at 54% in 1997–1998, before leveling off at 60% from 1999 onwards. Crackend Boys displayed remarkable stability, fluctuating narrowly between 59% and 62% across the entire timeframe. Notably, in 1999, Royston, Harble, and Crackend all converged at exactly 60%."
       }
     ]
   }

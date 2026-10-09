@@ -18,9 +18,9 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 08 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: Guess the 40-Year Emissions Trajectories</h2>
+        <h2 className="stage-title">Listen First: Higher Education Progression Across 5 Secondary Schools (1995–2000)</h2>
         <p className="stage-subtitle">
-          Play the cryptic briefing before revealing the line graph. Students should deduce the four European countries, the two contrasting trends, and the two major crossover points.
+          Play the cryptic briefing before revealing the statistical table. Students should deduce the five secondary institutions, the four rising schools vs. the sole decliner, and key crossover milestones.
         </p>
       </div>
 
@@ -56,7 +56,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
                 Cryptic Audio Briefing
               </h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)" }}>
-                Dynamic Line Graph • 4 European Nations • ~1:21
+                Statistical Table • 5 Secondary Schools • ~1:15
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           <div style={{ background: "#ffffff", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "16px", color: "var(--slate-700)", lineHeight: 1.55 }}>
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify which two nations experienced net declines, which two underwent sustained increases, and where the two major intersection points occurred.
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify which four schools expanded, which single school suffered an unbroken decline, and which three schools converged at an identical 60% in 1999.
           </div>
         </div>
 
@@ -112,10 +112,10 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           {[
-            "What environmental metric is being measured across the 40-year timeframe from 1967 to 2007?",
-            "Which nation remained the dominant, highest per capita emitter in every single year measured?",
-            "Which country displayed the most volatile pattern—a sharp rise to a 1977 peak followed by a 30-year plunge?",
-            "Which nation began with the lowest emissions by far, but underwent a more than four-fold surge to converge with another nation in 2007?"
+            "What academic progression metric is tracked across the six-year period from 1995 to 2000?",
+            "Which secondary school started with a commanding 90% lead, but was the sole institution to decline continuously?",
+            "Which institution achieved the most dramatic surge, nearly tripling from 30% to finish 1st overall at 80%?",
+            "In 1999, which three secondary schools all converged at the exact same percentage of 60%?"
           ].map((question, index) => (
             <div key={question} style={{ background: "#ffffff", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "15px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
               <span className="apple-badge neutral" style={{ minWidth: "30px", justifyContent: "center" }}>{index + 1}</span>
@@ -134,12 +134,12 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             className="apple-touch-btn primary"
             style={{ minHeight: "50px", gap: "8px", marginTop: "auto" }}
           >
-            <Sparkles size={18} /> {revealed ? "Continue to Line Graph Analysis" : "Reveal Task"}
+            <Sparkles size={18} /> {revealed ? "Continue to Table & Trend Analysis" : "Reveal Task"}
           </button>
 
           {revealed && (
             <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "14px", padding: "14px 16px", color: "#1e3a8a", fontSize: "0.9rem", lineHeight: 1.5 }}>
-              The full task prompt and dynamic CO2 line graph are revealed in Step 02.
+              The full task prompt and interactive data table are revealed in Step 02.
             </div>
           )}
         </div>

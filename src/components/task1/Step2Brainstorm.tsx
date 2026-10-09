@@ -7,20 +7,22 @@ import {
   ZoomIn,
   ZoomOut,
   Tv,
-  Layers,
   Map,
   HelpCircle,
   ImageIcon,
   GitCommit,
   Columns,
-  Maximize
+  Maximize,
+  Compass,
+  CheckCircle2,
+  School
 } from "lucide-react";
-import { TASK1_DATA } from "../../data/task1Data";
+import { TASK1_DATA, SCHOOLS_DATA } from "../../data/task1Data";
 import { TouchTimer } from "../common/TouchTimer";
-import { SmartBoardGraphSvg, GraphHighlightMode } from "./SmartBoardGraphSvg";
+import { SmartBoardTableMatrix, TableHighlightMode } from "./SmartBoardGraphSvg";
 import { BitsAndPiecesMindmap } from "./BitsAndPiecesMindmap";
 import { BitsAndPiecesFlashcards } from "./BitsAndPiecesFlashcards";
-import { CountryData } from "../../types/task1";
+import { SchoolData } from "../../types/task1";
 
 interface Step2BrainstormProps {
   formattedTime: string;
@@ -38,15 +40,16 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   onTimerReset
 }) => {
   const [viewMode, setViewMode] = useState<
-    "smartboard_vector" | "mindmap" | "flashcards" | "original_image"
-  >("smartboard_vector");
-  const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
+    "smartboard_table" | "mindmap" | "flashcards" | "original_image"
+  >("smartboard_table");
+  // Default to full_width so the table matrix has generous 8-column space with large clear numbers
+  const [stageLayout, setStageLayout] = useState<"split" | "full_width">("full_width");
   const [isEnlarged, setIsEnlarged] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
-  const [selectedCountry, setSelectedCountry] = useState<CountryData>(
-    TASK1_DATA.graphData.countries[0]
-  );
-  const [highlightMode, setHighlightMode] = useState<GraphHighlightMode>("all");
+
+  const schoolsList = SCHOOLS_DATA;
+  const [selectedSchool, setSelectedSchool] = useState<SchoolData>(schoolsList[0]);
+  const [highlightMode, setHighlightMode] = useState<TableHighlightMode>("all");
 
   // Fullscreen specific toggles
   const [fullscreenShowInspector, setFullscreenShowInspector] = useState(true);
@@ -63,20 +66,16 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isEnlarged]);
 
-  // When switching to mindmap or flashcards in embedded view, full_width gives optimal readability
   const handleSelectViewMode = (
-    mode: "smartboard_vector" | "mindmap" | "flashcards" | "original_image"
+    mode: "smartboard_table" | "mindmap" | "flashcards" | "original_image"
   ) => {
     setViewMode(mode);
-    if (mode === "mindmap" || mode === "flashcards") {
-      setStageLayout("full_width");
-    }
   };
 
-  const handleSvgSelectCountry = (countryId: string) => {
-    const found = TASK1_DATA.graphData.countries.find((c) => c.id === countryId);
+  const handleTableSelectSchool = (schoolId: string) => {
+    const found = schoolsList.find((c) => c.id === schoolId);
     if (found) {
-      setSelectedCountry(found);
+      setSelectedSchool(found);
     }
   };
 
@@ -87,16 +86,18 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
   return (
     <div className="stage-card-wrapper">
+      {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; Graph Analysis
+          Step 02 / 08 • Task Prompt &amp; Table Analysis
         </span>
-        <h2 className="stage-title">Deconstruct the 40-Year CO2 Emissions Line Graph</h2>
+        <h2 className="stage-title">Deconstruct the Higher Education Progression Table (1995–2000)</h2>
         <p className="stage-subtitle">
-          Examine the prompt, identify the two distinct 20-year trajectories (UK &amp; Sweden falling vs. Italy &amp; Portugal rising), and note critical crossover and convergence milestones.
+          Examine the prompt, identify the contrasting trajectories (Harble &amp; Fairfield rising vs. Greystone falling), and note the 1997 equalisation &amp; 1999 triple convergence milestones.
         </p>
       </div>
 
+      {/* Focus Timer */}
       <div style={{ marginBottom: "14px" }}>
         <TouchTimer
           formattedTime={formattedTime}
@@ -104,7 +105,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the two diverging groups (net decline vs net growth) and pinpoint the 1987 and 2007 intersection points."
+          instruction="Focus Timer: 3 minutes to analyze the five secondary schools, group the risers vs. decliner, and pinpoint the 1997 (75%) equalisation and 1999 (60%) triple convergence points."
         />
       </div>
 
@@ -132,14 +133,14 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
           <button
             type="button"
-            onClick={() => handleSelectViewMode("smartboard_vector")}
+            onClick={() => handleSelectViewMode("smartboard_table")}
             className="apple-touch-btn"
             style={{
               padding: "7px 14px",
               fontSize: "0.78rem",
               fontWeight: 750,
-              background: viewMode === "smartboard_vector" ? "var(--slate-900)" : "var(--slate-100)",
-              color: viewMode === "smartboard_vector" ? "#ffffff" : "var(--slate-700)",
+              background: viewMode === "smartboard_table" ? "var(--slate-900)" : "var(--slate-100)",
+              color: viewMode === "smartboard_table" ? "#ffffff" : "var(--slate-700)",
               border: "1px solid var(--border-subtle)",
               borderRadius: "10px",
               display: "flex",
@@ -147,7 +148,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <Tv size={14} /> 4K Smart Board Vector
+            <Tv size={14} /> 4K Table Matrix
           </button>
 
           <button
@@ -207,13 +208,13 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <ImageIcon size={14} /> Original Test Graph
+            <ImageIcon size={14} /> Original Task Table
           </button>
         </div>
 
         {/* Layout & Entire Screen Triggers */}
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          {/* Embedded Split vs Full Width Toggle */}
+          {/* Layout Toggle */}
           <button
             type="button"
             onClick={() => setStageLayout((l) => (l === "split" ? "full_width" : "split"))}
@@ -226,15 +227,15 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               display: "flex",
               alignItems: "center"
             }}
-            title={stageLayout === "split" ? "Expand Visual to Full Stage Width" : "Switch to 2-Column Split View"}
+            title={stageLayout === "split" ? "Expand Visual to Full Stage Width (Recommended for Table)" : "Switch to 2-Column Split View"}
           >
             {stageLayout === "split" ? (
               <>
-                <Maximize size={13} /> Full Width Stage
+                <Maximize size={13} /> Full Width Table View
               </>
             ) : (
               <>
-                <Columns size={13} /> Split View
+                <Columns size={13} /> Split View (Prompt + Table)
               </>
             )}
           </button>
@@ -258,9 +259,176 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         </div>
       </div>
 
-      {/* STAGE VIEWPORT (Split Mode vs Full Width Mode) */}
-      {stageLayout === "split" ? (
-        /* Standard 2-Column Split */
+      {/* STAGE VIEWPORT (Full Width Recommended vs Split Mode) */}
+      {stageLayout === "full_width" ? (
+        /* Full Width Stage Layout: Generous Horizontal Space For Perfect Table Readability */
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          {/* Main Visual Display Full Width */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1.5px solid var(--border-subtle)",
+              borderRadius: "20px",
+              padding: viewMode === "smartboard_table" ? "0" : "20px",
+              boxShadow: "var(--shadow-sm)",
+              minHeight: "560px",
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden"
+            }}
+          >
+            {viewMode === "smartboard_table" && (
+              <div style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%", minHeight: "560px" }}>
+                <SmartBoardTableMatrix
+                  selectedCountryId={selectedSchool.id}
+                  onSelectCountry={handleTableSelectSchool}
+                  highlightMode={highlightMode}
+                  onHighlightModeChange={setHighlightMode}
+                  showInternalToolbar={true}
+                  showDeepDiveCard={false}
+                />
+              </div>
+            )}
+
+            {viewMode === "mindmap" && (
+              <div style={{ flex: 1, minHeight: "540px" }}>
+                <BitsAndPiecesMindmap isEntireScreen={false} onToggleFullscreen={openFullscreen} />
+              </div>
+            )}
+
+            {viewMode === "flashcards" && (
+              <div style={{ flex: 1, minHeight: "500px" }}>
+                <BitsAndPiecesFlashcards isEntireScreen={false} onToggleFullscreen={openFullscreen} />
+              </div>
+            )}
+
+            {viewMode === "original_image" && (
+              <div
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "20px",
+                  background: "#f8fafc",
+                  borderRadius: "16px"
+                }}
+              >
+                <img
+                  src={`materials/${TASK1_DATA.imageFileName}`}
+                  alt="Original IELTS Task 1 Test Paper Table"
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "520px",
+                    objectFit: "contain",
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.08)"
+                  }}
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Lower Pedagogical Deconstruction Section: Task Prompt & Analysis Side-by-Side */}
+          <div className="stage-grid-2col" style={{ alignItems: "stretch", gap: "16px" }}>
+            {/* 1. Official Task 1 Question Prompt */}
+            <div
+              style={{
+                background: "var(--slate-50)",
+                border: "1.5px solid var(--border-subtle)",
+                borderRadius: "20px",
+                padding: "20px 22px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <FileText size={18} color="var(--slate-800)" />
+                  <h4 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>
+                    Official IELTS Task 1 Prompt
+                  </h4>
+                </div>
+                <span className="apple-badge accent">{TASK1_DATA.taskType}</span>
+              </div>
+
+              <div
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid var(--border-subtle)",
+                  borderRadius: "14px",
+                  padding: "16px 18px",
+                  fontSize: "1.02rem",
+                  fontWeight: 650,
+                  lineHeight: 1.6,
+                  color: "var(--slate-900)",
+                  boxShadow: "var(--shadow-sm)"
+                }}
+              >
+                {TASK1_DATA.questionText.split("\n\n").map((chunk, i) => (
+                  <p key={i} style={{ margin: i === 0 ? "0 0 8px 0" : "0" }}>
+                    {chunk}
+                  </p>
+                ))}
+              </div>
+
+              <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", fontSize: "0.76rem" }}>
+                <span className="apple-badge neutral">150+ Words Minimum</span>
+                <span className="apple-badge neutral">~20 Minutes Recommended</span>
+                <span className="apple-badge neutral">Unit: Percentage of leavers (%)</span>
+              </div>
+            </div>
+
+            {/* 2. Interactive Table Deconstruction Pillars */}
+            <div
+              style={{
+                background: "#ffffff",
+                border: "1.5px solid var(--border-subtle)",
+                borderRadius: "20px",
+                padding: "20px 22px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px",
+                boxShadow: "var(--shadow-sm)"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <Compass size={18} color="var(--apple-blue)" />
+                  <h4 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>
+                    Table Analysis &amp; Core Pillars
+                  </h4>
+                </div>
+                <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
+                  4 Essential Anchors
+                </span>
+              </div>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.86rem" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
+                  <CheckCircle2 size={16} color="var(--apple-blue)" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <span><strong>Metric &amp; Scope:</strong> Tracks the percentage of secondary school leavers entering higher/tertiary education across 5 institutions from 1995 to 2000.</span>
+                </div>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
+                  <CheckCircle2 size={16} color="#059669" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <span><strong>Macro 4-to-1 Dichotomy:</strong> 4 institutions expanded (Harble, Fairfield, Royston, Crackend), while Greystone High was the sole continuous decliner (90% down to 70%).</span>
+                </div>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
+                  <CheckCircle2 size={16} color="#7c3aed" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <span><strong>1997 &amp; 1999 Milestones:</strong> 1997 equalisation between Fairfield &amp; Greystone at 75%; 1999 triple convergence among Royston, Harble &amp; Crackend at 60%.</span>
+                </div>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
+                  <CheckCircle2 size={16} color="#d97706" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <span><strong>Hierarchy Inversion:</strong> Harble surged from last place (30%) to finish 1st (80%), nearly tripling its baseline.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* Split 2-Column Mode */
         <div className="stage-grid-2col" style={{ alignItems: "stretch", minHeight: "540px" }}>
           {/* Left Column: Visual Display Container */}
           <div
@@ -268,7 +436,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               background: "#ffffff",
               border: "1.5px solid var(--border-subtle)",
               borderRadius: "20px",
-              padding: viewMode === "smartboard_vector" ? "0" : "18px",
+              padding: viewMode === "smartboard_table" ? "0" : "18px",
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
@@ -276,11 +444,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               minHeight: "530px"
             }}
           >
-            {viewMode === "smartboard_vector" && (
+            {viewMode === "smartboard_table" && (
               <div style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
-                <SmartBoardGraphSvg
-                  selectedCountryId={selectedCountry.id}
-                  onSelectCountry={handleSvgSelectCountry}
+                <SmartBoardTableMatrix
+                  selectedCountryId={selectedSchool.id}
+                  onSelectCountry={handleTableSelectSchool}
                   highlightMode={highlightMode}
                   onHighlightModeChange={setHighlightMode}
                   showInternalToolbar={true}
@@ -316,7 +484,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="Original IELTS Task 1 Test Paper Graph"
+                  alt="Original IELTS Task 1 Test Paper Table"
                   style={{
                     maxWidth: "100%",
                     maxHeight: "460px",
@@ -344,7 +512,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             )}
           </div>
 
-          {/* Right Column: Prompt Card + Country Tier Inspector */}
+          {/* Right Column: Prompt Card + School Analysis */}
           <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
             {/* Main Task Prompt */}
             <div
@@ -375,7 +543,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   border: "1px solid var(--border-subtle)",
                   borderRadius: "14px",
                   padding: "16px 18px",
-                  fontSize: "1.05rem",
+                  fontSize: "1.02rem",
                   fontWeight: 650,
                   lineHeight: 1.55,
                   boxShadow: "var(--shadow-sm)",
@@ -390,7 +558,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               </div>
             </div>
 
-            {/* Interactive Country Inspector */}
+            {/* School Quick Inspector */}
             <div
               style={{
                 background: "#ffffff",
@@ -405,32 +573,32 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <Layers size={18} color="var(--apple-blue)" />
+                  <School size={18} color="var(--apple-blue)" />
                   <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--slate-900)" }}>
-                    Country Data Inspector
+                    Secondary School Inspector
                   </h4>
                 </div>
                 <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
-                  Select country to view data
+                  Tap school to inspect
                 </span>
               </div>
 
-              {/* Country Selector Pills */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "6px" }}>
-                {TASK1_DATA.graphData.countries.map((c) => {
-                  const isSelected = selectedCountry.id === c.id;
+              {/* School Selector Pills in Exam Order */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "6px" }}>
+                {schoolsList.map((c) => {
+                  const isSelected = selectedSchool.id === c.id;
                   return (
                     <button
                       key={c.id}
                       type="button"
                       onClick={() => {
-                        setSelectedCountry(c);
-                        setHighlightMode(c.id as GraphHighlightMode);
+                        setSelectedSchool(c);
+                        setHighlightMode(c.id as TableHighlightMode);
                       }}
                       style={{
-                        padding: "8px 4px",
+                        padding: "8px 2px",
                         borderRadius: "10px",
-                        fontSize: "0.78rem",
+                        fontSize: "0.76rem",
                         fontWeight: 750,
                         border: isSelected ? `2px solid ${c.color}` : "1.5px solid var(--border-subtle)",
                         background: isSelected ? c.color : "var(--slate-50)",
@@ -447,11 +615,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 })}
               </div>
 
-              {/* Active Country Detail Box */}
+              {/* Active School Detail Box */}
               <div
                 style={{
                   background: "var(--slate-50)",
-                  border: `1.5px solid ${selectedCountry.color}`,
+                  border: `1.5px solid ${selectedSchool.color}`,
                   borderRadius: "14px",
                   padding: "14px 16px",
                   display: "flex",
@@ -460,8 +628,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
-                  <strong style={{ fontSize: "1.02rem", color: selectedCountry.color }}>
-                    {selectedCountry.name}
+                  <strong style={{ fontSize: "1.02rem", color: selectedSchool.color }}>
+                    {selectedSchool.name}
                   </strong>
                   <span
                     style={{
@@ -474,15 +642,15 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       color: "var(--slate-700)"
                     }}
                   >
-                    {selectedCountry.netChange}
+                    {selectedSchool.netChange}
                   </span>
                 </div>
 
-                {/* Data points summary row */}
+                {/* Data points summary row (6 years) */}
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(5, 1fr)",
+                    gridTemplateColumns: "repeat(6, 1fr)",
                     gap: "4px",
                     background: "#ffffff",
                     padding: "8px",
@@ -491,20 +659,20 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     textAlign: "center"
                   }}
                 >
-                  {selectedCountry.dataPoints.map((pt) => (
+                  {selectedSchool.dataPoints.map((pt) => (
                     <div key={pt.year}>
                       <div style={{ fontSize: "0.68rem", fontWeight: 700, color: "var(--slate-500)" }}>
                         {pt.year}
                       </div>
-                      <div style={{ fontSize: "0.9rem", fontWeight: 800, color: selectedCountry.color }}>
-                        {pt.value}t
+                      <div style={{ fontSize: "0.95rem", fontWeight: 800, color: selectedSchool.color }}>
+                        {pt.value}%
                       </div>
                     </div>
                   ))}
                 </div>
 
                 <p style={{ fontSize: "0.85rem", color: "var(--slate-700)", margin: 0, lineHeight: 1.45 }}>
-                  {selectedCountry.trendSummary}
+                  {selectedSchool.trendSummary}
                 </p>
 
                 <div
@@ -512,157 +680,22 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     background: "#ffffff",
                     borderRadius: "8px",
                     padding: "8px 12px",
-                    borderLeft: `3px solid ${selectedCountry.color}`,
+                    borderLeft: `3px solid ${selectedSchool.color}`,
                     fontSize: "0.82rem",
                     fontStyle: "italic",
                     color: "var(--slate-800)",
                     lineHeight: 1.4
                   }}
                 >
-                  {selectedCountry.band9Phrase}
+                  {selectedSchool.band9Phrase}
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* Full Width Stage Layout (Maximum horizontal space for Mindmap/Visual) */
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          {/* Main Visual Display Full Width */}
-          <div
-            style={{
-              background: "#ffffff",
-              border: "1.5px solid var(--border-subtle)",
-              borderRadius: "20px",
-              padding: viewMode === "smartboard_vector" ? "0" : "20px",
-              boxShadow: "var(--shadow-sm)",
-              minHeight: "560px",
-              display: "flex",
-              flexDirection: "column"
-            }}
-          >
-            {viewMode === "smartboard_vector" && (
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%", minHeight: "560px" }}>
-                <SmartBoardGraphSvg
-                  selectedCountryId={selectedCountry.id}
-                  onSelectCountry={handleSvgSelectCountry}
-                  highlightMode={highlightMode}
-                  onHighlightModeChange={setHighlightMode}
-                  showInternalToolbar={true}
-                />
-              </div>
-            )}
-
-            {viewMode === "mindmap" && (
-              <div style={{ flex: 1, minHeight: "540px" }}>
-                <BitsAndPiecesMindmap isEntireScreen={false} onToggleFullscreen={openFullscreen} />
-              </div>
-            )}
-
-            {viewMode === "flashcards" && (
-              <div style={{ flex: 1, minHeight: "500px" }}>
-                <BitsAndPiecesFlashcards isEntireScreen={false} onToggleFullscreen={openFullscreen} />
-              </div>
-            )}
-
-            {viewMode === "original_image" && (
-              <div
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "20px",
-                  background: "#f8fafc",
-                  borderRadius: "16px"
-                }}
-              >
-                <img
-                  src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="Original IELTS Task 1 Test Paper Graph"
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "520px",
-                    objectFit: "contain",
-                    borderRadius: "8px",
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.08)"
-                  }}
-                />
-              </div>
-            )}
-          </div>
-
-          {/* Collapsible Lower Section: Prompt & Inspector Side-by-Side */}
-          <div className="stage-grid-2col" style={{ alignItems: "stretch" }}>
-            {/* Prompt */}
-            <div
-              style={{
-                background: "var(--slate-50)",
-                border: "1.5px solid var(--border-subtle)",
-                borderRadius: "18px",
-                padding: "18px 20px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <FileText size={17} color="var(--slate-800)" />
-                <h4 style={{ fontSize: "1rem", fontWeight: 750, margin: 0 }}>Task 1 Prompt</h4>
-                <span className="apple-badge accent" style={{ marginLeft: "auto", fontSize: "0.72rem" }}>
-                  {TASK1_DATA.taskType}
-                </span>
-              </div>
-              <p style={{ margin: 0, fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.5 }}>
-                {TASK1_DATA.questionText}
-              </p>
-            </div>
-
-            {/* Compact Country Inspector */}
-            <div
-              style={{
-                background: "#ffffff",
-                border: "1.5px solid var(--border-subtle)",
-                borderRadius: "18px",
-                padding: "18px 20px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>Country Quick Inspector</strong>
-                <div style={{ display: "flex", gap: "4px" }}>
-                  {TASK1_DATA.graphData.countries.map((c) => (
-                    <button
-                      key={c.id}
-                      onClick={() => {
-                        setSelectedCountry(c);
-                        setHighlightMode(c.id as GraphHighlightMode);
-                      }}
-                      style={{
-                        padding: "3px 8px",
-                        borderRadius: "6px",
-                        fontSize: "0.74rem",
-                        fontWeight: 750,
-                        border: selectedCountry.id === c.id ? `2px solid ${c.color}` : "1px solid var(--border-subtle)",
-                        background: selectedCountry.id === c.id ? c.color : "#ffffff",
-                        color: selectedCountry.id === c.id ? "#ffffff" : "var(--slate-700)",
-                        cursor: "pointer"
-                      }}
-                    >
-                      {c.name.split(" ")[0]}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div style={{ fontSize: "0.86rem", color: "var(--slate-700)" }}>
-                <strong style={{ color: selectedCountry.color }}>{selectedCountry.name}:</strong> {selectedCountry.trendSummary} ({selectedCountry.netChange})
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* FULLSCREEN SMART BOARD MODAL (Supports ALL 4 Sub-topics across entire screen) */}
+      {/* FULLSCREEN SMART BOARD MODAL */}
       <AnimatePresence>
         {isEnlarged && (
           <div
@@ -712,10 +745,10 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   <Tv size={20} color="var(--apple-blue)" />
                   <div>
                     <h3 style={{ fontSize: "1rem", fontWeight: 800, margin: 0, color: "#ffffff" }}>
-                      Smart Board Entire Screen Engine • CO2 Emissions (1967–2007)
+                      Smart Board Entire Screen Engine • Higher Education Progression Table (1995–2000)
                     </h3>
                     <p style={{ fontSize: "0.74rem", color: "#94a3b8", margin: 0 }}>
-                      United Kingdom, Sweden, Italy, Portugal • Units: Metric Tonnes per person
+                      Royston, Greystone, Harble, Fairfield, Crackend • Unit: Percentage (%)
                     </p>
                   </div>
                 </div>
@@ -733,7 +766,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 >
                   <button
                     type="button"
-                    onClick={() => setViewMode("smartboard_vector")}
+                    onClick={() => setViewMode("smartboard_table")}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -743,12 +776,12 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       fontWeight: 750,
                       borderRadius: "8px",
                       border: "none",
-                      background: viewMode === "smartboard_vector" ? "var(--apple-blue)" : "transparent",
+                      background: viewMode === "smartboard_table" ? "var(--apple-blue)" : "transparent",
                       color: "#ffffff",
                       cursor: "pointer"
                     }}
                   >
-                    <Tv size={13} /> 4K Vector Graph
+                    <Tv size={13} /> 4K Table Matrix
                   </button>
 
                   <button
@@ -808,14 +841,13 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       cursor: "pointer"
                     }}
                   >
-                    <ImageIcon size={13} /> Original Exam Graph
+                    <ImageIcon size={13} /> Original Exam Table
                   </button>
                 </div>
 
                 {/* Right Contextual Controls */}
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  {/* Zoom controls for vector or image */}
-                  {(viewMode === "smartboard_vector" || viewMode === "original_image") && (
+                  {(viewMode === "smartboard_table" || viewMode === "original_image") && (
                     <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                       <button
                         type="button"
@@ -841,8 +873,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     </div>
                   )}
 
-                  {/* Inspector Toggle for Vector Mode */}
-                  {viewMode === "smartboard_vector" && (
+                  {/* Inspector Toggle */}
+                  {viewMode === "smartboard_table" && (
                     <button
                       type="button"
                       onClick={() => setFullscreenShowInspector(!fullscreenShowInspector)}
@@ -868,36 +900,39 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
               {/* Fullscreen Body */}
               <div style={{ flex: 1, display: "flex", overflow: "hidden", minHeight: 0 }}>
-                {/* 1. Vector Graph in Fullscreen */}
-                {viewMode === "smartboard_vector" && (
+                {/* 1. 4K Table Matrix in Fullscreen */}
+                {viewMode === "smartboard_table" && (
                   <>
                     <div
                       style={{
                         flex: 1,
                         display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        flexDirection: "column",
+                        alignItems: "stretch",
+                        justifyContent: "flex-start",
                         background: "#ffffff",
-                        overflow: "auto",
+                        overflowY: "auto",
+                        overflowX: "auto",
                         padding: "16px"
                       }}
                     >
                       <div
                         style={{
                           transform: `scale(${zoomLevel})`,
-                          transformOrigin: "center center",
+                          transformOrigin: "top center",
                           transition: "transform 0.15s ease",
                           width: "100%",
-                          maxWidth: "1150px",
-                          height: "100%"
+                          maxWidth: "1350px",
+                          margin: "0 auto"
                         }}
                       >
-                        <SmartBoardGraphSvg
-                          selectedCountryId={selectedCountry.id}
-                          onSelectCountry={handleSvgSelectCountry}
+                        <SmartBoardTableMatrix
+                          selectedCountryId={selectedSchool.id}
+                          onSelectCountry={handleTableSelectSchool}
                           highlightMode={highlightMode}
                           onHighlightModeChange={setHighlightMode}
                           showInternalToolbar={true}
+                          showDeepDiveCard={!fullscreenShowInspector}
                         />
                       </div>
                     </div>
@@ -905,7 +940,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     {fullscreenShowInspector && (
                       <div
                         style={{
-                          width: "340px",
+                          width: "350px",
                           borderLeft: "1.5px solid var(--border-subtle)",
                           background: "var(--slate-50)",
                           padding: "20px",
@@ -917,22 +952,22 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                         }}
                       >
                         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                          <Layers size={18} color="var(--apple-blue)" />
+                          <School size={18} color="var(--apple-blue)" />
                           <h4 style={{ fontSize: "1rem", fontWeight: 800, margin: 0 }}>
-                            Country Inspector
+                            Secondary School Inspector
                           </h4>
                         </div>
 
                         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
-                          {TASK1_DATA.graphData.countries.map((c) => {
-                            const isSelected = selectedCountry.id === c.id;
+                          {schoolsList.map((c) => {
+                            const isSelected = selectedSchool.id === c.id;
                             return (
                               <button
                                 key={c.id}
                                 type="button"
                                 onClick={() => {
-                                  setSelectedCountry(c);
-                                  setHighlightMode(c.id as GraphHighlightMode);
+                                  setSelectedSchool(c);
+                                  setHighlightMode(c.id as TableHighlightMode);
                                 }}
                                 style={{
                                   padding: "8px",
@@ -954,7 +989,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                         <div
                           style={{
                             background: "#ffffff",
-                            border: `1.5px solid ${selectedCountry.color}`,
+                            border: `1.5px solid ${selectedSchool.color}`,
                             borderRadius: "14px",
                             padding: "16px",
                             display: "flex",
@@ -962,40 +997,41 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                             gap: "10px"
                           }}
                         >
-                          <strong style={{ fontSize: "1.1rem", color: selectedCountry.color }}>
-                            {selectedCountry.name}
+                          <strong style={{ fontSize: "1.1rem", color: selectedSchool.color }}>
+                            {selectedSchool.name}
                           </strong>
                           <span className="apple-badge neutral" style={{ alignSelf: "flex-start", fontSize: "0.72rem" }}>
-                            {selectedCountry.badge}
+                            {selectedSchool.badge}
                           </span>
 
-                          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "4px", background: "var(--slate-50)", padding: "8px", borderRadius: "8px", textAlign: "center" }}>
-                            {selectedCountry.dataPoints.map((pt) => (
+                          <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "4px", background: "var(--slate-50)", padding: "8px", borderRadius: "8px", textAlign: "center" }}>
+                            {selectedSchool.dataPoints.map((pt) => (
                               <div key={pt.year}>
                                 <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>{pt.year}</div>
-                                <div style={{ fontSize: "0.88rem", fontWeight: 800, color: selectedCountry.color }}>{pt.value}t</div>
+                                <div style={{ fontSize: "0.92rem", fontWeight: 800, color: selectedSchool.color }}>{pt.value}%</div>
                               </div>
                             ))}
                           </div>
 
                           <p style={{ fontSize: "0.85rem", color: "var(--slate-700)", margin: 0, lineHeight: 1.45 }}>
-                            {selectedCountry.trendSummary}
+                            {selectedSchool.trendSummary}
                           </p>
 
-                          <div style={{ fontSize: "0.82rem", fontStyle: "italic", color: "var(--slate-800)", borderLeft: `3px solid ${selectedCountry.color}`, paddingLeft: "8px" }}>
-                            {selectedCountry.band9Phrase}
+                          <div style={{ fontSize: "0.82rem", fontStyle: "italic", color: "var(--slate-800)", borderLeft: `3px solid ${selectedSchool.color}`, paddingLeft: "8px" }}>
+                            {selectedSchool.band9Phrase}
                           </div>
                         </div>
 
-                        {/* Quick Crossovers Card */}
+                        {/* Quick Milestones Card */}
                         <div style={{ background: "#ffffff", border: "1.5px solid #fde68a", borderRadius: "14px", padding: "14px" }}>
                           <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "6px", color: "#92400e" }}>
                             <GitCommit size={15} />
-                            <strong style={{ fontSize: "0.88rem" }}>Key Inflection Points:</strong>
+                            <strong style={{ fontSize: "0.88rem" }}>Key Table Milestones:</strong>
                           </div>
-                          <div style={{ fontSize: "0.8rem", color: "#78350f", lineHeight: 1.45 }}>
-                            • <strong>1987:</strong> Italy overtakes Sweden (~6.8t)<br />
-                            • <strong>2007:</strong> Sweden &amp; Portugal converge (5.4t)
+                          <div style={{ fontSize: "0.8rem", color: "#78350f", lineHeight: 1.5 }}>
+                            • <strong>1997:</strong> Fairfield &amp; Greystone equalised at 75%<br />
+                            • <strong>1999:</strong> Royston, Harble &amp; Crackend triple tie at 60%<br />
+                            • <strong>2000:</strong> Harble 1st place (80%) vs. Greystone 3rd (70%)
                           </div>
                         </div>
                       </div>
@@ -1019,7 +1055,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   </div>
                 )}
 
-                {/* 4. Original Exam Graph in Entire Screen */}
+                {/* 4. Original Exam Table in Entire Screen */}
                 {viewMode === "original_image" && (
                   <div
                     style={{
@@ -1044,7 +1080,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     >
                       <img
                         src={`materials/${TASK1_DATA.imageFileName}`}
-                        alt="Original IELTS Task 1 Test Paper Graph"
+                        alt="Original IELTS Task 1 Test Paper Table"
                         style={{
                           maxWidth: "90vw",
                           maxHeight: "85vh",

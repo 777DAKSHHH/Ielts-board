@@ -6,14 +6,13 @@ export interface DataPoint {
   annotation?: string;
 }
 
-export interface CountryData {
+export interface SchoolData {
   id: string;
   name: string;
-  originalLegendName: string;
+  originalLegendName?: string;
+  originalTableName?: string;
   color: string;
-  lineStyle: "dash-dot" | "dashed" | "solid" | "dotted";
-  strokeDashArray: string;
-  group: "net_decrease" | "net_increase";
+  group: "net_decrease" | "net_increase" | "steady" | string;
   badge: string;
   startValue: number;
   peakOrPlateauValue?: number;
@@ -25,29 +24,32 @@ export interface CountryData {
   description: string;
 }
 
-export interface IntersectionPoint {
+export type CountryData = SchoolData;
+
+export interface ConvergenceMilestone {
   id: string;
   year: number;
   approxValue: number;
-  countries: [string, string];
+  schools: string[];
+  countries?: string[];
   title: string;
   description: string;
   band9Phrase: string;
 }
 
-export interface Task1GraphData {
+export type IntersectionPoint = ConvergenceMilestone;
+
+export interface Task1TableData {
   years: number[];
   unit: string;
-  yRange: { min: number; max: number; step: number };
-  countries: CountryData[];
-  intersections: IntersectionPoint[];
-  comparisonsSummary: {
-    dominantEmitter: string;
-    mostVolatile: string;
-    steepestGrowth: string;
-    convergences: string;
-  };
+  schools: SchoolData[];
+  countries: SchoolData[]; // backwards-compatible alias
+  convergences: ConvergenceMilestone[];
+  intersections: ConvergenceMilestone[]; // backwards-compatible alias
+  comparisonsSummary: Record<string, string>;
 }
+
+export type Task1GraphData = Task1TableData;
 
 export interface BpSection {
   title: string;
@@ -80,6 +82,7 @@ export interface Task1Data {
   sampleOverview: string;
   timingSeconds: number;
   graphData: Task1GraphData;
+  tableData?: Task1TableData;
   vocabList: VocabItem[];
   vocabHunt: string[];
   bp1: BpSection;

@@ -29,7 +29,7 @@ export const Step3Vocab: React.FC<Step3VocabProps> = ({ onSpeak, accent, setAcce
       </div>
     </div>
     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "14px", color: "var(--slate-700)" }}>
-      <BookOpen size={18} /> <strong>10 essential academic line graph &amp; comparative collocations</strong>
+      <BookOpen size={18} /> <strong>10 essential academic table &amp; comparative trend collocations</strong>
     </div>
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px", overflowY: "auto", paddingRight: "4px" }}>
       {TASK1_DATA.vocabList.map((vocab, index) => <VocabCard key={vocab.word} vocab={vocab} onSpeak={onSpeak} index={index} />)}

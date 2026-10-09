@@ -8,9 +8,9 @@ export const Step8Connectors: React.FC = () => (
       <span className="apple-badge success" style={{ marginBottom: "8px" }}>
         Step 08 / 08 • Academic Transitions &amp; Comparative Cohesion
       </span>
-      <h2 className="stage-title">Cohesive Sequencing &amp; Contrastive Linking for Line Graphs</h2>
+      <h2 className="stage-title">Cohesive Sequencing &amp; Contrastive Linking for Statistical Tables</h2>
       <p className="stage-subtitle">
-        Master academic discourse markers to establish seamless logical transitions between opposing trajectory groups, pinpoint historical intersections, and articulate mathematical multipliers.
+        Master academic discourse markers to establish seamless logical transitions between the surging risers, the sole declining institution, stepped plateaus, and multi-school convergences.
       </p>
     </div>
 
@@ -69,41 +69,45 @@ export const Step8Connectors: React.FC = () => (
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         <CheckCircle2 size={18} color="#16a34a" />
         <strong style={{ color: "var(--slate-900)", fontSize: "0.95rem" }}>
-          Recommended Cohesive Discourse Pathway for 4-Line Comparative Graphs
+          Recommended Cohesive Discourse Pathway for Table Reporting
         </strong>
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.88rem", color: "var(--slate-700)" }}>
         {/* Paragraph 3 / Body 1 Flow */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "var(--slate-50)", padding: "10px 14px", borderRadius: "12px", border: "1px solid var(--border-subtle)" }}>
-          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 1 (Decreasers)</span>
+          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 1 (Surging Risers)</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Regarding the nations experiencing a net decline,...”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Turning first to the two highest-performing institutions by 2000,...”</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>UK steady descent (10.8t → 8.7t)</span>
+          <span>Harble's 30% baseline</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“By contrast, Sweden demonstrated the most erratic pattern...”</span>
+          <span>Steady climb to 60%</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>1977 peak (10.2t) → 30-year plunge (5.4t)</span>
+          <span>Leap by 20% to peak at 80% (nearly tripled)</span>
+          <ArrowRight size={13} color="var(--apple-blue)" />
+          <span>Fairfield 65% → 75% tie in 1997</span>
+          <ArrowRight size={13} color="var(--apple-blue)" />
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Despite a transient dip in 1999,...”</span>
+          <ArrowRight size={13} color="var(--apple-blue)" />
+          <span>Rebound to conclude at 79% (2nd place)</span>
         </div>
 
         {/* Paragraph 4 / Body 2 Flow */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "var(--slate-50)", padding: "10px 14px", borderRadius: "12px", border: "1px solid var(--border-subtle)" }}>
-          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 2 (Increasers)</span>
+          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 2 (Decliner &amp; Moderates)</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Turning to the countries with rising per capita emissions,...”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“In contrast, Greystone High was the only school to decline,...”</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span>Italy rise (4.2t → 6.7t in 1987)</span>
+          <span>Surrendered 90% lead → fell to 70%</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“At which point it surpassed Sweden...”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Meanwhile, Royston Academy progressed in a stepped manner,...”</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span>Plateau at 7.6t</span>
+          <span>50% → 54% plateau → 60%</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Meanwhile, Portugal initiated as lowest contributor...”</span>
+          <span>Crackend stability (59%–62%)</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span>Quadrupling surge</span>
-          <ArrowRight size={13} color="#16a34a" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Precisely converging with Sweden at 5.4t in 2007.”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Notably, in 1999, Royston, Harble, and Crackend converged at exactly 60%.”</span>
         </div>
       </div>
     </div>

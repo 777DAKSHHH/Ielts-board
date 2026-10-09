@@ -1,32 +1,33 @@
 import React from "react";
-import { CheckCircle2, TrendingDown, ArrowRight, Activity, ShieldCheck } from "lucide-react";
+import { CheckCircle2, TrendingUp, ArrowRight, Activity, ShieldCheck } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step5Bifurcation: React.FC = () => {
-  const uk = TASK1_DATA.graphData.countries.find((c) => c.id === "uk");
-  const sweden = TASK1_DATA.graphData.countries.find((c) => c.id === "sweden");
+  const harble = TASK1_DATA.graphData.countries.find((c) => c.id === "harble");
+  const fairfield = TASK1_DATA.graphData.countries.find((c) => c.id === "fairfield");
+  const body1Model = TASK1_DATA.modelReport?.paragraphs.find((p) => p.id === "body1");
 
   return (
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 05 / 08 • Body 1 — The Net Decreasers (UK &amp; Sweden)
+          Step 05 / 08 • Body 1 — The Surging Risers (Harble &amp; Fairfield)
         </span>
-        <h2 className="stage-title">Documenting High Baselines &amp; Long-Term Downward Trajectories</h2>
+        <h2 className="stage-title">Documenting Rapid Momentum &amp; Top-Ranking Performers</h2>
         <p className="stage-subtitle">
-          Analyze the two nations with net declines: the United Kingdom's uninterrupted dominance (from ~10.8 down to 8.7 tonnes), and Sweden's volatile trajectory (surging to ~10.2 tonnes in 1977 before collapsing by nearly 50% to 5.4 tonnes).
+          Analyze the two secondary schools that achieved dominant positions by 2000: Harble Secondary's meteoric surge from last to first place (30% to 80%), and Fairfield Girls' steady climb to second place (65% to 79%).
         </p>
       </div>
 
       <div className="stage-grid-2col">
-        {/* Left Column: Data Progression Cards for UK and Sweden */}
+        {/* Left Column: Data Progression Cards for Harble and Fairfield */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          {/* UK Card */}
-          {uk && (
+          {/* Harble Secondary Card */}
+          {harble && (
             <div
               style={{
                 background: "var(--slate-50)",
-                border: "1.5px solid rgba(147, 51, 234, 0.25)",
+                border: "1.5px solid rgba(5, 150, 105, 0.3)",
                 borderRadius: "18px",
                 padding: "20px",
                 display: "flex",
@@ -41,14 +42,14 @@ export const Step5Bifurcation: React.FC = () => {
                       width: "12px",
                       height: "12px",
                       borderRadius: "50%",
-                      background: uk.color
+                      background: harble.color
                     }}
                   />
                   <h4 style={{ fontSize: "1.1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                    {uk.name}
+                    {harble.name}
                   </h4>
-                  <span className="apple-badge neutral" style={{ fontSize: "0.72rem", fontFamily: "monospace" }}>
-                    - • - • (dash-dot)
+                  <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#d1fae5", color: "#065f46" }}>
+                    Top Climber (+50% pts)
                   </span>
                 </div>
                 <span
@@ -57,47 +58,49 @@ export const Step5Bifurcation: React.FC = () => {
                     fontWeight: 700,
                     padding: "3px 8px",
                     borderRadius: "6px",
-                    background: "rgba(147, 51, 234, 0.12)",
-                    color: uk.color
+                    background: "rgba(5, 150, 105, 0.12)",
+                    color: harble.color
                   }}
                 >
-                  {uk.netChange}
+                  {harble.netChange}
                 </span>
               </div>
 
-              {/* Data points row */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "6px" }}>
-                {uk.dataPoints.map((pt) => (
+              {/* Data points row (6 years) */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "5px" }}>
+                {harble.dataPoints.map((pt) => (
                   <div
                     key={pt.year}
                     style={{
-                      background: "#ffffff",
+                      background: pt.year === 2000 ? "rgba(5, 150, 105, 0.12)" : "#ffffff",
                       borderRadius: "10px",
-                      padding: "8px 6px",
+                      padding: "8px 4px",
                       textAlign: "center",
-                      border: "1px solid var(--border-subtle)"
+                      border: pt.year === 2000 ? "1.5px solid #059669" : "1px solid var(--border-subtle)"
                     }}
                   >
-                    <div style={{ fontSize: "0.72rem", color: "var(--slate-500)", fontWeight: 600 }}>{pt.year}</div>
-                    <div style={{ fontSize: "0.95rem", fontWeight: 800, color: uk.color, marginTop: "2px" }}>
-                      {pt.value}t
+                    <div style={{ fontSize: "0.7rem", color: pt.year === 2000 ? "#059669" : "var(--slate-500)", fontWeight: 700 }}>
+                      {pt.year} {pt.year === 2000 ? "★" : ""}
+                    </div>
+                    <div style={{ fontSize: "0.92rem", fontWeight: 800, color: harble.color, marginTop: "2px" }}>
+                      {pt.value}%
                     </div>
                   </div>
                 ))}
               </div>
 
               <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-                <strong>Key Trend:</strong> {uk.trendSummary}
+                <strong>Key Trend:</strong> {harble.trendSummary}
               </p>
             </div>
           )}
 
-          {/* Sweden Card */}
-          {sweden && (
+          {/* Fairfield Girls Card */}
+          {fairfield && (
             <div
               style={{
                 background: "var(--slate-50)",
-                border: "1.5px solid rgba(2, 132, 199, 0.25)",
+                border: "1.5px solid rgba(79, 70, 229, 0.3)",
                 borderRadius: "18px",
                 padding: "20px",
                 display: "flex",
@@ -112,14 +115,14 @@ export const Step5Bifurcation: React.FC = () => {
                       width: "12px",
                       height: "12px",
                       borderRadius: "50%",
-                      background: sweden.color
+                      background: fairfield.color
                     }}
                   />
                   <h4 style={{ fontSize: "1.1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                    {sweden.name}
+                    {fairfield.name}
                   </h4>
-                  <span className="apple-badge neutral" style={{ fontSize: "0.72rem", fontFamily: "monospace" }}>
-                    - - - (dashed)
+                  <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#ede9fe", color: "#5b21b6" }}>
+                    2nd Place (+14% pts)
                   </span>
                 </div>
                 <span
@@ -128,39 +131,39 @@ export const Step5Bifurcation: React.FC = () => {
                     fontWeight: 700,
                     padding: "3px 8px",
                     borderRadius: "6px",
-                    background: "rgba(2, 132, 199, 0.12)",
-                    color: sweden.color
+                    background: "rgba(79, 70, 229, 0.12)",
+                    color: fairfield.color
                   }}
                 >
-                  Peak: 10.2t (1977) • End: 5.4t
+                  {fairfield.netChange}
                 </span>
               </div>
 
-              {/* Data points row */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "6px" }}>
-                {sweden.dataPoints.map((pt) => (
+              {/* Data points row (6 years) */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "5px" }}>
+                {fairfield.dataPoints.map((pt) => (
                   <div
                     key={pt.year}
                     style={{
-                      background: pt.year === 1977 ? "rgba(2, 132, 199, 0.08)" : "#ffffff",
+                      background: pt.year === 1997 ? "rgba(245, 158, 11, 0.1)" : "#ffffff",
                       borderRadius: "10px",
-                      padding: "8px 6px",
+                      padding: "8px 4px",
                       textAlign: "center",
-                      border: pt.year === 1977 ? "1.5px solid var(--apple-blue)" : "1px solid var(--border-subtle)"
+                      border: pt.year === 1997 ? "1.5px solid #d97706" : "1px solid var(--border-subtle)"
                     }}
                   >
-                    <div style={{ fontSize: "0.72rem", color: pt.year === 1977 ? "var(--apple-blue)" : "var(--slate-500)", fontWeight: 700 }}>
-                      {pt.year} {pt.year === 1977 ? "★" : ""}
+                    <div style={{ fontSize: "0.7rem", color: pt.year === 1997 ? "#b45309" : "var(--slate-500)", fontWeight: 700 }}>
+                      {pt.year} {pt.year === 1997 ? "Tie" : ""}
                     </div>
-                    <div style={{ fontSize: "0.95rem", fontWeight: 800, color: sweden.color, marginTop: "2px" }}>
-                      {pt.value}t
+                    <div style={{ fontSize: "0.92rem", fontWeight: 800, color: fairfield.color, marginTop: "2px" }}>
+                      {pt.value}%
                     </div>
                   </div>
                 ))}
               </div>
 
               <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-                <strong>Key Trend:</strong> {sweden.trendSummary}
+                <strong>Key Trend:</strong> {fairfield.trendSummary}
               </p>
             </div>
           )}
@@ -182,13 +185,13 @@ export const Step5Bifurcation: React.FC = () => {
           >
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <TrendingDown size={20} color="#9333ea" />
+                <TrendingUp size={20} color="#059669" />
                 <h4 style={{ fontSize: "1.1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
                   Band 9 Model Body Paragraph 1
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.75rem", fontWeight: 700 }}>
-                74 words
+                {body1Model?.wordCount ?? 60} words
               </span>
             </div>
 
@@ -204,7 +207,7 @@ export const Step5Bifurcation: React.FC = () => {
                 boxShadow: "var(--shadow-sm)"
               }}
             >
-              “Regarding the nations with decreasing emissions, the United Kingdom consistently generated the highest levels throughout the entire period. Starting at approximately 10.8 metric tonnes per person in 1967, British emissions remained nearly unchanged in 1977 before undergoing a steady, uninterrupted decline to 10.0 tonnes in 1987, 9.6 tonnes in 1997, and finally 8.7 tonnes by 2007. Sweden began as the second-highest emitter at 8.6 metric tonnes and climbed sharply to peak at approximately 10.2 tonnes in 1977, briefly challenging the UK. Thereafter, Swedish emissions plummeted precipitously over the remaining thirty years, falling to 7.0 tonnes in 1987 and continuing downward to 5.4 tonnes by 2007—nearly half its peak value.”
+              “{body1Model?.text ?? "Turning first to the two highest-performing institutions by 2000, Harble Secondary recorded a meteoric ascent. Starting with the lowest figure of 30% in 1995, it rose steadily to 40% in 1997 and 60% in 1999, before jumping by 20 percentage points to finish at a peak of 80%—nearly tripling its baseline. Fairfield Girls also followed an upward trajectory, climbing from 65% in 1995 to equalize with Greystone at 75% in 1997. Despite a transient dip to 70% in 1999, Fairfield rebounded to conclude at 79%, securing second position."}”
             </div>
           </div>
 
@@ -231,15 +234,15 @@ export const Step5Bifurcation: React.FC = () => {
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
                 <ShieldCheck size={16} color="var(--apple-blue)" style={{ flexShrink: 0, marginTop: "2px" }} />
-                <span><strong>Logical Grouping:</strong> Grouping UK and Sweden together provides immediate coherence because both started high (&gt;8.5 tonnes) and finished lower.</span>
+                <span><strong>Logical Grouping:</strong> Grouping Harble and Fairfield together provides immediate coherence because both emerged as the undisputed top performers in 2000 (80% and 79%).</span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
-                <Activity size={16} color="#9333ea" style={{ flexShrink: 0, marginTop: "2px" }} />
-                <span><strong>Behavioral Contrast:</strong> Contrast the UK's smooth, gradual descent with Sweden's acute volatility (steep rise to apex followed by long-term collapse).</span>
+                <Activity size={16} color="#059669" style={{ flexShrink: 0, marginTop: "2px" }} />
+                <span><strong>Surge &amp; Acceleration Language:</strong> Accurately document Harble's accelerating increments (+5%, +5%, +10%, +10%, +20%) culminating in nearly tripling its initial proportion.</span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
-                <ArrowRight size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-                <span><strong>Mathematical Proportionality:</strong> Noting that Sweden finished at “nearly half its peak value” displays superior mathematical analytical capability.</span>
+                <ArrowRight size={16} color="#4f46e5" style={{ flexShrink: 0, marginTop: "2px" }} />
+                <span><strong>Relational Inflection Points:</strong> Note Fairfield tying Greystone at 75% in 1997, taking the sole lead in 1998, and rebounding from a 1999 dip to conclude just 1% behind Harble.</span>
               </div>
             </div>
           </div>

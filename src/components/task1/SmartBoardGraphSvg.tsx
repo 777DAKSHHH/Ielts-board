@@ -1,109 +1,136 @@
 import React, { useState } from "react";
-import { RotateCcw, TrendingDown, TrendingUp, GitCommit, Layers } from "lucide-react";
-import { TASK1_DATA } from "../../data/task1Data";
+import {
+  RotateCcw,
+  TrendingDown,
+  TrendingUp,
+  GitCommit,
+  Layers,
+  School,
+  Sparkles,
+  ArrowUpDown
+} from "lucide-react";
+import { SCHOOLS_DATA } from "../../data/task1Data";
+import { SchoolData } from "../../types/task1";
 
-export type GraphHighlightMode =
+export type TableHighlightMode =
   | "all"
-  | "decreasers"
-  | "increasers"
-  | "intersections"
-  | "uk"
-  | "sweden"
-  | "italy"
-  | "portugal";
+  | "risers"
+  | "decliner"
+  | "stable"
+  | "convergences"
+  | "harble"
+  | "fairfield"
+  | "greystone"
+  | "royston"
+  | "crackend";
 
-interface SmartBoardGraphSvgProps {
+// Backwards-compatible alias for any code importing GraphHighlightMode
+export type GraphHighlightMode = TableHighlightMode;
+
+interface SmartBoardTableMatrixProps {
   onSelectCountry?: (countryId: string) => void;
   selectedCountryId?: string | null;
-  highlightMode?: GraphHighlightMode;
-  onHighlightModeChange?: (mode: GraphHighlightMode) => void;
+  highlightMode?: TableHighlightMode;
+  onHighlightModeChange?: (mode: TableHighlightMode) => void;
   showInternalToolbar?: boolean;
+  showDeepDiveCard?: boolean;
 }
 
 const FILTER_DETAILS: Record<
-  GraphHighlightMode,
+  TableHighlightMode,
   { label: string; icon: React.ReactNode; color: string; description: string }
 > = {
   all: {
-    label: "All 4 Countries",
+    label: "All 5 Schools",
     icon: <RotateCcw size={13} />,
     color: "var(--slate-900)",
     description:
-      "Displaying full 40-year trajectories (1967–2007) for the United Kingdom, Sweden, Italy, and Portugal in metric tonnes per capita."
+      "Displaying all five secondary schools across the full six-year survey (1995–2000) entering higher education."
   },
-  decreasers: {
-    label: "Net Decreasers (UK & Sweden)",
-    icon: <TrendingDown size={13} />,
-    color: "#0284c7",
-    description:
-      "Highlighting the two nations experiencing overall decline: the UK's steady downward descent and Sweden's dramatic 1977 peak followed by a 30-year plunge."
-  },
-  increasers: {
-    label: "Net Increasers (Italy & Portugal)",
+  risers: {
+    label: "Surging Risers (Harble & Fairfield)",
     icon: <TrendingUp size={13} />,
-    color: "#b91c1c",
+    color: "#059669",
     description:
-      "Highlighting the two nations with substantial growth: Italy's steady ascent and plateau (+81%), and Portugal's four-fold surge (+350%)."
+      "Harble Secondary surged from 30% to 80% (vaulting from last to first), while Fairfield Girls grew from 65% to 79% to finish 2nd."
   },
-  intersections: {
-    label: "Crossovers & Convergences",
-    icon: <GitCommit size={13} />,
+  decliner: {
+    label: "Sole Decliner (Greystone High)",
+    icon: <TrendingDown size={13} />,
+    color: "#dc2626",
+    description:
+      "Greystone High was the sole school to suffer an uninterrupted decline, falling 20 percentage points from 90% down to 70%."
+  },
+  stable: {
+    label: "Stepped & Static (Royston & Crackend)",
+    icon: <Layers size={13} />,
     color: "#d97706",
     description:
-      "Highlighting critical inflection points: Italy overtaking Sweden around 1987 (~6.8 tonnes), and Sweden converging with Portugal in 2007 (~5.4 tonnes)."
+      "Royston Academy progressed in stepped plateaus from 50% to 60%, while Crackend Boys remained virtually static between 59% and 62%."
   },
-  uk: {
-    label: "United Kingdom Only",
-    icon: <Layers size={13} />,
-    color: "#9333ea",
+  convergences: {
+    label: "1997 & 1999 Milestones",
+    icon: <GitCommit size={13} />,
+    color: "#7c3aed",
     description:
-      "Dominant emitter throughout the 40 years: started highest at ~10.8 tonnes and dropped steadily to finish at ~8.7 tonnes."
+      "1997: Fairfield & Greystone equalized at 75%. 1999: Royston, Harble, and Crackend all converged at an identical 60%."
   },
-  sweden: {
-    label: "Sweden Only",
-    icon: <Layers size={13} />,
-    color: "#0284c7",
+  harble: {
+    label: "Harble Secondary",
+    icon: <School size={13} />,
+    color: "#059669",
     description:
-      "Most volatile nation: started at 8.6 tonnes, spiked to an apex of 10.2 tonnes in 1977, then plummeted to 5.4 tonnes."
+      "The most dramatic climb: leaped from 30% to 80% (+50% pts, nearly tripling), vaulting from last to first place."
   },
-  italy: {
-    label: "Italy Only",
-    icon: <Layers size={13} />,
-    color: "#b91c1c",
+  fairfield: {
+    label: "Fairfield Girls",
+    icon: <School size={13} />,
+    color: "#4f46e5",
     description:
-      "Steady growth: rose from 4.2 to 6.7 tonnes to surpass Sweden in 1987, reaching a permanent plateau at 7.6 tonnes from 1997."
+      "Strong upward climb from 65% to 79% (+14% pts), briefly leading in 1998 and rebounding from a 1999 dip to conclude 2nd."
   },
-  portugal: {
-    label: "Portugal Only",
-    icon: <Layers size={13} />,
-    color: "#1e293b",
+  greystone: {
+    label: "Greystone High",
+    icon: <School size={13} />,
+    color: "#dc2626",
     description:
-      "Steepest proportional rise: surged from a negligible 1.2 tonnes to quadruple, meeting Sweden at 5.4 tonnes in 2007."
+      "Sole downward trajectory: began with a commanding 90% lead but dropped consecutively each year to finish 3rd at 70%."
+  },
+  royston: {
+    label: "Royston Academy",
+    icon: <School size={13} />,
+    color: "#d97706",
+    description:
+      "Stepped pattern: 50% in 1995, plateaued at 54% (1997–98), and leveled off at 60% in 1999–2000 (+10% pts net)."
+  },
+  crackend: {
+    label: "Crackend Boys",
+    icon: <School size={13} />,
+    color: "#475569",
+    description:
+      "Remarkable stability: hovered between 59% and 62% across all 6 years, ending with a negligible 2% net increase."
   }
 };
 
-export const SmartBoardGraphSvg: React.FC<SmartBoardGraphSvgProps> = ({
+export const SmartBoardTableMatrix: React.FC<SmartBoardTableMatrixProps> = ({
   onSelectCountry,
   selectedCountryId,
   highlightMode: externalHighlightMode,
   onHighlightModeChange,
-  showInternalToolbar = true
+  showInternalToolbar = true,
+  showDeepDiveCard = true
 }) => {
   const [internalHighlightMode, setInternalHighlightMode] =
-    useState<GraphHighlightMode>("all");
-  const [activeTooltip, setActiveTooltip] = useState<{
-    country: string;
-    year: number;
-    value: number;
-    annotation?: string;
-    x: number;
-    y: number;
-    color: string;
-  } | null>(null);
+    useState<TableHighlightMode>("all");
+  const [tableDisplayMode, setTableDisplayMode] = useState<"clean" | "heatmap">("heatmap");
+  const [sortOrder, setSortOrder] = useState<"exam_order" | "ranked_2000" | "grouped">("exam_order");
 
-  const activeMode = externalHighlightMode ?? internalHighlightMode;
+  const rawActiveMode = externalHighlightMode ?? internalHighlightMode;
+  // Map "intersections" to "convergences" for backwards compatibility
+  const activeMode: TableHighlightMode =
+    rawActiveMode === ("intersections" as string) ? "convergences" : rawActiveMode;
 
-  const setHighlightMode = (mode: GraphHighlightMode) => {
+  const setHighlightMode = (mode: TableHighlightMode) => {
     if (onHighlightModeChange) {
       onHighlightModeChange(mode);
     } else {
@@ -111,43 +138,44 @@ export const SmartBoardGraphSvg: React.FC<SmartBoardGraphSvgProps> = ({
     }
   };
 
-  const isCountryDimmed = (countryId: string) => {
+  const isSchoolDimmed = (schoolId: string) => {
     if (activeMode === "all") return false;
-    if (activeMode === "decreasers") return countryId !== "uk" && countryId !== "sweden";
-    if (activeMode === "increasers") return countryId !== "italy" && countryId !== "portugal";
-    if (activeMode === "intersections") return false;
-    return activeMode !== countryId;
+    if (activeMode === "risers") return schoolId !== "harble" && schoolId !== "fairfield";
+    if (activeMode === "decliner") return schoolId !== "greystone";
+    if (activeMode === "stable") return schoolId !== "royston" && schoolId !== "crackend";
+    if (activeMode === "convergences") return false;
+    return activeMode !== schoolId;
   };
 
-  const isCountryHighlighted = (countryId: string) => {
-    if (selectedCountryId === countryId) return true;
+  const isSchoolHighlighted = (schoolId: string) => {
+    if (selectedCountryId === schoolId) return true;
     if (activeMode === "all") return true;
-    if (activeMode === "decreasers") return countryId === "uk" || countryId === "sweden";
-    if (activeMode === "increasers") return countryId === "italy" || countryId === "portugal";
-    return activeMode === countryId;
+    if (activeMode === "risers") return schoolId === "harble" || schoolId === "fairfield";
+    if (activeMode === "decliner") return schoolId === "greystone";
+    if (activeMode === "stable") return schoolId === "royston" || schoolId === "crackend";
+    return activeMode === schoolId;
   };
 
-  /*
-   * Plot Coordinates:
-   * Origin (0 tonnes): y = 460
-   * 12 tonnes: y = 100
-   * 1 tonne = 30 px
-   * Years: 1967 -> 180, 1977 -> 345, 1987 -> 510, 1997 -> 675, 2007 -> 840
-   */
-  const yearToX = (yr: number): number => {
-    switch (yr) {
-      case 1967: return 180;
-      case 1977: return 345;
-      case 1987: return 510;
-      case 1997: return 675;
-      case 2007: return 840;
-      default: return 180 + ((yr - 1967) / 40) * 660;
+  // Static immutable reference guaranteed to always have all 5 schools
+  const schoolsList = SCHOOLS_DATA;
+
+  // Sorting
+  const sortedSchools: SchoolData[] = [...schoolsList].sort((a, b) => {
+    if (sortOrder === "ranked_2000") {
+      const a2000 = a.dataPoints.find((p) => p.year === 2000)?.value || 0;
+      const b2000 = b.dataPoints.find((p) => p.year === 2000)?.value || 0;
+      return b2000 - a2000;
     }
-  };
+    if (sortOrder === "grouped") {
+      const groupRank: Record<string, number> = { net_increase: 1, net_decrease: 2, steady: 3 };
+      return (groupRank[a.group] || 4) - (groupRank[b.group] || 4);
+    }
+    // "exam_order" uses the original exam paper order (Royston, Greystone, Harble, Fairfield, Crackend)
+    return 0;
+  });
 
-  const valToY = (val: number): number => {
-    return 460 - val * 30;
-  };
+  const activeSchool =
+    schoolsList.find((c) => c.id === selectedCountryId) || schoolsList[0];
 
   return (
     <div
@@ -155,9 +183,10 @@ export const SmartBoardGraphSvg: React.FC<SmartBoardGraphSvgProps> = ({
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        height: "100%",
+        minHeight: "100%",
         userSelect: "none",
-        position: "relative"
+        position: "relative",
+        background: "#ffffff"
       }}
     >
       {/* Aspect Mode Quick Toolbar */}
@@ -168,37 +197,34 @@ export const SmartBoardGraphSvg: React.FC<SmartBoardGraphSvgProps> = ({
             flexWrap: "wrap",
             alignItems: "center",
             justifyContent: "space-between",
-            gap: "8px",
-            padding: "8px 12px",
-            background: "rgba(255, 255, 255, 0.95)",
-            backdropFilter: "blur(8px)",
+            gap: "10px",
+            padding: "10px 16px",
+            background: "#f8fafc",
             borderBottom: "1.5px solid var(--border-subtle)",
             zIndex: 10
           }}
         >
+          {/* Group 1: Strategic Trajectory Filters */}
           <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
             <span
               style={{
-                fontSize: "0.75rem",
+                fontSize: "0.74rem",
                 fontWeight: 800,
                 color: "var(--slate-500)",
                 textTransform: "uppercase",
                 letterSpacing: "0.04em",
-                marginRight: "4px"
+                marginRight: "2px"
               }}
             >
-              Smart Focus:
+              Macro Focus:
             </span>
             {(
               [
                 "all",
-                "decreasers",
-                "increasers",
-                "intersections",
-                "uk",
-                "sweden",
-                "italy",
-                "portugal"
+                "risers",
+                "decliner",
+                "stable",
+                "convergences"
               ] as const
             ).map((mode) => {
               const details = FILTER_DETAILS[mode];
@@ -212,7 +238,7 @@ export const SmartBoardGraphSvg: React.FC<SmartBoardGraphSvgProps> = ({
                     display: "flex",
                     alignItems: "center",
                     gap: "5px",
-                    padding: "4px 10px",
+                    padding: "5px 11px",
                     borderRadius: "8px",
                     fontSize: "0.78rem",
                     fontWeight: 750,
@@ -220,7 +246,7 @@ export const SmartBoardGraphSvg: React.FC<SmartBoardGraphSvgProps> = ({
                     background: isActive ? details.color : "#ffffff",
                     color: isActive ? "#ffffff" : "var(--slate-700)",
                     cursor: "pointer",
-                    boxShadow: isActive ? "0 2px 6px rgba(0,0,0,0.15)" : "none",
+                    boxShadow: isActive ? "0 2px 6px rgba(0,0,0,0.12)" : "none",
                     transition: "all 0.15s ease"
                   }}
                 >
@@ -231,553 +257,611 @@ export const SmartBoardGraphSvg: React.FC<SmartBoardGraphSvgProps> = ({
             })}
           </div>
 
-          <div
-            style={{
-              fontSize: "0.8rem",
-              fontWeight: 600,
-              color: "var(--slate-600)",
-              fontStyle: "italic"
-            }}
-          >
-            ✦ Tap any line or data point to inspect details
+          {/* Group 2: Table Presentation Toggles (Clean vs Heatmap) */}
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+            {/* View Mode Toggle */}
+            <div
+              style={{
+                display: "inline-flex",
+                background: "#e2e8f0",
+                borderRadius: "8px",
+                padding: "2px"
+              }}
+            >
+              <button
+                type="button"
+                onClick={() => setTableDisplayMode("clean")}
+                style={{
+                  padding: "4px 10px",
+                  fontSize: "0.74rem",
+                  fontWeight: 750,
+                  borderRadius: "6px",
+                  border: "none",
+                  cursor: "pointer",
+                  background: tableDisplayMode === "clean" ? "#ffffff" : "transparent",
+                  color: tableDisplayMode === "clean" ? "var(--slate-900)" : "var(--slate-600)",
+                  boxShadow: tableDisplayMode === "clean" ? "0 1px 3px rgba(0,0,0,0.1)" : "none"
+                }}
+                title="Display standard clean exam table without badges"
+              >
+                Clean Exam Mode
+              </button>
+              <button
+                type="button"
+                onClick={() => setTableDisplayMode("heatmap")}
+                style={{
+                  padding: "4px 10px",
+                  fontSize: "0.74rem",
+                  fontWeight: 750,
+                  borderRadius: "6px",
+                  border: "none",
+                  cursor: "pointer",
+                  background: tableDisplayMode === "heatmap" ? "var(--apple-blue)" : "transparent",
+                  color: tableDisplayMode === "heatmap" ? "#ffffff" : "var(--slate-600)",
+                  boxShadow: tableDisplayMode === "heatmap" ? "0 1px 3px rgba(0,0,0,0.1)" : "none"
+                }}
+                title="Display SmartBoard interactive heatmap and milestone highlights"
+              >
+                SmartBoard Heatmap
+              </button>
+            </div>
+
+            {/* Sort Toggle */}
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
+                background: "#ffffff",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: "8px",
+                padding: "3px 8px"
+              }}
+            >
+              <ArrowUpDown size={12} color="var(--slate-500)" />
+              <select
+                value={sortOrder}
+                onChange={(e) => setSortOrder(e.target.value as any)}
+                style={{
+                  border: "none",
+                  background: "transparent",
+                  fontSize: "0.74rem",
+                  fontWeight: 700,
+                  color: "var(--slate-800)",
+                  cursor: "pointer",
+                  outline: "none"
+                }}
+              >
+                <option value="exam_order">Exam Paper Order</option>
+                <option value="ranked_2000">Ranked by 2000 (80% → 60%)</option>
+                <option value="grouped">Trajectory Groups</option>
+              </select>
+            </div>
           </div>
         </div>
       )}
 
-      {/* SVG Canvas Container */}
+      {/* Main 4K Interactive Table Matrix View */}
       <div
         style={{
           flex: 1,
           width: "100%",
-          minHeight: "440px",
+          padding: "16px 20px",
+          overflowX: "auto",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "#ffffff",
-          position: "relative",
-          overflow: "hidden"
+          flexDirection: "column",
+          gap: "14px"
         }}
       >
-        <svg
-          viewBox="0 0 940 630"
+        {/* Table Title Banner */}
+        <div
           style={{
-            width: "100%",
-            height: "100%",
-            maxHeight: "560px",
-            display: "block"
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "10px",
+            borderBottom: "1.5px solid var(--border-subtle)",
+            paddingBottom: "10px"
           }}
         >
-          <defs>
-            {/* Drop shadow for tooltip & active markers */}
-            <filter id="marker-glow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#000" floodOpacity="0.25" />
-            </filter>
-            <filter id="intersection-glow" x="-30%" y="-30%" width="160%" height="160%">
-              <feDropShadow dx="0" dy="0" stdDeviation="6" floodColor="#f59e0b" floodOpacity="0.8" />
-            </filter>
-          </defs>
-
-          {/* Graph Title (Exact terms from prompt image) */}
-          <text
-            x="510"
-            y="36"
-            textAnchor="middle"
-            fontSize="19"
-            fontWeight="800"
-            fill="#0f172a"
-            fontFamily="system-ui, -apple-system, sans-serif"
-          >
-            Average Carbon Dioxide (CO2) Emissions per person
-          </text>
-          <text
-            x="510"
-            y="60"
-            textAnchor="middle"
-            fontSize="16"
-            fontWeight="750"
-            fill="#334155"
-            fontFamily="system-ui, -apple-system, sans-serif"
-          >
-            1967 - 2007
-          </text>
-
-          {/* Y-Axis Title (Rotated) */}
-          <text
-            transform="rotate(-90 100 280)"
-            x="100"
-            y="280"
-            textAnchor="middle"
-            fontSize="15"
-            fontWeight="750"
-            fill="#0f172a"
-            fontFamily="system-ui, -apple-system, sans-serif"
-          >
-            CO2 Emissions in Metric Tonnes
-          </text>
-
-          {/* Grid lines and Y-axis scale (0 to 12) */}
-          {[0, 2, 4, 6, 8, 10, 12].map((val) => {
-            const y = valToY(val);
-            const isZero = val === 0;
-            return (
-              <g key={val}>
-                <line
-                  x1="180"
-                  y1={y}
-                  x2="840"
-                  y2={y}
-                  stroke={isZero ? "#000000" : "#000000"}
-                  strokeWidth={isZero ? 4.5 : val % 4 === 0 ? 3.5 : 3.0}
-                  strokeLinecap="square"
-                />
-                <text
-                  x="165"
-                  y={y + 5}
-                  textAnchor="end"
-                  fontSize="16"
-                  fontWeight="800"
-                  fill="#000000"
-                  fontFamily="system-ui, -apple-system, sans-serif"
-                >
-                  {val}
-                </text>
-              </g>
-            );
-          })}
-
-          {/* Y-Axis Solid Line */}
-          <line x1="180" y1="100" x2="180" y2="460" stroke="#000000" strokeWidth="4.5" strokeLinecap="square" />
-
-          {/* X-Axis Ticks & Year Labels */}
-          {[1967, 1977, 1987, 1997, 2007].map((yr) => {
-            const x = yearToX(yr);
-            return (
-              <g key={yr}>
-                <line x1={x} y1="460" x2={x} y2="475" stroke="#000000" strokeWidth="4" strokeLinecap="square" />
-                <text
-                  x={x}
-                  y="500"
-                  textAnchor="middle"
-                  fontSize="16"
-                  fontWeight="800"
-                  fill="#000000"
-                  fontFamily="system-ui, -apple-system, sans-serif"
-                >
-                  {yr}
-                </text>
-              </g>
-            );
-          })}
-
-          {/* ============================================================== */}
-          {/* NATION TREND LINES & POINTS */}
-          {/* ============================================================== */}
-
-          {TASK1_DATA.graphData.countries.map((country) => {
-            const dimmed = isCountryDimmed(country.id);
-            const highlighted = isCountryHighlighted(country.id);
-
-            // Construct SVG path string
-            const pathString = country.dataPoints
-              .map((pt, i) => `${i === 0 ? "M" : "L"} ${yearToX(pt.year)} ${valToY(pt.value)}`)
-              .join(" ");
-
-            return (
-              <g
-                key={country.id}
-                onClick={() => {
-                  if (onSelectCountry) onSelectCountry(country.id);
-                }}
-                style={{
-                  cursor: "pointer",
-                  transition: "opacity 0.25s ease"
-                }}
-                opacity={dimmed ? 0.16 : 1}
-              >
-                {/* Wider invisible hit area for easy touch / mouse click */}
-                <path
-                  d={pathString}
-                  fill="none"
-                  stroke="transparent"
-                  strokeWidth="24"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-
-                {/* Visible Chart Line */}
-                <path
-                  d={pathString}
-                  fill="none"
-                  stroke={country.color}
-                  strokeWidth={highlighted ? 4.5 : 3.5}
-                  strokeDasharray={country.strokeDashArray}
-                  strokeLinecap={country.lineStyle === "dotted" ? "round" : "square"}
-                  strokeLinejoin="round"
-                  filter={highlighted && activeMode !== "all" ? "url(#marker-glow)" : undefined}
-                />
-
-                {/* Data Points / Markers */}
-                {country.dataPoints.map((pt) => {
-                  const cx = yearToX(pt.year);
-                  const cy = valToY(pt.value);
-                  const isHovered =
-                    activeTooltip?.country === country.name && activeTooltip?.year === pt.year;
-
-                  return (
-                    <g
-                      key={pt.year}
-                      onMouseEnter={() =>
-                        setActiveTooltip({
-                          country: country.name,
-                          year: pt.year,
-                          value: pt.value,
-                          annotation: pt.annotation,
-                          x: cx,
-                          y: cy,
-                          color: country.color
-                        })
-                      }
-                      onMouseLeave={() => setActiveTooltip(null)}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setActiveTooltip({
-                          country: country.name,
-                          year: pt.year,
-                          value: pt.value,
-                          annotation: pt.annotation,
-                          x: cx,
-                          y: cy,
-                          color: country.color
-                        });
-                        if (onSelectCountry) onSelectCountry(country.id);
-                      }}
-                    >
-                      {/* Touch target circle */}
-                      <circle cx={cx} cy={cy} r="14" fill="transparent" />
-
-                      {/* Visible marker */}
-                      <circle
-                        cx={cx}
-                        cy={cy}
-                        r={isHovered ? 7.5 : 5}
-                        fill={country.color}
-                        stroke="#ffffff"
-                        strokeWidth="2.5"
-                        filter="url(#marker-glow)"
-                      />
-
-                      {/* Optional inline value pill for active countries */}
-                      {highlighted && activeMode !== "all" && (
-                        <text
-                          x={cx}
-                          y={country.id === "portugal" && pt.year === 1967 ? cy - 12 : cy - 10}
-                          textAnchor="middle"
-                          fontSize="11"
-                          fontWeight="800"
-                          fill={country.color}
-                          fontFamily="system-ui, -apple-system, sans-serif"
-                        >
-                          {pt.value.toFixed(1)}t
-                        </text>
-                      )}
-                    </g>
-                  );
-                })}
-              </g>
-            );
-          })}
-
-          {/* ============================================================== */}
-          {/* SPECIAL INFLECTION / INTERSECTION HIGHLIGHTS */}
-          {/* ============================================================== */}
-          {activeMode === "intersections" && (
-            <g>
-              {/* 1977 Sweden Peak Highlight */}
-              <circle
-                cx={yearToX(1977)}
-                cy={valToY(10.2)}
-                r="16"
-                fill="none"
-                stroke="#0284c7"
-                strokeWidth="3"
-                strokeDasharray="4 2"
-                filter="url(#intersection-glow)"
-              />
-              <rect
-                x={yearToX(1977) - 60}
-                y={valToY(10.2) - 46}
-                width="120"
-                height="26"
-                rx="6"
-                fill="#0284c7"
-              />
-              <text
-                x={yearToX(1977)}
-                y={valToY(10.2) - 29}
-                textAnchor="middle"
-                fontSize="11"
-                fontWeight="800"
-                fill="#ffffff"
-              >
-                1977 Apex: 10.2t
-              </text>
-
-              {/* 1987 Italy-Sweden Crossover */}
-              <circle
-                cx={yearToX(1987)}
-                cy={valToY(6.8)}
-                r="16"
-                fill="none"
-                stroke="#d97706"
-                strokeWidth="3.5"
-                filter="url(#intersection-glow)"
-              />
-              <rect
-                x={yearToX(1987) + 16}
-                y={valToY(6.8) - 18}
-                width="164"
-                height="36"
-                rx="8"
-                fill="#78350f"
-              />
-              <text
-                x={yearToX(1987) + 24}
-                y={valToY(6.8) - 4}
-                fontSize="11"
-                fontWeight="800"
-                fill="#fef3c7"
-              >
-                1987: Italy Overtakes Sweden
-              </text>
-              <text
-                x={yearToX(1987) + 24}
-                y={valToY(6.8) + 10}
-                fontSize="10"
-                fontWeight="600"
-                fill="#ffffff"
-              >
-                Intersection at ~6.8 tonnes
-              </text>
-
-              {/* 2007 Sweden-Portugal Convergence */}
-              <circle
-                cx={yearToX(2007)}
-                cy={valToY(5.4)}
-                r="16"
-                fill="none"
-                stroke="#10b981"
-                strokeWidth="3.5"
-                filter="url(#intersection-glow)"
-              />
-              <rect
-                x={yearToX(2007) - 180}
-                y={valToY(5.4) - 18}
-                width="164"
-                height="36"
-                rx="8"
-                fill="#064e3b"
-              />
-              <text
-                x={yearToX(2007) - 172}
-                y={valToY(5.4) - 4}
-                fontSize="11"
-                fontWeight="800"
-                fill="#d1fae5"
-              >
-                2007: Convergence
-              </text>
-              <text
-                x={yearToX(2007) - 172}
-                y={valToY(5.4) + 10}
-                fontSize="10"
-                fontWeight="600"
-                fill="#ffffff"
-              >
-                Sweden & Portugal meet at 5.4t
-              </text>
-            </g>
-          )}
-
-          {/* ============================================================== */}
-          {/* LEGEND BOX (Exact terms from prompt image: UK, Sweden, Italy, Portgual) */}
-          {/* ============================================================== */}
-          <g transform="translate(170, 525)">
-            <rect
-              x="0"
-              y="0"
-              width="680"
-              height="85"
-              fill="#ffffff"
-              stroke="#000000"
-              strokeWidth="1.5"
-              rx="4"
-            />
-
-            {/* Column 1: UK & Sweden */}
-            {/* United Kingdom */}
-            <g
-              onClick={() => setHighlightMode("uk")}
-              style={{ cursor: "pointer" }}
-              opacity={activeMode === "uk" || activeMode === "all" || activeMode === "decreasers" ? 1 : 0.4}
-            >
-              <line
-                x1="25"
-                y1="30"
-                x2="135"
-                y2="30"
-                stroke="#9333ea"
-                strokeWidth="4.5"
-                strokeDasharray="14 5 3 5"
-              />
-              <circle cx="80" cy="30" r="4.5" fill="#9333ea" />
-              <text
-                x="150"
-                y="35"
-                fontSize="16"
-                fontWeight="800"
-                fill="#000000"
-                fontFamily="system-ui, -apple-system, sans-serif"
-              >
-                United Kingdom
-              </text>
-            </g>
-
-            {/* Sweden */}
-            <g
-              onClick={() => setHighlightMode("sweden")}
-              style={{ cursor: "pointer" }}
-              opacity={activeMode === "sweden" || activeMode === "all" || activeMode === "decreasers" ? 1 : 0.4}
-            >
-              <line
-                x1="25"
-                y1="64"
-                x2="135"
-                y2="64"
-                stroke="#0284c7"
-                strokeWidth="4.5"
-                strokeDasharray="10 8"
-              />
-              <circle cx="80" cy="64" r="4.5" fill="#0284c7" />
-              <text
-                x="150"
-                y="69"
-                fontSize="16"
-                fontWeight="800"
-                fill="#000000"
-                fontFamily="system-ui, -apple-system, sans-serif"
-              >
-                Sweden
-              </text>
-            </g>
-
-            {/* Column 2: Italy & Portgual */}
-            {/* Italy */}
-            <g
-              onClick={() => setHighlightMode("italy")}
-              style={{ cursor: "pointer" }}
-              opacity={activeMode === "italy" || activeMode === "all" || activeMode === "increasers" ? 1 : 0.4}
-            >
-              <line
-                x1="380"
-                y1="30"
-                x2="480"
-                y2="30"
-                stroke="#b91c1c"
-                strokeWidth="4.5"
-              />
-              <circle cx="430" cy="30" r="4.5" fill="#b91c1c" />
-              <text
-                x="500"
-                y="35"
-                fontSize="16"
-                fontWeight="800"
-                fill="#000000"
-                fontFamily="system-ui, -apple-system, sans-serif"
-              >
-                Italy
-              </text>
-            </g>
-
-            {/* Portgual (Exact term in image) */}
-            <g
-              onClick={() => setHighlightMode("portugal")}
-              style={{ cursor: "pointer" }}
-              opacity={activeMode === "portugal" || activeMode === "all" || activeMode === "increasers" ? 1 : 0.4}
-            >
-              <line
-                x1="380"
-                y1="64"
-                x2="480"
-                y2="64"
-                stroke="#1e293b"
-                strokeWidth="4.5"
-                strokeDasharray="4 6"
-                strokeLinecap="round"
-              />
-              <circle cx="430" cy="64" r="4.5" fill="#1e293b" />
-              <text
-                x="500"
-                y="69"
-                fontSize="16"
-                fontWeight="800"
-                fill="#000000"
-                fontFamily="system-ui, -apple-system, sans-serif"
-              >
-                Portgual
-              </text>
-            </g>
-          </g>
-        </svg>
-
-        {/* Floating Tooltip */}
-        {activeTooltip && (
-          <div
-            style={{
-              position: "absolute",
-              left: `${(activeTooltip.x / 940) * 100}%`,
-              top: `${(activeTooltip.y / 630) * 100}%`,
-              transform: "translate(-50%, -125%)",
-              background: "rgba(15, 23, 42, 0.95)",
-              color: "#ffffff",
-              padding: "10px 14px",
-              borderRadius: "12px",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
-              fontSize: "0.85rem",
-              lineHeight: 1.4,
-              pointerEvents: "none",
-              zIndex: 30,
-              minWidth: "160px",
-              border: `2px solid ${activeTooltip.color}`,
-              backdropFilter: "blur(6px)"
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "10px" }}>
-              <strong style={{ color: activeTooltip.color, fontSize: "0.92rem" }}>
-                {activeTooltip.country}
-              </strong>
-              <span style={{ background: "rgba(255,255,255,0.15)", padding: "1px 6px", borderRadius: "6px", fontSize: "0.75rem" }}>
-                {activeTooltip.year}
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span className="apple-badge accent" style={{ fontSize: "0.72rem", fontWeight: 800 }}>
+                IELTS Table Dataset
+              </span>
+              <span style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 650 }}>
+                5 Secondary Schools • 6 Annual Intervals (1995–2000) • Unit: Percentage (%)
               </span>
             </div>
-            <div style={{ fontSize: "1.1rem", fontWeight: 800, marginTop: "4px" }}>
-              {activeTooltip.value} <span style={{ fontSize: "0.78rem", fontWeight: 500 }}>metric tonnes</span>
-            </div>
-            {activeTooltip.annotation && (
-              <div style={{ fontSize: "0.78rem", color: "#cbd5e1", marginTop: "4px" }}>
-                {activeTooltip.annotation}
+            <h3
+              style={{
+                fontSize: "1.15rem",
+                fontWeight: 800,
+                color: "var(--slate-900)",
+                margin: "4px 0 0"
+              }}
+            >
+              Percentage of pupils who entered higher education from five secondary schools
+            </h3>
+          </div>
+
+          <div style={{ display: "flex", gap: "6px", alignItems: "center", flexWrap: "wrap" }}>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                fontSize: "0.74rem",
+                fontWeight: 750,
+                padding: "3px 8px",
+                borderRadius: "6px",
+                background: "#fef3c7",
+                color: "#92400e",
+                border: "1px solid #fde68a"
+              }}
+            >
+              <span>⚡ 1997:</span> Fairfield &amp; Greystone Tie (75%)
+            </span>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "5px",
+                fontSize: "0.74rem",
+                fontWeight: 750,
+                padding: "3px 8px",
+                borderRadius: "6px",
+                background: "#ede9fe",
+                color: "#5b21b6",
+                border: "1px solid #ddd6fe"
+              }}
+            >
+              <span>⚡ 1999:</span> Triple Convergence at 60%
+            </span>
+          </div>
+        </div>
+
+        {/* The 4K SmartBoard Table */}
+        <div
+          style={{
+            background: "#ffffff",
+            borderRadius: "14px",
+            border: "1.5px solid #cbd5e1",
+            boxShadow: "0 4px 16px rgba(0,0,0,0.05)",
+            overflowX: "auto",
+            overflowY: "visible",
+            flexShrink: 0
+          }}
+        >
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              textAlign: "center"
+            }}
+          >
+            <thead>
+              <tr style={{ background: "#0f172a", color: "#ffffff" }}>
+                <th
+                  style={{
+                    padding: "14px 18px",
+                    fontWeight: 800,
+                    textAlign: "left",
+                    width: "220px",
+                    fontSize: "0.88rem",
+                    letterSpacing: "0.04em",
+                    borderRight: "1px solid #334155"
+                  }}
+                >
+                  SECONDARY SCHOOL
+                </th>
+                <th style={{ padding: "14px 10px", fontWeight: 800, fontSize: "0.9rem", borderRight: "1px solid #334155" }}>
+                  1995
+                </th>
+                <th style={{ padding: "14px 10px", fontWeight: 800, fontSize: "0.9rem", borderRight: "1px solid #334155" }}>
+                  1996
+                </th>
+                <th style={{ padding: "14px 10px", fontWeight: 800, fontSize: "0.9rem", borderRight: "1px solid #334155" }}>
+                  1997
+                </th>
+                <th style={{ padding: "14px 10px", fontWeight: 800, fontSize: "0.9rem", borderRight: "1px solid #334155" }}>
+                  1998
+                </th>
+                <th style={{ padding: "14px 10px", fontWeight: 800, fontSize: "0.9rem", borderRight: "1px solid #334155" }}>
+                  1999
+                </th>
+                <th style={{ padding: "14px 10px", fontWeight: 800, fontSize: "0.9rem", borderRight: "1px solid #334155" }}>
+                  2000
+                </th>
+                <th
+                  style={{
+                    padding: "14px 14px",
+                    fontWeight: 800,
+                    fontSize: "0.88rem",
+                    background: "#1e293b",
+                    color: "#f8fafc"
+                  }}
+                >
+                  NET CHANGE
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedSchools.map((school, rowIndex) => {
+                const isSelected = selectedCountryId === school.id;
+                const isDimmed = isSchoolDimmed(school.id);
+                const isHighlighted = isSchoolHighlighted(school.id);
+
+                return (
+                  <tr
+                    key={school.id}
+                    onClick={() => onSelectCountry && onSelectCountry(school.id)}
+                    style={{
+                      borderBottom: rowIndex < sortedSchools.length - 1 ? "1.5px solid #e2e8f0" : "none",
+                      background: isSelected
+                        ? "rgba(224, 242, 254, 0.65)"
+                        : isHighlighted
+                        ? "#ffffff"
+                        : "#f8fafc",
+                      cursor: "pointer",
+                      opacity: isDimmed ? 0.22 : 1,
+                      transition: "all 0.15s ease"
+                    }}
+                  >
+                    {/* School Name & Trajectory Tag */}
+                    <td
+                      style={{
+                        padding: "13px 18px",
+                        textAlign: "left",
+                        fontWeight: 800,
+                        borderRight: "1.5px solid #cbd5e1",
+                        background: isSelected ? "rgba(224, 242, 254, 0.85)" : "#f8fafc"
+                      }}
+                    >
+                      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                        <span
+                          style={{
+                            width: "12px",
+                            height: "12px",
+                            borderRadius: "50%",
+                            background: school.color,
+                            flexShrink: 0
+                          }}
+                        />
+                        <div>
+                          <div style={{ fontSize: "0.96rem", color: "var(--slate-900)", fontWeight: 800 }}>
+                            {school.name}
+                          </div>
+                          <div style={{ fontSize: "0.72rem", color: "var(--slate-500)", fontWeight: 650 }}>
+                            {school.badge.split("(")[0].trim()}
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* 1995 */}
+                    <td
+                      style={{
+                        padding: "12px 10px",
+                        borderRight: "1px solid #e2e8f0",
+                        background:
+                          tableDisplayMode === "heatmap" && school.id === "greystone"
+                            ? "rgba(220, 38, 38, 0.08)"
+                            : undefined
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: "1.2rem",
+                          fontWeight: 800,
+                          fontVariantNumeric: "tabular-nums",
+                          color:
+                            tableDisplayMode === "heatmap" && school.id === "greystone"
+                              ? "#dc2626"
+                              : "#0f172a"
+                        }}
+                      >
+                        {school.dataPoints.find((p) => p.year === 1995)?.value}%
+                      </div>
+                      {tableDisplayMode === "heatmap" && school.id === "greystone" && (
+                        <span style={{ fontSize: "0.68rem", color: "#dc2626", fontWeight: 800, display: "block" }}>
+                          Leader (90%)
+                        </span>
+                      )}
+                      {tableDisplayMode === "heatmap" && school.id === "harble" && (
+                        <span style={{ fontSize: "0.68rem", color: "var(--slate-500)", fontWeight: 700, display: "block" }}>
+                          Lowest (30%)
+                        </span>
+                      )}
+                    </td>
+
+                    {/* 1996 */}
+                    <td style={{ padding: "12px 10px", borderRight: "1px solid #e2e8f0" }}>
+                      <div
+                        style={{
+                          fontSize: "1.2rem",
+                          fontWeight: 800,
+                          fontVariantNumeric: "tabular-nums",
+                          color: "#0f172a"
+                        }}
+                      >
+                        {school.dataPoints.find((p) => p.year === 1996)?.value}%
+                      </div>
+                    </td>
+
+                    {/* 1997 */}
+                    <td
+                      style={{
+                        padding: "12px 10px",
+                        borderRight: "1px solid #e2e8f0",
+                        background:
+                          tableDisplayMode === "heatmap" &&
+                          (school.id === "greystone" || school.id === "fairfield")
+                            ? "rgba(245, 158, 11, 0.12)"
+                            : undefined
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: "1.2rem",
+                          fontWeight: 800,
+                          fontVariantNumeric: "tabular-nums",
+                          color:
+                            tableDisplayMode === "heatmap" &&
+                            (school.id === "greystone" || school.id === "fairfield")
+                              ? "#b45309"
+                              : "#0f172a"
+                        }}
+                      >
+                        {school.dataPoints.find((p) => p.year === 1997)?.value}%
+                      </div>
+                      {tableDisplayMode === "heatmap" &&
+                        (school.id === "greystone" || school.id === "fairfield") && (
+                          <span
+                            style={{
+                              fontSize: "0.66rem",
+                              color: "#92400e",
+                              fontWeight: 800,
+                              background: "#fef3c7",
+                              padding: "1px 5px",
+                              borderRadius: "4px",
+                              display: "inline-block"
+                            }}
+                          >
+                            ⚡ 75% Tie
+                          </span>
+                        )}
+                    </td>
+
+                    {/* 1998 */}
+                    <td style={{ padding: "12px 10px", borderRight: "1px solid #e2e8f0" }}>
+                      <div
+                        style={{
+                          fontSize: "1.2rem",
+                          fontWeight: 800,
+                          fontVariantNumeric: "tabular-nums",
+                          color: "#0f172a"
+                        }}
+                      >
+                        {school.dataPoints.find((p) => p.year === 1998)?.value}%
+                      </div>
+                      {tableDisplayMode === "heatmap" && school.id === "fairfield" && (
+                        <span style={{ fontSize: "0.66rem", color: "#4f46e5", fontWeight: 800, display: "block" }}>
+                          Sole Lead (75%)
+                        </span>
+                      )}
+                    </td>
+
+                    {/* 1999 */}
+                    <td
+                      style={{
+                        padding: "12px 10px",
+                        borderRight: "1px solid #e2e8f0",
+                        background:
+                          tableDisplayMode === "heatmap" &&
+                          (school.id === "royston" || school.id === "harble" || school.id === "crackend")
+                            ? "rgba(124, 58, 237, 0.1)"
+                            : undefined
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: "1.2rem",
+                          fontWeight: 800,
+                          fontVariantNumeric: "tabular-nums",
+                          color:
+                            tableDisplayMode === "heatmap" &&
+                            (school.id === "royston" || school.id === "harble" || school.id === "crackend")
+                              ? "#6d28d9"
+                              : "#0f172a"
+                        }}
+                      >
+                        {school.dataPoints.find((p) => p.year === 1999)?.value}%
+                      </div>
+                      {tableDisplayMode === "heatmap" &&
+                        (school.id === "royston" || school.id === "harble" || school.id === "crackend") && (
+                          <span
+                            style={{
+                              fontSize: "0.66rem",
+                              color: "#5b21b6",
+                              fontWeight: 800,
+                              background: "#ede9fe",
+                              padding: "1px 5px",
+                              borderRadius: "4px",
+                              display: "inline-block"
+                            }}
+                          >
+                            ⚡ 60% Convergence
+                          </span>
+                        )}
+                    </td>
+
+                    {/* 2000 */}
+                    <td
+                      style={{
+                        padding: "12px 10px",
+                        borderRight: "1.5px solid #cbd5e1",
+                        background:
+                          tableDisplayMode === "heatmap" && school.id === "harble"
+                            ? "rgba(5, 150, 105, 0.12)"
+                            : undefined
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: "1.25rem",
+                          fontWeight: 850,
+                          fontVariantNumeric: "tabular-nums",
+                          color:
+                            tableDisplayMode === "heatmap" && school.id === "harble"
+                              ? "#047857"
+                              : "#0f172a"
+                        }}
+                      >
+                        {school.dataPoints.find((p) => p.year === 2000)?.value}%
+                      </div>
+                      {tableDisplayMode === "heatmap" && school.id === "harble" && (
+                        <span
+                          style={{
+                            fontSize: "0.66rem",
+                            color: "#047857",
+                            fontWeight: 800,
+                            background: "#d1fae5",
+                            padding: "1px 5px",
+                            borderRadius: "4px",
+                            display: "inline-block"
+                          }}
+                        >
+                          🏆 1st Place (80%)
+                        </span>
+                      )}
+                      {tableDisplayMode === "heatmap" && school.id === "fairfield" && (
+                        <span style={{ fontSize: "0.66rem", color: "#4f46e5", fontWeight: 800, display: "block" }}>
+                          🥈 2nd Place (79%)
+                        </span>
+                      )}
+                      {tableDisplayMode === "heatmap" && school.id === "greystone" && (
+                        <span style={{ fontSize: "0.66rem", color: "#dc2626", fontWeight: 800, display: "block" }}>
+                          🥉 3rd Place (70%)
+                        </span>
+                      )}
+                    </td>
+
+                    {/* Net Change */}
+                    <td
+                      style={{
+                        padding: "12px 14px",
+                        fontWeight: 850,
+                        fontSize: "0.95rem",
+                        background: isSelected ? "rgba(224, 242, 254, 0.85)" : "#f8fafc"
+                      }}
+                    >
+                      <span
+                        style={{
+                          display: "inline-block",
+                          padding: "4px 10px",
+                          borderRadius: "8px",
+                          fontWeight: 800,
+                          fontSize: "0.85rem",
+                          background:
+                            school.group === "net_decrease"
+                              ? "#fee2e2"
+                              : school.group === "steady"
+                              ? "#f1f5f9"
+                              : "#dcfce7",
+                          color:
+                            school.group === "net_decrease"
+                              ? "#b91c1c"
+                              : school.group === "steady"
+                              ? "#475569"
+                              : "#15803d"
+                        }}
+                      >
+                        {school.netChange.split(" ")[0]}
+                      </span>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Selected School Analytical Deep-Dive Card (shown when no inspector is displayed) */}
+        {showDeepDiveCard && activeSchool && (
+          <div
+            style={{
+              background: "#ffffff",
+              border: `2px solid ${activeSchool.color}`,
+              borderRadius: "14px",
+              padding: "16px 20px",
+              boxShadow: "0 3px 12px rgba(0,0,0,0.04)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              flexShrink: 0
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <span
+                  style={{
+                    width: "14px",
+                    height: "14px",
+                    borderRadius: "50%",
+                    background: activeSchool.color
+                  }}
+                />
+                <h4 style={{ fontSize: "1.08rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                  {activeSchool.name}
+                </h4>
+                <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: `${activeSchool.color}15`, color: activeSchool.color }}>
+                  {activeSchool.badge}
+                </span>
               </div>
-            )}
+              <span
+                style={{
+                  fontSize: "0.85rem",
+                  fontWeight: 800,
+                  color: activeSchool.group === "net_decrease" ? "#dc2626" : "#059669"
+                }}
+              >
+                Overall Net Change: {activeSchool.netChange}
+              </span>
+            </div>
+
+            <p style={{ margin: 0, fontSize: "0.9rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
+              {activeSchool.trendSummary}
+            </p>
+
+            <div
+              style={{
+                background: "var(--slate-50)",
+                borderRadius: "10px",
+                padding: "10px 14px",
+                borderLeft: `3.5px solid ${activeSchool.color}`,
+                display: "flex",
+                alignItems: "center",
+                gap: "8px"
+              }}
+            >
+              <Sparkles size={16} color={activeSchool.color} style={{ flexShrink: 0 }} />
+              <span style={{ fontSize: "0.88rem", fontStyle: "italic", color: "var(--slate-800)", lineHeight: 1.45 }}>
+                {activeSchool.band9Phrase}
+              </span>
+            </div>
           </div>
         )}
       </div>
 
-      {/* Description Strip below SVG */}
+      {/* Description Strip below Table */}
       <div
         style={{
           padding: "10px 18px",
           background: "var(--slate-50)",
-          borderTop: "1px solid var(--border-subtle)",
-          fontSize: "0.85rem",
+          borderTop: "1.5px solid var(--border-subtle)",
+          fontSize: "0.84rem",
           color: "var(--slate-700)",
           display: "flex",
           alignItems: "center",
@@ -801,3 +885,6 @@ export const SmartBoardGraphSvg: React.FC<SmartBoardGraphSvgProps> = ({
     </div>
   );
 };
+
+// Backwards-compatible alias
+export const SmartBoardGraphSvg = SmartBoardTableMatrix;
