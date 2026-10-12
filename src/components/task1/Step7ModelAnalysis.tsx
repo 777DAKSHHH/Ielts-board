@@ -12,9 +12,9 @@ export const Step7ModelAnalysis: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 07 / 08 • Analytical Language &amp; Full Model Report
         </span>
-        <h2 className="stage-title">Data Reporting Structures &amp; Complete Band 9 Response</h2>
+        <h2 className="stage-title">Comparative Systems &amp; Complete Band 9 Model Report</h2>
         <p className="stage-subtitle">
-          Master the three essential grammatical and lexical groupings for statistical tables and dynamic trends, alongside the complete 194-word Band 9 model report organized across four balanced paragraphs.
+          Master the three essential analytical frameworks for comparative diagrams, alongside the complete 214-word Band 9 model report organized across four balanced paragraphs.
         </p>
       </div>
 

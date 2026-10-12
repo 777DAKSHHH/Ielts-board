@@ -1,5 +1,7 @@
 import React from "react";
 import { ChevronLeft, ChevronRight, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { tactilePress } from "../../motion";
 
 interface TouchDockProps {
   currentStep: number;
@@ -21,46 +23,67 @@ export const TouchDock: React.FC<TouchDockProps> = ({
   canNext
 }) => {
   return (
-    <footer className="touch-dock glass-panel">
+    <footer className="touch-dock" role="navigation" aria-label="Lesson Stage Navigation Dock">
       {/* Previous Step Button */}
-      <button
+      <motion.button
+        whileTap={canPrev ? tactilePress : undefined}
         onClick={onPrev}
         disabled={!canPrev}
-        className="apple-touch-btn secondary"
+        className="apple-touch-btn"
         style={{
-          minHeight: "36px",
-          padding: "0 16px",
-          gap: "6px",
-          fontSize: "0.85rem",
-          opacity: canPrev ? 1 : 0.45,
-          cursor: canPrev ? "pointer" : "not-allowed"
+          minHeight: "42px",
+          padding: "0 18px",
+          gap: "8px",
+          fontSize: "0.88rem",
+          fontWeight: 700,
+          background: canPrev ? "#ffffff" : "var(--slate-100)",
+          color: canPrev ? "var(--slate-800)" : "var(--slate-400)",
+          border: `1.5px solid ${canPrev ? "var(--border-default)" : "var(--border-subtle)"}`,
+          borderRadius: "10px",
+          cursor: canPrev ? "pointer" : "not-allowed",
+          boxShadow: canPrev ? "var(--shadow-xs)" : "none"
+        }}
+        aria-label="Previous Lesson Step"
+      >
+        <ChevronLeft size={18} />
+        <span>Previous</span>
+      </motion.button>
+
+      {/* Step Indicators: Tactile Interactive Pills */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
+          background: "var(--slate-100)",
+          padding: "5px 12px",
+          borderRadius: "12px",
+          border: "1px solid var(--border-subtle)"
         }}
       >
-        <ChevronLeft size={16} />
-        <span>Previous</span>
-      </button>
-
-      {/* Step Dot Indicators */}
-      <div style={{ display: "flex", alignItems: "center", gap: "7px" }}>
         {Array.from({ length: totalSteps }, (_, i) => i + 1).map((stepNum) => {
           const isActive = stepNum === currentStep;
           const isPassed = stepNum < currentStep;
 
           return (
-            <button
+            <motion.button
               key={stepNum}
+              whileTap={tactilePress}
               onClick={() => onSelectStep(stepNum)}
-              title={`Go to Step ${stepNum}`}
+              title={`Jump to Step ${stepNum}`}
+              aria-label={`Step ${stepNum} of ${totalSteps}${isActive ? " (Current)" : isPassed ? " (Completed)" : ""}`}
               style={{
-                width: isActive ? "22px" : "7px",
-                height: "6px",
-                borderRadius: "999px",
+                width: isActive ? "32px" : "12px",
+                height: "10px",
+                borderRadius: "6px",
+                border: "none",
                 background: isActive
                   ? "var(--slate-900)"
                   : isPassed
                   ? "var(--slate-400)"
-                  : "var(--slate-200)",
-                transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)"
+                  : "var(--slate-300)",
+                cursor: "pointer",
+                transition: "all 0.22s cubic-bezier(0.16, 1, 0.3, 1)"
               }}
             />
           );
@@ -68,22 +91,29 @@ export const TouchDock: React.FC<TouchDockProps> = ({
       </div>
 
       {/* Next Step Button */}
-      <button
+      <motion.button
+        whileTap={canNext ? tactilePress : undefined}
         onClick={onNext}
         disabled={!canNext}
-        className="apple-touch-btn primary"
+        className="apple-touch-btn"
         style={{
-          minHeight: "36px",
-          padding: "0 18px",
-          gap: "6px",
-          fontSize: "0.85rem",
-          opacity: canNext ? 1 : 0.45,
-          cursor: canNext ? "pointer" : "not-allowed"
+          minHeight: "42px",
+          padding: "0 20px",
+          gap: "8px",
+          fontSize: "0.88rem",
+          fontWeight: 750,
+          background: canNext ? "var(--slate-900)" : "var(--slate-100)",
+          color: canNext ? "#ffffff" : "var(--slate-400)",
+          border: `1.5px solid ${canNext ? "var(--slate-950)" : "var(--border-subtle)"}`,
+          borderRadius: "10px",
+          cursor: canNext ? "pointer" : "not-allowed",
+          boxShadow: canNext ? "var(--shadow-sm)" : "none"
         }}
+        aria-label={currentStep === totalSteps ? "Finish Lesson" : "Next Lesson Step"}
       >
         <span>{currentStep === totalSteps ? "Finish Lesson" : "Next Step"}</span>
-        {currentStep === totalSteps ? <CheckCircle2 size={16} /> : <ChevronRight size={16} />}
-      </button>
+        {currentStep === totalSteps ? <CheckCircle2 size={18} /> : <ChevronRight size={18} />}
+      </motion.button>
     </footer>
   );
 };

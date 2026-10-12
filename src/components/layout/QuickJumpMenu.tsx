@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, CheckCircle, ArrowRight, HelpCircle, FileText } from "lucide-react";
+import { modalBackdropVariants, modalDialogVariants, tactilePress } from "../../motion";
 
 interface QuickJumpMenuProps {
   isOpen: boolean;
@@ -21,10 +22,25 @@ export const QuickJumpMenu: React.FC<QuickJumpMenuProps> = ({
   onOpenQuiz,
   onOpenReport
 }) => {
+  // Close on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
   return (
     <AnimatePresence>
       {isOpen && (
-        <div
+        <motion.div
+          variants={modalBackdropVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
           style={{
             position: "fixed",
             inset: 0,
@@ -32,46 +48,59 @@ export const QuickJumpMenu: React.FC<QuickJumpMenuProps> = ({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: "rgba(15, 23, 42, 0.4)",
-            backdropFilter: "blur(14px)",
-            WebkitBackdropFilter: "blur(14px)",
+            background: "rgba(15, 23, 42, 0.72)",
             padding: "24px"
           }}
           onClick={onClose}
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.94, y: 14 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.94, y: 14 }}
-            transition={{ type: "spring", stiffness: 380, damping: 30 }}
-            className="glass-panel"
+            variants={modalDialogVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
             style={{
-              width: "min(94vw, 760px)",
+              width: "min(94vw, 780px)",
               maxHeight: "88vh",
-              padding: "32px",
+              padding: "30px 34px",
               display: "flex",
               flexDirection: "column",
-              boxShadow: "0 25px 60px rgba(0,0,0,0.2)"
+              background: "#ffffff",
+              border: "1.5px solid var(--border-default)",
+              borderRadius: "20px",
+              boxShadow: "var(--shadow-modal)"
             }}
             onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="quick-jump-title"
           >
             {/* Header */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "20px" }}>
               <div>
-                <h3 style={{ fontSize: "1.45rem", fontWeight: 700, letterSpacing: "-0.02em" }}>
+                <h3 id="quick-jump-title" style={{ fontSize: "1.4rem", fontWeight: 800, letterSpacing: "-0.02em", color: "var(--slate-900)" }}>
                   Classroom Stage Navigator
                 </h3>
-                <p style={{ fontSize: "0.92rem", color: "var(--slate-500)", marginTop: "2px" }}>
+                <p style={{ fontSize: "0.9rem", color: "var(--slate-500)", marginTop: "2px" }}>
                   Jump directly to any lesson stage or open auxiliary classroom tools.
                 </p>
               </div>
-              <button
+              <motion.button
+                whileTap={tactilePress}
                 onClick={onClose}
                 className="apple-touch-btn"
-                style={{ width: "42px", height: "42px", padding: 0, borderRadius: "50%", background: "var(--slate-100)" }}
+                style={{
+                  width: "42px",
+                  height: "42px",
+                  padding: 0,
+                  borderRadius: "50%",
+                  background: "var(--slate-100)",
+                  border: "1px solid var(--border-subtle)",
+                  color: "var(--slate-700)"
+                }}
+                aria-label="Close Navigator (Esc)"
               >
                 <X size={20} />
-              </button>
+              </motion.button>
             </div>
 
             {/* Stage Grid */}
@@ -79,9 +108,9 @@ export const QuickJumpMenu: React.FC<QuickJumpMenuProps> = ({
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(2, 1fr)",
-                gap: "12px",
+                gap: "10px",
                 overflowY: "auto",
-                marginBottom: "24px",
+                marginBottom: "20px",
                 paddingRight: "6px"
               }}
             >
@@ -91,8 +120,9 @@ export const QuickJumpMenu: React.FC<QuickJumpMenuProps> = ({
                 const isPassed = stepNum < currentStep;
 
                 return (
-                  <button
+                  <motion.button
                     key={stepNum}
+                    whileTap={tactilePress}
                     onClick={() => {
                       onSelectStep(stepNum);
                       onClose();
@@ -101,40 +131,41 @@ export const QuickJumpMenu: React.FC<QuickJumpMenuProps> = ({
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      padding: "16px 20px",
-                      borderRadius: "16px",
-                      border: isCurrent ? "2px solid var(--slate-900)" : "1px solid var(--border-subtle)",
+                      padding: "14px 18px",
+                      borderRadius: "14px",
+                      border: isCurrent
+                        ? "2px solid var(--slate-900)"
+                        : "1.5px solid var(--border-subtle)",
                       background: isCurrent ? "#ffffff" : "var(--slate-50)",
-                      boxShadow: isCurrent ? "var(--shadow-md)" : "none",
+                      boxShadow: isCurrent ? "var(--shadow-sm)" : "none",
                       textAlign: "left",
-                      transition: "transform 0.1s ease, border-color 0.15s ease"
+                      cursor: "pointer",
+                      transition: "background 0.15s ease, border-color 0.15s ease"
                     }}
-                    onMouseDown={(e) => (e.currentTarget.style.transform = "scale(0.98)")}
-                    onMouseUp={(e) => (e.currentTarget.style.transform = "scale(1)")}
                   >
-                    <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                       <div
                         style={{
-                          width: "32px",
-                          height: "32px",
-                          borderRadius: "10px",
+                          width: "30px",
+                          height: "30px",
+                          borderRadius: "8px",
                           background: isCurrent ? "var(--slate-900)" : isPassed ? "#dcfce7" : "var(--slate-200)",
                           color: isCurrent ? "#ffffff" : isPassed ? "#15803d" : "var(--slate-700)",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          fontSize: "0.9rem",
-                          fontWeight: 700
+                          fontSize: "0.86rem",
+                          fontWeight: 800
                         }}
                       >
-                        {isPassed ? <CheckCircle size={18} /> : stepNum}
+                        {isPassed ? <CheckCircle size={16} /> : stepNum}
                       </div>
-                      <span style={{ fontSize: "1rem", fontWeight: isCurrent ? 700 : 600, color: "var(--slate-800)" }}>
+                      <span style={{ fontSize: "0.95rem", fontWeight: isCurrent ? 750 : 600, color: "var(--slate-800)" }}>
                         {title}
                       </span>
                     </div>
                     <ArrowRight size={16} color={isCurrent ? "var(--slate-900)" : "var(--slate-400)"} />
-                  </button>
+                  </motion.button>
                 );
               })}
             </div>
@@ -142,37 +173,53 @@ export const QuickJumpMenu: React.FC<QuickJumpMenuProps> = ({
             {/* Quick Auxiliary Modules */}
             <div
               style={{
-                borderTop: "1px solid var(--border-subtle)",
-                paddingTop: "20px",
+                borderTop: "1.5px solid var(--border-subtle)",
+                paddingTop: "18px",
                 display: "flex",
-                gap: "14px"
+                gap: "12px"
               }}
             >
-              <button
+              <motion.button
+                whileTap={tactilePress}
                 onClick={() => {
                   onClose();
                   onOpenQuiz();
                 }}
                 className="apple-touch-btn secondary"
-                style={{ flex: 1, minHeight: "50px", gap: "8px", fontSize: "0.95rem" }}
+                style={{
+                  flex: 1,
+                  minHeight: "48px",
+                  gap: "8px",
+                  fontSize: "0.92rem",
+                  fontWeight: 700,
+                  borderRadius: "12px"
+                }}
               >
-                <HelpCircle size={18} />
+                <HelpCircle size={18} color="var(--apple-blue)" />
                 <span>Vocabulary Quiz</span>
-              </button>
-              <button
+              </motion.button>
+              <motion.button
+                whileTap={tactilePress}
                 onClick={() => {
                   onClose();
                   onOpenReport();
                 }}
                 className="apple-touch-btn secondary"
-                style={{ flex: 1, minHeight: "50px", gap: "8px", fontSize: "0.95rem" }}
+                style={{
+                  flex: 1,
+                  minHeight: "48px",
+                  gap: "8px",
+                  fontSize: "0.92rem",
+                  fontWeight: 700,
+                  borderRadius: "12px"
+                }}
               >
-                <FileText size={18} />
+                <FileText size={18} color="#059669" />
                 <span>Tutor Live Report</span>
-              </button>
+              </motion.button>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       )}
     </AnimatePresence>
   );

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { X, FileText, Search } from "lucide-react";
+import { modalBackdropVariants, modalDialogVariants, tactilePress } from "../../motion";
 
 interface TutorReportModalProps {
   isOpen: boolean;
@@ -9,17 +10,17 @@ interface TutorReportModalProps {
 }
 
 const TASK1_SUBMISSIONS = [
-  { student: "Aarav Sharma", type: "Statistical Table", topic: "Macro 4-to-1 split & Harble Secondary's meteoric leap from 30% to 80%", accuracy: "High" },
-  { student: "Pooja Patel", type: "Statistical Table", topic: "Fairfield Girls & Greystone High equalising at 75% in 1997", accuracy: "High" },
-  { student: "Rohan Verma", type: "Statistical Table", topic: "1999 triple convergence at exactly 60% (Royston, Harble, Crackend)", accuracy: "High" },
-  { student: "Ananya Iyer", type: "Statistical Table", topic: "Greystone High as the sole uninterrupted decliner (90% down to 70%)", accuracy: "High" }
+  { student: "Aarav Sharma", type: "Comparative Diagram", topic: "Trade wind faltering & eastward warm water surge capping the Peruvian thermocline", accuracy: "High" },
+  { student: "Pooja Patel", type: "Comparative Diagram", topic: "Precipitation inversion: Australian convective rain shifting to Peruvian coastal storms", accuracy: "High" },
+  { student: "Rohan Verma", type: "Comparative Diagram", topic: "Nutrient upwelling cessation and catastrophic collapse of Peruvian commercial fish stocks", accuracy: "High" },
+  { student: "Ananya Iyer", type: "Comparative Diagram", topic: "Contrasting baseline Pacific equilibrium with El Niño atmospheric-oceanic disruption", accuracy: "High" }
 ];
 
 const TASK2_SUBMISSIONS = [
-  { student: "Aarav Sharma", type: "Two-Part Essay", topic: "Healthcare fiscal expenditure strain caused by chronic non-communicable diseases", accuracy: "High" },
-  { student: "Pooja Patel", type: "Two-Part Essay", topic: "Targeted fiscal sugar levies and statutory marketing curbs on processed foods", accuracy: "High" },
-  { student: "Rohan Verma", type: "Two-Part Essay", topic: "Sedentary automation reducing physical fitness & municipal cycleway expansion", accuracy: "Moderate" },
-  { student: "Ananya Iyer", type: "Two-Part Essay", topic: "Nordic civic physical activity initiatives & workplace ergonomic health mandates", accuracy: "High" }
+  { student: "Aarav Sharma", type: "Advantages Outweigh", topic: "Body 1: Year-round nutritional resilience & counter-seasonal produce buffering seasonal shortages", accuracy: "High" },
+  { student: "Pooja Patel", type: "Advantages Outweigh", topic: "Body 2: Competitive economic pressure spurring domestic farming innovation and precision agri-tech", accuracy: "High" },
+  { student: "Rohan Verma", type: "Advantages Outweigh", topic: "Body 3: Food miles emissions & smallholder vulnerability counteracted by eco-labeling and carbon tariffs", accuracy: "Moderate" },
+  { student: "Ananya Iyer", type: "Advantages Outweigh", topic: "Introduction & 3-Body Paragraph Architecture: Decisive thesis with outweighed counter-argument", accuracy: "High" }
 ];
 
 export const TutorReportModal: React.FC<TutorReportModalProps> = ({
@@ -28,6 +29,16 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
   currentModule
 }) => {
   const [filterTerm, setFilterTerm] = useState("");
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -40,7 +51,11 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
   );
 
   return (
-    <div
+    <motion.div
+      variants={modalBackdropVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
       style={{
         position: "fixed",
         inset: 0,
@@ -48,25 +63,27 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "rgba(15, 23, 42, 0.45)",
-        backdropFilter: "blur(18px)",
+        background: "rgba(15, 23, 42, 0.72)",
         padding: "24px"
       }}
       onClick={onClose}
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.93, y: 16 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.93, y: 16 }}
-        className="glass-panel"
+        variants={modalDialogVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
         style={{
-          width: "min(94vw, 780px)",
+          width: "min(94vw, 800px)",
           maxHeight: "86vh",
+          background: "#ffffff",
+          borderRadius: "24px",
+          border: "1px solid var(--border-default)",
           padding: "36px",
           display: "flex",
           flexDirection: "column",
           gap: "20px",
-          boxShadow: "0 25px 60px rgba(0,0,0,0.22)"
+          boxShadow: "var(--shadow-modal)"
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -75,8 +92,8 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
             <div
               style={{
-                width: "42px",
-                height: "42px",
+                width: "44px",
+                height: "44px",
                 borderRadius: "12px",
                 background: "var(--slate-900)",
                 color: "#ffffff",
@@ -88,20 +105,24 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
               <FileText size={22} />
             </div>
             <div>
-              <h3 style={{ fontSize: "1.35rem", fontWeight: 700 }}>Tutor Live Participation Report</h3>
-              <p style={{ fontSize: "0.85rem", color: "var(--slate-500)" }}>
+              <h3 style={{ fontSize: "1.35rem", fontWeight: 700, color: "var(--slate-900)" }}>
+                Tutor Live Participation Report
+              </h3>
+              <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", marginTop: "2px" }}>
                 Incoming student predictions from Step 1 active listening QR check
               </p>
             </div>
           </div>
 
-          <button
+          <motion.button
+            whileTap={tactilePress}
             onClick={onClose}
             className="apple-touch-btn"
-            style={{ width: "40px", height: "40px", padding: 0, borderRadius: "50%", background: "var(--slate-100)" }}
+            style={{ width: "44px", height: "44px", padding: 0, borderRadius: "50%", background: "var(--slate-100)" }}
+            aria-label="Close Report"
           >
             <X size={20} />
-          </button>
+          </motion.button>
         </div>
 
         {/* Search / Filter bar */}
@@ -140,7 +161,7 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
               {submissions.map((sub, idx) => (
                 <tr key={idx} style={{ borderBottom: "1px solid var(--border-subtle)", background: idx % 2 === 0 ? "#ffffff" : "var(--slate-50)" }}>
                   <td style={{ padding: "12px 16px", fontWeight: 600, color: "var(--slate-900)" }}>{sub.student}</td>
-                  <td style={{ padding: "12px 16px" }}>{sub.type}</td>
+                  <td style={{ padding: "12px 16px", color: "var(--slate-700)" }}>{sub.type}</td>
                   <td style={{ padding: "12px 16px", color: "var(--slate-700)" }}>{sub.topic}</td>
                   <td style={{ padding: "12px 16px" }}>
                     <span className="apple-badge success">{sub.accuracy}</span>
@@ -152,10 +173,10 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.85rem", color: "var(--slate-500)" }}>
-          <span>Total connected students: 4</span>
+          <span>Total connected students: {submissions.length}</span>
           <span>Refreshes automatically via live channel</span>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };

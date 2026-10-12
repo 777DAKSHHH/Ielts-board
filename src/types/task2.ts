@@ -66,6 +66,30 @@ export interface FluidVocabItem {
   examinerInsight?: string;
 }
 
+export interface MainReasonOption {
+  id: string;
+  badge: string;
+  title: string;
+  mainReason: string;
+  supportingReasons: string;
+  example: string;
+  band9Snippet?: string;
+  modelParagraph?: string;
+  examinerNotes?: string;
+}
+
+export interface BodyParaStructure {
+  paraNumber: 1 | 2 | 3;
+  side: "strong_opinion" | "non_opinion";
+  title: string;
+  theme: string;
+  mainReason: string;
+  supportingReasons: string;
+  example: string;
+  band9Snippet: string;
+  alternativeReasons?: MainReasonOption[];
+}
+
 export interface Task2Data {
   id: string;
   taskType: string;
@@ -75,6 +99,7 @@ export interface Task2Data {
   timingSeconds: number;
   sampleIntro: string;
   sampleConclusion: string;
+  bodyParagraphs?: BodyParaStructure[];
   vocabList: VocabItem[];
   vocabHunt: string[];
   consequences: ConsequenceItem[];

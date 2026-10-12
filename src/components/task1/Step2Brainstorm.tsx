@@ -10,19 +10,16 @@ import {
   Map,
   HelpCircle,
   ImageIcon,
-  GitCommit,
   Columns,
   Maximize,
-  Compass,
-  CheckCircle2,
-  School
+  Compass
 } from "lucide-react";
-import { TASK1_DATA, SCHOOLS_DATA } from "../../data/task1Data";
+import { TASK1_DATA, PACIFIC_CONDITIONS, COMPARISON_HOTSPOTS } from "../../data/task1Data";
 import { TouchTimer } from "../common/TouchTimer";
-import { SmartBoardTableMatrix, TableHighlightMode } from "./SmartBoardGraphSvg";
+import { SmartBoardTableMatrix, DiagramViewMode } from "./SmartBoardGraphSvg";
 import { BitsAndPiecesMindmap } from "./BitsAndPiecesMindmap";
 import { BitsAndPiecesFlashcards } from "./BitsAndPiecesFlashcards";
-import { SchoolData } from "../../types/task1";
+import { PacificConditionFeature } from "../../types/task1";
 
 interface Step2BrainstormProps {
   formattedTime: string;
@@ -42,14 +39,12 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   const [viewMode, setViewMode] = useState<
     "smartboard_table" | "mindmap" | "flashcards" | "original_image"
   >("smartboard_table");
-  // Default to full_width so the table matrix has generous 8-column space with large clear numbers
   const [stageLayout, setStageLayout] = useState<"split" | "full_width">("full_width");
   const [isEnlarged, setIsEnlarged] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
 
-  const schoolsList = SCHOOLS_DATA;
-  const [selectedSchool, setSelectedSchool] = useState<SchoolData>(schoolsList[0]);
-  const [highlightMode, setHighlightMode] = useState<TableHighlightMode>("all");
+  const [selectedCondition, setSelectedCondition] = useState<PacificConditionFeature>(PACIFIC_CONDITIONS[0]);
+  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("all");
 
   // Fullscreen specific toggles
   const [fullscreenShowInspector, setFullscreenShowInspector] = useState(true);
@@ -72,13 +67,6 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
     setViewMode(mode);
   };
 
-  const handleTableSelectSchool = (schoolId: string) => {
-    const found = schoolsList.find((c) => c.id === schoolId);
-    if (found) {
-      setSelectedSchool(found);
-    }
-  };
-
   const openFullscreen = () => {
     setZoomLevel(1);
     setIsEnlarged(true);
@@ -89,11 +77,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; Table Analysis
+          Step 02 / 08 • Task Prompt &amp; Diagram Analysis
         </span>
-        <h2 className="stage-title">Deconstruct the Higher Education Progression Table (1995–2000)</h2>
+        <h2 className="stage-title">Deconstruct the Normal vs. El Niño Pacific Comparative Diagrams</h2>
         <p className="stage-subtitle">
-          Examine the prompt, identify the contrasting trajectories (Harble &amp; Fairfield rising vs. Greystone falling), and note the 1997 equalisation &amp; 1999 triple convergence milestones.
+          Examine the prompt, deconstruct the dual ocean cross-sections (trade winds, warm pool displacement, and cold upwelling), and contrast the regional climatic impacts on Australia and Peru.
         </p>
       </div>
 
@@ -105,7 +93,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the five secondary schools, group the risers vs. decliner, and pinpoint the 1997 (75%) equalisation and 1999 (60%) triple convergence points."
+          instruction="Focus Timer: 3 minutes to analyze the two Pacific diagrams, compare the atmospheric trade winds and water layers, and note the rainfall vs. drought and fishery shifts."
         />
       </div>
 
@@ -148,7 +136,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <Tv size={14} /> 4K Table Matrix
+            <Tv size={14} /> 4K Diagram Engine
           </button>
 
           <button
@@ -208,7 +196,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <ImageIcon size={14} /> Original Task Table
+            <ImageIcon size={14} /> Original Exam Diagram
           </button>
         </div>
 
@@ -227,15 +215,15 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               display: "flex",
               alignItems: "center"
             }}
-            title={stageLayout === "split" ? "Expand Visual to Full Stage Width (Recommended for Table)" : "Switch to 2-Column Split View"}
+            title={stageLayout === "split" ? "Expand Visual to Full Stage Width" : "Switch to 2-Column Split View"}
           >
             {stageLayout === "split" ? (
               <>
-                <Maximize size={13} /> Full Width Table View
+                <Maximize size={13} /> Full Width Diagram View
               </>
             ) : (
               <>
-                <Columns size={13} /> Split View (Prompt + Table)
+                <Columns size={13} /> Split View (Prompt + Diagram)
               </>
             )}
           </button>
@@ -250,452 +238,310 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               fontSize: "0.78rem",
               fontWeight: 750,
               gap: "6px",
-              boxShadow: "0 2px 8px rgba(0, 113, 227, 0.25)"
+              display: "flex",
+              alignItems: "center",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
             }}
-            title="Open Current Sub-Topic Across Entire Screen"
           >
             <Maximize2 size={14} /> Entire Screen Mode
           </button>
         </div>
       </div>
 
-      {/* STAGE VIEWPORT (Full Width Recommended vs Split Mode) */}
+      {/* STAGE MAIN CONTENT AREA */}
       {stageLayout === "full_width" ? (
-        /* Full Width Stage Layout: Generous Horizontal Space For Perfect Table Readability */
+        /* FULL WIDTH VISUAL VIEW */
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          {/* Main Visual Display Full Width */}
+          {/* Main Visual Display */}
           <div
             style={{
               background: "#ffffff",
               border: "1.5px solid var(--border-subtle)",
               borderRadius: "20px",
-              padding: viewMode === "smartboard_table" ? "0" : "20px",
-              boxShadow: "var(--shadow-sm)",
-              minHeight: "560px",
-              display: "flex",
-              flexDirection: "column",
-              overflow: "hidden"
+              padding: "16px",
+              boxShadow: "var(--shadow-sm)"
             }}
           >
             {viewMode === "smartboard_table" && (
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%", minHeight: "560px" }}>
-                <SmartBoardTableMatrix
-                  selectedCountryId={selectedSchool.id}
-                  onSelectCountry={handleTableSelectSchool}
-                  highlightMode={highlightMode}
-                  onHighlightModeChange={setHighlightMode}
-                  showInternalToolbar={true}
-                  showDeepDiveCard={false}
-                />
-              </div>
+              <SmartBoardTableMatrix
+                highlightMode={highlightMode}
+                onHighlightModeChange={(mode) => setHighlightMode(mode)}
+                showInternalToolbar={true}
+                showDeepDiveCard={true}
+              />
             )}
 
-            {viewMode === "mindmap" && (
-              <div style={{ flex: 1, minHeight: "540px" }}>
-                <BitsAndPiecesMindmap isEntireScreen={false} onToggleFullscreen={openFullscreen} />
-              </div>
-            )}
+            {viewMode === "mindmap" && <BitsAndPiecesMindmap />}
 
-            {viewMode === "flashcards" && (
-              <div style={{ flex: 1, minHeight: "500px" }}>
-                <BitsAndPiecesFlashcards isEntireScreen={false} onToggleFullscreen={openFullscreen} />
-              </div>
-            )}
+            {viewMode === "flashcards" && <BitsAndPiecesFlashcards />}
 
             {viewMode === "original_image" && (
               <div
                 style={{
-                  flex: 1,
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
                   padding: "20px",
                   background: "#f8fafc",
-                  borderRadius: "16px"
+                  borderRadius: "14px",
+                  minHeight: "440px"
                 }}
               >
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="Original IELTS Task 1 Test Paper Table"
+                  alt="IELTS Academic Task 1 Pacific Ocean Diagram"
                   style={{
-                    maxWidth: "100%",
                     maxHeight: "520px",
+                    maxWidth: "100%",
                     objectFit: "contain",
-                    borderRadius: "8px",
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.08)"
+                    borderRadius: "10px",
+                    boxShadow: "0 6px 20px rgba(0,0,0,0.12)",
+                    border: "1px solid var(--border-subtle)"
                   }}
                 />
+                <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
+                  Official Cambridge IELTS Academic Question Diagram • Pacific Ocean Normal vs. El Niño
+                </div>
               </div>
             )}
           </div>
 
-          {/* Lower Pedagogical Deconstruction Section: Task Prompt & Analysis Side-by-Side */}
-          <div className="stage-grid-2col" style={{ alignItems: "stretch", gap: "16px" }}>
-            {/* 1. Official Task 1 Question Prompt */}
+          {/* Under-Diagram 2-Col Strip: Prompt Card + System Inspector */}
+          <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "14px" }}>
+            {/* Task Prompt Card */}
             <div
               style={{
                 background: "var(--slate-50)",
                 border: "1.5px solid var(--border-subtle)",
-                borderRadius: "20px",
-                padding: "20px 22px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "12px"
+                borderRadius: "18px",
+                padding: "18px 20px"
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <FileText size={18} color="var(--slate-800)" />
-                  <h4 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>
-                    Official IELTS Task 1 Prompt
+                  <FileText size={17} color="var(--slate-800)" />
+                  <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                    IELTS Academic Writing Task 1
                   </h4>
                 </div>
                 <span className="apple-badge accent">{TASK1_DATA.taskType}</span>
               </div>
-
               <div
                 style={{
                   background: "#ffffff",
                   border: "1px solid var(--border-subtle)",
-                  borderRadius: "14px",
-                  padding: "16px 18px",
-                  fontSize: "1.02rem",
+                  borderRadius: "12px",
+                  padding: "14px 16px",
+                  fontSize: "0.95rem",
                   fontWeight: 650,
-                  lineHeight: 1.6,
-                  color: "var(--slate-900)",
-                  boxShadow: "var(--shadow-sm)"
+                  lineHeight: 1.5,
+                  boxShadow: "var(--shadow-sm)",
+                  color: "var(--slate-900)"
                 }}
               >
                 {TASK1_DATA.questionText.split("\n\n").map((chunk, i) => (
-                  <p key={i} style={{ margin: i === 0 ? "0 0 8px 0" : "0" }}>
+                  <p key={i} style={{ marginBottom: i < 2 ? "6px" : 0 }}>
                     {chunk}
                   </p>
                 ))}
               </div>
-
-              <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", fontSize: "0.76rem" }}>
-                <span className="apple-badge neutral">150+ Words Minimum</span>
-                <span className="apple-badge neutral">~20 Minutes Recommended</span>
-                <span className="apple-badge neutral">Unit: Percentage of leavers (%)</span>
-              </div>
             </div>
 
-            {/* 2. Interactive Table Deconstruction Pillars */}
+            {/* Pacific System Quick Inspector */}
             <div
               style={{
                 background: "#ffffff",
                 border: "1.5px solid var(--border-subtle)",
-                borderRadius: "20px",
-                padding: "20px 22px",
+                borderRadius: "18px",
+                padding: "18px 20px",
+                boxShadow: "var(--shadow-sm)",
                 display: "flex",
                 flexDirection: "column",
-                gap: "12px",
-                boxShadow: "var(--shadow-sm)"
+                gap: "10px"
               }}
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <Compass size={18} color="var(--apple-blue)" />
-                  <h4 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>
-                    Table Analysis &amp; Core Pillars
+                  <Compass size={17} color="var(--apple-blue)" />
+                  <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                    Climatic System Inspector
                   </h4>
                 </div>
-                <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
-                  4 Essential Anchors
+                <span className="apple-badge neutral" style={{ fontSize: "0.7rem" }}>
+                  Tap condition to inspect
                 </span>
               </div>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.86rem" }}>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
-                  <CheckCircle2 size={16} color="var(--apple-blue)" style={{ flexShrink: 0, marginTop: "2px" }} />
-                  <span><strong>Metric &amp; Scope:</strong> Tracks the percentage of secondary school leavers entering higher/tertiary education across 5 institutions from 1995 to 2000.</span>
+              {/* Condition Selector Pills */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+                {PACIFIC_CONDITIONS.map((cond) => {
+                  const isSelected = selectedCondition.id === cond.id;
+                  const isNormal = cond.id === "normal";
+                  return (
+                    <button
+                      key={cond.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedCondition(cond);
+                        setHighlightMode(cond.id as DiagramViewMode);
+                      }}
+                      style={{
+                        padding: "8px 12px",
+                        borderRadius: "10px",
+                        fontSize: "0.8rem",
+                        fontWeight: 750,
+                        border: isSelected
+                          ? `2px solid ${isNormal ? "#0284c7" : "#dc2626"}`
+                          : "1.5px solid var(--border-subtle)",
+                        background: isSelected
+                          ? isNormal ? "#0284c7" : "#dc2626"
+                          : "var(--slate-50)",
+                        color: isSelected ? "#ffffff" : "var(--slate-800)",
+                        cursor: "pointer",
+                        textAlign: "center",
+                        transition: "all 0.15s ease"
+                      }}
+                    >
+                      {cond.title}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Active Condition Details */}
+              <div
+                style={{
+                  background: selectedCondition.id === "normal" ? "#f0f9ff" : "#fff1f2",
+                  border: `1.5px solid ${selectedCondition.id === "normal" ? "#bae6fd" : "#fecaca"}`,
+                  borderRadius: "12px",
+                  padding: "12px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "6px",
+                  fontSize: "0.82rem"
+                }}
+              >
+                <div>
+                  <strong style={{ color: "var(--slate-900)" }}>💨 Atmospheric Winds:</strong>{" "}
+                  {selectedCondition.tradeWinds}
                 </div>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
-                  <CheckCircle2 size={16} color="#059669" style={{ flexShrink: 0, marginTop: "2px" }} />
-                  <span><strong>Macro 4-to-1 Dichotomy:</strong> 4 institutions expanded (Harble, Fairfield, Royston, Crackend), while Greystone High was the sole continuous decliner (90% down to 70%).</span>
+                <div>
+                  <strong style={{ color: "var(--slate-900)" }}>🌊 Ocean Currents:</strong>{" "}
+                  {selectedCondition.waterThermocline}
                 </div>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
-                  <CheckCircle2 size={16} color="#7c3aed" style={{ flexShrink: 0, marginTop: "2px" }} />
-                  <span><strong>1997 &amp; 1999 Milestones:</strong> 1997 equalisation between Fairfield &amp; Greystone at 75%; 1999 triple convergence among Royston, Harble &amp; Crackend at 60%.</span>
+                <div>
+                  <strong style={{ color: "var(--slate-900)" }}>🇦🇺 Australia:</strong>{" "}
+                  {selectedCondition.australiaCondition.climate}
                 </div>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
-                  <CheckCircle2 size={16} color="#d97706" style={{ flexShrink: 0, marginTop: "2px" }} />
-                  <span><strong>Hierarchy Inversion:</strong> Harble surged from last place (30%) to finish 1st (80%), nearly tripling its baseline.</span>
+                <div>
+                  <strong style={{ color: "var(--slate-900)" }}>🇵🇪 Peru:</strong>{" "}
+                  {selectedCondition.peruCondition.fisheryStatus}
+                </div>
+                <div style={{ marginTop: "4px", fontStyle: "italic", color: "var(--slate-800)", borderTop: "1px dashed var(--border-subtle)", paddingTop: "6px" }}>
+                  {selectedCondition.band9Phrase}
                 </div>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        /* Split 2-Column Mode */
-        <div className="stage-grid-2col" style={{ alignItems: "stretch", minHeight: "540px" }}>
-          {/* Left Column: Visual Display Container */}
+        /* SPLIT 2-COLUMN VIEW */
+        <div className="stage-grid-2col">
+          {/* Left Column: Visual Container */}
           <div
             style={{
               background: "#ffffff",
               border: "1.5px solid var(--border-subtle)",
               borderRadius: "20px",
-              padding: viewMode === "smartboard_table" ? "0" : "18px",
-              display: "flex",
-              flexDirection: "column",
-              overflow: "hidden",
-              boxShadow: "var(--shadow-sm)",
-              minHeight: "530px"
+              padding: "14px",
+              boxShadow: "var(--shadow-sm)"
             }}
           >
             {viewMode === "smartboard_table" && (
-              <div style={{ flex: 1, display: "flex", flexDirection: "column", height: "100%" }}>
-                <SmartBoardTableMatrix
-                  selectedCountryId={selectedSchool.id}
-                  onSelectCountry={handleTableSelectSchool}
-                  highlightMode={highlightMode}
-                  onHighlightModeChange={setHighlightMode}
-                  showInternalToolbar={true}
-                />
-              </div>
+              <SmartBoardTableMatrix
+                highlightMode={highlightMode}
+                onHighlightModeChange={(mode) => setHighlightMode(mode)}
+                showInternalToolbar={true}
+                showDeepDiveCard={false}
+              />
             )}
 
-            {viewMode === "mindmap" && (
-              <div style={{ flex: 1, minHeight: "480px" }}>
-                <BitsAndPiecesMindmap onToggleFullscreen={openFullscreen} />
-              </div>
-            )}
+            {viewMode === "mindmap" && <BitsAndPiecesMindmap />}
 
-            {viewMode === "flashcards" && (
-              <div style={{ flex: 1, minHeight: "480px" }}>
-                <BitsAndPiecesFlashcards onToggleFullscreen={openFullscreen} />
-              </div>
-            )}
+            {viewMode === "flashcards" && <BitsAndPiecesFlashcards />}
 
             {viewMode === "original_image" && (
-              <div
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "16px",
-                  background: "#f8fafc",
-                  borderRadius: "14px",
-                  position: "relative"
-                }}
-              >
+              <div style={{ textAlign: "center", padding: "10px" }}>
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="Original IELTS Task 1 Test Paper Table"
-                  style={{
-                    maxWidth: "100%",
-                    maxHeight: "460px",
-                    objectFit: "contain",
-                    borderRadius: "8px",
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.08)"
-                  }}
+                  alt="Pacific Ocean El Nino Diagram"
+                  style={{ maxWidth: "100%", maxHeight: "400px", borderRadius: "10px", objectFit: "contain" }}
                 />
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "12px",
-                    background: "rgba(15, 23, 42, 0.8)",
-                    color: "#ffffff",
-                    padding: "4px 12px",
-                    borderRadius: "20px",
-                    fontSize: "0.76rem",
-                    fontWeight: 600,
-                    backdropFilter: "blur(4px)"
-                  }}
-                >
-                  Original Exam Paper Reproduction
-                </div>
               </div>
             )}
           </div>
 
-          {/* Right Column: Prompt Card + School Analysis */}
+          {/* Right Column: Prompt & Inspector */}
           <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-            {/* Main Task Prompt */}
+            {/* Prompt */}
             <div
               style={{
                 background: "var(--slate-50)",
                 border: "1.5px solid var(--border-subtle)",
-                borderRadius: "20px",
-                padding: "20px 22px"
+                borderRadius: "18px",
+                padding: "18px"
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  marginBottom: "12px"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "9px" }}>
-                  <FileText size={18} color="var(--slate-800)" />
-                  <h4 style={{ fontSize: "1.05rem", fontWeight: 700 }}>IELTS Academic Writing Task 1</h4>
-                </div>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
                 <span className="apple-badge accent">{TASK1_DATA.taskType}</span>
+                <span style={{ fontSize: "0.74rem", color: "var(--slate-500)" }}>150+ Words Required</span>
               </div>
-              <div
-                style={{
-                  background: "#ffffff",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "14px",
-                  padding: "16px 18px",
-                  fontSize: "1.02rem",
-                  fontWeight: 650,
-                  lineHeight: 1.55,
-                  boxShadow: "var(--shadow-sm)",
-                  color: "var(--slate-900)"
-                }}
-              >
+              <div style={{ fontSize: "0.95rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.5 }}>
                 {TASK1_DATA.questionText.split("\n\n").map((chunk, i) => (
-                  <p key={i} style={{ marginBottom: i < 2 ? "8px" : 0 }}>
+                  <p key={i} style={{ marginBottom: i < 2 ? "6px" : 0 }}>
                     {chunk}
                   </p>
                 ))}
               </div>
             </div>
 
-            {/* School Quick Inspector */}
+            {/* Quick Summary Highlights */}
             <div
               style={{
                 background: "#ffffff",
                 border: "1.5px solid var(--border-subtle)",
-                borderRadius: "20px",
-                padding: "18px 20px",
-                boxShadow: "var(--shadow-sm)",
+                borderRadius: "18px",
+                padding: "18px",
                 display: "flex",
                 flexDirection: "column",
-                gap: "12px"
+                gap: "10px"
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <School size={18} color="var(--apple-blue)" />
-                  <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--slate-900)" }}>
-                    Secondary School Inspector
-                  </h4>
-                </div>
-                <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
-                  Tap school to inspect
-                </span>
-              </div>
-
-              {/* School Selector Pills in Exam Order */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "6px" }}>
-                {schoolsList.map((c) => {
-                  const isSelected = selectedSchool.id === c.id;
-                  return (
-                    <button
-                      key={c.id}
-                      type="button"
-                      onClick={() => {
-                        setSelectedSchool(c);
-                        setHighlightMode(c.id as TableHighlightMode);
-                      }}
-                      style={{
-                        padding: "8px 2px",
-                        borderRadius: "10px",
-                        fontSize: "0.76rem",
-                        fontWeight: 750,
-                        border: isSelected ? `2px solid ${c.color}` : "1.5px solid var(--border-subtle)",
-                        background: isSelected ? c.color : "var(--slate-50)",
-                        color: isSelected ? "#ffffff" : "var(--slate-800)",
-                        cursor: "pointer",
-                        textAlign: "center",
-                        transition: "all 0.15s ease",
-                        boxShadow: isSelected ? "0 2px 6px rgba(0,0,0,0.12)" : "none"
-                      }}
-                    >
-                      {c.name.split(" ")[0]}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Active School Detail Box */}
-              <div
-                style={{
-                  background: "var(--slate-50)",
-                  border: `1.5px solid ${selectedSchool.color}`,
-                  borderRadius: "14px",
-                  padding: "14px 16px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
-                  <strong style={{ fontSize: "1.02rem", color: selectedSchool.color }}>
-                    {selectedSchool.name}
-                  </strong>
-                  <span
-                    style={{
-                      fontSize: "0.74rem",
-                      fontWeight: 755,
-                      background: "#ffffff",
-                      padding: "2px 8px",
-                      borderRadius: "6px",
-                      border: "1px solid var(--border-subtle)",
-                      color: "var(--slate-700)"
-                    }}
-                  >
-                    {selectedSchool.netChange}
-                  </span>
-                </div>
-
-                {/* Data points summary row (6 years) */}
+              <strong style={{ fontSize: "0.92rem", color: "var(--slate-900)" }}>
+                Key Comparison Highlights:
+              </strong>
+              {COMPARISON_HOTSPOTS.slice(0, 3).map((h) => (
                 <div
+                  key={h.id}
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(6, 1fr)",
-                    gap: "4px",
-                    background: "#ffffff",
-                    padding: "8px",
+                    background: "var(--slate-50)",
+                    padding: "10px 12px",
                     borderRadius: "10px",
                     border: "1px solid var(--border-subtle)",
-                    textAlign: "center"
+                    fontSize: "0.82rem"
                   }}
                 >
-                  {selectedSchool.dataPoints.map((pt) => (
-                    <div key={pt.year}>
-                      <div style={{ fontSize: "0.68rem", fontWeight: 700, color: "var(--slate-500)" }}>
-                        {pt.year}
-                      </div>
-                      <div style={{ fontSize: "0.95rem", fontWeight: 800, color: selectedSchool.color }}>
-                        {pt.value}%
-                      </div>
-                    </div>
-                  ))}
+                  <strong style={{ color: "var(--slate-900)" }}>{h.title}:</strong>
+                  <div style={{ color: "var(--slate-700)", marginTop: "2px" }}>{h.contrastKey}</div>
                 </div>
-
-                <p style={{ fontSize: "0.85rem", color: "var(--slate-700)", margin: 0, lineHeight: 1.45 }}>
-                  {selectedSchool.trendSummary}
-                </p>
-
-                <div
-                  style={{
-                    background: "#ffffff",
-                    borderRadius: "8px",
-                    padding: "8px 12px",
-                    borderLeft: `3px solid ${selectedSchool.color}`,
-                    fontSize: "0.82rem",
-                    fontStyle: "italic",
-                    color: "var(--slate-800)",
-                    lineHeight: 1.4
-                  }}
-                >
-                  {selectedSchool.band9Phrase}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       )}
 
-      {/* FULLSCREEN SMART BOARD MODAL */}
+      {/* FULLSCREEN ENLARGED MODAL (Entire Screen Mode) */}
       <AnimatePresence>
         {isEnlarged && (
           <div
@@ -707,7 +553,6 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               alignItems: "center",
               justifyContent: "center",
               background: "rgba(15, 23, 42, 0.88)",
-              backdropFilter: "blur(16px)",
               padding: "12px"
             }}
           >
@@ -745,10 +590,10 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   <Tv size={20} color="var(--apple-blue)" />
                   <div>
                     <h3 style={{ fontSize: "1rem", fontWeight: 800, margin: 0, color: "#ffffff" }}>
-                      Smart Board Entire Screen Engine • Higher Education Progression Table (1995–2000)
+                      Smart Board Entire Screen Engine • Pacific Ocean Normal vs. El Niño
                     </h3>
                     <p style={{ fontSize: "0.74rem", color: "#94a3b8", margin: 0 }}>
-                      Royston, Greystone, Harble, Fairfield, Crackend • Unit: Percentage (%)
+                      Atmospheric Winds, Warm Pool Displacement, Nutrient Upwelling &amp; Ecological Inversion
                     </p>
                   </div>
                 </div>
@@ -781,7 +626,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       cursor: "pointer"
                     }}
                   >
-                    <Tv size={13} /> 4K Table Matrix
+                    <Tv size={13} /> 4K Diagram Engine
                   </button>
 
                   <button
@@ -841,7 +686,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       cursor: "pointer"
                     }}
                   >
-                    <ImageIcon size={13} /> Original Exam Table
+                    <ImageIcon size={13} /> Original Exam Diagram
                   </button>
                 </div>
 
@@ -898,197 +743,167 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 </div>
               </div>
 
-              {/* Fullscreen Body */}
-              <div style={{ flex: 1, display: "flex", overflow: "hidden", minHeight: 0 }}>
-                {/* 1. 4K Table Matrix in Fullscreen */}
-                {viewMode === "smartboard_table" && (
-                  <>
-                    <div
-                      style={{
-                        flex: 1,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "stretch",
-                        justifyContent: "flex-start",
-                        background: "#ffffff",
-                        overflowY: "auto",
-                        overflowX: "auto",
-                        padding: "16px"
-                      }}
-                    >
-                      <div
-                        style={{
-                          transform: `scale(${zoomLevel})`,
-                          transformOrigin: "top center",
-                          transition: "transform 0.15s ease",
-                          width: "100%",
-                          maxWidth: "1350px",
-                          margin: "0 auto"
-                        }}
-                      >
-                        <SmartBoardTableMatrix
-                          selectedCountryId={selectedSchool.id}
-                          onSelectCountry={handleTableSelectSchool}
-                          highlightMode={highlightMode}
-                          onHighlightModeChange={setHighlightMode}
-                          showInternalToolbar={true}
-                          showDeepDiveCard={!fullscreenShowInspector}
-                        />
-                      </div>
-                    </div>
-
-                    {fullscreenShowInspector && (
-                      <div
-                        style={{
-                          width: "350px",
-                          borderLeft: "1.5px solid var(--border-subtle)",
-                          background: "var(--slate-50)",
-                          padding: "20px",
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: "14px",
-                          overflowY: "auto",
-                          flexShrink: 0
-                        }}
-                      >
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                          <School size={18} color="var(--apple-blue)" />
-                          <h4 style={{ fontSize: "1rem", fontWeight: 800, margin: 0 }}>
-                            Secondary School Inspector
-                          </h4>
-                        </div>
-
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
-                          {schoolsList.map((c) => {
-                            const isSelected = selectedSchool.id === c.id;
-                            return (
-                              <button
-                                key={c.id}
-                                type="button"
-                                onClick={() => {
-                                  setSelectedSchool(c);
-                                  setHighlightMode(c.id as TableHighlightMode);
-                                }}
-                                style={{
-                                  padding: "8px",
-                                  borderRadius: "8px",
-                                  fontSize: "0.8rem",
-                                  fontWeight: 750,
-                                  background: isSelected ? c.color : "#ffffff",
-                                  color: isSelected ? "#ffffff" : "var(--slate-800)",
-                                  border: isSelected ? `2px solid ${c.color}` : "1px solid var(--border-subtle)",
-                                  cursor: "pointer"
-                                }}
-                              >
-                                {c.name}
-                              </button>
-                            );
-                          })}
-                        </div>
-
-                        <div
-                          style={{
-                            background: "#ffffff",
-                            border: `1.5px solid ${selectedSchool.color}`,
-                            borderRadius: "14px",
-                            padding: "16px",
-                            display: "flex",
-                            flexDirection: "column",
-                            gap: "10px"
-                          }}
-                        >
-                          <strong style={{ fontSize: "1.1rem", color: selectedSchool.color }}>
-                            {selectedSchool.name}
-                          </strong>
-                          <span className="apple-badge neutral" style={{ alignSelf: "flex-start", fontSize: "0.72rem" }}>
-                            {selectedSchool.badge}
-                          </span>
-
-                          <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "4px", background: "var(--slate-50)", padding: "8px", borderRadius: "8px", textAlign: "center" }}>
-                            {selectedSchool.dataPoints.map((pt) => (
-                              <div key={pt.year}>
-                                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>{pt.year}</div>
-                                <div style={{ fontSize: "0.92rem", fontWeight: 800, color: selectedSchool.color }}>{pt.value}%</div>
-                              </div>
-                            ))}
-                          </div>
-
-                          <p style={{ fontSize: "0.85rem", color: "var(--slate-700)", margin: 0, lineHeight: 1.45 }}>
-                            {selectedSchool.trendSummary}
-                          </p>
-
-                          <div style={{ fontSize: "0.82rem", fontStyle: "italic", color: "var(--slate-800)", borderLeft: `3px solid ${selectedSchool.color}`, paddingLeft: "8px" }}>
-                            {selectedSchool.band9Phrase}
-                          </div>
-                        </div>
-
-                        {/* Quick Milestones Card */}
-                        <div style={{ background: "#ffffff", border: "1.5px solid #fde68a", borderRadius: "14px", padding: "14px" }}>
-                          <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "6px", color: "#92400e" }}>
-                            <GitCommit size={15} />
-                            <strong style={{ fontSize: "0.88rem" }}>Key Table Milestones:</strong>
-                          </div>
-                          <div style={{ fontSize: "0.8rem", color: "#78350f", lineHeight: 1.5 }}>
-                            • <strong>1997:</strong> Fairfield &amp; Greystone equalised at 75%<br />
-                            • <strong>1999:</strong> Royston, Harble &amp; Crackend triple tie at 60%<br />
-                            • <strong>2000:</strong> Harble 1st place (80%) vs. Greystone 3rd (70%)
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </>
-                )}
-
-                {/* 2. Bits & Pieces Mindmap in Entire Screen */}
-                {viewMode === "mindmap" && (
-                  <div style={{ flex: 1, height: "100%", overflow: "hidden" }}>
-                    <BitsAndPiecesMindmap isEntireScreen={true} />
-                  </div>
-                )}
-
-                {/* 3. Bits & Pieces Flashcards in Entire Screen */}
-                {viewMode === "flashcards" && (
-                  <div style={{ flex: 1, height: "100%", overflow: "hidden", display: "flex", justifyContent: "center" }}>
-                    <div style={{ width: "100%", maxWidth: "1200px", height: "100%" }}>
-                      <BitsAndPiecesFlashcards isEntireScreen={true} />
-                    </div>
-                  </div>
-                )}
-
-                {/* 4. Original Exam Table in Entire Screen */}
-                {viewMode === "original_image" && (
+              {/* Fullscreen Body Content */}
+              <div
+                style={{
+                  flex: 1,
+                  display: "flex",
+                  overflow: "hidden",
+                  background: "#f1f5f9"
+                }}
+              >
+                {/* Left/Center Visual Stage */}
+                <div
+                  style={{
+                    flex: 1,
+                    overflowY: "auto",
+                    padding: "16px",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center"
+                  }}
+                >
                   <div
                     style={{
-                      flex: 1,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: "#0f172a",
-                      overflow: "auto",
-                      padding: "20px"
+                      width: "100%",
+                      maxWidth: "1600px",
+                      transform: `scale(${zoomLevel})`,
+                      transformOrigin: "top center",
+                      transition: "transform 0.15s ease"
                     }}
                   >
+                    {viewMode === "smartboard_table" && (
+                      <SmartBoardTableMatrix
+                        highlightMode={highlightMode}
+                        onHighlightModeChange={(mode) => setHighlightMode(mode)}
+                        showInternalToolbar={true}
+                        showDeepDiveCard={true}
+                      />
+                    )}
+
+                    {viewMode === "mindmap" && <BitsAndPiecesMindmap />}
+
+                    {viewMode === "flashcards" && <BitsAndPiecesFlashcards />}
+
+                    {viewMode === "original_image" && (
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          padding: "24px",
+                          background: "#ffffff",
+                          borderRadius: "16px",
+                          boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
+                        }}
+                      >
+                        <img
+                          src={`materials/${TASK1_DATA.imageFileName}`}
+                          alt="Official Cambridge IELTS Pacific Diagram"
+                          style={{
+                            maxHeight: "82vh",
+                            maxWidth: "96%",
+                            objectFit: "contain",
+                            borderRadius: "12px",
+                            boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
+                          }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right Side Inspector Drawer in Fullscreen */}
+                {viewMode === "smartboard_table" && fullscreenShowInspector && (
+                  <div
+                    style={{
+                      width: "360px",
+                      background: "#ffffff",
+                      borderLeft: "1.5px solid var(--border-subtle)",
+                      display: "flex",
+                      flexDirection: "column",
+                      padding: "18px",
+                      overflowY: "auto",
+                      gap: "14px",
+                      flexShrink: 0
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                      <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>
+                        Pacific Systems Inspector
+                      </strong>
+                      <span className="apple-badge accent" style={{ fontSize: "0.68rem" }}>
+                        Interactive
+                      </span>
+                    </div>
+
+                    {/* Condition selection */}
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
+                      {PACIFIC_CONDITIONS.map((cond) => {
+                        const isSelected = selectedCondition.id === cond.id;
+                        return (
+                          <button
+                            key={cond.id}
+                            type="button"
+                            onClick={() => {
+                              setSelectedCondition(cond);
+                              setHighlightMode(cond.id as DiagramViewMode);
+                            }}
+                            style={{
+                              padding: "7px 10px",
+                              borderRadius: "8px",
+                              fontSize: "0.75rem",
+                              fontWeight: 750,
+                              background: isSelected ? "var(--slate-900)" : "var(--slate-100)",
+                              color: isSelected ? "#ffffff" : "var(--slate-800)",
+                              border: "none",
+                              cursor: "pointer"
+                            }}
+                          >
+                            {cond.title}
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* Details */}
                     <div
                       style={{
-                        transform: `scale(${zoomLevel})`,
-                        transformOrigin: "center center",
-                        transition: "transform 0.15s ease",
+                        background: "var(--slate-50)",
+                        borderRadius: "12px",
+                        padding: "12px",
+                        border: "1px solid var(--border-subtle)",
                         display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center"
+                        flexDirection: "column",
+                        gap: "8px",
+                        fontSize: "0.82rem"
                       }}
                     >
-                      <img
-                        src={`materials/${TASK1_DATA.imageFileName}`}
-                        alt="Original IELTS Task 1 Test Paper Table"
-                        style={{
-                          maxWidth: "90vw",
-                          maxHeight: "85vh",
-                          objectFit: "contain",
-                          borderRadius: "10px",
-                          boxShadow: "0 10px 40px rgba(0,0,0,0.6)"
-                        }}
-                      />
+                      <div>
+                        <strong style={{ color: "var(--slate-900)" }}>Winds:</strong> {selectedCondition.tradeWinds}
+                      </div>
+                      <div>
+                        <strong style={{ color: "var(--slate-900)" }}>Water:</strong> {selectedCondition.waterThermocline}
+                      </div>
+                      <div>
+                        <strong style={{ color: "var(--slate-900)" }}>Upwelling:</strong> {selectedCondition.upwellingStatus}
+                      </div>
+                      <div>
+                        <strong style={{ color: "var(--slate-900)" }}>Australia:</strong> {selectedCondition.australiaCondition.climate}
+                      </div>
+                      <div>
+                        <strong style={{ color: "var(--slate-900)" }}>Peru:</strong> {selectedCondition.peruCondition.fisheryStatus}
+                      </div>
+                    </div>
+
+                    <div style={{ background: "#f8fafc", padding: "12px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
+                      <div style={{ fontSize: "0.7rem", fontWeight: 800, color: "var(--apple-blue)", marginBottom: "4px" }}>
+                        BAND 9 OBSERVATION:
+                      </div>
+                      <div style={{ fontSize: "0.8rem", color: "var(--slate-800)", fontStyle: "italic", lineHeight: 1.4 }}>
+                        {selectedCondition.band9Phrase}
+                      </div>
                     </div>
                   </div>
                 )}

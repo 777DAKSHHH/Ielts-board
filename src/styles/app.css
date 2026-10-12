@@ -1,5 +1,6 @@
 /* ==========================================================================
-   GLOBAL APP & STAGE LAYOUT - APPLE SMARTBOARD WORKSPACE
+   IELTS TEACHING WIZARD V2 — GLOBAL STAGE LAYOUT & COMPONENT STYLES
+   Solid Opaque Architecture • Tactile Touch Precision • Smartboard Ready
    ========================================================================== */
 
 .app-stage-container {
@@ -9,109 +10,123 @@
   width: 100vw;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 0%, #f1f5f9 0%, #f8fafc 100%);
+  background-color: var(--bg-canvas);
 }
 
-/* Floating Island Header */
+/* Master Header Bar (100% Opaque Solid Surface) */
 .island-header {
   position: absolute;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(96vw, 1420px);
-  height: 50px;
+  width: min(97vw, 1520px);
+  height: var(--header-height);
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 18px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--touch-radius);
+  box-shadow: var(--shadow-md);
 }
 
 /* Center Stage Viewport */
 .stage-viewport {
   flex: 1;
   position: relative;
-  margin-top: 68px;
-  margin-bottom: 64px;
+  margin-top: calc(var(--header-height) + 18px);
+  margin-bottom: calc(var(--dock-height) + 20px);
   width: 100%;
   max-width: 1560px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
+  padding: 0 18px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   overflow: hidden;
+  min-height: 0;
 }
 
+/* Stage Card Wrapper */
 .stage-card-wrapper {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--card-radius);
-  box-shadow: var(--shadow-lg);
-  padding: 18px 24px;
+  box-shadow: var(--shadow-sm);
+  padding: 22px 28px;
   overflow-y: auto;
   position: relative;
 }
 
-/* Floating Bottom Touch Dock */
+/* Bottom Touch Dock (100% Opaque Solid Surface) */
 .touch-dock {
   position: absolute;
-  bottom: 10px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(92vw, 920px);
-  height: 48px;
+  width: min(94vw, 980px);
+  height: var(--dock-height);
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--touch-radius);
+  box-shadow: var(--shadow-dock);
 }
 
 /* Smartboard Stage Typography */
 .stage-title {
   font-size: 1.45rem;
-  font-weight: 700;
+  font-weight: 750;
   color: var(--slate-900);
   letter-spacing: -0.02em;
   margin-bottom: 4px;
+  line-height: 1.25;
 }
 
 .stage-subtitle {
   font-size: 0.95rem;
-  color: var(--slate-500);
-  margin-bottom: 14px;
+  color: var(--slate-600);
+  margin-bottom: 16px;
+  line-height: 1.45;
 }
 
 /* Two-Column Stage Split */
 .stage-grid-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  height: 100%;
+  gap: 20px;
+  width: 100%;
   align-items: start;
 }
 
-/* Badge Tags */
+/* Badge Tags (Opaque with Distinctive Semantic Borders) */
 .apple-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 0.88rem;
-  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .apple-badge.neutral {
   background: var(--slate-100);
-  color: var(--slate-700);
-  border: 1px solid var(--slate-200);
+  color: var(--slate-800);
+  border: 1px solid var(--border-default);
 }
 
 .apple-badge.success {
@@ -124,4 +139,44 @@
   background: #eff6ff;
   color: #1e40af;
   border: 1px solid #bfdbfe;
+}
+
+.apple-badge.warning {
+  background: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.apple-badge.danger {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* Responsive Viewport Adjustments for Smartboard & Smaller Monitors */
+@media (max-width: 1024px) {
+  .stage-grid-2col {
+    grid-template-columns: 1fr;
+  }
+  .stage-card-wrapper {
+    padding: 16px 18px;
+  }
+  .stage-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-height: 780px) {
+  :root {
+    --header-height: 50px;
+    --dock-height: 48px;
+  }
+  .stage-viewport {
+    margin-top: calc(var(--header-height) + 12px);
+    margin-bottom: calc(var(--dock-height) + 14px);
+    padding: 0 12px;
+  }
+  .stage-card-wrapper {
+    padding: 14px 18px;
+  }
 }

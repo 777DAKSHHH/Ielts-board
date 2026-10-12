@@ -6,11 +6,11 @@ export const Step9SubmissionT2: React.FC = () => (
     {/* Stage Header */}
     <div style={{ flexShrink: 0, marginBottom: "18px" }}>
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-        Step 09 / 09 • Final Essay Structure
+        Step 09 / 09 • Final Essay Structure &amp; Model
       </span>
-      <h2 className="stage-title">Write Your Two-Part Essay</h2>
+      <h2 className="stage-title">Write Your Outweighed 5-Paragraph Essay</h2>
       <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-        Review your paired paragraph architecture and key points before writing the complete response.
+        Review your 3-body paragraph architecture and golden rules before writing the complete Band 9 response.
       </p>
     </div>
 
@@ -25,7 +25,7 @@ export const Step9SubmissionT2: React.FC = () => (
         alignItems: "stretch"
       }}
     >
-      {/* Card 01: Paired Body Paragraph Architecture */}
+      {/* Card 01: 5-Paragraph Format (3 Body Paras Architecture) */}
       <div
         style={{
           background: "#ffffff",
@@ -40,39 +40,39 @@ export const Step9SubmissionT2: React.FC = () => (
       >
         <div>
           <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--apple-blue)" }}>
-            4-PARAGRAPH FORMAT
+            5-PARAGRAPH FORMAT
           </span>
           <h3 style={{ fontSize: "1.18rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-            Paired Body Paragraphs
+            3-Body Paragraph Architecture
           </h3>
           <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "var(--slate-500)" }}>
-            [ Effect + Solution + Example ]
+            [ Intro + 2 Strong Side + 1 Counterpoint + Conclusion ]
           </p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px", flex: 1 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1, overflowY: "auto" }}>
           {/* Body 1 Box */}
           <div
             style={{
               background: "var(--slate-50)",
               border: "1px solid var(--border-subtle)",
               borderRadius: "12px",
-              padding: "14px 16px",
+              padding: "11px 13px",
               display: "flex",
               flexDirection: "column",
-              gap: "6px"
+              gap: "4px"
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <span style={{ fontSize: "0.78rem", fontWeight: 800, background: "#dbeafe", color: "#1e40af", padding: "2px 8px", borderRadius: "6px" }}>
-                BODY PARA 1
+              <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#dbeafe", color: "#1e40af", padding: "2px 7px", borderRadius: "5px" }}>
+                ADVANTAGE 1
               </span>
-              <strong style={{ fontSize: "0.92rem", color: "var(--slate-900)" }}>Healthcare Solvency</strong>
+              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Year-Round Fresh Produce</strong>
             </div>
-            <div style={{ fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              • <strong>Effect 1:</strong> Hospital fiscal strain &amp; chronic diseases<br />
-              • <strong>Solution 1:</strong> Targeted fiscal sugar levies on junk foods<br />
-              • <strong>Example:</strong> Mexico 10% soda tax / NHS £6B spend
+            <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
+              • <strong>Main Reason:</strong> Year-round fresh food security &amp; winter freeze bypass<br />
+              • <strong>Support:</strong> Eliminating seasonal nutrient deficits for families<br />
+              • <strong>Example:</strong> Northern cities buying fresh berries and citrus in January
             </div>
           </div>
 
@@ -82,22 +82,47 @@ export const Step9SubmissionT2: React.FC = () => (
               background: "var(--slate-50)",
               border: "1px solid var(--border-subtle)",
               borderRadius: "12px",
-              padding: "14px 16px",
+              padding: "11px 13px",
               display: "flex",
               flexDirection: "column",
-              gap: "6px"
+              gap: "4px"
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <span style={{ fontSize: "0.78rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "2px 8px", borderRadius: "6px" }}>
-                BODY PARA 2
+              <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "2px 7px", borderRadius: "5px" }}>
+                ADVANTAGE 2
               </span>
-              <strong style={{ fontSize: "0.92rem", color: "var(--slate-900)" }}>Workforce Vitality</strong>
+              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Affordable Groceries &amp; Cultural Variety</strong>
             </div>
-            <div style={{ fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              • <strong>Effect 2:</strong> Sedentary lethargy &amp; labor productivity loss<br />
-              • <strong>Solution 2:</strong> Active municipal transit &amp; office mandates<br />
-              • <strong>Example:</strong> Copenhagen bicycle superhighways (&gt;40%)
+            <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
+              • <strong>Main Reason:</strong> Natural climate efficiency lowers family grocery bills<br />
+              • <strong>Support:</strong> Bypasses costly heated greenhouses + caters to diverse diets<br />
+              • <strong>Example:</strong> Cheap tropical staples (bananas, rice) &amp; international spices
+            </div>
+          </div>
+
+          {/* Body 3 Box */}
+          <div
+            style={{
+              background: "var(--slate-50)",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "12px",
+              padding: "11px 13px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "4px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#fee2e2", color: "#b91c1c", padding: "2px 7px", borderRadius: "5px" }}>
+                COUNTERPOINT
+              </span>
+              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Local Farmer Strain &amp; Food Miles</strong>
+            </div>
+            <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
+              • <strong>1 Main Disadvantage:</strong> Intense price pressure on small local farms &amp; transit emissions<br />
+              • <strong>Support:</strong> Cheap overseas imports undercut family farms + planes burn fuel<br />
+              • <strong>Example:</strong> Local dairy farms struggling + high emissions from air cargo
             </div>
           </div>
         </div>
@@ -121,30 +146,30 @@ export const Step9SubmissionT2: React.FC = () => (
             PARAGRAPH DEPTH
           </span>
           <h3 style={{ fontSize: "1.18rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-            1 Core Problem &amp; Causal Flow
+            The 1 Main Reason Rule
           </h3>
           <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "var(--slate-500)" }}>
-            Avoid listing multiple superficial points
+            [ Main Reason + Supporting Reasons + Example ]
           </p>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
           {[
             {
-              step: "Core Problem",
-              desc: "Focus on 1 primary crisis per paragraph rather than multiple symptoms."
+              step: "1. Single Core Reason",
+              desc: "Anchor each body paragraph around 1 strong, well-defined reason. Never pile up scattered shallow points."
             },
             {
-              step: "Causal Explanation",
-              desc: "Detail why and how sedentary habits lead to systemic health or economic strain."
+              step: "2. Causal Explanation",
+              desc: "Articulate the precise 'how' and 'why' mechanisms (e.g. how winter frost causes localized deficits, or how aviation fuel burns carbon)."
             },
             {
-              step: "Direct Countermeasure",
-              desc: "Propose a policy measure that specifically resolves that core issue."
+              step: "3. Concrete Real-World Example",
+              desc: "Provide verifiable empirical evidence (Fairtrade cooperatives, Mexican avocados in Europe, South American berry air cargo)."
             },
             {
-              step: "Concrete Evidence",
-              desc: "Substantiate with real-world data and precedent."
+              step: "4. Outweighing Synthesis",
+              desc: "Demonstrate in Body 3 and the Conclusion that environmental drawbacks are solvable through green logistics, whereas nutritional benefits are irreplaceable."
             }
           ].map((item, i) => (
             <div
@@ -184,13 +209,13 @@ export const Step9SubmissionT2: React.FC = () => (
       >
         <div>
           <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#9333ea" }}>
-            VOCABULARY &amp; TRANSITIONS
+            BAND 9 VOCABULARY &amp; COHESION
           </span>
           <h3 style={{ fontSize: "1.18rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-            Natural Academic Tone
+            Natural Academic Precision
           </h3>
           <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "var(--slate-500)" }}>
-            Dissolved naturally like sugar in water
+            Dissolved naturally like sugar in a glass of water
           </p>
         </div>
 
@@ -207,7 +232,7 @@ export const Step9SubmissionT2: React.FC = () => (
               PRECISION VOCABULARY:
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-              {["myopic", "epitome", "pervasive", "exacerbate", "catalyze", "mitigate", "paradigm"].map((w) => (
+              {["myopic", "epitome", "counter-seasonal", "food miles", "complacency", "catalyze", "monopolistic", "sovereignty"].map((w) => (
                 <span
                   key={w}
                   style={{
@@ -237,7 +262,12 @@ export const Step9SubmissionT2: React.FC = () => (
               lineHeight: 1.5
             }}
           >
-            <strong style={{ color: "var(--slate-900)" }}>Discourse Linkers:</strong> Position cohesive markers purposefully at paragraph openers, causal logic chains, and solution transitions.
+            <strong style={{ color: "var(--slate-900)" }}>Discourse Linkers:</strong>
+            <br />
+            • <em>Advantage 1 opener:</em> “Foremost among the advantages is that importing goods guarantees...”<br />
+            • <em>Advantage 2 opener:</em> “Equally important is that imported goods reduce household grocery costs...”<br />
+            • <em>Counterpoint opener:</em> “On the other hand, critics rightly point out that cheap foreign goods...”<br />
+            • <em>Conclusion opener:</em> “In conclusion, although importing supermarket goods increases food miles...”
           </div>
         </div>
       </div>

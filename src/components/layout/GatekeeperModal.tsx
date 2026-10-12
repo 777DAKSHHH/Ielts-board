@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Lock, ShieldCheck, KeyRound } from "lucide-react";
+import { modalDialogVariants, tactilePress } from "../../motion";
 
 interface GatekeeperModalProps {
   onUnlock: (passcode: string) => boolean;
@@ -33,45 +34,46 @@ export const GatekeeperModal: React.FC<GatekeeperModalProps> = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "rgba(15, 23, 42, 0.45)",
-        backdropFilter: "blur(18px)",
-        WebkitBackdropFilter: "blur(18px)",
+        background: "rgba(15, 23, 42, 0.75)",
         padding: "24px"
       }}
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.92, y: 18 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 350, damping: 28 }}
-        className="glass-panel"
+        variants={modalDialogVariants}
+        initial="hidden"
+        animate="visible"
         style={{
           width: "min(92vw, 480px)",
-          padding: "40px 36px",
+          padding: "38px 36px",
           textAlign: "center",
-          boxShadow: "0 25px 60px rgba(0,0,0,0.18)"
+          background: "#ffffff",
+          border: "1.5px solid var(--border-default)",
+          borderRadius: "22px",
+          boxShadow: "var(--shadow-modal)"
         }}
       >
         <div
           style={{
             width: "68px",
             height: "68px",
-            borderRadius: "20px",
+            borderRadius: "18px",
             background: "var(--slate-100)",
-            color: "var(--slate-800)",
+            color: "var(--slate-900)",
             display: "inline-flex",
             alignItems: "center",
             justifyContent: "center",
-            marginBottom: "20px",
-            boxShadow: "var(--shadow-sm)"
+            marginBottom: "18px",
+            border: "1px solid var(--border-subtle)",
+            boxShadow: "var(--shadow-xs)"
           }}
         >
-          <Lock size={32} strokeWidth={2.2} />
+          <Lock size={30} strokeWidth={2.2} />
         </div>
 
-        <h2 style={{ fontSize: "1.65rem", fontWeight: 700, marginBottom: "8px", letterSpacing: "-0.02em" }}>
+        <h2 style={{ fontSize: "1.65rem", fontWeight: 800, marginBottom: "8px", letterSpacing: "-0.02em", color: "var(--slate-900)" }}>
           IELTS Smartboard OS
         </h2>
-        <p style={{ color: "var(--slate-500)", fontSize: "0.98rem", marginBottom: "28px" }}>
+        <p style={{ color: "var(--slate-600)", fontSize: "0.95rem", marginBottom: "26px", lineHeight: 1.45 }}>
           Enter teacher Roman numeral access key to initialize classroom workstation.
         </p>
 
@@ -98,34 +100,44 @@ export const GatekeeperModal: React.FC<GatekeeperModalProps> = ({
               autoFocus
               style={{
                 width: "100%",
-                height: "56px",
-                paddingLeft: "52px",
-                paddingRight: "18px",
-                borderRadius: "16px",
-                border: "1.5px solid var(--border-strong)",
-                background: "#ffffff",
-                fontSize: "1.1rem",
-                letterSpacing: "0.08em",
-                color: "var(--slate-900)",
+                minHeight: "52px",
+                padding: "0 18px 0 50px",
+                borderRadius: "12px",
+                border: "1.5px solid var(--border-default)",
+                background: "var(--slate-50)",
+                fontSize: "1rem",
+                fontWeight: 600,
                 outline: "none",
-                transition: "border-color 0.15s ease, box-shadow 0.15s ease"
+                color: "var(--slate-900)",
+                boxShadow: "inset 0 1px 2px rgba(0,0,0,0.04)",
+                transition: "border-color 0.15s ease, background 0.15s ease"
               }}
-              onFocus={(e) => (e.target.style.borderColor = "var(--slate-900)")}
-              onBlur={(e) => (e.target.style.borderColor = "var(--border-strong)")}
+              onFocus={(e) => {
+                e.currentTarget.style.borderColor = "var(--apple-blue)";
+                e.currentTarget.style.background = "#ffffff";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.borderColor = "var(--border-default)";
+                e.currentTarget.style.background = "var(--slate-50)";
+              }}
             />
           </div>
 
           <AnimatePresence>
             {errorMsg && (
               <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
                 style={{
                   color: "var(--apple-red)",
-                  fontSize: "0.9rem",
-                  fontWeight: 600,
-                  marginBottom: "16px"
+                  fontSize: "0.85rem",
+                  fontWeight: 650,
+                  marginBottom: "16px",
+                  background: "#fef2f2",
+                  padding: "10px 14px",
+                  borderRadius: "10px",
+                  border: "1px solid #fca5a5"
                 }}
               >
                 {errorMsg}
@@ -133,17 +145,26 @@ export const GatekeeperModal: React.FC<GatekeeperModalProps> = ({
             )}
           </AnimatePresence>
 
-          <button
+          <motion.button
+            whileTap={tactilePress}
             type="submit"
             className="apple-touch-btn primary"
-            style={{ width: "100%", height: "56px", fontSize: "1.1rem", gap: "10px" }}
+            style={{
+              width: "100%",
+              minHeight: "52px",
+              fontSize: "1.05rem",
+              fontWeight: 750,
+              gap: "8px",
+              boxShadow: "var(--shadow-sm)"
+            }}
           >
-            <ShieldCheck size={22} /> Unlock Session
-          </button>
+            <ShieldCheck size={20} />
+            <span>Unlock Teaching Station</span>
+          </motion.button>
         </form>
 
-        <div style={{ marginTop: "24px", fontSize: "0.85rem", color: "var(--slate-400)" }}>
-          Teacher access is required before the classroom workstation can open.
+        <div style={{ marginTop: "22px", fontSize: "0.78rem", color: "var(--slate-400)", fontWeight: 600 }}>
+          IELTS Academic Writing &bull; Smartboard Classroom Console
         </div>
       </motion.div>
     </div>

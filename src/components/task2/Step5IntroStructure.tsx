@@ -6,11 +6,11 @@ export const Step5IntroStructureT2: React.FC = () => (
   <div className="stage-card-wrapper">
     <div>
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-        Step 05 / 09 • Introduction & 2-Part Thesis
+        Step 05 / 09 • Sample Introduction &amp; Thesis
       </span>
-      <h2 className="stage-title">Build the Introduction & 2-Part Thesis</h2>
+      <h2 className="stage-title">Sample Introduction &amp; Decisive Opinion Thesis</h2>
       <p className="stage-subtitle">
-        Ideal IELTS 2-Part Introduction: Paraphrase the prompt in sentence 1 + deliver a clear 2-part thesis answering both questions in sentence 2.
+        Ideal IELTS Outweighing Introduction: Paraphrase the imported goods prompt in Sentence 1 + deliver a clear, assertive opinion thesis stating that advantages outweigh disadvantages in Sentence 2.
       </p>
     </div>
     <div className="stage-grid-2col">
@@ -24,7 +24,7 @@ export const Step5IntroStructureT2: React.FC = () => (
       >
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
           <BookOpen size={20} />
-          <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Sample Introduction (Concise & Focused)</h4>
+          <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Sample Introduction (Concise &amp; Focused)</h4>
         </div>
         <div
           style={{
@@ -41,24 +41,24 @@ export const Step5IntroStructureT2: React.FC = () => (
           {TASK2_DATA.sampleIntro}
         </div>
         <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
-          <Clock size={15} /> 39 words • 2 sentences • Rapid exam timing (~2.5-3 mins)
+          <Clock size={15} /> 43 words • 2 sentences • Rapid exam timing (~2.5-3 mins)
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="1. Crisp Prompt Paraphrase (Sentence 1)"
-          text="Restate the prompt cleanly without fluff: that in many nations, rising average body weight and declining physical fitness have emerged as alarming public health concerns."
+          text="Restate the prompt without mechanical fluff: note that supermarket shelves are increasingly stocked with international imports rather than regional domestic produce."
         />
         <StructureCard
           icon={<Award size={18} />}
-          title="2. Paired 2-Part Thesis (Sentence 2)"
-          text="Directly outline paired answers to both questions: state the two primary repercussions (healthcare strain and curtailed economic productivity) and propose the counter-solutions (fiscal sugar levies and active transit infrastructure)."
+          title="2. Decisive Opinion Thesis (Sentence 2)"
+          text="Directly answer the question: acknowledge that although transport carbon emissions and local farmer strain exist, the benefits—namely guaranteed year-round fresh produce, lower consumer grocery costs, and greater cultural food variety—decisively outweigh the drawbacks."
         />
         <StructureCard
           icon={<CheckCircle2 size={18} />}
-          title="3. Word Economy & Exam Time Management"
-          text="Keep the introduction concise (~38–42 words across 2 sentences in ~2.5–3 mins). A punchy, focused introduction avoids fluff, secures full marks for Task Achievement, and saves vital minutes for in-depth body paragraph development."
+          title="3. Word Economy & Roadmapping"
+          text="Keep the introduction concise (~40–45 words across 2 sentences). A punchy, focused opening secures Band 9 Task Achievement by stating a clear position from the outset, setting up your body paragraphs."
         />
       </div>
     </div>

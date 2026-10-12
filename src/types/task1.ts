@@ -1,55 +1,66 @@
 import { VocabItem } from "./vocab";
 
-export interface DataPoint {
-  year: number;
-  value: number;
-  annotation?: string;
+export interface PacificConditionFeature {
+  id: "normal" | "el_nino";
+  title: string;
+  badge: string;
+  tradeWinds: string;
+  upperWinds: string;
+  waterThermocline: string;
+  upwellingStatus: string;
+  rainfallPattern: string;
+  australiaCondition: {
+    climate: string;
+    weather: string;
+    rainfall: string;
+    visualDetail: string;
+  };
+  peruCondition: {
+    climate: string;
+    marineLife: string;
+    fisheryStatus: string;
+    visualDetail: string;
+  };
+  band9Phrase: string;
+  summary: string;
 }
 
+export interface ComparisonHotspot {
+  id: string;
+  title: string;
+  zone: "west_pacific" | "east_pacific" | "atmosphere" | "marine_depth";
+  normalState: string;
+  elNinoState: string;
+  contrastKey: string;
+  band9Sentence: string;
+}
+
+export interface Task1DiagramData {
+  conditions: PacificConditionFeature[];
+  hotspots: ComparisonHotspot[];
+  comparisonsSummary: Record<string, string>;
+  // Backwards compatibility aliases
+  schools?: any[];
+  countries?: any[];
+  convergences?: any[];
+  intersections?: any[];
+}
+
+export type Task1GraphData = Task1DiagramData;
+export type Task1TableData = Task1DiagramData;
+
+// Backwards-compatible dummy interfaces if imported elsewhere
 export interface SchoolData {
   id: string;
   name: string;
-  originalLegendName?: string;
-  originalTableName?: string;
   color: string;
-  group: "net_decrease" | "net_increase" | "steady" | string;
   badge: string;
-  startValue: number;
-  peakOrPlateauValue?: number;
-  endValue: number;
+  dataPoints: { year: number; value: number; annotation?: string }[];
   netChange: string;
-  dataPoints: DataPoint[];
   trendSummary: string;
   band9Phrase: string;
-  description: string;
 }
-
 export type CountryData = SchoolData;
-
-export interface ConvergenceMilestone {
-  id: string;
-  year: number;
-  approxValue: number;
-  schools: string[];
-  countries?: string[];
-  title: string;
-  description: string;
-  band9Phrase: string;
-}
-
-export type IntersectionPoint = ConvergenceMilestone;
-
-export interface Task1TableData {
-  years: number[];
-  unit: string;
-  schools: SchoolData[];
-  countries: SchoolData[]; // backwards-compatible alias
-  convergences: ConvergenceMilestone[];
-  intersections: ConvergenceMilestone[]; // backwards-compatible alias
-  comparisonsSummary: Record<string, string>;
-}
-
-export type Task1GraphData = Task1TableData;
 
 export interface BpSection {
   title: string;
@@ -81,8 +92,9 @@ export interface Task1Data {
   sampleIntro: string;
   sampleOverview: string;
   timingSeconds: number;
-  graphData: Task1GraphData;
-  tableData?: Task1TableData;
+  diagramData: Task1DiagramData;
+  graphData: Task1DiagramData;
+  tableData?: Task1DiagramData;
   vocabList: VocabItem[];
   vocabHunt: string[];
   bp1: BpSection;

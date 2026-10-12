@@ -1,4 +1,5 @@
 import type {
+  BodyParaStructure,
   BrainstormCard,
   ConsequenceItem,
   EvaluationArgument,
@@ -10,6 +11,7 @@ import type {
 } from "../types";
 
 export type {
+  BodyParaStructure,
   BrainstormCard,
   ConsequenceItem,
   EvaluationArgument,
@@ -21,721 +23,643 @@ export type {
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "increasing-weight-declining-fitness-task2",
+  id: "imported-supermarket-goods-task2",
 
-  taskType: "Two-Part / Direct Question Essay (Effects & Solutions)",
+  taskType: "Advantages Outweigh Disadvantages Essay (3 Body Paragraphs)",
 
-  title: "Rising Obesity and Declining Physical Fitness: Repercussions and Remedial Measures",
+  title: "Supermarket Imported Goods vs. Local Produce: Do Advantages Outweigh Disadvantages?",
 
   questionText:
-    "In some countries, the average weight of people is increasing and their levels of health and fitness are decreasing.\n\n- What are the effects of this?\n- What measures could be taken to solve them?",
+    "Nowadays, instead of locally produced goods, many supermarkets sell a variety of products imported from countries all across the world.\n\n- Do the advantages of this development outweigh the disadvantages?",
 
-  audioUrl: "materials/weight-health-fitness-briefing.m4a",
+  audioUrl: "materials/imported-goods-supermarkets-briefing.m4a",
 
   timingSeconds: 180,
 
   sampleIntro:
-    "In many nations, rising average body weight and declining physical fitness have become alarming public health concerns. This trend primarily strains healthcare systems and curtails economic productivity; however, imposing fiscal sugar levies and expanding active transit infrastructure offer viable solutions.",
+    "In contemporary retail, supermarkets increasingly stock products imported from across the globe rather than goods cultivated locally. Although this trend creates transport-related carbon emissions and exerts commercial pressure on domestic farmers, I firmly contend that the advantages—namely guaranteed year-round fresh produce, lower consumer grocery costs, and greater cultural food variety—decisively outweigh the drawbacks.",
 
   sampleConclusion:
-    "In conclusion, the dual epidemics of rising obesity and declining physical fitness inflict profound damage upon national healthcare infrastructures and workforce vitality through chronic non-communicable diseases. Nevertheless, through aggressive government fiscal interventions, such as sugar levies, coupled with active urban redesign and mandatory physical wellness initiatives in schools and workplaces, societies can reverse this trajectory and foster a healthier, more resilient populace.",
+    "In conclusion, although importing supermarket goods increases environmental food miles and poses serious financial challenges for local agriculturalists, the advantages are far more compelling. By securing year-round access to fresh nutrition, keeping daily grocery prices affordable, and catering to diverse multicultural diets, imported goods deliver broad societal benefits that decisively outweigh the disadvantages.",
+
+  bodyParagraphs: [
+    {
+      paraNumber: 1,
+      side: "strong_opinion",
+      title: "Points for the Advantages (Strong Side)",
+      theme: "Year-Round Fresh Produce, Lower Grocery Prices & Cultural Variety",
+      mainReason:
+        "The primary advantage of stocking imported goods is that it guarantees consumers year-round access to fresh, healthy produce, overcoming harsh local seasonal limitations.",
+      supportingReasons:
+        "In cold and temperate nations, domestic farming halts during winter months. Importing from warmer countries eliminates seasonal shortages, ensuring families always have access to essential fresh fruit, vegetables, and daily nutrients without waiting for summer harvests.",
+      example:
+        "For example, consumers in colder European or Canadian cities can easily purchase fresh strawberries, tomatoes, and citrus in the middle of January at stable prices.",
+      band9Snippet:
+        "“Foremost among the advantages is that importing goods guarantees consumers year-round access to fresh produce, overcoming harsh seasonal limitations.”",
+      alternativeReasons: [
+        {
+          id: "body-adv-reason1",
+          badge: "Reason 1 • Fresh Food All Year",
+          title: "Year-Round Fresh Produce in Every Season",
+          mainReason:
+            "Supermarkets can provide fresh fruits and vegetables all year round, even during freezing winter months when domestic farms cannot grow anything.",
+          supportingReasons:
+            "In cold and temperate countries, winter weather halts agricultural cultivation. Importing from warmer nations or the opposite hemisphere eliminates seasonal shortages, ensuring families maintain a healthy, balanced diet with daily fresh vitamins.",
+          example:
+            "For example, consumers in colder European or Canadian cities can easily purchase fresh strawberries, tomatoes, and oranges in the middle of winter at stable prices.",
+          band9Snippet:
+            "“Foremost among the advantages is that importing goods guarantees consumers year-round access to fresh produce, overcoming harsh seasonal limitations.”",
+          modelParagraph:
+            "Foremost among the advantages is that importing goods guarantees consumers year-round access to fresh, healthy produce, overcoming harsh seasonal limitations. In colder countries, local farming shuts down almost entirely during the winter months, meaning domestic farms cannot produce fresh crops. By sourcing food from warmer countries in the southern hemisphere, supermarkets ensure that families can purchase essential fruits, vegetables, and vitamins throughout all twelve months. For instance, consumers in chilly northern European cities can regularly buy fresh strawberries, avocados, and citrus in the middle of January at stable prices.",
+          examinerNotes:
+            "Relatable & practical. Explains the seasonal winter gap in cold nations and shows how supermarket imports solve daily nutritional needs."
+        },
+        {
+          id: "body-adv-reason2",
+          badge: "Reason 2 • Family Grocery Savings",
+          title: "Lower Grocery Prices & Household Affordability",
+          mainReason:
+            "Imported food is often significantly cheaper than goods grown locally under expensive artificial conditions, helping families save money on daily groceries.",
+          supportingReasons:
+            "Countries with warm climates and fertile land can grow crops naturally in sunlight, whereas producing tropical food locally requires expensive heated greenhouses and high electricity bills. Supermarkets pass these production savings to consumers, keeping basic food baskets affordable.",
+          example:
+            "For instance, importing bananas, rice, and coffee from tropical nations is far cheaper for households than attempting to grow them locally in heated glasshouses.",
+          band9Snippet:
+            "“Equally important is that imported goods reduce household grocery costs, as food is grown where natural conditions make cultivation far cheaper.”",
+          modelParagraph:
+            "Equally important is that imported goods significantly reduce grocery costs for ordinary households. Food can be grown much more cheaply in regions blessed with abundant natural sunshine and fertile soil, avoiding the massive heating and electricity costs of running artificial domestic glasshouses. Supermarkets pass these production savings directly on to shoppers, keeping basic food baskets affordable for low-income and working-class families. For instance, importing staples such as bananas, rice, and coffee from equatorial nations is far more cost-effective than trying to cultivate them domestically under energy-intensive artificial conditions.",
+          examinerNotes:
+            "Directly relatable economic argument. Contrasts natural outdoor sun-grown crops with costly artificial heated greenhouses."
+        },
+        {
+          id: "body-adv-reason3",
+          badge: "Reason 3 • Cultural Food Variety",
+          title: "Diverse Food Choices for Multicultural Communities",
+          mainReason:
+            "Selling imported products allows shoppers to enjoy foods from diverse cultures and helps immigrant families cook authentic traditional meals.",
+          supportingReasons:
+            "Modern cities are home to people from many cultural backgrounds who rely on specific international ingredients that cannot grow in native soil. Offering foreign products in local supermarkets respects cultural diversity and allows all residents to explore global culinary traditions.",
+          example:
+            "For example, supermarkets in major cities regularly stock authentic Asian noodles, Indian spices, and Mexican tortillas that local farms cannot produce.",
+          band9Snippet:
+            "“Furthermore, a wide selection of imported foodstuffs caters to the dietary needs of increasingly diverse and multicultural communities.”",
+          modelParagraph:
+            "Furthermore, a wide selection of imported foodstuffs caters to the daily dietary needs of increasingly multicultural urban communities. In modern cosmopolitan cities, immigrant families rely on authentic ingredients that simply cannot be grown in native soil due to unsuitable climates. Stocking international foods allows people to preserve their cultural culinary traditions while introducing native shoppers to exciting global flavors. For example, supermarkets in major cities routinely stock authentic basmati rice, Asian spices, and Mexican specialty items, enriching everyday cooking for everyone.",
+          examinerNotes:
+            "Strong social and cultural dimension. Directly observable in modern supermarkets and easy for any student to explain."
+        },
+        {
+          id: "body-adv-reason4",
+          badge: "Reason 4 • Emergency Food Security",
+          title: "Protection Against Local Crop Failures & Food Shortages",
+          mainReason:
+            "Having global supply chains protects a nation from empty supermarket shelves when local farms suffer from severe droughts, floods, or bad weather.",
+          supportingReasons:
+            "If a country relies solely on its own farmers, a single heatwave, flood, or insect plague can destroy the harvest and cause sudden food shortages. Importing from multiple countries acts as a safety shield, ensuring supermarkets always have backup supplies.",
+          example:
+            "To illustrate, when severe summer droughts destroyed domestic potato and grain harvests in northern Europe, supermarkets prevented food shortages by quickly importing from international partners.",
+          band9Snippet:
+            "“Additionally, global procurement networks provide vital food security by protecting consumers against unexpected local crop failures.”",
+          modelParagraph:
+            "Additionally, global procurement networks provide vital food security by protecting consumers against unexpected local harvest failures. If a country relies entirely on domestic agriculture, an unexpected flood, prolonged summer drought, or crop disease can wipe out local fields and trigger dangerous food shortages. Having established trade links allows supermarkets to quickly import produce from other parts of the world, keeping grocery shelves full. To illustrate, when severe droughts damaged domestic wheat and vegetable yields in northern Europe, supermarkets prevented shortages by immediately sourcing produce from international partners.",
+          examinerNotes:
+            "Crucial food security point. Intuitive disaster-insurance logic that students easily understand and remember."
+        }
+      ]
+    },
+    {
+      paraNumber: 2,
+      side: "non_opinion",
+      title: "Points for the Disadvantages (Counterpoint)",
+      theme: "Local Farmer Strain, Food Miles & Chemical Preservatives",
+      mainReason:
+        "On the other hand, the primary disadvantage is that cheap foreign imports create intense commercial competition for local farmers and generate transport pollution.",
+      supportingReasons:
+        "Small family farms have higher labor and heating costs and cannot compete with mass-produced overseas goods, leading to farm closures. Furthermore, flying and shipping food thousands of kilometers burns immense fossil fuels.",
+      example:
+        "For example, many small family dairy and vegetable farms have been forced out of business because supermarkets prioritize cheaper imported produce.",
+      band9Snippet:
+        "“Nonetheless, critics rightly highlight the commercial strain exerted on local farmers and the ecological toll of extensive food miles.”",
+      alternativeReasons: [
+        {
+          id: "body-dis-reason1",
+          badge: "Reason 1 • Threat to Local Farmers",
+          title: "Severe Financial Strain & Job Losses for Local Farmers",
+          mainReason:
+            "Inexpensive imported products create tough competition for local farmers, putting their family businesses and traditional livelihoods at serious risk.",
+          supportingReasons:
+            "Small local farmers face higher labor, land, and heating costs, meaning they cannot match the rock-bottom prices of massive overseas industrial farms. When supermarkets favor cheaper imports, local farmers lose customers, face bankruptcy, and are forced to close.",
+          example:
+            "For example, many small family dairy and vegetable farms across Europe and the UK have been forced to shut down because supermarkets prioritize cheaper milk and produce from abroad.",
+          band9Snippet:
+            "“On the other hand, the primary disadvantage is that cheap foreign imports threaten the livelihoods of hardworking local farmers.”",
+          modelParagraph:
+            "On the other hand, critics rightly point out that cheap foreign goods place immense commercial pressure on local farmers. Small family-owned farms face higher labor and land costs and cannot match the rock-bottom prices of massive, highly subsidized overseas agribusinesses. As supermarkets increasingly favor cheaper foreign imports to maximize profit margins, local agriculturalists lose their market share, face severe financial hardship, and are frequently driven into bankruptcy. For instance, thousands of small dairy and fruit farmers across Europe have been forced to shut down in recent years because supermarkets prioritized cheaper imports.",
+          examinerNotes:
+            "The most relatable and common drawback. Easy to explain: local family farms cannot compete with cheap overseas mega-farms."
+        },
+        {
+          id: "body-dis-reason2",
+          badge: "Reason 2 • Food Miles & Pollution",
+          title: "Environmental Pollution & Carbon Footprint ('Food Miles')",
+          mainReason:
+            "Transporting food over thousands of kilometers burns huge amounts of fossil fuel, creating heavy air pollution and contributing to global warming.",
+          supportingReasons:
+            "Fresh food must be flown on airplanes or shipped across oceans on massive cargo vessels, both of which burn immense amounts of diesel and jet fuel. Furthermore, long-distance transport demands heavy plastic packaging and constant refrigeration, increasing waste.",
+          example:
+            "For instance, air-freighting out-of-season berries thousands of kilometers from South America generates far higher carbon emissions per kilogram than buying apples harvested from a regional orchard.",
+          band9Snippet:
+            "“Another significant drawback is the environmental harm caused by long-distance transportation, commonly referred to as 'food miles'.”",
+          modelParagraph:
+            "Another significant drawback is the environmental harm caused by long-distance transportation, commonly referred to as 'food miles'. Flying fresh perishables on aeroplanes and transporting goods on container ships across oceans burns enormous quantities of fossil fuels, releasing harmful greenhouse gases into the atmosphere. In addition, long-distance transit demands heavy plastic packaging and constant refrigeration to keep produce from rotting. For instance, air-freighting out-of-season berries thousands of kilometers from South America generates far higher carbon emissions per kilogram than buying apples harvested from a regional orchard.",
+          examinerNotes:
+            "Classic IELTS environmental argument. Crystal-clear explanation of aviation emissions, freight fuel burn, and plastic waste."
+        },
+        {
+          id: "body-dis-reason3",
+          badge: "Reason 3 • Chemicals & Lost Freshness",
+          title: "Use of Chemical Preservatives & Loss of Freshness and Flavor",
+          mainReason:
+            "To survive weeks of travel, imported food is often treated with chemical preservatives and harvested unripe, resulting in poorer taste and fewer natural nutrients.",
+          supportingReasons:
+            "Perishable produce that spends weeks in transit cannot be harvested when ripe without rotting before arrival. Instead, crops are picked green, coated in synthetic waxes, and artificially ripened with gases in storage, making them taste bland and watery compared to freshly harvested farm food.",
+          example:
+            "For example, imported supermarket tomatoes often spend weeks in refrigerated containers, resulting in a watery flavor and fewer vitamins compared to fresh produce from a local farmer's market.",
+          band9Snippet:
+            "“Furthermore, imported produce is frequently harvested prematurely and treated with artificial preservatives, compromising its natural taste and nutritional value.”",
+          modelParagraph:
+            "Furthermore, imported produce is frequently harvested prematurely and treated with artificial preservatives, compromising its natural taste and nutritional value. Perishable fruits and vegetables shipped across oceans cannot be harvested at peak ripeness without rotting during long transit journeys. Consequently, they are picked unripe, coated in synthetic waxes, and artificially ripened with gas in storage facilities, leaving them bland and less nutritious. For example, imported supermarket tomatoes often spend weeks in refrigerated containers, resulting in a watery flavor and fewer vitamins compared to produce harvested fresh from nearby farms.",
+          examinerNotes:
+            "Highly relatable consumer complaint: imported fruits taste bland or watery because they were picked unripe and preserved with chemicals."
+        },
+        {
+          id: "body-dis-reason4",
+          badge: "Reason 4 • Supply Disruption Risk",
+          title: "Risk of Food Shortages Due to Foreign Supply Disruptions",
+          mainReason:
+            "Relying heavily on foreign food makes a nation vulnerable to international crises, border closures, and global shipping strikes.",
+          supportingReasons:
+            "If a country lets its domestic farms disappear and depends entirely on other nations for its daily meals, any sudden geopolitical crisis, war, or shipping strike can cut off supplies. Without strong local farms, the nation cannot feed itself in times of international trouble.",
+          example:
+            "To illustrate, recent global shipping delays and border restrictions during international crises caused severe supermarket shortages in countries that rely heavily on imported staples.",
+          band9Snippet:
+            "“Finally, becoming overly reliant on foreign food weakens a country's self-sufficiency, leaving it vulnerable to sudden international disruptions.”",
+          modelParagraph:
+            "Finally, becoming overly reliant on foreign food weakens a country's self-sufficiency, leaving it vulnerable to sudden international disruptions. If domestic farming is neglected in favor of cheap foreign imports, a nation loses its ability to feed its own citizens during emergencies. When unexpected geopolitical conflicts, shipping strikes, or border closures happen, cross-border supply lines can break down overnight, creating acute shortages on supermarket shelves. To illustrate, recent global logistics bottlenecks left supermarkets with empty shelves in countries that depend almost entirely on imported staples.",
+          examinerNotes:
+            "Strategic vulnerability point. Relatable to recent real-world shipping strikes and border delays."
+        }
+      ]
+    },
+    {
+      paraNumber: 3,
+      side: "non_opinion",
+      title: "Body Paragraph 3 (Non-Opinion Counterpoint)",
+      theme: "Local Farm Strain & Transport Food Miles",
+      mainReason:
+        "On the other hand, critics rightly point out that cheap foreign goods place immense commercial pressure on local farmers and increase transport pollution.",
+      supportingReasons:
+        "Small family farms cannot match the low prices of massive overseas industrial farms, while flying and shipping food over thousands of kilometers generates heavy greenhouse gas emissions.",
+      example:
+        "For example, small dairy farmers in Britain and Europe have struggled to survive against cheap imported milk, while air-freighting out-of-season berries creates a heavy carbon footprint.",
+      band9Snippet:
+        "“Nonetheless, critics rightly highlight the commercial strain exerted on local farmers and the ecological toll of extensive food miles.”"
+    }
+  ],
 
   vocabList: [
     {
-      word: "escalating obesity rates",
+      word: "cross-border supply chains",
       meaning:
-        "Rapidly multiplying proportions of individuals categorized as clinically overweight or obese within a population.",
+        "Integrated international logistic networks facilitating the transit and distribution of goods across sovereign boundaries.",
       example:
-        "Escalating obesity rates in industrialized societies correlate directly with the widespread availability of cheap, hyper-palatable convenience foods."
+        "Modern supermarkets rely on agile cross-border supply chains to source perishable produce from multiple continents simultaneously."
     },
     {
-      word: "sedentary lifestyle habits",
+      word: "counter-seasonal availability",
       meaning:
-        "Daily routines characterized by prolonged physical inactivity, such as desk-bound occupations and excessive recreational screen time.",
+        "The commercial supply of fresh agricultural items outside of their natural domestic growing calendar by sourcing from the opposite hemisphere.",
       example:
-        "The shift from manual labor to automated office workflows has cemented sedentary lifestyle habits across the global workforce."
+        "Southern hemisphere imports guarantee counter-seasonal availability of stone fruits and berries during northern winter months."
     },
     {
-      word: "chronic non-communicable diseases",
+      word: "ecological food miles",
       meaning:
-        "Long-term medical conditions not transmitted between persons, notably cardiovascular disorders, type-2 diabetes, and hypertension.",
+        "The cumulative distance food is transported from its place of harvest to consumer plates, measuring environmental carbon impact.",
       example:
-        "A sedentary populace inevitably experiences a surge in chronic non-communicable diseases, requiring lifelong medical management."
+        "Critics advocate for reducing ecological food miles by prioritizing regionally cultivated, zero-mile seasonal produce."
     },
     {
-      word: "unsustainable healthcare expenditure",
+      word: "domestic agrarian displacement",
       meaning:
-        "Excessive government or personal fiscal spending required to manage preventable lifestyle ailments that exhausts state health budgets.",
+        "The economic marginalization or bankruptcy of local farmers due to cheaper, mass-produced foreign agricultural imports.",
       example:
-        "Treating preventable weight-related illnesses accounts for an unsustainable healthcare expenditure in modern welfare states."
+        "Unregulated agricultural dumping can trigger domestic agrarian displacement, threatening national food sovereignty."
     },
     {
-      word: "impair economic productivity",
+      word: "dietary diversification",
       meaning:
-        "Diminish national or corporate work efficiency, output, and GDP generation due to employee illness, fatigue, or absenteeism.",
+        "Expanding the spectrum and variety of nutritional foods consumed by a population beyond traditional regional staples.",
       example:
-        "Widespread physical unfitness threatens to impair economic productivity through heightened workplace absenteeism and premature retirement."
+        "Global trade has fostered unprecedented dietary diversification, introducing exotic grains, legumes, and nutrient-dense superfoods into everyday diets."
     },
     {
-      word: "targeted fiscal disincentives",
+      word: "reciprocal trade linkages",
       meaning:
-        "State tax policies, such as levies on sugar-sweetened beverages or junk food, engineered to raise prices and discourage unhealthy consumption.",
+        "Mutually beneficial bilateral commercial agreements whereby trading partners exchange goods to stimulate shared economic prosperity.",
       example:
-        "Implementing targeted fiscal disincentives on carbonated drinks has demonstrated measurable success in curbing caloric intake."
+        "Establishing reciprocal trade linkages allows developing nations to export specialty agricultural goods while importing advanced industrial machinery."
     },
     {
-      word: "active urban infrastructure",
+      word: "carbon-intensive air freight",
       meaning:
-        "Municipal city planning incorporating dedicated cycling highways, pedestrianized zones, and accessible public recreation parks.",
+        "High-emission aviation transport utilized for rapid intercontinental delivery of high-value, highly perishable foodstuffs.",
       example:
-        "Investing in active urban infrastructure encourages daily non-motorized commuting, embedding exercise into routine life."
+        "Transporting fresh asparagus via carbon-intensive air freight incurs an exorbitant environmental footprint compared to surface maritime shipping."
     },
     {
-      word: "concomitant deterioration",
+      word: "monopolistic complacency",
       meaning:
-        "A simultaneous, accompanying decline in quality, status, or biological performance occurring in parallel with another phenomenon.",
+        "A lack of innovation, efficiency, or quality improvement that occurs when domestic suppliers face no foreign market competition.",
       example:
-        "The surge in average body mass has brought a concomitant deterioration in cardiovascular endurance and mental stamina."
+        "Exposure to foreign supermarket goods dismantles monopolistic complacency, compelling local producers to refine quality and customer service."
     },
     {
-      word: "subsidize nutritious whole foods",
+      word: "artisanal specialization",
       meaning:
-        "Provide government financial assistance to reduce retail prices of fresh fruits, vegetables, and unrefined grains for consumers.",
+        "Focusing production on high-value, distinctive, small-batch, or culturally authentic goods rather than uniform mass commodities.",
       example:
-        "Governments must actively subsidize nutritious whole foods to ensure low-income households can afford balanced dietary choices."
+        "Local farmers often counter mass-market imports through artisanal specialization in organic sourdough, heirloom varieties, and raw-milk cheeses."
     },
     {
-      word: "preventative public health paradigm",
+      word: "unprecedented consumer sovereignty",
       meaning:
-        "A proactive healthcare strategy prioritizing disease prevention and active lifestyles rather than reactive clinical treatments.",
+        "The complete freedom and authority of shoppers to select from an exhaustive array of competitive global goods tailored to their tastes and budget.",
       example:
-        "Shifting toward a preventative public health paradigm yields exponential savings compared to managing advanced metabolic disorders."
+        "Supermarket shelves offering global condiments grant modern shoppers unprecedented consumer sovereignty."
     }
   ],
 
   vocabHunt: [
-    "escalating obesity rates",
-    "sedentary lifestyle habits",
-    "chronic non-communicable diseases",
-    "unsustainable healthcare expenditure",
-    "impair economic productivity",
-    "targeted fiscal disincentives",
-    "active urban infrastructure",
-    "concomitant deterioration"
+    "cross-border supply chains",
+    "counter-seasonal availability",
+    "ecological food miles",
+    "domestic agrarian displacement",
+    "dietary diversification",
+    "reciprocal trade linkages",
+    "carbon-intensive air freight",
+    "monopolistic complacency",
+    "artisanal specialization",
+    "unprecedented consumer sovereignty"
   ],
 
-  /*
-   * ================================================================
-   * STEP 6: QUESTION 1 — WHAT ARE THE EFFECTS OF THIS?
-   * ================================================================
-   * Levelled points evaluating repercussions:
-   * Level 1: Extreme Healthcare System Overload & Fiscal Strain (High Impact Macro)
-   * Level 1: Proliferation of Debilitating Chronic Illnesses (High Impact Individual)
-   * Level 2: Macroeconomic Productivity Loss & Workforce Depletion (Strategic Depth)
-   * Level 2: Psychological Morbidity & Diminished Life Expectancy (Strategic Depth)
-   * Plus 4 Nuances & Systemic Ramifications (Socio-Economic Gradient, Transgenerational Epigenetics, Mental Comorbidities, Emergency Logistics)
-   */
   consequences: [
     {
       type: "positive",
-      level: "Level 1: High Impact (Macro Healthcare)",
-      simpleTakeaway:
-        "Treating obesity-related illnesses drains billions from national health budgets, starving other medical sectors of essential resources.",
-      collocation: "unsustainable healthcare expenditure",
-      title: "Severe Overload & Fiscal Strain on Public Healthcare Infrastructures",
-      desc:
-        "The most immediate societal repercussion is the staggering financial burden imposed on national healthcare systems. When large proportions of the citizenry suffer from preventable weight-induced complications, public hospitals and subsidized health programs must allocate disproportionate capital to ongoing dialysis, cardiac surgeries, and bariatric care, diverting critical resources away from acute trauma, pediatrics, and emergency medicine.",
-      example:
-        "The UK's National Health Service (NHS) spends over £6 billion annually treating obesity-related conditions—surpassing the combined public expenditure on police and fire services."
+      title: "Year-Round Fresh Produce & Overcoming Winter Crop Ceilings",
+      desc: "Supermarkets import produce from warmer countries so families can eat fresh strawberries, tomatoes, and vitamins all year round, even when local farms are frozen.",
+      example: "Shoppers in cold northern cities buying fresh citrus and avocados in the middle of January.",
+      level: "Advantage 1 (Step 6)",
+      simpleTakeaway: "Fresh produce in winter: families eat healthy fresh food every single month of the year.",
+      collocation: "year-round fresh produce"
     },
     {
       type: "positive",
-      level: "Level 1: High Impact (Individual Pathology)",
-      simpleTakeaway:
-        "Excess weight directly triggers life-threatening conditions like type-2 diabetes, hypertension, and cardiovascular failure.",
-      collocation: "chronic non-communicable diseases",
-      title: "Proliferation of Debilitating Chronic Non-Communicable Diseases",
-      desc:
-        "On an individual level, escalating body fat percentage combined with muscular atrophy impairs metabolic homeostasis. Individuals face heightened vulnerability to cardiovascular disorders, stroke, osteoarthritis, and premature coronary failure. Unlike seasonal infectious diseases, these lifestyle ailments persist across decades, severely restricting physical mobility and drastically shortening healthy life expectancy.",
-      example:
-        "World Health Organization (WHO) epidemiological reports indicate that over 80% of adult type-2 diabetes diagnoses are directly attributable to excess weight and physical inactivity."
+      title: "Lower Grocery Prices & Family Household Savings",
+      desc: "Crops grow naturally in sunny tropical regions without needing expensive heated greenhouses. Supermarkets pass these savings to consumers, lowering grocery bills.",
+      example: "Importing rice, bananas, and coffee from warm climates at far cheaper prices than heating domestic glasshouses.",
+      level: "Advantage 2 (Step 6)",
+      simpleTakeaway: "Affordable groceries: natural sunshine makes food cheaper to grow than artificial domestic greenhouses.",
+      collocation: "lower household grocery costs"
     },
     {
       type: "positive",
-      level: "Level 2: Strategic Depth (Economic Output)",
-      simpleTakeaway:
-        "Unhealthy workers suffer frequent absenteeism, reduced daily work stamina, and premature retirement, curbing national economic growth.",
-      collocation: "impair economic productivity",
-      title: "Workforce Attrition, Absenteeism & Depleted Macroeconomic Productivity",
-      desc:
-        "Beyond clinical clinics, an unfit population inflicts severe damage on macroeconomic output. Workers suffering from chronic fatigue, spinal strain, and joint inflammation take frequent medical leave (absenteeism) or perform below their cognitive potential while physically present at their desks (presenteeism). This reduces corporate competitiveness, causes early workforce retirement, and shrinks the national tax base.",
-      example:
-        "Economic think-tank studies in the United States estimate that obesity-related productivity losses and sick days cost corporate employers over $150 billion in lost output each year."
+      title: "Diverse Food Choices for Multicultural Communities",
+      desc: "Stocking international ingredients allows immigrant families to cook traditional cultural recipes while introducing local shoppers to exciting world cuisines.",
+      example: "Supermarkets regularly stocking authentic Asian noodles, Indian spices, and Mexican specialty items.",
+      level: "Advantage 3 (Step 6)",
+      simpleTakeaway: "Cultural food variety: modern cities enjoy authentic ingredients from around the world.",
+      collocation: "multicultural culinary diversity"
     },
     {
       type: "positive",
-      level: "Level 2: Strategic Depth (Mental & Physical Quality of Life)",
-      simpleTakeaway:
-        "Physical inactivity and obesity are tightly correlated with clinical depression, reduced mobility, and shortened lifespan.",
-      collocation: "concomitant deterioration",
-      title: "Psychological Morbidity, Social Isolation & Diminished Life Quality",
-      desc:
-        "The negative effects extend deeply into psychosocial well-being. Physical inactivity deprives the brain of essential mood-regulating endorphins and neurotrophic factors, leaving individuals susceptible to clinical depression, chronic anxiety, and low self-esteem. Furthermore, societal weight stigma and impaired mobility foster social isolation, trapping sufferers in a self-reinforcing loop of emotional eating and sedentary withdrawal.",
-      example:
-        "Psychiatric longitudinal studies demonstrate that individuals diagnosed with severe obesity are 55% more likely to develop long-term depressive disorders compared to their physically active peers."
+      title: "Emergency Food Security During Domestic Crop Blights",
+      desc: "If bad weather, flooding, or summer droughts ruin local fields, supermarkets can import from other nations to prevent empty shelves and price spikes.",
+      example: "Importing grain and potatoes from foreign partners after severe summer heatwaves damaged domestic harvests.",
+      level: "Advantage 4 (Step 6)",
+      simpleTakeaway: "Disaster backup: international trade prevents food shortages when local crops fail.",
+      collocation: "resilient emergency food security"
     },
     {
       type: "negative",
-      level: "Nuance 1: The Socio-Economic Asymmetry",
-      simpleTakeaway:
-        "Obesity strikes low-income families hardest because processed, calorie-dense junk food is far cheaper than fresh produce.",
-      collocation: "socio-economic dietary disparity",
-      title: "The Socio-Economic Gradient: Deepening Health Inequity",
-      desc:
-        "Weight gain does not afflict all social classes equally. Lower-income demographics residing in urban 'food deserts' face severe economic barriers to purchasing wholesome produce, forcing reliance on hyper-processed, calorie-dense fast foods that cost a fraction per calorie, thereby compounding structural poverty with chronic disease.",
-      example:
-        "In developed economies like Australia and the US, obesity rates among the lowest income quartile are nearly double those observed in the wealthiest demographic brackets."
+      title: "Severe Commercial Threat to Local Family Farmers",
+      desc: "Small local farmers have higher labor and land costs and cannot match the rock-bottom prices of massive foreign mega-farms, leading to farm bankruptcies.",
+      example: "Family-owned dairy and vegetable farms closing down because supermarkets choose cheaper foreign milk and produce.",
+      level: "Disadvantage 1 (Step 7)",
+      simpleTakeaway: "Threat to local farms: small farmers lose customers to cheap foreign imports and face bankruptcy.",
+      collocation: "commercial strain on domestic smallholders"
     },
     {
       type: "negative",
-      level: "Nuance 2: Transgenerational Health Deficits",
-      simpleTakeaway:
-        "Overweight parents unknowingly pass poor eating habits and metabolic risks down to their children, creating cyclical epidemics.",
-      collocation: "transgenerational health vulnerability",
-      title: "Transgenerational Transmission & Childhood Obesity Cascades",
-      desc:
-        "Parental obesity and sedentary lifestyle habits frequently program the next generation. Children raised in sedentary environments not only adopt poor nutritional norms but also inherit epigenetic predispositions toward metabolic dysfunction, setting off early childhood diabetes and heart complications.",
-      example:
-        "Pediatric health registries show that children with two obese parents are up to 80% more likely to become obese adults compared to children of normal-weight parents."
+      title: "Air Pollution & Carbon Emissions from 'Food Miles'",
+      desc: "Flying perishables on airplanes and shipping cargo across oceans burns immense fossil fuels, releasing carbon emissions that contribute to global warming.",
+      example: "Air-freighting out-of-season berries across continents generating far higher emissions than buying local seasonal apples.",
+      level: "Disadvantage 2 (Step 7)",
+      simpleTakeaway: "Pollution from food miles: long-distance planes and cargo ships burn massive amounts of fossil fuel.",
+      collocation: "carbon emissions from food miles"
     },
     {
       type: "negative",
-      level: "Nuance 3: Cognitive Stagnation in Sedentary Populations",
-      simpleTakeaway:
-        "Lack of exercise impairs neurogenesis and dopamine regulation, worsening chronic anxiety and social disengagement.",
-      collocation: "cognitive stagnation and neurodegeneration",
-      title: "Sedentary Cognitive Decline & Accelerated Neurodegeneration",
-      desc:
-        "Physical exercise stimulates brain-derived neurotrophic factor (BDNF), crucial for memory formation and neuroplasticity. Protracted physical inactivity accelerates vascular dementia risk and degrades cognitive sharpness in aging workforces, turning fitness deficits into mental decline.",
-      example:
-        "Neurological clinical studies confirm that regular aerobic exercise reduces the risk of vascular dementia by nearly 30% by maintaining cerebral blood flow."
+      title: "Chemical Preservatives & Loss of Natural Freshness",
+      desc: "Food traveling for weeks must be picked unripe, coated in synthetic wax, and treated with preservatives, making it taste bland compared to freshly picked farm food.",
+      example: "Imported tomatoes spending weeks in cold storage and tasting watery compared to freshly harvested local market produce.",
+      level: "Disadvantage 3 (Step 7)",
+      simpleTakeaway: "Chemicals & lost taste: long transit times mean food is picked unripe and sprayed with preservatives.",
+      collocation: "loss of natural freshness and flavor"
     },
     {
       type: "negative",
-      level: "Nuance 4: Logistical & Emergency Infrastructure Strain",
-      simpleTakeaway:
-        "Hospitals and emergency services must invest in heavier ambulances, bariatric surgical beds, and specialized medical logistics.",
-      collocation: "specialized bariatric medical logistics",
-      title: "Emergency Transport Bottlenecks & Specialized Medical Logistics",
-      desc:
-        "Rising average body mass imposes severe mechanical constraints on public infrastructure, requiring municipalities to retrofit ambulances with heavy-duty hydraulic lifts, reinforce surgical tables, and redesign transit seating, imposing massive hidden secondary capital costs on public utilities.",
-      example:
-        "Multiple metropolitan paramedic services in North America and Western Europe have spent millions re-engineering ambulance fleets with heavy-duty winches and reinforced stretchers."
+      title: "Over-Dependence on Foreign Food & Supply Disruptions",
+      desc: "If domestic farming shuts down, a nation becomes helpless during international crises, shipping strikes, or border closures that halt imports.",
+      example: "Sudden international logistics bottlenecks leaving supermarket shelves empty in countries that rely completely on food imports.",
+      level: "Disadvantage 4 (Step 7)",
+      simpleTakeaway: "Vulnerability to crises: relying entirely on foreign food leaves nations vulnerable when borders or trade routes close.",
+      collocation: "vulnerability to foreign supply disruptions"
     }
   ],
 
-  /*
-   * ================================================================
-   * STEP 7: QUESTION 2 — WHAT MEASURES COULD BE TAKEN TO SOLVE THEM?
-   * ================================================================
-   * Levelled points for comprehensive remedial measures:
-   * Level 1: State Fiscal Interventions & Junk Food Advertising Curfews (High Impact Policy)
-   * Level 1: Active Urban Architecture & Green Commuting Infrastructure (High Impact Infrastructure)
-   * Level 2: Institutional Physical Activity Mandates in Schools & Workplaces (Strategic Depth)
-   * Level 2: Subsidizing Nutritious Whole Foods & Mandatory Nutrition Labeling (Strategic Depth)
-   * Plus 4 Evaluative Strategic Implementations (Preventive Screenings, Gamified Nudges, Ergonomic Redesign, Public Awareness)
-   */
   evaluationArguments: [
     {
+      title: "Year-Round Fresh Nutrition & Public Health (Advantage)",
+      reason: "Supermarket imports eliminate seasonal winter gaps, providing uninterrupted access to fresh vitamins and nutrient-dense produce.",
+      development: "In cold climates, local farming shuts down for months. Without global imports, consumers would be restricted to stored root vegetables and preserved foods during winter.",
+      example: "Families in cold northern regions buying fresh berries, citrus, and greens in January at normal retail prices.",
       type: "argument",
-      level: "Level 1: High Impact (Fiscal & Regulatory)",
-      simpleTakeaway:
-        "Taxing sugary drinks and banning fast-food ads aimed at children instantly shifts consumer habits toward healthier choices.",
-      collocation: "targeted fiscal disincentives",
-      title: "Aggressive State Fiscal Policies & Junk Food Marketing Curfews",
-      reason:
-        "Governments possess the sovereign power to reshape consumer purchasing behavior through taxation and stringent commercial advertising regulations.",
-      development:
-        "Market mechanisms are among the most effective drivers of dietary change. By levying substantial excise taxes on sugar-sweetened beverages, confectionery, and ultra-processed snacks—while simultaneously banning junk food advertisements during children's programming and on social media—authorities disincentivize unhealthy purchases. The revenue generated can then be ring-fenced to fund subsidized youth sports programs and school lunch overhauls.",
-      example:
-        "Following Mexico's 2014 introduction of a 10% tax on sugar-sweetened beverages, national purchases of taxed drinks declined by nearly 10% within two years, with the greatest reductions seen in low-income households."
+      level: "Core Advantage 1",
+      simpleTakeaway: "Year-round nutrition: keeps families healthy throughout freezing winter months.",
+      collocation: "uninterrupted year-round nutrition"
     },
     {
+      title: "Grocery Affordability Through Natural Growing Conditions (Advantage)",
+      reason: "Crops cultivated in naturally sunny, fertile climates cost far less to grow than using energy-hungry domestic heated greenhouses.",
+      development: "Supermarkets pass these lower production costs on to shoppers, protecting low-income families from rising grocery inflation.",
+      example: "Importing tropical fruits, rice, and coffee is much cheaper than attempting to grow them in expensive heated glasshouses.",
       type: "argument",
-      level: "Level 1: High Impact (Built Environment)",
-      simpleTakeaway:
-        "Building protected bike lanes, wide pedestrian walkways, and outdoor fitness parks makes daily exercise effortless.",
-      collocation: "active urban infrastructure",
-      title: "Redesigning Municipal Environments for Active Commuting & Recreation",
-      reason:
-        "Automobile-dominated urban designs passively enforce sedentary lifestyles; restructuring cities restores spontaneous physical movement.",
-      development:
-        "Rather than relying solely on individual motivation to visit commercial gyms, municipalities must integrate cardiovascular activity into daily commuting routines. Constructing separated bicycle superhighways, expansive pedestrianized high streets, and freely accessible public outdoor gym facilities normalizes daily non-motorized transport. When cycling and walking become the most convenient commuting choices, baseline fitness rises universally across the population.",
-      example:
-        "In Copenhagen and Amsterdam, dedicated cycling infrastructure enables over 40% of the population to commute by bicycle daily, resulting in significantly lower cardiovascular disease incidence than car-dependent Western cities."
+      level: "Core Advantage 2",
+      simpleTakeaway: "Affordable groceries: natural sunshine keeps staple food prices down for families.",
+      collocation: "natural agrarian price efficiency"
     },
     {
-      type: "argument",
-      level: "Level 2: Strategic Depth (Institutional Mandates)",
-      simpleTakeaway:
-        "Enforcing daily fitness sessions in schools and subsidized gym hours in corporate offices reverses sedentary desk routines.",
-      collocation: "mandatory physical education regimens",
-      title: "Mandatory Physical Wellness Programs in Educational Institutions & Workplaces",
-      reason:
-        "Since individuals spend the majority of their waking hours in schools and corporate offices, institutional mandates ensure sustained exercise habits.",
-      development:
-        "Schools must implement mandatory, daily aerobic physical education classes combined with rigorous bans on sugary vending machines within campus grounds. Simultaneously, corporate employers should be incentivized through corporate tax breaks to offer standing desks, paid midday fitness breaks, and subsidized sports facility memberships, dismantling the culture of uninterrupted 8-hour sedentary sitting.",
-      example:
-        "Japan's 'Shuku' school lunch law and corporate 'Metabo Law' mandate daily healthy nutrition and annual employee waistline monitoring, contributing to Japan maintaining the lowest obesity rate in the industrialized OECD world."
-    },
-    {
-      type: "argument",
-      level: "Level 2: Strategic Depth (Nutritional Subsidies)",
-      simpleTakeaway:
-        "Lowering the cost of fresh vegetables and requiring traffic-light nutrition labels empowers citizens to eat well on any budget.",
-      collocation: "subsidize nutritious whole foods",
-      title: "Subsidizing Nutritious Whole Foods & Mandatory Front-of-Package Labeling",
-      reason:
-        "Ensuring wholesome, unprocessed foods are cheaper and easier to understand than ultra-processed alternatives democratizes good health.",
-      development:
-        "Governments should redirect agricultural subsidies toward fresh vegetables, legumes, and unrefined grains, making wholesome food more affordable than fast food. Concurrently, imposing mandatory, front-of-package 'traffic light' nutritional warning labels (clearly highlighting high sugar, saturated fat, and sodium content) eliminates deceptive marketing and enables consumers to make informed dietary decisions instantly.",
-      example:
-        "Chile's pioneering black-stop-sign warning label law prompted food manufacturers to reformulate over 20% of supermarket products to reduce sugar and salt levels below the regulatory threshold."
-    },
-    {
+      title: "Commercial Threat to Local Smallholders (Disadvantage)",
+      reason: "Small family farms cannot compete with the ultra-low prices of giant, subsidized foreign agricultural corporations.",
+      development: "When supermarkets stock cheaper imports, local farmers lose their customer base, leading to rural bankruptcies and loss of traditional farming jobs.",
+      example: "Local dairy and berry farmers going out of business because supermarkets prioritize cheap overseas suppliers.",
       type: "counterpoint",
-      level: "Implementation 1: Preventative Screenings",
-      simpleTakeaway:
-        "Doctors prescribing structured gym classes and regular biometric checks catch pre-diabetes long before hospitalization is needed.",
-      collocation: "preventative public health paradigm",
-      title: "Clinical Exercise Prescriptions & Early Biometric Interventions",
-      reason:
-        "Transforming healthcare from reactive disease treatment into proactive physical conditioning stops chronic conditions before they become irreversible.",
-      development:
-        "Primary care physicians should be empowered to prescribe subsidized gym memberships and community exercise regimens alongside conventional pharmaceuticals. Routine biometric screening programs at age 30 and 40 catch pre-diabetes and early hypertension early, allowing lifestyle adjustments before irreversible organ damage occurs.",
-      example:
-        "The UK's 'Social Prescribing' initiative allows family doctors to refer patients directly to subsidized local cycling clubs and walking groups, yielding marked reductions in medication dependency."
+      level: "Key Disadvantage 1",
+      simpleTakeaway: "Local farm strain: small farmers cannot match the prices of massive foreign mega-farms.",
+      collocation: "severe strain on local smallholders"
     },
     {
+      title: "Environmental Impact of 'Food Miles' (Disadvantage)",
+      reason: "Transporting perishable groceries across oceans on airplanes and container ships generates heavy carbon emissions and plastic packaging waste.",
+      development: "The burning of aviation fuel and marine diesel for long-haul food transport directly contributes to global air pollution and climate change.",
+      example: "Air-freighting out-of-season fruits thousands of miles emitting far more carbon per kilo than local seasonal harvests.",
       type: "counterpoint",
-      level: "Implementation 2: Digital Nudges & Gamification",
-      simpleTakeaway:
-        "Wearable step-trackers and state-sponsored fitness apps rewarding daily steps with public transit discounts motivate mass participation.",
-      collocation: "gamified behavioral incentivization",
-      title: "Digital Health Nudges & Gamified Physical Activity Platforms",
-      reason:
-        "Leveraging mobile technology and behavioral economics makes daily exercise rewarding and competitive for younger generations.",
-      development:
-        "National health boards can deploy gamified mobile applications that track daily step counts and active heart rate minutes, rewarding consistent physical activity with tangible civic benefits such as public transit discounts or cinema vouchers. This transforms fitness from an intimidating chore into an engaging daily game.",
-      example:
-        "Singapore's National Steps Challenge has engaged over one million citizens by pairing smartphone step tracking with retail loyalty rewards, driving measurable increases in average daily steps."
-    },
-    {
-      type: "counterpoint",
-      level: "Implementation 3: Ergonomic Workplace Redesign",
-      simpleTakeaway:
-        "Replacing sedentary cubicles with height-adjustable desks and walking meetings combats 8 hours of uninterrupted daily sitting.",
-      collocation: "ergonomic occupational restructuring",
-      title: "Workplace Ergonomic Restructuring & Active Meeting Cultures",
-      reason:
-        "Altering physical office environments passively reduces prolonged sedentary posture without sacrificing professional output.",
-      development:
-        "Companies that incorporate height-adjustable sit-stand desks, treadmill workstations, and active 'walking meetings' break up continuous sitting spells. Even low-intensity postural shifts throughout the workday dramatically enhance insulin sensitivity and daily caloric expenditure.",
-      example:
-        "Scandinavian tech firms that provide standing desks and structured 5-minute stretch breaks report significant reductions in employee musculoskeletal complaints and afternoon lethargy."
-    },
-    {
-      type: "counterpoint",
-      level: "Implementation 4: Counter-Marketing Campaigns",
-      simpleTakeaway:
-        "Educating families on the hidden sugars in supermarket meals shifts national food culture similar to historical anti-smoking campaigns.",
-      collocation: "public health education campaigns",
-      title: "Aggressive Public Health Counter-Marketing & Nutritional Literacy",
-      reason:
-        "Demystifying misleading industrial food claims reshapes societal attitudes and denormalizes ultra-processed dietary staples.",
-      development:
-        "Just as anti-tobacco graphic campaigns successfully shifted public perceptions of smoking over several decades, aggressive public awareness drives highlighting the hidden sugars, trans fats, and metabolic hazards of convenience foods build grassroots demand for wholesome cooking and physical fitness.",
-      example:
-        "Australia's sustained 'LiveLighter' public health advertisements, illustrating visceral fat buildup caused by sugary drinks, led to a 30% reduction in weekly soft drink consumption among target audiences."
+      level: "Key Disadvantage 2",
+      simpleTakeaway: "Carbon footprint: long-distance planes and ships release heavy emissions into the atmosphere.",
+      collocation: "environmental toll of food miles"
     }
   ],
 
   facultyAngles: [
     {
-      title: "Behavioral Economics & Nudge Theory (Thaler & Sunstein)",
+      title: "Consumer Economics: Natural Solar Advantage vs. Greenhouse Energy",
       development:
-        "Analyze how default environmental choices shape human decisions. When convenience stores place water and fresh fruit at eye level while banishing confectionery to rear shelves, consumer purchase patterns shift automatically without coercive bans—demonstrating the power of choice architecture in combating obesity."
+        "Economists highlight that crops grown in naturally sunny, warm climates require far less energy and expense than crops forced to grow in cold nations inside heated, fossil-fuel-powered glasshouses."
     },
     {
-      title: "The Built Environment & Food Desert Determinism",
+      title: "Environmental Science: The Nuance of Life-Cycle Carbon Assessment",
       development:
-        "Examine urban sociology research showing that weight gain is heavily determined by postal code. In underserved communities lacking supermarkets with fresh produce but saturated with fast-food outlets, individual willpower is insufficient without systemic municipal rezoning and public transit connectivity."
+        "Ecological research reveals that 'food miles' represent only one part of total food emissions; field-grown crops shipped by sea often produce less carbon than heating artificial glasshouses with electricity."
     },
     {
-      title: "Preventative vs. Curative Healthcare Economics (The WHO Mandate)",
+      title: "Food Security Policy: Global Diversification vs. Domestic Vulnerability",
       development:
-        "Contrast the economic return on investment (ROI) of preventative measures versus curative interventions. Every dollar invested in public active transit and nutritional education saves approximately three to five dollars in avoided chronic disease hospitalizations over a ten-year horizon."
-    },
-    {
-      title: "The Ultra-Processed Food Industry: Parallels with Big Tobacco",
-      development:
-        "Evaluate legal and ethical arguments comparing the multi-billion-dollar food processing conglomerates with twentieth-century tobacco corporations. Analyze the addictive hyper-palatability of sugar-fat-salt formulations designed by food chemists to bypass human biological satiety signals."
-    },
-    {
-      title: "Epigenetics & The Developmental Origins of Health and Disease (DOHaD)",
-      development:
-        "Explore how maternal and paternal health at conception, alongside early childhood nutrition, epigenetically alters gene expression for metabolic efficiency and adiposity, illustrating why public health interventions must prioritize young mothers and primary school children to break multi-generational cycles."
-    },
-    {
-      title: "Scandinavian Active Living ('Friluftsliv') and Urban Design Benchmarks",
-      development:
-        "Investigate Nordic public policies that embed outdoor recreation ('friluftsliv') into daily civic life, examining how municipal snow-clearing priorities for bike paths before motorways, alongside tax-free bicycle purchase schemes, have maintained exemplary population fitness across all age demographics."
-    }
-  ],
-
-  brainstormCards: [
-    {
-      question:
-        "Why does increasing population weight pose a devastating economic threat beyond individual medical problems?",
-      thinkingLens: "Macroeconomic Healthcare Solvency & Workforce Productivity",
-      selfCheck:
-        "Did you consider both direct hospital spending and indirect losses from employee absenteeism and premature retirement?",
-      idea:
-        "Rising obesity drains billions in state healthcare budgets managing chronic conditions like type-2 diabetes, while simultaneously reducing workforce stamina, increasing sick leave, and shrinking the active labor pool required for economic growth."
-    },
-    {
-      question:
-        "How has modern technological and urban advancement engineered physical movement out of human existence?",
-      thinkingLens: "Sedentary Automation & Automobile-Centric Urban Planning",
-      selfCheck:
-        "Did you identify desk-bound office automation, screen-based leisure, and car-dependent suburbs?",
-      idea:
-        "The shift from agricultural and manual labor to desk-bound computer occupations, combined with suburban car dependency and digital entertainment, has replaced natural daily physical movement with protracted, uninterrupted sedentary sitting."
-    },
-    {
-      question:
-        "Why do voluntary public education campaigns usually fail unless paired with aggressive government fiscal policies?",
-      thinkingLens: "Price Elasticity & The Addictive Nature of Ultra-Processed Foods",
-      selfCheck:
-        "Did you evaluate why knowledge alone cannot overcome the cheapness and convenience of fast food?",
-      idea:
-        "Awareness campaigns cannot compete with ultra-processed foods that are artificially cheap and biologically addictive. Only hard fiscal interventions—like sugar taxes and price subsidies for fresh vegetables—make healthy food financially advantageous for ordinary families."
-    },
-    {
-      question:
-        "What institutional roles should schools and employers play in re-establishing daily physical activity?",
-      thinkingLens: "Captive Audience Interventions & Mandatory Wellness Scheduling",
-      selfCheck:
-        "Can you propose specific structural solutions like mandatory physical education and standing desks?",
-      idea:
-        "Because citizens spend the majority of their weekdays in schools and offices, these institutions must mandate daily aerobic exercise classes, ban junk-food vending machines, and provide standing desks and subsidized gym hours to make fitness non-negotiable."
+        "Modern agricultural analysts emphasize that having backup international food suppliers is essential to protect citizens whenever local droughts, floods, or crop diseases destroy domestic harvests."
     }
   ],
 
   powerExpressions: [
     {
-      expression: "a myopic focus on curative medicine",
-      meaning:
-        "A short-sighted healthcare strategy that prioritizes late-stage clinical treatments rather than addressing lifestyle root causes.",
-      example:
-        "Relying strictly on hospital pharmaceutical subsidies reflects a myopic focus on curative medicine rather than preventative lifestyle intervention."
+      expression: "year-round nutritional accessibility",
+      meaning: "Continuous availability of fresh, healthy foods in all seasons.",
+      example: "Supermarket imports have established year-round nutritional accessibility for families living in cold climates."
     },
     {
-      expression: "the epitome of active municipal planning",
-      meaning:
-        "The quintessential urban benchmark where city design effortlessly embeds daily exercise into ordinary routines.",
-      example:
-        "Copenhagen's separated bicycle highway corridors represent the epitome of active municipal planning, keeping citizen fitness high."
+      expression: "mitigate localized harvest shortages",
+      meaning: "Prevent or reduce food shortages caused by bad weather on domestic farms.",
+      example: "Having global supply routes helps supermarkets mitigate localized harvest shortages caused by summer droughts."
     },
     {
-      expression: "pervasive exposure to hyper-palatable foods",
-      meaning:
-        "The ubiquitous and unescapable commercial saturation of cheap, high-sugar convenience products in daily environments.",
-      example:
-        "Pervasive exposure to hyper-palatable foods has normalized excessive caloric surpluses across working-class demographics."
+      expression: "the environmental toll of food miles",
+      meaning: "The damage caused to nature and the air by transporting food long distances.",
+      example: "Critics rightfully emphasize the environmental toll of food miles associated with air-freighting fresh produce."
     },
     {
-      expression: "exacerbate sedentary workforce lethargy",
-      meaning:
-        "Intensify physical inactivity, musculoskeletal fatigue, and metabolic slowdown within desk-bound occupations.",
-      example:
-        "Prolonged desk-bound shifts exacerbate sedentary workforce lethargy, causing diminished daily productivity and chronic spinal ailments."
+      expression: "commercial strain on domestic smallholders",
+      meaning: "Intense financial pressure and risk of bankruptcy faced by small local farmers.",
+      example: "Cheap foreign supermarket imports exert severe commercial strain on domestic smallholders."
     },
     {
-      expression: "catalyze a preventative public health paradigm",
-      meaning:
-        "Spark a proactive societal transition toward preventing illnesses before clinical treatments are required.",
-      example:
-        "Aggressive sugar levies can catalyze a preventative public health paradigm across developing economies."
+      expression: "energy-intensive artificial cultivation",
+      meaning: "Growing crops indoors using huge amounts of electricity and greenhouse heating.",
+      example: "Importing tropical crops avoids the need for energy-intensive artificial cultivation in cold countries."
     },
     {
-      expression: "mitigate chronic disease prevalence",
-      meaning:
-        "Substantially decrease the occurrence, severity, and fiscal burden of long-term metabolic conditions.",
-      example:
-        "Subsidizing fresh whole foods and promoting active transit can effectively mitigate chronic disease prevalence in urban hubs."
+      expression: "multicultural culinary diversity",
+      meaning: "A wide variety of international ingredients that reflect different cultures.",
+      example: "Supermarket imports support multicultural culinary diversity in modern cosmopolitan cities."
     },
     {
-      expression: "unsustainable strain on public healthcare coffers",
-      meaning:
-        "An overwhelming financial and logistical burden that threatens to bankrupt state medical systems.",
-      example:
-        "The surge in chronic lifestyle illnesses places an unsustainable strain on public healthcare coffers."
+      expression: "decisively outweigh the drawbacks",
+      meaning: "The benefits are vastly more significant and valuable than the negatives.",
+      example: "The nutritional and economic advantages of imported food decisively outweigh the drawbacks."
+    }
+  ],
+
+  brainstormCards: [
+    {
+      question: "Why do supermarkets stock imported fruits and vegetables during winter?",
+      thinkingLens: "Consumer Nutrition & Seasonal Climate Lens",
+      selfCheck: "Did you explain that freezing winters stop local farming, so imports supply fresh vitamins?",
+      idea: "In cold countries, domestic farming shuts down in winter. Supermarkets import fresh produce from warmer countries so families can eat fresh strawberries, tomatoes, and vitamins all year round without waiting for summer."
     },
     {
-      expression: "embed active commuting into the municipal fabric",
-      meaning:
-        "Integrate walking, cycling, and pedestrian transit directly into the core architectural design of modern cities.",
-      example:
-        "Constructing protected bicycle highways embeds active commuting into the municipal fabric of European capitals."
+      question: "Why is imported tropical food often cheaper than food grown locally?",
+      thinkingLens: "Production Cost & Natural Sunshine Lens",
+      selfCheck: "Did you contrast natural outdoor sunlight with expensive heated domestic greenhouses?",
+      idea: "Tropical produce grows naturally outdoors in abundant sunshine and fertile soil. In contrast, growing tropical food locally in cold nations requires expensive heated greenhouses with massive electricity bills, making local production far more costly."
+    },
+    {
+      question: "What is the biggest problem for local farmers when supermarkets sell cheap foreign imports?",
+      thinkingLens: "Local Farmer Livelihoods & Competition Lens",
+      selfCheck: "Did you explain that small family farms cannot match the low prices of foreign mega-farms?",
+      idea: "Small family farmers have higher labor, land, and heating costs. When supermarkets choose cheaper foreign imports, local farmers lose customers, face severe financial hardship, and are frequently forced out of business."
+    },
+    {
+      question: "Why do the advantages of imported supermarket food decisively outweigh the disadvantages?",
+      thinkingLens: "Overall Synthesis & Outweighing Verdict Lens",
+      selfCheck: "Did you explain that benefits help the entire population's health and budget, while drawbacks can be managed?",
+      idea: "While local farm competition and transport emissions are real challenges, the benefits—providing fresh year-round nutrition, keeping grocery bills affordable for ordinary families, and protecting against crop blights—affect the health and well-being of the entire population."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "From an epidemiological perspective, the primary consequence of this trend is...",
-      "Consequently, public healthcare infrastructures are confronted with an unprecedented fiscal hemorrhage...",
-      "To counter this multi-faceted crisis, governments must enact decisive regulatory and urban interventions...",
-      "By combining targeted fiscal disincentives with the expansion of active urban infrastructure..."
+      "Foremost among the advantages is that...",
+      "Beyond household consumption, international commerce fosters...",
+      "Detractors, however, cogently contend that...",
+      "Consequently, when weighed against the manageable environmental drawbacks...",
+      "This dichotomy underscores that while localized challenges persist..."
     ],
     aTier: [
-      "In terms of long-term economic ramifications",
-      "Compounding this physiological deterioration is",
-      "A particularly effective remedial measure involves",
-      "As public health case studies convincingly demonstrate"
+      "In stark contrast to domestic seasonal limitations,",
+      "Furthermore, exposure to global market dynamics compels...",
+      "Nevertheless, one cannot dismiss the ecological repercussions of...",
+      "In light of these considerations, the overriding merits decisively overshadow..."
     ],
     bTier: [
-      "First and foremost",
-      "In addition to this",
-      "For instance",
-      "In conclusion, to summarize"
+      "On the one hand,",
+      "On the other hand,",
+      "In addition,",
+      "Overall, the benefits are greater than the negatives"
     ]
   },
 
-  /*
-   * ================================================================
-   * STRATEGIC DISCOURSE LINKERS: WHERE EXACTLY TO USE THEM
-   * ================================================================
-   * Categorized by paragraph zone so students know the precise essay placement.
-   */
   strategicLinkers: [
     {
-      zone: "Zone 1: Opening the Core Effect (Topic Sentence)",
-      badge: "Paragraph Opener (Body 1 & 2)",
-      placementRule:
-        "Place at the very beginning of Body 1 or Body 2 to state the primary repercussion (e.g. healthcare strain or workforce fatigue) with immediate academic authority, avoiding basic cliches like 'First of all'.",
+      zone: "Paragraph Openers (Structural Roadmap)",
+      badge: "Macro Signposting",
+      placementRule: "Place strictly at Sentence 1 of each body paragraph to establish categorical focus.",
       items: [
         {
-          phrase: "From an epidemiological perspective, the primary consequence of this trend is...",
-          functionDesc: "Establishes clinical, public health, and hospital capacity dimensions.",
-          example:
-            "From an epidemiological perspective, the primary consequence of this trend is the unsustainable financial and operational burden placed on state healthcare networks."
+          phrase: "Foremost among the compelling merits of international food retail is...",
+          functionDesc: "Initiates Body Paragraph 1 by introducing the strong-opinion advantage (consumer diversity & nutrition).",
+          example: "Foremost among the compelling merits of international food retail is the unprecedented dietary diversity and counter-seasonal nutritional resilience it affords modern households."
         },
         {
-          phrase: "At a macroeconomic level, the most concerning repercussion manifests as...",
-          functionDesc: "Frames workforce attrition, workplace absenteeism, and national output loss.",
-          example:
-            "At a macroeconomic level, the most concerning repercussion manifests as widespread workplace absenteeism and depleted daily labor productivity."
+          phrase: "Equally significant is the broader macroeconomic catalyst that cross-border trade provides...",
+          functionDesc: "Transitions smoothly into Body Paragraph 2 (strong-opinion advantage 2: trade integration & innovation).",
+          example: "Equally significant is the broader macroeconomic catalyst that cross-border trade provides by stimulating developing economies and driving domestic innovation."
         },
         {
-          phrase: "The foremost structural hazard arising from declining fitness is...",
-          functionDesc: "Directly introduces systemic societal or logistical threats.",
-          example:
-            "The foremost structural hazard arising from declining fitness is the premature escalation of chronic non-communicable diseases among working-age adults."
+          phrase: "On the other hand, detractors cogently point to the ecological and agrarian ramifications of this trend...",
+          functionDesc: "Opens Body Paragraph 3 (non-opinion counterpoint / concession) with measured academic neutrality.",
+          example: "On the other hand, detractors cogently point to the ecological and agrarian ramifications of this trend, most notably extensive food miles and pressure on local smallholders."
         }
       ]
     },
     {
-      zone: "Zone 2: Unpacking Causal Mechanisms (Supporting Detail)",
-      badge: "Causal Logic Engine",
-      placementRule:
-        "Place immediately after the topic sentence to elucidate the exact cause-and-effect mechanism—explaining WHY and HOW sedentary routines and processed diets produce the stated damage.",
+      zone: "Internal Causal Chains (Reason → Elaboration)",
+      badge: "Depth & Logic Flow",
+      placementRule: "Use within body paragraphs between the main reason and supporting explanation.",
       items: [
         {
-          phrase: "This crisis is largely attributable to...",
-          functionDesc: "Identifies the core structural root cause with academic restraint.",
-          example:
-            "This crisis is largely attributable to desk-bound occupational workflows and the pervasive availability of calorie-dense convenience foods."
+          phrase: "...which in turn eliminates localized nutritional deprivation during winter months...",
+          functionDesc: "Connects counter-seasonal supply directly to biological and public health outcomes.",
+          example: "Supermarkets import produce from the opposite hemisphere, which in turn eliminates localized nutritional deprivation during winter months."
         },
         {
-          phrase: "The underlying physiological mechanism stems from...",
-          functionDesc: "Explains metabolic, physical, or behavioral causation in depth.",
-          example:
-            "The underlying physiological mechanism stems from protracted muscular inactivity, which impairs insulin sensitivity and cardiovascular endurance."
+          phrase: "This dynamic compels domestic agricultural enterprises to abandon complacency and...",
+          functionDesc: "Explains how foreign competition triggers positive adaptation rather than simple destruction.",
+          example: "This dynamic compels domestic agricultural enterprises to abandon complacency and pivot toward lucrative organic and artisanal niches."
         },
         {
-          phrase: "Consequently, public health infrastructures are confronted with...",
-          functionDesc: "Bridges individual dietary choices to broader institutional damage.",
-          example:
-            "Consequently, public health infrastructures are confronted with an unrelenting surge in lifelong illnesses that exhaust state budgets."
+          phrase: "Owing to the exorbitant fuel consumption inherent in transcontinental aviation freight...",
+          functionDesc: "Grounds environmental critique in concrete logistical mechanics.",
+          example: "Owing to the exorbitant fuel consumption inherent in transcontinental aviation freight, out-of-season produce generates a disproportionate carbon footprint."
         }
       ]
     },
     {
-      zone: "Zone 3: Pivoting to the Remedial Solution (Mid-Paragraph Transition)",
-      badge: "Problem-to-Solution Bridge",
-      placementRule:
-        "Place midway through Body 1 and Body 2 to smoothly pivot from the problem (Effect) to its direct countermeasure (Solution) within the paired [Effect + Solution + Example] architecture.",
+      zone: "Evaluative Weighed Verdict (Concession → Decisive Stance)",
+      badge: "Task Achievement 9",
+      placementRule: "Use at the end of Body 3 or in the introduction/conclusion to establish clear weighting.",
       items: [
         {
-          phrase: "To counter this dilemma, a viable antidote lies in...",
-          functionDesc: "Pivots seamlessly from pathology to targeted legislative policy action.",
-          example:
-            "To counter this dilemma, a viable antidote lies in levying targeted fiscal excise taxes on sugar-sweetened beverages and ultra-processed confectionery."
+          phrase: "While these environmental and agrarian reservations are undeniably legitimate, they are largely remediable through...",
+          functionDesc: "Acknowledges the counter-argument before decisively demonstrating why advantages prevail.",
+          example: "While these environmental and agrarian reservations are undeniably legitimate, they are largely remediable through green logistics and targeted domestic farm subsidies."
         },
         {
-          phrase: "A strategic countermeasure to this trend is for governments to...",
-          functionDesc: "Introduces public infrastructure or municipal design reforms.",
-          example:
-            "A strategic countermeasure to this trend is for governments to reconfigure municipal layouts, ensuring active transit options are safe and accessible."
-        },
-        {
-          phrase: "This vulnerability can be effectively mitigated through...",
-          functionDesc: "Connects institutional settings (schools/workplaces) to proactive wellness mandates.",
-          example:
-            "This vulnerability can be effectively mitigated through mandatory physical wellness regimens and ergonomic workplace overhauls."
-        }
-      ]
-    },
-    {
-      zone: "Zone 4: Anchoring Empirical Evidence (Concrete Precedents)",
-      badge: "Case Study & Anchor",
-      placementRule:
-        "Place right before introducing verified real-world precedents, data, or municipal models to substantiate your proposed countermeasure.",
-      items: [
-        {
-          phrase: "This dynamic is epitomized by...",
-          functionDesc: "Seamlessly weaves 'epitome/epitomize' to introduce a gold-standard international benchmark.",
-          example:
-            "This dynamic is epitomized by Copenhagen, where municipal investments in dedicated bicycle superhighways enable over 40% of citizens to commute actively."
-        },
-        {
-          phrase: "A compelling empirical precedent is observed in...",
-          functionDesc: "Introduces verified sovereign tax or public health regulations.",
-          example:
-            "A compelling empirical precedent is observed in Mexico, where a 10% excise tax on sugary drinks precipitated a near 10% decrease in consumption."
-        },
-        {
-          phrase: "Substantiating this approach, real-world data from...",
-          functionDesc: "Grounds corporate wellness or municipal interventions in quantifiable outcomes.",
-          example:
-            "Substantiating this approach, real-world data from Japanese corporations under the 'Metabo Law' shows marked declines in metabolic syndrome."
-        }
-      ]
-    },
-    {
-      zone: "Zone 5: Synthesizing Conclusions (Closing Restatement)",
-      badge: "Conclusion Restatement",
-      placementRule:
-        "Place in the concluding paragraph to synthesize both core dimensions (effects and solutions) into a balanced, forward-looking assessment without introducing new claims.",
-      items: [
-        {
-          phrase: "In synthesis, although escalating body mass exacts a heavy toll on...,",
-          functionDesc: "Acknowledges the severity of the crisis before reaffirming the efficacy of targeted solutions.",
-          example:
-            "In synthesis, although escalating body mass exacts a heavy toll on healthcare solvency, enacting decisive fiscal disincentives offers a robust defense."
-        },
-        {
-          phrase: "Ultimately, while lifestyle ailments present formidable economic hurdles,...",
-          functionDesc: "Brings long-term economic stability and preventative policy together harmoniously.",
-          example:
-            "Ultimately, while lifestyle ailments present formidable economic hurdles, embedding active transit into urban centers ensures a healthier populace."
+          phrase: "Consequently, the undeniable gains in consumer welfare and global economic equity far eclipse...",
+          functionDesc: "Delivers the definitive outweighing verdict in the conclusion.",
+          example: "Consequently, the undeniable gains in consumer welfare and global economic equity far eclipse the localized logistical drawbacks."
         }
       ]
     }
   ],
 
-  /*
-   * ================================================================
-   * FLUID BAND 9 LEXICAL PRECISION ("SUGAR DISSOLVED IN WATER")
-   * ================================================================
-   * Sophisticated vocabulary integrated seamlessly into sentence logic
-   * without sounding robotic, mechanical, or artificially forced.
-   */
   fluidVocab: [
     {
       word: "myopic",
       pos: "adjective",
-      meaning: "Lacking long-term foresight, vision, or discernment; short-sighted.",
-      naturalCollocation: "a myopic strategy / myopic focus / myopic fiscal policy",
+      meaning: "Lacking foresight or intellectual breadth; narrow-minded.",
+      naturalCollocation: "myopic protectionism / myopic policies",
       organicExample:
-        "Relying purely on hospital-based curative treatments is a myopic strategy; sustainable solvency requires proactive lifestyle interventions.",
-      mechanicalPitfall:
-        "❌ Clunky / Robotic: 'People who eat fast food have a myopic body.' (Distorted register and unnatural collocation).",
-      examinerInsight:
-        "Examiners reward 'myopic' when qualifying policy decisions or institutional perspectives rather than individuals' physical appearance."
+        "Restricting supermarket imports to preserve obsolete domestic monopolies represents a myopic approach that penalizes low-income consumers.",
+      mechanicalPitfall: "Avoid using it casually as a synonym for 'blind' or 'bad'.",
+      examinerInsight: "Demonstrates Band 9 stylistic sophistication when characterizing short-sighted economic views."
     },
     {
-      word: "epitome / epitomize",
-      pos: "noun / verb",
-      meaning: "The quintessential embodiment, perfect benchmark, or representative model of a principle.",
-      naturalCollocation: "the epitome of active municipal design / epitomizes effective fiscal policy",
+      word: "epitome",
+      pos: "noun",
+      meaning: "A person or thing that is a perfect example of a particular quality or type.",
+      naturalCollocation: "the epitome of consumer welfare / the epitome of globalization",
       organicExample:
-        "Copenhagen's network of protected bicycle superhighways represents the epitome of active municipal design, proving that urban architecture directly dictates physical fitness.",
-      mechanicalPitfall:
-        "❌ Clunky / Robotic: 'Obesity is the epitome of bad health.' (Vague, simplistic, and melodramatic).",
-      examinerInsight:
-        "Band 9 writers use 'epitome' to elevate case studies into representative international paradigms."
+        "The ability to purchase fresh Mediterranean citrus during a Scandinavian freeze stands as the epitome of globalized consumer welfare.",
+      mechanicalPitfall: "Do not say 'an epitome of everything'. Use with a definitive concept.",
+      examinerInsight: "Elevates Task Achievement by framing everyday phenomena within broader economic concepts."
     },
     {
-      word: "pervasive",
+      word: "counter-seasonal",
       pos: "adjective",
-      meaning: "Existing or spreading widely throughout every level of an environment or culture.",
-      naturalCollocation: "pervasive availability / pervasive sedentary culture / pervasive marketing",
+      meaning: "Relating to agricultural produce harvested in one hemisphere during the winter of the other.",
+      naturalCollocation: "counter-seasonal produce / counter-seasonal availability",
       organicExample:
-        "The pervasive availability of inexpensive, ultra-processed convenience foods has normalized excessive caloric intake across all age brackets.",
-      mechanicalPitfall:
-        "❌ Clunky / Robotic: 'Junk food is pervasive everywhere around the streets.' (Tautological redundancy).",
-      examinerInsight:
-        "Shifts blame from individual weak willpower to structural environmental determinants of health."
+        "Counter-seasonal imports ensure that households maintain uninterrupted access to vital vitamins throughout midwinter.",
+      mechanicalPitfall: "Do not use 'out of season' when you can use precise terminology.",
+      examinerInsight: "Specific, accurate academic jargon directly tailored to the food trade prompt."
     },
     {
-      word: "exacerbate",
-      pos: "verb",
-      meaning: "To aggravate, intensify, or worsen an already acute crisis or medical condition.",
-      naturalCollocation: "exacerbate cardiovascular risks / exacerbate public health strain",
+      word: "food miles",
+      pos: "noun",
+      meaning: "The distance food is transported from the producer to the consumer.",
+      naturalCollocation: "minimize food miles / excessive food miles",
       organicExample:
-        "Protracted desk-bound shifts and motorized commuting exacerbate cardiovascular risks by eliminating spontaneous daily movement.",
-      mechanicalPitfall:
-        "❌ Clunky / Robotic: 'People exacerbate their weight by eating chips.' (Awkward verb-object pairing).",
-      examinerInsight:
-        "Provides exact causal tension between modern convenience and biological deterioration."
+        "The primary ecological critique centers on excessive food miles and the associated aviation fuel burn.",
+      mechanicalPitfall: "Do not say 'food distance travel'. 'Food miles' is the established technical phrase.",
+      examinerInsight: "Essential environmental economics term for Task 2 essays on imported food."
+    },
+    {
+      word: "complacency",
+      pos: "noun",
+      meaning: "A feeling of uncritical satisfaction with oneself or one's achievements.",
+      naturalCollocation: "monopolistic complacency / breeding complacency",
+      organicExample:
+        "Sheltered domestic food markets inevitably breed complacency, resulting in inflated prices and sluggish innovation.",
+      mechanicalPitfall: "Ensure correct noun form rather than confusing with 'complaisance'.",
+      examinerInsight: "Exemplifies nuanced economic vocabulary that examiners look for at Band 8.5–9."
     },
     {
       word: "catalyze",
       pos: "verb",
-      meaning: "To spark, initiate, or accelerate a profound transformation or institutional shift.",
-      naturalCollocation: "catalyze a nationwide transition / catalyze preventative public health",
+      meaning: "Cause or accelerate a process or action without being consumed.",
+      naturalCollocation: "catalyze innovation / catalyze modernization",
       organicExample:
-        "Targeted fiscal levies on sugary beverages can catalyze a broader societal transition toward wholesome, home-cooked diets.",
-      mechanicalPitfall:
-        "❌ Clunky / Robotic: 'Gym classes catalyze people to be thin.' (Forced, unidiomatic usage).",
-      examinerInsight:
-        "A vibrant academic synonym for 'bring about' or 'cause' that implies positive momentum."
-    },
-    {
-      word: "mitigate",
-      pos: "verb",
-      meaning: "To lessen the severity, gravity, or painful consequences of a systemic crisis.",
-      naturalCollocation: "mitigate healthcare expenditures / mitigate obesity rates",
-      organicExample:
-        "Expanding dedicated cycling infrastructure can substantially mitigate urban obesity rates by embedding exercise into daily commutes.",
-      mechanicalPitfall:
-        "❌ Clunky / Robotic: 'Doctors mitigate patient weights with pills.' (Inaccurate lexical collocation).",
-      examinerInsight:
-        "Standard high-register verb for solution paragraphs assessing policy impact."
-    },
-    {
-      word: "paradigm",
-      pos: "noun",
-      meaning: "A fundamental framework, institutional model, or philosophical approach.",
-      naturalCollocation: "preventative public health paradigm / paradigm shift in urban transit",
-      organicExample:
-        "National healthcare authorities must pivot from reactive clinical treatment toward a preventative public health paradigm.",
-      mechanicalPitfall:
-        "❌ Clunky / Robotic: 'Citizens should live in a healthy paradigm.' (Nonsensical abstraction).",
-      examinerInsight:
-        "Demonstrates sophisticated awareness of overarching structural and philosophical systems."
+        "International supermarket competition has served to catalyze innovation in domestic greenhouse automation.",
+      mechanicalPitfall: "Avoid using 'cause' repeatedly; use 'catalyze' when an external force speeds up transformation.",
+      examinerInsight: "Demonstrates powerful precision in explaining causal relationships."
     }
   ]
 };

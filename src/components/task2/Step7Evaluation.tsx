@@ -1,138 +1,330 @@
-import React from "react";
-import { CheckCircle2, Award, Compass, HeartHandshake, Star, BookOpen, CircleCheck } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Award, CircleCheck, CheckCircle2, ShieldCheck } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
+import { tactilePress } from "../../motion";
 
-export const Step7EvaluationT2: React.FC = () => (
-  <div className="stage-card-wrapper">
-    <div>
-      <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-        Step 07 / 09 • Question 2: Remedial Measures &amp; Strategic Interventions
-      </span>
-      <h2 className="stage-title">Question 2: Comprehensive Remedial Measures &amp; Public Health Solutions</h2>
-      <p className="stage-subtitle">
-        Levelled arguments for strategic interventions. Pair core policy solutions—such as targeted fiscal sugar levies for Body 1 (Healthcare Strain) and active municipal transit for Body 2 (Workforce Inactivity)—to build an integrated, paired argument.
-      </p>
-    </div>
+export const Step7EvaluationT2: React.FC = () => {
+  const [selectedReasonIdx, setSelectedReasonIdx] = useState(0);
 
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "18px",
-        overflowY: "auto"
-      }}
-    >
-      {TASK2_DATA.evaluationArguments.map((item, idx) => (
-        <div
-          key={item.title}
-          style={{
-            background: "#fff",
-            border: "1.5px solid var(--border-subtle)",
-            borderRadius: "18px",
-            padding: "20px",
-            boxShadow: "var(--shadow-sm)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px"
-          }}
-        >
-          {/* Level & Vocabulary Badge Row */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
-            <span
-              className="apple-badge accent"
-              style={{
-                fontSize: "0.74rem",
-                fontWeight: 750,
-                background: item.type === "argument" ? "rgba(147, 51, 234, 0.1)" : "rgba(5, 150, 105, 0.1)",
-                color: item.type === "argument" ? "#7e22ce" : "#047857",
-                border: item.type === "argument" ? "1px solid rgba(147, 51, 234, 0.25)" : "1px solid rgba(5, 150, 105, 0.25)"
-              }}
-            >
-              {item.level || (item.type === "argument" ? "Core Motivator" : "Strategic Implementation")}
-            </span>
-            {item.collocation && (
-              <span
+  const body2 = TASK2_DATA.bodyParagraphs?.[1];
+  const reasonOptions = body2?.alternativeReasons || [];
+  const currentReason = reasonOptions[selectedReasonIdx] || {
+    badge: "Reason 1 • Threat to Local Farmers",
+    title: "Severe Financial Strain & Job Losses for Local Farmers",
+    mainReason: body2?.mainReason || "",
+    supportingReasons: body2?.supportingReasons || "",
+    example: body2?.example || "",
+    modelParagraph:
+      "On the other hand, critics rightly point out that cheap foreign goods place immense commercial pressure on local farmers. Small family-owned farms face higher labor and land costs and cannot match the rock-bottom prices of massive, highly subsidized overseas agribusinesses. As supermarkets increasingly favor cheaper foreign imports to maximize profit margins, local agriculturalists lose their market share, face severe financial hardship, and are frequently driven into bankruptcy. For instance, thousands of small dairy and fruit farmers across Europe have been forced to shut down in recent years because supermarkets prioritized cheaper imports.",
+    examinerNotes:
+      "The most relatable and common drawback. Easy to explain: local family farms cannot compete with cheap overseas mega-farms."
+  };
+
+  return (
+    <div className="stage-card-wrapper">
+      <div>
+        <span className="apple-badge accent" style={{ marginBottom: "8px", background: "#fee2e2", color: "#b91c1c" }}>
+          Step 07 / 09 • Points for the Disadvantages (Counterpoint)
+        </span>
+        <h2 className="stage-title">Points for the Disadvantages: Counter-Arguments &amp; Concessions</h2>
+        <p className="stage-subtitle">
+          Structure: <strong>1 main reason + supporting reasons + example</strong>. Below are <strong>4 clear, relatable main reasons</strong> for the drawbacks. Select any reason to inspect its analytical development and how to outweigh it.
+        </p>
+      </div>
+
+      {/* Golden Format Bar */}
+      <div
+        style={{
+          background: "#fff1f2",
+          border: "1.5px solid #fecdd3",
+          borderRadius: "16px",
+          padding: "12px 18px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          gap: "10px"
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontSize: "0.8rem", fontWeight: 800, background: "#be123c", color: "#ffffff", padding: "3px 10px", borderRadius: "8px" }}>
+            EXACT FORMAT
+          </span>
+          <span style={{ fontSize: "0.92rem", fontWeight: 700, color: "#9f1239" }}>
+            1 Main Disadvantage → Supporting Causal Chain → Verified Concrete Example
+          </span>
+        </div>
+        <span className="apple-badge" style={{ background: "#fecdd3", color: "#9f1239", fontWeight: 700 }}>
+          Counterpoint Concession • Non-Opinion Side
+        </span>
+      </div>
+
+      {/* 4 REASONS INTERACTIVE SELECTOR STRIP */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "8px",
+          background: "var(--slate-50)",
+          border: "1.5px solid var(--border-default)",
+          borderRadius: "16px",
+          padding: "12px 14px"
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
+          <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "var(--slate-600)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+            Select 1 of 4 Relatable Disadvantage Reasons (Smartboard Interactive Choice):
+          </span>
+          <span style={{ fontSize: "0.75rem", color: "var(--slate-500)", fontWeight: 600 }}>
+            Tip: Pick the drawback you can acknowledge fairly before proving the advantages prevail
+          </span>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px" }}>
+          {reasonOptions.map((opt, idx) => {
+            const isSelected = selectedReasonIdx === idx;
+            return (
+              <motion.button
+                key={opt.id}
+                whileTap={tactilePress}
+                onClick={() => setSelectedReasonIdx(idx)}
                 style={{
-                  fontSize: "0.74rem",
-                  color: "var(--slate-600)",
-                  fontFamily: "monospace",
-                  background: "var(--slate-100)",
-                  padding: "2px 8px",
-                  borderRadius: "6px",
-                  border: "1px solid var(--border-subtle)"
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  textAlign: "left",
+                  padding: "10px 12px",
+                  borderRadius: "12px",
+                  border: isSelected ? "2px solid #e11d48" : "1.5px solid var(--border-subtle)",
+                  background: isSelected ? "#ffffff" : "var(--slate-100)",
+                  cursor: "pointer",
+                  boxShadow: isSelected ? "0 4px 12px rgba(225, 29, 72, 0.12)" : "none",
+                  transition: "all 0.15s ease",
+                  minHeight: "56px"
                 }}
               >
-                ✦ {item.collocation}
-              </span>
-            )}
-          </div>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", width: "100%", justifyContent: "space-between" }}>
+                  <span
+                    style={{
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      color: isSelected ? "#e11d48" : "var(--slate-600)"
+                    }}
+                  >
+                    Reason 0{idx + 1}
+                  </span>
+                  {isSelected && <CheckCircle2 size={14} color="#e11d48" />}
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.82rem",
+                    fontWeight: 750,
+                    color: isSelected ? "var(--slate-900)" : "var(--slate-700)",
+                    marginTop: "2px",
+                    lineHeight: 1.3
+                  }}
+                >
+                  {opt.title.split("&")[0].trim()}
+                </div>
+              </motion.button>
+            );
+          })}
+        </div>
+      </div>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "9px",
-              color: item.type === "counterpoint" ? "#059669" : "#7e22ce"
-            }}
-          >
-            {item.type === "counterpoint" ? (
-              <CheckCircle2 size={19} style={{ flexShrink: 0 }} />
-            ) : idx === 0 ? (
-              <Award size={19} style={{ flexShrink: 0 }} />
-            ) : idx === 1 ? (
-              <Compass size={19} style={{ flexShrink: 0 }} />
-            ) : idx === 2 ? (
-              <Star size={19} style={{ flexShrink: 0 }} />
-            ) : (
-              <HeartHandshake size={19} style={{ flexShrink: 0 }} />
-            )}
-            <h4 style={{ fontSize: "1.02rem", fontWeight: 750, color: "var(--slate-900)" }}>{item.title}</h4>
-          </div>
-
-          {/* Levelled Comprehension: Student Quick Take */}
-          {item.simpleTakeaway && (
+      {/* 2-Column Architectural Breakdown & Model View */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={selectedReasonIdx}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.18 }}
+          className="stage-grid-2col"
+          style={{ overflowY: "auto" }}
+        >
+          {/* Left Column: Architectural Breakdown */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            {/* Main Reason Card */}
             <div
               style={{
-                background: item.type === "argument" ? "#faf5ff" : "#f0fdf4",
-                borderLeft: item.type === "argument" ? "3.5px solid #9333ea" : "3.5px solid #059669",
-                borderRadius: "0 8px 8px 0",
-                padding: "7px 12px",
-                fontSize: "0.85rem",
-                color: item.type === "argument" ? "#6b21a8" : "#166534",
-                lineHeight: 1.45,
-                fontWeight: 550
+                background: "#ffffff",
+                border: "1.5px solid var(--border-default)",
+                borderRadius: "18px",
+                padding: "20px",
+                boxShadow: "var(--shadow-sm)"
               }}
             >
-              <BookOpen size={13} style={{ verticalAlign: "-2px", marginRight: "6px", display: "inline" }} />
-              <strong>Student Quick Take:</strong> {item.simpleTakeaway}
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
+                <span className="apple-badge accent" style={{ background: "#ffe4e6", color: "#be123c" }}>
+                  Component 1 • Main Disadvantage
+                </span>
+                <span style={{ fontSize: "0.76rem", fontWeight: 700, color: "var(--slate-400)" }}>
+                  {currentReason.badge}
+                </span>
+              </div>
+              <h4 style={{ fontSize: "1.06rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "8px" }}>
+                {currentReason.title}
+              </h4>
+              <p style={{ fontSize: "0.93rem", color: "var(--slate-800)", lineHeight: 1.6, margin: 0 }}>
+                {currentReason.mainReason}
+              </p>
             </div>
-          )}
 
-          <p style={{ fontSize: "0.89rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-            <strong>Core Reason:</strong> {item.reason}
-          </p>
-          <p style={{ fontSize: "0.89rem", color: "var(--slate-600)", lineHeight: 1.55 }}>
-            <strong>Logical Development:</strong> {item.development}
-          </p>
+            {/* Supporting Reasons Card */}
+            <div
+              style={{
+                background: "#ffffff",
+                border: "1.5px solid var(--border-default)",
+                borderRadius: "18px",
+                padding: "20px",
+                boxShadow: "var(--shadow-sm)"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                <span className="apple-badge warning" style={{ background: "#fef3c7", color: "#92400e" }}>
+                  Component 2 • Supporting Causal Chain
+                </span>
+              </div>
+              <h4 style={{ fontSize: "1.04rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "8px" }}>
+                Why This Problem Occurs
+              </h4>
+              <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.6, margin: 0 }}>
+                {currentReason.supportingReasons}
+              </p>
+            </div>
 
-          {/* Real-World Concrete Example */}
-          <div
-            style={{
-              marginTop: "auto",
-              background: "var(--slate-50)",
-              border: "1px solid var(--border-subtle)",
-              borderRadius: "12px",
-              padding: "10px 12px",
-              fontSize: "0.85rem",
-              color: "var(--slate-700)",
-              lineHeight: 1.45
-            }}
-          >
-            <CircleCheck size={14} style={{ verticalAlign: "-2px", marginRight: "6px", color: "var(--apple-blue)" }} />
-            <strong>Example:</strong> {item.example}
+            {/* Example Card */}
+            <div
+              style={{
+                background: "#ffffff",
+                border: "1.5px solid var(--border-default)",
+                borderRadius: "18px",
+                padding: "20px",
+                boxShadow: "var(--shadow-sm)"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                <span className="apple-badge" style={{ background: "#f1f5f9", color: "#334155" }}>
+                  Component 3 • Concrete Evidence
+                </span>
+              </div>
+              <h4 style={{ fontSize: "1.04rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "8px" }}>
+                Real-World IELTS Evidence
+              </h4>
+              <div
+                style={{
+                  background: "var(--slate-50)",
+                  border: "1px solid var(--border-subtle)",
+                  borderRadius: "12px",
+                  padding: "12px 14px",
+                  fontSize: "0.92rem",
+                  color: "var(--slate-800)",
+                  lineHeight: 1.55
+                }}
+              >
+                <CircleCheck size={16} color="#e11d48" style={{ verticalAlign: "-3px", marginRight: "6px", display: "inline" }} />
+                {currentReason.example}
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+
+          {/* Right Column: Model Paragraph & Outweighing Strategy */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            {/* Integrated Paragraph Card */}
+            <div
+              style={{
+                background: "#ffffff",
+                border: "1.5px solid var(--border-default)",
+                borderRadius: "18px",
+                padding: "22px",
+                boxShadow: "var(--shadow-sm)"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <Award size={20} color="#e11d48" />
+                  <h4 style={{ fontSize: "1.08rem", fontWeight: 800 }}>Complete Counterpoint Paragraph Model</h4>
+                </div>
+                <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
+                  Reason 0{selectedReasonIdx + 1} Applied
+                </span>
+              </div>
+
+              <div
+                style={{
+                  background: "#fff1f2",
+                  border: "1px solid #fecdd3",
+                  borderRadius: "14px",
+                  padding: "18px",
+                  fontSize: "0.98rem",
+                  lineHeight: 1.7,
+                  color: "#881337",
+                  fontStyle: "normal"
+                }}
+              >
+                {currentReason.modelParagraph}
+              </div>
+
+              <div style={{ marginTop: "14px", display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                <span className="apple-badge" style={{ fontSize: "0.74rem", background: "#fee2e2", color: "#991b1b" }}>
+                  ✦ Measured Concession
+                </span>
+                <span className="apple-badge" style={{ fontSize: "0.74rem", background: "#fee2e2", color: "#991b1b" }}>
+                  ✦ Causal Proof
+                </span>
+                <span className="apple-badge" style={{ fontSize: "0.74rem", background: "#fee2e2", color: "#991b1b" }}>
+                  ✦ Neutral Tone
+                </span>
+              </div>
+            </div>
+
+            {/* How to Outweigh This Point in the Essay */}
+            <div
+              style={{
+                background: "#f0fdf4",
+                border: "1.5px solid #bbf7d0",
+                borderRadius: "16px",
+                padding: "18px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "8px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <ShieldCheck size={18} color="#15803d" />
+                <h5 style={{ fontSize: "0.96rem", fontWeight: 750, color: "#166534", margin: 0 }}>
+                  How to Outweigh This Disadvantage (Band 9 Examiner Strategy)
+                </h5>
+              </div>
+              <p style={{ fontSize: "0.88rem", color: "#14532d", lineHeight: 1.55, margin: 0 }}>
+                <strong>Examiner Secret:</strong> In an "Advantages Outweigh Disadvantages" essay, you must acknowledge the counterpoint honestly, but explain why the advantages are broader or more vital. For instance, while local farmers can be protected through government grants and organic certifications, the benefits of year-round fresh food and lower grocery bills affect the daily health and financial survival of the entire general public.
+              </p>
+            </div>
+
+            {/* Examiner Notes Card */}
+            <div
+              style={{
+                background: "#f8fafc",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: "16px",
+                padding: "16px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "6px"
+              }}
+            >
+              <h5 style={{ fontSize: "0.92rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                Examiner Insight for Disadvantage 0{selectedReasonIdx + 1}
+              </h5>
+              <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", lineHeight: 1.5, margin: 0 }}>
+                {currentReason.examinerNotes}
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
-  </div>
-);
+  );
+};

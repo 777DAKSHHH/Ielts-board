@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import {
   FileText,
   Activity,
-  HeartPulse,
   Scale,
   Eye,
   EyeOff,
   Layers,
-  Sparkles
+  Sparkles,
+  ShoppingBag
 } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { TouchTimer } from "../common/TouchTimer";
@@ -25,25 +25,31 @@ const ESSAY_FORMAT_STEPS = [
     label: "Introduction",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    instruction: "Paraphrase the prompt + outline paired effects and solutions in a concise thesis"
+    instruction: "Paraphrase the prompt + state clear opinion (that advantages decisively outweigh disadvantages)"
   },
   {
     label: "Body Para 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    instruction: "1 main reason + supporting reasons + example [ Effect 1 + Solution + Example ]"
+    instruction: "Strong side opinion (Advantage 1): 1 main reason + supporting reasons + example [ Year-Round Fresh Produce in All Seasons ]"
   },
   {
     label: "Body Para 2",
     badgeBg: "rgba(16, 185, 129, 0.12)",
     badgeColor: "#047857",
-    instruction: "1 main reason + supporting reasons + example [ Effect 2 + Solution + Example ]"
+    instruction: "Strong side opinion (Advantage 2): 1 main reason + supporting reasons + example [ Lower Grocery Prices & Cultural Food Variety ]"
+  },
+  {
+    label: "Body Para 3",
+    badgeBg: "rgba(220, 38, 38, 0.12)",
+    badgeColor: "#dc2626",
+    instruction: "Non-opinion side (Counter/Disadvantage): 1 main reason + supporting reasons + example [ Threat to Local Farmers & Food Miles ]"
   },
   {
     label: "Conclusion",
     badgeBg: "rgba(100, 116, 139, 0.15)",
     badgeColor: "#334155",
-    instruction: "Sum-up all the main reasons + restate answers to both questions"
+    instruction: "Restate opinion + synthesize the balance (how benefits decisively outweigh the manageable drawbacks)"
   }
 ];
 
@@ -60,11 +66,11 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 09 • Task Reveal &amp; 4-Para Format
+          Step 02 / 09 • Task Reveal &amp; 5-Para Format
         </span>
-        <h2 className="stage-title">Deconstruct the Effects &amp; Solutions Prompt</h2>
+        <h2 className="stage-title">Deconstruct the Advantages vs. Disadvantages Prompt</h2>
         <p className="stage-subtitle">
-          Examine the prompt wording, establish your 2-part thesis, and reveal the required 4-paragraph essay architecture with 1 main reason, supporting reasons, and concrete example [Effect + Solution + Example] per body paragraph.
+          Examine the prompt wording, establish your outweighing opinion thesis, and reveal the required 5-paragraph essay architecture with 3 Body Paragraphs [Strong Side 1 + Strong Side 2 + Non-Opinion Counterpoint].
         </p>
       </div>
 
@@ -75,7 +81,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: Plan your thesis and frame 1 main reason + supporting reasons + example [Effect + Solution + Example] for each body paragraph."
+          instruction="Focus Timer: Plan your outweighing thesis: Frame 1 main reason + supporting reasons + example for each of the 3 body paragraphs."
         />
       </div>
 
@@ -165,7 +171,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span className="apple-badge neutral" style={{ fontSize: "0.74rem" }}>
-                  4 Paragraphs (Effects &amp; Solutions Architecture)
+                  5 Paragraphs (3 Body Paragraphs)
                 </span>
                 {isRevealed && (
                   <button
@@ -220,7 +226,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                       borderRadius: "6px",
                       background: step.badgeBg,
                       color: step.badgeColor,
-                      minWidth: "86px",
+                      minWidth: "90px",
                       textAlign: "center",
                       flexShrink: 0
                     }}
@@ -229,7 +235,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   </span>
                   <span
                     style={{
-                      fontSize: "0.86rem",
+                      fontSize: "0.85rem",
                       color: "var(--slate-700)",
                       lineHeight: 1.4,
                       fontWeight: 500
@@ -241,7 +247,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               ))}
             </div>
 
-            {/* Blur Overlay Trigger */}
+            {/* Opaque Reveal Trigger Curtain */}
             {!isRevealed && (
               <div
                 onClick={() => setIsRevealed(true)}
@@ -254,8 +260,8 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "8px",
-                  background: "rgba(255, 255, 255, 0.45)",
-                  backdropFilter: "blur(2px)",
+                  background: "#f8fafc",
+                  border: "1px dashed var(--border-default)",
                   cursor: "pointer",
                   borderRadius: "0 0 18px 18px",
                   zIndex: 2
@@ -285,7 +291,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                     gap: "4px"
                   }}
                 >
-                  <Sparkles size={13} color="var(--apple-blue)" /> Tap to reveal the required 4-paragraph architecture
+                  <Sparkles size={13} color="var(--apple-blue)" /> Tap to reveal the required 5-paragraph (3 Body Paras) architecture
                 </span>
               </div>
             )}
@@ -313,10 +319,10 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <Activity size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Two-Part / Direct Question (Effects &amp; Solutions)</h5>
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Do Advantages Outweigh Disadvantages?</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              The prompt contains two specific, interconnected inquiries: 1) <em>“What are the effects of this?”</em> and 2) <em>“What measures could be taken to solve them?”</em> You must address both questions with balanced, fully-developed paragraphs.
+              The essay question requires an explicit comparative judgment: <em>“Do the advantages of this development outweigh the disadvantages?”</em> You must take a clear side from the introduction, dedicate two body paragraphs to your strong-opinion side, and allocate one body paragraph to the non-opinion counter-perspective before synthesizing.
             </p>
           </div>
 
@@ -339,17 +345,17 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <Scale size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Structuring Your Two-Question Argument</h5>
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>The 3-Body-Paragraph Architecture</h5>
             </div>
-            <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              Use the proven paired architecture: address each major effect directly alongside its counter-solution:
+            <div style={{ fontSize: "0.9rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
+              • <strong>Body Para 1 (Strong Side Advantage 1):</strong> Focus on <em>Unprecedented Consumer Diversity &amp; Counter-Seasonal Food Security</em> [1 main reason + supporting reasons + example].
               <br />
-              • <strong>Body Para 1 [ Effect 1 + Solution + Example ]:</strong> Focus on <em>Healthcare Fiscal Strain &amp; Chronic Diseases</em> (Effect 1) paired with <em>Targeted Fiscal Sugar Levies</em> (Solution 1) + Empirical Example (e.g. Mexico soda tax / NHS data).
+              • <strong>Body Para 2 (Strong Side Advantage 2):</strong> Focus on <em>Reciprocal International Trade &amp; Domestic Producer Modernization</em> [1 main reason + supporting reasons + example].
               <br />
-              • <strong>Body Para 2 [ Effect 2 + Solution + Example ]:</strong> Focus on <em>Sedentary Workforce Productivity Losses</em> (Effect 2) paired with <em>Active Municipal Transit &amp; Workplace Mandates</em> (Solution 2) + Empirical Example (e.g. Copenhagen bicycle corridors).
+              • <strong>Body Para 3 (Non-Opinion Counterpoint):</strong> Focus on <em>Ecological Food Miles &amp; Pressure on Traditional Smallholders</em> [1 main reason + supporting reasons + example].
               <br />
-              • <strong>Synthesis:</strong> Directly coupling each crisis with its targeted countermeasure creates an impenetrable, logical argument.
-            </p>
+              • <strong>Conclusion:</strong> Restate your stance, demonstrating why the nutritional and economic benefits decidedly eclipse the manageable environmental and farming drawbacks.
+            </div>
           </div>
 
           <div
@@ -370,11 +376,11 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 marginBottom: "8px"
               }}
             >
-              <HeartPulse size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Paragraph Rule — 1 Main Reason + Support + Example</h5>
+              <ShoppingBag size={18} />
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Golden Paragraph Rule: 1 Main Reason + Support + Example</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              Never dump disjointed symptom lists. Maintain strict paragraph depth: in Body 1, elaborate on <strong>1 main reason</strong> (Effect 1: unsustainable healthcare expenditure caused by chronic non-communicable diseases), explain the causal chain, present the direct policy remedy (Solution 1: fiscal sugar levies), and anchor it with verified evidence. In Body 2, follow the <strong>identical format</strong> for Effect 2 (macroeconomic productivity loss from sedentary work habits) + Solution 2 (active municipal infrastructure).
+              Avoid chaotic lists of disjointed points. Every single body paragraph must follow the rigorous rule: <strong>1 central, well-articulated reason</strong>, followed by <strong>substantiated causal explanations</strong>, and anchored by a <strong>concrete real-world example</strong> (e.g., Fairtrade cooperatives in Colombia, air-freighted South American berries, or Spanish greenhouse supply lines).
             </p>
           </div>
         </div>

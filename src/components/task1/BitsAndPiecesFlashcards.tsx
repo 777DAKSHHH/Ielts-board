@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   RotateCw,
   ChevronLeft,
@@ -7,6 +8,7 @@ import {
   CheckCircle2,
   Maximize2
 } from "lucide-react";
+import { tactilePress } from "../../motion";
 
 interface FlashcardItem {
   id: number;
@@ -24,103 +26,86 @@ const FLASHCARDS: FlashcardItem[] = [
     id: 1,
     category: "Piece 1: The Macro Overview Split",
     badgeColor: "#0284c7",
-    question: "What is the single most important macro feature shown across the 1995–2000 timeframe?",
-    answerTitle: "Four Rose vs. One Solitary Decliner (Greystone High)",
+    question: "What is the single most important macro contrast between normal conditions and El Niño across the Pacific?",
+    answerTitle: "Systemic Reversal: Westward Warm Pool & Australian Rain vs. Eastward Warm Surge & Drought",
     bulletPoints: [
-      "Higher education admission expanded across four of the five schools (Harble, Fairfield, Royston, Crackend).",
-      "Greystone High was the SOLE institution to undergo an uninterrupted downward decline.",
-      "Harble Secondary showed the most dramatic surge (+50% pts), while Crackend Boys displayed near-total stability."
+      "Normal conditions feature strong westward trade winds pushing warm water and rain toward Australia, alongside nutrient upwelling off Peru.",
+      "El Niño represents a systematic inversion: trade winds weaken, warm water surges eastward, and rainfall shifts to Peru.",
+      "Australia is plunged into severe drought, while Peruvian coastal upwelling ceases, causing commercial fisheries to collapse."
     ],
     band9Phrase:
-      "Overall, higher education entry rates rose in four out of the five secondary schools, with Greystone High being the sole institution to experience a continuous downward trend."
+      "Overall, normal conditions feature strong trade winds driving warm water and heavy rain toward Australia while cold upwelling sustains Peruvian fisheries, whereas El Niño conditions see weakened trade winds and eastward shifts that invert rainfall patterns and decimate marine life."
   },
   {
     id: 2,
-    category: "Piece 2: Harble Secondary's Meteoric Leap",
-    badgeColor: "#059669",
-    question: "How did Harble Secondary transform across the 6-year period, and why is it the table's biggest highlight?",
-    answerTitle: "Vaulted from Last to First (30% → 80%), Nearly Tripling its Initial Proportion",
+    category: "Piece 2: Atmospheric Trade Winds & Upper Winds",
+    badgeColor: "#4f46e5",
+    question: "How do atmospheric winds differ between normal conditions and an El Niño phase?",
+    answerTitle: "Strong Westward Trade Winds Falter; Upper Winds Shift Eastward",
     bulletPoints: [
-      "Started lowest in 1995 at 30%—less than half of Fairfield and one-third of Greystone.",
-      "Rose by 5% increments to 35% (1996) and 40% (1997), then accelerated to 50% (1998) and 60% (1999).",
-      "In 2000, leaped by an extraordinary 20 percentage points to peak at 80%.",
-      "Achieved a massive net gain of +50 percentage points (+167% relative surge)."
+      "Normal: Strong trade winds blow continuously from the East Pacific toward the West Pacific; upper winds blow weakly eastward.",
+      "El Niño: Trade winds in the East Pacific weaken noticeably; upper atmosphere over the West Pacific is dominated by strong eastward winds.",
+      "Consequence: The weakened trade winds fail to hold warm water in the western basin, allowing it to migrate back across the ocean."
     ],
     band9Phrase:
-      "Harble Secondary registered the most dramatic surge, nearly tripling from a baseline of 30% in 1995 to emerge as the top performer at 80% in 2000."
+      "Whereas strong trade winds normally blow westward from the East Pacific, an El Niño episode witnesses these winds weaken substantially, accompanied by strong eastward upper-level winds."
   },
   {
     id: 3,
-    category: "Piece 3: Fairfield Girls' Ascent & Rebound",
-    badgeColor: "#4f46e5",
-    question: "What was Fairfield Girls' trajectory, and what happened in 1997, 1998, and 1999?",
-    answerTitle: "Steady Rise (65% → 79%), Catching Greystone in 1997 and Rebounding to 2nd Place",
+    category: "Piece 3: Warm Pool & Thermocline Displacement",
+    badgeColor: "#059669",
+    question: "What happens to the warm surface water and ocean thermocline during El Niño?",
+    answerTitle: "Warm Pool Shifts Eastward, Capping the Basin & Suppressing Cold Thermocline",
     bulletPoints: [
-      "Started second highest at 65% in 1995.",
-      "Climbed to 75% in 1997, equalizing with Greystone High, and held 75% in 1998 to take the sole lead.",
-      "Experienced a temporary 5-point dip to 70% in 1999 before rebounding sharply to 79% in 2000.",
-      "Finished in second place overall, just 1 percentage point behind Harble Secondary."
+      "Normal: Warm water is banked deeply in the western Pacific; cold thermocline sits near the surface in the east off Peru.",
+      "El Niño: Warm water is 'pushed eastwards' across the central and eastern Pacific basin.",
+      "Impact: The warm blanket suppresses the thermocline and prevents cold, deep water from reaching the surface."
     ],
     band9Phrase:
-      "Fairfield Girls climbed from 65% in 1995 to equalize with Greystone at 75% in 1997, before rebounding from a transient dip in 1999 to conclude at 79%."
+      "Consequently, the reservoir of warm water that typically banks against the western basin surges eastwards, capping the cooler subsurface layers across the Pacific."
   },
   {
     id: 4,
-    category: "Piece 4: Greystone High's Continuous Decline",
-    badgeColor: "#dc2626",
-    question: "What happened to Greystone High after holding a commanding lead at the start?",
-    answerTitle: "Uninterrupted Downward Slide (-20% pts), Falling from 1st (90%) to 3rd (70%)",
+    category: "Piece 4: Peruvian Upwelling & Fishery Collapse",
+    badgeColor: "#d97706",
+    question: "Why do Peruvian commercial fish harvests crash from flourishing (up arrow) to depleted (down arrow)?",
+    answerTitle: "Cessation of Cool Water Upwelling Causes Severe Nutrient Starvation",
     bulletPoints: [
-      "Commenced 1995 with an immense 25-percentage-point lead over second place (90% vs. 65%).",
-      "Fell sharply by 10 points to 80% in 1996 and 75% in 1997 (caught by Fairfield).",
-      "Continued declining to 73% (1998), 72% (1999), and finished at 70% in 2000.",
-      "The ONLY school that did not experience any period of growth."
+      "Normal: Upward arrow indicates active upwelling of 'cool water and rich nutrients', sustaining 2 large fish (booming fisheries).",
+      "El Niño: Eastward warm water cap blocks upwelling, leaving coastal waters with 'poor nutrients'.",
+      "Result: Downward arrow denotes fishery collapse, represented by a solitary thin fish."
     ],
     band9Phrase:
-      "Greystone High was the sole institution to experience a continuous downward trend, surrendering its commanding 90% lead to finish third at 70%."
+      "While normal conditions foster cold, nutrient-rich upwelling that sustains flourishing fish stocks off Peru, El Niño shuts down this upwelling, leading to nutrient impoverishment and a catastrophic decline in marine catches."
   },
   {
     id: 5,
-    category: "Piece 5: Royston Academy's Stepped Growth",
-    badgeColor: "#d97706",
-    question: "How did Royston Academy progress, and what pattern did its trajectory follow?",
-    answerTitle: "Stepped Pattern with Two Multi-Year Plateaus (50% → 60%, +10% pts Net)",
+    category: "Piece 5: Australian Precipitation vs. Scorching Drought",
+    badgeColor: "#dc2626",
+    question: "How does the terrestrial weather in Australia invert between the two states?",
+    answerTitle: "Transition from Convective Downpours & Lush Flora to Scorching Sun & Aridity",
     bulletPoints: [
-      "Started at 50% in 1995 and climbed to 52% in 1996 and 54% in 1997.",
-      "Plateaued identically at 54% in 1998.",
-      "Stepped up to 60% in 1999, where it leveled off again through 2000.",
-      "Demonstrated a disciplined, stepped pattern rather than continuous linear growth."
+      "Normal: Warm surface water fuels intense atmospheric convection, producing storm clouds, heavy rainfall, and lush green grass in Australia.",
+      "El Niño: Convective storm clouds shift eastward to Peru; Australia is left under clear skies, blazing sunshine, and severe drought.",
+      "Diagram Detail: Australia inset switches from rain clouds and grass to a burning sun and desiccated terrain."
     ],
     band9Phrase:
-      "Royston Academy progressed in a stepped manner, rising from 50% to plateau at 54% in 1997–1998 before leveling off at 60% from 1999 onwards."
+      "As convective storm clouds migrate eastward toward Peru, Australia transitions from receiving abundant rain that nurtures green vegetation to enduring blazing sunshine, parched terrain, and severe drought."
   },
   {
     id: 6,
-    category: "Piece 6: Crackend Boys' Static Stability",
-    badgeColor: "#475569",
-    question: "How did Crackend Boys behave across the timeframe, and why is this notable for Band 9?",
-    answerTitle: "Virtually Static Baseline Oscillating Tightly Between 59% and 62%",
-    bulletPoints: [
-      "Registered 60% in 1995, 59% in 1996, 60% in 1997, 61% in 1998, 60% in 1999, and 62% in 2000.",
-      "Total net variation was only +2 percentage points over the entire six years.",
-      "Contrasts sharply with the dynamic volatility of Harble (+50%) and Greystone (-20%)."
-    ],
-    band9Phrase:
-      "Crackend Boys displayed remarkable stability, fluctuating narrowly within a three-point band of 59% to 62% across the entire timeframe."
-  },
-  {
-    id: 7,
-    category: "Piece 7: Critical Intersections & Milestones",
+    category: "Piece 6: Band 9 Cohesive Architecture & Paragraphing",
     badgeColor: "#7c3aed",
-    question: "What two exact intersection milestones must you report to demonstrate Band 9 comparative analysis?",
-    answerTitle: "1997 Crossover at 75% and 1999 Triple Convergence at 60%",
+    question: "How should you divide the report into four balanced paragraphs for maximum Task Achievement?",
+    answerTitle: "Four Balanced Paragraphs: Intro, Overview, Body 1 (Normal), Body 2 (El Niño)",
     bulletPoints: [
-      "Milestone 1 (1997): Fairfield Girls and Greystone High tied at exactly 75%.",
-      "Milestone 2 (1999): Royston Academy, Harble Secondary, and Crackend Boys all met at precisely 60%.",
-      "Hierarchical Inversion (2000): Harble vaulted from 5th to 1st (80%), while Greystone slipped from 1st to 3rd (70%)."
+      "Paragraph 1 (Intro): Paraphrase diagram type, subject (Normal vs. El Niño), and geographic domain (Pacific Ocean).",
+      "Paragraph 2 (Overview): State the master dichotomy (wind/thermal reversal, Australian rain vs drought, Peruvian fisheries).",
+      "Paragraph 3 (Body 1): Describe Normal Conditions systematically (winds -> warm pool -> Australian rain -> Peruvian upwelling & fish).",
+      "Paragraph 4 (Body 2): Describe El Niño systematically (wind weakening -> eastward warm surge -> Australian drought -> Peruvian rain & fish crash)."
     ],
     band9Phrase:
-      "In 1997, Fairfield Girls equalized with Greystone High at 75%, while in 1999, Royston, Harble, and Crackend all converged at an identical 60%."
+      "By dedicating Body 1 entirely to the baseline equilibrium and Body 2 to the El Niño disruption, the report achieves flawless comparative balance and logical coherence."
   }
 ];
 
@@ -205,43 +190,47 @@ export const BitsAndPiecesFlashcards: React.FC<BitsAndPiecesFlashcardsProps> = (
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--slate-500)" }}>
+          <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--slate-500)" }}>
             Card {activeIdx + 1} of {FLASHCARDS.length}
           </span>
-          <div style={{ display: "flex", gap: "4px" }}>
-            <button
+          <div style={{ display: "flex", gap: "6px" }}>
+            <motion.button
+              whileTap={tactilePress}
               onClick={handlePrev}
               className="apple-touch-btn secondary"
-              style={{ padding: "6px 10px", minHeight: "32px" }}
+              style={{ padding: "6px 12px", minHeight: "40px" }}
               aria-label="Previous Flashcard"
             >
-              <ChevronLeft size={16} />
-            </button>
-            <button
+              <ChevronLeft size={18} />
+            </motion.button>
+            <motion.button
+              whileTap={tactilePress}
               onClick={handleNext}
               className="apple-touch-btn secondary"
-              style={{ padding: "6px 10px", minHeight: "32px" }}
+              style={{ padding: "6px 12px", minHeight: "40px" }}
               aria-label="Next Flashcard"
             >
-              <ChevronRight size={16} />
-            </button>
+              <ChevronRight size={18} />
+            </motion.button>
           </div>
 
           {!isEntireScreen && onToggleFullscreen && (
-            <button
+            <motion.button
+              whileTap={tactilePress}
               type="button"
               onClick={onToggleFullscreen}
               className="apple-touch-btn primary"
               style={{
-                padding: "6px 14px",
-                fontSize: "0.78rem",
-                fontWeight: 750,
-                gap: "5px",
+                padding: "8px 16px",
+                fontSize: "0.82rem",
+                fontWeight: 700,
+                gap: "6px",
+                minHeight: "40px",
                 marginLeft: "6px"
               }}
             >
-              <Maximize2 size={13} /> Entire Screen
-            </button>
+              <Maximize2 size={14} /> Entire Screen
+            </motion.button>
           )}
         </div>
       </div>
@@ -441,28 +430,31 @@ export const BitsAndPiecesFlashcards: React.FC<BitsAndPiecesFlashcardsProps> = (
               ))}
             </div>
 
-            <div style={{ display: "flex", gap: "6px" }}>
-              <button
+            <div style={{ display: "flex", gap: "8px" }}>
+              <motion.button
+                whileTap={tactilePress}
                 type="button"
                 onClick={handlePrev}
                 className="apple-touch-btn secondary"
-                style={{ padding: "4px 10px", fontSize: "0.75rem", minHeight: "30px" }}
+                style={{ padding: "0 16px", fontSize: "0.85rem", fontWeight: 600, minHeight: "44px" }}
               >
                 Previous
-              </button>
-              <button
+              </motion.button>
+              <motion.button
+                whileTap={tactilePress}
                 type="button"
                 onClick={handleNext}
                 className="apple-touch-btn primary"
                 style={{
-                  padding: "4px 14px",
-                  fontSize: "0.75rem",
-                  minHeight: "30px",
+                  padding: "0 20px",
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  minHeight: "44px",
                   background: card.badgeColor
                 }}
               >
                 Next Card
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>

@@ -4,7 +4,6 @@ import {
   X,
   Sparkles,
   Award,
-  ArrowRight,
   CheckCircle2,
   AlertTriangle,
   Lightbulb,
@@ -21,6 +20,15 @@ interface CaveatsDeepDiveModalProps {
 export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState<"rationale" | "method" | "comparisons" | "formulas">("rationale");
 
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
@@ -33,8 +41,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "rgba(15, 23, 42, 0.65)",
-          backdropFilter: "blur(16px)",
+          background: "rgba(15, 23, 42, 0.72)",
           padding: "20px"
         }}
         onClick={onClose}
@@ -96,14 +103,14 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       padding: "2px 8px"
                     }}
                   >
-                    TWO-PART ESSAY MASTERCLASS
+                    OUTWEIGHING ESSAY MASTERCLASS
                   </span>
                   <span style={{ fontSize: "0.85rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                    Step 06 Deep Dive • Nuances & 1 Reason + Support + Example
+                    Step 06 Deep Dive • 1 Main Reason + Support + Example
                   </span>
                 </div>
                 <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--slate-900)", margin: "3px 0 0" }}>
-                  Mastering Nuances & The "1 Reason + Support + Example" Architecture
+                  Mastering the 3-Body Paragraph Architecture &amp; Causal Depth
                 </h3>
               </div>
             </div>
@@ -140,7 +147,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               { id: "rationale", label: "1. Core Argument Logic", icon: <Award size={15} /> },
               { id: "method", label: "2. The 3-Tier Body Architecture", icon: <Lightbulb size={15} /> },
               { id: "comparisons", label: "3. Band 6 vs Band 8.5+ Sentences", icon: <GitBranch size={15} /> },
-              { id: "formulas", label: "4. Plug & Play Formulas", icon: <BookOpen size={15} /> }
+              { id: "formulas", label: "4. Outweighing Formulas", icon: <BookOpen size={15} /> }
             ].map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -200,10 +207,10 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   <AlertTriangle size={22} color="#d97706" style={{ flexShrink: 0, marginTop: "2px" }} />
                   <div>
                     <h5 style={{ fontSize: "1rem", fontWeight: 800, color: "#92400e", margin: "0 0 4px" }}>
-                      The "Laundry List" Mistake (Band 6.0 Trap)
+                      The "Shopping List" Mistake (Band 6.0 Trap)
                     </h5>
                     <p style={{ fontSize: "0.9rem", color: "#78350f", margin: 0, lineHeight: 1.55 }}>
-                      Band 6 candidates dump 3 or 4 rushed ideas in one paragraph without developing any of them (*"People are fat because of burgers, and they don't walk, and hospitals have no beds, and economies suffer"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
+                      Band 6 candidates dump 3 or 4 rushed points in one paragraph without developing any of them (*"Supermarket imports are good because we get bananas, and chocolate, and farmers get money, but ships pollute"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
                     </p>
                   </div>
                 </div>
@@ -220,11 +227,11 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                       <CheckCircle2 size={18} color="var(--apple-blue)" />
                       <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                        1. One Main Reason = Depth Over Breadth
+                        1. One Main Reason = Analytical Depth
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      By focusing on <strong>1 main reason per body paragraph</strong> in the paired format <code>[ Effect + Solution + Example ]</code> (Body 1: Healthcare Fiscal Strain paired with Fiscal Sugar Levies; Body 2: Workforce Inactivity paired with Active Transit Infrastructure), students have the space to unpack the causal chain thoroughly instead of superficial skimming.
+                      Focusing on <strong>1 main reason per body paragraph</strong> in the format <code>[ 1 Main Reason + Supporting Reasons + Example ]</code> allows students to unpack the causal chain thoroughly (e.g. why frost limits winter yields, how opposite-hemisphere imports prevent scurvy and localized inflation).
                     </p>
                   </div>
 
@@ -239,11 +246,11 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                       <CheckCircle2 size={18} color="#059669" />
                       <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                        2. Verifiable Evidence vs. Vague Statements
+                        2. Verifiable Evidence vs. Vague Generalities
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      Effective essays provide specific real-world grounding. Citing the <em>UK NHS £6 billion obesity expenditure</em> or <em>Mexico's sugar tax and Copenhagen's cycle highways</em> demonstrates genuine academic command and direct prompt response.
+                      Effective essays substantiate with concrete precedents. Citing <em>Fairtrade farming cooperatives in Colombia and Ghana</em> or <em>South American winter berry air freight</em> demonstrates authentic academic authority and directly satisfies Task Achievement.
                     </p>
                   </div>
                 </div>
@@ -267,23 +274,23 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   {
                     step: "Tier 01",
                     badge: "Topic Sentence",
-                    title: "State 1 Clear Primary Consequence",
-                    say: "“First and foremost, the primary societal repercussion of escalating obesity rates is the unsustainable financial and operational burden placed on public healthcare infrastructures.”",
-                    takeaway: "Direct, unequivocal claim that immediately answers Question 1."
+                    title: "State 1 Clear Primary Reason",
+                    say: "“Foremost among the advantages is that stocking imported merchandise affords consumers unprecedented dietary diversity and counter-seasonal nutritional resilience.”",
+                    takeaway: "Direct, unequivocal claim answering the question."
                   },
                   {
                     step: "Tier 02",
                     badge: "Supporting Causal Engine",
                     title: "Unpack WHY and HOW with Supporting Reasons",
-                    say: "“As sedentary habits and hyper-processed diets proliferate, populations experience an exponential increase in preventable non-communicable conditions like type-2 diabetes and cardiovascular disease, forcing hospitals to divert billions toward continuous palliative treatments rather than acute emergency medicine.”",
-                    takeaway: "Explains the underlying epidemiological mechanism and fiscal diversion effect."
+                    say: "“In colder climates, domestic harvests are paralyzed during winter months. International supply chains transcend these natural limits, ensuring families have continuous access to fresh produce and eliminating winter vitamin deficiencies.”",
+                    takeaway: "Explains the underlying economic, climatic, and biological mechanics."
                   },
                   {
                     step: "Tier 03",
                     badge: "Concrete Real-World Anchor",
                     title: "Substantiate with Specific Evidence",
-                    say: "“This fiscal crisis is exemplified in the United Kingdom, where the National Health Service expends over £6 billion annually managing obesity-related pathology—a figure outstripping the entire national public budget for emergency policing services.”",
-                    takeaway: "Pins the theoretical argument to an undeniable, verified public health reality."
+                    say: "“For instance, European consumers routinely purchase Spanish citrus and Mexican avocados in midwinter at stable, affordable price points without suffering seasonal inflation.”",
+                    takeaway: "Pins the theoretical argument to an undeniable, verified real-world reality."
                   }
                 ].map((item) => (
                   <div
@@ -298,174 +305,129 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
                       <span className="apple-badge accent" style={{ fontSize: "0.75rem", padding: "2px 8px" }}>
-                        {item.step}
+                        {item.step} • {item.badge}
                       </span>
-                      <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>
-                        {item.title} ({item.badge})
-                      </strong>
+                      <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>{item.title}</strong>
                     </div>
-                    <p style={{ fontStyle: "italic", fontSize: "0.9rem", color: "var(--slate-800)", margin: "0 0 8px", background: "#f8fafc", padding: "10px 14px", borderRadius: "10px", borderLeft: "3px solid var(--apple-blue)" }}>
+                    <p style={{ fontSize: "0.92rem", color: "var(--slate-800)", fontStyle: "italic", margin: "0 0 8px", lineHeight: 1.5 }}>
                       {item.say}
                     </p>
-                    <p style={{ fontSize: "0.82rem", color: "var(--slate-500)", margin: 0 }}>
-                      <strong>Function in Essay:</strong> {item.takeaway}
-                    </p>
+                    <div style={{ fontSize: "0.82rem", color: "var(--slate-500)", fontWeight: 600 }}>
+                      ✦ Examiner Function: {item.takeaway}
+                    </div>
                   </div>
                 ))}
               </motion.div>
             )}
 
-            {/* TAB 3: SENTENCE COMPARISONS */}
+            {/* TAB 3: BAND 6 VS BAND 8.5+ SENTENCES */}
             {activeTab === "comparisons" && (
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+                style={{ display: "flex", flexDirection: "column", gap: "14px" }}
               >
-                <div
-                  style={{
-                    background: "#ffffff",
-                    border: "1.5px solid var(--border-subtle)",
-                    borderRadius: "18px",
-                    overflow: "hidden",
-                    boxShadow: "var(--shadow-sm)"
-                  }}
-                >
+                {[
+                  {
+                    topic: "Consumer Variety & Nutrition",
+                    band6: "Supermarkets have food from everywhere so people can buy different fruits and vegetables every day.",
+                    band9: "Supermarket imports confer unprecedented dietary diversification, liberating households from localized climatic ceilings to sustain optimal nutritional intake throughout winter.",
+                    why: "Replaces simplistic vocabulary with precise academic collocations: 'unprecedented dietary diversification', 'localized climatic ceilings'."
+                  },
+                  {
+                    topic: "Global Trade Cooperation",
+                    band6: "Selling food makes poor countries get money and become richer.",
+                    band9: "Procurement contracts with developing farming cooperatives inject essential foreign capital into rural agrarian economies, fostering mutually advantageous bilateral trade linkages.",
+                    why: "Connects commercial food transactions to institutional macroeconomic development."
+                  },
+                  {
+                    topic: "Environmental Food Miles (Counterpoint)",
+                    band6: "Flying food in planes is bad for nature because of pollution.",
+                    band9: "The intercontinental aviation transit of perishable goods generates excessive 'food miles' and substantial carbon emissions, imposing severe ecological externalities.",
+                    why: "Deploys precise environmental terminology ('food miles', 'aviation transit', 'ecological externalities')."
+                  }
+                ].map((item, index) => (
                   <div
+                    key={index}
                     style={{
-                      background: "#fef2f2",
-                      borderBottom: "1px solid #fee2e2",
-                      padding: "12px 18px",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px"
+                      background: "#ffffff",
+                      border: "1.5px solid var(--border-subtle)",
+                      borderRadius: "16px",
+                      padding: "18px 20px",
+                      boxShadow: "var(--shadow-sm)"
                     }}
                   >
-                    <span className="apple-badge" style={{ background: "#ef4444", color: "#fff", fontSize: "0.72rem" }}>
-                      BAND 6.0
-                    </span>
-                    <strong style={{ color: "#991b1b", fontSize: "0.9rem" }}>Vague &amp; Superficial (No Causal Depth or Specificity)</strong>
+                    <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "12px" }}>
+                      {item.topic}
+                    </h5>
+                    <div className="stage-grid-2col" style={{ gap: "14px", marginBottom: "12px" }}>
+                      <div style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "12px", padding: "12px 14px" }}>
+                        <span style={{ fontSize: "0.76rem", fontWeight: 800, color: "#991b1b" }}>BAND 6.0 (SHALLOW)</span>
+                        <p style={{ fontSize: "0.88rem", color: "#7f1d1d", margin: "6px 0 0", lineHeight: 1.45 }}>{item.band6}</p>
+                      </div>
+                      <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "12px 14px" }}>
+                        <span style={{ fontSize: "0.76rem", fontWeight: 800, color: "#166534" }}>BAND 8.5+ (ACADEMIC)</span>
+                        <p style={{ fontSize: "0.88rem", color: "#14532d", margin: "6px 0 0", lineHeight: 1.45 }}>{item.band9}</p>
+                      </div>
+                    </div>
+                    <div style={{ fontSize: "0.84rem", color: "var(--slate-600)", lineHeight: 1.45 }}>
+                      <Sparkles size={14} color="#d97706" style={{ verticalAlign: "-2px", marginRight: "6px" }} />
+                      <strong>Why It Works:</strong> {item.why}
+                    </div>
                   </div>
-                  <div style={{ padding: "14px 18px", fontSize: "0.92rem", color: "#475569", lineHeight: 1.5 }}>
-                    “People are getting fatter and unhealthier because they eat junk food and sit on chairs all day. This causes big problems for hospitals and makes economies poor.”
-                  </div>
-                  <div style={{ padding: "8px 18px 14px", fontSize: "0.8rem", color: "#dc2626" }}>
-                    ❌ <em>Weak vocabulary ('getting fatter', 'sit on chairs', 'makes economies poor'); zero causal mechanism; completely lacks academic precision.</em>
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    background: "#ffffff",
-                    border: "1.5px solid #bbf7d0",
-                    borderRadius: "18px",
-                    overflow: "hidden",
-                    boxShadow: "var(--shadow-sm)"
-                  }}
-                >
-                  <div
-                    style={{
-                      background: "#f0fdf4",
-                      borderBottom: "1px solid #dcfce7",
-                      padding: "12px 18px",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px"
-                    }}
-                  >
-                    <span className="apple-badge success" style={{ fontSize: "0.72rem" }}>
-                      BAND 8.5+
-                    </span>
-                    <strong style={{ color: "#166534", fontSize: "0.9rem" }}>Fully Extended &amp; Empirically Grounded</strong>
-                  </div>
-                  <div style={{ padding: "14px 18px", fontSize: "0.95rem", color: "#1e293b", lineHeight: 1.6 }}>
-                    “The alarming escalation in average body weight combined with pervasive physical inactivity imposes an unsustainable fiscal burden on state medical infrastructures. Specifically, as preventable chronic non-communicable illnesses like type-2 diabetes and cardiovascular disease surge, public healthcare systems must allocate billions toward palliative treatments, exemplified by the UK NHS expending over £6 billion annually managing obesity-related pathology.”
-                  </div>
-                  <div style={{ padding: "8px 18px 14px", fontSize: "0.82rem", color: "#15803d" }}>
-                    ✓ <em>Key strengths: Academic collocations ('pervasive physical inactivity', 'unsustainable fiscal burden', 'chronic non-communicable illnesses'), complex sentence coordination, and a verifiable empirical health benchmark.</em>
-                  </div>
-                </div>
+                ))}
               </motion.div>
             )}
 
-            {/* TAB 4: FORMULAS */}
+            {/* TAB 4: PLUG & PLAY FORMULAS */}
             {activeTab === "formulas" && (
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 style={{ display: "flex", flexDirection: "column", gap: "14px" }}
               >
-                <div style={{ background: "var(--slate-50)", borderRadius: "14px", padding: "14px 18px", border: "1px solid var(--border-subtle)" }}>
-                  <p style={{ margin: 0, fontSize: "0.9rem", color: "var(--slate-700)" }}>
-                    Master these <strong>3 plug-and-play body paragraph templates</strong>:
-                  </p>
-                </div>
-
                 {[
                   {
-                    title: "Formula 1: The Topic Sentence Frame (1 Primary Consequence)",
-                    pattern: "The primary consequence of [escalating weight / declining fitness] is that [1 Core Repercussion], which ultimately [societal / fiscal consequence].",
-                    example: "“The primary consequence of escalating population obesity is the unsustainable fiscal burden placed on public health services, which ultimately starves other vital medical sectors of essential capital.”"
+                    title: "Outweighing Thesis Formula (Introduction)",
+                    formula: "“Although [concession: transport carbon emissions and pressure on domestic farmers] remain legitimate concerns, I firmly contend that [core advantages: counter-seasonal nutrition and mutual global trade] decisively outweigh these drawbacks.”"
                   },
                   {
-                    title: "Formula 2: The Causal Supporting Explanation",
-                    pattern: "When populations succumb to [lifestyle driver], individuals inevitably [pathological outcome]; conversely, by enacting [targeted intervention], governments can [preventative health benefit].",
-                    example: "“When populations succumb to sedentary routines and hyper-palatable diets, individuals inevitably develop chronic metabolic disorders; conversely, by instituting targeted fiscal sugar levies, governments can curb harmful consumption and incentivize healthier eating habits.”"
+                    title: "Body 1 Opener Formula (Strong Advantage 1)",
+                    formula: "“Foremost among the compelling merits of international food retail is the unprecedented [dietary diversity / counter-seasonal nutritional security] that global supply networks afford modern households.”"
                   },
                   {
-                    title: "Formula 3: The Concrete Case-Study Clincher",
-                    pattern: "This dynamic is substantiated by [Public Health / Policy Precedent], where [regulatory / infrastructure measure] successfully [quantifiable health outcome achieved].",
-                    example: "“This dynamic is substantiated by municipal infrastructure investments in Copenhagen, where dedicated cycling highways enable over 40% of residents to commute actively by bicycle, driving significant reductions in national cardiovascular morbidity.”"
+                    title: "Body 2 Opener Formula (Strong Advantage 2)",
+                    formula: "“Beyond consumer convenience, cross-border agricultural trade serves as an indispensable macroeconomic catalyst by [enriching developing agrarian exporters] and [compelling domestic producers to modernize].”"
+                  },
+                  {
+                    title: "Body 3 Opener Formula (Non-Opinion Counterpoint)",
+                    formula: "“On the other hand, detractors cogently point to [the environmental toll of extended food miles] and [the commercial precarity imposed on local smallholders].”"
+                  },
+                  {
+                    title: "Decisive Verdict Formula (Conclusion)",
+                    formula: "“In conclusion, while the proliferation of imported food generates transport emissions and challenges local growers, the overriding benefits of universal nutritional resilience and international economic cooperation render this development predominantly advantageous.”"
                   }
-                ].map((item, idx) => (
+                ].map((item, index) => (
                   <div
-                    key={idx}
+                    key={index}
                     style={{
                       background: "#ffffff",
                       border: "1.5px solid var(--border-subtle)",
                       borderRadius: "16px",
-                      padding: "16px 20px"
+                      padding: "16px 20px",
+                      boxShadow: "var(--shadow-sm)"
                     }}
                   >
-                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                      <Sparkles size={16} color="var(--apple-blue)" />
-                      <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>{item.title}</strong>
-                    </div>
-                    <div style={{ background: "#f8fafc", borderRadius: "8px", padding: "8px 12px", fontFamily: "monospace", fontSize: "0.84rem", color: "#334155", marginBottom: "8px" }}>
-                      {item.pattern}
-                    </div>
-                    <div style={{ fontSize: "0.88rem", color: "var(--slate-700)", fontStyle: "italic", lineHeight: 1.45 }}>
-                      {item.example}
-                    </div>
+                    <h5 style={{ fontSize: "0.95rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "8px" }}>
+                      {item.title}
+                    </h5>
+                    <p style={{ fontSize: "0.92rem", color: "#1e40af", fontFamily: "Georgia, serif", margin: 0, lineHeight: 1.6 }}>
+                      {item.formula}
+                    </p>
                   </div>
                 ))}
               </motion.div>
             )}
-          </div>
-
-          {/* Footer Bar */}
-          <div
-            style={{
-              padding: "16px 28px",
-              borderTop: "1.5px solid var(--border-subtle)",
-              background: "#ffffff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between"
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
-              <Sparkles size={15} color="#d97706" />
-              <span>Review this breakdown for paragraph depth and analytical logic</span>
-            </div>
-            <button
-              onClick={onClose}
-              className="apple-touch-btn primary"
-              style={{ minHeight: "42px", padding: "0 20px", fontSize: "0.88rem", gap: "6px" }}
-            >
-              <span>Back to Step 6 (Body 1)</span>
-              <ArrowRight size={15} />
-            </button>
           </div>
         </motion.div>
       </div>

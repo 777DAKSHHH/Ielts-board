@@ -1,430 +1,497 @@
-import type { Task1Data, VocabItem, SchoolData, ConvergenceMilestone, Task1TableData } from "../types";
-export type { Task1Data, VocabItem, SchoolData, ConvergenceMilestone, Task1TableData };
+import type {
+  Task1Data,
+  VocabItem,
+  PacificConditionFeature,
+  ComparisonHotspot,
+  SchoolData,
+  Task1DiagramData
+} from "../types";
 
+export type {
+  Task1Data,
+  VocabItem,
+  PacificConditionFeature,
+  ComparisonHotspot,
+  SchoolData,
+  Task1DiagramData
+};
+
+export const PACIFIC_CONDITIONS: PacificConditionFeature[] = [
+  {
+    id: "normal",
+    title: "Normal Pacific Conditions",
+    badge: "Equilibrium Baseline",
+    tradeWinds: "Strong easterly trade winds blowing westward across the Pacific toward the western basin",
+    upperWinds: "Weak high-altitude winds blowing eastward",
+    waterThermocline: "Thick pool of warm surface water accumulates in the West Pacific; cold thermocline close to surface off Peru",
+    upwellingStatus: "Active upward surge of cool, nutrient-dense water along the Peruvian coastline",
+    rainfallPattern: "Intense convective storm clouds and heavy precipitation centered over the West Pacific and Australia",
+    australiaCondition: {
+      climate: "Humid & rainy conditions sustaining lush green vegetation",
+      weather: "Storm clouds & abundant rainfall",
+      rainfall: "Frequent convective downpours supporting local ecosystems and farming",
+      visualDetail: "Overcast skies, torrential showers, and flourishing green flora"
+    },
+    peruCondition: {
+      climate: "Arid, clear coastal skies with abundant offshore marine harvests",
+      marineLife: "Dense schools of cold-water fish thriving on rising nutrients",
+      fisheryStatus: "Booming commercial fishing industry (illustrated by 2 large fish and an upward arrow)",
+      visualDetail: "Bright sunshine, clear horizon, and thriving fish biomass"
+    },
+    band9Phrase:
+      "“Under normal conditions, powerful trade winds propel warm surface water toward the western basin, fostering cloud formation and heavy rain over Australia, while cold, nutrient-laden currents upwell along the Peruvian coastline.”",
+    summary:
+      "Standard Pacific equilibrium: strong westward trade winds, deep western warm pool, rainfall over Australia, sunny skies and thriving fish stocks off Peru."
+  },
+  {
+    id: "el_nino",
+    title: "El Niño Conditions",
+    badge: "Oceanic-Atmospheric Disruption",
+    tradeWinds: "Weakened trade winds in the East Pacific; wind circulation falters",
+    upperWinds: "Strong high-altitude winds blowing eastward over the West Pacific",
+    waterThermocline: "Warm surface water is pushed eastward across the ocean basin, blanketing the thermocline",
+    upwellingStatus: "Suppressed upwelling; warm surface layer traps cold water and yields poor nutrient levels",
+    rainfallPattern: "Convective storm clouds and heavy precipitation shift eastward across the ocean to Peru",
+    australiaCondition: {
+      climate: "Severe aridity, parched terrain, and heightened bushfire danger",
+      weather: "Scorching sun & cloudless skies",
+      rainfall: "Near-total absence of rainfall, causing withered vegetation and drought",
+      visualDetail: "Blazing sun icon, desiccated ground, and zero cloud cover"
+    },
+    peruCondition: {
+      climate: "Uncharacteristic storm clouds, heavy rainfall, and flood vulnerability",
+      marineLife: "Fish populations collapse due to warm surface water and severe nutrient starvation",
+      fisheryStatus: "Severely depleted fishery (illustrated by a solitary thin fish and a downward arrow)",
+      visualDetail: "Heavy rain clouds, downpours over coastal land, and impoverished marine stocks"
+    },
+    band9Phrase:
+      "“During an El Niño event, this circulation pattern is disrupted: trade winds falter, warm water surges eastwards, and heavy rainfall shifts to Peru, while Australia experiences prolonged drought and Peruvian fisheries collapse under nutrient starvation.”",
+    summary:
+      "Climatic inversion: weakened trade winds, eastward warm surge, scorching drought in Australia, torrential rain and collapsed fisheries off Peru."
+  }
+];
+
+export const COMPARISON_HOTSPOTS: ComparisonHotspot[] = [
+  {
+    id: "trade-winds",
+    title: "Atmospheric Circulation & Trade Winds",
+    zone: "atmosphere",
+    normalState: "Strong trade winds blowing westward across East Pacific; weak upper winds in the west",
+    elNinoState: "Trade winds weaken substantially; strong eastward-blowing winds dominate upper atmosphere",
+    contrastKey: "Directional and velocity reversal of prevailing air currents",
+    band9Sentence:
+      "“Whereas robust trade winds normally blow westward across the basin, an El Niño episode witnesses these winds weaken, accompanied by strong eastward atmospheric flows.”"
+  },
+  {
+    id: "warm-pool",
+    title: "Surface Water & Thermocline Displacement",
+    zone: "west_pacific",
+    normalState: "Warm surface water is concentrated in a deep layer in the West Pacific",
+    elNinoState: "Warm water is pushed eastwards across the Pacific, capping the thermocline across the basin",
+    contrastKey: "Eastward thermal migration and ocean warming",
+    band9Sentence:
+      "“Consequently, the body of warm water that typically banks against the western Pacific surges eastwards toward South America.”"
+  },
+  {
+    id: "upwelling-nutrients",
+    title: "Peruvian Upwelling & Marine Nutrients",
+    zone: "marine_depth",
+    normalState: "Cool water and rich nutrients surge upwards to the surface along Peru",
+    elNinoState: "Upwelling is blocked by the eastward warm water layer; coastal waters suffer poor nutrients",
+    contrastKey: "Suppression of coastal upwelling and nutrient starvation",
+    band9Sentence:
+      "“This warm oceanic cap halts the upwelling of cold, nutrient-dense water along the Peruvian coastline, resulting in impoverished nutrient levels.”"
+  },
+  {
+    id: "australia-weather",
+    title: "Australian Weather & Vegetation",
+    zone: "west_pacific",
+    normalState: "Storm clouds produce frequent rain, nurturing lush green vegetation",
+    elNinoState: "Cloudless skies, scorching sun, and severe drought with withered ground",
+    contrastKey: "Transition from lush precipitation to arid drought",
+    band9Sentence:
+      "“As a result, Australia transitions from receiving abundant convective precipitation under normal conditions to experiencing arid conditions and blazing sunshine during El Niño.”"
+  },
+  {
+    id: "peru-weather-fishery",
+    title: "Peruvian Weather & Commercial Fisheries",
+    zone: "east_pacific",
+    normalState: "Clear, sunny skies accompanied by booming, abundant fish populations (upward arrow)",
+    elNinoState: "Dark storm clouds bring heavy rain, while fish populations plummet (downward arrow)",
+    contrastKey: "Inversion to coastal flooding and catastrophic fishery collapse",
+    band9Sentence:
+      "“Conversely, Peru experiences an inversion from clear skies and flourishing fish stocks to heavy rainfall accompanied by a precipitous decline in marine harvests.”"
+  }
+];
+
+// Backwards-compatible stub data for any components still referencing school metrics
 export const SCHOOLS_DATA: SchoolData[] = [
   {
-    id: "royston",
-    name: "Royston Academy",
-    originalLegendName: "ROYSTON ACADEMY",
-    originalTableName: "ROYSTON ACADEMY",
-    color: "#d97706",
-    group: "net_increase",
-    badge: "Stepped Climber (50% → 60%, +10% pts)",
-    startValue: 50,
-    peakOrPlateauValue: 60,
-    endValue: 60,
-    netChange: "+10 percentage points (+20% increase)",
+    id: "normal_pacific",
+    name: "Normal Equilibrium",
+    color: "#0284c7",
+    badge: "Westward Flow & Rain in West",
+    netChange: "Equilibrium Baseline",
+    trendSummary: "Strong westward trade winds drive warm water and rain to Australia; cold upwelling off Peru.",
+    band9Phrase: "“Under normal conditions, strong trade winds push warm water westward, fostering rain over Australia.”",
     dataPoints: [
-      { year: 1995, value: 50, annotation: "Began at exactly 50%" },
-      { year: 1996, value: 52, annotation: "Marginal rise to 52%" },
-      { year: 1997, value: 54, annotation: "Rose to 54%" },
-      { year: 1998, value: 54, annotation: "Plateaued identically at 54%" },
-      { year: 1999, value: 60, annotation: "Stepped up to 60%, joining Harble and Crackend" },
-      { year: 2000, value: 60, annotation: "Level at 60% for a second consecutive year" }
-    ],
-    trendSummary:
-      "Showed stepped growth, rising from 50% to 54% (1997–98) before stepping up to 60% (1999–2000).",
-    band9Phrase:
-      "“Royston Academy progressed in a stepped fashion, rising from 50% to plateau at 54% in 1997–1998 before leveling off at 60% by the end of the century.”",
-    description:
-      "Grew modestly by 10 percentage points overall, featuring two distinct two-year periods of stability at 54% and 60%."
+      { year: 1, value: 85, annotation: "Strong Trade Winds" },
+      { year: 2, value: 90, annotation: "Western Warm Pool" },
+      { year: 3, value: 95, annotation: "Australian Rain" },
+      { year: 4, value: 90, annotation: "Peruvian Upwelling" },
+      { year: 5, value: 95, annotation: "Booming Fish Stocks" }
+    ]
   },
   {
-    id: "greystone",
-    name: "Greystone High",
-    originalLegendName: "GREYSTONE HIGH",
-    originalTableName: "GREYSTONE HIGH",
+    id: "el_nino_pacific",
+    name: "El Niño Disruption",
     color: "#dc2626",
-    group: "net_decrease",
-    badge: "Sole Decliner: Lost Dominance (90% → 70%)",
-    startValue: 90,
-    peakOrPlateauValue: 90,
-    endValue: 70,
-    netChange: "-20 percentage points (-22.2% decline)",
+    badge: "Eastward Warm Surge & Drought",
+    netChange: "Climatic Inversion",
+    trendSummary: "Weak trade winds push warm water east; Australia suffers drought while Peru faces rain and fishery crash.",
+    band9Phrase: "“During El Niño, weakened trade winds displace warm water east, plunging Australia into drought.”",
     dataPoints: [
-      { year: 1995, value: 90, annotation: "Commanding lead at 90%, 25 points ahead of 2nd" },
-      { year: 1996, value: 80, annotation: "Steep drop by 10 points to 80%" },
-      { year: 1997, value: 75, annotation: "Fell to 75%, caught by Fairfield Girls" },
-      { year: 1998, value: 73, annotation: "Dropped to 73%, falling behind Fairfield" },
-      { year: 1999, value: 72, annotation: "Marginal decline to 72%" },
-      { year: 2000, value: 70, annotation: "Concluded at 70%, slipping to third place" }
-    ],
-    trendSummary:
-      "The only school to decline, suffering an uninterrupted downward slide from 90% down to 70% and dropping from 1st to 3rd place.",
-    band9Phrase:
-      "“Greystone High was the sole institution to experience a continuous downward trend, surrendering its commanding 90% lead to finish third at 70%.”",
-    description:
-      "Fell sharply by 15 points in the first two years, followed by a slower steady descent to drop from 1st to 3rd place."
-  },
-  {
-    id: "harble",
-    name: "Harble Secondary",
-    originalLegendName: "HARBLE SECONDARY",
-    originalTableName: "HARBLE SECONDARY",
-    color: "#059669",
-    group: "net_increase",
-    badge: "Most Dramatic Surge (30% → 80%, Nearly Tripled)",
-    startValue: 30,
-    peakOrPlateauValue: 80,
-    endValue: 80,
-    netChange: "+50 percentage points (+167% relative surge)",
-    dataPoints: [
-      { year: 1995, value: 30, annotation: "Lowest initial percentage at 30%" },
-      { year: 1996, value: 35, annotation: "Rose to 35% (+5%)" },
-      { year: 1997, value: 40, annotation: "Climbed to 40% (+5%)" },
-      { year: 1998, value: 50, annotation: "Accelerated to 50% (+10%)" },
-      { year: 1999, value: 60, annotation: "Reached 60%, converging with Royston and Crackend" },
-      { year: 2000, value: 80, annotation: "Jumped by 20% to finish 1st overall at 80%" }
-    ],
-    trendSummary:
-      "Underwent an uninterrupted, accelerating climb, vaulting from last place at 30% to first place at 80%—nearly tripling its baseline.",
-    band9Phrase:
-      "“Harble Secondary registered the most dramatic surge, nearly tripling from a baseline of 30% in 1995 to emerge as the top performer at 80% in 2000.”",
-    description:
-      "Rose by 5% annually for two years, then accelerated by 10% in 1998 and 1999, before jumping by an extraordinary 20 percentage points in the final year."
-  },
-  {
-    id: "fairfield",
-    name: "Fairfield Girls",
-    originalLegendName: "FAIRFIELD GIRLS",
-    originalTableName: "FAIRFIELD GIRLS",
-    color: "#4f46e5",
-    group: "net_increase",
-    badge: "Strong Climber (65% → 79%, 2nd Place)",
-    startValue: 65,
-    peakOrPlateauValue: 79,
-    endValue: 79,
-    netChange: "+14 percentage points (+21.5% growth)",
-    dataPoints: [
-      { year: 1995, value: 65, annotation: "Started second highest at 65%" },
-      { year: 1996, value: 70, annotation: "Rose to 70% (+5%)" },
-      { year: 1997, value: 75, annotation: "Equalized with Greystone High at 75%" },
-      { year: 1998, value: 75, annotation: "Plateaued at 75%, surpassing Greystone High" },
-      { year: 1999, value: 70, annotation: "Experienced a temporary 5% contraction to 70%" },
-      { year: 2000, value: 79, annotation: "Rebounded sharply to finish in second place at 79%" }
-    ],
-    trendSummary:
-      "Grew from 65% to 75% by 1997, overtook Greystone in 1998, and rebounded from a 1999 dip to conclude at 79% (just 1% behind Harble).",
-    band9Phrase:
-      "“Fairfield Girls climbed steadily from 65% to 75% in 1997, overtook Greystone in 1998, and rebounded from a transient dip in 1999 to conclude at 79%.”",
-    description:
-      "Maintained second place initially, briefly tied for first in 1997, held the sole lead in 1998, and concluded just one point shy of Harble."
-  },
-  {
-    id: "crackend",
-    name: "Crackend Boys",
-    originalLegendName: "CRACKEND BOYS",
-    originalTableName: "CRACKEND BOYS",
-    color: "#475569",
-    group: "steady",
-    badge: "Static / Stable Baseline (59% – 62%)",
-    startValue: 60,
-    peakOrPlateauValue: 62,
-    endValue: 62,
-    netChange: "+2 percentage points (negligible change)",
-    dataPoints: [
-      { year: 1995, value: 60, annotation: "Began at 60%" },
-      { year: 1996, value: 59, annotation: "Slight dip to 59%" },
-      { year: 1997, value: 60, annotation: "Returned to 60%" },
-      { year: 1998, value: 61, annotation: "Marginal uptick to 61%" },
-      { year: 1999, value: 60, annotation: "Returned to 60%, part of the triple tie" },
-      { year: 2000, value: 62, annotation: "Finished slightly higher at 62%" }
-    ],
-    trendSummary:
-      "Maintained virtually static numbers across the entire six-year span, fluctuating within a tight band between 59% and 62%.",
-    band9Phrase:
-      "“Crackend Boys exhibited remarkable stability, oscillating within a narrow band of 59% to 62% throughout the six-year period.”",
-    description:
-      "Demonstrated near-total stability, never deviating by more than two percentage points from its initial 60% baseline."
+      { year: 1, value: 30, annotation: "Weak Trade Winds" },
+      { year: 2, value: 80, annotation: "Eastward Warm Surge" },
+      { year: 3, value: 15, annotation: "Australian Drought" },
+      { year: 4, value: 20, annotation: "Poor Nutrients" },
+      { year: 5, value: 10, annotation: "Fishery Collapse" }
+    ]
   }
 ];
 
-export const CONVERGENCES_DATA: ConvergenceMilestone[] = [
-  {
-    id: "fairfield-greystone-1997",
-    year: 1997,
-    approxValue: 75,
-    schools: ["Fairfield Girls", "Greystone High"],
-    countries: ["Fairfield Girls", "Greystone High"],
-    title: "1997: Fairfield Girls Equalizes with Greystone High (75%)",
-    description:
-      "Fairfield's climb (+10 points) and Greystone's descent (-15 points) met at precisely 75% in 1997, prior to Fairfield taking the lead in 1998.",
-    band9Phrase:
-      "“In 1997, Fairfield Girls' ascending rate equalized with Greystone High's declining figure at exactly 75%.”"
-  },
-  {
-    id: "triple-tie-1999",
-    year: 1999,
-    approxValue: 60,
-    schools: ["Royston Academy", "Harble Secondary", "Crackend Boys"],
-    countries: ["Royston Academy", "Harble Secondary", "Crackend Boys"],
-    title: "1999: Triple Convergence at 60%",
-    description:
-      "In 1999, Royston Academy's stepped climb, Harble's rapid surge, and Crackend's stable rate all converged at precisely 60%.",
-    band9Phrase:
-      "“Remarkably, in 1999, Royston Academy, Harble Secondary, and Crackend Boys all converged at an identical figure of exactly 60%.”"
-  }
-];
-
-const TABLE_DATA_PAYLOAD: Task1TableData = {
-  years: [1995, 1996, 1997, 1998, 1999, 2000],
-  unit: "% of pupils entering higher education",
-  schools: SCHOOLS_DATA,
-  countries: SCHOOLS_DATA,
-  convergences: CONVERGENCES_DATA,
-  intersections: CONVERGENCES_DATA,
+export const TASK1_DIAGRAM_DATA: Task1DiagramData = {
+  conditions: PACIFIC_CONDITIONS,
+  hotspots: COMPARISON_HOTSPOTS,
   comparisonsSummary: {
-    highestStarter: "Greystone High (90% in 1995, falling to 70% in 2000)",
-    mostDramaticSurge: "Harble Secondary (surged from 30% to 80%, nearly tripling)",
-    soleDecliner: "Greystone High (dropped 20 percentage points, falling from 1st to 3rd)",
-    mostStable: "Crackend Boys (fluctuated minimally between 59% and 62%)",
-    convergences: "Fairfield & Greystone tied at 75% in 1997; Royston, Harble & Crackend tied at 60% in 1999"
-  }
+    tradeWinds: "Strong westward winds under normal conditions vs. weakened trade winds & eastward upper winds during El Niño.",
+    waterMovement: "Warm water pooled in western Pacific normally vs. warm water pushed eastwards across basin in El Niño.",
+    peruOcean: "Cold upwelling with rich nutrients normally vs. capped thermocline with poor nutrients in El Niño.",
+    australiaClimate: "Storm clouds & rain (lush flora) normally vs. blazing sun & drought in El Niño.",
+    peruClimateFisheries: "Sunny skies & abundant fish normally vs. storm clouds, rain & decimated fish catch in El Niño."
+  },
+  schools: SCHOOLS_DATA,
+  countries: SCHOOLS_DATA
 };
 
 export const TASK1_DATA: Task1Data = {
-  id: "higher-education-pupils-task1",
-  taskType: "Statistical Table & Progression Trends (1995–2000)",
-  title: "Percentage of Pupils Entering Higher Education from Five Secondary Schools (1995–2000)",
+  id: "task1-pacific-el-nino",
+  taskType: "Comparative Oceanographic Diagram",
+  title: "Normal vs. El Niño Conditions in the Pacific Ocean",
   questionText:
-    "The table shows the percentage of pupils who entered higher education from five secondary school between 1995 and 2000.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
-  imageFileName: "higher-education-pupils-table.png",
-  audioUrl: "materials/weight-health-fitness-briefing.m4a",
+    "The diagrams compare the normal condition with El Nino condition in the Pacific Ocean.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+  imageFileName: "pacific-el-nino-comparison.png",
+  audioUrl: "https://actions.google.com/sounds/v1/weather/light_rain.ogg",
   audioClueText:
-    "Today's visual task presents a statistical table detailing the percentage of secondary school leavers entering higher education across five distinct institutions: Royston Academy, Greystone High, Harble Secondary, Fairfield Girls, and Crackend Boys, spanning from 1995 to 2000. Over this six-year timeframe, four of the five institutions recorded overall increases, while only one experienced a continuous decline. Greystone High commenced the period with a dominant lead of ninety percent, but steadily fell by twenty percentage points to finish at seventy percent. In stark contrast, Harble Secondary achieved the most remarkable leap, ascending from a baseline of just thirty percent to finish as the frontrunner at eighty percent—nearly tripling its baseline. Fairfield Girls followed an upward trajectory, rising from sixty-five percent to seventy-nine percent, briefly tying with Greystone at seventy-five percent in 1997 before overtaking it. Meanwhile, Royston Academy progressed moderately from fifty to sixty percent, and Crackend Boys demonstrated near-total stability, hovering between fifty-nine and sixty-two percent. Notably, in 1999, Royston, Crackend, and Harble all intersected at exactly sixty percent.",
-  timingSeconds: 180,
+    "Listen carefully to the Pacific Ocean comparison briefing. Notice how the two diagrams reveal a dramatic climatic inversion. In the top diagram, under normal conditions, robust easterly trade winds blow from the East Pacific toward the West Pacific, pooling warm surface water off the Australian coast. This creates convective storm clouds and abundant rainfall over Australia. Meanwhile, off the Peruvian coastline in the East Pacific, cool water laden with rich nutrients surges upward from the depths, supporting clear sunny skies and thriving, abundant fish populations. In contrast, the bottom diagram depicts an El Niño event: the trade winds weaken, upper winds blow strongly eastward, and warm surface water is propelled across the ocean basin toward South America. This suppresses the cold thermocline and halts nutrient upwelling, causing Peruvian fish stocks to crash while dumping uncharacteristic storm rain on Peru. Concurrently, Australia is deprived of moisture, enduring scorching sun, clear skies, and severe drought.",
   sampleIntro:
-    "The table illustrates the proportion of pupils who proceeded to tertiary education from five secondary schools—Royston Academy, Greystone High, Harble Secondary, Fairfield Girls, and Crackend Boys—between 1995 and 2000.",
+    "The diagrams illustrate the atmospheric and oceanic differences between normal weather conditions and an El Niño phenomenon across the Pacific Ocean.",
   sampleOverview:
-    "Overall, higher education entry rates rose in four out of the five secondary schools, with Greystone High being the sole institution to experience a continuous downward trend. Furthermore, while Harble Secondary exhibited the most dramatic expansion to finish with the highest percentage, Crackend Boys maintained notable consistency throughout the six-year period.",
-
-  tableData: TABLE_DATA_PAYLOAD,
-  graphData: TABLE_DATA_PAYLOAD,
-
+    "Overall, normal conditions are characterized by strong trade winds driving warm surface water and heavy rainfall westward toward Australia, while nutrient-rich cold upwelling sustains flourishing Peruvian fisheries. In sharp contrast, El Niño conditions feature weakened trade winds and eastward atmospheric flows, which displace warm water and storm clouds toward Peru while plunging Australia into drought and severely depleting Peruvian marine nutrients and fish stocks.",
+  timingSeconds: 1200,
+  diagramData: TASK1_DIAGRAM_DATA,
+  graphData: TASK1_DIAGRAM_DATA,
+  tableData: TASK1_DIAGRAM_DATA,
   vocabList: [
     {
-      word: "tertiary education entry rate",
+      word: "Upwelling",
       meaning:
-        "The proportion or percentage of secondary school leavers who gain admission and enroll in university or higher education.",
+        "The upward vertical movement of colder, nutrient-dense deep ocean water toward the surface as surface water is pushed away.",
       example:
-        "The table tracks variations in tertiary education entry rates across five secondary schools between 1995 and 2000."
+        "Off the coast of Peru, cool water and rich nutrients actively upwell from the ocean depths to nourish marine life under normal conditions.",
+      partOfSpeech: "noun",
+      pronunciation: "/ˈʌpˌwel.ɪŋ/",
+      definition:
+        "The upward vertical movement of colder, nutrient-dense deep ocean water toward the surface as surface water is pushed away.",
+      band9Context:
+        "Off the coast of Peru, cool water and rich nutrients actively upwell from the ocean depths to nourish marine life under normal conditions.",
+      collocations: ["nutrient-rich upwelling", "coastal upwelling", "suppressed upwelling", "oceanic upwelling"]
     },
     {
-      word: "register an uninterrupted downward trend",
+      word: "Thermocline",
       meaning:
-        "Continuously decrease year over year without experiencing any rebound or leveling off.",
+        "The distinct transitional layer in an ocean body separating warmer surface water from much colder, denser deep water.",
       example:
-        "Greystone High was the only school to register an uninterrupted downward trend, falling every single year."
+        "During an El Niño phase, warm surface water pushed eastward caps the ocean basin, suppressing the cool thermocline below.",
+      partOfSpeech: "noun",
+      pronunciation: "/ˈθɜː.mə.klaɪn/",
+      definition:
+        "The distinct transitional layer in an ocean body separating warmer surface water from much colder, denser deep water.",
+      band9Context:
+        "During an El Niño phase, warm surface water pushed eastward caps the ocean basin, suppressing the cool thermocline below.",
+      collocations: ["steep thermocline", "suppress the thermocline", "thermocline displacement", "deep ocean layer"]
     },
     {
-      word: "experience a meteoric surge",
+      word: "Trade Winds",
       meaning:
-        "Undergo an extraordinarily swift, steep, and dramatic upward climb in statistical value.",
+        "The prevailing tropical easterly winds that blow steadily across the equatorial ocean basin.",
       example:
-        "Harble Secondary experienced a meteoric surge, vaulting from thirty percent in 1995 to eighty percent in 2000."
+        "Under normal conditions, powerful trade winds blow westward from the East Pacific toward the West Pacific basin.",
+      partOfSpeech: "noun",
+      pronunciation: "/ˈtreɪd wɪndz/",
+      definition:
+        "The prevailing tropical easterly winds that blow steadily across the equatorial ocean basin.",
+      band9Context:
+        "Under normal conditions, powerful trade winds blow westward from the East Pacific toward the West Pacific basin.",
+      collocations: ["strong trade winds", "weakened trade winds", "prevailing trade winds", "easterly winds"]
     },
     {
-      word: "nearly triple its initial baseline",
+      word: "Atmospheric Convection",
       meaning:
-        "Multiply by almost a factor of three relative to the starting figure at the beginning of the timeframe.",
+        "The vertical rising of warm, moisture-laden air that condenses into storm clouds and produces precipitation.",
       example:
-        "By soaring from 30% to 80%, Harble Secondary nearly tripled its initial baseline over the six-year period."
+        "The accumulation of warm water in the western basin triggers intense atmospheric convection, generating storm clouds and rain over Australia.",
+      partOfSpeech: "noun",
+      pronunciation: "/ˌæt.məsˈfer.ɪk kənˈvek.ʃən/",
+      definition:
+        "The vertical rising of warm, moisture-laden air that condenses into storm clouds and produces precipitation.",
+      band9Context:
+        "The accumulation of warm water in the western basin triggers intense atmospheric convection, generating storm clouds and rain over Australia.",
+      collocations: ["convective storm clouds", "trigger convection", "convective precipitation", "atmospheric lift"]
     },
     {
-      word: "surrender a commanding lead",
+      word: "Displace Eastward",
       meaning:
-        "Relinquish the undisputed top-ranked position after holding a substantial numerical advantage.",
+        "To shift, propel, or push a body of water or air mass across an oceanic expanse toward the eastern quadrant.",
       example:
-        "Greystone High surrendered its commanding 25-point lead, eventually slipping to third place by the end of the survey."
+        "As trade winds falter, a substantial layer of warm water is displaced eastwards toward the South American coastline.",
+      partOfSpeech: "verb",
+      pronunciation: "/dɪsˈpleɪs ˈiːst.wəd/",
+      definition:
+        "To shift, propel, or push a body of water or air mass across an oceanic expanse toward the eastern quadrant.",
+      band9Context:
+        "As trade winds falter, a substantial layer of warm water is displaced eastwards toward the South American coastline.",
+      collocations: ["pushed eastwards", "displaced eastward", "eastward migration", "propel water east"]
     },
     {
-      word: "converge at an identical proportion",
+      word: "Nutrient-Dense",
       meaning:
-        "Align at the exact same percentage figure across separate data series in a specific year.",
+        "Containing a high concentration of organic and mineral compounds essential for sustaining marine food webs.",
       example:
-        "In 1999, Royston Academy, Harble Secondary, and Crackend Boys converged at an identical proportion of 60%."
+        "Cold, nutrient-dense water rising off Peru provides the essential ecological foundation for abundant commercial fish harvests.",
+      partOfSpeech: "adjective",
+      pronunciation: "/ˈnjuː.tri.ənt dens/",
+      definition:
+        "Containing a high concentration of organic and mineral compounds essential for sustaining marine food webs.",
+      band9Context:
+        "Cold, nutrient-dense water rising off Peru provides the essential ecological foundation for abundant commercial fish harvests.",
+      collocations: ["nutrient-dense currents", "rich nutrients", "poor nutrient levels", "nutrient starvation"]
     },
     {
-      word: "oscillate within a narrow band",
+      word: "Climatic Inversion",
       meaning:
-        "Fluctuate slightly up and down within very tight numerical limits, demonstrating high stability.",
+        "A complete reversal or mirrored flip of established meteorological and atmospheric patterns across two regions.",
       example:
-        "Crackend Boys oscillated within a narrow band of 59% to 62%, exhibiting near-total stability."
+        "The onset of El Niño triggers a complete climatic inversion, converting wet Australia into an arid zone and dry Peru into a flood zone.",
+      partOfSpeech: "noun",
+      pronunciation: "/klaɪˈmæt.ɪk ɪnˈvɜː.ʃən/",
+      definition:
+        "A complete reversal or mirrored flip of established meteorological and atmospheric patterns across two regions.",
+      band9Context:
+        "The onset of El Niño triggers a complete climatic inversion, converting wet Australia into an arid zone and dry Peru into a flood zone.",
+      collocations: ["climatic inversion", "meteorological reversal", "inverted weather patterns", "systemic shift"]
     },
     {
-      word: "exhibit a stepped upward pattern",
+      word: "Precipitous Decline",
       meaning:
-        "Progress through alternating periods of growth followed by short multi-year plateaus.",
+        "An extremely steep, sudden, and disastrous reduction in quantity or abundance.",
       example:
-        "Royston Academy exhibited a stepped upward pattern, pausing at 54% in 1997–98 before leveling at 60%."
+        "Due to the cessation of nutrient upwelling, Peruvian fish stocks suffer a precipitous decline as indicated by the downward arrow.",
+      partOfSpeech: "noun",
+      pronunciation: "/prɪˈsɪp.ɪ.təs dɪˈklaɪn/",
+      definition:
+        "An extremely steep, sudden, and disastrous reduction in quantity or abundance.",
+      band9Context:
+        "Due to the cessation of nutrient upwelling, Peruvian fish stocks suffer a precipitous decline as indicated by the downward arrow.",
+      collocations: ["precipitous decline", "plummet rapidly", "severe depletion", "decimate stocks"]
     },
     {
-      word: "rebound following a transient dip",
+      word: "Prolonged Aridity",
       meaning:
-        "Recover strongly after experiencing a brief, temporary downward decline.",
+        "An extended period of severe dryness, characterized by an absence of precipitation and scorching temperatures.",
       example:
-        "Fairfield Girls rebounded following a transient dip to 70% in 1999, concluding at 79% in 2000."
+        "Deprived of warm convective sea surfaces, eastern Australia is subjected to prolonged aridity and blazing sunshine.",
+      partOfSpeech: "noun",
+      pronunciation: "/prəˈlɒŋd əˈrɪd.ə.ti/",
+      definition:
+        "An extended period of severe dryness, characterized by an absence of precipitation and scorching temperatures.",
+      band9Context:
+        "Deprived of warm convective sea surfaces, eastern Australia is subjected to prolonged aridity and blazing sunshine.",
+      collocations: ["prolonged aridity", "severe drought", "arid conditions", "parched landscapes"]
     },
     {
-      word: "overtake and displace from first place",
+      word: "Flourish",
       meaning:
-        "Surpass a higher-ranked entity and take over the leading position.",
+        "To grow, develop, or thrive vigorously under optimal environmental and nutritional circumstances.",
       example:
-        "By 1998, Fairfield Girls had overtaken Greystone High, temporarily holding the highest progression rate."
+        "Commercial fisheries flourish off the Peruvian coast during normal periods thanks to continuous nutrient replenishment.",
+      partOfSpeech: "verb",
+      pronunciation: "/ˈflʌr.ɪʃ/",
+      definition:
+        "To grow, develop, or thrive vigorously under optimal environmental and nutritional circumstances.",
+      band9Context:
+        "Commercial fisheries flourish off the Peruvian coast during normal periods thanks to continuous nutrient replenishment.",
+      collocations: ["flourishing fish populations", "marine life flourishes", "thriving ecosystem", "abundant biomass"]
+    },
+    {
+      word: "Attenuate",
+      meaning:
+        "To reduce the force, intensity, or velocity of a physical flow or meteorological wind system.",
+      example:
+        "During El Niño episodes, the standard westward trade winds attenuate, allowing warm water to migrate back eastward.",
+      partOfSpeech: "verb",
+      pronunciation: "/əˈten.ju.eɪt/",
+      definition:
+        "To reduce the force, intensity, or velocity of a physical flow or meteorological wind system.",
+      band9Context:
+        "During El Niño episodes, the standard westward trade winds attenuate, allowing warm water to migrate back eastward.",
+      collocations: ["attenuated trade winds", "attenuate significantly", "weakened circulation", "faltering currents"]
+    },
+    {
+      word: "Equilibrium Baseline",
+      meaning:
+        "The regular, balanced state of an environmental system against which anomalies and disruptions are measured.",
+      example:
+        "The normal Pacific diagram illustrates the equilibrium baseline, whereas El Niño depicts a transient yet disruptive anomaly.",
+      partOfSpeech: "noun",
+      pronunciation: "/ˌiː.kwɪˈlɪb.ri.əm ˈbeɪs.laɪn/",
+      definition:
+        "The regular, balanced state of an environmental system against which anomalies and disruptions are measured.",
+      band9Context:
+        "The normal Pacific diagram illustrates the equilibrium baseline, whereas El Niño depicts a transient yet disruptive anomaly.",
+      collocations: ["equilibrium baseline", "climatic equilibrium", "oceanic balance", "systemic disruption"]
     }
   ],
-
   vocabHunt: [
-    "tertiary education entry rate",
-    "register an uninterrupted downward trend",
-    "experience a meteoric surge",
-    "nearly triple its initial baseline",
-    "surrender a commanding lead",
-    "converge at an identical proportion",
-    "oscillate within a narrow band",
-    "exhibit a stepped upward pattern",
-    "rebound following a transient dip",
-    "overtake and displace from first place"
+    "Upwelling",
+    "Thermocline",
+    "Trade Winds",
+    "Atmospheric Convection",
+    "Displace Eastward",
+    "Nutrient-Dense",
+    "Climatic Inversion",
+    "Precipitous Decline"
   ],
-
   bp1: {
-    title: "Body 1: The Surging Risers & Frontrunners (Harble Secondary & Fairfield Girls)",
-    focus: "Harble's meteoric leap from last to first (30% to 80%) and Fairfield's progression to second place (65% to 79%)",
+    title: "Body 1: Normal Pacific Equilibrium (Westward Winds & Rich Upwelling)",
+    focus: "Atmospheric circulation, western warm pool, Australian rainfall, and Peruvian nutrient upwelling.",
     points: [
-      "Harble Secondary started as the lowest-ranking institution at 30% in 1995.",
-      "It rose steadily by 5% annually to 35% in 1996 and 40% in 1997, before accelerating to 50% in 1998 and 60% in 1999.",
-      "In the final year, Harble leaped by an extraordinary 20 percentage points to capture the top rank at 80% (nearly tripling its baseline).",
-      "Fairfield Girls commenced in second position at 65% in 1995, climbing to 70% in 1996.",
-      "In 1997, Fairfield reached 75%, equalizing with Greystone High, and held this level in 1998 to take the sole lead.",
-      "After a brief 5% dip to 70% in 1999, Fairfield rebounded sharply to finish in second place at 79% in 2000 (just 1% behind Harble)."
-    ],
-    takeaways: [
-      "Harble: Meteoric surge from 30% to 80% (+50% pts, +167%), vaulting from 5th to 1st place",
-      "Fairfield: Strong rise from 65% to 79% (+14% pts), briefly leading in 1998 and rebounding to 2nd place"
+      "Trade Winds: Powerful easterly trade winds blow westward from the East Pacific toward the West Pacific basin, while upper winds remain weak.",
+      "Western Warm Pool: These trade winds push warm surface water westward, concentrating a deep thermal reservoir along the Australian coast.",
+      "Australian Rainfall: This warm western pool fuels atmospheric convection, producing storm clouds and abundant rainfall that sustains green vegetation in Australia.",
+      "Peruvian Cold Upwelling: Simultaneously, off the Peruvian coastline in the East Pacific, cool water laden with rich nutrients wells up from the deep ocean.",
+      "Flourishing Fisheries: This continuous upwelling supports sunny coastal conditions and abundant fish populations (indicated by two large fish and an upward arrow)."
     ]
   },
-
   bp2: {
-    title: "Body 2: The Sole Decliner, Stepped Climber & Static Baseline (Greystone, Royston, Crackend)",
-    focus: "Greystone's continuous decline (-20% pts), Royston's stepped rise (50% to 60%), Crackend's flatline (59%–62%), and the 1999 triple tie at 60%",
+    title: "Body 2: El Niño Climatic Reversal (Eastward Shift & Ecological Collapse)",
+    focus: "Weakened trade winds, eastward warm water displacement, Australian drought, and Peruvian flood & fishery crash.",
     points: [
-      "Greystone High began with a commanding 25-point lead at 90% in 1995, but was the sole school to decrease.",
-      "It dropped sharply to 80% in 1996 and 75% in 1997, followed by gradual declines to 73% (1998), 72% (1999), and 70% (2000), slipping to third place.",
-      "Royston Academy progressed in a stepped manner, rising from 50% to 52% in 1996 and 54% in 1997, where it plateaued in 1998.",
-      "It stepped up to 60% in 1999 and remained level in 2000 (+10% pts net).",
-      "Crackend Boys exhibited remarkable stability, oscillating between 59% and 62% across the entire period (ending at 62%, +2% pts).",
-      "In 1999, Royston Academy, Harble Secondary, and Crackend Boys all converged at an identical figure of exactly 60%."
-    ],
-    takeaways: [
-      "Greystone: Continuous decline from 90% to 70% (-20% pts), surrendering its lead to finish 3rd",
-      "Royston: Stepped growth from 50% to 60% (+10% pts) with plateaus in 1997–98 (54%) and 1999–2000 (60%)",
-      "Crackend: Virtually static baseline hovering tightly between 59% and 62%",
-      "1999 Milestone: Triple convergence at exactly 60% among Royston, Harble, and Crackend"
+      "Weakened Trade Winds: During an El Niño event, trade winds in the East Pacific weaken noticeably, while upper winds over the West Pacific strengthen eastward.",
+      "Eastward Warm Surge: Consequently, warm surface water is pushed eastwards across the Pacific basin, capping the thermocline and blanketing cold deep water.",
+      "Australian Drought: Deprived of warm water and convective energy, Australia experiences blazing sunshine, cloudless skies, and severe drought.",
+      "Peruvian Storms: Storm clouds and heavy rain shift eastward, dumping uncharacteristic precipitation over the Peruvian coastal zone.",
+      "Fishery Decimation: The warm layer halts the upwelling of cool nutrients, resulting in poor nutrient levels and a catastrophic collapse in fish stocks (a solitary thin fish and downward arrow)."
     ]
   },
-
   processingGroups: [
     {
-      title: "Ascending Trends & Exponential Growth",
+      title: "Atmospheric & Wind Dynamics",
       items: [
-        "Soared from 30% to finish at a peak of 80% in 2000",
-        "Nearly tripled its initial baseline over the six-year period",
-        "Jumped by an extraordinary 20 percentage points in a single year",
-        "Vaulted from the lowest-ranked institution to the frontrunner position",
-        "Rebounded sharply following a transient 5% contraction"
+        "Normal: Strong westward trade winds; weak eastward upper winds.",
+        "El Niño: Weakened trade winds; strong eastward upper-level winds.",
+        "Shift: Complete reversal in prevailing wind velocity and convective drivers."
       ]
     },
     {
-      title: "Decline, Stagnation & Stepped Plateaus",
+      title: "Oceanic Thermocline & Water Layers",
       items: [
-        "Was the sole institution to register an uninterrupted downward trend",
-        "Surrendered its commanding 25-point lead, slipping from 1st to 3rd place",
-        "Progressed in a stepped manner, featuring distinct multi-year plateaus",
-        "Hovered tightly within a narrow 3% band between 59% and 62%",
-        "Maintained notable consistency throughout the recording timeframe"
+        "Normal: Deep warm surface water pool concentrated in the West Pacific.",
+        "El Niño: Warm surface water is pushed eastward across the central and eastern Pacific.",
+        "Subsurface: Cool thermocline suppressed by the invading warm surface layer."
       ]
     },
     {
-      title: "Comparative Crossovers & Convergences",
+      title: "Terrestrial Climate & Marine Ecology",
       items: [
-        "Equalized with Greystone High at exactly 75% in 1997",
-        "Overtook the former leader to claim the sole lead in 1998",
-        "Converged at an identical figure of precisely 60% in 1999",
-        "Concluded the period just one percentage point behind the top performer",
-        "Inverted the historical hierarchy between first and last place by 2000"
+        "Normal: Australia has storm clouds & rain; Peru has clear skies, cold upwelling, and rich fish stocks.",
+        "El Niño: Australia suffers blazing sun & drought; Peru faces heavy rain, poor nutrients, and depleted fish.",
+        "Impact: Simultaneous ecological inversion in both land vegetation and marine biomass."
       ]
     }
   ],
-
   connectors: [
     {
-      phrase: "Turning first to the two highest-performing institutions by 2000,...",
-      purpose: "Topic sentence transition opening Body Paragraph 1 (the surging risers).",
-      example:
-        "“Turning first to the two highest-performing institutions by 2000, Harble Secondary and Fairfield Girls recorded substantial growth.”"
+      phrase: "Under normal conditions,...",
+      purpose: "Establish the baseline equilibrium state of the Pacific ocean-atmosphere system.",
+      example: "Under normal conditions, powerful trade winds propel warm surface water toward the western Pacific."
     },
     {
-      phrase: "Starting with the lowest figure of 30% in 1995,...",
-      purpose: "Introducing the baseline figure for the most dramatic climber.",
-      example:
-        "“Starting with the lowest figure of 30% in 1995, Harble Secondary rose steadily before accelerating rapidly.”"
+      phrase: "In sharp contrast, during an El Niño phase,...",
+      purpose: "Signal the comprehensive meteorological and oceanic disruption.",
+      example: "In sharp contrast, during an El Niño phase, the trade winds weaken and winds blow strongly eastwards."
     },
     {
-      phrase: "Despite a transient dip in 1999,...",
-      purpose: "Concessive linker introducing a temporary reversal before a final recovery.",
-      example:
-        "“Despite a transient dip to 70% in 1999, Fairfield Girls rebounded to conclude at 79%.”"
+      phrase: "Consequently / As a direct result,...",
+      purpose: "Establish clear causal links between wind changes and water mass movements.",
+      example: "Consequently, the reservoir of warm surface water is pushed eastwards across the ocean basin."
     },
     {
-      phrase: "In contrast, Greystone High was the only school to decline,...",
-      purpose: "Contrastive macro transition opening Body Paragraph 2 (the falling and steady group).",
-      example:
-        "“In contrast, Greystone High was the only school to decline, surrendering its commanding initial lead of 90%.”"
+      phrase: "This warm oceanic layer suppresses / halts...",
+      purpose: "Explain the physical mechanism blocking nutrient upwelling off Peru.",
+      example: "This warm oceanic layer halts the upwelling of cool, nutrient-dense water along the Peruvian coast."
     },
     {
-      phrase: "Meanwhile, Royston Academy progressed in a stepped manner,...",
-      purpose: "Parallel connector introducing moderate, stepped upward growth.",
-      example:
-        "“Meanwhile, Royston Academy progressed in a stepped manner from 50% to plateau at 54%.”"
+      phrase: "Whereas Australia receives..., it experiences...",
+      purpose: "Highlight the regional weather reversal from abundant rain to scorching drought.",
+      example: "Whereas Australia normally receives abundant convective rainfall, it experiences scorching sunshine and drought during El Niño."
     },
     {
-      phrase: "Notably, in 1999, three institutions converged at exactly 60%...",
-      purpose: "Highlighting a major multi-school convergence milestone.",
-      example:
-        "“Notably, in 1999, Royston, Harble, and Crackend all converged at an identical proportion of 60%.”"
+      phrase: "Conversely, off the Peruvian coast,...",
+      purpose: "Pivot between geographical extremes across the Pacific basin.",
+      example: "Conversely, off the Peruvian coast, clear skies give way to dark storm clouds and torrential downpours."
+    },
+    {
+      phrase: "Deprived of vital nutrients,...",
+      purpose: "Illustrate the ecological cause of collapsing marine life.",
+      example: "Deprived of vital nutrients, coastal fish populations decline precipitously as denoted by the downward arrow."
+    },
+    {
+      phrase: "Simultaneously / Concurrently,...",
+      purpose: "Link co-occurring atmospheric and marine phenomena across the Pacific.",
+      example: "Concurrently, storm clouds migrate eastwards, displacing convective rainfall toward South America."
     }
   ],
-
   modelReport: {
-    wordCount: 194,
+    wordCount: 214,
     paragraphs: [
       {
         id: "intro",
-        title: "Introduction",
-        wordCount: 27,
-        badges: ["Paraphrase", "Parameters", "Schools Listed"],
-        text: "The table illustrates the proportion of pupils who proceeded to tertiary education from five secondary schools—Royston Academy, Greystone High, Harble Secondary, Fairfield Girls, and Crackend Boys—between 1995 and 2000."
+        title: "Paragraph 1: Introduction (Paraphrase)",
+        text: "The diagrams illustrate the atmospheric and oceanic differences between normal weather conditions and an El Niño phenomenon across the Pacific Ocean.",
+        wordCount: 21,
+        badges: ["Paraphrase", "Dual System Scope", "Oceanic & Atmospheric Focus"]
       },
       {
         id: "overview",
-        title: "Overview",
-        wordCount: 47,
-        badges: ["Macro Dichotomy", "Sole Decliner", "Meteoric Surge", "Static Baseline"],
-        text: "Overall, higher education entry rates rose in four out of the five secondary schools, with Greystone High being the sole institution to experience a continuous downward trend. Furthermore, while Harble Secondary exhibited the most dramatic expansion to finish with the highest percentage, Crackend Boys maintained notable consistency throughout the six-year period."
+        title: "Paragraph 2: Macro Overview (Key Dichotomy)",
+        text: "Overall, normal conditions are characterized by strong trade winds driving warm water and heavy rainfall westward toward Australia, alongside nutrient-rich cold upwelling that sustains thriving Peruvian fisheries. In sharp contrast, El Niño conditions feature weakened trade winds and eastward atmospheric flows, which displace warm water and rainfall to Peru while plunging Australia into drought and severely depleting marine nutrients and fish stocks.",
+        wordCount: 64,
+        badges: ["Macro Contrast", "Wind & Thermal Shift", "Ecological & Climatic Inversion"]
       },
       {
         id: "body1",
-        title: "Body Paragraph 1: Surging Risers (Harble & Fairfield)",
-        wordCount: 60,
-        badges: ["Harble Leap", "Nearly Tripled", "Fairfield 1997 Tie", "1999 Dip & Rebound"],
-        text: "Turning first to the two highest-performing institutions by 2000, Harble Secondary recorded a meteoric ascent. Starting with the lowest figure of 30% in 1995, it rose steadily to 40% in 1997 and 60% in 1999, before jumping by 20 percentage points to finish at a peak of 80%—nearly tripling its baseline. Fairfield Girls also followed an upward trajectory, climbing from 65% in 1995 to equalize with Greystone at 75% in 1997. Despite a transient dip to 70% in 1999, Fairfield rebounded to conclude at 79%, securing second position."
+        title: "Paragraph 3: Body 1 (Normal Conditions)",
+        text: "Under normal conditions, powerful trade winds blow westward from the East Pacific, pushing warm surface water to accumulate in the western basin. This generates convective storm clouds and substantial rainfall over Australia. Meanwhile, off the Peruvian coast, cool water laden with rich nutrients wells up from the ocean depths beneath sunny skies, fostering flourishing fish populations.",
+        wordCount: 55,
+        badges: ["Westward Trade Winds", "Western Warm Pool", "Australian Rain", "Peruvian Upwelling & Fish"]
       },
       {
         id: "body2",
-        title: "Body Paragraph 2: Decliner & Moderates (Greystone, Royston, Crackend)",
-        wordCount: 60,
-        badges: ["Greystone Fall", "Stepped Growth", "Crackend Stability", "1999 Triple Convergence"],
-        text: "In contrast, Greystone High was the only school to decline, surrendering its commanding initial lead of 90% as it fell consecutively each year to end at 70%. Meanwhile, Royston Academy progressed in a stepped manner from 50% to plateau at 54% in 1997–1998, before leveling off at 60% from 1999 onwards. Crackend Boys displayed remarkable stability, fluctuating narrowly between 59% and 62% across the entire timeframe. Notably, in 1999, Royston, Harble, and Crackend all converged at exactly 60%."
+        title: "Paragraph 4: Body 2 (El Niño Conditions)",
+        text: "During an El Niño phase, this system undergoes a marked reversal. Trade winds in the East Pacific weaken, while strong upper winds blow eastwards from the West Pacific. As a result, warm surface water is propelled eastwards, capping the colder layers below and suppressing the upwelling of nutrients. Consequently, Australia suffers from scorching sun and severe drought, whereas storm clouds migrate to Peru, bringing heavy rain accompanied by a sharp decline in coastal fish stocks.",
+        wordCount: 74,
+        badges: ["Wind Reversal", "Eastward Warm Surge", "Suppressed Nutrients", "Australian Drought & Peruvian Crash"]
       }
     ]
   }

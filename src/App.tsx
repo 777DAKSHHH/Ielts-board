@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { stageSlideVariants } from "./motion";
 
 // Hooks
 import { useGatekeeper } from "./hooks/useGatekeeper";
@@ -154,35 +155,6 @@ export function App() {
     }
   };
 
-  // Slide Animation Variants (120 FPS Spring Motion)
-  const slideVariants: Variants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 320 : -320,
-      opacity: 0,
-      scale: 0.98
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        x: { type: "spring" as const, stiffness: 340, damping: 32 },
-        opacity: { duration: 0.22 },
-        scale: { duration: 0.22 }
-      }
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? -320 : 320,
-      opacity: 0,
-      scale: 0.98,
-      transition: {
-        x: { type: "spring" as const, stiffness: 340, damping: 32 },
-        opacity: { duration: 0.18 },
-        scale: { duration: 0.18 }
-      }
-    })
-  };
-
   if (!isUnlocked) {
     return (
       <div className="app-stage-container" style={{ minHeight: "100vh", background: "var(--slate-50)" }}>
@@ -193,7 +165,7 @@ export function App() {
 
   return (
     <div className="app-stage-container">
-      {/* Floating Island Header */}
+      {/* Master Teaching Header */}
       <IslandHeader
         currentModule={currentModule}
         onSelectModule={handleSelectModule}
@@ -207,13 +179,13 @@ export function App() {
         onTimerToggle={timer.toggle}
       />
 
-      {/* Center Stage Viewport with 120 FPS Spring Motion */}
+      {/* Center Stage Viewport with Tactile Spring Motion */}
       <main className="stage-viewport">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={`${currentModule}-${currentStep}`}
             custom={direction}
-            variants={slideVariants}
+            variants={stageSlideVariants}
             initial="enter"
             animate="center"
             exit="exit"

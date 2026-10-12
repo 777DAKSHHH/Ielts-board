@@ -1,11 +1,13 @@
 /* ==========================================================================
-   APPLE HIG DESIGN SYSTEM TOKENS - IELTS SMARTBOARD OS
+   IELTS TEACHING WIZARD V2 — DESIGN SYSTEM TOKENS
+   Precision-Crafted, Opaque, Tactile Smartboard Workspace Architecture
+   STRICTLY ZERO LIQUID GLASS / ZERO GLASSMORPHISM
    ========================================================================== */
 
 :root {
   /* System Typography */
-  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", sans-serif;
-  --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 
   /* Monochromatic Slate Palette */
   --slate-50: #f8fafc;
@@ -20,48 +22,57 @@
   --slate-900: #0f172a;
   --slate-950: #020617;
 
-  /* Apple Accent Colors */
-  --apple-blue: #0071e3;
-  --apple-blue-hover: #0077ed;
-  --apple-teal: #06b6d4;
-  --apple-green: #34c759;
-  --apple-orange: #ff9500;
-  --apple-red: #ff3b30;
-  --apple-purple: #af52de;
+  /* Brand Accents — Precise, Authoritative, High-Contrast */
+  --apple-blue: #0066cc;
+  --apple-blue-hover: #0055b3;
+  --apple-teal: #0891b2;
+  --apple-green: #16a34a;
+  --apple-orange: #ea580c;
+  --apple-red: #dc2626;
+  --apple-purple: #7c3aed;
 
-  /* Semantic UI Surfaces */
-  --bg-canvas: #f8fafc;
+  /* Semantic UI Surfaces (100% Solid & Opaque — No Frosted Glass) */
+  --bg-canvas: #f1f5f9;
   --surface-card: #ffffff;
-  --surface-card-muted: #f1f5f9;
-  --surface-overlay: rgba(15, 23, 42, 0.5);
+  --surface-card-muted: #f8fafc;
+  --surface-card-inset: #f1f5f9;
+  --surface-elevated: #ffffff;
+  --surface-overlay: rgba(15, 23, 42, 0.75);
 
-  /* Apple Frosted Glass */
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-bg-subtle: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(15, 23, 42, 0.08);
-  --glass-blur: blur(24px);
+  /* Backward compatibility for replaced glass tokens (Now 100% Opaque) */
+  --glass-bg: #ffffff;
+  --glass-bg-subtle: #f8fafc;
+  --glass-border: #cbd5e1;
+  --glass-blur: none;
 
-  /* Borders & Dividers */
+  /* High-Definition Solid Borders */
   --border-subtle: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --border-focus: #0f172a;
+  --border-default: #cbd5e1;
+  --border-strong: #94a3b8;
+  --border-focus: #0066cc;
 
-  /* Shadows (Apple Smooth Elevation) */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
-  --shadow-dock: 0 20px 40px rgba(15, 23, 42, 0.12), 0 1px 3px rgba(15, 23, 42, 0.06);
+  /* Real Physical Elevation & Controlled Depth Shadows */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.07), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 8px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 24px -3px rgba(15, 23, 42, 0.09), 0 4px 8px -4px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 32px -4px rgba(15, 23, 42, 0.12), 0 8px 16px -6px rgba(15, 23, 42, 0.06);
+  --shadow-dock: 0 12px 28px -4px rgba(15, 23, 42, 0.14), 0 4px 10px -2px rgba(15, 23, 42, 0.06);
+  --shadow-modal: 0 24px 48px -12px rgba(15, 23, 42, 0.3), 0 8px 16px -4px rgba(15, 23, 42, 0.1);
 
-  /* Apple Motion Physics */
+  /* Tactile Physics & Spring Timing */
   --spring-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   --spring-snappy: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-natural: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-tactile: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* Smartboard Touch Target Metrics */
-  --touch-min-height: 42px;
-  --touch-padding-x: 18px;
+  /* Smartboard Touch Target Metrics (48px - 56px minimums for reliable touch) */
+  --touch-min-height: 48px;
+  --touch-padding-x: 20px;
   --touch-radius: 12px;
-  --card-radius: 18px;
+  --card-radius: 20px;
+  --header-height: 56px;
+  --dock-height: 54px;
 }
 
 /* Reset & Base Stage Layout */
@@ -80,20 +91,24 @@ html, body, #root {
   background-color: var(--bg-canvas);
   color: var(--slate-900);
   font-family: var(--font-system);
-  user-select: none;
-  -webkit-user-select: none;
+  /* Educational content is selectable by default; interactive controls apply user-select: none */
+  user-select: text;
+  -webkit-user-select: text;
 }
 
-/* Touch Interactive States */
-button, [role="button"] {
+/* Interactive Touch Elements & Buttons */
+button, [role="button"], .no-select {
   font-family: inherit;
   cursor: pointer;
   border: none;
   outline: none;
   background: none;
   touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
+/* Tactile Smartboard Touch Button */
 .apple-touch-btn {
   display: inline-flex;
   align-items: center;
@@ -101,19 +116,30 @@ button, [role="button"] {
   min-height: var(--touch-min-height);
   padding: 0 var(--touch-padding-x);
   border-radius: var(--touch-radius);
-  font-size: 1.05rem;
-  font-weight: 600;
-  transition: transform 0.12s var(--spring-bounce), background-color 0.15s ease, box-shadow 0.15s ease;
+  font-size: 0.95rem;
+  font-weight: 650;
+  border: 1px solid transparent;
+  transition: transform 0.14s var(--spring-snappy), background-color 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   will-change: transform;
 }
 
+.apple-touch-btn:hover {
+  transform: translateY(-1px);
+}
+
 .apple-touch-btn:active {
-  transform: scale(0.96);
+  transform: scale(0.96) translateY(0);
+}
+
+.apple-touch-btn:focus-visible {
+  outline: 2px solid var(--apple-blue);
+  outline-offset: 2px;
 }
 
 .apple-touch-btn.primary {
   background-color: var(--slate-900);
   color: #ffffff;
+  border: 1px solid var(--slate-950);
   box-shadow: var(--shadow-sm);
 }
 
@@ -123,37 +149,56 @@ button, [role="button"] {
 }
 
 .apple-touch-btn.secondary {
-  background-color: var(--slate-100);
+  background-color: #ffffff;
   color: var(--slate-800);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-xs);
 }
 
 .apple-touch-btn.secondary:hover {
-  background-color: var(--slate-200);
+  background-color: var(--slate-50);
+  border-color: var(--slate-400);
 }
 
-/* Frosted Glass Floating Panels */
-.glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
+/* Opaque Solid Surface Panels (Completely Non-Glass) */
+.glass-panel,
+.panel-solid {
+  background: #ffffff;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1.5px solid var(--border-subtle);
   box-shadow: var(--shadow-lg);
   border-radius: var(--card-radius);
 }
 
-/* Custom Scrollbar for inner cards if needed */
+/* Custom Minimalist Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--slate-100);
+  border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb {
   background: var(--slate-300);
   border-radius: 999px;
+  border: 2px solid var(--slate-100);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--slate-400);
+}
+
+/* Accessibility: Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .apple-touch-btn {
+    transition: none !important;
+    transform: none !important;
+  }
 }

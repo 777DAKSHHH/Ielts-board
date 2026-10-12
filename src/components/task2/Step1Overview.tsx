@@ -1,6 +1,8 @@
-import React, { useRef } from "react";
-import { Headphones, Lightbulb, Unlock, Sparkles } from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
+import { Lightbulb, Unlock, Sparkles, ShoppingBag } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
+import { tactilePress } from "../../motion";
 
 interface Step1OverviewProps {
   onUnlockBypass: () => void;
@@ -8,43 +10,29 @@ interface Step1OverviewProps {
 }
 
 export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }) => {
-  const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const handleUnlockClick = () => {
-    if (clickTimeoutRef.current) {
-      clearTimeout(clickTimeoutRef.current);
-      clickTimeoutRef.current = null;
-      onUnlockBypass();
-      return;
-    }
-    clickTimeoutRef.current = setTimeout(() => {
-      clickTimeoutRef.current = null;
-      alert("Task reveal unlocked! Double-click to jump directly to the question.");
-    }, 250);
-  };
-
   return (
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 09 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: Guess the Public Health Topic</h2>
+        <h2 className="stage-title">Listen First: Guess the Global Food Trade Topic</h2>
         <p className="stage-subtitle">
-          Play the briefing before revealing the actual IELTS question. Listen to the global discussion regarding escalating body weight, deteriorating physical fitness, and strategic remedial measures.
+          Play the briefing before revealing the actual IELTS question. Listen to the global debate surrounding international food imports on supermarket shelves versus regional domestic agricultural produce.
         </p>
       </div>
 
       <div className="stage-grid-2col">
         <div
           style={{
-            background: "var(--slate-50)",
-            border: "1.5px solid var(--border-subtle)",
+            background: "#ffffff",
+            border: "1px solid var(--border-default)",
             borderRadius: "20px",
             padding: "26px",
             display: "flex",
             flexDirection: "column",
-            gap: "18px"
+            gap: "18px",
+            boxShadow: "var(--shadow-sm)"
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -60,12 +48,12 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
                 justifyContent: "center"
               }}
             >
-              <Headphones size={22} />
+              <ShoppingBag size={22} />
             </div>
             <div>
-              <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Cryptic Audio Briefing</h4>
-              <p style={{ fontSize: "0.85rem", color: "var(--slate-500)" }}>
-                Public Health &amp; Epidemiology • Rising Obesity vs. Remedial Interventions • ~1:05
+              <h4 style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--slate-900)" }}>Cryptic Audio Briefing</h4>
+              <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", marginTop: "2px" }}>
+                Global Commerce &amp; Agrarian Economics • Imported Goods vs. Local Agriculture • ~1:05
               </p>
             </div>
           </div>
@@ -81,7 +69,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
 
           <div
             style={{
-              background: "#fff",
+              background: "var(--slate-50)",
               border: "1px solid var(--border-subtle)",
               borderRadius: "14px",
               padding: "16px",
@@ -89,58 +77,63 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               lineHeight: 1.55
             }}
           >
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. What societal crisis is unfolding regarding physical health and weight, what compounding repercussions are identified, and what multi-level solutions are proposed?
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Why are contemporary supermarkets filled with items shipped from overseas rather than domestic harvests? What are the key consumer and economic benefits, what ecological and farming drawbacks exist, and do the benefits outweigh the costs?
           </div>
         </div>
 
         <div
           style={{
-            background: "var(--slate-50)",
-            border: "1.5px solid var(--border-subtle)",
+            background: "#ffffff",
+            border: "1px solid var(--border-default)",
             borderRadius: "20px",
             padding: "26px",
             display: "flex",
             flexDirection: "column",
-            gap: "16px"
+            gap: "16px",
+            boxShadow: "var(--shadow-sm)"
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Lightbulb size={21} color="var(--slate-800)" />
-            <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Student Guess Board</h4>
+            <Lightbulb size={22} color="var(--slate-800)" />
+            <h4 style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--slate-900)" }}>Student Guess Board</h4>
           </div>
           {[
-            "What global epidemiological trend regarding population body weight and physical fitness is being highlighted?",
-            "What severe repercussions does increasing weight inflict upon public healthcare systems and economic productivity?",
-            "What physiological and psychological non-communicable illnesses arise from chronic sedentary lifestyles?",
-            "What decisive interventions—from government taxation to urban redesign and institutional mandates—could solve this crisis?"
+            "Why have modern supermarkets transitioned from local produce to global imported food?",
+            "How does international food trade provide counter-seasonal nutrition and consumer diversity?",
+            "What ecological toll do 'food miles' and transcontinental air freight impose on the environment?",
+            "Does global trade empower developing agrarian exporters or undermine traditional local farmers?",
+            "Do the substantial advantages of globalized supermarket goods decisively outweigh the disadvantages?"
           ].map((question, index) => (
             <div
               key={question}
               style={{
-                background: "#fff",
+                background: "var(--slate-50)",
                 border: "1px solid var(--border-subtle)",
                 borderRadius: "14px",
-                padding: "15px",
+                padding: "14px 15px",
                 display: "flex",
                 gap: "12px",
                 alignItems: "flex-start"
               }}
             >
-              <span className="apple-badge neutral" style={{ minWidth: "30px", justifyContent: "center" }}>
+              <span className="apple-badge neutral" style={{ minWidth: "32px", justifyContent: "center", fontWeight: 800 }}>
                 {index + 1}
               </span>
-              <span style={{ fontSize: "0.95rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
+              <span style={{ fontSize: "0.93rem", color: "var(--slate-800)", lineHeight: 1.45 }}>
                 {question}
               </span>
             </div>
           ))}
-          <button
-            onClick={handleUnlockClick}
+
+          <motion.button
+            whileTap={tactilePress}
+            onClick={onUnlockBypass}
             className="apple-touch-btn primary"
-            style={{ minHeight: "50px", gap: "8px", marginTop: "auto" }}
+            style={{ minHeight: "52px", gap: "8px", marginTop: "auto", fontSize: "1.02rem", fontWeight: 700 }}
           >
-            <Unlock size={18} /> <span>Reveal Task 2 Question</span>
-          </button>
+            <Unlock size={18} /> <span>Reveal Task 2 Question &amp; 5-Para Format</span>
+          </motion.button>
+
           <div
             style={{
               background: "#eff6ff",
@@ -152,7 +145,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             }}
           >
             <Sparkles size={14} style={{ verticalAlign: "-2px", marginRight: "6px" }} />
-            The next stage reveals the exact question wording. The guided brainstorming challenge comes immediately after it.
+            The next stage reveals the exact question wording and the required 5-paragraph structure (3 Body Paragraphs).
           </div>
         </div>
       </div>

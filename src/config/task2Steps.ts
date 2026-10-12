@@ -6,63 +6,63 @@ export const TASK2_STEPS: StepDefinition[] = [
     stepNumber: 1,
     title: "Audio Briefing & Guess",
     badge: "Step 01 / 09 • Cryptic Audio Guess",
-    description: "Listen First: Guess the Public Health Topic"
+    description: "Listen First: Guess the Global Food Trade Topic"
   },
   {
     id: "task2-step2",
-    title: "Task 2 Question & Format",
-    badge: "Step 02 / 09 • Task Reveal & 4-Para Format",
-    description: "Deconstruct the Effects & Solutions Prompt",
-    stepNumber: 2
+    stepNumber: 2,
+    title: "Task 2 Question & 5-Para Format",
+    badge: "Step 02 / 09 • Task Reveal & 5-Para Format (3 Body Paras)",
+    description: "Deconstruct the 'Advantages Outweigh Disadvantages' Prompt & Architecture"
   },
   {
     id: "task2-step3",
     stepNumber: 3,
     title: "Guided Brainstorm Challenge",
     badge: "Step 03 / 09 • Guided Brainstorm Challenge",
-    description: "Think First. Reveal Later."
+    description: "Think First. Reveal Later. (Weighing Advantages vs Disadvantages)"
   },
   {
     id: "task2-step4",
     stepNumber: 4,
     title: "Academic Power Vocabulary",
     badge: "Step 04 / 09 • Lexical Resource",
-    description: "Epidemiology, Sedentary Lifestyles & Public Health Interventions"
+    description: "Agrarian Economics, Food Miles & Global Supply Chains"
   },
   {
     id: "task2-step5",
     stepNumber: 5,
-    title: "Introduction & 2-Part Thesis",
-    badge: "Step 05 / 09 • Introduction & 2-Part Thesis",
-    description: "Paraphrase the Prompt + Outline Both Effects & Practical Solutions"
+    title: "Sample Introduction & Thesis",
+    badge: "Step 05 / 09 • Sample Introduction & Thesis",
+    description: "Paraphrase the Prompt + State Clear Outweighing Opinion"
   },
   {
     id: "task2-step6",
     stepNumber: 6,
-    title: "Q1: Repercussions & Societal Toll",
-    badge: "Step 06 / 09 • Question 1: Health Repercussions & Societal Toll",
-    description: "Levelled Points: Healthcare Fiscal Strain, Chronic Illnesses, Productivity Drain & Quality of Life"
+    title: "Points for the Advantages",
+    badge: "Step 06 / 09 • Points for the Advantages (Strong Side)",
+    description: "4 Relatable Main Reasons + Causal Explanations + Concrete Examples"
   },
   {
     id: "task2-step7",
     stepNumber: 7,
-    title: "Q2: Comprehensive Remedial Measures",
-    badge: "Step 07 / 09 • Question 2: Remedial Measures & Strategic Interventions",
-    description: "Levelled Points: Fiscal Levies, Active Urban Design, Workplace Wellness & Nutritional Subsidies"
+    title: "Points for the Disadvantages",
+    badge: "Step 07 / 09 • Points for the Disadvantages (Counterpoint)",
+    description: "4 Relatable Main Reasons + Causal Explanations + Concrete Examples"
   },
   {
     id: "task2-step8",
     stepNumber: 8,
-    title: "Conclusion & Faculty Angles",
-    badge: "Step 08 / 09 • Conclusion + Faculty Extension",
-    description: "Sum-up Main Points, Restate Outlook & Public Health Economics Angles"
+    title: "Sample Conclusion",
+    badge: "Step 08 / 09 • Sample Conclusion & Outweighing Strategy",
+    description: "Decisive Outweighing Formula + Model Conclusion + Scoring Standards"
   },
   {
     id: "task2-step9",
     stepNumber: 9,
     title: "Final Essay Submission",
     badge: "Step 09 / 09 • Final Essay Submission",
-    description: "Write Your Two-Part Essay Response"
+    description: "Write Your 5-Paragraph Outweighed Essay Response"
   }
 ];
 

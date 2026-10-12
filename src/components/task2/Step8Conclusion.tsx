@@ -1,224 +1,306 @@
 import React, { useState } from "react";
-import { CheckCircle2, BookOpen, ChevronLeft, ChevronRight, Sparkles, Eye, EyeOff } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle2, Award, Clock, Sparkles, ShieldCheck, BookOpen, Layers } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
+import { tactilePress } from "../../motion";
+
+const CONCLUSION_VARIATIONS = [
+  {
+    id: "balanced",
+    title: "Style 1: Standard Balanced Synthesis",
+    badge: "Band 8.5–9 • Recommended",
+    summary: "Acknowledges the real drawbacks and proves the broad societal benefits are far more significant.",
+    text: "In conclusion, although the proliferation of imported groceries increases transport carbon emissions and pressures small-scale domestic farmers, the societal advantages are far more substantial. Ensuring that millions of citizens enjoy year-round fresh nutrition, lower grocery bills, and diverse culinary ingredients provides widespread daily benefits that decisively outweigh the localized disadvantages.",
+    breakdown: "Sentence 1: Concession to food miles & local farmers | Sentence 2: Synthesis of nutrition, affordability, and multicultural variety as outweighing factors."
+  },
+  {
+    id: "solution-oriented",
+    title: "Style 2: Solution-Oriented Outweighed Model",
+    badge: "Band 9 • Advanced Reasoning",
+    summary: "Shows why the drawbacks are manageable through policy/technology, whereas advantages are vital.",
+    text: "To conclude, while the environmental toll of food miles and commercial competition for domestic growers are undeniable drawbacks, they can be actively mitigated through greener maritime logistics and government farm subsidies. Consequently, the irreplaceable benefits of guaranteed counter-seasonal food security and affordable everyday grocery prices mean that this retail evolution is predominantly advantageous.",
+    breakdown: "Sentence 1: Explains that drawbacks can be managed through green transport and subsidies | Sentence 2: Concludes that food security and affordability are irreplaceable."
+  },
+  {
+    id: "rapid-exam",
+    title: "Style 3: Rapid 2-Sentence Exam Model",
+    badge: "Rapid Timing • Under 40 Words",
+    summary: "Ultra-compact, high-speed conclusion ideal when running out of time in the real exam.",
+    text: "In conclusion, despite the transport emissions and commercial pressure on local farmers caused by imported products, I firmly believe the advantages are far greater. Continuous access to diverse, affordable nutrition across all seasons makes this retail trend immensely beneficial for the general public.",
+    breakdown: "Sentence 1: Rapid concession + clear opinion stance | Sentence 2: High-impact synthesis of nutrition and affordability."
+  }
+];
 
 export const Step8ConclusionT2: React.FC = () => {
-  const [angle, setAngle] = useState(0);
-  const [isFacultyRevealed, setIsFacultyRevealed] = useState(false);
-  const angles = TASK2_DATA.facultyAngles;
+  const [selectedStyleIdx, setSelectedStyleIdx] = useState(0);
+  const currentStyle = CONCLUSION_VARIATIONS[selectedStyleIdx];
 
   return (
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 08 / 09 • Conclusion + Faculty Extension
+          Step 08 / 09 • Sample Conclusion &amp; Outweighing Strategy
         </span>
-        <h2 className="stage-title">Close the Argument — Then Go Deeper</h2>
+        <h2 className="stage-title">Sample Conclusion &amp; Decisive Outweighing Strategy</h2>
         <p className="stage-subtitle">
-          Examine the model Band 9 conclusion, then explore advanced multidisciplinary angles on public health economics, behavioral nudges, and built environment determinism in the Faculty Idea Bank.
+          Band 9 Conclusion Blueprint: Acknowledge the counterpoint + Restate your decisive opinion + Summarize why the advantages overwhelmingly prevail.
         </p>
       </div>
 
-      <div className="stage-grid-2col">
-        <div
-          style={{
-            background: "var(--slate-50)",
-            border: "1.5px solid var(--border-subtle)",
-            borderRadius: "20px",
-            padding: "24px"
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
-            <BookOpen size={20} />
-            <h4 style={{ fontSize: "1.1rem", fontWeight: 750 }}>Sample Conclusion</h4>
-          </div>
-          <div
-            style={{
-              background: "#fff",
-              border: "1px solid var(--border-subtle)",
-              borderRadius: "14px",
-              padding: "20px",
-              fontSize: "1.02rem",
-              lineHeight: 1.7
-            }}
-          >
-            {TASK2_DATA.sampleConclusion}
-          </div>
-          <div style={{ marginTop: "16px", display: "flex", flexDirection: "column", gap: "8px" }}>
-            <span className="apple-badge success">
-              <CheckCircle2 size={14} /> Answers Question 1: Synthesizes severe healthcare fiscal burdens &amp; chronic non-communicable diseases
-            </span>
-            <span className="apple-badge success">
-              <CheckCircle2 size={14} /> Answers Question 2: Reasserts multi-level policy solutions (sugar levies, active transit, wellness mandates)
-            </span>
-            <span className="apple-badge neutral">
-              Synthesizes both core dimensions without introducing new unsupported claims
-            </span>
-          </div>
-        </div>
-
+      <div className="stage-grid-2col" style={{ overflowY: "auto" }}>
+        {/* Left Column: Master Sample Conclusion & Structural Blueprint */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          {/* Interactive Blurred Faculty Idea Bank Card */}
+          {/* Master Sample Conclusion Card */}
           <div
             style={{
-              background: "#fff",
-              border: "1.5px solid var(--border-subtle)",
-              borderRadius: "18px",
-              padding: "20px",
-              position: "relative",
-              overflow: "hidden",
+              background: "#ffffff",
+              border: "1.5px solid var(--border-default)",
+              borderRadius: "20px",
+              padding: "24px",
               boxShadow: "var(--shadow-sm)"
             }}
           >
-            {/* Header */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: "12px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Sparkles size={18} color="var(--apple-blue)" />
-                <h4 style={{ fontSize: "1.05rem", fontWeight: 700 }}>Faculty Idea Bank — Advanced Public Health, Economics &amp; Built Environment</h4>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <Award size={22} color="var(--apple-blue)" />
+                <h4 style={{ fontSize: "1.15rem", fontWeight: 750, color: "var(--slate-900)" }}>
+                  Sample Conclusion (Band 9 Model)
+                </h4>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span className="apple-badge neutral" style={{ fontSize: "0.74rem" }}>
-                  Classroom Debate
-                </span>
-                {isFacultyRevealed && (
-                  <button
-                    onClick={() => setIsFacultyRevealed(false)}
-                    className="apple-touch-btn secondary"
-                    style={{
-                      minHeight: "26px",
-                      padding: "3px 8px",
-                      fontSize: "0.75rem",
-                      gap: "4px"
-                    }}
-                    title="Blur Faculty Idea Bank"
-                  >
-                    <EyeOff size={13} />
-                    <span>Blur</span>
-                  </button>
-                )}
-              </div>
+              <span className="apple-badge success">
+                Decisive Outweighed Stance
+              </span>
             </div>
 
-            {/* Blurred Content */}
             <div
               style={{
-                filter: isFacultyRevealed ? "none" : "blur(8px)",
-                opacity: isFacultyRevealed ? 1 : 0.2,
-                transition: "filter 0.35s ease, opacity 0.35s ease",
-                pointerEvents: isFacultyRevealed ? "auto" : "none",
-                userSelect: isFacultyRevealed ? "auto" : "none"
+                background: "var(--slate-50)",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: "14px",
+                padding: "20px",
+                fontSize: "1.06rem",
+                lineHeight: 1.75,
+                color: "var(--slate-800)"
               }}
             >
-              <div style={{ minHeight: "150px" }}>
-                <h5 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "7px", color: "var(--slate-900)" }}>
-                  {angles[angle].title}
-                </h5>
-                <p style={{ color: "var(--slate-600)", lineHeight: 1.55 }}>
-                  {angles[angle].development}
-                </p>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  marginTop: "12px"
-                }}
-              >
-                <button
-                  onClick={() => setAngle(Math.max(0, angle - 1))}
-                  className="apple-touch-btn secondary"
-                  style={{ minHeight: "42px", opacity: angle === 0 ? 0.4 : 1 }}
-                  disabled={angle === 0}
-                >
-                  <ChevronLeft size={17} />
-                </button>
-                <span style={{ fontSize: ".82rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                  {angle + 1} / {angles.length}
-                </span>
-                <button
-                  onClick={() => setAngle(Math.min(angles.length - 1, angle + 1))}
-                  className="apple-touch-btn secondary"
-                  style={{ minHeight: "42px", opacity: angle === angles.length - 1 ? 0.4 : 1 }}
-                  disabled={angle === angles.length - 1}
-                >
-                  <ChevronRight size={17} />
-                </button>
-              </div>
+              {TASK2_DATA.sampleConclusion}
             </div>
 
-            {/* Tap-to-Reveal Overlay */}
-            {!isFacultyRevealed && (
-              <div
-                onClick={() => setIsFacultyRevealed(true)}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  top: "46px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "9px",
-                  background: "rgba(255, 255, 255, 0.55)",
-                  backdropFilter: "blur(2px)",
-                  cursor: "pointer",
-                  borderRadius: "0 0 18px 18px",
-                  zIndex: 10,
-                  transition: "all 0.2s ease"
-                }}
-                title="Click to reveal Faculty Idea Bank"
-              >
-                <div
-                  className="apple-touch-btn primary"
-                  style={{
-                    minHeight: "38px",
-                    padding: "0 18px",
-                    fontSize: "0.85rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.02em",
-                    gap: "8px",
-                    boxShadow: "0 4px 14px rgba(0, 113, 227, 0.25)"
-                  }}
-                >
-                  <Eye size={16} />
-                  <span>REVEAL FACULTY IDEA BANK</span>
-                </div>
-                <span
-                  style={{
-                    fontSize: "0.78rem",
-                    color: "var(--slate-600)",
-                    fontWeight: 500,
-                    letterSpacing: "0.01em"
-                  }}
-                >
-                  Tap anywhere to reveal Band 9 policy angles & discussion prompts
-                </span>
-              </div>
-            )}
+            <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "12px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
+              <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+                <Clock size={15} /> 44 words • 2 sentences
+              </span>
+              <span>•</span>
+              <span>Rapid exam timing (~2.5 minutes)</span>
+            </div>
           </div>
 
+          {/* 3-Step Outweighing Blueprint */}
           <div
             style={{
-              background: "var(--slate-50)",
-              border: "1px solid var(--border-subtle)",
-              borderRadius: "16px",
-              padding: "16px"
+              background: "#ffffff",
+              border: "1.5px solid var(--border-default)",
+              borderRadius: "18px",
+              padding: "20px",
+              boxShadow: "var(--shadow-sm)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px"
             }}
           >
-            <strong style={{ fontSize: "0.92rem", color: "var(--slate-800)" }}>
-              High-Value Academic Collocations:
-            </strong>
-            <p style={{ marginTop: "8px", color: "var(--slate-600)", lineHeight: 1.55, fontSize: "0.88rem" }}>
-              {TASK2_DATA.vocabHunt.join(" • ")}
-            </p>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <Layers size={18} color="var(--apple-blue)" />
+              <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                The 3-Step Outweighing Conclusion Formula
+              </h5>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ background: "#fff1f2", border: "1px solid #fecdd3", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#9f1239" }}>
+                <strong>Step 1: Measured Concession Clause:</strong> Acknowledge the disadvantages without lingering (`"In conclusion, although imported products increase transport emissions and pressure local farmers..."`)
+              </div>
+              <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#1e40af" }}>
+                <strong>Step 2: Assertive Outweighing Opinion:</strong> Confirm that benefits are far superior (`"...I firmly believe the advantages are far more compelling."`)
+              </div>
+              <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#166534" }}>
+                <strong>Step 3: Synthesis &amp; Broad Impact:</strong> Summarize why (year-round nutrition &amp; family affordability benefit millions of citizens daily).
+              </div>
+            </div>
+          </div>
+
+          {/* Examiner Golden Rules for Conclusions */}
+          <div
+            style={{
+              background: "#f8fafc",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "16px",
+              padding: "16px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "8px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <ShieldCheck size={16} color="#059669" />
+              <span style={{ fontSize: "0.88rem", fontWeight: 750, color: "var(--slate-900)" }}>
+                Examiner Golden Rules: Conclusion Checklist
+              </span>
+            </div>
+            <ul style={{ margin: 0, paddingLeft: "18px", fontSize: "0.84rem", color: "var(--slate-700)", lineHeight: 1.55 }}>
+              <li><strong>Never introduce new arguments:</strong> Do not bring up new examples or statistics here.</li>
+              <li><strong>Match your Introduction:</strong> If you wrote "advantages outweigh" in Step 5, you MUST conclude the same in Step 8.</li>
+              <li><strong>Be decisive:</strong> Avoid saying "it has both pros and cons". Directly state which side is stronger!</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Right Column: 3 Interactive Smartboard Conclusion Styles */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+          {/* Switcher Strip */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1.5px solid var(--border-default)",
+              borderRadius: "18px",
+              padding: "16px",
+              boxShadow: "var(--shadow-sm)"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <Sparkles size={18} color="var(--apple-blue)" />
+                <h4 style={{ fontSize: "1.02rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                  Interactive Smartboard Conclusion Variations
+                </h4>
+              </div>
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
+                Tap to Switch
+              </span>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "8px", marginBottom: "14px" }}>
+              {CONCLUSION_VARIATIONS.map((style, idx) => {
+                const isSelected = selectedStyleIdx === idx;
+                return (
+                  <motion.button
+                    key={style.id}
+                    whileTap={tactilePress}
+                    onClick={() => setSelectedStyleIdx(idx)}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      textAlign: "left",
+                      padding: "10px 12px",
+                      borderRadius: "12px",
+                      border: isSelected ? "2px solid #0066cc" : "1.5px solid var(--border-subtle)",
+                      background: isSelected ? "#eff6ff" : "var(--slate-100)",
+                      cursor: "pointer",
+                      boxShadow: isSelected ? "0 4px 12px rgba(0, 102, 204, 0.12)" : "none",
+                      transition: "all 0.15s ease"
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.72rem",
+                        fontWeight: 800,
+                        color: isSelected ? "#0066cc" : "var(--slate-600)"
+                      }}
+                    >
+                      Option 0{idx + 1}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: "0.82rem",
+                        fontWeight: 750,
+                        color: isSelected ? "var(--slate-900)" : "var(--slate-700)",
+                        marginTop: "2px"
+                      }}
+                    >
+                      {style.title.split(":")[1]?.trim()}
+                    </span>
+                  </motion.button>
+                );
+              })}
+            </div>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedStyleIdx}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.16 }}
+                style={{
+                  background: "var(--slate-50)",
+                  border: "1.5px solid var(--border-default)",
+                  borderRadius: "14px",
+                  padding: "18px"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
+                  <span className="apple-badge accent" style={{ fontSize: "0.74rem" }}>
+                    {currentStyle.badge}
+                  </span>
+                  <span style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 600 }}>
+                    {currentStyle.summary}
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    background: "#ffffff",
+                    border: "1px solid var(--border-subtle)",
+                    borderRadius: "12px",
+                    padding: "16px",
+                    fontSize: "0.98rem",
+                    lineHeight: 1.7,
+                    color: "var(--slate-900)",
+                    marginBottom: "12px"
+                  }}
+                >
+                  {currentStyle.text}
+                </div>
+
+                <div style={{ fontSize: "0.84rem", color: "var(--slate-600)", lineHeight: 1.5, background: "#ffffff", padding: "10px 12px", borderRadius: "8px", border: "1px solid var(--border-subtle)" }}>
+                  <CheckCircle2 size={14} color="#059669" style={{ verticalAlign: "-2px", marginRight: "6px", display: "inline" }} />
+                  <strong>Structural Logic:</strong> {currentStyle.breakdown}
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Outweighing Vocabulary Toolkit */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1.5px solid var(--border-default)",
+              borderRadius: "18px",
+              padding: "20px",
+              boxShadow: "var(--shadow-sm)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <BookOpen size={18} color="var(--apple-blue)" />
+              <h5 style={{ fontSize: "0.98rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                Band 9 Outweighing Signposting Toolkit
+              </h5>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+              <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "10px", padding: "8px 12px", fontSize: "0.82rem" }}>
+                <strong style={{ color: "#0066cc" }}>Concession Openers:</strong><br />
+                • "Although [drawback] is undeniable..."<br />
+                • "While the concerns regarding [X] are legitimate..."
+              </div>
+              <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "10px", padding: "8px 12px", fontSize: "0.82rem" }}>
+                <strong style={{ color: "#059669" }}>Outweighed Verdicts:</strong><br />
+                • "...the benefits decisively outweigh the drawbacks."<br />
+                • "...render this retail development predominantly advantageous."
+              </div>
+            </div>
           </div>
         </div>
       </div>

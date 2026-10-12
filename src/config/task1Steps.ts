@@ -6,56 +6,56 @@ export const TASK1_STEPS: StepDefinition[] = [
     stepNumber: 1,
     title: "Cryptic Audio Guess",
     badge: "Step 01 / 08 • Cryptic Audio Guess",
-    description: "Listen First: Higher Education Progression Across 5 Secondary Schools (1995–2000)"
+    description: "Listen First: Atmospheric Winds, Warm Water Shifts & El Niño Inversion in the Pacific"
   },
   {
     id: "task1-step2",
     stepNumber: 2,
-    title: "Task Prompt & Table Analysis",
-    badge: "Step 02 / 08 • Task Prompt & Table Analysis",
-    description: "Deconstruct 5 Secondary Schools, Percentages, and 6-Year Trajectories"
+    title: "Task Prompt & Diagram Analysis",
+    badge: "Step 02 / 08 • Task Prompt & Diagram Analysis",
+    description: "Deconstruct Pacific Ocean Cross-Sections: Normal vs. El Niño Conditions"
   },
   {
     id: "task1-step3",
     stepNumber: 3,
-    title: "Dynamic Trend Vocabulary",
+    title: "Oceanographic & Meteorological Lexicon",
     badge: "Step 03 / 08 • Lexical Resource",
-    description: "Tertiary Rates, Meteoric Surges, Stepped Plateaus & Convergence Collocations"
+    description: "Upwelling, Thermocline, Trade Winds, Convection, Aridity & Nutrient Depletion"
   },
   {
     id: "task1-step4",
     stepNumber: 4,
     title: "Sample Introduction & Overview",
     badge: "Step 04 / 08 • Sample Introduction & Overview",
-    description: "Paraphrase Prompt & Frame Overall Dichotomy (4 Rising vs 1 Declining)"
+    description: "Paraphrase Prompt & Contrast Dual Pacific Climatic Systems (Equilibrium vs Disruption)"
   },
   {
     id: "task1-step5",
     stepNumber: 5,
-    title: "Body 1: Harble & Fairfield (Surging Risers)",
-    badge: "Step 05 / 08 • Body 1 — The Surging Risers",
-    description: "Harble's Meteoric Leap (30% → 80%) & Fairfield's Rebound to 2nd Place (79%)"
+    title: "Body 1: Normal Pacific Equilibrium",
+    badge: "Step 05 / 08 • Body 1 — Normal Equilibrium",
+    description: "Westward Trade Winds, Australian Rainfall, Cold Upwelling & Booming Peruvian Fisheries"
   },
   {
     id: "task1-step6",
     stepNumber: 6,
-    title: "Body 2: Greystone, Royston, Crackend",
-    badge: "Step 06 / 08 • Body 2 — Decliner & Moderates",
-    description: "Greystone's Solitary Fall (90% → 70%), Royston's Steps & Crackend's Stability"
+    title: "Body 2: El Niño Climatic Reversal",
+    badge: "Step 06 / 08 • Body 2 — El Niño Disruption",
+    description: "Weakened Winds, Eastward Warm Surge, Australian Drought & Peruvian Fishery Collapse"
   },
   {
     id: "task1-step7",
     stepNumber: 7,
-    title: "Mathematical & Comparative Structures",
+    title: "Comparative Systems & Band 9 Model",
     badge: "Step 07 / 08 • Analytical Language & Model Response",
-    description: "Multipliers, Triple Convergence at 60%, and Full 194-Word Band 9 Report"
+    description: "Ocean-Atmosphere Linkages, Spatial Contrasts & Full 214-Word Band 9 Report"
   },
   {
     id: "task1-step8",
     stepNumber: 8,
-    title: "Cohesive Trend Connectors",
+    title: "Cohesive Meteorological Connectors",
     badge: "Step 08 / 08 • Comparative Connectors & Flow",
-    description: "Contrast Trajectories, Sequence Stepped Growth & Mark Convergence Points"
+    description: "Contrast Basin Extremes, Track Eastward Shifts & Frame Cause-and-Effect Sequences"
   }
 ];
 
