@@ -180,7 +180,11 @@ export const TASK1_DATA: Task1Data = {
   title: "Normal vs. El Niño Conditions in the Pacific Ocean",
   questionText:
     "The diagrams compare the normal condition with El Nino condition in the Pacific Ocean.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
-  imageFileName: "pacific-el-nino-comparison.png",
+  imageFileName: "ielts-task1-hd-diagram.jpg",
+  hdImageFileName: "ielts-task1-hd-diagram.jpg",
+  normalHdImageFileName: "ielts-task1-normal-hd.jpg",
+  elNinoHdImageFileName: "ielts-task1-elnino-hd.jpg",
+  scanImageFileName: "pacific-el-nino-comparison.png",
   audioUrl: "https://actions.google.com/sounds/v1/weather/light_rain.ogg",
   audioClueText:
     "Listen carefully to the Pacific Ocean comparison briefing. Notice how the two diagrams reveal a dramatic climatic inversion. In the top diagram, under normal conditions, robust easterly trade winds blow from the East Pacific toward the West Pacific, pooling warm surface water off the Australian coast. This creates convective storm clouds and abundant rainfall over Australia. Meanwhile, off the Peruvian coastline in the East Pacific, cool water laden with rich nutrients surges upward from the depths, supporting clear sunny skies and thriving, abundant fish populations. In contrast, the bottom diagram depicts an El Niño event: the trade winds weaken, upper winds blow strongly eastward, and warm surface water is propelled across the ocean basin toward South America. This suppresses the cold thermocline and halts nutrient upwelling, causing Peruvian fish stocks to crash while dumping uncharacteristic storm rain on Peru. Concurrently, Australia is deprived of moisture, enduring scorching sun, clear skies, and severe drought.",

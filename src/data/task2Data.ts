@@ -23,516 +23,516 @@ export type {
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "imported-supermarket-goods-task2",
+  id: "delaying-marriage-children-in-30s-task2",
 
-  taskType: "Advantages Outweigh Disadvantages Essay (3 Body Paragraphs)",
+  taskType: "Positive or Negative Development Essay (3 Body Paragraphs)",
 
-  title: "Supermarket Imported Goods vs. Local Produce: Do Advantages Outweigh Disadvantages?",
+  title: "Marrying & Having Children in the 30s: Positive or Negative Development?",
 
   questionText:
-    "Nowadays, instead of locally produced goods, many supermarkets sell a variety of products imported from countries all across the world.\n\n- Do the advantages of this development outweigh the disadvantages?",
+    "Many young people tend to marry and have children in their 30s rather than at a younger age.\n\n- Is this a positive or negative development?",
 
-  audioUrl: "materials/imported-goods-supermarkets-briefing.m4a",
+  audioUrl: "materials/Staying_Young_as_a_Survival_Tactic.m4a",
 
   timingSeconds: 180,
 
   sampleIntro:
-    "In contemporary retail, supermarkets increasingly stock products imported from across the globe rather than goods cultivated locally. Although this trend creates transport-related carbon emissions and exerts commercial pressure on domestic farmers, I firmly contend that the advantages—namely guaranteed year-round fresh produce, lower consumer grocery costs, and greater cultural food variety—decisively outweigh the drawbacks.",
+    "In contemporary society, an increasing proportion of young adults are choosing to marry and start families in their thirties rather than during their twenties. Although this postponement introduces biological fertility risks and contributes to an aging demographic, I firmly contend that it is a predominantly positive development because it provides couples with financial security, career fulfillment, and emotional maturity for raising children.",
 
   sampleConclusion:
-    "In conclusion, although importing supermarket goods increases environmental food miles and poses serious financial challenges for local agriculturalists, the advantages are far more compelling. By securing year-round access to fresh nutrition, keeping daily grocery prices affordable, and catering to diverse multicultural diets, imported goods deliver broad societal benefits that decisively outweigh the disadvantages.",
+    "In conclusion, while postponing marriage and childbirth into one's thirties carries medical fertility risks and accelerates population aging, the personal and familial advantages are far more compelling. By achieving career stability, financial independence, and emotional resilience prior to family life, mature parents can offer their children a significantly more stable and prosperous upbringing, rendering this a distinctly positive trend.",
 
   bodyParagraphs: [
     {
       paraNumber: 1,
       side: "strong_opinion",
-      title: "Points for the Advantages (Strong Side)",
-      theme: "Year-Round Fresh Produce, Lower Grocery Prices & Cultural Variety",
+      title: "Points for the Advantages (Strong Side - Advantage 1)",
+      theme: "Financial Security, Career Foundation & Wealth Stability",
       mainReason:
-        "The primary advantage of stocking imported goods is that it guarantees consumers year-round access to fresh, healthy produce, overcoming harsh local seasonal limitations.",
+        "The primary advantage of postponing marriage and parenthood until one's thirties is that it grants individuals the time required to establish financial independence and career stability.",
       supportingReasons:
-        "In cold and temperate nations, domestic farming halts during winter months. Importing from warmer countries eliminates seasonal shortages, ensuring families always have access to essential fresh fruit, vegetables, and daily nutrients without waiting for summer harvests.",
+        "Rearing children in modern economies is exceptionally costly, demanding substantial outlays for housing, healthcare, nutritious food, and education. Young adults in their twenties often struggle with student loan debt and volatile entry-level salaries, whereas individuals in their thirties have established professional careers and accumulated savings, allowing them to provide a secure and prosperous home.",
       example:
-        "For example, consumers in colder European or Canadian cities can easily purchase fresh strawberries, tomatoes, and citrus in the middle of January at stable prices.",
+        "For example, couples who delay family formation until their thirties are statistically far more capable of purchasing a family home and absorbing child-rearing costs without falling into chronic debt.",
       band9Snippet:
-        "“Foremost among the advantages is that importing goods guarantees consumers year-round access to fresh produce, overcoming harsh seasonal limitations.”",
+        "“Foremost among the positive aspects of delaying marriage is that it provides couples with the financial foundation and career stability necessary to support a family.”",
       alternativeReasons: [
         {
           id: "body-adv-reason1",
-          badge: "Reason 1 • Fresh Food All Year",
-          title: "Year-Round Fresh Produce in Every Season",
+          badge: "Reason 1 • Financial Security",
+          title: "Accumulated Wealth & Freedom from Economic Hardship",
           mainReason:
-            "Supermarkets can provide fresh fruits and vegetables all year round, even during freezing winter months when domestic farms cannot grow anything.",
+            "Couples in their thirties have stable incomes and accumulated savings, ensuring they can comfortably afford the high costs of raising children.",
           supportingReasons:
-            "In cold and temperate countries, winter weather halts agricultural cultivation. Importing from warmer nations or the opposite hemisphere eliminates seasonal shortages, ensuring families maintain a healthy, balanced diet with daily fresh vitamins.",
+            "Child-rearing requires immense financial resources for housing, healthcare, nutrition, and schooling. Young adults in their twenties frequently struggle with student loans and unstable entry-level wages, whereas thirty-somethings have climbed the career ladder, earned higher salaries, and saved enough money to give their children a secure, stress-free upbringing.",
           example:
-            "For example, consumers in colder European or Canadian cities can easily purchase fresh strawberries, tomatoes, and oranges in the middle of winter at stable prices.",
+            "For instance, parents in their thirties are far more likely to own their family home and comfortably afford quality daycare without resorting to high-interest personal loans.",
           band9Snippet:
-            "“Foremost among the advantages is that importing goods guarantees consumers year-round access to fresh produce, overcoming harsh seasonal limitations.”",
+            "“Foremost among the positive aspects of delaying marriage is that it provides couples with the financial stability needed to support a family comfortably.”",
           modelParagraph:
-            "Foremost among the advantages is that importing goods guarantees consumers year-round access to fresh, healthy produce, overcoming harsh seasonal limitations. In colder countries, local farming shuts down almost entirely during the winter months, meaning domestic farms cannot produce fresh crops. By sourcing food from warmer countries in the southern hemisphere, supermarkets ensure that families can purchase essential fruits, vegetables, and vitamins throughout all twelve months. For instance, consumers in chilly northern European cities can regularly buy fresh strawberries, avocados, and citrus in the middle of January at stable prices.",
+            "Foremost among the positive aspects of delaying marriage is that it provides couples with the financial stability needed to support a family comfortably. The economic burden of child-rearing—encompassing spacious housing, healthcare, quality nutrition, and educational fees—has escalated sharply in modern society. Individuals in their thirties typically enjoy established careers, higher earning capacity, and accumulated savings, whereas twenty-somethings frequently battle student debt and unstable entry-level wages. Consequently, mature parents are in a vastly superior position to absorb domestic expenses without enduring debilitating economic stress. For instance, parents in their thirties are statistically far more likely to own their family residence and finance early childhood schooling without descending into chronic debt.",
           examinerNotes:
-            "Relatable & practical. Explains the seasonal winter gap in cold nations and shows how supermarket imports solve daily nutritional needs."
+            "Directly relatable economic argument. Contrasts entry-level 20s financial struggle with established 30s earning power."
         },
         {
           id: "body-adv-reason2",
-          badge: "Reason 2 • Family Grocery Savings",
-          title: "Lower Grocery Prices & Household Affordability",
+          badge: "Reason 2 • Career Progression",
+          title: "Uninterrupted Professional & Educational Advancement",
           mainReason:
-            "Imported food is often significantly cheaper than goods grown locally under expensive artificial conditions, helping families save money on daily groceries.",
+            "Postponing marriage and parenthood allows young adults to complete higher education and reach senior career milestones without domestic disruption.",
           supportingReasons:
-            "Countries with warm climates and fertile land can grow crops naturally in sunlight, whereas producing tropical food locally requires expensive heated greenhouses and high electricity bills. Supermarkets pass these production savings to consumers, keeping basic food baskets affordable.",
+            "Balancing intense university degrees or demanding corporate hours with the 24/7 duties of childcare often forces young professionals—particularly women—to interrupt or abandon their ambitions. Delaying family obligations enables both partners to earn postgraduate qualifications, gain international experience, and secure promotions before taking parental leave.",
           example:
-            "For instance, importing bananas, rice, and coffee from tropical nations is far cheaper for households than attempting to grow them locally in heated glasshouses.",
+            "For example, female professionals in fields like medicine, law, and engineering who delay childbearing until their thirties are significantly more likely to achieve senior leadership and managerial roles.",
           band9Snippet:
-            "“Equally important is that imported goods reduce household grocery costs, as food is grown where natural conditions make cultivation far cheaper.”",
+            "“Equally significant is that deferring domestic commitments allows young adults to realize their full educational and professional potential unhindered.”",
           modelParagraph:
-            "Equally important is that imported goods significantly reduce grocery costs for ordinary households. Food can be grown much more cheaply in regions blessed with abundant natural sunshine and fertile soil, avoiding the massive heating and electricity costs of running artificial domestic glasshouses. Supermarkets pass these production savings directly on to shoppers, keeping basic food baskets affordable for low-income and working-class families. For instance, importing staples such as bananas, rice, and coffee from equatorial nations is far more cost-effective than trying to cultivate them domestically under energy-intensive artificial conditions.",
+            "Equally significant is that deferring domestic responsibilities allows young adults to realize their full educational and professional potential unhindered. Demanding degree programs and competitive corporate careers require intensive commitment that is exceptionally difficult to balance with the relentless demands of newborn care. By postponing marriage and childbirth, individuals can complete postgraduate studies, acquire specialized workplace skills, and ascend to leadership positions before taking on family duties. For instance, female professionals in competitive fields like medicine, law, and corporate finance who delay motherhood until their thirties are much more likely to attain senior directorships without sacrificing their career trajectory.",
           examinerNotes:
-            "Directly relatable economic argument. Contrasts natural outdoor sun-grown crops with costly artificial heated greenhouses."
+            "Highlights gender equality and professional fulfillment without overcomplicating the logic."
         },
         {
           id: "body-adv-reason3",
-          badge: "Reason 3 • Cultural Food Variety",
-          title: "Diverse Food Choices for Multicultural Communities",
+          badge: "Reason 3 • Emotional Maturity",
+          title: "Psychological Wisdom & Lower Divorce Rates",
           mainReason:
-            "Selling imported products allows shoppers to enjoy foods from diverse cultures and helps immigrant families cook authentic traditional meals.",
+            "Adults in their thirties possess greater self-awareness and emotional wisdom, resulting in stronger marriages and calmer parenting.",
           supportingReasons:
-            "Modern cities are home to people from many cultural backgrounds who rely on specific international ingredients that cannot grow in native soil. Offering foreign products in local supermarkets respects cultural diversity and allows all residents to explore global culinary traditions.",
+            "Young people in their early twenties are still developing their personal identity and frequently rush into relationships driven by infatuation, leading to high divorce rates. By age thirty, people have gained life experience, understand what they value in a partner, and handle domestic disagreements with patient communication, creating a harmonious environment for children.",
           example:
-            "For example, supermarkets in major cities regularly stock authentic Asian noodles, Indian spices, and Mexican tortillas that local farms cannot produce.",
+            "Sociological studies demonstrate that couples who marry after age thirty experience substantially lower rates of divorce and marital separation compared to those marrying in their early twenties.",
           band9Snippet:
-            "“Furthermore, a wide selection of imported foodstuffs caters to the dietary needs of increasingly diverse and multicultural communities.”",
+            "“Moreover, postponing marriage fosters greater emotional maturity and psychological resilience in both marital relationships and parenting.”",
           modelParagraph:
-            "Furthermore, a wide selection of imported foodstuffs caters to the daily dietary needs of increasingly multicultural urban communities. In modern cosmopolitan cities, immigrant families rely on authentic ingredients that simply cannot be grown in native soil due to unsuitable climates. Stocking international foods allows people to preserve their cultural culinary traditions while introducing native shoppers to exciting global flavors. For example, supermarkets in major cities routinely stock authentic basmati rice, Asian spices, and Mexican specialty items, enriching everyday cooking for everyone.",
+            "Moreover, postponing marriage fosters greater emotional maturity and psychological resilience in both marital relationships and parenting. Young adults in their early twenties are often still exploring their personal identities and lack the conflict-resolution skills necessary for lifelong commitment. By the age of thirty, individuals possess a clearer understanding of their personal values, make wiser partner choices, and handle parental stress with greater patience and emotional balance. Research consistently indicates that couples who marry in their thirties exhibit markedly lower divorce rates, providing children with a much calmer, more harmonious domestic environment.",
           examinerNotes:
-            "Strong social and cultural dimension. Directly observable in modern supermarkets and easy for any student to explain."
+            "Focuses on psychological well-being, mature decision-making, and marital stability."
         },
         {
           id: "body-adv-reason4",
-          badge: "Reason 4 • Emergency Food Security",
-          title: "Protection Against Local Crop Failures & Food Shortages",
+          badge: "Reason 4 • Personal Freedom",
+          title: "Living Youthful Dreams Without Later Resentment",
           mainReason:
-            "Having global supply chains protects a nation from empty supermarket shelves when local farms suffer from severe droughts, floods, or bad weather.",
+            "Spending one's twenties independent allows people to travel, pursue passions, and mature without feeling trapped or resentful later in life.",
           supportingReasons:
-            "If a country relies solely on its own farmers, a single heatwave, flood, or insect plague can destroy the harvest and cause sudden food shortages. Importing from multiple countries acts as a safety shield, ensuring supermarkets always have backup supplies.",
+            "Those who marry too young often suffer from 'lost youth syndrome,' resenting that domestic duties prevented them from seeing the world or exploring personal interests. Having enjoyed complete independence throughout their twenties, adults in their thirties transition into parenthood willingly and wholeheartedly.",
           example:
-            "To illustrate, when severe summer droughts destroyed domestic potato and grain harvests in northern Europe, supermarkets prevented food shortages by quickly importing from international partners.",
+            "Many adults who spent their twenties traveling, studying abroad, and building creative hobbies report entering family life with deep satisfaction and zero feelings of missing out.",
           band9Snippet:
-            "“Additionally, global procurement networks provide vital food security by protecting consumers against unexpected local crop failures.”",
+            "“Finally, spending one's twenties as an independent individual prevents the psychological resentment that often accompanies premature domesticity.”",
           modelParagraph:
-            "Additionally, global procurement networks provide vital food security by protecting consumers against unexpected local harvest failures. If a country relies entirely on domestic agriculture, an unexpected flood, prolonged summer drought, or crop disease can wipe out local fields and trigger dangerous food shortages. Having established trade links allows supermarkets to quickly import produce from other parts of the world, keeping grocery shelves full. To illustrate, when severe droughts damaged domestic wheat and vegetable yields in northern Europe, supermarkets prevented shortages by immediately sourcing produce from international partners.",
+            "Finally, spending one's twenties as an independent individual prevents the psychological resentment that often accompanies premature domesticity. Young people who marry prematurely frequently feel they have missed out on fundamental life experiences such as solo travel, personal hobbies, and social exploration. Having satisfied these youthful aspirations, men and women in their thirties transition into parenthood willingly and with deep gratitude, viewing family life as a fulfilling new chapter rather than a restrictive burden.",
           examinerNotes:
-            "Crucial food security point. Intuitive disaster-insurance logic that students easily understand and remember."
+            "Psychological perspective on life satisfaction and parental commitment."
         }
       ]
     },
     {
       paraNumber: 2,
-      side: "non_opinion",
-      title: "Points for the Disadvantages (Counterpoint)",
-      theme: "Local Farmer Strain, Food Miles & Chemical Preservatives",
+      side: "strong_opinion",
+      title: "Body Paragraph 2 (Strong Side Advantage 2)",
+      theme: "Emotional Maturity, Relationship Longevity & Quality Parenting",
       mainReason:
-        "On the other hand, the primary disadvantage is that cheap foreign imports create intense commercial competition for local farmers and generate transport pollution.",
+        "Equally important is that greater psychological maturity in one's thirties fosters durable marital partnerships and more nurturing, patient parenting.",
       supportingReasons:
-        "Small family farms have higher labor and heating costs and cannot compete with mass-produced overseas goods, leading to farm closures. Furthermore, flying and shipping food thousands of kilometers burns immense fossil fuels.",
+        "Older parents are generally calmer, less impulsive, and more attentive to their children's psychological development, shielding children from chaotic home environments.",
       example:
-        "For example, many small family dairy and vegetable farms have been forced out of business because supermarkets prioritize cheaper imported produce.",
+        "Research confirms that children raised by mature, financially stable parents achieve higher educational outcomes and report greater emotional security.",
       band9Snippet:
-        "“Nonetheless, critics rightly highlight the commercial strain exerted on local farmers and the ecological toll of extensive food miles.”",
-      alternativeReasons: [
-        {
-          id: "body-dis-reason1",
-          badge: "Reason 1 • Threat to Local Farmers",
-          title: "Severe Financial Strain & Job Losses for Local Farmers",
-          mainReason:
-            "Inexpensive imported products create tough competition for local farmers, putting their family businesses and traditional livelihoods at serious risk.",
-          supportingReasons:
-            "Small local farmers face higher labor, land, and heating costs, meaning they cannot match the rock-bottom prices of massive overseas industrial farms. When supermarkets favor cheaper imports, local farmers lose customers, face bankruptcy, and are forced to close.",
-          example:
-            "For example, many small family dairy and vegetable farms across Europe and the UK have been forced to shut down because supermarkets prioritize cheaper milk and produce from abroad.",
-          band9Snippet:
-            "“On the other hand, the primary disadvantage is that cheap foreign imports threaten the livelihoods of hardworking local farmers.”",
-          modelParagraph:
-            "On the other hand, critics rightly point out that cheap foreign goods place immense commercial pressure on local farmers. Small family-owned farms face higher labor and land costs and cannot match the rock-bottom prices of massive, highly subsidized overseas agribusinesses. As supermarkets increasingly favor cheaper foreign imports to maximize profit margins, local agriculturalists lose their market share, face severe financial hardship, and are frequently driven into bankruptcy. For instance, thousands of small dairy and fruit farmers across Europe have been forced to shut down in recent years because supermarkets prioritized cheaper imports.",
-          examinerNotes:
-            "The most relatable and common drawback. Easy to explain: local family farms cannot compete with cheap overseas mega-farms."
-        },
-        {
-          id: "body-dis-reason2",
-          badge: "Reason 2 • Food Miles & Pollution",
-          title: "Environmental Pollution & Carbon Footprint ('Food Miles')",
-          mainReason:
-            "Transporting food over thousands of kilometers burns huge amounts of fossil fuel, creating heavy air pollution and contributing to global warming.",
-          supportingReasons:
-            "Fresh food must be flown on airplanes or shipped across oceans on massive cargo vessels, both of which burn immense amounts of diesel and jet fuel. Furthermore, long-distance transport demands heavy plastic packaging and constant refrigeration, increasing waste.",
-          example:
-            "For instance, air-freighting out-of-season berries thousands of kilometers from South America generates far higher carbon emissions per kilogram than buying apples harvested from a regional orchard.",
-          band9Snippet:
-            "“Another significant drawback is the environmental harm caused by long-distance transportation, commonly referred to as 'food miles'.”",
-          modelParagraph:
-            "Another significant drawback is the environmental harm caused by long-distance transportation, commonly referred to as 'food miles'. Flying fresh perishables on aeroplanes and transporting goods on container ships across oceans burns enormous quantities of fossil fuels, releasing harmful greenhouse gases into the atmosphere. In addition, long-distance transit demands heavy plastic packaging and constant refrigeration to keep produce from rotting. For instance, air-freighting out-of-season berries thousands of kilometers from South America generates far higher carbon emissions per kilogram than buying apples harvested from a regional orchard.",
-          examinerNotes:
-            "Classic IELTS environmental argument. Crystal-clear explanation of aviation emissions, freight fuel burn, and plastic waste."
-        },
-        {
-          id: "body-dis-reason3",
-          badge: "Reason 3 • Chemicals & Lost Freshness",
-          title: "Use of Chemical Preservatives & Loss of Freshness and Flavor",
-          mainReason:
-            "To survive weeks of travel, imported food is often treated with chemical preservatives and harvested unripe, resulting in poorer taste and fewer natural nutrients.",
-          supportingReasons:
-            "Perishable produce that spends weeks in transit cannot be harvested when ripe without rotting before arrival. Instead, crops are picked green, coated in synthetic waxes, and artificially ripened with gases in storage, making them taste bland and watery compared to freshly harvested farm food.",
-          example:
-            "For example, imported supermarket tomatoes often spend weeks in refrigerated containers, resulting in a watery flavor and fewer vitamins compared to fresh produce from a local farmer's market.",
-          band9Snippet:
-            "“Furthermore, imported produce is frequently harvested prematurely and treated with artificial preservatives, compromising its natural taste and nutritional value.”",
-          modelParagraph:
-            "Furthermore, imported produce is frequently harvested prematurely and treated with artificial preservatives, compromising its natural taste and nutritional value. Perishable fruits and vegetables shipped across oceans cannot be harvested at peak ripeness without rotting during long transit journeys. Consequently, they are picked unripe, coated in synthetic waxes, and artificially ripened with gas in storage facilities, leaving them bland and less nutritious. For example, imported supermarket tomatoes often spend weeks in refrigerated containers, resulting in a watery flavor and fewer vitamins compared to produce harvested fresh from nearby farms.",
-          examinerNotes:
-            "Highly relatable consumer complaint: imported fruits taste bland or watery because they were picked unripe and preserved with chemicals."
-        },
-        {
-          id: "body-dis-reason4",
-          badge: "Reason 4 • Supply Disruption Risk",
-          title: "Risk of Food Shortages Due to Foreign Supply Disruptions",
-          mainReason:
-            "Relying heavily on foreign food makes a nation vulnerable to international crises, border closures, and global shipping strikes.",
-          supportingReasons:
-            "If a country lets its domestic farms disappear and depends entirely on other nations for its daily meals, any sudden geopolitical crisis, war, or shipping strike can cut off supplies. Without strong local farms, the nation cannot feed itself in times of international trouble.",
-          example:
-            "To illustrate, recent global shipping delays and border restrictions during international crises caused severe supermarket shortages in countries that rely heavily on imported staples.",
-          band9Snippet:
-            "“Finally, becoming overly reliant on foreign food weakens a country's self-sufficiency, leaving it vulnerable to sudden international disruptions.”",
-          modelParagraph:
-            "Finally, becoming overly reliant on foreign food weakens a country's self-sufficiency, leaving it vulnerable to sudden international disruptions. If domestic farming is neglected in favor of cheap foreign imports, a nation loses its ability to feed its own citizens during emergencies. When unexpected geopolitical conflicts, shipping strikes, or border closures happen, cross-border supply lines can break down overnight, creating acute shortages on supermarket shelves. To illustrate, recent global logistics bottlenecks left supermarkets with empty shelves in countries that depend almost entirely on imported staples.",
-          examinerNotes:
-            "Strategic vulnerability point. Relatable to recent real-world shipping strikes and border delays."
-        }
-      ]
+        "“Equally important is that greater psychological maturity in one's thirties fosters durable marital partnerships and more nurturing, patient parenting.”"
     },
     {
       paraNumber: 3,
       side: "non_opinion",
-      title: "Body Paragraph 3 (Non-Opinion Counterpoint)",
-      theme: "Local Farm Strain & Transport Food Miles",
+      title: "Points for the Disadvantages (Counterpoint / Non-Opinion Side)",
+      theme: "Biological Fertility Complications & Generational Age Gap",
       mainReason:
-        "On the other hand, critics rightly point out that cheap foreign goods place immense commercial pressure on local farmers and increase transport pollution.",
+        "On the other hand, critics rightly emphasize that delaying marriage and childbirth introduces serious biological risks and creates a widening generational gap.",
       supportingReasons:
-        "Small family farms cannot match the low prices of massive overseas industrial farms, while flying and shipping food over thousands of kilometers generates heavy greenhouse gas emissions.",
+        "Human fertility declines significantly after age thirty, increasing the likelihood of conception difficulties, miscarriages, and expensive medical procedures, while older parents may lack the energy to raise active children.",
       example:
-        "For example, small dairy farmers in Britain and Europe have struggled to survive against cheap imported milk, while air-freighting out-of-season berries creates a heavy carbon footprint.",
+        "For instance, women attempting first-time conception in their late thirties experience higher rates of pregnancy complications and frequently require stressful in-vitro fertilization (IVF) treatments.",
       band9Snippet:
-        "“Nonetheless, critics rightly highlight the commercial strain exerted on local farmers and the ecological toll of extensive food miles.”"
+        "“On the other hand, critics rightly emphasize that delaying marriage and childbirth introduces serious biological risks and creates a widening generational gap.”",
+      alternativeReasons: [
+        {
+          id: "body-disadv-reason1",
+          badge: "Reason 1 • Biological Fertility Risks",
+          title: "Reproductive Decline & Heightened Pregnancy Complications",
+          mainReason:
+            "Natural fertility declines significantly after age thirty, making conception harder and increasing pregnancy complications.",
+          supportingReasons:
+            "Human biological clocks are real: female ovarian reserve drops sharply after thirty and steeper after thirty-five, while sperm quality also declines. Older pregnancies carry higher risks of gestational diabetes, high blood pressure, and chromosomal disorders such as Down syndrome, often forcing couples to undergo emotionally exhausting and expensive IVF procedures.",
+          example:
+            "For example, women conceiving in their late thirties face higher rates of miscarriage and often spend thousands of dollars on assisted reproductive technologies.",
+          band9Snippet:
+            "“On the other hand, critics rightly emphasize the profound biological and medical hazards associated with delayed childbearing.”",
+          modelParagraph:
+            "On the other hand, critics rightly emphasize the profound biological and medical hazards associated with delayed childbearing. Human fertility declines precipitously after the age of thirty, particularly for women, making natural conception considerably more difficult and unpredictable. Furthermore, pregnancies at advanced maternal age carry heightened clinical risks, including preeclampsia, gestational diabetes, and chromosomal abnormalities such as Down syndrome. For example, many couples in their late thirties are compelled to undergo costly, emotionally distressing in-vitro fertilization (IVF) procedures that offer no guarantee of successful childbirth.",
+          examinerNotes:
+            "The most authoritative, scientifically backed drawback. Directly relatable and clear."
+        },
+        {
+          id: "body-disadv-reason2",
+          badge: "Reason 2 • Physical Energy & Age Gap",
+          title: "Dwindling Physical Energy & Wide Generational Divide",
+          mainReason:
+            "Older parents often lack the physical stamina required to raise energetic toddlers and face a wider cultural gap with their offspring.",
+          supportingReasons:
+            "Caring for small children involves sleepless nights, physical carrying, and constant active play, which becomes far more taxing in one's late thirties and forties. Furthermore, being nearly forty years older than their children means parents will be approaching retirement when their children graduate, leaving less shared time with future grandchildren.",
+          example:
+            "A parent who has a baby at thirty-eight will be almost sixty when the child completes high school, creating a vast cultural and communication divide.",
+          band9Snippet:
+            "“Another significant drawback is the physical strain of late parenthood and the widening generational divide.”",
+          modelParagraph:
+            "Another significant drawback is the physical strain of late parenthood and the widening generational divide. Caring for hyperactive toddlers and coping with chronic sleep deprivation requires immense physical stamina that naturally diminishes as adults approach their forties. Moreover, a substantial age gap between parents and offspring can hinder mutual cultural understanding and communication. For instance, a parent who conceives at thirty-eight will be approaching retirement when their child graduates from secondary school, leaving them with less energy to participate in their child's athletic milestones and fewer years to bond with future grandchildren.",
+          examinerNotes:
+            "Very human and realistic. Relates to daily energy levels and long-term family relationships."
+        },
+        {
+          id: "body-disadv-reason3",
+          badge: "Reason 3 • Population Aging",
+          title: "Plummeting Birth Rates & National Economic Contraction",
+          mainReason:
+            "Delaying marriage leads to smaller family sizes, causing national birth rates to plummet and creating an aging society.",
+          supportingReasons:
+            "When adults wait until their thirties to have children, biological time limits mean most have only one or two children instead of three or four. This causes national birth rates to drop below replacement level (2.1), leaving countries with a shrinking workforce unable to pay for pensions and healthcare for growing elderly populations.",
+          example:
+            "Countries like South Korea, Japan, and Italy, where the average marriage age exceeds thirty-one, are now experiencing severe labor shortages and closed elementary schools.",
+          band9Snippet:
+            "“From a broader societal perspective, widespread delays in family formation exacerbate severe demographic aging and workforce contraction.”",
+          modelParagraph:
+            "From a broader societal perspective, widespread delays in family formation exacerbate severe demographic aging and workforce contraction. Couples who postpone parenthood into their thirties inevitably have fewer children due to biological time limits, causing national birth rates to plummet below the replacement threshold. This creates a top-heavy demographic pyramid with a dwindling workforce struggling to fund the soaring pension and healthcare liabilities of an expanding elderly population. For instance, countries such as South Korea and Japan, where average marriage ages now exceed thirty-one, are currently grappling with labor shortages, rural depopulation, and unsustainable social security deficits.",
+          examinerNotes:
+            "Broad macroeconomic and demographic argument that connects delayed marriage to global issues."
+        },
+        {
+          id: "body-disadv-reason4",
+          badge: "Reason 4 • Double Caring Burden",
+          title: "Simultaneously Caring for Young Children & Ailing Elderly Parents",
+          mainReason:
+            "Having children later in life coincides directly with the period when one's own elderly parents require intensive care and medical support.",
+          supportingReasons:
+            "When an adult has a toddler at thirty-eight, their own parents are typically in their seventies and developing chronic illnesses. This traps middle-aged adults in the exhausting 'sandwich generation,' forced to juggle career peaks, young children, and frail aging parents at the same time.",
+          example:
+            "Many forty-year-olds face severe emotional and financial burnout from managing preschool drop-offs alongside hospital visits for elderly parents suffering from dementia or mobility loss.",
+          band9Snippet:
+            "“Lastly, postponing childbirth frequently subjects adults to the grueling emotional and logistical burdens of the 'sandwich generation.'”",
+          modelParagraph:
+            "Lastly, postponing childbirth frequently subjects adults to the grueling emotional and logistical burdens of the 'sandwich generation.' When adults delay having children until their late thirties, their own parents are typically entering their seventies and suffering from chronic age-related ailments. Consequently, middle-aged adults find themselves squeezed between the relentless demands of rearing young toddlers and the exhaustive duties of providing eldercare for ailing parents. This dual caretaking burden causes acute psychological burnout, marital friction, and severe financial strain.",
+          examinerNotes:
+            "Deep psychological and sociological insight into modern family pressures."
+        }
+      ]
     }
   ],
 
   vocabList: [
     {
-      word: "cross-border supply chains",
+      word: "socio-economic independence",
       meaning:
-        "Integrated international logistic networks facilitating the transit and distribution of goods across sovereign boundaries.",
+        "The state of possessing sufficient personal wealth, professional stability, and material autonomy to live without financial reliance on others.",
       example:
-        "Modern supermarkets rely on agile cross-border supply chains to source perishable produce from multiple continents simultaneously."
+        "Delaying marriage allows young adults to establish complete socio-economic independence before undertaking the responsibilities of child-rearing."
     },
     {
-      word: "counter-seasonal availability",
+      word: "advanced maternal age",
       meaning:
-        "The commercial supply of fresh agricultural items outside of their natural domestic growing calendar by sourcing from the opposite hemisphere.",
+        "A clinical term used in obstetrics referring to women who become pregnant at age 35 or older, associated with increased physiological risks.",
       example:
-        "Southern hemisphere imports guarantee counter-seasonal availability of stone fruits and berries during northern winter months."
+        "Pregnancies categorized as advanced maternal age require heightened medical vigilance to prevent gestational complications."
     },
     {
-      word: "ecological food miles",
+      word: "demographic contraction",
       meaning:
-        "The cumulative distance food is transported from its place of harvest to consumer plates, measuring environmental carbon impact.",
+        "A sustained reduction in a nation's total population size accompanied by a shrinking proportion of young working-age citizens.",
       example:
-        "Critics advocate for reducing ecological food miles by prioritizing regionally cultivated, zero-mile seasonal produce."
+        "Widespread postponement of childbearing has accelerated demographic contraction in nations like Japan and South Korea."
     },
     {
-      word: "domestic agrarian displacement",
+      word: "assisted reproductive technology",
       meaning:
-        "The economic marginalization or bankruptcy of local farmers due to cheaper, mass-produced foreign agricultural imports.",
+        "Medical procedures such as IVF and egg freezing designed to achieve pregnancy when natural conception is hindered by age or biological factors.",
       example:
-        "Unregulated agricultural dumping can trigger domestic agrarian displacement, threatening national food sovereignty."
+        "Couples who postpone family formation past age thirty-five increasingly rely on assisted reproductive technology to overcome fertility obstacles."
     },
     {
-      word: "dietary diversification",
+      word: "the sandwich generation",
       meaning:
-        "Expanding the spectrum and variety of nutritional foods consumed by a population beyond traditional regional staples.",
+        "A cohort of middle-aged adults simultaneously burdened with caring for their young children and supporting their aging, dependent parents.",
       example:
-        "Global trade has fostered unprecedented dietary diversification, introducing exotic grains, legumes, and nutrient-dense superfoods into everyday diets."
+        "Older first-time parents frequently find themselves trapped in the sandwich generation, dividing time between toddlers and frail elderly parents."
     },
     {
-      word: "reciprocal trade linkages",
+      word: "marital longevity",
       meaning:
-        "Mutually beneficial bilateral commercial agreements whereby trading partners exchange goods to stimulate shared economic prosperity.",
+        "The durability, stability, and enduring survival of a marriage over a protracted period without divorce or separation.",
       example:
-        "Establishing reciprocal trade linkages allows developing nations to export specialty agricultural goods while importing advanced industrial machinery."
+        "Greater emotional maturity in one's thirties is strongly correlated with increased marital longevity and lower rates of domestic breakdown."
     },
     {
-      word: "carbon-intensive air freight",
+      word: "emotional equilibrium",
       meaning:
-        "High-emission aviation transport utilized for rapid intercontinental delivery of high-value, highly perishable foodstuffs.",
+        "A state of mental calmness, self-mastery, and psychological composure that enables patient and effective conflict resolution.",
       example:
-        "Transporting fresh asparagus via carbon-intensive air freight incurs an exorbitant environmental footprint compared to surface maritime shipping."
+        "Thirty-something parents generally display greater emotional equilibrium, shielding their offspring from impulsive, reactive parenting."
     },
     {
-      word: "monopolistic complacency",
+      word: "sub-replacement fertility",
       meaning:
-        "A lack of innovation, efficiency, or quality improvement that occurs when domestic suppliers face no foreign market competition.",
+        "A total fertility rate that falls below 2.1 children per woman, insufficient to keep a population stable without external immigration.",
       example:
-        "Exposure to foreign supermarket goods dismantles monopolistic complacency, compelling local producers to refine quality and customer service."
+        "Many developed economies have descended into sub-replacement fertility as young adults defer family formation indefinitely."
     },
     {
-      word: "artisanal specialization",
+      word: "ovarian reserve depletion",
       meaning:
-        "Focusing production on high-value, distinctive, small-batch, or culturally authentic goods rather than uniform mass commodities.",
+        "The progressive age-related decline in the quality and quantity of eggs in female ovaries, reducing natural conception likelihood.",
       example:
-        "Local farmers often counter mass-market imports through artisanal specialization in organic sourdough, heirloom varieties, and raw-milk cheeses."
+        "Women are biologically constrained by ovarian reserve depletion, which accelerates rapidly after thirty-five years of age."
     },
     {
-      word: "unprecedented consumer sovereignty",
+      word: "psychological preparedness",
       meaning:
-        "The complete freedom and authority of shoppers to select from an exhaustive array of competitive global goods tailored to their tastes and budget.",
+        "The mental and emotional readiness of an individual to willingly embrace the sacrifices and daily duties of parenthood.",
       example:
-        "Supermarket shelves offering global condiments grant modern shoppers unprecedented consumer sovereignty."
+        "Having satisfied their youthful wanderlust in their twenties, older parents enter domestic life with superior psychological preparedness."
     }
   ],
 
   vocabHunt: [
-    "cross-border supply chains",
-    "counter-seasonal availability",
-    "ecological food miles",
-    "domestic agrarian displacement",
-    "dietary diversification",
-    "reciprocal trade linkages",
-    "carbon-intensive air freight",
-    "monopolistic complacency",
-    "artisanal specialization",
-    "unprecedented consumer sovereignty"
+    "socio-economic independence",
+    "advanced maternal age",
+    "demographic contraction",
+    "assisted reproductive technology",
+    "the sandwich generation",
+    "marital longevity",
+    "emotional equilibrium",
+    "sub-replacement fertility",
+    "ovarian reserve depletion",
+    "psychological preparedness"
   ],
 
   consequences: [
     {
       type: "positive",
-      title: "Year-Round Fresh Produce & Overcoming Winter Crop Ceilings",
-      desc: "Supermarkets import produce from warmer countries so families can eat fresh strawberries, tomatoes, and vitamins all year round, even when local farms are frozen.",
-      example: "Shoppers in cold northern cities buying fresh citrus and avocados in the middle of January.",
+      title: "Financial Security & Accumulation of Family Wealth",
+      desc: "Individuals in their 30s have stable professional careers, higher salaries, and savings, ensuring they can comfortably fund childcare, housing, and schooling without debt.",
+      example: "Couples in their 30s purchasing a family home and absorbing healthcare and private tutoring costs comfortably.",
       level: "Advantage 1 (Step 6)",
-      simpleTakeaway: "Fresh produce in winter: families eat healthy fresh food every single month of the year.",
-      collocation: "year-round fresh produce"
+      simpleTakeaway: "Financial stability: higher earnings and savings allow parents to provide superior living standards for their children.",
+      collocation: "accumulated family wealth"
     },
     {
       type: "positive",
-      title: "Lower Grocery Prices & Family Household Savings",
-      desc: "Crops grow naturally in sunny tropical regions without needing expensive heated greenhouses. Supermarkets pass these savings to consumers, lowering grocery bills.",
-      example: "Importing rice, bananas, and coffee from warm climates at far cheaper prices than heating domestic glasshouses.",
+      title: "Uninterrupted Career Progression & Equal Opportunity",
+      desc: "Delaying children allows young men and women to complete university degrees and achieve leadership promotions before taking parental leave.",
+      example: "Female doctors, lawyers, and engineers attaining partnership or directorships in their early 30s before having babies.",
       level: "Advantage 2 (Step 6)",
-      simpleTakeaway: "Affordable groceries: natural sunshine makes food cheaper to grow than artificial domestic greenhouses.",
-      collocation: "lower household grocery costs"
+      simpleTakeaway: "Career success: young adults reach senior professional milestones without domestic interruption.",
+      collocation: "uninterrupted career trajectory"
     },
     {
       type: "positive",
-      title: "Diverse Food Choices for Multicultural Communities",
-      desc: "Stocking international ingredients allows immigrant families to cook traditional cultural recipes while introducing local shoppers to exciting world cuisines.",
-      example: "Supermarkets regularly stocking authentic Asian noodles, Indian spices, and Mexican specialty items.",
+      title: "Emotional Maturity & Drastically Lower Divorce Rates",
+      desc: "30-year-olds know themselves, make deliberate partner choices, and handle domestic stress calmly, creating a harmonious upbringing for children.",
+      example: "Sociological data confirming couples marrying after 30 have significantly lower divorce rates than those marrying at 21.",
       level: "Advantage 3 (Step 6)",
-      simpleTakeaway: "Cultural food variety: modern cities enjoy authentic ingredients from around the world.",
-      collocation: "multicultural culinary diversity"
+      simpleTakeaway: "Marital stability: emotional wisdom prevents impetuous relationship choices and lowers divorce rates.",
+      collocation: "marital stability and longevity"
     },
     {
       type: "positive",
-      title: "Emergency Food Security During Domestic Crop Blights",
-      desc: "If bad weather, flooding, or summer droughts ruin local fields, supermarkets can import from other nations to prevent empty shelves and price spikes.",
-      example: "Importing grain and potatoes from foreign partners after severe summer heatwaves damaged domestic harvests.",
+      title: "Youthful Freedom & Absence of Parental Resentment",
+      desc: "Enjoying independence, travel, and personal hobbies in their 20s ensures adults enter family life willingly and without feelings of lost youth.",
+      example: "Adults who traveled and explored creative interests in their 20s dedicating themselves wholeheartedly to family in their 30s.",
       level: "Advantage 4 (Step 6)",
-      simpleTakeaway: "Disaster backup: international trade prevents food shortages when local crops fail.",
-      collocation: "resilient emergency food security"
+      simpleTakeaway: "No lost youth: experiencing personal freedom first prevents resentment toward family commitments later.",
+      collocation: "psychological life fulfillment"
     },
     {
       type: "negative",
-      title: "Severe Commercial Threat to Local Family Farmers",
-      desc: "Small local farmers have higher labor and land costs and cannot match the rock-bottom prices of massive foreign mega-farms, leading to farm bankruptcies.",
-      example: "Family-owned dairy and vegetable farms closing down because supermarkets choose cheaper foreign milk and produce.",
+      title: "Biological Fertility Decline & Pregnancy Complications",
+      desc: "Natural reproductive capacity drops sharply after 30 and 35, increasing miscarriage risks, genetic disorders, and reliance on expensive IVF.",
+      example: "Women in their late 30s facing higher risks of preeclampsia, gestational diabetes, and chromosomal conditions.",
       level: "Disadvantage 1 (Step 7)",
-      simpleTakeaway: "Threat to local farms: small farmers lose customers to cheap foreign imports and face bankruptcy.",
-      collocation: "commercial strain on domestic smallholders"
+      simpleTakeaway: "Biological clock: natural fertility drops after 30, increasing medical complications and conception hurdles.",
+      collocation: "age-related biological decline"
     },
     {
       type: "negative",
-      title: "Air Pollution & Carbon Emissions from 'Food Miles'",
-      desc: "Flying perishables on airplanes and shipping cargo across oceans burns immense fossil fuels, releasing carbon emissions that contribute to global warming.",
-      example: "Air-freighting out-of-season berries across continents generating far higher emissions than buying local seasonal apples.",
+      title: "Reduced Physical Stamina & Widened Generational Gap",
+      desc: "Older parents have less energy to keep up with active toddlers, and being 35-40 years older widens the cultural divide with their children.",
+      example: "Parents approaching age 60 when their child finishes high school, leaving less shared time with future grandchildren.",
       level: "Disadvantage 2 (Step 7)",
-      simpleTakeaway: "Pollution from food miles: long-distance planes and cargo ships burn massive amounts of fossil fuel.",
-      collocation: "carbon emissions from food miles"
+      simpleTakeaway: "Physical fatigue: toddlers require intense stamina, and an older age gap widens the generational divide.",
+      collocation: "widening generational divide"
     },
     {
       type: "negative",
-      title: "Chemical Preservatives & Loss of Natural Freshness",
-      desc: "Food traveling for weeks must be picked unripe, coated in synthetic wax, and treated with preservatives, making it taste bland compared to freshly picked farm food.",
-      example: "Imported tomatoes spending weeks in cold storage and tasting watery compared to freshly harvested local market produce.",
+      title: "National Population Aging & Shrinking Workforce",
+      desc: "Couples who start having babies in their 30s have fewer children overall, causing national birth rates to plummet below replacement levels.",
+      example: "South Korea and Japan facing closed schools and pension deficits due to average marriage ages exceeding 31.",
       level: "Disadvantage 3 (Step 7)",
-      simpleTakeaway: "Chemicals & lost taste: long transit times mean food is picked unripe and sprayed with preservatives.",
-      collocation: "loss of natural freshness and flavor"
+      simpleTakeaway: "Demographic crisis: delaying children leads to smaller families, aging societies, and labor shortages.",
+      collocation: "severe demographic contraction"
     },
     {
       type: "negative",
-      title: "Over-Dependence on Foreign Food & Supply Disruptions",
-      desc: "If domestic farming shuts down, a nation becomes helpless during international crises, shipping strikes, or border closures that halt imports.",
-      example: "Sudden international logistics bottlenecks leaving supermarket shelves empty in countries that rely completely on food imports.",
+      title: "The Exhausting 'Sandwich Generation' Dilemma",
+      desc: "Having children late means toddler care coincides directly with the onset of chronic illness in one's elderly parents in their 70s.",
+      example: "40-year-olds juggling preschool runs while caring for frail parents suffering from dementia or mobility decline.",
       level: "Disadvantage 4 (Step 7)",
-      simpleTakeaway: "Vulnerability to crises: relying entirely on foreign food leaves nations vulnerable when borders or trade routes close.",
-      collocation: "vulnerability to foreign supply disruptions"
+      simpleTakeaway: "Double burden: middle-aged adults are squeezed between raising young kids and caring for sick elderly parents.",
+      collocation: "the sandwich generation strain"
     }
   ],
 
   evaluationArguments: [
     {
-      title: "Year-Round Fresh Nutrition & Public Health (Advantage)",
-      reason: "Supermarket imports eliminate seasonal winter gaps, providing uninterrupted access to fresh vitamins and nutrient-dense produce.",
-      development: "In cold climates, local farming shuts down for months. Without global imports, consumers would be restricted to stored root vegetables and preserved foods during winter.",
-      example: "Families in cold northern regions buying fresh berries, citrus, and greens in January at normal retail prices.",
+      title: "Socio-Economic Foundation & Child Well-being (Advantage)",
+      reason: "Couples in their thirties have stable incomes and accumulated assets, ensuring a secure and prosperous environment for child development.",
+      development: "Raising a child requires substantial capital for housing, healthcare, nutrition, and schooling. In their twenties, individuals struggle with student loans and entry-level wages, whereas thirty-somethings possess established earning power.",
+      example: "Older parents are far more capable of purchasing a family home and financing extracurricular activities without chronic financial distress.",
       type: "argument",
       level: "Core Advantage 1",
-      simpleTakeaway: "Year-round nutrition: keeps families healthy throughout freezing winter months.",
-      collocation: "uninterrupted year-round nutrition"
+      simpleTakeaway: "Economic foundation: accumulated wealth shields children from poverty and domestic stress.",
+      collocation: "socio-economic stability"
     },
     {
-      title: "Grocery Affordability Through Natural Growing Conditions (Advantage)",
-      reason: "Crops cultivated in naturally sunny, fertile climates cost far less to grow than using energy-hungry domestic heated greenhouses.",
-      development: "Supermarkets pass these lower production costs on to shoppers, protecting low-income families from rising grocery inflation.",
-      example: "Importing tropical fruits, rice, and coffee is much cheaper than attempting to grow them in expensive heated glasshouses.",
+      title: "Emotional Equilibrium & Marital Longevity (Advantage)",
+      reason: "Thirty-somethings possess greater psychological self-awareness and life experience, resulting in durable marriages and patient parenting.",
+      development: "Young adults in their early twenties are still developing their identity and often rush into marriages based on infatuation, leading to high divorce rates. By thirty, emotional resilience and communication skills foster peaceful domestic environments.",
+      example: "Sociological data confirms that couples who marry in their thirties experience significantly lower divorce rates than those marrying in their early twenties.",
       type: "argument",
       level: "Core Advantage 2",
-      simpleTakeaway: "Affordable groceries: natural sunshine keeps staple food prices down for families.",
-      collocation: "natural agrarian price efficiency"
+      simpleTakeaway: "Emotional maturity: wiser partner choices and calm parenting prevent divorce and domestic conflict.",
+      collocation: "emotional equilibrium and maturity"
     },
     {
-      title: "Commercial Threat to Local Smallholders (Disadvantage)",
-      reason: "Small family farms cannot compete with the ultra-low prices of giant, subsidized foreign agricultural corporations.",
-      development: "When supermarkets stock cheaper imports, local farmers lose their customer base, leading to rural bankruptcies and loss of traditional farming jobs.",
-      example: "Local dairy and berry farmers going out of business because supermarkets prioritize cheap overseas suppliers.",
+      title: "Biological Reproductive Decline & Clinical Risks (Disadvantage)",
+      reason: "Human reproductive capacity declines significantly after age thirty, making conception difficult and increasing clinical complications.",
+      development: "Female ovarian reserve drops sharply after thirty-five, while sperm quality also diminishes. Older pregnancies carry higher risks of gestational diabetes, preeclampsia, and chromosomal abnormalities like Down syndrome.",
+      example: "Many couples in their late thirties are forced to undergo expensive, emotionally exhausting in-vitro fertilization (IVF) cycles.",
       type: "counterpoint",
       level: "Key Disadvantage 1",
-      simpleTakeaway: "Local farm strain: small farmers cannot match the prices of massive foreign mega-farms.",
-      collocation: "severe strain on local smallholders"
+      simpleTakeaway: "Biological fertility limits: natural conception declines sharply, raising medical risks.",
+      collocation: "clinical fertility complications"
     },
     {
-      title: "Environmental Impact of 'Food Miles' (Disadvantage)",
-      reason: "Transporting perishable groceries across oceans on airplanes and container ships generates heavy carbon emissions and plastic packaging waste.",
-      development: "The burning of aviation fuel and marine diesel for long-haul food transport directly contributes to global air pollution and climate change.",
-      example: "Air-freighting out-of-season fruits thousands of miles emitting far more carbon per kilo than local seasonal harvests.",
+      title: "Demographic Aging & Shrinking Labor Force (Disadvantage)",
+      reason: "Delaying marriage limits the biological window for having children, leading to smaller family sizes and national birth rate collapses.",
+      development: "Couples who delay family formation typically have only one or two children, depressing national fertility rates below the 2.1 replacement rate and burdening social security systems.",
+      example: "Japan, Italy, and South Korea face labor shortages and school closures as average marriage ages climb past thirty-one.",
       type: "counterpoint",
       level: "Key Disadvantage 2",
-      simpleTakeaway: "Carbon footprint: long-distance planes and ships release heavy emissions into the atmosphere.",
-      collocation: "environmental toll of food miles"
+      simpleTakeaway: "Societal aging: lower birth rates shrink the future workforce and strain pension systems.",
+      collocation: "accelerated demographic aging"
     }
   ],
 
   facultyAngles: [
     {
-      title: "Consumer Economics: Natural Solar Advantage vs. Greenhouse Energy",
+      title: "Developmental Psychology: Emotional Maturity vs. Impetuous Youth",
       development:
-        "Economists highlight that crops grown in naturally sunny, warm climates require far less energy and expense than crops forced to grow in cold nations inside heated, fossil-fuel-powered glasshouses."
+        "Psychologists emphasize that the prefrontal cortex and emotional self-regulation continue developing well into the mid-twenties. Thirty-somethings possess greater self-mastery, conflict-resolution capacity, and patience, leading to significantly lower divorce rates and nurturing parenting."
     },
     {
-      title: "Environmental Science: The Nuance of Life-Cycle Carbon Assessment",
+      title: "Reproductive Biology & Obstetrics: The Inflexible Ovarian Clock",
       development:
-        "Ecological research reveals that 'food miles' represent only one part of total food emissions; field-grown crops shipped by sea often produce less carbon than heating artificial glasshouses with electricity."
+        "Medical researchers note that human biology has not evolved as rapidly as modern social trends. Ovarian reserve and egg quality decline precipitously after thirty-five, dramatically raising the clinical incidence of conception difficulty, miscarriage, and chromosomal disorders."
     },
     {
-      title: "Food Security Policy: Global Diversification vs. Domestic Vulnerability",
+      title: "Macroeconomics & Demography: The Threat of Inverted Age Pyramids",
       development:
-        "Modern agricultural analysts emphasize that having backup international food suppliers is essential to protect citizens whenever local droughts, floods, or crop diseases destroy domestic harvests."
+        "Economists warn that when societies delay marriage into the thirties, the total fertility rate inevitably plunges below the replacement threshold, creating an inverted demographic pyramid where a shrinking workforce cannot support escalating healthcare and pension costs."
     }
   ],
 
   powerExpressions: [
     {
-      expression: "year-round nutritional accessibility",
-      meaning: "Continuous availability of fresh, healthy foods in all seasons.",
-      example: "Supermarket imports have established year-round nutritional accessibility for families living in cold climates."
+      expression: "career consolidation before domestic commitments",
+      meaning: "Establishing professional status and seniority before taking on family responsibilities.",
+      example: "Delaying marriage allows career consolidation before domestic commitments, fostering greater long-term earning power."
     },
     {
-      expression: "mitigate localized harvest shortages",
-      meaning: "Prevent or reduce food shortages caused by bad weather on domestic farms.",
-      example: "Having global supply routes helps supermarkets mitigate localized harvest shortages caused by summer droughts."
+      expression: "the precariousness of youthful impetuousness",
+      meaning: "The danger of making rushed, immature decisions in one's early twenties.",
+      example: "Marrying in one's thirties protects couples from the precariousness of youthful impetuousness and subsequent divorce."
     },
     {
-      expression: "the environmental toll of food miles",
-      meaning: "The damage caused to nature and the air by transporting food long distances.",
-      example: "Critics rightfully emphasize the environmental toll of food miles associated with air-freighting fresh produce."
+      expression: "biological realities versus socio-economic prudence",
+      meaning: "The conflict between natural reproductive age limits and the practical need for financial stability.",
+      example: "The decision to defer childbearing reflects an ongoing tension between biological realities and socio-economic prudence."
     },
     {
-      expression: "commercial strain on domestic smallholders",
-      meaning: "Intense financial pressure and risk of bankruptcy faced by small local farmers.",
-      example: "Cheap foreign supermarket imports exert severe commercial strain on domestic smallholders."
+      expression: "advanced maternal age and fertility decline",
+      meaning: "Medical terms describing pregnancy after thirty-five and the drop in reproductive capacity.",
+      example: "Couples must remain cognizant of the clinical risks associated with advanced maternal age and fertility decline."
     },
     {
-      expression: "energy-intensive artificial cultivation",
-      meaning: "Growing crops indoors using huge amounts of electricity and greenhouse heating.",
-      example: "Importing tropical crops avoids the need for energy-intensive artificial cultivation in cold countries."
+      expression: "the grueling demands of the sandwich generation",
+      meaning: "The heavy burden of having to care for young children and elderly parents at the same time.",
+      example: "Late-stage parenthood often subjects adults in their forties to the grueling demands of the sandwich generation."
     },
     {
-      expression: "multicultural culinary diversity",
-      meaning: "A wide variety of international ingredients that reflect different cultures.",
-      example: "Supermarket imports support multicultural culinary diversity in modern cosmopolitan cities."
+      expression: "foster enduring domestic and marital harmony",
+      meaning: "Create long-lasting peace, stability, and mutual understanding in the home.",
+      example: "Greater emotional maturity in one's thirties serves to foster enduring domestic and marital harmony."
     },
     {
-      expression: "decisively outweigh the drawbacks",
-      meaning: "The benefits are vastly more significant and valuable than the negatives.",
-      example: "The nutritional and economic advantages of imported food decisively outweigh the drawbacks."
+      expression: "decisively eclipse the biological caveats",
+      meaning: "The socio-economic and psychological advantages far outweigh the medical concerns.",
+      example: "The profound stability of mature parenthood decisively eclipses the biological caveats."
     }
   ],
 
   brainstormCards: [
     {
-      question: "Why do supermarkets stock imported fruits and vegetables during winter?",
-      thinkingLens: "Consumer Nutrition & Seasonal Climate Lens",
-      selfCheck: "Did you explain that freezing winters stop local farming, so imports supply fresh vitamins?",
-      idea: "In cold countries, domestic farming shuts down in winter. Supermarkets import fresh produce from warmer countries so families can eat fresh strawberries, tomatoes, and vitamins all year round without waiting for summer."
+      question: "Why do young adults prioritize career and financial independence before marriage?",
+      thinkingLens: "Economic Security & Housing Market Lens",
+      selfCheck: "Did you explain that high housing and child-rearing costs require established savings and stable income?",
+      idea: "Raising children is extremely expensive in modern economies. Young adults in their twenties face student debt and low starting wages, so delaying family life until their thirties enables them to buy a home, save money, and raise children without chronic economic anxiety."
     },
     {
-      question: "Why is imported tropical food often cheaper than food grown locally?",
-      thinkingLens: "Production Cost & Natural Sunshine Lens",
-      selfCheck: "Did you contrast natural outdoor sunlight with expensive heated domestic greenhouses?",
-      idea: "Tropical produce grows naturally outdoors in abundant sunshine and fertile soil. In contrast, growing tropical food locally in cold nations requires expensive heated greenhouses with massive electricity bills, making local production far more costly."
+      question: "How does greater psychological maturity in one's 30s reduce divorce and support parenting?",
+      thinkingLens: "Psychological Development & Relationship Longevity Lens",
+      selfCheck: "Did you contrast impulsive twenty-something relationships with patient, mature thirty-something communication?",
+      idea: "People in their twenties are still discovering their identity and often marry impulsively. By age thirty, adults have greater emotional wisdom, understand their core values, choose compatible partners, and parent with calm patience, drastically reducing divorce rates."
     },
     {
-      question: "What is the biggest problem for local farmers when supermarkets sell cheap foreign imports?",
-      thinkingLens: "Local Farmer Livelihoods & Competition Lens",
-      selfCheck: "Did you explain that small family farms cannot match the low prices of foreign mega-farms?",
-      idea: "Small family farmers have higher labor, land, and heating costs. When supermarkets choose cheaper foreign imports, local farmers lose customers, face severe financial hardship, and are frequently forced out of business."
+      question: "What biological risks and fertility challenges arise when childbearing is delayed past 35?",
+      thinkingLens: "Reproductive Biology & Clinical Obstetric Lens",
+      selfCheck: "Did you explain natural ovarian reserve decline, genetic conditions, and the need for IVF?",
+      idea: "Human fertility declines sharply after thirty, particularly for women. Deferring pregnancy past thirty-five increases the risk of conception failure, preeclampsia, and genetic conditions like Down syndrome, often requiring costly and emotionally painful IVF treatments."
     },
     {
-      question: "Why do the advantages of imported supermarket food decisively outweigh the disadvantages?",
-      thinkingLens: "Overall Synthesis & Outweighing Verdict Lens",
-      selfCheck: "Did you explain that benefits help the entire population's health and budget, while drawbacks can be managed?",
-      idea: "While local farm competition and transport emissions are real challenges, the benefits—providing fresh year-round nutrition, keeping grocery bills affordable for ordinary families, and protecting against crop blights—affect the health and well-being of the entire population."
+      question: "Why do the socio-economic advantages of delayed parenthood decisively outweigh the drawbacks?",
+      thinkingLens: "Overall Synthesis & Outweighing Stance Lens",
+      selfCheck: "Did you explain that financial security and emotional stability last a lifetime, while medical risks can be managed?",
+      idea: "While biological fertility decline is a real concern, modern assisted reproductive technology can assist conception, whereas financial destitution and marital breakdown cause irreversible harm to children. Therefore, the benefits of mature, solvent parenthood decisively prevail."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "Foremost among the advantages is that...",
-      "Beyond household consumption, international commerce fosters...",
-      "Detractors, however, cogently contend that...",
-      "Consequently, when weighed against the manageable environmental drawbacks...",
-      "This dichotomy underscores that while localized challenges persist..."
+      "Foremost among the positive aspects of delaying marriage is that...",
+      "Beyond individual financial security, emotional maturity fosters...",
+      "Detractors, however, cogently emphasize the biological hazards of...",
+      "Consequently, when weighed against the manageable reproductive caveats...",
+      "This dichotomy underscores that while clinical challenges persist, the socio-economic dividends decisively prevail..."
     ],
     aTier: [
-      "In stark contrast to domestic seasonal limitations,",
-      "Furthermore, exposure to global market dynamics compels...",
-      "Nevertheless, one cannot dismiss the ecological repercussions of...",
-      "In light of these considerations, the overriding merits decisively overshadow..."
+      "In stark contrast to the financial instability of one's early twenties,",
+      "Furthermore, achieving professional consolidation enables both partners to...",
+      "Nevertheless, one cannot dismiss the demographic repercussions of...",
+      "In light of these considerations, the overriding merits of mature parenthood decisively overshadow..."
     ],
     bTier: [
       "On the one hand,",
       "On the other hand,",
       "In addition,",
-      "Overall, the benefits are greater than the negatives"
+      "Overall, the positive side is stronger than the negative side"
     ]
   },
 
@@ -543,19 +543,19 @@ export const TASK2_DATA: Task2Data = {
       placementRule: "Place strictly at Sentence 1 of each body paragraph to establish categorical focus.",
       items: [
         {
-          phrase: "Foremost among the compelling merits of international food retail is...",
-          functionDesc: "Initiates Body Paragraph 1 by introducing the strong-opinion advantage (consumer diversity & nutrition).",
-          example: "Foremost among the compelling merits of international food retail is the unprecedented dietary diversity and counter-seasonal nutritional resilience it affords modern households."
+          phrase: "Foremost among the compelling merits of delaying family formation is...",
+          functionDesc: "Initiates Body Paragraph 1 by introducing the strong-opinion advantage (financial security & career foundation).",
+          example: "Foremost among the compelling merits of delaying family formation is the unprecedented economic stability and career foundation it affords aspiring parents."
         },
         {
-          phrase: "Equally significant is the broader macroeconomic catalyst that cross-border trade provides...",
-          functionDesc: "Transitions smoothly into Body Paragraph 2 (strong-opinion advantage 2: trade integration & innovation).",
-          example: "Equally significant is the broader macroeconomic catalyst that cross-border trade provides by stimulating developing economies and driving domestic innovation."
+          phrase: "Equally significant is the emotional maturity and marital resilience that thirty-somethings possess...",
+          functionDesc: "Transitions smoothly into Body Paragraph 2 (strong-opinion advantage 2: psychological wisdom & parenting stability).",
+          example: "Equally significant is the emotional maturity and marital resilience that thirty-somethings possess, which fosters durable partnerships and calm parenting."
         },
         {
-          phrase: "On the other hand, detractors cogently point to the ecological and agrarian ramifications of this trend...",
+          phrase: "On the other hand, detractors and medical specialists cogently point to the biological ramifications of this trend...",
           functionDesc: "Opens Body Paragraph 3 (non-opinion counterpoint / concession) with measured academic neutrality.",
-          example: "On the other hand, detractors cogently point to the ecological and agrarian ramifications of this trend, most notably extensive food miles and pressure on local smallholders."
+          example: "On the other hand, detractors and medical specialists cogently point to the biological ramifications of this trend, most notably steep fertility decline and obstetric risks."
         }
       ]
     },
@@ -565,19 +565,19 @@ export const TASK2_DATA: Task2Data = {
       placementRule: "Use within body paragraphs between the main reason and supporting explanation.",
       items: [
         {
-          phrase: "...which in turn eliminates localized nutritional deprivation during winter months...",
-          functionDesc: "Connects counter-seasonal supply directly to biological and public health outcomes.",
-          example: "Supermarkets import produce from the opposite hemisphere, which in turn eliminates localized nutritional deprivation during winter months."
+          phrase: "...which in turn shields the household from the chronic friction of debt and financial instability...",
+          functionDesc: "Connects accumulated career savings directly to domestic harmony and child well-being.",
+          example: "Couples in their thirties command higher salaries, which in turn shields the household from the chronic friction of debt and financial instability."
         },
         {
-          phrase: "This dynamic compels domestic agricultural enterprises to abandon complacency and...",
-          functionDesc: "Explains how foreign competition triggers positive adaptation rather than simple destruction.",
-          example: "This dynamic compels domestic agricultural enterprises to abandon complacency and pivot toward lucrative organic and artisanal niches."
+          phrase: "This emotional equilibrium prevents impetuous relationship choices, thereby drastically curbing...",
+          functionDesc: "Explains how mature partner selection directly lowers divorce rates.",
+          example: "This emotional equilibrium prevents impetuous relationship choices, thereby drastically curbing the risk of marital breakdown."
         },
         {
-          phrase: "Owing to the exorbitant fuel consumption inherent in transcontinental aviation freight...",
-          functionDesc: "Grounds environmental critique in concrete logistical mechanics.",
-          example: "Owing to the exorbitant fuel consumption inherent in transcontinental aviation freight, out-of-season produce generates a disproportionate carbon footprint."
+          phrase: "Owing to the precipitous age-related depletion of ovarian reserve and declining sperm motility...",
+          functionDesc: "Grounds medical critique in precise reproductive biology.",
+          example: "Owing to the precipitous age-related depletion of ovarian reserve and declining sperm motility, natural conception becomes increasingly problematic."
         }
       ]
     },
@@ -587,14 +587,14 @@ export const TASK2_DATA: Task2Data = {
       placementRule: "Use at the end of Body 3 or in the introduction/conclusion to establish clear weighting.",
       items: [
         {
-          phrase: "While these environmental and agrarian reservations are undeniably legitimate, they are largely remediable through...",
+          phrase: "While these reproductive caveats are undeniably serious, they are increasingly manageable through modern medicine, whereas...",
           functionDesc: "Acknowledges the counter-argument before decisively demonstrating why advantages prevail.",
-          example: "While these environmental and agrarian reservations are undeniably legitimate, they are largely remediable through green logistics and targeted domestic farm subsidies."
+          example: "While these reproductive caveats are undeniably serious, they are increasingly manageable through modern medicine, whereas financial destitution causes lasting trauma."
         },
         {
-          phrase: "Consequently, the undeniable gains in consumer welfare and global economic equity far eclipse...",
+          phrase: "Consequently, the undeniable gains in family prosperity, career equity, and marital stability far eclipse...",
           functionDesc: "Delivers the definitive outweighing verdict in the conclusion.",
-          example: "Consequently, the undeniable gains in consumer welfare and global economic equity far eclipse the localized logistical drawbacks."
+          example: "Consequently, the undeniable gains in family prosperity, career equity, and marital stability far eclipse the biological drawbacks."
         }
       ]
     }
@@ -602,64 +602,64 @@ export const TASK2_DATA: Task2Data = {
 
   fluidVocab: [
     {
+      word: "precipitous",
+      pos: "adjective",
+      meaning: "Dangerously steep or rapid in decline.",
+      naturalCollocation: "a precipitous decline in fertility / precipitous drop",
+      organicExample:
+        "Women face a precipitous decline in natural fertility once they surpass thirty-five years of age.",
+      mechanicalPitfall: "Do not use casually for small decreases; reserve for sharp, steep drops.",
+      examinerInsight: "Demonstrates Band 9 lexical precision when discussing biological trends."
+    },
+    {
+      word: "equanimity",
+      pos: "noun",
+      meaning: "Mental calmness, composure, and evenness of temper, especially in difficult situations.",
+      naturalCollocation: "handle stress with equanimity / emotional equanimity",
+      organicExample:
+        "Older parents are far more capable of navigating toddler tantrums with patience and equanimity.",
+      mechanicalPitfall: "Do not say 'have an equanimity'. It is an uncountable abstract noun.",
+      examinerInsight: "Elevates Task Achievement by capturing psychological maturity in one precise term."
+    },
+    {
       word: "myopic",
       pos: "adjective",
-      meaning: "Lacking foresight or intellectual breadth; narrow-minded.",
-      naturalCollocation: "myopic protectionism / myopic policies",
+      meaning: "Short-sighted; lacking long-term foresight or realistic planning.",
+      naturalCollocation: "a myopic choice / myopic romantic impulse",
       organicExample:
-        "Restricting supermarket imports to preserve obsolete domestic monopolies represents a myopic approach that penalizes low-income consumers.",
-      mechanicalPitfall: "Avoid using it casually as a synonym for 'blind' or 'bad'.",
-      examinerInsight: "Demonstrates Band 9 stylistic sophistication when characterizing short-sighted economic views."
-    },
-    {
-      word: "epitome",
-      pos: "noun",
-      meaning: "A person or thing that is a perfect example of a particular quality or type.",
-      naturalCollocation: "the epitome of consumer welfare / the epitome of globalization",
-      organicExample:
-        "The ability to purchase fresh Mediterranean citrus during a Scandinavian freeze stands as the epitome of globalized consumer welfare.",
-      mechanicalPitfall: "Do not say 'an epitome of everything'. Use with a definitive concept.",
-      examinerInsight: "Elevates Task Achievement by framing everyday phenomena within broader economic concepts."
-    },
-    {
-      word: "counter-seasonal",
-      pos: "adjective",
-      meaning: "Relating to agricultural produce harvested in one hemisphere during the winter of the other.",
-      naturalCollocation: "counter-seasonal produce / counter-seasonal availability",
-      organicExample:
-        "Counter-seasonal imports ensure that households maintain uninterrupted access to vital vitamins throughout midwinter.",
-      mechanicalPitfall: "Do not use 'out of season' when you can use precise terminology.",
-      examinerInsight: "Specific, accurate academic jargon directly tailored to the food trade prompt."
-    },
-    {
-      word: "food miles",
-      pos: "noun",
-      meaning: "The distance food is transported from the producer to the consumer.",
-      naturalCollocation: "minimize food miles / excessive food miles",
-      organicExample:
-        "The primary ecological critique centers on excessive food miles and the associated aviation fuel burn.",
-      mechanicalPitfall: "Do not say 'food distance travel'. 'Food miles' is the established technical phrase.",
-      examinerInsight: "Essential environmental economics term for Task 2 essays on imported food."
-    },
-    {
-      word: "complacency",
-      pos: "noun",
-      meaning: "A feeling of uncritical satisfaction with oneself or one's achievements.",
-      naturalCollocation: "monopolistic complacency / breeding complacency",
-      organicExample:
-        "Sheltered domestic food markets inevitably breed complacency, resulting in inflated prices and sluggish innovation.",
-      mechanicalPitfall: "Ensure correct noun form rather than confusing with 'complaisance'.",
-      examinerInsight: "Exemplifies nuanced economic vocabulary that examiners look for at Band 8.5–9."
+        "Rushing into marriage in one's early twenties often represents a myopic decision that overlooks long-term financial reality.",
+      mechanicalPitfall: "Avoid using it casually as a synonym for 'blind'. Use for lack of foresight.",
+      examinerInsight: "Exemplifies high-level academic critique of impulsive youthful choices."
     },
     {
       word: "catalyze",
       pos: "verb",
-      meaning: "Cause or accelerate a process or action without being consumed.",
-      naturalCollocation: "catalyze innovation / catalyze modernization",
+      meaning: "To accelerate or initiate a transformative process.",
+      naturalCollocation: "catalyze career advancement / catalyze demographic shift",
       organicExample:
-        "International supermarket competition has served to catalyze innovation in domestic greenhouse automation.",
-      mechanicalPitfall: "Avoid using 'cause' repeatedly; use 'catalyze' when an external force speeds up transformation.",
-      examinerInsight: "Demonstrates powerful precision in explaining causal relationships."
+        "Delaying family commitments can catalyze career advancement for ambitious female professionals.",
+      mechanicalPitfall: "Do not use 'cause' repeatedly; use 'catalyze' when an external condition speeds up success.",
+      examinerInsight: "Demonstrates sophisticated understanding of causal dynamics."
+    },
+    {
+      word: "dichotomy",
+      pos: "noun",
+      meaning: "A division or contrast between two things that are represented as being opposed or entirely different.",
+      naturalCollocation: "the dichotomy between biological limits and social aspirations",
+      organicExample:
+        "This trend illustrates the sharp dichotomy between biological reproductive limits and modern socio-economic aspirations.",
+      mechanicalPitfall: "Ensure there are two clear contrasting elements before using 'dichotomy'.",
+      examinerInsight: "Frames the prompt within a sophisticated academic conceptual model."
+    },
+    {
+      word: "subsume",
+      pos: "verb",
+      meaning: "To include, absorb, or incorporate within something larger or more comprehensive.",
+      naturalCollocation: "be subsumed by domestic duties",
+      organicExample:
+        "Young adults in their twenties fear having their personal ambitions completely subsumed by domestic duties.",
+      mechanicalPitfall: "Ensure correct passive or active usage with preposition 'by' or 'under'.",
+      examinerInsight: "Band 9 precision for describing how individual identity can be overwhelmed by early family burdens."
     }
   ]
 };

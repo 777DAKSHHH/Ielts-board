@@ -67,12 +67,12 @@ export const Step9SubmissionT2: React.FC = () => (
               <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#dbeafe", color: "#1e40af", padding: "2px 7px", borderRadius: "5px" }}>
                 ADVANTAGE 1
               </span>
-              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Year-Round Fresh Produce</strong>
+              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Financial Security &amp; Wealth</strong>
             </div>
             <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
-              • <strong>Main Reason:</strong> Year-round fresh food security &amp; winter freeze bypass<br />
-              • <strong>Support:</strong> Eliminating seasonal nutrient deficits for families<br />
-              • <strong>Example:</strong> Northern cities buying fresh berries and citrus in January
+              • <strong>Main Reason:</strong> Robust financial foundation &amp; asset accumulation<br />
+              • <strong>Support:</strong> Overcoming early-career debt and precarious renting before dependents<br />
+              • <strong>Example:</strong> Dual-income 30s couples securing fixed mortgages &amp; emergency savings
             </div>
           </div>
 
@@ -92,12 +92,12 @@ export const Step9SubmissionT2: React.FC = () => (
               <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "2px 7px", borderRadius: "5px" }}>
                 ADVANTAGE 2
               </span>
-              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Affordable Groceries &amp; Cultural Variety</strong>
+              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Career Stability &amp; Emotional Maturity</strong>
             </div>
             <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
-              • <strong>Main Reason:</strong> Natural climate efficiency lowers family grocery bills<br />
-              • <strong>Support:</strong> Bypasses costly heated greenhouses + caters to diverse diets<br />
-              • <strong>Example:</strong> Cheap tropical staples (bananas, rice) &amp; international spices
+              • <strong>Main Reason:</strong> Career progression &amp; psychological equanimity<br />
+              • <strong>Support:</strong> Senior workplace footing allows paid parental leaves; maturity reduces divorce<br />
+              • <strong>Example:</strong> Higher marital endurance and lower divorce rates among mature couples
             </div>
           </div>
 
@@ -117,12 +117,12 @@ export const Step9SubmissionT2: React.FC = () => (
               <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#fee2e2", color: "#b91c1c", padding: "2px 7px", borderRadius: "5px" }}>
                 COUNTERPOINT
               </span>
-              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Local Farmer Strain &amp; Food Miles</strong>
+              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Fertility Decline &amp; Demographic Aging</strong>
             </div>
             <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
-              • <strong>1 Main Disadvantage:</strong> Intense price pressure on small local farms &amp; transit emissions<br />
-              • <strong>Support:</strong> Cheap overseas imports undercut family farms + planes burn fuel<br />
-              • <strong>Example:</strong> Local dairy farms struggling + high emissions from air cargo
+              • <strong>1 Main Disadvantage:</strong> Biological conception limits &amp; national aging populations<br />
+              • <strong>Support:</strong> Fertility drops precipitously post-35 + economic workforce contraction<br />
+              • <strong>Example:</strong> Increased reliance on costly IVF treatments and wider generational gaps
             </div>
           </div>
         </div>
@@ -157,19 +157,19 @@ export const Step9SubmissionT2: React.FC = () => (
           {[
             {
               step: "1. Single Core Reason",
-              desc: "Anchor each body paragraph around 1 strong, well-defined reason. Never pile up scattered shallow points."
+              desc: "Anchor each body paragraph around 1 strong, well-defined reason (e.g. wealth accumulation, psychological maturity, or reproductive risks). Never pile up scattered shallow points."
             },
             {
               step: "2. Causal Explanation",
-              desc: "Articulate the precise 'how' and 'why' mechanisms (e.g. how winter frost causes localized deficits, or how aviation fuel burns carbon)."
+              desc: "Articulate the precise 'how' and 'why' mechanisms (e.g. how early-twenties salaries are strained by student debt, or how reproductive senescence accelerates after 35)."
             },
             {
               step: "3. Concrete Real-World Example",
-              desc: "Provide verifiable empirical evidence (Fairtrade cooperatives, Mexican avocados in Europe, South American berry air cargo)."
+              desc: "Provide verifiable empirical evidence (dual-income homeownership metrics, OECD divorce rate statistics, or reproductive clinic healthcare data)."
             },
             {
               step: "4. Outweighing Synthesis",
-              desc: "Demonstrate in Body 3 and the Conclusion that environmental drawbacks are solvable through green logistics, whereas nutritional benefits are irreplaceable."
+              desc: "Demonstrate in Body 3 and the Conclusion that reproductive hurdles can be mitigated via modern medicine, whereas lifelong emotional and economic stability are irreplaceable."
             }
           ].map((item, i) => (
             <div
@@ -232,7 +232,7 @@ export const Step9SubmissionT2: React.FC = () => (
               PRECISION VOCABULARY:
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-              {["myopic", "epitome", "counter-seasonal", "food miles", "complacency", "catalyze", "monopolistic", "sovereignty"].map((w) => (
+              {["equanimity", "precipitous", "procreation", "matrimony", "subsume", "catalyze", "demographic", "solvency"].map((w) => (
                 <span
                   key={w}
                   style={{
@@ -264,10 +264,10 @@ export const Step9SubmissionT2: React.FC = () => (
           >
             <strong style={{ color: "var(--slate-900)" }}>Discourse Linkers:</strong>
             <br />
-            • <em>Advantage 1 opener:</em> “Foremost among the advantages is that importing goods guarantees...”<br />
-            • <em>Advantage 2 opener:</em> “Equally important is that imported goods reduce household grocery costs...”<br />
-            • <em>Counterpoint opener:</em> “On the other hand, critics rightly point out that cheap foreign goods...”<br />
-            • <em>Conclusion opener:</em> “In conclusion, although importing supermarket goods increases food miles...”
+            • <em>Advantage 1 opener:</em> “Foremost among the advantages is that delaying marriage until one’s thirties provides financial security...”<br />
+            • <em>Advantage 2 opener:</em> “Equally significant is that advanced age fosters professional consolidation and psychological maturity...”<br />
+            • <em>Counterpoint opener:</em> “On the other hand, a prominent drawback is the physiological decline in natural reproductive capacity...”<br />
+            • <em>Conclusion opener:</em> “In conclusion, although postponing family planning introduces undeniable biological hurdles...”
           </div>
         </div>
       </div>

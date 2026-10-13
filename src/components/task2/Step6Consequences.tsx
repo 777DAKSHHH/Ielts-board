@@ -12,15 +12,15 @@ export const Step6ConsequencesT2: React.FC = () => {
   const body1 = TASK2_DATA.bodyParagraphs?.[0];
   const reasonOptions = body1?.alternativeReasons || [];
   const currentReason = reasonOptions[selectedReasonIdx] || {
-    badge: "Reason 1 • Fresh Food All Year",
-    title: "Year-Round Fresh Produce in Every Season",
-    mainReason: body1?.mainReason || "",
-    supportingReasons: body1?.supportingReasons || "",
-    example: body1?.example || "",
+    badge: "Reason 1 • Financial Security",
+    title: "Financial Security & Wealth Foundation",
+    mainReason: body1?.mainReason || "Delaying marriage and parenthood until one's thirties enables individuals to establish robust financial resilience before facing the substantial economic demands of family life.",
+    supportingReasons: body1?.supportingReasons || "Young professionals in their twenties often carry student loans, entry-level salaries, and high rental costs. Deferring family life allows them to build emergency savings and secure stable housing.",
+    example: body1?.example || "For example, dual-income couples in their thirties are far more likely to afford homeownership down payments and childcare fees without falling into severe debt.",
     modelParagraph:
-      "Foremost among the advantages is that importing goods guarantees consumers year-round access to fresh, healthy produce, overcoming harsh seasonal limitations. In colder countries, local farming shuts down almost entirely during the winter months, meaning domestic farms cannot produce fresh crops. By sourcing food from warmer countries in the southern hemisphere, supermarkets ensure that families can purchase essential fruits, vegetables, and vitamins throughout all twelve months. For instance, consumers in chilly northern European cities can regularly buy fresh strawberries, avocados, and citrus in the middle of January at stable prices.",
+      "Foremost among the advantages is that delaying marriage and parenthood until one's thirties allows individuals to establish robust financial security before taking on the economic burdens of family life. In today's economy, young adults in their twenties frequently face substantial student debt, entry-level earnings, and exorbitant rental markets. By deferring domestic commitments, both partners can consolidate their careers, build substantial savings, and invest in permanent housing. For example, research indicates that couples who marry after age thirty are considerably more likely to afford mortgage down payments and high childcare expenses without succumbing to crippling financial anxiety.",
     examinerNotes:
-      "Relatable & practical. Explains the seasonal winter gap in cold nations and shows how supermarket imports solve daily nutritional needs."
+      "Relatable & practical. Explains the economic pressures of early adulthood and demonstrates how financial solvency builds resilient households."
   };
 
   return (

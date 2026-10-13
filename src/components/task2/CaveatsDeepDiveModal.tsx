@@ -210,7 +210,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       The "Shopping List" Mistake (Band 6.0 Trap)
                     </h5>
                     <p style={{ fontSize: "0.9rem", color: "#78350f", margin: 0, lineHeight: 1.55 }}>
-                      Band 6 candidates dump 3 or 4 rushed points in one paragraph without developing any of them (*"Supermarket imports are good because we get bananas, and chocolate, and farmers get money, but ships pollute"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
+                      Band 6 candidates dump 3 or 4 rushed points in one paragraph without developing any of them (*"Getting married in your 30s is good because you have money, and a car, and you are mature, but having babies is hard"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
                     </p>
                   </div>
                 </div>
@@ -231,7 +231,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      Focusing on <strong>1 main reason per body paragraph</strong> in the format <code>[ 1 Main Reason + Supporting Reasons + Example ]</code> allows students to unpack the causal chain thoroughly (e.g. why frost limits winter yields, how opposite-hemisphere imports prevent scurvy and localized inflation).
+                      Focusing on <strong>1 main reason per body paragraph</strong> in the format <code>[ 1 Main Reason + Supporting Reasons + Example ]</code> allows students to unpack the causal chain thoroughly (e.g. why entry-level earnings and student debt strain young families, and how career consolidation builds durable stability).
                     </p>
                   </div>
 
@@ -250,7 +250,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       </h5>
                     </div>
                     <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      Effective essays substantiate with concrete precedents. Citing <em>Fairtrade farming cooperatives in Colombia and Ghana</em> or <em>South American winter berry air freight</em> demonstrates authentic academic authority and directly satisfies Task Achievement.
+                      Effective essays substantiate with concrete precedents. Citing <em>dual-income mortgage eligibility, OECD divorce longevity statistics, or reproductive clinic healthcare data</em> demonstrates authentic academic authority and directly satisfies Task Achievement.
                     </p>
                   </div>
                 </div>
@@ -275,21 +275,21 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     step: "Tier 01",
                     badge: "Topic Sentence",
                     title: "State 1 Clear Primary Reason",
-                    say: "“Foremost among the advantages is that stocking imported merchandise affords consumers unprecedented dietary diversity and counter-seasonal nutritional resilience.”",
+                    say: "“Foremost among the advantages is that delaying marriage and parenthood until one’s thirties allows individuals to establish robust financial resilience before taking on familial obligations.”",
                     takeaway: "Direct, unequivocal claim answering the question."
                   },
                   {
                     step: "Tier 02",
                     badge: "Supporting Causal Engine",
                     title: "Unpack WHY and HOW with Supporting Reasons",
-                    say: "“In colder climates, domestic harvests are paralyzed during winter months. International supply chains transcend these natural limits, ensuring families have continuous access to fresh produce and eliminating winter vitamin deficiencies.”",
-                    takeaway: "Explains the underlying economic, climatic, and biological mechanics."
+                    say: "“Young adults in their twenties frequently face volatile rental markets and student debts. Remaining unencumbered affords them time to attain career seniority, accumulate emergency capital, and secure stable housing.”",
+                    takeaway: "Explains the underlying economic, professional, and lifestyle mechanics."
                   },
                   {
                     step: "Tier 03",
                     badge: "Concrete Real-World Anchor",
                     title: "Substantiate with Specific Evidence",
-                    say: "“For instance, European consumers routinely purchase Spanish citrus and Mexican avocados in midwinter at stable, affordable price points without suffering seasonal inflation.”",
+                    say: "“For example, dual-income couples in major metropolitan regions who marry in their early thirties are far more capable of purchasing fixed-rate homes and funding early childhood education without incurring debt.”",
                     takeaway: "Pins the theoretical argument to an undeniable, verified real-world reality."
                   }
                 ].map((item) => (
@@ -329,22 +329,22 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    topic: "Consumer Variety & Nutrition",
-                    band6: "Supermarkets have food from everywhere so people can buy different fruits and vegetables every day.",
-                    band9: "Supermarket imports confer unprecedented dietary diversification, liberating households from localized climatic ceilings to sustain optimal nutritional intake throughout winter.",
-                    why: "Replaces simplistic vocabulary with precise academic collocations: 'unprecedented dietary diversification', 'localized climatic ceilings'."
+                    topic: "Financial & Household Stability",
+                    band6: "People in their 30s have better jobs and more money so they can buy a house and feed their babies easily.",
+                    band9: "Postponing domestic commitments until one’s fourth decade ensures couples have attained professional seniority and accumulated capital reserves, thereby shielding the burgeoning household from chronic financial precarity.",
+                    why: "Replaces colloquial expressions with high-register academic collocations: 'attained professional seniority', 'accumulated capital reserves', 'chronic financial precarity'."
                   },
                   {
-                    topic: "Global Trade Cooperation",
-                    band6: "Selling food makes poor countries get money and become richer.",
-                    band9: "Procurement contracts with developing farming cooperatives inject essential foreign capital into rural agrarian economies, fostering mutually advantageous bilateral trade linkages.",
-                    why: "Connects commercial food transactions to institutional macroeconomic development."
+                    topic: "Emotional Maturity & Marital Durability",
+                    band6: "Older people understand each other more and do not fight or get divorced as quickly as young people.",
+                    band9: "Greater psychological maturity and emotional equanimity acquired through twenties life experience substantially reduce domestic friction and correlate with precipitously lower rates of marital breakdown.",
+                    why: "Frames relationship stability through mature psychological dynamics: 'emotional equanimity', 'marital breakdown'."
                   },
                   {
-                    topic: "Environmental Food Miles (Counterpoint)",
-                    band6: "Flying food in planes is bad for nature because of pollution.",
-                    band9: "The intercontinental aviation transit of perishable goods generates excessive 'food miles' and substantial carbon emissions, imposing severe ecological externalities.",
-                    why: "Deploys precise environmental terminology ('food miles', 'aviation transit', 'ecological externalities')."
+                    topic: "Biological Fertility Limits (Counterpoint)",
+                    band6: "Having babies when you are older is dangerous and women cannot get pregnant easily.",
+                    band9: "Advanced parental age brings physiological challenges, as natural fecundity declines sharply past the mid-thirties, increasing reliance on invasive reproductive interventions and elevating maternal health risks.",
+                    why: "Deploys precise biomedical and demographic terminology: 'natural fecundity', 'reproductive interventions', 'maternal health risks'."
                   }
                 ].map((item, index) => (
                   <div
@@ -389,23 +389,23 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                 {[
                   {
                     title: "Outweighing Thesis Formula (Introduction)",
-                    formula: "“Although [concession: transport carbon emissions and pressure on domestic farmers] remain legitimate concerns, I firmly contend that [core advantages: counter-seasonal nutrition and mutual global trade] decisively outweigh these drawbacks.”"
+                    formula: "“Although [concession: biological fertility constraints and demographic aging] present undeniable hurdles, I firmly contend that [core advantages: accumulated financial stability and psychological maturity] render this trend predominantly positive.”"
                   },
                   {
                     title: "Body 1 Opener Formula (Strong Advantage 1)",
-                    formula: "“Foremost among the compelling merits of international food retail is the unprecedented [dietary diversity / counter-seasonal nutritional security] that global supply networks afford modern households.”"
+                    formula: "“Foremost among the compelling merits of deferring family formation is the unprecedented [financial resilience / economic security] that established careers afford prospective parents.”"
                   },
                   {
                     title: "Body 2 Opener Formula (Strong Advantage 2)",
-                    formula: "“Beyond consumer convenience, cross-border agricultural trade serves as an indispensable macroeconomic catalyst by [enriching developing agrarian exporters] and [compelling domestic producers to modernize].”"
+                    formula: "“Beyond financial solvency, mature adulthood fosters [heightened emotional equanimity] and [workplace seniority], creating an intrinsically more stable environment for raising children.”"
                   },
                   {
                     title: "Body 3 Opener Formula (Non-Opinion Counterpoint)",
-                    formula: "“On the other hand, detractors cogently point to [the environmental toll of extended food miles] and [the commercial precarity imposed on local smallholders].”"
+                    formula: "“On the other hand, detractors cogently point to [the physiological decline in reproductive capacity] and [the macroeconomic pressures of an aging societal demographic].”"
                   },
                   {
                     title: "Decisive Verdict Formula (Conclusion)",
-                    formula: "“In conclusion, while the proliferation of imported food generates transport emissions and challenges local growers, the overriding benefits of universal nutritional resilience and international economic cooperation render this development predominantly advantageous.”"
+                    formula: "“In conclusion, while starting families in one’s thirties entails genuine biological and demographic complexities, the enduring advantages of parental maturity and financial security make this development overwhelmingly beneficial.”"
                   }
                 ].map((item, index) => (
                   <div

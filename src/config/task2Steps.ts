@@ -6,35 +6,35 @@ export const TASK2_STEPS: StepDefinition[] = [
     stepNumber: 1,
     title: "Audio Briefing & Guess",
     badge: "Step 01 / 09 • Cryptic Audio Guess",
-    description: "Listen First: Guess the Global Food Trade Topic"
+    description: "Listen First: Guess the Demographic & Social Trend"
   },
   {
     id: "task2-step2",
     stepNumber: 2,
     title: "Task 2 Question & 5-Para Format",
     badge: "Step 02 / 09 • Task Reveal & 5-Para Format (3 Body Paras)",
-    description: "Deconstruct the 'Advantages Outweigh Disadvantages' Prompt & Architecture"
+    description: "Deconstruct the 'Positive or Negative Development' Prompt & Architecture"
   },
   {
     id: "task2-step3",
     stepNumber: 3,
     title: "Guided Brainstorm Challenge",
     badge: "Step 03 / 09 • Guided Brainstorm Challenge",
-    description: "Think First. Reveal Later. (Weighing Advantages vs Disadvantages)"
+    description: "Think First. Reveal Later. (Evaluating Positives vs Negatives)"
   },
   {
     id: "task2-step4",
     stepNumber: 4,
     title: "Academic Power Vocabulary",
     badge: "Step 04 / 09 • Lexical Resource",
-    description: "Agrarian Economics, Food Miles & Global Supply Chains"
+    description: "Demographic Shifts, Financial Solvency & Emotional Equanimity"
   },
   {
     id: "task2-step5",
     stepNumber: 5,
     title: "Sample Introduction & Thesis",
     badge: "Step 05 / 09 • Sample Introduction & Thesis",
-    description: "Paraphrase the Prompt + State Clear Outweighing Opinion"
+    description: "Paraphrase the Prompt + State Clear Positive Stance"
   },
   {
     id: "task2-step6",
@@ -62,7 +62,7 @@ export const TASK2_STEPS: StepDefinition[] = [
     stepNumber: 9,
     title: "Final Essay Submission",
     badge: "Step 09 / 09 • Final Essay Submission",
-    description: "Write Your 5-Paragraph Outweighed Essay Response"
+    description: "Write Your 5-Paragraph Band 9 Essay Response"
   }
 ];
 

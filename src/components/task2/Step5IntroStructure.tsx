@@ -10,7 +10,7 @@ export const Step5IntroStructureT2: React.FC = () => (
       </span>
       <h2 className="stage-title">Sample Introduction &amp; Decisive Opinion Thesis</h2>
       <p className="stage-subtitle">
-        Ideal IELTS Outweighing Introduction: Paraphrase the imported goods prompt in Sentence 1 + deliver a clear, assertive opinion thesis stating that advantages outweigh disadvantages in Sentence 2.
+        Ideal IELTS Positive/Negative Development Introduction: Paraphrase the trend of postponing marriage and childbearing in Sentence 1 + deliver a decisive opinion thesis arguing that the development is overwhelmingly positive in Sentence 2.
       </p>
     </div>
     <div className="stage-grid-2col">
@@ -41,24 +41,24 @@ export const Step5IntroStructureT2: React.FC = () => (
           {TASK2_DATA.sampleIntro}
         </div>
         <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
-          <Clock size={15} /> 43 words • 2 sentences • Rapid exam timing (~2.5-3 mins)
+          <Clock size={15} /> 58 words • 2 sentences • Rapid exam timing (~2.5-3 mins)
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="1. Crisp Prompt Paraphrase (Sentence 1)"
-          text="Restate the prompt without mechanical fluff: note that supermarket shelves are increasingly stocked with international imports rather than regional domestic produce."
+          text="Restate the prompt naturally without mechanical copying: note the pervasive modern trend where young adults defer matrimony and parenthood until their fourth decade."
         />
         <StructureCard
           icon={<Award size={18} />}
           title="2. Decisive Opinion Thesis (Sentence 2)"
-          text="Directly answer the question: acknowledge that although transport carbon emissions and local farmer strain exist, the benefits—namely guaranteed year-round fresh produce, lower consumer grocery costs, and greater cultural food variety—decisively outweigh the drawbacks."
+          text="Directly answer the prompt: acknowledge that while biological fertility windows and demographic aging pose valid concerns, the advantages—namely robust financial security, career consolidation, and emotional maturity—make this an overwhelmingly positive shift."
         />
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="3. Word Economy & Roadmapping"
-          text="Keep the introduction concise (~40–45 words across 2 sentences). A punchy, focused opening secures Band 9 Task Achievement by stating a clear position from the outset, setting up your body paragraphs."
+          text="Keep the introduction concise (~50–60 words across 2 sentences). A punchy opening establishes a crystal-clear position from the outset, unlocking Band 9 Task Achievement before launching into your body paragraphs."
         />
       </div>
     </div>

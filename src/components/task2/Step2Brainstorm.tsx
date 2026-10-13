@@ -25,31 +25,31 @@ const ESSAY_FORMAT_STEPS = [
     label: "Introduction",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    instruction: "Paraphrase the prompt + state clear opinion (that advantages decisively outweigh disadvantages)"
+    instruction: "Paraphrase the prompt + state clear opinion (that delaying marriage and children into the 30s is predominantly positive)"
   },
   {
     label: "Body Para 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    instruction: "Strong side opinion (Advantage 1): 1 main reason + supporting reasons + example [ Year-Round Fresh Produce in All Seasons ]"
+    instruction: "Strong side opinion (Positive 1): 1 main reason + supporting reasons + example [ Career Consolidation & Financial Security ]"
   },
   {
     label: "Body Para 2",
     badgeBg: "rgba(16, 185, 129, 0.12)",
     badgeColor: "#047857",
-    instruction: "Strong side opinion (Advantage 2): 1 main reason + supporting reasons + example [ Lower Grocery Prices & Cultural Food Variety ]"
+    instruction: "Strong side opinion (Positive 2): 1 main reason + supporting reasons + example [ Emotional Maturity, Lower Divorce Rates & Calm Parenting ]"
   },
   {
     label: "Body Para 3",
     badgeBg: "rgba(220, 38, 38, 0.12)",
     badgeColor: "#dc2626",
-    instruction: "Non-opinion side (Counter/Disadvantage): 1 main reason + supporting reasons + example [ Threat to Local Farmers & Food Miles ]"
+    instruction: "Non-opinion side (Counterpoint/Drawback): 1 main reason + supporting reasons + example [ Biological Fertility Decline & Medical Risks ]"
   },
   {
     label: "Conclusion",
     badgeBg: "rgba(100, 116, 139, 0.15)",
     badgeColor: "#334155",
-    instruction: "Restate opinion + synthesize the balance (how benefits decisively outweigh the manageable drawbacks)"
+    instruction: "Restate opinion + synthesize the balance (how socio-economic benefits overwhelmingly prevail over biological caveats)"
   }
 ];
 
@@ -319,10 +319,10 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <Activity size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Do Advantages Outweigh Disadvantages?</h5>
+              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Positive or Negative Development?</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              The essay question requires an explicit comparative judgment: <em>“Do the advantages of this development outweigh the disadvantages?”</em> You must take a clear side from the introduction, dedicate two body paragraphs to your strong-opinion side, and allocate one body paragraph to the non-opinion counter-perspective before synthesizing.
+              The prompt explicitly asks: <em>“Is this a positive or negative development?”</em> In IELTS Task 2, taking a decisive, nuanced stance (arguing that delaying marriage and childbirth into one’s 30s is predominantly positive) yields higher Task Achievement than sitting on the fence. Dedicate two body paragraphs to your primary positive reasons, and allocate one body paragraph to the counterbalancing negative implications before synthesizing.
             </p>
           </div>
 
@@ -348,13 +348,13 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>The 3-Body-Paragraph Architecture</h5>
             </div>
             <div style={{ fontSize: "0.9rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              • <strong>Body Para 1 (Strong Side Advantage 1):</strong> Focus on <em>Unprecedented Consumer Diversity &amp; Counter-Seasonal Food Security</em> [1 main reason + supporting reasons + example].
+              • <strong>Body Para 1 (Advantage 1):</strong> Focus on <em>Financial Security &amp; Wealth Foundation</em> [1 main reason + supporting causal links + concrete example].
               <br />
-              • <strong>Body Para 2 (Strong Side Advantage 2):</strong> Focus on <em>Reciprocal International Trade &amp; Domestic Producer Modernization</em> [1 main reason + supporting reasons + example].
+              • <strong>Body Para 2 (Advantage 2):</strong> Focus on <em>Career Consolidation &amp; Emotional Maturity</em> [1 main reason + supporting causal links + concrete example].
               <br />
-              • <strong>Body Para 3 (Non-Opinion Counterpoint):</strong> Focus on <em>Ecological Food Miles &amp; Pressure on Traditional Smallholders</em> [1 main reason + supporting reasons + example].
+              • <strong>Body Para 3 (Counterpoint Disadvantage):</strong> Focus on <em>Biological Fertility Declines &amp; Demographic Aging Pressures</em> [1 main reason + supporting causal links + concrete example].
               <br />
-              • <strong>Conclusion:</strong> Restate your stance, demonstrating why the nutritional and economic benefits decidedly eclipse the manageable environmental and farming drawbacks.
+              • <strong>Conclusion:</strong> Restate your stance, highlighting why psychological stability and economic resilience decisively outweigh the manageable biological and social hurdles.
             </div>
           </div>
 
@@ -376,11 +376,11 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 marginBottom: "8px"
               }}
             >
-              <ShoppingBag size={18} />
+              <Sparkles size={18} />
               <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Golden Paragraph Rule: 1 Main Reason + Support + Example</h5>
             </div>
             <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              Avoid chaotic lists of disjointed points. Every single body paragraph must follow the rigorous rule: <strong>1 central, well-articulated reason</strong>, followed by <strong>substantiated causal explanations</strong>, and anchored by a <strong>concrete real-world example</strong> (e.g., Fairtrade cooperatives in Colombia, air-freighted South American berries, or Spanish greenhouse supply lines).
+              Avoid chaotic laundry lists of disjointed claims. Every single body paragraph must follow the rigorous formula: <strong>1 central, well-articulated reason</strong>, supported by <strong>clear causal explanations</strong> (why and how), and anchored by a <strong>concrete, relatable example</strong> (e.g., dual-income mortgage affordability, career promotions prior to maternity leave, or OECD data showing reduced divorce rates among mature couples).
             </p>
           </div>
         </div>

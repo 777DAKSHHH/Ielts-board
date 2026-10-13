@@ -9,25 +9,25 @@ const CONCLUSION_VARIATIONS = [
     id: "balanced",
     title: "Style 1: Standard Balanced Synthesis",
     badge: "Band 8.5–9 • Recommended",
-    summary: "Acknowledges the real drawbacks and proves the broad societal benefits are far more significant.",
-    text: "In conclusion, although the proliferation of imported groceries increases transport carbon emissions and pressures small-scale domestic farmers, the societal advantages are far more substantial. Ensuring that millions of citizens enjoy year-round fresh nutrition, lower grocery bills, and diverse culinary ingredients provides widespread daily benefits that decisively outweigh the localized disadvantages.",
-    breakdown: "Sentence 1: Concession to food miles & local farmers | Sentence 2: Synthesis of nutrition, affordability, and multicultural variety as outweighing factors."
+    summary: "Acknowledges the biological & demographic drawbacks and proves individual & familial resilience is far superior.",
+    text: "In conclusion, although delaying marriage and childbearing until one's thirties introduces legitimate biological hurdles and demographic challenges, the societal and individual benefits are far more significant. The economic stability, homeownership readiness, and emotional maturity achieved by mature parents create enduring foundations that decisively outweigh these concerns.",
+    breakdown: "Sentence 1: Concession to biological fertility limits & demographic aging | Sentence 2: Synthesis of financial solvency, career footing, and psychological maturity as outweighing factors."
   },
   {
     id: "solution-oriented",
     title: "Style 2: Solution-Oriented Outweighed Model",
     badge: "Band 9 • Advanced Reasoning",
-    summary: "Shows why the drawbacks are manageable through policy/technology, whereas advantages are vital.",
-    text: "To conclude, while the environmental toll of food miles and commercial competition for domestic growers are undeniable drawbacks, they can be actively mitigated through greener maritime logistics and government farm subsidies. Consequently, the irreplaceable benefits of guaranteed counter-seasonal food security and affordable everyday grocery prices mean that this retail evolution is predominantly advantageous.",
-    breakdown: "Sentence 1: Explains that drawbacks can be managed through green transport and subsidies | Sentence 2: Concludes that food security and affordability are irreplaceable."
+    summary: "Shows why medical advancements and workplace policies mitigate the drawbacks, whereas emotional/financial stability is irreplaceable.",
+    text: "To conclude, while reduced biological fertility and national demographic shifts are notable drawbacks, they can be substantially mitigated through modern healthcare advancements and progressive family-support policies. Consequently, the irreplaceable advantages of emotional preparedness and dual-career financial resilience render this societal evolution predominantly beneficial.",
+    breakdown: "Sentence 1: Explains that fertility risks and workforce gaps can be managed via reproductive medicine and policy | Sentence 2: Concludes that emotional and economic preparedness are irreplaceable."
   },
   {
     id: "rapid-exam",
     title: "Style 3: Rapid 2-Sentence Exam Model",
-    badge: "Rapid Timing • Under 40 Words",
-    summary: "Ultra-compact, high-speed conclusion ideal when running out of time in the real exam.",
-    text: "In conclusion, despite the transport emissions and commercial pressure on local farmers caused by imported products, I firmly believe the advantages are far greater. Continuous access to diverse, affordable nutrition across all seasons makes this retail trend immensely beneficial for the general public.",
-    breakdown: "Sentence 1: Rapid concession + clear opinion stance | Sentence 2: High-impact synthesis of nutrition and affordability."
+    badge: "Rapid Timing • Under 45 Words",
+    summary: "Ultra-compact, high-speed conclusion ideal when running short on time in the real exam.",
+    text: "In conclusion, despite the biological fertility risks and wider demographic challenges associated with starting families later, I am convinced this trend is overwhelmingly positive. The financial stability and psychological maturity gained in one's thirties cultivate demonstrably healthier and more resilient family units.",
+    breakdown: "Sentence 1: Rapid concession to fertility risks + clear positive stance | Sentence 2: High-impact synthesis of financial solvency and emotional readiness."
   }
 ];
 
@@ -88,7 +88,7 @@ export const Step8ConclusionT2: React.FC = () => {
 
             <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "12px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
               <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                <Clock size={15} /> 44 words • 2 sentences
+                <Clock size={15} /> 57 words • 2 sentences
               </span>
               <span>•</span>
               <span>Rapid exam timing (~2.5 minutes)</span>
@@ -117,13 +117,13 @@ export const Step8ConclusionT2: React.FC = () => {
 
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               <div style={{ background: "#fff1f2", border: "1px solid #fecdd3", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#9f1239" }}>
-                <strong>Step 1: Measured Concession Clause:</strong> Acknowledge the disadvantages without lingering (`"In conclusion, although imported products increase transport emissions and pressure local farmers..."`)
+                <strong>Step 1: Measured Concession Clause:</strong> Acknowledge the counterpoint without lingering (`"In conclusion, although postponing marriage and childbirth introduces undeniable biological constraints and contributes to demographic aging..."`)
               </div>
               <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#1e40af" }}>
-                <strong>Step 2: Assertive Outweighing Opinion:</strong> Confirm that benefits are far superior (`"...I firmly believe the advantages are far more compelling."`)
+                <strong>Step 2: Assertive Outweighing Opinion:</strong> Confirm that the development is predominantly positive (`"...I firmly believe that this is a predominantly positive development."`)
               </div>
               <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#166534" }}>
-                <strong>Step 3: Synthesis &amp; Broad Impact:</strong> Summarize why (year-round nutrition &amp; family affordability benefit millions of citizens daily).
+                <strong>Step 3: Synthesis &amp; Broad Impact:</strong> Summarize why (elevated financial resilience, advanced career footing, and emotional maturity cultivate far more resilient families).
               </div>
             </div>
           </div>

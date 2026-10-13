@@ -87,6 +87,10 @@ export interface Task1Data {
   title: string;
   questionText: string;
   imageFileName: string;
+  hdImageFileName?: string;
+  normalHdImageFileName?: string;
+  elNinoHdImageFileName?: string;
+  scanImageFileName?: string;
   audioUrl: string;
   audioClueText: string;
   sampleIntro: string;

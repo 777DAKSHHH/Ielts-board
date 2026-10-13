@@ -10,15 +10,15 @@ export const Step7EvaluationT2: React.FC = () => {
   const body2 = TASK2_DATA.bodyParagraphs?.[1];
   const reasonOptions = body2?.alternativeReasons || [];
   const currentReason = reasonOptions[selectedReasonIdx] || {
-    badge: "Reason 1 • Threat to Local Farmers",
-    title: "Severe Financial Strain & Job Losses for Local Farmers",
-    mainReason: body2?.mainReason || "",
-    supportingReasons: body2?.supportingReasons || "",
-    example: body2?.example || "",
+    badge: "Reason 1 • Biological Fertility Risks",
+    title: "Biological Fertility Decline & Medical Complications",
+    mainReason: body2?.mainReason || "Delaying pregnancy into one's thirties is biologically associated with steep declines in natural fertility and heightened risks of obstetric complications.",
+    supportingReasons: body2?.supportingReasons || "Human reproductive biology becomes progressively more constrained after age 35, precipitating higher occurrences of gestational diabetes, chromosomal abnormalities, and conception difficulties.",
+    example: body2?.example || "For example, clinical statistics show that women attempting first conception after 35 face a 30% higher likelihood of requiring invasive IVF treatments or caesarean deliveries.",
     modelParagraph:
-      "On the other hand, critics rightly point out that cheap foreign goods place immense commercial pressure on local farmers. Small family-owned farms face higher labor and land costs and cannot match the rock-bottom prices of massive, highly subsidized overseas agribusinesses. As supermarkets increasingly favor cheaper foreign imports to maximize profit margins, local agriculturalists lose their market share, face severe financial hardship, and are frequently driven into bankruptcy. For instance, thousands of small dairy and fruit farmers across Europe have been forced to shut down in recent years because supermarkets prioritized cheaper imports.",
+      "On the other hand, a prominent drawback of delaying family planning into one's thirties is the physiological decline in natural reproductive capacity and corresponding medical risks. Clinical evidence consistently demonstrates that female fertility decreases noticeably after the age of thirty-two and drops precipitously past thirty-five. Consequently, couples attempting conception later in life often encounter difficulties conceiving naturally, predisposing them to elevated rates of pregnancy complications and emotionally exhausting, cost-prohibitive assisted reproductive therapies. For instance, public health registries indicate that mothers over thirty-five experience a significantly higher incidence of gestational diabetes and chromosomal conditions compared to their younger peers.",
     examinerNotes:
-      "The most relatable and common drawback. Easy to explain: local family farms cannot compete with cheap overseas mega-farms."
+      "The most compelling biological counterpoint. High lexical resource and clear causal progression showing why age poses medical hurdles."
   };
 
   return (
