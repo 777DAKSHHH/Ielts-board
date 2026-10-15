@@ -1,5 +1,51 @@
 import { VocabItem } from "./vocab";
 
+export type CountryKey = "germany" | "france" | "italy";
+export type FormatKey = "shop_cds" | "online_cds" | "downloads" | "cassettes" | "vinyl";
+
+export interface CountryProfitDetail {
+  y1997: number; // in million euros
+  y2007: number;
+  change: string;
+  band9Citation: string;
+}
+
+export interface MusicFormatItem {
+  id: FormatKey;
+  name: string;
+  shortLabel: string;
+  category: "Physical Retail" | "Digital / Online" | "Legacy Analog";
+  description: string;
+  profits: Record<CountryKey, CountryProfitDetail>;
+  trendSummary: string;
+  band9Phrase: string;
+  keyFeature: string;
+}
+
+export interface CountryMarketData {
+  id: CountryKey;
+  name: string;
+  fillPattern: "solid" | "empty" | "textured";
+  barColor: string;
+  badge: string;
+  total1997: number;
+  total2007: number;
+  netChange: string;
+  summary: string;
+  dominantFormat: string;
+}
+
+export interface ComparisonHotspot {
+  id: string;
+  title: string;
+  zone: "shop_cds" | "digital" | "legacy_analog" | "national_contrast";
+  normalState: string; // 1997 baseline
+  elNinoState: string; // 2007 shift
+  contrastKey: string;
+  band9Sentence: string;
+}
+
+// Backward compatibility for old diagram structure
 export interface PacificConditionFeature {
   id: "normal" | "el_nino";
   title: string;
@@ -25,23 +71,13 @@ export interface PacificConditionFeature {
   summary: string;
 }
 
-export interface ComparisonHotspot {
-  id: string;
-  title: string;
-  zone: "west_pacific" | "east_pacific" | "atmosphere" | "marine_depth";
-  normalState: string;
-  elNinoState: string;
-  contrastKey: string;
-  band9Sentence: string;
-}
-
 export interface Task1DiagramData {
   conditions: PacificConditionFeature[];
   hotspots: ComparisonHotspot[];
   comparisonsSummary: Record<string, string>;
-  // Backwards compatibility aliases
+  formats?: MusicFormatItem[];
+  countries?: CountryMarketData[];
   schools?: any[];
-  countries?: any[];
   convergences?: any[];
   intersections?: any[];
 }
@@ -49,7 +85,6 @@ export interface Task1DiagramData {
 export type Task1GraphData = Task1DiagramData;
 export type Task1TableData = Task1DiagramData;
 
-// Backwards-compatible dummy interfaces if imported elsewhere
 export interface SchoolData {
   id: string;
   name: string;
@@ -85,17 +120,19 @@ export interface Task1Data {
   id: string;
   taskType: string;
   title: string;
+  companyName: string;
+  unit: string;
   questionText: string;
   imageFileName: string;
   hdImageFileName?: string;
-  normalHdImageFileName?: string;
-  elNinoHdImageFileName?: string;
   scanImageFileName?: string;
   audioUrl: string;
   audioClueText: string;
   sampleIntro: string;
   sampleOverview: string;
   timingSeconds: number;
+  formats: MusicFormatItem[];
+  countries: CountryMarketData[];
   diagramData: Task1DiagramData;
   graphData: Task1DiagramData;
   tableData?: Task1DiagramData;
@@ -105,7 +142,7 @@ export interface Task1Data {
   bp2: BpSection;
   processingGroups: ProcessingGroup[];
   connectors: ConnectorItem[];
-  modelReport?: {
+  modelReport: {
     wordCount: number;
     paragraphs: {
       id: string;

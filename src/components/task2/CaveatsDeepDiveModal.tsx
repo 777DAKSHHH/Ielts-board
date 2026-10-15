@@ -18,7 +18,7 @@ interface CaveatsDeepDiveModalProps {
 }
 
 export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOpen, onClose }) => {
-  const [activeTab, setActiveTab] = useState<"rationale" | "method" | "comparisons" | "formulas">("rationale");
+  const [activeTab, setActiveTab] = useState<"faculty" | "method" | "comparisons" | "formulas">("faculty");
 
   React.useEffect(() => {
     if (!isOpen) return;
@@ -103,14 +103,14 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       padding: "2px 8px"
                     }}
                   >
-                    OUTWEIGHING ESSAY MASTERCLASS
+                    FACULTY &amp; EXAMINER MASTERCLASS
                   </span>
                   <span style={{ fontSize: "0.85rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                    Step 06 Deep Dive • 1 Main Reason + Support + Example
+                    Teacher Idea Bank • Analytical Extensions &amp; Discussion Prompts
                   </span>
                 </div>
                 <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--slate-900)", margin: "3px 0 0" }}>
-                  Mastering the 3-Body Paragraph Architecture &amp; Causal Depth
+                  Faculty Idea Bank &amp; High-Band Argumentation
                 </h3>
               </div>
             </div>
@@ -144,10 +144,10 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
             }}
           >
             {[
-              { id: "rationale", label: "1. Core Argument Logic", icon: <Award size={15} /> },
+              { id: "faculty", label: "1. Faculty Idea Bank (8 Angles)", icon: <Award size={15} /> },
               { id: "method", label: "2. The 3-Tier Body Architecture", icon: <Lightbulb size={15} /> },
               { id: "comparisons", label: "3. Band 6 vs Band 8.5+ Sentences", icon: <GitBranch size={15} /> },
-              { id: "formulas", label: "4. Outweighing Formulas", icon: <BookOpen size={15} /> }
+              { id: "formulas", label: "4. Outweighing Formulas & Advice", icon: <BookOpen size={15} /> }
             ].map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -186,72 +186,115 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               gap: "20px"
             }}
           >
-            {/* TAB 1: EXAMINER RATIONALE */}
-            {activeTab === "rationale" && (
+            {/* TAB 1: FACULTY IDEA BANK */}
+            {activeTab === "faculty" && (
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 style={{ display: "flex", flexDirection: "column", gap: "16px" }}
               >
+                {/* Discussion Question Feature Card */}
                 <div
                   style={{
-                    background: "#fffbeb",
-                    border: "1.5px solid #fde68a",
+                    background: "linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%)",
+                    border: "1.5px solid #bfdbfe",
                     borderRadius: "18px",
                     padding: "18px 22px",
                     display: "flex",
-                    alignItems: "flex-start",
-                    gap: "14px"
+                    flexDirection: "column",
+                    gap: "10px"
                   }}
                 >
-                  <AlertTriangle size={22} color="#d97706" style={{ flexShrink: 0, marginTop: "2px" }} />
-                  <div>
-                    <h5 style={{ fontSize: "1rem", fontWeight: 800, color: "#92400e", margin: "0 0 4px" }}>
-                      The "Shopping List" Mistake (Band 6.0 Trap)
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--apple-blue)" }}>
+                    <Lightbulb size={20} />
+                    <h5 style={{ fontSize: "1rem", fontWeight: 800, margin: 0 }}>
+                      The Strongest Classroom Discussion Question
                     </h5>
-                    <p style={{ fontSize: "0.9rem", color: "#78350f", margin: 0, lineHeight: 1.55 }}>
-                      Band 6 candidates dump 3 or 4 rushed points in one paragraph without developing any of them (*"Getting married in your 30s is good because you have money, and a car, and you are mature, but having babies is hard"*). IELTS Band 8.5+ criteria for Task Achievement strictly requires <strong>“a fully developed response with relevant, extended and supported ideas.”</strong>
-                    </p>
                   </div>
+                  <blockquote style={{ margin: 0, fontSize: "1.02rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
+                    “Would you rather have a child at 25 while still building your career, or at 35 when you are financially established?”
+                  </blockquote>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "4px" }}>
+                    <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
+                      Follow-up 1: Does financial security automatically make someone a better parent?
+                    </span>
+                    <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
+                      Follow-up 2: Can emotional maturity compensate for financial instability?
+                    </span>
+                    <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
+                      Follow-up 3: Is there ever a perfect time to start a family?
+                    </span>
+                  </div>
+                  <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--slate-600)", fontStyle: "italic" }}>
+                    ✦ Pedagogical Purpose: These questions help students see that the issue is not simply age; it is the level of preparedness that age may bring.
+                  </p>
                 </div>
 
-                <div className="stage-grid-2col" style={{ gap: "16px" }}>
-                  <div
-                    style={{
-                      background: "var(--slate-50)",
-                      border: "1.5px solid var(--border-subtle)",
-                      borderRadius: "18px",
-                      padding: "20px"
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                      <CheckCircle2 size={18} color="var(--apple-blue)" />
-                      <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                        1. One Main Reason = Analytical Depth
-                      </h5>
+                {/* 8 Faculty Analytical Angles */}
+                <div>
+                  <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "12px" }}>
+                    Faculty / Teacher Idea Bank (8 Analytical Discussion Angles)
+                  </h4>
+                  <div className="stage-grid-2col" style={{ gap: "14px" }}>
+                    {/* Positive Angles */}
+                    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                      <span className="apple-badge success" style={{ alignSelf: "flex-start", fontSize: "0.75rem" }}>
+                        🟢 POSITIVE ANGLES (EXTENDED TEACHING)
+                      </span>
+                      {[
+                        {
+                          title: "Reduced Financial Dependence",
+                          desc: "Couples who have established their own incomes may be less dependent on parents or extended family, allowing them to make independent decisions about their household and children."
+                        },
+                        {
+                          title: "Greater Equality Within Relationships",
+                          desc: "When both partners have had time to pursue education and careers, they may be better positioned to negotiate domestic responsibilities and share financial decisions."
+                        },
+                        {
+                          title: "Breaking the Cycle of Financial Insecurity",
+                          desc: "Parents who enter family life with savings and stable employment may be better able to invest in nutrition, education and enriching experiences for their children."
+                        },
+                        {
+                          title: "More Deliberate Family Planning",
+                          desc: "Delaying parenthood can give couples time to decide whether they genuinely want children and how many they can realistically support, potentially reducing unplanned pregnancies."
+                        }
+                      ].map((item, idx) => (
+                        <div key={idx} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "12px 14px" }}>
+                          <strong style={{ fontSize: "0.88rem", color: "#166534" }}>{item.title}:</strong>
+                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#14532d", lineHeight: 1.45 }}>{item.desc}</p>
+                        </div>
+                      ))}
                     </div>
-                    <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      Focusing on <strong>1 main reason per body paragraph</strong> in the format <code>[ 1 Main Reason + Supporting Reasons + Example ]</code> allows students to unpack the causal chain thoroughly (e.g. why entry-level earnings and student debt strain young families, and how career consolidation builds durable stability).
-                    </p>
-                  </div>
 
-                  <div
-                    style={{
-                      background: "var(--slate-50)",
-                      border: "1.5px solid var(--border-subtle)",
-                      borderRadius: "18px",
-                      padding: "20px"
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                      <CheckCircle2 size={18} color="#059669" />
-                      <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                        2. Verifiable Evidence vs. Vague Generalities
-                      </h5>
+                    {/* Negative Angles */}
+                    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                      <span className="apple-badge warning" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fee2e2", color: "#991b1b" }}>
+                        🔴 NEGATIVE ANGLES (EXTENDED TEACHING)
+                      </span>
+                      {[
+                        {
+                          title: "A Narrowing Window for Family Planning",
+                          desc: "Delayed decisions may leave couples with less flexibility if conception takes longer than expected or they encounter fertility difficulties."
+                        },
+                        {
+                          title: "The Dual Burden of Caring Responsibilities",
+                          desc: "People who become parents later may simultaneously have young children and ageing parents who need financial or practical support."
+                        },
+                        {
+                          title: "Over-Optimisation of Life Plans",
+                          desc: "Waiting for the perfect salary, house or career position may lead some individuals to postpone family life indefinitely because complete security is rarely achievable."
+                        },
+                        {
+                          title: "Changing Expectations of Independence",
+                          desc: "People accustomed to controlling their time and spending may find the compromises required by marriage and parenting more challenging than anticipated."
+                        }
+                      ].map((item, idx) => (
+                        <div key={idx} style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "12px", padding: "12px 14px" }}>
+                          <strong style={{ fontSize: "0.88rem", color: "#991b1b" }}>{item.title}:</strong>
+                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#7f1d1d", lineHeight: 1.45 }}>{item.desc}</p>
+                        </div>
+                      ))}
                     </div>
-                    <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.55, margin: 0 }}>
-                      Effective essays substantiate with concrete precedents. Citing <em>dual-income mortgage eligibility, OECD divorce longevity statistics, or reproductive clinic healthcare data</em> demonstrates authentic academic authority and directly satisfies Task Achievement.
-                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -426,6 +469,27 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </p>
                   </div>
                 ))}
+
+                {/* Teaching Recommendation */}
+                <div
+                  style={{
+                    background: "linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%)",
+                    border: "1.5px solid #86efac",
+                    borderRadius: "16px",
+                    padding: "16px 20px",
+                    boxShadow: "var(--shadow-sm)"
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "#166534", marginBottom: "6px" }}>
+                    <Award size={18} />
+                    <h5 style={{ fontSize: "0.95rem", fontWeight: 800, margin: 0 }}>
+                      Faculty Teaching Recommendation
+                    </h5>
+                  </div>
+                  <p style={{ fontSize: "0.9rem", color: "#14532d", margin: 0, lineHeight: 1.55 }}>
+                    Have students build their essay around financial preparedness and emotional maturity, then acknowledge reproductive constraints as the principal counterargument. This gives them a clear, defensible position without making unsupported claims that marrying later always leads to better relationships or parenting.
+                  </p>
+                </div>
               </motion.div>
             )}
           </div>

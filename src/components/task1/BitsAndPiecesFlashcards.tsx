@@ -6,7 +6,7 @@ import {
   ChevronRight,
   Sparkles,
   CheckCircle2,
-  Maximize2
+  AlertTriangle
 } from "lucide-react";
 import { tactilePress } from "../../motion";
 
@@ -24,440 +24,236 @@ interface FlashcardItem {
 const FLASHCARDS: FlashcardItem[] = [
   {
     id: 1,
-    category: "Piece 1: The Macro Overview Split",
+    category: "Card 1: The Macro Overview Split",
     badgeColor: "#0284c7",
-    question: "What is the single most important macro contrast between normal conditions and El Niño across the Pacific?",
-    answerTitle: "Systemic Reversal: Westward Warm Pool & Australian Rain vs. Eastward Warm Surge & Drought",
+    question: "What are the three essential macro features that must appear in a Band 9 overview for this bar chart?",
+    answerTitle: "1) Store CD Persistent Dominance, 2) Analog Obsolescence, 3) Digital Growth",
     bulletPoints: [
-      "Normal conditions feature strong westward trade winds pushing warm water and rain toward Australia, alongside nutrient upwelling off Peru.",
-      "El Niño represents a systematic inversion: trade winds weaken, warm water surges eastward, and rainfall shifts to Peru.",
-      "Australia is plunged into severe drought, while Peruvian coastal upwelling ceases, causing commercial fisheries to collapse."
+      "Retail store-bought CDs remained the principal profit generator across all three nations throughout the decade, despite heavy drops.",
+      "Legacy analog formats (cassettes and vinyl) suffered total commercial obsolescence, collapsing to zero profit across the board.",
+      "Digital channels (online CD purchases and internet downloads) experienced substantial expansion, with Germany consistently recording the highest profits."
     ],
     band9Phrase:
-      "Overall, normal conditions feature strong trade winds driving warm water and heavy rain toward Australia while cold upwelling sustains Peruvian fisheries, whereas El Niño conditions see weakened trade winds and eastward shifts that invert rainfall patterns and decimate marine life."
+      "“Overall, retail store-bought compact discs remained the primary source of revenue in all three nations throughout the decade, despite experiencing marked contractions by 2007. Concurrently, legacy analog formats became completely obsolete, while digital distribution channels witnessed substantial growth, with Germany consistently generating the highest overall profits.”"
   },
   {
     id: 2,
-    category: "Piece 2: Atmospheric Trade Winds & Upper Winds",
+    category: "Card 2: In-Store CDs Dynamic",
     badgeColor: "#4f46e5",
-    question: "How do atmospheric winds differ between normal conditions and an El Niño phase?",
-    answerTitle: "Strong Westward Trade Winds Falter; Upper Winds Shift Eastward",
+    question: "How should you contrast the numerical performance of shop-bought CDs between 1997 and 2007?",
+    answerTitle: "Universal 30%–40% Contraction across All Nations, Yet Undisputed #1 Rank Preserved",
     bulletPoints: [
-      "Normal: Strong trade winds blow continuously from the East Pacific toward the West Pacific; upper winds blow weakly eastward.",
-      "El Niño: Trade winds in the East Pacific weaken noticeably; upper atmosphere over the West Pacific is dominated by strong eastward winds.",
-      "Consequence: The weakened trade winds fail to hold warm water in the western basin, allowing it to migrate back across the ocean."
+      "1997: Germany led at 40 million euros, France recorded 25 million, and Italy generated 20 million (accounting for over 85% of total company profit).",
+      "2007: Profits plummeted sharply—Germany fell to 25 million (-15m), France dropped to 15 million (-10m), and Italy contracted to 14 million (-6m).",
+      "Key analytical contrast: Even after these steep declines, shop CDs remained larger than all other formats combined in each country."
     ],
     band9Phrase:
-      "Whereas strong trade winds normally blow westward from the East Pacific, an El Niño episode witnesses these winds weaken substantially, accompanied by strong eastward upper-level winds."
+      "“Although shop-bought CDs suffered substantial contractions in all three territories—sliding to 25 million euros in Germany, 15 million in France, and 14 million in Italy—this format remained the undisputed commercial backbone of SMG Entertainment.”"
   },
   {
     id: 3,
-    category: "Piece 3: Warm Pool & Thermocline Displacement",
-    badgeColor: "#059669",
-    question: "What happens to the warm surface water and ocean thermocline during El Niño?",
-    answerTitle: "Warm Pool Shifts Eastward, Capping the Basin & Suppressing Cold Thermocline",
+    category: "Card 3: Analog Cassettes & Vinyl Obsolescence",
+    badgeColor: "#dc2626",
+    question: "Why is it vital to report the 1997 figures for cassettes and vinyl rather than just saying they became zero?",
+    answerTitle: "Band 9 Task Achievement Demands Contextualizing Initial Commercial Value Before Demise",
     bulletPoints: [
-      "Normal: Warm water is banked deeply in the western Pacific; cold thermocline sits near the surface in the east off Peru.",
-      "El Niño: Warm water is 'pushed eastwards' across the central and eastern Pacific basin.",
-      "Impact: The warm blanket suppresses the thermocline and prevents cold, deep water from reaching the surface."
+      "In 1997, cassettes were commercially significant in Italy (6 million euros, leading all nations) and Germany (5 million), with France recording under 1 million.",
+      "Vinyl singles and LPs contributed 3 million euros in Italy and 2 million in Germany, while being negligible in France.",
+      "By 2007, both media were completely phased out, generating 0 million euros across all three markets."
     ],
     band9Phrase:
-      "Consequently, the reservoir of warm water that typically banks against the western basin surges eastwards, capping the cooler subsurface layers across the Pacific."
+      "“Cassettes, which had yielded 6 million euros in Italy and 5 million in Germany in 1997, alongside modest vinyl returns, were rendered completely obsolete, recording zero revenue across the board a decade later.”"
   },
   {
     id: 4,
-    category: "Piece 4: Peruvian Upwelling & Fishery Collapse",
-    badgeColor: "#d97706",
-    question: "Why do Peruvian commercial fish harvests crash from flourishing (up arrow) to depleted (down arrow)?",
-    answerTitle: "Cessation of Cool Water Upwelling Causes Severe Nutrient Starvation",
+    category: "Card 4: Emergence of Digital & Online Channels",
+    badgeColor: "#16a34a",
+    question: "How did internet downloads and online CD sales develop from 1997 to 2007?",
+    answerTitle: "Emergence from Zero Baseline / Nominal Figures into Major Secondary Revenue Streams",
     bulletPoints: [
-      "Normal: Upward arrow indicates active upwelling of 'cool water and rich nutrients', sustaining 2 large fish (booming fisheries).",
-      "El Niño: Eastward warm water cap blocks upwelling, leaving coastal waters with 'poor nutrients'.",
-      "Result: Downward arrow denotes fishery collapse, represented by a solitary thin fish."
+      "1997: Internet downloads were completely nonexistent (0 €m) across all three nations. Online CD orders were trivial (Germany €3m, France €1.5m, Italy 0).",
+      "2007: Online CD orders surged to 8 million euros in Germany, 7 million in France, and 1.5 million in Italy.",
+      "2007: Internet downloads emerged from a standing start to generate 5 million euros each in Germany and France, and 1.5 million in Italy."
     ],
     band9Phrase:
-      "While normal conditions foster cold, nutrient-rich upwelling that sustains flourishing fish stocks off Peru, El Niño shuts down this upwelling, leading to nutrient impoverishment and a catastrophic decline in marine catches."
+      "“Internet downloads emerged from a standing start of zero to generate 5 million euros apiece in Germany and France, while remote online CD orders multiplied to reach 8 million and 7 million euros respectively.”"
   },
   {
     id: 5,
-    category: "Piece 5: Australian Precipitation vs. Scorching Drought",
-    badgeColor: "#dc2626",
-    question: "How does the terrestrial weather in Australia invert between the two states?",
-    answerTitle: "Transition from Convective Downpours & Lush Flora to Scorching Sun & Aridity",
+    category: "Card 5: National Market Ranking & Agility",
+    badgeColor: "#9333ea",
+    question: "How did the total profitability and resilience of Germany, France, and Italy compare over the decade?",
+    answerTitle: "Germany Dominant Leader, France Digitally Resilient, Italy Severely Contracted",
     bulletPoints: [
-      "Normal: Warm surface water fuels intense atmospheric convection, producing storm clouds, heavy rainfall, and lush green grass in Australia.",
-      "El Niño: Convective storm clouds shift eastward to Peru; Australia is left under clear skies, blazing sunshine, and severe drought.",
-      "Diagram Detail: Australia inset switches from rain clouds and grass to a burning sun and desiccated terrain."
+      "Germany: Market leader in total profit in both 1997 (~50m) and 2007 (~38m), dominating store CDs, online CDs, and downloads.",
+      "France: Highly resilient (~27m total in both 1997 and 2007); losses in retail CDs (-10m) were offset by rapid gains in online CDs (+5.5m) and downloads (+5m).",
+      "Italy: Sunk from ~29m down to ~17m (-41% drop); high initial dependence on cassettes/vinyl backfired when analog died, and digital adoption was sluggish."
     ],
     band9Phrase:
-      "As convective storm clouds migrate eastward toward Peru, Australia transitions from receiving abundant rain that nurtures green vegetation to enduring blazing sunshine, parched terrain, and severe drought."
+      "“Geographically, Germany stood out as the principal commercial engine throughout, whereas France demonstrated remarkable digital agility to maintain net revenue stability, in contrast to Italy which suffered a steep 41% profit collapse.”"
   },
   {
     id: 6,
-    category: "Piece 6: Band 9 Cohesive Architecture & Paragraphing",
-    badgeColor: "#7c3aed",
-    question: "How should you divide the report into four balanced paragraphs for maximum Task Achievement?",
-    answerTitle: "Four Balanced Paragraphs: Intro, Overview, Body 1 (Normal), Body 2 (El Niño)",
+    category: "Card 6: Exam Pitfalls & Band 9 Precautions",
+    badgeColor: "#ea580c",
+    isWarning: true,
+    question: "What are the most frequent examiner-penalized mistakes in this SMG Entertainment task?",
+    answerTitle: "Unit Omissions, Misreporting Zero Baselines, and Neglecting National Comparisons",
     bulletPoints: [
-      "Paragraph 1 (Intro): Paraphrase diagram type, subject (Normal vs. El Niño), and geographic domain (Pacific Ocean).",
-      "Paragraph 2 (Overview): State the master dichotomy (wind/thermal reversal, Australian rain vs drought, Peruvian fisheries).",
-      "Paragraph 3 (Body 1): Describe Normal Conditions systematically (winds -> warm pool -> Australian rain -> Peruvian upwelling & fish).",
-      "Paragraph 4 (Body 2): Describe El Niño systematically (wind weakening -> eastward warm surge -> Australian drought -> Peruvian rain & fish crash)."
+      "Unit Error: Failing to specify 'million euros (€m)' in the body paragraphs (saying just '40' or 'euros' without 'million').",
+      "Baseline Error: Claiming internet downloads 'decreased' or 'changed little'—they were zero in 1997 and emerged brand new in 2007.",
+      "Obsolescence Error: Ignoring the zero values in 2007 for cassettes and vinyl; examiners test your ability to report complete market extinction.",
+      "Grouping Error: Writing a separate paragraph for each of the 5 formats without synthesizing comparisons between countries or years."
     ],
     band9Phrase:
-      "By dedicating Body 1 entirely to the baseline equilibrium and Body 2 to the El Niño disruption, the report achieves flawless comparative balance and logical coherence."
+      "“Band 9 Criterion: Grouping data chronologically (1997 baseline vs. 2007 shift) or structurally (physical/analog vs. digital/online) with accurate units and explicit comparisons.”"
   }
 ];
 
-interface BitsAndPiecesFlashcardsProps {
-  isEntireScreen?: boolean;
-  onToggleFullscreen?: () => void;
-}
-
-export const BitsAndPiecesFlashcards: React.FC<BitsAndPiecesFlashcardsProps> = ({
-  isEntireScreen = false,
-  onToggleFullscreen
-}) => {
-  const [activeIdx, setActiveIdx] = useState(0);
+export const BitsAndPiecesFlashcards: React.FC = () => {
+  const [currentIdx, setCurrentIdx] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const card = FLASHCARDS[activeIdx];
+  const card = FLASHCARDS[currentIdx];
 
-  const handleNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleNext = () => {
     setIsFlipped(false);
-    setActiveIdx((prev) => (prev + 1) % FLASHCARDS.length);
+    setCurrentIdx((prev) => (prev + 1) % FLASHCARDS.length);
   };
 
-  const handlePrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handlePrev = () => {
     setIsFlipped(false);
-    setActiveIdx((prev) => (prev - 1 + FLASHCARDS.length) % FLASHCARDS.length);
+    setCurrentIdx((prev) => (prev - 1 + FLASHCARDS.length) % FLASHCARDS.length);
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "100%",
-        height: "100%",
-        padding: isEntireScreen ? "20px 28px" : "16px",
-        background: isEntireScreen ? "#f8fafc" : "var(--slate-50)",
-        borderRadius: isEntireScreen ? "0" : "18px",
-        overflowY: "auto",
-        boxSizing: "border-box"
-      }}
-    >
-      {/* Top Header Bar */}
+    <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%", alignItems: "center" }}>
+      {/* Header Info */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", flexWrap: "wrap", gap: "8px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Sparkles size={18} color="var(--apple-blue)" />
+          <span style={{ fontSize: "0.88rem", fontWeight: 800, color: "var(--slate-900)" }}>
+            SMG Entertainment Interactive Flashcard Deck
+          </span>
+        </div>
+        <span className="apple-badge neutral" style={{ fontWeight: 750 }}>
+          Card {currentIdx + 1} of {FLASHCARDS.length}
+        </span>
+      </div>
+
+      {/* Main Tactile Flashcard */}
       <div
+        onClick={() => setIsFlipped(!isFlipped)}
         style={{
+          width: "100%",
+          maxWidth: "760px",
+          minHeight: "360px",
+          background: isFlipped ? "#ffffff" : "var(--slate-50)",
+          border: `2px solid ${card.isWarning ? "#fca5a5" : card.badgeColor}`,
+          borderRadius: "22px",
+          padding: "26px 30px",
           display: "flex",
-          alignItems: "center",
+          flexDirection: "column",
           justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "10px",
-          marginBottom: "14px",
-          background: "#ffffff",
-          padding: "10px 16px",
-          borderRadius: "14px",
-          border: "1.5px solid var(--border-subtle)",
-          boxShadow: "var(--shadow-sm)"
+          cursor: "pointer",
+          boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
+          transition: "all 0.2s ease"
         }}
       >
-        <div>
+        {/* Card Top Label */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <span
-            className="apple-badge neutral"
             style={{
-              fontSize: "0.72rem",
+              fontSize: "0.76rem",
               fontWeight: 800,
-              background: card.badgeColor,
-              color: "#ffffff"
+              padding: "4px 10px",
+              borderRadius: "8px",
+              background: isFlipped ? "var(--slate-100)" : card.badgeColor,
+              color: isFlipped ? "var(--slate-800)" : "#ffffff"
             }}
           >
             {card.category}
           </span>
-          <h3
-            style={{
-              fontSize: isEntireScreen ? "1.25rem" : "1.08rem",
-              fontWeight: 800,
-              color: "var(--slate-900)",
-              margin: "3px 0 0"
-            }}
-          >
-            Bits &amp; Pieces: Active Flashcard Recall
-          </h3>
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--slate-500)" }}>
-            Card {activeIdx + 1} of {FLASHCARDS.length}
-          </span>
-          <div style={{ display: "flex", gap: "6px" }}>
-            <motion.button
-              whileTap={tactilePress}
-              onClick={handlePrev}
-              className="apple-touch-btn secondary"
-              style={{ padding: "6px 12px", minHeight: "40px" }}
-              aria-label="Previous Flashcard"
-            >
-              <ChevronLeft size={18} />
-            </motion.button>
-            <motion.button
-              whileTap={tactilePress}
-              onClick={handleNext}
-              className="apple-touch-btn secondary"
-              style={{ padding: "6px 12px", minHeight: "40px" }}
-              aria-label="Next Flashcard"
-            >
-              <ChevronRight size={18} />
-            </motion.button>
+          <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 650 }}>
+            <RotateCw size={13} /> Tap card to flip
           </div>
-
-          {!isEntireScreen && onToggleFullscreen && (
-            <motion.button
-              whileTap={tactilePress}
-              type="button"
-              onClick={onToggleFullscreen}
-              className="apple-touch-btn primary"
-              style={{
-                padding: "8px 16px",
-                fontSize: "0.82rem",
-                fontWeight: 700,
-                gap: "6px",
-                minHeight: "40px",
-                marginLeft: "6px"
-              }}
-            >
-              <Maximize2 size={14} /> Entire Screen
-            </motion.button>
-          )}
         </div>
-      </div>
 
-      {/* Main Flashcard Interactive Area */}
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "440px",
-          position: "relative"
-        }}
-      >
-        <div
-          onClick={() => setIsFlipped((prev) => !prev)}
-          style={{
-            width: "100%",
-            maxWidth: "760px",
-            minHeight: "360px",
-            background: "#ffffff",
-            borderRadius: "20px",
-            border: `2px solid ${card.badgeColor}`,
-            boxShadow: "0 10px 25px rgba(0,0,0,0.06)",
-            padding: "32px 36px",
-            cursor: "pointer",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            position: "relative",
-            transition: "all 0.25s ease",
-            boxSizing: "border-box"
-          }}
-        >
-          {/* Top Row on Card */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span
-              style={{
-                fontSize: "0.76rem",
-                fontWeight: 800,
-                padding: "3px 10px",
-                borderRadius: "8px",
-                background: `${card.badgeColor}18`,
-                color: card.badgeColor
-              }}
-            >
-              {isFlipped ? "Band 9 Synthesis & Model Formula" : "Architectural Investigation"}
-            </span>
+        {/* Card Body Content (Front vs Back) */}
+        {!isFlipped ? (
+          /* FRONT: QUESTION */
+          <div style={{ margin: "auto 0", display: "flex", flexDirection: "column", gap: "14px" }}>
+            <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--slate-500)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+              Key Analytical Challenge:
+            </div>
+            <h3 style={{ fontSize: "1.35rem", fontWeight: 850, color: "var(--slate-900)", lineHeight: 1.4, margin: 0 }}>
+              {card.question}
+            </h3>
+            <div style={{ fontSize: "0.88rem", color: "var(--slate-600)" }}>
+              Tap anywhere on this card to reveal the Band 9 deduction and phrasing.
+            </div>
+          </div>
+        ) : (
+          /* BACK: ANSWER & BAND 9 FORMULA */
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px", margin: "auto 0" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              {card.isWarning ? (
+                <AlertTriangle size={20} color="#dc2626" />
+              ) : (
+                <CheckCircle2 size={20} color={card.badgeColor} />
+              )}
+              <h4 style={{ fontSize: "1.08rem", fontWeight: 850, color: "var(--slate-900)", margin: 0 }}>
+                {card.answerTitle}
+              </h4>
+            </div>
+
+            <ul style={{ margin: 0, paddingLeft: "20px", display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
+              {card.bulletPoints.map((pt, i) => (
+                <li key={i}>{pt}</li>
+              ))}
+            </ul>
 
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "5px",
-                fontSize: "0.76rem",
-                fontWeight: 700,
-                color: "var(--slate-400)"
+                background: "var(--slate-50)",
+                borderRadius: "10px",
+                padding: "12px 14px",
+                border: "1px solid var(--border-subtle)",
+                fontSize: "0.84rem",
+                color: "var(--slate-800)",
+                lineHeight: 1.5
               }}
             >
-              <RotateCw size={13} /> Tap card to {isFlipped ? "view question" : "reveal answer"}
+              <strong style={{ color: card.badgeColor }}>Band 9 Model Sentence:</strong> {card.band9Phrase}
             </div>
           </div>
+        )}
 
-          {/* Card Body */}
-          {!isFlipped ? (
-            <div style={{ margin: "auto 0", padding: "16px 0" }}>
-              <div
-                style={{
-                  fontSize: "0.85rem",
-                  fontWeight: 800,
-                  color: card.badgeColor,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em",
-                  marginBottom: "8px"
-                }}
-              >
-                Question Prompt
-              </div>
-              <h2
-                style={{
-                  fontSize: isEntireScreen ? "1.65rem" : "1.35rem",
-                  fontWeight: 800,
-                  color: "var(--slate-900)",
-                  lineHeight: 1.45,
-                  margin: 0
-                }}
-              >
-                {card.question}
-              </h2>
-            </div>
-          ) : (
-            <div style={{ margin: "auto 0", padding: "12px 0", display: "flex", flexDirection: "column", gap: "14px" }}>
-              <div>
-                <div
-                  style={{
-                    fontSize: "0.82rem",
-                    fontWeight: 800,
-                    color: card.badgeColor,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                    marginBottom: "4px"
-                  }}
-                >
-                  Key Architectural Finding
-                </div>
-                <h3
-                  style={{
-                    fontSize: isEntireScreen ? "1.25rem" : "1.1rem",
-                    fontWeight: 800,
-                    color: "var(--slate-900)",
-                    margin: 0
-                  }}
-                >
-                  {card.answerTitle}
-                </h3>
-              </div>
-
-              {/* Bullet Points */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                {card.bulletPoints.map((pt, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px" }}>
-                    <CheckCircle2
-                      size={15}
-                      color={card.badgeColor}
-                      style={{ flexShrink: 0, marginTop: "2px" }}
-                    />
-                    <span style={{ fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
-                      {pt}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Band 9 Application Quote */}
-              <div
-                style={{
-                  background: "var(--slate-50)",
-                  borderRadius: "12px",
-                  padding: "12px 14px",
-                  border: "1px solid var(--border-subtle)",
-                  marginTop: "4px"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
-                  <Sparkles size={13} color={card.badgeColor} />
-                  <span
-                    style={{
-                      fontSize: "0.72rem",
-                      fontWeight: 800,
-                      color: card.badgeColor,
-                      textTransform: "uppercase"
-                    }}
-                  >
-                    Band 9 Application Sentence
-                  </span>
-                </div>
-                <p
-                  style={{
-                    margin: 0,
-                    fontSize: "0.88rem",
-                    fontStyle: "italic",
-                    color: "var(--slate-800)",
-                    lineHeight: 1.5
-                  }}
-                >
-                  “{card.band9Phrase}”
-                </p>
-              </div>
-            </div>
-          )}
-
-          {/* Bottom Card Navigation Indicator */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              borderTop: "1px solid var(--border-subtle)",
-              paddingTop: "12px",
-              marginTop: "12px"
-            }}
-          >
-            <div style={{ display: "flex", gap: "6px" }}>
-              {FLASHCARDS.map((_, i) => (
-                <span
-                  key={i}
-                  style={{
-                    width: i === activeIdx ? "20px" : "6px",
-                    height: "6px",
-                    borderRadius: "3px",
-                    background: i === activeIdx ? card.badgeColor : "var(--slate-200)",
-                    transition: "all 0.2s ease"
-                  }}
-                />
-              ))}
-            </div>
-
-            <div style={{ display: "flex", gap: "8px" }}>
-              <motion.button
-                whileTap={tactilePress}
-                type="button"
-                onClick={handlePrev}
-                className="apple-touch-btn secondary"
-                style={{ padding: "0 16px", fontSize: "0.85rem", fontWeight: 600, minHeight: "44px" }}
-              >
-                Previous
-              </motion.button>
-              <motion.button
-                whileTap={tactilePress}
-                type="button"
-                onClick={handleNext}
-                className="apple-touch-btn primary"
-                style={{
-                  padding: "0 20px",
-                  fontSize: "0.85rem",
-                  fontWeight: 700,
-                  minHeight: "44px",
-                  background: card.badgeColor
-                }}
-              >
-                Next Card
-              </motion.button>
-            </div>
-          </div>
+        {/* Bottom Helper */}
+        <div style={{ fontSize: "0.75rem", color: "var(--slate-400)", textAlign: "center" }}>
+          Showing {isFlipped ? "Band 9 Answer & Sentence Model" : "Exam Inquiry Question"}
         </div>
+      </div>
+
+      {/* Navigation Buttons */}
+      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+        <motion.button
+          whileTap={tactilePress}
+          onClick={handlePrev}
+          className="apple-touch-btn secondary"
+          style={{ minHeight: "42px", padding: "0 18px", fontWeight: 700, gap: "6px" }}
+        >
+          <ChevronLeft size={16} /> Previous Card
+        </motion.button>
+
+        <motion.button
+          whileTap={tactilePress}
+          onClick={handleNext}
+          className="apple-touch-btn primary"
+          style={{ minHeight: "42px", padding: "0 22px", fontWeight: 700, gap: "6px" }}
+        >
+          Next Card <ChevronRight size={16} />
+        </motion.button>
       </div>
     </div>
   );

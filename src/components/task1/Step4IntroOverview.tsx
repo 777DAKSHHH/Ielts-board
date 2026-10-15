@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, Sparkles, CheckCircle2, Split, Compass } from "lucide-react";
+import { BookOpen, Sparkles, CheckCircle2, Split, Compass, Layers, Globe } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 const QuoteCard: React.FC<{ icon: React.ReactNode; title: string; text: string; annotation?: string }> = ({ icon, title, text, annotation }) => (
@@ -22,9 +22,9 @@ export const Step4IntroOverview: React.FC = () => (
   <div className="stage-card-wrapper">
     <div>
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction &amp; Overview</span>
-      <h2 className="stage-title">Build the Introduction and Overview</h2>
+      <h2 className="stage-title">Build the Introduction and Macro Overview</h2>
       <p className="stage-subtitle">
-        Master the Band 9 approach for natural comparative diagrams: state the diagram format, dual climatic states, and oceanic basin, followed by a high-level overview synthesizing wind circulation, warm water migration, terrestrial precipitation, and marine nutrient upwelling.
+        Master the Band 9 approach for comparative business bar graphs: state the graphic format, commercial enterprise, distribution channels, and temporal range, followed by a high-level overview synthesizing store dominance, analog obsolescence, and digital growth.
       </p>
     </div>
 
@@ -33,13 +33,13 @@ export const Step4IntroOverview: React.FC = () => (
         icon={<BookOpen size={20} color="var(--slate-800)" />}
         title="1. Sample Introduction"
         text={TASK1_DATA.sampleIntro}
-        annotation="Paraphrases 'compare the normal condition with El Nino condition in the Pacific Ocean' into 'illustrates the atmospheric and oceanic differences between normal weather conditions and an El Niño phenomenon across the Pacific Ocean', capturing both air and sea dimensions."
+        annotation="Paraphrases 'The bar graphs show the profit made by SMG entertainment (a record company) in three countries' into 'The horizontal bar charts illustrate the profits earned by SMG Entertainment, a music record company, across five distinct audio distribution formats in Germany, France, and Italy between 1997 and 2007', capturing graphic type, entity, specific channels, and geographic/temporal parameters."
       />
       <QuoteCard
         icon={<Sparkles size={20} color="var(--slate-800)" />}
-        title="2. Sample Overview"
+        title="2. Sample Macro Overview"
         text={TASK1_DATA.sampleOverview}
-        annotation="Synthesizes the master dichotomy: 1) Normal conditions drive warm water and rain westward to Australia while cold upwelling off Peru sustains thriving fisheries; 2) El Niño conditions reverse winds, displacing warm water and torrential rain eastward toward Peru, while plunging Australia into severe drought and decimating Peruvian marine nutrients."
+        annotation="Synthesizes the 3 macro pillars: 1) Physical store CDs retained undisputed leadership despite sharp drops; 2) Legacy analog formats (cassettes and vinyl) were rendered completely obsolete with zero profit; 3) Online channels expanded dynamically, while establishing Germany as the dominant market."
       />
     </div>
 
@@ -56,19 +56,19 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-            <span><strong>Visual Type &amp; Action:</strong> <em>“The diagrams illustrate / compare...”</em> (clear reporting verb).</span>
+            <span><strong>Graphic Format &amp; Action:</strong> <em>“The horizontal bar charts illustrate / compare...”</em> (clear academic reporting verb).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-            <span><strong>Dual Meteorological States:</strong> <em>“normal weather conditions and an El Niño phenomenon...”</em></span>
+            <span><strong>Entity &amp; Financial Metric:</strong> <em>“...the profits earned by SMG Entertainment, a music record enterprise...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>3</span>
-            <span><strong>Specific Domain:</strong> <em>“across the Pacific Ocean, between Australia in the west and Peru in the east...”</em></span>
+            <span><strong>Scope &amp; Categories:</strong> <em>“...across five distinct audio distribution formats, calibrated in million euros...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>4</span>
-            <span><strong>Systemic Scope:</strong> <em>“in terms of atmospheric wind patterns, ocean water temperatures, and ecological impacts.”</em></span>
+            <span><strong>Territories &amp; Timeframe:</strong> <em>“...in Germany, France, and Italy between 1997 and 2007.”</em></span>
           </div>
         </div>
       </div>
@@ -78,21 +78,21 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Split size={18} color="#16a34a" />
           <h4 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-            3-Pillar Comparative Overview Architecture
+            3-Pillar Macro Overview Architecture
           </h4>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 1 — Wind &amp; Thermal Circulation:</strong> Contrast strong westward trade winds pushing warm water to Australia (normal) with weakened winds allowing warm water to surge eastwards (El Niño).</span>
+            <span><strong>Pillar 1 — Persistent Physical Dominance:</strong> Emphasize that retail shop-bought CDs produced the vast majority of profit across all three nations in both years, despite sharp drops.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 2 — Precipitation Inversion:</strong> Highlight how convective storm clouds shift eastward, trading wet Australia for severe drought and dry Peru for heavy rain.</span>
+            <span><strong>Pillar 2 — Analog Obsolescence:</strong> Highlight that cassettes and vinyl records suffered total extinction, recording zero revenue by 2007.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 3 — Marine Nutrient &amp; Fishery Disruption:</strong> Contrast Peru's cold, nutrient-rich upwelling and flourishing fish stocks with the suppressed nutrients and collapsed fisheries during El Niño.</span>
+            <span><strong>Pillar 3 — Digital Transition &amp; Geographic Leader:</strong> Note the dynamic emergence of downloads and online CD purchases, while identifying Germany as the premier revenue generator.</span>
           </div>
         </div>
       </div>

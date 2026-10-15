@@ -6,6 +6,7 @@ import { stageSlideVariants } from "./motion";
 import { useGatekeeper } from "./hooks/useGatekeeper";
 import { useTimer } from "./hooks/useTimer";
 import { useSpeech } from "./hooks/useSpeech";
+import { useBoardScale } from "./hooks/useBoardScale";
 
 // Layout Components
 import { GatekeeperModal } from "./components/layout/GatekeeperModal";
@@ -59,6 +60,7 @@ export function App() {
   // Shared Hooks
   const timer = useTimer(180);
   const speech = useSpeech();
+  const boardScale = useBoardScale();
 
   const totalSteps = currentModule === "task1" ? TASK1_STEPS.length : TASK2_STEPS.length;
   const stepTitles = currentModule === "task1" ? TASK1_TITLES : TASK2_TITLES;
@@ -177,6 +179,7 @@ export function App() {
         formattedTime={timer.formatTime()}
         isTimerRunning={timer.isRunning}
         onTimerToggle={timer.toggle}
+        boardScale={boardScale}
       />
 
       {/* Center Stage Viewport with Tactile Spring Motion */}

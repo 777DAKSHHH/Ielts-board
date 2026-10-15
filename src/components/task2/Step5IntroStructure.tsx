@@ -23,42 +23,62 @@ export const Step5IntroStructureT2: React.FC = () => (
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
-          <BookOpen size={20} />
-          <h4 style={{ fontSize: "1.15rem", fontWeight: 700 }}>Sample Introduction (Concise &amp; Focused)</h4>
+          <BookOpen size={22} color="var(--apple-blue)" />
+          <h4 style={{ fontSize: "1.22rem", fontWeight: 750 }}>Sample Introduction (Concise &amp; Focused)</h4>
         </div>
         <div
           style={{
             background: "#fff",
-            border: "1px solid var(--border-subtle)",
-            borderRadius: "14px",
-            padding: "20px",
-            fontSize: "1.08rem",
-            lineHeight: 1.7,
+            border: "1.5px solid var(--border-default)",
+            borderRadius: "16px",
+            padding: "22px 24px",
+            fontSize: "1.24rem",
+            fontWeight: 650,
+            lineHeight: 1.75,
             boxShadow: "var(--shadow-sm)",
-            color: "var(--slate-800)"
+            color: "var(--slate-900)"
           }}
         >
           {TASK2_DATA.sampleIntro}
         </div>
-        <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
-          <Clock size={15} /> 58 words • 2 sentences • Rapid exam timing (~2.5-3 mins)
+        <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-600)", fontSize: "0.92rem", fontWeight: 600 }}>
+          <Clock size={16} /> 49 words • 2 sentences • Rapid exam timing (~2-2.5 mins)
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+        <div
+          style={{
+            background: "#eff6ff",
+            border: "1.5px solid #bfdbfe",
+            borderRadius: "16px",
+            padding: "18px 20px"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--apple-blue)", marginBottom: "8px" }}>
+            <Award size={20} />
+            <h5 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>One-Liner Planning Points</h5>
+          </div>
+          <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "1.02rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
+            <li><strong>Trend:</strong> Marriage and parenthood occur later in life.</li>
+            <li><strong>Opinion:</strong> Largely positive development.</li>
+            <li><strong>Main reasons:</strong> Financial independence + emotional maturity.</li>
+          </ul>
+        </div>
+
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="1. Crisp Prompt Paraphrase (Sentence 1)"
-          text="Restate the prompt naturally without mechanical copying: note the pervasive modern trend where young adults defer matrimony and parenthood until their fourth decade."
+          text="“In many societies, individuals are increasingly choosing to establish their careers and achieve personal stability before getting married and starting a family.” (States the modern trend naturally without template cliché)."
         />
         <StructureCard
           icon={<Award size={18} />}
           title="2. Decisive Opinion Thesis (Sentence 2)"
-          text="Directly answer the prompt: acknowledge that while biological fertility windows and demographic aging pose valid concerns, the advantages—namely robust financial security, career consolidation, and emotional maturity—make this an overwhelmingly positive shift."
+          text="“I consider this a largely positive development, as greater financial security and emotional maturity can help couples build more stable family environments, despite the potential challenges associated with delayed parenthood.”"
         />
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="3. Word Economy & Roadmapping"
-          text="Keep the introduction concise (~50–60 words across 2 sentences). A punchy opening establishes a crystal-clear position from the outset, unlocking Band 9 Task Achievement before launching into your body paragraphs."
+          text="Keep the introduction concise (~45–55 words across 2 sentences). A punchy opening establishes a crystal-clear position from the outset, setting up your body paragraphs."
         />
       </div>
     </div>
@@ -73,9 +93,10 @@ const StructureCard: React.FC<{ icon: React.ReactNode; title: string; text: stri
   <div
     style={{
       background: "#fff",
-      border: "1px solid var(--border-subtle)",
+      border: "1.5px solid var(--border-subtle)",
       borderRadius: "16px",
-      padding: "18px"
+      padding: "18px 20px",
+      boxShadow: "var(--shadow-sm)"
     }}
   >
     <div
@@ -88,8 +109,8 @@ const StructureCard: React.FC<{ icon: React.ReactNode; title: string; text: stri
       }}
     >
       {icon}
-      <h5 style={{ fontSize: "0.95rem", fontWeight: 700 }}>{title}</h5>
+      <h5 style={{ fontSize: "1.04rem", fontWeight: 750 }}>{title}</h5>
     </div>
-    <p style={{ fontSize: "0.92rem", color: "var(--slate-600)", lineHeight: 1.5 }}>{text}</p>
+    <p style={{ fontSize: "1.02rem", color: "var(--slate-800)", lineHeight: 1.55, margin: 0 }}>{text}</p>
   </div>
 );

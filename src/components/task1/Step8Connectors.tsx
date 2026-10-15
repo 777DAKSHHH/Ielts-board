@@ -8,9 +8,9 @@ export const Step8Connectors: React.FC = () => (
       <span className="apple-badge success" style={{ marginBottom: "8px" }}>
         Step 08 / 08 • Academic Transitions &amp; Comparative Cohesion
       </span>
-      <h2 className="stage-title">Cohesive Sequencing &amp; Contrastive Linking for Comparative Diagrams</h2>
+      <h2 className="stage-title">Financial Transitions &amp; Discourse Connectors for Comparative Bar Graphs</h2>
       <p className="stage-subtitle">
-        Master academic discourse markers to establish seamless logical transitions between atmospheric wind circulation, eastward oceanic shifts, terrestrial precipitation, and marine nutrient upwelling.
+        Master academic discourse markers to establish seamless logical transitions between temporal baselines, market contractions, total obsolescence to nil, and burgeoning digital revenues.
       </p>
     </div>
 
@@ -69,49 +69,49 @@ export const Step8Connectors: React.FC = () => (
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         <CheckCircle2 size={18} color="#16a34a" />
         <strong style={{ color: "var(--slate-900)", fontSize: "0.95rem" }}>
-          Recommended Cohesive Discourse Pathway for Comparative Systems
+          Recommended Cohesive Discourse Pathway for 10-Year Dynamic Bar Graphs
         </strong>
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.88rem", color: "var(--slate-700)" }}>
         {/* Paragraph 3 / Body 1 Flow */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "var(--slate-50)", padding: "10px 14px", borderRadius: "12px", border: "1px solid var(--border-subtle)" }}>
-          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 1 (Normal Equilibrium)</span>
+          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 1 (1997 Baseline)</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Under normal conditions,...”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“In 1997,...”</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Strong westward trade winds</span>
+          <span>Shop CDs form overwhelming lion’s share</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Warm water banked in West Pacific</span>
+          <span>Germany (€40m) &gt; France (€25m) &gt; Italy (€20m)</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Convective storm clouds &amp; rain in Australia</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“By contrast,...”</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Meanwhile, off the Peruvian coast,...”</span>
+          <span>Online CD orders negligible (&lt;€3m) + downloads nil</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Cold nutrient-dense upwelling</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Regarding analog formats,...”</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Flourishing fish stocks under sunny skies</span>
+          <span>Italy leads cassettes (€6m) and vinyl (€3m)</span>
         </div>
 
         {/* Paragraph 4 / Body 2 Flow */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "var(--slate-50)", padding: "10px 14px", borderRadius: "12px", border: "1px solid var(--border-subtle)" }}>
-          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 2 (El Niño Disruption)</span>
-          <ArrowRight size={13} color="#dc2626" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“During an El Niño phase,...”</span>
-          <ArrowRight size={13} color="#dc2626" />
-          <span>Trade winds weaken + upper winds blow east</span>
-          <ArrowRight size={13} color="#dc2626" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“As a result,...”</span>
-          <ArrowRight size={13} color="#dc2626" />
-          <span>Warm water propelled eastwards, capping cold thermocline</span>
-          <ArrowRight size={13} color="#dc2626" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Consequently,...”</span>
-          <ArrowRight size={13} color="#dc2626" />
-          <span>Australia suffers scorching sun &amp; drought</span>
-          <ArrowRight size={13} color="#dc2626" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“whereas storm clouds migrate to Peru,...”</span>
-          <ArrowRight size={13} color="#dc2626" />
-          <span>Heavy rain + coastal fish stocks decline precipitously</span>
+          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 2 (2007 Shift)</span>
+          <ArrowRight size={13} color="#16a34a" />
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“A decade later,...”</span>
+          <ArrowRight size={13} color="#16a34a" />
+          <span>Shop CDs contract by €6m–€15m (yet remain #1)</span>
+          <ArrowRight size={13} color="#16a34a" />
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“In stark contrast,...”</span>
+          <ArrowRight size={13} color="#16a34a" />
+          <span>Cassettes &amp; vinyl completely phased out to 0 €m</span>
+          <ArrowRight size={13} color="#16a34a" />
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“The slack was partially absorbed by...”</span>
+          <ArrowRight size={13} color="#16a34a" />
+          <span>Online CD sales surge (€8m Germany, €7m France)</span>
+          <ArrowRight size={13} color="#16a34a" />
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Concurrently,...”</span>
+          <ArrowRight size={13} color="#16a34a" />
+          <span>Downloads emerge from zero to €5m each</span>
         </div>
       </div>
     </div>

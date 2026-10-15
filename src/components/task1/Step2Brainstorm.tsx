@@ -11,15 +11,20 @@ import {
   HelpCircle,
   ImageIcon,
   Columns,
-  Maximize,
-  Compass
+  Sparkles,
+  BarChart3,
+  Disc
 } from "lucide-react";
-import { TASK1_DATA, PACIFIC_CONDITIONS, COMPARISON_HOTSPOTS } from "../../data/task1Data";
+import {
+  TASK1_DATA,
+  MUSIC_FORMATS,
+  COUNTRY_MARKETS,
+  TASK1_HOTSPOTS
+} from "../../data/task1Data";
 import { TouchTimer } from "../common/TouchTimer";
 import { SmartBoardTableMatrix, DiagramViewMode } from "./SmartBoardGraphSvg";
 import { BitsAndPiecesMindmap } from "./BitsAndPiecesMindmap";
 import { BitsAndPiecesFlashcards } from "./BitsAndPiecesFlashcards";
-import { PacificConditionFeature } from "../../types/task1";
 
 interface Step2BrainstormProps {
   formattedTime: string;
@@ -42,12 +47,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   const [stageLayout, setStageLayout] = useState<"split" | "full_width">("full_width");
   const [isEnlarged, setIsEnlarged] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(1);
-
-  const [selectedCondition, setSelectedCondition] = useState<PacificConditionFeature>(PACIFIC_CONDITIONS[0]);
+  const [selectedHotspotId, setSelectedHotspotId] = useState<string>(TASK1_HOTSPOTS[0].id);
   const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("all");
-
-  // Fullscreen specific toggles
-  const [fullscreenShowInspector, setFullscreenShowInspector] = useState(true);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -72,16 +73,19 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
     setIsEnlarged(true);
   };
 
+  const selectedHotspot =
+    TASK1_HOTSPOTS.find((h) => h.id === selectedHotspotId) || TASK1_HOTSPOTS[0];
+
   return (
     <div className="stage-card-wrapper">
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; Diagram Analysis
+          Step 02 / 08 • Task Prompt &amp; Bar Graph Engine
         </span>
-        <h2 className="stage-title">Deconstruct the Normal vs. El Niño Pacific Comparative Diagrams</h2>
+        <h2 className="stage-title">Deconstruct the SMG Entertainment Dual Bar Charts (1997 vs 2007)</h2>
         <p className="stage-subtitle">
-          Examine the prompt, deconstruct the dual ocean cross-sections (trade winds, warm pool displacement, and cold upwelling), and contrast the regional climatic impacts on Australia and Peru.
+          Examine the prompt, deconstruct the 5 audio distribution formats across Germany, France, and Italy, track the collapse of legacy analog media to zero, and contrast retail CD drops against the emergence of online orders and digital downloads.
         </p>
       </div>
 
@@ -93,7 +97,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the two Pacific diagrams, compare the atmospheric trade winds and water layers, and note the rainfall vs. drought and fishery shifts."
+          instruction="Focus Timer: 3 minutes to analyze the two bar charts, identify the dominant shop CD category, note the extinction of cassettes/vinyl, and trace the rise of digital downloads."
         />
       </div>
 
@@ -136,7 +140,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <Tv size={14} /> 4K Diagram Engine
+            <BarChart3 size={14} /> 4K Bar Graph Engine
           </button>
 
           <button
@@ -196,61 +200,49 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <ImageIcon size={14} /> Original Exam Diagram
+            <ImageIcon size={14} /> Original Exam Pamphlet
           </button>
         </div>
 
-        {/* Layout & Entire Screen Triggers */}
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          {/* Layout Toggle */}
+        {/* Layout & Fullscreen Controls */}
+        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
           <button
             type="button"
-            onClick={() => setStageLayout((l) => (l === "split" ? "full_width" : "split"))}
+            onClick={() => setStageLayout(stageLayout === "full_width" ? "split" : "full_width")}
             className="apple-touch-btn secondary"
             style={{
               padding: "7px 12px",
-              fontSize: "0.78rem",
+              fontSize: "0.76rem",
               fontWeight: 700,
-              gap: "5px",
               display: "flex",
-              alignItems: "center"
+              alignItems: "center",
+              gap: "5px"
             }}
-            title={stageLayout === "split" ? "Expand Visual to Full Stage Width" : "Switch to 2-Column Split View"}
           >
-            {stageLayout === "split" ? (
-              <>
-                <Maximize size={13} /> Full Width Diagram View
-              </>
-            ) : (
-              <>
-                <Columns size={13} /> Split View (Prompt + Diagram)
-              </>
-            )}
+            <Columns size={13} />
+            {stageLayout === "full_width" ? "Split Prompt View" : "Full Stage View"}
           </button>
 
-          {/* Fullscreen Smart Board Button */}
           <button
             type="button"
             onClick={openFullscreen}
             className="apple-touch-btn primary"
             style={{
-              padding: "7px 16px",
-              fontSize: "0.78rem",
+              padding: "7px 14px",
+              fontSize: "0.76rem",
               fontWeight: 750,
-              gap: "6px",
               display: "flex",
               alignItems: "center",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
+              gap: "5px"
             }}
           >
-            <Maximize2 size={14} /> Entire Screen Mode
+            <Maximize2 size={13} /> Fullscreen
           </button>
         </div>
       </div>
 
-      {/* STAGE MAIN CONTENT AREA */}
+      {/* STAGE CONTAINER: FULL-WIDTH OR SPLIT VIEW */}
       {stageLayout === "full_width" ? (
-        /* FULL WIDTH VISUAL VIEW */
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           {/* Main Visual Display */}
           <div
@@ -290,9 +282,9 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="IELTS Academic Task 1 Pacific Ocean Diagram"
+                  alt="IELTS Academic Task 1 SMG Entertainment Bar Graphs"
                   style={{
-                    maxHeight: "520px",
+                    maxHeight: "560px",
                     maxWidth: "100%",
                     objectFit: "contain",
                     borderRadius: "10px",
@@ -301,13 +293,13 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   }}
                 />
                 <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
-                  Official Cambridge IELTS Academic Question Diagram • Pacific Ocean Normal vs. El Niño
+                  Official Cambridge IELTS Academic Question Diagram • SMG Entertainment Bar Graphs (1997 vs 2007)
                 </div>
               </div>
             )}
           </div>
 
-          {/* Under-Diagram 2-Col Strip: Prompt Card + System Inspector */}
+          {/* Under-Diagram 2-Col Strip: Prompt Card + Hotspots Inspector */}
           <div style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "14px" }}>
             {/* Task Prompt Card */}
             <div
@@ -348,7 +340,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               </div>
             </div>
 
-            {/* Pacific System Quick Inspector */}
+            {/* Strategic Hotspots Quick Inspector */}
             <div
               style={{
                 background: "#ffffff",
@@ -363,59 +355,53 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <Compass size={17} color="var(--apple-blue)" />
+                  <Sparkles size={17} color="var(--apple-blue)" />
                   <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                    Climatic System Inspector
+                    Strategic Comparison Hotspots
                   </h4>
                 </div>
                 <span className="apple-badge neutral" style={{ fontSize: "0.7rem" }}>
-                  Tap condition to inspect
+                  Tap hotspot to view
                 </span>
               </div>
 
-              {/* Condition Selector Pills */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-                {PACIFIC_CONDITIONS.map((cond) => {
-                  const isSelected = selectedCondition.id === cond.id;
-                  const isNormal = cond.id === "normal";
+              {/* Hotspot Selector Chips */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
+                {TASK1_HOTSPOTS.map((h) => {
+                  const isSelected = selectedHotspotId === h.id;
                   return (
                     <button
-                      key={cond.id}
+                      key={h.id}
                       type="button"
-                      onClick={() => {
-                        setSelectedCondition(cond);
-                        setHighlightMode(cond.id as DiagramViewMode);
-                      }}
+                      onClick={() => setSelectedHotspotId(h.id)}
                       style={{
-                        padding: "8px 12px",
-                        borderRadius: "10px",
-                        fontSize: "0.8rem",
+                        padding: "7px 10px",
+                        borderRadius: "8px",
+                        fontSize: "0.76rem",
                         fontWeight: 750,
-                        border: isSelected
-                          ? `2px solid ${isNormal ? "#0284c7" : "#dc2626"}`
-                          : "1.5px solid var(--border-subtle)",
-                        background: isSelected
-                          ? isNormal ? "#0284c7" : "#dc2626"
-                          : "var(--slate-50)",
+                        border: isSelected ? "1.5px solid var(--slate-900)" : "1px solid var(--border-subtle)",
+                        background: isSelected ? "var(--slate-900)" : "var(--slate-50)",
                         color: isSelected ? "#ffffff" : "var(--slate-800)",
                         cursor: "pointer",
-                        textAlign: "center",
-                        transition: "all 0.15s ease"
+                        textAlign: "left",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap"
                       }}
                     >
-                      {cond.title}
+                      {h.title}
                     </button>
                   );
                 })}
               </div>
 
-              {/* Active Condition Details */}
+              {/* Active Hotspot Details */}
               <div
                 style={{
-                  background: selectedCondition.id === "normal" ? "#f0f9ff" : "#fff1f2",
-                  border: `1.5px solid ${selectedCondition.id === "normal" ? "#bae6fd" : "#fecaca"}`,
+                  background: "var(--slate-50)",
+                  border: "1px solid var(--border-subtle)",
                   borderRadius: "12px",
-                  padding: "12px",
+                  padding: "12px 14px",
                   display: "flex",
                   flexDirection: "column",
                   gap: "6px",
@@ -423,23 +409,15 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 }}
               >
                 <div>
-                  <strong style={{ color: "var(--slate-900)" }}>💨 Atmospheric Winds:</strong>{" "}
-                  {selectedCondition.tradeWinds}
+                  <strong style={{ color: "var(--slate-900)" }}>1997 Baseline:</strong>{" "}
+                  {selectedHotspot.normalState}
                 </div>
                 <div>
-                  <strong style={{ color: "var(--slate-900)" }}>🌊 Ocean Currents:</strong>{" "}
-                  {selectedCondition.waterThermocline}
-                </div>
-                <div>
-                  <strong style={{ color: "var(--slate-900)" }}>🇦🇺 Australia:</strong>{" "}
-                  {selectedCondition.australiaCondition.climate}
-                </div>
-                <div>
-                  <strong style={{ color: "var(--slate-900)" }}>🇵🇪 Peru:</strong>{" "}
-                  {selectedCondition.peruCondition.fisheryStatus}
+                  <strong style={{ color: "var(--slate-900)" }}>2007 Transformation:</strong>{" "}
+                  {selectedHotspot.elNinoState}
                 </div>
                 <div style={{ marginTop: "4px", fontStyle: "italic", color: "var(--slate-800)", borderTop: "1px dashed var(--border-subtle)", paddingTop: "6px" }}>
-                  {selectedCondition.band9Phrase}
+                  {selectedHotspot.band9Sentence}
                 </div>
               </div>
             </div>
@@ -475,16 +453,15 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <div style={{ textAlign: "center", padding: "10px" }}>
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="Pacific Ocean El Nino Diagram"
+                  alt="SMG Entertainment Bar Graph"
                   style={{ maxWidth: "100%", maxHeight: "400px", borderRadius: "10px", objectFit: "contain" }}
                 />
               </div>
             )}
           </div>
 
-          {/* Right Column: Prompt & Inspector */}
+          {/* Right Column: Prompt & Key Highlights */}
           <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-            {/* Prompt */}
             <div
               style={{
                 background: "var(--slate-50)",
@@ -506,7 +483,6 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               </div>
             </div>
 
-            {/* Quick Summary Highlights */}
             <div
               style={{
                 background: "#ffffff",
@@ -521,7 +497,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <strong style={{ fontSize: "0.92rem", color: "var(--slate-900)" }}>
                 Key Comparison Highlights:
               </strong>
-              {COMPARISON_HOTSPOTS.slice(0, 3).map((h) => (
+              {TASK1_HOTSPOTS.map((h) => (
                 <div
                   key={h.id}
                   style={{
@@ -585,328 +561,107 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   gap: "10px"
                 }}
               >
-                {/* Title */}
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <Tv size={20} color="var(--apple-blue)" />
                   <div>
                     <h3 style={{ fontSize: "1rem", fontWeight: 800, margin: 0, color: "#ffffff" }}>
-                      Smart Board Entire Screen Engine • Pacific Ocean Normal vs. El Niño
+                      Smart Board Fullscreen Engine • SMG Entertainment Bar Graphs (1997 vs 2007)
                     </h3>
                     <p style={{ fontSize: "0.74rem", color: "#94a3b8", margin: 0 }}>
-                      Atmospheric Winds, Warm Pool Displacement, Nutrient Upwelling &amp; Ecological Inversion
+                      Germany, France, and Italy across 5 Distribution Channels
                     </p>
                   </div>
                 </div>
 
-                {/* Sub-Topic Switcher Strip Inside Fullscreen */}
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px",
-                    background: "rgba(255,255,255,0.1)",
-                    borderRadius: "10px",
-                    padding: "3px"
-                  }}
-                >
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                   <button
-                    type="button"
-                    onClick={() => setViewMode("smartboard_table")}
+                    onClick={() => setZoomLevel((z) => Math.max(z - 0.15, 0.7))}
                     style={{
+                      background: "rgba(255,255,255,0.12)",
+                      border: "none",
+                      color: "#ffffff",
+                      padding: "6px 10px",
+                      borderRadius: "8px",
+                      cursor: "pointer",
                       display: "flex",
                       alignItems: "center",
-                      gap: "5px",
-                      padding: "6px 12px",
-                      fontSize: "0.78rem",
-                      fontWeight: 750,
-                      borderRadius: "8px",
-                      border: "none",
-                      background: viewMode === "smartboard_table" ? "var(--apple-blue)" : "transparent",
-                      color: "#ffffff",
-                      cursor: "pointer"
+                      gap: "4px",
+                      fontSize: "0.76rem"
                     }}
                   >
-                    <Tv size={13} /> 4K Diagram Engine
+                    <ZoomOut size={13} /> Zoom -
+                  </button>
+                  <span style={{ fontSize: "0.78rem", color: "#94a3b8", minWidth: "45px", textAlign: "center" }}>
+                    {Math.round(zoomLevel * 100)}%
+                  </span>
+                  <button
+                    onClick={() => setZoomLevel((z) => Math.min(z + 0.15, 1.8))}
+                    style={{
+                      background: "rgba(255,255,255,0.12)",
+                      border: "none",
+                      color: "#ffffff",
+                      padding: "6px 10px",
+                      borderRadius: "8px",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "4px",
+                      fontSize: "0.76rem"
+                    }}
+                  >
+                    <ZoomIn size={13} /> Zoom +
                   </button>
 
                   <button
-                    type="button"
-                    onClick={() => setViewMode("mindmap")}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                      padding: "6px 12px",
-                      fontSize: "0.78rem",
-                      fontWeight: 750,
-                      borderRadius: "8px",
-                      border: "none",
-                      background: viewMode === "mindmap" ? "var(--apple-blue)" : "transparent",
-                      color: "#ffffff",
-                      cursor: "pointer"
-                    }}
-                  >
-                    <Map size={13} /> Bits &amp; Pieces Mindmap
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setViewMode("flashcards")}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                      padding: "6px 12px",
-                      fontSize: "0.78rem",
-                      fontWeight: 750,
-                      borderRadius: "8px",
-                      border: "none",
-                      background: viewMode === "flashcards" ? "var(--apple-blue)" : "transparent",
-                      color: "#ffffff",
-                      cursor: "pointer"
-                    }}
-                  >
-                    <HelpCircle size={13} /> Bits &amp; Pieces Flashcards
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setViewMode("original_image")}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                      padding: "6px 12px",
-                      fontSize: "0.78rem",
-                      fontWeight: 750,
-                      borderRadius: "8px",
-                      border: "none",
-                      background: viewMode === "original_image" ? "var(--apple-blue)" : "transparent",
-                      color: "#ffffff",
-                      cursor: "pointer"
-                    }}
-                  >
-                    <ImageIcon size={13} /> Original Exam Diagram
-                  </button>
-                </div>
-
-                {/* Right Contextual Controls */}
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  {(viewMode === "smartboard_table" || viewMode === "original_image") && (
-                    <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                      <button
-                        type="button"
-                        onClick={() => setZoomLevel((z) => Math.max(0.7, z - 0.1))}
-                        className="apple-touch-btn secondary"
-                        style={{ minHeight: "30px", width: "30px", padding: 0 }}
-                        title="Zoom Out"
-                      >
-                        <ZoomOut size={14} />
-                      </button>
-                      <span style={{ fontSize: "0.76rem", color: "#cbd5e1", minWidth: "36px", textAlign: "center" }}>
-                        {Math.round(zoomLevel * 100)}%
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setZoomLevel((z) => Math.min(1.8, z + 0.1))}
-                        className="apple-touch-btn secondary"
-                        style={{ minHeight: "30px", width: "30px", padding: 0 }}
-                        title="Zoom In"
-                      >
-                        <ZoomIn size={14} />
-                      </button>
-                    </div>
-                  )}
-
-                  {/* Inspector Toggle */}
-                  {viewMode === "smartboard_table" && (
-                    <button
-                      type="button"
-                      onClick={() => setFullscreenShowInspector(!fullscreenShowInspector)}
-                      className="apple-touch-btn secondary"
-                      style={{ minHeight: "30px", padding: "0 10px", fontSize: "0.76rem" }}
-                    >
-                      {fullscreenShowInspector ? "Hide Inspector" : "Show Inspector"}
-                    </button>
-                  )}
-
-                  {/* Close Fullscreen Button */}
-                  <button
-                    type="button"
                     onClick={() => setIsEnlarged(false)}
-                    className="apple-touch-btn secondary"
-                    style={{ minHeight: "32px", width: "32px", padding: 0, borderRadius: "50%" }}
-                    title="Close Fullscreen (Esc)"
+                    style={{
+                      background: "#ef4444",
+                      border: "none",
+                      color: "#ffffff",
+                      padding: "6px 14px",
+                      borderRadius: "8px",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px",
+                      fontWeight: 750,
+                      fontSize: "0.78rem",
+                      marginLeft: "6px"
+                    }}
                   >
-                    <X size={17} />
+                    <X size={14} /> Close (Esc)
                   </button>
                 </div>
               </div>
 
-              {/* Fullscreen Body Content */}
+              {/* Fullscreen Body View */}
               <div
                 style={{
                   flex: 1,
+                  overflowY: "auto",
+                  padding: "20px",
+                  background: "#f8fafc",
                   display: "flex",
-                  overflow: "hidden",
-                  background: "#f1f5f9"
+                  flexDirection: "column",
+                  alignItems: "center"
                 }}
               >
-                {/* Left/Center Visual Stage */}
                 <div
                   style={{
-                    flex: 1,
-                    overflowY: "auto",
-                    padding: "16px",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center"
+                    width: "100%",
+                    maxWidth: "1400px",
+                    transform: `scale(${zoomLevel})`,
+                    transformOrigin: "top center",
+                    transition: "transform 0.1s ease"
                   }}
                 >
-                  <div
-                    style={{
-                      width: "100%",
-                      maxWidth: "1600px",
-                      transform: `scale(${zoomLevel})`,
-                      transformOrigin: "top center",
-                      transition: "transform 0.15s ease"
-                    }}
-                  >
-                    {viewMode === "smartboard_table" && (
-                      <SmartBoardTableMatrix
-                        highlightMode={highlightMode}
-                        onHighlightModeChange={(mode) => setHighlightMode(mode)}
-                        showInternalToolbar={true}
-                        showDeepDiveCard={true}
-                      />
-                    )}
-
-                    {viewMode === "mindmap" && <BitsAndPiecesMindmap />}
-
-                    {viewMode === "flashcards" && <BitsAndPiecesFlashcards />}
-
-                    {viewMode === "original_image" && (
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          padding: "24px",
-                          background: "#ffffff",
-                          borderRadius: "16px",
-                          boxShadow: "0 8px 30px rgba(0,0,0,0.12)"
-                        }}
-                      >
-                        <img
-                          src={`materials/${TASK1_DATA.imageFileName}`}
-                          alt="Official Cambridge IELTS Pacific Diagram"
-                          style={{
-                            maxHeight: "82vh",
-                            maxWidth: "96%",
-                            objectFit: "contain",
-                            borderRadius: "12px",
-                            boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
-                          }}
-                        />
-                      </div>
-                    )}
-                  </div>
+                  <SmartBoardTableMatrix
+                    highlightMode={highlightMode}
+                    onHighlightModeChange={(mode) => setHighlightMode(mode)}
+                    showInternalToolbar={true}
+                    showDeepDiveCard={true}
+                  />
                 </div>
-
-                {/* Right Side Inspector Drawer in Fullscreen */}
-                {viewMode === "smartboard_table" && fullscreenShowInspector && (
-                  <div
-                    style={{
-                      width: "360px",
-                      background: "#ffffff",
-                      borderLeft: "1.5px solid var(--border-subtle)",
-                      display: "flex",
-                      flexDirection: "column",
-                      padding: "18px",
-                      overflowY: "auto",
-                      gap: "14px",
-                      flexShrink: 0
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                      <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>
-                        Pacific Systems Inspector
-                      </strong>
-                      <span className="apple-badge accent" style={{ fontSize: "0.68rem" }}>
-                        Interactive
-                      </span>
-                    </div>
-
-                    {/* Condition selection */}
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
-                      {PACIFIC_CONDITIONS.map((cond) => {
-                        const isSelected = selectedCondition.id === cond.id;
-                        return (
-                          <button
-                            key={cond.id}
-                            type="button"
-                            onClick={() => {
-                              setSelectedCondition(cond);
-                              setHighlightMode(cond.id as DiagramViewMode);
-                            }}
-                            style={{
-                              padding: "7px 10px",
-                              borderRadius: "8px",
-                              fontSize: "0.75rem",
-                              fontWeight: 750,
-                              background: isSelected ? "var(--slate-900)" : "var(--slate-100)",
-                              color: isSelected ? "#ffffff" : "var(--slate-800)",
-                              border: "none",
-                              cursor: "pointer"
-                            }}
-                          >
-                            {cond.title}
-                          </button>
-                        );
-                      })}
-                    </div>
-
-                    {/* Details */}
-                    <div
-                      style={{
-                        background: "var(--slate-50)",
-                        borderRadius: "12px",
-                        padding: "12px",
-                        border: "1px solid var(--border-subtle)",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "8px",
-                        fontSize: "0.82rem"
-                      }}
-                    >
-                      <div>
-                        <strong style={{ color: "var(--slate-900)" }}>Winds:</strong> {selectedCondition.tradeWinds}
-                      </div>
-                      <div>
-                        <strong style={{ color: "var(--slate-900)" }}>Water:</strong> {selectedCondition.waterThermocline}
-                      </div>
-                      <div>
-                        <strong style={{ color: "var(--slate-900)" }}>Upwelling:</strong> {selectedCondition.upwellingStatus}
-                      </div>
-                      <div>
-                        <strong style={{ color: "var(--slate-900)" }}>Australia:</strong> {selectedCondition.australiaCondition.climate}
-                      </div>
-                      <div>
-                        <strong style={{ color: "var(--slate-900)" }}>Peru:</strong> {selectedCondition.peruCondition.fisheryStatus}
-                      </div>
-                    </div>
-
-                    <div style={{ background: "#f8fafc", padding: "12px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
-                      <div style={{ fontSize: "0.7rem", fontWeight: 800, color: "var(--apple-blue)", marginBottom: "4px" }}>
-                        BAND 9 OBSERVATION:
-                      </div>
-                      <div style={{ fontSize: "0.8rem", color: "var(--slate-800)", fontStyle: "italic", lineHeight: 1.4 }}>
-                        {selectedCondition.band9Phrase}
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </motion.div>
           </div>

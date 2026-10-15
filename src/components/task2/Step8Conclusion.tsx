@@ -9,25 +9,25 @@ const CONCLUSION_VARIATIONS = [
     id: "balanced",
     title: "Style 1: Standard Balanced Synthesis",
     badge: "Band 8.5–9 • Recommended",
-    summary: "Acknowledges the biological & demographic drawbacks and proves individual & familial resilience is far superior.",
-    text: "In conclusion, although delaying marriage and childbearing until one's thirties introduces legitimate biological hurdles and demographic challenges, the societal and individual benefits are far more significant. The economic stability, homeownership readiness, and emotional maturity achieved by mature parents create enduring foundations that decisively outweigh these concerns.",
-    breakdown: "Sentence 1: Concession to biological fertility limits & demographic aging | Sentence 2: Synthesis of financial solvency, career footing, and psychological maturity as outweighing factors."
+    summary: "Reflects the recommended conclusion: financial security + mature decision-making outweigh biological limits.",
+    text: "In conclusion, marrying and becoming parents later in life can enable individuals to make more informed decisions, establish financial security and provide a stable upbringing for their children. Although postponing parenthood may present certain practical and biological challenges, I believe the overall benefits of greater maturity and preparedness make this a positive development.",
+    breakdown: "Sentence 1: Synthesis of informed choices, financial solvency, and stable upbringing | Sentence 2: Balanced concession to biological challenges + definitive positive judgement."
   },
   {
     id: "solution-oriented",
     title: "Style 2: Solution-Oriented Outweighed Model",
     badge: "Band 9 • Advanced Reasoning",
-    summary: "Shows why medical advancements and workplace policies mitigate the drawbacks, whereas emotional/financial stability is irreplaceable.",
-    text: "To conclude, while reduced biological fertility and national demographic shifts are notable drawbacks, they can be substantially mitigated through modern healthcare advancements and progressive family-support policies. Consequently, the irreplaceable advantages of emotional preparedness and dual-career financial resilience render this societal evolution predominantly beneficial.",
-    breakdown: "Sentence 1: Explains that fertility risks and workforce gaps can be managed via reproductive medicine and policy | Sentence 2: Concludes that emotional and economic preparedness are irreplaceable."
+    summary: "Shows why biological and practical hurdles are manageable, whereas emotional/financial stability is irreplaceable.",
+    text: "To conclude, while reproductive constraints and a widening generational gap are legitimate concerns, they can be substantially managed through modern healthcare and proactive family planning. Consequently, the irreplaceable advantages of emotional acuity and dual-career financial wherewithal render this societal trend predominantly positive.",
+    breakdown: "Sentence 1: Explains that fertility risks and lifestyle friction are manageable via healthcare and planning | Sentence 2: Concludes that emotional and economic preparedness are irreplaceable."
   },
   {
     id: "rapid-exam",
     title: "Style 3: Rapid 2-Sentence Exam Model",
     badge: "Rapid Timing • Under 45 Words",
     summary: "Ultra-compact, high-speed conclusion ideal when running short on time in the real exam.",
-    text: "In conclusion, despite the biological fertility risks and wider demographic challenges associated with starting families later, I am convinced this trend is overwhelmingly positive. The financial stability and psychological maturity gained in one's thirties cultivate demonstrably healthier and more resilient family units.",
-    breakdown: "Sentence 1: Rapid concession to fertility risks + clear positive stance | Sentence 2: High-impact synthesis of financial solvency and emotional readiness."
+    text: "In conclusion, despite the practical hurdles and fertility-related risks of postponing parenthood, I consider this a largely positive development. Greater financial wherewithal and emotional maturity enable mature couples to establish demonstrably more stable homes for their children.",
+    breakdown: "Sentence 1: Rapid concession to practical/fertility risks + clear positive stance | Sentence 2: High-impact synthesis of financial solvency and emotional readiness."
   }
 ];
 
@@ -62,8 +62,8 @@ export const Step8ConclusionT2: React.FC = () => {
           >
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <Award size={22} color="var(--apple-blue)" />
-                <h4 style={{ fontSize: "1.15rem", fontWeight: 750, color: "var(--slate-900)" }}>
+                <Award size={24} color="var(--apple-blue)" />
+                <h4 style={{ fontSize: "1.24rem", fontWeight: 750, color: "var(--slate-900)" }}>
                   Sample Conclusion (Band 9 Model)
                 </h4>
               </div>
@@ -74,25 +74,47 @@ export const Step8ConclusionT2: React.FC = () => {
 
             <div
               style={{
-                background: "var(--slate-50)",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "14px",
-                padding: "20px",
-                fontSize: "1.06rem",
+                background: "#ffffff",
+                border: "1.5px solid var(--border-default)",
+                borderRadius: "16px",
+                padding: "22px 24px",
+                fontSize: "1.24rem",
+                fontWeight: 650,
                 lineHeight: 1.75,
-                color: "var(--slate-800)"
+                color: "var(--slate-900)"
               }}
             >
               {TASK2_DATA.sampleConclusion}
             </div>
 
-            <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "12px", color: "var(--slate-500)", fontSize: "0.85rem" }}>
+            <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "12px", color: "var(--slate-600)", fontSize: "0.92rem", fontWeight: 600 }}>
               <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                <Clock size={15} /> 57 words • 2 sentences
+                <Clock size={16} /> 54 words • 2 sentences
               </span>
               <span>•</span>
               <span>Rapid exam timing (~2.5 minutes)</span>
             </div>
+          </div>
+
+          {/* One-Liner Planning Points */}
+          <div
+            style={{
+              background: "#eff6ff",
+              border: "1.5px solid #bfdbfe",
+              borderRadius: "18px",
+              padding: "18px 20px",
+              boxShadow: "var(--shadow-sm)"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--apple-blue)", marginBottom: "8px" }}>
+              <CheckCircle2 size={20} />
+              <h5 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>One-Liner Planning Points</h5>
+            </div>
+            <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "1.02rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
+              <li><strong>Benefits:</strong> Financial preparedness + mature decision-making.</li>
+              <li><strong>Drawback:</strong> Fewer years available for raising children and possible fertility-related concerns.</li>
+              <li><strong>Judgement:</strong> Benefits generally outweigh the drawbacks.</li>
+            </ul>
           </div>
 
           {/* 3-Step Outweighing Blueprint */}
@@ -117,13 +139,13 @@ export const Step8ConclusionT2: React.FC = () => {
 
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               <div style={{ background: "#fff1f2", border: "1px solid #fecdd3", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#9f1239" }}>
-                <strong>Step 1: Measured Concession Clause:</strong> Acknowledge the counterpoint without lingering (`"In conclusion, although postponing marriage and childbirth introduces undeniable biological constraints and contributes to demographic aging..."`)
+                <strong>Step 1: Measured Concession Clause:</strong> Acknowledge the counterpoint without lingering (`"Although postponing parenthood may present certain practical and biological challenges..."`)
               </div>
               <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#1e40af" }}>
-                <strong>Step 2: Assertive Outweighing Opinion:</strong> Confirm that the development is predominantly positive (`"...I firmly believe that this is a predominantly positive development."`)
+                <strong>Step 2: Assertive Outweighing Opinion:</strong> Confirm that the development is positive (`"...I believe the overall benefits make this a positive development."`)
               </div>
               <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#166534" }}>
-                <strong>Step 3: Synthesis &amp; Broad Impact:</strong> Summarize why (elevated financial resilience, advanced career footing, and emotional maturity cultivate far more resilient families).
+                <strong>Step 3: Synthesis &amp; Broad Impact:</strong> Summarize why (greater maturity, informed partner choices, and financial security provide a stable upbringing).
               </div>
             </div>
           </div>
@@ -202,7 +224,7 @@ export const Step8ConclusionT2: React.FC = () => {
                   >
                     <span
                       style={{
-                        fontSize: "0.72rem",
+                        fontSize: "0.84rem",
                         fontWeight: 800,
                         color: isSelected ? "#0066cc" : "var(--slate-600)"
                       }}
@@ -211,7 +233,7 @@ export const Step8ConclusionT2: React.FC = () => {
                     </span>
                     <span
                       style={{
-                        fontSize: "0.82rem",
+                        fontSize: "0.95rem",
                         fontWeight: 750,
                         color: isSelected ? "var(--slate-900)" : "var(--slate-700)",
                         marginTop: "2px"
@@ -239,10 +261,10 @@ export const Step8ConclusionT2: React.FC = () => {
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
-                  <span className="apple-badge accent" style={{ fontSize: "0.74rem" }}>
+                  <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
                     {currentStyle.badge}
                   </span>
-                  <span style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 600 }}>
+                  <span style={{ fontSize: "0.88rem", color: "var(--slate-600)", fontWeight: 600 }}>
                     {currentStyle.summary}
                   </span>
                 </div>
@@ -250,10 +272,10 @@ export const Step8ConclusionT2: React.FC = () => {
                 <div
                   style={{
                     background: "#ffffff",
-                    border: "1px solid var(--border-subtle)",
+                    border: "1.5px solid var(--border-subtle)",
                     borderRadius: "12px",
-                    padding: "16px",
-                    fontSize: "0.98rem",
+                    padding: "18px 20px",
+                    fontSize: "1.15rem",
                     lineHeight: 1.7,
                     color: "var(--slate-900)",
                     marginBottom: "12px"
@@ -262,8 +284,8 @@ export const Step8ConclusionT2: React.FC = () => {
                   {currentStyle.text}
                 </div>
 
-                <div style={{ fontSize: "0.84rem", color: "var(--slate-600)", lineHeight: 1.5, background: "#ffffff", padding: "10px 12px", borderRadius: "8px", border: "1px solid var(--border-subtle)" }}>
-                  <CheckCircle2 size={14} color="#059669" style={{ verticalAlign: "-2px", marginRight: "6px", display: "inline" }} />
+                <div style={{ fontSize: "0.95rem", color: "var(--slate-700)", lineHeight: 1.55, background: "#ffffff", padding: "12px 14px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
+                  <CheckCircle2 size={16} color="#059669" style={{ verticalAlign: "-3px", marginRight: "6px", display: "inline" }} />
                   <strong>Structural Logic:</strong> {currentStyle.breakdown}
                 </div>
               </motion.div>

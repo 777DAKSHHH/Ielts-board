@@ -25,31 +25,31 @@ const ESSAY_FORMAT_STEPS = [
     label: "Introduction",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    instruction: "Paraphrase the prompt + state clear opinion (that delaying marriage and children into the 30s is predominantly positive)"
+    instruction: "Paraphrase prompt + state largely positive opinion [Trend: later marriage/parenthood • Reasons: financial independence + emotional maturity]"
   },
   {
     label: "Body Para 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    instruction: "Strong side opinion (Positive 1): 1 main reason + supporting reasons + example [ Career Consolidation & Financial Security ]"
+    instruction: "Strong side (Advantage 1): Financial Independence [establish careers, build savings, secure housing • e.g. affording mortgage & childcare]"
   },
   {
     label: "Body Para 2",
     badgeBg: "rgba(16, 185, 129, 0.12)",
     badgeColor: "#047857",
-    instruction: "Strong side opinion (Positive 2): 1 main reason + supporting reasons + example [ Emotional Maturity, Lower Divorce Rates & Calm Parenting ]"
+    instruction: "Strong side (Advantage 2): Emotional Maturity [self-awareness, managing disagreements • e.g. resolving childcare disputes constructively]"
   },
   {
     label: "Body Para 3",
     badgeBg: "rgba(220, 38, 38, 0.12)",
     badgeColor: "#dc2626",
-    instruction: "Non-opinion side (Counterpoint/Drawback): 1 main reason + supporting reasons + example [ Biological Fertility Decline & Medical Risks ]"
+    instruction: "Non-opinion counterpoint: Acknowledge biological fertility concerns & practical hurdles [fertility decline past 35 • e.g. conception challenges]"
   },
   {
     label: "Conclusion",
     badgeBg: "rgba(100, 116, 139, 0.15)",
     badgeColor: "#334155",
-    instruction: "Restate opinion + synthesize the balance (how socio-economic benefits overwhelmingly prevail over biological caveats)"
+    instruction: "Restate position + synthesize balance [benefits of maturity and preparedness generally outweigh practical/biological challenges]"
   }
 ];
 
@@ -68,9 +68,9 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 02 / 09 • Task Reveal &amp; 5-Para Format
         </span>
-        <h2 className="stage-title">Deconstruct the Advantages vs. Disadvantages Prompt</h2>
+        <h2 className="stage-title">Deconstruct the Positive or Negative Development Prompt</h2>
         <p className="stage-subtitle">
-          Examine the prompt wording, establish your outweighing opinion thesis, and reveal the required 5-paragraph essay architecture with 3 Body Paragraphs [Strong Side 1 + Strong Side 2 + Non-Opinion Counterpoint].
+          Recommended position: <strong>A largely positive development</strong>. Examine the prompt wording, establish your position, and reveal the five-minute planning architecture.
         </p>
       </div>
 
@@ -81,7 +81,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: Plan your outweighing thesis: Frame 1 main reason + supporting reasons + example for each of the 3 body paragraphs."
+          instruction="Focus Timer: Plan your thesis: build around financial preparedness and emotional maturity, then acknowledge reproductive constraints."
         />
       </div>
 
@@ -114,32 +114,39 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
             <div
               style={{
                 background: "#fff",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "14px",
-                padding: "18px 20px",
-                fontSize: "1.12rem",
-                fontWeight: 650,
-                lineHeight: 1.6,
+                border: "1.5px solid var(--border-default)",
+                borderRadius: "16px",
+                padding: "20px 24px",
+                fontSize: "1.24rem",
+                fontWeight: 700,
+                lineHeight: 1.65,
                 boxShadow: "var(--shadow-sm)",
                 color: "var(--slate-900)"
               }}
             >
               {TASK2_DATA.questionText.split("\n\n").map((chunk, i) => (
-                <p key={i} style={{ marginBottom: i === 0 ? "10px" : 0 }}>
+                <p key={i} style={{ marginBottom: i === 0 ? "12px" : 0 }}>
                   {chunk}
                 </p>
               ))}
             </div>
-            <p
+            <div
               style={{
-                fontSize: "0.82rem",
-                color: "var(--slate-500)",
-                fontStyle: "italic",
-                marginTop: "10px"
+                marginTop: "14px",
+                padding: "12px 16px",
+                background: "#eff6ff",
+                border: "1.5px solid #bfdbfe",
+                borderRadius: "12px",
+                fontSize: "1rem",
+                color: "#1e3a8a",
+                lineHeight: 1.55
               }}
             >
-              * Write at least 250 words. Spend approximately 40 minutes on this task.
-            </p>
+              <strong style={{ fontSize: "1.05rem" }}>Recommended Position:</strong> {TASK2_DATA.recommendedPosition}
+              <div style={{ marginTop: "6px", color: "var(--slate-800)", fontSize: "0.96rem", lineHeight: 1.5 }}>
+                {TASK2_DATA.strongestArgument}
+              </div>
+            </div>
           </div>
 
           {/* Interactive Blur/Reveal Essay Format Component */}
@@ -298,7 +305,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           </div>
         </div>
 
-        {/* Right Column: Key Breakdown Cards */}
+        {/* Right Column: 5-Minute Planning Map & Teaching Guidance */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
           <div
             style={{
@@ -319,42 +326,28 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <Activity size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Prompt Direction — Positive or Negative Development?</h5>
+              <h5 style={{ fontSize: "1.12rem", fontWeight: 750 }}>Smart Board — Five-Minute Planning Map</h5>
             </div>
-            <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              The prompt explicitly asks: <em>“Is this a positive or negative development?”</em> In IELTS Task 2, taking a decisive, nuanced stance (arguing that delaying marriage and childbirth into one’s 30s is predominantly positive) yields higher Task Achievement than sitting on the fence. Dedicate two body paragraphs to your primary positive reasons, and allocate one body paragraph to the counterbalancing negative implications before synthesizing.
-            </p>
-          </div>
-
-          <div
-            style={{
-              background: "#fff",
-              border: "1.5px solid var(--border-subtle)",
-              borderRadius: "18px",
-              padding: "18px 20px",
-              boxShadow: "var(--shadow-sm)"
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                color: "#059669",
-                marginBottom: "8px"
-              }}
-            >
-              <Scale size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>The 3-Body-Paragraph Architecture</h5>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "10px" }}>
+              <div style={{ background: "#f0fdf4", border: "1.5px solid #86efac", borderRadius: "12px", padding: "12px 14px" }}>
+                <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#166534" }}>🟢 POSITIVE</span>
+                <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "0.94rem", color: "#14532d", lineHeight: 1.55 }}>
+                  <li>Financial independence → savings, housing, childcare</li>
+                  <li>Emotional maturity → better conflict resolution</li>
+                  <li>Informed decisions → compatible partners, planned families</li>
+                </ul>
+              </div>
+              <div style={{ background: "#fef2f2", border: "1.5px solid #fca5a5", borderRadius: "12px", padding: "12px 14px" }}>
+                <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#991b1b" }}>🔴 NEGATIVE</span>
+                <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "0.94rem", color: "#7f1d1d", lineHeight: 1.55 }}>
+                  <li>Fertility concerns → possible difficulty conceiving</li>
+                  <li>Later responsibilities → childcare overlaps retirement</li>
+                  <li>Social pressure → criticism for marrying later</li>
+                </ul>
+              </div>
             </div>
-            <div style={{ fontSize: "0.9rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              • <strong>Body Para 1 (Advantage 1):</strong> Focus on <em>Financial Security &amp; Wealth Foundation</em> [1 main reason + supporting causal links + concrete example].
-              <br />
-              • <strong>Body Para 2 (Advantage 2):</strong> Focus on <em>Career Consolidation &amp; Emotional Maturity</em> [1 main reason + supporting causal links + concrete example].
-              <br />
-              • <strong>Body Para 3 (Counterpoint Disadvantage):</strong> Focus on <em>Biological Fertility Declines &amp; Demographic Aging Pressures</em> [1 main reason + supporting causal links + concrete example].
-              <br />
-              • <strong>Conclusion:</strong> Restate your stance, highlighting why psychological stability and economic resilience decisively outweigh the manageable biological and social hurdles.
+            <div style={{ marginTop: "12px", fontSize: "0.98rem", color: "var(--slate-800)", lineHeight: 1.55, background: "var(--slate-50)", padding: "12px 14px", borderRadius: "12px", border: "1px solid var(--border-subtle)" }}>
+              <strong style={{ color: "var(--slate-900)" }}>Essay Roadmap:</strong> <em>Body 1:</em> Financial security + emotional maturity • <em>Body 2/3:</em> Acknowledge fertility concerns, but explain why the benefits generally outweigh them.
             </div>
           </div>
 
@@ -363,7 +356,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               background: "#fff",
               border: "1.5px solid var(--border-subtle)",
               borderRadius: "18px",
-              padding: "18px 20px",
+              padding: "20px 22px",
               boxShadow: "var(--shadow-sm)"
             }}
           >
@@ -376,11 +369,11 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 marginBottom: "8px"
               }}
             >
-              <Sparkles size={18} />
-              <h5 style={{ fontSize: "1rem", fontWeight: 700 }}>Golden Paragraph Rule: 1 Main Reason + Support + Example</h5>
+              <Scale size={18} />
+              <h5 style={{ fontSize: "1.12rem", fontWeight: 750 }}>Teaching Recommendation &amp; Defensible Position</h5>
             </div>
-            <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-              Avoid chaotic laundry lists of disjointed claims. Every single body paragraph must follow the rigorous formula: <strong>1 central, well-articulated reason</strong>, supported by <strong>clear causal explanations</strong> (why and how), and anchored by a <strong>concrete, relatable example</strong> (e.g., dual-income mortgage affordability, career promotions prior to maternity leave, or OECD data showing reduced divorce rates among mature couples).
+            <p style={{ fontSize: "1rem", color: "var(--slate-800)", lineHeight: 1.6, margin: 0 }}>
+              {TASK2_DATA.fiveMinutePlanningMap?.teachingRecommendation}
             </p>
           </div>
         </div>

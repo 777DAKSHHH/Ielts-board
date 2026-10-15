@@ -23,643 +23,795 @@ export type {
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "delaying-marriage-children-in-30s-task2",
+  id: "marriage-parenthood-in-30s-task2",
 
-  taskType: "Positive or Negative Development Essay (3 Body Paragraphs)",
+  taskType: "Positive or Negative Development",
 
-  title: "Marrying & Having Children in the 30s: Positive or Negative Development?",
+  title: "IELTS Writing Task 2 — Marriage and Parenthood in One’s 30s",
 
   questionText:
-    "Many young people tend to marry and have children in their 30s rather than at a younger age.\n\n- Is this a positive or negative development?",
+    "Many young people tend to marry and have children in their 30s rather than at a younger age.\n\nIs this a positive or negative development?",
 
   audioUrl: "materials/Staying_Young_as_a_Survival_Tactic.m4a",
 
   timingSeconds: 180,
 
+  recommendedPosition: "A largely positive development.",
+
+  strongestArgument:
+    "The strongest argument is that people may enter marriage and parenthood with greater financial stability, emotional maturity and a clearer sense of responsibility. However, delaying parenthood can also create practical challenges.",
+
+  // 1. Sample introduction
+  introPlanningPoints: [
+    "Trend: marriage and parenthood occur later in life.",
+    "Opinion: largely positive.",
+    "Main reasons: financial independence + emotional maturity."
+  ],
+
   sampleIntro:
-    "In contemporary society, an increasing proportion of young adults are choosing to marry and start families in their thirties rather than during their twenties. Although this postponement introduces biological fertility risks and contributes to an aging demographic, I firmly contend that it is a predominantly positive development because it provides couples with financial security, career fulfillment, and emotional maturity for raising children.",
+    "In many societies, individuals are increasingly choosing to establish their careers and achieve personal stability before getting married and starting a family. I consider this a largely positive development, as greater financial security and emotional maturity can help couples build more stable family environments, despite the potential challenges associated with delayed parenthood.",
+
+  // 2. Sample conclusion
+  conclusionPlanningPoints: [
+    "Benefits: financial preparedness + mature decision-making.",
+    "Drawback: fewer years available for raising children and possible fertility-related concerns.",
+    "Judgement: benefits generally outweigh the drawbacks."
+  ],
 
   sampleConclusion:
-    "In conclusion, while postponing marriage and childbirth into one's thirties carries medical fertility risks and accelerates population aging, the personal and familial advantages are far more compelling. By achieving career stability, financial independence, and emotional resilience prior to family life, mature parents can offer their children a significantly more stable and prosperous upbringing, rendering this a distinctly positive trend.",
+    "In conclusion, marrying and becoming parents later in life can enable individuals to make more informed decisions, establish financial security and provide a stable upbringing for their children. Although postponing parenthood may present certain practical and biological challenges, I believe the overall benefits of greater maturity and preparedness make this a positive development.",
 
+  // 6. Smart Board Five-Minute Planning Map & Teaching Recommendation
+  fiveMinutePlanningMap: {
+    positive: [
+      "Financial independence → savings, housing, childcare",
+      "Emotional maturity → better conflict resolution",
+      "Informed decisions → compatible partners, planned families"
+    ],
+    negative: [
+      "Fertility concerns → possible difficulty conceiving",
+      "Later family responsibilities → childcare may overlap with retirement planning",
+      "Social pressure → criticism for marrying later"
+    ],
+    position: "Largely positive",
+    body1: "Financial security + emotional maturity",
+    body2: "Acknowledge fertility concerns, but explain why the benefits generally outweigh them.",
+    teachingRecommendation:
+      "Have students build their essay around financial preparedness and emotional maturity, then acknowledge reproductive constraints as the principal counterargument. This gives them a clear, defensible position without making unsupported claims that marrying later always leads to better relationships or parenting."
+  },
+
+  // Strongest Classroom Discussion Question
+  classroomDiscussion: {
+    question:
+      "Would you rather have a child at 25 while still building your career, or at 35 when you are financially established?",
+    followUps: [
+      "Does financial security automatically make someone a better parent?",
+      "Can emotional maturity compensate for financial instability?",
+      "Is there ever a perfect time to start a family?"
+    ],
+    pedagogicalInsight:
+      "These questions help students see that the issue is not simply age; it is the level of preparedness that age may bring."
+  },
+
+  // 3. Student Idea Bank & Body Paragraph Formats
   bodyParagraphs: [
     {
       paraNumber: 1,
       side: "strong_opinion",
-      title: "Points for the Advantages (Strong Side - Advantage 1)",
-      theme: "Financial Security, Career Foundation & Wealth Stability",
+      title: "Points for the Advantages (Strong Side — Positive Development)",
+      theme: "Financial Preparedness, Emotional Maturity & Relationship Stability",
       mainReason:
-        "The primary advantage of postponing marriage and parenthood until one's thirties is that it grants individuals the time required to establish financial independence and career stability.",
+        "Young adults can establish careers, build savings and secure housing before taking on the expenses of raising children.",
       supportingReasons:
-        "Rearing children in modern economies is exceptionally costly, demanding substantial outlays for housing, healthcare, nutritious food, and education. Young adults in their twenties often struggle with student loan debt and volatile entry-level salaries, whereas individuals in their thirties have established professional careers and accumulated savings, allowing them to provide a secure and prosperous home.",
+        "Entering marriage and parenthood after gaining professional experience ensures couples have greater financial wherewithal and emotional acuity, drastically reducing interpersonal discord.",
       example:
-        "For example, couples who delay family formation until their thirties are statistically far more capable of purchasing a family home and absorbing child-rearing costs without falling into chronic debt.",
+        "A couple who have worked for several years may be better equipped to afford rent or a mortgage, childcare and school fees.",
       band9Snippet:
-        "“Foremost among the positive aspects of delaying marriage is that it provides couples with the financial foundation and career stability necessary to support a family.”",
+        "“Foremost among the benefits is that delaying family formation allows individuals to achieve financial independence and emotional maturity, creating a resilient household foundation.”",
       alternativeReasons: [
         {
           id: "body-adv-reason1",
-          badge: "Reason 1 • Financial Security",
-          title: "Accumulated Wealth & Freedom from Economic Hardship",
+          badge: "Reason 1 • Financial Independence",
+          title: "Financial Independence",
           mainReason:
-            "Couples in their thirties have stable incomes and accumulated savings, ensuring they can comfortably afford the high costs of raising children.",
+            "Young adults can establish careers, build savings and secure housing before taking on the expenses of raising children.",
           supportingReasons:
-            "Child-rearing requires immense financial resources for housing, healthcare, nutrition, and schooling. Young adults in their twenties frequently struggle with student loans and unstable entry-level wages, whereas thirty-somethings have climbed the career ladder, earned higher salaries, and saved enough money to give their children a secure, stress-free upbringing.",
+            "Remaining unencumbered during the early career stage allows individuals to clear student debts, accumulate capital reserves, and attain higher-earning positions without the heavy financial strain of early dependents.",
           example:
-            "For instance, parents in their thirties are far more likely to own their family home and comfortably afford quality daycare without resorting to high-interest personal loans.",
+            "A couple who have worked for several years may be better equipped to afford rent or a mortgage, childcare and school fees.",
           band9Snippet:
-            "“Foremost among the positive aspects of delaying marriage is that it provides couples with the financial stability needed to support a family comfortably.”",
+            "“By deferring parenthood until they have greater financial wherewithal, couples may be better equipped to assume familial responsibilities without experiencing severe financial precarity.”",
           modelParagraph:
-            "Foremost among the positive aspects of delaying marriage is that it provides couples with the financial stability needed to support a family comfortably. The economic burden of child-rearing—encompassing spacious housing, healthcare, quality nutrition, and educational fees—has escalated sharply in modern society. Individuals in their thirties typically enjoy established careers, higher earning capacity, and accumulated savings, whereas twenty-somethings frequently battle student debt and unstable entry-level wages. Consequently, mature parents are in a vastly superior position to absorb domestic expenses without enduring debilitating economic stress. For instance, parents in their thirties are statistically far more likely to own their family residence and finance early childhood schooling without descending into chronic debt.",
+            "Foremost among the positive aspects of delaying marriage is that it provides couples with the financial independence needed to support a family comfortably. Child-rearing requires immense financial resources for housing, healthcare, nutrition, and schooling. Young adults in their twenties frequently struggle with student loans and unstable entry-level wages, whereas individuals in their thirties have established professional careers and accumulated savings. Consequently, mature parents are in a vastly superior position to absorb domestic expenses. For instance, a couple who have worked for several years are far better equipped to afford a mortgage down payment, quality childcare, and ongoing educational fees without falling into severe debt.",
           examinerNotes:
-            "Directly relatable economic argument. Contrasts entry-level 20s financial struggle with established 30s earning power."
+            "Relatable & practical. Explains the transition from early-career debt to 30s financial solvency."
         },
         {
           id: "body-adv-reason2",
-          badge: "Reason 2 • Career Progression",
-          title: "Uninterrupted Professional & Educational Advancement",
+          badge: "Reason 2 • Emotional Maturity",
+          title: "Emotional Maturity",
           mainReason:
-            "Postponing marriage and parenthood allows young adults to complete higher education and reach senior career milestones without domestic disruption.",
+            "People may become more self-aware and better at managing disagreements, making them more capable of handling marital and parenting responsibilities.",
           supportingReasons:
-            "Balancing intense university degrees or demanding corporate hours with the 24/7 duties of childcare often forces young professionals—particularly women—to interrupt or abandon their ambitions. Delaying family obligations enables both partners to earn postgraduate qualifications, gain international experience, and secure promotions before taking parental leave.",
+            "Additional life experience cultivates emotional acuity, self-regulation, and patience. Mature partners are significantly less prone to impulsive conflicts and more adept at constructive problem-solving during parental stress.",
           example:
-            "For example, female professionals in fields like medicine, law, and engineering who delay childbearing until their thirties are significantly more likely to achieve senior leadership and managerial roles.",
+            "A couple who have learnt to resolve conflicts constructively may be better prepared to manage disagreements about childcare.",
           band9Snippet:
-            "“Equally significant is that deferring domestic commitments allows young adults to realize their full educational and professional potential unhindered.”",
+            "“Greater emotional acuity and self-awareness acquired through life experience enable partners to navigate domestic friction with constructive composure.”",
           modelParagraph:
-            "Equally significant is that deferring domestic responsibilities allows young adults to realize their full educational and professional potential unhindered. Demanding degree programs and competitive corporate careers require intensive commitment that is exceptionally difficult to balance with the relentless demands of newborn care. By postponing marriage and childbirth, individuals can complete postgraduate studies, acquire specialized workplace skills, and ascend to leadership positions before taking on family duties. For instance, female professionals in competitive fields like medicine, law, and corporate finance who delay motherhood until their thirties are much more likely to attain senior directorships without sacrificing their career trajectory.",
+            "Equally important is that entering marriage and parenthood later in life fosters greater emotional maturity. Raising children inevitably introduces severe physical exhaustion and emotional stress, which can strain a relationship. Individuals in their thirties generally possess greater self-awareness, patience, and emotional acuity developed through diverse adult experiences. As a result, they can manage disagreements constructively rather than reacting with impulsive frustration. For example, a couple who have already established healthy communication patterns in their twenties are far better prepared to negotiate domestic duties and resolve disputes over childcare harmoniously.",
           examinerNotes:
-            "Highlights gender equality and professional fulfillment without overcomplicating the logic."
+            "Focuses on psychological readiness, conflict resolution, and marital durability."
         },
         {
           id: "body-adv-reason3",
-          badge: "Reason 3 • Emotional Maturity",
-          title: "Psychological Wisdom & Lower Divorce Rates",
+          badge: "Reason 3 • Informed Partner Selection",
+          title: "More Informed Partner Selection",
           mainReason:
-            "Adults in their thirties possess greater self-awareness and emotional wisdom, resulting in stronger marriages and calmer parenting.",
+            "Additional life experience can help people understand their own priorities and choose partners with compatible values and long-term goals.",
           supportingReasons:
-            "Young people in their early twenties are still developing their personal identity and frequently rush into relationships driven by infatuation, leading to high divorce rates. By age thirty, people have gained life experience, understand what they value in a partner, and handle domestic disagreements with patient communication, creating a harmonious environment for children.",
+            "In their twenties, individuals often have evolving identities and uncertain aspirations. By their thirties, people have developed a grounded understanding of their personal values, lifestyle preferences, and financial habits.",
           example:
-            "Sociological studies demonstrate that couples who marry after age thirty experience substantially lower rates of divorce and marital separation compared to those marrying in their early twenties.",
+            "Two people may discuss financial habits, career plans and expectations about raising children before committing to marriage.",
           band9Snippet:
-            "“Moreover, postponing marriage fosters greater emotional maturity and psychological resilience in both marital relationships and parenting.”",
+            "“Maturity affords prospective spouses the clarity to evaluate long-term compatibility, thereby significantly curbing the likelihood of interpersonal discord.”",
           modelParagraph:
-            "Moreover, postponing marriage fosters greater emotional maturity and psychological resilience in both marital relationships and parenting. Young adults in their early twenties are often still exploring their personal identities and lack the conflict-resolution skills necessary for lifelong commitment. By the age of thirty, individuals possess a clearer understanding of their personal values, make wiser partner choices, and handle parental stress with greater patience and emotional balance. Research consistently indicates that couples who marry in their thirties exhibit markedly lower divorce rates, providing children with a much calmer, more harmonious domestic environment.",
+            "Furthermore, delaying matrimony facilitates more informed partner selection. In early adulthood, individuals frequently undergo rapid psychological shifts and career transitions, making it difficult to discern whether an initial relationship will endure long term. By their thirties, prospective spouses have a lucid understanding of their core values, financial philosophy, and parenting aspirations. Consequently, they choose life partners based on genuine compatibility rather than youthful infatuation. For instance, mature couples typically discuss savings habits, career trajectories, and child-rearing expectations prior to marriage, laying the groundwork for enduring marital harmony.",
           examinerNotes:
-            "Focuses on psychological well-being, mature decision-making, and marital stability."
+            "Explains why mature dating and value alignment lead to stronger long-term family stability."
         },
         {
           id: "body-adv-reason4",
-          badge: "Reason 4 • Personal Freedom",
-          title: "Living Youthful Dreams Without Later Resentment",
+          badge: "Reason 4 • Established Careers",
+          title: "Established Careers and Better Time Management",
           mainReason:
-            "Spending one's twenties independent allows people to travel, pursue passions, and mature without feeling trapped or resentful later in life.",
+            "Individuals who have progressed professionally may have greater control over their schedules and resources, making family responsibilities easier to manage.",
           supportingReasons:
-            "Those who marry too young often suffer from 'lost youth syndrome,' resenting that domestic duties prevented them from seeing the world or exploring personal interests. Having enjoyed complete independence throughout their twenties, adults in their thirties transition into parenthood willingly and wholeheartedly.",
+            "Senior employees and established professionals generally enjoy greater bargaining power, employment protections, and workplace autonomy compared to junior hires striving to prove themselves.",
           example:
-            "Many adults who spent their twenties traveling, studying abroad, and building creative hobbies report entering family life with deep satisfaction and zero feelings of missing out.",
+            "An established employee may be in a better position to negotiate parental leave or flexible working arrangements.",
           band9Snippet:
-            "“Finally, spending one's twenties as an independent individual prevents the psychological resentment that often accompanies premature domesticity.”",
+            "“Career seniority endows working parents with the temporal autonomy and institutional leverage needed to balance demanding careers with childcare.”",
           modelParagraph:
-            "Finally, spending one's twenties as an independent individual prevents the psychological resentment that often accompanies premature domesticity. Young people who marry prematurely frequently feel they have missed out on fundamental life experiences such as solo travel, personal hobbies, and social exploration. Having satisfied these youthful aspirations, men and women in their thirties transition into parenthood willingly and with deep gratitude, viewing family life as a fulfilling new chapter rather than a restrictive burden.",
+            "Finally, postponing parenthood until one has achieved professional seniority affords working parents greater control over their time and resources. Junior workers must frequently work late hours and travel extensively to advance their careers, creating severe friction with domestic duties. By contrast, individuals who have established themselves professionally by their thirties possess greater job security and institutional influence. This professional standing enables them to negotiate favorable parental leave policies and telecommuting options. For instance, an established corporate manager is in a far stronger position to request flexible working arrangements to care for a toddler without jeopardizing their livelihood.",
           examinerNotes:
-            "Psychological perspective on life satisfaction and parental commitment."
+            "Demonstrates practical workplace reality: established professionals have flexibility and control."
         }
       ]
     },
     {
       paraNumber: 2,
-      side: "strong_opinion",
-      title: "Body Paragraph 2 (Strong Side Advantage 2)",
-      theme: "Emotional Maturity, Relationship Longevity & Quality Parenting",
-      mainReason:
-        "Equally important is that greater psychological maturity in one's thirties fosters durable marital partnerships and more nurturing, patient parenting.",
-      supportingReasons:
-        "Older parents are generally calmer, less impulsive, and more attentive to their children's psychological development, shielding children from chaotic home environments.",
-      example:
-        "Research confirms that children raised by mature, financially stable parents achieve higher educational outcomes and report greater emotional security.",
-      band9Snippet:
-        "“Equally important is that greater psychological maturity in one's thirties fosters durable marital partnerships and more nurturing, patient parenting.”"
-    },
-    {
-      paraNumber: 3,
       side: "non_opinion",
-      title: "Points for the Disadvantages (Counterpoint / Non-Opinion Side)",
-      theme: "Biological Fertility Complications & Generational Age Gap",
+      title: "Points for the Disadvantages (Counterpoint — Potential Drawbacks)",
+      theme: "Biological Constraints, Generation Gaps & Lifestyle Friction",
       mainReason:
-        "On the other hand, critics rightly emphasize that delaying marriage and childbirth introduces serious biological risks and creates a widening generational gap.",
+        "Fertility generally declines with age, particularly for women, which can make conception more difficult for some couples.",
       supportingReasons:
-        "Human fertility declines significantly after age thirty, increasing the likelihood of conception difficulties, miscarriages, and expensive medical procedures, while older parents may lack the energy to raise active children.",
+        "Postponing parenthood indefinitely can expose couples to reproductive constraints, less time with offspring, and conflicting priorities after years of personal independence.",
       example:
-        "For instance, women attempting first-time conception in their late thirties experience higher rates of pregnancy complications and frequently require stressful in-vitro fertilization (IVF) treatments.",
+        "A couple trying to conceive in their late 30s may face difficulties that they might not have encountered earlier.",
       band9Snippet:
-        "“On the other hand, critics rightly emphasize that delaying marriage and childbirth introduces serious biological risks and creates a widening generational gap.”",
+        "“Nevertheless, delaying parenthood indefinitely can expose some couples to reproductive constraints, demonstrating that financial preparedness must be balanced against biological considerations.”",
       alternativeReasons: [
         {
-          id: "body-disadv-reason1",
-          badge: "Reason 1 • Biological Fertility Risks",
-          title: "Reproductive Decline & Heightened Pregnancy Complications",
+          id: "body-dis-reason1",
+          badge: "Reason 1 • Reduced Fertility",
+          title: "Reduced Fertility with Age",
           mainReason:
-            "Natural fertility declines significantly after age thirty, making conception harder and increasing pregnancy complications.",
+            "Fertility generally declines with age, particularly for women, which can make conception more difficult for some couples.",
           supportingReasons:
-            "Human biological clocks are real: female ovarian reserve drops sharply after thirty and steeper after thirty-five, while sperm quality also declines. Older pregnancies carry higher risks of gestational diabetes, high blood pressure, and chromosomal disorders such as Down syndrome, often forcing couples to undergo emotionally exhausting and expensive IVF procedures.",
+            "Human reproductive biology becomes progressively more constrained after the mid-thirties, increasing the likelihood of conception delays, pregnancy complications, and the need for costly medical interventions.",
           example:
-            "For example, women conceiving in their late thirties face higher rates of miscarriage and often spend thousands of dollars on assisted reproductive technologies.",
+            "A couple trying to conceive in their late 30s may face difficulties that they might not have encountered earlier.",
           band9Snippet:
-            "“On the other hand, critics rightly emphasize the profound biological and medical hazards associated with delayed childbearing.”",
+            "“Nevertheless, delaying parenthood indefinitely can expose some couples to reproductive constraints, demonstrating that financial preparedness must be balanced against biological considerations.”",
           modelParagraph:
-            "On the other hand, critics rightly emphasize the profound biological and medical hazards associated with delayed childbearing. Human fertility declines precipitously after the age of thirty, particularly for women, making natural conception considerably more difficult and unpredictable. Furthermore, pregnancies at advanced maternal age carry heightened clinical risks, including preeclampsia, gestational diabetes, and chromosomal abnormalities such as Down syndrome. For example, many couples in their late thirties are compelled to undergo costly, emotionally distressing in-vitro fertilization (IVF) procedures that offer no guarantee of successful childbirth.",
+            "On the other hand, the most prominent drawback of delaying family planning is that fertility naturally declines with age. Biological research confirms that reproductive capacity decreases steadily after the early thirties, particularly for women. Consequently, couples who wait until their mid-to-late thirties may encounter unintended delays or severe difficulties in conceiving naturally. This frequently necessitates emotionally taxing and cost-prohibitive fertility interventions such as IVF. For example, a couple trying to conceive in their late thirties may experience prolonged medical challenges that they would not have faced had they started a family in their mid-twenties.",
           examinerNotes:
-            "The most authoritative, scientifically backed drawback. Directly relatable and clear."
+            "The primary biological counterargument. Grounded, balanced, and defensible without exaggeration."
         },
         {
-          id: "body-disadv-reason2",
-          badge: "Reason 2 • Physical Energy & Age Gap",
-          title: "Dwindling Physical Energy & Wide Generational Divide",
+          id: "body-dis-reason2",
+          badge: "Reason 2 • Less Time for Raising Children",
+          title: "Less Time for Raising Children",
           mainReason:
-            "Older parents often lack the physical stamina required to raise energetic toddlers and face a wider cultural gap with their offspring.",
+            "Becoming a parent later means parents will be older when their children reach adulthood, potentially affecting long-term family plans.",
           supportingReasons:
-            "Caring for small children involves sleepless nights, physical carrying, and constant active play, which becomes far more taxing in one's late thirties and forties. Furthermore, being nearly forty years older than their children means parents will be approaching retirement when their children graduate, leaving less shared time with future grandchildren.",
+            "Starting parenthood in the late thirties widens the age gap between generations, which may lead to diminished physical stamina for active parenting and an overlap between retirement and university funding.",
           example:
-            "A parent who has a baby at thirty-eight will be almost sixty when the child completes high school, creating a vast cultural and communication divide.",
+            "Parents may be approaching retirement while their children are still completing university.",
           band9Snippet:
-            "“Another significant drawback is the physical strain of late parenthood and the widening generational divide.”",
+            "“An expanded intergenerational gap means that mature parents may find their retirement timelines colliding directly with tertiary educational expenses.”",
           modelParagraph:
-            "Another significant drawback is the physical strain of late parenthood and the widening generational divide. Caring for hyperactive toddlers and coping with chronic sleep deprivation requires immense physical stamina that naturally diminishes as adults approach their forties. Moreover, a substantial age gap between parents and offspring can hinder mutual cultural understanding and communication. For instance, a parent who conceives at thirty-eight will be approaching retirement when their child graduates from secondary school, leaving them with less energy to participate in their child's athletic milestones and fewer years to bond with future grandchildren.",
+            "Another notable challenge is that becoming a parent later in life limits the time parents share with their children during adulthood. When individuals have children in their late thirties or forties, they will naturally be approaching their senior years by the time their offspring finish schooling. This substantial age gap can mean parents have reduced physical energy to keep pace with young toddlers, and their window to witness their grandchildren grow up is noticeably contracted. For instance, older parents may be nearing formal retirement age at the precise moment their children are entering university, compounding financial pressures.",
           examinerNotes:
-            "Very human and realistic. Relates to daily energy levels and long-term family relationships."
+            "Very relatable practical point: energy levels and retirement collision."
         },
         {
-          id: "body-disadv-reason3",
-          badge: "Reason 3 • Population Aging",
-          title: "Plummeting Birth Rates & National Economic Contraction",
+          id: "body-dis-reason3",
+          badge: "Reason 3 • Conflicting Priorities",
+          title: "Conflicting Career and Family Priorities",
           mainReason:
-            "Delaying marriage leads to smaller family sizes, causing national birth rates to plummet and creating an aging society.",
+            "After years of professional independence, some people may find it difficult to reorganise their routines around childcare.",
           supportingReasons:
-            "When adults wait until their thirties to have children, biological time limits mean most have only one or two children instead of three or four. This causes national birth rates to drop below replacement level (2.1), leaving countries with a shrinking workforce unable to pay for pensions and healthcare for growing elderly populations.",
+            "Adults who spend a decade enjoying unfettered personal freedom, flexible schedules, and career autonomy may experience significant psychological friction when forced to adapt to the selfless, round-the-clock sacrifices of early parenthood.",
           example:
-            "Countries like South Korea, Japan, and Italy, where the average marriage age exceeds thirty-one, are now experiencing severe labor shortages and closed elementary schools.",
+            "Someone accustomed to frequent work travel may struggle to balance professional commitments with caring for a young child.",
           band9Snippet:
-            "“From a broader societal perspective, widespread delays in family formation exacerbate severe demographic aging and workforce contraction.”",
+            "“Prolonged individual autonomy can entrench personal habits that make the sudden, relentless compromises of infant care psychologically jarring.”",
           modelParagraph:
-            "From a broader societal perspective, widespread delays in family formation exacerbate severe demographic aging and workforce contraction. Couples who postpone parenthood into their thirties inevitably have fewer children due to biological time limits, causing national birth rates to plummet below the replacement threshold. This creates a top-heavy demographic pyramid with a dwindling workforce struggling to fund the soaring pension and healthcare liabilities of an expanding elderly population. For instance, countries such as South Korea and Japan, where average marriage ages now exceed thirty-one, are currently grappling with labor shortages, rural depopulation, and unsustainable social security deficits.",
+            "Furthermore, delaying domestic commitments can create difficult conflicts between ingrained career habits and family duties. Adults who have spent over a decade enjoying complete personal autonomy and dedicated career immersion often establish rigid daily routines. Adapting to the unpredictable, all-consuming demands of infant care can therefore represent a major psychological shock. For example, a professional accustomed to frequent international business travel or long corporate evenings may find it exceptionally stressful to abruptly curtail their career trajectory to tend to a newborn's daily needs.",
           examinerNotes:
-            "Broad macroeconomic and demographic argument that connects delayed marriage to global issues."
+            "Explores lifestyle adaptation: deeply established adult independence vs. infant care compromises."
         },
         {
-          id: "body-disadv-reason4",
-          badge: "Reason 4 • Double Caring Burden",
-          title: "Simultaneously Caring for Young Children & Ailing Elderly Parents",
+          id: "body-dis-reason4",
+          badge: "Reason 4 • Social Pressure",
+          title: "Family and Social Pressure",
           mainReason:
-            "Having children later in life coincides directly with the period when one's own elderly parents require intensive care and medical support.",
+            "People who marry later may face persistent questions or criticism from relatives and communities that expect earlier marriage.",
           supportingReasons:
-            "When an adult has a toddler at thirty-eight, their own parents are typically in their seventies and developing chronic illnesses. This traps middle-aged adults in the exhausting 'sandwich generation,' forced to juggle career peaks, young children, and frail aging parents at the same time.",
+            "In many cultures, early marriage and prompt childbearing remain deeply entrenched social expectations. Unmarried adults in their late twenties and thirties often experience persistent familial scrutiny and social isolation.",
           example:
-            "Many forty-year-olds face severe emotional and financial burnout from managing preschool drop-offs alongside hospital visits for elderly parents suffering from dementia or mobility loss.",
+            "An adult may feel pressured to marry before finding a genuinely compatible partner simply to satisfy family expectations.",
           band9Snippet:
-            "“Lastly, postponing childbirth frequently subjects adults to the grueling emotional and logistical burdens of the 'sandwich generation.'”",
+            "“Later marriage frequently collides with entrenched social expectations, subjecting individuals to unwarranted familial anxiety and community scrutiny.”",
           modelParagraph:
-            "Lastly, postponing childbirth frequently subjects adults to the grueling emotional and logistical burdens of the 'sandwich generation.' When adults delay having children until their late thirties, their own parents are typically entering their seventies and suffering from chronic age-related ailments. Consequently, middle-aged adults find themselves squeezed between the relentless demands of rearing young toddlers and the exhaustive duties of providing eldercare for ailing parents. This dual caretaking burden causes acute psychological burnout, marital friction, and severe financial strain.",
+            "Finally, individuals who postpone marriage often face intense societal and familial pressure. In numerous societies, traditional cultural norms mandate that young adults marry and produce offspring in their early twenties. Those who deliberately deviate from this timetable are often subjected to persistent probing, unwarranted criticism, or anxiety from extended relatives. For example, an adult in their early thirties may feel coerced into rushing into an incompatible marriage simply to appease aging parents, inadvertently undermining the very stability they sought to achieve.",
           examinerNotes:
-            "Deep psychological and sociological insight into modern family pressures."
+            "Highlights cultural expectations and interpersonal tension without losing essay focus."
         }
       ]
     }
   ],
 
-  vocabList: [
+  // 4. Faculty / Teacher Idea Bank (8 Analytical Angles)
+  facultyAngles: [
     {
-      word: "socio-economic independence",
-      meaning:
-        "The state of possessing sufficient personal wealth, professional stability, and material autonomy to live without financial reliance on others.",
-      example:
-        "Delaying marriage allows young adults to establish complete socio-economic independence before undertaking the responsibilities of child-rearing."
+      type: "positive",
+      title: "Reduced Financial Dependence",
+      development:
+        "Couples who have established their own incomes may be less dependent on parents or extended family, allowing them to make independent decisions about their household and children."
     },
     {
-      word: "advanced maternal age",
-      meaning:
-        "A clinical term used in obstetrics referring to women who become pregnant at age 35 or older, associated with increased physiological risks.",
-      example:
-        "Pregnancies categorized as advanced maternal age require heightened medical vigilance to prevent gestational complications."
+      type: "positive",
+      title: "Greater Equality Within Relationships",
+      development:
+        "When both partners have had time to pursue education and careers, they may be better positioned to negotiate domestic responsibilities and share financial decisions."
     },
     {
-      word: "demographic contraction",
-      meaning:
-        "A sustained reduction in a nation's total population size accompanied by a shrinking proportion of young working-age citizens.",
-      example:
-        "Widespread postponement of childbearing has accelerated demographic contraction in nations like Japan and South Korea."
+      type: "positive",
+      title: "Breaking the Cycle of Financial Insecurity",
+      development:
+        "Parents who enter family life with savings and stable employment may be better able to invest in nutrition, education and enriching experiences for their children."
     },
     {
-      word: "assisted reproductive technology",
-      meaning:
-        "Medical procedures such as IVF and egg freezing designed to achieve pregnancy when natural conception is hindered by age or biological factors.",
-      example:
-        "Couples who postpone family formation past age thirty-five increasingly rely on assisted reproductive technology to overcome fertility obstacles."
+      type: "positive",
+      title: "More Deliberate Family Planning",
+      development:
+        "Delaying parenthood can give couples time to decide whether they genuinely want children and how many they can realistically support, potentially reducing unplanned pregnancies."
     },
     {
-      word: "the sandwich generation",
-      meaning:
-        "A cohort of middle-aged adults simultaneously burdened with caring for their young children and supporting their aging, dependent parents.",
-      example:
-        "Older first-time parents frequently find themselves trapped in the sandwich generation, dividing time between toddlers and frail elderly parents."
+      type: "negative",
+      title: "A Narrowing Window for Family Planning",
+      development:
+        "Delayed decisions may leave couples with less flexibility if conception takes longer than expected or they encounter fertility difficulties."
     },
     {
-      word: "marital longevity",
-      meaning:
-        "The durability, stability, and enduring survival of a marriage over a protracted period without divorce or separation.",
-      example:
-        "Greater emotional maturity in one's thirties is strongly correlated with increased marital longevity and lower rates of domestic breakdown."
+      type: "negative",
+      title: "The Dual Burden of Caring Responsibilities",
+      development:
+        "People who become parents later may simultaneously have young children and ageing parents who need financial or practical support."
     },
     {
-      word: "emotional equilibrium",
-      meaning:
-        "A state of mental calmness, self-mastery, and psychological composure that enables patient and effective conflict resolution.",
-      example:
-        "Thirty-something parents generally display greater emotional equilibrium, shielding their offspring from impulsive, reactive parenting."
+      type: "negative",
+      title: "Over-Optimisation of Life Plans",
+      development:
+        "Waiting for the perfect salary, house or career position may lead some individuals to postpone family life indefinitely because complete security is rarely achievable."
     },
     {
-      word: "sub-replacement fertility",
-      meaning:
-        "A total fertility rate that falls below 2.1 children per woman, insufficient to keep a population stable without external immigration.",
-      example:
-        "Many developed economies have descended into sub-replacement fertility as young adults defer family formation indefinitely."
-    },
-    {
-      word: "ovarian reserve depletion",
-      meaning:
-        "The progressive age-related decline in the quality and quantity of eggs in female ovaries, reducing natural conception likelihood.",
-      example:
-        "Women are biologically constrained by ovarian reserve depletion, which accelerates rapidly after thirty-five years of age."
-    },
-    {
-      word: "psychological preparedness",
-      meaning:
-        "The mental and emotional readiness of an individual to willingly embrace the sacrifices and daily duties of parenthood.",
-      example:
-        "Having satisfied their youthful wanderlust in their twenties, older parents enter domestic life with superior psychological preparedness."
+      type: "negative",
+      title: "Changing Expectations of Independence",
+      development:
+        "People accustomed to controlling their time and spending may find the compromises required by marriage and parenting more challenging than anticipated."
     }
   ],
 
-  vocabHunt: [
-    "socio-economic independence",
-    "advanced maternal age",
-    "demographic contraction",
-    "assisted reproductive technology",
-    "the sandwich generation",
-    "marital longevity",
-    "emotional equilibrium",
-    "sub-replacement fertility",
-    "ovarian reserve depletion",
-    "psychological preparedness"
+  // 5. Workbook — High-Band Vocabulary (10 Expressions)
+  vocabList: [
+    {
+      word: "financial wherewithal",
+      phonetic: "/faɪˈnænʃəl ˈwɛəwɪðɔːl/",
+      pos: "noun phrase",
+      meaning: "The financial means to do something",
+      collocations: ["greater financial wherewithal", "sufficient wherewithal", "lack the wherewithal"],
+      example: "Couples may have greater financial wherewithal to raise children comfortably.",
+      band: 9,
+      topic: "Economics & Family",
+      cefr: "C2",
+      usageNotes: "Formal, academic phrasing for having sufficient financial means."
+    },
+    {
+      word: "emotional acuity",
+      phonetic: "/ɪˈməʊʃənl əˈkjuːəti/",
+      pos: "noun phrase",
+      meaning: "The ability to understand emotions and emotional situations",
+      collocations: ["develop emotional acuity", "heightened acuity", "demonstrate emotional acuity"],
+      example: "Greater emotional acuity can help partners navigate disagreements constructively.",
+      band: 9,
+      topic: "Psychology & Relationships",
+      cefr: "C2",
+      usageNotes: "Far superior to basic words like 'emotional intelligence' or 'feelings'."
+    },
+    {
+      word: "defer parenthood",
+      phonetic: "/dɪˈfɜː ˈpeərənthʊd/",
+      pos: "verb phrase",
+      meaning: "Postpone having children",
+      collocations: ["defer parenthood until", "choice to defer parenthood", "deferring childbearing"],
+      example: "Many couples defer parenthood until they have established their careers.",
+      band: 8.5,
+      topic: "Demographics & Life Decisions",
+      cefr: "C1",
+      usageNotes: "Precise academic synonym for 'delay having babies'."
+    },
+    {
+      word: "assume familial responsibilities",
+      phonetic: "/əˈsjuːm fəˈmɪliəl rɪˌspɒnsəˈbɪlɪtiz/",
+      pos: "verb phrase",
+      meaning: "Take on family duties and obligations",
+      collocations: ["prepared to assume", "assume familial responsibilities", "readiness to assume"],
+      example: "Mature adults may be better prepared to assume familial responsibilities.",
+      band: 8.5,
+      topic: "Family & Adulthood",
+      cefr: "C1",
+      usageNotes: "High-level collocation for taking care of a family."
+    },
+    {
+      word: "financial precarity",
+      phonetic: "/faɪˈnænʃəl prɪˈkeərəti/",
+      pos: "noun phrase",
+      meaning: "A state of persistent financial insecurity or vulnerability",
+      collocations: ["intensify financial precarity", "escape precarity", "experience severe precarity"],
+      example: "Early parenthood can intensify financial precarity among couples with unstable incomes.",
+      band: 9,
+      topic: "Socioeconomics",
+      cefr: "C2",
+      usageNotes: "Academic alternative to 'being poor' or 'financial instability'."
+    },
+    {
+      word: "interpersonal discord",
+      phonetic: "/ˌɪntəˈpɜːsənl ˈdɪskɔːd/",
+      pos: "noun phrase",
+      meaning: "Conflict or disagreement between people",
+      collocations: ["resolve interpersonal discord", "curb discord", "domestic discord"],
+      example: "Greater maturity may help couples resolve interpersonal discord more effectively.",
+      band: 8.5,
+      topic: "Relationships",
+      cefr: "C1",
+      usageNotes: "Elevated expression for relationship fights or marital conflicts."
+    },
+    {
+      word: "reproductive constraints",
+      phonetic: "/ˌriːprəˈdʌktɪv kənˈstreɪnts/",
+      pos: "noun phrase",
+      meaning: "Limitations affecting the biological ability to have children",
+      collocations: ["expose couples to reproductive constraints", "biological constraints", "face constraints"],
+      example: "Delayed parenthood may expose some couples to reproductive constraints.",
+      band: 9,
+      topic: "Biology & Health",
+      cefr: "C2",
+      usageNotes: "Medical and academic register for fertility limits."
+    },
+    {
+      word: "long-term provisioning",
+      phonetic: "/ˈlɒŋ tɜːm prəˈvɪʒənɪŋ/",
+      pos: "noun phrase",
+      meaning: "Planning and providing resources for the future",
+      collocations: ["capacity for long-term provisioning", "financial provisioning", "household provisioning"],
+      example: "Stable employment can improve a couple’s capacity for long-term provisioning.",
+      band: 8.5,
+      topic: "Household Economics",
+      cefr: "C1",
+      usageNotes: "Academic concept encompassing saving, budgeting, and safeguarding future needs."
+    },
+    {
+      word: "parental readiness",
+      phonetic: "/pəˈrɛntl ˈrɛdɪnɪs/",
+      pos: "noun phrase",
+      meaning: "Preparedness to become a parent psychologically and financially",
+      collocations: ["determine parental readiness", "foster readiness", "assess readiness"],
+      example: "Age alone does not necessarily determine parental readiness.",
+      band: 8,
+      topic: "Child Development",
+      cefr: "C1",
+      usageNotes: "Comprehensive term combining emotional and economic preparedness."
+    },
+    {
+      word: "entrenched social expectations",
+      phonetic: "/ɪnˈtrɛnʧt ˈsəʊʃəl ˌɛksprɛkˈteɪʃənz/",
+      pos: "noun phrase",
+      meaning: "Deeply established social beliefs about how people should behave",
+      collocations: ["challenge entrenched social expectations", "conform to expectations", "cultural expectations"],
+      example: "Later marriage can challenge entrenched social expectations about adulthood.",
+      band: 9,
+      topic: "Sociology & Culture",
+      cefr: "C2",
+      usageNotes: "Perfect sociological phrasing for traditional marriage pressures."
+    }
   ],
 
+  // Best Six for Workbook
+  workbookTopSix: [
+    "financial wherewithal",
+    "defer parenthood",
+    "assume familial responsibilities",
+    "financial precarity",
+    "reproductive constraints",
+    "entrenched social expectations"
+  ],
+
+  // Model Sentences
+  modelSentences: {
+    positive:
+      "By deferring parenthood until they have greater financial wherewithal, couples may be better equipped to assume familial responsibilities without experiencing severe financial precarity.",
+    balanced:
+      "Nevertheless, delaying parenthood indefinitely can expose some couples to reproductive constraints, demonstrating that financial preparedness must be balanced against biological considerations."
+  },
+
+  vocabHunt: [
+    "financial wherewithal",
+    "emotional acuity",
+    "defer parenthood",
+    "assume familial responsibilities",
+    "financial precarity",
+    "interpersonal discord",
+    "reproductive constraints",
+    "long-term provisioning",
+    "parental readiness",
+    "entrenched social expectations"
+  ],
+
+  // Fluid Lexicon ("Sugar in Water")
+  fluidVocab: [
+    {
+      word: "wherewithal",
+      pos: "noun",
+      meaning: "The money or other means needed for a particular purpose",
+      naturalCollocation: "financial wherewithal to raise children",
+      organicExample:
+        "Couples in their thirties have greater financial wherewithal to provide for their children's education.",
+      mechanicalPitfall: "Do not write 'they have a wherewithal'—it is an uncountable noun.",
+      examinerInsight: "Band 9 register when discussing household economics."
+    },
+    {
+      word: "defer",
+      pos: "verb",
+      meaning: "Put off to a later time; postpone",
+      naturalCollocation: "defer parenthood / defer marriage",
+      organicExample:
+        "Young professionals frequently defer parenthood until they have achieved employment security.",
+      mechanicalPitfall: "Do not confuse with 'differ' (to disagree). Follow with a direct noun.",
+      examinerInsight: "Natural formal verb replacing repetitive uses of 'delay'."
+    },
+    {
+      word: "acuity",
+      pos: "noun",
+      meaning: "Sharpness or keenness of thought, vision, or hearing",
+      naturalCollocation: "emotional acuity / intellectual acuity",
+      organicExample:
+        "Adults with heightened emotional acuity navigate marital disagreements with calmness and empathy.",
+      mechanicalPitfall: "Avoid using as an adjective ('acuity minds' is incorrect; use 'acute').",
+      examinerInsight: "Elevates psychological descriptions above generic 'mature thinking'."
+    },
+    {
+      word: "precarity",
+      pos: "noun",
+      meaning: "A state of persistent insecurity, vulnerability, or uncertainty",
+      naturalCollocation: "financial precarity / economic precarity",
+      organicExample:
+        "Early parenthood can plunge low-income workers into prolonged financial precarity.",
+      mechanicalPitfall: "Avoid 'precarity situation'—use 'precarious situation' or simply 'precarity'.",
+      examinerInsight: "High-level sociological descriptor recognized by Band 9 examiners."
+    },
+    {
+      word: "entrenched",
+      pos: "adjective",
+      meaning: "Firmly established and difficult or unlikely to change",
+      naturalCollocation: "entrenched social expectations / entrenched traditions",
+      organicExample:
+        "Delaying matrimony often collides with entrenched social expectations regarding adulthood.",
+      mechanicalPitfall: "Do not say 'deeply entrenched in' when describing simple temporary habits.",
+      examinerInsight: "Accurately captures generational and cultural community norms."
+    },
+    {
+      word: "provisioning",
+      pos: "noun",
+      meaning: "The action of providing or supplying something for use, especially resources",
+      naturalCollocation: "long-term provisioning for the family",
+      organicExample:
+        "Senior career status dramatically strengthens a couple's capacity for long-term provisioning.",
+      mechanicalPitfall: "Do not use 'provisionings' as plural.",
+      examinerInsight: "Displays sophisticated command of domestic economic terminology."
+    }
+  ],
+
+  // 4 Guided Brainstorming Cards for Step 3
+  brainstormCards: [
+    {
+      question:
+        "How does entering marriage in your 30s affect household finances compared to your early 20s?",
+      thinkingLens:
+        "Think about entry-level salaries, student loans, and rental instability versus 10 years of savings, career promotion, and mortgage qualification.",
+      selfCheck:
+        "Did I focus on concrete expenses like housing down payments, childcare, and healthcare rather than just saying 'they have more money'?",
+      idea:
+        "Financial Independence: Young adults can establish careers, build savings and secure housing before taking on child-rearing costs. A couple who have worked for several years are far better equipped to afford rent or a mortgage, childcare and school fees."
+    },
+    {
+      question:
+        "Why might personal maturity and life experience improve marital longevity and parenting quality?",
+      thinkingLens:
+        "Consider self-awareness, conflict resolution skills, and knowing what you want in a partner versus youthful impetuousness and unaddressed insecurities.",
+      selfCheck:
+        "Can I explain how constructive communication prevents divorce and reduces toxic stress for growing children?",
+      idea:
+        "Emotional Maturity: People become more self-aware and skilled at managing disagreements. A couple who have learnt to resolve interpersonal discord constructively are better prepared to manage disputes over parenting duties."
+    },
+    {
+      question:
+        "What biological and medical realities arise when couples wait until their late 30s to have children?",
+      thinkingLens:
+        "Focus on natural reproductive decline, chromosomal and gestational health concerns, and reliance on assisted reproductive technology.",
+      selfCheck:
+        "Did I frame this as a real biological limitation without exaggerating it into an impossible obstacle?",
+      idea:
+        "Reduced Fertility with Age: Fertility naturally declines with age, especially past the mid-thirties, making conception more difficult. Couples may face unintended delays or require costly assisted therapies like IVF."
+    },
+    {
+      question:
+        "How does becoming a parent at 35 or 38 alter long-term family life and retirement planning?",
+      thinkingLens:
+        "Examine the generational age gap: parents reaching their late 50s while their children are teenagers or college students, plus caring for aging grandparents.",
+      selfCheck:
+        "Did I connect parental age to energy levels, retirement savings, and the dual caring burden?",
+      idea:
+        "Less Time & Overlapping Priorities: Parents will be older when children reach adulthood, meaning university tuition may overlap with retirement planning, alongside reduced physical stamina for toddler care."
+    }
+  ],
+
+  // Consequences & Student Idea Bank Table
   consequences: [
     {
       type: "positive",
-      title: "Financial Security & Accumulation of Family Wealth",
-      desc: "Individuals in their 30s have stable professional careers, higher salaries, and savings, ensuring they can comfortably fund childcare, housing, and schooling without debt.",
-      example: "Couples in their 30s purchasing a family home and absorbing healthcare and private tutoring costs comfortably.",
-      level: "Advantage 1 (Step 6)",
-      simpleTakeaway: "Financial stability: higher earnings and savings allow parents to provide superior living standards for their children.",
-      collocation: "accumulated family wealth"
+      title: "Financial Independence",
+      desc: "Young adults can establish careers, build savings and secure housing before taking on the expenses of raising children.",
+      example: "A couple who have worked for several years may be better equipped to afford rent or a mortgage, childcare and school fees.",
+      level: "Student Bank 01",
+      simpleTakeaway: "Clear career footing and accumulated savings shield families from debt.",
+      collocation: "financial wherewithal"
     },
     {
       type: "positive",
-      title: "Uninterrupted Career Progression & Equal Opportunity",
-      desc: "Delaying children allows young men and women to complete university degrees and achieve leadership promotions before taking parental leave.",
-      example: "Female doctors, lawyers, and engineers attaining partnership or directorships in their early 30s before having babies.",
-      level: "Advantage 2 (Step 6)",
-      simpleTakeaway: "Career success: young adults reach senior professional milestones without domestic interruption.",
-      collocation: "uninterrupted career trajectory"
+      title: "Emotional Maturity",
+      desc: "People may become more self-aware and better at managing disagreements, making them more capable of handling marital and parenting responsibilities.",
+      example: "A couple who have learnt to resolve conflicts constructively may be better prepared to manage disagreements about childcare.",
+      level: "Student Bank 02",
+      simpleTakeaway: "Self-awareness and constructive conflict resolution build durable marriages.",
+      collocation: "emotional acuity"
     },
     {
       type: "positive",
-      title: "Emotional Maturity & Drastically Lower Divorce Rates",
-      desc: "30-year-olds know themselves, make deliberate partner choices, and handle domestic stress calmly, creating a harmonious upbringing for children.",
-      example: "Sociological data confirming couples marrying after 30 have significantly lower divorce rates than those marrying at 21.",
-      level: "Advantage 3 (Step 6)",
-      simpleTakeaway: "Marital stability: emotional wisdom prevents impetuous relationship choices and lowers divorce rates.",
-      collocation: "marital stability and longevity"
+      title: "More Informed Partner Selection",
+      desc: "Additional life experience can help people understand their own priorities and choose partners with compatible values and long-term goals.",
+      example: "Two people may discuss financial habits, career plans and expectations about raising children before committing to marriage.",
+      level: "Student Bank 03",
+      simpleTakeaway: "Aligning values and life goals prevents domestic discord.",
+      collocation: "compatible values"
     },
     {
       type: "positive",
-      title: "Youthful Freedom & Absence of Parental Resentment",
-      desc: "Enjoying independence, travel, and personal hobbies in their 20s ensures adults enter family life willingly and without feelings of lost youth.",
-      example: "Adults who traveled and explored creative interests in their 20s dedicating themselves wholeheartedly to family in their 30s.",
-      level: "Advantage 4 (Step 6)",
-      simpleTakeaway: "No lost youth: experiencing personal freedom first prevents resentment toward family commitments later.",
-      collocation: "psychological life fulfillment"
+      title: "Established Careers and Better Time Management",
+      desc: "Individuals who have progressed professionally may have greater control over their schedules and resources, making family responsibilities easier to manage.",
+      example: "An established employee may be in a better position to negotiate parental leave or flexible working arrangements.",
+      level: "Student Bank 04",
+      simpleTakeaway: "Seniority allows parents to negotiate flexible work hours and leave.",
+      collocation: "workplace autonomy"
     },
     {
       type: "negative",
-      title: "Biological Fertility Decline & Pregnancy Complications",
-      desc: "Natural reproductive capacity drops sharply after 30 and 35, increasing miscarriage risks, genetic disorders, and reliance on expensive IVF.",
-      example: "Women in their late 30s facing higher risks of preeclampsia, gestational diabetes, and chromosomal conditions.",
-      level: "Disadvantage 1 (Step 7)",
-      simpleTakeaway: "Biological clock: natural fertility drops after 30, increasing medical complications and conception hurdles.",
-      collocation: "age-related biological decline"
+      title: "Reduced Fertility with Age",
+      desc: "Fertility generally declines with age, particularly for women, which can make conception more difficult for some couples.",
+      example: "A couple trying to conceive in their late 30s may face difficulties that they might not have encountered earlier.",
+      level: "Drawback 01",
+      simpleTakeaway: "Biological reproductive constraints increase after the mid-thirties.",
+      collocation: "reproductive constraints"
     },
     {
       type: "negative",
-      title: "Reduced Physical Stamina & Widened Generational Gap",
-      desc: "Older parents have less energy to keep up with active toddlers, and being 35-40 years older widens the cultural divide with their children.",
-      example: "Parents approaching age 60 when their child finishes high school, leaving less shared time with future grandchildren.",
-      level: "Disadvantage 2 (Step 7)",
-      simpleTakeaway: "Physical fatigue: toddlers require intense stamina, and an older age gap widens the generational divide.",
-      collocation: "widening generational divide"
+      title: "Less Time for Raising Children",
+      desc: "Becoming a parent later means parents will be older when their children reach adulthood, potentially affecting long-term family plans.",
+      example: "Parents may be approaching retirement while their children are still completing university.",
+      level: "Drawback 02",
+      simpleTakeaway: "Age gap means university costs collide with retirement savings.",
+      collocation: "intergenerational gap"
     },
     {
       type: "negative",
-      title: "National Population Aging & Shrinking Workforce",
-      desc: "Couples who start having babies in their 30s have fewer children overall, causing national birth rates to plummet below replacement levels.",
-      example: "South Korea and Japan facing closed schools and pension deficits due to average marriage ages exceeding 31.",
-      level: "Disadvantage 3 (Step 7)",
-      simpleTakeaway: "Demographic crisis: delaying children leads to smaller families, aging societies, and labor shortages.",
-      collocation: "severe demographic contraction"
+      title: "Conflicting Career and Family Priorities",
+      desc: "After years of professional independence, some people may find it difficult to reorganise their routines around childcare.",
+      example: "Someone accustomed to frequent work travel may struggle to balance professional commitments with caring for a young child.",
+      level: "Drawback 03",
+      simpleTakeaway: "Transition from complete adult independence to infant care can be jarring.",
+      collocation: "lifestyle adjustment"
     },
     {
       type: "negative",
-      title: "The Exhausting 'Sandwich Generation' Dilemma",
-      desc: "Having children late means toddler care coincides directly with the onset of chronic illness in one's elderly parents in their 70s.",
-      example: "40-year-olds juggling preschool runs while caring for frail parents suffering from dementia or mobility decline.",
-      level: "Disadvantage 4 (Step 7)",
-      simpleTakeaway: "Double burden: middle-aged adults are squeezed between raising young kids and caring for sick elderly parents.",
-      collocation: "the sandwich generation strain"
+      title: "Family and Social Pressure",
+      desc: "People who marry later may face persistent questions or criticism from relatives and communities that expect earlier marriage.",
+      example: "An adult may feel pressured to marry before finding a genuinely compatible partner simply to satisfy family expectations.",
+      level: "Drawback 04",
+      simpleTakeaway: "Unmarried 30-somethings encounter social expectations and scrutiny.",
+      collocation: "entrenched social expectations"
     }
   ],
 
+  // Evaluation arguments mapping to the essay
   evaluationArguments: [
     {
-      title: "Socio-Economic Foundation & Child Well-being (Advantage)",
-      reason: "Couples in their thirties have stable incomes and accumulated assets, ensuring a secure and prosperous environment for child development.",
-      development: "Raising a child requires substantial capital for housing, healthcare, nutrition, and schooling. In their twenties, individuals struggle with student loans and entry-level wages, whereas thirty-somethings possess established earning power.",
-      example: "Older parents are far more capable of purchasing a family home and financing extracurricular activities without chronic financial distress.",
+      title: "Financial Security Outweighs Early Hardship",
+      reason: "Having children without financial stability causes severe marital distress and child poverty.",
+      development: "When parents marry in their thirties, their combined earning power and savings provide a secure platform for healthcare, quality nutrition, and tutoring.",
+      example: "Dual-income households in their thirties carry 40% lower consumer debt upon their first child's birth.",
       type: "argument",
-      level: "Core Advantage 1",
-      simpleTakeaway: "Economic foundation: accumulated wealth shields children from poverty and domestic stress.",
-      collocation: "socio-economic stability"
+      level: "Economic Proof",
+      simpleTakeaway: "Financial resilience outweighs any benefit of having children earlier on low wages.",
+      collocation: "financial precarity"
     },
     {
-      title: "Emotional Equilibrium & Marital Longevity (Advantage)",
-      reason: "Thirty-somethings possess greater psychological self-awareness and life experience, resulting in durable marriages and patient parenting.",
-      development: "Young adults in their early twenties are still developing their identity and often rush into marriages based on infatuation, leading to high divorce rates. By thirty, emotional resilience and communication skills foster peaceful domestic environments.",
-      example: "Sociological data confirms that couples who marry in their thirties experience significantly lower divorce rates than those marrying in their early twenties.",
+      title: "Emotional Maturity Protects Children",
+      reason: "Divorce and volatile home environments cause profound psychological trauma to developing children.",
+      development: "Older parents exhibit higher patience and constructive communication, resulting in lower divorce rates and happier households.",
+      example: "Sociological data links later marriages with significantly lower rates of legal separation within the first seven years.",
       type: "argument",
-      level: "Core Advantage 2",
-      simpleTakeaway: "Emotional maturity: wiser partner choices and calm parenting prevent divorce and domestic conflict.",
-      collocation: "emotional equilibrium and maturity"
+      level: "Psychological Proof",
+      simpleTakeaway: "Emotional stability in your 30s fosters an enduring marital bond.",
+      collocation: "interpersonal discord"
     },
     {
-      title: "Biological Reproductive Decline & Clinical Risks (Disadvantage)",
-      reason: "Human reproductive capacity declines significantly after age thirty, making conception difficult and increasing clinical complications.",
-      development: "Female ovarian reserve drops sharply after thirty-five, while sperm quality also diminishes. Older pregnancies carry higher risks of gestational diabetes, preeclampsia, and chromosomal abnormalities like Down syndrome.",
-      example: "Many couples in their late thirties are forced to undergo expensive, emotionally exhausting in-vitro fertilization (IVF) cycles.",
+      title: "Biological Limits Require Balanced Planning",
+      reason: "Biological fertility cannot be ignored despite financial comfort.",
+      development: "Postponing parenthood indefinitely increases the chance of conception difficulties and high medical costs.",
+      example: "Women attempting conception past age 35 experience lower natural monthly conception probabilities.",
       type: "counterpoint",
-      level: "Key Disadvantage 1",
-      simpleTakeaway: "Biological fertility limits: natural conception declines sharply, raising medical risks.",
-      collocation: "clinical fertility complications"
+      level: "Biological Concession",
+      simpleTakeaway: "Financial preparedness must be weighed against reproductive realities.",
+      collocation: "reproductive constraints"
     },
     {
-      title: "Demographic Aging & Shrinking Labor Force (Disadvantage)",
-      reason: "Delaying marriage limits the biological window for having children, leading to smaller family sizes and national birth rate collapses.",
-      development: "Couples who delay family formation typically have only one or two children, depressing national fertility rates below the 2.1 replacement rate and burdening social security systems.",
-      example: "Japan, Italy, and South Korea face labor shortages and school closures as average marriage ages climb past thirty-one.",
-      type: "counterpoint",
-      level: "Key Disadvantage 2",
-      simpleTakeaway: "Societal aging: lower birth rates shrink the future workforce and strain pension systems.",
-      collocation: "accelerated demographic aging"
-    }
-  ],
-
-  facultyAngles: [
-    {
-      title: "Developmental Psychology: Emotional Maturity vs. Impetuous Youth",
-      development:
-        "Psychologists emphasize that the prefrontal cortex and emotional self-regulation continue developing well into the mid-twenties. Thirty-somethings possess greater self-mastery, conflict-resolution capacity, and patience, leading to significantly lower divorce rates and nurturing parenting."
-    },
-    {
-      title: "Reproductive Biology & Obstetrics: The Inflexible Ovarian Clock",
-      development:
-        "Medical researchers note that human biology has not evolved as rapidly as modern social trends. Ovarian reserve and egg quality decline precipitously after thirty-five, dramatically raising the clinical incidence of conception difficulty, miscarriage, and chromosomal disorders."
-    },
-    {
-      title: "Macroeconomics & Demography: The Threat of Inverted Age Pyramids",
-      development:
-        "Economists warn that when societies delay marriage into the thirties, the total fertility rate inevitably plunges below the replacement threshold, creating an inverted demographic pyramid where a shrinking workforce cannot support escalating healthcare and pension costs."
+      title: "Managing the Generational Gap",
+      reason: "Being older parents requires conscious lifestyle and financial planning.",
+      development: "Although parents are older, healthy longevity and modern preventative healthcare mean parents remain energetic into their 50s and 60s.",
+      example: "Modern 40-year-olds enjoy far better cardiovascular health and life expectancy than previous generations.",
+      type: "argument",
+      level: "Rebuttal Angle",
+      simpleTakeaway: "Modern health and longevity offset traditional concerns about parental age.",
+      collocation: "parental readiness"
     }
   ],
 
   powerExpressions: [
     {
-      expression: "career consolidation before domestic commitments",
-      meaning: "Establishing professional status and seniority before taking on family responsibilities.",
-      example: "Delaying marriage allows career consolidation before domestic commitments, fostering greater long-term earning power."
+      expression: "financial wherewithal",
+      meaning: "The financial means or capital necessary to achieve an undertaking",
+      example: "Established professionals possess the financial wherewithal to fund private schooling and secure fixed mortgages."
     },
     {
-      expression: "the precariousness of youthful impetuousness",
-      meaning: "The danger of making rushed, immature decisions in one's early twenties.",
-      example: "Marrying in one's thirties protects couples from the precariousness of youthful impetuousness and subsequent divorce."
+      expression: "emotional acuity",
+      meaning: "Keen insight and understanding into interpersonal and psychological dynamics",
+      example: "Couples who have honed their emotional acuity resolve domestic disagreements through calm negotiation."
     },
     {
-      expression: "biological realities versus socio-economic prudence",
-      meaning: "The conflict between natural reproductive age limits and the practical need for financial stability.",
-      example: "The decision to defer childbearing reflects an ongoing tension between biological realities and socio-economic prudence."
+      expression: "defer parenthood",
+      meaning: "To deliberately postpone having children until a future date",
+      example: "Modern graduates frequently choose to defer parenthood until their career foundations are secure."
     },
     {
-      expression: "advanced maternal age and fertility decline",
-      meaning: "Medical terms describing pregnancy after thirty-five and the drop in reproductive capacity.",
-      example: "Couples must remain cognizant of the clinical risks associated with advanced maternal age and fertility decline."
+      expression: "assume familial responsibilities",
+      meaning: "To take upon oneself the obligations and duties of marriage and child-rearing",
+      example: "Older adults enter domestic life better prepared to assume familial responsibilities without resentment."
     },
     {
-      expression: "the grueling demands of the sandwich generation",
-      meaning: "The heavy burden of having to care for young children and elderly parents at the same time.",
-      example: "Late-stage parenthood often subjects adults in their forties to the grueling demands of the sandwich generation."
+      expression: "financial precarity",
+      meaning: "A precarious state of economic insecurity, vulnerability, and debt",
+      example: "Starting a family in one's early twenties often plunges young couples into acute financial precarity."
     },
     {
-      expression: "foster enduring domestic and marital harmony",
-      meaning: "Create long-lasting peace, stability, and mutual understanding in the home.",
-      example: "Greater emotional maturity in one's thirties serves to foster enduring domestic and marital harmony."
-    },
-    {
-      expression: "decisively eclipse the biological caveats",
-      meaning: "The socio-economic and psychological advantages far outweigh the medical concerns.",
-      example: "The profound stability of mature parenthood decisively eclipses the biological caveats."
-    }
-  ],
-
-  brainstormCards: [
-    {
-      question: "Why do young adults prioritize career and financial independence before marriage?",
-      thinkingLens: "Economic Security & Housing Market Lens",
-      selfCheck: "Did you explain that high housing and child-rearing costs require established savings and stable income?",
-      idea: "Raising children is extremely expensive in modern economies. Young adults in their twenties face student debt and low starting wages, so delaying family life until their thirties enables them to buy a home, save money, and raise children without chronic economic anxiety."
-    },
-    {
-      question: "How does greater psychological maturity in one's 30s reduce divorce and support parenting?",
-      thinkingLens: "Psychological Development & Relationship Longevity Lens",
-      selfCheck: "Did you contrast impulsive twenty-something relationships with patient, mature thirty-something communication?",
-      idea: "People in their twenties are still discovering their identity and often marry impulsively. By age thirty, adults have greater emotional wisdom, understand their core values, choose compatible partners, and parent with calm patience, drastically reducing divorce rates."
-    },
-    {
-      question: "What biological risks and fertility challenges arise when childbearing is delayed past 35?",
-      thinkingLens: "Reproductive Biology & Clinical Obstetric Lens",
-      selfCheck: "Did you explain natural ovarian reserve decline, genetic conditions, and the need for IVF?",
-      idea: "Human fertility declines sharply after thirty, particularly for women. Deferring pregnancy past thirty-five increases the risk of conception failure, preeclampsia, and genetic conditions like Down syndrome, often requiring costly and emotionally painful IVF treatments."
-    },
-    {
-      question: "Why do the socio-economic advantages of delayed parenthood decisively outweigh the drawbacks?",
-      thinkingLens: "Overall Synthesis & Outweighing Stance Lens",
-      selfCheck: "Did you explain that financial security and emotional stability last a lifetime, while medical risks can be managed?",
-      idea: "While biological fertility decline is a real concern, modern assisted reproductive technology can assist conception, whereas financial destitution and marital breakdown cause irreversible harm to children. Therefore, the benefits of mature, solvent parenthood decisively prevail."
+      expression: "reproductive constraints",
+      meaning: "Biological or physiological limitations affecting conception and pregnancy",
+      example: "Couples who postpone family planning indefinitely must confront inevitable reproductive constraints."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "Foremost among the positive aspects of delaying marriage is that...",
-      "Beyond individual financial security, emotional maturity fosters...",
-      "Detractors, however, cogently emphasize the biological hazards of...",
-      "Consequently, when weighed against the manageable reproductive caveats...",
-      "This dichotomy underscores that while clinical challenges persist, the socio-economic dividends decisively prevail..."
+      "Foremost among the positive aspects of...",
+      "In consequence of their accumulated financial reserves...",
+      "Nevertheless, delaying parenthood indefinitely can expose couples to...",
+      "On the other hand, critics rightly point to...",
+      "By deferring parenthood until they have greater financial wherewithal..."
     ],
     aTier: [
-      "In stark contrast to the financial instability of one's early twenties,",
-      "Furthermore, achieving professional consolidation enables both partners to...",
-      "Nevertheless, one cannot dismiss the demographic repercussions of...",
-      "In light of these considerations, the overriding merits of mature parenthood decisively overshadow..."
+      "Equally significant is that...",
+      "As a direct corollary...",
+      "It is therefore evident that...",
+      "Although postponing parenthood presents certain practical challenges..."
     ],
     bTier: [
-      "On the one hand,",
-      "On the other hand,",
+      "Furthermore,",
       "In addition,",
-      "Overall, the positive side is stronger than the negative side"
+      "However,",
+      "Consequently,"
     ]
   },
 
   strategicLinkers: [
     {
-      zone: "Paragraph Openers (Structural Roadmap)",
-      badge: "Macro Signposting",
-      placementRule: "Place strictly at Sentence 1 of each body paragraph to establish categorical focus.",
+      zone: "Zone 1: Opening Strong Opinion Body Paragraphs",
+      badge: "Advantage Openers",
+      placementRule: "Use at the beginning of Body 1 and Body 2 to declare your primary advantage clearly.",
       items: [
         {
-          phrase: "Foremost among the compelling merits of delaying family formation is...",
-          functionDesc: "Initiates Body Paragraph 1 by introducing the strong-opinion advantage (financial security & career foundation).",
-          example: "Foremost among the compelling merits of delaying family formation is the unprecedented economic stability and career foundation it affords aspiring parents."
+          phrase: "Foremost among the positive aspects of delaying marriage is that...",
+          functionDesc: "Declares your strongest advantage immediately with authority.",
+          example:
+            "Foremost among the positive aspects of delaying marriage is that it provides couples with the financial independence needed to support a family."
         },
         {
-          phrase: "Equally significant is the emotional maturity and marital resilience that thirty-somethings possess...",
-          functionDesc: "Transitions smoothly into Body Paragraph 2 (strong-opinion advantage 2: psychological wisdom & parenting stability).",
-          example: "Equally significant is the emotional maturity and marital resilience that thirty-somethings possess, which fosters durable partnerships and calm parenting."
-        },
-        {
-          phrase: "On the other hand, detractors and medical specialists cogently point to the biological ramifications of this trend...",
-          functionDesc: "Opens Body Paragraph 3 (non-opinion counterpoint / concession) with measured academic neutrality.",
-          example: "On the other hand, detractors and medical specialists cogently point to the biological ramifications of this trend, most notably steep fertility decline and obstetric risks."
+          phrase: "Equally important is that entering parenthood later in life fosters...",
+          functionDesc: "Introduces your second major argument (Body 2) while maintaining logical cohesion.",
+          example:
+            "Equally important is that entering parenthood later in life fosters greater emotional maturity and relationship stability."
         }
       ]
     },
     {
-      zone: "Internal Causal Chains (Reason → Elaboration)",
-      badge: "Depth & Logic Flow",
-      placementRule: "Use within body paragraphs between the main reason and supporting explanation.",
+      zone: "Zone 2: Concession & Counterpoint Placement",
+      badge: "Drawback Transitions",
+      placementRule: "Use at the start of Body 3 to acknowledge the counterpoint fairly without conceding your overall stance.",
       items: [
         {
-          phrase: "...which in turn shields the household from the chronic friction of debt and financial instability...",
-          functionDesc: "Connects accumulated career savings directly to domestic harmony and child well-being.",
-          example: "Couples in their thirties command higher salaries, which in turn shields the household from the chronic friction of debt and financial instability."
+          phrase: "On the other hand, the most prominent drawback of delaying family planning is that...",
+          functionDesc: "Smoothly shifts to the counter-perspective while signaling a measured concession.",
+          example:
+            "On the other hand, the most prominent drawback of delaying family planning is that natural fertility declines noticeably with advancing age."
         },
         {
-          phrase: "This emotional equilibrium prevents impetuous relationship choices, thereby drastically curbing...",
-          functionDesc: "Explains how mature partner selection directly lowers divorce rates.",
-          example: "This emotional equilibrium prevents impetuous relationship choices, thereby drastically curbing the risk of marital breakdown."
-        },
-        {
-          phrase: "Owing to the precipitous age-related depletion of ovarian reserve and declining sperm motility...",
-          functionDesc: "Grounds medical critique in precise reproductive biology.",
-          example: "Owing to the precipitous age-related depletion of ovarian reserve and declining sperm motility, natural conception becomes increasingly problematic."
+          phrase: "Nevertheless, delaying parenthood indefinitely can expose some couples to...",
+          functionDesc: "Introduces biological or practical constraints while maintaining a balanced tone.",
+          example:
+            "Nevertheless, delaying parenthood indefinitely can expose some couples to reproductive constraints and higher medical costs."
         }
       ]
     },
     {
-      zone: "Evaluative Weighed Verdict (Concession → Decisive Stance)",
-      badge: "Task Achievement 9",
-      placementRule: "Use at the end of Body 3 or in the introduction/conclusion to establish clear weighting.",
+      zone: "Zone 3: Decisive Outweighing Conclusion",
+      badge: "Conclusion Synthesis",
+      placementRule: "Use in the final paragraph to synthesize drawbacks against the superior benefits.",
       items: [
         {
-          phrase: "While these reproductive caveats are undeniably serious, they are increasingly manageable through modern medicine, whereas...",
-          functionDesc: "Acknowledges the counter-argument before decisively demonstrating why advantages prevail.",
-          example: "While these reproductive caveats are undeniably serious, they are increasingly manageable through modern medicine, whereas financial destitution causes lasting trauma."
+          phrase: "In conclusion, marrying and becoming parents later in life can enable individuals to...",
+          functionDesc: "Directly mirrors the prompt's scope and synthesizes personal preparedness.",
+          example:
+            "In conclusion, marrying and becoming parents later in life can enable individuals to make more informed decisions and establish financial security."
         },
         {
-          phrase: "Consequently, the undeniable gains in family prosperity, career equity, and marital stability far eclipse...",
-          functionDesc: "Delivers the definitive outweighing verdict in the conclusion.",
-          example: "Consequently, the undeniable gains in family prosperity, career equity, and marital stability far eclipse the biological drawbacks."
+          phrase: "Although postponing parenthood may present certain practical and biological challenges, I believe...",
+          functionDesc: "Acknowledges the counterpoint in the first clause and asserts the positive verdict in the second.",
+          example:
+            "Although postponing parenthood may present certain practical and biological challenges, I believe the overall benefits make this a positive development."
         }
       ]
-    }
-  ],
-
-  fluidVocab: [
-    {
-      word: "precipitous",
-      pos: "adjective",
-      meaning: "Dangerously steep or rapid in decline.",
-      naturalCollocation: "a precipitous decline in fertility / precipitous drop",
-      organicExample:
-        "Women face a precipitous decline in natural fertility once they surpass thirty-five years of age.",
-      mechanicalPitfall: "Do not use casually for small decreases; reserve for sharp, steep drops.",
-      examinerInsight: "Demonstrates Band 9 lexical precision when discussing biological trends."
-    },
-    {
-      word: "equanimity",
-      pos: "noun",
-      meaning: "Mental calmness, composure, and evenness of temper, especially in difficult situations.",
-      naturalCollocation: "handle stress with equanimity / emotional equanimity",
-      organicExample:
-        "Older parents are far more capable of navigating toddler tantrums with patience and equanimity.",
-      mechanicalPitfall: "Do not say 'have an equanimity'. It is an uncountable abstract noun.",
-      examinerInsight: "Elevates Task Achievement by capturing psychological maturity in one precise term."
-    },
-    {
-      word: "myopic",
-      pos: "adjective",
-      meaning: "Short-sighted; lacking long-term foresight or realistic planning.",
-      naturalCollocation: "a myopic choice / myopic romantic impulse",
-      organicExample:
-        "Rushing into marriage in one's early twenties often represents a myopic decision that overlooks long-term financial reality.",
-      mechanicalPitfall: "Avoid using it casually as a synonym for 'blind'. Use for lack of foresight.",
-      examinerInsight: "Exemplifies high-level academic critique of impulsive youthful choices."
-    },
-    {
-      word: "catalyze",
-      pos: "verb",
-      meaning: "To accelerate or initiate a transformative process.",
-      naturalCollocation: "catalyze career advancement / catalyze demographic shift",
-      organicExample:
-        "Delaying family commitments can catalyze career advancement for ambitious female professionals.",
-      mechanicalPitfall: "Do not use 'cause' repeatedly; use 'catalyze' when an external condition speeds up success.",
-      examinerInsight: "Demonstrates sophisticated understanding of causal dynamics."
-    },
-    {
-      word: "dichotomy",
-      pos: "noun",
-      meaning: "A division or contrast between two things that are represented as being opposed or entirely different.",
-      naturalCollocation: "the dichotomy between biological limits and social aspirations",
-      organicExample:
-        "This trend illustrates the sharp dichotomy between biological reproductive limits and modern socio-economic aspirations.",
-      mechanicalPitfall: "Ensure there are two clear contrasting elements before using 'dichotomy'.",
-      examinerInsight: "Frames the prompt within a sophisticated academic conceptual model."
-    },
-    {
-      word: "subsume",
-      pos: "verb",
-      meaning: "To include, absorb, or incorporate within something larger or more comprehensive.",
-      naturalCollocation: "be subsumed by domestic duties",
-      organicExample:
-        "Young adults in their twenties fear having their personal ambitions completely subsumed by domestic duties.",
-      mechanicalPitfall: "Ensure correct passive or active usage with preposition 'by' or 'under'.",
-      examinerInsight: "Band 9 precision for describing how individual identity can be overwhelmed by early family burdens."
     }
   ]
 };

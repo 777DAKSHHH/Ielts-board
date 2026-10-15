@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layers, CheckCircle2, FileText } from "lucide-react";
+import { Layers, CheckCircle2, FileText, Sparkles, Disc, Globe } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step7ModelAnalysis: React.FC = () => {
@@ -10,11 +10,11 @@ export const Step7ModelAnalysis: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 07 / 08 • Analytical Language &amp; Full Model Report
+          Step 07 / 08 • Body 2 &amp; Full Model Response
         </span>
-        <h2 className="stage-title">Comparative Systems &amp; Complete Band 9 Model Report</h2>
+        <h2 className="stage-title">Structural Digital Shift &amp; Complete Band 9 Model Report</h2>
         <p className="stage-subtitle">
-          Master the three essential analytical frameworks for comparative diagrams, alongside the complete 214-word Band 9 model report organized across four balanced paragraphs.
+          Master the three essential analytical frameworks for comparative business bar graphs, alongside the complete 191-word Band 9 model response organized across four balanced paragraphs.
         </p>
       </div>
 
@@ -33,7 +33,7 @@ export const Step7ModelAnalysis: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
               <Layers
                 size={17}
-                color={idx === 0 ? "var(--apple-blue)" : idx === 1 ? "#9333ea" : "#16a34a"}
+                color={idx === 0 ? "var(--apple-blue)" : idx === 1 ? "#dc2626" : "#16a34a"}
               />
               <h4 style={{ fontSize: "0.92rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
                 {group.title}
@@ -91,8 +91,8 @@ export const Step7ModelAnalysis: React.FC = () => {
                   { id: "all", label: "Full Report (All)" },
                   { id: "intro", label: "Intro" },
                   { id: "overview", label: "Overview" },
-                  { id: "body1", label: "Body 1" },
-                  { id: "body2", label: "Body 2" }
+                  { id: "body1", label: "Body 1 (1997)" },
+                  { id: "body2", label: "Body 2 (2007)" }
                 ] as const
               ).map((tab) => (
                 <button
@@ -188,7 +188,7 @@ export const Step7ModelAnalysis: React.FC = () => {
           </strong>
         </div>
         <p style={{ margin: 0, fontSize: "0.96rem", lineHeight: 1.6, color: "var(--slate-800)" }}>
-          “While higher education progression rates increased across four of the five secondary institutions—culminating in Harble Secondary vaulting from 30% to 80% and Fairfield Girls rebounding to 79%—Greystone High stood alone in suffering an uninterrupted decline from 90% to 70%, while Crackend Boys maintained remarkable consistency around 60%.”
+          “While retail purchases of compact discs suffered substantial contractions across all three territories—sliding by 15 million euros in Germany and 10 million in France—this medium nonetheless preserved its unchallenged commercial lead, whereas analog cassettes and vinyl records were wiped out entirely, their losses partially cushioned by the burgeoning expansion of online CD sales and newly emerged internet downloads.”
         </p>
       </div>
     </div>

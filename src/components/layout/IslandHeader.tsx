@@ -2,6 +2,8 @@ import React from "react";
 import { Clock, LockKeyhole, LayoutGrid } from "lucide-react";
 import { motion } from "framer-motion";
 import { tactilePress } from "../../motion";
+import { SmartBoardDisplayControl } from "./SmartBoardDisplayControl";
+import { BoardScaleHook } from "../../hooks/useBoardScale";
 
 interface IslandHeaderProps {
   currentModule: "task1" | "task2";
@@ -14,6 +16,7 @@ interface IslandHeaderProps {
   formattedTime: string;
   isTimerRunning: boolean;
   onTimerToggle: () => void;
+  boardScale: BoardScaleHook;
 }
 
 export const IslandHeader: React.FC<IslandHeaderProps> = ({
@@ -26,7 +29,8 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
   onLock,
   formattedTime,
   isTimerRunning,
-  onTimerToggle
+  onTimerToggle,
+  boardScale
 }) => {
   const progressPercent = Math.round((currentStep / totalSteps) * 100);
 
@@ -154,8 +158,11 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
         </span>
       </div>
 
-      {/* Right Controls: Tactile Timer, Stage Menu, Lock */}
+      {/* Right Controls: Board Scale Stepper, Tactile Timer, Stage Menu, Lock */}
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        {/* Senses Smart Board Display Scale & Clarity Tool */}
+        <SmartBoardDisplayControl boardScale={boardScale} />
+
         {/* Quick Focus Timer */}
         <motion.button
           whileTap={tactilePress}

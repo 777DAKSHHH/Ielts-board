@@ -39,13 +39,13 @@ export const Step9SubmissionT2: React.FC = () => (
         }}
       >
         <div>
-          <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--apple-blue)" }}>
+          <span style={{ fontSize: "0.92rem", fontWeight: 700, color: "var(--apple-blue)" }}>
             5-PARAGRAPH FORMAT
           </span>
-          <h3 style={{ fontSize: "1.18rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
+          <h3 style={{ fontSize: "1.28rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
             3-Body Paragraph Architecture
           </h3>
-          <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "var(--slate-500)" }}>
+          <p style={{ margin: "4px 0 0", fontSize: "0.96rem", color: "var(--slate-600)" }}>
             [ Intro + 2 Strong Side + 1 Counterpoint + Conclusion ]
           </p>
         </div>
@@ -55,24 +55,24 @@ export const Step9SubmissionT2: React.FC = () => (
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1px solid var(--border-subtle)",
+              border: "1.5px solid var(--border-subtle)",
               borderRadius: "12px",
-              padding: "11px 13px",
+              padding: "12px 14px",
               display: "flex",
               flexDirection: "column",
-              gap: "4px"
+              gap: "6px"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#dbeafe", color: "#1e40af", padding: "2px 7px", borderRadius: "5px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#dbeafe", color: "#1e40af", padding: "3px 8px", borderRadius: "6px" }}>
                 ADVANTAGE 1
               </span>
-              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Financial Security &amp; Wealth</strong>
+              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Financial Independence</strong>
             </div>
-            <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
-              • <strong>Main Reason:</strong> Robust financial foundation &amp; asset accumulation<br />
-              • <strong>Support:</strong> Overcoming early-career debt and precarious renting before dependents<br />
-              • <strong>Example:</strong> Dual-income 30s couples securing fixed mortgages &amp; emergency savings
+            <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
+              • <strong>Main Reason:</strong> Establish careers, build savings &amp; secure housing before children<br />
+              • <strong>Development:</strong> Greater financial wherewithal shields the household from precarity<br />
+              • <strong>Example:</strong> Working couples affording rent/mortgage, childcare, and school fees
             </div>
           </div>
 
@@ -80,24 +80,24 @@ export const Step9SubmissionT2: React.FC = () => (
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1px solid var(--border-subtle)",
+              border: "1.5px solid var(--border-subtle)",
               borderRadius: "12px",
-              padding: "11px 13px",
+              padding: "12px 14px",
               display: "flex",
               flexDirection: "column",
-              gap: "4px"
+              gap: "6px"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "2px 7px", borderRadius: "5px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "3px 8px", borderRadius: "6px" }}>
                 ADVANTAGE 2
               </span>
-              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Career Stability &amp; Emotional Maturity</strong>
+              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Emotional Maturity &amp; Conflict Skills</strong>
             </div>
-            <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
-              • <strong>Main Reason:</strong> Career progression &amp; psychological equanimity<br />
-              • <strong>Support:</strong> Senior workplace footing allows paid parental leaves; maturity reduces divorce<br />
-              • <strong>Example:</strong> Higher marital endurance and lower divorce rates among mature couples
+            <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
+              • <strong>Main Reason:</strong> Self-awareness and managing disagreements effectively<br />
+              • <strong>Development:</strong> Emotional acuity helps partners resolve interpersonal discord<br />
+              • <strong>Example:</strong> Couples resolving childcare disagreements constructively without friction
             </div>
           </div>
 
@@ -105,24 +105,24 @@ export const Step9SubmissionT2: React.FC = () => (
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1px solid var(--border-subtle)",
+              border: "1.5px solid var(--border-subtle)",
               borderRadius: "12px",
-              padding: "11px 13px",
+              padding: "12px 14px",
               display: "flex",
               flexDirection: "column",
-              gap: "4px"
+              gap: "6px"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#fee2e2", color: "#b91c1c", padding: "2px 7px", borderRadius: "5px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#fee2e2", color: "#b91c1c", padding: "3px 8px", borderRadius: "6px" }}>
                 COUNTERPOINT
               </span>
-              <strong style={{ fontSize: "0.88rem", color: "var(--slate-900)" }}>Fertility Decline &amp; Demographic Aging</strong>
+              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Fertility Decline &amp; Practical Hurdles</strong>
             </div>
-            <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", lineHeight: 1.45 }}>
-              • <strong>1 Main Disadvantage:</strong> Biological conception limits &amp; national aging populations<br />
-              • <strong>Support:</strong> Fertility drops precipitously post-35 + economic workforce contraction<br />
-              • <strong>Example:</strong> Increased reliance on costly IVF treatments and wider generational gaps
+            <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
+              • <strong>Main Drawback:</strong> Fertility generally declines with age, especially for women<br />
+              • <strong>Development:</strong> Reproductive constraints and fewer years for raising children<br />
+              • <strong>Example:</strong> A couple conceiving in their late 30s facing medical difficulties
             </div>
           </div>
         </div>

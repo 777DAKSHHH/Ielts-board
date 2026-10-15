@@ -673,6 +673,39 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
               );
             })}
           </div>
+
+          {/* Strongest Classroom Discussion Question Card */}
+          {TASK2_DATA.classroomDiscussion && (
+            <div
+              style={{
+                marginTop: "16px",
+                background: "#ffffff",
+                border: "1.5px solid #bfdbfe",
+                borderRadius: "14px",
+                padding: "14px",
+                boxShadow: "0 2px 6px rgba(0,0,0,0.04)"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--apple-blue)", marginBottom: "6px" }}>
+                <Lightbulb size={16} />
+                <strong style={{ fontSize: "0.85rem" }}>Classroom Discussion Question:</strong>
+              </div>
+              <p style={{ fontSize: "0.84rem", fontWeight: 700, color: "var(--slate-900)", margin: "0 0 8px", lineHeight: 1.45 }}>
+                “{TASK2_DATA.classroomDiscussion.question}”
+              </p>
+              <div style={{ fontSize: "0.78rem", color: "var(--slate-600)", lineHeight: 1.45 }}>
+                <strong>Follow-up prompts:</strong>
+                <ul style={{ margin: "4px 0 0", paddingLeft: "16px" }}>
+                  {TASK2_DATA.classroomDiscussion.followUps.map((fu, idx) => (
+                    <li key={idx} style={{ marginBottom: "2px" }}>{fu}</li>
+                  ))}
+                </ul>
+              </div>
+              <div style={{ marginTop: "8px", paddingTop: "8px", borderTop: "1px dashed var(--border-subtle)", fontSize: "0.75rem", color: "var(--slate-500)", fontStyle: "italic" }}>
+                ✦ {TASK2_DATA.classroomDiscussion.pedagogicalInsight}
+              </div>
+            </div>
+          )}
         </aside>
       </div>
     </div>

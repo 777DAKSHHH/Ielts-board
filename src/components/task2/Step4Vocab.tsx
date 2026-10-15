@@ -136,7 +136,7 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
           }}
         >
           <BookOpen size={17} />
-          <span>Public Health Collocations ({TASK2_DATA.vocabList.length})</span>
+          <span>Workbook High-Band Vocabulary ({TASK2_DATA.vocabList.length})</span>
         </button>
 
         <button
@@ -193,6 +193,92 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
       {/* TAB 1: COLLOCATIONS & POWER EXPRESSIONS */}
       {activeTab === "collocations" && (
         <div style={{ flex: 1, minHeight: 0, overflowY: "auto", paddingRight: "4px" }}>
+          {/* Best Six & Model Sentences Banner */}
+          <div
+            style={{
+              background: "linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%)",
+              border: "1.5px solid #bbf7d0",
+              borderRadius: "16px",
+              padding: "16px 18px",
+              marginBottom: "16px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px"
+            }}
+          >
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                <span className="apple-badge success" style={{ fontSize: "0.74rem" }}>
+                  ⭐ THE BEST SIX FOR THE STUDENT WORKBOOK
+                </span>
+                <span style={{ fontSize: "0.82rem", color: "var(--slate-600)", fontWeight: 600 }}>
+                  High-yield vocabulary fitting the argument naturally:
+                </span>
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "7px" }}>
+                {(TASK2_DATA.workbookTopSix || []).map((term) => (
+                  <button
+                    key={term}
+                    onClick={() => onSpeak(term)}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px",
+                      background: "#ffffff",
+                      border: "1.5px solid #86efac",
+                      borderRadius: "8px",
+                      padding: "4px 10px",
+                      fontSize: "0.85rem",
+                      fontWeight: 700,
+                      color: "#166534",
+                      cursor: "pointer"
+                    }}
+                    title="Click to listen"
+                  >
+                    <Volume2 size={13} />
+                    <span>{term}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {TASK2_DATA.modelSentences && (
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", paddingTop: "12px", borderTop: "1.5px dashed #86efac" }}>
+                <div style={{ background: "#ffffff", padding: "12px 14px", borderRadius: "12px", border: "1.5px solid #86efac" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
+                    <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#166534" }}>MODEL: POSITIVE ARGUMENT</span>
+                    <button
+                      onClick={() => handleCopy(TASK2_DATA.modelSentences!.positive)}
+                      style={{ border: "none", background: "none", cursor: "pointer", color: "var(--slate-500)" }}
+                      title="Copy sentence"
+                    >
+                      {copiedText === TASK2_DATA.modelSentences.positive ? <Check size={15} color="#059669" /> : <Copy size={15} />}
+                    </button>
+                  </div>
+                  <p style={{ margin: 0, fontSize: "1.04rem", color: "var(--slate-900)", lineHeight: 1.55, fontStyle: "italic", fontWeight: 550 }}>
+                    “{TASK2_DATA.modelSentences.positive}”
+                  </p>
+                </div>
+
+                <div style={{ background: "#ffffff", padding: "12px 14px", borderRadius: "12px", border: "1.5px solid #93c5fd" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
+                    <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#1e40af" }}>MODEL: BALANCED EVALUATION</span>
+                    <button
+                      onClick={() => handleCopy(TASK2_DATA.modelSentences!.balanced)}
+                      style={{ border: "none", background: "none", cursor: "pointer", color: "var(--slate-500)" }}
+                      title="Copy sentence"
+                    >
+                      {copiedText === TASK2_DATA.modelSentences.balanced ? <Check size={15} color="#059669" /> : <Copy size={15} />}
+                    </button>
+                  </div>
+                  <p style={{ margin: 0, fontSize: "1.04rem", color: "var(--slate-900)", lineHeight: 1.55, fontStyle: "italic", fontWeight: 550 }}>
+                    “{TASK2_DATA.modelSentences.balanced}”
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Subtoggle between Vocab Cards and Power Expressions */}
           <div
             style={{
@@ -549,7 +635,7 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
                     </span>
                     <h3
                       style={{
-                        fontSize: "1.32rem",
+                        fontSize: "1.52rem",
                         fontWeight: 800,
                         color: "var(--slate-900)",
                         margin: 0,
@@ -562,10 +648,10 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
                       style={{
                         background: "rgba(147, 51, 234, 0.1)",
                         color: "#7e22ce",
-                        fontSize: "0.78rem",
+                        fontSize: "0.85rem",
                         fontWeight: 700,
-                        padding: "2px 8px",
-                        borderRadius: "6px"
+                        padding: "3px 10px",
+                        borderRadius: "7px"
                       }}
                     >
                       {vocabItem.pos}
@@ -573,34 +659,34 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
                     <button
                       onClick={() => onSpeak(vocabItem.word)}
                       className="apple-touch-btn secondary"
-                      style={{ minHeight: "32px", width: "32px", padding: 0, borderRadius: "50%" }}
+                      style={{ minHeight: "34px", width: "34px", padding: 0, borderRadius: "50%" }}
                       title={`Listen to ${vocabItem.word}`}
                     >
-                      <Volume2 size={16} />
+                      <Volume2 size={17} />
                     </button>
                   </div>
 
-                  <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                    <span style={{ fontSize: "0.82rem", color: "var(--slate-500)", fontWeight: 600 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <span style={{ fontSize: "0.88rem", color: "var(--slate-600)", fontWeight: 650 }}>
                       Natural Collocation:
                     </span>
-                    <span className="apple-badge neutral" style={{ fontSize: "0.82rem", fontWeight: 700 }}>
+                    <span className="apple-badge neutral" style={{ fontSize: "0.92rem", fontWeight: 750 }}>
                       {vocabItem.naturalCollocation}
                     </span>
                   </div>
                 </div>
 
                 {/* Definition */}
-                <div style={{ padding: "14px 22px 10px" }}>
-                  <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--slate-600)", lineHeight: 1.45 }}>
-                    <strong style={{ color: "var(--slate-800)" }}>Definition:</strong> {vocabItem.meaning}
+                <div style={{ padding: "16px 24px 12px" }}>
+                  <p style={{ margin: 0, fontSize: "1.06rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
+                    <strong style={{ color: "var(--slate-900)" }}>Definition:</strong> {vocabItem.meaning}
                   </p>
                 </div>
 
                 {/* Comparison Grid: Dissolved in Context vs Mechanical Pitfall */}
                 <div
                   style={{
-                    padding: "8px 22px 18px",
+                    padding: "8px 24px 20px",
                     display: "grid",
                     gridTemplateColumns: "1fr 1fr",
                     gap: "14px"
@@ -612,23 +698,24 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
                       background: "#f0fdf4",
                       border: "1.5px solid #86efac",
                       borderRadius: "14px",
-                      padding: "14px 16px",
+                      padding: "16px 18px",
                       display: "flex",
                       flexDirection: "column",
-                      gap: "6px"
+                      gap: "8px"
                     }}
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#166534" }}>
-                      <CheckCircle2 size={16} color="#16a34a" />
-                      <strong style={{ fontSize: "0.88rem" }}>✨ Natural Context Sentence</strong>
+                      <CheckCircle2 size={18} color="#16a34a" />
+                      <strong style={{ fontSize: "0.95rem" }}>✨ Natural Context Sentence</strong>
                     </div>
                     <p
                       style={{
                         margin: 0,
-                        fontSize: "0.92rem",
+                        fontSize: "1.06rem",
                         color: "#14532d",
                         fontStyle: "italic",
-                        lineHeight: 1.5
+                        lineHeight: 1.6,
+                        fontWeight: 500
                       }}
                     >
                       “{vocabItem.organicExample}”
@@ -638,15 +725,15 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
                       className="apple-touch-btn secondary"
                       style={{
                         alignSelf: "flex-start",
-                        minHeight: "26px",
-                        padding: "2px 8px",
-                        fontSize: "0.75rem",
+                        minHeight: "28px",
+                        padding: "3px 10px",
+                        fontSize: "0.8rem",
                         marginTop: "4px",
-                        gap: "4px",
+                        gap: "5px",
                         background: "#fff"
                       }}
                     >
-                      <Volume2 size={13} />
+                      <Volume2 size={14} />
                       <span>Hear Sentence</span>
                     </button>
                   </div>
@@ -657,22 +744,22 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
                       background: "#fef2f2",
                       border: "1.5px solid #fca5a5",
                       borderRadius: "14px",
-                      padding: "14px 16px",
+                      padding: "16px 18px",
                       display: "flex",
                       flexDirection: "column",
-                      gap: "6px"
+                      gap: "8px"
                     }}
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#991b1b" }}>
-                      <AlertTriangle size={16} color="#dc2626" />
-                      <strong style={{ fontSize: "0.88rem" }}>⚠️ Unnatural / Forced Usage</strong>
+                      <AlertTriangle size={18} color="#dc2626" />
+                      <strong style={{ fontSize: "0.95rem" }}>⚠️ Unnatural / Forced Usage</strong>
                     </div>
                     <p
                       style={{
                         margin: 0,
-                        fontSize: "0.88rem",
+                        fontSize: "1.02rem",
                         color: "#7f1d1d",
-                        lineHeight: 1.5
+                        lineHeight: 1.6
                       }}
                     >
                       {vocabItem.mechanicalPitfall}

@@ -14,9 +14,9 @@ export const Step3Vocab: React.FC<Step3VocabProps> = ({ onSpeak, accent, setAcce
     <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "16px" }}>
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 03 / 08 • Lexical Resource</span>
-        <h2 className="stage-title">Oceanographic &amp; Meteorological Lexicon</h2>
+        <h2 className="stage-title">Financial &amp; Market Trend Lexicon</h2>
         <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-          Essential academic terminology for upwelling, convective precipitation, thermocline layers, trade wind circulation, and ecological transitions.
+          Essential academic collocations for business profits, market shares, contractions, obsolescence, burgeoning digital streams, and comparative disparities.
         </p>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "var(--slate-100)", padding: "6px 10px", borderRadius: "12px" }}>
@@ -29,7 +29,7 @@ export const Step3Vocab: React.FC<Step3VocabProps> = ({ onSpeak, accent, setAcce
       </div>
     </div>
     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "14px", color: "var(--slate-700)" }}>
-      <BookOpen size={18} /> <strong>{TASK1_DATA.vocabList.length} essential natural process &amp; comparative collocations</strong>
+      <BookOpen size={18} /> <strong>{TASK1_DATA.vocabList.length} high-impact economic &amp; trend collocations</strong>
     </div>
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px", overflowY: "auto", paddingRight: "4px" }}>
       {TASK1_DATA.vocabList.map((vocab, index) => <VocabCard key={vocab.word} vocab={vocab} onSpeak={onSpeak} index={index} />)}

@@ -1,60 +1,51 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CircleCheck, Sparkles, Award, CheckCircle2 } from "lucide-react";
+import { CircleCheck, Sparkles, Award, CheckCircle2, BookOpen, Lightbulb, ArrowRight, Eye } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { CaveatsDeepDiveModal } from "./CaveatsDeepDiveModal";
 import { tactilePress } from "../../motion";
 
 export const Step6ConsequencesT2: React.FC = () => {
   const [isDeepDiveOpen, setIsDeepDiveOpen] = useState(false);
-  const [selectedReasonIdx, setSelectedReasonIdx] = useState(0);
+  const [activeModelIdx, setActiveModelIdx] = useState(0);
 
   const body1 = TASK2_DATA.bodyParagraphs?.[0];
-  const reasonOptions = body1?.alternativeReasons || [];
-  const currentReason = reasonOptions[selectedReasonIdx] || {
-    badge: "Reason 1 • Financial Security",
-    title: "Financial Security & Wealth Foundation",
-    mainReason: body1?.mainReason || "Delaying marriage and parenthood until one's thirties enables individuals to establish robust financial resilience before facing the substantial economic demands of family life.",
-    supportingReasons: body1?.supportingReasons || "Young professionals in their twenties often carry student loans, entry-level salaries, and high rental costs. Deferring family life allows them to build emergency savings and secure stable housing.",
-    example: body1?.example || "For example, dual-income couples in their thirties are far more likely to afford homeownership down payments and childcare fees without falling into severe debt.",
-    modelParagraph:
-      "Foremost among the advantages is that delaying marriage and parenthood until one's thirties allows individuals to establish robust financial security before taking on the economic burdens of family life. In today's economy, young adults in their twenties frequently face substantial student debt, entry-level earnings, and exorbitant rental markets. By deferring domestic commitments, both partners can consolidate their careers, build substantial savings, and invest in permanent housing. For example, research indicates that couples who marry after age thirty are considerably more likely to afford mortgage down payments and high childcare expenses without succumbing to crippling financial anxiety.",
-    examinerNotes:
-      "Relatable & practical. Explains the economic pressures of early adulthood and demonstrates how financial solvency builds resilient households."
-  };
+  const allReasons = body1?.alternativeReasons || [];
 
   return (
     <div className="stage-card-wrapper">
+      {/* Step Header */}
       <div>
-        <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
+        <span className="apple-badge success" style={{ marginBottom: "8px" }}>
           Step 06 / 09 • Points for the Advantages (Strong Side)
         </span>
-        <h2 className="stage-title">Points for the Advantages: Core Arguments &amp; Evidence</h2>
+        <h2 className="stage-title">Student Idea Bank: 4 Main Advantages</h2>
         <p className="stage-subtitle">
-          Structure: <strong>1 main reason + supporting reasons + example</strong>. Below are <strong>4 clear, relatable main reasons</strong> for the advantages. Select any reason to examine its exact IELTS analytical development.
+          All 4 strong arguments displayed simultaneously for your class. Students should <strong>choose two strong arguments and develop them</strong> using <em>Main Idea + Causal Development + Real-Life Example</em>.
         </p>
       </div>
 
-      {/* Golden Format Bar */}
+      {/* Teaching Strategy Banner */}
       <div
         style={{
-          background: "#eff6ff",
-          border: "1.5px solid #bfdbfe",
+          background: "#f0fdf4",
+          border: "1.5px solid #86efac",
           borderRadius: "16px",
-          padding: "12px 18px",
+          padding: "14px 20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           flexWrap: "wrap",
-          gap: "10px"
+          gap: "12px",
+          marginBottom: "18px"
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontSize: "0.8rem", fontWeight: 800, background: "#1e40af", color: "#ffffff", padding: "3px 10px", borderRadius: "8px" }}>
-            EXACT FORMAT
+          <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#166534", color: "#ffffff", padding: "4px 10px", borderRadius: "8px" }}>
+            TEACHING RULE
           </span>
-          <span style={{ fontSize: "0.92rem", fontWeight: 700, color: "#1e3a8a" }}>
-            1 Main Reason → Supporting Causal Chain → Verified Empirical Example
+          <span style={{ fontSize: "0.98rem", fontWeight: 700, color: "#14532d" }}>
+            Students pick ANY TWO reasons below to write Body 1. Never attempt to cram all four into one essay!
           </span>
         </div>
         <motion.button
@@ -64,263 +55,225 @@ export const Step6ConsequencesT2: React.FC = () => {
           style={{
             minHeight: "36px",
             padding: "0 14px",
-            fontSize: "0.8rem",
+            fontSize: "0.82rem",
             fontWeight: 750,
             gap: "6px",
-            color: "#1e40af",
+            color: "#166534",
             background: "#ffffff",
-            border: "1.5px solid #93c5fd",
+            border: "1.5px solid #86efac",
             cursor: "pointer",
             borderRadius: "10px"
           }}
         >
-          <Sparkles size={14} color="#2563eb" />
-          <span>Examiner Logic Deep Dive</span>
+          <Sparkles size={15} color="#16a34a" />
+          <span>Faculty Deep Dive &amp; Angles</span>
         </motion.button>
       </div>
 
-      {/* 4 REASONS INTERACTIVE SELECTOR STRIP */}
+      {/* =========================================================================
+          ALL 4 REASONS DISPLAYED SIMULTANEOUSLY (ZERO CLICKS REQUIRED FOR TEACHER)
+         ========================================================================= */}
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "8px",
-          background: "var(--slate-50)",
-          border: "1.5px solid var(--border-default)",
-          borderRadius: "16px",
-          padding: "12px 14px"
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "18px",
+          marginBottom: "22px"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
-          <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "var(--slate-600)", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-            Select 1 of 4 Main Reasons (Smartboard Interactive Choice):
-          </span>
-          <span style={{ fontSize: "0.75rem", color: "var(--slate-500)", fontWeight: 600 }}>
-            Tip: Choose the reason easiest for you to extend convincingly
-          </span>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "8px" }}>
-          {reasonOptions.map((opt, idx) => {
-            const isSelected = selectedReasonIdx === idx;
-            return (
-              <motion.button
-                key={opt.id}
-                whileTap={tactilePress}
-                onClick={() => setSelectedReasonIdx(idx)}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  textAlign: "left",
-                  padding: "10px 12px",
-                  borderRadius: "12px",
-                  border: isSelected ? "2px solid #0066cc" : "1.5px solid var(--border-subtle)",
-                  background: isSelected ? "#ffffff" : "var(--slate-100)",
-                  cursor: "pointer",
-                  boxShadow: isSelected ? "0 4px 12px rgba(0, 102, 204, 0.12)" : "none",
-                  transition: "all 0.15s ease",
-                  minHeight: "56px"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "6px", width: "100%", justifyContent: "space-between" }}>
-                  <span
-                    style={{
-                      fontSize: "0.72rem",
-                      fontWeight: 800,
-                      color: isSelected ? "#0066cc" : "var(--slate-600)"
-                    }}
-                  >
-                    Reason 0{idx + 1}
-                  </span>
-                  {isSelected && <CheckCircle2 size={14} color="#0066cc" />}
-                </div>
-                <div
+        {allReasons.map((reason, idx) => (
+          <div
+            key={reason.id}
+            style={{
+              background: "#ffffff",
+              border: "1.5px solid var(--border-default)",
+              borderRadius: "18px",
+              padding: "20px 22px",
+              boxShadow: "var(--shadow-sm)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "14px"
+            }}
+          >
+            {/* Card Header */}
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1.5px solid var(--border-subtle)", paddingBottom: "10px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <span
                   style={{
-                    fontSize: "0.82rem",
-                    fontWeight: 750,
-                    color: isSelected ? "var(--slate-900)" : "var(--slate-700)",
-                    marginTop: "2px",
-                    lineHeight: 1.3
+                    background: "#dcfce7",
+                    color: "#166534",
+                    fontSize: "0.84rem",
+                    fontWeight: 800,
+                    padding: "3px 10px",
+                    borderRadius: "7px"
                   }}
                 >
-                  {opt.title.split("&")[0].trim()}
-                </div>
-              </motion.button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* 2-Column Architectural Breakdown & Model View */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={selectedReasonIdx}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.18 }}
-          className="stage-grid-2col"
-          style={{ overflowY: "auto" }}
-        >
-          {/* Left Column: Architectural Breakdown */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-            {/* Main Reason Card */}
-            <div
-              style={{
-                background: "#ffffff",
-                border: "1.5px solid var(--border-default)",
-                borderRadius: "18px",
-                padding: "20px",
-                boxShadow: "var(--shadow-sm)"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
-                <span className="apple-badge accent" style={{ background: "#dbeafe", color: "#1e40af" }}>
-                  Component 1 • Main Reason
+                  🟢 REASON 0{idx + 1}
                 </span>
-                <span style={{ fontSize: "0.76rem", fontWeight: 700, color: "var(--slate-400)" }}>
-                  {currentReason.badge}
-                </span>
-              </div>
-              <h4 style={{ fontSize: "1.06rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "8px" }}>
-                {currentReason.title}
-              </h4>
-              <p style={{ fontSize: "0.93rem", color: "var(--slate-800)", lineHeight: 1.6, margin: 0 }}>
-                {currentReason.mainReason}
-              </p>
-            </div>
-
-            {/* Supporting Reasons Card */}
-            <div
-              style={{
-                background: "#ffffff",
-                border: "1.5px solid var(--border-default)",
-                borderRadius: "18px",
-                padding: "20px",
-                boxShadow: "var(--shadow-sm)"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <span className="apple-badge warning" style={{ background: "#fef3c7", color: "#92400e" }}>
-                  Component 2 • Supporting Causal Chain
-                </span>
-              </div>
-              <h4 style={{ fontSize: "1.04rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "8px" }}>
-                Why This Occurs &amp; Its Impact
-              </h4>
-              <p style={{ fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.6, margin: 0 }}>
-                {currentReason.supportingReasons}
-              </p>
-            </div>
-
-            {/* Example Card */}
-            <div
-              style={{
-                background: "#ffffff",
-                border: "1.5px solid var(--border-default)",
-                borderRadius: "18px",
-                padding: "20px",
-                boxShadow: "var(--shadow-sm)"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <span className="apple-badge success">
-                  Component 3 • Concrete Evidence
-                </span>
-              </div>
-              <h4 style={{ fontSize: "1.04rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "8px" }}>
-                Empirical Real-World Example
-              </h4>
-              <div
-                style={{
-                  background: "var(--slate-50)",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "12px",
-                  padding: "12px 14px",
-                  fontSize: "0.92rem",
-                  color: "var(--slate-800)",
-                  lineHeight: 1.55
-                }}
-              >
-                <CircleCheck size={16} color="#059669" style={{ verticalAlign: "-3px", marginRight: "6px", display: "inline" }} />
-                {currentReason.example}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Model Paragraph Synthesis & Lexical Mastery */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-            {/* Integrated Paragraph Card */}
-            <div
-              style={{
-                background: "#ffffff",
-                border: "1.5px solid var(--border-default)",
-                borderRadius: "18px",
-                padding: "22px",
-                boxShadow: "var(--shadow-sm)"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <Award size={20} color="var(--apple-blue)" />
-                  <h4 style={{ fontSize: "1.08rem", fontWeight: 800 }}>Complete Advantage Paragraph Model</h4>
-                </div>
-                <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
-                  Reason 0{selectedReasonIdx + 1} Applied
-                </span>
-              </div>
-
-              <div
-                style={{
-                  background: "var(--slate-50)",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "14px",
-                  padding: "18px",
-                  fontSize: "0.98rem",
-                  lineHeight: 1.7,
-                  color: "var(--slate-800)",
-                  fontStyle: "normal"
-                }}
-              >
-                {currentReason.modelParagraph}
-              </div>
-
-              <div style={{ marginTop: "14px", display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                <span className="apple-badge accent" style={{ fontSize: "0.74rem" }}>
-                  ✦ 1 Main Reason
-                </span>
-                <span className="apple-badge accent" style={{ fontSize: "0.74rem" }}>
-                  ✦ Causal Progression
-                </span>
-                <span className="apple-badge accent" style={{ fontSize: "0.74rem" }}>
-                  ✦ Verifiable Evidence
-                </span>
+                <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                  {reason.title}
+                </h4>
               </div>
             </div>
 
-            {/* Examiner Assessment Card */}
+            {/* 1. Main Idea */}
             <div
               style={{
                 background: "#f8fafc",
                 border: "1px solid var(--border-subtle)",
-                borderRadius: "16px",
-                padding: "18px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px"
+                borderRadius: "12px",
+                padding: "12px 14px"
               }}
             >
-              <h5 style={{ fontSize: "0.96rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                Examiner Assessment for Reason 0{selectedReasonIdx + 1}
-              </h5>
-              <p style={{ fontSize: "0.88rem", color: "var(--slate-600)", lineHeight: 1.5, margin: 0 }}>
-                {currentReason.examinerNotes}
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+                <Lightbulb size={16} color="var(--apple-blue)" />
+                <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "var(--apple-blue)", textTransform: "uppercase", letterSpacing: "0.03em" }}>
+                  1. Main Idea (Topic Sentence)
+                </span>
+              </div>
+              <p style={{ margin: 0, fontSize: "1.04rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
+                {reason.mainReason}
+              </p>
+            </div>
+
+            {/* 2. Development */}
+            <div
+              style={{
+                background: "#fffbeb",
+                border: "1px solid #fde68a",
+                borderRadius: "12px",
+                padding: "12px 14px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+                <ArrowRight size={16} color="#b45309" />
+                <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#92400e", textTransform: "uppercase", letterSpacing: "0.03em" }}>
+                  2. Causal Development (Why &amp; How)
+                </span>
+              </div>
+              <p style={{ margin: 0, fontSize: "0.98rem", color: "#78350f", lineHeight: 1.55 }}>
+                {reason.supportingReasons}
+              </p>
+            </div>
+
+            {/* 3. Real-Life Example */}
+            <div
+              style={{
+                background: "#f0fdf4",
+                border: "1.5px solid #86efac",
+                borderRadius: "12px",
+                padding: "12px 14px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+                <CircleCheck size={16} color="#16a34a" />
+                <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#166534", textTransform: "uppercase", letterSpacing: "0.03em" }}>
+                  3. Relatable Real-Life Example
+                </span>
+              </div>
+              <p style={{ margin: 0, fontSize: "0.98rem", color: "#14532d", lineHeight: 1.55, fontWeight: 550 }}>
+                {reason.example}
               </p>
             </div>
           </div>
-        </motion.div>
-      </AnimatePresence>
+        ))}
+      </div>
+
+      {/* =========================================================================
+          EXAMINER MODEL BODY PARAGRAPH SECTION
+         ========================================================================= */}
+      <div
+        style={{
+          background: "#ffffff",
+          border: "1.5px solid var(--border-default)",
+          borderRadius: "20px",
+          padding: "24px",
+          boxShadow: "var(--shadow-sm)"
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px", flexWrap: "wrap", gap: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Award size={24} color="var(--apple-blue)" />
+            <div>
+              <h4 style={{ fontSize: "1.24rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                Examiner Band 9 Model Paragraph Synthesis
+              </h4>
+              <p style={{ margin: "2px 0 0", fontSize: "0.88rem", color: "var(--slate-600)" }}>
+                See how a Band 9 writer constructs a cohesive body paragraph from the ideas above
+              </p>
+            </div>
+          </div>
+
+          {/* Model Switcher Chips */}
+          <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "var(--slate-100)", padding: "3px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
+            <span style={{ fontSize: "0.76rem", fontWeight: 750, color: "var(--slate-500)", padding: "0 6px" }}>
+              Show Model for:
+            </span>
+            {allReasons.map((r, idx) => (
+              <button
+                key={r.id}
+                onClick={() => setActiveModelIdx(idx)}
+                style={{
+                  border: "none",
+                  padding: "4px 10px",
+                  borderRadius: "7px",
+                  fontSize: "0.82rem",
+                  fontWeight: 750,
+                  cursor: "pointer",
+                  background: activeModelIdx === idx ? "var(--slate-900)" : "transparent",
+                  color: activeModelIdx === idx ? "#ffffff" : "var(--slate-700)",
+                  transition: "all 0.12s ease"
+                }}
+              >
+                Reason 0{idx + 1}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Model Paragraph Text */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeModelIdx}
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.15 }}
+          >
+            <div
+              style={{
+                background: "#f0fdf4",
+                border: "1.5px solid #86efac",
+                borderRadius: "16px",
+                padding: "20px 24px",
+                fontSize: "1.18rem",
+                lineHeight: 1.75,
+                color: "#14532d",
+                fontWeight: 500
+              }}
+            >
+              {allReasons[activeModelIdx]?.modelParagraph}
+            </div>
+
+            <div style={{ marginTop: "12px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
+                  ✦ 1 Main Idea
+                </span>
+                <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
+                  ✦ Causal Progression
+                </span>
+                <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
+                  ✦ Concrete Real-Life Proof
+                </span>
+              </div>
+              <span style={{ fontSize: "0.88rem", color: "var(--slate-600)", fontWeight: 600 }}>
+                💡 <em>{allReasons[activeModelIdx]?.examinerNotes}</em>
+              </span>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       <CaveatsDeepDiveModal
         isOpen={isDeepDiveOpen}

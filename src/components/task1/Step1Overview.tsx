@@ -20,9 +20,9 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 08 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: Pacific Atmospheric Circulation &amp; El Niño Inversion</h2>
+        <h2 className="stage-title">Listen First: SMG Entertainment Profits &amp; The 10-Year Digital Shift</h2>
         <p className="stage-subtitle">
-          Play the cryptic briefing before revealing the comparative diagrams. Students should deduce the two contrasting climatic states, the direction of trade winds and warm water displacement, and the ecological fate of Australia and Peru.
+          Play the cryptic briefing before revealing the bar graphs. Students should deduce which music formats generated the lion's share of revenue in 1997, which legacy formats suffered extinction, and how digital channels surged by 2007 across Germany, France, and Italy.
         </p>
       </div>
 
@@ -59,7 +59,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
                 Cryptic Audio Briefing
               </h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", marginTop: "2px" }}>
-                Comparative Oceanographic Diagram • Normal vs. El Niño • ~1:15
+                Comparative Bar Graphs • 1997 vs 2007 • ~1:15
               </p>
             </div>
           </div>
@@ -96,7 +96,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "16px", color: "var(--slate-700)", lineHeight: 1.55 }}>
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify how trade winds alter between the two phases, why warm water shifts eastward, and how nutrient upwelling off Peru controls commercial fish populations.
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify which physical medium held the undisputed lion's share of company profit in 1997, which two legacy formats vanished by 2007, and how digital channels reshuffled market leadership between Germany, France, and Italy.
           </div>
         </div>
 
@@ -118,10 +118,10 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           {[
-            "Which oceanic basin and two coastal regions are depicted in the dual comparative cross-sections?",
-            "Under normal conditions, which direction do the trade winds blow, and where does warm surface water pool?",
-            "What meteorological and ecological changes occur in Australia when El Niño conditions develop?",
-            "Why do Peruvian commercial fish harvests collapse from flourishing (up arrow) to depleted (down arrow) during El Niño?"
+            "Which single audio distribution format accounted for over 85% of SMG Entertainment's profits in 1997 across all three countries?",
+            "Which country was consistently the most lucrative market for SMG Entertainment across both 1997 and 2007?",
+            "What happened to traditional cassettes and vinyl singles/LPs over the ten-year period from 1997 to 2007?",
+            "How did internet downloads and online CD sales evolve from 1997 (when downloads were zero) to 2007?"
           ].map((question, index) => (
             <div key={question} style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "15px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
               <span className="apple-badge neutral" style={{ minWidth: "32px", justifyContent: "center", fontWeight: 800 }}>{index + 1}</span>
@@ -141,7 +141,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             className="apple-touch-btn primary"
             style={{ minHeight: "52px", gap: "8px", marginTop: "auto", fontSize: "1.02rem", fontWeight: 700 }}
           >
-            <Sparkles size={18} /> {revealed ? "Continue to Pacific Diagram Analysis" : "Reveal Task"}
+            <Sparkles size={18} /> {revealed ? "Continue to Bar Graph Analysis" : "Reveal Task & Graphs"}
           </motion.button>
 
           {revealed && (
@@ -150,7 +150,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
               animate={{ opacity: 1, y: 0 }}
               style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "14px", padding: "14px 16px", color: "#1e3a8a", fontSize: "0.9rem", lineHeight: 1.5 }}
             >
-              The full task prompt and interactive Pacific Ocean Diagram Engine are revealed in Step 02.
+              The full task prompt and interactive Dual Bar Graph Engine are revealed in Step 02.
             </motion.div>
           )}
         </div>

@@ -24,6 +24,7 @@ export interface EvaluationArgument {
 export interface FacultyAngle {
   title: string;
   development: string;
+  type?: "positive" | "negative";
 }
 
 export interface BrainstormCard {
@@ -99,6 +100,28 @@ export interface Task2Data {
   timingSeconds: number;
   sampleIntro: string;
   sampleConclusion: string;
+  recommendedPosition?: string;
+  strongestArgument?: string;
+  introPlanningPoints?: string[];
+  conclusionPlanningPoints?: string[];
+  classroomDiscussion?: {
+    question: string;
+    followUps: string[];
+    pedagogicalInsight: string;
+  };
+  workbookTopSix?: string[];
+  modelSentences?: {
+    positive: string;
+    balanced: string;
+  };
+  fiveMinutePlanningMap?: {
+    positive: string[];
+    negative: string[];
+    position: string;
+    body1: string;
+    body2: string;
+    teachingRecommendation: string;
+  };
   bodyParagraphs?: BodyParaStructure[];
   vocabList: VocabItem[];
   vocabHunt: string[];

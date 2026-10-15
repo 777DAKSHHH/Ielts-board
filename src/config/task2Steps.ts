@@ -27,7 +27,7 @@ export const TASK2_STEPS: StepDefinition[] = [
     stepNumber: 4,
     title: "Academic Power Vocabulary",
     badge: "Step 04 / 09 • Lexical Resource",
-    description: "Demographic Shifts, Financial Solvency & Emotional Equanimity"
+    description: "Workbook High-Band Vocabulary: Top Six & Model Sentences"
   },
   {
     id: "task2-step5",
@@ -41,14 +41,14 @@ export const TASK2_STEPS: StepDefinition[] = [
     stepNumber: 6,
     title: "Points for the Advantages",
     badge: "Step 06 / 09 • Points for the Advantages (Strong Side)",
-    description: "4 Relatable Main Reasons + Causal Explanations + Concrete Examples"
+    description: "Student Idea Bank: 4 Positive Reasons + Development + Real-Life Examples"
   },
   {
     id: "task2-step7",
     stepNumber: 7,
     title: "Points for the Disadvantages",
     badge: "Step 07 / 09 • Points for the Disadvantages (Counterpoint)",
-    description: "4 Relatable Main Reasons + Causal Explanations + Concrete Examples"
+    description: "Student Idea Bank: 4 Potential Drawbacks + Development + Real-Life Examples"
   },
   {
     id: "task2-step8",

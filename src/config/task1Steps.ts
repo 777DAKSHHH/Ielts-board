@@ -6,56 +6,56 @@ export const TASK1_STEPS: StepDefinition[] = [
     stepNumber: 1,
     title: "Cryptic Audio Guess",
     badge: "Step 01 / 08 • Cryptic Audio Guess",
-    description: "Listen First: Atmospheric Winds, Warm Water Shifts & El Niño Inversion in the Pacific"
+    description: "Listen First: SMG Entertainment Profits, Retail CD Dominance & the 10-Year Digital Shift"
   },
   {
     id: "task1-step2",
     stepNumber: 2,
-    title: "Task Prompt & Diagram Analysis",
-    badge: "Step 02 / 08 • Task Prompt & Diagram Analysis",
-    description: "Deconstruct Pacific Ocean Cross-Sections: Normal vs. El Niño Conditions"
+    title: "Task Prompt & Bar Graph Engine",
+    badge: "Step 02 / 08 • Prompt & Interactive Visual Engine",
+    description: "Interactive Dual Bar Charts (1997 vs 2007): Germany, France & Italy Across 5 Music Formats"
   },
   {
     id: "task1-step3",
     stepNumber: 3,
-    title: "Oceanographic & Meteorological Lexicon",
+    title: "Financial & Trend Lexicon",
     badge: "Step 03 / 08 • Lexical Resource",
-    description: "Upwelling, Thermocline, Trade Winds, Convection, Aridity & Nutrient Depletion"
+    description: "Lion's Share, Contraction, Obsolescence, Plummet, Burgeoning Streams & Standing Starts"
   },
   {
     id: "task1-step4",
     stepNumber: 4,
     title: "Sample Introduction & Overview",
     badge: "Step 04 / 08 • Sample Introduction & Overview",
-    description: "Paraphrase Prompt & Contrast Dual Pacific Climatic Systems (Equilibrium vs Disruption)"
+    description: "4-Element Prompt Paraphrase & 3-Pillar Macro Synthesis (Retail Lead, Digital Surge, Analog Demise)"
   },
   {
     id: "task1-step5",
     stepNumber: 5,
-    title: "Body 1: Normal Pacific Equilibrium",
-    badge: "Step 05 / 08 • Body 1 — Normal Equilibrium",
-    description: "Westward Trade Winds, Australian Rainfall, Cold Upwelling & Booming Peruvian Fisheries"
+    title: "Data Bifurcation & Grouping",
+    badge: "Step 05 / 08 • Structural Grouping Strategy",
+    description: "Bifurcation Tactics: Chronological Baseline vs. Physical vs. Digital Media Division"
   },
   {
     id: "task1-step6",
     stepNumber: 6,
-    title: "Body 2: El Niño Climatic Reversal",
-    badge: "Step 06 / 08 • Body 2 — El Niño Disruption",
-    description: "Weakened Winds, Eastward Warm Surge, Australian Drought & Peruvian Fishery Collapse"
+    title: "Body 1: 1997 Retail Baseline",
+    badge: "Step 06 / 08 • Body 1 — Initial Market Landscape",
+    description: "Physical Store CD Supremacy (€40m in Germany), Modest Cassette/Vinyl Profits & Zero Downloads"
   },
   {
     id: "task1-step7",
     stepNumber: 7,
-    title: "Comparative Systems & Band 9 Model",
-    badge: "Step 07 / 08 • Analytical Language & Model Response",
-    description: "Ocean-Atmosphere Linkages, Spatial Contrasts & Full 214-Word Band 9 Report"
+    title: "Body 2 & Complete Band 9 Model",
+    badge: "Step 07 / 08 • Body 2 & Full Model Response",
+    description: "Store Contraction, Complete Analog Obsolescence, Digital Downloads Surge & 191-Word Band 9 Report"
   },
   {
     id: "task1-step8",
     stepNumber: 8,
-    title: "Cohesive Meteorological Connectors",
-    badge: "Step 08 / 08 • Comparative Connectors & Flow",
-    description: "Contrast Basin Extremes, Track Eastward Shifts & Frame Cause-and-Effect Sequences"
+    title: "Financial & Comparative Connectors",
+    badge: "Step 08 / 08 • Academic Discourse Connectors",
+    description: "Logical Transitions, Data Attribution Phrases, Negative/Zero Reporting & Comparative Flow"
   }
 ];
 

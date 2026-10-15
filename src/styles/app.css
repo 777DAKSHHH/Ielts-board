@@ -19,13 +19,13 @@
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(97vw, 1520px);
+  width: min(98vw, 1640px);
   height: var(--header-height);
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 18px;
+  padding: 0 16px;
   background: #ffffff;
   border: 1.5px solid var(--border-subtle);
   border-radius: var(--touch-radius);
@@ -36,13 +36,13 @@
 .stage-viewport {
   flex: 1;
   position: relative;
-  margin-top: calc(var(--header-height) + 18px);
-  margin-bottom: calc(var(--dock-height) + 20px);
+  margin-top: calc(var(--header-height) + 14px);
+  margin-bottom: calc(var(--dock-height) + 16px);
   width: 100%;
-  max-width: 1560px;
+  max-width: 1660px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 18px;
+  padding: 0 16px;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -60,7 +60,7 @@
   border: 1.5px solid var(--border-subtle);
   border-radius: var(--card-radius);
   box-shadow: var(--shadow-sm);
-  padding: 22px 28px;
+  padding: clamp(16px, 2.2vw, 26px) clamp(18px, 2.6vw, 30px);
   overflow-y: auto;
   position: relative;
 }
@@ -71,7 +71,7 @@
   bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(94vw, 980px);
+  width: min(94vw, 1020px);
   height: var(--dock-height);
   z-index: 50;
   display: flex;
@@ -86,19 +86,19 @@
 
 /* Smartboard Stage Typography */
 .stage-title {
-  font-size: 1.45rem;
-  font-weight: 750;
+  font-size: 1.55rem;
+  font-weight: 800;
   color: var(--slate-900);
   letter-spacing: -0.02em;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   line-height: 1.25;
 }
 
 .stage-subtitle {
-  font-size: 0.95rem;
-  color: var(--slate-600);
+  font-size: 1.02rem;
+  color: var(--slate-700);
   margin-bottom: 16px;
-  line-height: 1.45;
+  line-height: 1.5;
 }
 
 /* Two-Column Stage Split */
@@ -117,8 +117,8 @@
   gap: 6px;
   padding: 5px 12px;
   border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 750;
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
