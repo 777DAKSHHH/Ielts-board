@@ -45,18 +45,21 @@ interface SmartBoardDiagramProps {
   onHighlightModeChange?: (mode: DiagramViewMode) => void;
   showInternalToolbar?: boolean;
   showDeepDiveCard?: boolean;
+  forcedLayoutMode?: "stacked" | "split";
 }
 
 export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
   highlightMode = "all",
   onHighlightModeChange,
   showInternalToolbar = true,
-  showDeepDiveCard = true
+  showDeepDiveCard = true,
+  forcedLayoutMode
 }) => {
   const [selectedFormatId, setSelectedFormatId] = useState<FormatKey>("shop_cds");
   const [selectedCountry, setSelectedCountry] = useState<CountryKey | "all">("all");
-  const [layoutMode, setLayoutMode] = useState<"stacked" | "split">("stacked");
-  const [activeYear, setActiveYear] = useState<"both" | 1997 | 2007>("both");
+  const [internalLayoutMode, setInternalLayoutMode] = useState<"stacked" | "split">("stacked");
+  const layoutMode = forcedLayoutMode || internalLayoutMode;
+
   const [hoveredBar, setHoveredBar] = useState<{
     year: number;
     format: string;
@@ -82,13 +85,14 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
   };
 
   // SVG Chart Geometry
-  const chartWidth = 560;
-  const chartHeight = 300;
-  const margin = { top: 38, right: 46, bottom: 35, left: 165 };
+  // Scale max value set to 46 so 40 is a clear gridline and Germany's ~42m bar extends visibly beyond it
+  const chartWidth = 590;
+  const chartHeight = 310;
+  const margin = { top: 38, right: 38, bottom: 35, left: 175 };
   const innerWidth = chartWidth - margin.left - margin.right;
   const innerHeight = chartHeight - margin.top - margin.bottom;
 
-  const maxVal = 40; // Max x-axis scale 40 million euros
+  const maxVal = 46; // X-axis range up to 46 allows 42m bar to be drawn cleanly past 40
   const xScale = (val: number) => (val / maxVal) * innerWidth;
 
   const rowHeight = innerHeight / MUSIC_FORMATS.length;
@@ -108,14 +112,15 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
           display: "flex",
           flexDirection: "column",
           gap: "8px",
-          flex: 1
+          minWidth: 0,
+          flex: "1 1 0"
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <span
               style={{
-                fontSize: "1.25rem",
+                fontSize: "1.3rem",
                 fontWeight: 900,
                 color: "#0f172a",
                 letterSpacing: "-0.02em"
@@ -141,11 +146,11 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
           </div>
         </div>
 
-        {/* SVG Container */}
-        <div style={{ width: "100%", overflowX: "auto" }}>
+        {/* SVG Container - Responsive and Vector-Perfect */}
+        <div style={{ width: "100%", overflow: "hidden" }}>
           <svg
             viewBox={`0 0 ${chartWidth} ${chartHeight}`}
-            style={{ width: "100%", height: "auto", display: "block", minWidth: "480px" }}
+            style={{ width: "100%", height: "auto", display: "block" }}
           >
             <defs>
               {/* Pattern for Italy (Dotted / Textured Pattern matching exam scan) */}
@@ -171,7 +176,7 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
               </pattern>
             </defs>
 
-            {/* Vertical Gridlines & X-Axis Labels */}
+            {/* Vertical Gridlines & X-Axis Labels at 0, 10, 20, 30, 40 */}
             {[0, 10, 20, 30, 40].map((tick) => {
               const x = margin.left + xScale(tick);
               return (
@@ -181,17 +186,17 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
                     y1={margin.top - 8}
                     x2={x}
                     y2={margin.top + innerHeight}
-                    stroke={tick === 0 ? "#0f172a" : "#cbd5e1"}
-                    strokeWidth={tick === 0 ? 2 : 1}
+                    stroke={tick === 0 ? "#0f172a" : tick === 40 ? "#475569" : "#cbd5e1"}
+                    strokeWidth={tick === 0 ? 2 : tick === 40 ? 1.5 : 1}
                     strokeDasharray={tick === 0 ? "none" : "3,3"}
                   />
                   <text
                     x={x}
                     y={margin.top + innerHeight + 16}
                     textAnchor="middle"
-                    fill="#334155"
-                    fontSize="11"
-                    fontWeight="700"
+                    fill={tick === 40 ? "#0f172a" : "#334155"}
+                    fontSize="11.5"
+                    fontWeight="800"
                   >
                     {tick}
                   </text>
@@ -215,9 +220,9 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
               );
             })}
 
-            {/* X-Axis bottom title */}
+            {/* Bottom X-Axis Title */}
             <text
-              x={margin.left + innerWidth / 2}
+              x={margin.left + xScale(20)}
               y={margin.top + innerHeight + 30}
               textAnchor="middle"
               fill="#475569"
@@ -257,12 +262,12 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
                   onClick={() => handleFormatSelect(format.id)}
                   style={{ cursor: "pointer" }}
                 >
-                  {/* Subtle row highlight */}
+                  {/* Row hover / selection subtle backdrop */}
                   {isSelectedFormat && (
                     <rect
-                      x={8}
+                      x={6}
                       y={rowY}
-                      width={chartWidth - 16}
+                      width={chartWidth - 12}
                       height={rowHeight}
                       fill="rgba(59, 130, 246, 0.06)"
                       rx="6"
@@ -301,7 +306,7 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
                       fill={`url(#germany-pattern-${year})`}
                       stroke="#0f172a"
                       strokeWidth="1.5"
-                      opacity={gerHighlight ? 1 : 0.22}
+                      opacity={gerHighlight ? 1 : 0.2}
                       rx="1"
                     />
                     {valGer > 0 && (
@@ -317,7 +322,7 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
                     )}
                   </g>
 
-                  {/* France Bar (White / Hollow) */}
+                  {/* France Bar (White / Hollow with crisp border) */}
                   <g
                     onMouseEnter={() =>
                       setHoveredBar({
@@ -337,7 +342,7 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
                       fill="#ffffff"
                       stroke="#0f172a"
                       strokeWidth="1.6"
-                      opacity={fraHighlight ? 1 : 0.22}
+                      opacity={fraHighlight ? 1 : 0.2}
                       rx="1"
                     />
                     {valFra > 0 && (
@@ -353,7 +358,7 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
                     )}
                   </g>
 
-                  {/* Italy Bar (Dotted / Textured) */}
+                  {/* Italy Bar (Dotted / Textured Pattern) */}
                   <g
                     onMouseEnter={() =>
                       setHoveredBar({
@@ -373,7 +378,7 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
                       fill={`url(#italy-pattern-${year})`}
                       stroke="#475569"
                       strokeWidth="1.4"
-                      opacity={itaHighlight ? 1 : 0.22}
+                      opacity={itaHighlight ? 1 : 0.2}
                       rx="1"
                     />
                     {valIta > 0 && (
@@ -411,7 +416,7 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%" }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%", minWidth: 0 }}>
       {/* Interactive Control & Legend Toolbar */}
       {showInternalToolbar && (
         <div
@@ -424,7 +429,8 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
-            gap: "12px"
+            gap: "12px",
+            width: "100%"
           }}
         >
           {/* Country Legend Buttons */}
@@ -543,48 +549,50 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
             </button>
           </div>
 
-          {/* Layout Toggle: Stacked vs Split */}
-          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <span style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 700 }}>
-              Layout:
-            </span>
-            <button
-              onClick={() => setLayoutMode("stacked")}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                padding: "5px 10px",
-                borderRadius: "8px",
-                border: "1px solid var(--border-subtle)",
-                background: layoutMode === "stacked" ? "var(--slate-800)" : "#ffffff",
-                color: layoutMode === "stacked" ? "#ffffff" : "var(--slate-700)",
-                fontSize: "0.74rem",
-                fontWeight: 700,
-                cursor: "pointer"
-              }}
-            >
-              <Rows size={13} /> Stacked (Exam Order)
-            </button>
-            <button
-              onClick={() => setLayoutMode("split")}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                padding: "5px 10px",
-                borderRadius: "8px",
-                border: "1px solid var(--border-subtle)",
-                background: layoutMode === "split" ? "var(--slate-800)" : "#ffffff",
-                color: layoutMode === "split" ? "#ffffff" : "var(--slate-700)",
-                fontSize: "0.74rem",
-                fontWeight: 700,
-                cursor: "pointer"
-              }}
-            >
-              <Columns size={13} /> Side-by-Side (Widescreen)
-            </button>
-          </div>
+          {/* Layout Toggle: Stacked vs Side-by-Side (Widescreen) */}
+          {!forcedLayoutMode && (
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 700 }}>
+                Layout:
+              </span>
+              <button
+                onClick={() => setInternalLayoutMode("stacked")}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  padding: "5px 10px",
+                  borderRadius: "8px",
+                  border: "1px solid var(--border-subtle)",
+                  background: layoutMode === "stacked" ? "var(--slate-800)" : "#ffffff",
+                  color: layoutMode === "stacked" ? "#ffffff" : "var(--slate-700)",
+                  fontSize: "0.74rem",
+                  fontWeight: 700,
+                  cursor: "pointer"
+                }}
+              >
+                <Rows size={13} /> Stacked (Exam Order)
+              </button>
+              <button
+                onClick={() => setInternalLayoutMode("split")}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  padding: "5px 10px",
+                  borderRadius: "8px",
+                  border: "1px solid var(--border-subtle)",
+                  background: layoutMode === "split" ? "var(--slate-800)" : "#ffffff",
+                  color: layoutMode === "split" ? "#ffffff" : "var(--slate-700)",
+                  fontSize: "0.74rem",
+                  fontWeight: 700,
+                  cursor: "pointer"
+                }}
+              >
+                <Columns size={13} /> Side-by-Side (Widescreen)
+              </button>
+            </div>
+          )}
         </div>
       )}
 
@@ -613,13 +621,17 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
         </div>
       )}
 
-      {/* Main Bar Charts Container */}
+      {/* Main Bar Charts Container - Clean Responsive Grid with Zero Glitch */}
       <div
         style={{
-          display: "flex",
-          flexDirection: layoutMode === "stacked" ? "column" : "row",
+          display: "grid",
+          gridTemplateColumns:
+            layoutMode === "stacked"
+              ? "1fr"
+              : "repeat(auto-fit, minmax(360px, 1fr))",
           gap: "16px",
-          width: "100%"
+          width: "100%",
+          alignItems: "start"
         }}
       >
         {renderSingleChart(1997)}
@@ -637,7 +649,9 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
             boxShadow: "0 4px 14px rgba(0,0,0,0.03)",
             display: "flex",
             flexDirection: "column",
-            gap: "14px"
+            gap: "14px",
+            width: "100%",
+            minWidth: 0
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
@@ -690,7 +704,14 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
           </div>
 
           {/* 3 Country Comparative Cards for Selected Format */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: "12px",
+              width: "100%"
+            }}
+          >
             {COUNTRY_MARKETS.map((country) => {
               const details = selectedFormat.profits[country.id];
               const isContraction = details.y2007 < details.y1997;

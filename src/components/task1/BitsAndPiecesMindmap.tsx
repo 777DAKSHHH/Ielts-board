@@ -120,11 +120,11 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
     pieces: [
       {
         label: "Store CD Supremacy",
-        value: "Germany €40m, France €25m, Italy €20m",
+        value: "Germany ~€42m (above 40m line), France €25m, Italy ~€20.5m",
         detail:
-          "Physical store CD sales generated over 85% of total company revenue; Germany held a €15m lead over France and €20m over Italy.",
+          "Physical store CD sales generated over 80% of total company revenue; Germany's bar visibly exceeded the 40 million line, holding a commanding lead over France and Italy.",
         band9Application:
-          "“In 1997, retail purchases of CDs in shops represented the overwhelming lion’s share of SMG Entertainment’s earnings, with Germany generating 40 million euros, followed by France at 25 million and Italy at 20 million.”"
+          "“In 1997, retail purchases of CDs in shops represented the overwhelming lion’s share of SMG Entertainment’s earnings, with Germany generating approximately 42 million euros (just exceeding the 40 million mark), followed by France at 25 million and Italy at just over 20 million.”"
       },
       {
         label: "Digital Nonexistence & Online Triviality",
@@ -136,11 +136,11 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
       },
       {
         label: "Analog Mediums (Cassettes & Vinyl)",
-        value: "Italy Led: Cassettes €6m, Vinyl €3m",
+        value: "Cassettes: Italy €6m, Ger & Fra €5m • Vinyl: Fra & Ita €3m, Ger €2m",
         detail:
-          "Cassettes yielded €6m in Italy, €5m in Germany, and under €1m in France; vinyl yielded €3m in Italy and €2m in Germany.",
+          "Cassettes yielded €6m in Italy and €5m each in Germany and France; vinyl yielded €3m in both France and Italy, alongside €2m in Germany.",
         band9Application:
-          "“Regarding analog formats, Italy led cassette sales at 6 million euros, slightly ahead of Germany’s 5 million, while vinyl singles and LPs accounted for 3 million euros in Italy and 2 million in Germany.”"
+          "“Regarding analog formats, Italy led cassette sales at 6 million euros, while Germany and France were tied at 5 million each; similarly, vinyl records generated 3 million euros in both France and Italy, compared to 2 million in Germany.”"
       }
     ]
   },

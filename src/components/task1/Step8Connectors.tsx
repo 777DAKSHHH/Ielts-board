@@ -82,7 +82,7 @@ export const Step8Connectors: React.FC = () => (
           <ArrowRight size={13} color="var(--apple-blue)" />
           <span>Shop CDs form overwhelming lion’s share</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Germany (€40m) &gt; France (€25m) &gt; Italy (€20m)</span>
+          <span>Germany (~€42m, above 40m line) &gt; France (€25m) &gt; Italy (~€20.5m)</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
           <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“By contrast,...”</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
@@ -90,7 +90,7 @@ export const Step8Connectors: React.FC = () => (
           <ArrowRight size={13} color="var(--apple-blue)" />
           <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Regarding analog formats,...”</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Italy leads cassettes (€6m) and vinyl (€3m)</span>
+          <span>Cassettes (Italy €6m; France &amp; Germany €5m) + vinyl (France &amp; Italy €3m)</span>
         </div>
 
         {/* Paragraph 4 / Body 2 Flow */}

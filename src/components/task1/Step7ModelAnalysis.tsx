@@ -188,7 +188,7 @@ export const Step7ModelAnalysis: React.FC = () => {
           </strong>
         </div>
         <p style={{ margin: 0, fontSize: "0.96rem", lineHeight: 1.6, color: "var(--slate-800)" }}>
-          “While retail purchases of compact discs suffered substantial contractions across all three territories—sliding by 15 million euros in Germany and 10 million in France—this medium nonetheless preserved its unchallenged commercial lead, whereas analog cassettes and vinyl records were wiped out entirely, their losses partially cushioned by the burgeoning expansion of online CD sales and newly emerged internet downloads.”
+          “While retail purchases of compact discs suffered substantial contractions across all three territories—sliding from just above 40 million euros to 25 million in Germany and from 25 million to 15 million in France—this medium nonetheless preserved its unchallenged commercial lead, whereas analog cassettes and vinyl records were wiped out entirely, their losses partially cushioned by the burgeoning expansion of online CD sales and newly emerged internet downloads.”
         </p>
       </div>
     </div>

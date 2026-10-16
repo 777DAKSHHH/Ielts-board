@@ -24,33 +24,33 @@ export const Step4IntroOverview: React.FC = () => (
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction &amp; Overview</span>
       <h2 className="stage-title">Build the Introduction and Macro Overview</h2>
       <p className="stage-subtitle">
-        Master the Band 9 approach for comparative business bar graphs: state the graphic format, commercial enterprise, distribution channels, and temporal range, followed by a high-level overview synthesizing store dominance, analog obsolescence, and digital growth.
+        Master the Band 9 approach for comparative business bar graphs: state the graphic format, commercial enterprise, distribution channels, temporal range, and exact financial scale of measurement, followed by a 3-pillar macro overview.
       </p>
     </div>
 
     <div className="stage-grid-2col">
       <QuoteCard
         icon={<BookOpen size={20} color="var(--slate-800)" />}
-        title="1. Sample Introduction"
+        title="1. Sample Introduction (With Scale)"
         text={TASK1_DATA.sampleIntro}
-        annotation="Paraphrases 'The bar graphs show the profit made by SMG entertainment (a record company) in three countries' into 'The horizontal bar charts illustrate the profits earned by SMG Entertainment, a music record company, across five distinct audio distribution formats in Germany, France, and Italy between 1997 and 2007', capturing graphic type, entity, specific channels, and geographic/temporal parameters."
+        annotation="Paraphrases the prompt by integrating all key elements: 1) Graphic type (horizontal bar charts), 2) Business entity (SMG Entertainment), 3) Five audio formats, 4) Geographic & temporal scope (Germany, France, and Italy from 1997 to 2007), and 5) The explicit financial measurement scale ('measured on a scale of million euros / €m'), satisfying examiner Band 9 Task Achievement expectations."
       />
       <QuoteCard
         icon={<Sparkles size={20} color="var(--slate-800)" />}
         title="2. Sample Macro Overview"
         text={TASK1_DATA.sampleOverview}
-        annotation="Synthesizes the 3 macro pillars: 1) Physical store CDs retained undisputed leadership despite sharp drops; 2) Legacy analog formats (cassettes and vinyl) were rendered completely obsolete with zero profit; 3) Online channels expanded dynamically, while establishing Germany as the dominant market."
+        annotation="Synthesizes the 3 macro pillars: 1) Physical store CDs retained undisputed leadership despite sharp drops; 2) Legacy analog formats (cassettes and vinyl) were rendered completely obsolete with zero profit across all three markets; 3) Online channels expanded dynamically, while establishing Germany as the dominant profit generator."
       />
     </div>
 
     {/* Pedagogical Breakdown Grid */}
     <div className="stage-grid-2col" style={{ marginTop: "6px" }}>
-      {/* 4-Parameter Intro Breakdown */}
+      {/* 5-Parameter Intro Breakdown */}
       <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px", boxShadow: "var(--shadow-sm)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Compass size={18} color="var(--apple-blue)" />
           <h4 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-            4-Element Introduction Paraphrase Formula
+            5-Element Introduction Paraphrase Formula
           </h4>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
@@ -60,15 +60,19 @@ export const Step4IntroOverview: React.FC = () => (
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-            <span><strong>Entity &amp; Financial Metric:</strong> <em>“...the profits earned by SMG Entertainment, a music record enterprise...”</em></span>
+            <span><strong>Entity &amp; Subject:</strong> <em>“...the profits earned by SMG Entertainment, a music record enterprise...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>3</span>
-            <span><strong>Scope &amp; Categories:</strong> <em>“...across five distinct audio distribution formats, calibrated in million euros...”</em></span>
+            <span><strong>Scope &amp; Categories:</strong> <em>“...across five distinct audio distribution formats...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>4</span>
-            <span><strong>Territories &amp; Timeframe:</strong> <em>“...in Germany, France, and Italy between 1997 and 2007.”</em></span>
+            <span><strong>Territories &amp; Timeframe:</strong> <em>“...in Germany, France, and Italy between 1997 and 2007...”</em></span>
+          </div>
+          <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
+            <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center", background: "#dbeafe", color: "#1e40af", fontWeight: 800 }}>5</span>
+            <span><strong>Measurement Scale (Crucial):</strong> <em>“...with financial returns measured on a scale of million euros (€m).”</em></span>
           </div>
         </div>
       </div>
@@ -88,7 +92,7 @@ export const Step4IntroOverview: React.FC = () => (
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 2 — Analog Obsolescence:</strong> Highlight that cassettes and vinyl records suffered total extinction, recording zero revenue by 2007.</span>
+            <span><strong>Pillar 2 — Universal Analog Obsolescence:</strong> Highlight that cassettes and vinyl records suffered total extinction, recording zero revenue across all three countries by 2007.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />

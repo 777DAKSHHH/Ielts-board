@@ -43,12 +43,12 @@ const FLASHCARDS: FlashcardItem[] = [
     question: "How should you contrast the numerical performance of shop-bought CDs between 1997 and 2007?",
     answerTitle: "Universal 30%–40% Contraction across All Nations, Yet Undisputed #1 Rank Preserved",
     bulletPoints: [
-      "1997: Germany led at 40 million euros, France recorded 25 million, and Italy generated 20 million (accounting for over 85% of total company profit).",
-      "2007: Profits plummeted sharply—Germany fell to 25 million (-15m), France dropped to 15 million (-10m), and Italy contracted to 14 million (-6m).",
+      "1997: Germany led at approximately 42 million euros (just exceeding the 40 million line), France recorded 25 million, and Italy generated just over 20 million (accounting for over 80% of total company profit).",
+      "2007: Profits plummeted sharply—Germany fell to 25 million (-17m), France dropped to 15 million (-10m), and Italy contracted to 14 million (-6.5m).",
       "Key analytical contrast: Even after these steep declines, shop CDs remained larger than all other formats combined in each country."
     ],
     band9Phrase:
-      "“Although shop-bought CDs suffered substantial contractions in all three territories—sliding to 25 million euros in Germany, 15 million in France, and 14 million in Italy—this format remained the undisputed commercial backbone of SMG Entertainment.”"
+      "“Although shop-bought CDs suffered substantial contractions in all three territories—sliding from just above 40 million euros to 25 million in Germany, 15 million in France, and 14 million in Italy—this format remained the undisputed commercial backbone of SMG Entertainment.”"
   },
   {
     id: 3,
@@ -57,12 +57,12 @@ const FLASHCARDS: FlashcardItem[] = [
     question: "Why is it vital to report the 1997 figures for cassettes and vinyl rather than just saying they became zero?",
     answerTitle: "Band 9 Task Achievement Demands Contextualizing Initial Commercial Value Before Demise",
     bulletPoints: [
-      "In 1997, cassettes were commercially significant in Italy (6 million euros, leading all nations) and Germany (5 million), with France recording under 1 million.",
-      "Vinyl singles and LPs contributed 3 million euros in Italy and 2 million in Germany, while being negligible in France.",
-      "By 2007, both media were completely phased out, generating 0 million euros across all three markets."
+      "In 1997, cassettes were commercially active across all three markets: Italy led at 6 million euros, while Germany and France were tied at 5 million each.",
+      "Vinyl singles and LPs contributed 3 million euros each in France and Italy, alongside 2 million in Germany.",
+      "By 2007, both media were completely phased out, generating exactly 0 million euros across all three markets."
     ],
     band9Phrase:
-      "“Cassettes, which had yielded 6 million euros in Italy and 5 million in Germany in 1997, alongside modest vinyl returns, were rendered completely obsolete, recording zero revenue across the board a decade later.”"
+      "“Cassettes, which had yielded 6 million euros in Italy and 5 million each in Germany and France in 1997, alongside vinyl returns of 3 million in France and Italy, were rendered completely obsolete, recording zero revenue across the board a decade later.”"
   },
   {
     id: 4,

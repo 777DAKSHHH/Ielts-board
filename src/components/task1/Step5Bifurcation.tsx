@@ -106,28 +106,28 @@ export const Step5Bifurcation: React.FC = () => {
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ background: "#e0f2fe", color: "#0369a1", fontWeight: 750 }}>
-                124 Words
+                125 Words
               </span>
             </div>
 
             <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.5 }}>
-              Establishes the initial commercial landscape where retail shop compact discs accounted for the immense lion's share of profits, digital downloads did not exist, and legacy analog media provided secondary revenue.
+              Establishes the initial commercial landscape where retail shop compact discs accounted for the immense lion's share of profits (with Germany surpassing 40m), digital downloads did not exist, and legacy analog media provided healthy secondary revenue across all three countries.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>1. Retail CD Dominance:</strong> Germany (€40m), France (€25m), Italy (€20m) — over 85% of total enterprise yield.
+                <strong style={{ color: "var(--slate-900)" }}>1. Retail CD Dominance:</strong> Germany (~€42m, exceeding the 40m line), France (€25m), Italy (~€20.5m) — over 80% of total enterprise yield.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
                 <strong style={{ color: "var(--slate-900)" }}>2. Trivial Online &amp; Zero Downloads:</strong> Online CDs generated only €3m (Germany), €1.5m (France), and nil (Italy); internet downloads stood at 0 across all 3 nations.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>3. Legacy Analog Footprint:</strong> Italy led cassette sales at €6m (vs €5m Germany, &lt;€1m France); vinyl produced €3m in Italy and €2m in Germany.
+                <strong style={{ color: "var(--slate-900)" }}>3. Analog Media Footprint:</strong> Italy led cassette sales at €6m, while Germany and France both reached €5m; vinyl records generated €3m each in France and Italy, vs €2m in Germany.
               </div>
             </div>
 
             <div style={{ background: "#f8fafc", borderRadius: "10px", padding: "10px 12px", fontSize: "0.8rem", color: "var(--slate-700)", borderLeft: "3px solid #0284c7" }}>
-              <strong>Teaching Note:</strong> Citing the 1997 baseline values for cassettes and vinyl is mandatory—without them, the examiner cannot grade your reporting of their subsequent demise.
+              <strong>Teaching Note:</strong> Citing the 1997 baseline values for cassettes (€5m in France/Germany, €6m in Italy) and vinyl (€3m in France/Italy) is mandatory—without them, the examiner cannot grade your reporting of their subsequent demise.
             </div>
           </div>
 
@@ -157,7 +157,7 @@ export const Step5Bifurcation: React.FC = () => {
             </div>
 
             <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.5 }}>
-              Documents the structural transformation over the decade: steep contractions in store CDs, complete extinction of analog media to zero, and the surge of online CD purchasing and internet downloads.
+              Documents the structural transformation over the decade: steep contractions in store CDs, complete extinction of analog media to zero in all three nations, and the surge of online CD purchasing and internet downloads.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -165,7 +165,7 @@ export const Step5Bifurcation: React.FC = () => {
                 <strong style={{ color: "var(--slate-900)" }}>1. Shop CD Contraction:</strong> Slid to €25m (Germany), €15m (France), and €14m (Italy), yet preserved its status as the leading single contributor.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>2. Complete Obsolescence:</strong> Cassettes and vinyl fell to zero across all three countries, wiping out €9m of revenue from Italy's balance sheet.
+                <strong style={{ color: "var(--slate-900)" }}>2. Universal Obsolescence:</strong> Cassettes and vinyl fell to zero across all three countries, wiping out initial multi-million revenues.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
                 <strong style={{ color: "var(--slate-900)" }}>3. Rise of Remote &amp; Digital:</strong> Online CDs grew to €8m (Germany), €7m (France), and €1.5m (Italy); downloads surged to €5m each in Germany and France.
@@ -202,9 +202,9 @@ export const Step5Bifurcation: React.FC = () => {
               Groups the traditional declining formats: Shop-bought CDs, Cassettes, and Vinyl across both 1997 and 2007.
             </p>
             <ul style={{ margin: 0, paddingLeft: "20px", fontSize: "0.84rem", color: "var(--slate-700)", display: "flex", flexDirection: "column", gap: "6px" }}>
-              <li>Shop CDs: €40m to €25m (Germany), €25m to €15m (France), €20m to €14m (Italy).</li>
-              <li>Cassettes: €6m (Italy) and €5m (Germany) dropping to 0 across the board.</li>
-              <li>Vinyl: €3m (Italy) and €2m (Germany) also dropping to nil in 2007.</li>
+              <li>Shop CDs: ~€42m to €25m (Germany), €25m to €15m (France), ~€20.5m to €14m (Italy).</li>
+              <li>Cassettes: €6m (Italy), €5m (Germany), and €5m (France) all dropping to 0 across the board.</li>
+              <li>Vinyl: €3m (Italy and France) and €2m (Germany) also dropping to nil in 2007.</li>
             </ul>
           </div>
 
@@ -220,7 +220,7 @@ export const Step5Bifurcation: React.FC = () => {
               boxShadow: "var(--shadow-sm)"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div style={{ display: "center", alignItems: "center", gap: "8px" }}>
               <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#9333ea" }} />
               <h4 style={{ fontSize: "1.08rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
                 Body 2: Modern Remote &amp; Digital Distribution
