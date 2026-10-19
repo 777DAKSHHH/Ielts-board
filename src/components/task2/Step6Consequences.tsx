@@ -17,11 +17,11 @@ export const Step6ConsequencesT2: React.FC = () => {
       {/* Step Header */}
       <div>
         <span className="apple-badge success" style={{ marginBottom: "8px" }}>
-          Step 06 / 09 • Points for the Advantages (Strong Side)
+          Step 06 / 09 • Opinion Side (Body Paras 1 &amp; 2)
         </span>
-        <h2 className="stage-title">Student Idea Bank: 4 Main Advantages</h2>
+        <h2 className="stage-title">Body 1 &amp; 2: Why AI Cannot Replace Teachers</h2>
         <p className="stage-subtitle">
-          All 4 strong arguments displayed simultaneously for your class. Students should <strong>choose two strong arguments and develop them</strong> using <em>Main Idea + Causal Development + Real-Life Example</em>.
+          Mandatory Body Paragraph Format: <strong>1 Main reason + Supporting reasons + Example</strong>. Explore the core arguments for why emotional empathy and critical thinking are irreplaceable.
         </p>
       </div>
 

@@ -46,7 +46,7 @@ export const Step9SubmissionT2: React.FC = () => (
             3-Body Paragraph Architecture
           </h3>
           <p style={{ margin: "4px 0 0", fontSize: "0.96rem", color: "var(--slate-600)" }}>
-            [ Intro + 2 Strong Side + 1 Counterpoint + Conclusion ]
+            [ Intro + 2 Opinion Side + 1 Non-Opinion Side + Conclusion ]
           </p>
         </div>
 
@@ -65,14 +65,14 @@ export const Step9SubmissionT2: React.FC = () => (
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#dbeafe", color: "#1e40af", padding: "3px 8px", borderRadius: "6px" }}>
-                ADVANTAGE 1
+                OPINION SIDE 1
               </span>
-              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Financial Independence</strong>
+              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Emotional Intelligence &amp; Pastoral Care</strong>
             </div>
             <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Main Reason:</strong> Establish careers, build savings &amp; secure housing before children<br />
-              • <strong>Development:</strong> Greater financial wherewithal shields the household from precarity<br />
-              • <strong>Example:</strong> Working couples affording rent/mortgage, childcare, and school fees
+              • <strong>Main Reason:</strong> Empathy and emotional care are impossible for code to replicate<br />
+              • <strong>Development:</strong> Learning is relational; children require psychological reassurance<br />
+              • <strong>Example:</strong> An observant teacher detecting student grief, anxiety, or disengagement
             </div>
           </div>
 
@@ -90,14 +90,14 @@ export const Step9SubmissionT2: React.FC = () => (
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "3px 8px", borderRadius: "6px" }}>
-                ADVANTAGE 2
+                OPINION SIDE 2
               </span>
-              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Emotional Maturity &amp; Conflict Skills</strong>
+              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Critical Thinking &amp; Moral Guidance</strong>
             </div>
             <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Main Reason:</strong> Self-awareness and managing disagreements effectively<br />
-              • <strong>Development:</strong> Emotional acuity helps partners resolve interpersonal discord<br />
-              • <strong>Example:</strong> Couples resolving childcare disagreements constructively without friction
+              • <strong>Main Reason:</strong> Higher-order cognitive inquiry demands human dialogue<br />
+              • <strong>Development:</strong> Algorithms regurgitate past data; teachers challenge biases &amp; model ethics<br />
+              • <strong>Example:</strong> Moderating contentious historical debates and Socratic discussions
             </div>
           </div>
 
@@ -115,14 +115,14 @@ export const Step9SubmissionT2: React.FC = () => (
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#fee2e2", color: "#b91c1c", padding: "3px 8px", borderRadius: "6px" }}>
-                COUNTERPOINT
+                NON-OPINION CONCESSION
               </span>
-              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Fertility Decline &amp; Practical Hurdles</strong>
+              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>AI as an Augmentative Tool</strong>
             </div>
             <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Main Drawback:</strong> Fertility generally declines with age, especially for women<br />
-              • <strong>Development:</strong> Reproductive constraints and fewer years for raising children<br />
-              • <strong>Example:</strong> A couple conceiving in their late 30s facing medical difficulties
+              • <strong>Main Reason:</strong> AI is an exceptional supplementary aid for drills and grading<br />
+              • <strong>Development:</strong> 24/7 personalized learning velocity relieves teacher administrative fatigue<br />
+              • <strong>Example:</strong> Adaptive platforms like Khan Academy (assisting, not replacing)
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ export const Step9SubmissionT2: React.FC = () => (
             The 1 Main Reason Rule
           </h3>
           <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "var(--slate-500)" }}>
-            [ Main Reason + Supporting Reasons + Example ]
+            [ 1 Main Reason + Supporting Reasons + Example ]
           </p>
         </div>
 
@@ -157,19 +157,19 @@ export const Step9SubmissionT2: React.FC = () => (
           {[
             {
               step: "1. Single Core Reason",
-              desc: "Anchor each body paragraph around 1 strong, well-defined reason (e.g. wealth accumulation, psychological maturity, or reproductive risks). Never pile up scattered shallow points."
+              desc: "Anchor each body paragraph around 1 strong, well-defined reason (e.g. machine lack of empathy, Socratic critical thinking, or automated grading efficiency). Never pile up scattered shallow points."
             },
             {
               step: "2. Causal Explanation",
-              desc: "Articulate the precise 'how' and 'why' mechanisms (e.g. how early-twenties salaries are strained by student debt, or how reproductive senescence accelerates after 35)."
+              desc: "Articulate the precise 'how' and 'why' mechanisms (e.g. how emotional empathy stabilizes vulnerable adolescents, or how algorithmic statistical prediction cannot model ethical reasoning)."
             },
             {
               step: "3. Concrete Real-World Example",
-              desc: "Provide verifiable empirical evidence (dual-income homeownership metrics, OECD divorce rate statistics, or reproductive clinic healthcare data)."
+              desc: "Provide verifiable pedagogical illustrations (classroom grief counseling, bioethics debate facilitation, or Khan Academy adaptive drills)."
             },
             {
               step: "4. Outweighing Synthesis",
-              desc: "Demonstrate in Body 3 and the Conclusion that reproductive hurdles can be mitigated via modern medicine, whereas lifelong emotional and economic stability are irreplaceable."
+              desc: "Demonstrate in Body 3 and the Conclusion that computational efficiency merely enhances instruction, whereas human mentorship and empathy remain permanently irreplaceable."
             }
           ].map((item, i) => (
             <div
@@ -232,7 +232,7 @@ export const Step9SubmissionT2: React.FC = () => (
               PRECISION VOCABULARY:
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-              {["equanimity", "precipitous", "procreation", "matrimony", "subsume", "catalyze", "demographic", "solvency"].map((w) => (
+              {["supersede", "augmentative", "pastoral care", "algorithmic", "pedagogical", "empathy", "nuanced", "dissemination", "indispensable", "inimitable"].map((w) => (
                 <span
                   key={w}
                   style={{
@@ -241,7 +241,7 @@ export const Step9SubmissionT2: React.FC = () => (
                     padding: "3px 8px",
                     borderRadius: "6px",
                     fontSize: "0.84rem",
-                    fontWeight: 700,
+                    fontWeight: 750,
                     color: "var(--slate-800)"
                   }}
                 >
@@ -264,10 +264,10 @@ export const Step9SubmissionT2: React.FC = () => (
           >
             <strong style={{ color: "var(--slate-900)" }}>Discourse Linkers:</strong>
             <br />
-            • <em>Advantage 1 opener:</em> “Foremost among the advantages is that delaying marriage until one’s thirties provides financial security...”<br />
-            • <em>Advantage 2 opener:</em> “Equally significant is that advanced age fosters professional consolidation and psychological maturity...”<br />
-            • <em>Counterpoint opener:</em> “On the other hand, a prominent drawback is the physiological decline in natural reproductive capacity...”<br />
-            • <em>Conclusion opener:</em> “In conclusion, although postponing family planning introduces undeniable biological hurdles...”
+            • <em>Opinion Body 1 opener:</em> “Foremost among the reasons why artificial intelligence cannot supplant educators is that...”<br />
+            • <em>Opinion Body 2 opener:</em> “Equally significant is that cultivating higher-order cognitive faculties necessitates...”<br />
+            • <em>Non-Opinion Body 3 opener:</em> “On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative aid...”<br />
+            • <em>Conclusion opener:</em> “In conclusion, although artificial intelligence is poised to revolutionize schooling by automating routine grading, I firmly disagree that...”
           </div>
         </div>
       </div>

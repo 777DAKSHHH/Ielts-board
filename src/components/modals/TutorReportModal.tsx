@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import { X, FileText, Search } from "lucide-react";
 import { modalBackdropVariants, modalDialogVariants, tactilePress } from "../../motion";
 
+import { ModuleType } from "../../types";
+
 interface TutorReportModalProps {
   isOpen: boolean;
   onClose: () => void;
-  currentModule: "task1" | "task2";
+  currentModule: ModuleType;
 }
 
 const TASK1_SUBMISSIONS = [
@@ -17,10 +19,10 @@ const TASK1_SUBMISSIONS = [
 ];
 
 const TASK2_SUBMISSIONS = [
-  { student: "Aarav Sharma", type: "Advantages Outweigh", topic: "Body 1: Year-round nutritional resilience & counter-seasonal produce buffering seasonal shortages", accuracy: "High" },
-  { student: "Pooja Patel", type: "Advantages Outweigh", topic: "Body 2: Competitive economic pressure spurring domestic farming innovation and precision agri-tech", accuracy: "High" },
-  { student: "Rohan Verma", type: "Advantages Outweigh", topic: "Body 3: Food miles emissions & smallholder vulnerability counteracted by eco-labeling and carbon tariffs", accuracy: "Moderate" },
-  { student: "Ananya Iyer", type: "Advantages Outweigh", topic: "Introduction & 3-Body Paragraph Architecture: Decisive thesis with outweighed counter-argument", accuracy: "High" }
+  { student: "Aarav Sharma", type: "Agree / Disagree", topic: "Body 1: Emotional intelligence, empathy and pastoral care unique to human teachers", accuracy: "High" },
+  { student: "Pooja Patel", type: "Agree / Disagree", topic: "Body 2: Moral mentorship, debate moderation and cultivating critical thinking", accuracy: "High" },
+  { student: "Rohan Verma", type: "Agree / Disagree", topic: "Body 3: AI as augmentative pedagogical aid (grading & adaptive drills) without replacement", accuracy: "Moderate" },
+  { student: "Ananya Iyer", type: "Agree / Disagree", topic: "Introduction & 3-Body Paragraph Architecture: Clear decisive disagree thesis", accuracy: "High" }
 ];
 
 export const TutorReportModal: React.FC<TutorReportModalProps> = ({

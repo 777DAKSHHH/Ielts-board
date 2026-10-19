@@ -22,34 +22,44 @@ interface Step2BrainstormProps {
 
 const ESSAY_FORMAT_STEPS = [
   {
+    stepNum: "1",
     label: "Introduction",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    instruction: "Paraphrase prompt + state largely positive opinion [Trend: later marriage/parenthood • Reasons: financial independence + emotional maturity]"
+    formatRule: "Paraphrase the question + Opinion",
+    instruction: "Paraphrase prompt (AI supplanting teachers) + State clear opinion: Largely disagree (AI is an augmentative tool, not a human replacement)."
   },
   {
-    label: "Body Para 1",
+    stepNum: "2",
+    label: "Body Para 1 (Opinion)",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    instruction: "Strong side (Advantage 1): Financial Independence [establish careers, build savings, secure housing • e.g. affording mortgage & childcare]"
+    formatRule: "1 Main reason + Supporting reasons + Example",
+    instruction: "Opinion Side: Emotional intelligence & pastoral care [1 Main reason: Empathy is beyond algorithms • Supporting reasons: Children require human psychological reassurance • Example: Detecting student anxiety or bereavement]."
   },
   {
-    label: "Body Para 2",
+    stepNum: "3",
+    label: "Body Para 2 (Opinion)",
     badgeBg: "rgba(16, 185, 129, 0.12)",
     badgeColor: "#047857",
-    instruction: "Strong side (Advantage 2): Emotional Maturity [self-awareness, managing disagreements • e.g. resolving childcare disputes constructively]"
+    formatRule: "1 Main reason + Supporting reasons + Example",
+    instruction: "Opinion Side: Critical thinking & moral mentorship [1 Main reason: Higher-order reasoning requires human facilitation • Supporting reasons: Algorithms rely on past datasets rather than ethical reflection • Example: Moderating controversial historical debates]."
   },
   {
-    label: "Body Para 3",
+    stepNum: "4",
+    label: "Body Para 3 (Non-Opinion)",
     badgeBg: "rgba(220, 38, 38, 0.12)",
     badgeColor: "#dc2626",
-    instruction: "Non-opinion counterpoint: Acknowledge biological fertility concerns & practical hurdles [fertility decline past 35 • e.g. conception challenges]"
+    formatRule: "1 Main reason + Supporting reasons + Example",
+    instruction: "Non-Opinion Side: AI's augmentative role [1 Main reason: Exceptional supplementary aid • Supporting reasons: 24/7 personalized drill pacing & automated grading • Example: Adaptive apps like Khan Academy (augmenting, not replacing)]."
   },
   {
+    stepNum: "5",
     label: "Conclusion",
     badgeBg: "rgba(100, 116, 139, 0.15)",
     badgeColor: "#334155",
-    instruction: "Restate position + synthesize balance [benefits of maturity and preparedness generally outweigh practical/biological challenges]"
+    formatRule: "Sum-up all the main ideas + restate opinion",
+    instruction: "Synthesize both perspectives: While AI excels at administrative automation and practice drills, human empathy, moral stewardship, and critical debate remain irreplaceable."
   }
 ];
 
@@ -68,9 +78,9 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 02 / 09 • Task Reveal &amp; 5-Para Format
         </span>
-        <h2 className="stage-title">Deconstruct the Positive or Negative Development Prompt</h2>
+        <h2 className="stage-title">Deconstruct the 'Agree or Disagree' Prompt &amp; Architecture</h2>
         <p className="stage-subtitle">
-          Recommended position: <strong>A largely positive development</strong>. Examine the prompt wording, establish your position, and reveal the five-minute planning architecture.
+          Recommended position: <strong>Largely Disagree (AI as an augmentative tool, not a replacement)</strong>. Examine the question wording, establish your position, and master the 5-paragraph format.
         </p>
       </div>
 
@@ -81,7 +91,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: Plan your thesis: build around financial preparedness and emotional maturity, then acknowledge reproductive constraints."
+          instruction="Focus Timer: Plan your thesis: build around emotional empathy (Body 1) and critical thinking (Body 2), then concede AI's augmentative drill role (Body 3)."
         />
       </div>
 
@@ -167,13 +177,13 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                marginBottom: "12px"
+                marginBottom: "10px"
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <Layers size={18} color="var(--apple-blue)" />
-                <h4 style={{ fontSize: "0.98rem", fontWeight: 750, color: "var(--slate-900)" }}>
-                  Exact Essay Writing Format
+                <h4 style={{ fontSize: "1.02rem", fontWeight: 800, color: "var(--slate-900)" }}>
+                  Mandatory Essay Writing Format
                 </h4>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -198,6 +208,22 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               </div>
             </div>
 
+            {/* Prominent Body Paragraph Golden Rule Callout */}
+            <div
+              style={{
+                background: "#f0fdf4",
+                border: "1.5px solid #bbf7d0",
+                borderRadius: "10px",
+                padding: "8px 14px",
+                marginBottom: "10px",
+                fontSize: "0.88rem",
+                fontWeight: 750,
+                color: "#166534"
+              }}
+            >
+              ⚡ Body Paragraph Rule: <strong>1 Main reason + Supporting reasons + Example</strong>
+            </div>
+
             {/* Format Content (Blurred until tapped) */}
             <div
               style={{
@@ -216,40 +242,45 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   key={step.label}
                   style={{
                     display: "flex",
-                    alignItems: "center",
+                    alignItems: "flex-start",
                     gap: "10px",
                     background: "#fff",
                     border: "1px solid var(--border-subtle)",
                     borderRadius: "10px",
-                    padding: "7px 12px",
+                    padding: "8px 12px",
                     boxShadow: "0 1px 2px rgba(0,0,0,0.03)"
                   }}
                 >
                   <span
                     style={{
                       fontSize: "0.78rem",
-                      fontWeight: 750,
+                      fontWeight: 800,
                       padding: "3px 8px",
                       borderRadius: "6px",
                       background: step.badgeBg,
                       color: step.badgeColor,
-                      minWidth: "90px",
+                      minWidth: "115px",
                       textAlign: "center",
                       flexShrink: 0
                     }}
                   >
                     {step.label}
                   </span>
-                  <span
-                    style={{
-                      fontSize: "0.85rem",
-                      color: "var(--slate-700)",
-                      lineHeight: 1.4,
-                      fontWeight: 500
-                    }}
-                  >
-                    {step.instruction}
-                  </span>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: "0.82rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "2px" }}>
+                      {step.formatRule}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "0.82rem",
+                        color: "var(--slate-600)",
+                        lineHeight: 1.4,
+                        fontWeight: 500
+                      }}
+                    >
+                      {step.instruction}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

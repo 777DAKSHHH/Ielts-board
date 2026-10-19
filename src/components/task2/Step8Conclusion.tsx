@@ -9,25 +9,25 @@ const CONCLUSION_VARIATIONS = [
     id: "balanced",
     title: "Style 1: Standard Balanced Synthesis",
     badge: "Band 8.5–9 • Recommended",
-    summary: "Reflects the recommended conclusion: financial security + mature decision-making outweigh biological limits.",
-    text: "In conclusion, marrying and becoming parents later in life can enable individuals to make more informed decisions, establish financial security and provide a stable upbringing for their children. Although postponing parenthood may present certain practical and biological challenges, I believe the overall benefits of greater maturity and preparedness make this a positive development.",
-    breakdown: "Sentence 1: Synthesis of informed choices, financial solvency, and stable upbringing | Sentence 2: Balanced concession to biological challenges + definitive positive judgement."
+    summary: "Reflects the recommended conclusion: AI personalizes drills and automates grading, but human empathy and critical debate are irreplaceable.",
+    text: "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating assessment marking and tailoring practice drills to individual learning paces, I firmly disagree that it will replace classroom teachers. The essence of genuine education lies not merely in information retrieval, but in human empathy, moral stewardship, and inspirational mentorship—qualities that no algorithmic software can ever replicate.",
+    breakdown: "Sentence 1: Concession to AI's administrative automation & drill pacing + clear restatement of disagree opinion | Sentence 2: Synthesis of irreplaceable human qualities (empathy, ethics, mentorship)."
   },
   {
-    id: "solution-oriented",
-    title: "Style 2: Solution-Oriented Outweighed Model",
-    badge: "Band 9 • Advanced Reasoning",
-    summary: "Shows why biological and practical hurdles are manageable, whereas emotional/financial stability is irreplaceable.",
-    text: "To conclude, while reproductive constraints and a widening generational gap are legitimate concerns, they can be substantially managed through modern healthcare and proactive family planning. Consequently, the irreplaceable advantages of emotional acuity and dual-career financial wherewithal render this societal trend predominantly positive.",
-    breakdown: "Sentence 1: Explains that fertility risks and lifestyle friction are manageable via healthcare and planning | Sentence 2: Concludes that emotional and economic preparedness are irreplaceable."
+    id: "pedagogical",
+    title: "Style 2: Relational Pedagogy Model",
+    badge: "Band 9 • Advanced Lexicon",
+    summary: "Contrasts computational information dissemination with relational pastoral care and character formation.",
+    text: "To conclude, while intelligent algorithms will undeniably serve as powerful augmentative tools that eliminate repetitive administrative burdens, I entirely reject the notion that they will supplant educators. Teaching is fundamentally a relational human journey; cold lines of computer code can never emulate the compassionate pastoral care and ethical inspiration that dedicated teachers provide.",
+    breakdown: "Sentence 1: Concedes augmentative administrative benefits + decisive rejection of total replacement | Sentence 2: Contrasts cold computational code with compassionate pastoral care."
   },
   {
     id: "rapid-exam",
     title: "Style 3: Rapid 2-Sentence Exam Model",
     badge: "Rapid Timing • Under 45 Words",
     summary: "Ultra-compact, high-speed conclusion ideal when running short on time in the real exam.",
-    text: "In conclusion, despite the practical hurdles and fertility-related risks of postponing parenthood, I consider this a largely positive development. Greater financial wherewithal and emotional maturity enable mature couples to establish demonstrably more stable homes for their children.",
-    breakdown: "Sentence 1: Rapid concession to practical/fertility risks + clear positive stance | Sentence 2: High-impact synthesis of financial solvency and emotional readiness."
+    text: "In conclusion, despite the exceptional utility of artificial intelligence in automating grading and tailoring practice exercises, I firmly maintain that teachers will remain indispensable. Human empathy, critical thinking facilitation, and moral guidance cannot be replaced by algorithms.",
+    breakdown: "Sentence 1: Rapid concession to AI utility + firm thesis that teachers remain indispensable | Sentence 2: Punchy synthesis of human empathy, critical thinking, and ethics."
   }
 ];
 
@@ -39,11 +39,11 @@ export const Step8ConclusionT2: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 08 / 09 • Sample Conclusion &amp; Outweighing Strategy
+          Step 08 / 09 • Sample Conclusion &amp; Synthesis
         </span>
-        <h2 className="stage-title">Sample Conclusion &amp; Decisive Outweighing Strategy</h2>
+        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Ideas + Restate Opinion</h2>
         <p className="stage-subtitle">
-          Band 9 Conclusion Blueprint: Acknowledge the counterpoint + Restate your decisive opinion + Summarize why the advantages overwhelmingly prevail.
+          Mandatory Conclusion Format: <strong>Sum-up all the main ideas + restate opinion</strong>. Concede AI's augmentative role in sentence 1, and reassert why human empathy and critical thinking remain irreplaceable in sentence 2.
         </p>
       </div>
 

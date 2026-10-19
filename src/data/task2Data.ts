@@ -23,729 +23,636 @@ export type {
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "marriage-parenthood-in-30s-task2",
+  id: "ai-replace-teachers-classroom-task2",
 
-  taskType: "Positive or Negative Development",
+  taskType: "Agree or Disagree (To what extent do you agree or disagree?)",
 
-  title: "IELTS Writing Task 2 — Marriage and Parenthood in One’s 30s",
+  title: "IELTS Writing Task 2 — AI Replacing Teachers in the Classroom",
 
   questionText:
-    "Many young people tend to marry and have children in their 30s rather than at a younger age.\n\nIs this a positive or negative development?",
+    "Artificial intelligence will soon replace teachers in the classroom.\n\nTo what extent do you agree or disagree?",
 
   audioUrl: "materials/Staying_Young_as_a_Survival_Tactic.m4a",
 
   timingSeconds: 180,
 
-  recommendedPosition: "A largely positive development.",
+  recommendedPosition: "Largely disagree (AI is an augmentative tool, not a human replacement)",
 
   strongestArgument:
-    "The strongest argument is that people may enter marriage and parenthood with greater financial stability, emotional maturity and a clearer sense of responsibility. However, delaying parenthood can also create practical challenges.",
+    "The strongest argument is that while artificial intelligence can deliver tailored learning drills and automate routine administrative grading, it fundamentally lacks the emotional intelligence, moral mentorship, and spontaneous facilitation required for holistic human education.",
 
-  // 1. Sample introduction
+  // 1. Sample introduction planning points
   introPlanningPoints: [
-    "Trend: marriage and parenthood occur later in life.",
-    "Opinion: largely positive.",
-    "Main reasons: financial independence + emotional maturity."
+    "Paraphrase: The prospect of artificial intelligence supplanting human educators in the classroom.",
+    "Opinion: Largely disagree with full replacement.",
+    "Main reasons: AI serves as an augmentative tool, but human teachers provide irreplaceable emotional empathy, ethical mentorship, and critical discourse."
   ],
 
   sampleIntro:
-    "In many societies, individuals are increasingly choosing to establish their careers and achieve personal stability before getting married and starting a family. I consider this a largely positive development, as greater financial security and emotional maturity can help couples build more stable family environments, despite the potential challenges associated with delayed parenthood.",
+    "With rapid advances in educational technology, it is often argued that artificial intelligence will soon supersede human teachers in the classroom. While I acknowledge that intelligent algorithms can enhance personalized instruction and automate routine administrative tasks, I largely disagree that they will ever fully replace human educators, whose emotional empathy, ethical mentorship, and dynamic classroom leadership remain fundamentally irreplaceable.",
 
-  // 2. Sample conclusion
+  // 2. Sample conclusion planning points
   conclusionPlanningPoints: [
-    "Benefits: financial preparedness + mature decision-making.",
-    "Drawback: fewer years available for raising children and possible fertility-related concerns.",
-    "Judgement: benefits generally outweigh the drawbacks."
+    "Main ideas: AI excels at automated grading and customized drill delivery (augmentative aid).",
+    "Irreplaceable human core: Empathy, psychological pastoral care, and fostering ethical critical thinking.",
+    "Restate opinion: AI will empower teachers, never replace them."
   ],
 
   sampleConclusion:
-    "In conclusion, marrying and becoming parents later in life can enable individuals to make more informed decisions, establish financial security and provide a stable upbringing for their children. Although postponing parenthood may present certain practical and biological challenges, I believe the overall benefits of greater maturity and preparedness make this a positive development.",
+    "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating assessment marking and tailoring practice drills to individual learning paces, I firmly disagree that it will replace classroom teachers. The essence of genuine education lies not merely in information retrieval, but in human empathy, moral stewardship, and inspirational mentorship—qualities that no algorithmic software can ever replicate.",
 
-  // 6. Smart Board Five-Minute Planning Map & Teaching Recommendation
+  // Five-Minute Planning Map & Teaching Recommendation
   fiveMinutePlanningMap: {
     positive: [
-      "Financial independence → savings, housing, childcare",
-      "Emotional maturity → better conflict resolution",
-      "Informed decisions → compatible partners, planned families"
+      "Emotional intelligence & pastoral care → supporting distressed or struggling learners",
+      "Critical thinking & moral debate → challenging cognitive biases and ethical dilemmas",
+      "Spontaneous classroom facilitation → inspiring curiosity and collaborative discovery"
     ],
     negative: [
-      "Fertility concerns → possible difficulty conceiving",
-      "Later family responsibilities → childcare may overlap with retirement planning",
-      "Social pressure → criticism for marrying later"
+      "Personalized pacing → adaptive drills customized to individual student velocity",
+      "Administrative efficiency → instantaneous grading of objective tests and homework",
+      "Scalable database access → 24/7 interactive knowledge retrieval"
     ],
-    position: "Largely positive",
-    body1: "Financial security + emotional maturity",
-    body2: "Acknowledge fertility concerns, but explain why the benefits generally outweigh them.",
+    position: "Largely Disagree",
+    body1: "Body 1 (Opinion): Irreplaceable emotional empathy, pastoral care, and psychological encouragement",
+    body2: "Body 2 (Opinion): Cultivating independent critical thinking, ethical reasoning, and debate moderation",
     teachingRecommendation:
-      "Have students build their essay around financial preparedness and emotional maturity, then acknowledge reproductive constraints as the principal counterargument. This gives them a clear, defensible position without making unsupported claims that marrying later always leads to better relationships or parenting."
+      "Instruct students to follow the exact format: 1 Main reason + Supporting reasons + Example for every body paragraph. Build Body 1 on emotional empathy and pastoral care, Body 2 on critical thinking and moral mentorship, and use Body 3 to concede AI's augmentative role in personalized drills and grading automation. Conclude decisively that assisting a teacher is fundamentally distinct from replacing one."
   },
 
   // Strongest Classroom Discussion Question
   classroomDiscussion: {
     question:
-      "Would you rather have a child at 25 while still building your career, or at 35 when you are financially established?",
+      "Can an algorithm inspire a child to love learning or comfort a student in tears the way a dedicated human teacher does?",
     followUps: [
-      "Does financial security automatically make someone a better parent?",
-      "Can emotional maturity compensate for financial instability?",
-      "Is there ever a perfect time to start a family?"
+      "What is the difference between transmitting information and genuine pedagogical teaching?",
+      "Can artificial intelligence teach ethics and moral philosophy when it possesses no consciousness?",
+      "Does automating homework grading mean the teacher is being replaced, or merely assisted?"
     ],
     pedagogicalInsight:
-      "These questions help students see that the issue is not simply age; it is the level of preparedness that age may bring."
+      "These questions help students realize that education is fundamentally relational and ethical, whereas computer programs are merely cognitive calculators."
   },
 
-  // 3. Student Idea Bank & Body Paragraph Formats
+  // 3. Student Idea Bank & Body Paragraph Formats (Strict Format: 1 Main reason + Supporting reasons + Example)
   bodyParagraphs: [
     {
       paraNumber: 1,
       side: "strong_opinion",
-      title: "Points for the Advantages (Strong Side — Positive Development)",
-      theme: "Financial Preparedness, Emotional Maturity & Relationship Stability",
+      title: "Body Para 1 (Opinion Side) — Emotional Intelligence & Pastoral Care",
+      theme: "Emotional Intelligence, Pastoral Empathy & Human Relational Support",
       mainReason:
-        "Young adults can establish careers, build savings and secure housing before taking on the expenses of raising children.",
+        "Human educators possess emotional intelligence and psychological empathy, which are vital for student well-being and entirely beyond algorithmic replication.",
       supportingReasons:
-        "Entering marriage and parenthood after gaining professional experience ensures couples have greater financial wherewithal and emotional acuity, drastically reducing interpersonal discord.",
+        "Education is fundamentally a relational human journey. Learners, particularly young children and teenagers, routinely encounter emotional distress, self-doubt, and social friction. An observant teacher offers compassionate encouragement, emotional stability, and pastoral guidance, whereas an artificial intelligence system is inherently cold and incapable of genuine feeling.",
       example:
-        "A couple who have worked for several years may be better equipped to afford rent or a mortgage, childcare and school fees.",
+        "When an adolescent experiences acute exam anxiety or family bereavement, an attentive teacher recognizes non-verbal behavioral shifts and adapts expectations with warmth, whereas an algorithm would merely record missed deadlines as academic delinquency.",
       band9Snippet:
-        "“Foremost among the benefits is that delaying family formation allows individuals to achieve financial independence and emotional maturity, creating a resilient household foundation.”",
+        "“Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy.”",
       alternativeReasons: [
         {
-          id: "body-adv-reason1",
-          badge: "Reason 1 • Financial Independence",
-          title: "Financial Independence",
+          id: "body1-alt1",
+          badge: "Reason 1 • Pastoral Empathy",
+          title: "Pastoral Empathy & Psychological Safety",
           mainReason:
-            "Young adults can establish careers, build savings and secure housing before taking on the expenses of raising children.",
+            "Human educators possess emotional intelligence and psychological empathy, which are vital for student well-being and entirely beyond algorithmic replication.",
           supportingReasons:
-            "Remaining unencumbered during the early career stage allows individuals to clear student debts, accumulate capital reserves, and attain higher-earning positions without the heavy financial strain of early dependents.",
+            "Education is fundamentally a relational human journey. Learners, particularly young children and teenagers, routinely encounter emotional distress, self-doubt, and social friction. An observant teacher offers compassionate encouragement, emotional stability, and pastoral guidance, whereas an artificial intelligence system is inherently cold and incapable of genuine feeling.",
           example:
-            "A couple who have worked for several years may be better equipped to afford rent or a mortgage, childcare and school fees.",
+            "When an adolescent experiences acute exam anxiety or family bereavement, an attentive teacher recognizes non-verbal behavioral shifts and adapts expectations with warmth, whereas an algorithm would merely record missed deadlines as academic delinquency.",
           band9Snippet:
-            "“By deferring parenthood until they have greater financial wherewithal, couples may be better equipped to assume familial responsibilities without experiencing severe financial precarity.”",
+            "“Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy.”",
           modelParagraph:
-            "Foremost among the positive aspects of delaying marriage is that it provides couples with the financial independence needed to support a family comfortably. Child-rearing requires immense financial resources for housing, healthcare, nutrition, and schooling. Young adults in their twenties frequently struggle with student loans and unstable entry-level wages, whereas individuals in their thirties have established professional careers and accumulated savings. Consequently, mature parents are in a vastly superior position to absorb domestic expenses. For instance, a couple who have worked for several years are far better equipped to afford a mortgage down payment, quality childcare, and ongoing educational fees without falling into severe debt.",
+            "Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy. Children and adolescents do not merely acquire data; they undergo profound psychological development during which they frequently experience motivational crises, anxiety, and personal adversity. A human teacher can perceive subtle behavioral cues, listen with genuine compassion, and provide the psychological reassurance necessary to restore a pupil’s confidence. In contrast, artificial intelligence systems, regardless of their sophisticated computational power, possess zero consciousness or empathy. For example, when a student struggles academically due to domestic distress or bereavement, a sensitive teacher adapts deadlines and offers counseling, whereas an automated program would rigidly penalize the late submission as a quantitative failure.",
           examinerNotes:
-            "Relatable & practical. Explains the transition from early-career debt to 30s financial solvency."
+            "High emotional resonance. Explains the critical boundary between machine computation and human relational connection."
         },
         {
-          id: "body-adv-reason2",
-          badge: "Reason 2 • Emotional Maturity",
-          title: "Emotional Maturity",
+          id: "body1-alt2",
+          badge: "Reason 2 • Inspiration & Mentorship",
+          title: "Inspirational Role Modeling & Character Formation",
           mainReason:
-            "People may become more self-aware and better at managing disagreements, making them more capable of handling marital and parenting responsibilities.",
+            "Teachers act as inspirational role models whose life stories, passion, and personal character stimulate a lifelong love of learning.",
           supportingReasons:
-            "Additional life experience cultivates emotional acuity, self-regulation, and patience. Mature partners are significantly less prone to impulsive conflicts and more adept at constructive problem-solving during parental stress.",
+            "A charismatic teacher instills enthusiasm through shared human experiences, enthusiasm for their subject, and personal vulnerability. Algorithms can deliver curriculum checklists, but they cannot inspire passion or serve as ethical figures that young people seek to emulate.",
           example:
-            "A couple who have learnt to resolve conflicts constructively may be better prepared to manage disagreements about childcare.",
+            "Countless accomplished scientists and writers attribute their life achievements to a specific school teacher who believed in their potential and ignited their curiosity.",
           band9Snippet:
-            "“Greater emotional acuity and self-awareness acquired through life experience enable partners to navigate domestic friction with constructive composure.”",
+            "“Beyond transmitting knowledge, teachers serve as vital role models whose infectious enthusiasm and personal mentorship kindle long-term academic ambition.”",
           modelParagraph:
-            "Equally important is that entering marriage and parenthood later in life fosters greater emotional maturity. Raising children inevitably introduces severe physical exhaustion and emotional stress, which can strain a relationship. Individuals in their thirties generally possess greater self-awareness, patience, and emotional acuity developed through diverse adult experiences. As a result, they can manage disagreements constructively rather than reacting with impulsive frustration. For example, a couple who have already established healthy communication patterns in their twenties are far better prepared to negotiate domestic duties and resolve disputes over childcare harmoniously.",
+            "Equally critical is the role of human teachers as inspirational role models whose personal passion can kindle lifelong academic ambition. Education is fundamentally ignited by human connection; when students witness an educator's authentic enthusiasm for literature, history, or mathematics, they are motivated to push past cognitive hurdles. An algorithm operates entirely on mechanical logic, devoid of genuine passion or human conviction. For instance, numerous renowned scientists and Nobel laureates recount that their career trajectory was not catalyzed by reading textbooks, but by a devoted instructor who recognized their unique spark, believed in their potential, and pushed them to excel.",
           examinerNotes:
-            "Focuses on psychological readiness, conflict resolution, and marital durability."
+            "Focuses on inspirational mentorship and long-term academic motivation."
         },
         {
-          id: "body-adv-reason3",
-          badge: "Reason 3 • Informed Partner Selection",
-          title: "More Informed Partner Selection",
+          id: "body1-alt3",
+          badge: "Reason 3 • Dynamic Conflict Resolution",
+          title: "Interpersonal Socialization & Conflict Resolution",
           mainReason:
-            "Additional life experience can help people understand their own priorities and choose partners with compatible values and long-term goals.",
+            "Classrooms are micro-societies where teachers teach students how to negotiate conflicts, collaborate harmoniously, and build social maturity.",
           supportingReasons:
-            "In their twenties, individuals often have evolving identities and uncertain aspirations. By their thirties, people have developed a grounded understanding of their personal values, lifestyle preferences, and financial habits.",
+            "Socialization is one of the primary pillars of schooling. Managing bullying, resolving playground disputes, and teaching children to cooperate with differing temperaments require acute human diplomacy that software cannot manage.",
           example:
-            "Two people may discuss financial habits, career plans and expectations about raising children before committing to marriage.",
+            "When group work devolves into peer friction or social exclusion, a teacher steps in to mediate disagreements and guide students toward constructive compromise.",
           band9Snippet:
-            "“Maturity affords prospective spouses the clarity to evaluate long-term compatibility, thereby significantly curbing the likelihood of interpersonal discord.”",
+            "“Human teachers serve as essential mediators of social cohesion, teaching children the nuanced interpersonal skills needed to thrive within diverse communities.”",
           modelParagraph:
-            "Furthermore, delaying matrimony facilitates more informed partner selection. In early adulthood, individuals frequently undergo rapid psychological shifts and career transitions, making it difficult to discern whether an initial relationship will endure long term. By their thirties, prospective spouses have a lucid understanding of their core values, financial philosophy, and parenting aspirations. Consequently, they choose life partners based on genuine compatibility rather than youthful infatuation. For instance, mature couples typically discuss savings habits, career trajectories, and child-rearing expectations prior to marriage, laying the groundwork for enduring marital harmony.",
+            "Furthermore, classrooms function as vital social crucibles where children learn to interact, collaborate, and resolve interpersonal discord under human supervision. Schooling is not conducted in solitary isolation; it involves group dynamics, teamwork, and navigating social friction. A human teacher intuitively manages classroom chemistry, detects bullying, and guides alienated students toward productive group integration. A digital interface cannot mediate playground squabbles or cultivate empathy among squabbling peers. For example, when cooperative projects break down due to personality clashes, an experienced teacher uses the moment as a lesson in negotiation, a pedagogical intervention entirely beyond algorithmic capability.",
           examinerNotes:
-            "Explains why mature dating and value alignment lead to stronger long-term family stability."
-        },
-        {
-          id: "body-adv-reason4",
-          badge: "Reason 4 • Established Careers",
-          title: "Established Careers and Better Time Management",
-          mainReason:
-            "Individuals who have progressed professionally may have greater control over their schedules and resources, making family responsibilities easier to manage.",
-          supportingReasons:
-            "Senior employees and established professionals generally enjoy greater bargaining power, employment protections, and workplace autonomy compared to junior hires striving to prove themselves.",
-          example:
-            "An established employee may be in a better position to negotiate parental leave or flexible working arrangements.",
-          band9Snippet:
-            "“Career seniority endows working parents with the temporal autonomy and institutional leverage needed to balance demanding careers with childcare.”",
-          modelParagraph:
-            "Finally, postponing parenthood until one has achieved professional seniority affords working parents greater control over their time and resources. Junior workers must frequently work late hours and travel extensively to advance their careers, creating severe friction with domestic duties. By contrast, individuals who have established themselves professionally by their thirties possess greater job security and institutional influence. This professional standing enables them to negotiate favorable parental leave policies and telecommuting options. For instance, an established corporate manager is in a far stronger position to request flexible working arrangements to care for a toddler without jeopardizing their livelihood.",
-          examinerNotes:
-            "Demonstrates practical workplace reality: established professionals have flexibility and control."
+            "Highlights social learning theory and the classroom as an interpersonal community."
         }
       ]
     },
     {
       paraNumber: 2,
-      side: "non_opinion",
-      title: "Points for the Disadvantages (Counterpoint — Potential Drawbacks)",
-      theme: "Biological Constraints, Generation Gaps & Lifestyle Friction",
+      side: "strong_opinion",
+      title: "Body Para 2 (Opinion Side) — Critical Thinking, Ethics & Debate",
+      theme: "Higher-Order Cognitive Skills, Ethical Discernment & Socratic Discourse",
       mainReason:
-        "Fertility generally declines with age, particularly for women, which can make conception more difficult for some couples.",
+        "Cultivating independent critical thinking, ethical reasoning, and collaborative civic discourse requires active human facilitation rather than pre-programmed responses.",
       supportingReasons:
-        "Postponing parenthood indefinitely can expose couples to reproductive constraints, less time with offspring, and conflicting priorities after years of personal independence.",
+        "True education extends far beyond rote memorization of factual data; it involves challenging preconceptions, dissecting moral dilemmas, and participating in spontaneous classroom debate. While algorithms merely assemble predictive textual patterns from historical databases, human mentors provoke intellectual curiosity, challenge cognitive biases, and model moral integrity.",
       example:
-        "A couple trying to conceive in their late 30s may face difficulties that they might not have encountered earlier.",
+        "In a history or literature seminar evaluating contentious historical events, an experienced teacher challenges students' assumptions and moderates respectful debate, orchestrating nuances that a pre-programmed chatbot cannot navigate.",
       band9Snippet:
-        "“Nevertheless, delaying parenthood indefinitely can expose some couples to reproductive constraints, demonstrating that financial preparedness must be balanced against biological considerations.”",
+        "“Equally significant is that cultivating higher-order cognitive faculties and moral reasoning necessitates spontaneous human dialogue and intellectual challenge.”",
       alternativeReasons: [
         {
-          id: "body-dis-reason1",
-          badge: "Reason 1 • Reduced Fertility",
-          title: "Reduced Fertility with Age",
+          id: "body2-alt1",
+          badge: "Reason 1 • Socratic Dialogue",
+          title: "Socratic Debate & Questioning Preconceptions",
           mainReason:
-            "Fertility generally declines with age, particularly for women, which can make conception more difficult for some couples.",
+            "Developing analytical rigor and nuanced argumentation depends on spontaneous Socratic questioning that forces students to justify their beliefs.",
           supportingReasons:
-            "Human reproductive biology becomes progressively more constrained after the mid-thirties, increasing the likelihood of conception delays, pregnancy complications, and the need for costly medical interventions.",
+            "An experienced teacher can immediately detect logical fallacies in a student's verbal reasoning and pivot the discussion with counter-questions, fostering genuine intellectual agility rather than mechanical information retrieval.",
           example:
-            "A couple trying to conceive in their late 30s may face difficulties that they might not have encountered earlier.",
+            "During a high school debate on environmental legislation, a teacher prompts students to reconcile conflicting economic and moral priorities through real-time philosophical inquiry.",
           band9Snippet:
-            "“Nevertheless, delaying parenthood indefinitely can expose some couples to reproductive constraints, demonstrating that financial preparedness must be balanced against biological considerations.”",
+            "“Socratic intellectual inquiry thrives upon dynamic teacher-led dialogue, compelling pupils to confront logical inconsistencies and defend complex hypotheses.”",
           modelParagraph:
-            "On the other hand, the most prominent drawback of delaying family planning is that fertility naturally declines with age. Biological research confirms that reproductive capacity decreases steadily after the early thirties, particularly for women. Consequently, couples who wait until their mid-to-late thirties may encounter unintended delays or severe difficulties in conceiving naturally. This frequently necessitates emotionally taxing and cost-prohibitive fertility interventions such as IVF. For example, a couple trying to conceive in their late thirties may experience prolonged medical challenges that they would not have faced had they started a family in their mid-twenties.",
+            "Equally important is that cultivating critical thinking, ethical reasoning, and intellectual discernment necessitates dynamic human facilitation. Genuine education transcends rote memorization of static facts; it requires learners to interrogate orthodoxies, identify subtle biases, and engage in spontaneous debate. A human instructor employs Socratic questioning to challenge superficial thinking, pressing students to justify their assertions and consider alternate perspectives. Artificial intelligence, which merely synthesizes historical statistical correlations, is ill-equipped to guide philosophical inquiries or ethical debates. For instance, in a classroom discussion concerning bioethics or civil rights, a teacher skillfully steers the dialogue through moral ambiguities, prompting students to formulate independent convictions rather than accepting standardized algorithmic answers.",
           examinerNotes:
-            "The primary biological counterargument. Grounded, balanced, and defensible without exaggeration."
+            "Targets Task Achievement at Band 9 by contrasting dynamic human inquiry with static computational databases."
         },
         {
-          id: "body-dis-reason2",
-          badge: "Reason 2 • Less Time for Raising Children",
-          title: "Less Time for Raising Children",
+          id: "body2-alt2",
+          badge: "Reason 2 • Ethical Stewardship",
+          title: "Moral Guidance & Ethical Character Building",
           mainReason:
-            "Becoming a parent later means parents will be older when their children reach adulthood, potentially affecting long-term family plans.",
+            "Education is intrinsically linked to moral stewardship and instilling ethical values such as honesty, justice, and civic responsibility.",
           supportingReasons:
-            "Starting parenthood in the late thirties widens the age gap between generations, which may lead to diminished physical stamina for active parenting and an overlap between retirement and university funding.",
+            "AI systems are trained on web text that frequently contains societal biases, misinformation, or moral apathy. Human educators embody moral accountability and teach students to distinguish right from wrong through lived ethical examples.",
           example:
-            "Parents may be approaching retirement while their children are still completing university.",
+            "When dealing with academic dishonesty or plagiarism, a teacher transforms an infraction into an impactful moral lesson about personal integrity.",
           band9Snippet:
-            "“An expanded intergenerational gap means that mature parents may find their retirement timelines colliding directly with tertiary educational expenses.”",
+            "“Teachers act as ethical anchors who instill enduring moral values and civic responsibility, whereas synthetic models operate without moral conscience.”",
           modelParagraph:
-            "Another notable challenge is that becoming a parent later in life limits the time parents share with their children during adulthood. When individuals have children in their late thirties or forties, they will naturally be approaching their senior years by the time their offspring finish schooling. This substantial age gap can mean parents have reduced physical energy to keep pace with young toddlers, and their window to witness their grandchildren grow up is noticeably contracted. For instance, older parents may be nearing formal retirement age at the precise moment their children are entering university, compounding financial pressures.",
+            "Moreover, educators serve as indispensable moral guides who cultivate ethical character, honesty, and civic responsibility in future generations. Artificial intelligence models are fundamentally amoral systems trained on uncurated internet data, often perpetuating algorithmic biases without moral awareness. Human teachers, by contrast, teach integrity through daily conduct, disciplining unfair behavior and instilling values of fairness and community service. For example, when an adolescent engages in academic dishonesty or cheating, a teacher does not simply issue an automatic grade deduction; they conduct a serious conversation about honor and personal responsibility, transforming an error into a formative ethical milestone.",
           examinerNotes:
-            "Very relatable practical point: energy levels and retirement collision."
+            "Emphasizes character education and moral development as human-exclusive domains."
         },
         {
-          id: "body-dis-reason3",
-          badge: "Reason 3 • Conflicting Priorities",
-          title: "Conflicting Career and Family Priorities",
+          id: "body2-alt3",
+          badge: "Reason 3 • Adaptability to Diverse Needs",
+          title: "Real-Time Pedagogical Intuition & Adaptive Delivery",
           mainReason:
-            "After years of professional independence, some people may find it difficult to reorganise their routines around childcare.",
+            "Experienced educators possess professional intuition that enables them to spontaneously redesign lesson delivery when they sense a class is disengaged or confused.",
           supportingReasons:
-            "Adults who spend a decade enjoying unfettered personal freedom, flexible schedules, and career autonomy may experience significant psychological friction when forced to adapt to the selfless, round-the-clock sacrifices of early parenthood.",
+            "While software follows rigid decision trees, human teachers can read the room, tell an illustrative anecdote, or switch to kinesthetic group work on the fly based on subtle collective energy.",
           example:
-            "Someone accustomed to frequent work travel may struggle to balance professional commitments with caring for a young child.",
+            "Noticing an afternoon class struggling with a dense theoretical physics concept, a teacher pivots to a spontaneous physical demonstration with everyday classroom objects.",
           band9Snippet:
-            "“Prolonged individual autonomy can entrench personal habits that make the sudden, relentless compromises of infant care psychologically jarring.”",
+            "“Experienced teachers wield an intuitive pedagogical flexibility that allows them to re-energize an exhausted classroom through spontaneous creative adaptations.”",
           modelParagraph:
-            "Furthermore, delaying domestic commitments can create difficult conflicts between ingrained career habits and family duties. Adults who have spent over a decade enjoying complete personal autonomy and dedicated career immersion often establish rigid daily routines. Adapting to the unpredictable, all-consuming demands of infant care can therefore represent a major psychological shock. For example, a professional accustomed to frequent international business travel or long corporate evenings may find it exceptionally stressful to abruptly curtail their career trajectory to tend to a newborn's daily needs.",
+            "Additionally, human teachers possess an intuitive pedagogical flexibility that allows them to adjust their instruction spontaneously in response to room dynamics. While artificial intelligence follows pre-programmed scripts and user metrics, an educator can sense when a whole classroom is mentally fatigued, distracted, or genuinely bewildered by a complex concept. They can immediately alter their tone, introduce an impromptu interactive demonstration, or tell a memorable humorous anecdote to re-engage attention. For instance, an intuitive science teacher observing blank stares during a lecture on molecular physics can abruptly set aside the textbook and stage an interactive physical simulation, an instinctive adaptation that rigid algorithmic tutors cannot match.",
           examinerNotes:
-            "Explores lifestyle adaptation: deeply established adult independence vs. infant care compromises."
+            "Highlights the intuitive, non-linear art of classroom teaching."
+        }
+      ]
+    },
+    {
+      paraNumber: 3,
+      side: "non_opinion",
+      title: "Body Para 3 (Non-Opinion Side) — AI's Augmentative Efficiency & Personalized Pacing",
+      theme: "Personalized Practice Drills, Administrative Relief & Scalable Tutoring",
+      mainReason:
+        "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative educational aid that personalizes practice drills and streamlines administrative duties.",
+      supportingReasons:
+        "Intelligent tutoring platforms can instantaneously analyze individual performance metrics, dynamically adapting the difficulty of mathematical problem sets or foreign language vocabulary to a pupil's exact pace. Furthermore, automating routine paper grading frees teachers from administrative burdens.",
+      example:
+        "Adaptive software like Khan Academy or Duolingo enables students to practice foundational concepts at their own speed with immediate diagnostic feedback, allowing teachers to dedicate their classroom hours to higher-level discussions.",
+      band9Snippet:
+        "“On the other hand, proponents rightfully point out that artificial intelligence can function as an exceptional augmentative tool by optimizing repetitive tasks and customizing foundational exercises.”",
+      alternativeReasons: [
+        {
+          id: "body3-alt1",
+          badge: "Reason 1 • Personalized Pacing",
+          title: "Adaptive Learning Pacing & Instant Feedback",
+          mainReason:
+            "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative educational aid that personalizes practice drills and streamlines administrative duties.",
+          supportingReasons:
+            "Intelligent tutoring platforms can instantaneously analyze individual performance metrics, dynamically adapting the difficulty of mathematical problem sets or foreign language vocabulary to a pupil's exact pace. Furthermore, automating routine paper grading frees teachers from administrative burdens.",
+          example:
+            "Adaptive software like Khan Academy or Duolingo enables students to practice foundational concepts at their own speed with immediate diagnostic feedback, allowing teachers to dedicate their classroom hours to higher-level discussions.",
+          band9Snippet:
+            "“On the other hand, proponents rightfully point out that artificial intelligence can function as an exceptional augmentative tool by optimizing repetitive tasks and customizing foundational exercises.”",
+          modelParagraph:
+            "On the other hand, proponents of educational technology legitimately argue that artificial intelligence offers unprecedented benefits as a supplementary learning tool. Intelligent tutoring platforms can process vast pedagogical databases and track individual learning trajectories with surgical precision. By diagnosing a student's specific gaps in mathematics or grammar, algorithmic software can instantly generate customized exercises tailored to their unique pace, preventing gifted students from feeling bored and slower learners from falling behind. For example, platforms such as Khan Academy utilize machine learning algorithms to provide real-time hints and adaptive problem sets for homework. However, delivering customized drills is essentially an augmentative mechanism that enhances teacher effectiveness, rather than a justification for replacing educators altogether.",
+          examinerNotes:
+            "Demonstrates high balance. Acknowledges the strengths of AI without conceding the main thesis."
         },
         {
-          id: "body-dis-reason4",
-          badge: "Reason 4 • Social Pressure",
-          title: "Family and Social Pressure",
+          id: "body3-alt2",
+          badge: "Reason 2 • Administrative Liberation",
+          title: "Automating Grading & Administrative Tedium",
           mainReason:
-            "People who marry later may face persistent questions or criticism from relatives and communities that expect earlier marriage.",
+            "AI can eliminate the crushing burden of administrative paperwork and marking, liberating educators to spend more time directly mentoring students.",
           supportingReasons:
-            "In many cultures, early marriage and prompt childbearing remain deeply entrenched social expectations. Unmarried adults in their late twenties and thirties often experience persistent familial scrutiny and social isolation.",
+            "Teachers spend dozens of unpaid hours each week grading objective quizzes, entering attendance data, and drafting standardized reports. AI can automate these clerical tasks instantaneously.",
           example:
-            "An adult may feel pressured to marry before finding a genuinely compatible partner simply to satisfy family expectations.",
+            "Automated assessment tools can evaluate multiple-choice papers and basic grammar tests in seconds, generating diagnostic class performance reports for the teacher.",
           band9Snippet:
-            "“Later marriage frequently collides with entrenched social expectations, subjecting individuals to unwarranted familial anxiety and community scrutiny.”",
+            "“By automating tedious marking and clerical paperwork, intelligent systems empower teachers to reallocate their finite hours toward high-impact personal tutoring.”",
           modelParagraph:
-            "Finally, individuals who postpone marriage often face intense societal and familial pressure. In numerous societies, traditional cultural norms mandate that young adults marry and produce offspring in their early twenties. Those who deliberately deviate from this timetable are often subjected to persistent probing, unwarranted criticism, or anxiety from extended relatives. For example, an adult in their early thirties may feel coerced into rushing into an incompatible marriage simply to appease aging parents, inadvertently undermining the very stability they sought to achieve.",
+            "Furthermore, artificial intelligence holds extraordinary promise in liberating educators from the crushing administrative workload that currently triggers widespread teacher burnout. A substantial portion of a teacher’s working week is consumed by repetitive clerical tasks, such as marking multiple-choice exams, recording attendance data, and compiling routine administrative documentation. Modern machine-learning applications can evaluate objective assessments instantaneously and identify class-wide conceptual weaknesses in seconds. For instance, automated scoring software can process hundreds of standardized tests in moments, freeing teachers from mechanical paperwork so they can dedicate their finite emotional energy to direct student mentorship.",
           examinerNotes:
-            "Highlights cultural expectations and interpersonal tension without losing essay focus."
+            "Shows deep practical understanding of teacher workloads and technological automation."
+        },
+        {
+          id: "body3-alt3",
+          badge: "Reason 3 • Democratizing Global Access",
+          title: "24/7 Educational Access in Underserved Regions",
+          mainReason:
+            "In impoverished or remote regions with severe teacher shortages, AI-powered interactive tutoring can democratize access to high-quality educational materials.",
+          supportingReasons:
+            "Millions of children globally lack access to qualified human instructors. Synthetic tutors can deliver foundational literacy and numeracy lessons via low-cost mobile devices around the clock.",
+          example:
+            "In rural sub-Saharan communities without certified teachers, conversational AI applications provide children with fundamental English and mathematics instruction.",
+          band9Snippet:
+            "“In remote communities plagued by chronic staffing deficits, algorithmic instruction can serve as an invaluable educational lifeline for marginalized learners.”",
+          modelParagraph:
+            "Finally, artificial intelligence has the power to democratize educational access for millions of learners living in remote or economically disadvantaged regions where qualified teachers are scarce. Globally, rural communities frequently suffer from chronic teacher deficits, leaving children without access to specialized tutors in science, foreign languages, or mathematics. In such environments, mobile AI tutoring applications can deliver structured, high-quality instruction directly to handheld devices at virtually zero marginal cost. While this demonstrates the vital social utility of educational software in filling institutional voids, it remains a stopgap measure rather than an optimal substitute for a qualified human teacher.",
+          examinerNotes:
+            "Broadens the essay's global perspective and shows high academic maturity."
         }
       ]
     }
   ],
 
-  // 4. Faculty / Teacher Idea Bank (8 Analytical Angles)
-  facultyAngles: [
-    {
-      type: "positive",
-      title: "Reduced Financial Dependence",
-      development:
-        "Couples who have established their own incomes may be less dependent on parents or extended family, allowing them to make independent decisions about their household and children."
-    },
-    {
-      type: "positive",
-      title: "Greater Equality Within Relationships",
-      development:
-        "When both partners have had time to pursue education and careers, they may be better positioned to negotiate domestic responsibilities and share financial decisions."
-    },
-    {
-      type: "positive",
-      title: "Breaking the Cycle of Financial Insecurity",
-      development:
-        "Parents who enter family life with savings and stable employment may be better able to invest in nutrition, education and enriching experiences for their children."
-    },
-    {
-      type: "positive",
-      title: "More Deliberate Family Planning",
-      development:
-        "Delaying parenthood can give couples time to decide whether they genuinely want children and how many they can realistically support, potentially reducing unplanned pregnancies."
-    },
-    {
-      type: "negative",
-      title: "A Narrowing Window for Family Planning",
-      development:
-        "Delayed decisions may leave couples with less flexibility if conception takes longer than expected or they encounter fertility difficulties."
-    },
-    {
-      type: "negative",
-      title: "The Dual Burden of Caring Responsibilities",
-      development:
-        "People who become parents later may simultaneously have young children and ageing parents who need financial or practical support."
-    },
-    {
-      type: "negative",
-      title: "Over-Optimisation of Life Plans",
-      development:
-        "Waiting for the perfect salary, house or career position may lead some individuals to postpone family life indefinitely because complete security is rarely achievable."
-    },
-    {
-      type: "negative",
-      title: "Changing Expectations of Independence",
-      development:
-        "People accustomed to controlling their time and spending may find the compromises required by marriage and parenting more challenging than anticipated."
-    }
-  ],
-
-  // 5. Workbook — High-Band Vocabulary (10 Expressions)
+  // Academic Lexicon (12 Band 9 Lexical Items)
   vocabList: [
     {
-      word: "financial wherewithal",
-      phonetic: "/faɪˈnænʃəl ˈwɛəwɪðɔːl/",
-      pos: "noun phrase",
-      meaning: "The financial means to do something",
-      collocations: ["greater financial wherewithal", "sufficient wherewithal", "lack the wherewithal"],
-      example: "Couples may have greater financial wherewithal to raise children comfortably.",
-      band: 9,
-      topic: "Economics & Family",
-      cefr: "C2",
-      usageNotes: "Formal, academic phrasing for having sufficient financial means."
+      word: "supersede",
+      phonetic: "/ˌsuː.pəˈsiːd/",
+      pos: "verb",
+      meaning: "To take the place of a person or thing previously in authority or use; to supplant.",
+      collocations: ["supersede human educators", "gradually supersede", "threaten to supersede"],
+      example: "Advanced algorithms may streamline administrative duties, but they can never entirely supersede human teachers in the classroom.",
+      tutorTip: "Far more sophisticated than 'replace'. Use it in your introduction thesis statement."
     },
     {
-      word: "emotional acuity",
-      phonetic: "/ɪˈməʊʃənl əˈkjuːəti/",
-      pos: "noun phrase",
-      meaning: "The ability to understand emotions and emotional situations",
-      collocations: ["develop emotional acuity", "heightened acuity", "demonstrate emotional acuity"],
-      example: "Greater emotional acuity can help partners navigate disagreements constructively.",
-      band: 9,
-      topic: "Psychology & Relationships",
-      cefr: "C2",
-      usageNotes: "Far superior to basic words like 'emotional intelligence' or 'feelings'."
+      word: "augmentative",
+      phonetic: "/ɔːɡˈmen.tə.tɪv/",
+      pos: "adjective",
+      meaning: "Serving to increase, enhance, or supplement rather than substitute completely.",
+      collocations: ["augmentative tool", "augmentative technology", "purely augmentative role"],
+      example: "Artificial intelligence should be viewed as an augmentative aid that empowers educators rather than an autonomous replacement.",
+      tutorTip: "The perfect conceptual word to describe AI's true relationship to teaching in Body 3."
     },
     {
-      word: "defer parenthood",
-      phonetic: "/dɪˈfɜː ˈpeərənthʊd/",
-      pos: "verb phrase",
-      meaning: "Postpone having children",
-      collocations: ["defer parenthood until", "choice to defer parenthood", "deferring childbearing"],
-      example: "Many couples defer parenthood until they have established their careers.",
-      band: 8.5,
-      topic: "Demographics & Life Decisions",
-      cefr: "C1",
-      usageNotes: "Precise academic synonym for 'delay having babies'."
+      word: "pastoral care",
+      phonetic: "/ˈpɑː.stər.əl keər/",
+      pos: "noun",
+      meaning: "The emotional, social, and psychological support given to students by an educational institution.",
+      collocations: ["provide pastoral care", "essential pastoral support", "comprehensive pastoral duties"],
+      example: "Schooling encompasses vital pastoral care that addresses student anxiety and emotional vulnerability, a domain completely inaccessible to machines.",
+      tutorTip: "Demonstrates advanced British academic educational terminology in Body 1."
     },
     {
-      word: "assume familial responsibilities",
-      phonetic: "/əˈsjuːm fəˈmɪliəl rɪˌspɒnsəˈbɪlɪtiz/",
-      pos: "verb phrase",
-      meaning: "Take on family duties and obligations",
-      collocations: ["prepared to assume", "assume familial responsibilities", "readiness to assume"],
-      example: "Mature adults may be better prepared to assume familial responsibilities.",
-      band: 8.5,
-      topic: "Family & Adulthood",
-      cefr: "C1",
-      usageNotes: "High-level collocation for taking care of a family."
+      word: "algorithmic",
+      phonetic: "/ˌæl.ɡəˈrɪð.mɪk/",
+      pos: "adjective",
+      meaning: "Relating to or using a process or set of rules to be followed in calculations or problem-solving.",
+      collocations: ["algorithmic tutoring", "algorithmic rigidity", "algorithmic feedback"],
+      example: "An algorithmic system evaluates pupil performance through rigid metrics, failing to appreciate creative or unconventional reasoning.",
+      tutorTip: "Use to contrast computational rules against human flexibility."
     },
     {
-      word: "financial precarity",
-      phonetic: "/faɪˈnænʃəl prɪˈkeərəti/",
-      pos: "noun phrase",
-      meaning: "A state of persistent financial insecurity or vulnerability",
-      collocations: ["intensify financial precarity", "escape precarity", "experience severe precarity"],
-      example: "Early parenthood can intensify financial precarity among couples with unstable incomes.",
-      band: 9,
-      topic: "Socioeconomics",
-      cefr: "C2",
-      usageNotes: "Academic alternative to 'being poor' or 'financial instability'."
+      word: "pedagogical",
+      phonetic: "/ˌped.əˈɡɒdʒ.ɪ.kəl/",
+      pos: "adjective",
+      meaning: "Relating to the theory, methods, and principles of teaching.",
+      collocations: ["pedagogical leadership", "pedagogical flexibility", "pedagogical efficacy"],
+      example: "True pedagogical success is measured not by test score memorization, but by the development of independent critical inquiry.",
+      tutorTip: "Replaces the simplistic word 'teaching-related' with authentic academic precision."
     },
     {
-      word: "interpersonal discord",
-      phonetic: "/ˌɪntəˈpɜːsənl ˈdɪskɔːd/",
-      pos: "noun phrase",
-      meaning: "Conflict or disagreement between people",
-      collocations: ["resolve interpersonal discord", "curb discord", "domestic discord"],
-      example: "Greater maturity may help couples resolve interpersonal discord more effectively.",
-      band: 8.5,
-      topic: "Relationships",
-      cefr: "C1",
-      usageNotes: "Elevated expression for relationship fights or marital conflicts."
+      word: "empathy",
+      phonetic: "/ˈem.pə.θi/",
+      pos: "noun",
+      meaning: "The psychological capacity to understand, share, and resonate with the feelings of another.",
+      collocations: ["interpersonal empathy", "genuine emotional empathy", "demonstrate deep empathy"],
+      example: "A machine can generate grammatically flawless feedback, but it is utterly incapable of demonstrating authentic human empathy.",
+      tutorTip: "The foundational core argument of your opinion side in Body 1."
     },
     {
-      word: "reproductive constraints",
-      phonetic: "/ˌriːprəˈdʌktɪv kənˈstreɪnts/",
-      pos: "noun phrase",
-      meaning: "Limitations affecting the biological ability to have children",
-      collocations: ["expose couples to reproductive constraints", "biological constraints", "face constraints"],
-      example: "Delayed parenthood may expose some couples to reproductive constraints.",
-      band: 9,
-      topic: "Biology & Health",
-      cefr: "C2",
-      usageNotes: "Medical and academic register for fertility limits."
+      word: "nuanced",
+      phonetic: "/ˈnjuː.ɑːnst/",
+      pos: "adjective",
+      meaning: "Characterized by subtle distinctions, variations in meaning, or intricate complexities.",
+      collocations: ["nuanced debate", "nuanced understanding", "nuanced perspective"],
+      example: "Moderating a nuanced discussion on historical ethics requires a human facilitator who understands social subtlety.",
+      tutorTip: "Use in Body 2 when explaining why Socratic debate cannot be automated."
     },
     {
-      word: "long-term provisioning",
-      phonetic: "/ˈlɒŋ tɜːm prəˈvɪʒənɪŋ/",
-      pos: "noun phrase",
-      meaning: "Planning and providing resources for the future",
-      collocations: ["capacity for long-term provisioning", "financial provisioning", "household provisioning"],
-      example: "Stable employment can improve a couple’s capacity for long-term provisioning.",
-      band: 8.5,
-      topic: "Household Economics",
-      cefr: "C1",
-      usageNotes: "Academic concept encompassing saving, budgeting, and safeguarding future needs."
+      word: "dissemination",
+      phonetic: "/dɪˌsem.ɪˈneɪ.ʃən/",
+      pos: "noun",
+      meaning: "The act of spreading, distributing, or broadcasting information and knowledge widely.",
+      collocations: ["knowledge dissemination", "information dissemination", "passive dissemination"],
+      example: "Teaching cannot be reduced to the mere dissemination of facts; it is the active cultivation of intellectual curiosity.",
+      tutorTip: "Use this contrast in your conclusion or Body 2 to show that education is more than data transfer."
     },
     {
-      word: "parental readiness",
-      phonetic: "/pəˈrɛntl ˈrɛdɪnɪs/",
-      pos: "noun phrase",
-      meaning: "Preparedness to become a parent psychologically and financially",
-      collocations: ["determine parental readiness", "foster readiness", "assess readiness"],
-      example: "Age alone does not necessarily determine parental readiness.",
-      band: 8,
-      topic: "Child Development",
-      cefr: "C1",
-      usageNotes: "Comprehensive term combining emotional and economic preparedness."
+      word: "indispensable",
+      phonetic: "/ˌɪn.dɪˈspen.sə.bəl/",
+      pos: "adjective",
+      meaning: "Absolutely necessary, essential, or impossible to manage without.",
+      collocations: ["indispensable asset", "remain indispensable", "indispensable component"],
+      example: "The personal mentorship and moral stewardship provided by teachers remain indispensable to adolescent development.",
+      tutorTip: "Band 9 synonym for 'essential' or 'very important'."
     },
     {
-      word: "entrenched social expectations",
-      phonetic: "/ɪnˈtrɛnʧt ˈsəʊʃəl ˌɛksprɛkˈteɪʃənz/",
-      pos: "noun phrase",
-      meaning: "Deeply established social beliefs about how people should behave",
-      collocations: ["challenge entrenched social expectations", "conform to expectations", "cultural expectations"],
-      example: "Later marriage can challenge entrenched social expectations about adulthood.",
-      band: 9,
-      topic: "Sociology & Culture",
-      cefr: "C2",
-      usageNotes: "Perfect sociological phrasing for traditional marriage pressures."
+      word: "facilitator",
+      phonetic: "/fəˈsɪl.ɪ.teɪ.tər/",
+      pos: "noun",
+      meaning: "A person who helps a group of people to understand their common objectives and guides them without imposing.",
+      collocations: ["classroom facilitator", "discussion facilitator", "act as a facilitator"],
+      example: "Modern educators function primarily as intellectual facilitators who guide collaborative student discovery.",
+      tutorTip: "Demonstrates modern pedagogical understanding in Task 2."
+    },
+    {
+      word: "rote learning",
+      phonetic: "/rəʊt ˈlɜː.nɪŋ/",
+      pos: "noun",
+      meaning: "A memorization technique based on mechanical repetition rather than deep conceptual understanding.",
+      collocations: ["mechanical rote learning", "discourage rote learning", "transcend rote learning"],
+      example: "While automated software excels at drills and rote learning, it cannot nurture genuine philosophical creativity.",
+      tutorTip: "Perfect contrasting term against higher-order critical thinking."
+    },
+    {
+      word: "inimitable",
+      phonetic: "/ɪˈnɪm.ɪ.tə.bəl/",
+      pos: "adjective",
+      meaning: "So good or unique that it is impossible to copy or emulate; matchless.",
+      collocations: ["inimitable human warmth", "inimitable quality", "inimitable guidance"],
+      example: "The inimitable guidance of a compassionate human mentor cannot be duplicated by lines of computer code.",
+      tutorTip: "High-level closing adjective for your conclusion."
     }
   ],
-
-  // Best Six for Workbook
-  workbookTopSix: [
-    "financial wherewithal",
-    "defer parenthood",
-    "assume familial responsibilities",
-    "financial precarity",
-    "reproductive constraints",
-    "entrenched social expectations"
-  ],
-
-  // Model Sentences
-  modelSentences: {
-    positive:
-      "By deferring parenthood until they have greater financial wherewithal, couples may be better equipped to assume familial responsibilities without experiencing severe financial precarity.",
-    balanced:
-      "Nevertheless, delaying parenthood indefinitely can expose some couples to reproductive constraints, demonstrating that financial preparedness must be balanced against biological considerations."
-  },
 
   vocabHunt: [
-    "financial wherewithal",
-    "emotional acuity",
-    "defer parenthood",
-    "assume familial responsibilities",
-    "financial precarity",
-    "interpersonal discord",
-    "reproductive constraints",
-    "long-term provisioning",
-    "parental readiness",
-    "entrenched social expectations"
+    "supersede",
+    "augmentative",
+    "pastoral care",
+    "algorithmic",
+    "pedagogical",
+    "empathy",
+    "nuanced",
+    "dissemination",
+    "indispensable",
+    "facilitator",
+    "rote learning",
+    "inimitable"
   ],
 
-  // Fluid Lexicon ("Sugar in Water")
-  fluidVocab: [
-    {
-      word: "wherewithal",
-      pos: "noun",
-      meaning: "The money or other means needed for a particular purpose",
-      naturalCollocation: "financial wherewithal to raise children",
-      organicExample:
-        "Couples in their thirties have greater financial wherewithal to provide for their children's education.",
-      mechanicalPitfall: "Do not write 'they have a wherewithal'—it is an uncountable noun.",
-      examinerInsight: "Band 9 register when discussing household economics."
-    },
-    {
-      word: "defer",
-      pos: "verb",
-      meaning: "Put off to a later time; postpone",
-      naturalCollocation: "defer parenthood / defer marriage",
-      organicExample:
-        "Young professionals frequently defer parenthood until they have achieved employment security.",
-      mechanicalPitfall: "Do not confuse with 'differ' (to disagree). Follow with a direct noun.",
-      examinerInsight: "Natural formal verb replacing repetitive uses of 'delay'."
-    },
-    {
-      word: "acuity",
-      pos: "noun",
-      meaning: "Sharpness or keenness of thought, vision, or hearing",
-      naturalCollocation: "emotional acuity / intellectual acuity",
-      organicExample:
-        "Adults with heightened emotional acuity navigate marital disagreements with calmness and empathy.",
-      mechanicalPitfall: "Avoid using as an adjective ('acuity minds' is incorrect; use 'acute').",
-      examinerInsight: "Elevates psychological descriptions above generic 'mature thinking'."
-    },
-    {
-      word: "precarity",
-      pos: "noun",
-      meaning: "A state of persistent insecurity, vulnerability, or uncertainty",
-      naturalCollocation: "financial precarity / economic precarity",
-      organicExample:
-        "Early parenthood can plunge low-income workers into prolonged financial precarity.",
-      mechanicalPitfall: "Avoid 'precarity situation'—use 'precarious situation' or simply 'precarity'.",
-      examinerInsight: "High-level sociological descriptor recognized by Band 9 examiners."
-    },
-    {
-      word: "entrenched",
-      pos: "adjective",
-      meaning: "Firmly established and difficult or unlikely to change",
-      naturalCollocation: "entrenched social expectations / entrenched traditions",
-      organicExample:
-        "Delaying matrimony often collides with entrenched social expectations regarding adulthood.",
-      mechanicalPitfall: "Do not say 'deeply entrenched in' when describing simple temporary habits.",
-      examinerInsight: "Accurately captures generational and cultural community norms."
-    },
-    {
-      word: "provisioning",
-      pos: "noun",
-      meaning: "The action of providing or supplying something for use, especially resources",
-      naturalCollocation: "long-term provisioning for the family",
-      organicExample:
-        "Senior career status dramatically strengthens a couple's capacity for long-term provisioning.",
-      mechanicalPitfall: "Do not use 'provisionings' as plural.",
-      examinerInsight: "Displays sophisticated command of domestic economic terminology."
-    }
-  ],
-
-  // 4 Guided Brainstorming Cards for Step 3
-  brainstormCards: [
-    {
-      question:
-        "How does entering marriage in your 30s affect household finances compared to your early 20s?",
-      thinkingLens:
-        "Think about entry-level salaries, student loans, and rental instability versus 10 years of savings, career promotion, and mortgage qualification.",
-      selfCheck:
-        "Did I focus on concrete expenses like housing down payments, childcare, and healthcare rather than just saying 'they have more money'?",
-      idea:
-        "Financial Independence: Young adults can establish careers, build savings and secure housing before taking on child-rearing costs. A couple who have worked for several years are far better equipped to afford rent or a mortgage, childcare and school fees."
-    },
-    {
-      question:
-        "Why might personal maturity and life experience improve marital longevity and parenting quality?",
-      thinkingLens:
-        "Consider self-awareness, conflict resolution skills, and knowing what you want in a partner versus youthful impetuousness and unaddressed insecurities.",
-      selfCheck:
-        "Can I explain how constructive communication prevents divorce and reduces toxic stress for growing children?",
-      idea:
-        "Emotional Maturity: People become more self-aware and skilled at managing disagreements. A couple who have learnt to resolve interpersonal discord constructively are better prepared to manage disputes over parenting duties."
-    },
-    {
-      question:
-        "What biological and medical realities arise when couples wait until their late 30s to have children?",
-      thinkingLens:
-        "Focus on natural reproductive decline, chromosomal and gestational health concerns, and reliance on assisted reproductive technology.",
-      selfCheck:
-        "Did I frame this as a real biological limitation without exaggerating it into an impossible obstacle?",
-      idea:
-        "Reduced Fertility with Age: Fertility naturally declines with age, especially past the mid-thirties, making conception more difficult. Couples may face unintended delays or require costly assisted therapies like IVF."
-    },
-    {
-      question:
-        "How does becoming a parent at 35 or 38 alter long-term family life and retirement planning?",
-      thinkingLens:
-        "Examine the generational age gap: parents reaching their late 50s while their children are teenagers or college students, plus caring for aging grandparents.",
-      selfCheck:
-        "Did I connect parental age to energy levels, retirement savings, and the dual caring burden?",
-      idea:
-        "Less Time & Overlapping Priorities: Parents will be older when children reach adulthood, meaning university tuition may overlap with retirement planning, alongside reduced physical stamina for toddler care."
-    }
-  ],
-
-  // Consequences & Student Idea Bank Table
+  // Consequences (Opinion Side vs Non-Opinion Side)
   consequences: [
     {
       type: "positive",
-      title: "Financial Independence",
-      desc: "Young adults can establish careers, build savings and secure housing before taking on the expenses of raising children.",
-      example: "A couple who have worked for several years may be better equipped to afford rent or a mortgage, childcare and school fees.",
-      level: "Student Bank 01",
-      simpleTakeaway: "Clear career footing and accumulated savings shield families from debt.",
-      collocation: "financial wherewithal"
+      title: "Body 1 (Opinion Side): Emotional Well-Being & Pastoral Support",
+      desc: "Human teachers provide empathy, motivational reassurance, and pastoral care that algorithms cannot duplicate.",
+      example: "An attentive teacher detects adolescent depression or exam distress and provides compassionate intervention.",
+      level: "Core Argument",
+      simpleTakeaway: "Empathy & Pastoral Care",
+      collocation: "irreplaceable pastoral care"
     },
     {
       type: "positive",
-      title: "Emotional Maturity",
-      desc: "People may become more self-aware and better at managing disagreements, making them more capable of handling marital and parenting responsibilities.",
-      example: "A couple who have learnt to resolve conflicts constructively may be better prepared to manage disagreements about childcare.",
-      level: "Student Bank 02",
-      simpleTakeaway: "Self-awareness and constructive conflict resolution build durable marriages.",
-      collocation: "emotional acuity"
+      title: "Body 2 (Opinion Side): Critical Thinking & Moral Stewardship",
+      desc: "Developing intellectual curiosity, ethical character, and civil discourse requires active human facilitation.",
+      example: "In a literature seminar, a teacher guides nuanced ethical debates that synthetic chatbots cannot navigate.",
+      level: "Core Argument",
+      simpleTakeaway: "Critical Thinking & Ethics",
+      collocation: "cultivate critical thinking"
+    },
+    {
+      type: "negative",
+      title: "Body 3 (Non-Opinion Side): AI's Augmentative Efficiency & Pacing",
+      desc: "AI automates routine grading and personalizes practice drills, functioning as a high-powered assistant.",
+      example: "Adaptive platforms like Khan Academy dynamically calibrate math problems to student skill levels.",
+      level: "Concession",
+      simpleTakeaway: "Augmentative Pacing & Grading",
+      collocation: "augmentative educational tool"
     },
     {
       type: "positive",
-      title: "More Informed Partner Selection",
-      desc: "Additional life experience can help people understand their own priorities and choose partners with compatible values and long-term goals.",
-      example: "Two people may discuss financial habits, career plans and expectations about raising children before committing to marriage.",
-      level: "Student Bank 03",
-      simpleTakeaway: "Aligning values and life goals prevents domestic discord.",
-      collocation: "compatible values"
+      title: "Human Inspiration & Role Modeling",
+      desc: "Passionate human educators inspire children to pursue ambitious careers through shared lived experience.",
+      example: "Renowned innovators consistently credit a dedicated teacher who recognized their nascent talents.",
+      level: "Supporting Angle",
+      simpleTakeaway: "Inspirational Role Models",
+      collocation: "inspire lifelong passion"
+    },
+    {
+      type: "negative",
+      title: "Administrative Liberation for Educators",
+      desc: "Automating objective marking and attendance tracking frees educators to spend more time directly tutoring.",
+      example: "Software marks hundreds of diagnostic quizzes in seconds, eliminating clerical exhaustion.",
+      level: "Supporting Angle",
+      simpleTakeaway: "Administrative Relief",
+      collocation: "eliminate clerical burdens"
     },
     {
       type: "positive",
-      title: "Established Careers and Better Time Management",
-      desc: "Individuals who have progressed professionally may have greater control over their schedules and resources, making family responsibilities easier to manage.",
-      example: "An established employee may be in a better position to negotiate parental leave or flexible working arrangements.",
-      level: "Student Bank 04",
-      simpleTakeaway: "Seniority allows parents to negotiate flexible work hours and leave.",
-      collocation: "workplace autonomy"
-    },
-    {
-      type: "negative",
-      title: "Reduced Fertility with Age",
-      desc: "Fertility generally declines with age, particularly for women, which can make conception more difficult for some couples.",
-      example: "A couple trying to conceive in their late 30s may face difficulties that they might not have encountered earlier.",
-      level: "Drawback 01",
-      simpleTakeaway: "Biological reproductive constraints increase after the mid-thirties.",
-      collocation: "reproductive constraints"
-    },
-    {
-      type: "negative",
-      title: "Less Time for Raising Children",
-      desc: "Becoming a parent later means parents will be older when their children reach adulthood, potentially affecting long-term family plans.",
-      example: "Parents may be approaching retirement while their children are still completing university.",
-      level: "Drawback 02",
-      simpleTakeaway: "Age gap means university costs collide with retirement savings.",
-      collocation: "intergenerational gap"
-    },
-    {
-      type: "negative",
-      title: "Conflicting Career and Family Priorities",
-      desc: "After years of professional independence, some people may find it difficult to reorganise their routines around childcare.",
-      example: "Someone accustomed to frequent work travel may struggle to balance professional commitments with caring for a young child.",
-      level: "Drawback 03",
-      simpleTakeaway: "Transition from complete adult independence to infant care can be jarring.",
-      collocation: "lifestyle adjustment"
-    },
-    {
-      type: "negative",
-      title: "Family and Social Pressure",
-      desc: "People who marry later may face persistent questions or criticism from relatives and communities that expect earlier marriage.",
-      example: "An adult may feel pressured to marry before finding a genuinely compatible partner simply to satisfy family expectations.",
-      level: "Drawback 04",
-      simpleTakeaway: "Unmarried 30-somethings encounter social expectations and scrutiny.",
-      collocation: "entrenched social expectations"
+      title: "Classroom Socialization & Conflict Resolution",
+      desc: "Teachers teach students how to negotiate interpersonal disagreements, work in teams, and build civic maturity.",
+      example: "An educator mediates playground friction and teaches children the value of compromise and mutual respect.",
+      level: "Supporting Angle",
+      simpleTakeaway: "Socialization & Diplomacy",
+      collocation: "foster social maturity"
     }
   ],
 
-  // Evaluation arguments mapping to the essay
   evaluationArguments: [
     {
-      title: "Financial Security Outweighs Early Hardship",
-      reason: "Having children without financial stability causes severe marital distress and child poverty.",
-      development: "When parents marry in their thirties, their combined earning power and savings provide a secure platform for healthcare, quality nutrition, and tutoring.",
-      example: "Dual-income households in their thirties carry 40% lower consumer debt upon their first child's birth.",
       type: "argument",
-      level: "Economic Proof",
-      simpleTakeaway: "Financial resilience outweighs any benefit of having children earlier on low wages.",
-      collocation: "financial precarity"
+      title: "Empathy Cannot Be Programmed into Silicon",
+      reason: "Artificial neural networks can simulate conversation, but they lack human consciousness and authentic empathy.",
+      development: "Children are social beings who learn through emotional connection and psychological validation from trusted adults.",
+      example: "An algorithm cannot offer sincere reassurance to a child weeping from social alienation or family trauma.",
+      level: "Band 9",
+      simpleTakeaway: "Lack of Machine Empathy",
+      collocation: "devoid of authentic empathy"
     },
     {
-      title: "Emotional Maturity Protects Children",
-      reason: "Divorce and volatile home environments cause profound psychological trauma to developing children.",
-      development: "Older parents exhibit higher patience and constructive communication, resulting in lower divorce rates and happier households.",
-      example: "Sociological data links later marriages with significantly lower rates of legal separation within the first seven years.",
       type: "argument",
-      level: "Psychological Proof",
-      simpleTakeaway: "Emotional stability in your 30s fosters an enduring marital bond.",
-      collocation: "interpersonal discord"
+      title: "Education is Cultivating Character, Not Data Transfer",
+      reason: "If schooling were merely acquiring facts, the internet would have replaced teachers decades ago.",
+      development: "True pedagogy shapes ethical discernment, resilience, civic duty, and the courage to challenge falsehoods.",
+      example: "A teacher models integrity by admitting their own mistakes and guiding students through moral dilemmas.",
+      level: "Band 9",
+      simpleTakeaway: "Character Building Over Data",
+      collocation: "moral stewardship"
     },
     {
-      title: "Biological Limits Require Balanced Planning",
-      reason: "Biological fertility cannot be ignored despite financial comfort.",
-      development: "Postponing parenthood indefinitely increases the chance of conception difficulties and high medical costs.",
-      example: "Women attempting conception past age 35 experience lower natural monthly conception probabilities.",
       type: "counterpoint",
-      level: "Biological Concession",
-      simpleTakeaway: "Financial preparedness must be weighed against reproductive realities.",
-      collocation: "reproductive constraints"
+      title: "AI Excels at Scalable Repetition & Drill Adaptation",
+      reason: "Computers do not get tired, impatient, or biased when a student requires 50 repetitions of an algebra drill.",
+      development: "This makes AI an exceptional augmentative tool for homework and diagnostic gap analysis.",
+      example: "Language learners benefit tremendously from 24/7 speech recognition pronunciation drills.",
+      level: "Band 9",
+      simpleTakeaway: "Scalable Repetitive Drills",
+      collocation: "adaptive drill calibration"
     },
     {
-      title: "Managing the Generational Gap",
-      reason: "Being older parents requires conscious lifestyle and financial planning.",
-      development: "Although parents are older, healthy longevity and modern preventative healthcare mean parents remain energetic into their 50s and 60s.",
-      example: "Modern 40-year-olds enjoy far better cardiovascular health and life expectancy than previous generations.",
       type: "argument",
-      level: "Rebuttal Angle",
-      simpleTakeaway: "Modern health and longevity offset traditional concerns about parental age.",
-      collocation: "parental readiness"
+      title: "Algorithmic Hallucination & Moral Bias Risks",
+      reason: "Generative AI systems frequently produce fabricated historical data and inherit toxic societal biases.",
+      development: "Entrusting children's education entirely to automated models without human oversight poses severe pedagogical risks.",
+      example: "Uncurated AI outputs have generated biased historical interpretations in automated student assessments.",
+      level: "Band 9",
+      simpleTakeaway: "Algorithmic Bias Danger",
+      collocation: "perpetuate algorithmic biases"
+    },
+    {
+      type: "counterpoint",
+      title: "Democratizing Access in Under-Resourced Regions",
+      reason: "In impoverished rural areas where qualified teachers are unavailable, AI software provides a vital educational stopgap.",
+      development: "However, this represents an emergency mitigation of staffing shortages, not an optimal educational replacement.",
+      example: "Mobile AI learning apps in isolated villages offer foundational literacy where no schools exist.",
+      level: "Band 9",
+      simpleTakeaway: "Emergency Educational Lifeline",
+      collocation: "mitigate teacher shortages"
+    },
+    {
+      type: "argument",
+      title: "Dynamic Classroom Chemistry & Non-Linear Teaching",
+      reason: "Classrooms thrive on spontaneous humor, group discussions, and reading collective emotional energy.",
+      development: "A human teacher pivots instructional strategy instantly when sensing student confusion or apathy.",
+      example: "A physics teacher discards their planned slide deck to perform a spontaneous real-world experiment.",
+      level: "Band 9",
+      simpleTakeaway: "Pedagogical Flexibility",
+      collocation: "intuitive pedagogical agility"
+    }
+  ],
+
+  facultyAngles: [
+    {
+      title: "The Emotional & Relational Dimension (Body 1 Angle)",
+      development: "Argue forcefully that learning is an inherently social and psychological process requiring human empathy and pastoral care.",
+      type: "positive"
+    },
+    {
+      title: "The Socratic & Critical Inquiry Dimension (Body 2 Angle)",
+      development: "Highlight that independent critical thinking and ethical discernment require a human mentor to challenge dogmas and moderate debate.",
+      type: "positive"
+    },
+    {
+      title: "The Augmentative Technology Dimension (Body 3 Angle)",
+      development: "Concede that AI is revolutionary as a 24/7 drill tutor and administrative grading assistant, but distinguish assisting from replacing.",
+      type: "negative"
+    },
+    {
+      title: "The Decisive Outweighing Conclusion Angle",
+      development: "Reiterate that education encompasses character formation and moral guidance, which remain forever beyond the capabilities of code.",
+      type: "positive"
     }
   ],
 
   powerExpressions: [
     {
-      expression: "financial wherewithal",
-      meaning: "The financial means or capital necessary to achieve an undertaking",
-      example: "Established professionals possess the financial wherewithal to fund private schooling and secure fixed mortgages."
+      expression: "Supersede rather than merely supplement",
+      meaning: "To completely take over and eliminate the need for the previous system.",
+      example: "It is an exaggeration to claim that automated systems will supersede human educators rather than merely supplement them."
     },
     {
-      expression: "emotional acuity",
-      meaning: "Keen insight and understanding into interpersonal and psychological dynamics",
-      example: "Couples who have honed their emotional acuity resolve domestic disagreements through calm negotiation."
+      expression: "An inherently relational human endeavor",
+      meaning: "An activity that fundamentally relies on personal connection, trust, and mutual understanding.",
+      example: "Pedagogy is an inherently relational human endeavor that shrivels when reduced to synthetic digital metrics."
     },
     {
-      expression: "defer parenthood",
-      meaning: "To deliberately postpone having children until a future date",
-      example: "Modern graduates frequently choose to defer parenthood until their career foundations are secure."
+      expression: "Devoid of conscious empathy",
+      meaning: "Completely lacking the capacity to feel or care about another's distress.",
+      example: "An artificial neural network remains completely devoid of conscious empathy or moral conviction."
     },
     {
-      expression: "assume familial responsibilities",
-      meaning: "To take upon oneself the obligations and duties of marriage and child-rearing",
-      example: "Older adults enter domestic life better prepared to assume familial responsibilities without resentment."
+      expression: "Transcend mere information dissemination",
+      meaning: "To go far beyond the simple act of broadcasting facts and data.",
+      example: "True educators transcend mere information dissemination to nurture critical thinking and moral maturity."
     },
     {
-      expression: "financial precarity",
-      meaning: "A precarious state of economic insecurity, vulnerability, and debt",
-      example: "Starting a family in one's early twenties often plunges young couples into acute financial precarity."
+      expression: "Act as an augmentative educational aid",
+      meaning: "To function as a valuable supportive tool that enhances teacher efficacy.",
+      example: "Artificial intelligence should be celebrated as an augmentative educational aid that relieves administrative burdens."
     },
     {
-      expression: "reproductive constraints",
-      meaning: "Biological or physiological limitations affecting conception and pregnancy",
-      example: "Couples who postpone family planning indefinitely must confront inevitable reproductive constraints."
+      expression: "Inimitable human guidance",
+      meaning: "Guidance that is so unique, compassionate, and wise that it cannot be copied by machines.",
+      example: "No amount of algorithmic refinement can substitute for the inimitable human guidance of an inspiring teacher."
+    }
+  ],
+
+  brainstormCards: [
+    {
+      question: "Why can't artificial intelligence provide authentic pastoral care to children?",
+      thinkingLens: "Psychological & Emotional Development",
+      selfCheck: "Are algorithms conscious? Can they feel sympathy or perceive emotional trauma?",
+      idea: "Machines have zero consciousness or empathy; they cannot comfort a grieving student or detect quiet depression."
+    },
+    {
+      question: "How does a teacher cultivate higher-order critical thinking during class discussions?",
+      thinkingLens: "Pedagogical & Cognitive Rigor",
+      selfCheck: "Is thinking just memorizing answers, or questioning assumptions?",
+      idea: "Teachers use Socratic counter-questioning and moderate debate on moral gray areas, which static algorithms cannot do."
+    },
+    {
+      question: "In what specific areas does AI outperform human teachers?",
+      thinkingLens: "Technological & Administrative Efficiency",
+      selfCheck: "What takes teachers hours of boring repetitive time?",
+      idea: "Grading objective homework, instantaneous diagnostic test analysis, and generating 24/7 personalized practice drills."
+    },
+    {
+      question: "What is the crucial difference between 'augmenting' and 'replacing' a profession?",
+      thinkingLens: "Conceptual & Lexical Precision",
+      selfCheck: "Does a doctor get replaced by an MRI machine?",
+      idea: "Augmenting equips the professional with better diagnostic tools, whereas replacing renders the human obsolete."
+    },
+    {
+      question: "Can an algorithm teach moral ethics and civic integrity to future citizens?",
+      thinkingLens: "Societal & Ethical Character Building",
+      selfCheck: "Where do children learn honesty, fairness, and accountability?",
+      idea: "Children learn ethics by observing lived human role models who embody integrity, not by interacting with amoral code."
+    },
+    {
+      question: "What would a classroom completely devoid of human teachers look like for students?",
+      thinkingLens: "Socialization & Community Well-Being",
+      selfCheck: "Would students feel motivated, connected, and socially mature?",
+      idea: "Students would suffer from social isolation, lack of accountability, and mechanical disengagement."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "Foremost among the positive aspects of...",
-      "In consequence of their accumulated financial reserves...",
-      "Nevertheless, delaying parenthood indefinitely can expose couples to...",
-      "On the other hand, critics rightly point to...",
-      "By deferring parenthood until they have greater financial wherewithal..."
+      "Foremost among the reasons why artificial intelligence cannot supplant educators is that...",
+      "Equally significant is that cultivating higher-order cognitive faculties necessitates...",
+      "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative tool...",
+      "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating routine grading, I firmly disagree that..."
     ],
     aTier: [
-      "Equally significant is that...",
-      "As a direct corollary...",
-      "It is therefore evident that...",
-      "Although postponing parenthood presents certain practical challenges..."
+      "By deferring repetitive administrative duties to automated software, teachers can...",
+      "It is a dangerous misconception to assume that algorithmic feedback can seamlessly substitute for...",
+      "Whereas digital platforms excel at static information dissemination, human mentors...",
+      "Consequently, the essence of genuine education lies not in computational retrieval, but in..."
     ],
     bTier: [
       "Furthermore,",
@@ -757,61 +664,125 @@ export const TASK2_DATA: Task2Data = {
 
   strategicLinkers: [
     {
-      zone: "Zone 1: Opening Strong Opinion Body Paragraphs",
-      badge: "Advantage Openers",
-      placementRule: "Use at the beginning of Body 1 and Body 2 to declare your primary advantage clearly.",
+      zone: "Zone 1: Opening Opinion Body Paragraphs (Why AI Cannot Replace Teachers)",
+      badge: "Opinion Side Openers",
+      placementRule: "Use at the beginning of Body 1 and Body 2 to declare your primary arguments against full AI replacement.",
       items: [
         {
-          phrase: "Foremost among the positive aspects of delaying marriage is that...",
-          functionDesc: "Declares your strongest advantage immediately with authority.",
+          phrase: "Foremost among the reasons why artificial intelligence cannot supplant educators is that...",
+          functionDesc: "Declares your strongest argument (emotional empathy & pastoral care) immediately with academic authority.",
           example:
-            "Foremost among the positive aspects of delaying marriage is that it provides couples with the financial independence needed to support a family."
+            "Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy."
         },
         {
-          phrase: "Equally important is that entering parenthood later in life fosters...",
-          functionDesc: "Introduces your second major argument (Body 2) while maintaining logical cohesion.",
+          phrase: "Equally significant is that cultivating higher-order cognitive faculties necessitates...",
+          functionDesc: "Introduces your second major argument (critical thinking, ethics & debate) with seamless cohesion.",
           example:
-            "Equally important is that entering parenthood later in life fosters greater emotional maturity and relationship stability."
+            "Equally significant is that cultivating higher-order cognitive faculties and moral reasoning necessitates spontaneous human dialogue and intellectual challenge."
         }
       ]
     },
     {
-      zone: "Zone 2: Concession & Counterpoint Placement",
-      badge: "Drawback Transitions",
-      placementRule: "Use at the start of Body 3 to acknowledge the counterpoint fairly without conceding your overall stance.",
+      zone: "Zone 2: Concession & Augmentative AI Placement (Body 3)",
+      badge: "Non-Opinion Concession",
+      placementRule: "Use at the start of Body 3 to acknowledge AI's legitimate strengths in grading and pacing without surrendering your main thesis.",
       items: [
         {
-          phrase: "On the other hand, the most prominent drawback of delaying family planning is that...",
-          functionDesc: "Smoothly shifts to the counter-perspective while signaling a measured concession.",
+          phrase: "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative aid...",
+          functionDesc: "Smoothly shifts to the counter-perspective while framing AI's capabilities as supportive rather than replacement.",
           example:
-            "On the other hand, the most prominent drawback of delaying family planning is that natural fertility declines noticeably with advancing age."
+            "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative educational aid that personalizes practice drills and streamlines administrative duties."
         },
         {
-          phrase: "Nevertheless, delaying parenthood indefinitely can expose some couples to...",
-          functionDesc: "Introduces biological or practical constraints while maintaining a balanced tone.",
+          phrase: "Nevertheless, delivering customized exercises is essentially an assistive mechanism rather than...",
+          functionDesc: "Delivers the critical judgement anchor at the conclusion of Body 3.",
           example:
-            "Nevertheless, delaying parenthood indefinitely can expose some couples to reproductive constraints and higher medical costs."
+            "Nevertheless, delivering customized exercises is essentially an assistive mechanism rather than a justification for replacing educators altogether."
         }
       ]
     },
     {
       zone: "Zone 3: Decisive Outweighing Conclusion",
       badge: "Conclusion Synthesis",
-      placementRule: "Use in the final paragraph to synthesize drawbacks against the superior benefits.",
+      placementRule: "Use in the final paragraph to summarize the main points and restate your decisive disagree position.",
       items: [
         {
-          phrase: "In conclusion, marrying and becoming parents later in life can enable individuals to...",
-          functionDesc: "Directly mirrors the prompt's scope and synthesizes personal preparedness.",
+          phrase: "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating routine grading, I firmly disagree that...",
+          functionDesc: "Concedes AI's administrative and pacing role in the dependent clause and reasserts your disagree position in the main clause.",
           example:
-            "In conclusion, marrying and becoming parents later in life can enable individuals to make more informed decisions and establish financial security."
+            "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating routine grading and tailoring practice drills, I firmly disagree that it will replace classroom teachers."
         },
         {
-          phrase: "Although postponing parenthood may present certain practical and biological challenges, I believe...",
-          functionDesc: "Acknowledges the counterpoint in the first clause and asserts the positive verdict in the second.",
+          phrase: "The essence of genuine education lies not merely in information retrieval, but in...",
+          functionDesc: "Synthesizes the core reason why human teachers remain permanently irreplaceable.",
           example:
-            "Although postponing parenthood may present certain practical and biological challenges, I believe the overall benefits make this a positive development."
+            "The essence of genuine education lies not merely in information retrieval, but in human empathy, moral stewardship, and inspirational mentorship."
         }
       ]
     }
-  ]
+  ],
+
+  fluidVocab: [
+    {
+      word: "supersede",
+      pos: "verb",
+      meaning: "To supplant or replace something older or less advanced.",
+      naturalCollocation: "supersede human educators in the classroom",
+      organicExample: "It is profoundly naive to claim that predictive algorithms will supersede teachers who provide moral and emotional mentorship.",
+      mechanicalPitfall: "Avoid using it casually as a synonym for 'change'. It implies full displacement.",
+      examinerInsight: "Demonstrates Band 9 lexical resource when used in the opening thesis statement."
+    },
+    {
+      word: "augmentative",
+      pos: "adjective",
+      meaning: "Serving to supplement, support, or enhance without replacing.",
+      naturalCollocation: "augmentative pedagogical aid",
+      organicExample: "Educational software should be embraced as an augmentative tool that liberates instructors from grading paperwork.",
+      mechanicalPitfall: "Do not confuse with 'augmenting' as a progressive participle.",
+      examinerInsight: "The definitive word examiners look for in balanced technology essays."
+    },
+    {
+      word: "pastoral care",
+      pos: "noun phrase",
+      meaning: "Institutional emotional and psychological support for student well-being.",
+      naturalCollocation: "deliver compassionate pastoral care",
+      organicExample: "A machine can compute exam percentiles, but it cannot deliver pastoral care to an adolescent experiencing bereavement.",
+      mechanicalPitfall: "Avoid spelling as 'pastoral cares'. It is an uncountable institutional concept.",
+      examinerInsight: "Immediately signals native-level British academic education vocabulary."
+    },
+    {
+      word: "dissemination",
+      pos: "noun",
+      meaning: "The distribution or broadcasting of facts and information.",
+      naturalCollocation: "passive dissemination of factual data",
+      organicExample: "Schooling transcends the mechanical dissemination of facts; it is the active incubation of moral and intellectual character.",
+      mechanicalPitfall: "Do not use 'disseminate' for physical objects like books; it applies to ideas, knowledge, and data.",
+      examinerInsight: "Creates sharp contrast between rote internet access and true teaching."
+    },
+    {
+      word: "nuanced",
+      pos: "adjective",
+      meaning: "Subtle, complex, and full of fine distinctions.",
+      naturalCollocation: "facilitate nuanced ethical debates",
+      organicExample: "Guiding students through nuanced historical controversies requires an experienced human mediator.",
+      mechanicalPitfall: "Do not say 'very nuanced'. Use nuanced with adverbs like 'subtly' or on its own.",
+      examinerInsight: "Demonstrates academic depth when describing critical thinking."
+    },
+    {
+      word: "inimitable",
+      pos: "adjective",
+      meaning: "Impossible to imitate or copy; matchless in quality.",
+      naturalCollocation: "the inimitable warmth of a human mentor",
+      organicExample: "Lines of computer code can never emulate the inimitable encouragement of a teacher who believes in a child's potential.",
+      mechanicalPitfall: "Do not confuse with 'imitable' (which means can be copied).",
+      examinerInsight: "A brilliant, sophisticated adjective to close an essay with authoritative elegance."
+    }
+  ],
+
+  modelSentences: {
+    positive:
+      "Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy.",
+    balanced:
+      "While artificial intelligence will undoubtedly transform classrooms as an augmentative tool that automates grading and tailors practice drills, I firmly disagree that it will ever replace human teachers whose empathy, moral mentorship, and dynamic facilitation remain irreplaceable."
+  }
 };

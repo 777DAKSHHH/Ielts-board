@@ -58,14 +58,14 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
             maxHeight: "90vh",
             background: "#ffffff",
             borderRadius: "24px",
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.35)",
             border: "1.5px solid var(--border-subtle)",
-            boxShadow: "0 25px 60px -15px rgba(0, 0, 0, 0.35)",
             display: "flex",
             flexDirection: "column",
             overflow: "hidden"
           }}
         >
-          {/* Header Bar */}
+          {/* Modal Header */}
           <div
             style={{
               padding: "20px 28px",
@@ -110,7 +110,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   </span>
                 </div>
                 <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--slate-900)", margin: "3px 0 0" }}>
-                  Faculty Idea Bank &amp; High-Band Argumentation
+                  AI in the Classroom: High-Band Argumentation &amp; Nuance
                 </h3>
               </div>
             </div>
@@ -212,21 +212,21 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </h5>
                   </div>
                   <blockquote style={{ margin: 0, fontSize: "1.02rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
-                    “Would you rather have a child at 25 while still building your career, or at 35 when you are financially established?”
+                    “Can an algorithm inspire a child to love learning or comfort a student in tears the way a dedicated human teacher does?”
                   </blockquote>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "4px" }}>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 1: Does financial security automatically make someone a better parent?
+                      Follow-up 1: What is the difference between transmitting information and genuine pedagogical teaching?
                     </span>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 2: Can emotional maturity compensate for financial instability?
+                      Follow-up 2: Can artificial intelligence teach ethics and moral philosophy when it possesses no consciousness?
                     </span>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 3: Is there ever a perfect time to start a family?
+                      Follow-up 3: Does automating homework grading mean the teacher is being replaced, or merely assisted?
                     </span>
                   </div>
                   <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--slate-600)", fontStyle: "italic" }}>
-                    ✦ Pedagogical Purpose: These questions help students see that the issue is not simply age; it is the level of preparedness that age may bring.
+                    ✦ Pedagogical Purpose: These questions help students realize that education is fundamentally relational and ethical, whereas computer programs are merely cognitive calculators.
                   </p>
                 </div>
 
@@ -236,27 +236,27 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     Faculty / Teacher Idea Bank (8 Analytical Discussion Angles)
                   </h4>
                   <div className="stage-grid-2col" style={{ gap: "14px" }}>
-                    {/* Positive Angles */}
+                    {/* Opinion Side Angles (Why AI Cannot Replace Teachers) */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                       <span className="apple-badge success" style={{ alignSelf: "flex-start", fontSize: "0.75rem" }}>
-                        🟢 POSITIVE ANGLES (EXTENDED TEACHING)
+                        🟢 OPINION SIDE: WHY TEACHERS ARE IRREPLACEABLE
                       </span>
                       {[
                         {
-                          title: "Reduced Financial Dependence",
-                          desc: "Couples who have established their own incomes may be less dependent on parents or extended family, allowing them to make independent decisions about their household and children."
+                          title: "Psychological Pastoral Care",
+                          desc: "Human teachers detect subtle emotional crises, bullying, or domestic distress in students, offering compassionate intervention that no algorithm can emulate."
                         },
                         {
-                          title: "Greater Equality Within Relationships",
-                          desc: "When both partners have had time to pursue education and careers, they may be better positioned to negotiate domestic responsibilities and share financial decisions."
+                          title: "Socratic Debate & Critical Discernment",
+                          desc: "Education requires challenging biases, dissecting ethical dilemmas, and fostering civil discourse through spontaneous classroom dialogue."
                         },
                         {
-                          title: "Breaking the Cycle of Financial Insecurity",
-                          desc: "Parents who enter family life with savings and stable employment may be better able to invest in nutrition, education and enriching experiences for their children."
+                          title: "Moral Integrity & Ethical Role Modeling",
+                          desc: "Children learn ethical values not from abstract textual outputs, but by observing respected human mentors who embody fairness, honesty, and accountability."
                         },
                         {
-                          title: "More Deliberate Family Planning",
-                          desc: "Delaying parenthood can give couples time to decide whether they genuinely want children and how many they can realistically support, potentially reducing unplanned pregnancies."
+                          title: "Dynamic Classroom Chemistry",
+                          desc: "Experienced teachers instinctively read collective room energy, pivoting their pedagogical approach when sensing student exhaustion or confusion."
                         }
                       ].map((item, idx) => (
                         <div key={idx} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "12px 14px" }}>
@@ -266,27 +266,27 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       ))}
                     </div>
 
-                    {/* Negative Angles */}
+                    {/* Non-Opinion Side Angles (AI as Augmentative Tool) */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                       <span className="apple-badge warning" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fee2e2", color: "#991b1b" }}>
-                        🔴 NEGATIVE ANGLES (EXTENDED TEACHING)
+                        🔴 NON-OPINION SIDE: AI'S AUGMENTATIVE STRENGTHS
                       </span>
                       {[
                         {
-                          title: "A Narrowing Window for Family Planning",
-                          desc: "Delayed decisions may leave couples with less flexibility if conception takes longer than expected or they encounter fertility difficulties."
+                          title: "Personalized Practice Velocity",
+                          desc: "Intelligent software calibrates math problem difficulty and vocabulary drills to each student's exact speed, preventing boredom and frustration."
                         },
                         {
-                          title: "The Dual Burden of Caring Responsibilities",
-                          desc: "People who become parents later may simultaneously have young children and ageing parents who need financial or practical support."
+                          title: "Administrative Liberation",
+                          desc: "Automating repetitive clerical tasks and objective grading frees educators to dedicate their limited energy to direct student mentorship."
                         },
                         {
-                          title: "Over-Optimisation of Life Plans",
-                          desc: "Waiting for the perfect salary, house or career position may lead some individuals to postpone family life indefinitely because complete security is rarely achievable."
+                          title: "24/7 Homework Assistance",
+                          desc: "Synthetic tutors provide continuous diagnostic guidance outside school hours, allowing students to clarify doubts whenever they study."
                         },
                         {
-                          title: "Changing Expectations of Independence",
-                          desc: "People accustomed to controlling their time and spending may find the compromises required by marriage and parenting more challenging than anticipated."
+                          title: "Educational Lifeline in Remote Regions",
+                          desc: "In under-resourced communities facing severe human teacher deficits, mobile AI tools deliver vital foundational literacy and numeracy lessons."
                         }
                       ].map((item, idx) => (
                         <div key={idx} style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "12px", padding: "12px 14px" }}>
@@ -309,31 +309,31 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 <div style={{ background: "var(--slate-50)", borderRadius: "16px", padding: "16px 20px", border: "1px solid var(--border-subtle)" }}>
                   <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-                    <strong>The 3-Tier Body Paragraph Blueprint:</strong> Construct every body paragraph like an inverted pyramid of logic:
+                    <strong>Mandatory Body Paragraph Format:</strong> 1 Main reason + Supporting reasons + Example. Construct every body paragraph with this inverted pyramid of logical cohesion:
                   </p>
                 </div>
 
                 {[
                   {
                     step: "Tier 01",
-                    badge: "Topic Sentence",
+                    badge: "1 Main Reason",
                     title: "State 1 Clear Primary Reason",
-                    say: "“Foremost among the advantages is that delaying marriage and parenthood until one’s thirties allows individuals to establish robust financial resilience before taking on familial obligations.”",
-                    takeaway: "Direct, unequivocal claim answering the question."
+                    say: "“Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy.”",
+                    takeaway: "Direct, unequivocal claim addressing the prompt without waffle."
                   },
                   {
                     step: "Tier 02",
-                    badge: "Supporting Causal Engine",
-                    title: "Unpack WHY and HOW with Supporting Reasons",
-                    say: "“Young adults in their twenties frequently face volatile rental markets and student debts. Remaining unencumbered affords them time to attain career seniority, accumulate emergency capital, and secure stable housing.”",
-                    takeaway: "Explains the underlying economic, professional, and lifestyle mechanics."
+                    badge: "Supporting Reasons",
+                    title: "Unpack WHY and HOW with Causal Supporting Reasons",
+                    say: "“Children and adolescents routinely experience motivational slumps, anxiety, and social friction. An observant teacher detects non-verbal cues and provides psychological reassurance, whereas algorithms possess zero consciousness or empathy.”",
+                    takeaway: "Explains the psychological, cognitive, and relational mechanics."
                   },
                   {
                     step: "Tier 03",
-                    badge: "Concrete Real-World Anchor",
+                    badge: "Example",
                     title: "Substantiate with Specific Evidence",
-                    say: "“For example, dual-income couples in major metropolitan regions who marry in their early thirties are far more capable of purchasing fixed-rate homes and funding early childhood education without incurring debt.”",
-                    takeaway: "Pins the theoretical argument to an undeniable, verified real-world reality."
+                    say: "“For example, when a pupil struggles academically due to bereavement or severe domestic stress, an attentive educator offers compassionate counseling, whereas an automated software would rigidly log the missed deadline as academic failure.”",
+                    takeaway: "Pins the theoretical reasoning to an undeniable real-world scenario."
                   }
                 ].map((item) => (
                   <div
@@ -372,22 +372,22 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    topic: "Financial & Household Stability",
-                    band6: "People in their 30s have better jobs and more money so they can buy a house and feed their babies easily.",
-                    band9: "Postponing domestic commitments until one’s fourth decade ensures couples have attained professional seniority and accumulated capital reserves, thereby shielding the burgeoning household from chronic financial precarity.",
-                    why: "Replaces colloquial expressions with high-register academic collocations: 'attained professional seniority', 'accumulated capital reserves', 'chronic financial precarity'."
+                    topic: "Emotional Connection & Empathy (Body 1)",
+                    band6: "Robots do not have feelings so they cannot understand when a student is crying or sad.",
+                    band9: "Artificial neural networks operate entirely on cold computational logic, remaining fundamentally devoid of the conscious empathy and psychological intuition required to support emotionally vulnerable learners.",
+                    why: "Replaces simplistic language with precise psychological and academic terminology: 'computational logic', 'conscious empathy', 'psychological intuition'."
                   },
                   {
-                    topic: "Emotional Maturity & Marital Durability",
-                    band6: "Older people understand each other more and do not fight or get divorced as quickly as young people.",
-                    band9: "Greater psychological maturity and emotional equanimity acquired through twenties life experience substantially reduce domestic friction and correlate with precipitously lower rates of marital breakdown.",
-                    why: "Frames relationship stability through mature psychological dynamics: 'emotional equanimity', 'marital breakdown'."
+                    topic: "Critical Thinking & Socratic Debate (Body 2)",
+                    band6: "Teachers are better because they ask hard questions and make kids discuss things in class.",
+                    band9: "Cultivating higher-order critical faculties requires dynamic Socratic facilitation, wherein an experienced human mentor interrogates student assumptions and navigates contentious ethical dilemmas.",
+                    why: "Frames classroom discussion in terms of cognitive development: 'higher-order critical faculties', 'Socratic facilitation', 'interrogates student assumptions'."
                   },
                   {
-                    topic: "Biological Fertility Limits (Counterpoint)",
-                    band6: "Having babies when you are older is dangerous and women cannot get pregnant easily.",
-                    band9: "Advanced parental age brings physiological challenges, as natural fecundity declines sharply past the mid-thirties, increasing reliance on invasive reproductive interventions and elevating maternal health risks.",
-                    why: "Deploys precise biomedical and demographic terminology: 'natural fecundity', 'reproductive interventions', 'maternal health risks'."
+                    topic: "AI as an Augmentative Tool (Body 3 Concession)",
+                    band6: "AI is good because it checks homework fast and teaches math easily.",
+                    band9: "Artificial intelligence functions as an exceptional augmentative asset by delivering calibrated practice exercises and automating routine assessment marking, thereby liberating educators from clerical exhaustion.",
+                    why: "Uses precise conceptual framing: 'augmentative asset', 'calibrated practice exercises', 'clerical exhaustion'."
                   }
                 ].map((item, index) => (
                   <div
@@ -431,24 +431,24 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    title: "Outweighing Thesis Formula (Introduction)",
-                    formula: "“Although [concession: biological fertility constraints and demographic aging] present undeniable hurdles, I firmly contend that [core advantages: accumulated financial stability and psychological maturity] render this trend predominantly positive.”"
+                    title: "1. Introduction Formula (Paraphrase + Opinion)",
+                    formula: "“With rapid advances in educational technology, it is often asserted that [AI will replace teachers in the classroom]. While I acknowledge that [AI can personalize drills and automate grading], I largely disagree that it will ever fully supersede human educators, whose [empathy, ethical mentorship, and critical facilitation] remain irreplaceable.”"
                   },
                   {
-                    title: "Body 1 Opener Formula (Strong Advantage 1)",
-                    formula: "“Foremost among the compelling merits of deferring family formation is the unprecedented [financial resilience / economic security] that established careers afford prospective parents.”"
+                    title: "2. Body 1 Opener Formula (Opinion Side — Empathy)",
+                    formula: "“Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring [emotional intelligence and pastoral empathy].”"
                   },
                   {
-                    title: "Body 2 Opener Formula (Strong Advantage 2)",
-                    formula: "“Beyond financial solvency, mature adulthood fosters [heightened emotional equanimity] and [workplace seniority], creating an intrinsically more stable environment for raising children.”"
+                    title: "3. Body 2 Opener Formula (Opinion Side — Critical Thinking)",
+                    formula: "“Equally significant is that cultivating higher-order cognitive faculties and moral reasoning necessitates [spontaneous human dialogue, intellectual challenge, and ethical stewardship].”"
                   },
                   {
-                    title: "Body 3 Opener Formula (Non-Opinion Counterpoint)",
-                    formula: "“On the other hand, detractors cogently point to [the physiological decline in reproductive capacity] and [the macroeconomic pressures of an aging societal demographic].”"
+                    title: "4. Body 3 Opener Formula (Non-Opinion Side — AI's Role)",
+                    formula: "“On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative educational aid that [personalizes practice drills and streamlines administrative duties].”"
                   },
                   {
-                    title: "Decisive Verdict Formula (Conclusion)",
-                    formula: "“In conclusion, while starting families in one’s thirties entails genuine biological and demographic complexities, the enduring advantages of parental maturity and financial security make this development overwhelmingly beneficial.”"
+                    title: "5. Conclusion Formula (Sum-up Main Ideas + Restate Opinion)",
+                    formula: "“In conclusion, although artificial intelligence is poised to revolutionize schooling by [automating grading and tailoring drills], I firmly disagree that it will replace classroom teachers. The essence of genuine education lies in [human empathy, moral stewardship, and inspirational mentorship]—qualities that no software can replicate.”"
                   }
                 ].map((item, index) => (
                   <div
@@ -487,7 +487,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </h5>
                   </div>
                   <p style={{ fontSize: "0.9rem", color: "#14532d", margin: 0, lineHeight: 1.55 }}>
-                    Have students build their essay around financial preparedness and emotional maturity, then acknowledge reproductive constraints as the principal counterargument. This gives them a clear, defensible position without making unsupported claims that marrying later always leads to better relationships or parenting.
+                    Instruct students to strictly maintain the <strong>1 Main reason + Supporting reasons + Example</strong> formula in every body paragraph. Build Body 1 around emotional empathy, Body 2 around critical thinking and ethics, and use Body 3 to concede AI's augmentative role in homework and grading automation. Conclude decisively that assisting a teacher is fundamentally distinct from replacing one.
                   </p>
                 </div>
               </motion.div>

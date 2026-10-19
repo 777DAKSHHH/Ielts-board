@@ -16,5 +16,6 @@ export interface VocabItem {
   topic?: string;
   cefr?: string;
   usageNotes?: string;
+  tutorTip?: string;
   collocations?: string[];
 }

@@ -6,19 +6,19 @@ import { TASK2_DATA } from "../../data/task2Data";
 export const Step7EvaluationT2: React.FC = () => {
   const [activeModelIdx, setActiveModelIdx] = useState(0);
 
-  const body2 = TASK2_DATA.bodyParagraphs?.[1];
-  const allDrawbacks = body2?.alternativeReasons || [];
+  const body3 = TASK2_DATA.bodyParagraphs?.[2];
+  const allDrawbacks = body3?.alternativeReasons || [];
 
   return (
     <div className="stage-card-wrapper">
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px", background: "#fee2e2", color: "#b91c1c" }}>
-          Step 07 / 09 • Points for the Disadvantages (Counterpoint)
+          Step 07 / 09 • Non-Opinion Side (Body Para 3 Concession)
         </span>
-        <h2 className="stage-title">Student Idea Bank: 4 Potential Drawbacks</h2>
+        <h2 className="stage-title">Body 3: AI as an Augmentative Tool (Counterpoint)</h2>
         <p className="stage-subtitle">
-          All 4 potential drawbacks displayed simultaneously for your class. Students should <strong>acknowledge one strong counterargument</strong> (using <em>Main Idea + Causal Development + Real-Life Example</em>) and explain why the advantages decisively outweigh it.
+          Mandatory Body Paragraph Format: <strong>1 Main reason + Supporting reasons + Example</strong>. Concede AI's legitimate strengths in personalized pacing and administrative relief, while maintaining that assistance is fundamentally distinct from replacement.
         </p>
       </div>
 
@@ -42,11 +42,11 @@ export const Step7EvaluationT2: React.FC = () => {
             EXAMINER ADVICE
           </span>
           <span style={{ fontSize: "0.98rem", fontWeight: 700, color: "#9f1239" }}>
-            Acknowledge reproductive constraints fairly, then demonstrate that financial wherewithal and emotional maturity are irreplaceable!
+            Concede AI's computational efficiency in Body 3, but anchor firmly that assistive tools empower teachers rather than supplant them!
           </span>
         </div>
         <span className="apple-badge" style={{ background: "#fecdd3", color: "#9f1239", fontWeight: 750 }}>
-          Counterpoint Concession • Body 2 / 3
+          Counterpoint Concession • Body Para 3
         </span>
       </div>
 

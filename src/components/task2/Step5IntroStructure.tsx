@@ -10,7 +10,7 @@ export const Step5IntroStructureT2: React.FC = () => (
       </span>
       <h2 className="stage-title">Sample Introduction &amp; Decisive Opinion Thesis</h2>
       <p className="stage-subtitle">
-        Ideal IELTS Positive/Negative Development Introduction: Paraphrase the trend of postponing marriage and childbearing in Sentence 1 + deliver a decisive opinion thesis arguing that the development is overwhelmingly positive in Sentence 2.
+        Mandatory 2-Sentence Introduction Format: <strong>Paraphrase the question in Sentence 1 + State your clear opinion thesis in Sentence 2</strong>.
       </p>
     </div>
     <div className="stage-grid-2col">
@@ -24,7 +24,7 @@ export const Step5IntroStructureT2: React.FC = () => (
       >
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
           <BookOpen size={22} color="var(--apple-blue)" />
-          <h4 style={{ fontSize: "1.22rem", fontWeight: 750 }}>Sample Introduction (Concise &amp; Focused)</h4>
+          <h4 style={{ fontSize: "1.22rem", fontWeight: 750 }}>Sample Introduction (Paraphrase + Opinion)</h4>
         </div>
         <div
           style={{
@@ -42,7 +42,7 @@ export const Step5IntroStructureT2: React.FC = () => (
           {TASK2_DATA.sampleIntro}
         </div>
         <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-600)", fontSize: "0.92rem", fontWeight: 600 }}>
-          <Clock size={16} /> 49 words • 2 sentences • Rapid exam timing (~2-2.5 mins)
+          <Clock size={16} /> 51 words • 2 sentences • Rapid exam timing (~2-2.5 mins)
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
@@ -59,26 +59,26 @@ export const Step5IntroStructureT2: React.FC = () => (
             <h5 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>One-Liner Planning Points</h5>
           </div>
           <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "1.02rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
-            <li><strong>Trend:</strong> Marriage and parenthood occur later in life.</li>
-            <li><strong>Opinion:</strong> Largely positive development.</li>
-            <li><strong>Main reasons:</strong> Financial independence + emotional maturity.</li>
+            <li><strong>Paraphrase:</strong> Assertion that artificial intelligence will supersede classroom educators.</li>
+            <li><strong>Opinion:</strong> Largely disagree with full replacement.</li>
+            <li><strong>Main reasons:</strong> AI serves as an augmentative aid, while human teachers provide irreplaceable emotional empathy, ethical mentorship, and critical discourse.</li>
           </ul>
         </div>
 
         <StructureCard
           icon={<CheckCircle2 size={18} />}
-          title="1. Crisp Prompt Paraphrase (Sentence 1)"
-          text="“In many societies, individuals are increasingly choosing to establish their careers and achieve personal stability before getting married and starting a family.” (States the modern trend naturally without template cliché)."
+          title="1. Crisp Question Paraphrase (Sentence 1)"
+          text="“With rapid advances in educational technology, it is often argued that artificial intelligence will soon supersede human teachers in the classroom.” (Replaces 'replace' with 'supersede' and frames the modern educational context without robotic clichés)."
         />
         <StructureCard
           icon={<Award size={18} />}
           title="2. Decisive Opinion Thesis (Sentence 2)"
-          text="“I consider this a largely positive development, as greater financial security and emotional maturity can help couples build more stable family environments, despite the potential challenges associated with delayed parenthood.”"
+          text="“While I acknowledge that intelligent algorithms can enhance personalized instruction and automate routine administrative tasks, I largely disagree that they will ever fully replace human educators, whose emotional empathy, ethical mentorship, and dynamic classroom leadership remain fundamentally irreplaceable.”"
         />
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="3. Word Economy & Roadmapping"
-          text="Keep the introduction concise (~45–55 words across 2 sentences). A punchy opening establishes a crystal-clear position from the outset, setting up your body paragraphs."
+          text="Keep the introduction concise (~50 words across 2 sentences). A punchy opening establishes a crystal-clear position from the outset, paving the way for Body 1 & 2 (Opinion side) and Body 3 (Non-opinion side)."
         />
       </div>
     </div>

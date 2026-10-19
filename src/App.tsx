@@ -86,7 +86,7 @@ export function App() {
     setCurrentStep(step);
   };
 
-  const handleSelectModule = (mod: "task1" | "task2") => {
+  const handleSelectModule = (mod: ModuleType) => {
     setCurrentModule(mod);
     setCurrentStep(1);
     timer.reset(180);

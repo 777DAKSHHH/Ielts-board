@@ -5,10 +5,12 @@ import { TASK1_DATA } from "../../data/task1Data";
 import { TASK2_DATA } from "../../data/task2Data";
 import { modalBackdropVariants, modalDialogVariants, tactilePress } from "../../motion";
 
+import { ModuleType } from "../../types";
+
 interface QuizModalProps {
   isOpen: boolean;
   onClose: () => void;
-  currentModule: "task1" | "task2";
+  currentModule: ModuleType;
   onSpeak: (word: string) => void;
 }
 
@@ -18,7 +20,7 @@ export const QuizModal: React.FC<QuizModalProps> = ({
   currentModule,
   onSpeak
 }) => {
-  const vocabList = currentModule === "task1" ? TASK1_DATA.vocabList : TASK2_DATA.vocabList;
+  const vocabList = currentModule === "task2" ? TASK2_DATA.vocabList : TASK1_DATA.vocabList;
   const [activeIdx, setActiveIdx] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 

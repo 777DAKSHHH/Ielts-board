@@ -5,9 +5,11 @@ import { tactilePress } from "../../motion";
 import { SmartBoardDisplayControl } from "./SmartBoardDisplayControl";
 import { BoardScaleHook } from "../../hooks/useBoardScale";
 
+import { ModuleType } from "../../types";
+
 interface IslandHeaderProps {
-  currentModule: "task1" | "task2";
-  onSelectModule: (mod: "task1" | "task2") => void;
+  currentModule: ModuleType;
+  onSelectModule: (mod: ModuleType) => void;
   currentStep: number;
   totalSteps: number;
   stepTitle: string;
