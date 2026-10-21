@@ -6,19 +6,19 @@ import { TASK2_DATA } from "../../data/task2Data";
 export const Step7EvaluationT2: React.FC = () => {
   const [activeModelIdx, setActiveModelIdx] = useState(0);
 
-  const body3 = TASK2_DATA.bodyParagraphs?.[2];
-  const allDrawbacks = body3?.alternativeReasons || [];
+  const body2 = TASK2_DATA.bodyParagraphs?.[1];
+  const allEffects = body2?.alternativeReasons || [];
 
   return (
     <div className="stage-card-wrapper">
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px", background: "#fee2e2", color: "#b91c1c" }}>
-          Step 07 / 09 • Non-Opinion Side (Body Para 3 Concession)
+          Step 07 / 09 • Body Para 2 (Effects on Victims)
         </span>
-        <h2 className="stage-title">Body 3: AI as an Augmentative Tool (Counterpoint)</h2>
+        <h2 className="stage-title">Body 2: The Devastating Fallout for Victims</h2>
         <p className="stage-subtitle">
-          Mandatory Body Paragraph Format: <strong>1 Main reason + Supporting reasons + Example</strong>. Concede AI's legitimate strengths in personalized pacing and administrative relief, while maintaining that assistance is fundamentally distinct from replacement.
+          Mandatory Body Paragraph Format: <strong>1 Main reason + Supporting reasons + Example</strong>. Examine the multifaceted harm inflicted on victims (financial ruin, destroyed credit ratings, psychological distress, protracted bureaucracy).
         </p>
       </div>
 
@@ -39,19 +39,19 @@ export const Step7EvaluationT2: React.FC = () => {
       >
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#be123c", color: "#ffffff", padding: "4px 10px", borderRadius: "8px" }}>
-            EXAMINER ADVICE
+            TEACHING RULE
           </span>
           <span style={{ fontSize: "0.98rem", fontWeight: 700, color: "#9f1239" }}>
-            Concede AI's computational efficiency in Body 3, but anchor firmly that assistive tools empower teachers rather than supplant them!
+            Students pick ONE or TWO victim consequences below to write Body 2. Ground the personal impact with concrete real-life examples!
           </span>
         </div>
         <span className="apple-badge" style={{ background: "#fecdd3", color: "#9f1239", fontWeight: 750 }}>
-          Counterpoint Concession • Body Para 3
+          Victim Fallout • Body Para 2
         </span>
       </div>
 
       {/* =========================================================================
-          ALL 4 DRAWBACKS DISPLAYED SIMULTANEOUSLY (ZERO CLICKS REQUIRED FOR TEACHER)
+          ALL 4 EFFECTS DISPLAYED SIMULTANEOUSLY (ZERO CLICKS REQUIRED FOR TEACHER)
          ========================================================================= */}
       <div
         style={{
@@ -61,9 +61,9 @@ export const Step7EvaluationT2: React.FC = () => {
           marginBottom: "22px"
         }}
       >
-        {allDrawbacks.map((drawback, idx) => (
+        {allEffects.map((effect, idx) => (
           <div
-            key={drawback.id}
+            key={effect.id}
             style={{
               background: "#ffffff",
               border: "1.5px solid var(--border-default)",
@@ -88,10 +88,10 @@ export const Step7EvaluationT2: React.FC = () => {
                     borderRadius: "7px"
                   }}
                 >
-                  🔴 DRAWBACK 0{idx + 1}
+                  🔴 EFFECT 0{idx + 1}
                 </span>
                 <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  {drawback.title}
+                  {effect.title}
                 </h4>
               </div>
             </div>
@@ -108,11 +108,11 @@ export const Step7EvaluationT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
                 <AlertTriangle size={16} color="#dc2626" />
                 <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#991b1b", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  1. Main Drawback (Topic Sentence)
+                  1. Main Effect (Topic Sentence)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "1.04rem", fontWeight: 700, color: "#7f1d1d", lineHeight: 1.5 }}>
-                {drawback.mainReason}
+                {effect.mainReason}
               </p>
             </div>
 
@@ -128,11 +128,11 @@ export const Step7EvaluationT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
                 <ArrowRight size={16} color="var(--slate-600)" />
                 <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "var(--slate-700)", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  2. Causal Development (Why This Occurs)
+                  2. Causal Progression (Impact on Individual's Life)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "0.98rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-                {drawback.supportingReasons}
+                {effect.supportingReasons}
               </p>
             </div>
 
@@ -148,11 +148,11 @@ export const Step7EvaluationT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
                 <CircleCheck size={16} color="#e11d48" />
                 <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#9f1239", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  3. Relatable Real-World Evidence
+                  3. Real-World Case &amp; Repercussion
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "0.98rem", color: "#881337", lineHeight: 1.55, fontWeight: 550 }}>
-                {drawback.example}
+                {effect.example}
               </p>
             </div>
           </div>
@@ -160,7 +160,7 @@ export const Step7EvaluationT2: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          EXAMINER MODEL COUNTERPOINT PARAGRAPH SECTION
+          EXAMINER MODEL BODY PARAGRAPH SECTION
          ========================================================================= */}
       <div
         style={{
@@ -176,10 +176,10 @@ export const Step7EvaluationT2: React.FC = () => {
             <Award size={24} color="#e11d48" />
             <div>
               <h4 style={{ fontSize: "1.24rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                Examiner Band 9 Counterpoint Paragraph Model
+                Examiner Band 9 Model Paragraph Synthesis
               </h4>
               <p style={{ margin: "2px 0 0", fontSize: "0.88rem", color: "var(--slate-600)" }}>
-                See how to concede a drawback with neutral academic objectivity before proving the advantages prevail
+                See how a Band 9 writer constructs a cohesive body paragraph on the victim consequences above
               </p>
             </div>
           </div>
@@ -189,7 +189,7 @@ export const Step7EvaluationT2: React.FC = () => {
             <span style={{ fontSize: "0.76rem", fontWeight: 750, color: "var(--slate-500)", padding: "0 6px" }}>
               Show Model for:
             </span>
-            {allDrawbacks.map((d, idx) => (
+            {allEffects.map((d, idx) => (
               <button
                 key={d.id}
                 onClick={() => setActiveModelIdx(idx)}
@@ -205,7 +205,7 @@ export const Step7EvaluationT2: React.FC = () => {
                   transition: "all 0.12s ease"
                 }}
               >
-                Drawback 0{idx + 1}
+                Effect 0{idx + 1}
               </button>
             ))}
           </div>
@@ -232,23 +232,23 @@ export const Step7EvaluationT2: React.FC = () => {
                 fontWeight: 500
               }}
             >
-              {allDrawbacks[activeModelIdx]?.modelParagraph}
+              {allEffects[activeModelIdx]?.modelParagraph}
             </div>
 
             <div style={{ marginTop: "12px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span className="apple-badge" style={{ fontSize: "0.82rem", background: "#fee2e2", color: "#991b1b" }}>
-                  ✦ Measured Concession
+                  ✦ 1 Main Effect
                 </span>
                 <span className="apple-badge" style={{ fontSize: "0.82rem", background: "#fee2e2", color: "#991b1b" }}>
-                  ✦ Causal Proof
+                  ✦ Causal Escalation
                 </span>
                 <span className="apple-badge" style={{ fontSize: "0.82rem", background: "#fee2e2", color: "#991b1b" }}>
-                  ✦ Neutral Academic Tone
+                  ✦ Real-World Proof
                 </span>
               </div>
               <span style={{ fontSize: "0.88rem", color: "var(--slate-600)", fontWeight: 600 }}>
-                💡 <em>{allDrawbacks[activeModelIdx]?.examinerNotes}</em>
+                💡 <em>{allEffects[activeModelIdx]?.examinerNotes}</em>
               </span>
             </div>
           </motion.div>

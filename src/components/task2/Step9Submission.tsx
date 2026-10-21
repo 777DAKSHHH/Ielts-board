@@ -8,9 +8,9 @@ export const Step9SubmissionT2: React.FC = () => (
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
         Step 09 / 09 • Final Essay Structure &amp; Model
       </span>
-      <h2 className="stage-title">Write Your Outweighed 5-Paragraph Essay</h2>
+      <h2 className="stage-title">Write Your Complete Cause &amp; Effect Essay</h2>
       <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-        Review your 3-body paragraph architecture and golden rules before writing the complete Band 9 response.
+        Review your 4-paragraph architecture and mandatory formatting rules before writing the complete Band 9 response.
       </p>
     </div>
 
@@ -25,7 +25,7 @@ export const Step9SubmissionT2: React.FC = () => (
         alignItems: "stretch"
       }}
     >
-      {/* Card 01: 5-Paragraph Format (3 Body Paras Architecture) */}
+      {/* Card 01: 4-Paragraph Format (Cause & Effect Architecture) */}
       <div
         style={{
           background: "#ffffff",
@@ -40,13 +40,13 @@ export const Step9SubmissionT2: React.FC = () => (
       >
         <div>
           <span style={{ fontSize: "0.92rem", fontWeight: 700, color: "var(--apple-blue)" }}>
-            5-PARAGRAPH FORMAT
+            4-PARAGRAPH FORMAT
           </span>
           <h3 style={{ fontSize: "1.28rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-            3-Body Paragraph Architecture
+            Direct Cause &amp; Effect Architecture
           </h3>
           <p style={{ margin: "4px 0 0", fontSize: "0.96rem", color: "var(--slate-600)" }}>
-            [ Intro + 2 Opinion Side + 1 Non-Opinion Side + Conclusion ]
+            [ Intro + Body 1 Causes + Body 2 Effects + Conclusion ]
           </p>
         </div>
 
@@ -64,15 +64,15 @@ export const Step9SubmissionT2: React.FC = () => (
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#dbeafe", color: "#1e40af", padding: "3px 8px", borderRadius: "6px" }}>
-                OPINION SIDE 1
+              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#fef3c7", color: "#92400e", padding: "3px 8px", borderRadius: "6px" }}>
+                BODY 1 • CAUSES
               </span>
-              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Emotional Intelligence &amp; Pastoral Care</strong>
+              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Digital Proliferation &amp; Data Leaks</strong>
             </div>
             <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Main Reason:</strong> Empathy and emotional care are impossible for code to replicate<br />
-              • <strong>Development:</strong> Learning is relational; children require psychological reassurance<br />
-              • <strong>Example:</strong> An observant teacher detecting student grief, anxiety, or disengagement
+              • <strong>Main Reason:</strong> Ubiquitous online transactions and vulnerable corporate repositories<br />
+              • <strong>Development:</strong> Infiltrators exfiltrate sensitive credentials and trade them on dark-web forums<br />
+              • <strong>Example:</strong> Equifax breach compromising 147 million identities and credit files
             </div>
           </div>
 
@@ -89,19 +89,19 @@ export const Step9SubmissionT2: React.FC = () => (
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "3px 8px", borderRadius: "6px" }}>
-                OPINION SIDE 2
+              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#fee2e2", color: "#b91c1c", padding: "3px 8px", borderRadius: "6px" }}>
+                BODY 2 • EFFECTS
               </span>
-              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Critical Thinking &amp; Moral Guidance</strong>
+              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Financial Ruin &amp; Psychological Trauma</strong>
             </div>
             <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Main Reason:</strong> Higher-order cognitive inquiry demands human dialogue<br />
-              • <strong>Development:</strong> Algorithms regurgitate past data; teachers challenge biases &amp; model ethics<br />
-              • <strong>Example:</strong> Moderating contentious historical debates and Socratic discussions
+              • <strong>Main Reason:</strong> Direct account depletion, decimated credit scores, and chronic distress<br />
+              • <strong>Development:</strong> Fraudulent debts freeze livelihoods; victims face arduous bureaucratic disputes<br />
+              • <strong>Example:</strong> Victims denied home loans or battling credit agencies for years to clear their record
             </div>
           </div>
 
-          {/* Body 3 Box */}
+          {/* Task Balance Box */}
           <div
             style={{
               background: "var(--slate-50)",
@@ -114,15 +114,14 @@ export const Step9SubmissionT2: React.FC = () => (
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#fee2e2", color: "#b91c1c", padding: "3px 8px", borderRadius: "6px" }}>
-                NON-OPINION CONCESSION
+              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "3px 8px", borderRadius: "6px" }}>
+                TASK ACHIEVEMENT
               </span>
-              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>AI as an Augmentative Tool</strong>
+              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Symmetrical 50/50 Coverage</strong>
             </div>
             <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Main Reason:</strong> AI is an exceptional supplementary aid for drills and grading<br />
-              • <strong>Development:</strong> 24/7 personalized learning velocity relieves teacher administrative fatigue<br />
-              • <strong>Example:</strong> Adaptive platforms like Khan Academy (assisting, not replacing)
+              • <strong>Causes (50%):</strong> Explaining the systemic and technological mechanisms driving fraud<br />
+              • <strong>Victim Fallout (50%):</strong> Fully detailing the economic, legal, and mental ramifications
             </div>
           </div>
         </div>
@@ -156,20 +155,20 @@ export const Step9SubmissionT2: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
           {[
             {
-              step: "1. Single Core Reason",
-              desc: "Anchor each body paragraph around 1 strong, well-defined reason (e.g. machine lack of empathy, Socratic critical thinking, or automated grading efficiency). Never pile up scattered shallow points."
+              step: "1. Single Primary Anchor",
+              desc: "Dedicate each body paragraph to 1 clear, overarching focus (Body 1: cyber infrastructure vulnerabilities; Body 2: multifaceted victim fallout). Never dump a random shopping list of points."
             },
             {
-              step: "2. Causal Explanation",
-              desc: "Articulate the precise 'how' and 'why' mechanisms (e.g. how emotional empathy stabilizes vulnerable adolescents, or how algorithmic statistical prediction cannot model ethical reasoning)."
+              step: "2. Causal Progression",
+              desc: "Articulate the precise 'how' and 'why' progression (e.g., how credential harvesting leads to illicit loan creation, or how falsified credit logs trigger wrongful criminal liability)."
             },
             {
-              step: "3. Concrete Real-World Example",
-              desc: "Provide verifiable pedagogical illustrations (classroom grief counseling, bioethics debate facilitation, or Khan Academy adaptive drills)."
+              step: "3. Real-World Proof",
+              desc: "Provide verifiable, high-impact evidence (corporate data leaks like Equifax/Target, credit rating rejections, dark web credential auctions)."
             },
             {
-              step: "4. Outweighing Synthesis",
-              desc: "Demonstrate in Body 3 and the Conclusion that computational efficiency merely enhances instruction, whereas human mentorship and empathy remain permanently irreplaceable."
+              step: "4. Causal Synthesis",
+              desc: "Ensure the topic sentences and conclusion mirror each other, weaving causes and effects into a coherent analytical narrative."
             }
           ].map((item, i) => (
             <div
@@ -232,7 +231,7 @@ export const Step9SubmissionT2: React.FC = () => (
               PRECISION VOCABULARY:
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-              {["supersede", "augmentative", "pastoral care", "algorithmic", "pedagogical", "empathy", "nuanced", "dissemination", "indispensable", "inimitable"].map((w) => (
+              {["exfiltrate", "credential stuffing", "impersonation", "siphon", "decimate", "bureaucratic ordeal", "ubiquitous", "illicit", "rectify", "vulnerabilities"].map((w) => (
                 <span
                   key={w}
                   style={{
@@ -264,10 +263,10 @@ export const Step9SubmissionT2: React.FC = () => (
           >
             <strong style={{ color: "var(--slate-900)" }}>Discourse Linkers:</strong>
             <br />
-            • <em>Opinion Body 1 opener:</em> “Foremost among the reasons why artificial intelligence cannot supplant educators is that...”<br />
-            • <em>Opinion Body 2 opener:</em> “Equally significant is that cultivating higher-order cognitive faculties necessitates...”<br />
-            • <em>Non-Opinion Body 3 opener:</em> “On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative aid...”<br />
-            • <em>Conclusion opener:</em> “In conclusion, although artificial intelligence is poised to revolutionize schooling by automating routine grading, I firmly disagree that...”
+            • <em>Body 1 opener:</em> “Foremost among the drivers behind the escalating incidence of identity theft is the ubiquity of...”<br />
+            • <em>Body 2 opener:</em> “Turning to the ramifications, the consequences inflicted upon victims are both financially devastating and psychologically taxing...”<br />
+            • <em>Example illustration:</em> “A salient illustration of this dynamic is observed when corporate databases are breached...”<br />
+            • <em>Conclusion opener:</em> “In conclusion, the alarming surge in identity theft is propelled primarily by... leaving victims to endure...”
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Lightbulb, Unlock, Sparkles, Users } from "lucide-react";
+import { Lightbulb, Unlock, Sparkles, ShieldAlert } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { tactilePress } from "../../motion";
 
@@ -16,9 +16,9 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 09 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: Guess the Marriage &amp; Family Planning Trend</h2>
+        <h2 className="stage-title">Listen First: Digital Financial Fraud &amp; Identity Theft Crisis</h2>
         <p className="stage-subtitle">
-          Play the briefing before revealing the actual IELTS question. Listen to the global demographic shift toward marrying and starting families in one's thirties rather than at a younger age.
+          Play the briefing before revealing the actual IELTS question. Listen to the global surge in identity theft, cyber-enabled financial fraud, and the devastating fallout for victims.
         </p>
       </div>
 
@@ -48,12 +48,12 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
                 justifyContent: "center"
               }}
             >
-              <Users size={22} />
+              <ShieldAlert size={22} />
             </div>
             <div>
               <h4 style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--slate-900)" }}>Cryptic Audio Briefing</h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", marginTop: "2px" }}>
-                Sociology &amp; Family Economics • Delaying Marriage &amp; Children to 30s • ~1:05
+                Cybercrime &amp; Financial Fraud • Identity Theft Trends &amp; Victim Impact • ~1:15
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               lineHeight: 1.55
             }}
           >
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Why are contemporary young adults choosing to defer marriage and parenthood until their thirties? What financial, career, and psychological benefits exist, what biological and demographic drawbacks occur, and is this overall a positive or negative development?
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. What technological and systemic vulnerabilities are driving the alarming rise in identity theft across numerous countries? What immediate financial ruin and profound psychological trauma do the innocent victims experience?
           </div>
         </div>
 
@@ -98,11 +98,11 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             <h4 style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--slate-900)" }}>Student Guess Board</h4>
           </div>
           {[
-            "Why are millions of young adults postponing marriage and parenthood until their 30s instead of their 20s?",
-            "How do career advancement and financial independence benefit families formed later in life?",
-            "What psychological advantages and lower divorce rates are linked to greater maturity in one's 30s?",
-            "What biological fertility risks and clinical challenges arise as parents age past 35?",
-            "Is delaying marriage and childbirth a predominantly positive or negative development for society?"
+            "Why has identity theft skyrocketed into one of the fastest-growing financial crimes worldwide?",
+            "How do online banking portals, e-commerce, and corporate database breaches expose ordinary consumers?",
+            "What happens to a victim's bank accounts, credit ratings, and ability to borrow when their identity is hijacked?",
+            "What severe emotional trauma, chronic anxiety, and bureaucratic battles do victims endure to restore their names?",
+            "What systemic safeguards are urgently required to combat international cybercrime syndicates?"
           ].map((question, index) => (
             <div
               key={question}
@@ -131,7 +131,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             className="apple-touch-btn primary"
             style={{ minHeight: "52px", gap: "8px", marginTop: "auto", fontSize: "1.02rem", fontWeight: 700 }}
           >
-            <Unlock size={18} /> <span>Reveal Task 2 Question &amp; 5-Para Format</span>
+            <Unlock size={18} /> <span>Reveal Task 2 Question &amp; Essay Format</span>
           </motion.button>
 
           <div
@@ -139,13 +139,13 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               background: "#eff6ff",
               border: "1px solid #bfdbfe",
               borderRadius: "14px",
-              padding: "13px 15px",
+              padding: "12px 14px",
               color: "#1e3a8a",
-              fontSize: "0.88rem"
+              fontSize: "0.88rem",
+              lineHeight: 1.45
             }}
           >
-            <Sparkles size={14} style={{ verticalAlign: "-2px", marginRight: "6px" }} />
-            The next stage reveals the exact question wording and the required 5-paragraph structure (3 Body Paragraphs).
+            The complete question prompt and essay architecture are unlocked in Step 02.
           </div>
         </div>
       </div>

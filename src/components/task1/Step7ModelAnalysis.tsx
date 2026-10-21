@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layers, CheckCircle2, FileText, Sparkles, Disc, Globe } from "lucide-react";
+import { Layers, CheckCircle2, FileText, Sparkles, Tv, Radio } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step7ModelAnalysis: React.FC = () => {
@@ -12,9 +12,9 @@ export const Step7ModelAnalysis: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 07 / 08 • Body 2 &amp; Full Model Response
         </span>
-        <h2 className="stage-title">Structural Digital Shift &amp; Complete Band 9 Model Report</h2>
+        <h2 className="stage-title">Prime-Time Television Surge &amp; Complete Band 9 Model Report</h2>
         <p className="stage-subtitle">
-          Master the three essential analytical frameworks for comparative business bar graphs, alongside the complete 191-word Band 9 model response organized across four balanced paragraphs.
+          Master the three essential analytical frameworks for diurnal line graphs, alongside the complete 192-word Band 9 model response organized across four balanced paragraphs.
         </p>
       </div>
 
@@ -33,7 +33,7 @@ export const Step7ModelAnalysis: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
               <Layers
                 size={17}
-                color={idx === 0 ? "var(--apple-blue)" : idx === 1 ? "#dc2626" : "#16a34a"}
+                color={idx === 0 ? "#dc2626" : idx === 1 ? "#d97706" : "#2563eb"}
               />
               <h4 style={{ fontSize: "0.92rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
                 {group.title}
@@ -91,23 +91,23 @@ export const Step7ModelAnalysis: React.FC = () => {
                   { id: "all", label: "Full Report (All)" },
                   { id: "intro", label: "Intro" },
                   { id: "overview", label: "Overview" },
-                  { id: "body1", label: "Body 1 (1997)" },
-                  { id: "body2", label: "Body 2 (2007)" }
+                  { id: "body1", label: "Body 1 (01:00–13:00)" },
+                  { id: "body2", label: "Body 2 (14:00–24:00)" }
                 ] as const
               ).map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   style={{
-                    padding: "4px 10px",
+                    padding: "6px 12px",
                     borderRadius: "8px",
                     fontSize: "0.78rem",
-                    fontWeight: 700,
+                    fontWeight: 750,
                     border: "none",
-                    cursor: "pointer",
                     background: activeTab === tab.id ? "#ffffff" : "transparent",
                     color: activeTab === tab.id ? "var(--slate-900)" : "var(--slate-600)",
-                    boxShadow: activeTab === tab.id ? "var(--shadow-sm)" : "none"
+                    boxShadow: activeTab === tab.id ? "var(--shadow-sm)" : "none",
+                    cursor: "pointer"
                   }}
                 >
                   {tab.label}
@@ -116,7 +116,7 @@ export const Step7ModelAnalysis: React.FC = () => {
             </div>
           </div>
 
-          {/* Paragraphs Display */}
+          {/* Paragraph Cards */}
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             {modelReport.paragraphs
               .filter((p) => activeTab === "all" || p.id === activeTab)
@@ -134,63 +134,30 @@ export const Step7ModelAnalysis: React.FC = () => {
                   }}
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                      <span className="apple-badge neutral" style={{ fontSize: "0.75rem", fontWeight: 750 }}>
-                        {p.title}
-                      </span>
-                      <span style={{ fontSize: "0.76rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                        ({p.wordCount} words)
-                      </span>
-                    </div>
-                    <div style={{ display: "flex", gap: "5px" }}>
-                      {p.badges.map((badge) => (
-                        <span
-                          key={badge}
-                          className="apple-badge neutral"
-                          style={{ fontSize: "0.7rem", padding: "2px 6px" }}
-                        >
-                          {badge}
-                        </span>
-                      ))}
-                    </div>
+                    <h5 style={{ fontSize: "0.92rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                      {p.title}
+                    </h5>
+                    <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
+                      {p.wordCount} words
+                    </span>
                   </div>
-                  <p
-                    style={{
-                      margin: 0,
-                      fontSize: "0.95rem",
-                      color: "var(--slate-800)",
-                      lineHeight: 1.65,
-                      fontFamily: "var(--font-sans)"
-                    }}
-                  >
+
+                  <p style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.65, margin: 0 }}>
                     {p.text}
                   </p>
+
+                  <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", marginTop: "4px" }}>
+                    {p.badges.map((badge) => (
+                      <span key={badge} className="apple-badge neutral" style={{ fontSize: "0.7rem" }}>
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
           </div>
         </div>
       )}
-
-      {/* Model Synthesis Sentence */}
-      <div
-        style={{
-          background: "#ffffff",
-          border: "1.5px solid var(--border-subtle)",
-          borderRadius: "18px",
-          padding: "18px 20px",
-          boxShadow: "var(--shadow-sm)"
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-          <CheckCircle2 size={18} color="#16a34a" />
-          <strong style={{ color: "var(--slate-900)", fontSize: "0.95rem" }}>
-            Band 9 Macro Synthesis Sentence (Grammatical Benchmark)
-          </strong>
-        </div>
-        <p style={{ margin: 0, fontSize: "0.96rem", lineHeight: 1.6, color: "var(--slate-800)" }}>
-          “While retail purchases of compact discs suffered substantial contractions across all three territories—sliding from just above 40 million euros to 25 million in Germany and from 25 million to 15 million in France—this medium nonetheless preserved its unchallenged commercial lead, whereas analog cassettes and vinyl records were wiped out entirely, their losses partially cushioned by the burgeoning expansion of online CD sales and newly emerged internet downloads.”
-        </p>
-      </div>
     </div>
   );
 };

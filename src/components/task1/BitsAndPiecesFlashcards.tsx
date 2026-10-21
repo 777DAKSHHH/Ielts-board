@@ -26,87 +26,87 @@ const FLASHCARDS: FlashcardItem[] = [
     id: 1,
     category: "Card 1: The Macro Overview Split",
     badgeColor: "#0284c7",
-    question: "What are the three essential macro features that must appear in a Band 9 overview for this bar chart?",
-    answerTitle: "1) Store CD Persistent Dominance, 2) Analog Obsolescence, 3) Digital Growth",
+    question: "What are the three essential macro features that must appear in a Band 9 overview for this diurnal line graph?",
+    answerTitle: "1) Inverse Diurnal Patterns, 2) Prime-Time 45% TV Apex, 3) Midday Crossover Convergence",
     bulletPoints: [
-      "Retail store-bought CDs remained the principal profit generator across all three nations throughout the decade, despite heavy drops.",
-      "Legacy analog formats (cassettes and vinyl) suffered total commercial obsolescence, collapsing to zero profit across the board.",
-      "Digital channels (online CD purchases and internet downloads) experienced substantial expansion, with Germany consistently recording the highest profits."
+      "Radio is the preferred broadcasting medium during the morning hours, whereas television decisively dominates from the early afternoon through the night.",
+      "Prime-time television viewing achieved the single highest audience share of the entire 24-hour cycle (~45% between 20:00 and 21:00).",
+      "Both mediums briefly converge at an identical level of approximately 15% around midday (13:00 / 1:00 pm)."
     ],
     band9Phrase:
-      "“Overall, retail store-bought compact discs remained the primary source of revenue in all three nations throughout the decade, despite experiencing marked contractions by 2007. Concurrently, legacy analog formats became completely obsolete, while digital distribution channels witnessed substantial growth, with Germany consistently generating the highest overall profits.”"
+      "“Overall, the two media displayed contrasting diurnal patterns; radio listenership was considerably higher during the morning hours, whereas television decisively dominated from the early afternoon through the night. Additionally, evening television viewing attracted the single highest audience share of the day, with both mediums briefly converging around midday.”"
   },
   {
     id: 2,
-    category: "Card 2: In-Store CDs Dynamic",
-    badgeColor: "#4f46e5",
-    question: "How should you contrast the numerical performance of shop-bought CDs between 1997 and 2007?",
-    answerTitle: "Universal 30%–40% Contraction across All Nations, Yet Undisputed #1 Rank Preserved",
+    category: "Card 2: Morning Radio Surge & Breakfast Apex",
+    badgeColor: "#dc2626",
+    question: "How should you report the morning trajectory of radio between 6:00 and 9:00 am compared to television?",
+    answerTitle: "Dramatic Morning Surge to Daily Apex of ~27% at 8:30 am, Outpacing Subdued 7% TV Bump",
     bulletPoints: [
-      "1997: Germany led at approximately 42 million euros (just exceeding the 40 million line), France recorded 25 million, and Italy generated just over 20 million (accounting for over 80% of total company profit).",
-      "2007: Profits plummeted sharply—Germany fell to 25 million (-17m), France dropped to 15 million (-10m), and Italy contracted to 14 million (-6.5m).",
-      "Key analytical contrast: Even after these steep declines, shop CDs remained larger than all other formats combined in each country."
+      "Radio surges rapidly: starting from ~4% at 6:00 am, climbing to 15% at 7:00, 25% at 8:00, and reaching its daily apex of ~27% around 8:30 am.",
+      "Television remains subdued: rising only modestly to a minor morning peak of 7% at 8:00 am before sliding to a daytime trough of 3.5%–4% at 11:00 am.",
+      "Key analytical contrast: At 8:30 am, radio listenership outstrips television viewership by over 20 percentage points."
     ],
     band9Phrase:
-      "“Although shop-bought CDs suffered substantial contractions in all three territories—sliding from just above 40 million euros to 25 million in Germany, 15 million in France, and 14 million in Italy—this format remained the undisputed commercial backbone of SMG Entertainment.”"
+      "“Radio audience experienced a dramatic morning surge, climbing steeply to reach a daily apex of approximately 27% around 8:30. In contrast, television engagement rose only modestly to 7% at 8:00 before sliding back to around 4% at 11:00.”"
   },
   {
     id: 3,
-    category: "Card 3: Analog Cassettes & Vinyl Obsolescence",
-    badgeColor: "#dc2626",
-    question: "Why is it vital to report the 1997 figures for cassettes and vinyl rather than just saying they became zero?",
-    answerTitle: "Band 9 Task Achievement Demands Contextualizing Initial Commercial Value Before Demise",
+    category: "Card 3: Midday Convergence & Crossover (13:00)",
+    badgeColor: "#d97706",
+    question: "Why is the 13:00 (1:00 pm) coordinate considered the pivotal structural bridge of this chart?",
+    answerTitle: "The Unique Crossover Point Where Both Mediums Meet at 15% and TV Takes Permanent Dominance",
     bulletPoints: [
-      "In 1997, cassettes were commercially active across all three markets: Italy led at 6 million euros, while Germany and France were tied at 5 million each.",
-      "Vinyl singles and LPs contributed 3 million euros each in France and Italy, alongside 2 million in Germany.",
-      "By 2007, both media were completely phased out, generating exactly 0 million euros across all three markets."
+      "Radio has been declining steadily from its 27% morning peak, falling to 20% at 11:00 and reaching 15% at 13:00.",
+      "Television has been rising from its 3.5% daytime low, climbing to 8% at 12:00 and reaching 15% at 13:00.",
+      "From 14:00 onwards, television permanently supersedes radio as the nation's leading broadcasting platform."
     ],
     band9Phrase:
-      "“Cassettes, which had yielded 6 million euros in Italy and 5 million each in Germany and France in 1997, alongside vinyl returns of 3 million in France and Italy, were rendered completely obsolete, recording zero revenue across the board a decade later.”"
+      "“By 13:00, radio audiences had tapered off while television viewership climbed, resulting in an intersection where both mediums stood at roughly 15%. From that point onward, television decisively superseded radio.”"
   },
   {
     id: 4,
-    category: "Card 4: Emergence of Digital & Online Channels",
-    badgeColor: "#16a34a",
-    question: "How did internet downloads and online CD sales develop from 1997 to 2007?",
-    answerTitle: "Emergence from Zero Baseline / Nominal Figures into Major Secondary Revenue Streams",
+    category: "Card 4: Prime-Time Television Explosion",
+    badgeColor: "#2563eb",
+    question: "How should you describe the spectacular evening surge of television between 17:00 and 21:00?",
+    answerTitle: "Exponential Escalation to Global Peak of 45% (Captivating Nearly Half the UK Population)",
     bulletPoints: [
-      "1997: Internet downloads were completely nonexistent (0 €m) across all three nations. Online CD orders were trivial (Germany €3m, France €1.5m, Italy 0).",
-      "2007: Online CD orders surged to 8 million euros in Germany, 7 million in France, and 1.5 million in Italy.",
-      "2007: Internet downloads emerged from a standing start to generate 5 million euros each in Germany and France, and 1.5 million in Italy."
+      "Television accelerates rapidly: rising from 17% at 16:00 to 25% at 17:00, and rocketing to 42% by 18:00.",
+      "Peak Prime-Time Window: Holds at its absolute global zenith of 45% between 20:00 and 21:00.",
+      "Radio contrast: While television commands 45%, radio listenership plunges below 10% after 18:00, hovering between 4% and 6%."
     ],
     band9Phrase:
-      "“Internet downloads emerged from a standing start of zero to generate 5 million euros apiece in Germany and France, while remote online CD orders multiplied to reach 8 million and 7 million euros respectively.”"
+      "“Conversely, television audiences skyrocketed from 16:00, culminating in a prime-time peak of 45% between 20:00 and 21:00, captivating nearly half the UK population.”"
   },
   {
     id: 5,
-    category: "Card 5: National Market Ranking & Agility",
-    badgeColor: "#9333ea",
-    question: "How did the total profitability and resilience of Germany, France, and Italy compare over the decade?",
-    answerTitle: "Germany Dominant Leader, France Digitally Resilient, Italy Severely Contracted",
+    category: "Card 5: Nocturnal Trough & Late-Night Descent",
+    badgeColor: "#64748b",
+    question: "How do radio and television audiences behave during the pre-dawn hours and late at night?",
+    answerTitle: "Marginal Engagement Under 5% Overnight, and Steep Midnight TV Plummet to 15%",
     bulletPoints: [
-      "Germany: Market leader in total profit in both 1997 (~50m) and 2007 (~38m), dominating store CDs, online CDs, and downloads.",
-      "France: Highly resilient (~27m total in both 1997 and 2007); losses in retail CDs (-10m) were offset by rapid gains in online CDs (+5.5m) and downloads (+5m).",
-      "Italy: Sunk from ~29m down to ~17m (-41% drop); high initial dependence on cassettes/vinyl backfired when analog died, and digital adoption was sluggish."
+      "Nocturnal lull (01:00–06:00): Audiences for both media bottom out under 5% (radio at 2%–3%, TV at 3%–4%).",
+      "Late-night TV descent (21:00–24:00): Television viewership slides precipitously from 45% down to 38% at 22:00, 33% at 23:00, and closes at 15% by midnight.",
+      "Radio late night: Levels off and stabilizes at roughly 4% to 5%."
     ],
     band9Phrase:
-      "“Geographically, Germany stood out as the principal commercial engine throughout, whereas France demonstrated remarkable digital agility to maintain net revenue stability, in contrast to Italy which suffered a steep 41% profit collapse.”"
+      "“Between 1:00 and 6:00, audience figures for both platforms remained marginal at under 7%. Late at night, television viewership dropped sharply to 15% by midnight, while radio leveled off at around 4%.”"
   },
   {
     id: 6,
     category: "Card 6: Exam Pitfalls & Band 9 Precautions",
     badgeColor: "#ea580c",
     isWarning: true,
-    question: "What are the most frequent examiner-penalized mistakes in this SMG Entertainment task?",
-    answerTitle: "Unit Omissions, Misreporting Zero Baselines, and Neglecting National Comparisons",
+    question: "What are the most frequent examiner-penalized mistakes in this 1992 audience graph?",
+    answerTitle: "Unit Omissions, Misinterpreting Crossover Time, and Ignoring the Age Scope",
     bulletPoints: [
-      "Unit Error: Failing to specify 'million euros (€m)' in the body paragraphs (saying just '40' or 'euros' without 'million').",
-      "Baseline Error: Claiming internet downloads 'decreased' or 'changed little'—they were zero in 1997 and emerged brand new in 2007.",
-      "Obsolescence Error: Ignoring the zero values in 2007 for cassettes and vinyl; examiners test your ability to report complete market extinction.",
-      "Grouping Error: Writing a separate paragraph for each of the 5 formats without synthesizing comparisons between countries or years."
+      "Scope Error: Failing to mention that the population surveyed is 'over 4 years old'—this demographic detail is explicitly highlighted on the Y-axis.",
+      "Unit Error: Writing numbers without percentage signs (e.g. '45' instead of '45% of the UK population').",
+      "Crossover Error: Neglecting to report the 13:00 intersection, or claiming that television led during the morning.",
+      "Peak Misquotation: Claiming radio peaked at 40% (it peaked at ~27%), or that TV peaked at 50% (it peaked at 45%)."
     ],
     band9Phrase:
-      "“Band 9 Criterion: Grouping data chronologically (1997 baseline vs. 2007 shift) or structurally (physical/analog vs. digital/online) with accurate units and explicit comparisons.”"
+      "“Band 9 Criterion: Accurate demographic framing (UK population aged 4+), precise percentage citations (radio ~27% at 8:30 am, TV 45% at 20:00–21:00), and reporting the 13:00 crossover convergence (15%).”"
   }
 ];
 
@@ -126,134 +126,234 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
     setCurrentIdx((prev) => (prev - 1 + FLASHCARDS.length) % FLASHCARDS.length);
   };
 
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%", alignItems: "center" }}>
-      {/* Header Info */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", flexWrap: "wrap", gap: "8px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Sparkles size={18} color="var(--apple-blue)" />
-          <span style={{ fontSize: "0.88rem", fontWeight: 800, color: "var(--slate-900)" }}>
-            SMG Entertainment Interactive Flashcard Deck
-          </span>
-        </div>
-        <span className="apple-badge neutral" style={{ fontWeight: 750 }}>
-          Card {currentIdx + 1} of {FLASHCARDS.length}
-        </span>
-      </div>
+  const handleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
 
-      {/* Main Tactile Flashcard */}
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "18px",
+        width: "100%",
+        fontFamily: "var(--font-sans)"
+      }}
+    >
+      {/* Navigation & Progress Header */}
       <div
-        onClick={() => setIsFlipped(!isFlipped)}
         style={{
-          width: "100%",
-          maxWidth: "760px",
-          minHeight: "360px",
-          background: isFlipped ? "#ffffff" : "var(--slate-50)",
-          border: `2px solid ${card.isWarning ? "#fca5a5" : card.badgeColor}`,
-          borderRadius: "22px",
-          padding: "26px 30px",
           display: "flex",
-          flexDirection: "column",
+          alignItems: "center",
           justifyContent: "space-between",
-          cursor: "pointer",
-          boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
-          transition: "all 0.2s ease"
+          width: "100%",
+          maxWidth: "820px",
+          background: "#ffffff",
+          border: "1.5px solid var(--border-subtle)",
+          borderRadius: "16px",
+          padding: "10px 18px",
+          boxShadow: "var(--shadow-sm)"
         }}
       >
-        {/* Card Top Label */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <span
+            className="apple-badge neutral"
             style={{
-              fontSize: "0.76rem",
+              background: card.badgeColor,
+              color: "#ffffff",
               fontWeight: 800,
-              padding: "4px 10px",
-              borderRadius: "8px",
-              background: isFlipped ? "var(--slate-100)" : card.badgeColor,
-              color: isFlipped ? "var(--slate-800)" : "#ffffff"
+              fontSize: "0.78rem"
             }}
           >
             {card.category}
           </span>
-          <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 650 }}>
-            <RotateCw size={13} /> Tap card to flip
-          </div>
+          <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--slate-500)" }}>
+            Card {currentIdx + 1} of {FLASHCARDS.length}
+          </span>
         </div>
 
-        {/* Card Body Content (Front vs Back) */}
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <button
+            onClick={handlePrev}
+            style={{
+              width: "36px",
+              height: "36px",
+              borderRadius: "10px",
+              border: "1px solid var(--border-subtle)",
+              background: "var(--slate-50)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer"
+            }}
+          >
+            <ChevronLeft size={18} color="var(--slate-700)" />
+          </button>
+          <button
+            onClick={handleNext}
+            style={{
+              width: "36px",
+              height: "36px",
+              borderRadius: "10px",
+              border: "1px solid var(--border-subtle)",
+              background: "var(--slate-50)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer"
+            }}
+          >
+            <ChevronRight size={18} color="var(--slate-700)" />
+          </button>
+        </div>
+      </div>
+
+      {/* Main Flashcard Container */}
+      <div
+        onClick={handleFlip}
+        style={{
+          width: "100%",
+          maxWidth: "820px",
+          minHeight: "360px",
+          background: isFlipped ? "#f8fafc" : "#ffffff",
+          border: isFlipped ? `2px solid ${card.badgeColor}` : "1.5px solid var(--border-subtle)",
+          borderRadius: "24px",
+          padding: "30px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          boxShadow: "var(--shadow-md)",
+          cursor: "pointer",
+          transition: "all 0.25s ease",
+          position: "relative"
+        }}
+      >
+        {/* Flip Indicator Tag */}
+        <div
+          style={{
+            position: "absolute",
+            top: "20px",
+            right: "24px",
+            display: "flex",
+            alignItems: "center",
+            gap: "5px",
+            fontSize: "0.78rem",
+            fontWeight: 700,
+            color: "var(--slate-400)"
+          }}
+        >
+          <RotateCw size={14} />
+          {isFlipped ? "Tap to see question" : "Tap to flip & reveal answer"}
+        </div>
+
+        {/* Card Face Content */}
         {!isFlipped ? (
-          /* FRONT: QUESTION */
-          <div style={{ margin: "auto 0", display: "flex", flexDirection: "column", gap: "14px" }}>
-            <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--slate-500)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-              Key Analytical Challenge:
-            </div>
-            <h3 style={{ fontSize: "1.35rem", fontWeight: 850, color: "var(--slate-900)", lineHeight: 1.4, margin: 0 }}>
+          /* QUESTION FACE */
+          <div style={{ display: "flex", flexDirection: "column", gap: "18px", marginTop: "18px" }}>
+            <span
+              style={{
+                fontSize: "0.85rem",
+                fontWeight: 800,
+                color: card.badgeColor,
+                letterSpacing: "0.04em",
+                textTransform: "uppercase"
+              }}
+            >
+              Essential IELTS Examination Challenge
+            </span>
+            <h3
+              style={{
+                fontSize: "1.45rem",
+                fontWeight: 800,
+                color: "var(--slate-900)",
+                lineHeight: 1.45,
+                margin: 0
+              }}
+            >
               {card.question}
             </h3>
-            <div style={{ fontSize: "0.88rem", color: "var(--slate-600)" }}>
-              Tap anywhere on this card to reveal the Band 9 deduction and phrasing.
-            </div>
+            <p style={{ fontSize: "0.92rem", color: "var(--slate-500)", lineHeight: 1.5, margin: 0 }}>
+              Formulate your response using precise data points, comparative collocations, and temporal markers before flipping the card.
+            </p>
           </div>
         ) : (
-          /* BACK: ANSWER & BAND 9 FORMULA */
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px", margin: "auto 0" }}>
+          /* ANSWER FACE */
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginTop: "10px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               {card.isWarning ? (
-                <AlertTriangle size={20} color="#dc2626" />
+                <AlertTriangle size={22} color="#ea580c" />
               ) : (
-                <CheckCircle2 size={20} color={card.badgeColor} />
+                <CheckCircle2 size={22} color={card.badgeColor} />
               )}
-              <h4 style={{ fontSize: "1.08rem", fontWeight: 850, color: "var(--slate-900)", margin: 0 }}>
+              <h4 style={{ fontSize: "1.15rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
                 {card.answerTitle}
               </h4>
             </div>
 
-            <ul style={{ margin: 0, paddingLeft: "20px", display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
+            <ul style={{ margin: 0, paddingLeft: "20px", display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem", color: "var(--slate-700)" }}>
               {card.bulletPoints.map((pt, i) => (
-                <li key={i}>{pt}</li>
+                <li key={i} style={{ lineHeight: 1.5 }}>
+                  {pt}
+                </li>
               ))}
             </ul>
 
             <div
               style={{
-                background: "var(--slate-50)",
-                borderRadius: "10px",
-                padding: "12px 14px",
+                background: "#ffffff",
                 border: "1px solid var(--border-subtle)",
-                fontSize: "0.84rem",
+                borderRadius: "12px",
+                padding: "12px 16px",
+                fontSize: "0.86rem",
                 color: "var(--slate-800)",
-                lineHeight: 1.5
+                lineHeight: 1.55,
+                borderLeft: `4px solid ${card.badgeColor}`
               }}
             >
-              <strong style={{ color: card.badgeColor }}>Band 9 Model Sentence:</strong> {card.band9Phrase}
+              <strong style={{ color: card.badgeColor, display: "block", marginBottom: "3px" }}>
+                Band 9 Formulation:
+              </strong>
+              {card.band9Phrase}
             </div>
           </div>
         )}
 
-        {/* Bottom Helper */}
-        <div style={{ fontSize: "0.75rem", color: "var(--slate-400)", textAlign: "center" }}>
-          Showing {isFlipped ? "Band 9 Answer & Sentence Model" : "Exam Inquiry Question"}
+        {/* Footer Bar */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            borderTop: "1px solid var(--border-subtle)",
+            paddingTop: "16px",
+            marginTop: "20px"
+          }}
+        >
+          <span style={{ fontSize: "0.8rem", color: "var(--slate-400)", fontWeight: 600 }}>
+            {isFlipped ? "Answer & Academic Lexicon Revealed" : "Test Your Memory & Analytical Precision"}
+          </span>
+          <div style={{ display: "flex", gap: "6px" }}>
+            {FLASHCARDS.map((_, idx) => (
+              <span
+                key={idx}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsFlipped(false);
+                  setCurrentIdx(idx);
+                }}
+                style={{
+                  width: idx === currentIdx ? "20px" : "8px",
+                  height: "8px",
+                  borderRadius: "4px",
+                  background: idx === currentIdx ? card.badgeColor : "var(--slate-200)",
+                  cursor: "pointer",
+                  transition: "all 0.2s ease"
+                }}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-
-      {/* Navigation Buttons */}
-      <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-        <motion.button
-          whileTap={tactilePress}
-          onClick={handlePrev}
-          className="apple-touch-btn secondary"
-          style={{ minHeight: "42px", padding: "0 18px", fontWeight: 700, gap: "6px" }}
-        >
-          <ChevronLeft size={16} /> Previous Card
-        </motion.button>
-
-        <motion.button
-          whileTap={tactilePress}
-          onClick={handleNext}
-          className="apple-touch-btn primary"
-          style={{ minHeight: "42px", padding: "0 22px", fontWeight: 700, gap: "6px" }}
-        >
-          Next Card <ChevronRight size={16} />
-        </motion.button>
       </div>
     </div>
   );

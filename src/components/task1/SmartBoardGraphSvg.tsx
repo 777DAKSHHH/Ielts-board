@@ -2,810 +2,868 @@ import React, { useState } from "react";
 import {
   RotateCcw,
   Sparkles,
-  BarChart3,
   TrendingDown,
   TrendingUp,
-  Disc,
-  Download,
-  ShoppingBag,
-  Radio,
-  FileText,
+  Tv,
+  Radio as RadioIcon,
+  Clock,
+  Layers,
   Eye,
-  Columns,
-  Rows
+  Crosshair,
+  Info
 } from "lucide-react";
 import {
   TASK1_DATA,
-  MUSIC_FORMATS,
-  COUNTRY_MARKETS,
-  TASK1_HOTSPOTS
+  HOURLY_AUDIENCE_DATA,
+  MEDIA_CHANNELS,
+  AUDIENCE_HOTSPOTS
 } from "../../data/task1Data";
-import { CountryKey, FormatKey, MusicFormatItem } from "../../types/task1";
+import { HourlyAudiencePoint } from "../../types/task1";
 
 export type DiagramViewMode =
   | "all"
-  | "shop_cds"
-  | "online_cds"
-  | "downloads"
-  | "cassettes"
-  | "vinyl"
-  | "germany"
-  | "france"
-  | "italy"
-  | "normal"
-  | "el_nino";
+  | "morning"
+  | "midday"
+  | "evening"
+  | "overnight"
+  | "tv"
+  | "radio"
+  | string;
 
-export type TableHighlightMode = DiagramViewMode | string;
-export type GraphHighlightMode = TableHighlightMode;
+export type TableHighlightMode = DiagramViewMode;
+export type GraphHighlightMode = DiagramViewMode;
 
 interface SmartBoardDiagramProps {
   onSelectCountry?: (id: string) => void;
   selectedCountryId?: string | null;
-  highlightMode?: DiagramViewMode | string;
+  highlightMode?: DiagramViewMode;
   onHighlightModeChange?: (mode: DiagramViewMode) => void;
   showInternalToolbar?: boolean;
   showDeepDiveCard?: boolean;
   forcedLayoutMode?: "stacked" | "split";
 }
 
+// Catmull-Rom or Cardinal Spline to SVG path generator
+function createSmoothPath(points: { x: number; y: number }[]): string {
+  if (points.length === 0) return "";
+  if (points.length === 1) return `M ${points[0].x} ${points[0].y}`;
+
+  let d = `M ${points[0].x.toFixed(1)} ${points[0].y.toFixed(1)}`;
+  for (let i = 0; i < points.length - 1; i++) {
+    const p0 = i > 0 ? points[i - 1] : points[i];
+    const p1 = points[i];
+    const p2 = points[i + 1];
+    const p3 = i < points.length - 2 ? points[i + 2] : p2;
+
+    const cp1x = p1.x + (p2.x - p0.x) / 6;
+    const cp1y = p1.y + (p2.y - p0.y) / 6;
+    const cp2x = p2.x - (p3.x - p1.x) / 6;
+    const cp2y = p2.y - (p3.y - p1.y) / 6;
+
+    d += ` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)}, ${cp2x.toFixed(1)} ${cp2y.toFixed(1)}, ${p2.x.toFixed(1)} ${p2.y.toFixed(1)}`;
+  }
+  return d;
+}
+
 export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
   highlightMode = "all",
   onHighlightModeChange,
   showInternalToolbar = true,
-  showDeepDiveCard = true,
-  forcedLayoutMode
+  showDeepDiveCard = true
 }) => {
-  const [selectedFormatId, setSelectedFormatId] = useState<FormatKey>("shop_cds");
-  const [selectedCountry, setSelectedCountry] = useState<CountryKey | "all">("all");
-  const [internalLayoutMode, setInternalLayoutMode] = useState<"stacked" | "split">("stacked");
-  const layoutMode = forcedLayoutMode || internalLayoutMode;
+  const [activePhase, setActivePhase] = useState<DiagramViewMode>(highlightMode);
+  const [showTv, setShowTv] = useState(true);
+  const [showRadio, setShowRadio] = useState(true);
+  const [hoveredHour, setHoveredHour] = useState<HourlyAudiencePoint | null>(null);
+  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("radio_peak");
 
-  const [hoveredBar, setHoveredBar] = useState<{
-    year: number;
-    format: string;
-    country: string;
-    value: number;
-  } | null>(null);
-
-  const selectedFormat =
-    MUSIC_FORMATS.find((f) => f.id === selectedFormatId) || MUSIC_FORMATS[0];
-
-  const handleFormatSelect = (id: FormatKey) => {
-    setSelectedFormatId(id);
-    if (onHighlightModeChange) onHighlightModeChange(id);
-  };
-
-  const handleCountryToggle = (country: CountryKey | "all") => {
-    setSelectedCountry(country);
-    if (onHighlightModeChange && country !== "all") {
-      onHighlightModeChange(country);
-    } else if (onHighlightModeChange) {
-      onHighlightModeChange("all");
-    }
+  const handlePhaseChange = (phase: DiagramViewMode) => {
+    setActivePhase(phase);
+    if (onHighlightModeChange) onHighlightModeChange(phase);
   };
 
   // SVG Chart Geometry
-  // Scale max value set to 46 so 40 is a clear gridline and Germany's ~42m bar extends visibly beyond it
-  const chartWidth = 590;
-  const chartHeight = 310;
-  const margin = { top: 38, right: 38, bottom: 35, left: 175 };
+  const chartWidth = 740;
+  const chartHeight = 370;
+  const margin = { top: 32, right: 36, bottom: 54, left: 60 };
   const innerWidth = chartWidth - margin.left - margin.right;
   const innerHeight = chartHeight - margin.top - margin.bottom;
 
-  const maxVal = 46; // X-axis range up to 46 allows 42m bar to be drawn cleanly past 40
-  const xScale = (val: number) => (val / maxVal) * innerWidth;
+  const minHour = 1;
+  const maxHour = 24;
+  const maxPercent = 50;
 
-  const rowHeight = innerHeight / MUSIC_FORMATS.length;
-  const barHeight = 10;
-  const barSpacing = 2.5;
+  const xScale = (hour: number) =>
+    margin.left + ((hour - minHour) / (maxHour - minHour)) * innerWidth;
 
-  const renderSingleChart = (year: 1997 | 2007) => {
-    const is1997 = year === 1997;
-    return (
+  const yScale = (val: number) =>
+    margin.top + innerHeight - (Math.max(0, Math.min(val, maxPercent)) / maxPercent) * innerHeight;
+
+  // Gridlines: Y-axis 0% to 50% in 5% increments
+  const yTicks = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+
+  // X-axis main hour ticks matching the graph
+  const xTicks = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23];
+
+  // Prepare points
+  const tvPoints = HOURLY_AUDIENCE_DATA.map((p) => ({
+    x: xScale(p.hour),
+    y: yScale(p.tv),
+    point: p
+  }));
+
+  const radioPoints = HOURLY_AUDIENCE_DATA.map((p) => ({
+    x: xScale(p.hour),
+    y: yScale(p.radio),
+    point: p
+  }));
+
+  const tvPathD = createSmoothPath(tvPoints);
+  const radioPathD = createSmoothPath(radioPoints);
+
+  // Area paths for gradient fills
+  const tvAreaD = `${tvPathD} L ${xScale(24)} ${yScale(0)} L ${xScale(1)} ${yScale(0)} Z`;
+  const radioAreaD = `${radioPathD} L ${xScale(24)} ${yScale(0)} L ${xScale(1)} ${yScale(0)} Z`;
+
+  // Landmark coordinates
+  const radioPeakPoint = HOURLY_AUDIENCE_DATA.find((p) => p.isPeak === "radio") || HOURLY_AUDIENCE_DATA[8];
+  const tvPeakPoint = HOURLY_AUDIENCE_DATA.find((p) => p.hour === 20.5) || HOURLY_AUDIENCE_DATA[20];
+  const crossoverPoint = HOURLY_AUDIENCE_DATA.find((p) => p.isCrossover) || HOURLY_AUDIENCE_DATA[13];
+
+  // Highlight band for phases
+  const getPhaseHighlightBand = () => {
+    switch (activePhase) {
+      case "morning":
+        return { start: 6, end: 10, title: "Morning Rush & Radio Peak (06:00 – 10:00)" };
+      case "midday":
+        return { start: 12, end: 14, title: "Midday Crossover Point (12:00 – 14:00)" };
+      case "evening":
+        return { start: 17, end: 22, title: "Prime-Time Television Surge (17:00 – 22:00)" };
+      case "overnight":
+        return { start: 1, end: 6, title: "Nocturnal Trough (01:00 – 06:00)" };
+      default:
+        return null;
+    }
+  };
+
+  const highlightBand = getPhaseHighlightBand();
+  const activeHover = hoveredHour || crossoverPoint;
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "14px",
+        width: "100%",
+        fontFamily: "var(--font-sans)"
+      }}
+    >
+      {/* SmartBoard Interactive Control Bar */}
+      {showInternalToolbar && (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "10px",
+            background: "#ffffff",
+            padding: "12px 18px",
+            borderRadius: "16px",
+            border: "1.5px solid var(--border-subtle)",
+            boxShadow: "var(--shadow-sm)"
+          }}
+        >
+          {/* Phase Filter Buttons */}
+          <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "0.82rem", fontWeight: 750, color: "var(--slate-500)", marginRight: "4px" }}>
+              DIURNAL PHASES:
+            </span>
+            {[
+              { id: "all", label: "All 24 Hours", icon: <Clock size={14} /> },
+              { id: "morning", label: "Morning Rush (Radio Peak)", icon: <TrendingUp size={14} color="#dc2626" /> },
+              { id: "midday", label: "Midday Crossover (13:00)", icon: <Sparkles size={14} color="#d97706" /> },
+              { id: "evening", label: "Prime-Time TV Surge", icon: <Tv size={14} color="#2563eb" /> },
+              { id: "overnight", label: "Nocturnal Lull (<5%)", icon: <TrendingDown size={14} color="#64748b" /> }
+            ].map((phase) => {
+              const isActive = activePhase === phase.id;
+              return (
+                <button
+                  key={phase.id}
+                  onClick={() => handlePhaseChange(phase.id as DiagramViewMode)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    padding: "7px 12px",
+                    borderRadius: "10px",
+                    fontSize: "0.82rem",
+                    fontWeight: 700,
+                    border: isActive ? "2px solid var(--slate-900)" : "1px solid var(--border-subtle)",
+                    background: isActive ? "var(--slate-900)" : "var(--slate-50)",
+                    color: isActive ? "#ffffff" : "var(--slate-700)",
+                    cursor: "pointer",
+                    transition: "all 0.15s ease"
+                  }}
+                >
+                  {phase.icon}
+                  {phase.label}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Channel Legend & Toggle Switches */}
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <button
+              onClick={() => setShowTv(!showTv)}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "6px 12px",
+                borderRadius: "10px",
+                background: showTv ? "#eff6ff" : "var(--slate-100)",
+                border: `2px solid ${showTv ? "#2563eb" : "var(--slate-300)"}`,
+                cursor: "pointer"
+              }}
+            >
+              <div
+                style={{
+                  width: "14px",
+                  height: "4px",
+                  background: showTv ? "#2563eb" : "var(--slate-400)",
+                  borderRadius: "2px"
+                }}
+              />
+              <span
+                style={{
+                  fontSize: "0.85rem",
+                  fontWeight: 800,
+                  color: showTv ? "#1e40af" : "var(--slate-500)"
+                }}
+              >
+                TV (Blue)
+              </span>
+            </button>
+
+            <button
+              onClick={() => setShowRadio(!showRadio)}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "6px 12px",
+                borderRadius: "10px",
+                background: showRadio ? "#fef2f2" : "var(--slate-100)",
+                border: `2px solid ${showRadio ? "#dc2626" : "var(--slate-300)"}`,
+                cursor: "pointer"
+              }}
+            >
+              <div
+                style={{
+                  width: "14px",
+                  height: "4px",
+                  background: showRadio ? "#dc2626" : "var(--slate-400)",
+                  borderRadius: "2px"
+                }}
+              />
+              <span
+                style={{
+                  fontSize: "0.85rem",
+                  fontWeight: 800,
+                  color: showRadio ? "#991b1b" : "var(--slate-500)"
+                }}
+              >
+                Radio (Red)
+              </span>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Main Interactive Vector Line Graph Canvas */}
       <div
         style={{
           background: "#ffffff",
-          border: "2px solid var(--border-subtle)",
-          borderRadius: "18px",
-          padding: "16px 18px",
-          boxShadow: "0 4px 14px rgba(0,0,0,0.04)",
+          borderRadius: "20px",
+          border: "1.5px solid var(--border-subtle)",
+          padding: "20px 22px 16px 22px",
+          boxShadow: "var(--shadow-sm)",
           display: "flex",
           flexDirection: "column",
-          gap: "8px",
-          minWidth: 0,
-          flex: "1 1 0"
+          gap: "12px",
+          position: "relative"
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <span
-              style={{
-                fontSize: "1.3rem",
-                fontWeight: 900,
-                color: "#0f172a",
-                letterSpacing: "-0.02em"
-              }}
-            >
-              {year}
-            </span>
-            <span
-              className="apple-badge neutral"
-              style={{
-                fontSize: "0.75rem",
-                fontWeight: 700,
-                background: is1997 ? "#f1f5f9" : "#eff6ff",
-                color: is1997 ? "#334155" : "#1d4ed8"
-              }}
-            >
-              {is1997 ? "Baseline Period (Pre-Digital)" : "Decade Later (Digital Shift)"}
-            </span>
-          </div>
-
-          <div style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 600 }}>
-            Unit: <strong>million euros (€m)</strong>
-          </div>
+        {/* Title Header Matching Real IELTS Chart */}
+        <div style={{ textAlign: "center", marginBottom: "4px" }}>
+          <h3
+            style={{
+              fontSize: "1.15rem",
+              fontWeight: 800,
+              color: "var(--slate-900)",
+              letterSpacing: "-0.01em",
+              margin: 0
+            }}
+          >
+            Radio and Television audiences in UK, October - December 1992
+          </h3>
+          <p style={{ fontSize: "0.82rem", color: "var(--slate-500)", marginTop: "3px", margin: 0 }}>
+            Source: UK Audience Measurement • 24-Hour Diurnal Cycle • Percentage of UK population aged 4+
+          </p>
         </div>
 
-        {/* SVG Container - Responsive and Vector-Perfect */}
-        <div style={{ width: "100%", overflow: "hidden" }}>
+        {/* SVG Viewport */}
+        <div style={{ width: "100%", overflowX: "auto" }}>
           <svg
             viewBox={`0 0 ${chartWidth} ${chartHeight}`}
-            style={{ width: "100%", height: "auto", display: "block" }}
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              userSelect: "none"
+            }}
           >
             <defs>
-              {/* Pattern for Italy (Dotted / Textured Pattern matching exam scan) */}
-              <pattern
-                id={`italy-pattern-${year}`}
-                width="6"
-                height="6"
-                patternUnits="userSpaceOnUse"
-              >
-                <circle cx="2" cy="2" r="1.5" fill="#475569" />
-                <circle cx="5" cy="5" r="1.5" fill="#475569" />
-              </pattern>
+              {/* TV Area Gradient */}
+              <linearGradient id="tvGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#2563eb" stopOpacity="0.22" />
+                <stop offset="85%" stopColor="#2563eb" stopOpacity="0.02" />
+                <stop offset="100%" stopColor="#2563eb" stopOpacity="0" />
+              </linearGradient>
 
-              {/* Germany solid pattern with micro-texture */}
-              <pattern
-                id={`germany-pattern-${year}`}
-                width="8"
-                height="8"
-                patternUnits="userSpaceOnUse"
-              >
-                <rect width="8" height="8" fill="#0f172a" />
-                <line x1="0" y1="0" x2="8" y2="8" stroke="#334155" strokeWidth="1" />
-              </pattern>
+              {/* Radio Area Gradient */}
+              <linearGradient id="radioGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#dc2626" stopOpacity="0.22" />
+                <stop offset="85%" stopColor="#dc2626" stopOpacity="0.02" />
+                <stop offset="100%" stopColor="#dc2626" stopOpacity="0" />
+              </linearGradient>
+
+              {/* Filter glow for peaks */}
+              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
             </defs>
 
-            {/* Vertical Gridlines & X-Axis Labels at 0, 10, 20, 30, 40 */}
-            {[0, 10, 20, 30, 40].map((tick) => {
-              const x = margin.left + xScale(tick);
+            {/* Background Phase Highlight Band */}
+            {highlightBand && (
+              <g>
+                <rect
+                  x={xScale(highlightBand.start)}
+                  y={margin.top}
+                  width={xScale(highlightBand.end) - xScale(highlightBand.start)}
+                  height={innerHeight}
+                  fill="rgba(245, 158, 11, 0.08)"
+                  stroke="rgba(245, 158, 11, 0.35)"
+                  strokeDasharray="4 4"
+                  rx="6"
+                />
+                <text
+                  x={xScale((highlightBand.start + highlightBand.end) / 2)}
+                  y={margin.top + 18}
+                  textAnchor="middle"
+                  fill="#b45309"
+                  fontSize="11"
+                  fontWeight="700"
+                >
+                  {highlightBand.title}
+                </text>
+              </g>
+            )}
+
+            {/* Horizontal Gridlines & Y-Axis Labels */}
+            {yTicks.map((tick) => {
+              const y = yScale(tick);
               return (
                 <g key={tick}>
                   <line
-                    x1={x}
-                    y1={margin.top - 8}
-                    x2={x}
-                    y2={margin.top + innerHeight}
-                    stroke={tick === 0 ? "#0f172a" : tick === 40 ? "#475569" : "#cbd5e1"}
-                    strokeWidth={tick === 0 ? 2 : tick === 40 ? 1.5 : 1}
-                    strokeDasharray={tick === 0 ? "none" : "3,3"}
+                    x1={margin.left}
+                    y1={y}
+                    x2={margin.left + innerWidth}
+                    y2={y}
+                    stroke={tick === 0 ? "var(--slate-800)" : "#e2e8f0"}
+                    strokeWidth={tick === 0 ? 1.5 : 1}
+                    strokeDasharray={tick === 0 ? "none" : tick % 10 === 0 ? "none" : "2 2"}
                   />
                   <text
-                    x={x}
-                    y={margin.top + innerHeight + 16}
-                    textAnchor="middle"
-                    fill={tick === 40 ? "#0f172a" : "#334155"}
-                    fontSize="11.5"
-                    fontWeight="800"
+                    x={margin.left - 10}
+                    y={y + 4}
+                    textAnchor="end"
+                    fill={tick === 0 ? "var(--slate-800)" : "#64748b"}
+                    fontSize="11"
+                    fontWeight={tick % 10 === 0 ? "700" : "500"}
                   >
-                    {tick}
+                    {tick}%
                   </text>
                 </g>
               );
             })}
 
-            {/* Sub-ticks at 5, 15, 25, 35 */}
-            {[5, 15, 25, 35].map((subTick) => {
-              const x = margin.left + xScale(subTick);
+            {/* Vertical Hour Tick Lines & Labels */}
+            {xTicks.map((hour) => {
+              const x = xScale(hour);
+              return (
+                <g key={hour}>
+                  <line
+                    x1={x}
+                    y1={margin.top}
+                    x2={x}
+                    y2={margin.top + innerHeight}
+                    stroke="#f1f5f9"
+                    strokeWidth={1}
+                  />
+                  <line
+                    x1={x}
+                    y1={margin.top + innerHeight}
+                    x2={x}
+                    y2={margin.top + innerHeight + 6}
+                    stroke="var(--slate-600)"
+                    strokeWidth={1.5}
+                  />
+                  <text
+                    x={x}
+                    y={margin.top + innerHeight + 20}
+                    textAnchor="middle"
+                    fill="var(--slate-800)"
+                    fontSize="11.5"
+                    fontWeight="700"
+                  >
+                    {hour.toFixed(2)}
+                  </text>
+                </g>
+              );
+            })}
+
+            {/* Intermediate minor hour tick notches */}
+            {[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24].map((hour) => {
+              const x = xScale(hour);
               return (
                 <line
-                  key={subTick}
+                  key={`minor-${hour}`}
                   x1={x}
                   y1={margin.top + innerHeight}
                   x2={x}
-                  y2={margin.top + innerHeight + 5}
+                  y2={margin.top + innerHeight + 4}
                   stroke="#94a3b8"
-                  strokeWidth="1"
+                  strokeWidth={1}
                 />
               );
             })}
 
-            {/* Bottom X-Axis Title */}
+            {/* Y-Axis Title (Rotated) */}
             <text
-              x={margin.left + xScale(20)}
-              y={margin.top + innerHeight + 30}
+              transform={`rotate(-90)`}
+              x={-(margin.top + innerHeight / 2)}
+              y={16}
               textAnchor="middle"
-              fill="#475569"
-              fontSize="11"
-              fontWeight="800"
-              letterSpacing="0.04em"
+              fill="#64748b"
+              fontSize="11.5"
+              fontWeight="700"
+              letterSpacing="0.02em"
             >
-              million euros
+              Percentage of UK population (over 4-years old)
             </text>
 
-            {/* Format Rows */}
-            {MUSIC_FORMATS.map((format, fIdx) => {
-              const rowY = margin.top + fIdx * rowHeight;
-              const isSelectedFormat = selectedFormatId === format.id;
+            {/* X-Axis Title */}
+            <text
+              x={margin.left + innerWidth / 2}
+              y={chartHeight - 8}
+              textAnchor="middle"
+              fill="#64748b"
+              fontSize="12"
+              fontWeight="700"
+            >
+              Time of day or night
+            </text>
 
-              const valGer = is1997 ? format.profits.germany.y1997 : format.profits.germany.y2007;
-              const valFra = is1997 ? format.profits.france.y1997 : format.profits.france.y2007;
-              const valIta = is1997 ? format.profits.italy.y1997 : format.profits.italy.y2007;
+            {/* Inset Legend inside SVG matching original layout */}
+            <g transform={`translate(${margin.left + 22}, ${margin.top + 16})`}>
+              <rect
+                x="0"
+                y="0"
+                width="100"
+                height="48"
+                fill="#ffffff"
+                stroke="#e2e8f0"
+                strokeWidth="1"
+                rx="8"
+                opacity="0.95"
+              />
+              <line x1="12" y1="16" x2="34" y2="16" stroke="#2563eb" strokeWidth="3.5" />
+              <text x="42" y="20" fill="var(--slate-800)" fontSize="11" fontWeight="750">
+                TV
+              </text>
 
-              const gerY = rowY + 5;
-              const fraY = gerY + barHeight + barSpacing;
-              const itaY = fraY + barHeight + barSpacing;
+              <line x1="12" y1="34" x2="34" y2="34" stroke="#dc2626" strokeWidth="3.5" />
+              <text x="42" y="38" fill="var(--slate-800)" fontSize="11" fontWeight="750">
+                Radio
+              </text>
+            </g>
 
-              const gerHighlight =
-                (selectedCountry === "all" || selectedCountry === "germany") &&
-                (highlightMode === "all" || highlightMode === format.id || highlightMode === "germany");
-              const fraHighlight =
-                (selectedCountry === "all" || selectedCountry === "france") &&
-                (highlightMode === "all" || highlightMode === format.id || highlightMode === "france");
-              const itaHighlight =
-                (selectedCountry === "all" || selectedCountry === "italy") &&
-                (highlightMode === "all" || highlightMode === format.id || highlightMode === "italy");
+            {/* TV Filled Area & Curve */}
+            {showTv && (
+              <g>
+                <path d={tvAreaD} fill="url(#tvGradient)" />
+                <path
+                  d={tvPathD}
+                  fill="none"
+                  stroke="#2563eb"
+                  strokeWidth="3.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
+            )}
 
-              return (
-                <g
-                  key={format.id}
-                  onClick={() => handleFormatSelect(format.id)}
-                  style={{ cursor: "pointer" }}
-                >
-                  {/* Row hover / selection subtle backdrop */}
-                  {isSelectedFormat && (
-                    <rect
-                      x={6}
-                      y={rowY}
-                      width={chartWidth - 12}
-                      height={rowHeight}
-                      fill="rgba(59, 130, 246, 0.06)"
-                      rx="6"
-                    />
-                  )}
+            {/* Radio Filled Area & Curve */}
+            {showRadio && (
+              <g>
+                <path d={radioAreaD} fill="url(#radioGradient)" />
+                <path
+                  d={radioPathD}
+                  fill="none"
+                  stroke="#dc2626"
+                  strokeWidth="3.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </g>
+            )}
 
-                  {/* Format Label */}
+            {/* Landmark 1: Radio Peak Callout at 8:30 (27%) */}
+            {showRadio && (
+              <g transform={`translate(${xScale(radioPeakPoint.hour)}, ${yScale(radioPeakPoint.radio)})`}>
+                <circle r="6" fill="#dc2626" stroke="#ffffff" strokeWidth="2.5" filter="url(#glow)" />
+                <circle r="12" fill="none" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.7" />
+                <g transform="translate(-50, -32)">
+                  <rect
+                    x="0"
+                    y="0"
+                    width="100"
+                    height="24"
+                    rx="6"
+                    fill="#dc2626"
+                    filter="url(#glow)"
+                  />
                   <text
-                    x={margin.left - 12}
-                    y={rowY + rowHeight / 2 - 2}
-                    textAnchor="end"
-                    fill={isSelectedFormat ? "#0284c7" : "#0f172a"}
-                    fontSize="11"
-                    fontWeight={isSelectedFormat ? "800" : "650"}
+                    x="50"
+                    y="16"
+                    textAnchor="middle"
+                    fill="#ffffff"
+                    fontSize="10"
+                    fontWeight="800"
                   >
-                    {format.name}
+                    Radio Apex: ~27%
                   </text>
-
-                  {/* Germany Bar (Solid Dark) */}
-                  <g
-                    onMouseEnter={() =>
-                      setHoveredBar({
-                        year,
-                        format: format.name,
-                        country: "Germany",
-                        value: valGer
-                      })
-                    }
-                    onMouseLeave={() => setHoveredBar(null)}
-                  >
-                    <rect
-                      x={margin.left}
-                      y={gerY}
-                      width={Math.max(xScale(valGer), valGer > 0 ? 3 : 0)}
-                      height={barHeight}
-                      fill={`url(#germany-pattern-${year})`}
-                      stroke="#0f172a"
-                      strokeWidth="1.5"
-                      opacity={gerHighlight ? 1 : 0.2}
-                      rx="1"
-                    />
-                    {valGer > 0 && (
-                      <text
-                        x={margin.left + xScale(valGer) + 4}
-                        y={gerY + barHeight - 2}
-                        fontSize="9.5"
-                        fontWeight="750"
-                        fill={gerHighlight ? "#0f172a" : "#94a3b8"}
-                      >
-                        {valGer}
-                      </text>
-                    )}
-                  </g>
-
-                  {/* France Bar (White / Hollow with crisp border) */}
-                  <g
-                    onMouseEnter={() =>
-                      setHoveredBar({
-                        year,
-                        format: format.name,
-                        country: "France",
-                        value: valFra
-                      })
-                    }
-                    onMouseLeave={() => setHoveredBar(null)}
-                  >
-                    <rect
-                      x={margin.left}
-                      y={fraY}
-                      width={Math.max(xScale(valFra), valFra > 0 ? 3 : 0)}
-                      height={barHeight}
-                      fill="#ffffff"
-                      stroke="#0f172a"
-                      strokeWidth="1.6"
-                      opacity={fraHighlight ? 1 : 0.2}
-                      rx="1"
-                    />
-                    {valFra > 0 && (
-                      <text
-                        x={margin.left + xScale(valFra) + 4}
-                        y={fraY + barHeight - 2}
-                        fontSize="9.5"
-                        fontWeight="750"
-                        fill={fraHighlight ? "#0f172a" : "#94a3b8"}
-                      >
-                        {valFra}
-                      </text>
-                    )}
-                  </g>
-
-                  {/* Italy Bar (Dotted / Textured Pattern) */}
-                  <g
-                    onMouseEnter={() =>
-                      setHoveredBar({
-                        year,
-                        format: format.name,
-                        country: "Italy",
-                        value: valIta
-                      })
-                    }
-                    onMouseLeave={() => setHoveredBar(null)}
-                  >
-                    <rect
-                      x={margin.left}
-                      y={itaY}
-                      width={Math.max(xScale(valIta), valIta > 0 ? 3 : 0)}
-                      height={barHeight}
-                      fill={`url(#italy-pattern-${year})`}
-                      stroke="#475569"
-                      strokeWidth="1.4"
-                      opacity={itaHighlight ? 1 : 0.2}
-                      rx="1"
-                    />
-                    {valIta > 0 && (
-                      <text
-                        x={margin.left + xScale(valIta) + 4}
-                        y={itaY + barHeight - 2}
-                        fontSize="9.5"
-                        fontWeight="750"
-                        fill={itaHighlight ? "#0f172a" : "#94a3b8"}
-                      >
-                        {valIta}
-                      </text>
-                    )}
-                  </g>
-
-                  {/* Zero / Extinct marker if all are 0 */}
-                  {valGer === 0 && valFra === 0 && valIta === 0 && (
-                    <text
-                      x={margin.left + 8}
-                      y={rowY + rowHeight / 2 + 3}
-                      fill="#dc2626"
-                      fontSize="9.5"
-                      fontWeight="700"
-                    >
-                      (0 €m - Extinct)
-                    </text>
-                  )}
                 </g>
+              </g>
+            )}
+
+            {/* Landmark 2: Midday Crossover Callout at 13:00 (15%) */}
+            <g transform={`translate(${xScale(crossoverPoint.hour)}, ${yScale(15)})`}>
+              <circle r="7" fill="#d97706" stroke="#ffffff" strokeWidth="2.5" filter="url(#glow)" />
+              <line x1="0" y1="-28" x2="0" y2="-8" stroke="#d97706" strokeWidth="1.5" strokeDasharray="2 2" />
+              <g transform="translate(-65, -52)">
+                <rect
+                  x="0"
+                  y="0"
+                  width="130"
+                  height="24"
+                  rx="6"
+                  fill="#78350f"
+                />
+                <text
+                  x="65"
+                  y="16"
+                  textAnchor="middle"
+                  fill="#fef3c7"
+                  fontSize="10"
+                  fontWeight="800"
+                >
+                  13:00 Crossover: 15%
+                </text>
+              </g>
+            </g>
+
+            {/* Landmark 3: TV Evening Peak Callout at 20:30 (45%) */}
+            {showTv && (
+              <g transform={`translate(${xScale(20.5)}, ${yScale(45)})`}>
+                <circle r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" filter="url(#glow)" />
+                <circle r="12" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.7" />
+                <g transform="translate(-55, -32)">
+                  <rect
+                    x="0"
+                    y="0"
+                    width="110"
+                    height="24"
+                    rx="6"
+                    fill="#1e40af"
+                    filter="url(#glow)"
+                  />
+                  <text
+                    x="55"
+                    y="16"
+                    textAnchor="middle"
+                    fill="#ffffff"
+                    fontSize="10"
+                    fontWeight="800"
+                  >
+                    TV Prime Peak: 45%
+                  </text>
+                </g>
+              </g>
+            )}
+
+            {/* Interactive Vertical Cursor Tracking */}
+            {activeHover && (
+              <g>
+                <line
+                  x1={xScale(activeHover.hour)}
+                  y1={margin.top}
+                  x2={xScale(activeHover.hour)}
+                  y2={margin.top + innerHeight}
+                  stroke="var(--slate-700)"
+                  strokeWidth="1.5"
+                  strokeDasharray="4 3"
+                />
+                {showTv && (
+                  <circle
+                    cx={xScale(activeHover.hour)}
+                    cy={yScale(activeHover.tv)}
+                    r="5"
+                    fill="#2563eb"
+                    stroke="#ffffff"
+                    strokeWidth="2"
+                  />
+                )}
+                {showRadio && (
+                  <circle
+                    cx={xScale(activeHover.hour)}
+                    cy={yScale(activeHover.radio)}
+                    r="5"
+                    fill="#dc2626"
+                    stroke="#ffffff"
+                    strokeWidth="2"
+                  />
+                )}
+              </g>
+            )}
+
+            {/* Interactive Hover Columns over the whole chart */}
+            {HOURLY_AUDIENCE_DATA.map((p) => {
+              const x = xScale(p.hour);
+              const colWidth = innerWidth / (HOURLY_AUDIENCE_DATA.length - 1);
+              return (
+                <rect
+                  key={p.hour}
+                  x={x - colWidth / 2}
+                  y={margin.top}
+                  width={colWidth}
+                  height={innerHeight}
+                  fill="transparent"
+                  style={{ cursor: "pointer" }}
+                  onMouseEnter={() => setHoveredHour(p)}
+                  onClick={() => setHoveredHour(p)}
+                />
               );
             })}
           </svg>
         </div>
-      </div>
-    );
-  };
 
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%", minWidth: 0 }}>
-      {/* Interactive Control & Legend Toolbar */}
-      {showInternalToolbar && (
+        {/* Live Touch Hover Inspector Banner */}
         <div
           style={{
             background: "var(--slate-50)",
-            border: "1.5px solid var(--border-subtle)",
-            borderRadius: "16px",
+            border: "1px solid var(--border-subtle)",
+            borderRadius: "14px",
             padding: "12px 18px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
-            gap: "12px",
-            width: "100%"
+            gap: "12px"
           }}
         >
-          {/* Country Legend Buttons */}
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
-            <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#0f172a", marginRight: "4px" }}>
-              LEGEND / FILTER:
-            </span>
-
-            <button
-              onClick={() => handleCountryToggle("all")}
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <div
               style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "10px",
+                background: "var(--slate-900)",
+                color: "#ffffff",
                 display: "flex",
                 alignItems: "center",
-                gap: "6px",
-                padding: "6px 12px",
-                borderRadius: "8px",
-                border: "1px solid var(--border-subtle)",
-                background: selectedCountry === "all" ? "var(--slate-900)" : "#ffffff",
-                color: selectedCountry === "all" ? "#ffffff" : "var(--slate-700)",
-                fontSize: "0.78rem",
-                fontWeight: 750,
-                cursor: "pointer"
+                justifyContent: "center"
               }}
             >
-              <RotateCcw size={12} /> All Markets
-            </button>
-
-            {/* Germany Legend */}
-            <button
-              onClick={() => handleCountryToggle("germany")}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "7px",
-                padding: "6px 12px",
-                borderRadius: "8px",
-                border: "1.5px solid #0f172a",
-                background: selectedCountry === "germany" ? "#0f172a" : "#ffffff",
-                color: selectedCountry === "germany" ? "#ffffff" : "#0f172a",
-                fontSize: "0.78rem",
-                fontWeight: 750,
-                cursor: "pointer"
-              }}
-            >
-              <span
-                style={{
-                  width: "14px",
-                  height: "10px",
-                  background: "#0f172a",
-                  borderRadius: "2px",
-                  border: "1px solid #ffffff",
-                  display: "inline-block"
-                }}
-              />
-              GERMANY
-            </button>
-
-            {/* France Legend */}
-            <button
-              onClick={() => handleCountryToggle("france")}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "7px",
-                padding: "6px 12px",
-                borderRadius: "8px",
-                border: "1.5px solid #0f172a",
-                background: selectedCountry === "france" ? "#e2e8f0" : "#ffffff",
-                color: "#0f172a",
-                fontSize: "0.78rem",
-                fontWeight: 750,
-                cursor: "pointer"
-              }}
-            >
-              <span
-                style={{
-                  width: "14px",
-                  height: "10px",
-                  background: "#ffffff",
-                  borderRadius: "2px",
-                  border: "1.8px solid #0f172a",
-                  display: "inline-block"
-                }}
-              />
-              FRANCE
-            </button>
-
-            {/* Italy Legend */}
-            <button
-              onClick={() => handleCountryToggle("italy")}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "7px",
-                padding: "6px 12px",
-                borderRadius: "8px",
-                border: "1.5px solid #475569",
-                background: selectedCountry === "italy" ? "#cbd5e1" : "#ffffff",
-                color: "#0f172a",
-                fontSize: "0.78rem",
-                fontWeight: 750,
-                cursor: "pointer"
-              }}
-            >
-              <span
-                style={{
-                  width: "14px",
-                  height: "10px",
-                  background: "radial-gradient(#475569 25%, #ffffff 25%) 0 0/4px 4px",
-                  borderRadius: "2px",
-                  border: "1px solid #475569",
-                  display: "inline-block"
-                }}
-              />
-              ITALY
-            </button>
-          </div>
-
-          {/* Layout Toggle: Stacked vs Side-by-Side (Widescreen) */}
-          {!forcedLayoutMode && (
-            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <span style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 700 }}>
-                Layout:
-              </span>
-              <button
-                onClick={() => setInternalLayoutMode("stacked")}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "4px",
-                  padding: "5px 10px",
-                  borderRadius: "8px",
-                  border: "1px solid var(--border-subtle)",
-                  background: layoutMode === "stacked" ? "var(--slate-800)" : "#ffffff",
-                  color: layoutMode === "stacked" ? "#ffffff" : "var(--slate-700)",
-                  fontSize: "0.74rem",
-                  fontWeight: 700,
-                  cursor: "pointer"
-                }}
-              >
-                <Rows size={13} /> Stacked (Exam Order)
-              </button>
-              <button
-                onClick={() => setInternalLayoutMode("split")}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "4px",
-                  padding: "5px 10px",
-                  borderRadius: "8px",
-                  border: "1px solid var(--border-subtle)",
-                  background: layoutMode === "split" ? "var(--slate-800)" : "#ffffff",
-                  color: layoutMode === "split" ? "#ffffff" : "var(--slate-700)",
-                  fontSize: "0.74rem",
-                  fontWeight: 700,
-                  cursor: "pointer"
-                }}
-              >
-                <Columns size={13} /> Side-by-Side (Widescreen)
-              </button>
+              <Clock size={18} />
             </div>
-          )}
-        </div>
-      )}
-
-      {/* Hovered Bar Live Indicator Pill */}
-      {hoveredBar && (
-        <div
-          style={{
-            background: "#0f172a",
-            color: "#ffffff",
-            padding: "8px 14px",
-            borderRadius: "10px",
-            fontSize: "0.86rem",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
-          }}
-        >
-          <div>
-            <strong>{hoveredBar.country}</strong> in <strong>{hoveredBar.year}</strong>:{" "}
-            <em>{hoveredBar.format}</em>
+            <div>
+              <div style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 700 }}>
+                HOURLY INSPECTION
+              </div>
+              <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--slate-900)" }}>
+                {activeHover.timeLabel} ({activeHover.hour >= 12 ? `${activeHover.hour === 12 ? 12 : (activeHover.hour - 12).toFixed(1)} pm` : `${activeHover.hour.toFixed(1)} am`})
+              </div>
+            </div>
           </div>
-          <div style={{ fontSize: "1rem", fontWeight: 800, color: "#38bdf8" }}>
-            {hoveredBar.value} million euros
+
+          {/* TV & Radio Data Pills */}
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+            <div
+              style={{
+                background: "#eff6ff",
+                border: "1.5px solid #bfdbfe",
+                borderRadius: "10px",
+                padding: "8px 14px",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px"
+              }}
+            >
+              <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#2563eb" }} />
+              <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1e40af" }}>
+                TV Audience: <strong>{activeHover.tv}%</strong>
+              </span>
+            </div>
+
+            <div
+              style={{
+                background: "#fef2f2",
+                border: "1.5px solid #fecaca",
+                borderRadius: "10px",
+                padding: "8px 14px",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px"
+              }}
+            >
+              <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#dc2626" }} />
+              <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#991b1b" }}>
+                Radio Audience: <strong>{activeHover.radio}%</strong>
+              </span>
+            </div>
+
+            <div
+              style={{
+                background: "#ffffff",
+                border: "1px solid var(--border-default)",
+                borderRadius: "10px",
+                padding: "8px 14px",
+                fontSize: "0.85rem",
+                color: "var(--slate-700)"
+              }}
+            >
+              <strong>Leadership:</strong>{" "}
+              {activeHover.tv > activeHover.radio ? (
+                <span style={{ color: "#2563eb", fontWeight: 750 }}>
+                  TV leads by +{(activeHover.tv - activeHover.radio).toFixed(1)}%
+                </span>
+              ) : activeHover.radio > activeHover.tv ? (
+                <span style={{ color: "#dc2626", fontWeight: 750 }}>
+                  Radio leads by +{(activeHover.radio - activeHover.tv).toFixed(1)}%
+                </span>
+              ) : (
+                <span style={{ color: "#d97706", fontWeight: 750 }}>
+                  Equal Convergence (15%)
+                </span>
+              )}
+            </div>
           </div>
         </div>
-      )}
-
-      {/* Main Bar Charts Container - Clean Responsive Grid with Zero Glitch */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns:
-            layoutMode === "stacked"
-              ? "1fr"
-              : "repeat(auto-fit, minmax(360px, 1fr))",
-          gap: "16px",
-          width: "100%",
-          alignItems: "start"
-        }}
-      >
-        {renderSingleChart(1997)}
-        {renderSingleChart(2007)}
       </div>
 
-      {/* Deep-Dive Interactive Format Inspector */}
+      {/* Deep-Dive Analytical Hotspot Cards */}
       {showDeepDiveCard && (
         <div
           style={{
-            background: "#ffffff",
-            border: "2px solid var(--border-subtle)",
-            borderRadius: "18px",
-            padding: "20px 22px",
-            boxShadow: "0 4px 14px rgba(0,0,0,0.03)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "14px",
-            width: "100%",
-            minWidth: 0
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "12px"
           }}
         >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          {AUDIENCE_HOTSPOTS.map((hotspot) => {
+            const isSelected = selectedHotspotId === hotspot.id;
+            return (
               <div
+                key={hotspot.id}
+                onClick={() => {
+                  setSelectedHotspotId(hotspot.id);
+                  handlePhaseChange(hotspot.zone as DiagramViewMode);
+                }}
                 style={{
-                  width: "36px",
-                  height: "36px",
-                  borderRadius: "10px",
-                  background: "var(--apple-blue)",
-                  color: "#ffffff",
+                  background: isSelected ? "#f8fafc" : "#ffffff",
+                  border: isSelected ? "2px solid var(--slate-900)" : "1.5px solid var(--border-subtle)",
+                  borderRadius: "16px",
+                  padding: "16px",
                   display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center"
+                  flexDirection: "column",
+                  gap: "8px",
+                  cursor: "pointer",
+                  transition: "all 0.15s ease",
+                  boxShadow: isSelected ? "var(--shadow-md)" : "var(--shadow-sm)"
                 }}
               >
-                <Disc size={20} />
-              </div>
-              <div>
-                <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  Interactive Format Inspector: {selectedFormat.name}
-                </h4>
-                <span className="apple-badge neutral" style={{ fontSize: "0.72rem", marginTop: "3px" }}>
-                  Category: {selectedFormat.category}
-                </span>
-              </div>
-            </div>
-
-            {/* Quick Format Switcher Chips */}
-            <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-              {MUSIC_FORMATS.map((f) => (
-                <button
-                  key={f.id}
-                  onClick={() => handleFormatSelect(f.id)}
-                  style={{
-                    padding: "5px 10px",
-                    borderRadius: "8px",
-                    fontSize: "0.75rem",
-                    fontWeight: 700,
-                    border: "1px solid var(--border-subtle)",
-                    background: selectedFormatId === f.id ? "var(--slate-900)" : "var(--slate-100)",
-                    color: selectedFormatId === f.id ? "#ffffff" : "var(--slate-700)",
-                    cursor: "pointer"
-                  }}
-                >
-                  {f.shortLabel}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* 3 Country Comparative Cards for Selected Format */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: "12px",
-              width: "100%"
-            }}
-          >
-            {COUNTRY_MARKETS.map((country) => {
-              const details = selectedFormat.profits[country.id];
-              const isContraction = details.y2007 < details.y1997;
-              const isGrowth = details.y2007 > details.y1997;
-
-              return (
-                <div
-                  key={country.id}
-                  style={{
-                    background: "var(--slate-50)",
-                    border: "1.5px solid var(--border-subtle)",
-                    borderRadius: "14px",
-                    padding: "14px 16px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "8px"
-                  }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>
-                      {country.name}
-                    </strong>
-                    <span
-                      style={{
-                        fontSize: "0.75rem",
-                        fontWeight: 800,
-                        padding: "2px 8px",
-                        borderRadius: "6px",
-                        background: isGrowth ? "#dcfce7" : isContraction ? "#fee2e2" : "#f1f5f9",
-                        color: isGrowth ? "#15803d" : isContraction ? "#b91c1c" : "#475569"
-                      }}
-                    >
-                      {details.change}
-                    </span>
-                  </div>
-
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "4px" }}>
-                    <div>
-                      <div style={{ fontSize: "0.72rem", color: "var(--slate-500)", fontWeight: 600 }}>1997</div>
-                      <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--slate-800)" }}>
-                        {details.y1997} €m
-                      </div>
-                    </div>
-                    <div style={{ color: "var(--slate-400)", fontSize: "1rem" }}>➔</div>
-                    <div>
-                      <div style={{ fontSize: "0.72rem", color: "var(--slate-500)", fontWeight: 600 }}>2007</div>
-                      <div
-                        style={{
-                          fontSize: "1.2rem",
-                          fontWeight: 800,
-                          color: isGrowth ? "#16a34a" : isContraction ? "#dc2626" : "var(--slate-800)"
-                        }}
-                      >
-                        {details.y2007} €m
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <span
+                    className="apple-badge neutral"
                     style={{
-                      background: "#ffffff",
-                      borderRadius: "8px",
-                      padding: "8px 10px",
-                      border: "1px solid var(--border-subtle)",
-                      fontSize: "0.78rem",
-                      color: "var(--slate-700)",
-                      lineHeight: 1.4,
-                      marginTop: "4px"
+                      fontSize: "0.72rem",
+                      background:
+                        hotspot.zone === "morning"
+                          ? "#fee2e2"
+                          : hotspot.zone === "midday"
+                          ? "#fef3c7"
+                          : hotspot.zone === "evening"
+                          ? "#dbeafe"
+                          : "#f1f5f9",
+                      color:
+                        hotspot.zone === "morning"
+                          ? "#991b1b"
+                          : hotspot.zone === "midday"
+                          ? "#92400e"
+                          : hotspot.zone === "evening"
+                          ? "#1e40af"
+                          : "#475569",
+                      fontWeight: 800
                     }}
                   >
-                    <em>Band 9:</em> “{details.band9Citation}”
-                  </div>
+                    {hotspot.timeRange}
+                  </span>
+                  <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--slate-500)" }}>
+                    {hotspot.zone.toUpperCase()}
+                  </span>
                 </div>
-              );
-            })}
-          </div>
 
-          {/* Band 9 Analytical Commentary Banner */}
-          <div
-            style={{
-              background: "#eff6ff",
-              border: "1px solid #bfdbfe",
-              borderRadius: "12px",
-              padding: "12px 16px",
-              display: "flex",
-              alignItems: "center",
-              gap: "10px"
-            }}
-          >
-            <Sparkles size={18} color="#2563eb" style={{ flexShrink: 0 }} />
-            <p style={{ margin: 0, fontSize: "0.88rem", color: "#1e40af", lineHeight: 1.5 }}>
-              {selectedFormat.band9Phrase}
-            </p>
-          </div>
+                <h4 style={{ fontSize: "0.98rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                  {hotspot.title}
+                </h4>
+
+                <p style={{ fontSize: "0.82rem", color: "var(--slate-600)", lineHeight: 1.45, margin: 0 }}>
+                  {hotspot.contrastKey}
+                </p>
+
+                <div
+                  style={{
+                    background: "#ffffff",
+                    border: "1px solid var(--border-subtle)",
+                    borderRadius: "10px",
+                    padding: "8px 10px",
+                    fontSize: "0.8rem",
+                    color: "var(--slate-700)",
+                    fontStyle: "italic",
+                    marginTop: "4px"
+                  }}
+                >
+                  {hotspot.band9Sentence}
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

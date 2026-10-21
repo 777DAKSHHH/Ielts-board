@@ -10,14 +10,13 @@ import {
   ImageIcon,
   Columns,
   Sparkles,
-  BarChart3,
-  Disc,
-  Rows
+  TrendingUp,
+  Clock,
+  Layers
 } from "lucide-react";
 import {
   TASK1_DATA,
-  MUSIC_FORMATS,
-  COUNTRY_MARKETS,
+  AUDIENCE_HOTSPOTS,
   TASK1_HOTSPOTS
 } from "../../data/task1Data";
 import { TouchTimer } from "../common/TouchTimer";
@@ -45,8 +44,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   >("smartboard_table");
   const [stageLayout, setStageLayout] = useState<"full_width" | "split">("full_width");
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const [fullscreenGraphLayout, setFullscreenGraphLayout] = useState<"split" | "stacked">("split");
-  const [selectedHotspotId, setSelectedHotspotId] = useState<string>(TASK1_HOTSPOTS[0].id);
+  const [selectedHotspotId, setSelectedHotspotId] = useState<string>(AUDIENCE_HOTSPOTS[0].id);
   const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("all");
 
   useEffect(() => {
@@ -72,18 +70,18 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   };
 
   const selectedHotspot =
-    TASK1_HOTSPOTS.find((h) => h.id === selectedHotspotId) || TASK1_HOTSPOTS[0];
+    AUDIENCE_HOTSPOTS.find((h) => h.id === selectedHotspotId) || AUDIENCE_HOTSPOTS[0];
 
   return (
     <div className="stage-card-wrapper" style={{ width: "100%", minWidth: 0 }}>
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; Bar Graph Engine
+          Step 02 / 08 • Task Prompt &amp; Line Graph Engine
         </span>
-        <h2 className="stage-title">Deconstruct the SMG Entertainment Dual Bar Charts (1997 vs 2007)</h2>
+        <h2 className="stage-title">Deconstruct the 1992 UK Radio vs Television Line Graph</h2>
         <p className="stage-subtitle">
-          Examine the prompt, deconstruct the 5 audio distribution formats across Germany, France, and Italy, track the collapse of legacy analog media to zero, and contrast retail CD drops against the emergence of online orders and digital downloads.
+          Examine the prompt, deconstruct the 24-hour diurnal cycle across the UK population aged 4+, trace the morning radio surge (~27%), the 13:00 crossover convergence (15%), and television's prime-time apex (45%).
         </p>
       </div>
 
@@ -95,7 +93,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the two bar charts, identify the dominant shop CD category, note the extinction of cassettes/vinyl, and trace the rise of digital downloads."
+          instruction="Focus Timer: 3 minutes to analyze the line graph, pinpoint the morning radio peak, note the 13:00 crossover point, and analyze the evening prime-time television surge."
         />
       </div>
 
@@ -139,7 +137,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <BarChart3 size={14} /> 4K Bar Graph Engine
+            <TrendingUp size={14} color="#2563eb" /> Interactive Line Graph Engine
           </button>
 
           <button
@@ -199,7 +197,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <ImageIcon size={14} /> Original Exam Pamphlet
+            <ImageIcon size={14} /> Original Exam Graphic
           </button>
         </div>
 
@@ -283,7 +281,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="IELTS Academic Task 1 SMG Entertainment Bar Graphs"
+                  alt="IELTS Academic Task 1 Radio and Television Audiences in UK 1992 Line Graph"
                   style={{
                     maxHeight: "560px",
                     maxWidth: "100%",
@@ -294,7 +292,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   }}
                 />
                 <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
-                  Official Cambridge IELTS Academic Question Diagram • SMG Entertainment Bar Graphs (1997 vs 2007)
+                  Official Cambridge IELTS Academic Question Diagram • Radio and Television Audiences in UK (October - December 1992)
                 </div>
               </div>
             )}
@@ -368,13 +366,16 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
               {/* Hotspot Selector Chips */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
-                {TASK1_HOTSPOTS.map((h) => {
+                {AUDIENCE_HOTSPOTS.map((h) => {
                   const isSelected = selectedHotspotId === h.id;
                   return (
                     <button
                       key={h.id}
                       type="button"
-                      onClick={() => setSelectedHotspotId(h.id)}
+                      onClick={() => {
+                        setSelectedHotspotId(h.id);
+                        setHighlightMode(h.zone as DiagramViewMode);
+                      }}
                       style={{
                         padding: "7px 10px",
                         borderRadius: "8px",
@@ -410,12 +411,12 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 }}
               >
                 <div>
-                  <strong style={{ color: "var(--slate-900)" }}>1997 Baseline:</strong>{" "}
-                  {selectedHotspot.normalState}
+                  <strong style={{ color: "#dc2626" }}>Radio Curve:</strong>{" "}
+                  {selectedHotspot.radioState}
                 </div>
                 <div>
-                  <strong style={{ color: "var(--slate-900)" }}>2007 Transformation:</strong>{" "}
-                  {selectedHotspot.elNinoState}
+                  <strong style={{ color: "#2563eb" }}>TV Curve:</strong>{" "}
+                  {selectedHotspot.tvState}
                 </div>
                 <div style={{ marginTop: "4px", fontStyle: "italic", color: "var(--slate-800)", borderTop: "1px dashed var(--border-subtle)", paddingTop: "6px" }}>
                   {selectedHotspot.band9Sentence}
@@ -425,9 +426,9 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           </div>
         </div>
       ) : (
-        /* SPLIT 2-COLUMN VIEW (Chart neatly stacked on left so it never glithes or overflows) */
+        /* SPLIT 2-COLUMN VIEW */
         <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "16px", width: "100%", alignItems: "start" }}>
-          {/* Left Column: Visual Container (Forced stacked so charts fit comfortably) */}
+          {/* Left Column: Visual Container */}
           <div
             style={{
               background: "#ffffff",
@@ -444,7 +445,6 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 onHighlightModeChange={(mode) => setHighlightMode(mode)}
                 showInternalToolbar={true}
                 showDeepDiveCard={false}
-                forcedLayoutMode="stacked"
               />
             )}
 
@@ -456,7 +456,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <div style={{ textAlign: "center", padding: "10px" }}>
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="SMG Entertainment Bar Graph"
+                  alt="Radio and TV Audiences 1992 Line Graph"
                   style={{ maxWidth: "100%", maxHeight: "400px", borderRadius: "10px", objectFit: "contain" }}
                 />
               </div>
@@ -500,7 +500,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <strong style={{ fontSize: "0.92rem", color: "var(--slate-900)" }}>
                 Key Comparison Highlights:
               </strong>
-              {TASK1_HOTSPOTS.map((h) => (
+              {AUDIENCE_HOTSPOTS.map((h) => (
                 <div
                   key={h.id}
                   style={{
@@ -520,7 +520,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         </div>
       )}
 
-      {/* FULLSCREEN ENLARGED MODAL (Rock-Solid Board View - Zero Transform Glitches) */}
+      {/* FULLSCREEN ENLARGED MODAL */}
       <AnimatePresence>
         {isEnlarged && (
           <div
@@ -553,55 +553,15 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 <Tv size={22} color="var(--apple-blue)" />
                 <div>
                   <h3 style={{ fontSize: "1.05rem", fontWeight: 800, margin: 0, color: "#ffffff" }}>
-                    Smart Board Fullscreen Engine • SMG Entertainment Bar Graphs (1997 vs 2007)
+                    Smart Board Fullscreen Engine • UK Radio &amp; TV Audiences (1992 Line Graph)
                   </h3>
                   <p style={{ fontSize: "0.76rem", color: "#94a3b8", margin: "2px 0 0 0" }}>
-                    Germany, France &amp; Italy • Financial Scale: Million Euros (€m)
+                    24-Hour Diurnal Trajectory • Percentage of UK Population (Aged 4+)
                   </p>
                 </div>
               </div>
 
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                {/* Fullscreen Layout Switcher */}
-                <div style={{ display: "flex", background: "#1e293b", padding: "3px", borderRadius: "10px", gap: "4px" }}>
-                  <button
-                    onClick={() => setFullscreenGraphLayout("split")}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                      padding: "5px 12px",
-                      borderRadius: "7px",
-                      border: "none",
-                      background: fullscreenGraphLayout === "split" ? "var(--apple-blue)" : "transparent",
-                      color: "#ffffff",
-                      fontSize: "0.76rem",
-                      fontWeight: 750,
-                      cursor: "pointer"
-                    }}
-                  >
-                    <Columns size={13} /> Side-by-Side (Widescreen)
-                  </button>
-                  <button
-                    onClick={() => setFullscreenGraphLayout("stacked")}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                      padding: "5px 12px",
-                      borderRadius: "7px",
-                      border: "none",
-                      background: fullscreenGraphLayout === "stacked" ? "var(--apple-blue)" : "transparent",
-                      color: "#ffffff",
-                      fontSize: "0.76rem",
-                      fontWeight: 750,
-                      cursor: "pointer"
-                    }}
-                  >
-                    <Rows size={13} /> Stacked (Exam Order)
-                  </button>
-                </div>
-
                 <button
                   onClick={() => setIsEnlarged(false)}
                   style={{
@@ -649,7 +609,6 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   onHighlightModeChange={(mode) => setHighlightMode(mode)}
                   showInternalToolbar={true}
                   showDeepDiveCard={true}
-                  forcedLayoutMode={fullscreenGraphLayout}
                 />
               </div>
             </div>

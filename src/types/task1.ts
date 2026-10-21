@@ -1,10 +1,50 @@
 import { VocabItem } from "./vocab";
 
+export type MediaChannelKey = "tv" | "radio";
+export type TimeOfDayZone = "overnight" | "morning" | "midday" | "afternoon" | "evening" | "night";
+
+export interface HourlyAudiencePoint {
+  hour: number; // 1 to 24 (1.00 to 24.00)
+  timeLabel: string; // "1.00", "7.00", "13.00", etc.
+  tv: number; // percentage
+  radio: number; // percentage
+  annotation?: string;
+  isPeak?: "tv" | "radio";
+  isCrossover?: boolean;
+}
+
+export interface MediaChannelInfo {
+  id: MediaChannelKey;
+  name: string;
+  color: string;
+  lineStroke: string;
+  bgBadge: string;
+  peakTime: string;
+  peakValue: number;
+  troughTime: string;
+  troughValue: number;
+  summary: string;
+  band9Phrase: string;
+}
+
+export interface AudienceHotspot {
+  id: string;
+  title: string;
+  zone: TimeOfDayZone;
+  timeRange: string;
+  radioState: string;
+  tvState: string;
+  contrastKey: string;
+  band9Sentence: string;
+  keyFeature: string;
+}
+
+// Backward compatibility types for legacy or shared components
 export type CountryKey = "germany" | "france" | "italy";
 export type FormatKey = "shop_cds" | "online_cds" | "downloads" | "cassettes" | "vinyl";
 
 export interface CountryProfitDetail {
-  y1997: number; // in million euros
+  y1997: number;
   y2007: number;
   change: string;
   band9Citation: string;
@@ -38,14 +78,13 @@ export interface CountryMarketData {
 export interface ComparisonHotspot {
   id: string;
   title: string;
-  zone: "shop_cds" | "digital" | "legacy_analog" | "national_contrast";
-  normalState: string; // 1997 baseline
-  elNinoState: string; // 2007 shift
+  zone: string;
+  normalState: string;
+  elNinoState: string;
   contrastKey: string;
   band9Sentence: string;
 }
 
-// Backward compatibility for old diagram structure
 export interface PacificConditionFeature {
   id: "normal" | "el_nino";
   title: string;
@@ -72,11 +111,13 @@ export interface PacificConditionFeature {
 }
 
 export interface Task1DiagramData {
-  conditions: PacificConditionFeature[];
+  conditions?: PacificConditionFeature[];
   hotspots: ComparisonHotspot[];
   comparisonsSummary: Record<string, string>;
   formats?: MusicFormatItem[];
   countries?: CountryMarketData[];
+  audiencePoints?: HourlyAudiencePoint[];
+  channels?: MediaChannelInfo[];
   schools?: any[];
   convergences?: any[];
   intersections?: any[];
@@ -131,6 +172,9 @@ export interface Task1Data {
   sampleIntro: string;
   sampleOverview: string;
   timingSeconds: number;
+  hourlyPoints?: HourlyAudiencePoint[];
+  channels?: MediaChannelInfo[];
+  audienceHotspots?: AudienceHotspot[];
   formats: MusicFormatItem[];
   countries: CountryMarketData[];
   diagramData: Task1DiagramData;

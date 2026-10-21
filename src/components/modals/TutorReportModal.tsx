@@ -12,10 +12,10 @@ interface TutorReportModalProps {
 }
 
 const TASK1_SUBMISSIONS = [
-  { student: "Aarav Sharma", type: "Comparative Diagram", topic: "Trade wind faltering & eastward warm water surge capping the Peruvian thermocline", accuracy: "High" },
-  { student: "Pooja Patel", type: "Comparative Diagram", topic: "Precipitation inversion: Australian convective rain shifting to Peruvian coastal storms", accuracy: "High" },
-  { student: "Rohan Verma", type: "Comparative Diagram", topic: "Nutrient upwelling cessation and catastrophic collapse of Peruvian commercial fish stocks", accuracy: "High" },
-  { student: "Ananya Iyer", type: "Comparative Diagram", topic: "Contrasting baseline Pacific equilibrium with El Niño atmospheric-oceanic disruption", accuracy: "High" }
+  { student: "Aarav Sharma", type: "Line Graph", topic: "Morning rush surge & Radio daily apex (~27% at 8:30 am) vs TV news bump", accuracy: "High" },
+  { student: "Pooja Patel", type: "Line Graph", topic: "Midday crossover convergence at 13:00 (15%) and TV leadership reversal", accuracy: "High" },
+  { student: "Rohan Verma", type: "Line Graph", topic: "Prime-time TV explosion to 45% (20:00–21:00) vs Radio commute bump & plunge", accuracy: "High" },
+  { student: "Ananya Iyer", type: "Line Graph", topic: "Inverse diurnal patterns, nocturnal troughs (<5%) and complete 24-hour cycle synthesis", accuracy: "High" }
 ];
 
 const TASK2_SUBMISSIONS = [

@@ -9,25 +9,25 @@ const CONCLUSION_VARIATIONS = [
     id: "balanced",
     title: "Style 1: Standard Balanced Synthesis",
     badge: "Band 8.5–9 • Recommended",
-    summary: "Reflects the recommended conclusion: AI personalizes drills and automates grading, but human empathy and critical debate are irreplaceable.",
-    text: "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating assessment marking and tailoring practice drills to individual learning paces, I firmly disagree that it will replace classroom teachers. The essence of genuine education lies not merely in information retrieval, but in human empathy, moral stewardship, and inspirational mentorship—qualities that no algorithmic software can ever replicate.",
-    breakdown: "Sentence 1: Concession to AI's administrative automation & drill pacing + clear restatement of disagree opinion | Sentence 2: Synthesis of irreplaceable human qualities (empathy, ethics, mentorship)."
+    summary: "Synthesizes digital banking proliferation & data breaches, followed by the financial ruin and psychological toll on victims.",
+    text: "In conclusion, the alarming surge in identity theft is propelled primarily by the exponential expansion of digital commerce and systemic corporate database breaches. Consequently, innocent victims endure devastating repercussions, spanning immediate financial deprivation, ruined credit ratings, and enduring psychological trauma. Addressing this crisis necessitates both enhanced institutional cybersecurity and comprehensive victim restitution.",
+    breakdown: "Sentence 1: Synthesis of primary technological & institutional causes | Sentence 2: Synthesis of victim monetary & psychological fallout | Sentence 3: Forward-looking systemic remedy."
   },
   {
-    id: "pedagogical",
-    title: "Style 2: Relational Pedagogy Model",
+    id: "academic",
+    title: "Style 2: Academic Causal Synthesis",
     badge: "Band 9 • Advanced Lexicon",
-    summary: "Contrasts computational information dissemination with relational pastoral care and character formation.",
-    text: "To conclude, while intelligent algorithms will undeniably serve as powerful augmentative tools that eliminate repetitive administrative burdens, I entirely reject the notion that they will supplant educators. Teaching is fundamentally a relational human journey; cold lines of computer code can never emulate the compassionate pastoral care and ethical inspiration that dedicated teachers provide.",
-    breakdown: "Sentence 1: Concedes augmentative administrative benefits + decisive rejection of total replacement | Sentence 2: Contrasts cold computational code with compassionate pastoral care."
+    summary: "Contrasts vulnerable digital transaction infrastructure with the protracted bureaucratic ordeals and mental anguish endured by victims.",
+    text: "To conclude, the escalation of financial impersonation stems undeniably from vulnerable digital transaction channels and illicit dark-web credential trafficking. In turn, individuals targeted by such cybercrimes suffer not only catastrophic monetary depletion but also profound mental anguish and protracted bureaucratic ordeals. Without stringent regulatory enforcement and proactive banking safeguards, this shadow economy will continue to thrive.",
+    breakdown: "Sentence 1: Advanced synthesis of cyber infrastructure flaws & dark-web trade | Sentence 2: Vivid synthesis of economic devastation & bureaucratic trauma."
   },
   {
     id: "rapid-exam",
     title: "Style 3: Rapid 2-Sentence Exam Model",
-    badge: "Rapid Timing • Under 45 Words",
+    badge: "Rapid Timing • Under 50 Words",
     summary: "Ultra-compact, high-speed conclusion ideal when running short on time in the real exam.",
-    text: "In conclusion, despite the exceptional utility of artificial intelligence in automating grading and tailoring practice exercises, I firmly maintain that teachers will remain indispensable. Human empathy, critical thinking facilitation, and moral guidance cannot be replaced by algorithms.",
-    breakdown: "Sentence 1: Rapid concession to AI utility + firm thesis that teachers remain indispensable | Sentence 2: Punchy synthesis of human empathy, critical thinking, and ethics."
+    text: "In conclusion, identity theft is burgeoning due to widespread digital transactions and corporate data leaks. For victims, the fallout is devastating, causing severe financial impoverishment, credit destruction, and long-lasting psychological anxiety.",
+    breakdown: "Sentence 1: Compact synthesis of main causes | Sentence 2: Punchy recap of triple victim impact (financial, credit, emotional)."
   }
 ];
 
@@ -41,9 +41,9 @@ export const Step8ConclusionT2: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 08 / 09 • Sample Conclusion &amp; Synthesis
         </span>
-        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Ideas + Restate Opinion</h2>
+        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Ideas (Causes &amp; Effects)</h2>
         <p className="stage-subtitle">
-          Mandatory Conclusion Format: <strong>Sum-up all the main ideas + restate opinion</strong>. Concede AI's augmentative role in sentence 1, and reassert why human empathy and critical thinking remain irreplaceable in sentence 2.
+          Mandatory Conclusion Format: <strong>Sum-up all the main ideas + synthesize causes and effects</strong>. Reiterate digital banking and corporate security lapses as key drivers in sentence 1, and synthesize the financial and psychological toll on victims in sentence 2.
         </p>
       </div>
 
@@ -68,7 +68,7 @@ export const Step8ConclusionT2: React.FC = () => {
                 </h4>
               </div>
               <span className="apple-badge success">
-                Decisive Outweighed Stance
+                Cause &amp; Effect Synthesis
               </span>
             </div>
 
@@ -111,13 +111,13 @@ export const Step8ConclusionT2: React.FC = () => {
               <h5 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>One-Liner Planning Points</h5>
             </div>
             <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "1.02rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
-              <li><strong>Benefits:</strong> Financial preparedness + mature decision-making.</li>
-              <li><strong>Drawback:</strong> Fewer years available for raising children and possible fertility-related concerns.</li>
-              <li><strong>Judgement:</strong> Benefits generally outweigh the drawbacks.</li>
+              <li><strong>Causes:</strong> Proliferation of digital transactions + corporate database breaches exfiltrating credentials.</li>
+              <li><strong>Victim Effects:</strong> Immediate financial impoverishment + enduring psychological trauma and bureaucratic credit battles.</li>
+              <li><strong>Synthesis:</strong> Demands robust institutional cyber defense paired with rapid victim restitution protocols.</li>
             </ul>
           </div>
 
-          {/* 3-Step Outweighing Blueprint */}
+          {/* 3-Step Cause-and-Effect Blueprint */}
           <div
             style={{
               background: "#ffffff",
@@ -133,19 +133,19 @@ export const Step8ConclusionT2: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <Layers size={18} color="var(--apple-blue)" />
               <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                The 3-Step Outweighing Conclusion Formula
+                The 3-Step Cause &amp; Effect Conclusion Formula
               </h5>
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              <div style={{ background: "#fff1f2", border: "1px solid #fecdd3", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#9f1239" }}>
-                <strong>Step 1: Measured Concession Clause:</strong> Acknowledge the counterpoint without lingering (`"Although postponing parenthood may present certain practical and biological challenges..."`)
+              <div style={{ background: "#fffbeb", border: "1px solid #fde68a", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#92400e" }}>
+                <strong>Step 1: Direct Synthesis Opener:</strong> Signal conclusion and summarize root causes (`"In conclusion, the alarming escalation in identity theft is propelled primarily by..."`)
               </div>
-              <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#1e40af" }}>
-                <strong>Step 2: Assertive Outweighing Opinion:</strong> Confirm that the development is positive (`"...I believe the overall benefits make this a positive development."`)
+              <div style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#991b1b" }}>
+                <strong>Step 2: Recap of Victim Toll:</strong> Summarize dual economic and psychological damage (`"...inflicting acute monetary loss, ruined credit ratings, and prolonged psychological distress."`)
               </div>
               <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#166534" }}>
-                <strong>Step 3: Synthesis &amp; Broad Impact:</strong> Summarize why (greater maturity, informed partner choices, and financial security provide a stable upbringing).
+                <strong>Step 3: Forward-Looking Perspective:</strong> Emphasize institutional safeguards &amp; restitution (`"Stemming this crime demands rigorous cybersecurity alongside expedited legal support for victims."`)
               </div>
             </div>
           </div>
@@ -169,9 +169,9 @@ export const Step8ConclusionT2: React.FC = () => {
               </span>
             </div>
             <ul style={{ margin: 0, paddingLeft: "18px", fontSize: "0.84rem", color: "var(--slate-700)", lineHeight: 1.55 }}>
-              <li><strong>Never introduce new arguments:</strong> Do not bring up new examples or statistics here.</li>
-              <li><strong>Match your Introduction:</strong> If you wrote "advantages outweigh" in Step 5, you MUST conclude the same in Step 8.</li>
-              <li><strong>Be decisive:</strong> Avoid saying "it has both pros and cons". Directly state which side is stronger!</li>
+              <li><strong>Never introduce new causes or effects:</strong> Restrict synthesis strictly to points developed in Body 1 and Body 2.</li>
+              <li><strong>Match your Introduction:</strong> The causes and victim fallout previewed in Step 5 must be mirrored faithfully here.</li>
+              <li><strong>Maintain balanced weight:</strong> Do not omit the victim effects in favor of causes; both parts of the question must be concluded.</li>
             </ul>
           </div>
         </div>
@@ -292,7 +292,7 @@ export const Step8ConclusionT2: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Outweighing Vocabulary Toolkit */}
+          {/* Cause-and-Effect Signposting Toolkit */}
           <div
             style={{
               background: "#ffffff",
@@ -308,19 +308,19 @@ export const Step8ConclusionT2: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <BookOpen size={18} color="var(--apple-blue)" />
               <h5 style={{ fontSize: "0.98rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                Band 9 Outweighing Signposting Toolkit
+                Band 9 Cause &amp; Effect Signposting Toolkit
               </h5>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
               <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "10px", padding: "8px 12px", fontSize: "0.82rem" }}>
-                <strong style={{ color: "#0066cc" }}>Concession Openers:</strong><br />
-                • "Although [drawback] is undeniable..."<br />
-                • "While the concerns regarding [X] are legitimate..."
+                <strong style={{ color: "#0066cc" }}>Causal Summary Openers:</strong><br />
+                • "In conclusion, the surge in identity theft is propelled primarily by..."<br />
+                • "To conclude, the escalation in cyber fraud stems undeniably from..."
               </div>
               <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "10px", padding: "8px 12px", fontSize: "0.82rem" }}>
-                <strong style={{ color: "#059669" }}>Outweighed Verdicts:</strong><br />
-                • "...the benefits decisively outweigh the drawbacks."<br />
-                • "...render this retail development predominantly advantageous."
+                <strong style={{ color: "#dc2626" }}>Victim Toll Signposts:</strong><br />
+                • "...leaving victims to bear the brunt of severe financial depletion..."<br />
+                • "...inflicting lasting psychological trauma alongside protracted administrative battles."
               </div>
             </div>
           </div>

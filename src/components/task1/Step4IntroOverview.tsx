@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, Sparkles, CheckCircle2, Split, Compass, Layers, Globe } from "lucide-react";
+import { BookOpen, Sparkles, CheckCircle2, Split, Compass } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 const QuoteCard: React.FC<{ icon: React.ReactNode; title: string; text: string; annotation?: string }> = ({ icon, title, text, annotation }) => (
@@ -24,22 +24,22 @@ export const Step4IntroOverview: React.FC = () => (
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction &amp; Overview</span>
       <h2 className="stage-title">Build the Introduction and Macro Overview</h2>
       <p className="stage-subtitle">
-        Master the Band 9 approach for comparative business bar graphs: state the graphic format, commercial enterprise, distribution channels, temporal range, and exact financial scale of measurement, followed by a 3-pillar macro overview.
+        Master the Band 9 approach for line graphs depicting diurnal cycles: state the visual format, demographic population, media channels, 24-hour cycle, and exact percentage measurement scale, followed by a 3-pillar macro overview.
       </p>
     </div>
 
     <div className="stage-grid-2col">
       <QuoteCard
         icon={<BookOpen size={20} color="var(--slate-800)" />}
-        title="1. Sample Introduction (With Scale)"
+        title="1. Sample Introduction (With Scale & Demographic Scope)"
         text={TASK1_DATA.sampleIntro}
-        annotation="Paraphrases the prompt by integrating all key elements: 1) Graphic type (horizontal bar charts), 2) Business entity (SMG Entertainment), 3) Five audio formats, 4) Geographic & temporal scope (Germany, France, and Italy from 1997 to 2007), and 5) The explicit financial measurement scale ('measured on a scale of million euros / €m'), satisfying examiner Band 9 Task Achievement expectations."
+        annotation="Paraphrases the prompt by integrating all 5 critical parameters: 1) Graphic type (line graph), 2) Demographic audience (UK population aged four and above), 3) Two media channels (radio and television), 4) Full temporal span (a 24-hour cycle between October and December 1992), and 5) The explicit measurement unit (percentage of population / %), satisfying examiner Band 9 Task Achievement expectations."
       />
       <QuoteCard
         icon={<Sparkles size={20} color="var(--slate-800)" />}
-        title="2. Sample Macro Overview"
+        title="2. Sample Macro Overview (3 Core Pillars)"
         text={TASK1_DATA.sampleOverview}
-        annotation="Synthesizes the 3 macro pillars: 1) Physical store CDs retained undisputed leadership despite sharp drops; 2) Legacy analog formats (cassettes and vinyl) were rendered completely obsolete with zero profit across all three markets; 3) Online channels expanded dynamically, while establishing Germany as the dominant profit generator."
+        annotation="Synthesizes the 3 macro pillars: 1) Inverse diurnal patterns (radio morning supremacy vs television afternoon and evening dominance); 2) Prime-time television achieving the single highest audience share of the entire 24-hour cycle (45%); 3) The pivotal midday intersection around 13:00 where both curves temporarily converge at roughly 15%."
       />
     </div>
 
@@ -56,23 +56,23 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-            <span><strong>Graphic Format &amp; Action:</strong> <em>“The horizontal bar charts illustrate / compare...”</em> (clear academic reporting verb).</span>
+            <span><strong>Graphic Format &amp; Action:</strong> <em>“The line graph illustrates / depicts...”</em> (accurate academic reporting verb).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-            <span><strong>Entity &amp; Subject:</strong> <em>“...the profits earned by SMG Entertainment, a music record enterprise...”</em></span>
+            <span><strong>Demographic Subject &amp; Age:</strong> <em>“...the proportion of the UK population aged four and above...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>3</span>
-            <span><strong>Scope &amp; Categories:</strong> <em>“...across five distinct audio distribution formats...”</em></span>
+            <span><strong>Two Broadcasting Channels:</strong> <em>“...who listened to the radio and watched television...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>4</span>
-            <span><strong>Territories &amp; Timeframe:</strong> <em>“...in Germany, France, and Italy between 1997 and 2007...”</em></span>
+            <span><strong>Temporal Cycle &amp; Year:</strong> <em>“...throughout a 24-hour diurnal cycle between October and December 1992...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center", background: "#dbeafe", color: "#1e40af", fontWeight: 800 }}>5</span>
-            <span><strong>Measurement Scale (Crucial):</strong> <em>“...with financial returns measured on a scale of million euros (€m).”</em></span>
+            <span><strong>Measurement Scale (Crucial):</strong> <em>“...measured as a percentage of the total population (%).”</em></span>
           </div>
         </div>
       </div>
@@ -88,15 +88,15 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 1 — Persistent Physical Dominance:</strong> Emphasize that retail shop-bought CDs produced the vast majority of profit across all three nations in both years, despite sharp drops.</span>
+            <span><strong>Pillar 1 — Inverse Diurnal Rhythms:</strong> Point out that radio commands the morning peak (breakfast commute), whereas television decisively dominates from the early afternoon through midnight.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 2 — Universal Analog Obsolescence:</strong> Highlight that cassettes and vinyl records suffered total extinction, recording zero revenue across all three countries by 2007.</span>
+            <span><strong>Pillar 2 — Absolute Peak (TV Zenith):</strong> Emphasize that television achieved the single highest audience share of the entire 24-hour cycle during prime time (45% between 20:00 and 21:00).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 3 — Digital Transition &amp; Geographic Leader:</strong> Note the dynamic emergence of downloads and online CD purchases, while identifying Germany as the premier revenue generator.</span>
+            <span><strong>Pillar 3 — Midday Convergence Milestone:</strong> Note the key crossover point around 13:00 (1:00 pm) where both broadcasting mediums temporarily converge at roughly 15%.</span>
           </div>
         </div>
       </div>

@@ -110,7 +110,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   </span>
                 </div>
                 <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--slate-900)", margin: "3px 0 0" }}>
-                  AI in the Classroom: High-Band Argumentation &amp; Nuance
+                  Financial Cybercrime &amp; Identity Theft: High-Band Argumentation &amp; Nuance
                 </h3>
               </div>
             </div>
@@ -147,7 +147,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               { id: "faculty", label: "1. Faculty Idea Bank (8 Angles)", icon: <Award size={15} /> },
               { id: "method", label: "2. The 3-Tier Body Architecture", icon: <Lightbulb size={15} /> },
               { id: "comparisons", label: "3. Band 6 vs Band 8.5+ Sentences", icon: <GitBranch size={15} /> },
-              { id: "formulas", label: "4. Outweighing Formulas & Advice", icon: <BookOpen size={15} /> }
+              { id: "formulas", label: "4. Cause-Effect Formulas & Advice", icon: <BookOpen size={15} /> }
             ].map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -196,7 +196,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                 {/* Discussion Question Feature Card */}
                 <div
                   style={{
-                    background: "linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%)",
+                    background: "linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%)",
                     border: "1.5px solid #bfdbfe",
                     borderRadius: "18px",
                     padding: "18px 22px",
@@ -212,21 +212,21 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </h5>
                   </div>
                   <blockquote style={{ margin: 0, fontSize: "1.02rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
-                    “Can an algorithm inspire a child to love learning or comfort a student in tears the way a dedicated human teacher does?”
+                    “Why has identity theft surged into one of the most lucrative financial crimes globally, and why is restoring a stolen identity so notoriously arduous for victims?”
                   </blockquote>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "4px" }}>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 1: What is the difference between transmitting information and genuine pedagogical teaching?
+                      Follow-up 1: Is individual carelessness to blame, or is the root cause systemic corporate security failures?
                     </span>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 2: Can artificial intelligence teach ethics and moral philosophy when it possesses no consciousness?
+                      Follow-up 2: Why do financial institutions often place the burden of proof onto the traumatized victim?
                     </span>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 3: Does automating homework grading mean the teacher is being replaced, or merely assisted?
+                      Follow-up 3: How does the borderless nature of cybercrime syndicates shield perpetrators from prosecution?
                     </span>
                   </div>
                   <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--slate-600)", fontStyle: "italic" }}>
-                    ✦ Pedagogical Purpose: These questions help students realize that education is fundamentally relational and ethical, whereas computer programs are merely cognitive calculators.
+                    ✦ Pedagogical Purpose: These questions help students perceive that identity theft is an organized, industrial shadow economy enabled by flawed digital infrastructure, resulting in protracted legal and psychological trauma for individuals.
                   </p>
                 </div>
 
@@ -236,57 +236,57 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     Faculty / Teacher Idea Bank (8 Analytical Discussion Angles)
                   </h4>
                   <div className="stage-grid-2col" style={{ gap: "14px" }}>
-                    {/* Opinion Side Angles (Why AI Cannot Replace Teachers) */}
+                    {/* Causes of Identity Theft */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                      <span className="apple-badge success" style={{ alignSelf: "flex-start", fontSize: "0.75rem" }}>
-                        🟢 OPINION SIDE: WHY TEACHERS ARE IRREPLACEABLE
+                      <span className="apple-badge warning" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fef3c7", color: "#92400e" }}>
+                        ⚡ BODY 1: ROOT CAUSES OF IDENTITY THEFT
                       </span>
                       {[
                         {
-                          title: "Psychological Pastoral Care",
-                          desc: "Human teachers detect subtle emotional crises, bullying, or domestic distress in students, offering compassionate intervention that no algorithm can emulate."
+                          title: "Ubiquitous Cashless Transactions",
+                          desc: "The transition to mobile banking and online merchant checkouts drastically multiplies the attack surface, exposing payment credentials at countless digital touchpoints."
                         },
                         {
-                          title: "Socratic Debate & Critical Discernment",
-                          desc: "Education requires challenging biases, dissecting ethical dilemmas, and fostering civil discourse through spontaneous classroom dialogue."
+                          title: "Systemic Corporate Data Breaches",
+                          desc: "Hackers breach centralized commercial databases, exfiltrating millions of unencrypted government ID numbers and credit records for dark-web distribution."
                         },
                         {
-                          title: "Moral Integrity & Ethical Role Modeling",
-                          desc: "Children learn ethical values not from abstract textual outputs, but by observing respected human mentors who embody fairness, honesty, and accountability."
+                          title: "Sophisticated Social Engineering",
+                          desc: "Phishing emails and spoofed banking portals impersonate trusted authorities, manipulating vulnerable individuals into surrendering one-time passcodes and pins."
                         },
                         {
-                          title: "Dynamic Classroom Chemistry",
-                          desc: "Experienced teachers instinctively read collective room energy, pivoting their pedagogical approach when sensing student exhaustion or confusion."
+                          title: "Transnational Cybercrime Impunity",
+                          desc: "Syndicates operate from foreign jurisdictions with weak extradition pacts, laundering illicit profits via crypto with minimal fear of law enforcement retribution."
                         }
                       ].map((item, idx) => (
-                        <div key={idx} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "12px 14px" }}>
-                          <strong style={{ fontSize: "0.88rem", color: "#166534" }}>{item.title}:</strong>
-                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#14532d", lineHeight: 1.45 }}>{item.desc}</p>
+                        <div key={idx} style={{ background: "#fffbeb", border: "1px solid #fde68a", borderRadius: "12px", padding: "12px 14px" }}>
+                          <strong style={{ fontSize: "0.88rem", color: "#92400e" }}>{item.title}:</strong>
+                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#78350f", lineHeight: 1.45 }}>{item.desc}</p>
                         </div>
                       ))}
                     </div>
 
-                    {/* Non-Opinion Side Angles (AI as Augmentative Tool) */}
+                    {/* Effects on Victims */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                      <span className="apple-badge warning" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fee2e2", color: "#991b1b" }}>
-                        🔴 NON-OPINION SIDE: AI'S AUGMENTATIVE STRENGTHS
+                      <span className="apple-badge accent" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fee2e2", color: "#b91c1c" }}>
+                        🔴 BODY 2: DEVASTATING FALLOUT FOR VICTIMS
                       </span>
                       {[
                         {
-                          title: "Personalized Practice Velocity",
-                          desc: "Intelligent software calibrates math problem difficulty and vocabulary drills to each student's exact speed, preventing boredom and frustration."
+                          title: "Catastrophic Financial Depletion",
+                          desc: "Perpetrators rapidly siphon liquid savings, max out existing credit cards, and secure unauthorized loans, leaving victims facing sudden insolvency."
                         },
                         {
-                          title: "Administrative Liberation",
-                          desc: "Automating repetitive clerical tasks and objective grading frees educators to dedicate their limited energy to direct student mentorship."
+                          title: "Decimated Credit Ratings",
+                          desc: "Unpaid fraudulent liabilities register as defaults, causing victims' credit scores to plummet and disqualifying them from mortgages and vehicle loans."
                         },
                         {
-                          title: "24/7 Homework Assistance",
-                          desc: "Synthetic tutors provide continuous diagnostic guidance outside school hours, allowing students to clarify doubts whenever they study."
+                          title: "Protracted Bureaucratic Ordeal",
+                          desc: "Victims spend hundreds of agonizing hours disputing false claims, acquiring notarized affidavits, and battling recalcitrant credit bureaus to clean their names."
                         },
                         {
-                          title: "Educational Lifeline in Remote Regions",
-                          desc: "In under-resourced communities facing severe human teacher deficits, mobile AI tools deliver vital foundational literacy and numeracy lessons."
+                          title: "Chronic Psychological Distress",
+                          desc: "Having one's identity weaponized triggers intense anxiety, paranoia, feelings of severe violation, and insomnia akin to post-traumatic stress."
                         }
                       ].map((item, idx) => (
                         <div key={idx} style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "12px", padding: "12px 14px" }}>
@@ -318,22 +318,22 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     step: "Tier 01",
                     badge: "1 Main Reason",
                     title: "State 1 Clear Primary Reason",
-                    say: "“Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy.”",
-                    takeaway: "Direct, unequivocal claim addressing the prompt without waffle."
+                    say: "“Foremost among the drivers behind the surge in identity theft is the ubiquity of digital financial transactions coupled with vulnerable corporate data repositories.”",
+                    takeaway: "Direct, unequivocal topic sentence addressing the question without ambiguity."
                   },
                   {
                     step: "Tier 02",
                     badge: "Supporting Reasons",
                     title: "Unpack WHY and HOW with Causal Supporting Reasons",
-                    say: "“Children and adolescents routinely experience motivational slumps, anxiety, and social friction. An observant teacher detects non-verbal cues and provides psychological reassurance, whereas algorithms possess zero consciousness or empathy.”",
-                    takeaway: "Explains the psychological, cognitive, and relational mechanics."
+                    say: "“As everyday commerce transitions online, consumers submit personal information across countless platforms. When corporate security fails, cyber syndicates exfiltrate sensitive data in bulk and auction credentials on dark-web marketplaces to facilitate automated fraud.”",
+                    takeaway: "Explains the technological mechanics and institutional vulnerabilities."
                   },
                   {
                     step: "Tier 03",
                     badge: "Example",
                     title: "Substantiate with Specific Evidence",
-                    say: "“For example, when a pupil struggles academically due to bereavement or severe domestic stress, an attentive educator offers compassionate counseling, whereas an automated software would rigidly log the missed deadline as academic failure.”",
-                    takeaway: "Pins the theoretical reasoning to an undeniable real-world scenario."
+                    say: "“A prominent illustration is the Equifax breach, in which hackers compromised the financial dossiers of over 147 million consumers, triggering an unprecedented wave of unauthorized credit cards and fraudulent loans.”",
+                    takeaway: "Anchors theoretical reasoning to an undeniable real-world cybercrime event."
                   }
                 ].map((item) => (
                   <div
@@ -372,22 +372,22 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    topic: "Emotional Connection & Empathy (Body 1)",
-                    band6: "Robots do not have feelings so they cannot understand when a student is crying or sad.",
-                    band9: "Artificial neural networks operate entirely on cold computational logic, remaining fundamentally devoid of the conscious empathy and psychological intuition required to support emotionally vulnerable learners.",
-                    why: "Replaces simplistic language with precise psychological and academic terminology: 'computational logic', 'conscious empathy', 'psychological intuition'."
+                    topic: "Root Causes: Cyber Breaches & Digital Banking (Body 1)",
+                    band6: "Identity theft is increasing because everyone buys things on their phone now and hackers steal passwords from companies.",
+                    band9: "The rapid proliferation of identity fraud is catalyzed by ubiquitous cashless transactions and systemic corporate database vulnerabilities, allowing cybercrime syndicates to exfiltrate personally identifiable information en masse.",
+                    why: "Replaces vague everyday words with precise technological and academic terminology: 'ubiquitous cashless transactions', 'systemic vulnerabilities', 'exfiltrate personally identifiable information en masse'."
                   },
                   {
-                    topic: "Critical Thinking & Socratic Debate (Body 2)",
-                    band6: "Teachers are better because they ask hard questions and make kids discuss things in class.",
-                    band9: "Cultivating higher-order critical faculties requires dynamic Socratic facilitation, wherein an experienced human mentor interrogates student assumptions and navigates contentious ethical dilemmas.",
-                    why: "Frames classroom discussion in terms of cognitive development: 'higher-order critical faculties', 'Socratic facilitation', 'interrogates student assumptions'."
+                    topic: "Victim Effects: Financial Ruin & Decimated Credit (Body 2)",
+                    band6: "Victims lose all their money and their bank accounts are empty so they cannot buy a house or get a loan.",
+                    band9: "Beyond immediate capital depletion, victims endure decimated credit ratings and false debt liabilities, effectively blacklisting them from obtaining mortgages, auto loans, or employment opportunities.",
+                    why: "Frames the consequence comprehensively: 'immediate capital depletion', 'decimated credit ratings', 'blacklisting them from mortgages'."
                   },
                   {
-                    topic: "AI as an Augmentative Tool (Body 3 Concession)",
-                    band6: "AI is good because it checks homework fast and teaches math easily.",
-                    band9: "Artificial intelligence functions as an exceptional augmentative asset by delivering calibrated practice exercises and automating routine assessment marking, thereby liberating educators from clerical exhaustion.",
-                    why: "Uses precise conceptual framing: 'augmentative asset', 'calibrated practice exercises', 'clerical exhaustion'."
+                    topic: "Victim Effects: Psychological & Bureaucratic Toll (Body 2)",
+                    band6: "People feel very sad and stressed out because they have to call the police and banks for many months.",
+                    band9: "Compounding the economic damage, victims endure chronic psychological trauma and an exhausting bureaucratic ordeal, spending months filing notarized affidavits to expunge fraudulent records from credit bureaus.",
+                    why: "Captures the emotional and institutional reality with precision: 'chronic psychological trauma', 'exhausting bureaucratic ordeal', 'expunge fraudulent records'."
                   }
                 ].map((item, index) => (
                   <div
@@ -431,24 +431,20 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    title: "1. Introduction Formula (Paraphrase + Opinion)",
-                    formula: "“With rapid advances in educational technology, it is often asserted that [AI will replace teachers in the classroom]. While I acknowledge that [AI can personalize drills and automate grading], I largely disagree that it will ever fully supersede human educators, whose [empathy, ethical mentorship, and critical facilitation] remain irreplaceable.”"
+                    title: "1. Introduction Formula (Paraphrase + Direct Outline)",
+                    formula: "“In the contemporary digital era, financial crimes centered around identity theft are escalating at an alarming velocity worldwide. In this essay, I will examine how [ubiquitous online banking and corporate data breaches] have catalyzed this illicit trend, before illustrating the [catastrophic financial devastation, ruined creditworthiness, and profound psychological distress] inflicted upon victimized individuals.”"
                   },
                   {
-                    title: "2. Body 1 Opener Formula (Opinion Side — Empathy)",
-                    formula: "“Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring [emotional intelligence and pastoral empathy].”"
+                    title: "2. Body 1 Opener Formula (Root Causes)",
+                    formula: "“Foremost among the drivers behind the escalating incidence of identity theft is the [ubiquity of electronic financial transactions combined with systemic corporate cybersecurity vulnerabilities]...”"
                   },
                   {
-                    title: "3. Body 2 Opener Formula (Opinion Side — Critical Thinking)",
-                    formula: "“Equally significant is that cultivating higher-order cognitive faculties and moral reasoning necessitates [spontaneous human dialogue, intellectual challenge, and ethical stewardship].”"
+                    title: "3. Body 2 Opener Formula (Effects on Victims)",
+                    formula: "“Turning to the ramifications, the consequences inflicted upon victims are both financially devastating and psychologically debilitating, characterized by [immediate monetary drainage and protracted bureaucratic struggles]...”"
                   },
                   {
-                    title: "4. Body 3 Opener Formula (Non-Opinion Side — AI's Role)",
-                    formula: "“On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative educational aid that [personalizes practice drills and streamlines administrative duties].”"
-                  },
-                  {
-                    title: "5. Conclusion Formula (Sum-up Main Ideas + Restate Opinion)",
-                    formula: "“In conclusion, although artificial intelligence is poised to revolutionize schooling by [automating grading and tailoring drills], I firmly disagree that it will replace classroom teachers. The essence of genuine education lies in [human empathy, moral stewardship, and inspirational mentorship]—qualities that no software can replicate.”"
+                    title: "4. Conclusion Formula (Sum-up Causes + Synthesize Effects)",
+                    formula: "“In conclusion, the alarming surge in identity theft is propelled primarily by [widespread digital commerce and corporate database leaks]. Consequently, innocent victims endure devastating repercussions, spanning [immediate financial deprivation, ruined credit ratings, and enduring psychological trauma]...”"
                   }
                 ].map((item, index) => (
                   <div
@@ -487,7 +483,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </h5>
                   </div>
                   <p style={{ fontSize: "0.9rem", color: "#14532d", margin: 0, lineHeight: 1.55 }}>
-                    Instruct students to strictly maintain the <strong>1 Main reason + Supporting reasons + Example</strong> formula in every body paragraph. Build Body 1 around emotional empathy, Body 2 around critical thinking and ethics, and use Body 3 to concede AI's augmentative role in homework and grading automation. Conclude decisively that assisting a teacher is fundamentally distinct from replacing one.
+                    Instruct students to strictly maintain the <strong>1 Main reason + Supporting reasons + Example</strong> formula in every body paragraph. Build Body 1 around digital transaction ubiquity and corporate database breaches, and construct Body 2 around direct financial ruin, destroyed credit ratings, and protracted bureaucratic/mental trauma. Symmetrical 50/50 paragraph balance between causes and effects guarantees maximum Band 9 Task Achievement.
                   </p>
                 </div>
               </motion.div>

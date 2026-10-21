@@ -8,9 +8,9 @@ export const Step8Connectors: React.FC = () => (
       <span className="apple-badge success" style={{ marginBottom: "8px" }}>
         Step 08 / 08 • Academic Transitions &amp; Comparative Cohesion
       </span>
-      <h2 className="stage-title">Financial Transitions &amp; Discourse Connectors for Comparative Bar Graphs</h2>
+      <h2 className="stage-title">Discourse Connectors &amp; Temporal Flow for Diurnal Line Graphs</h2>
       <p className="stage-subtitle">
-        Master academic discourse markers to establish seamless logical transitions between temporal baselines, market contractions, total obsolescence to nil, and burgeoning digital revenues.
+        Master academic discourse markers to establish seamless logical transitions between nocturnal troughs, rapid morning surges, midday crossover points, and evening prime-time spikes.
       </p>
     </div>
 
@@ -69,49 +69,51 @@ export const Step8Connectors: React.FC = () => (
       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
         <CheckCircle2 size={18} color="#16a34a" />
         <strong style={{ color: "var(--slate-900)", fontSize: "0.95rem" }}>
-          Recommended Cohesive Discourse Pathway for 10-Year Dynamic Bar Graphs
+          Recommended Cohesive Discourse Pathway for Diurnal Line Graphs
         </strong>
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.88rem", color: "var(--slate-700)" }}>
         {/* Paragraph 3 / Body 1 Flow */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "var(--slate-50)", padding: "10px 14px", borderRadius: "12px", border: "1px solid var(--border-subtle)" }}>
-          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 1 (1997 Baseline)</span>
+          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 1 (01:00–13:00)</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“In 1997,...”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Between 1:00 and 6:00,...”</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Shop CDs form overwhelming lion’s share</span>
+          <span>Audience figures remain marginal (&lt;7%)</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Germany (~€42m, above 40m line) &gt; France (€25m) &gt; Italy (~€20.5m)</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Radio then experienced a dramatic morning surge,...”</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“By contrast,...”</span>
+          <span>Apex of ~27% around 8:30 am</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Online CD orders negligible (&lt;€3m) + downloads nil</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“In contrast,...”</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Regarding analog formats,...”</span>
+          <span>TV modest 7% bump down to 4% at 11:00</span>
           <ArrowRight size={13} color="var(--apple-blue)" />
-          <span>Cassettes (Italy €6m; France &amp; Germany €5m) + vinyl (France &amp; Italy €3m)</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“By 13:00,...”</span>
+          <ArrowRight size={13} color="var(--apple-blue)" />
+          <span>Intersection where both mediums stand at 15%</span>
         </div>
 
         {/* Paragraph 4 / Body 2 Flow */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "var(--slate-50)", padding: "10px 14px", borderRadius: "12px", border: "1px solid var(--border-subtle)" }}>
-          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 2 (2007 Shift)</span>
+          <span className="apple-badge neutral" style={{ fontWeight: 700 }}>Body 2 (14:00–24:00)</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“A decade later,...”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“From 14:00 onwards,...”</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span>Shop CDs contract by €6m–€15m (yet remain #1)</span>
+          <span>Television supersedes radio permanently</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“In stark contrast,...”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Although radio exhibited a commute bump to 14%,...”</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span>Cassettes &amp; vinyl completely phased out to 0 €m</span>
+          <span>its figures plummeted below 10% thereafter</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“The slack was partially absorbed by...”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Conversely, television audiences skyrocketed...”</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span>Online CD sales surge (€8m Germany, €7m France)</span>
+          <span>Culminating in a prime-time peak of 45% (20:00–21:00)</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Concurrently,...”</span>
+          <span style={{ fontWeight: 650, color: "var(--slate-900)" }}>“Late at night,...”</span>
           <ArrowRight size={13} color="#16a34a" />
-          <span>Downloads emerge from zero to €5m each</span>
+          <span>TV drops to 15% by midnight, radio levels off at 4%</span>
         </div>
       </div>
     </div>

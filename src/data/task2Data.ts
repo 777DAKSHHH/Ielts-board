@@ -23,74 +23,74 @@ export type {
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "ai-replace-teachers-classroom-task2",
+  id: "identity-theft-causes-effects-task2",
 
-  taskType: "Agree or Disagree (To what extent do you agree or disagree?)",
+  taskType: "Causes and Effects (Direct Two-Part Question)",
 
-  title: "IELTS Writing Task 2 — AI Replacing Teachers in the Classroom",
+  title: "IELTS Writing Task 2 — Causes and Effects of Identity Theft",
 
   questionText:
-    "Artificial intelligence will soon replace teachers in the classroom.\n\nTo what extent do you agree or disagree?",
+    "In many countries, a financial crime involving identity theft is increasing.\n\nWhat are the causes of it and what effects does identity theft have on the victims involved?",
 
-  audioUrl: "materials/Staying_Young_as_a_Survival_Tactic.m4a",
+  audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
 
   timingSeconds: 180,
 
-  recommendedPosition: "Largely disagree (AI is an augmentative tool, not a human replacement)",
+  recommendedPosition: "Direct Dual Response: Technological vulnerabilities & corporate data breaches drive the crime; victims face financial ruin and acute psychological trauma.",
 
   strongestArgument:
-    "The strongest argument is that while artificial intelligence can deliver tailored learning drills and automate routine administrative grading, it fundamentally lacks the emotional intelligence, moral mentorship, and spontaneous facilitation required for holistic human education.",
+    "The strongest argument is that the exponential proliferation of online banking and e-commerce, combined with corporate data leaks, allows organized cybercrime syndicates to harvest confidential records, leaving victims facing wiped-out savings, destroyed credit ratings, and grueling psychological trauma.",
 
   // 1. Sample introduction planning points
   introPlanningPoints: [
-    "Paraphrase: The prospect of artificial intelligence supplanting human educators in the classroom.",
-    "Opinion: Largely disagree with full replacement.",
-    "Main reasons: AI serves as an augmentative tool, but human teachers provide irreplaceable emotional empathy, ethical mentorship, and critical discourse."
+    "Paraphrase: The rapid international escalation of fraudulent activities centered around identity theft.",
+    "Outline Causes: Widespread digitisation of financial transactions and large-scale corporate data breaches.",
+    "Outline Effects: Catastrophic monetary liabilities and profound, long-term psychological and bureaucratic distress for victims."
   ],
 
   sampleIntro:
-    "With rapid advances in educational technology, it is often argued that artificial intelligence will soon supersede human teachers in the classroom. While I acknowledge that intelligent algorithms can enhance personalized instruction and automate routine administrative tasks, I largely disagree that they will ever fully replace human educators, whose emotional empathy, ethical mentorship, and dynamic classroom leadership remain fundamentally irreplaceable.",
+    "In contemporary society, fraudulent activities centered around identity theft are experiencing an alarming surge across numerous nations. This modern financial crime is primarily driven by the ubiquity of vulnerable online financial transactions and rampant corporate data breaches, and it inflicts catastrophic monetary losses alongside profound psychological trauma on the individuals affected.",
 
   // 2. Sample conclusion planning points
   conclusionPlanningPoints: [
-    "Main ideas: AI excels at automated grading and customized drill delivery (augmentative aid).",
-    "Irreplaceable human core: Empathy, psychological pastoral care, and fostering ethical critical thinking.",
-    "Restate opinion: AI will empower teachers, never replace them."
+    "Summary of Causes: Cashless, hyper-connected digital economies and organized illicit cybercrime syndicates.",
+    "Summary of Effects: Severe economic destitution, ruined credit histories, and chronic emotional anguish.",
+    "Final Takeaway: Robust systemic encryption and expedited victim restitution are urgently needed."
   ],
 
   sampleConclusion:
-    "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating assessment marking and tailoring practice drills to individual learning paces, I firmly disagree that it will replace classroom teachers. The essence of genuine education lies not merely in information retrieval, but in human empathy, moral stewardship, and inspirational mentorship—qualities that no algorithmic software can ever replicate.",
+    "In conclusion, the escalating incidence of identity theft stems principally from the vulnerabilities inherent in a cashless, hyper-connected digital economy and the proliferation of illicit hacking syndicates. The fallout for victims is both acute and enduring, encompassing catastrophic financial hardship and severe emotional distress that often requires years of painstaking effort to resolve.",
 
   // Five-Minute Planning Map & Teaching Recommendation
   fiveMinutePlanningMap: {
     positive: [
-      "Emotional intelligence & pastoral care → supporting distressed or struggling learners",
-      "Critical thinking & moral debate → challenging cognitive biases and ethical dilemmas",
-      "Spontaneous classroom facilitation → inspiring curiosity and collaborative discovery"
+      "Digital banking convenience → routine storage of passwords and credentials on interconnected servers",
+      "Corporate database vulnerabilities → mass leaks of national insurance numbers and passwords",
+      "Sophisticated cybercrime tools → automated phishing, malware, and credential stuffing"
     ],
     negative: [
-      "Personalized pacing → adaptive drills customized to individual student velocity",
-      "Administrative efficiency → instantaneous grading of objective tests and homework",
-      "Scalable database access → 24/7 interactive knowledge retrieval"
+      "Total asset depletion → drained savings accounts and fraudulent credit lines opened in victim's name",
+      "Decimated credit rating → inability to secure housing mortgages, vehicle loans, or employment",
+      "Acute psychological distress → paranoia, insomnia, and an exhausting multi-year bureaucratic struggle"
     ],
-    position: "Largely Disagree",
-    body1: "Body 1 (Opinion): Irreplaceable emotional empathy, pastoral care, and psychological encouragement",
-    body2: "Body 2 (Opinion): Cultivating independent critical thinking, ethical reasoning, and debate moderation",
+    position: "Balanced Cause & Effect Structure",
+    body1: "Body 1 (Causes): Ubiquitous digital transactions, corporate database breaches, and sophisticated cybercrime syndicates",
+    body2: "Body 2 (Effects): Financial ruin, damaged credit ratings, chronic psychological trauma, and bureaucratic paralysis",
     teachingRecommendation:
-      "Instruct students to follow the exact format: 1 Main reason + Supporting reasons + Example for every body paragraph. Build Body 1 on emotional empathy and pastoral care, Body 2 on critical thinking and moral mentorship, and use Body 3 to concede AI's augmentative role in personalized drills and grading automation. Conclude decisively that assisting a teacher is fundamentally distinct from replacing one."
+      "Instruct students to follow the exact format: 1 Main reason + Supporting reasons + Example for both body paragraphs. Dedicate Body 1 to dissecting root technological and systemic causes (digital dependency and data breaches), and Body 2 to analyzing the dual material and psychological devastation endured by victims. Avoid simple lists; fully unpack causal links."
   },
 
   // Strongest Classroom Discussion Question
   classroomDiscussion: {
     question:
-      "Can an algorithm inspire a child to love learning or comfort a student in tears the way a dedicated human teacher does?",
+      "Why has identity theft become far more lucrative and difficult to prosecute than traditional physical bank robbery?",
     followUps: [
-      "What is the difference between transmitting information and genuine pedagogical teaching?",
-      "Can artificial intelligence teach ethics and moral philosophy when it possesses no consciousness?",
-      "Does automating homework grading mean the teacher is being replaced, or merely assisted?"
+      "Whose responsibility is it when personal records are exfiltrated: the individual consumer or the corporation hosting the database?",
+      "Can financial reimbursement from banks truly compensate for the psychological agony and ruined credit history of a victim?",
+      "How does the borderless nature of the internet shield cybercrime syndicates from national law enforcement?"
     ],
     pedagogicalInsight:
-      "These questions help students realize that education is fundamentally relational and ethical, whereas computer programs are merely cognitive calculators."
+      "These questions guide students to understand that identity theft is an asymmetric, borderless crime where the attacker risks little while the victim suffers comprehensive existential and financial disruption."
   },
 
   // 3. Student Idea Bank & Body Paragraph Formats (Strict Format: 1 Main reason + Supporting reasons + Example)
@@ -98,625 +98,480 @@ export const TASK2_DATA: Task2Data = {
     {
       paraNumber: 1,
       side: "strong_opinion",
-      title: "Body Para 1 (Opinion Side) — Emotional Intelligence & Pastoral Care",
-      theme: "Emotional Intelligence, Pastoral Empathy & Human Relational Support",
+      title: "Body Para 1 (Causes) — Technological Vulnerabilities & Cybercrime Syndicates",
+      theme: "Digital Dependency, Corporate Data Breaches & Organized Cybercrime",
       mainReason:
-        "Human educators possess emotional intelligence and psychological empathy, which are vital for student well-being and entirely beyond algorithmic replication.",
+        "Foremost among the drivers of escalating identity theft is the rapid digitisation of financial transactions combined with the increasing sophistication of international cybercrime syndicates.",
       supportingReasons:
-        "Education is fundamentally a relational human journey. Learners, particularly young children and teenagers, routinely encounter emotional distress, self-doubt, and social friction. An observant teacher offers compassionate encouragement, emotional stability, and pastoral guidance, whereas an artificial intelligence system is inherently cold and incapable of genuine feeling.",
+        "In an era where online banking, digital wallets, and e-commerce have become ubiquitous, individuals routinely input sensitive personal details—such as bank account numbers, passwords, and government identification—onto interconnected servers. Concurrently, organized criminal networks exploit technical vulnerabilities through advanced phishing campaigns, spyware, and large-scale corporate data breaches to harvest confidential credentials.",
       example:
-        "When an adolescent experiences acute exam anxiety or family bereavement, an attentive teacher recognizes non-verbal behavioral shifts and adapts expectations with warmth, whereas an algorithm would merely record missed deadlines as academic delinquency.",
+        "For example, prominent cyber-attacks against major credit bureaus and consumer retail databases have exposed the personal records of millions of individuals, enabling perpetrators to trade these credentials illicitly on dark web marketplaces.",
       band9Snippet:
-        "“Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy.”",
+        "“Foremost among the drivers of escalating identity theft is the rapid digitisation of financial transactions combined with the increasing sophistication of international cybercrime syndicates.”",
       alternativeReasons: [
         {
           id: "body1-alt1",
-          badge: "Reason 1 • Pastoral Empathy",
-          title: "Pastoral Empathy & Psychological Safety",
+          badge: "Cause 1 • Digital Banking Proliferation",
+          title: "Ubiquitous E-Commerce & Interconnected Cloud Portals",
           mainReason:
-            "Human educators possess emotional intelligence and psychological empathy, which are vital for student well-being and entirely beyond algorithmic replication.",
+            "The shift toward a cashless society forces citizens to entrust sensitive financial data to dozens of online commerce and banking platforms.",
           supportingReasons:
-            "Education is fundamentally a relational human journey. Learners, particularly young children and teenagers, routinely encounter emotional distress, self-doubt, and social friction. An observant teacher offers compassionate encouragement, emotional stability, and pastoral guidance, whereas an artificial intelligence system is inherently cold and incapable of genuine feeling.",
+            "Every commercial interaction requires transmitting credit card information, dates of birth, and home addresses across web servers. The sheer volume of transactions dramatically increases the surface area for data interception, leaving individuals vulnerable to automated man-in-the-middle attacks.",
           example:
-            "When an adolescent experiences acute exam anxiety or family bereavement, an attentive teacher recognizes non-verbal behavioral shifts and adapts expectations with warmth, whereas an algorithm would merely record missed deadlines as academic delinquency.",
+            "Consumers shopping on unverified mobile applications frequently have their payment details skimmed and cloned by fraudulent mirror websites.",
           band9Snippet:
-            "“Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy.”",
+            "“The exponential expansion of digital commerce has multiplied the access points through which malicious actors can intercept confidential payment credentials.”",
           modelParagraph:
-            "Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy. Children and adolescents do not merely acquire data; they undergo profound psychological development during which they frequently experience motivational crises, anxiety, and personal adversity. A human teacher can perceive subtle behavioral cues, listen with genuine compassion, and provide the psychological reassurance necessary to restore a pupil’s confidence. In contrast, artificial intelligence systems, regardless of their sophisticated computational power, possess zero consciousness or empathy. For example, when a student struggles academically due to domestic distress or bereavement, a sensitive teacher adapts deadlines and offers counseling, whereas an automated program would rigidly penalize the late submission as a quantitative failure.",
+            "Foremost among the drivers of escalating identity theft is the rapid digitisation of commerce and banking. In contemporary economies, cash has been largely supplanted by electronic transactions, requiring consumers to register their banking details, passwords, and home addresses across countless commercial websites. This constant digital footprint vastly multiplies the potential vulnerabilities that hackers can exploit. Unsecured payment gateways and fraudulent mirror websites routinely capture credit card numbers and personal data without the consumer's knowledge. For example, shoppers using unverified mobile applications or public Wi-Fi networks frequently fall prey to packet-sniffing software that harvests their banking credentials in real time.",
           examinerNotes:
-            "High emotional resonance. Explains the critical boundary between machine computation and human relational connection."
+            "Exemplary Band 9 development focusing on the structural transition to digital commerce."
         },
         {
           id: "body1-alt2",
-          badge: "Reason 2 • Inspiration & Mentorship",
-          title: "Inspirational Role Modeling & Character Formation",
+          badge: "Cause 2 • Corporate & Institutional Breaches",
+          title: "Institutional Data Leaks & Dark Web Marketplaces",
           mainReason:
-            "Teachers act as inspirational role models whose life stories, passion, and personal character stimulate a lifelong love of learning.",
+            "Corporations, healthcare providers, and government agencies collect vast troves of personal data but frequently fail to implement adequate cybersecurity defenses.",
           supportingReasons:
-            "A charismatic teacher instills enthusiasm through shared human experiences, enthusiasm for their subject, and personal vulnerability. Algorithms can deliver curriculum checklists, but they cannot inspire passion or serve as ethical figures that young people seek to emulate.",
+            "When security safeguards are breached, confidential identity dossiers containing social security numbers, biometric data, and tax records are exfiltrated en masse. These stolen databases are then aggregated and auctioned off on dark web forums for nominal sums, equipping low-level criminals with turnkey identity kits.",
           example:
-            "Countless accomplished scientists and writers attribute their life achievements to a specific school teacher who believed in their potential and ignited their curiosity.",
+            "The monumental breaches of major credit rating agencies like Equifax exposed the confidential financial dossiers of over 140 million citizens, creating a permanent reservoir of stolen identities.",
           band9Snippet:
-            "“Beyond transmitting knowledge, teachers serve as vital role models whose infectious enthusiasm and personal mentorship kindle long-term academic ambition.”",
+            "“Catastrophic institutional data breaches exfiltrate vast troves of sensitive citizen dossiers directly into the illicit hands of dark web syndicates.”",
           modelParagraph:
-            "Equally critical is the role of human teachers as inspirational role models whose personal passion can kindle lifelong academic ambition. Education is fundamentally ignited by human connection; when students witness an educator's authentic enthusiasm for literature, history, or mathematics, they are motivated to push past cognitive hurdles. An algorithm operates entirely on mechanical logic, devoid of genuine passion or human conviction. For instance, numerous renowned scientists and Nobel laureates recount that their career trajectory was not catalyzed by reading textbooks, but by a devoted instructor who recognized their unique spark, believed in their potential, and pushed them to excel.",
+            "Equally critical is the vulnerability of large corporate and governmental databases that warehouse vast reservoirs of citizen information. Corporations and financial institutions accumulate enormous quantities of sensitive customer records—including national insurance numbers, birth dates, and credit histories—yet frequently deploy outdated encryption safeguards. When these central repositories suffer cyber-attacks, millions of comprehensive identity dossiers are exfiltrated in a single incident. For instance, the infamous Equifax breach compromised the sensitive data of nearly 150 million consumers, allowing cybercriminals to auction complete identity profiles on underground digital marketplaces.",
           examinerNotes:
-            "Focuses on inspirational mentorship and long-term academic motivation."
+            "Directly addresses systemic and institutional vulnerabilities."
         },
         {
           id: "body1-alt3",
-          badge: "Reason 3 • Dynamic Conflict Resolution",
-          title: "Interpersonal Socialization & Conflict Resolution",
+          badge: "Cause 3 • Advanced Phishing & Social Engineering",
+          title: "Sophisticated Social Engineering & Impersonation Tactics",
           mainReason:
-            "Classrooms are micro-societies where teachers teach students how to negotiate conflicts, collaborate harmoniously, and build social maturity.",
+            "Cybercrime organizations employ deceptive social engineering schemes that manipulate human trust and psychological urgency.",
           supportingReasons:
-            "Socialization is one of the primary pillars of schooling. Managing bullying, resolving playground disputes, and teaching children to cooperate with differing temperaments require acute human diplomacy that software cannot manage.",
+            "Phishing emails, spoofed bank SMS alerts, and AI-generated voice cloning trick unsuspecting victims into willingly disclosing their two-factor authentication codes and confidential pins. Because these schemes mimic legitimate banking communications flawlessly, even digitally literate individuals are deceived.",
           example:
-            "When group work devolves into peer friction or social exclusion, a teacher steps in to mediate disagreements and guide students toward constructive compromise.",
+            "Fraudulent messages masquerading as urgent alerts from national tax authorities or delivery couriers persuade victims to input login credentials on fraudulent authentication portals.",
           band9Snippet:
-            "“Human teachers serve as essential mediators of social cohesion, teaching children the nuanced interpersonal skills needed to thrive within diverse communities.”",
+            "“Deceptive phishing campaigns and psychological social engineering exploit human trust to coerce victims into surrendering multi-factor credentials.”",
           modelParagraph:
-            "Furthermore, classrooms function as vital social crucibles where children learn to interact, collaborate, and resolve interpersonal discord under human supervision. Schooling is not conducted in solitary isolation; it involves group dynamics, teamwork, and navigating social friction. A human teacher intuitively manages classroom chemistry, detects bullying, and guides alienated students toward productive group integration. A digital interface cannot mediate playground squabbles or cultivate empathy among squabbling peers. For example, when cooperative projects break down due to personality clashes, an experienced teacher uses the moment as a lesson in negotiation, a pedagogical intervention entirely beyond algorithmic capability.",
+            "Furthermore, identity theft is intensified by the growing sophistication of social engineering and deceptive phishing campaigns. Modern cybercriminals no longer rely solely on brute-force hacking; they deploy highly convincing fraudulent communications that impersonate tax authorities, postal services, or banking fraud departments. By creating a false sense of panic or regulatory urgency, these schemes manipulate victims into surrendering two-factor authentication codes and private verification passwords. For example, spear-phishing messages designed to mimic urgent security alerts from national commercial banks frequently lead unsuspecting customers to counterfeit login portals where their credentials are instantly compromised.",
           examinerNotes:
-            "Highlights social learning theory and the classroom as an interpersonal community."
+            "Explores human-centered vulnerabilities and psychological manipulation."
+        },
+        {
+          id: "body1-alt4",
+          badge: "Cause 4 • Inadequate Legislation & Cross-Border Impunity",
+          title: "Jurisdictional Gaps & Anonymized Crypto Laundering",
+          mainReason:
+            "The borderless architecture of the internet allows international criminal syndicates to operate outside the jurisdiction of local law enforcement.",
+          supportingReasons:
+            "Perpetrators operating in rogue jurisdictions can weaponize stolen identities across foreign banking systems without fear of extradition. Coupled with cryptocurrency and digital mixers, stolen funds are laundered instantaneously, creating near-zero legal risk for perpetrators.",
+          example:
+            "Transnational crime syndicates based in regions with weak cyber regulations systematically target Western bank accounts, knowing local police lack international subpoena powers.",
+          band9Snippet:
+            "“The jurisdictional fragmentation of international law enables cybercriminals to harvest identities abroad with near-total judicial impunity.”",
+          modelParagraph:
+            "Additionally, the legal framework governing international cybercrime remains hopelessly fragmented, granting foreign syndicates near-total impunity. Because the internet is inherently borderless, criminal organizations can orchestrate identity theft campaigns from countries that maintain weak cyber regulations and refuse to cooperate with foreign law enforcement. When criminals exploit stolen identities to take out loans or drain accounts, the illicit proceeds are rapidly converted into untraceable cryptocurrencies. Consequently, local police departments lack the jurisdictional reach and forensic resources to apprehend overseas offenders, creating a low-risk, high-reward environment for perpetrators.",
+          examinerNotes:
+            "Provides an advanced geopolitical and legal perspective on the cause."
         }
       ]
     },
     {
       paraNumber: 2,
       side: "strong_opinion",
-      title: "Body Para 2 (Opinion Side) — Critical Thinking, Ethics & Debate",
-      theme: "Higher-Order Cognitive Skills, Ethical Discernment & Socratic Discourse",
+      title: "Body Para 2 (Effects) — Financial Ruin & Psychological Trauma",
+      theme: "Asset Depletion, Credit Decimation & Severe Bureaucratic Trauma",
       mainReason:
-        "Cultivating independent critical thinking, ethical reasoning, and collaborative civic discourse requires active human facilitation rather than pre-programmed responses.",
+        "The repercussions of identity theft on victims are both financially catastrophic and psychologically devastating.",
       supportingReasons:
-        "True education extends far beyond rote memorization of factual data; it involves challenging preconceptions, dissecting moral dilemmas, and participating in spontaneous classroom debate. While algorithms merely assemble predictive textual patterns from historical databases, human mentors provoke intellectual curiosity, challenge cognitive biases, and model moral integrity.",
+        "From an economic standpoint, criminals exploit compromised information to drain savings, max out credit cards, and obtain illicit loans, which obliterates the victim’s credit rating and disqualifies them from securing essential services such as mortgages or business financing. Rectifying these fraudulent liabilities typically entails an exhausting, protracted bureaucratic struggle with banking institutions and law enforcement agencies to restore legal legitimacy. Beyond material loss, victims frequently endure acute emotional trauma; the persistent feeling of personal violation and the ceaseless fear of recurring fraud commonly trigger severe anxiety, insomnia, and pervasive distrust in digital systems.",
       example:
-        "In a history or literature seminar evaluating contentious historical events, an experienced teacher challenges students' assumptions and moderates respectful debate, orchestrating nuances that a pre-programmed chatbot cannot navigate.",
+        "For instance, many victims discover the fraud only when debt collectors demand repayment for mortgages or loans taken in their name, leaving them legally culpable until proven innocent.",
       band9Snippet:
-        "“Equally significant is that cultivating higher-order cognitive faculties and moral reasoning necessitates spontaneous human dialogue and intellectual challenge.”",
+        "“The fallout for victims encompasses not merely direct pecuniary losses, but also the total destruction of creditworthiness and severe, chronic psychological distress.”",
       alternativeReasons: [
         {
           id: "body2-alt1",
-          badge: "Reason 1 • Socratic Dialogue",
-          title: "Socratic Debate & Questioning Preconceptions",
+          badge: "Effect 1 • Financial Ruin & Credit Decimation",
+          title: "Direct Asset Depletion & Paralyzing Credit Destruction",
           mainReason:
-            "Developing analytical rigor and nuanced argumentation depends on spontaneous Socratic questioning that forces students to justify their beliefs.",
+            "Victims suffer the immediate draining of liquid assets followed by severe credit score destruction that paralyses their economic lives.",
           supportingReasons:
-            "An experienced teacher can immediately detect logical fallacies in a student's verbal reasoning and pivot the discussion with counter-questions, fostering genuine intellectual agility rather than mechanical information retrieval.",
+            "Perpetrators take out massive personal loans, lease luxury vehicles, and rack up credit debts in the victim's name. When these go unpaid, the victim's credit profile is blacklisted, rendering them incapable of securing a home mortgage, renting an apartment, or even passing pre-employment background checks.",
           example:
-            "During a high school debate on environmental legislation, a teacher prompts students to reconcile conflicting economic and moral priorities through real-time philosophical inquiry.",
+            "Young professionals have had their credit scores obliterated overnight, causing approved bank mortgages to be rescinded and forcing them into sudden housing crises.",
           band9Snippet:
-            "“Socratic intellectual inquiry thrives upon dynamic teacher-led dialogue, compelling pupils to confront logical inconsistencies and defend complex hypotheses.”",
+            "“Compromised credit ratings effectively paralyze the victim’s economic trajectory, disqualifying them from housing mortgages and legitimate commercial loans.”",
           modelParagraph:
-            "Equally important is that cultivating critical thinking, ethical reasoning, and intellectual discernment necessitates dynamic human facilitation. Genuine education transcends rote memorization of static facts; it requires learners to interrogate orthodoxies, identify subtle biases, and engage in spontaneous debate. A human instructor employs Socratic questioning to challenge superficial thinking, pressing students to justify their assertions and consider alternate perspectives. Artificial intelligence, which merely synthesizes historical statistical correlations, is ill-equipped to guide philosophical inquiries or ethical debates. For instance, in a classroom discussion concerning bioethics or civil rights, a teacher skillfully steers the dialogue through moral ambiguities, prompting students to formulate independent convictions rather than accepting standardized algorithmic answers.",
+            "The primary consequence for victims is acute financial devastation and the total ruin of their creditworthiness. Once an identity is hijacked, perpetrators frequently empty checking accounts, establish fraudulent credit lines, and incur exorbitant loans in the victim’s name. When these fraudulent debts inevitably default, it is the innocent victim whose credit score is decimated. Consequently, victims find themselves blacklisted by credit reference agencies, leaving them entirely unable to secure home mortgages, obtain vehicle finance, or even rent an apartment. For example, many individuals only become aware of the crime when their mortgage applications are rejected or when debt collection agencies issue court summons for debts they never incurred.",
           examinerNotes:
-            "Targets Task Achievement at Band 9 by contrasting dynamic human inquiry with static computational databases."
+            "Comprehensive breakdown of the tangible economic devastation."
         },
         {
           id: "body2-alt2",
-          badge: "Reason 2 • Ethical Stewardship",
-          title: "Moral Guidance & Ethical Character Building",
+          badge: "Effect 2 • Protracted Bureaucratic Ordeal",
+          title: "Exhausting Bureaucratic & Legal Battles to Restore Identity",
           mainReason:
-            "Education is intrinsically linked to moral stewardship and instilling ethical values such as honesty, justice, and civic responsibility.",
+            "Restoring a stolen identity requires months or years of agonizing bureaucratic disputes with banks, credit bureaus, and judicial bodies.",
           supportingReasons:
-            "AI systems are trained on web text that frequently contains societal biases, misinformation, or moral apathy. Human educators embody moral accountability and teach students to distinguish right from wrong through lived ethical examples.",
+            "Victims are treated as guilty debtors until they can conclusively prove fraud. They must file hundreds of pages of police affidavits, hire legal counsel at great personal expense, and continually challenge erroneous credit agency entries across disparate institutions.",
           example:
-            "When dealing with academic dishonesty or plagiarism, a teacher transforms an infraction into an impactful moral lesson about personal integrity.",
+            "Victims often spend hundreds of hours submitting forensic notarized declarations to multiple credit bureaus, frequently having to repeat the process when bureaus misfile paperwork.",
           band9Snippet:
-            "“Teachers act as ethical anchors who instill enduring moral values and civic responsibility, whereas synthetic models operate without moral conscience.”",
+            "“Victims are thrust into an exhausting bureaucratic labyrinth, burdened with proving their innocence against automated banking and judicial machinery.”",
           modelParagraph:
-            "Moreover, educators serve as indispensable moral guides who cultivate ethical character, honesty, and civic responsibility in future generations. Artificial intelligence models are fundamentally amoral systems trained on uncurated internet data, often perpetuating algorithmic biases without moral awareness. Human teachers, by contrast, teach integrity through daily conduct, disciplining unfair behavior and instilling values of fairness and community service. For example, when an adolescent engages in academic dishonesty or cheating, a teacher does not simply issue an automatic grade deduction; they conduct a serious conversation about honor and personal responsibility, transforming an error into a formative ethical milestone.",
+            "Beyond monetary losses, victims are subjected to an exhausting and protracted bureaucratic ordeal to reclaim their legal identity. Financial institutions and credit reporting agencies routinely operate under the presumption that account holders are responsible for unpaid debts until conclusive proof of fraud is established. As a result, victims must spend hundreds of hours filing police reports, submitting sworn affidavits, and disputing fraudulent entries with uncooperative corporate bureaucracies. This grueling process frequently spans several years and requires hiring expensive legal counsel, forcing victims to expend substantial personal savings merely to clear their name.",
           examinerNotes:
-            "Emphasizes character education and moral development as human-exclusive domains."
+            "Highlights the systemic administrative burden placed on innocent victims."
         },
         {
           id: "body2-alt3",
-          badge: "Reason 3 • Adaptability to Diverse Needs",
-          title: "Real-Time Pedagogical Intuition & Adaptive Delivery",
+          badge: "Effect 3 • Severe Psychological Anguish & Paranoia",
+          title: "Chronic Anxiety, Violation of Privacy & Digital Paranoia",
           mainReason:
-            "Experienced educators possess professional intuition that enables them to spontaneously redesign lesson delivery when they sense a class is disengaged or confused.",
+            "The psychological damage of having one’s personal identity violated is profound, enduring, and akin to a physical burglary.",
           supportingReasons:
-            "While software follows rigid decision trees, human teachers can read the room, tell an illustrative anecdote, or switch to kinesthetic group work on the fly based on subtle collective energy.",
+            "Victims experience severe emotional upheaval, including chronic anxiety, panic disorders, feelings of vulnerability, and depression. Knowing that an unknown criminal possesses their home address, date of birth, and identity triggers pervasive paranoia, eroding their trust in digital technology and public institutions.",
           example:
-            "Noticing an afternoon class struggling with a dense theoretical physics concept, a teacher pivots to a spontaneous physical demonstration with everyday classroom objects.",
+            "Surveys of identity theft victims reveal that over 70% experience severe sleep deprivation, marital conflict, and long-lasting distrust of online communications.",
           band9Snippet:
-            "“Experienced teachers wield an intuitive pedagogical flexibility that allows them to re-energize an exhausted classroom through spontaneous creative adaptations.”",
+            "“The psychological impact is profoundly debilitating, triggering acute feelings of personal violation, chronic sleep deprivation, and enduring digital paranoia.”",
           modelParagraph:
-            "Additionally, human teachers possess an intuitive pedagogical flexibility that allows them to adjust their instruction spontaneously in response to room dynamics. While artificial intelligence follows pre-programmed scripts and user metrics, an educator can sense when a whole classroom is mentally fatigued, distracted, or genuinely bewildered by a complex concept. They can immediately alter their tone, introduce an impromptu interactive demonstration, or tell a memorable humorous anecdote to re-engage attention. For instance, an intuitive science teacher observing blank stares during a lecture on molecular physics can abruptly set aside the textbook and stage an interactive physical simulation, an instinctive adaptation that rigid algorithmic tutors cannot match.",
+            "Equally damaging is the profound psychological trauma and emotional distress that identity theft inflicts upon victims. Having one's intimate personal details weaponized by an anonymous criminal induces feelings of severe personal violation analogous to a home burglary. Victims frequently suffer from chronic insomnia, panic attacks, and severe clinical depression as they endure the constant dread of impending financial ruin. Moreover, this traumatic experience engenders an enduring sense of paranoia and cynicism toward modern digital technology. For example, psychological studies indicate that identity theft victims routinely suffer from post-traumatic stress and marital conflict stemming from the relentless strain of resolving fraudulent claims.",
           examinerNotes:
-            "Highlights the intuitive, non-linear art of classroom teaching."
-        }
-      ]
-    },
-    {
-      paraNumber: 3,
-      side: "non_opinion",
-      title: "Body Para 3 (Non-Opinion Side) — AI's Augmentative Efficiency & Personalized Pacing",
-      theme: "Personalized Practice Drills, Administrative Relief & Scalable Tutoring",
-      mainReason:
-        "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative educational aid that personalizes practice drills and streamlines administrative duties.",
-      supportingReasons:
-        "Intelligent tutoring platforms can instantaneously analyze individual performance metrics, dynamically adapting the difficulty of mathematical problem sets or foreign language vocabulary to a pupil's exact pace. Furthermore, automating routine paper grading frees teachers from administrative burdens.",
-      example:
-        "Adaptive software like Khan Academy or Duolingo enables students to practice foundational concepts at their own speed with immediate diagnostic feedback, allowing teachers to dedicate their classroom hours to higher-level discussions.",
-      band9Snippet:
-        "“On the other hand, proponents rightfully point out that artificial intelligence can function as an exceptional augmentative tool by optimizing repetitive tasks and customizing foundational exercises.”",
-      alternativeReasons: [
-        {
-          id: "body3-alt1",
-          badge: "Reason 1 • Personalized Pacing",
-          title: "Adaptive Learning Pacing & Instant Feedback",
-          mainReason:
-            "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative educational aid that personalizes practice drills and streamlines administrative duties.",
-          supportingReasons:
-            "Intelligent tutoring platforms can instantaneously analyze individual performance metrics, dynamically adapting the difficulty of mathematical problem sets or foreign language vocabulary to a pupil's exact pace. Furthermore, automating routine paper grading frees teachers from administrative burdens.",
-          example:
-            "Adaptive software like Khan Academy or Duolingo enables students to practice foundational concepts at their own speed with immediate diagnostic feedback, allowing teachers to dedicate their classroom hours to higher-level discussions.",
-          band9Snippet:
-            "“On the other hand, proponents rightfully point out that artificial intelligence can function as an exceptional augmentative tool by optimizing repetitive tasks and customizing foundational exercises.”",
-          modelParagraph:
-            "On the other hand, proponents of educational technology legitimately argue that artificial intelligence offers unprecedented benefits as a supplementary learning tool. Intelligent tutoring platforms can process vast pedagogical databases and track individual learning trajectories with surgical precision. By diagnosing a student's specific gaps in mathematics or grammar, algorithmic software can instantly generate customized exercises tailored to their unique pace, preventing gifted students from feeling bored and slower learners from falling behind. For example, platforms such as Khan Academy utilize machine learning algorithms to provide real-time hints and adaptive problem sets for homework. However, delivering customized drills is essentially an augmentative mechanism that enhances teacher effectiveness, rather than a justification for replacing educators altogether.",
-          examinerNotes:
-            "Demonstrates high balance. Acknowledges the strengths of AI without conceding the main thesis."
+            "Explores the mental health and emotional toll on individuals and families."
         },
         {
-          id: "body3-alt2",
-          badge: "Reason 2 • Administrative Liberation",
-          title: "Automating Grading & Administrative Tedium",
+          id: "body2-alt4",
+          badge: "Effect 4 • Wrongful Criminal Liability & Legal Peril",
+          title: "Wrongful Implication in Crimes & False Criminal Records",
           mainReason:
-            "AI can eliminate the crushing burden of administrative paperwork and marking, liberating educators to spend more time directly mentoring students.",
+            "In severe instances of synthetic identity theft, criminals commit serious offenses under the victim's name, leaving them with wrongful criminal records.",
           supportingReasons:
-            "Teachers spend dozens of unpaid hours each week grading objective quizzes, entering attendance data, and drafting standardized reports. AI can automate these clerical tasks instantaneously.",
+            "Stolen identities are used to register getaway vehicles, launder illicit narcotics proceeds, or evade arrest warrants. When law enforcement investigates, the innocent victim faces erroneous arrest warrants, humiliating public detention, and wrongful criminal convictions.",
           example:
-            "Automated assessment tools can evaluate multiple-choice papers and basic grammar tests in seconds, generating diagnostic class performance reports for the teacher.",
+            "Innocent citizens have been detained at international border crossings or subjected to armed police raids because their stolen identification was tied to drug trafficking cartels.",
           band9Snippet:
-            "“By automating tedious marking and clerical paperwork, intelligent systems empower teachers to reallocate their finite hours toward high-impact personal tutoring.”",
+            "“In extreme scenarios, victims suffer the ultimate indignity of wrongful criminal implication, facing unwarranted arrest warrants for offenses committed in their name.”",
           modelParagraph:
-            "Furthermore, artificial intelligence holds extraordinary promise in liberating educators from the crushing administrative workload that currently triggers widespread teacher burnout. A substantial portion of a teacher’s working week is consumed by repetitive clerical tasks, such as marking multiple-choice exams, recording attendance data, and compiling routine administrative documentation. Modern machine-learning applications can evaluate objective assessments instantaneously and identify class-wide conceptual weaknesses in seconds. For instance, automated scoring software can process hundreds of standardized tests in moments, freeing teachers from mechanical paperwork so they can dedicate their finite emotional energy to direct student mentorship.",
+            "In the most egregious scenarios, identity theft can lead to wrongful criminal implication and severe legal peril. Sophisticated criminals frequently exploit stolen identity documents to purchase vehicles involved in illicit operations, facilitate money laundering schemes, or provide false identification during traffic stops. Consequently, innocent citizens suddenly find that outstanding arrest warrants have been issued in their name for crimes they never committed. For instance, there are numerous documented cases of blameless individuals being publicly detained at airport immigration checkpoints or subjected to police investigations because a criminal syndicate weaponized their identification to conduct transnational smuggling.",
           examinerNotes:
-            "Shows deep practical understanding of teacher workloads and technological automation."
-        },
-        {
-          id: "body3-alt3",
-          badge: "Reason 3 • Democratizing Global Access",
-          title: "24/7 Educational Access in Underserved Regions",
-          mainReason:
-            "In impoverished or remote regions with severe teacher shortages, AI-powered interactive tutoring can democratize access to high-quality educational materials.",
-          supportingReasons:
-            "Millions of children globally lack access to qualified human instructors. Synthetic tutors can deliver foundational literacy and numeracy lessons via low-cost mobile devices around the clock.",
-          example:
-            "In rural sub-Saharan communities without certified teachers, conversational AI applications provide children with fundamental English and mathematics instruction.",
-          band9Snippet:
-            "“In remote communities plagued by chronic staffing deficits, algorithmic instruction can serve as an invaluable educational lifeline for marginalized learners.”",
-          modelParagraph:
-            "Finally, artificial intelligence has the power to democratize educational access for millions of learners living in remote or economically disadvantaged regions where qualified teachers are scarce. Globally, rural communities frequently suffer from chronic teacher deficits, leaving children without access to specialized tutors in science, foreign languages, or mathematics. In such environments, mobile AI tutoring applications can deliver structured, high-quality instruction directly to handheld devices at virtually zero marginal cost. While this demonstrates the vital social utility of educational software in filling institutional voids, it remains a stopgap measure rather than an optimal substitute for a qualified human teacher.",
-          examinerNotes:
-            "Broadens the essay's global perspective and shows high academic maturity."
+            "Captures the highest-severity consequence of identity impersonation."
         }
       ]
     }
   ],
 
-  // Academic Lexicon (12 Band 9 Lexical Items)
+  // 12 Band 9 Vocabulary Items for Academic Lexical Resource
   vocabList: [
     {
-      word: "supersede",
-      phonetic: "/ˌsuː.pəˈsiːd/",
+      word: "identity theft / impersonation",
+      pos: "noun phrase",
+      meaning: "The deliberate acquisition and fraudulent utilization of another person's personal identification data for monetary gain.",
+      definition: "The deliberate acquisition and fraudulent utilization of another person's personal identification data for monetary gain.",
+      example: "Identity theft has emerged as one of the most lucrative and pervasive financial crimes of the twenty-first century.",
+      band: 9,
+      naturalCollocation: "rampant identity theft / fraudulent impersonation",
+      organicExample: "Rampant identity theft poses an existential threat to consumer confidence in electronic banking systems.",
+      mechanicalPitfall: "Avoid simplistic phrases like 'stealing someone's name'; use 'fraudulent impersonation' or 'unauthorized credential acquisition'."
+    },
+    {
+      word: "exfiltrate / exfiltration",
+      pos: "verb / noun",
+      meaning: "To illicitly copy, extract, or transfer confidential data from a protected network or database.",
+      definition: "To illicitly copy, extract, or transfer confidential data from a protected network or database.",
+      example: "Hackers managed to exfiltrate the banking records and social security numbers of over two million citizens.",
+      band: 9,
+      naturalCollocation: "exfiltrate sensitive credentials / massive data exfiltration",
+      organicExample: "The massive exfiltration of consumer records left millions vulnerable to financial fraud.",
+      mechanicalPitfall: "Do not confuse with simply 'stealing'; exfiltration specifically refers to unauthorized digital data extraction."
+    },
+    {
+      word: "data breach",
+      pos: "collocation / noun phrase",
+      meaning: "A security incident in which sensitive, confidential, or protected data is accessed, copied, or transmitted by an unauthorized party.",
+      definition: "A security incident in which sensitive, confidential, or protected data is accessed, copied, or transmitted by an unauthorized party.",
+      example: "The catastrophic data breach compromised the personal dossiers of millions of prospective homebuyers.",
+      band: 8,
+      naturalCollocation: "suffer a catastrophic data breach / widespread breach",
+      organicExample: "Corporations that suffer recurring data breaches should be held strictly accountable under criminal law.",
+      mechanicalPitfall: "Avoid 'data hacking'; 'corporate data breach' is the recognized standard academic collocation."
+    },
+    {
+      word: "phishing campaign",
+      pos: "collocation / noun phrase",
+      meaning: "A fraudulent operation where cybercriminals masquerade as legitimate institutions to trick individuals into disclosing confidential credentials.",
+      definition: "A fraudulent operation where cybercriminals masquerade as legitimate institutions to trick individuals into disclosing confidential credentials.",
+      example: "Sophisticated phishing campaigns target elderly banking customers with counterfeit urgent security warnings.",
+      band: 8,
+      naturalCollocation: "deceptive phishing campaign / spear-phishing attack",
+      organicExample: "Deceptive phishing campaigns frequently coerce victims into surrendering two-factor authentication codes.",
+      mechanicalPitfall: "Do not write 'fake emails'; use 'deceptive phishing communications' or 'spear-phishing campaigns'."
+    },
+    {
+      word: "decimate / decimation",
+      pos: "verb / noun",
+      meaning: "To severely damage, destroy, or drastically reduce the value or integrity of something.",
+      definition: "To severely damage, destroy, or drastically reduce the value or integrity of something.",
+      example: "Unpaid fraudulent loans decimated the victim's credit rating, preventing them from securing a home mortgage.",
+      band: 9,
+      naturalCollocation: "decimate creditworthiness / decimation of personal savings",
+      organicExample: "The unexpected decimation of their creditworthiness left the family legally disqualified from bank financing.",
+      mechanicalPitfall: "Reserve 'decimate' for dramatic, severe impacts rather than minor inconveniences."
+    },
+    {
+      word: "bureaucratic ordeal",
+      pos: "noun phrase",
+      meaning: "An intensely stressful, complicated, and prolonged administrative struggle involving institutions and paperwork.",
+      definition: "An intensely stressful, complicated, and prolonged administrative struggle involving institutions and paperwork.",
+      example: "Restoring one's legal identity requires navigating an agonizing bureaucratic ordeal with uncooperative banking entities.",
+      band: 9,
+      naturalCollocation: "protracted bureaucratic ordeal / grueling ordeal",
+      organicExample: "Victims are thrust into an exhausting bureaucratic ordeal that frequently spans several stressful years.",
+      mechanicalPitfall: "Avoid 'lots of office work'; 'protracted bureaucratic ordeal' carries high examiner weight."
+    },
+    {
+      word: "siphon / drain funds",
+      pos: "verb phrase",
+      meaning: "To systematically and illicitly remove or empty money from an account or financial repository.",
+      definition: "To systematically and illicitly remove or empty money from an account or financial repository.",
+      example: "Using stolen authentication tokens, the fraudsters siphoned life savings from dozens of pension accounts.",
+      band: 9,
+      naturalCollocation: "siphon liquid assets / systematically drain savings",
+      organicExample: "Perpetrators systematically siphoned funds through a labyrinth of foreign cryptocurrency exchanges.",
+      mechanicalPitfall: "Prefer 'siphon liquid assets' over 'take all the money'."
+    },
+    {
+      word: "dark web marketplace",
+      pos: "collocation / noun phrase",
+      meaning: "Encrypted, anonymized online commercial portals where illicit contraband, including stolen identification data, is traded.",
+      definition: "Encrypted, anonymized online commercial portals where illicit contraband, including stolen identification data, is traded.",
+      example: "Stolen medical dossiers and passport scans are actively bought and sold on illicit dark web marketplaces.",
+      band: 8,
+      naturalCollocation: "illicit dark web marketplace / underground digital forum",
+      organicExample: "Compromised credit card numbers are auctioned on dark web marketplaces for fractions of a dollar.",
+      mechanicalPitfall: "Always use 'dark web' as a technical term, not 'secret internet'."
+    },
+    {
+      word: "psychological trauma / acute distress",
+      pos: "noun phrase",
+      meaning: "Severe, lasting mental and emotional suffering triggered by a deeply disturbing or violating experience.",
+      definition: "Severe, lasting mental and emotional suffering triggered by a deeply disturbing or violating experience.",
+      example: "Beyond financial ruin, the psychological trauma of knowing an unknown criminal controls your identity is immense.",
+      band: 9,
+      naturalCollocation: "endure psychological trauma / acute emotional distress",
+      organicExample: "The victim suffered acute psychological distress, manifested in chronic insomnia and constant panic attacks.",
+      mechanicalPitfall: "Saying 'they feel sad' is Band 5; 'they endure severe psychological trauma' is Band 9."
+    },
+    {
+      word: "ubiquitous / hyper-connected",
+      pos: "adjective",
+      meaning: "Present, existing, or found everywhere; interconnected across continuous digital telecommunication networks.",
+      definition: "Present, existing, or found everywhere; interconnected across continuous digital telecommunication networks.",
+      example: "In a hyper-connected cashless society, ubiquitous digital transactions leave consumers inherently vulnerable.",
+      band: 9,
+      naturalCollocation: "ubiquitous digital banking / hyper-connected financial system",
+      organicExample: "The ubiquitous nature of internet-enabled devices provides cybercriminals with unprecedented points of entry.",
+      mechanicalPitfall: "Use 'ubiquitous' in place of simplistic 'very common' or 'everywhere'."
+    },
+    {
+      word: "rectify / expunge",
       pos: "verb",
-      meaning: "To take the place of a person or thing previously in authority or use; to supplant.",
-      collocations: ["supersede human educators", "gradually supersede", "threaten to supersede"],
-      example: "Advanced algorithms may streamline administrative duties, but they can never entirely supersede human teachers in the classroom.",
-      tutorTip: "Far more sophisticated than 'replace'. Use it in your introduction thesis statement."
+      meaning: "To correct or restore to proper status; to completely eliminate or erase fraudulent judicial or credit records.",
+      definition: "To correct or restore to proper status; to completely eliminate or erase fraudulent judicial or credit records.",
+      example: "It took two years of rigorous litigation to expunge the fraudulent debts from the victim's official credit record.",
+      band: 9,
+      naturalCollocation: "expunge fraudulent records / rectify erroneous credit entries",
+      organicExample: "Victims must battle tirelessly to rectify erroneous defaults and expunge criminal warrants from police databases.",
+      mechanicalPitfall: "Avoid 'clean the record'; 'expunge fraudulent liabilities' demonstrates superior lexical sophistication."
     },
     {
-      word: "augmentative",
-      phonetic: "/ɔːɡˈmen.tə.tɪv/",
-      pos: "adjective",
-      meaning: "Serving to increase, enhance, or supplement rather than substitute completely.",
-      collocations: ["augmentative tool", "augmentative technology", "purely augmentative role"],
-      example: "Artificial intelligence should be viewed as an augmentative aid that empowers educators rather than an autonomous replacement.",
-      tutorTip: "The perfect conceptual word to describe AI's true relationship to teaching in Body 3."
-    },
-    {
-      word: "pastoral care",
-      phonetic: "/ˈpɑː.stər.əl keər/",
+      word: "impunity",
       pos: "noun",
-      meaning: "The emotional, social, and psychological support given to students by an educational institution.",
-      collocations: ["provide pastoral care", "essential pastoral support", "comprehensive pastoral duties"],
-      example: "Schooling encompasses vital pastoral care that addresses student anxiety and emotional vulnerability, a domain completely inaccessible to machines.",
-      tutorTip: "Demonstrates advanced British academic educational terminology in Body 1."
-    },
-    {
-      word: "algorithmic",
-      phonetic: "/ˌæl.ɡəˈrɪð.mɪk/",
-      pos: "adjective",
-      meaning: "Relating to or using a process or set of rules to be followed in calculations or problem-solving.",
-      collocations: ["algorithmic tutoring", "algorithmic rigidity", "algorithmic feedback"],
-      example: "An algorithmic system evaluates pupil performance through rigid metrics, failing to appreciate creative or unconventional reasoning.",
-      tutorTip: "Use to contrast computational rules against human flexibility."
-    },
-    {
-      word: "pedagogical",
-      phonetic: "/ˌped.əˈɡɒdʒ.ɪ.kəl/",
-      pos: "adjective",
-      meaning: "Relating to the theory, methods, and principles of teaching.",
-      collocations: ["pedagogical leadership", "pedagogical flexibility", "pedagogical efficacy"],
-      example: "True pedagogical success is measured not by test score memorization, but by the development of independent critical inquiry.",
-      tutorTip: "Replaces the simplistic word 'teaching-related' with authentic academic precision."
-    },
-    {
-      word: "empathy",
-      phonetic: "/ˈem.pə.θi/",
-      pos: "noun",
-      meaning: "The psychological capacity to understand, share, and resonate with the feelings of another.",
-      collocations: ["interpersonal empathy", "genuine emotional empathy", "demonstrate deep empathy"],
-      example: "A machine can generate grammatically flawless feedback, but it is utterly incapable of demonstrating authentic human empathy.",
-      tutorTip: "The foundational core argument of your opinion side in Body 1."
-    },
-    {
-      word: "nuanced",
-      phonetic: "/ˈnjuː.ɑːnst/",
-      pos: "adjective",
-      meaning: "Characterized by subtle distinctions, variations in meaning, or intricate complexities.",
-      collocations: ["nuanced debate", "nuanced understanding", "nuanced perspective"],
-      example: "Moderating a nuanced discussion on historical ethics requires a human facilitator who understands social subtlety.",
-      tutorTip: "Use in Body 2 when explaining why Socratic debate cannot be automated."
-    },
-    {
-      word: "dissemination",
-      phonetic: "/dɪˌsem.ɪˈneɪ.ʃən/",
-      pos: "noun",
-      meaning: "The act of spreading, distributing, or broadcasting information and knowledge widely.",
-      collocations: ["knowledge dissemination", "information dissemination", "passive dissemination"],
-      example: "Teaching cannot be reduced to the mere dissemination of facts; it is the active cultivation of intellectual curiosity.",
-      tutorTip: "Use this contrast in your conclusion or Body 2 to show that education is more than data transfer."
-    },
-    {
-      word: "indispensable",
-      phonetic: "/ˌɪn.dɪˈspen.sə.bəl/",
-      pos: "adjective",
-      meaning: "Absolutely necessary, essential, or impossible to manage without.",
-      collocations: ["indispensable asset", "remain indispensable", "indispensable component"],
-      example: "The personal mentorship and moral stewardship provided by teachers remain indispensable to adolescent development.",
-      tutorTip: "Band 9 synonym for 'essential' or 'very important'."
-    },
-    {
-      word: "facilitator",
-      phonetic: "/fəˈsɪl.ɪ.teɪ.tər/",
-      pos: "noun",
-      meaning: "A person who helps a group of people to understand their common objectives and guides them without imposing.",
-      collocations: ["classroom facilitator", "discussion facilitator", "act as a facilitator"],
-      example: "Modern educators function primarily as intellectual facilitators who guide collaborative student discovery.",
-      tutorTip: "Demonstrates modern pedagogical understanding in Task 2."
-    },
-    {
-      word: "rote learning",
-      phonetic: "/rəʊt ˈlɜː.nɪŋ/",
-      pos: "noun",
-      meaning: "A memorization technique based on mechanical repetition rather than deep conceptual understanding.",
-      collocations: ["mechanical rote learning", "discourage rote learning", "transcend rote learning"],
-      example: "While automated software excels at drills and rote learning, it cannot nurture genuine philosophical creativity.",
-      tutorTip: "Perfect contrasting term against higher-order critical thinking."
-    },
-    {
-      word: "inimitable",
-      phonetic: "/ɪˈnɪm.ɪ.tə.bəl/",
-      pos: "adjective",
-      meaning: "So good or unique that it is impossible to copy or emulate; matchless.",
-      collocations: ["inimitable human warmth", "inimitable quality", "inimitable guidance"],
-      example: "The inimitable guidance of a compassionate human mentor cannot be duplicated by lines of computer code.",
-      tutorTip: "High-level closing adjective for your conclusion."
+      meaning: "Exemption from punishment, arrest, or freedom from the injurious consequences of an action.",
+      definition: "Exemption from punishment, arrest, or freedom from the injurious consequences of an action.",
+      example: "Transnational cyber syndicates orchestrate digital fraud with near-total impunity from overseas havens.",
+      band: 9,
+      naturalCollocation: "operate with total impunity / international judicial impunity",
+      organicExample: "Because national jurisdictions cannot easily cross borders, hackers siphon funds with brazen impunity.",
+      mechanicalPitfall: "Use 'operate with impunity' rather than 'they don't get caught'."
     }
   ],
 
   vocabHunt: [
-    "supersede",
-    "augmentative",
-    "pastoral care",
-    "algorithmic",
-    "pedagogical",
-    "empathy",
-    "nuanced",
-    "dissemination",
-    "indispensable",
-    "facilitator",
-    "rote learning",
-    "inimitable"
+    "Identify the academic term for 'illicitly transferring confidential data out of a protected database'.",
+    "Locate the phrase meaning 'an agonizing, prolonged administrative struggle with institutions'.",
+    "Find the verb meaning 'to completely wipe out or erase fraudulent legal records'.",
+    "Identify the advanced noun describing 'freedom or exemption from criminal punishment'."
   ],
 
-  // Consequences (Opinion Side vs Non-Opinion Side)
-  consequences: [
-    {
-      type: "positive",
-      title: "Body 1 (Opinion Side): Emotional Well-Being & Pastoral Support",
-      desc: "Human teachers provide empathy, motivational reassurance, and pastoral care that algorithms cannot duplicate.",
-      example: "An attentive teacher detects adolescent depression or exam distress and provides compassionate intervention.",
-      level: "Core Argument",
-      simpleTakeaway: "Empathy & Pastoral Care",
-      collocation: "irreplaceable pastoral care"
-    },
-    {
-      type: "positive",
-      title: "Body 2 (Opinion Side): Critical Thinking & Moral Stewardship",
-      desc: "Developing intellectual curiosity, ethical character, and civil discourse requires active human facilitation.",
-      example: "In a literature seminar, a teacher guides nuanced ethical debates that synthetic chatbots cannot navigate.",
-      level: "Core Argument",
-      simpleTakeaway: "Critical Thinking & Ethics",
-      collocation: "cultivate critical thinking"
-    },
-    {
-      type: "negative",
-      title: "Body 3 (Non-Opinion Side): AI's Augmentative Efficiency & Pacing",
-      desc: "AI automates routine grading and personalizes practice drills, functioning as a high-powered assistant.",
-      example: "Adaptive platforms like Khan Academy dynamically calibrate math problems to student skill levels.",
-      level: "Concession",
-      simpleTakeaway: "Augmentative Pacing & Grading",
-      collocation: "augmentative educational tool"
-    },
-    {
-      type: "positive",
-      title: "Human Inspiration & Role Modeling",
-      desc: "Passionate human educators inspire children to pursue ambitious careers through shared lived experience.",
-      example: "Renowned innovators consistently credit a dedicated teacher who recognized their nascent talents.",
-      level: "Supporting Angle",
-      simpleTakeaway: "Inspirational Role Models",
-      collocation: "inspire lifelong passion"
-    },
-    {
-      type: "negative",
-      title: "Administrative Liberation for Educators",
-      desc: "Automating objective marking and attendance tracking frees educators to spend more time directly tutoring.",
-      example: "Software marks hundreds of diagnostic quizzes in seconds, eliminating clerical exhaustion.",
-      level: "Supporting Angle",
-      simpleTakeaway: "Administrative Relief",
-      collocation: "eliminate clerical burdens"
-    },
-    {
-      type: "positive",
-      title: "Classroom Socialization & Conflict Resolution",
-      desc: "Teachers teach students how to negotiate interpersonal disagreements, work in teams, and build civic maturity.",
-      example: "An educator mediates playground friction and teaches children the value of compromise and mutual respect.",
-      level: "Supporting Angle",
-      simpleTakeaway: "Socialization & Diplomacy",
-      collocation: "foster social maturity"
-    }
+  workbookTopSix: [
+    "identity theft / impersonation",
+    "exfiltrate / exfiltration",
+    "decimate / decimation",
+    "bureaucratic ordeal",
+    "dark web marketplace",
+    "expunge fraudulent liabilities"
   ],
 
-  evaluationArguments: [
-    {
-      type: "argument",
-      title: "Empathy Cannot Be Programmed into Silicon",
-      reason: "Artificial neural networks can simulate conversation, but they lack human consciousness and authentic empathy.",
-      development: "Children are social beings who learn through emotional connection and psychological validation from trusted adults.",
-      example: "An algorithm cannot offer sincere reassurance to a child weeping from social alienation or family trauma.",
-      level: "Band 9",
-      simpleTakeaway: "Lack of Machine Empathy",
-      collocation: "devoid of authentic empathy"
-    },
-    {
-      type: "argument",
-      title: "Education is Cultivating Character, Not Data Transfer",
-      reason: "If schooling were merely acquiring facts, the internet would have replaced teachers decades ago.",
-      development: "True pedagogy shapes ethical discernment, resilience, civic duty, and the courage to challenge falsehoods.",
-      example: "A teacher models integrity by admitting their own mistakes and guiding students through moral dilemmas.",
-      level: "Band 9",
-      simpleTakeaway: "Character Building Over Data",
-      collocation: "moral stewardship"
-    },
-    {
-      type: "counterpoint",
-      title: "AI Excels at Scalable Repetition & Drill Adaptation",
-      reason: "Computers do not get tired, impatient, or biased when a student requires 50 repetitions of an algebra drill.",
-      development: "This makes AI an exceptional augmentative tool for homework and diagnostic gap analysis.",
-      example: "Language learners benefit tremendously from 24/7 speech recognition pronunciation drills.",
-      level: "Band 9",
-      simpleTakeaway: "Scalable Repetitive Drills",
-      collocation: "adaptive drill calibration"
-    },
-    {
-      type: "argument",
-      title: "Algorithmic Hallucination & Moral Bias Risks",
-      reason: "Generative AI systems frequently produce fabricated historical data and inherit toxic societal biases.",
-      development: "Entrusting children's education entirely to automated models without human oversight poses severe pedagogical risks.",
-      example: "Uncurated AI outputs have generated biased historical interpretations in automated student assessments.",
-      level: "Band 9",
-      simpleTakeaway: "Algorithmic Bias Danger",
-      collocation: "perpetuate algorithmic biases"
-    },
-    {
-      type: "counterpoint",
-      title: "Democratizing Access in Under-Resourced Regions",
-      reason: "In impoverished rural areas where qualified teachers are unavailable, AI software provides a vital educational stopgap.",
-      development: "However, this represents an emergency mitigation of staffing shortages, not an optimal educational replacement.",
-      example: "Mobile AI learning apps in isolated villages offer foundational literacy where no schools exist.",
-      level: "Band 9",
-      simpleTakeaway: "Emergency Educational Lifeline",
-      collocation: "mitigate teacher shortages"
-    },
-    {
-      type: "argument",
-      title: "Dynamic Classroom Chemistry & Non-Linear Teaching",
-      reason: "Classrooms thrive on spontaneous humor, group discussions, and reading collective emotional energy.",
-      development: "A human teacher pivots instructional strategy instantly when sensing student confusion or apathy.",
-      example: "A physics teacher discards their planned slide deck to perform a spontaneous real-world experiment.",
-      level: "Band 9",
-      simpleTakeaway: "Pedagogical Flexibility",
-      collocation: "intuitive pedagogical agility"
-    }
-  ],
-
-  facultyAngles: [
-    {
-      title: "The Emotional & Relational Dimension (Body 1 Angle)",
-      development: "Argue forcefully that learning is an inherently social and psychological process requiring human empathy and pastoral care.",
-      type: "positive"
-    },
-    {
-      title: "The Socratic & Critical Inquiry Dimension (Body 2 Angle)",
-      development: "Highlight that independent critical thinking and ethical discernment require a human mentor to challenge dogmas and moderate debate.",
-      type: "positive"
-    },
-    {
-      title: "The Augmentative Technology Dimension (Body 3 Angle)",
-      development: "Concede that AI is revolutionary as a 24/7 drill tutor and administrative grading assistant, but distinguish assisting from replacing.",
-      type: "negative"
-    },
-    {
-      title: "The Decisive Outweighing Conclusion Angle",
-      development: "Reiterate that education encompasses character formation and moral guidance, which remain forever beyond the capabilities of code.",
-      type: "positive"
-    }
-  ],
+  modelSentences: {
+    positive:
+      "Foremost among the drivers of escalating identity theft is the rapid digitisation of financial transactions combined with the increasing sophistication of international cybercrime syndicates.",
+    balanced:
+      "The fallout for victims encompasses not merely direct pecuniary losses, but also the total destruction of creditworthiness and severe, chronic psychological distress."
+  },
 
   powerExpressions: [
     {
-      expression: "Supersede rather than merely supplement",
-      meaning: "To completely take over and eliminate the need for the previous system.",
-      example: "It is an exaggeration to claim that automated systems will supersede human educators rather than merely supplement them."
+      expression: "exfiltrate confidential dossiers",
+      meaning: "To illicitly extract comprehensive personal identification files from corporate databases.",
+      example: "Rogue actors managed to exfiltrate confidential dossiers containing the tax details of thousands of citizens."
     },
     {
-      expression: "An inherently relational human endeavor",
-      meaning: "An activity that fundamentally relies on personal connection, trust, and mutual understanding.",
-      example: "Pedagogy is an inherently relational human endeavor that shrivels when reduced to synthetic digital metrics."
+      expression: "decimate creditworthiness",
+      meaning: "To destroy an individual's financial reputation and credit score beyond immediate recovery.",
+      example: "Fraudulent credit applications decimated the applicant's creditworthiness within days."
     },
     {
-      expression: "Devoid of conscious empathy",
-      meaning: "Completely lacking the capacity to feel or care about another's distress.",
-      example: "An artificial neural network remains completely devoid of conscious empathy or moral conviction."
+      expression: "navigate a bureaucratic ordeal",
+      meaning: "To endure an exhausting, paperwork-heavy struggle with corporations and government agencies.",
+      example: "The victim spent eighteen months navigating a bureaucratic ordeal to prove their innocence."
     },
     {
-      expression: "Transcend mere information dissemination",
-      meaning: "To go far beyond the simple act of broadcasting facts and data.",
-      example: "True educators transcend mere information dissemination to nurture critical thinking and moral maturity."
+      expression: "illicit dark web marketplaces",
+      meaning: "Encrypted online commercial hubs where stolen credentials and personal data are sold.",
+      example: "Complete consumer profiles were auctioned on illicit dark web marketplaces for minimal sums."
     },
     {
-      expression: "Act as an augmentative educational aid",
-      meaning: "To function as a valuable supportive tool that enhances teacher efficacy.",
-      example: "Artificial intelligence should be celebrated as an augmentative educational aid that relieves administrative burdens."
+      expression: "siphon liquid assets",
+      meaning: "To systematically drain bank accounts and monetary balances through illicit transfers.",
+      example: "Within hours of the breach, automated scripts siphoned liquid assets from compromised checking accounts."
     },
     {
-      expression: "Inimitable human guidance",
-      meaning: "Guidance that is so unique, compassionate, and wise that it cannot be copied by machines.",
-      example: "No amount of algorithmic refinement can substitute for the inimitable human guidance of an inspiring teacher."
+      expression: "operate with brazen impunity",
+      meaning: "To commit severe financial crimes without any fear of arrest or judicial prosecution.",
+      example: "Operating from non-extradition territories, international syndicates orchestrate identity fraud with brazen impunity."
     }
   ],
 
   brainstormCards: [
     {
-      question: "Why can't artificial intelligence provide authentic pastoral care to children?",
-      thinkingLens: "Psychological & Emotional Development",
-      selfCheck: "Are algorithms conscious? Can they feel sympathy or perceive emotional trauma?",
-      idea: "Machines have zero consciousness or empathy; they cannot comfort a grieving student or detect quiet depression."
+      question: "Why has the transition to a cashless digital economy created unprecedented opportunities for identity theft?",
+      thinkingLens: "Technological & Infrastructure Vulnerability",
+      selfCheck: "Do people use physical cash or digital passwords for everyday life?",
+      idea: "Consumers routinely input passwords, credit cards, and personal dossiers into dozens of online commerce and banking platforms, exponentially expanding the attack surface for hackers."
     },
     {
-      question: "How does a teacher cultivate higher-order critical thinking during class discussions?",
-      thinkingLens: "Pedagogical & Cognitive Rigor",
-      selfCheck: "Is thinking just memorizing answers, or questioning assumptions?",
-      idea: "Teachers use Socratic counter-questioning and moderate debate on moral gray areas, which static algorithms cannot do."
+      question: "How do corporate and institutional database breaches fuel international identity theft?",
+      thinkingLens: "Corporate Governance & Cybersecurity Deficiencies",
+      selfCheck: "What happens when a large credit agency or hospital gets hacked?",
+      idea: "A single corporate breach exfiltrates millions of complete citizen dossiers (social security numbers, dates of birth, addresses) directly onto dark web marketplaces where they are traded en masse."
     },
     {
-      question: "In what specific areas does AI outperform human teachers?",
-      thinkingLens: "Technological & Administrative Efficiency",
-      selfCheck: "What takes teachers hours of boring repetitive time?",
-      idea: "Grading objective homework, instantaneous diagnostic test analysis, and generating 24/7 personalized practice drills."
+      question: "In what ways do cybercrime syndicates trick unsuspecting individuals into surrendering credentials?",
+      thinkingLens: "Psychological Manipulation & Social Engineering",
+      selfCheck: "Are cybercrimes purely technical, or do they exploit human emotion?",
+      idea: "Deceptive phishing campaigns, counterfeit banking SMS alerts, and AI voice cloning create an illusion of urgency, coercing victims into surrendering two-factor authentication tokens."
     },
     {
-      question: "What is the crucial difference between 'augmenting' and 'replacing' a profession?",
-      thinkingLens: "Conceptual & Lexical Precision",
-      selfCheck: "Does a doctor get replaced by an MRI machine?",
-      idea: "Augmenting equips the professional with better diagnostic tools, whereas replacing renders the human obsolete."
+      question: "What immediate economic devastation does an identity theft victim face?",
+      thinkingLens: "Financial & Material Destitution",
+      selfCheck: "What happens when a criminal takes control of your banking profile?",
+      idea: "Checking accounts are siphoned dry, credit cards are maxed out, and fraudulent multi-thousand dollar loans are taken out, leaving the victim facing immediate financial insolvency."
     },
     {
-      question: "Can an algorithm teach moral ethics and civic integrity to future citizens?",
-      thinkingLens: "Societal & Ethical Character Building",
-      selfCheck: "Where do children learn honesty, fairness, and accountability?",
-      idea: "Children learn ethics by observing lived human role models who embody integrity, not by interacting with amoral code."
+      question: "Why does identity theft destroy a victim's ability to participate in normal economic life?",
+      thinkingLens: "Credit Ratings & Institutional Blacklisting",
+      selfCheck: "What happens when fraudulent loans go into default in your name?",
+      idea: "The victim's credit score is decimated; credit reference agencies blacklist them, preventing them from securing mortgages, car financing, renting an apartment, or passing employment background checks."
     },
     {
-      question: "What would a classroom completely devoid of human teachers look like for students?",
-      thinkingLens: "Socialization & Community Well-Being",
-      selfCheck: "Would students feel motivated, connected, and socially mature?",
-      idea: "Students would suffer from social isolation, lack of accountability, and mechanical disengagement."
+      question: "What severe psychological trauma and emotional agony do victims suffer?",
+      thinkingLens: "Mental Health, Privacy & Bureaucratic Anguish",
+      selfCheck: "Is identity theft just about money, or does it feel like a violation of the self?",
+      idea: "Victims suffer profound feelings of personal violation, chronic insomnia, and panic disorders, compounded by years of an exhausting bureaucratic ordeal trying to prove their innocence to unyielding banks."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "Foremost among the reasons why artificial intelligence cannot supplant educators is that...",
-      "Equally significant is that cultivating higher-order cognitive faculties necessitates...",
-      "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative tool...",
-      "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating routine grading, I firmly disagree that..."
+      "Foremost among the drivers of escalating identity theft is that...",
+      "Equally critical is the vulnerability of large corporate repositories which...",
+      "Turning to the repercussions, the fallout for victims is both financially catastrophic and...",
+      "In conclusion, although the proliferation of digital transactions offers undeniable convenience, it has fueled..."
     ],
     aTier: [
-      "By deferring repetitive administrative duties to automated software, teachers can...",
-      "It is a dangerous misconception to assume that algorithmic feedback can seamlessly substitute for...",
-      "Whereas digital platforms excel at static information dissemination, human mentors...",
-      "Consequently, the essence of genuine education lies not in computational retrieval, but in..."
+      "By weaponizing exfiltrated credentials across digital platforms, criminals can...",
+      "This systemic vulnerability is compounded by the fact that victims are thrust into...",
+      "Beyond immediate pecuniary loss, individuals endure profound psychological trauma characterized by...",
+      "Consequently, rectifying fraudulent liabilities demands an agonizing bureaucratic ordeal that..."
     ],
     bTier: [
       "Furthermore,",
       "In addition,",
-      "However,",
+      "As a result,",
       "Consequently,"
     ]
   },
 
   strategicLinkers: [
     {
-      zone: "Zone 1: Opening Opinion Body Paragraphs (Why AI Cannot Replace Teachers)",
-      badge: "Opinion Side Openers",
-      placementRule: "Use at the beginning of Body 1 and Body 2 to declare your primary arguments against full AI replacement.",
+      zone: "Zone 1: Opening Body Paragraph 1 (Root Causes of Identity Theft)",
+      badge: "Cause Explanations",
+      placementRule: "Use at the beginning of Body 1 to establish the technological and systemic drivers behind identity theft.",
       items: [
         {
-          phrase: "Foremost among the reasons why artificial intelligence cannot supplant educators is that...",
-          functionDesc: "Declares your strongest argument (emotional empathy & pastoral care) immediately with academic authority.",
+          phrase: "Foremost among the drivers of escalating identity theft is that...",
+          functionDesc: "Declares your primary cause (digital banking ubiquity & cyber syndicates) with authoritative academic tone.",
           example:
-            "Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy."
+            "Foremost among the drivers of escalating identity theft is that our increasingly cashless economy compels individuals to store sensitive credentials across vulnerable internet databases."
         },
         {
-          phrase: "Equally significant is that cultivating higher-order cognitive faculties necessitates...",
-          functionDesc: "Introduces your second major argument (critical thinking, ethics & debate) with seamless cohesion.",
+          phrase: "Equally critical is the vulnerability of corporate databases, where...",
+          functionDesc: "Introduces the second major cause (corporate data breaches and dark web trading) seamlessly.",
           example:
-            "Equally significant is that cultivating higher-order cognitive faculties and moral reasoning necessitates spontaneous human dialogue and intellectual challenge."
+            "Equally critical is the vulnerability of corporate databases, where millions of comprehensive citizen dossiers are exfiltrated and auctioned on dark web marketplaces."
         }
       ]
     },
     {
-      zone: "Zone 2: Concession & Augmentative AI Placement (Body 3)",
-      badge: "Non-Opinion Concession",
-      placementRule: "Use at the start of Body 3 to acknowledge AI's legitimate strengths in grading and pacing without surrendering your main thesis.",
+      zone: "Zone 2: Opening Body Paragraph 2 (Effects on Victims)",
+      badge: "Victim Impact Analysis",
+      placementRule: "Use to transition from causes to the dual economic and psychological consequences suffered by victims.",
       items: [
         {
-          phrase: "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative aid...",
-          functionDesc: "Smoothly shifts to the counter-perspective while framing AI's capabilities as supportive rather than replacement.",
+          phrase: "Turning to the repercussions, the fallout for victims is both financially catastrophic and...",
+          functionDesc: "Transitions with academic flair into the multi-dimensional harm inflicted on innocent citizens.",
           example:
-            "On the other hand, proponents legitimately emphasize that artificial intelligence has immense value as an augmentative educational aid that personalizes practice drills and streamlines administrative duties."
+            "Turning to the repercussions, the fallout for victims is both financially catastrophic and psychologically devastating, decimating their creditworthiness and destroying peace of mind."
         },
         {
-          phrase: "Nevertheless, delivering customized exercises is essentially an assistive mechanism rather than...",
-          functionDesc: "Delivers the critical judgement anchor at the conclusion of Body 3.",
+          phrase: "Beyond immediate pecuniary loss, individuals are thrust into...",
+          functionDesc: "Highlights the prolonged bureaucratic ordeal and emotional trauma beyond lost cash.",
           example:
-            "Nevertheless, delivering customized exercises is essentially an assistive mechanism rather than a justification for replacing educators altogether."
+            "Beyond immediate pecuniary loss, individuals are thrust into a grueling bureaucratic ordeal to expunge fraudulent debts and reclaim their stolen identity."
         }
       ]
     },
     {
-      zone: "Zone 3: Decisive Outweighing Conclusion",
-      badge: "Conclusion Synthesis",
-      placementRule: "Use in the final paragraph to summarize the main points and restate your decisive disagree position.",
+      zone: "Zone 3: Synthesizing Conclusion & Final Stance",
+      badge: "Conclusion Markers",
+      placementRule: "Use in the concluding paragraph to synthesize both causes and consequences with high lexical compression.",
       items: [
         {
-          phrase: "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating routine grading, I firmly disagree that...",
-          functionDesc: "Concedes AI's administrative and pacing role in the dependent clause and reasserts your disagree position in the main clause.",
+          phrase: "In conclusion, the alarming surge in identity fraud is propelled primarily by...",
+          functionDesc: "Recapitulates the core technological and structural causes succinctly.",
           example:
-            "In conclusion, although artificial intelligence is poised to revolutionize schooling by automating routine grading and tailoring practice drills, I firmly disagree that it will replace classroom teachers."
+            "In conclusion, the alarming surge in identity fraud is propelled primarily by the vulnerabilities inherent in a cashless economy and the mass exfiltration of corporate data."
         },
         {
-          phrase: "The essence of genuine education lies not merely in information retrieval, but in...",
-          functionDesc: "Synthesizes the core reason why human teachers remain permanently irreplaceable.",
+          phrase: "The consequences for victims are profoundly distressing, encompassing...",
+          functionDesc: "Finalizes the thesis by reinforcing the acute material and psychological trauma.",
           example:
-            "The essence of genuine education lies not merely in information retrieval, but in human empathy, moral stewardship, and inspirational mentorship."
+            "The consequences for victims are profoundly distressing, encompassing ruined credit ratings and chronic emotional anguish that demand urgent institutional reform."
         }
       ]
     }
@@ -724,65 +579,121 @@ export const TASK2_DATA: Task2Data = {
 
   fluidVocab: [
     {
-      word: "supersede",
+      word: "exfiltrate",
       pos: "verb",
-      meaning: "To supplant or replace something older or less advanced.",
-      naturalCollocation: "supersede human educators in the classroom",
-      organicExample: "It is profoundly naive to claim that predictive algorithms will supersede teachers who provide moral and emotional mentorship.",
-      mechanicalPitfall: "Avoid using it casually as a synonym for 'change'. It implies full displacement.",
-      examinerInsight: "Demonstrates Band 9 lexical resource when used in the opening thesis statement."
+      meaning: "To illicitly extract and transfer confidential data from a protected network.",
+      naturalCollocation: "exfiltrate sensitive dossiers / credentials",
+      organicExample: "Cyber syndicates exfiltrate consumer credentials to auction them on illicit digital forums.",
+      mechanicalPitfall: "Avoid 'steal internet files'; 'exfiltrate sensitive credentials' demonstrates top-tier lexical mastery."
     },
     {
-      word: "augmentative",
-      pos: "adjective",
-      meaning: "Serving to supplement, support, or enhance without replacing.",
-      naturalCollocation: "augmentative pedagogical aid",
-      organicExample: "Educational software should be embraced as an augmentative tool that liberates instructors from grading paperwork.",
-      mechanicalPitfall: "Do not confuse with 'augmenting' as a progressive participle.",
-      examinerInsight: "The definitive word examiners look for in balanced technology essays."
+      word: "decimate",
+      pos: "verb",
+      meaning: "To drastically reduce, destroy, or severely damage the integrity or value of something.",
+      naturalCollocation: "decimate creditworthiness / credit ratings",
+      organicExample: "Fraudulent loans incurred by impersonators decimate the victim's credit rating within weeks.",
+      mechanicalPitfall: "Do not say 'make their credit score bad'; use 'decimate creditworthiness'."
     },
     {
-      word: "pastoral care",
+      word: "bureaucratic ordeal",
       pos: "noun phrase",
-      meaning: "Institutional emotional and psychological support for student well-being.",
-      naturalCollocation: "deliver compassionate pastoral care",
-      organicExample: "A machine can compute exam percentiles, but it cannot deliver pastoral care to an adolescent experiencing bereavement.",
-      mechanicalPitfall: "Avoid spelling as 'pastoral cares'. It is an uncountable institutional concept.",
-      examinerInsight: "Immediately signals native-level British academic education vocabulary."
+      meaning: "An agonizing, prolonged administrative struggle involving institutions, forms, and legal hurdles.",
+      naturalCollocation: "endure a grueling bureaucratic ordeal",
+      organicExample: "Victims must endure an exhausting bureaucratic ordeal to convince credit bureaus to expunge fraudulent debts.",
+      mechanicalPitfall: "Avoid 'too much paperwork'; 'grueling bureaucratic ordeal' carries exceptional academic tone."
     },
     {
-      word: "dissemination",
-      pos: "noun",
-      meaning: "The distribution or broadcasting of facts and information.",
-      naturalCollocation: "passive dissemination of factual data",
-      organicExample: "Schooling transcends the mechanical dissemination of facts; it is the active incubation of moral and intellectual character.",
-      mechanicalPitfall: "Do not use 'disseminate' for physical objects like books; it applies to ideas, knowledge, and data.",
-      examinerInsight: "Creates sharp contrast between rote internet access and true teaching."
-    },
-    {
-      word: "nuanced",
-      pos: "adjective",
-      meaning: "Subtle, complex, and full of fine distinctions.",
-      naturalCollocation: "facilitate nuanced ethical debates",
-      organicExample: "Guiding students through nuanced historical controversies requires an experienced human mediator.",
-      mechanicalPitfall: "Do not say 'very nuanced'. Use nuanced with adverbs like 'subtly' or on its own.",
-      examinerInsight: "Demonstrates academic depth when describing critical thinking."
-    },
-    {
-      word: "inimitable",
-      pos: "adjective",
-      meaning: "Impossible to imitate or copy; matchless in quality.",
-      naturalCollocation: "the inimitable warmth of a human mentor",
-      organicExample: "Lines of computer code can never emulate the inimitable encouragement of a teacher who believes in a child's potential.",
-      mechanicalPitfall: "Do not confuse with 'imitable' (which means can be copied).",
-      examinerInsight: "A brilliant, sophisticated adjective to close an essay with authoritative elegance."
+      word: "expunge",
+      pos: "verb",
+      meaning: "To completely wipe out, eliminate, or erase erroneous and fraudulent records.",
+      naturalCollocation: "expunge fraudulent liabilities / criminal records",
+      organicExample: "It took eighteen months of legal litigation to expunge the fraudulent debts from the victim's official credit record.",
+      mechanicalPitfall: "Saying 'clean up the debt' is informal; 'expunge fraudulent liabilities' is Band 9."
     }
   ],
 
-  modelSentences: {
-    positive:
-      "Foremost among the reasons why artificial intelligence cannot supplant educators is that learning is an inherently relational endeavor requiring emotional intelligence and pastoral empathy.",
-    balanced:
-      "While artificial intelligence will undoubtedly transform classrooms as an augmentative tool that automates grading and tailors practice drills, I firmly disagree that it will ever replace human teachers whose empathy, moral mentorship, and dynamic facilitation remain irreplaceable."
-  }
+  consequences: [
+    {
+      type: "negative",
+      title: "Catastrophic Asset Depletion & Fraudulent Debt",
+      desc: "Perpetrators siphon checking and savings accounts dry while taking out personal loans, leaving the victim facing immediate insolvency.",
+      example: "Victims discovering maxed-out credit cards and $50,000 in personal loans taken out in their name without their consent.",
+      collocation: "siphon liquid assets / fraudulent liabilities"
+    },
+    {
+      type: "negative",
+      title: "Credit Decimation & Economic Blacklisting",
+      desc: "Defaulted fraudulent debts obliterate the victim's credit rating, rendering them legally disqualified from mortgages, vehicle loans, and employment.",
+      example: "A prospective homebuyer whose pre-approved mortgage is abruptly rescinded due to an unrecognized default on an identity-theft loan.",
+      collocation: "decimate creditworthiness / institutional blacklisting"
+    },
+    {
+      type: "negative",
+      title: "Severe Psychological Trauma & Panic Disorders",
+      desc: "The violation of one's personal identity triggers chronic anxiety, clinical depression, paranoia, and severe sleep deprivation.",
+      example: "Over 70% of identity theft victims reporting long-term insomnia, panic attacks, and severe marital strain while fighting fraud claims.",
+      collocation: "acute emotional distress / personal violation"
+    },
+    {
+      type: "negative",
+      title: "Protracted Bureaucratic Ordeal & Legal Peril",
+      desc: "Victims must spend hundreds of hours and thousands of dollars filing sworn affidavits and hiring lawyers to prove their innocence to banks.",
+      example: "Innocent citizens detained at airport security checkpoints because criminals weaponized their stolen identities to commit felonies.",
+      collocation: "protracted bureaucratic ordeal / expunge wrongful records"
+    }
+  ],
+
+  evaluationArguments: [
+    {
+      title: "Ubiquitous Digital Banking & Cashless Commerce",
+      reason: "The wholesale transition to online financial portals vastly multiplies the vulnerable attack surface for data harvesting.",
+      development: "Consumers routinely enter sensitive identity credentials across dozens of commercial and banking servers daily, creating opportunities for automated packet-sniffing and mirror phishing portals.",
+      example: "Millions of consumers shopping via unverified mobile apps or public Wi-Fi networks having their payment credentials skimmed.",
+      type: "argument",
+      collocation: "ubiquitous digital banking / expanded attack surface"
+    },
+    {
+      title: "Corporate & Institutional Database Breaches",
+      reason: "Corporations accumulate massive reservoirs of consumer identification without investing in adequate cryptographic protection.",
+      development: "When central servers are compromised, millions of complete citizen dossiers—including national insurance numbers and passwords—are exfiltrated and auctioned on dark web marketplaces.",
+      example: "The monumental Equifax data breach leaking the sensitive financial dossiers of nearly 150 million consumers onto underground forums.",
+      type: "argument",
+      collocation: "exfiltrate sensitive dossiers / dark web marketplaces"
+    },
+    {
+      title: "Deceptive Social Engineering & AI Phishing",
+      reason: "Cybercriminals deploy psychological urgency and artificial intelligence to trick individuals into surrendering authentication codes.",
+      development: "Spear-phishing emails and voice-cloning software mimic legitimate banking institutions with flawless accuracy, manipulating human trust.",
+      example: "Counterfeit SMS messages purporting to be urgent bank fraud alerts coercing victims into entering their two-factor security codes.",
+      type: "argument",
+      collocation: "deceptive phishing campaign / psychological social engineering"
+    },
+    {
+      title: "Transnational Impunity & Cryptocurrency Laundering",
+      reason: "The borderless internet allows cybercrime syndicates to operate from foreign safe havens without fear of local police prosecution.",
+      development: "Stolen funds are laundered instantaneously through anonymized cryptocurrency exchanges, creating a low-risk, high-profit criminal enterprise.",
+      example: "Organized syndicates operating outside international extradition treaties systematically draining foreign bank accounts with complete impunity.",
+      type: "argument",
+      collocation: "operate with brazen impunity / anonymized crypto laundering"
+    }
+  ],
+
+  facultyAngles: [
+    {
+      title: "Technological & Infrastructure Angle",
+      development: "Focuses on the rapid shift toward a cashless society and the structural vulnerabilities of centralized cloud databases."
+    },
+    {
+      title: "Institutional Accountability Angle",
+      development: "Critiques corporate entities for warehousing vast quantities of citizen data while neglecting state-of-the-art encryption defenses."
+    },
+    {
+      title: "Human Psychology & Victim Anguish Angle",
+      development: "Examines the severe mental health toll, loss of privacy, and bureaucratic helplessness endured by targeted individuals."
+    },
+    {
+      title: "Judicial & Geopolitical Enforcement Angle",
+      development: "Highlights how jurisdictional gaps and borderless internet protocols shield international cybercrime syndicates from legal accountability."
+    }
+  ]
 };

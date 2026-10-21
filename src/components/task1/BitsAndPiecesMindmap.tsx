@@ -7,10 +7,10 @@ import {
   Sparkles,
   BookOpen,
   Maximize2,
-  Grid,
-  Columns,
-  Disc,
-  Globe
+  Tv,
+  Radio,
+  Clock,
+  Crosshair
 } from "lucide-react";
 
 interface MindmapPiece {
@@ -35,38 +35,38 @@ interface MindmapBranch {
 const MINDMAP_BRANCHES: MindmapBranch[] = [
   {
     id: "parameters",
-    title: "Piece 1: Introduction & Essential Graph Parameters",
+    title: "Piece 1: Introduction & Graph Parameters",
     badge: "Introduction Anchor",
     color: "#4338ca",
     borderColor: "#c7d2fe",
     bgLight: "#eef2ff",
     icon: <BookOpen size={20} color="#4f46e5" />,
     summary:
-      "A Band 9 report begins with an unambiguous paraphrase of the core parameters: visual format (horizontal bar charts), subject (profit generation of SMG Entertainment record company), geographic scope (Germany, France, and Italy), 5 music formats, and unit (million euros).",
+      "A Band 9 introduction paraphrases the essential parameters: graphic format (line graph), demographic subject (UK population aged four and above), two broadcasting channels (radio and television), temporal cycle (24 hours between October and December 1992), and measurement unit (percentage / %).",
     pieces: [
       {
-        label: "Visual Format & Subject",
-        value: "Dual Comparative Horizontal Bar Charts",
+        label: "Visual Format & Action",
+        value: "Dual Line Graph of Diurnal Cycle",
         detail:
-          "Two separate horizontal bar graphs detailing profits for record enterprise SMG Entertainment.",
+          "Continuous line graph tracking radio and television audiences across the 24 hours of day and night.",
         band9Application:
-          "“The horizontal bar charts illustrate the profits earned by SMG Entertainment, a music record company, across five distinct audio distribution formats in Germany, France, and Italy between 1997 and 2007.”"
+          "“The line graph illustrates the percentage of the UK population aged four and above who listened to the radio and watched television throughout a 24-hour cycle between October and December in 1992.”"
       },
       {
-        label: "Geographic & Temporal Parameters",
-        value: "3 European Nations Across a 10-Year Span (1997 vs 2007)",
+        label: "Demographic Target & Scope",
+        value: "UK Population Aged Four and Above",
         detail:
-          "Tracks Germany, France, and Italy at two discrete snapshots marking the onset of the digital audio revolution.",
+          "Crucial demographic boundary specified in the Y-axis label: '(over 4-years old)'.",
         band9Application:
-          "“...comparing financial returns in three European nations across a 10-year period marking the shift from physical to digital media.”"
+          "“...tracking the proportion of UK citizens aged four and older who engaged with broadcast media...”"
       },
       {
-        label: "Measurement Unit & Categories",
-        value: "Million Euros (€m) Across 5 Media Formats",
+        label: "Measurement Scale & Period",
+        value: "Percentage Scale (0%–50%) Over 24 Hours",
         detail:
-          "Shop CDs, Online CDs, Internet downloads, Cassettes, and Vinyl singles/LPs calibrated from 0 to 40 million euros.",
+          "Y-axis calibrated in 5% intervals from 0% to 50%; X-axis spans from 1.00 am to 24.00 (midnight).",
         band9Application:
-          "“...with profits measured in million euros across traditional brick-and-mortar sales, remote physical orders, digital downloads, and legacy magnetic/vinyl formats.”"
+          "“...calibrated as a percentage of the total national population, recorded over the final quarter of 1992.”"
       }
     ]
   },
@@ -79,142 +79,105 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
     bgLight: "#f0f9ff",
     icon: <Layers size={20} color="#0284c7" />,
     summary:
-      "The macro overview must identify the three decisive macro features: 1) Physical store CDs retained undisputed leadership despite sharp drops; 2) Legacy analog formats vanished completely to zero; 3) Digital downloads and online sales expanded dynamically, with Germany leading overall profits.",
+      "The macro overview must synthesize the three decisive macro features: 1) Inverse diurnal patterns (radio morning supremacy vs TV afternoon/night domination); 2) Prime-time television achieving the single highest audience share of the day (45%); 3) The pivotal midday intersection where both mediums converge at approximately 15%.",
     pieces: [
       {
-        label: "Pillar 1: Persistent Store CD Dominance",
-        value: "Highest earner in both 1997 and 2007 despite 30%-40% drop",
+        label: "Pillar 1: Inverse Diurnal Trajectories",
+        value: "Radio morning leader vs Television evening supreme",
         detail:
-          "Shop-bought CDs formed the overwhelming majority of earnings across all three nations in 1997 and remained the #1 source in 2007.",
+          "Radio commands breakfast and commute listening; television takes over decisively from 13:00 into late night.",
         band9Application:
-          "“Overall, retail store-bought compact discs remained the primary source of revenue in all three nations throughout the decade, despite experiencing marked contractions by 2007.”"
+          "“Overall, the two media displayed contrasting diurnal patterns; radio listenership was considerably higher during the morning hours, whereas television decisively dominated from the early afternoon through the night.”"
       },
       {
-        label: "Pillar 2: Total Obsolescence of Legacy Analog",
-        value: "Cassettes & Vinyl collapsed from up to €6m to 0 €m",
+        label: "Pillar 2: Prime-Time Television Zenith",
+        value: "45% Peak between 20:00 and 21:00",
         detail:
-          "Cassettes and vinyl records contributed noticeably in 1997 but were entirely phased out of profitability by 2007.",
+          "Television captivates nearly half the UK population during prime time, achieving the single highest point on the chart.",
         band9Application:
-          "“Concurrently, legacy analog formats—namely cassettes and vinyl—became completely obsolete, generating zero profit across the board.”"
+          "“Additionally, evening television viewing attracted the single highest audience share of the day, peaking at roughly 45% during prime time.”"
       },
       {
-        label: "Pillar 3: Digital Emergence & German Leadership",
-        value: "Online CDs & Downloads surged; Germany led all markets",
+        label: "Pillar 3: Midday Crossover Convergence",
+        value: "Both mediums intersect at 15% around 13:00",
         detail:
-          "Internet downloads rose from nil, online CDs multiplied, and Germany maintained commanding profitability in nearly every medium.",
+          "The critical pivot point where television viewership ascends to surpass declining radio listenership.",
         band9Application:
-          "“...while digital distribution channels witnessed substantial growth, with Germany consistently generating the highest overall profits.”"
+          "“...with both mediums briefly converging at an identical level around midday before embarking on opposite paths.”"
       }
     ]
   },
   {
-    id: "body1_baseline",
-    title: "Piece 3: Body 1 (1997 Baseline & Analog Distribution)",
+    id: "body1_morning",
+    title: "Piece 3: Body 1 (Morning Trends & Midday Crossover)",
     badge: "Body 1 Focus",
-    color: "#059669",
-    borderColor: "#a7f3d0",
-    bgLight: "#ecfdf5",
-    icon: <TrendingUp size={20} color="#059669" />,
+    color: "#dc2626",
+    borderColor: "#fecaca",
+    bgLight: "#fef2f2",
+    icon: <Radio size={20} color="#dc2626" />,
     summary:
-      "Document the initial 1997 commercial baseline: in-store CDs generating the immense lion's share, negligible online CDs, nonexistent internet downloads, and modest analog cassette/vinyl sales led by Italy.",
+      "Document the first half of the diurnal cycle (01:00 to 13:00): nocturnal lull (<5%), the explosive climb of radio to its daily apex of ~27% at 8:30 am, television's modest morning bump (7% at 8:00) down to 3.5%, and the 13:00 intersection at 15%.",
     pieces: [
       {
-        label: "Store CD Supremacy",
-        value: "Germany ~€42m (above 40m line), France €25m, Italy ~€20.5m",
+        label: "Feature 1: Nocturnal Trough",
+        value: "01:00 – 06:00 (Under 5% Engagement)",
         detail:
-          "Physical store CD sales generated over 80% of total company revenue; Germany's bar visibly exceeded the 40 million line, holding a commanding lead over France and Italy.",
+          "Both media hover below 5% overnight; radio bottoms out at 2%–3% while TV remains flat at 3%–4%.",
         band9Application:
-          "“In 1997, retail purchases of CDs in shops represented the overwhelming lion’s share of SMG Entertainment’s earnings, with Germany generating approximately 42 million euros (just exceeding the 40 million mark), followed by France at 25 million and Italy at just over 20 million.”"
+          "“Between 1:00 and 6:00, audience figures for both platforms remained marginal at under 7%.”"
       },
       {
-        label: "Digital Nonexistence & Online Triviality",
-        value: "Downloads 0 €m; Online CDs under €3m",
+        label: "Feature 2: Radio Morning Surge & Peak",
+        value: "06:00 – 09:00 (Apex of ~27% at 08:30)",
         detail:
-          "Downloads were 0 in all markets; online CD purchases were negligible at €3m in Germany, €1.5m in France, and 0 in Italy.",
+          "Radio shoots up from 4% at 6:00 to 15% at 7:00, 25% at 8:00, peaking at approximately 27% around 8:30.",
         band9Application:
-          "“By contrast, online CD orders were negligible, yielding 3 million euros in Germany and 1.5 million in France, while internet downloads were entirely nonexistent across all three territories.”"
+          "“Radio then experienced a dramatic morning surge, climbing steeply to reach a daily apex of approximately 27% around 8:30.”"
       },
       {
-        label: "Analog Mediums (Cassettes & Vinyl)",
-        value: "Cassettes: Italy €6m, Ger & Fra €5m • Vinyl: Fra & Ita €3m, Ger €2m",
+        label: "Feature 3: TV Morning Slump & Midday Crossover",
+        value: "08:00 (7%) → 11:00 (3.5%) → 13:00 (15%)",
         detail:
-          "Cassettes yielded €6m in Italy and €5m each in Germany and France; vinyl yielded €3m in both France and Italy, alongside €2m in Germany.",
+          "TV has a brief 7% bump at 8:00, dips to 3.5% at 11:00, then climbs to meet falling radio at 15% at 13:00.",
         band9Application:
-          "“Regarding analog formats, Italy led cassette sales at 6 million euros, while Germany and France were tied at 5 million each; similarly, vinyl records generated 3 million euros in both France and Italy, compared to 2 million in Germany.”"
+          "“In contrast, television engagement rose only modestly to 7% at 8:00 before sliding back to around 4% at 11:00. By 13:00, radio audiences had tapered off while television viewership climbed, resulting in an intersection where both mediums stood at roughly 15%.”"
       }
     ]
   },
   {
-    id: "body2_shift",
-    title: "Piece 4: Body 2 (2007 Contraction, Digital Surge & Obsolescence)",
+    id: "body2_evening",
+    title: "Piece 4: Body 2 (Afternoon Ascent, Prime-Time Peak & Night)",
     badge: "Body 2 Focus",
-    color: "#d97706",
-    borderColor: "#fde68a",
-    bgLight: "#fffbeb",
-    icon: <TrendingDown size={20} color="#d97706" />,
+    color: "#2563eb",
+    borderColor: "#bfdbfe",
+    bgLight: "#eff6ff",
+    icon: <Tv size={20} color="#2563eb" />,
     summary:
-      "Analyze the profound structural changes a decade later: in-store CDs plummeting by €6m–€15m, total wipe-out of cassettes and vinyl, and the rapid uptake of online CD ordering and internet downloads.",
+      "Document the second half of the diurnal cycle (14:00 to 24:00): television permanently taking the lead, radio's secondary commute bump (14% at 17:00) followed by its plunge below 10%, TV's explosive prime-time surge to 45% (20:00–21:00), and late-night declines.",
     pieces: [
       {
-        label: "Contraction in Store CDs",
-        value: "Germany €25m (-15m), France €15m (-10m), Italy €14m (-6m)",
+        label: "Feature 1: TV Leadership Reversal",
+        value: "14:00 Onwards (TV Supersedes Radio)",
         detail:
-          "Despite remaining the #1 profit contributor, shop CD earnings suffered steep declines of 30% to 40% in all territories.",
+          "TV remains steady around 14%–15% while radio falls to 11%–12%, initiating permanent TV dominance.",
         band9Application:
-          "“Although shop-bought CDs remained the leading profit contributor, earnings plummeted across all markets—sliding to 25 million euros in Germany, 15 million in France, and 14 million in Italy.”"
+          "“From 14:00 onwards, television superseded radio as the preferred broadcasting medium.”"
       },
       {
-        label: "Total Extinction of Analog Formats",
-        value: "0 €m for Cassettes & Vinyl in All 3 Countries",
+        label: "Feature 2: Radio Commute Bump & Slump",
+        value: "17:00 (14% Bump) → Drops Below 10%",
         detail:
-          "Analog media ceased to exist commercially, completely wiped off the balance sheet without a single euro of profit.",
+          "Radio enjoys a temporary bump to 14% at 17:00 as commuters travel home, before plunging below 10% after 18:00.",
         band9Application:
-          "“In stark contrast, both cassettes and vinyl records were entirely phased out, generating zero profit across the board.”"
+          "“Although radio exhibited a brief afternoon commute bump to 14% at 17:00, its figures plummeted below 10% thereafter.”"
       },
       {
-        label: "Surge of Remote & Digital Channels",
-        value: "Online CDs (€8m Ger, €7m Fra) + Downloads (€5m Ger, €5m Fra)",
+        label: "Feature 3: Prime-Time 45% TV Explosion & Nightfall",
+        value: "20:00 – 21:00 (Global Zenith of 45%)",
         detail:
-          "Online CDs grew rapidly; internet downloads emerged from a standing start to generate €5m each in Germany and France, and €1.5m in Italy.",
+          "TV rockets past 40% after 18:00 to peak at 45% between 20:00 and 21:00, before falling to 15% by midnight while radio sits at 4%.",
         band9Application:
-          "“The slack was partially absorbed by digital and remote channels; online CD sales surged to 8 million euros in Germany and 7 million in France, while internet downloads contributed 5 million euros each in both leading nations.”"
-      }
-    ]
-  },
-  {
-    id: "national_rankings",
-    title: "Piece 5: Geographic Market Comparison & Structural Impact",
-    badge: "Comparative Synthesis",
-    color: "#7c3aed",
-    borderColor: "#ddd6fe",
-    bgLight: "#f5f3ff",
-    icon: <Globe size={20} color="#7c3aed" />,
-    summary:
-      "Contrast national agility and total earnings: Germany maintained undisputed supremacy (~€50m to ~€38m), France showed digital resilience (~€27m stable), while Italy suffered the sharpest net loss (~€29m down to ~€17m).",
-    pieces: [
-      {
-        label: "Germany: Market Leader in Every Format",
-        value: "Top profit generator in both 1997 and 2007",
-        detail:
-          "Dominated store CDs (€40m/€25m), online CDs (€8m), and matched France in downloads (€5m).",
-        band9Application:
-          "“Geographically, Germany stood out as the principal commercial engine for SMG Entertainment across both time periods.”"
-      },
-      {
-        label: "France: Agile Digital Transition",
-        value: "Net total profit remained stable (~€27m in both years)",
-        detail:
-          "Losses of €10m in store CDs were almost perfectly offset by gains in online CDs (+€5.5m) and downloads (+€5m).",
-        band9Application:
-          "“France exhibited remarkable digital agility, mitigating its retail CD losses through swift gains in remote and digital avenues.”"
-      },
-      {
-        label: "Italy: Severe Contraction Due to Analog Lag",
-        value: "Sharpest drop: from ~€29m down to ~€17m (-41%)",
-        detail:
-          "High initial reliance on cassettes (€6m) and vinyl (€3m) left it vulnerable when analog vanished, while digital uptake was slowest (€1.5m each).",
-        band9Application:
-          "“Conversely, Italy suffered a dramatic 41% contraction in total profit, crippled by the disappearance of its lucrative cassette trade and sluggish adoption of internet downloads.”"
+          "“Conversely, television audiences skyrocketed from 16:00, culminating in a prime-time peak of 45% between 20:00 and 21:00. Late at night, television viewership dropped sharply to 15% by midnight, while radio leveled off at around 4%.”"
       }
     ]
   }
@@ -222,143 +185,111 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
 
 export const BitsAndPiecesMindmap: React.FC = () => {
   const [selectedBranchId, setSelectedBranchId] = useState<string>("parameters");
-  const [viewMode, setViewMode] = useState<"detail" | "matrix">("detail");
-
   const selectedBranch =
     MINDMAP_BRANCHES.find((b) => b.id === selectedBranchId) || MINDMAP_BRANCHES[0];
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%" }}>
-      {/* Top Controller Strip */}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "14px",
+        width: "100%",
+        fontFamily: "var(--font-sans)"
+      }}
+    >
+      {/* Branch Selector Cards */}
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "10px",
-          background: "var(--slate-50)",
-          padding: "10px 16px",
-          borderRadius: "14px",
-          border: "1px solid var(--border-subtle)"
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+          gap: "10px"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Sparkles size={18} color="var(--apple-blue)" />
-          <span style={{ fontSize: "0.86rem", fontWeight: 800, color: "var(--slate-900)" }}>
-            SMG Entertainment Mindmap Architecture (5 Strategic Pieces)
-          </span>
-        </div>
-
-        <div style={{ display: "flex", gap: "6px" }}>
-          <button
-            onClick={() => setViewMode("detail")}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "5px",
-              padding: "5px 10px",
-              borderRadius: "8px",
-              fontSize: "0.75rem",
-              fontWeight: 700,
-              border: "1px solid var(--border-subtle)",
-              background: viewMode === "detail" ? "var(--slate-900)" : "#ffffff",
-              color: viewMode === "detail" ? "#ffffff" : "var(--slate-700)",
-              cursor: "pointer"
-            }}
-          >
-            <Columns size={12} /> Detailed Explorer
-          </button>
-          <button
-            onClick={() => setViewMode("matrix")}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "5px",
-              padding: "5px 10px",
-              borderRadius: "8px",
-              fontSize: "0.75rem",
-              fontWeight: 700,
-              border: "1px solid var(--border-subtle)",
-              background: viewMode === "matrix" ? "var(--slate-900)" : "#ffffff",
-              color: viewMode === "matrix" ? "#ffffff" : "var(--slate-700)",
-              cursor: "pointer"
-            }}
-          >
-            <Grid size={12} /> Full Overview Matrix
-          </button>
-        </div>
-      </div>
-
-      {/* Piece Tabs */}
-      <div style={{ display: "flex", gap: "8px", overflowX: "auto", paddingBottom: "4px" }}>
-        {MINDMAP_BRANCHES.map((b) => {
-          const isSelected = selectedBranchId === b.id;
+        {MINDMAP_BRANCHES.map((branch) => {
+          const isSelected = selectedBranchId === branch.id;
           return (
             <button
-              key={b.id}
-              onClick={() => setSelectedBranchId(b.id)}
+              key={branch.id}
+              onClick={() => setSelectedBranchId(branch.id)}
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "8px",
-                padding: "8px 14px",
-                borderRadius: "12px",
-                border: isSelected ? `2px solid ${b.color}` : "1.5px solid var(--border-subtle)",
-                background: isSelected ? b.bgLight : "#ffffff",
-                color: isSelected ? b.color : "var(--slate-700)",
-                fontWeight: isSelected ? 800 : 650,
-                fontSize: "0.82rem",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
+                gap: "12px",
+                padding: "14px 16px",
+                borderRadius: "16px",
+                border: isSelected ? `2px solid ${branch.color}` : "1.5px solid var(--border-subtle)",
+                background: isSelected ? branch.bgLight : "#ffffff",
                 boxShadow: isSelected ? "var(--shadow-sm)" : "none",
+                cursor: "pointer",
+                textAlign: "left",
                 transition: "all 0.15s ease"
               }}
             >
-              {b.icon}
-              {b.badge}
+              <div
+                style={{
+                  width: "36px",
+                  height: "36px",
+                  borderRadius: "10px",
+                  background: isSelected ? branch.color : "var(--slate-100)",
+                  color: isSelected ? "#ffffff" : "var(--slate-600)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0
+                }}
+              >
+                {branch.icon}
+              </div>
+              <div>
+                <span
+                  style={{
+                    fontSize: "0.72rem",
+                    fontWeight: 800,
+                    color: isSelected ? branch.color : "var(--slate-500)",
+                    display: "block"
+                  }}
+                >
+                  {branch.badge}
+                </span>
+                <strong
+                  style={{
+                    fontSize: "0.88rem",
+                    color: "var(--slate-900)",
+                    display: "block",
+                    lineHeight: 1.3
+                  }}
+                >
+                  {branch.title}
+                </strong>
+              </div>
             </button>
           );
         })}
       </div>
 
-      {viewMode === "detail" ? (
-        /* Detailed View of Active Branch */
-        <div
-          style={{
-            background: "#ffffff",
-            border: `2px solid ${selectedBranch.borderColor}`,
-            borderRadius: "18px",
-            padding: "20px 22px",
-            boxShadow: "var(--shadow-sm)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "16px"
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div>
-              <span
-                style={{
-                  fontSize: "0.74rem",
-                  fontWeight: 800,
-                  color: selectedBranch.color,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em"
-                }}
-              >
-                {selectedBranch.badge}
-              </span>
-              <h3 style={{ fontSize: "1.15rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0 0" }}>
-                {selectedBranch.title}
-              </h3>
-            </div>
+      {/* Selected Branch Deep Dive */}
+      <div
+        style={{
+          background: "#ffffff",
+          border: `1.5px solid ${selectedBranch.borderColor}`,
+          borderRadius: "20px",
+          padding: "22px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "16px",
+          boxShadow: "var(--shadow-sm)"
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <div
               style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "10px",
-                background: selectedBranch.bgLight,
+                width: "40px",
+                height: "40px",
+                borderRadius: "12px",
+                background: selectedBranch.color,
+                color: "#ffffff",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
@@ -366,115 +297,105 @@ export const BitsAndPiecesMindmap: React.FC = () => {
             >
               {selectedBranch.icon}
             </div>
+            <div>
+              <h4 style={{ fontSize: "1.15rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                {selectedBranch.title}
+              </h4>
+              <p style={{ fontSize: "0.84rem", color: "var(--slate-600)", marginTop: "2px", margin: 0 }}>
+                {selectedBranch.summary}
+              </p>
+            </div>
           </div>
-
-          <p style={{ fontSize: "0.9rem", color: "var(--slate-600)", lineHeight: 1.5, margin: 0 }}>
-            {selectedBranch.summary}
-          </p>
-
-          {/* Sub-pieces */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "12px" }}>
-            {selectedBranch.pieces.map((piece) => (
-              <div
-                key={piece.label}
-                style={{
-                  background: "var(--slate-50)",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "14px",
-                  padding: "14px 16px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "6px"
-                }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "6px" }}>
-                  <strong style={{ fontSize: "0.92rem", color: "var(--slate-900)" }}>
-                    {piece.label}
-                  </strong>
-                  {piece.value && (
-                    <span
-                      style={{
-                        fontSize: "0.75rem",
-                        fontWeight: 750,
-                        padding: "2px 8px",
-                        borderRadius: "6px",
-                        background: "#ffffff",
-                        border: "1px solid var(--border-subtle)",
-                        color: selectedBranch.color
-                      }}
-                    >
-                      {piece.value}
-                    </span>
-                  )}
-                </div>
-                <div style={{ fontSize: "0.85rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-                  {piece.detail}
-                </div>
-                <div
-                  style={{
-                    background: "#ffffff",
-                    borderRadius: "8px",
-                    padding: "8px 12px",
-                    border: "1px solid var(--border-subtle)",
-                    fontSize: "0.82rem",
-                    color: "var(--slate-800)",
-                    fontStyle: "italic",
-                    marginTop: "4px",
-                    lineHeight: 1.45
-                  }}
-                >
-                  <strong style={{ fontStyle: "normal", color: "var(--slate-900)" }}>Band 9 Phrasing:</strong>{" "}
-                  {piece.band9Application}
-                </div>
-              </div>
-            ))}
-          </div>
+          <span
+            className="apple-badge neutral"
+            style={{
+              background: selectedBranch.bgLight,
+              color: selectedBranch.color,
+              fontWeight: 800,
+              fontSize: "0.78rem"
+            }}
+          >
+            {selectedBranch.badge}
+          </span>
         </div>
-      ) : (
-        /* Matrix View Across All 5 Branches */
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "14px" }}>
-          {MINDMAP_BRANCHES.map((b) => (
+
+        {/* Piece Items Cards */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "12px" }}>
+          {selectedBranch.pieces.map((piece, idx) => (
             <div
-              key={b.id}
+              key={piece.label}
               style={{
-                background: "#ffffff",
-                border: `1.5px solid ${b.borderColor}`,
-                borderRadius: "16px",
+                background: "var(--slate-50)",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: "14px",
                 padding: "16px",
                 display: "flex",
                 flexDirection: "column",
-                gap: "10px",
-                boxShadow: "var(--shadow-sm)"
+                gap: "8px"
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                {b.icon}
-                <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)" }}>{b.badge}</strong>
-              </div>
-              <p style={{ fontSize: "0.8rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-                {b.summary}
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginTop: "auto" }}>
-                {b.pieces.map((p) => (
-                  <div
-                    key={p.label}
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                  <span
+                    className="apple-badge neutral"
                     style={{
-                      background: "var(--slate-50)",
-                      borderRadius: "8px",
-                      padding: "6px 8px",
-                      fontSize: "0.75rem",
-                      color: "var(--slate-700)",
+                      width: "22px",
+                      height: "22px",
+                      borderRadius: "50%",
+                      padding: 0,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontWeight: 800,
+                      fontSize: "0.74rem"
+                    }}
+                  >
+                    {idx + 1}
+                  </span>
+                  <strong style={{ fontSize: "0.92rem", color: "var(--slate-900)" }}>
+                    {piece.label}
+                  </strong>
+                </div>
+                {piece.value && (
+                  <span
+                    className="apple-badge neutral"
+                    style={{
+                      fontSize: "0.72rem",
+                      fontWeight: 750,
+                      background: "#ffffff",
                       border: "1px solid var(--border-subtle)"
                     }}
                   >
-                    <strong>{p.label}:</strong> {p.value}
-                  </div>
-                ))}
+                    {piece.value}
+                  </span>
+                )}
+              </div>
+
+              <p style={{ fontSize: "0.84rem", color: "var(--slate-600)", lineHeight: 1.45, margin: 0 }}>
+                {piece.detail}
+              </p>
+
+              <div
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid var(--border-subtle)",
+                  borderRadius: "10px",
+                  padding: "10px 12px",
+                  fontSize: "0.82rem",
+                  color: "var(--slate-800)",
+                  lineHeight: 1.5,
+                  marginTop: "auto"
+                }}
+              >
+                <strong style={{ color: selectedBranch.color, display: "block", marginBottom: "2px" }}>
+                  Band 9 Application:
+                </strong>
+                {piece.band9Application}
               </div>
             </div>
           ))}
         </div>
-      )}
+      </div>
     </div>
   );
 };

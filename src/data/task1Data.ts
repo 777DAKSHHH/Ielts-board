@@ -6,7 +6,10 @@ import type {
   ComparisonHotspot,
   PacificConditionFeature,
   SchoolData,
-  Task1DiagramData
+  Task1DiagramData,
+  HourlyAudiencePoint,
+  MediaChannelInfo,
+  AudienceHotspot
 } from "../types";
 
 export type {
@@ -17,569 +20,417 @@ export type {
   ComparisonHotspot,
   PacificConditionFeature,
   SchoolData,
-  Task1DiagramData
+  Task1DiagramData,
+  HourlyAudiencePoint,
+  MediaChannelInfo,
+  AudienceHotspot
 };
 
-export const MUSIC_FORMATS: MusicFormatItem[] = [
+export const HOURLY_AUDIENCE_DATA: HourlyAudiencePoint[] = [
+  { hour: 1, timeLabel: "1.00", tv: 7, radio: 3, annotation: "Cycle begins: TV at 7%, Radio at 3%" },
+  { hour: 2, timeLabel: "2.00", tv: 3, radio: 2, annotation: "Nocturnal lull: both platforms drop under 4%" },
+  { hour: 3, timeLabel: "3.00", tv: 3, radio: 2, annotation: "Overnight trough: TV at ~3%, Radio at ~2%" },
+  { hour: 4, timeLabel: "4.00", tv: 3.5, radio: 2.5, annotation: "Pre-dawn quiet: minimal public engagement" },
+  { hour: 5, timeLabel: "5.00", tv: 4, radio: 3, annotation: "Early risers: both remain flat under 5%" },
+  { hour: 6, timeLabel: "6.00", tv: 5, radio: 4.5, annotation: "Dawn transition: Radio prepares for steep morning climb" },
+  { hour: 7, timeLabel: "7.00", tv: 5, radio: 15, annotation: "Morning surge: Radio shoots up to 15%, TV holds at 5%" },
+  { hour: 8, timeLabel: "8.00", tv: 7, radio: 25, annotation: "Breakfast rush: Radio leaps to 25%, TV has modest 7% news bump" },
+  { hour: 8.5, timeLabel: "8.30", tv: 6, radio: 27, isPeak: "radio", annotation: "Radio Daily Apex: ~27% of UK population tuned in" },
+  { hour: 9, timeLabel: "9.00", tv: 5.5, radio: 26, annotation: "Morning drive: Radio hovers strong at 26%" },
+  { hour: 10, timeLabel: "10.00", tv: 4, radio: 23, annotation: "Post-commute: Radio begins gradual daytime descent" },
+  { hour: 11, timeLabel: "11.00", tv: 3.5, radio: 20, annotation: "TV daytime low: TV dips to 3.5%, Radio slides to 20%" },
+  { hour: 12, timeLabel: "12.00", tv: 8, radio: 17.5, annotation: "Midday approach: TV climbs toward 8%, Radio slides to 17.5%" },
+  { hour: 13, timeLabel: "13.00", tv: 15, radio: 15, isCrossover: true, annotation: "Crossover Convergence: TV and Radio intersect at 15%" },
+  { hour: 14, timeLabel: "14.00", tv: 14.5, radio: 12, annotation: "Leadership reversal: TV supersedes Radio permanently" },
+  { hour: 15, timeLabel: "15.00", tv: 14, radio: 11, annotation: "Afternoon lull: TV steady at 14%, Radio at 11%" },
+  { hour: 16, timeLabel: "16.00", tv: 17, radio: 13, annotation: "Late afternoon: TV starts ascending, Radio ticks up" },
+  { hour: 17, timeLabel: "17.00", tv: 25, radio: 13.5, annotation: "Evening commute: Radio secondary bump (13.5%), TV surges to 25%" },
+  { hour: 18, timeLabel: "18.00", tv: 42, radio: 7, annotation: "Prime-time explosion: TV rockets to 42%, Radio plunges to 7%" },
+  { hour: 19, timeLabel: "19.00", tv: 43, radio: 7, annotation: "Prime-time entry: TV reaches 43%, Radio flat at 7%" },
+  { hour: 20, timeLabel: "20.00", tv: 45, radio: 6, isPeak: "tv", annotation: "Prime-Time Global Apex: TV captivates 45% of UK population" },
+  { hour: 21, timeLabel: "21.00", tv: 45, radio: 4, isPeak: "tv", annotation: "Prime-time plateau: TV holds at 45%, Radio drops to 4%" },
+  { hour: 22, timeLabel: "22.00", tv: 38, radio: 5, annotation: "Late evening: TV begins steep slide down to 38%" },
+  { hour: 23, timeLabel: "23.00", tv: 33, radio: 5, annotation: "Pre-midnight: TV drops to 33%, Radio at 5%" },
+  { hour: 24, timeLabel: "24.00", tv: 15, radio: 4, annotation: "Cycle closes: TV falls to 15%, Radio settles at 4%" }
+];
+
+export const MEDIA_CHANNELS: MediaChannelInfo[] = [
   {
-    id: "shop_cds",
-    name: "CDs bought in shops",
-    shortLabel: "In-Store CDs",
-    category: "Physical Retail",
-    description: "Traditional brick-and-mortar retail purchase of physical compact discs.",
-    profits: {
-      germany: {
-        y1997: 42,
-        y2007: 25,
-        change: "-17m (-40.5%)",
-        band9Citation: "peaked at approximately 42 million euros (just exceeding the 40 million line) before sliding to 25 million"
-      },
-      france: {
-        y1997: 25,
-        y2007: 15,
-        change: "-10m (-40.0%)",
-        band9Citation: "dropped from exactly 25 million to 15 million euros"
-      },
-      italy: {
-        y1997: 20.5,
-        y2007: 14,
-        change: "-6.5m (-31.7%)",
-        band9Citation: "contracted from just over 20 million to 14 million euros"
-      }
-    },
-    trendSummary: "Consistently the dominant profit generator across all three nations in both years, despite suffering substantial drops by 2007.",
-    band9Phrase: "“Although retail purchases of CDs in shops remained the undisputed commercial backbone, profits shrank substantially in every country over the 10-year span, with Germany falling from just above 40 million euros to 25 million.”",
-    keyFeature: "Highest profit across all categories in both 1997 and 2007, with Germany starting above the 40m mark."
+    id: "radio",
+    name: "Radio",
+    color: "#dc2626",
+    lineStroke: "#dc2626",
+    bgBadge: "rgba(220, 38, 38, 0.12)",
+    peakTime: "08:30 – 09:00",
+    peakValue: 27,
+    troughTime: "02:00 – 04:00",
+    troughValue: 2,
+    summary: "Preferred medium during breakfast and morning commuting hours, with a peak of ~27% before declining steadily into the afternoon.",
+    band9Phrase: "“Radio listenership followed an early diurnal rhythm, surging steeply between 6:00 and 8:30 to register its day peak of roughly 27% before undergoing a prolonged descent.”"
   },
   {
-    id: "online_cds",
-    name: "CDs bought online",
-    shortLabel: "Online CDs",
-    category: "Digital / Online",
-    description: "Remote ordering of physical compact discs via internet web stores.",
-    profits: {
-      germany: {
-        y1997: 3,
-        y2007: 8,
-        change: "+5m (+167%)",
-        band9Citation: "more than doubled from 3 million to 8 million euros"
-      },
-      france: {
-        y1997: 1.5,
-        y2007: 7,
-        change: "+5.5m (+367%)",
-        band9Citation: "surged from a negligible 1.5 million to 7 million euros"
-      },
-      italy: {
-        y1997: 0,
-        y2007: 1.5,
-        change: "+1.5m (from nil)",
-        band9Citation: "emerged from zero to register approximately 1.5 million euros"
-      }
-    },
-    trendSummary: "Experienced rapid expansion, becoming the second most profitable channel in Germany and France by 2007.",
-    band9Phrase: "“Conversely, remote online CD orders gathered significant momentum, multiplying several-fold in Germany and France to reach 8 million and 7 million euros respectively.”",
-    keyFeature: "Strongest growth trajectory among physical media delivery."
-  },
-  {
-    id: "downloads",
-    name: "Internet downloads",
-    shortLabel: "Downloads",
-    category: "Digital / Online",
-    description: "Pure digital music file purchases downloaded directly over the web.",
-    profits: {
-      germany: {
-        y1997: 0,
-        y2007: 5,
-        change: "+5m (from nil)",
-        band9Citation: "emerged from zero to yield 5 million euros"
-      },
-      france: {
-        y1997: 0,
-        y2007: 5,
-        change: "+5m (from nil)",
-        band9Citation: "matched Germany’s tally at exactly 5 million euros"
-      },
-      italy: {
-        y1997: 0,
-        y2007: 1.5,
-        change: "+1.5m (from nil)",
-        band9Citation: "generated a modest 1.5 million euros from a standing start"
-      }
-    },
-    trendSummary: "Completely absent in 1997; rose to become a major revenue stream by 2007, earning €5m each in Germany and France.",
-    band9Phrase: "“Internet downloads, completely nonexistent at the start of the timeframe, emerged as a viable revenue stream contributing 5 million euros apiece in Germany and France.”",
-    keyFeature: "Zero in 1997 across all countries; viable digital stream by 2007."
-  },
-  {
-    id: "cassettes",
-    name: "Cassettes",
-    shortLabel: "Cassettes",
-    category: "Legacy Analog",
-    description: "Magnetic tape audio cassettes popular throughout the 1980s and 1990s.",
-    profits: {
-      germany: {
-        y1997: 5,
-        y2007: 0,
-        change: "-5m (-100%)",
-        band9Citation: "fell from 5 million euros to complete extinction"
-      },
-      france: {
-        y1997: 5,
-        y2007: 0,
-        change: "-5m (-100%)",
-        band9Citation: "matched Germany at 5 million euros before dwindling to nil"
-      },
-      italy: {
-        y1997: 6,
-        y2007: 0,
-        change: "-6m (-100%)",
-        band9Citation: "collapsed from an initial peak of 6 million euros to zero"
-      }
-    },
-    trendSummary: "Generated healthy profits in 1997 (Italy €6m, Germany €5m, France €5m), but suffered total obsolescence by 2007 across all three countries.",
-    band9Phrase: "“Cassettes, which had yielded 6 million euros in Italy and 5 million each in Germany and France in 1997, became entirely obsolete, recording zero revenue by 2007.”",
-    keyFeature: "Total phase-out: from €5m–€6m down to exactly 0 across all three markets."
-  },
-  {
-    id: "vinyl",
-    name: "Vinyl singles and LPs",
-    shortLabel: "Vinyl LPs",
-    category: "Legacy Analog",
-    description: "Polyvinyl chloride phonograph turntable discs.",
-    profits: {
-      germany: {
-        y1997: 2,
-        y2007: 0,
-        change: "-2m (-100%)",
-        band9Citation: "dropped from 2 million euros to zero"
-      },
-      france: {
-        y1997: 3,
-        y2007: 0,
-        change: "-3m (-100%)",
-        band9Citation: "matched Italy at 3 million euros before vanishing to zero"
-      },
-      italy: {
-        y1997: 3,
-        y2007: 0,
-        change: "-3m (-100%)",
-        band9Citation: "declined from 3 million euros to zero"
-      }
-    },
-    trendSummary: "A niche analog medium that yielded €3m in Italy and France, and €2m in Germany in 1997 before disappearing entirely by 2007.",
-    band9Phrase: "“Vinyl records followed an identical downward trajectory, vanishing entirely from the balance sheets of all three territories after initial returns of 3 million euros in Italy and France, and 2 million in Germany.”",
-    keyFeature: "France and Italy tied at 3m in 1997; disappeared completely by 2007."
+    id: "tv",
+    name: "Television (TV)",
+    color: "#2563eb",
+    lineStroke: "#2563eb",
+    bgBadge: "rgba(37, 99, 235, 0.12)",
+    peakTime: "20:00 – 21:00",
+    peakValue: 45,
+    troughTime: "02:00 – 04:00 & 11:00",
+    troughValue: 3,
+    summary: "Overwhelmingly dominant from early afternoon through nightfall, skyrocketing to a massive prime-time apex of 45% between 20:00 and 21:00.",
+    band9Phrase: "“Conversely, television viewing commanded the lion’s share of audience attention from 13:00 onwards, escalating dramatically in the evening to reach an absolute maximum of 45% between 20:00 and 21:00.”"
   }
 ];
 
-export const COUNTRY_MARKETS: CountryMarketData[] = [
+export const AUDIENCE_HOTSPOTS: AudienceHotspot[] = [
   {
-    id: "germany",
-    name: "Germany",
-    fillPattern: "solid",
-    barColor: "#0f172a",
-    badge: "Dominant Market Leader",
-    total1997: 52,
-    total2007: 38,
-    netChange: "-14m (-27%)",
-    summary: "Led the company's profits in virtually every format across both years, recording ~€42m (above the 40m line) in store CDs in 1997 and pioneering online sales in 2007.",
-    dominantFormat: "CDs bought in shops (~€42m in 1997, €25m in 2007)"
+    id: "radio_peak",
+    title: "Morning Rush & Radio Peak (08:30–09:00)",
+    zone: "morning",
+    timeRange: "06:00 – 09:00",
+    radioState: "Surges rapidly from ~4% to its maximum daily apex of ~27%",
+    tvState: "Registers a modest bump to ~7% at 8:00 before sliding to ~5.5%",
+    contrastKey: "Radio outstrips TV by over 20 percentage points during morning rush hour",
+    band9Sentence: "“Radio audience experienced a dramatic morning surge, climbing steeply to reach a daily apex of approximately 27% around 8:30, far outpacing television’s modest 7% peak.”",
+    keyFeature: "Highest radio listenership of the entire 24-hour cycle."
   },
   {
-    id: "france",
-    name: "France",
-    fillPattern: "empty",
-    barColor: "#ffffff",
-    badge: "Strong Second Tier with High Resilience",
-    total1997: 34.5,
-    total2007: 27,
-    netChange: "-7.5m (-22%)",
-    summary: "Generated €25m in shop CDs, €5m in cassettes, and €3m in vinyl in 1997; mitigated its retail losses in 2007 through rapid gains in online CDs (€7m) and downloads (€5m).",
-    dominantFormat: "CDs bought in shops (€25m in 1997, €15m in 2007)"
+    id: "midday_crossover",
+    title: "Midday Convergence & Crossover (13:00)",
+    zone: "midday",
+    timeRange: "12:00 – 14:00",
+    radioState: "Declines steadily to meet television at exactly 15%",
+    tvState: "Climbs sharply from midday news to reach 15%",
+    contrastKey: "Precise intersection point where TV supersedes radio permanently",
+    band9Sentence: "“By 13:00, radio audiences had tapered off while television viewership climbed, resulting in a pivotal intersection where both mediums converged at precisely 15%.”",
+    keyFeature: "The unique crossover point separating morning radio dominance from evening TV supremacy."
   },
   {
-    id: "italy",
-    name: "Italy",
-    fillPattern: "textured",
-    barColor: "#64748b",
-    badge: "Analog Heavy, Slower Digital Shift",
-    total1997: 29.5,
-    total2007: 17,
-    netChange: "-12.5m (-42%)",
-    summary: "Relied heavily on legacy cassettes (€6m) and vinyl (€3m) alongside shop CDs (~€20.5m) in 1997; when analog vanished, its digital channels only reached €1.5m each.",
-    dominantFormat: "CDs bought in shops (~€20.5m in 1997, €14m in 2007)"
+    id: "evening_surge",
+    title: "Prime-Time Television Explosion (20:00–21:00)",
+    zone: "evening",
+    timeRange: "17:00 – 21:00",
+    radioState: "Plunges below 10%, settling between 4% and 6%",
+    tvState: "Skyrockets from 25% at 17:00 to an overall global peak of 45%",
+    contrastKey: "Television achieves a massive 41-percentage-point lead over radio",
+    band9Sentence: "“Television audiences skyrocketed through the evening, culminating in a dominant prime-time peak of 45% between 20:00 and 21:00, captivating nearly half the UK population.”",
+    keyFeature: "Absolute maximum audience recorded across the entire day."
+  },
+  {
+    id: "nocturnal_trough",
+    title: "Nocturnal Trough & Minimal Engagement (02:00–05:00)",
+    zone: "overnight",
+    timeRange: "01:00 – 06:00",
+    radioState: "Bottoms out at 2% to 3%",
+    tvState: "Flattens at 3% to 4%",
+    contrastKey: "Both media languish below 5% with virtually negligible engagement",
+    band9Sentence: "“Between 1:00 and 6:00, audience figures for both platforms remained marginal, hovering under 5% throughout the early pre-dawn hours.”",
+    keyFeature: "The lowest collective audience period for both broadcasting channels."
+  },
+  {
+    id: "commute_bump",
+    title: "Radio Evening Drive-Time Bump (17:00)",
+    zone: "afternoon",
+    timeRange: "16:00 – 18:00",
+    radioState: "Exhibits a minor secondary rise to 13.5%–14%",
+    tvState: "Ascending rapidly to 25%",
+    contrastKey: "Radio temporarily arrests its decline before dropping sharply at 18:00",
+    band9Sentence: "“Although radio exhibited a brief afternoon commute bump to approximately 14% at 17:00, its figures plummeted below 10% immediately thereafter.”",
+    keyFeature: "Nuanced secondary peak reflecting vehicular commuters returning home."
   }
 ];
 
-export const TASK1_HOTSPOTS: ComparisonHotspot[] = [
-  {
-    id: "shop_cds_dominance",
-    title: "Lion’s Share: In-Store CDs",
-    zone: "shop_cds",
-    normalState: "Accounted for ~€42m in Germany (surpassing the 40m mark), €25m in France, and ~€20.5m in Italy.",
-    elNinoState: "Fell sharply to €25m in Germany, €15m in France, and €14m in Italy, yet still remained the largest revenue earner by far.",
-    contrastKey: "Universal contraction across all three nations yet persistent dominance over all other media.",
-    band9Sentence: "“Although earnings from CDs bought in shops dropped substantially across all three nations by 2007, this channel remained by far the single greatest contributor to total profit, with German sales declining from just above 40 million euros to 25 million.”"
-  },
-  {
-    id: "digital_revolution",
-    title: "Digital Transition: Online CDs & Downloads",
-    zone: "digital",
-    normalState: "Negligible online CDs (€3m in Germany, €1.5m in France, 0 in Italy) and exactly zero internet downloads.",
-    elNinoState: "Online CDs rose to €8m (Germany), €7m (France), and €1.5m (Italy); downloads reached €5m in Germany/France and €1.5m in Italy.",
-    contrastKey: "Rapid expansion from nonexistence or trivial amounts to vital commercial streams.",
-    band9Sentence: "“Conversely, digital and remote distribution emerged rapidly, with online CD sales and internet downloads generating combined profits of 13 million euros in Germany and 12 million in France by 2007.”"
-  },
-  {
-    id: "analog_extinction",
-    title: "Analog Obsolescence: Cassettes & Vinyl",
-    zone: "legacy_analog",
-    normalState: "Cassettes generated €6m in Italy and €5m each in Germany and France; vinyl produced €3m in Italy and France, and €2m in Germany.",
-    elNinoState: "Both formats were completely wiped out, generating 0 million euros in all three countries.",
-    contrastKey: "Total commercial extinction within a single decade across all three markets.",
-    band9Sentence: "“Meanwhile, traditional analog media underwent total obsolescence; cassettes and vinyl, which had generated significant returns across all three markets in 1997—including 5 million euros for cassettes in both France and Germany—recorded zero profit a decade later.”"
-  },
-  {
-    id: "national_rankings",
-    title: "Geographic Hierarchy: Germany vs France vs Italy",
-    zone: "national_contrast",
-    normalState: "Germany led overall (~€52m), France held second (~€34.5m), and Italy stood third (~€29.5m).",
-    elNinoState: "Germany retained top position (~€38m), France held firm at ~€27m via rapid digital adoption, while Italy sank to ~€17m.",
-    contrastKey: "Germany’s commanding leadership and Italy’s steep net loss due to slow digital migration.",
-    band9Sentence: "“Geographically, Germany remained the most lucrative territory throughout, while Italy experienced the sharpest overall decline as its reliance on phased-out analog formats took a heavy toll.”"
-  }
-];
+// Compatibility definitions for legacy structures
+export const TASK1_HOTSPOTS: ComparisonHotspot[] = AUDIENCE_HOTSPOTS.map((h) => ({
+  id: h.id,
+  title: h.title,
+  zone: h.zone,
+  normalState: h.radioState,
+  elNinoState: h.tvState,
+  contrastKey: h.contrastKey,
+  band9Sentence: h.band9Sentence
+}));
 
-export const PACIFIC_CONDITIONS: PacificConditionFeature[] = [
-  {
-    id: "normal",
-    title: "1997 Baseline Profit Distribution",
-    badge: "Store CDs & Analog Baseline",
-    tradeWinds: "Retail CDs in shops dominated (>80% of total profits across all nations), with Germany exceeding 40m",
-    upperWinds: "Internet downloads completely non-existent (0 €m across all three markets)",
-    waterThermocline: "Online CD sales virtually negligible (€3m in Germany, €1.5m in France, 0 in Italy)",
-    upwellingStatus: "Cassettes and vinyl provided healthy returns across all three nations (€5m cassettes in France/Germany, €6m in Italy)",
-    rainfallPattern: "Germany generated the greatest profit volume at ~€52m total",
-    australiaCondition: {
-      climate: "Germany: Market leader (~€42m in store CDs, €5m cassettes, €3m online CDs, €2m vinyl)",
-      weather: "Solid physical retail footprint",
-      rainfall: "€52m total turnover",
-      visualDetail: "Germany's black bars represent the longest reach across almost every category"
-    },
-    peruCondition: {
-      climate: "France: €25m in store CDs, €5m cassettes, €3m vinyl",
-      marineLife: "Second in total profitability in 1997 (~€34.5m)",
-      fisheryStatus: "Matched Germany in cassettes (€5m) and Italy in vinyl (€3m)",
-      visualDetail: "France showed strong analog and physical sales"
-    },
-    band9Phrase: "“In 1997, retail purchases of CDs in shops represented the overwhelming lion’s share of SMG Entertainment’s earnings, with Germany yielding a remarkable figure of just above 40 million euros.”",
-    summary: "1997 was marked by absolute dominance of physical store CD sales, balanced cassette and vinyl sales across all countries, and zero internet downloads."
-  },
-  {
-    id: "el_nino",
-    title: "2007 Structural Digital Shift",
-    badge: "Contraction & Digital Emergence",
-    tradeWinds: "Shop CD sales contracted steeply across all three nations (dropping to €25m in Germany, €15m in France, and €14m in Italy)",
-    upperWinds: "Internet downloads surfaced strongly to €5m in Germany and France",
-    waterThermocline: "Online CD sales surged to €8m in Germany and €7m in France",
-    upwellingStatus: "Analog media (cassettes and vinyl) suffered total commercial extinction (0 €m)",
-    rainfallPattern: "Germany remained the top revenue market at ~€38m; France proved digitally resilient at ~€27m",
-    australiaCondition: {
-      climate: "Germany & France: Swift digital uptake (€12m-€13m in combined online & downloads)",
-      weather: "Shift toward modern remote purchasing",
-      rainfall: "Offset physical losses",
-      visualDetail: "Bars for online CDs and downloads grew noticeably in Germany and France"
-    },
-    peruCondition: {
-      climate: "Italy: Slowest digital adoption (€1.5m in online CDs and €1.5m in downloads)",
-      marineLife: "Experienced sharpest overall drop (~€17m total)",
-      fisheryStatus: "Zero analog buffer remaining",
-      visualDetail: "All Italian bars contracted significantly compared to 1997"
-    },
-    band9Phrase: "“By 2007, the music company’s revenue landscape was restructured by the total demise of analog media, a sharp decline in retail CD sales, and the rise of digital downloads.”",
-    summary: "2007 witnessed the complete extinction of cassettes and vinyl, substantial contraction in store CDs, and a surge in digital distribution."
-  }
-];
+export const MUSIC_FORMATS: MusicFormatItem[] = [];
+export const COUNTRY_MARKETS: CountryMarketData[] = [];
+export const PACIFIC_CONDITIONS: PacificConditionFeature[] = [];
 
 export const TASK1_DATA: Task1Data = {
-  id: "task1-smg-entertainment",
-  taskType: "Comparative Bar Graphs (Two Time Periods)",
-  title: "SMG Entertainment Record Company Profit (1997 vs 2007)",
-  companyName: "SMG Entertainment",
-  unit: "Million Euros (€m)",
+  id: "task1-uk-audiences-1992",
+  taskType: "Line Graph (24-Hour Diurnal Cycle)",
+  title: "Radio and Television Audiences in UK (Oct – Dec 1992)",
+  companyName: "UK Broadcasting Audience Research",
+  unit: "Percentage of UK population (over 4-years old) [%]",
   questionText:
-    "The bar graphs show the profit made by SMG entertainment (a record company) in three countries. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
-  imageFileName: "smg_entertainment_chart.png",
-  hdImageFileName: "smg_entertainment_chart.png",
-  scanImageFileName: "smg_entertainment_chart.png",
+    "The graph below shows radio and television audiences throughout the day in 1992. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+  imageFileName: "radio_tv_audiences_1992.png",
+  hdImageFileName: "radio_tv_audiences_1992.png",
+  scanImageFileName: "radio_tv_audiences_1992.png",
   audioUrl: "/audio/task1_briefing.mp3",
   audioClueText:
-    "Welcome students to Task 1 analysis. You are examining two horizontal bar graphs documenting the profits generated by SMG Entertainment, an international record label, across Germany, France, and Italy in 1997 and 2007. Listen carefully to the structural shift: at the start of the decade, physical shop-bought compact discs formed the immense bulk of company earnings, generating just over 40 million euros in Germany alone. Traditional analog tapes and vinyl records still brought in noticeable profits—with cassettes yielding 5 million euros each in Germany and France and 6 million in Italy, while digital downloads were nonexistent. However, over the subsequent ten years, a technological revolution transformed the industry: cassettes and vinyl suffered complete extinction to zero, shop CD profits plummeted, and remote online channels emerged as pivotal new revenue streams.",
+    "Welcome students to Task 1 analysis. You are examining a dual line graph depicting the percentage of the UK population aged four and above who tuned into radio and television over a full 24-hour cycle between October and December 1992. Notice the striking inverse relationship: radio is the preferred broadcasting medium during the morning hours, shooting up between 6:00 and 8:30 to reach a daily apex of roughly 27% during breakfast and morning commuting. In contrast, television begins slowly, maintaining a low audience of around 4% to 7% through the morning. At 13:00, or 1:00 pm, both curves intersect at approximately 15%. From this point forward, television decisively commands the afternoon and evening, skyrocketing past 40% after 18:00 to reach a colossal prime-time peak of 45% between 20:00 and 21:00, while radio languishes below 10%.",
   sampleIntro:
-    "The horizontal bar charts illustrate the profits earned by SMG Entertainment, a music record company, across five distinct audio distribution formats in Germany, France, and Italy between 1997 and 2007, with financial returns measured on a scale of million euros (€m).",
+    "The line graph illustrates the percentage of the UK population aged four and above who listened to the radio and watched television throughout a 24-hour cycle between October and December in 1992.",
   sampleOverview:
-    "Overall, retail store-bought compact discs remained the primary source of revenue in all three nations throughout the decade, despite experiencing marked contractions by 2007. Concurrently, legacy analog formats—namely cassettes and vinyl—became completely obsolete, while digital distribution channels, comprising online CD purchases and internet downloads, witnessed substantial growth, with Germany consistently generating the highest overall profits.",
+    "Overall, the two media displayed contrasting diurnal patterns; radio listenership was considerably higher during the morning hours, whereas television decisively dominated from the early afternoon through the night. Additionally, evening television viewing attracted the single highest audience share of the day, with both mediums briefly converging around midday.",
   timingSeconds: 180,
+  hourlyPoints: HOURLY_AUDIENCE_DATA,
+  channels: MEDIA_CHANNELS,
+  audienceHotspots: AUDIENCE_HOTSPOTS,
   formats: MUSIC_FORMATS,
   countries: COUNTRY_MARKETS,
   diagramData: {
-    conditions: PACIFIC_CONDITIONS,
     hotspots: TASK1_HOTSPOTS,
     comparisonsSummary: {
-      "Shop CDs": "Dominant across both decades; Germany led at ~€42m (above 40m line in 1997) dropping to €25m (2007).",
-      "Online CDs": "Rapid growth; surged to €8m in Germany and €7m in France by 2007.",
-      "Downloads": "Zero in 1997; rose to €5m in Germany and France, and €1.5m in Italy by 2007.",
-      "Cassettes": "Italy led with €6m in 1997, while Germany and France both stood at €5m; all fell to zero by 2007.",
-      "Vinyl": "Italy and France tied at €3m, Germany had €2m in 1997; completely extinct by 2007.",
-      "Market Hierarchy": "Germany generated the most profit throughout, while France proved more digitally agile than Italy."
+      "Morning Rush (06:00–09:00)": "Radio surges to daily peak of ~27% at 8:30 am; TV has minor 7% bump.",
+      "Midday Crossover (13:00)": "Both channels intersect at exactly 15%; TV overtakes radio permanently.",
+      "Prime-Time Surge (18:00–21:00)": "TV explodes to peak of 45% between 20:00–21:00; Radio drops below 7%.",
+      "Late Afternoon Commute (17:00)": "Radio shows brief secondary bump to 13.5%–14% before dropping.",
+      "Nocturnal Trough (02:00–05:00)": "Both media bottom out under 5% with minimal participation."
     },
-    formats: MUSIC_FORMATS,
-    countries: COUNTRY_MARKETS
+    audiencePoints: HOURLY_AUDIENCE_DATA,
+    channels: MEDIA_CHANNELS
   },
   graphData: {
-    conditions: PACIFIC_CONDITIONS,
     hotspots: TASK1_HOTSPOTS,
     comparisonsSummary: {},
-    formats: MUSIC_FORMATS,
-    countries: COUNTRY_MARKETS
+    audiencePoints: HOURLY_AUDIENCE_DATA,
+    channels: MEDIA_CHANNELS
   },
   vocabList: [
     {
-      word: "lion’s share",
-      partOfSpeech: "idiom / noun phrase",
-      meaning: "The largest part or majority of something, especially revenue or market share.",
-      definition: "The largest part or majority of something, especially revenue or market share.",
-      example: "In 1997, shop-bought CDs represented the lion’s share of SMG Entertainment’s revenue.",
+      word: "diurnal pattern",
+      partOfSpeech: "noun phrase",
+      meaning: "A recurring daily cycle of variation occurring over a 24-hour period.",
+      definition: "A recurring daily cycle of variation occurring over a 24-hour period.",
+      example: "Radio and television audiences followed contrasting diurnal patterns throughout the day.",
       band: 9
     },
     {
-      word: "contract / contraction",
-      partOfSpeech: "verb / noun",
-      meaning: "To decrease in size, volume, or monetary value; a substantial shrinkage.",
-      definition: "To decrease in size, volume, or monetary value; a substantial shrinkage.",
-      example: "Profits from in-store CD sales contracted by 17 million euros in Germany over the decade.",
-      band: 8
-    },
-    {
-      word: "obsolete / obsolescence",
-      partOfSpeech: "adjective / noun",
-      meaning: "No longer in use or commercially viable because of being replaced by something newer.",
-      definition: "No longer in use or commercially viable because of being replaced by something newer.",
-      example: "Legacy analog formats such as cassettes and vinyl were rendered entirely obsolete by 2007.",
+      word: "reach an apex / peak at",
+      partOfSpeech: "verb phrase",
+      meaning: "To reach the absolute highest statistical point or maximum level in a distribution.",
+      definition: "To reach the absolute highest statistical point or maximum level in a distribution.",
+      example: "Television viewership reached its daily apex of 45% between 20:00 and 21:00.",
       band: 9
     },
     {
-      word: "plummet / plunge",
+      word: "crossover point / intersection",
+      partOfSpeech: "noun phrase",
+      meaning: "The precise coordinate where two trend lines meet and trade positions of leadership.",
+      definition: "The precise coordinate where two trend lines meet and trade positions of leadership.",
+      example: "At 13:00, a crossover point occurred as both media intersected at roughly 15%.",
+      band: 9
+    },
+    {
+      word: "supersede / eclipse",
       partOfSpeech: "verb",
-      meaning: "To fall or drop rapidly and drastically from a high level.",
-      definition: "To fall or drop rapidly and drastically from a high level.",
-      example: "Cassette revenues plummeted to nil across all three European markets.",
-      band: 8
-    },
-    {
-      word: "burgeoning / surge",
-      partOfSpeech: "adjective / verb",
-      meaning: "Growing or developing rapidly; an abrupt, significant upward movement.",
-      definition: "Growing or developing rapidly; an abrupt, significant upward movement.",
-      example: "Internet downloads emerged as a burgeoning revenue channel, surging to five million euros in France.",
+      meaning: "To take the place of, surpass, or become much more prominent than another entity.",
+      definition: "To take the place of, surpass, or become much more prominent than another entity.",
+      example: "From early afternoon onwards, television decisively superseded radio.",
       band: 9
     },
     {
-      word: "outstrip / eclipse",
-      partOfSpeech: "verb",
-      meaning: "To exceed or surpass someone or something in quantity, value, or importance.",
-      definition: "To exceed or surpass someone or something in quantity, value, or importance.",
-      example: "German profits outstripped those of France and Italy in nearly every individual category.",
-      band: 9
-    },
-    {
-      word: "revenue stream",
+      word: "prime-time viewing",
       partOfSpeech: "collocation / noun phrase",
-      meaning: "A specific category or medium through which a business earns monetary returns.",
-      definition: "A specific category or medium through which a business earns monetary returns.",
-      example: "Digital downloads materialized as a viable secondary revenue stream by 2007.",
+      meaning: "The peak evening broadcasting block when audience viewership reaches its zenith.",
+      definition: "The peak evening broadcasting block when audience viewership reaches its zenith.",
+      example: "Prime-time viewing between 20:00 and 21:00 captivated almost half the UK population.",
       band: 8
     },
     {
-      word: "negligible / nominal",
-      partOfSpeech: "adjective",
-      meaning: "So small, insignificant, or trivial as to not be worth considering.",
-      definition: "So small, insignificant, or trivial as to not be worth considering.",
-      example: "In 1997, online CD purchases generated a negligible 1.5 million euros in France.",
-      band: 9
+      word: "trough / bottom out",
+      partOfSpeech: "noun / verb phrase",
+      meaning: "The lowest point in a cycle or curve, followed by stabilization or subsequent rise.",
+      definition: "The lowest point in a cycle or curve, followed by stabilization or subsequent rise.",
+      example: "Between 2:00 and 4:00 am, audience engagement bottomed out at just 2% to 3%.",
+      band: 8
     },
     {
-      word: "yield / generate",
+      word: "skyrocket / surge",
       partOfSpeech: "verb",
-      meaning: "To produce a financial gain, profit, or return.",
-      definition: "To produce a financial gain, profit, or return.",
-      example: "In-store CD sales yielded just above 40 million euros in Germany in 1997.",
+      meaning: "To rise or increase abruptly and extremely rapidly.",
+      definition: "To rise or increase abruptly and extremely rapidly.",
+      example: "Television ratings skyrocketed from 25% at 17:00 to 42% by 18:00.",
       band: 8
     },
     {
-      word: "from a standing start",
-      partOfSpeech: "idiom / adverbial phrase",
-      meaning: "Beginning from a point of zero prior progress or nonexistent baseline.",
-      definition: "Beginning from a point of zero prior progress or nonexistent baseline.",
-      example: "Internet downloads emerged from a standing start to generate five million euros each in France and Germany.",
+      word: "plummet / steep descent",
+      partOfSpeech: "verb / noun phrase",
+      meaning: "To fall precipitously and sharply from an elevated level.",
+      definition: "To fall precipitously and sharply from an elevated level.",
+      example: "After the evening news, radio audience plummeted below 10%.",
+      band: 8
+    },
+    {
+      word: "marginal engagement",
+      partOfSpeech: "noun phrase",
+      meaning: "Very low, negligible, or minimal participation or audience measurement.",
+      definition: "Very low, negligible, or minimal participation or audience measurement.",
+      example: "Both channels registered marginal engagement during the early pre-dawn hours.",
       band: 9
     },
     {
-      word: "phase out",
-      partOfSpeech: "phrasal verb",
-      meaning: "To discontinue the manufacture, sale, or distribution of a product gradually over time.",
-      definition: "To discontinue the manufacture, sale, or distribution of a product gradually over time.",
-      example: "Analog cassettes were progressively phased out of distribution until reaching zero profit.",
+      word: "commute bump",
+      partOfSpeech: "collocation / noun phrase",
+      meaning: "A temporary secondary rise in listenership coinciding with vehicular travel times.",
+      definition: "A temporary secondary rise in listenership coinciding with vehicular travel times.",
+      example: "Radio enjoyed a brief commute bump to 14% around 17:00 as workers journeyed home.",
       band: 8
     },
     {
-      word: "disparity",
-      partOfSpeech: "noun",
-      meaning: "A noticeable difference, imbalance, or inequality between two or more figures.",
-      definition: "A noticeable difference, imbalance, or inequality between two or more figures.",
-      example: "A marked disparity was evident between Germany’s commercial volume and Italy’s modest digital returns.",
+      word: "level off / plateau",
+      partOfSpeech: "verb",
+      meaning: "To flatten out and remain relatively stable after a period of increase or decrease.",
+      definition: "To flatten out and remain relatively stable after a period of increase or decrease.",
+      example: "Late at night, radio listenership leveled off at roughly 4% to 5%.",
+      band: 8
+    },
+    {
+      word: "inverse trajectory",
+      partOfSpeech: "noun phrase",
+      meaning: "Opposite directional pathways where one indicator rises while the other falls.",
+      definition: "Opposite directional pathways where one indicator rises while the other falls.",
+      example: "The two broadcasting mediums maintained inverse trajectories across the morning and evening.",
       band: 9
     }
   ],
   vocabHunt: [
-    "Identify the idiom meaning 'the largest portion of revenue'.",
-    "Locate the academic synonym for 'becoming extinct or out of date'.",
-    "Find the phrasal verb meaning 'gradually discontinued'.",
-    "Identify the verb describing an abrupt, steep monetary decline."
+    "Identify the academic term for 'a recurring 24-hour cycle of behavior'.",
+    "Locate the phrase meaning 'the exact point where two lines meet and change rank'.",
+    "Find the verb meaning 'to surpass or replace someone or something in dominance'.",
+    "Identify the collocation for 'the peak evening television broadcasting window'."
   ],
   bp1: {
-    title: "Body 1: 1997 Baseline — Store Dominance & Analog Sales",
-    focus: "Detail the initial 1997 figures: in-store CDs generating the immense bulk of profit (exceeding 40m in Germany), healthy cassette and vinyl returns in all three countries, and zero downloads.",
+    title: "Body 1: Morning Surge to Midday Crossover (01:00 – 13:00)",
+    focus: "Detail the overnight lull (<5%), the explosive morning rise of radio to its daily peak of ~27% at 8:30 am versus TV's modest 7% bump, followed by radio's steady decline and TV's ascent to the 13:00 crossover at 15%.",
     points: [
-      "In-store CDs generated the vast majority of profit: Germany led at approximately 42 million euros (just surpassing the 40m mark), followed by France (25m) and Italy (~20.5m).",
-      "Online CD purchases were negligible: 3m in Germany, 1.5m in France, and virtually nil in Italy.",
-      "Internet downloads were completely absent (0 million euros) across all three nations.",
-      "Analog media produced healthy returns: Italy led cassette sales at 6 million euros, while Germany and France both registered 5 million.",
-      "Vinyl contributed 3 million euros each in Italy and France, alongside 2 million in Germany."
+      "Overnight lull (01:00–06:00): Audiences for both media remained marginal, hovering below 5% (radio at 2%–3%, TV at 3%–4%).",
+      "Morning rush hour (06:00–09:00): Radio listenership surged dramatically, soaring to a daily maximum peak of approximately 27% around 8:30.",
+      "Television morning trend: Rose modestly to a small bump of 7% at 8:00 before sliding back to a daytime low of ~3.5% at 11:00.",
+      "Midday crossover (13:00): Radio audiences steadily tapered down while television viewership climbed, meeting at an identical 15%."
     ],
     flow: [
-      "1. Frame the 1997 commercial baseline with in-store CDs as the predominant revenue generator.",
-      "2. Quote exact figures for Germany (~€42m, above 40m line), France (€25m), and Italy (~€20.5m).",
-      "3. Highlight the trivial role of online orders (<€3m) and total absence of digital downloads (0m).",
-      "4. Synthesize analog earnings: cassettes (Italy €6m; France & Germany €5m each) and vinyl (Italy & France €3m each; Germany €2m)."
+      "1. Frame the pre-dawn baseline: marginal figures (<5%) for both radio and television.",
+      "2. Document the explosive morning ascent of radio, quoting its peak of ~27% at 8:30 am.",
+      "3. Contrast with television's subdued morning bump (7% at 8:00) and drop to 3.5% at 11:00.",
+      "4. Highlight the crucial 13:00 intersection where both mediums converged at precisely 15%."
     ],
     takeaways: [
-      "Germany was the runaway market leader in shop CDs, exceeding the 40m mark (~42m).",
-      "France had active analog revenue, matching Germany in cassettes (€5m) and Italy in vinyl (€3m).",
-      "Digital music distribution was practically nonexistent in 1997."
+      "Radio was the undisputed morning leader, outpacing TV by roughly 20 percentage points at 8:30 am.",
+      "13:00 marks the exact watershed moment when TV and radio audience curves crossed."
     ]
   },
   bp2: {
-    title: "Body 2: 2007 Shift — Digital Surge, Contraction & Obsolescence",
-    focus: "Detail the 2007 transformations: sharp decline in shop CDs, universal extinction of cassettes and vinyl, and the rapid emergence of online CDs and internet downloads.",
+    title: "Body 2: Afternoon Ascent, Prime-Time Peak & Nightfall (14:00 – 24:00)",
+    focus: "Detail television superseding radio from 14:00 onwards, radio's secondary 17:00 commute bump (14%) followed by its plunge below 10%, TV's explosive surge to its 45% peak between 20:00–21:00, and late-night declines.",
     points: [
-      "In-store CDs fell substantially across all markets: down to 25 million euros in Germany (-17m), 15m in France (-10m), and 14m in Italy (-6.5m).",
-      "Cassettes and vinyl records suffered total obsolescence, dropping to exactly zero across all three countries.",
-      "Online CD orders grew significantly: climbing to 8m in Germany, 7m in France, and 1.5m in Italy.",
-      "Internet downloads surged from zero to become a viable format: generating 5m each in Germany and France, and 1.5m in Italy.",
-      "Overall market ranking preserved: Germany remained the top earner, France proved digitally agile, and Italy experienced the steepest contraction."
+      "TV dominance begins (14:00): Television overtook radio, holding steady around 14%–15% while radio declined to 11%–12%.",
+      "Late afternoon commute (16:00–17:00): Radio enjoyed a slight secondary bump to ~14% at 17:00, while TV accelerated to 25%.",
+      "Evening prime-time explosion (18:00–21:00): TV rocketed to 42% by 18:00, reaching an absolute peak of 45% between 20:00 and 21:00.",
+      "Radio evening collapse: Plunged below 10% after 18:00 and hovered between 4% and 7% for the remainder of the evening.",
+      "Late-night descent (22:00–24:00): TV dropped steeply from 38% to 15% by midnight, while radio leveled off at ~4%."
     ],
     flow: [
-      "1. Introduce the structural shift over the decade toward digital and remote channels.",
-      "2. Document the contraction of retail CDs, emphasizing that they nonetheless remained the leading earner.",
-      "3. State the complete wipe-out of cassettes and vinyl to zero million euros in all three nations.",
-      "4. Detail the dual rise of online CD sales (€8m in Germany, €7m in France) and newly emerged internet downloads (€5m each)."
+      "1. Establish TV taking permanent leadership after 13:00.",
+      "2. Note radio's secondary commute bump (14% at 17:00) before its sharp slump below 10%.",
+      "3. Trace television's spectacular surge past 40% to its prime-time zenith of 45% (20:00–21:00).",
+      "4. Conclude with late-night trajectories: TV sliding to 15% and radio stabilizing at 4% by midnight."
     ],
     takeaways: [
-      "Store CDs contracted by between 30% and 40%, yet remained the #1 format.",
-      "Cassettes and vinyl fell from initial multi-million levels (€5m–€6m) to completely zero.",
-      "Online purchases and downloads combined for €13m in Germany and €12m in France."
+      "Prime-time television achieved the single highest audience of the day at 45% (nearly half the population).",
+      "Radio audience remained subdued throughout the evening, hovering under 7%."
     ]
   },
   processingGroups: [
     {
-      title: "Synthesizing Market Dominance",
+      title: "Describing Temporal Peaks & Zenith",
       items: [
-        "“...constituted the lion’s share of earnings, surpassing the 40 million mark in Germany...”",
-        "“...remained by far the primary profit generator despite universal contractions...”",
-        "“...maintained an unchallenged commercial lead across all territories...”"
+        "“...surged steeply to reach a daily apex of approximately 27% at 8:30...”",
+        "“...culminated in a prime-time peak of 45% between 20:00 and 21:00...”",
+        "“...commanded the single largest audience share of the entire 24-hour cycle...”"
       ]
     },
     {
-      title: "Describing Total Obsolescence & Phasing Out",
+      title: "Framing Intersections & Crossovers",
       items: [
-        "“...became completely obsolete by the conclusion of the decade...”",
-        "“...were entirely phased out, generating zero profit across the board...”",
-        "“...plummeted to nil from initial returns of up to 6 million euros...”"
+        "“...converged at an identical level of approximately 15% around midday...”",
+        "“...marked a pivotal crossover point at 13:00 where television superseded radio...”",
+        "“...intersected briefly before embarking on diametrically opposed paths...”"
       ]
     },
     {
-      title: "Framing Digital Growth & Emergence",
+      title: "Contrasting Inverse Diurnal Trajectories",
       items: [
-        "“...emerged from a standing start of zero to yield...”",
-        "“...experienced rapid expansion, multiplying several-fold to reach...”",
-        "“...surfaced as a viable secondary revenue stream, contributing...”"
+        "“...in stark contrast to radio’s morning supremacy, television dominated the evening...”",
+        "“...while television viewership skyrocketed, radio listenership plummeted below 10%...”",
+        "“...displayed contrasting diurnal patterns across the morning and nocturnal hours...”"
       ]
     }
   ],
   connectors: [
     {
-      phrase: "By contrast, / In stark contrast,",
-      purpose: "Contrasting declining traditional formats with burgeoning digital channels",
-      example: "In stark contrast to the slump in retail CD sales, online CD purchases expanded vigorously."
+      phrase: "In stark contrast, / Conversely,",
+      purpose: "Contrasting opposite morning and evening trends between radio and television",
+      example: "In stark contrast to radio's morning dominance, television commanded the vast majority of viewers from the afternoon onwards."
     },
     {
-      phrase: "Across all three territories,",
-      purpose: "Highlighting universal macro trends that applied to Germany, France, and Italy equally",
-      example: "Across all three territories, analog media ceased generating any revenue whatsoever by 2007."
+      phrase: "Reaching a daily apex of...",
+      purpose: "Attributing the maximum statistical peak with high lexical sophistication",
+      example: "Radio audiences climbed sharply between 6:00 and 8:30, reaching a daily apex of roughly 27%."
     },
     {
-      phrase: "From a standing start of zero,",
-      purpose: "Emphasizing the birth of an entirely new market segment",
-      example: "From a standing start of zero in 1997, internet downloads reached five million euros in France."
+      phrase: "By 13:00, / Around midday,",
+      purpose: "Marking chronological milestones and temporal transitions",
+      example: "By 13:00, both broadcasting mediums had converged at an identical level of 15%."
     },
     {
-      phrase: "Concurrently, / Simultaneously,",
-      purpose: "Connecting two parallel shifts occurring over the same ten-year window",
-      example: "Concurrently, online CD purchases rose sharply, partially offsetting losses in traditional retail."
+      phrase: "Thereafter, / From this point forward,",
+      purpose: "Signaling permanent leadership change following the crossover point",
+      example: "From this point forward, television superseded radio as the nation's premier medium."
     },
     {
-      phrase: "Yielding a modest... / Accounting for...",
-      purpose: "Precisely attributing numerical data and financial proportions",
-      example: "Cassettes accounted for six million euros in Italy, outstripping German and French sales by one million."
+      phrase: "Skyrocketing to... / Rocketing past...",
+      purpose: "Depicting dramatic, rapid evening acceleration in television ratings",
+      example: "Television viewership skyrocketed past 40% after 18:00, culminating in a 45% prime-time high."
     },
     {
-      phrase: "Despite this downturn, / Notwithstanding this decline,",
-      purpose: "Maintaining nuance when a dominant category shrinks but remains number one",
-      example: "Despite this downturn, shop-bought CDs continued to outperform all other formats combined."
+      phrase: "Hovering under... / Bottoming out at...",
+      purpose: "Accurately reporting low nocturnal troughs and minor percentages",
+      example: "Between 2:00 and 5:00 am, audience engagement bottomed out at under 5% for both channels."
     }
   ],
   modelReport: {
-    wordCount: 198,
+    wordCount: 192,
     paragraphs: [
       {
         id: "intro",
         title: "Introduction",
-        text: "The horizontal bar charts illustrate the profits earned by SMG Entertainment, a music record company, across five distinct audio distribution formats in Germany, France, and Italy between 1997 and 2007, with financial returns measured on a scale of million euros (€m).",
-        wordCount: 38,
-        badges: ["Band 9 Paraphrase", "Scale of Measurement Included", "Temporal & Territorial Scope"]
+        text: "The line graph illustrates the percentage of the UK population aged four and above who listened to the radio and watched television throughout a 24-hour cycle between October and December in 1992.",
+        wordCount: 33,
+        badges: ["Band 9 Paraphrase", "Scale of Measurement Included", "Temporal & Age Scope"]
       },
       {
         id: "overview",
         title: "Overview",
-        text: "Overall, retail store-bought compact discs remained the primary source of revenue in all three nations throughout the decade, despite experiencing marked contractions by 2007. Concurrently, legacy analog formats—namely cassettes and vinyl—became completely obsolete, while digital distribution channels, comprising online CD purchases and internet downloads, witnessed substantial growth, with Germany consistently generating the highest overall profits.",
-        wordCount: 52,
-        badges: ["3-Pillar Macro Summary", "Dominance vs Obsolescence", "National Hierarchy"]
+        text: "Overall, the two media displayed contrasting diurnal patterns; radio listenership was considerably higher during the morning hours, whereas television decisively dominated from the early afternoon through the night. Additionally, evening television viewing attracted the single highest audience share of the day, with both mediums briefly converging around midday.",
+        wordCount: 51,
+        badges: ["3-Pillar Macro Summary", "Inverse Trajectories", "Global Peak & Midday Convergence"]
       },
       {
         id: "body1",
-        title: "Body 1: 1997 Initial Distribution",
-        text: "In 1997, retail purchases of CDs in shops represented the overwhelming lion’s share of SMG Entertainment’s earnings. Germany was by far the most lucrative market, generating approximately 42 million euros (just exceeding the 40 million line), followed by France at 25 million and Italy at just over 20 million. By contrast, online CD orders were negligible, yielding 3 million euros in Germany and 1.5 million in France, while producing virtually no return in Italy. Internet downloads were non-existent across all three territories. Regarding analog media, Italy led cassette sales at 6 million euros, while Germany and France were tied at 5 million each. Similarly, vinyl records generated 3 million euros in both France and Italy, compared to 2 million in Germany.",
-        wordCount: 125,
-        badges: ["Baseline Synthesis", "Accurate Above-40 German Citation", "Complete French Analog Data"]
+        title: "Body 1: Morning Trends & Crossover (01:00 – 13:00)",
+        text: "Between 1:00 and 6:00, audience figures for both platforms remained marginal at under 7%. Radio then experienced a dramatic morning surge, climbing steeply to reach a daily apex of approximately 27% around 8:30. In contrast, television engagement rose only modestly to 7% at 8:00 before sliding back to around 4% at 11:00. By 13:00, radio audiences had tapered off while television viewership climbed, resulting in an intersection where both mediums stood at roughly 15%.",
+        wordCount: 75,
+        badges: ["Nocturnal Baseline", "Radio 27% Morning Peak", "13:00 Crossover Convergence"]
       },
       {
         id: "body2",
-        title: "Body 2: 2007 Structural Shift",
-        text: "A decade later, the financial landscape underwent a pronounced structural transformation. Although shop-bought CDs remained the leading profit contributor, earnings plummeted across all markets—sliding to 25 million euros in Germany, 15 million in France, and 14 million in Italy. In stark contrast, both cassettes and vinyl records were entirely phased out, generating zero profit across the board. The slack was partially absorbed by digital and remote channels; online CD sales surged to 8 million euros in Germany and 7 million in France, with Italy registering 1.5 million. Concurrently, internet downloads emerged as a viable revenue stream, contributing 5 million euros each in Germany and France, alongside 1.5 million in Italy.",
-        wordCount: 111,
-        badges: ["Trend Direction", "Digital Rise vs Universal Analog Demise", "Precise Figures"]
+        title: "Body 2: Afternoon Ascent, Prime-Time Peak & Night (14:00 – 24:00)",
+        text: "From 14:00 onwards, television superseded radio. Although radio exhibited a brief afternoon commute bump to 14% at 17:00, its figures plummeted below 10% thereafter. Conversely, television audiences skyrocketed from 16:00, culminating in a prime-time peak of 45% between 20:00 and 21:00. Late at night, television viewership dropped sharply to 15% by midnight, while radio leveled off at around 4%.",
+        wordCount: 63,
+        badges: ["TV Leadership Reversal", "Prime-Time 45% Zenith", "Nightfall Stabilization"]
       }
     ]
   }

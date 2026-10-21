@@ -7,7 +7,7 @@ import {
   EyeOff,
   Layers,
   Sparkles,
-  ShoppingBag
+  ShieldAlert
 } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { TouchTimer } from "../common/TouchTimer";
@@ -26,40 +26,32 @@ const ESSAY_FORMAT_STEPS = [
     label: "Introduction",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    formatRule: "Paraphrase the question + Opinion",
-    instruction: "Paraphrase prompt (AI supplanting teachers) + State clear opinion: Largely disagree (AI is an augmentative tool, not a human replacement)."
+    formatRule: "Paraphrase the question + Dual Outline / Thesis",
+    instruction: "Paraphrase prompt (surge in identity theft & financial fraud) + State clear outline of both primary causes (digital banking, data breaches) and acute effects on victims (financial destitution, psychological trauma)."
   },
   {
     stepNum: "2",
-    label: "Body Para 1 (Opinion)",
+    label: "Body Para 1 (Causes)",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
     formatRule: "1 Main reason + Supporting reasons + Example",
-    instruction: "Opinion Side: Emotional intelligence & pastoral care [1 Main reason: Empathy is beyond algorithms • Supporting reasons: Children require human psychological reassurance • Example: Detecting student anxiety or bereavement]."
+    instruction: "Causes of Identity Theft: [1 Main reason: Rapid digitisation of financial transactions & organized cybercrime syndicates • Supporting reasons: Routine storage of credentials on cloud portals; corporate database breaches exfiltrating records to dark web marketplaces • Example: Large-scale breaches of major credit bureaus and consumer retail databases]."
   },
   {
     stepNum: "3",
-    label: "Body Para 2 (Opinion)",
-    badgeBg: "rgba(16, 185, 129, 0.12)",
-    badgeColor: "#047857",
-    formatRule: "1 Main reason + Supporting reasons + Example",
-    instruction: "Opinion Side: Critical thinking & moral mentorship [1 Main reason: Higher-order reasoning requires human facilitation • Supporting reasons: Algorithms rely on past datasets rather than ethical reflection • Example: Moderating controversial historical debates]."
-  },
-  {
-    stepNum: "4",
-    label: "Body Para 3 (Non-Opinion)",
+    label: "Body Para 2 (Effects on Victims)",
     badgeBg: "rgba(220, 38, 38, 0.12)",
     badgeColor: "#dc2626",
     formatRule: "1 Main reason + Supporting reasons + Example",
-    instruction: "Non-Opinion Side: AI's augmentative role [1 Main reason: Exceptional supplementary aid • Supporting reasons: 24/7 personalized drill pacing & automated grading • Example: Adaptive apps like Khan Academy (augmenting, not replacing)]."
+    instruction: "Devastating Fallout for Victims: [1 Main reason: Catastrophic financial ruin compounded by ruined credit ratings and severe psychological trauma • Supporting reasons: Fraudulent loans default, blacklisting victims from housing and employment; grueling multi-year bureaucratic struggle to clear one's name • Example: Debt collectors hounding innocent citizens for tens of thousands in fraudulent debts]."
   },
   {
-    stepNum: "5",
+    stepNum: "4",
     label: "Conclusion",
     badgeBg: "rgba(100, 116, 139, 0.15)",
     badgeColor: "#334155",
-    formatRule: "Sum-up all the main ideas + restate opinion",
-    instruction: "Synthesize both perspectives: While AI excels at administrative automation and practice drills, human empathy, moral stewardship, and critical debate remain irreplaceable."
+    formatRule: "Sum-up all the main ideas + Restate thesis",
+    instruction: "Synthesize both dimensions: The alarming rise of identity theft is fueled by digital vulnerabilities and corporate data leaks, leaving victims facing acute financial hardship and severe emotional trauma requiring years to resolve."
   }
 ];
 
@@ -76,11 +68,11 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 09 • Task Reveal &amp; 5-Para Format
+          Step 02 / 09 • Task Reveal &amp; Essay Format
         </span>
-        <h2 className="stage-title">Deconstruct the 'Agree or Disagree' Prompt &amp; Architecture</h2>
+        <h2 className="stage-title">Deconstruct the 'Causes &amp; Effects' Prompt &amp; Architecture</h2>
         <p className="stage-subtitle">
-          Recommended position: <strong>Largely Disagree (AI as an augmentative tool, not a replacement)</strong>. Examine the question wording, establish your position, and master the 5-paragraph format.
+          Direct Two-Part Question: <strong>Causes of Identity Theft + Effects on the Victims</strong>. Examine the question wording, master the mandatory body paragraph format: <strong>1 Main reason + Supporting reasons + Example</strong>.
         </p>
       </div>
 
@@ -91,7 +83,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: Plan your thesis: build around emotional empathy (Body 1) and critical thinking (Body 2), then concede AI's augmentative drill role (Body 3)."
+          instruction="Focus Timer: 3 minutes to plan your two body paragraphs: Body 1 on technological and systemic causes (digital banking, data breaches), and Body 2 on the financial and psychological devastation suffered by victims."
         />
       </div>
 
@@ -148,30 +140,28 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 border: "1.5px solid #bfdbfe",
                 borderRadius: "12px",
                 fontSize: "1rem",
-                color: "#1e3a8a",
+                color: "#1e40af",
                 lineHeight: 1.55
               }}
             >
-              <strong style={{ fontSize: "1.05rem" }}>Recommended Position:</strong> {TASK2_DATA.recommendedPosition}
-              <div style={{ marginTop: "6px", color: "var(--slate-800)", fontSize: "0.96rem", lineHeight: 1.5 }}>
+              <strong style={{ fontSize: "1.05rem" }}>Recommended Approach:</strong> {TASK2_DATA.recommendedPosition}
+              <div style={{ marginTop: "4px", fontSize: "0.92rem", color: "#1e3a8a" }}>
                 {TASK2_DATA.strongestArgument}
               </div>
             </div>
           </div>
 
-          {/* Interactive Blur/Reveal Essay Format Component */}
+          {/* Revealable Essay Format Card */}
           <div
             style={{
-              background: "linear-gradient(145deg, #ffffff 0%, var(--slate-50) 100%)",
+              background: "var(--slate-50)",
               border: "1.5px solid var(--border-subtle)",
               borderRadius: "20px",
-              padding: "18px 20px",
-              boxShadow: "var(--shadow-sm)",
+              padding: "16px 20px",
               position: "relative",
               overflow: "hidden"
             }}
           >
-            {/* Header */}
             <div
               style={{
                 display: "flex",
@@ -181,21 +171,22 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Layers size={18} color="var(--apple-blue)" />
-                <h4 style={{ fontSize: "1.02rem", fontWeight: 800, color: "var(--slate-900)" }}>
-                  Mandatory Essay Writing Format
+                <Layers size={17} color="var(--apple-blue)" />
+                <h4 style={{ fontSize: "0.95rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                  Standard Cause &amp; Effect Essay Format
                 </h4>
               </div>
+
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span className="apple-badge neutral" style={{ fontSize: "0.74rem" }}>
-                  5 Paragraphs (3 Body Paragraphs)
+                <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
+                  4-Paragraph Structure
                 </span>
                 {isRevealed && (
                   <button
+                    type="button"
                     onClick={() => setIsRevealed(false)}
                     className="apple-touch-btn secondary"
                     style={{
-                      minHeight: "26px",
                       padding: "3px 8px",
                       fontSize: "0.75rem",
                       gap: "4px"
@@ -329,7 +320,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                     gap: "4px"
                   }}
                 >
-                  <Sparkles size={13} color="var(--apple-blue)" /> Tap to reveal the required 5-paragraph (3 Body Paras) architecture
+                  <Sparkles size={13} color="var(--apple-blue)" /> Tap to reveal the required Cause &amp; Effect architecture
                 </span>
               </div>
             )}
@@ -360,25 +351,25 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               <h5 style={{ fontSize: "1.12rem", fontWeight: 750 }}>Smart Board — Five-Minute Planning Map</h5>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "10px" }}>
-              <div style={{ background: "#f0fdf4", border: "1.5px solid #86efac", borderRadius: "12px", padding: "12px 14px" }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#166534" }}>🟢 POSITIVE</span>
-                <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "0.94rem", color: "#14532d", lineHeight: 1.55 }}>
-                  <li>Financial independence → savings, housing, childcare</li>
-                  <li>Emotional maturity → better conflict resolution</li>
-                  <li>Informed decisions → compatible partners, planned families</li>
+              <div style={{ background: "#f0f9ff", border: "1.5px solid #bae6fd", borderRadius: "12px", padding: "12px 14px" }}>
+                <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#0369a1" }}>⚡ CAUSES (WHY IT'S RISING)</span>
+                <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "0.94rem", color: "#0c4a6e", lineHeight: 1.55 }}>
+                  <li>Ubiquitous digital banking → routine entry of passwords &amp; PINs</li>
+                  <li>Corporate database breaches → mass leaks of citizen dossiers</li>
+                  <li>Sophisticated cybercrime tools → automated phishing &amp; spyware</li>
                 </ul>
               </div>
               <div style={{ background: "#fef2f2", border: "1.5px solid #fca5a5", borderRadius: "12px", padding: "12px 14px" }}>
-                <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#991b1b" }}>🔴 NEGATIVE</span>
+                <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#991b1b" }}>⚠️ EFFECTS ON VICTIMS</span>
                 <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "0.94rem", color: "#7f1d1d", lineHeight: 1.55 }}>
-                  <li>Fertility concerns → possible difficulty conceiving</li>
-                  <li>Later responsibilities → childcare overlaps retirement</li>
-                  <li>Social pressure → criticism for marrying later</li>
+                  <li>Immediate financial ruin → accounts siphoned, fraudulent loans taken</li>
+                  <li>Decimated credit scores → blacklisted from mortgages &amp; rentals</li>
+                  <li>Severe psychological trauma → chronic anxiety, paranoia &amp; legal battles</li>
                 </ul>
               </div>
             </div>
             <div style={{ marginTop: "12px", fontSize: "0.98rem", color: "var(--slate-800)", lineHeight: 1.55, background: "var(--slate-50)", padding: "12px 14px", borderRadius: "12px", border: "1px solid var(--border-subtle)" }}>
-              <strong style={{ color: "var(--slate-900)" }}>Essay Roadmap:</strong> <em>Body 1:</em> Financial security + emotional maturity • <em>Body 2/3:</em> Acknowledge fertility concerns, but explain why the benefits generally outweigh them.
+              <strong style={{ color: "var(--slate-900)" }}>Essay Roadmap:</strong> <em>Body 1:</em> Root technological &amp; corporate causes • <em>Body 2:</em> Severe financial ruin &amp; chronic psychological trauma on victims.
             </div>
           </div>
 
