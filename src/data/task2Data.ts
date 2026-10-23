@@ -77,7 +77,7 @@ export const TASK2_DATA: Task2Data = {
     body1: "Body 1 (Causes): Ubiquitous digital transactions, corporate database breaches, and sophisticated cybercrime syndicates",
     body2: "Body 2 (Effects): Financial ruin, damaged credit ratings, chronic psychological trauma, and bureaucratic paralysis",
     teachingRecommendation:
-      "Instruct students to follow the exact format: 1 Main reason + Supporting reasons + Example for both body paragraphs. Dedicate Body 1 to dissecting root technological and systemic causes (digital dependency and data breaches), and Body 2 to analyzing the dual material and psychological devastation endured by victims. Avoid simple lists; fully unpack causal links."
+      "Instruct students to follow the exact format: Cause 1 + Effect 1 + Example for both body paragraphs. Dedicate Body 1 to dissecting root technological and systemic causes (digital dependency and data breaches), and Body 2 to analyzing the dual material and psychological devastation endured by victims. Avoid simple lists; fully unpack causal links."
   },
 
   // Strongest Classroom Discussion Question
@@ -93,7 +93,7 @@ export const TASK2_DATA: Task2Data = {
       "These questions guide students to understand that identity theft is an asymmetric, borderless crime where the attacker risks little while the victim suffers comprehensive existential and financial disruption."
   },
 
-  // 3. Student Idea Bank & Body Paragraph Formats (Strict Format: 1 Main reason + Supporting reasons + Example)
+  // 3. Student Idea Bank & Body Paragraph Formats (Strict Format: Cause 1 + Effect 1 + Example)
   bodyParagraphs: [
     {
       paraNumber: 1,

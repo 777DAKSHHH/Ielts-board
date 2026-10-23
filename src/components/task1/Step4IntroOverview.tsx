@@ -24,7 +24,7 @@ export const Step4IntroOverview: React.FC = () => (
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction &amp; Overview</span>
       <h2 className="stage-title">Build the Introduction and Macro Overview</h2>
       <p className="stage-subtitle">
-        Master the Band 9 approach for line graphs depicting diurnal cycles: state the visual format, demographic population, media channels, 24-hour cycle, and exact percentage measurement scale, followed by a 3-pillar macro overview.
+        Master the Band 9 approach for double bar charts depicting demographic comparisons: state the graphic format, surveyed population, gender categories, age brackets, survey year, and exact percentage measurement scale, followed by a 3-pillar macro overview.
       </p>
     </div>
 
@@ -33,13 +33,13 @@ export const Step4IntroOverview: React.FC = () => (
         icon={<BookOpen size={20} color="var(--slate-800)" />}
         title="1. Sample Introduction (With Scale & Demographic Scope)"
         text={TASK1_DATA.sampleIntro}
-        annotation="Paraphrases the prompt by integrating all 5 critical parameters: 1) Graphic type (line graph), 2) Demographic audience (UK population aged four and above), 3) Two media channels (radio and television), 4) Full temporal span (a 24-hour cycle between October and December 1992), and 5) The explicit measurement unit (percentage of population / %), satisfying examiner Band 9 Task Achievement expectations."
+        annotation="Paraphrases the prompt by integrating all 5 critical parameters: 1) Graphic type (double bar chart), 2) Demographic audience (Australian men and women), 3) Age distribution (six distinct cohorts from 15 to 65+), 4) Subject & temporal span (regular physical activity in 2010), and 5) The explicit measurement unit (measured as a percentage of each demographic cohort / %), satisfying examiner Band 9 Task Achievement expectations."
       />
       <QuoteCard
         icon={<Sparkles size={20} color="var(--slate-800)" />}
         title="2. Sample Macro Overview (3 Core Pillars)"
         text={TASK1_DATA.sampleOverview}
-        annotation="Synthesizes the 3 macro pillars: 1) Inverse diurnal patterns (radio morning supremacy vs television afternoon and evening dominance); 2) Prime-time television achieving the single highest audience share of the entire 24-hour cycle (45%); 3) The pivotal midday intersection around 13:00 where both curves temporarily converge at roughly 15%."
+        annotation="Synthesizes the 3 macro pillars: 1) Overall female preponderance (women lead across 5 of 6 age groups); 2) Youth anomaly (young men aged 15–24 are the sole demographic where males outpace females); 3) Trajectory divergence & senior convergence (female mid-life peak at 53.3% vs male U-shaped dip to 39.5%, culminating in virtual parity at 47% in retirement)."
       />
     </div>
 
@@ -56,23 +56,23 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-            <span><strong>Graphic Format &amp; Action:</strong> <em>“The line graph illustrates / depicts...”</em> (accurate academic reporting verb).</span>
+            <span><strong>Graphic Format &amp; Action:</strong> <em>“The bar chart compares / illustrates...”</em> (accurate academic reporting verb).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-            <span><strong>Demographic Subject &amp; Age:</strong> <em>“...the proportion of the UK population aged four and above...”</em></span>
+            <span><strong>Demographic Subject &amp; Gender:</strong> <em>“...the proportions of Australian men and women...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>3</span>
-            <span><strong>Two Broadcasting Channels:</strong> <em>“...who listened to the radio and watched television...”</em></span>
+            <span><strong>Age Distribution:</strong> <em>“...across six distinct age brackets (ranging from 15 to 65 and over)...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>4</span>
-            <span><strong>Temporal Cycle &amp; Year:</strong> <em>“...throughout a 24-hour diurnal cycle between October and December 1992...”</em></span>
+            <span><strong>Activity &amp; Temporal Anchor:</strong> <em>“...who engaged in regular physical activity in the year 2010...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center", background: "#dbeafe", color: "#1e40af", fontWeight: 800 }}>5</span>
-            <span><strong>Measurement Scale (Crucial):</strong> <em>“...measured as a percentage of the total population (%).”</em></span>
+            <span><strong>Measurement Scale (Crucial):</strong> <em>“...measured as a percentage of each demographic cohort (%).”</em></span>
           </div>
         </div>
       </div>
@@ -88,15 +88,15 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 1 — Inverse Diurnal Rhythms:</strong> Point out that radio commands the morning peak (breakfast commute), whereas television decisively dominates from the early afternoon through midnight.</span>
+            <span><strong>Pillar 1 — Female Participation Lead:</strong> Australian women generally recorded higher rates of regular exercise than men across five out of the six age categories.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 2 — Absolute Peak (TV Zenith):</strong> Emphasize that television achieved the single highest audience share of the entire 24-hour cycle during prime time (45% between 20:00 and 21:00).</span>
+            <span><strong>Pillar 2 — Youth Male Inversion:</strong> Young men (15–24) formed the sole exception where male participation outpaced females (52.8% vs 47.7%).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 3 — Midday Convergence Milestone:</strong> Note the key crossover point around 13:00 (1:00 pm) where both broadcasting mediums temporarily converge at roughly 15%.</span>
+            <span><strong>Pillar 3 — Mid-Life Gap &amp; Senior Parity:</strong> Women reached a peak of 53.3% (45–54), while men dropped to a low of 39.5% (widest 13-point gap), before both sexes converged to near equality at age 65+ (~47%).</span>
           </div>
         </div>
       </div>

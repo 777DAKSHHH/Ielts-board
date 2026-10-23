@@ -70,8 +70,8 @@ export const Step9SubmissionT2: React.FC = () => (
               <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Digital Proliferation &amp; Data Leaks</strong>
             </div>
             <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Main Reason:</strong> Ubiquitous online transactions and vulnerable corporate repositories<br />
-              • <strong>Development:</strong> Infiltrators exfiltrate sensitive credentials and trade them on dark-web forums<br />
+              • <strong>Cause 1:</strong> Ubiquitous online transactions and vulnerable corporate repositories<br />
+              • <strong>Effect 1:</strong> Infiltrators exfiltrate sensitive credentials and trade them on dark-web forums<br />
               • <strong>Example:</strong> Equifax breach compromising 147 million identities and credit files
             </div>
           </div>
@@ -95,8 +95,8 @@ export const Step9SubmissionT2: React.FC = () => (
               <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Financial Ruin &amp; Psychological Trauma</strong>
             </div>
             <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Main Reason:</strong> Direct account depletion, decimated credit scores, and chronic distress<br />
-              • <strong>Development:</strong> Fraudulent debts freeze livelihoods; victims face arduous bureaucratic disputes<br />
+              • <strong>Cause 1:</strong> Direct account depletion, decimated credit scores, and unauthorized loans<br />
+              • <strong>Effect 1:</strong> Fraudulent debts freeze livelihoods; victims face grueling multi-year bureaucratic battles<br />
               • <strong>Example:</strong> Victims denied home loans or battling credit agencies for years to clear their record
             </div>
           </div>
@@ -127,7 +127,7 @@ export const Step9SubmissionT2: React.FC = () => (
         </div>
       </div>
 
-      {/* Card 02: 1 Main Reason Rule */}
+      {/* Card 02: Body Paragraph Formula */}
       <div
         style={{
           background: "#ffffff",
@@ -142,32 +142,32 @@ export const Step9SubmissionT2: React.FC = () => (
       >
         <div>
           <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#059669" }}>
-            PARAGRAPH DEPTH
+            PARAGRAPH FORMAT
           </span>
           <h3 style={{ fontSize: "1.18rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-            The 1 Main Reason Rule
+            Body Paragraph Structure
           </h3>
           <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "var(--slate-500)" }}>
-            [ 1 Main Reason + Supporting Reasons + Example ]
+            [ Cause 1 + Effect 1 + Example ]
           </p>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
           {[
             {
-              step: "1. Single Primary Anchor",
-              desc: "Dedicate each body paragraph to 1 clear, overarching focus (Body 1: cyber infrastructure vulnerabilities; Body 2: multifaceted victim fallout). Never dump a random shopping list of points."
+              step: "1. Cause 1",
+              desc: "Anchor each body paragraph around 1 clear primary root cause or vulnerability (Body 1: cyber infrastructure vulnerabilities; Body 2: unauthorized borrowing and identity weaponization)."
             },
             {
-              step: "2. Causal Progression",
-              desc: "Articulate the precise 'how' and 'why' progression (e.g., how credential harvesting leads to illicit loan creation, or how falsified credit logs trigger wrongful criminal liability)."
+              step: "2. Effect 1",
+              desc: "Articulate the precise 'how' and 'why' causal progression (e.g., how credential harvesting leads to illicit loan creation, or how falsified credit logs trigger wrongful debt collection and trauma)."
             },
             {
-              step: "3. Real-World Proof",
+              step: "3. Example",
               desc: "Provide verifiable, high-impact evidence (corporate data leaks like Equifax/Target, credit rating rejections, dark web credential auctions)."
             },
             {
-              step: "4. Causal Synthesis",
+              step: "4. Synthesis",
               desc: "Ensure the topic sentences and conclusion mirror each other, weaving causes and effects into a coherent analytical narrative."
             }
           ].map((item, i) => (

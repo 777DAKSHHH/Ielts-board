@@ -18,4 +18,6 @@ export interface VocabItem {
   usageNotes?: string;
   tutorTip?: string;
   collocations?: string[];
+  term?: string;
+  sampleSentence?: string;
 }

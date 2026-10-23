@@ -41,14 +41,14 @@ export const TASK2_STEPS: StepDefinition[] = [
     stepNumber: 6,
     title: "Body 1: Causes of Identity Theft",
     badge: "Step 06 / 09 • Body Para 1 (Causes)",
-    description: "Format: 1 Main Reason + Supporting Reasons + Example (Digital Banking & Data Breaches)"
+    description: "Format: Cause 1 + Effect 1 + Example (Digital Banking & Data Breaches)"
   },
   {
     id: "task2-step7",
     stepNumber: 7,
     title: "Body 2: Effects on Victims",
     badge: "Step 07 / 09 • Body Para 2 (Effects on Victims)",
-    description: "Format: 1 Main Reason + Supporting Reasons + Example (Financial Ruin & Psychological Trauma)"
+    description: "Format: Cause 1 + Effect 1 + Example (Financial Ruin & Psychological Trauma)"
   },
   {
     id: "task2-step8",

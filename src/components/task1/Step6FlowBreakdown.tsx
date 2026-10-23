@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2, TrendingUp, Tv, Radio, ShieldCheck, Clock, Sparkles } from "lucide-react";
+import { CheckCircle2, TrendingUp, Users, ShieldCheck, Sparkles, Award } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step6FlowBreakdown: React.FC = () => {
@@ -9,18 +9,18 @@ export const Step6FlowBreakdown: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 06 / 08 • Body 1 — Morning Surge to Crossover (01:00 – 13:00)
+          Step 06 / 08 • Body 1 — Female Trajectory &amp; Mid-Life Dominance
         </span>
-        <h2 className="stage-title">Deconstructing Body Paragraph 1: Morning Dynamics &amp; Midday Crossover</h2>
+        <h2 className="stage-title">Deconstructing Body Paragraph 1: Female Physical Activity Trajectory</h2>
         <p className="stage-subtitle">
-          Examine the sentence-by-sentence architectural breakdown for the first half of the day: nocturnal baseline (&lt;5%), the dramatic morning climb of radio to its daily apex of ~27% at 8:30 am, TV's modest morning bump, and the pivotal 13:00 crossover convergence at 15%.
+          Examine the sentence-by-sentence architectural breakdown for Australian women: initial baseline (47.7%), steady multi-decade rise through 48.9% and 52.5%, chart peak of 53.3% in middle age, sustained 53.0% plateau, and the senior decline to 47.1%.
         </p>
       </div>
 
       <div className="stage-grid-2col">
-        {/* Left Column: Feature Breakdown for Morning (01:00 - 13:00) */}
+        {/* Left Column: Feature Breakdown for Female Trajectory */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          {/* Feature 1: Nocturnal Pre-Dawn Trough */}
+          {/* Feature 1: Youth Baseline */}
           <div
             style={{
               background: "var(--slate-50)",
@@ -36,75 +36,35 @@ export const Step6FlowBreakdown: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#64748b" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  1. Nocturnal Lull (01:00 – 06:00)
+                  1. Youth Baseline (15 to 24)
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
-                Under 5% Trough
-              </span>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
-                <div style={{ fontSize: "0.75rem", color: "#dc2626", fontWeight: 700 }}>RADIO (02:00–04:00)</div>
-                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a" }}>2% – 3%</div>
-                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>Night trough</div>
-              </div>
-              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
-                <div style={{ fontSize: "0.75rem", color: "#2563eb", fontWeight: 700 }}>TV (02:00–05:00)</div>
-                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a" }}>3% – 4%</div>
-                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>Flatline</div>
-              </div>
-            </div>
-
-            <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Analytical Role:</strong> Establishes the baseline. Both broadcasting channels command negligible attention prior to the morning commute.
-            </p>
-          </div>
-
-          {/* Feature 2: Radio Morning Surge & Peak */}
-          <div
-            style={{
-              background: "var(--slate-50)",
-              border: "1.5px solid rgba(220, 38, 38, 0.3)",
-              borderRadius: "18px",
-              padding: "20px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "12px"
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#dc2626" }} />
-                <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  2. Radio Morning Surge &amp; Apex (06:00 – 09:00)
-                </h4>
-              </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#fee2e2", color: "#991b1b" }}>
-                Peak: ~27%
+                Starting Level: 47.7%
               </span>
             </div>
 
             <div style={{ background: "#ffffff", borderRadius: "10px", padding: "12px", border: "1px solid var(--border-subtle)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: "0.84rem", fontWeight: 700, color: "var(--slate-800)" }}>
-                  Surge: 4% at 06:00 → 15% at 07:00 → 25% at 08:00
+                <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--slate-700)" }}>
+                  Female Youngest Cohort
                 </span>
-                <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#dc2626" }}>~27% at 08:30</span>
+                <span style={{ fontSize: "1.2rem", fontWeight: 800, color: "#334155" }}>
+                  47.7%
+                </span>
               </div>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Key Phrasing:</strong> <em>“Radio audience experienced a dramatic morning surge, climbing steeply to reach a daily apex of approximately 27% around 8:30...”</em>
+              <strong>Analytical Role:</strong> Establishes the female starting point. Note that although this was women's second-lowest figure, they were only behind men in this single age group.
             </p>
           </div>
 
-          {/* Feature 3: TV Subdued Morning & 13:00 Crossover */}
+          {/* Feature 2: Steady Multi-Decade Ascent */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid rgba(217, 119, 6, 0.3)",
+              border: "1.5px solid rgba(37, 99, 235, 0.3)",
               borderRadius: "18px",
               padding: "20px",
               display: "flex",
@@ -114,34 +74,99 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#d97706" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#2563eb" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  3. Subdued TV &amp; Midday Crossover (13:00)
+                  2. Progressive Mid-Life Rise (25–34 &amp; 35–44)
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#fef3c7", color: "#92400e" }}>
-                15% Intersection
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#eff6ff", color: "#1e40af" }}>
+                Climb: +4.8%
               </span>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)" }}>
-                <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "#2563eb" }}>TV Morning Arc:</div>
-                <div style={{ fontSize: "0.78rem", color: "var(--slate-700)", marginTop: "3px" }}>
-                  7% peak at 08:00 → 3.5% trough at 11:00 → 15% at 13:00.
-                </div>
+              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
+                <div style={{ fontSize: "0.75rem", color: "#64748b", fontWeight: 700 }}>25 TO 34 COHORT</div>
+                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a" }}>48.9%</div>
+                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>Women take lead</div>
               </div>
-              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)" }}>
-                <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "#d97706" }}>13:00 Convergence:</div>
-                <div style={{ fontSize: "0.78rem", color: "var(--slate-700)", marginTop: "3px" }}>
-                  Both mediums intersect at exactly 15%.
-                </div>
+              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
+                <div style={{ fontSize: "0.75rem", color: "#2563eb", fontWeight: 700 }}>35 TO 44 COHORT</div>
+                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a" }}>52.5%</div>
+                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>Crosses 50% threshold</div>
               </div>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Accurate Data Note:</strong> At 13:00, TV viewership catches up to declining radio listenership, creating the single intersection of the day.
+              <strong>Key Phrasing:</strong> <em>“...before progressing steadily through the 25–34 (48.9%) and 35–44 (52.5%) age brackets...”</em>
             </p>
+          </div>
+
+          {/* Feature 3: Overall Peak & Plateau */}
+          <div
+            style={{
+              background: "var(--slate-50)",
+              border: "1.5px solid rgba(22, 163, 74, 0.3)",
+              borderRadius: "18px",
+              padding: "20px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px"
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#16a34a" }} />
+                <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                  3. Chart Peak &amp; Plateau (45–54 &amp; 55–64)
+                </h4>
+              </div>
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f0fdf4", color: "#166534" }}>
+                Peak: 53.3%
+              </span>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
+                <div style={{ fontSize: "0.75rem", color: "#16a34a", fontWeight: 700 }}>45 TO 54 COHORT</div>
+                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#16a34a" }}>53.3%</div>
+                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>Overall Chart Peak</div>
+              </div>
+              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
+                <div style={{ fontSize: "0.75rem", color: "#475569", fontWeight: 700 }}>55 TO 64 COHORT</div>
+                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a" }}>53.0%</div>
+                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>Sustained plateau</div>
+              </div>
+            </div>
+
+            <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
+              <strong>Examiner Precision:</strong> Grouping 45–54 and 55–64 as an <em>“elevated plateau sustained above 53%”</em> showcases sophisticated lexical synthesis.
+            </p>
+          </div>
+
+          {/* Feature 4: Senior Decline */}
+          <div
+            style={{
+              background: "var(--slate-50)",
+              border: "1.5px solid var(--border-subtle)",
+              borderRadius: "18px",
+              padding: "16px 20px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
+          >
+            <div>
+              <h4 style={{ fontSize: "0.95rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                4. Senior Cohort (65 and over): Drop to 47.1%
+              </h4>
+              <p style={{ fontSize: "0.8rem", color: "var(--slate-600)", margin: "4px 0 0 0" }}>
+                Recedes by 5.9 points to reach its lowest point across all female cohorts.
+              </p>
+            </div>
+            <span style={{ fontSize: "1.2rem", fontWeight: 800, color: "#475569" }}>
+              47.1%
+            </span>
           </div>
         </div>
 
@@ -162,13 +187,13 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Clock size={20} color="var(--apple-blue)" />
+                <Users size={20} color="var(--apple-blue)" />
                 <h4 style={{ fontSize: "1.1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
                   Body Paragraph 1 Model ({body1Model?.wordCount} words)
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.75rem", fontWeight: 750 }}>
-                01:00 to 13:00 Focus
+                Female Focus
               </span>
             </div>
 
@@ -219,19 +244,19 @@ export const Step6FlowBreakdown: React.FC = () => {
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.85rem" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>1</span>
-                <span><strong>Nocturnal Baseline:</strong> Group 1:00 to 6:00 as marginal engagement (&lt;7% for TV, &lt;5% for radio).</span>
+                <span><strong>Starting Baseline:</strong> <em>“Focusing first on females, regular exercise commenced at 47.7% among those aged 15 to 24...”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>2</span>
-                <span><strong>Radio Morning Surge:</strong> Document the steep climb to its daily apex of ~27% at approximately 8:30 am.</span>
+                <span><strong>Steady Progression:</strong> <em>“...before progressing steadily through the 25–34 (48.9%) and 35–44 (52.5%) age brackets.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>3</span>
-                <span><strong>Television Morning Contrast:</strong> Note TV’s modest rise to 7% at 8:00 before sliding back to 4% at 11:00.</span>
+                <span><strong>Chart Peak &amp; Plateau:</strong> <em>“Physical activity reached its peak among women aged 45 to 54 at 53.3%... sustained in the 55-to-64 demographic at precisely 53.0%.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>4</span>
-                <span><strong>Midday Crossover Point:</strong> Detail the convergence at 13:00 where both curves meet at roughly 15%.</span>
+                <span><strong>Senior Tapering:</strong> <em>“However, female involvement experienced a noticeable decline among seniors aged 65 and over, receding to 47.1%.”</em></span>
               </div>
             </div>
           </div>

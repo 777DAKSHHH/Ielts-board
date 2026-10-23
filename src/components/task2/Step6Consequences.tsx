@@ -21,7 +21,7 @@ export const Step6ConsequencesT2: React.FC = () => {
         </span>
         <h2 className="stage-title">Body 1: Root Causes of Surging Identity Theft</h2>
         <p className="stage-subtitle">
-          Mandatory Body Paragraph Format: <strong>1 Main reason + Supporting reasons + Example</strong>. Analyze the technological and systemic vulnerabilities driving the global surge in financial cybercrime.
+          Mandatory Body Paragraph Format: <strong>Cause 1 + Effect 1 + Example</strong>. Analyze the technological and systemic vulnerabilities driving the global surge in financial cybercrime.
         </p>
       </div>
 

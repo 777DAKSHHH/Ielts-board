@@ -119,7 +119,7 @@ export function App() {
         case 7:
           return <Step7ModelAnalysis />;
         case 8:
-          return <Step8Connectors />;
+          return <Step8Connectors onSpeak={speech.speak} />;
         default:
           return null;
       }

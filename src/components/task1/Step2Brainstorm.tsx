@@ -4,20 +4,26 @@ import {
   FileText,
   Maximize2,
   X,
-  Tv,
   Map,
   HelpCircle,
   ImageIcon,
   Columns,
   Sparkles,
   TrendingUp,
-  Clock,
-  Layers
+  Award,
+  Layers,
+  CheckCircle2,
+  Users,
+  Compass,
+  ArrowRight,
+  ShieldCheck,
+  LayoutGrid
 } from "lucide-react";
 import {
   TASK1_DATA,
-  AUDIENCE_HOTSPOTS,
-  TASK1_HOTSPOTS
+  ACTIVITY_DATA,
+  ACTIVITY_GENDERS,
+  ACTIVITY_HOTSPOTS
 } from "../../data/task1Data";
 import { TouchTimer } from "../common/TouchTimer";
 import { SmartBoardTableMatrix, DiagramViewMode } from "./SmartBoardGraphSvg";
@@ -42,10 +48,12 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   const [viewMode, setViewMode] = useState<
     "smartboard_table" | "mindmap" | "flashcards" | "original_image"
   >("smartboard_table");
-  const [stageLayout, setStageLayout] = useState<"full_width" | "split">("full_width");
+  // Default to side-by-side split view for zero-scroll on smart boards
+  const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const [selectedHotspotId, setSelectedHotspotId] = useState<string>(AUDIENCE_HOTSPOTS[0].id);
+  const [selectedCohortId, setSelectedCohortId] = useState<string>("35_to_44");
   const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("all");
+  const [dockTab, setDockTab] = useState<"cohort" | "prompt" | "hotspots">("cohort");
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -69,31 +77,360 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
     setIsEnlarged(true);
   };
 
-  const selectedHotspot =
-    AUDIENCE_HOTSPOTS.find((h) => h.id === selectedHotspotId) || AUDIENCE_HOTSPOTS[0];
+  // Synchronized active cohort data
+  const activeCohort =
+    ACTIVITY_DATA.find((g) => g.id === selectedCohortId) || ACTIVITY_DATA[2];
+
+  const activeHotspot =
+    ACTIVITY_HOTSPOTS.find((h) => h.ageGroup === activeCohort.ageGroup) ||
+    ACTIVITY_HOTSPOTS[1];
+
+  // Presenter Dock Component for zero-scroll smart board teaching
+  const renderPresenterDock = (inModal = false) => (
+    <div
+      style={{
+        background: "#ffffff",
+        border: "1.5px solid var(--border-subtle, #cbd5e1)",
+        borderRadius: "20px",
+        padding: inModal ? "18px 22px" : "16px 18px",
+        boxShadow: "0 4px 16px rgba(0,0,0,0.04)",
+        display: "flex",
+        flexDirection: "column",
+        gap: "12px",
+        height: "100%",
+        minHeight: inModal ? "auto" : "420px"
+      }}
+    >
+      {/* Dock Tabs Header */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          gap: "8px",
+          borderBottom: "1.5px solid #f1f5f9",
+          paddingBottom: "10px"
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <Sparkles size={16} color="#2563eb" />
+          <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#0f172a" }}>
+            Smart Board Presenter Dock
+          </span>
+        </div>
+
+        {/* 3 Dock Tabs */}
+        <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "3px", borderRadius: "8px" }}>
+          {[
+            { id: "cohort", label: "🎯 Active Cohort" },
+            { id: "prompt", label: "📝 Prompt" },
+            { id: "hotspots", label: "⭐ Hotspots" }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => setDockTab(tab.id as any)}
+              style={{
+                padding: "5px 10px",
+                borderRadius: "6px",
+                fontSize: "0.74rem",
+                fontWeight: 750,
+                border: "none",
+                background: dockTab === tab.id ? "#ffffff" : "transparent",
+                color: dockTab === tab.id ? "#0f172a" : "#64748b",
+                boxShadow: dockTab === tab.id ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+                cursor: "pointer"
+              }}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Dock Content: Tab 1 - Active Cohort Deep Dive */}
+      {dockTab === "cohort" && (
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
+          {/* Quick Cohort Tap Strip */}
+          <div style={{ display: "flex", alignItems: "center", gap: "5px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "0.7rem", fontWeight: 750, color: "#64748b", marginRight: "2px" }}>
+              TAP COHORT:
+            </span>
+            {ACTIVITY_DATA.map((grp) => {
+              const isSelected = selectedCohortId === grp.id;
+              return (
+                <button
+                  key={grp.id}
+                  type="button"
+                  onClick={() => {
+                    setSelectedCohortId(grp.id);
+                    setHighlightMode(grp.id as DiagramViewMode);
+                  }}
+                  style={{
+                    padding: "3px 8px",
+                    borderRadius: "6px",
+                    fontSize: "0.72rem",
+                    fontWeight: 750,
+                    border: isSelected ? "1.5px solid #0f172a" : "1px solid #e2e8f0",
+                    background: isSelected ? "#0f172a" : "#f8fafc",
+                    color: isSelected ? "#ffffff" : "#475569",
+                    cursor: "pointer"
+                  }}
+                >
+                  {grp.shortLabel}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Cohort Name & Dominance Banner */}
+          <div
+            style={{
+              background: "#f8fafc",
+              border: "1px solid #e2e8f0",
+              borderRadius: "12px",
+              padding: "10px 14px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
+          >
+            <div>
+              <span style={{ fontSize: "0.72rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase" }}>
+                Selected Age Cohort
+              </span>
+              <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a" }}>
+                {activeCohort.ageGroup}
+              </div>
+            </div>
+            <span
+              style={{
+                fontSize: "0.75rem",
+                fontWeight: 800,
+                padding: "4px 9px",
+                borderRadius: "6px",
+                background:
+                  activeCohort.higherGender === "male"
+                    ? "#fef2f2"
+                    : activeCohort.genderGap > 6
+                    ? "#eff6ff"
+                    : "#f0fdf4",
+                color:
+                  activeCohort.higherGender === "male"
+                    ? "#dc2626"
+                    : activeCohort.genderGap > 6
+                    ? "#1e40af"
+                    : "#166534",
+                border: "1px solid currentColor"
+              }}
+            >
+              {activeCohort.higherGender === "male"
+                ? `Male Lead (+${Math.abs(activeCohort.genderGap)}%)`
+                : activeCohort.genderGap > 6
+                ? `Female Lead (+${activeCohort.genderGap}%)`
+                : `Near Parity (${activeCohort.genderGap}%)`}
+            </span>
+          </div>
+
+          {/* Stat Cards Grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
+            {/* Men */}
+            <div
+              style={{
+                background: "#0f172a",
+                color: "#ffffff",
+                padding: "9px 10px",
+                borderRadius: "10px",
+                textAlign: "center"
+              }}
+            >
+              <div style={{ fontSize: "0.68rem", color: "#94a3b8", fontWeight: 700 }}>MEN</div>
+              <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#ffffff" }}>
+                {activeCohort.male}%
+              </div>
+              <div style={{ fontSize: "0.65rem", color: "#cbd5e1" }}>
+                {activeCohort.isPeak === "male"
+                  ? "★ Male Peak"
+                  : activeCohort.isTrough === "male"
+                  ? "▼ Lowest Figure"
+                  : "Active Rate"}
+              </div>
+            </div>
+
+            {/* Women */}
+            <div
+              style={{
+                background: "#f1f5f9",
+                border: "1px solid #cbd5e1",
+                padding: "9px 10px",
+                borderRadius: "10px",
+                textAlign: "center"
+              }}
+            >
+              <div style={{ fontSize: "0.68rem", color: "#64748b", fontWeight: 700 }}>WOMEN</div>
+              <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a" }}>
+                {activeCohort.ageGroup === "55 to 64" ? "53%" : `${activeCohort.female}%`}
+              </div>
+              <div style={{ fontSize: "0.65rem", color: "#64748b" }}>
+                {activeCohort.isPeak === "female" ? "▲ Overall Peak" : "Active Rate"}
+              </div>
+            </div>
+
+            {/* Gap Difference */}
+            <div
+              style={{
+                background: "#eff6ff",
+                border: "1px solid #bfdbfe",
+                padding: "9px 10px",
+                borderRadius: "10px",
+                textAlign: "center"
+              }}
+            >
+              <div style={{ fontSize: "0.68rem", color: "#1e40af", fontWeight: 700 }}>GAP DIFF</div>
+              <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#1d4ed8" }}>
+                {Math.abs(activeCohort.genderGap).toFixed(1)}
+              </div>
+              <div style={{ fontSize: "0.65rem", color: "#3b82f6" }}>percentage pts</div>
+            </div>
+          </div>
+
+          {/* Annotation Detail */}
+          {activeCohort.annotation && (
+            <p style={{ fontSize: "0.8rem", color: "#475569", margin: 0, lineHeight: 1.45 }}>
+              <strong>Feature Note:</strong> {activeCohort.annotation}
+            </p>
+          )}
+
+          {/* Band 9 Analytical Sentence Box */}
+          <div
+            style={{
+              background: "#f8fafc",
+              border: "1px solid #cbd5e1",
+              borderLeft: "3.5px solid #2563eb",
+              borderRadius: "10px",
+              padding: "10px 12px",
+              fontSize: "0.84rem",
+              lineHeight: 1.5,
+              color: "#1e293b",
+              marginTop: "auto"
+            }}
+          >
+            <div style={{ fontSize: "0.72rem", fontWeight: 800, color: "#2563eb", marginBottom: "3px" }}>
+              BAND 9 SENTENCE:
+            </div>
+            <em>{activeHotspot.band9Sentence}</em>
+          </div>
+        </div>
+      )}
+
+      {/* Dock Content: Tab 2 - Task Prompt */}
+      {dockTab === "prompt" && (
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
+          <div
+            style={{
+              background: "#f8fafc",
+              border: "1px solid #e2e8f0",
+              borderRadius: "12px",
+              padding: "12px",
+              fontSize: "0.88rem",
+              fontWeight: 650,
+              lineHeight: 1.5,
+              color: "#0f172a"
+            }}
+          >
+            {TASK1_DATA.questionText.split("\n\n").map((chunk, i) => (
+              <p key={i} style={{ marginBottom: i < 2 ? "6px" : 0 }}>
+                {chunk}
+              </p>
+            ))}
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "0.78rem" }}>
+            <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
+              <span style={{ color: "#64748b" }}>Format:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>Double Bar Chart</strong>
+            </div>
+            <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
+              <span style={{ color: "#64748b" }}>Scale:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>Percentage (%)</strong>
+            </div>
+            <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
+              <span style={{ color: "#64748b" }}>Scope:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>Australia (2010)</strong>
+            </div>
+            <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
+              <span style={{ color: "#64748b" }}>Target:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>150+ Words</strong>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Dock Content: Tab 3 - Strategic Hotspots List */}
+      {dockTab === "hotspots" && (
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1, overflowY: "auto" }}>
+          {ACTIVITY_HOTSPOTS.map((h) => {
+            const isMatch = activeCohort.ageGroup === h.ageGroup;
+            return (
+              <div
+                key={h.id}
+                onClick={() => {
+                  const target = ACTIVITY_DATA.find((g) => g.ageGroup === h.ageGroup);
+                  if (target) {
+                    setSelectedCohortId(target.id);
+                    setHighlightMode(target.id as DiagramViewMode);
+                  }
+                }}
+                style={{
+                  background: isMatch ? "#eff6ff" : "#f8fafc",
+                  border: isMatch ? "1.5px solid #2563eb" : "1px solid #e2e8f0",
+                  borderRadius: "10px",
+                  padding: "8px 10px",
+                  cursor: "pointer",
+                  fontSize: "0.8rem",
+                  transition: "all 0.15s ease"
+                }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <strong style={{ color: "#0f172a" }}>{h.title}</strong>
+                  <span style={{ fontSize: "0.72rem", color: "#2563eb", fontWeight: 700 }}>
+                    {h.ageGroup}
+                  </span>
+                </div>
+                <div style={{ fontSize: "0.75rem", color: "#475569", marginTop: "2px" }}>
+                  {h.gapText}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className="stage-card-wrapper" style={{ width: "100%", minWidth: 0 }}>
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; Line Graph Engine
+          Step 02 / 08 • Task Prompt &amp; Double Bar Chart Engine
         </span>
-        <h2 className="stage-title">Deconstruct the 1992 UK Radio vs Television Line Graph</h2>
+        <h2 className="stage-title">Deconstruct the Australian Physical Activity (2010) Bar Chart</h2>
         <p className="stage-subtitle">
-          Examine the prompt, deconstruct the 24-hour diurnal cycle across the UK population aged 4+, trace the morning radio surge (~27%), the 13:00 crossover convergence (15%), and television's prime-time apex (45%).
+          Examine the prompt, deconstruct regular exercise participation across six age cohorts in 2010, identify the youth male lead (52.8%), the mid-life low (39.5%), the female peak (53.3%), and senior convergence (47%).
         </p>
       </div>
 
       {/* Focus Timer */}
-      <div style={{ marginBottom: "14px" }}>
+      <div style={{ marginBottom: "12px" }}>
         <TouchTimer
           formattedTime={formattedTime}
           isRunning={isRunning}
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the line graph, pinpoint the morning radio peak, note the 13:00 crossover point, and analyze the evening prime-time television surge."
+          instruction="Focus Timer: 3 minutes to analyze the double bar chart, note the youth male lead (15–24), the 13% gender gap at 35–44, the female peak at 45–54, and senior parity at 65+."
         />
       </div>
 
@@ -109,7 +446,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           border: "1.5px solid var(--border-subtle)",
           borderRadius: "16px",
           padding: "8px 12px",
-          marginBottom: "16px",
+          marginBottom: "14px",
           boxShadow: "var(--shadow-sm)",
           width: "100%"
         }}
@@ -117,7 +454,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         {/* 4 View Mode Buttons */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
           <span style={{ fontSize: "0.8rem", fontWeight: 800, color: "var(--slate-800)", marginRight: "4px" }}>
-            BOARD TEACHING VIEW:
+            TEACHING VIEW:
           </span>
 
           <button
@@ -137,7 +474,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <TrendingUp size={14} color="#2563eb" /> Interactive Line Graph Engine
+            <TrendingUp size={14} color="#2563eb" /> Interactive Double Bar Chart
           </button>
 
           <button
@@ -157,7 +494,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <Map size={14} /> Bits &amp; Pieces Mindmap
+            <Map size={14} /> Mindmap
           </button>
 
           <button
@@ -177,7 +514,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <HelpCircle size={14} /> Bits &amp; Pieces Flashcards
+            <HelpCircle size={14} /> Flashcards
           </button>
 
           <button
@@ -203,21 +540,25 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
         {/* Layout & Fullscreen Controls */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          {/* Layout Toggle: Side-by-Side (Zero Scroll) vs Full Width */}
           <button
             type="button"
-            onClick={() => setStageLayout(stageLayout === "full_width" ? "split" : "full_width")}
+            onClick={() => setStageLayout(stageLayout === "split" ? "full_width" : "split")}
             className="apple-touch-btn secondary"
             style={{
               padding: "7px 12px",
               fontSize: "0.76rem",
-              fontWeight: 700,
+              fontWeight: 750,
               display: "flex",
               alignItems: "center",
-              gap: "5px"
+              gap: "6px",
+              background: stageLayout === "split" ? "#eff6ff" : "#ffffff",
+              color: stageLayout === "split" ? "#1e40af" : "#334155",
+              border: stageLayout === "split" ? "1.5px solid #3b82f6" : "1px solid var(--border-subtle)"
             }}
           >
-            <Columns size={13} />
-            {stageLayout === "full_width" ? "Split Prompt View" : "Full Stage View"}
+            <Columns size={13} color={stageLayout === "split" ? "#2563eb" : "#64748b"} />
+            {stageLayout === "split" ? "Zero-Scroll Board Mode ✓" : "Switch to Zero-Scroll Mode"}
           </button>
 
           <button
@@ -233,15 +574,69 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "5px"
             }}
           >
-            <Maximize2 size={13} /> Fullscreen
+            <Maximize2 size={13} /> Fullscreen Board
           </button>
         </div>
       </div>
 
-      {/* STAGE CONTAINER: FULL-WIDTH OR SPLIT VIEW */}
-      {stageLayout === "full_width" ? (
+      {/* STAGE CONTAINER: ZERO-SCROLL SPLIT VIEW (DEFAULT) */}
+      {stageLayout === "split" ? (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.28fr 1fr",
+            gap: "16px",
+            width: "100%",
+            alignItems: "stretch"
+          }}
+        >
+          {/* Left Column: Visual Container (Chart without tall bottom cards) */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1.5px solid var(--border-subtle)",
+              borderRadius: "20px",
+              padding: "14px",
+              boxShadow: "var(--shadow-sm)",
+              minWidth: 0,
+              display: "flex",
+              flexDirection: "column"
+            }}
+          >
+            {viewMode === "smartboard_table" && (
+              <SmartBoardTableMatrix
+                highlightMode={highlightMode}
+                onHighlightModeChange={(mode) => setHighlightMode(mode)}
+                selectedCohortId={selectedCohortId}
+                onSelectCohort={(id) => setSelectedCohortId(id)}
+                showInternalToolbar={true}
+                showDeepDiveCard={false} // Hidden on left because Live Presenter Dock on the right handles it with zero scroll!
+              />
+            )}
+
+            {viewMode === "mindmap" && <BitsAndPiecesMindmap />}
+
+            {viewMode === "flashcards" && <BitsAndPiecesFlashcards />}
+
+            {viewMode === "original_image" && (
+              <div style={{ textAlign: "center", padding: "10px" }}>
+                <img
+                  src={`materials/${TASK1_DATA.imageFileName}`}
+                  alt="Australian Physical Activity 2010 Bar Chart"
+                  style={{ maxWidth: "100%", maxHeight: "400px", borderRadius: "10px", objectFit: "contain" }}
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Right Column: Live Smart Board Presenter Dock (Directly Beside Chart!) */}
+          <div style={{ minWidth: 0, height: "100%" }}>
+            {renderPresenterDock(false)}
+          </div>
+        </div>
+      ) : (
+        /* FULL-WIDTH VIEW */
         <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%", minWidth: 0 }}>
-          {/* Main Visual Display */}
           <div
             style={{
               background: "#ffffff",
@@ -257,6 +652,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <SmartBoardTableMatrix
                 highlightMode={highlightMode}
                 onHighlightModeChange={(mode) => setHighlightMode(mode)}
+                selectedCohortId={selectedCohortId}
+                onSelectCohort={(id) => setSelectedCohortId(id)}
                 showInternalToolbar={true}
                 showDeepDiveCard={true}
               />
@@ -281,7 +678,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="IELTS Academic Task 1 Radio and Television Audiences in UK 1992 Line Graph"
+                  alt="IELTS Academic Task 1 Australian Physical Activity 2010 Double Bar Chart"
                   style={{
                     maxHeight: "560px",
                     maxWidth: "100%",
@@ -292,7 +689,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   }}
                 />
                 <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
-                  Official Cambridge IELTS Academic Question Diagram • Radio and Television Audiences in UK (October - December 1992)
+                  Official Cambridge IELTS Academic Question Diagram • Percentage of Australian Men and Women Doing Regular Physical Activity in 2010
                 </div>
               </div>
             )}
@@ -364,17 +761,19 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 </span>
               </div>
 
-              {/* Hotspot Selector Chips */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
-                {AUDIENCE_HOTSPOTS.map((h) => {
-                  const isSelected = selectedHotspotId === h.id;
+                {ACTIVITY_HOTSPOTS.map((h) => {
+                  const targetGrp = ACTIVITY_DATA.find((g) => g.ageGroup === h.ageGroup);
+                  const isSelected = targetGrp && selectedCohortId === targetGrp.id;
                   return (
                     <button
                       key={h.id}
                       type="button"
                       onClick={() => {
-                        setSelectedHotspotId(h.id);
-                        setHighlightMode(h.zone as DiagramViewMode);
+                        if (targetGrp) {
+                          setSelectedCohortId(targetGrp.id);
+                          setHighlightMode(targetGrp.id as DiagramViewMode);
+                        }
                       }}
                       style={{
                         padding: "7px 10px",
@@ -411,116 +810,23 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 }}
               >
                 <div>
-                  <strong style={{ color: "#dc2626" }}>Radio Curve:</strong>{" "}
-                  {selectedHotspot.radioState}
+                  <strong style={{ color: "#0f172a" }}>Male Participation:</strong>{" "}
+                  {activeCohort.male}%
                 </div>
                 <div>
-                  <strong style={{ color: "#2563eb" }}>TV Curve:</strong>{" "}
-                  {selectedHotspot.tvState}
+                  <strong style={{ color: "#475569" }}>Female Participation:</strong>{" "}
+                  {activeCohort.female}%
                 </div>
                 <div style={{ marginTop: "4px", fontStyle: "italic", color: "var(--slate-800)", borderTop: "1px dashed var(--border-subtle)", paddingTop: "6px" }}>
-                  {selectedHotspot.band9Sentence}
+                  {activeHotspot.band9Sentence}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* SPLIT 2-COLUMN VIEW */
-        <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "16px", width: "100%", alignItems: "start" }}>
-          {/* Left Column: Visual Container */}
-          <div
-            style={{
-              background: "#ffffff",
-              border: "1.5px solid var(--border-subtle)",
-              borderRadius: "20px",
-              padding: "14px",
-              boxShadow: "var(--shadow-sm)",
-              minWidth: 0
-            }}
-          >
-            {viewMode === "smartboard_table" && (
-              <SmartBoardTableMatrix
-                highlightMode={highlightMode}
-                onHighlightModeChange={(mode) => setHighlightMode(mode)}
-                showInternalToolbar={true}
-                showDeepDiveCard={false}
-              />
-            )}
-
-            {viewMode === "mindmap" && <BitsAndPiecesMindmap />}
-
-            {viewMode === "flashcards" && <BitsAndPiecesFlashcards />}
-
-            {viewMode === "original_image" && (
-              <div style={{ textAlign: "center", padding: "10px" }}>
-                <img
-                  src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="Radio and TV Audiences 1992 Line Graph"
-                  style={{ maxWidth: "100%", maxHeight: "400px", borderRadius: "10px", objectFit: "contain" }}
-                />
-              </div>
-            )}
-          </div>
-
-          {/* Right Column: Prompt & Key Highlights */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px", minWidth: 0 }}>
-            <div
-              style={{
-                background: "var(--slate-50)",
-                border: "1.5px solid var(--border-subtle)",
-                borderRadius: "18px",
-                padding: "18px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
-                <span className="apple-badge accent">{TASK1_DATA.taskType}</span>
-                <span style={{ fontSize: "0.74rem", color: "var(--slate-500)" }}>150+ Words Required</span>
-              </div>
-              <div style={{ fontSize: "0.95rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.5 }}>
-                {TASK1_DATA.questionText.split("\n\n").map((chunk, i) => (
-                  <p key={i} style={{ marginBottom: i < 2 ? "6px" : 0 }}>
-                    {chunk}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            <div
-              style={{
-                background: "#ffffff",
-                border: "1.5px solid var(--border-subtle)",
-                borderRadius: "18px",
-                padding: "18px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px"
-              }}
-            >
-              <strong style={{ fontSize: "0.92rem", color: "var(--slate-900)" }}>
-                Key Comparison Highlights:
-              </strong>
-              {AUDIENCE_HOTSPOTS.map((h) => (
-                <div
-                  key={h.id}
-                  style={{
-                    background: "var(--slate-50)",
-                    padding: "10px 12px",
-                    borderRadius: "10px",
-                    border: "1px solid var(--border-subtle)",
-                    fontSize: "0.82rem"
-                  }}
-                >
-                  <strong style={{ color: "var(--slate-900)" }}>{h.title}:</strong>
-                  <div style={{ color: "var(--slate-700)", marginTop: "2px" }}>{h.contrastKey}</div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
       )}
 
-      {/* FULLSCREEN ENLARGED MODAL */}
+      {/* FULLSCREEN ZERO-SCROLL ENLARGED MODAL */}
       <AnimatePresence>
         {isEnlarged && (
           <div
@@ -550,13 +856,13 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <Tv size={22} color="var(--apple-blue)" />
+                <TrendingUp size={22} color="var(--apple-blue)" />
                 <div>
                   <h3 style={{ fontSize: "1.05rem", fontWeight: 800, margin: 0, color: "#ffffff" }}>
-                    Smart Board Fullscreen Engine • UK Radio &amp; TV Audiences (1992 Line Graph)
+                    Smart Board Zero-Scroll Presentation • Australian Physical Activity by Age &amp; Gender (2010)
                   </h3>
                   <p style={{ fontSize: "0.76rem", color: "#94a3b8", margin: "2px 0 0 0" }}>
-                    24-Hour Diurnal Trajectory • Percentage of UK Population (Aged 4+)
+                    Double Bar Chart • 6 Age Cohorts • Live Synchronized Presenter Dock
                   </p>
                 </div>
               </div>
@@ -583,33 +889,45 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               </div>
             </div>
 
-            {/* Fullscreen Scrollable Content */}
+            {/* Fullscreen Content: Side-by-Side Zero-Scroll Kiosk Layout */}
             <div
               style={{
                 flex: 1,
-                overflowY: "auto",
-                padding: "20px 28px",
+                padding: "16px 24px",
                 background: "#f1f5f9",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center"
+                display: "grid",
+                gridTemplateColumns: "1.3fr 1fr",
+                gap: "16px",
+                alignItems: "stretch",
+                overflow: "hidden"
               }}
             >
+              {/* Left Column: Big Chart */}
               <div
                 style={{
-                  width: "100%",
-                  maxWidth: "1500px",
+                  background: "#ffffff",
+                  borderRadius: "20px",
+                  padding: "16px",
+                  border: "1.5px solid #cbd5e1",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "16px"
+                  justifyContent: "center",
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.05)"
                 }}
               >
                 <SmartBoardTableMatrix
                   highlightMode={highlightMode}
                   onHighlightModeChange={(mode) => setHighlightMode(mode)}
+                  selectedCohortId={selectedCohortId}
+                  onSelectCohort={(id) => setSelectedCohortId(id)}
                   showInternalToolbar={true}
-                  showDeepDiveCard={true}
+                  showDeepDiveCard={false}
                 />
+              </div>
+
+              {/* Right Column: Presenter Dock (fits full height without scroll!) */}
+              <div style={{ height: "100%", overflowY: "auto" }}>
+                {renderPresenterDock(true)}
               </div>
             </div>
           </div>

@@ -12,9 +12,9 @@ export const Step7ModelAnalysis: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 07 / 08 • Body 2 &amp; Full Model Response
         </span>
-        <h2 className="stage-title">Prime-Time Television Surge &amp; Complete Band 9 Model Report</h2>
+        <h2 className="stage-title">Male U-Shaped Trajectory &amp; Complete Band 9 Model Report</h2>
         <p className="stage-subtitle">
-          Master the three essential analytical frameworks for diurnal line graphs, alongside the complete 192-word Band 9 model response organized across four balanced paragraphs.
+          Master the three essential analytical frameworks for double bar charts, alongside the complete 188-word Band 9 model response organized across four balanced paragraphs.
         </p>
       </div>
 
@@ -91,8 +91,8 @@ export const Step7ModelAnalysis: React.FC = () => {
                   { id: "all", label: "Full Report (All)" },
                   { id: "intro", label: "Intro" },
                   { id: "overview", label: "Overview" },
-                  { id: "body1", label: "Body 1 (01:00–13:00)" },
-                  { id: "body2", label: "Body 2 (14:00–24:00)" }
+                  { id: "body1", label: "Body 1 (Females)" },
+                  { id: "body2", label: "Body 2 (Males & Divergence)" }
                 ] as const
               ).map((tab) => (
                 <button

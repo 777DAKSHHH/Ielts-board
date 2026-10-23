@@ -309,31 +309,31 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 <div style={{ background: "var(--slate-50)", borderRadius: "16px", padding: "16px 20px", border: "1px solid var(--border-subtle)" }}>
                   <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-                    <strong>Mandatory Body Paragraph Format:</strong> 1 Main reason + Supporting reasons + Example. Construct every body paragraph with this inverted pyramid of logical cohesion:
+                    <strong>Mandatory Body Paragraph Format:</strong> Cause 1 + Effect 1 + Example. Construct every body paragraph with this cohesive cause-and-effect progression:
                   </p>
                 </div>
 
                 {[
                   {
                     step: "Tier 01",
-                    badge: "1 Main Reason",
-                    title: "State 1 Clear Primary Reason",
+                    badge: "Cause 1",
+                    title: "State 1 Clear Primary Cause / Driver",
                     say: "“Foremost among the drivers behind the surge in identity theft is the ubiquity of digital financial transactions coupled with vulnerable corporate data repositories.”",
-                    takeaway: "Direct, unequivocal topic sentence addressing the question without ambiguity."
+                    takeaway: "Direct, unequivocal topic sentence establishing the primary root cause."
                   },
                   {
                     step: "Tier 02",
-                    badge: "Supporting Reasons",
-                    title: "Unpack WHY and HOW with Causal Supporting Reasons",
+                    badge: "Effect 1",
+                    title: "Unpack the Immediate Effect & Causal Mechanism",
                     say: "“As everyday commerce transitions online, consumers submit personal information across countless platforms. When corporate security fails, cyber syndicates exfiltrate sensitive data in bulk and auction credentials on dark-web marketplaces to facilitate automated fraud.”",
-                    takeaway: "Explains the technological mechanics and institutional vulnerabilities."
+                    takeaway: "Explains how the root cause generates immediate destructive effects."
                   },
                   {
                     step: "Tier 03",
                     badge: "Example",
-                    title: "Substantiate with Specific Evidence",
+                    title: "Substantiate with Specific Real-World Evidence",
                     say: "“A prominent illustration is the Equifax breach, in which hackers compromised the financial dossiers of over 147 million consumers, triggering an unprecedented wave of unauthorized credit cards and fraudulent loans.”",
-                    takeaway: "Anchors theoretical reasoning to an undeniable real-world cybercrime event."
+                    takeaway: "Anchors the cause and effect to an undeniable real-world cybercrime event."
                   }
                 ].map((item) => (
                   <div
@@ -483,7 +483,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </h5>
                   </div>
                   <p style={{ fontSize: "0.9rem", color: "#14532d", margin: 0, lineHeight: 1.55 }}>
-                    Instruct students to strictly maintain the <strong>1 Main reason + Supporting reasons + Example</strong> formula in every body paragraph. Build Body 1 around digital transaction ubiquity and corporate database breaches, and construct Body 2 around direct financial ruin, destroyed credit ratings, and protracted bureaucratic/mental trauma. Symmetrical 50/50 paragraph balance between causes and effects guarantees maximum Band 9 Task Achievement.
+                    Instruct students to strictly maintain the <strong>Cause 1 + Effect 1 + Example</strong> formula in every body paragraph. Build Body 1 around digital transaction ubiquity and corporate database breaches, and construct Body 2 around direct financial ruin, destroyed credit ratings, and protracted bureaucratic/mental trauma. Symmetrical 50/50 paragraph balance between causes and effects guarantees maximum Band 9 Task Achievement.
                   </p>
                 </div>
               </motion.div>

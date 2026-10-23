@@ -18,7 +18,7 @@ export const Step7EvaluationT2: React.FC = () => {
         </span>
         <h2 className="stage-title">Body 2: The Devastating Fallout for Victims</h2>
         <p className="stage-subtitle">
-          Mandatory Body Paragraph Format: <strong>1 Main reason + Supporting reasons + Example</strong>. Examine the multifaceted harm inflicted on victims (financial ruin, destroyed credit ratings, psychological distress, protracted bureaucracy).
+          Mandatory Body Paragraph Format: <strong>Cause 1 + Effect 1 + Example</strong>. Examine the multifaceted harm inflicted on victims (financial ruin, destroyed credit ratings, psychological distress, protracted bureaucracy).
         </p>
       </div>
 

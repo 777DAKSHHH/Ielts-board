@@ -1,13 +1,55 @@
 import { VocabItem } from "./vocab";
 
+export type GenderKey = "male" | "female";
+
+export interface ActivityAgeGroup {
+  id: string; // "15_to_24", "25_to_34", etc.
+  ageGroup: string; // "15 to 24", "25 to 34", etc.
+  shortLabel: string; // "15–24", "25–34", etc.
+  male: number; // 52.8
+  female: number; // 47.7
+  genderGap: number; // female - male (+ for female lead, - for male lead)
+  higherGender: "male" | "female" | "equal";
+  annotation?: string;
+  isPeak?: "male" | "female";
+  isTrough?: "male" | "female";
+}
+
+export interface ActivityGenderInfo {
+  id: GenderKey;
+  name: string;
+  color: string;
+  barColor: string;
+  bgBadge: string;
+  peakAge: string;
+  peakValue: number;
+  lowestAge: string;
+  lowestValue: number;
+  summary: string;
+  band9Phrase: string;
+}
+
+export interface ActivityHotspot {
+  id: string;
+  title: string;
+  ageGroup: string;
+  maleValue: number;
+  femaleValue: number;
+  gapText: string;
+  contrastKey: string;
+  band9Sentence: string;
+  keyFeature: string;
+}
+
+// Backward compatibility types
 export type MediaChannelKey = "tv" | "radio";
 export type TimeOfDayZone = "overnight" | "morning" | "midday" | "afternoon" | "evening" | "night";
 
 export interface HourlyAudiencePoint {
-  hour: number; // 1 to 24 (1.00 to 24.00)
-  timeLabel: string; // "1.00", "7.00", "13.00", etc.
-  tv: number; // percentage
-  radio: number; // percentage
+  hour: number;
+  timeLabel: string;
+  tv: number;
+  radio: number;
   annotation?: string;
   isPeak?: "tv" | "radio";
   isCrossover?: boolean;
@@ -39,7 +81,6 @@ export interface AudienceHotspot {
   keyFeature: string;
 }
 
-// Backward compatibility types for legacy or shared components
 export type CountryKey = "germany" | "france" | "italy";
 export type FormatKey = "shop_cds" | "online_cds" | "downloads" | "cassettes" | "vinyl";
 
@@ -175,6 +216,9 @@ export interface Task1Data {
   hourlyPoints?: HourlyAudiencePoint[];
   channels?: MediaChannelInfo[];
   audienceHotspots?: AudienceHotspot[];
+  activityData?: ActivityAgeGroup[];
+  genderInfo?: ActivityGenderInfo[];
+  activityHotspots?: ActivityHotspot[];
   formats: MusicFormatItem[];
   countries: CountryMarketData[];
   diagramData: Task1DiagramData;

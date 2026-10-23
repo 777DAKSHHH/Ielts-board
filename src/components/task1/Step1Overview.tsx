@@ -20,9 +20,9 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 08 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: UK Radio &amp; Television Audiences (1992)</h2>
+        <h2 className="stage-title">Listen First: Australian Physical Activity by Gender (2010)</h2>
         <p className="stage-subtitle">
-          Play the cryptic briefing before revealing the line graph. Students should deduce which broadcasting medium dominated the morning hours, when television overtook radio, and what time prime-time viewing peaked.
+          Play the briefing before revealing the bar chart. Students should deduce which gender dominated youth sports, where the widest divergence occurred, which group reached the chart's overall peak, and where the two genders converged.
         </p>
       </div>
 
@@ -59,7 +59,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
                 Cryptic Audio Briefing
               </h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", marginTop: "2px" }}>
-                Line Graph • UK Audiences 1992 • 24-Hour Diurnal Cycle
+                Double Bar Chart • Australian Men &amp; Women 2010 • 6 Age Cohorts
               </p>
             </div>
           </div>
@@ -96,7 +96,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "16px", color: "var(--slate-700)", lineHeight: 1.55 }}>
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify which broadcasting medium commanded the morning breakfast peak, the exact hour when TV and radio curves crossed, and the massive prime-time television peak recorded late in the evening.
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify the sole age cohort where men led women, the age group featuring the widest gender gap (13.0 percentage points), the demographic cohort that attained the peak figure of 53.3%, and the final cohort where both genders reached virtual parity.
           </div>
         </div>
 
@@ -118,10 +118,10 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           {[
-            "Which medium dominated broadcasting during breakfast and the morning rush hour (6:00 to 9:00 am)?",
-            "At what exact time of day did television and radio audiences converge at an identical percentage (~15%)?",
-            "During what evening hours did television viewership explode to its highest prime-time peak of 45%?",
-            "What happened to both radio and television audiences between 1:00 am and 6:00 am (the nocturnal pre-dawn hours)?"
+            "In which single age cohort did Australian men record a higher physical activity rate than women (52.8% vs 47.7%)?",
+            "Which middle-aged bracket (35–44) witnessed the widest gender gap and the absolute lowest figure in the chart (39.5%)?",
+            "Which demographic group achieved the chart's absolute visual peak at 53.3% (females aged 45 to 54)?",
+            "What happened to the physical activity rates of Australian men and women in the 65-and-over retirement cohort?"
           ].map((question, index) => (
             <div key={question} style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "15px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
               <span className="apple-badge neutral" style={{ minWidth: "32px", justifyContent: "center", fontWeight: 800 }}>{index + 1}</span>
@@ -141,7 +141,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             className="apple-touch-btn primary"
             style={{ minHeight: "52px", gap: "8px", marginTop: "auto", fontSize: "1.02rem", fontWeight: 700 }}
           >
-            <Sparkles size={18} /> {revealed ? "Continue to Line Graph Analysis" : "Reveal Task & Line Graph"}
+            <Sparkles size={18} /> {revealed ? "Continue to Double Bar Chart Analysis" : "Reveal Task & Double Bar Chart"}
           </motion.button>
 
           {revealed && (
@@ -150,7 +150,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
               animate={{ opacity: 1, y: 0 }}
               style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "14px", padding: "14px 16px", color: "#1e3a8a", fontSize: "0.9rem", lineHeight: 1.5 }}
             >
-              The full task prompt and interactive 24-Hour Line Graph Engine are revealed in Step 02.
+              The full task prompt and interactive Double Bar Chart Engine are revealed in Step 02.
             </motion.div>
           )}
         </div>

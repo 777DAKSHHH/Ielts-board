@@ -4,30 +4,31 @@ import {
   Sparkles,
   TrendingDown,
   TrendingUp,
-  Tv,
-  Radio as RadioIcon,
-  Clock,
-  Layers,
   Eye,
-  Crosshair,
-  Info
+  Info,
+  CheckCircle2,
+  Users,
+  Award,
+  Layers
 } from "lucide-react";
 import {
   TASK1_DATA,
-  HOURLY_AUDIENCE_DATA,
-  MEDIA_CHANNELS,
-  AUDIENCE_HOTSPOTS
+  ACTIVITY_DATA,
+  ACTIVITY_GENDERS,
+  ACTIVITY_HOTSPOTS
 } from "../../data/task1Data";
-import { HourlyAudiencePoint } from "../../types/task1";
+import { ActivityAgeGroup } from "../../types/task1";
 
 export type DiagramViewMode =
   | "all"
-  | "morning"
-  | "midday"
-  | "evening"
-  | "overnight"
-  | "tv"
-  | "radio"
+  | "15_to_24"
+  | "25_to_34"
+  | "35_to_44"
+  | "45_to_54"
+  | "55_to_64"
+  | "65_and_over"
+  | "male_only"
+  | "female_only"
   | string;
 
 export type TableHighlightMode = DiagramViewMode;
@@ -38,116 +39,88 @@ interface SmartBoardDiagramProps {
   selectedCountryId?: string | null;
   highlightMode?: DiagramViewMode;
   onHighlightModeChange?: (mode: DiagramViewMode) => void;
+  selectedCohortId?: string;
+  onSelectCohort?: (id: string) => void;
   showInternalToolbar?: boolean;
   showDeepDiveCard?: boolean;
   forcedLayoutMode?: "stacked" | "split";
 }
 
-// Catmull-Rom or Cardinal Spline to SVG path generator
-function createSmoothPath(points: { x: number; y: number }[]): string {
-  if (points.length === 0) return "";
-  if (points.length === 1) return `M ${points[0].x} ${points[0].y}`;
-
-  let d = `M ${points[0].x.toFixed(1)} ${points[0].y.toFixed(1)}`;
-  for (let i = 0; i < points.length - 1; i++) {
-    const p0 = i > 0 ? points[i - 1] : points[i];
-    const p1 = points[i];
-    const p2 = points[i + 1];
-    const p3 = i < points.length - 2 ? points[i + 2] : p2;
-
-    const cp1x = p1.x + (p2.x - p0.x) / 6;
-    const cp1y = p1.y + (p2.y - p0.y) / 6;
-    const cp2x = p2.x - (p3.x - p1.x) / 6;
-    const cp2y = p2.y - (p3.y - p1.y) / 6;
-
-    d += ` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)}, ${cp2x.toFixed(1)} ${cp2y.toFixed(1)}, ${p2.x.toFixed(1)} ${p2.y.toFixed(1)}`;
-  }
-  return d;
-}
-
 export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
   highlightMode = "all",
   onHighlightModeChange,
+  selectedCohortId: controlledCohortId,
+  onSelectCohort,
   showInternalToolbar = true,
   showDeepDiveCard = true
 }) => {
-  const [activePhase, setActivePhase] = useState<DiagramViewMode>(highlightMode);
-  const [showTv, setShowTv] = useState(true);
-  const [showRadio, setShowRadio] = useState(true);
-  const [hoveredHour, setHoveredHour] = useState<HourlyAudiencePoint | null>(null);
-  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("radio_peak");
+  const [activeMode, setActiveMode] = useState<DiagramViewMode>(highlightMode);
+  const [showMale, setShowMale] = useState(true);
+  const [showFemale, setShowFemale] = useState(true);
+  const [hoveredGroup, setHoveredGroup] = useState<ActivityAgeGroup | null>(null);
+  const [internalCohortId, setInternalCohortId] = useState<string>("35_to_44");
 
-  const handlePhaseChange = (phase: DiagramViewMode) => {
-    setActivePhase(phase);
-    if (onHighlightModeChange) onHighlightModeChange(phase);
-  };
+  const effectiveCohortId = controlledCohortId || internalCohortId;
 
-  // SVG Chart Geometry
-  const chartWidth = 740;
-  const chartHeight = 370;
-  const margin = { top: 32, right: 36, bottom: 54, left: 60 };
-  const innerWidth = chartWidth - margin.left - margin.right;
-  const innerHeight = chartHeight - margin.top - margin.bottom;
+  const handleModeChange = (mode: DiagramViewMode) => {
+    setActiveMode(mode);
+    if (onHighlightModeChange) onHighlightModeChange(mode);
 
-  const minHour = 1;
-  const maxHour = 24;
-  const maxPercent = 50;
-
-  const xScale = (hour: number) =>
-    margin.left + ((hour - minHour) / (maxHour - minHour)) * innerWidth;
-
-  const yScale = (val: number) =>
-    margin.top + innerHeight - (Math.max(0, Math.min(val, maxPercent)) / maxPercent) * innerHeight;
-
-  // Gridlines: Y-axis 0% to 50% in 5% increments
-  const yTicks = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
-
-  // X-axis main hour ticks matching the graph
-  const xTicks = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23];
-
-  // Prepare points
-  const tvPoints = HOURLY_AUDIENCE_DATA.map((p) => ({
-    x: xScale(p.hour),
-    y: yScale(p.tv),
-    point: p
-  }));
-
-  const radioPoints = HOURLY_AUDIENCE_DATA.map((p) => ({
-    x: xScale(p.hour),
-    y: yScale(p.radio),
-    point: p
-  }));
-
-  const tvPathD = createSmoothPath(tvPoints);
-  const radioPathD = createSmoothPath(radioPoints);
-
-  // Area paths for gradient fills
-  const tvAreaD = `${tvPathD} L ${xScale(24)} ${yScale(0)} L ${xScale(1)} ${yScale(0)} Z`;
-  const radioAreaD = `${radioPathD} L ${xScale(24)} ${yScale(0)} L ${xScale(1)} ${yScale(0)} Z`;
-
-  // Landmark coordinates
-  const radioPeakPoint = HOURLY_AUDIENCE_DATA.find((p) => p.isPeak === "radio") || HOURLY_AUDIENCE_DATA[8];
-  const tvPeakPoint = HOURLY_AUDIENCE_DATA.find((p) => p.hour === 20.5) || HOURLY_AUDIENCE_DATA[20];
-  const crossoverPoint = HOURLY_AUDIENCE_DATA.find((p) => p.isCrossover) || HOURLY_AUDIENCE_DATA[13];
-
-  // Highlight band for phases
-  const getPhaseHighlightBand = () => {
-    switch (activePhase) {
-      case "morning":
-        return { start: 6, end: 10, title: "Morning Rush & Radio Peak (06:00 – 10:00)" };
-      case "midday":
-        return { start: 12, end: 14, title: "Midday Crossover Point (12:00 – 14:00)" };
-      case "evening":
-        return { start: 17, end: 22, title: "Prime-Time Television Surge (17:00 – 22:00)" };
-      case "overnight":
-        return { start: 1, end: 6, title: "Nocturnal Trough (01:00 – 06:00)" };
-      default:
-        return null;
+    if (mode === "male_only") {
+      setShowMale(true);
+      setShowFemale(false);
+    } else if (mode === "female_only") {
+      setShowMale(false);
+      setShowFemale(true);
+    } else {
+      setShowMale(true);
+      setShowFemale(true);
+      if (mode !== "all") {
+        setInternalCohortId(mode);
+        if (onSelectCohort) onSelectCohort(mode);
+      }
     }
   };
 
-  const highlightBand = getPhaseHighlightBand();
-  const activeHover = hoveredHour || crossoverPoint;
+  const handleReset = () => {
+    setActiveMode("all");
+    setShowMale(true);
+    setShowFemale(true);
+    setInternalCohortId("35_to_44");
+    if (onSelectCohort) onSelectCohort("35_to_44");
+    if (onHighlightModeChange) onHighlightModeChange("all");
+  };
+
+  // SVG Geometry Settings
+  const svgWidth = 920;
+  const svgHeight = 410;
+  const margin = { top: 52, right: 36, bottom: 64, left: 60 };
+  const chartWidth = svgWidth - margin.left - margin.right;
+  const chartHeight = svgHeight - margin.top - margin.bottom;
+
+  // Y-Scale: 0 to 60 (%)
+  const maxY = 60;
+  const yTicks = [0, 10, 20, 30, 40, 50, 60];
+
+  const getYPos = (val: number) => {
+    return margin.top + chartHeight - (val / maxY) * chartHeight;
+  };
+
+  // 6 Age Groups
+  const numGroups = ACTIVITY_DATA.length;
+  const groupSlotWidth = chartWidth / numGroups;
+  const barWidth = 36;
+  const barGap = 6;
+  const clusterWidth = barWidth * 2 + barGap;
+
+  const activeCohort =
+    ACTIVITY_DATA.find((g) => g.id === effectiveCohortId) ||
+    hoveredGroup ||
+    ACTIVITY_DATA[2]; // default 35 to 44
+
+  const activeHotspot = ACTIVITY_HOTSPOTS.find(
+    (h) => h.ageGroup === activeCohort.ageGroup
+  );
 
   return (
     <div
@@ -156,10 +129,10 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
         flexDirection: "column",
         gap: "14px",
         width: "100%",
-        fontFamily: "var(--font-sans)"
+        fontFamily: "var(--font-sans, -apple-system, BlinkMacSystemFont, sans-serif)"
       }}
     >
-      {/* SmartBoard Interactive Control Bar */}
+      {/* Smart Board Control Strip */}
       {showInternalToolbar && (
         <div
           style={{
@@ -167,703 +140,618 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
             alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
-            gap: "10px",
-            background: "#ffffff",
-            padding: "12px 18px",
-            borderRadius: "16px",
-            border: "1.5px solid var(--border-subtle)",
-            boxShadow: "var(--shadow-sm)"
+            gap: "8px",
+            background: "#f8fafc",
+            border: "1.5px solid var(--border-subtle, #e2e8f0)",
+            borderRadius: "14px",
+            padding: "8px 12px"
           }}
         >
-          {/* Phase Filter Buttons */}
+          {/* Preset Hotspot Filters */}
           <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
-            <span style={{ fontSize: "0.82rem", fontWeight: 750, color: "var(--slate-500)", marginRight: "4px" }}>
-              DIURNAL PHASES:
+            <span
+              style={{
+                fontSize: "0.78rem",
+                fontWeight: 800,
+                color: "#1e293b",
+                marginRight: "4px"
+              }}
+            >
+              HIGHLIGHT COHORT:
             </span>
+
             {[
-              { id: "all", label: "All 24 Hours", icon: <Clock size={14} /> },
-              { id: "morning", label: "Morning Rush (Radio Peak)", icon: <TrendingUp size={14} color="#dc2626" /> },
-              { id: "midday", label: "Midday Crossover (13:00)", icon: <Sparkles size={14} color="#d97706" /> },
-              { id: "evening", label: "Prime-Time TV Surge", icon: <Tv size={14} color="#2563eb" /> },
-              { id: "overnight", label: "Nocturnal Lull (<5%)", icon: <TrendingDown size={14} color="#64748b" /> }
-            ].map((phase) => {
-              const isActive = activePhase === phase.id;
+              { id: "all", label: "All Demographics" },
+              { id: "15_to_24", label: "15–24 (Male Lead)" },
+              { id: "35_to_44", label: "35–44 (Widest Gap / Low Point)" },
+              { id: "45_to_54", label: "45–54 (Female Peak)" },
+              { id: "65_and_over", label: "65+ (Convergence)" }
+            ].map((btn) => {
+              const isSelected = activeMode === btn.id;
               return (
                 <button
-                  key={phase.id}
-                  onClick={() => handlePhaseChange(phase.id as DiagramViewMode)}
+                  key={btn.id}
+                  type="button"
+                  onClick={() => handleModeChange(btn.id)}
                   style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    padding: "7px 12px",
-                    borderRadius: "10px",
-                    fontSize: "0.82rem",
-                    fontWeight: 700,
-                    border: isActive ? "2px solid var(--slate-900)" : "1px solid var(--border-subtle)",
-                    background: isActive ? "var(--slate-900)" : "var(--slate-50)",
-                    color: isActive ? "#ffffff" : "var(--slate-700)",
+                    padding: "6px 12px",
+                    borderRadius: "8px",
+                    fontSize: "0.76rem",
+                    fontWeight: 750,
+                    border: isSelected ? "1.5px solid #0f172a" : "1px solid #cbd5e1",
+                    background: isSelected ? "#0f172a" : "#ffffff",
+                    color: isSelected ? "#ffffff" : "#334155",
                     cursor: "pointer",
                     transition: "all 0.15s ease"
                   }}
                 >
-                  {phase.icon}
-                  {phase.label}
+                  {btn.label}
                 </button>
               );
             })}
           </div>
 
-          {/* Channel Legend & Toggle Switches */}
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          {/* Gender Filter Toggles & Reset */}
+          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
             <button
-              onClick={() => setShowTv(!showTv)}
+              type="button"
+              onClick={() => {
+                setShowMale(!showMale);
+              }}
               style={{
+                padding: "6px 10px",
+                borderRadius: "8px",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                border: "1px solid #cbd5e1",
+                background: showMale ? "#0f172a" : "#f1f5f9",
+                color: showMale ? "#ffffff" : "#64748b",
+                cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
-                gap: "8px",
-                padding: "6px 12px",
-                borderRadius: "10px",
-                background: showTv ? "#eff6ff" : "var(--slate-100)",
-                border: `2px solid ${showTv ? "#2563eb" : "var(--slate-300)"}`,
-                cursor: "pointer"
+                gap: "5px"
               }}
             >
-              <div
-                style={{
-                  width: "14px",
-                  height: "4px",
-                  background: showTv ? "#2563eb" : "var(--slate-400)",
-                  borderRadius: "2px"
-                }}
-              />
               <span
                 style={{
-                  fontSize: "0.85rem",
-                  fontWeight: 800,
-                  color: showTv ? "#1e40af" : "var(--slate-500)"
+                  width: "10px",
+                  height: "10px",
+                  borderRadius: "2px",
+                  background: showMale ? "#ffffff" : "#0f172a",
+                  display: "inline-block"
                 }}
-              >
-                TV (Blue)
-              </span>
+              />
+              Men {showMale ? "On" : "Off"}
             </button>
 
             <button
-              onClick={() => setShowRadio(!showRadio)}
+              type="button"
+              onClick={() => {
+                setShowFemale(!showFemale);
+              }}
               style={{
+                padding: "6px 10px",
+                borderRadius: "8px",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                border: "1px solid #cbd5e1",
+                background: showFemale ? "#64748b" : "#f1f5f9",
+                color: showFemale ? "#ffffff" : "#64748b",
+                cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
-                gap: "8px",
-                padding: "6px 12px",
-                borderRadius: "10px",
-                background: showRadio ? "#fef2f2" : "var(--slate-100)",
-                border: `2px solid ${showRadio ? "#dc2626" : "var(--slate-300)"}`,
-                cursor: "pointer"
+                gap: "5px"
               }}
             >
-              <div
-                style={{
-                  width: "14px",
-                  height: "4px",
-                  background: showRadio ? "#dc2626" : "var(--slate-400)",
-                  borderRadius: "2px"
-                }}
-              />
               <span
                 style={{
-                  fontSize: "0.85rem",
-                  fontWeight: 800,
-                  color: showRadio ? "#991b1b" : "var(--slate-500)"
+                  width: "10px",
+                  height: "10px",
+                  borderRadius: "2px",
+                  background: "#cbd5e1",
+                  border: "1px solid #94a3b8",
+                  display: "inline-block"
                 }}
-              >
-                Radio (Red)
-              </span>
+              />
+              Women {showFemale ? "On" : "Off"}
+            </button>
+
+            <button
+              type="button"
+              onClick={handleReset}
+              title="Reset Chart View"
+              style={{
+                padding: "6px 10px",
+                borderRadius: "8px",
+                fontSize: "0.75rem",
+                fontWeight: 700,
+                border: "1px solid #cbd5e1",
+                background: "#ffffff",
+                color: "#64748b",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: "4px"
+              }}
+            >
+              <RotateCcw size={12} /> Reset
             </button>
           </div>
         </div>
       )}
 
-      {/* Main Interactive Vector Line Graph Canvas */}
+      {/* Main Interactive Double Bar Chart SVG Canvas */}
       <div
         style={{
+          width: "100%",
           background: "#ffffff",
-          borderRadius: "20px",
-          border: "1.5px solid var(--border-subtle)",
-          padding: "20px 22px 16px 22px",
-          boxShadow: "var(--shadow-sm)",
-          display: "flex",
-          flexDirection: "column",
-          gap: "12px",
+          borderRadius: "16px",
+          border: "1.5px solid #e2e8f0",
+          boxShadow: "0 2px 10px rgba(0, 0, 0, 0.04)",
+          overflow: "hidden",
           position: "relative"
         }}
       >
-        {/* Title Header Matching Real IELTS Chart */}
-        <div style={{ textAlign: "center", marginBottom: "4px" }}>
-          <h3
-            style={{
-              fontSize: "1.15rem",
-              fontWeight: 800,
-              color: "var(--slate-900)",
-              letterSpacing: "-0.01em",
-              margin: 0
-            }}
-          >
-            Radio and Television audiences in UK, October - December 1992
-          </h3>
-          <p style={{ fontSize: "0.82rem", color: "var(--slate-500)", marginTop: "3px", margin: 0 }}>
-            Source: UK Audience Measurement • 24-Hour Diurnal Cycle • Percentage of UK population aged 4+
-          </p>
-        </div>
-
-        {/* SVG Viewport */}
-        <div style={{ width: "100%", overflowX: "auto" }}>
-          <svg
-            viewBox={`0 0 ${chartWidth} ${chartHeight}`}
-            style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-              userSelect: "none"
-            }}
-          >
-            <defs>
-              {/* TV Area Gradient */}
-              <linearGradient id="tvGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#2563eb" stopOpacity="0.22" />
-                <stop offset="85%" stopColor="#2563eb" stopOpacity="0.02" />
-                <stop offset="100%" stopColor="#2563eb" stopOpacity="0" />
-              </linearGradient>
-
-              {/* Radio Area Gradient */}
-              <linearGradient id="radioGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#dc2626" stopOpacity="0.22" />
-                <stop offset="85%" stopColor="#dc2626" stopOpacity="0.02" />
-                <stop offset="100%" stopColor="#dc2626" stopOpacity="0" />
-              </linearGradient>
-
-              {/* Filter glow for peaks */}
-              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-
-            {/* Background Phase Highlight Band */}
-            {highlightBand && (
-              <g>
-                <rect
-                  x={xScale(highlightBand.start)}
-                  y={margin.top}
-                  width={xScale(highlightBand.end) - xScale(highlightBand.start)}
-                  height={innerHeight}
-                  fill="rgba(245, 158, 11, 0.08)"
-                  stroke="rgba(245, 158, 11, 0.35)"
-                  strokeDasharray="4 4"
-                  rx="6"
-                />
-                <text
-                  x={xScale((highlightBand.start + highlightBand.end) / 2)}
-                  y={margin.top + 18}
-                  textAnchor="middle"
-                  fill="#b45309"
-                  fontSize="11"
-                  fontWeight="700"
-                >
-                  {highlightBand.title}
-                </text>
-              </g>
-            )}
-
-            {/* Horizontal Gridlines & Y-Axis Labels */}
-            {yTicks.map((tick) => {
-              const y = yScale(tick);
-              return (
-                <g key={tick}>
-                  <line
-                    x1={margin.left}
-                    y1={y}
-                    x2={margin.left + innerWidth}
-                    y2={y}
-                    stroke={tick === 0 ? "var(--slate-800)" : "#e2e8f0"}
-                    strokeWidth={tick === 0 ? 1.5 : 1}
-                    strokeDasharray={tick === 0 ? "none" : tick % 10 === 0 ? "none" : "2 2"}
-                  />
-                  <text
-                    x={margin.left - 10}
-                    y={y + 4}
-                    textAnchor="end"
-                    fill={tick === 0 ? "var(--slate-800)" : "#64748b"}
-                    fontSize="11"
-                    fontWeight={tick % 10 === 0 ? "700" : "500"}
-                  >
-                    {tick}%
-                  </text>
-                </g>
-              );
-            })}
-
-            {/* Vertical Hour Tick Lines & Labels */}
-            {xTicks.map((hour) => {
-              const x = xScale(hour);
-              return (
-                <g key={hour}>
-                  <line
-                    x1={x}
-                    y1={margin.top}
-                    x2={x}
-                    y2={margin.top + innerHeight}
-                    stroke="#f1f5f9"
-                    strokeWidth={1}
-                  />
-                  <line
-                    x1={x}
-                    y1={margin.top + innerHeight}
-                    x2={x}
-                    y2={margin.top + innerHeight + 6}
-                    stroke="var(--slate-600)"
-                    strokeWidth={1.5}
-                  />
-                  <text
-                    x={x}
-                    y={margin.top + innerHeight + 20}
-                    textAnchor="middle"
-                    fill="var(--slate-800)"
-                    fontSize="11.5"
-                    fontWeight="700"
-                  >
-                    {hour.toFixed(2)}
-                  </text>
-                </g>
-              );
-            })}
-
-            {/* Intermediate minor hour tick notches */}
-            {[2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24].map((hour) => {
-              const x = xScale(hour);
-              return (
-                <line
-                  key={`minor-${hour}`}
-                  x1={x}
-                  y1={margin.top + innerHeight}
-                  x2={x}
-                  y2={margin.top + innerHeight + 4}
-                  stroke="#94a3b8"
-                  strokeWidth={1}
-                />
-              );
-            })}
-
-            {/* Y-Axis Title (Rotated) */}
-            <text
-              transform={`rotate(-90)`}
-              x={-(margin.top + innerHeight / 2)}
-              y={16}
-              textAnchor="middle"
-              fill="#64748b"
-              fontSize="11.5"
-              fontWeight="700"
-              letterSpacing="0.02em"
-            >
-              Percentage of UK population (over 4-years old)
-            </text>
-
-            {/* X-Axis Title */}
-            <text
-              x={margin.left + innerWidth / 2}
-              y={chartHeight - 8}
-              textAnchor="middle"
-              fill="#64748b"
-              fontSize="12"
-              fontWeight="700"
-            >
-              Time of day or night
-            </text>
-
-            {/* Inset Legend inside SVG matching original layout */}
-            <g transform={`translate(${margin.left + 22}, ${margin.top + 16})`}>
-              <rect
-                x="0"
-                y="0"
-                width="100"
-                height="48"
-                fill="#ffffff"
-                stroke="#e2e8f0"
-                strokeWidth="1"
-                rx="8"
-                opacity="0.95"
-              />
-              <line x1="12" y1="16" x2="34" y2="16" stroke="#2563eb" strokeWidth="3.5" />
-              <text x="42" y="20" fill="var(--slate-800)" fontSize="11" fontWeight="750">
-                TV
-              </text>
-
-              <line x1="12" y1="34" x2="34" y2="34" stroke="#dc2626" strokeWidth="3.5" />
-              <text x="42" y="38" fill="var(--slate-800)" fontSize="11" fontWeight="750">
-                Radio
-              </text>
-            </g>
-
-            {/* TV Filled Area & Curve */}
-            {showTv && (
-              <g>
-                <path d={tvAreaD} fill="url(#tvGradient)" />
-                <path
-                  d={tvPathD}
-                  fill="none"
-                  stroke="#2563eb"
-                  strokeWidth="3.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </g>
-            )}
-
-            {/* Radio Filled Area & Curve */}
-            {showRadio && (
-              <g>
-                <path d={radioAreaD} fill="url(#radioGradient)" />
-                <path
-                  d={radioPathD}
-                  fill="none"
-                  stroke="#dc2626"
-                  strokeWidth="3.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </g>
-            )}
-
-            {/* Landmark 1: Radio Peak Callout at 8:30 (27%) */}
-            {showRadio && (
-              <g transform={`translate(${xScale(radioPeakPoint.hour)}, ${yScale(radioPeakPoint.radio)})`}>
-                <circle r="6" fill="#dc2626" stroke="#ffffff" strokeWidth="2.5" filter="url(#glow)" />
-                <circle r="12" fill="none" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.7" />
-                <g transform="translate(-50, -32)">
-                  <rect
-                    x="0"
-                    y="0"
-                    width="100"
-                    height="24"
-                    rx="6"
-                    fill="#dc2626"
-                    filter="url(#glow)"
-                  />
-                  <text
-                    x="50"
-                    y="16"
-                    textAnchor="middle"
-                    fill="#ffffff"
-                    fontSize="10"
-                    fontWeight="800"
-                  >
-                    Radio Apex: ~27%
-                  </text>
-                </g>
-              </g>
-            )}
-
-            {/* Landmark 2: Midday Crossover Callout at 13:00 (15%) */}
-            <g transform={`translate(${xScale(crossoverPoint.hour)}, ${yScale(15)})`}>
-              <circle r="7" fill="#d97706" stroke="#ffffff" strokeWidth="2.5" filter="url(#glow)" />
-              <line x1="0" y1="-28" x2="0" y2="-8" stroke="#d97706" strokeWidth="1.5" strokeDasharray="2 2" />
-              <g transform="translate(-65, -52)">
-                <rect
-                  x="0"
-                  y="0"
-                  width="130"
-                  height="24"
-                  rx="6"
-                  fill="#78350f"
-                />
-                <text
-                  x="65"
-                  y="16"
-                  textAnchor="middle"
-                  fill="#fef3c7"
-                  fontSize="10"
-                  fontWeight="800"
-                >
-                  13:00 Crossover: 15%
-                </text>
-              </g>
-            </g>
-
-            {/* Landmark 3: TV Evening Peak Callout at 20:30 (45%) */}
-            {showTv && (
-              <g transform={`translate(${xScale(20.5)}, ${yScale(45)})`}>
-                <circle r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" filter="url(#glow)" />
-                <circle r="12" fill="none" stroke="#2563eb" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.7" />
-                <g transform="translate(-55, -32)">
-                  <rect
-                    x="0"
-                    y="0"
-                    width="110"
-                    height="24"
-                    rx="6"
-                    fill="#1e40af"
-                    filter="url(#glow)"
-                  />
-                  <text
-                    x="55"
-                    y="16"
-                    textAnchor="middle"
-                    fill="#ffffff"
-                    fontSize="10"
-                    fontWeight="800"
-                  >
-                    TV Prime Peak: 45%
-                  </text>
-                </g>
-              </g>
-            )}
-
-            {/* Interactive Vertical Cursor Tracking */}
-            {activeHover && (
-              <g>
-                <line
-                  x1={xScale(activeHover.hour)}
-                  y1={margin.top}
-                  x2={xScale(activeHover.hour)}
-                  y2={margin.top + innerHeight}
-                  stroke="var(--slate-700)"
-                  strokeWidth="1.5"
-                  strokeDasharray="4 3"
-                />
-                {showTv && (
-                  <circle
-                    cx={xScale(activeHover.hour)}
-                    cy={yScale(activeHover.tv)}
-                    r="5"
-                    fill="#2563eb"
-                    stroke="#ffffff"
-                    strokeWidth="2"
-                  />
-                )}
-                {showRadio && (
-                  <circle
-                    cx={xScale(activeHover.hour)}
-                    cy={yScale(activeHover.radio)}
-                    r="5"
-                    fill="#dc2626"
-                    stroke="#ffffff"
-                    strokeWidth="2"
-                  />
-                )}
-              </g>
-            )}
-
-            {/* Interactive Hover Columns over the whole chart */}
-            {HOURLY_AUDIENCE_DATA.map((p) => {
-              const x = xScale(p.hour);
-              const colWidth = innerWidth / (HOURLY_AUDIENCE_DATA.length - 1);
-              return (
-                <rect
-                  key={p.hour}
-                  x={x - colWidth / 2}
-                  y={margin.top}
-                  width={colWidth}
-                  height={innerHeight}
-                  fill="transparent"
-                  style={{ cursor: "pointer" }}
-                  onMouseEnter={() => setHoveredHour(p)}
-                  onClick={() => setHoveredHour(p)}
-                />
-              );
-            })}
-          </svg>
-        </div>
-
-        {/* Live Touch Hover Inspector Banner */}
-        <div
-          style={{
-            background: "var(--slate-50)",
-            border: "1px solid var(--border-subtle)",
-            borderRadius: "14px",
-            padding: "12px 18px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "12px"
-          }}
+        <svg
+          viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+          style={{ width: "100%", height: "auto", display: "block" }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <div
-              style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "10px",
-                background: "var(--slate-900)",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center"
-              }}
-            >
-              <Clock size={18} />
-            </div>
-            <div>
-              <div style={{ fontSize: "0.78rem", color: "var(--slate-500)", fontWeight: 700 }}>
-                HOURLY INSPECTION
-              </div>
-              <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--slate-900)" }}>
-                {activeHover.timeLabel} ({activeHover.hour >= 12 ? `${activeHover.hour === 12 ? 12 : (activeHover.hour - 12).toFixed(1)} pm` : `${activeHover.hour.toFixed(1)} am`})
-              </div>
-            </div>
-          </div>
+          {/* Background fill */}
+          <rect width={svgWidth} height={svgHeight} fill="#ffffff" />
 
-          {/* TV & Radio Data Pills */}
-          <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
-            <div
-              style={{
-                background: "#eff6ff",
-                border: "1.5px solid #bfdbfe",
-                borderRadius: "10px",
-                padding: "8px 14px",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px"
-              }}
-            >
-              <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#2563eb" }} />
-              <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1e40af" }}>
-                TV Audience: <strong>{activeHover.tv}%</strong>
-              </span>
-            </div>
+          {/* Chart Header Title inside SVG */}
+          <text
+            x={svgWidth / 2}
+            y={32}
+            textAnchor="middle"
+            fill="#334155"
+            fontSize="15"
+            fontWeight="700"
+            letterSpacing="-0.01em"
+          >
+            Percentage of Australian men and women doing regular physical activity in 2010
+          </text>
 
-            <div
-              style={{
-                background: "#fef2f2",
-                border: "1.5px solid #fecaca",
-                borderRadius: "10px",
-                padding: "8px 14px",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px"
-              }}
-            >
-              <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#dc2626" }} />
-              <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#991b1b" }}>
-                Radio Audience: <strong>{activeHover.radio}%</strong>
-              </span>
-            </div>
+          {/* Y-Axis Gridlines and Labels */}
+          {yTicks.map((val) => {
+            const yPos = getYPos(val);
+            const isZero = val === 0;
+            return (
+              <g key={val}>
+                <line
+                  x1={margin.left}
+                  y1={yPos}
+                  x2={svgWidth - margin.right}
+                  y2={yPos}
+                  stroke={isZero ? "#94a3b8" : "#f1f5f9"}
+                  strokeWidth={isZero ? 1.5 : 1}
+                />
+                <text
+                  x={margin.left - 12}
+                  y={yPos + 4}
+                  textAnchor="end"
+                  fill="#64748b"
+                  fontSize="12.5"
+                  fontWeight="600"
+                >
+                  {val}
+                </text>
+              </g>
+            );
+          })}
 
-            <div
-              style={{
-                background: "#ffffff",
-                border: "1px solid var(--border-default)",
-                borderRadius: "10px",
-                padding: "8px 14px",
-                fontSize: "0.85rem",
-                color: "var(--slate-700)"
-              }}
+          {/* Y-Axis Main Baseline */}
+          <line
+            x1={margin.left}
+            y1={margin.top}
+            x2={margin.left}
+            y2={margin.top + chartHeight}
+            stroke="#94a3b8"
+            strokeWidth={1.5}
+          />
+
+          {/* Render Clustered Bars for Each Age Cohort */}
+          {ACTIVITY_DATA.map((group, index) => {
+            const groupCenterX = margin.left + (index + 0.5) * groupSlotWidth;
+            const maleX = groupCenterX - clusterWidth / 2;
+            const femaleX = maleX + barWidth + barGap;
+
+            const maleY = getYPos(group.male);
+            const maleBarHeight = getYPos(0) - maleY;
+
+            const femaleY = getYPos(group.female);
+            const femaleBarHeight = getYPos(0) - femaleY;
+
+            const isCohortSelected =
+              activeMode === group.id ||
+              effectiveCohortId === group.id ||
+              hoveredGroup?.id === group.id;
+
+            const isDimmed =
+              activeMode !== "all" &&
+              activeMode !== "male_only" &&
+              activeMode !== "female_only" &&
+              !isCohortSelected;
+
+            return (
+              <g
+                key={group.id}
+                cursor="pointer"
+                opacity={isDimmed ? 0.3 : 1}
+                onMouseEnter={() => setHoveredGroup(group)}
+                onMouseLeave={() => setHoveredGroup(null)}
+                onClick={() => {
+                  setInternalCohortId(group.id);
+                  if (onSelectCohort) onSelectCohort(group.id);
+                  if (activeMode !== "male_only" && activeMode !== "female_only") {
+                    setActiveMode(group.id);
+                  }
+                }}
+                style={{ transition: "opacity 0.2s ease" }}
+              >
+                {/* Highlight Background Pillar if selected */}
+                {isCohortSelected && (
+                  <rect
+                    x={groupCenterX - groupSlotWidth / 2 + 4}
+                    y={margin.top}
+                    width={groupSlotWidth - 8}
+                    height={chartHeight}
+                    fill="rgba(59, 130, 246, 0.05)"
+                    rx={8}
+                    stroke="rgba(59, 130, 246, 0.2)"
+                    strokeWidth={1}
+                    strokeDasharray="4 3"
+                  />
+                )}
+
+                {/* Male Bar (Black: #0f172a) */}
+                {showMale && (
+                  <g>
+                    <rect
+                      x={maleX}
+                      y={maleY}
+                      width={barWidth}
+                      height={maleBarHeight}
+                      fill="#0f172a"
+                      rx={2}
+                      style={{ transition: "all 0.25s ease" }}
+                    />
+                    {/* Value Label above Male Bar */}
+                    <text
+                      x={maleX + barWidth / 2}
+                      y={maleY - 7}
+                      textAnchor="middle"
+                      fill="#0f172a"
+                      fontSize="12.5"
+                      fontWeight="750"
+                    >
+                      {group.male}
+                    </text>
+                  </g>
+                )}
+
+                {/* Female Bar (Light Grey: #cbd5e1 with subtle border) */}
+                {showFemale && (
+                  <g>
+                    <rect
+                      x={femaleX}
+                      y={femaleY}
+                      width={barWidth}
+                      height={femaleBarHeight}
+                      fill="#cbd5e1"
+                      stroke="#94a3b8"
+                      strokeWidth={1}
+                      rx={2}
+                      style={{ transition: "all 0.25s ease" }}
+                    />
+                    {/* Value Label above Female Bar (displaying 53 for 55 to 64 as in original graphic) */}
+                    <text
+                      x={femaleX + barWidth / 2}
+                      y={femaleY - 7}
+                      textAnchor="middle"
+                      fill="#475569"
+                      fontSize="12.5"
+                      fontWeight="750"
+                    >
+                      {group.ageGroup === "55 to 64" ? "53" : group.female}
+                    </text>
+                  </g>
+                )}
+
+                {/* X-Axis Category Label */}
+                <text
+                  x={groupCenterX}
+                  y={margin.top + chartHeight + 24}
+                  textAnchor="middle"
+                  fill={isCohortSelected ? "#0f172a" : "#475569"}
+                  fontSize={isCohortSelected ? "13.5" : "13"}
+                  fontWeight={isCohortSelected ? "800" : "600"}
+                >
+                  {group.ageGroup}
+                </text>
+
+                {/* Special Hotspot Badges on Canvas */}
+                {group.id === "15_to_24" && (
+                  <g>
+                    <rect
+                      x={groupCenterX - 56}
+                      y={margin.top + chartHeight + 36}
+                      width={112}
+                      height={18}
+                      rx={4}
+                      fill="#fef2f2"
+                      stroke="#fecaca"
+                      strokeWidth={0.8}
+                    />
+                    <text
+                      x={groupCenterX}
+                      y={margin.top + chartHeight + 49}
+                      textAnchor="middle"
+                      fill="#dc2626"
+                      fontSize="9.5"
+                      fontWeight="750"
+                    >
+                      ★ Sole Male Lead (+5.1%)
+                    </text>
+                  </g>
+                )}
+
+                {group.id === "35_to_44" && (
+                  <g>
+                    <rect
+                      x={groupCenterX - 56}
+                      y={margin.top + chartHeight + 36}
+                      width={112}
+                      height={18}
+                      rx={4}
+                      fill="#eff6ff"
+                      stroke="#bfdbfe"
+                      strokeWidth={0.8}
+                    />
+                    <text
+                      x={groupCenterX}
+                      y={margin.top + chartHeight + 49}
+                      textAnchor="middle"
+                      fill="#2563eb"
+                      fontSize="9.5"
+                      fontWeight="750"
+                    >
+                      Widest Gap (13.0%) • Lowest Point
+                    </text>
+                  </g>
+                )}
+
+                {group.id === "45_to_54" && (
+                  <g>
+                    <rect
+                      x={groupCenterX - 56}
+                      y={margin.top + chartHeight + 36}
+                      width={112}
+                      height={18}
+                      rx={4}
+                      fill="#f0fdf4"
+                      stroke="#bbf7d0"
+                      strokeWidth={0.8}
+                    />
+                    <text
+                      x={groupCenterX}
+                      y={margin.top + chartHeight + 49}
+                      textAnchor="middle"
+                      fill="#16a34a"
+                      fontSize="9.5"
+                      fontWeight="750"
+                    >
+                      ▲ Overall Peak (53.3%)
+                    </text>
+                  </g>
+                )}
+
+                {group.id === "65_and_over" && (
+                  <g>
+                    <rect
+                      x={groupCenterX - 56}
+                      y={margin.top + chartHeight + 36}
+                      width={112}
+                      height={18}
+                      rx={4}
+                      fill="#f8fafc"
+                      stroke="#cbd5e1"
+                      strokeWidth={0.8}
+                    />
+                    <text
+                      x={groupCenterX}
+                      y={margin.top + chartHeight + 49}
+                      textAnchor="middle"
+                      fill="#475569"
+                      fontSize="9.5"
+                      fontWeight="750"
+                    >
+                      ≈ Virtual Parity (0.4%)
+                    </text>
+                  </g>
+                )}
+              </g>
+            );
+          })}
+
+          {/* Interactive Legend Box at Bottom Center */}
+          <g transform={`translate(${svgWidth / 2 - 120}, ${svgHeight - 16})`}>
+            {/* Male Legend Item */}
+            <g
+              cursor="pointer"
+              onClick={() => setShowMale(!showMale)}
+              opacity={showMale ? 1 : 0.4}
             >
-              <strong>Leadership:</strong>{" "}
-              {activeHover.tv > activeHover.radio ? (
-                <span style={{ color: "#2563eb", fontWeight: 750 }}>
-                  TV leads by +{(activeHover.tv - activeHover.radio).toFixed(1)}%
-                </span>
-              ) : activeHover.radio > activeHover.tv ? (
-                <span style={{ color: "#dc2626", fontWeight: 750 }}>
-                  Radio leads by +{(activeHover.radio - activeHover.tv).toFixed(1)}%
-                </span>
-              ) : (
-                <span style={{ color: "#d97706", fontWeight: 750 }}>
-                  Equal Convergence (15%)
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
+              <rect
+                x={0}
+                y={-10}
+                width={14}
+                height={14}
+                fill="#0f172a"
+                rx={2}
+              />
+              <text
+                x={22}
+                y={2}
+                fill="#1e293b"
+                fontSize="12.5"
+                fontWeight="700"
+              >
+                ■ Male
+              </text>
+            </g>
+
+            {/* Female Legend Item */}
+            <g
+              cursor="pointer"
+              transform="translate(130, 0)"
+              onClick={() => setShowFemale(!showFemale)}
+              opacity={showFemale ? 1 : 0.4}
+            >
+              <rect
+                x={0}
+                y={-10}
+                width={14}
+                height={14}
+                fill="#cbd5e1"
+                stroke="#94a3b8"
+                strokeWidth={1}
+                rx={2}
+              />
+              <text
+                x={22}
+                y={2}
+                fill="#475569"
+                fontSize="12.5"
+                fontWeight="700"
+              >
+                ■ Female
+              </text>
+            </g>
+          </g>
+        </svg>
       </div>
 
-      {/* Deep-Dive Analytical Hotspot Cards */}
+      {/* Active Demographic Deep-Dive Card */}
       {showDeepDiveCard && (
         <div
           style={{
+            background: "#ffffff",
+            border: "1.5px solid var(--border-subtle, #e2e8f0)",
+            borderRadius: "16px",
+            padding: "16px 20px",
+            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.03)",
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "12px"
+            gap: "16px",
+            alignItems: "center"
           }}
         >
-          {AUDIENCE_HOTSPOTS.map((hotspot) => {
-            const isSelected = selectedHotspotId === hotspot.id;
-            return (
-              <div
-                key={hotspot.id}
-                onClick={() => {
-                  setSelectedHotspotId(hotspot.id);
-                  handlePhaseChange(hotspot.zone as DiagramViewMode);
-                }}
+          {/* Left Column: Stat Summary */}
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+              <span
                 style={{
-                  background: isSelected ? "#f8fafc" : "#ffffff",
-                  border: isSelected ? "2px solid var(--slate-900)" : "1.5px solid var(--border-subtle)",
-                  borderRadius: "16px",
-                  padding: "16px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px",
-                  cursor: "pointer",
-                  transition: "all 0.15s ease",
-                  boxShadow: isSelected ? "var(--shadow-md)" : "var(--shadow-sm)"
+                  background: "#0f172a",
+                  color: "#ffffff",
+                  fontSize: "0.72rem",
+                  fontWeight: 800,
+                  padding: "3px 8px",
+                  borderRadius: "6px"
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span
-                    className="apple-badge neutral"
-                    style={{
-                      fontSize: "0.72rem",
-                      background:
-                        hotspot.zone === "morning"
-                          ? "#fee2e2"
-                          : hotspot.zone === "midday"
-                          ? "#fef3c7"
-                          : hotspot.zone === "evening"
-                          ? "#dbeafe"
-                          : "#f1f5f9",
-                      color:
-                        hotspot.zone === "morning"
-                          ? "#991b1b"
-                          : hotspot.zone === "midday"
-                          ? "#92400e"
-                          : hotspot.zone === "evening"
-                          ? "#1e40af"
-                          : "#475569",
-                      fontWeight: 800
-                    }}
-                  >
-                    {hotspot.timeRange}
-                  </span>
-                  <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--slate-500)" }}>
-                    {hotspot.zone.toUpperCase()}
-                  </span>
-                </div>
+                COHORT: {activeCohort.ageGroup}
+              </span>
+              {activeCohort.higherGender === "male" ? (
+                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#dc2626" }}>
+                  Male Dominance (+{Math.abs(activeCohort.genderGap)}%)
+                </span>
+              ) : activeCohort.genderGap > 5 ? (
+                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#2563eb" }}>
+                  Female Dominance (+{activeCohort.genderGap}%)
+                </span>
+              ) : (
+                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#16a34a" }}>
+                  Near Convergence (Gap: {activeCohort.genderGap}%)
+                </span>
+              )}
+            </div>
 
-                <h4 style={{ fontSize: "0.98rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  {hotspot.title}
-                </h4>
-
-                <p style={{ fontSize: "0.82rem", color: "var(--slate-600)", lineHeight: 1.45, margin: 0 }}>
-                  {hotspot.contrastKey}
-                </p>
-
-                <div
+            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginTop: "8px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                <span
                   style={{
-                    background: "#ffffff",
-                    border: "1px solid var(--border-subtle)",
-                    borderRadius: "10px",
-                    padding: "8px 10px",
-                    fontSize: "0.8rem",
-                    color: "var(--slate-700)",
-                    fontStyle: "italic",
-                    marginTop: "4px"
+                    width: "12px",
+                    height: "12px",
+                    background: "#0f172a",
+                    borderRadius: "3px",
+                    display: "inline-block"
                   }}
-                >
-                  {hotspot.band9Sentence}
-                </div>
+                />
+                <span style={{ fontSize: "0.85rem", color: "#64748b" }}>Men:</span>
+                <strong style={{ fontSize: "1.15rem", color: "#0f172a" }}>
+                  {activeCohort.male}%
+                </strong>
               </div>
-            );
-          })}
+
+              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                <span
+                  style={{
+                    width: "12px",
+                    height: "12px",
+                    background: "#cbd5e1",
+                    border: "1px solid #94a3b8",
+                    borderRadius: "3px",
+                    display: "inline-block"
+                  }}
+                />
+                <span style={{ fontSize: "0.85rem", color: "#64748b" }}>Women:</span>
+                <strong style={{ fontSize: "1.15rem", color: "#334155" }}>
+                  {activeCohort.female}%
+                </strong>
+              </div>
+
+              <div style={{ fontSize: "0.82rem", color: "#64748b", borderLeft: "1px solid #e2e8f0", paddingLeft: "12px" }}>
+                Difference:{" "}
+                <strong style={{ color: "#0f172a" }}>
+                  {Math.abs(activeCohort.genderGap).toFixed(1)} percentage points
+                </strong>
+              </div>
+            </div>
+
+            {activeCohort.annotation && (
+              <p style={{ fontSize: "0.82rem", color: "#475569", margin: "6px 0 0 0" }}>
+                {activeCohort.annotation}
+              </p>
+            )}
+          </div>
+
+          {/* Right Column: Band 9 Academic Sentence Formulation */}
+          <div
+            style={{
+              background: "#f8fafc",
+              border: "1px solid #e2e8f0",
+              borderRadius: "12px",
+              padding: "12px 14px",
+              fontSize: "0.84rem",
+              lineHeight: 1.5,
+              color: "#334155"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+              <Sparkles size={14} color="#2563eb" />
+              <strong style={{ color: "#0f172a", fontSize: "0.82rem" }}>
+                Band 9 Analytical Sentence:
+              </strong>
+            </div>
+            {activeHotspot ? (
+              <em>{activeHotspot.band9Sentence}</em>
+            ) : (
+              <em>
+                “In the {activeCohort.ageGroup} bracket, {activeCohort.higherGender === "male" ? "men" : "women"} registered a participation rate of {activeCohort.higherGender === "male" ? activeCohort.male : activeCohort.female}%, exceeding their counterparts by {Math.abs(activeCohort.genderGap)} percentage points.”
+              </em>
+            )}
+          </div>
         </div>
       )}
     </div>
