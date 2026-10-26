@@ -5,6 +5,7 @@ import type {
   EvaluationArgument,
   FacultyAngle,
   FluidVocabItem,
+  PowerExpression,
   StrategicLinkerGroup,
   Task2Data,
   VocabItem
@@ -17,561 +18,465 @@ export type {
   EvaluationArgument,
   FacultyAngle,
   FluidVocabItem,
+  PowerExpression,
   StrategicLinkerGroup,
   Task2Data,
   VocabItem
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "identity-theft-causes-effects-task2",
+  id: "history-relevance-discussion-task2",
 
-  taskType: "Causes and Effects (Direct Two-Part Question)",
+  taskType: "Discussion with Opinion (Discuss Both Views & Give Opinion)",
 
-  title: "IELTS Writing Task 2 — Causes and Effects of Identity Theft",
+  title: "IELTS Writing Task 2 — The Relevance of History in Understanding the Present",
 
   questionText:
-    "In many countries, a financial crime involving identity theft is increasing.\n\nWhat are the causes of it and what effects does identity theft have on the victims involved?",
+    "Some people believe that history has little to teach us about today, while others think that the study of the past helps us to understand the present.\n\nDiscuss both the views and give your opinion.",
 
   audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
 
   timingSeconds: 180,
 
-  recommendedPosition: "Direct Dual Response: Technological vulnerabilities & corporate data breaches drive the crime; victims face financial ruin and acute psychological trauma.",
+  recommendedPosition:
+    "Balanced View: While modern demographic scale and novel technology create blindspots for historical archives, physical path dependency and cyclical human psychology make studying the past indispensable.",
 
   strongestArgument:
-    "The strongest argument is that the exponential proliferation of online banking and e-commerce, combined with corporate data leaks, allows organized cybercrime syndicates to harvest confidential records, leaving victims facing wiped-out savings, destroyed credit ratings, and grueling psychological trauma.",
+    "The strongest argument is that while modern cities and technologies operate on an unprecedented scale, our physical infrastructure (such as Roman roads), financial psychology (speculative manias like Tulip Mania), and public health responses (1918 flu quarantines) are direct continuations of historical patterns.",
 
   // 1. Sample introduction planning points
   introPlanningPoints: [
-    "Paraphrase: The rapid international escalation of fraudulent activities centered around identity theft.",
-    "Outline Causes: Widespread digitisation of financial transactions and large-scale corporate data breaches.",
-    "Outline Effects: Catastrophic monetary liabilities and profound, long-term psychological and bureaucratic distress for victims."
+    "Paraphrase: Divergent views on whether historical archives offer practical guidance for modern society.",
+    "Outline View 1: Survivorship bias in historical texts and the trap of preparing for past crises.",
+    "Outline View 2 & Opinion: Physical path dependency, cyclical market psychology, and pandemic protocols proving the past remains vital."
   ],
 
   sampleIntro:
-    "In contemporary society, fraudulent activities centered around identity theft are experiencing an alarming surge across numerous nations. This modern financial crime is primarily driven by the ubiquity of vulnerable online financial transactions and rampant corporate data breaches, and it inflicts catastrophic monetary losses alongside profound psychological trauma on the individuals affected.",
+    "While some individuals argue that historical records provide little practical guidance in our fast-evolving modern world, others maintain that analyzing the past is essential for comprehending contemporary reality. In my opinion, although rapid urban and technological changes present unprecedented challenges, studying historical human psychology and institutional foundations remains indispensable for sound decision-making.",
 
   // 2. Sample conclusion planning points
   conclusionPlanningPoints: [
-    "Summary of Causes: Cashless, hyper-connected digital economies and organized illicit cybercrime syndicates.",
-    "Summary of Effects: Severe economic destitution, ruined credit histories, and chronic emotional anguish.",
-    "Final Takeaway: Robust systemic encryption and expedited victim restitution are urgently needed."
+    "Summary of View 1: Elitist bias in ancient records and the novel scale of modern megacities.",
+    "Summary of View 2: Physical infrastructure foundations, market mania psychology, and public health playbooks.",
+    "Final Opinion Restatement: History provides the indispensable blueprint to navigate recurring human patterns."
   ],
 
   sampleConclusion:
-    "In conclusion, the escalating incidence of identity theft stems principally from the vulnerabilities inherent in a cashless, hyper-connected digital economy and the proliferation of illicit hacking syndicates. The fallout for victims is both acute and enduring, encompassing catastrophic financial hardship and severe emotional distress that often requires years of painstaking effort to resolve.",
+    "In conclusion, although the elitist bias of historical archives and the novel scale of modern society lead some to dismiss the past, history remains an indispensable guide. Understanding the physical foundations of our cities and the cyclical nature of human psychology is essential for interpreting the present and making defensible decisions.",
 
-  // Five-Minute Planning Map & Teaching Recommendation
+  // Five-Minute Planning Map — Strictly showing points for View 1 and View 2 (ONE-LINERS ONLY)
   fiveMinutePlanningMap: {
     positive: [
-      "Digital banking convenience → routine storage of passwords and credentials on interconnected servers",
-      "Corporate database vulnerabilities → mass leaks of national insurance numbers and passwords",
-      "Sophisticated cybercrime tools → automated phishing, malware, and credential stuffing"
+      "Survivorship Bias in Records: History was written only by victorious kings, ignoring how ordinary people survived crises.",
+      "The 'Fighting the Last War' Trap: Fixating on past historical disasters blinds leaders to completely new, unexpected threats.",
+      "Radical Megacity Scale: Ancient small-town direct democracies cannot manage modern twenty-million-person megacities.",
+      "Fragile Global Supply Chains: Ancient localized kingdoms offer zero playbook for hyper-synchronized international supply shocks."
     ],
     negative: [
-      "Total asset depletion → drained savings accounts and fraudulent credit lines opened in victim's name",
-      "Decimated credit rating → inability to secure housing mortgages, vehicle loans, or employment",
-      "Acute psychological distress → paranoia, insomnia, and an exhausting multi-year bureaucratic struggle"
+      "Physical Path Dependency: Modern highways and city centers are built directly on ancient Roman and medieval roads.",
+      "Speculative Market Manias: Modern cryptocurrency and stock crashes follow the exact psychological stages of the 1637 Dutch Tulip Mania.",
+      "Pandemic Containment Playbooks: Modern quarantine protocols, contact tracing, and mask rules were copied directly from the 1918 Spanish Flu.",
+      "Diplomatic Peace Pacts: Centuries-old international treaties (like the 1815 Treaty of Paris) still sustain modern Swiss neutrality."
     ],
-    position: "Balanced Cause & Effect Structure",
-    body1: "Body 1 (Causes): Ubiquitous digital transactions, corporate database breaches, and sophisticated cybercrime syndicates",
-    body2: "Body 2 (Effects): Financial ruin, damaged credit ratings, chronic psychological trauma, and bureaucratic paralysis",
+    position: "5-Paragraph Discussion with Opinion Structure",
+    body1: "Body 1 (1st View): Survivorship bias in records, fighting the last war, megacity scale, and fragile supply chains.",
+    body2: "Body 2 (2nd View): Physical Roman road foundations, Tulip Mania market psychology, 1918 flu playbooks, and peace pacts.",
     teachingRecommendation:
-      "Instruct students to follow the exact format: Cause 1 + Effect 1 + Example for both body paragraphs. Dedicate Body 1 to dissecting root technological and systemic causes (digital dependency and data breaches), and Body 2 to analyzing the dual material and psychological devastation endured by victims. Avoid simple lists; fully unpack causal links."
+      "Instruct students to follow the exact 5-paragraph structure: Intro (Paraphrase + Opinion), Body 1 (Ideas for 1st View), Body 2 (Ideas for 2nd View), Body 3 (Ideas for Opinion), Conclusion (Sum-up main points + Restate opinion). Use these fresh, easy-to-justify one-liners!"
   },
 
   // Strongest Classroom Discussion Question
   classroomDiscussion: {
     question:
-      "Why has identity theft become far more lucrative and difficult to prosecute than traditional physical bank robbery?",
+      "Why do modern highway maps across Europe still follow roads paved by Roman soldiers two thousand years ago?",
     followUps: [
-      "Whose responsibility is it when personal records are exfiltrated: the individual consumer or the corporation hosting the database?",
-      "Can financial reimbursement from banks truly compensate for the psychological agony and ruined credit history of a victim?",
-      "How does the borderless nature of the internet shield cybercrime syndicates from national law enforcement?"
+      "Did the public panic during COVID-19 reveal that human nature in a pandemic hasn't changed since 1918?",
+      "Why did building the giant Maginot Line wall fail to protect France in World War II?",
+      "Can studying the 1637 Dutch Tulip Mania help regular investors avoid losing money in modern cryptocurrency bubbles?"
     ],
     pedagogicalInsight:
-      "These questions guide students to understand that identity theft is an asymmetric, borderless crime where the attacker risks little while the victim suffers comprehensive existential and financial disruption."
+      "These concrete questions instantly prove to students that history is not an abstract subject in old textbooks—it is physically under our car tires and psychologically behind our financial decisions today."
   },
 
-  // 3. Student Idea Bank & Body Paragraph Formats (Strict Format: Cause 1 + Effect 1 + Example)
+  // 3. Student Idea Bank — Strictly Points for View 1 (Body 1) and View 2 (Body 2) in ONE-LINERS
   bodyParagraphs: [
     {
       paraNumber: 1,
       side: "strong_opinion",
-      title: "Body Para 1 (Causes) — Technological Vulnerabilities & Cybercrime Syndicates",
-      theme: "Digital Dependency, Corporate Data Breaches & Organized Cybercrime",
+      title: "Body Para 1 (1st View) — Why History Fails to Guide Modern Society",
+      theme: "Survivorship Bias, Strategic Blindspots & Unprecedented Scale",
       mainReason:
-        "Foremost among the drivers of escalating identity theft is the rapid digitisation of financial transactions combined with the increasing sophistication of international cybercrime syndicates.",
+        "Historical records were written only by ruling elites and victors, offering zero advice for common people's problems.",
       supportingReasons:
-        "In an era where online banking, digital wallets, and e-commerce have become ubiquitous, individuals routinely input sensitive personal details—such as bank account numbers, passwords, and government identification—onto interconnected servers. Concurrently, organized criminal networks exploit technical vulnerabilities through advanced phishing campaigns, spyware, and large-scale corporate data breaches to harvest confidential credentials.",
+        "Preparing for past crises blinds modern leaders to novel threats, just as small ancient town rules fail in modern megacities.",
       example:
-        "For example, prominent cyber-attacks against major credit bureaus and consumer retail databases have exposed the personal records of millions of individuals, enabling perpetrators to trade these credentials illicitly on dark web marketplaces.",
+        "France built the static Maginot Line wall to prevent another trench war, but modern tanks easily bypassed it in days.",
       band9Snippet:
-        "“Foremost among the drivers of escalating identity theft is the rapid digitisation of financial transactions combined with the increasing sophistication of international cybercrime syndicates.”",
+        "“On the one hand, proponents argue that historical archives suffer from profound survivorship bias and prepare policymakers for yesterday's battles rather than today's reality.”",
       alternativeReasons: [
         {
           id: "body1-alt1",
-          badge: "Cause 1 • Digital Banking Proliferation",
-          title: "Ubiquitous E-Commerce & Interconnected Cloud Portals",
+          badge: "View 1 • Point 1: Survivorship Bias",
+          title: "Survivorship Bias & Elitist Historical Records",
           mainReason:
-            "The shift toward a cashless society forces citizens to entrust sensitive financial data to dozens of online commerce and banking platforms.",
+            "History was recorded exclusively by victorious kings and elites, ignoring how ordinary citizens survived daily crises.",
           supportingReasons:
-            "Every commercial interaction requires transmitting credit card information, dates of birth, and home addresses across web servers. The sheer volume of transactions dramatically increases the surface area for data interception, leaving individuals vulnerable to automated man-in-the-middle attacks.",
+            "Ancient chronicles glorify royal conquests and palace intrigues rather than the economic struggles of common laborers.",
           example:
-            "Consumers shopping on unverified mobile applications frequently have their payment details skimmed and cloned by fraudulent mirror websites.",
+            "Ancient texts celebrate emperor military triumphs, but record virtually nothing about how working-class families coped with famine.",
           band9Snippet:
-            "“The exponential expansion of digital commerce has multiplied the access points through which malicious actors can intercept confidential payment credentials.”",
+            "“Historical archives suffer from profound survivorship bias, having been authored almost exclusively by ruling elites to chronicle military triumphs rather than the lived realities of ordinary citizens.”",
           modelParagraph:
-            "Foremost among the drivers of escalating identity theft is the rapid digitisation of commerce and banking. In contemporary economies, cash has been largely supplanted by electronic transactions, requiring consumers to register their banking details, passwords, and home addresses across countless commercial websites. This constant digital footprint vastly multiplies the potential vulnerabilities that hackers can exploit. Unsecured payment gateways and fraudulent mirror websites routinely capture credit card numbers and personal data without the consumer's knowledge. For example, shoppers using unverified mobile applications or public Wi-Fi networks frequently fall prey to packet-sniffing software that harvests their banking credentials in real time.",
+            "On the one hand, proponents argue that historical lessons are inherently flawed because the historical archive suffers from profound survivorship bias. Throughout antiquity, documentation was written almost exclusively by the victorious ruling elite, monks, and monarchical scribes. Consequently, history predominantly chronicles royal palace intrigues and imperial battlefield conquests, while entirely ignoring the socioeconomic realities and survival strategies of ordinary working-class citizens. For instance, ancient Greek and Roman chronicles offer detailed accounts of military generals, but record virtually nothing regarding how common artisans and laborers navigated localized economic depressions.",
           examinerNotes:
-            "Exemplary Band 9 development focusing on the structural transition to digital commerce."
+            "A brilliant, original argument exposing the structural incompleteness of historical evidence."
         },
         {
           id: "body1-alt2",
-          badge: "Cause 2 • Corporate & Institutional Breaches",
-          title: "Institutional Data Leaks & Dark Web Marketplaces",
+          badge: "View 1 • Point 2: The 'Last War' Trap",
+          title: "The Past-Crisis Blindspot ('Fighting the Last War')",
           mainReason:
-            "Corporations, healthcare providers, and government agencies collect vast troves of personal data but frequently fail to implement adequate cybersecurity defenses.",
+            "Fixating on past historical disasters blinds modern leaders to completely new, unexpected forms of crisis.",
           supportingReasons:
-            "When security safeguards are breached, confidential identity dossiers containing social security numbers, biometric data, and tax records are exfiltrated en masse. These stolen databases are then aggregated and auctioned off on dark web forums for nominal sums, equipping low-level criminals with turnkey identity kits.",
+            "Applying yesterday's defensive solutions creates a false sense of security against novel technological threats.",
           example:
-            "The monumental breaches of major credit rating agencies like Equifax exposed the confidential financial dossiers of over 140 million citizens, creating a permanent reservoir of stolen identities.",
+            "France built the massive static Maginot Line wall to prevent another WWI trench war, only for modern tanks and planes to bypass it in days.",
           band9Snippet:
-            "“Catastrophic institutional data breaches exfiltrate vast troves of sensitive citizen dossiers directly into the illicit hands of dark web syndicates.”",
+            "“Overreliance on historical precedent frequently induces the dangerous fallacy of 'fighting the last war,' leaving institutions fatally blind to novel, asymmetric threats.”",
           modelParagraph:
-            "Equally critical is the vulnerability of large corporate and governmental databases that warehouse vast reservoirs of citizen information. Corporations and financial institutions accumulate enormous quantities of sensitive customer records—including national insurance numbers, birth dates, and credit histories—yet frequently deploy outdated encryption safeguards. When these central repositories suffer cyber-attacks, millions of comprehensive identity dossiers are exfiltrated in a single incident. For instance, the infamous Equifax breach compromised the sensitive data of nearly 150 million consumers, allowing cybercriminals to auction complete identity profiles on underground digital marketplaces.",
+            "Furthermore, an overreliance on historical precedent often traps policymakers in the dangerous psychological fallacy of 'fighting the last war.' When leaders uncritically apply solutions from previous crises, they construct rigid defenses that leave them fatally vulnerable to unprecedented modern threats. A salient military illustration is the French construction of the Maginot Line following World War I; having studied the trench warfare of the previous conflict, planners built an impenetrable concrete barrier, only for modern mechanized divisions and aircraft to easily bypass it within days.",
           examinerNotes:
-            "Directly addresses systemic and institutional vulnerabilities."
+            "Compelling historical proof showing how excessive historical focus creates modern strategic blindspots."
         },
         {
           id: "body1-alt3",
-          badge: "Cause 3 • Advanced Phishing & Social Engineering",
-          title: "Sophisticated Social Engineering & Impersonation Tactics",
+          badge: "View 1 • Point 3: Radical Demographic Scale",
+          title: "Radical Demographic Scale & Megacity Realities",
           mainReason:
-            "Cybercrime organizations employ deceptive social engineering schemes that manipulate human trust and psychological urgency.",
+            "Ancient agrarian governance was designed for tiny populations and cannot manage modern twenty-million-person megacities.",
           supportingReasons:
-            "Phishing emails, spoofed bank SMS alerts, and AI-generated voice cloning trick unsuspecting victims into willingly disclosing their two-factor authentication codes and confidential pins. Because these schemes mimic legitimate banking communications flawlessly, even digitally literate individuals are deceived.",
+            "Administrative mechanisms that succeeded in homogeneous ancient city-states fail completely in complex, hyper-dense global metropolises.",
           example:
-            "Fraudulent messages masquerading as urgent alerts from national tax authorities or delivery couriers persuade victims to input login credentials on fraudulent authentication portals.",
+            "Ancient Athenian direct democracy required citizens to physically gather in a town square, a model mathematically impossible in modern multi-million nations.",
           band9Snippet:
-            "“Deceptive phishing campaigns and psychological social engineering exploit human trust to coerce victims into surrendering multi-factor credentials.”",
+            "“The unprecedented demographic scale of contemporary megacities renders the administrative frameworks of small, ancient city-states mathematically and practically unworkable.”",
           modelParagraph:
-            "Furthermore, identity theft is intensified by the growing sophistication of social engineering and deceptive phishing campaigns. Modern cybercriminals no longer rely solely on brute-force hacking; they deploy highly convincing fraudulent communications that impersonate tax authorities, postal services, or banking fraud departments. By creating a false sense of panic or regulatory urgency, these schemes manipulate victims into surrendering two-factor authentication codes and private verification passwords. For example, spear-phishing messages designed to mimic urgent security alerts from national commercial banks frequently lead unsuspecting customers to counterfeit login portals where their credentials are instantly compromised.",
+            "Additionally, the sheer demographic scale of contemporary society invalidates ancient administrative models. Ancient classical civilizations operated on minuscule population scales compared to today's twenty-million-person urban conurbations. For example, ancient Athenian direct democracy functioned only because a few thousand citizens could assemble in a single town square to vote on municipal policies. Attempting to derive modern civic administration from such small-scale historical models is mathematically unworkable in an era of sprawling, multicultural megacities managing complex automated transit and sanitation systems.",
           examinerNotes:
-            "Explores human-centered vulnerabilities and psychological manipulation."
+            "Sharp, intuitive contrast highlighting the immense population and urban scale divergence."
         },
         {
           id: "body1-alt4",
-          badge: "Cause 4 • Inadequate Legislation & Cross-Border Impunity",
-          title: "Jurisdictional Gaps & Anonymized Crypto Laundering",
+          badge: "View 1 • Point 4: Global Supply Chains",
+          title: "Hyper-Fragile Global Supply Chain Networks",
           mainReason:
-            "The borderless architecture of the internet allows international criminal syndicates to operate outside the jurisdiction of local law enforcement.",
+            "Ancient economies were localized and self-contained, whereas today a single foreign disruption paralyzes global survival.",
           supportingReasons:
-            "Perpetrators operating in rogue jurisdictions can weaponize stolen identities across foreign banking systems without fear of extradition. Coupled with cryptocurrency and digital mixers, stolen funds are laundered instantaneously, creating near-zero legal risk for perpetrators.",
+            "Historical isolationist doctrines offer no playbook for managing just-in-time international food, energy, and semiconductor networks.",
           example:
-            "Transnational crime syndicates based in regions with weak cyber regulations systematically target Western bank accounts, knowing local police lack international subpoena powers.",
+            "A single container ship stuck in the Suez Canal halted ten billion dollars in global daily trade, an economic shock unknown in ancient history.",
           band9Snippet:
-            "“The jurisdictional fragmentation of international law enables cybercriminals to harvest identities abroad with near-total judicial impunity.”",
+            "“Unlike ancient self-sufficient agrarian fiefdoms, contemporary civilization depends on hyper-synchronized global supply chains that have no historical equivalent.”",
           modelParagraph:
-            "Additionally, the legal framework governing international cybercrime remains hopelessly fragmented, granting foreign syndicates near-total impunity. Because the internet is inherently borderless, criminal organizations can orchestrate identity theft campaigns from countries that maintain weak cyber regulations and refuse to cooperate with foreign law enforcement. When criminals exploit stolen identities to take out loans or drain accounts, the illicit proceeds are rapidly converted into untraceable cryptocurrencies. Consequently, local police departments lack the jurisdictional reach and forensic resources to apprehend overseas offenders, creating a low-risk, high-reward environment for perpetrators.",
+            "Finally, contemporary economic vulnerability is rooted in hyper-connected global supply networks that have no historical parallel. Ancient civilizations operated as largely localized, self-contained agrarian economies where supply disruptions were geographically confined. In contrast, modern nations rely on fragile, just-in-time international supply chains for food, energy, and microchips. For instance, when a single container vessel ran aground in the Suez Canal in 2021, it paralyzed nearly ten billion dollars in global trade daily—an interconnected systemic shock that historical economic models offer zero guidance to resolve.",
           examinerNotes:
-            "Provides an advanced geopolitical and legal perspective on the cause."
+            "Fresh, highly modern real-world evidence demonstrating supply chain vulnerability."
         }
       ]
     },
     {
       paraNumber: 2,
-      side: "strong_opinion",
-      title: "Body Para 2 (Effects) — Financial Ruin & Psychological Trauma",
-      theme: "Asset Depletion, Credit Decimation & Severe Bureaucratic Trauma",
+      side: "non_opinion",
+      title: "Body Para 2 (2nd View) — How the Past Silently Shapes the Present",
+      theme: "Physical Path Dependency, Cyclical Psychology & Epidemiological Playbooks",
       mainReason:
-        "The repercussions of identity theft on victims are both financially catastrophic and psychologically devastating.",
+        "Modern infrastructure, speculative financial psychology, and public health playbooks are direct continuations of history.",
       supportingReasons:
-        "From an economic standpoint, criminals exploit compromised information to drain savings, max out credit cards, and obtain illicit loans, which obliterates the victim’s credit rating and disqualifies them from securing essential services such as mortgages or business financing. Rectifying these fraudulent liabilities typically entails an exhausting, protracted bureaucratic struggle with banking institutions and law enforcement agencies to restore legal legitimacy. Beyond material loss, victims frequently endure acute emotional trauma; the persistent feeling of personal violation and the ceaseless fear of recurring fraud commonly trigger severe anxiety, insomnia, and pervasive distrust in digital systems.",
+        "European highways still follow Roman soldier roads, while human panic during modern crypto crashes and pandemics repeats past events.",
       example:
-        "For instance, many victims discover the fraud only when debt collectors demand repayment for mortgages or loans taken in their name, leaving them legally culpable until proven innocent.",
+        "Modern quarantine and mask mandates during COVID-19 were copied directly from public health rules used during the 1918 Spanish Flu.",
       band9Snippet:
-        "“The fallout for victims encompasses not merely direct pecuniary losses, but also the total destruction of creditworthiness and severe, chronic psychological distress.”",
+        "“On the other hand, the study of the past is indispensable because modern physical infrastructure, financial speculation, and epidemiological responses are direct legacies of historical blueprints.”",
       alternativeReasons: [
         {
           id: "body2-alt1",
-          badge: "Effect 1 • Financial Ruin & Credit Decimation",
-          title: "Direct Asset Depletion & Paralyzing Credit Destruction",
+          badge: "View 2 • Point 1: Physical Infrastructure",
+          title: "Physical Path Dependency & Roman Road Networks",
           mainReason:
-            "Victims suffer the immediate draining of liquid assets followed by severe credit score destruction that paralyses their economic lives.",
+            "Modern highways, railway lines, and European city centers are built directly on ancient Roman and medieval foundations.",
           supportingReasons:
-            "Perpetrators take out massive personal loans, lease luxury vehicles, and rack up credit debts in the victim's name. When these go unpaid, the victim's credit profile is blacklisted, rendering them incapable of securing a home mortgage, renting an apartment, or even passing pre-employment background checks.",
+            "Contemporary traffic bottlenecks and urban growth patterns can only be understood by studying the routes ancient military engineers laid down.",
           example:
-            "Young professionals have had their credit scores obliterated overnight, causing approved bank mortgages to be rescinded and forcing them into sudden housing crises.",
+            "Major British and European highways (such as Watling Street in the UK) still follow the exact paved routes constructed by Roman soldiers two thousand years ago.",
           band9Snippet:
-            "“Compromised credit ratings effectively paralyze the victim’s economic trajectory, disqualifying them from housing mortgages and legitimate commercial loans.”",
+            "“Through the lens of path dependency, modern infrastructure remains physically anchored to ancient foundations, with contemporary European transit corridors directly tracing Roman military roads.”",
           modelParagraph:
-            "The primary consequence for victims is acute financial devastation and the total ruin of their creditworthiness. Once an identity is hijacked, perpetrators frequently empty checking accounts, establish fraudulent credit lines, and incur exorbitant loans in the victim’s name. When these fraudulent debts inevitably default, it is the innocent victim whose credit score is decimated. Consequently, victims find themselves blacklisted by credit reference agencies, leaving them entirely unable to secure home mortgages, obtain vehicle finance, or even rent an apartment. For example, many individuals only become aware of the crime when their mortgage applications are rejected or when debt collection agencies issue court summons for debts they never incurred.",
+            "On the other hand, advocates emphasize that contemporary society is physically anchored to historical foundations through the phenomenon of path dependency. Modern transport corridors, city layouts, and trade hubs did not emerge in a vacuum; they sit directly on top of ancient engineering decisions. For example, across the United Kingdom and continental Europe, major contemporary highways and freight corridors still follow the exact paved trajectories surveyed and constructed by Roman military engineers over two millennia ago. Understanding why modern cities experience specific logistical bottlenecks requires studying the historical urban footprints that dictate their expansion.",
           examinerNotes:
-            "Comprehensive breakdown of the tangible economic devastation."
+            "Fascinating, concrete physical proof that history literally lies under our modern roads."
         },
         {
           id: "body2-alt2",
-          badge: "Effect 2 • Protracted Bureaucratic Ordeal",
-          title: "Exhausting Bureaucratic & Legal Battles to Restore Identity",
+          badge: "View 2 • Point 2: Speculative Market Manias",
+          title: "The Psychology of Speculative Financial Bubbles",
           mainReason:
-            "Restoring a stolen identity requires months or years of agonizing bureaucratic disputes with banks, credit bureaus, and judicial bodies.",
+            "While financial technology changes, human greed and collective delusion during market crashes follow identical historical patterns.",
           supportingReasons:
-            "Victims are treated as guilty debtors until they can conclusively prove fraud. They must file hundreds of pages of police affidavits, hire legal counsel at great personal expense, and continually challenge erroneous credit agency entries across disparate institutions.",
+            "Studying how public hysteria inflates speculative assets helps modern investors and regulators recognize irrational market bubbles before they burst.",
           example:
-            "Victims often spend hundreds of hours submitting forensic notarized declarations to multiple credit bureaus, frequently having to repeat the process when bureaus misfile paperwork.",
+            "The rapid rise and catastrophic collapse of speculative cryptocurrency schemes mirrored the exact stages of the 1637 Dutch Tulip Mania.",
           band9Snippet:
-            "“Victims are thrust into an exhausting bureaucratic labyrinth, burdened with proving their innocence against automated banking and judicial machinery.”",
+            "“While financial instruments evolve, the collective psychology of speculative greed remains immutable, with modern digital asset collapses mirroring the classic anatomy of seventeenth-century Dutch Tulip Mania.”",
           modelParagraph:
-            "Beyond monetary losses, victims are subjected to an exhausting and protracted bureaucratic ordeal to reclaim their legal identity. Financial institutions and credit reporting agencies routinely operate under the presumption that account holders are responsible for unpaid debts until conclusive proof of fraud is established. As a result, victims must spend hundreds of hours filing police reports, submitting sworn affidavits, and disputing fraudulent entries with uncooperative corporate bureaucracies. This grueling process frequently spans several years and requires hiring expensive legal counsel, forcing victims to expend substantial personal savings merely to clear their name.",
+            "Equally compelling is the realization that human financial psychology follows cyclical patterns that history documents with remarkable precision. While financial technology has progressed from physical ledgers to decentralized digital algorithms, the underlying human vices of irrational exuberance and panic remain identical. A salient illustration is observed in modern cryptocurrency and meme-stock crashes, which unfolded through the exact psychological stages of speculative mania and sudden collapse first recorded during the Dutch Tulip Mania of 1637. By analyzing historical asset bubbles, economists can identify the warning signs of market irrationality before widespread economic devastation ensues.",
           examinerNotes:
-            "Highlights the systemic administrative burden placed on innocent victims."
+            "Brilliant comparison between 1637 Tulip Mania and modern cryptocurrency crashes."
         },
         {
           id: "body2-alt3",
-          badge: "Effect 3 • Severe Psychological Anguish & Paranoia",
-          title: "Chronic Anxiety, Violation of Privacy & Digital Paranoia",
+          badge: "View 2 • Point 3: Pandemic Containment",
+          title: "Epidemiological Protocols & Human Compliance",
           mainReason:
-            "The psychological damage of having one’s personal identity violated is profound, enduring, and akin to a physical burglary.",
+            "Human behavioral reactions and containment strategies during deadly disease outbreaks repeat identically across centuries.",
           supportingReasons:
-            "Victims experience severe emotional upheaval, including chronic anxiety, panic disorders, feelings of vulnerability, and depression. Knowing that an unknown criminal possesses their home address, date of birth, and identity triggers pervasive paranoia, eroding their trust in digital technology and public institutions.",
+            "Modern epidemiologists successfully deployed border quarantines and mask policies because historical data proved they flatten infection curves.",
           example:
-            "Surveys of identity theft victims reveal that over 70% experience severe sleep deprivation, marital conflict, and long-lasting distrust of online communications.",
+            "Modern public health responses during COVID-19—such as isolation zones and social distancing—were directly derived from protocols refined during the 1918 Spanish Flu.",
           band9Snippet:
-            "“The psychological impact is profoundly debilitating, triggering acute feelings of personal violation, chronic sleep deprivation, and enduring digital paranoia.”",
+            "“In public health, contemporary epidemiological strategies—spanning quarantine mandates to contact tracing—derive directly from empirical protocols developed during the 1918 influenza pandemic.”",
           modelParagraph:
-            "Equally damaging is the profound psychological trauma and emotional distress that identity theft inflicts upon victims. Having one's intimate personal details weaponized by an anonymous criminal induces feelings of severe personal violation analogous to a home burglary. Victims frequently suffer from chronic insomnia, panic attacks, and severe clinical depression as they endure the constant dread of impending financial ruin. Moreover, this traumatic experience engenders an enduring sense of paranoia and cynicism toward modern digital technology. For example, psychological studies indicate that identity theft victims routinely suffer from post-traumatic stress and marital conflict stemming from the relentless strain of resolving fraudulent claims.",
+            "Furthermore, historical archives supply proven blueprints for managing acute global crises, particularly in public health. When novel epidemics emerge, human sociological responses—including initial denial, panic buying, and resistance to restrictions—mirror past behavioral patterns. During the recent COVID-19 pandemic, public health authorities did not invent containment protocols from scratch; they dusted off empirical non-pharmaceutical interventions, such as municipal quarantines, contact tracing, and mask mandates, that were rigorously refined during the 1918 Spanish Influenza pandemic. Without historical epidemiological data demonstrating that social distancing flattens mortality curves, modern response efforts would have been drastically delayed.",
           examinerNotes:
-            "Explores the mental health and emotional toll on individuals and families."
+            "Exceptionally relatable and justifiable evidence linking the 1918 flu to COVID-19 response measures."
         },
         {
           id: "body2-alt4",
-          badge: "Effect 4 • Wrongful Criminal Liability & Legal Peril",
-          title: "Wrongful Implication in Crimes & False Criminal Records",
+          badge: "View 2 • Point 4: Century-Old Peace Pacts",
+          title: "Diplomatic Neutrality & Century-Old Peace Pacts",
           mainReason:
-            "In severe instances of synthetic identity theft, criminals commit serious offenses under the victim's name, leaving them with wrongful criminal records.",
+            "Contemporary international diplomacy and border stability rely entirely on enduring peace treaties established centuries ago.",
           supportingReasons:
-            "Stolen identities are used to register getaway vehicles, launder illicit narcotics proceeds, or evade arrest warrants. When law enforcement investigates, the innocent victim faces erroneous arrest warrants, humiliating public detention, and wrongful criminal convictions.",
+            "Diplomats cannot maintain international peace accords without honoring the historical grievances and compromises that created them.",
           example:
-            "Innocent citizens have been detained at international border crossings or subjected to armed police raids because their stolen identification was tied to drug trafficking cartels.",
+            "Switzerland's renowned modern role as a neutral diplomatic mediator is the direct result of the 1815 Treaty of Paris signed after the Napoleonic Wars.",
           band9Snippet:
-            "“In extreme scenarios, victims suffer the ultimate indignity of wrongful criminal implication, facing unwarranted arrest warrants for offenses committed in their name.”",
+            "“Contemporary geopolitical stability is sustained by long-standing institutional pacts, exemplified by Swiss diplomatic neutrality rooted in the post-Napoleonic 1815 Treaty of Paris.”",
           modelParagraph:
-            "In the most egregious scenarios, identity theft can lead to wrongful criminal implication and severe legal peril. Sophisticated criminals frequently exploit stolen identity documents to purchase vehicles involved in illicit operations, facilitate money laundering schemes, or provide false identification during traffic stops. Consequently, innocent citizens suddenly find that outstanding arrest warrants have been issued in their name for crimes they never committed. For instance, there are numerous documented cases of blameless individuals being publicly detained at airport immigration checkpoints or subjected to police investigations because a criminal syndicate weaponized their identification to conduct transnational smuggling.",
+            "Finally, contemporary international law and diplomatic stability are direct outcomes of historical treaties that have endured for centuries. Peaceful coexistence among nations requires an understanding of the historical compromises that established modern borders and sovereign statuses. For instance, Switzerland's modern status as an unshakeable, neutral sanctuary for international peace talks is not an arbitrary modern policy, but the direct legacy of the 1815 Treaty of Paris following the Napoleonic Wars. Ignoring the historical foundations of such treaties would dismantle the fragile international consensus that maintains global diplomatic order.",
           examinerNotes:
-            "Captures the highest-severity consequence of identity impersonation."
+            "Elevated geopolitical insight illustrating the enduring validity of historic diplomatic treaties."
         }
       ]
     }
   ],
 
-  // 12 Band 9 Vocabulary Items for Academic Lexical Resource
+  // 4. Band 9 Academic Power Vocabulary (History & Modern Era)
   vocabList: [
     {
-      word: "identity theft / impersonation",
+      word: "path dependency",
       pos: "noun phrase",
-      meaning: "The deliberate acquisition and fraudulent utilization of another person's personal identification data for monetary gain.",
-      definition: "The deliberate acquisition and fraudulent utilization of another person's personal identification data for monetary gain.",
-      example: "Identity theft has emerged as one of the most lucrative and pervasive financial crimes of the twenty-first century.",
-      band: 9,
-      naturalCollocation: "rampant identity theft / fraudulent impersonation",
-      organicExample: "Rampant identity theft poses an existential threat to consumer confidence in electronic banking systems.",
-      mechanicalPitfall: "Avoid simplistic phrases like 'stealing someone's name'; use 'fraudulent impersonation' or 'unauthorized credential acquisition'."
+      meaning: "The tendency of past decisions and ancient layouts to constrain and dictate modern choices and routes.",
+      example: "Modern European railway and road networks exhibit profound path dependency, following ancient Roman routes."
     },
     {
-      word: "exfiltrate / exfiltration",
-      pos: "verb / noun",
-      meaning: "To illicitly copy, extract, or transfer confidential data from a protected network or database.",
-      definition: "To illicitly copy, extract, or transfer confidential data from a protected network or database.",
-      example: "Hackers managed to exfiltrate the banking records and social security numbers of over two million citizens.",
-      band: 9,
-      naturalCollocation: "exfiltrate sensitive credentials / massive data exfiltration",
-      organicExample: "The massive exfiltration of consumer records left millions vulnerable to financial fraud.",
-      mechanicalPitfall: "Do not confuse with simply 'stealing'; exfiltration specifically refers to unauthorized digital data extraction."
-    },
-    {
-      word: "data breach",
-      pos: "collocation / noun phrase",
-      meaning: "A security incident in which sensitive, confidential, or protected data is accessed, copied, or transmitted by an unauthorized party.",
-      definition: "A security incident in which sensitive, confidential, or protected data is accessed, copied, or transmitted by an unauthorized party.",
-      example: "The catastrophic data breach compromised the personal dossiers of millions of prospective homebuyers.",
-      band: 8,
-      naturalCollocation: "suffer a catastrophic data breach / widespread breach",
-      organicExample: "Corporations that suffer recurring data breaches should be held strictly accountable under criminal law.",
-      mechanicalPitfall: "Avoid 'data hacking'; 'corporate data breach' is the recognized standard academic collocation."
-    },
-    {
-      word: "phishing campaign",
-      pos: "collocation / noun phrase",
-      meaning: "A fraudulent operation where cybercriminals masquerade as legitimate institutions to trick individuals into disclosing confidential credentials.",
-      definition: "A fraudulent operation where cybercriminals masquerade as legitimate institutions to trick individuals into disclosing confidential credentials.",
-      example: "Sophisticated phishing campaigns target elderly banking customers with counterfeit urgent security warnings.",
-      band: 8,
-      naturalCollocation: "deceptive phishing campaign / spear-phishing attack",
-      organicExample: "Deceptive phishing campaigns frequently coerce victims into surrendering two-factor authentication codes.",
-      mechanicalPitfall: "Do not write 'fake emails'; use 'deceptive phishing communications' or 'spear-phishing campaigns'."
-    },
-    {
-      word: "decimate / decimation",
-      pos: "verb / noun",
-      meaning: "To severely damage, destroy, or drastically reduce the value or integrity of something.",
-      definition: "To severely damage, destroy, or drastically reduce the value or integrity of something.",
-      example: "Unpaid fraudulent loans decimated the victim's credit rating, preventing them from securing a home mortgage.",
-      band: 9,
-      naturalCollocation: "decimate creditworthiness / decimation of personal savings",
-      organicExample: "The unexpected decimation of their creditworthiness left the family legally disqualified from bank financing.",
-      mechanicalPitfall: "Reserve 'decimate' for dramatic, severe impacts rather than minor inconveniences."
-    },
-    {
-      word: "bureaucratic ordeal",
+      word: "survivorship bias",
       pos: "noun phrase",
-      meaning: "An intensely stressful, complicated, and prolonged administrative struggle involving institutions and paperwork.",
-      definition: "An intensely stressful, complicated, and prolonged administrative struggle involving institutions and paperwork.",
-      example: "Restoring one's legal identity requires navigating an agonizing bureaucratic ordeal with uncooperative banking entities.",
-      band: 9,
-      naturalCollocation: "protracted bureaucratic ordeal / grueling ordeal",
-      organicExample: "Victims are thrust into an exhausting bureaucratic ordeal that frequently spans several stressful years.",
-      mechanicalPitfall: "Avoid 'lots of office work'; 'protracted bureaucratic ordeal' carries high examiner weight."
+      meaning: "A logical error focusing only on successful or surviving records while ignoring hidden or forgotten failures.",
+      example: "Historical archives suffer from survivorship bias because ancient scribes only preserved the triumphs of victorious kings."
     },
     {
-      word: "siphon / drain funds",
-      pos: "verb phrase",
-      meaning: "To systematically and illicitly remove or empty money from an account or financial repository.",
-      definition: "To systematically and illicitly remove or empty money from an account or financial repository.",
-      example: "Using stolen authentication tokens, the fraudsters siphoned life savings from dozens of pension accounts.",
-      band: 9,
-      naturalCollocation: "siphon liquid assets / systematically drain savings",
-      organicExample: "Perpetrators systematically siphoned funds through a labyrinth of foreign cryptocurrency exchanges.",
-      mechanicalPitfall: "Prefer 'siphon liquid assets' over 'take all the money'."
-    },
-    {
-      word: "dark web marketplace",
-      pos: "collocation / noun phrase",
-      meaning: "Encrypted, anonymized online commercial portals where illicit contraband, including stolen identification data, is traded.",
-      definition: "Encrypted, anonymized online commercial portals where illicit contraband, including stolen identification data, is traded.",
-      example: "Stolen medical dossiers and passport scans are actively bought and sold on illicit dark web marketplaces.",
-      band: 8,
-      naturalCollocation: "illicit dark web marketplace / underground digital forum",
-      organicExample: "Compromised credit card numbers are auctioned on dark web marketplaces for fractions of a dollar.",
-      mechanicalPitfall: "Always use 'dark web' as a technical term, not 'secret internet'."
-    },
-    {
-      word: "psychological trauma / acute distress",
+      word: "speculative mania",
       pos: "noun phrase",
-      meaning: "Severe, lasting mental and emotional suffering triggered by a deeply disturbing or violating experience.",
-      definition: "Severe, lasting mental and emotional suffering triggered by a deeply disturbing or violating experience.",
-      example: "Beyond financial ruin, the psychological trauma of knowing an unknown criminal controls your identity is immense.",
-      band: 9,
-      naturalCollocation: "endure psychological trauma / acute emotional distress",
-      organicExample: "The victim suffered acute psychological distress, manifested in chronic insomnia and constant panic attacks.",
-      mechanicalPitfall: "Saying 'they feel sad' is Band 5; 'they endure severe psychological trauma' is Band 9."
+      meaning: "An irrational period of collective financial greed where asset prices skyrocket far beyond their real value.",
+      example: "The sudden boom and bust of cryptocurrency mirrored the speculative mania of seventeenth-century Dutch tulips."
     },
     {
-      word: "ubiquitous / hyper-connected",
+      word: "epidemiological",
       pos: "adjective",
-      meaning: "Present, existing, or found everywhere; interconnected across continuous digital telecommunication networks.",
-      definition: "Present, existing, or found everywhere; interconnected across continuous digital telecommunication networks.",
-      example: "In a hyper-connected cashless society, ubiquitous digital transactions leave consumers inherently vulnerable.",
-      band: 9,
-      naturalCollocation: "ubiquitous digital banking / hyper-connected financial system",
-      organicExample: "The ubiquitous nature of internet-enabled devices provides cybercriminals with unprecedented points of entry.",
-      mechanicalPitfall: "Use 'ubiquitous' in place of simplistic 'very common' or 'everywhere'."
+      meaning: "Relating to the branch of medicine and science dealing with the incidence, distribution, and control of disease.",
+      example: "Modern epidemiological playbooks on quarantine and social distancing were adapted directly from the 1918 influenza records."
     },
     {
-      word: "rectify / expunge",
-      pos: "verb",
-      meaning: "To correct or restore to proper status; to completely eliminate or erase fraudulent judicial or credit records.",
-      definition: "To correct or restore to proper status; to completely eliminate or erase fraudulent judicial or credit records.",
-      example: "It took two years of rigorous litigation to expunge the fraudulent debts from the victim's official credit record.",
-      band: 9,
-      naturalCollocation: "expunge fraudulent records / rectify erroneous credit entries",
-      organicExample: "Victims must battle tirelessly to rectify erroneous defaults and expunge criminal warrants from police databases.",
-      mechanicalPitfall: "Avoid 'clean the record'; 'expunge fraudulent liabilities' demonstrates superior lexical sophistication."
-    },
-    {
-      word: "impunity",
+      word: "fallacy",
       pos: "noun",
-      meaning: "Exemption from punishment, arrest, or freedom from the injurious consequences of an action.",
-      definition: "Exemption from punishment, arrest, or freedom from the injurious consequences of an action.",
-      example: "Transnational cyber syndicates orchestrate digital fraud with near-total impunity from overseas havens.",
-      band: 9,
-      naturalCollocation: "operate with total impunity / international judicial impunity",
-      organicExample: "Because national jurisdictions cannot easily cross borders, hackers siphon funds with brazen impunity.",
-      mechanicalPitfall: "Use 'operate with impunity' rather than 'they don't get caught'."
+      meaning: "A mistaken belief or flawed reasoning, especially one based on unsound argument.",
+      example: "Preparing solely for past military battles commits the strategic fallacy of fighting the last war."
+    },
+    {
+      word: "conurbation",
+      pos: "noun",
+      meaning: "An extended urban area, typically consisting of several towns merging with the suburbs of one or more cities.",
+      example: "Managing a modern conurbation of twenty million citizens requires tools unknown to ancient village democracies."
+    },
+    {
+      word: "autarky",
+      pos: "noun",
+      meaning: "Economic independence or self-sufficiency, where a kingdom or nation does not rely on international trade.",
+      example: "Ancient feudal kingdoms operated under relative autarky, whereas modern economies collapse if international shipping halts."
+    },
+    {
+      word: "anachronistic",
+      pos: "adjective",
+      meaning: "Belonging to a past era; out of date or chronologically misplaced in modern society.",
+      example: "Applying ancient agrarian laws to regulate modern automated financial algorithms is entirely anachronistic."
+    },
+    {
+      word: "precedent",
+      pos: "noun",
+      meaning: "An earlier event, decision, or action that serves as an authoritative guide or model for subsequent situations.",
+      example: "Historical judicial precedents provide the constitutional backbone for modern democratic legal systems."
+    },
+    {
+      word: "indispensable",
+      pos: "adjective",
+      meaning: "Absolutely essential; impossible to operate effectively without.",
+      example: "Studying past market panics is indispensable for central bankers trying to prevent modern economic collapse."
+    },
+    {
+      word: "immutable",
+      pos: "adjective",
+      meaning: "Unchanging over time or unable to be altered.",
+      example: "While modern digital gadgets evolve rapidly, basic human emotions of fear and greed remain essentially immutable."
+    },
+    {
+      word: "unprecedented",
+      pos: "adjective",
+      meaning: "Never having occurred or existed at any point in prior human history.",
+      example: "The global synchronization of modern just-in-time supply chains is unprecedented in scale."
     }
   ],
 
   vocabHunt: [
-    "Identify the academic term for 'illicitly transferring confidential data out of a protected database'.",
-    "Locate the phrase meaning 'an agonizing, prolonged administrative struggle with institutions'.",
-    "Find the verb meaning 'to completely wipe out or erase fraudulent legal records'.",
-    "Identify the advanced noun describing 'freedom or exemption from criminal punishment'."
+    "path dependency",
+    "survivorship bias",
+    "speculative mania",
+    "epidemiological",
+    "fallacy",
+    "conurbation",
+    "autarky",
+    "anachronistic",
+    "precedent",
+    "indispensable",
+    "immutable",
+    "unprecedented"
   ],
 
-  workbookTopSix: [
-    "identity theft / impersonation",
-    "exfiltrate / exfiltration",
-    "decimate / decimation",
-    "bureaucratic ordeal",
-    "dark web marketplace",
-    "expunge fraudulent liabilities"
-  ],
-
-  modelSentences: {
-    positive:
-      "Foremost among the drivers of escalating identity theft is the rapid digitisation of financial transactions combined with the increasing sophistication of international cybercrime syndicates.",
-    balanced:
-      "The fallout for victims encompasses not merely direct pecuniary losses, but also the total destruction of creditworthiness and severe, chronic psychological distress."
-  },
-
-  powerExpressions: [
-    {
-      expression: "exfiltrate confidential dossiers",
-      meaning: "To illicitly extract comprehensive personal identification files from corporate databases.",
-      example: "Rogue actors managed to exfiltrate confidential dossiers containing the tax details of thousands of citizens."
-    },
-    {
-      expression: "decimate creditworthiness",
-      meaning: "To destroy an individual's financial reputation and credit score beyond immediate recovery.",
-      example: "Fraudulent credit applications decimated the applicant's creditworthiness within days."
-    },
-    {
-      expression: "navigate a bureaucratic ordeal",
-      meaning: "To endure an exhausting, paperwork-heavy struggle with corporations and government agencies.",
-      example: "The victim spent eighteen months navigating a bureaucratic ordeal to prove their innocence."
-    },
-    {
-      expression: "illicit dark web marketplaces",
-      meaning: "Encrypted online commercial hubs where stolen credentials and personal data are sold.",
-      example: "Complete consumer profiles were auctioned on illicit dark web marketplaces for minimal sums."
-    },
-    {
-      expression: "siphon liquid assets",
-      meaning: "To systematically drain bank accounts and monetary balances through illicit transfers.",
-      example: "Within hours of the breach, automated scripts siphoned liquid assets from compromised checking accounts."
-    },
-    {
-      expression: "operate with brazen impunity",
-      meaning: "To commit severe financial crimes without any fear of arrest or judicial prosecution.",
-      example: "Operating from non-extradition territories, international syndicates orchestrate identity fraud with brazen impunity."
-    }
-  ],
-
+  // 5. Guided Brainstorm Challenge Cards (Strictly View 1 & View 2 — Easy to Understand, One-Liner Ideas)
   brainstormCards: [
     {
-      question: "Why has the transition to a cashless digital economy created unprecedented opportunities for identity theft?",
-      thinkingLens: "Technological & Infrastructure Vulnerability",
-      selfCheck: "Do people use physical cash or digital passwords for everyday life?",
-      idea: "Consumers routinely input passwords, credit cards, and personal dossiers into dozens of online commerce and banking platforms, exponentially expanding the attack surface for hackers."
+      question: "Why do ancient historical books fail to help ordinary working people today?",
+      thinkingLens: "Survivorship Bias (History written by kings & victors)",
+      selfCheck: "Did ancient scrolls record everyday citizens or just wealthy emperors?",
+      idea: "Ancient history only recorded the victories of emperors and kings, leaving out how everyday people lived and solved problems."
     },
     {
-      question: "How do corporate and institutional database breaches fuel international identity theft?",
-      thinkingLens: "Corporate Governance & Cybersecurity Deficiencies",
-      selfCheck: "What happens when a large credit agency or hospital gets hacked?",
-      idea: "A single corporate breach exfiltrates millions of complete citizen dossiers (social security numbers, dates of birth, addresses) directly onto dark web marketplaces where they are traded en masse."
+      question: "How can preparing for past disasters actually make us weaker against modern threats?",
+      thinkingLens: "The 'Fighting the Last War' Trap (Preparing for yesterday's crisis)",
+      selfCheck: "Does building a wall protect against modern airplanes and tanks?",
+      idea: "Obsessing over past mistakes blinds leaders to completely new threats, just as France built a huge wall that modern tanks simply bypassed."
     },
     {
-      question: "In what ways do cybercrime syndicates trick unsuspecting individuals into surrendering credentials?",
-      thinkingLens: "Psychological Manipulation & Social Engineering",
-      selfCheck: "Are cybercrimes purely technical, or do they exploit human emotion?",
-      idea: "Deceptive phishing campaigns, counterfeit banking SMS alerts, and AI voice cloning create an illusion of urgency, coercing victims into surrendering two-factor authentication tokens."
+      question: "Why can't ancient city rules run modern megacities?",
+      thinkingLens: "Population Scale (Small tribes vs 20-million-person megacities)",
+      selfCheck: "Can millions of modern city residents meet in a town square like ancient Athens?",
+      idea: "Ancient direct democracy required small crowds in a town square, which is mathematically impossible in a city of twenty million people."
     },
     {
-      question: "What immediate economic devastation does an identity theft victim face?",
-      thinkingLens: "Financial & Material Destitution",
-      selfCheck: "What happens when a criminal takes control of your banking profile?",
-      idea: "Checking accounts are siphoned dry, credit cards are maxed out, and fraudulent multi-thousand dollar loans are taken out, leaving the victim facing immediate financial insolvency."
+      question: "How do ancient Roman roads still dictate our daily commute today?",
+      thinkingLens: "Physical Path Dependency (Cities built on ancient foundations)",
+      selfCheck: "Why do modern European highway maps trace Roman soldier paths?",
+      idea: "Modern highways and train routes in Europe still sit directly on top of paved stone roads built by Roman soldiers two thousand years ago."
     },
     {
-      question: "Why does identity theft destroy a victim's ability to participate in normal economic life?",
-      thinkingLens: "Credit Ratings & Institutional Blacklisting",
-      selfCheck: "What happens when fraudulent loans go into default in your name?",
-      idea: "The victim's credit score is decimated; credit reference agencies blacklist them, preventing them from securing mortgages, car financing, renting an apartment, or passing employment background checks."
+      question: "Why does the 1637 Dutch Tulip Mania explain today's cryptocurrency crashes?",
+      thinkingLens: "Speculative Greed & Market Manias",
+      selfCheck: "Does human greed change when buying internet coins instead of flowers?",
+      idea: "Human greed and panic during financial crashes are identical whether people are speculating on seventeenth-century tulips or modern internet coins."
     },
     {
-      question: "What severe psychological trauma and emotional agony do victims suffer?",
-      thinkingLens: "Mental Health, Privacy & Bureaucratic Anguish",
-      selfCheck: "Is identity theft just about money, or does it feel like a violation of the self?",
-      idea: "Victims suffer profound feelings of personal violation, chronic insomnia, and panic disorders, compounded by years of an exhausting bureaucratic ordeal trying to prove their innocence to unyielding banks."
+      question: "Where did modern pandemic rules like quarantine and masks come from?",
+      thinkingLens: "Epidemiological History (1918 Spanish Flu)",
+      selfCheck: "Did doctors invent quarantine during COVID-19 or copy it from the past?",
+      idea: "Modern lockdown and mask rules were copied directly from public health strategies developed during the 1918 Spanish Flu pandemic."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "Foremost among the drivers of escalating identity theft is that...",
-      "Equally critical is the vulnerability of large corporate repositories which...",
-      "Turning to the repercussions, the fallout for victims is both financially catastrophic and...",
-      "In conclusion, although the proliferation of digital transactions offers undeniable convenience, it has fueled..."
+      "On the one hand, proponents argue that historical archives suffer from profound survivorship bias...",
+      "On the other hand, through the lens of path dependency, modern society remains physically anchored to...",
+      "In my view, while the demographic and technological scale of modern life is novel, the cyclical patterns of...",
+      "Consequently, analyzing past market crashes and epidemiological records provides an indispensable blueprint..."
     ],
     aTier: [
-      "By weaponizing exfiltrated credentials across digital platforms, criminals can...",
-      "This systemic vulnerability is compounded by the fact that victims are thrust into...",
-      "Beyond immediate pecuniary loss, individuals endure profound psychological trauma characterized by...",
-      "Consequently, rectifying fraudulent liabilities demands an agonizing bureaucratic ordeal that..."
+      "Furthermore, fixating on past battles creates the dangerous fallacy of...",
+      "Equally compelling is the realization that human financial psychology...",
+      "A salient historical illustration of this dynamic is observed in...",
+      "In conclusion, although the elitist bias of historical records leads some to..."
     ],
     bTier: [
-      "Furthermore,",
-      "In addition,",
-      "As a result,",
-      "Consequently,"
+      "In addition to this...",
+      "For instance, studying Roman roads...",
+      "Therefore, history teaches us...",
+      "To summarize everything..."
     ]
   },
 
   strategicLinkers: [
     {
-      zone: "Zone 1: Opening Body Paragraph 1 (Root Causes of Identity Theft)",
-      badge: "Cause Explanations",
-      placementRule: "Use at the beginning of Body 1 to establish the technological and systemic drivers behind identity theft.",
+      zone: "Zone 1: Opening 1st View (History Fails Modernity)",
+      badge: "View 1 Transitions",
+      placementRule: "Use at the beginning of Body 1 to establish the perspective that past archives are biased and structurally mismatched with modernity.",
       items: [
         {
-          phrase: "Foremost among the drivers of escalating identity theft is that...",
-          functionDesc: "Declares your primary cause (digital banking ubiquity & cyber syndicates) with authoritative academic tone.",
+          phrase: "On the one hand, proponents argue that historical lessons are increasingly unhelpful because past archives suffer from...",
+          functionDesc: "Introduces the argument that ancient evidence is incomplete and biased toward ruling elites.",
           example:
-            "Foremost among the drivers of escalating identity theft is that our increasingly cashless economy compels individuals to store sensitive credentials across vulnerable internet databases."
+            "On the one hand, proponents argue that historical lessons are increasingly unhelpful because past archives suffer from severe survivorship bias."
         },
         {
-          phrase: "Equally critical is the vulnerability of corporate databases, where...",
-          functionDesc: "Introduces the second major cause (corporate data breaches and dark web trading) seamlessly.",
+          phrase: "Advocates of this viewpoint emphasize that fixating on past precedents blinds leaders to...",
+          functionDesc: "Highlights the strategic blindspot of fighting yesterday's battles.",
           example:
-            "Equally critical is the vulnerability of corporate databases, where millions of comprehensive citizen dossiers are exfiltrated and auctioned on dark web marketplaces."
+            "Advocates of this viewpoint emphasize that fixating on past precedents blinds leaders to novel, asymmetric modern threats."
         }
       ]
     },
     {
-      zone: "Zone 2: Opening Body Paragraph 2 (Effects on Victims)",
-      badge: "Victim Impact Analysis",
-      placementRule: "Use to transition from causes to the dual economic and psychological consequences suffered by victims.",
+      zone: "Zone 2: Opening 2nd View (Past Silently Shapes Present)",
+      badge: "View 2 Transitions",
+      placementRule: "Use at the beginning of Body 2 to pivot toward how physical infrastructure and cyclical psychology bind today to the past.",
       items: [
         {
-          phrase: "Turning to the repercussions, the fallout for victims is both financially catastrophic and...",
-          functionDesc: "Transitions with academic flair into the multi-dimensional harm inflicted on innocent citizens.",
+          phrase: "On the other hand, analyzing historical developments is indispensable because through path dependency, modern society is...",
+          functionDesc: "Establishes that current city infrastructure and institutions are literally built on ancient foundations.",
           example:
-            "Turning to the repercussions, the fallout for victims is both financially catastrophic and psychologically devastating, decimating their creditworthiness and destroying peace of mind."
+            "On the other hand, analyzing historical developments is indispensable because through path dependency, modern society is physically anchored to ancient foundations."
         },
         {
-          phrase: "Beyond immediate pecuniary loss, individuals are thrust into...",
-          functionDesc: "Highlights the prolonged bureaucratic ordeal and emotional trauma beyond lost cash.",
+          phrase: "While financial and medical technologies evolve, the collective human psychology of...",
+          functionDesc: "Demonstrates that human reactions to market bubbles and disease outbreaks follow timeless cycles.",
           example:
-            "Beyond immediate pecuniary loss, individuals are thrust into a grueling bureaucratic ordeal to expunge fraudulent debts and reclaim their stolen identity."
+            "While financial and medical technologies evolve, the collective human psychology of speculative greed and pandemic fear remains essentially immutable."
         }
       ]
     },
     {
-      zone: "Zone 3: Synthesizing Conclusion & Final Stance",
-      badge: "Conclusion Markers",
-      placementRule: "Use in the concluding paragraph to synthesize both causes and consequences with high lexical compression.",
+      zone: "Zone 3: Expressing Author Opinion & Synthesizing",
+      badge: "Opinion & Conclusion",
+      placementRule: "Use in Body 3 or Conclusion to deliver a clear, balanced, defensible stance.",
       items: [
         {
-          phrase: "In conclusion, the alarming surge in identity fraud is propelled primarily by...",
-          functionDesc: "Recapitulates the core technological and structural causes succinctly.",
+          phrase: "In my view, while the demographic scale of modern civilization is unprecedented, the underlying architecture of...",
+          functionDesc: "Delivers a nuanced stance reconciling unprecedented modern scale with timeless human nature.",
           example:
-            "In conclusion, the alarming surge in identity fraud is propelled primarily by the vulnerabilities inherent in a cashless economy and the mass exfiltration of corporate data."
+            "In my view, while the demographic scale of modern civilization is unprecedented, the underlying architecture of human governance and financial mania remains identical."
         },
         {
-          phrase: "The consequences for victims are profoundly distressing, encompassing...",
-          functionDesc: "Finalizes the thesis by reinforcing the acute material and psychological trauma.",
+          phrase: "In conclusion, although the elitist bias of historical archives leads some to dismiss history, the past remains...",
+          functionDesc: "Summarizes both perspectives succinctly before confirming the final personal stance.",
           example:
-            "The consequences for victims are profoundly distressing, encompassing ruined credit ratings and chronic emotional anguish that demand urgent institutional reform."
+            "In conclusion, although the elitist bias of historical archives leads some to dismiss history, the past remains an indispensable roadmap for modern civilization."
         }
       ]
     }
@@ -579,121 +484,146 @@ export const TASK2_DATA: Task2Data = {
 
   fluidVocab: [
     {
-      word: "exfiltrate",
-      pos: "verb",
-      meaning: "To illicitly extract and transfer confidential data from a protected network.",
-      naturalCollocation: "exfiltrate sensitive dossiers / credentials",
-      organicExample: "Cyber syndicates exfiltrate consumer credentials to auction them on illicit digital forums.",
-      mechanicalPitfall: "Avoid 'steal internet files'; 'exfiltrate sensitive credentials' demonstrates top-tier lexical mastery."
-    },
-    {
-      word: "decimate",
-      pos: "verb",
-      meaning: "To drastically reduce, destroy, or severely damage the integrity or value of something.",
-      naturalCollocation: "decimate creditworthiness / credit ratings",
-      organicExample: "Fraudulent loans incurred by impersonators decimate the victim's credit rating within weeks.",
-      mechanicalPitfall: "Do not say 'make their credit score bad'; use 'decimate creditworthiness'."
-    },
-    {
-      word: "bureaucratic ordeal",
+      word: "path dependency",
       pos: "noun phrase",
-      meaning: "An agonizing, prolonged administrative struggle involving institutions, forms, and legal hurdles.",
-      naturalCollocation: "endure a grueling bureaucratic ordeal",
-      organicExample: "Victims must endure an exhausting bureaucratic ordeal to convince credit bureaus to expunge fraudulent debts.",
-      mechanicalPitfall: "Avoid 'too much paperwork'; 'grueling bureaucratic ordeal' carries exceptional academic tone."
+      meaning: "The structural reality where current choices and layouts are dictated by past historical decisions.",
+      naturalCollocation: "exhibit profound path dependency / physical infrastructure",
+      organicExample: "Modern European transport corridors exhibit profound path dependency, tracing Roman military roads.",
+      mechanicalPitfall: "Avoid 'history makes roads'; 'path dependency' demonstrates masterclass academic precision."
     },
     {
-      word: "expunge",
-      pos: "verb",
-      meaning: "To completely wipe out, eliminate, or erase erroneous and fraudulent records.",
-      naturalCollocation: "expunge fraudulent liabilities / criminal records",
-      organicExample: "It took eighteen months of legal litigation to expunge the fraudulent debts from the victim's official credit record.",
-      mechanicalPitfall: "Saying 'clean up the debt' is informal; 'expunge fraudulent liabilities' is Band 9."
+      word: "survivorship bias",
+      pos: "noun phrase",
+      meaning: "The flaw of drawing conclusions from only surviving written records while overlooking unrecorded realities.",
+      naturalCollocation: "suffer from survivorship bias / elitist documentation",
+      organicExample: "Historical texts suffer from survivorship bias because ancient scribes only recorded the victories of emperors.",
+      mechanicalPitfall: "Do not say 'one-sided history'; 'survivorship bias' is Band 9 terminology."
+    },
+    {
+      word: "speculative mania",
+      pos: "noun phrase",
+      meaning: "A period of irrational collective financial greed where asset prices skyrocket and crash.",
+      naturalCollocation: "anatomy of speculative mania / financial bubble",
+      organicExample: "The boom and bust of cryptocurrency mirrored the classic anatomy of seventeenth-century Dutch Tulip Mania.",
+      mechanicalPitfall: "Saying 'people got too greedy' is informal; use 'speculative mania'."
+    },
+    {
+      word: "immutable",
+      pos: "adjective",
+      meaning: "Unchanging and permanent across all eras of human existence.",
+      naturalCollocation: "immutable human nature / psychological traits",
+      organicExample: "While digital gadgets evolve rapidly, human psychological reactions to crisis remain immutable.",
+      mechanicalPitfall: "Avoid 'stays the same'; 'immutable human psychology' is Band 9."
     }
   ],
 
+  powerExpressions: [
+    {
+      expression: "physical path dependency",
+      meaning: "The concept that modern physical infrastructure remains locked into ancient routes and layouts.",
+      example: "European highway systems demonstrate physical path dependency by directly following Roman military roads."
+    },
+    {
+      expression: "the fallacy of fighting the last war",
+      meaning: "The dangerous strategic mistake of preparing for previous crises rather than modern threats.",
+      example: "Military planners fell victim to the fallacy of fighting the last war by building static fortifications against aircraft."
+    },
+    {
+      expression: "cyclical anatomy of speculative bubbles",
+      meaning: "The repeating psychological pattern of greed, euphoria, and collapse in financial markets.",
+      example: "Understanding the cyclical anatomy of speculative bubbles protects investors from recurring market crashes."
+    },
+    {
+      expression: "empirical epidemiological blueprints",
+      meaning: "Proven public health strategies derived from historical disease outbreaks.",
+      example: "Modern quarantine mandates during global pandemics rely on empirical epidemiological blueprints refined since 1918."
+    }
+  ],
+
+  // Consequences strictly for View 1
   consequences: [
     {
-      type: "negative",
-      title: "Catastrophic Asset Depletion & Fraudulent Debt",
-      desc: "Perpetrators siphon checking and savings accounts dry while taking out personal loans, leaving the victim facing immediate insolvency.",
-      example: "Victims discovering maxed-out credit cards and $50,000 in personal loans taken out in their name without their consent.",
-      collocation: "siphon liquid assets / fraudulent liabilities"
+      type: "positive",
+      title: "Survivorship Bias & Elitist Records",
+      desc: "History was recorded exclusively by victorious monarchs and wealthy elites, offering zero practical guidance for common citizens' modern struggles.",
+      example: "Ancient chronicles celebrate royal conquests, but record virtually nothing about how working-class families coped with economic depressions.",
+      collocation: "survivorship bias / elitist documentation"
     },
     {
-      type: "negative",
-      title: "Credit Decimation & Economic Blacklisting",
-      desc: "Defaulted fraudulent debts obliterate the victim's credit rating, rendering them legally disqualified from mortgages, vehicle loans, and employment.",
-      example: "A prospective homebuyer whose pre-approved mortgage is abruptly rescinded due to an unrecognized default on an identity-theft loan.",
-      collocation: "decimate creditworthiness / institutional blacklisting"
+      type: "positive",
+      title: "The 'Fighting the Last War' Blindspot",
+      desc: "Fixating on past crises creates a false sense of security, blinding modern leadership to novel, asymmetric technological threats.",
+      example: "France heavily fortified the static Maginot Line after WWI, only for modern tanks and aircraft to bypass it in days.",
+      collocation: "strategic blindspot / fighting the last war"
     },
     {
-      type: "negative",
-      title: "Severe Psychological Trauma & Panic Disorders",
-      desc: "The violation of one's personal identity triggers chronic anxiety, clinical depression, paranoia, and severe sleep deprivation.",
-      example: "Over 70% of identity theft victims reporting long-term insomnia, panic attacks, and severe marital strain while fighting fraud claims.",
-      collocation: "acute emotional distress / personal violation"
+      type: "positive",
+      title: "Radical Megacity Demographic Scale",
+      desc: "Ancient small-town governance frameworks cannot manage modern twenty-million-person multicultural megacities with automated infrastructure.",
+      example: "Ancient Athenian direct democracy required a few thousand citizens in a town square, a model mathematically impossible in modern nations.",
+      collocation: "radical demographic scale / unworkable civic models"
     },
     {
-      type: "negative",
-      title: "Protracted Bureaucratic Ordeal & Legal Peril",
-      desc: "Victims must spend hundreds of hours and thousands of dollars filing sworn affidavits and hiring lawyers to prove their innocence to banks.",
-      example: "Innocent citizens detained at airport security checkpoints because criminals weaponized their stolen identities to commit felonies.",
-      collocation: "protracted bureaucratic ordeal / expunge wrongful records"
+      type: "positive",
+      title: "Fragile Global Supply Chains",
+      desc: "Ancient economies were localized and self-contained, whereas today a single foreign disruption halts international food and medicine.",
+      example: "A single container vessel grounded in the Suez Canal halted $10 billion in global daily trade, an economic shock unknown in ancient history.",
+      collocation: "hyper-synchronized supply chains / systemic vulnerability"
     }
   ],
 
+  // Arguments strictly for View 2
   evaluationArguments: [
     {
-      title: "Ubiquitous Digital Banking & Cashless Commerce",
-      reason: "The wholesale transition to online financial portals vastly multiplies the vulnerable attack surface for data harvesting.",
-      development: "Consumers routinely enter sensitive identity credentials across dozens of commercial and banking servers daily, creating opportunities for automated packet-sniffing and mirror phishing portals.",
-      example: "Millions of consumers shopping via unverified mobile apps or public Wi-Fi networks having their payment credentials skimmed.",
+      title: "Physical Path Dependency & Roman Roads",
+      reason: "Modern highways, train routes, and city centers are built directly on top of ancient Roman and medieval engineering foundations.",
+      development: "Contemporary European transit corridors and logistical bottlenecks can only be understood by examining the routes Roman legions paved two thousand years ago.",
+      example: "Major British highways (like Watling Street) still follow the exact stone routes paved by Roman soldiers over two millennia ago.",
       type: "argument",
-      collocation: "ubiquitous digital banking / expanded attack surface"
+      collocation: "physical path dependency / ancient Roman foundations"
     },
     {
-      title: "Corporate & Institutional Database Breaches",
-      reason: "Corporations accumulate massive reservoirs of consumer identification without investing in adequate cryptographic protection.",
-      development: "When central servers are compromised, millions of complete citizen dossiers—including national insurance numbers and passwords—are exfiltrated and auctioned on dark web marketplaces.",
-      example: "The monumental Equifax data breach leaking the sensitive financial dossiers of nearly 150 million consumers onto underground forums.",
+      title: "The Psychology of Speculative Bubbles",
+      reason: "While financial instruments change from physical ledgers to internet coins, human greed and collective panic follow identical historical cycles.",
+      development: "Studying past market manias enables economists and investors to identify the psychological warning signs of an asset bubble before it collapses.",
+      example: "Modern cryptocurrency and meme-stock crashes mirrored the exact psychological stages of the 1637 Dutch Tulip Mania.",
       type: "argument",
-      collocation: "exfiltrate sensitive dossiers / dark web marketplaces"
+      collocation: "speculative market mania / cyclical financial euphoria"
     },
     {
-      title: "Deceptive Social Engineering & AI Phishing",
-      reason: "Cybercriminals deploy psychological urgency and artificial intelligence to trick individuals into surrendering authentication codes.",
-      development: "Spear-phishing emails and voice-cloning software mimic legitimate banking institutions with flawless accuracy, manipulating human trust.",
-      example: "Counterfeit SMS messages purporting to be urgent bank fraud alerts coercing victims into entering their two-factor security codes.",
+      title: "Epidemiological Protocols & Pandemics",
+      reason: "Human behavioral reactions and containment strategies during disease outbreaks repeat identically across historical eras.",
+      development: "Modern public health agencies successfully managed recent outbreaks because historical records from 1918 proved that quarantines and mask-wearing flatten mortality curves.",
+      example: "Modern COVID-19 containment measures—including municipal quarantines and social distancing—were adapted directly from the 1918 Spanish Flu playbook.",
       type: "argument",
-      collocation: "deceptive phishing campaign / psychological social engineering"
+      collocation: "epidemiological protocols / empirical containment blueprints"
     },
     {
-      title: "Transnational Impunity & Cryptocurrency Laundering",
-      reason: "The borderless internet allows cybercrime syndicates to operate from foreign safe havens without fear of local police prosecution.",
-      development: "Stolen funds are laundered instantaneously through anonymized cryptocurrency exchanges, creating a low-risk, high-profit criminal enterprise.",
-      example: "Organized syndicates operating outside international extradition treaties systematically draining foreign bank accounts with complete impunity.",
+      title: "Century-Old Peace Treaties & Diplomacy",
+      reason: "Contemporary international law, sovereign borders, and diplomatic neutrality are direct continuations of historic peace treaties.",
+      development: "International peace accords cannot be maintained without honoring the historical compromises and border treaties that established modern sovereign states.",
+      example: "Switzerland's modern status as an unshakeable neutral mediator is the direct legacy of the 1815 Treaty of Paris signed after the Napoleonic Wars.",
       type: "argument",
-      collocation: "operate with brazen impunity / anonymized crypto laundering"
+      collocation: "enduring peace treaties / institutional diplomatic neutrality"
     }
   ],
 
   facultyAngles: [
     {
-      title: "Technological & Infrastructure Angle",
-      development: "Focuses on the rapid shift toward a cashless society and the structural vulnerabilities of centralized cloud databases."
+      title: "Historical Bias & Methodology Angle (View 1)",
+      development: "Explains how survivorship bias and elite-centered records distort our understanding of common human problems, making ancient chronicles a flawed guide."
     },
     {
-      title: "Institutional Accountability Angle",
-      development: "Critiques corporate entities for warehousing vast quantities of citizen data while neglecting state-of-the-art encryption defenses."
+      title: "Technological & Demographic Scale Angle (View 1)",
+      development: "Highlights that twenty-million-person megacities and synchronized global supply chains are mathematically beyond the scope of ancient village rules."
     },
     {
-      title: "Human Psychology & Victim Anguish Angle",
-      development: "Examines the severe mental health toll, loss of privacy, and bureaucratic helplessness endured by targeted individuals."
+      title: "Physical Infrastructure & Path Dependency Angle (View 2)",
+      development: "Demonstrates that history is not an abstract concept; modern highways, city centers, and train lines literally rest upon Roman foundations."
     },
     {
-      title: "Judicial & Geopolitical Enforcement Angle",
-      development: "Highlights how jurisdictional gaps and borderless internet protocols shield international cybercrime syndicates from legal accountability."
+      title: "Behavioral Constancy Angle (View 2)",
+      development: "Shows that human greed during financial bubbles (Tulip Mania vs Crypto) and fear during pandemics (1918 Flu vs COVID-19) remain completely immutable."
     }
   ]
 };

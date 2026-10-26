@@ -1,7 +1,9 @@
-import React from "react";
-import { FileText, Layers } from "lucide-react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { FileText, Layers, Eye, EyeOff, Lock, Unlock } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { TouchTimer } from "../common/TouchTimer";
+import { tactilePress } from "../../motion";
 
 interface Step2BrainstormProps {
   formattedTime: string;
@@ -17,28 +19,35 @@ const ESSAY_FORMAT_STEPS = [
     label: "Introduction",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    formatRule: "Paraphrase the question + Opinion / Outline"
+    formatRule: "Paraphrase the question + Opinion"
   },
   {
     stepNum: "2",
     label: "Body Paragraph 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    formatRule: "Cause 1 + Effect 1 + Example"
+    formatRule: "Mention ideas for 1st view"
   },
   {
     stepNum: "3",
     label: "Body Paragraph 2",
-    badgeBg: "rgba(220, 38, 38, 0.12)",
-    badgeColor: "#dc2626",
-    formatRule: "Cause 1 + Effect 1 + Example"
+    badgeBg: "rgba(13, 148, 136, 0.12)",
+    badgeColor: "#0f766e",
+    formatRule: "Mention ideas for 2nd view"
   },
   {
     stepNum: "4",
+    label: "Body Paragraph 3",
+    badgeBg: "rgba(234, 88, 12, 0.12)",
+    badgeColor: "#c2410c",
+    formatRule: "Mention ideas for opinion"
+  },
+  {
+    stepNum: "5",
     label: "Conclusion",
     badgeBg: "rgba(100, 116, 139, 0.15)",
     badgeColor: "#334155",
-    formatRule: "Sum-up all the main ideas + Restate opinion"
+    formatRule: "Sum-up all the main points + restate the opinion"
   }
 ];
 
@@ -49,15 +58,17 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
   onTimerToggle,
   onTimerReset
 }) => {
+  const [isFormatRevealed, setIsFormatRevealed] = useState(false);
+
   return (
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 02 / 09 • Task Reveal &amp; Essay Format
         </span>
-        <h2 className="stage-title">Deconstruct the 'Causes &amp; Effects' Prompt &amp; Architecture</h2>
+        <h2 className="stage-title">Deconstruct the 'Discuss Both Views &amp; Give Opinion' Architecture</h2>
         <p className="stage-subtitle">
-          Direct Two-Part Question: <strong>Causes of Identity Theft + Effects on the Victims</strong>. Master the mandatory body paragraph format: <strong>Cause 1 + Effect 1 + Example</strong>.
+          Discussion Essay: <strong>View 1 (History is outdated) vs View 2 (History guides us) + Your Opinion</strong>. Master the 5-paragraph structure.
         </p>
       </div>
 
@@ -68,7 +79,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to plan your two body paragraphs: Body 1 (Cause 1 + Effect 1 + Example) and Body 2 (Cause 1 + Effect 1 + Example)."
+          instruction="Focus Timer: 3 minutes to plan your ideas for View 1 and View 2."
         />
       </div>
 
@@ -128,7 +139,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           </div>
         </div>
 
-        {/* Right Column: Standard Cause & Effect Essay Format Card */}
+        {/* Right Column: Standard Discussion with Opinion Essay Format Card (Blurred until Revealed) */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
           <div
             style={{
@@ -139,7 +150,9 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               height: "100%",
               display: "flex",
               flexDirection: "column",
-              gap: "14px"
+              gap: "14px",
+              position: "relative",
+              overflow: "hidden"
             }}
           >
             <div
@@ -152,82 +165,196 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <Layers size={22} color="var(--apple-blue)" />
                 <h4 style={{ fontSize: "1.15rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  Standard Cause &amp; Effect Essay Format
+                  Discussion with Opinion Format
                 </h4>
               </div>
 
-              <span className="apple-badge neutral" style={{ fontSize: "0.82rem" }}>
-                4-Paragraph Structure
-              </span>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                {isFormatRevealed && (
+                  <motion.button
+                    whileTap={tactilePress}
+                    onClick={() => setIsFormatRevealed(false)}
+                    style={{
+                      border: "1px solid var(--border-subtle)",
+                      background: "#ffffff",
+                      padding: "4px 10px",
+                      borderRadius: "8px",
+                      fontSize: "0.76rem",
+                      fontWeight: 700,
+                      color: "var(--slate-600)",
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "4px"
+                    }}
+                  >
+                    <EyeOff size={13} /> Hide Format
+                  </motion.button>
+                )}
+                <span className="apple-badge neutral" style={{ fontSize: "0.82rem" }}>
+                  5-Paragraph Structure
+                </span>
+              </div>
             </div>
 
-            {/* Prominent Body Paragraph Format Banner */}
-            <div
-              style={{
-                background: "#f0fdf4",
-                border: "1.5px solid #86efac",
-                borderRadius: "12px",
-                padding: "12px 18px",
-                fontSize: "1.08rem",
-                fontWeight: 800,
-                color: "#166534"
-              }}
-            >
-              ⚡ Body Paragraph Format: <strong>Cause 1 + Effect 1 + Example</strong>
-            </div>
-
-            {/* Format Content Cards (Large, Bold, Clean) */}
+            {/* Content Container (Blurred when !isFormatRevealed) */}
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
                 gap: "12px",
                 flex: 1,
-                justifyContent: "space-between"
+                filter: isFormatRevealed ? "none" : "blur(10px)",
+                opacity: isFormatRevealed ? 1 : 0.25,
+                transition: "filter 0.35s ease, opacity 0.35s ease",
+                pointerEvents: isFormatRevealed ? "auto" : "none",
+                userSelect: isFormatRevealed ? "auto" : "none"
               }}
             >
-              {ESSAY_FORMAT_STEPS.map((step) => (
+              {/* Prominent Essay Format Banner */}
+              <div
+                style={{
+                  background: "#eff6ff",
+                  border: "1.5px solid #bfdbfe",
+                  borderRadius: "12px",
+                  padding: "10px 16px",
+                  fontSize: "1.02rem",
+                  fontWeight: 800,
+                  color: "#1d4ed8"
+                }}
+              >
+                ⚡ Essay Structure: <strong>5-Paragraph Discussion with Opinion Architecture</strong>
+              </div>
+
+              {/* Format Content Cards (Large, Bold, Clean) */}
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "10px",
+                  flex: 1,
+                  justifyContent: "space-between"
+                }}
+              >
+                {ESSAY_FORMAT_STEPS.map((step) => (
+                  <div
+                    key={step.label}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "14px",
+                      background: "#fff",
+                      border: "1.5px solid var(--border-subtle)",
+                      borderRadius: "14px",
+                      padding: "16px 20px",
+                      boxShadow: "var(--shadow-sm)"
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.95rem",
+                        fontWeight: 800,
+                        padding: "6px 14px",
+                        borderRadius: "8px",
+                        background: step.badgeBg,
+                        color: step.badgeColor,
+                        minWidth: "155px",
+                        textAlign: "center",
+                        flexShrink: 0
+                      }}
+                    >
+                      {step.label}
+                    </span>
+                    <div
+                      style={{
+                        fontSize: "1.15rem",
+                        fontWeight: 800,
+                        color: "var(--slate-900)",
+                        letterSpacing: "0.01em"
+                      }}
+                    >
+                      {step.formatRule}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Reveal Overlay (Shown when !isFormatRevealed) */}
+            {!isFormatRevealed && (
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  top: "60px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "24px",
+                  background: "rgba(248, 250, 252, 0.4)",
+                  zIndex: 10
+                }}
+              >
                 <div
-                  key={step.label}
                   style={{
+                    background: "#ffffff",
+                    border: "1.5px solid var(--border-default)",
+                    borderRadius: "18px",
+                    padding: "24px 28px",
+                    maxWidth: "380px",
+                    textAlign: "center",
+                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
                     display: "flex",
+                    flexDirection: "column",
                     alignItems: "center",
-                    gap: "14px",
-                    background: "#fff",
-                    border: "1.5px solid var(--border-subtle)",
-                    borderRadius: "14px",
-                    padding: "16px 20px",
-                    boxShadow: "var(--shadow-sm)"
+                    gap: "12px"
                   }}
                 >
-                  <span
-                    style={{
-                      fontSize: "0.95rem",
-                      fontWeight: 800,
-                      padding: "6px 14px",
-                      borderRadius: "8px",
-                      background: step.badgeBg,
-                      color: step.badgeColor,
-                      minWidth: "155px",
-                      textAlign: "center",
-                      flexShrink: 0
-                    }}
-                  >
-                    {step.label}
-                  </span>
                   <div
                     style={{
-                      fontSize: "1.15rem",
-                      fontWeight: 800,
-                      color: "var(--slate-900)",
-                      letterSpacing: "0.01em"
+                      width: "48px",
+                      height: "48px",
+                      borderRadius: "14px",
+                      background: "rgba(37, 99, 235, 0.1)",
+                      color: "var(--apple-blue)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center"
                     }}
                   >
-                    {step.formatRule}
+                    <Lock size={24} />
                   </div>
+
+                  <div>
+                    <h4 style={{ fontSize: "1.12rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                      Format Hidden
+                    </h4>
+                    <p style={{ fontSize: "0.86rem", color: "var(--slate-500)", margin: "4px 0 0", lineHeight: 1.45 }}>
+                      Ask students to recall the Discussion with Opinion essay structure, then click to reveal.
+                    </p>
+                  </div>
+
+                  <motion.button
+                    whileTap={tactilePress}
+                    onClick={() => setIsFormatRevealed(true)}
+                    className="apple-touch-btn primary"
+                    style={{
+                      minHeight: "44px",
+                      padding: "0 20px",
+                      gap: "8px",
+                      fontSize: "0.95rem",
+                      fontWeight: 750,
+                      width: "100%",
+                      borderRadius: "12px",
+                      marginTop: "6px"
+                    }}
+                  >
+                    <Eye size={17} /> <span>Reveal Essay Format</span>
+                  </motion.button>
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

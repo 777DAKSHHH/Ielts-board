@@ -119,9 +119,7 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
           <h2 className="stage-title">Think First. Reveal Later.</h2>
 
           <p className="stage-subtitle">
-            Students generate their own ideas first, use the thinking lens to
-            refine their reasoning, and only then see one possible developable
-            IELTS idea.
+            Simple brainstorm cards for View 1 &amp; View 2: Answer the question aloud first, check the lens, then reveal the one-liner IELTS idea.
           </p>
         </div>
 

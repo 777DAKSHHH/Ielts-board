@@ -58,22 +58,21 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
             maxHeight: "90vh",
             background: "#ffffff",
             borderRadius: "24px",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.35)",
-            border: "1.5px solid var(--border-subtle)",
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
             display: "flex",
             flexDirection: "column",
             overflow: "hidden"
           }}
         >
-          {/* Modal Header */}
+          {/* Top Bar */}
           <div
             style={{
               padding: "20px 28px",
               borderBottom: "1.5px solid var(--border-subtle)",
-              background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
               display: "flex",
               alignItems: "center",
-              justifyContent: "space-between"
+              justifyContent: "space-between",
+              background: "#ffffff"
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -82,8 +81,8 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   width: "42px",
                   height: "42px",
                   borderRadius: "12px",
-                  background: "#d97706",
-                  color: "#ffffff",
+                  background: "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)",
+                  color: "var(--apple-blue)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center"
@@ -92,111 +91,87 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                 <Compass size={22} />
               </div>
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <span
-                    className="apple-badge"
-                    style={{
-                      background: "#fef3c7",
-                      color: "#92400e",
-                      fontWeight: 800,
-                      fontSize: "0.72rem",
-                      padding: "2px 8px"
-                    }}
-                  >
-                    FACULTY &amp; EXAMINER MASTERCLASS
-                  </span>
-                  <span style={{ fontSize: "0.85rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                    Teacher Idea Bank • Analytical Extensions &amp; Discussion Prompts
-                  </span>
-                </div>
-                <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--slate-900)", margin: "3px 0 0" }}>
-                  Financial Cybercrime &amp; Identity Theft: High-Band Argumentation &amp; Nuance
+                <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                  Faculty Teaching Vault &amp; Discussion Architecture
                 </h3>
+                <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", margin: "2px 0 0" }}>
+                  Fresh, Easily Justifiable Ideas: History &amp; Modern Society
+                </p>
               </div>
             </div>
-
             <button
               onClick={onClose}
-              className="apple-touch-btn secondary"
               style={{
-                minHeight: "38px",
-                width: "38px",
-                padding: 0,
-                borderRadius: "50%",
+                width: "36px",
+                height: "36px",
+                borderRadius: "10px",
+                border: "1px solid var(--border-subtle)",
+                background: "var(--slate-100)",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
+                cursor: "pointer",
+                color: "var(--slate-600)"
               }}
-              title="Close modal"
             >
-              <X size={19} />
+              <X size={18} />
             </button>
           </div>
 
-          {/* Interactive Navigation Tabs for Smart Board */}
+          {/* Navigation Tabs */}
           <div
             style={{
               display: "flex",
-              gap: "8px",
-              padding: "12px 28px",
-              borderBottom: "1px solid var(--border-subtle)",
-              background: "#ffffff"
+              borderBottom: "1.5px solid var(--border-subtle)",
+              background: "var(--slate-50)",
+              padding: "0 24px"
             }}
           >
             {[
-              { id: "faculty", label: "1. Faculty Idea Bank (8 Angles)", icon: <Award size={15} /> },
-              { id: "method", label: "2. The 3-Tier Body Architecture", icon: <Lightbulb size={15} /> },
-              { id: "comparisons", label: "3. Band 6 vs Band 8.5+ Sentences", icon: <GitBranch size={15} /> },
-              { id: "formulas", label: "4. Cause-Effect Formulas & Advice", icon: <BookOpen size={15} /> }
-            ].map((tab) => {
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as typeof activeTab)}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    padding: "8px 14px",
-                    borderRadius: "10px",
-                    fontSize: "0.85rem",
-                    fontWeight: 700,
-                    border: "none",
-                    cursor: "pointer",
-                    transition: "all 0.15s ease",
-                    background: isActive ? "var(--slate-900)" : "var(--slate-100)",
-                    color: isActive ? "#ffffff" : "var(--slate-700)"
-                  }}
-                >
-                  {tab.icon}
-                  {tab.label}
-                </button>
-              );
-            })}
+              { id: "faculty", label: "Classroom Discussion & Idea Vault", icon: <Lightbulb size={16} /> },
+              { id: "method", label: "5-Paragraph Architecture", icon: <GitBranch size={16} /> },
+              { id: "comparisons", label: "Band 6 vs Band 9 Contrasts", icon: <Award size={16} /> },
+              { id: "formulas", label: "Plug & Play Sentence Formulas", icon: <BookOpen size={16} /> }
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "14px 18px",
+                  fontSize: "0.9rem",
+                  fontWeight: activeTab === tab.id ? 750 : 600,
+                  color: activeTab === tab.id ? "var(--apple-blue)" : "var(--slate-600)",
+                  borderBottom: activeTab === tab.id ? "2.5px solid var(--apple-blue)" : "2.5px solid transparent",
+                  background: "transparent",
+                  borderTop: "none",
+                  borderLeft: "none",
+                  borderRight: "none",
+                  cursor: "pointer",
+                  transition: "all 0.15s ease"
+                }}
+              >
+                {tab.icon}
+                <span>{tab.label}</span>
+              </button>
+            ))}
           </div>
 
-          {/* Scrollable Content Body */}
-          <div
-            style={{
-              padding: "24px 28px",
-              overflowY: "auto",
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px"
-            }}
-          >
-            {/* TAB 1: FACULTY IDEA BANK */}
+          {/* Modal Content Body */}
+          <div style={{ padding: "24px 28px", overflowY: "auto", flex: 1 }}>
+            {/* TAB 1: FACULTY CLASSROOM IDEAS */}
             {activeTab === "faculty" && (
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+                style={{ display: "flex", flexDirection: "column", gap: "18px" }}
               >
-                {/* Discussion Question Feature Card */}
+                {/* Classroom Discussion Spotlight */}
                 <div
                   style={{
-                    background: "linear-gradient(135deg, #eff6ff 0%, #fef3c7 100%)",
+                    background: "linear-gradient(135deg, #eff6ff 0%, #ffffff 100%)",
                     border: "1.5px solid #bfdbfe",
                     borderRadius: "18px",
                     padding: "18px 22px",
@@ -212,51 +187,51 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </h5>
                   </div>
                   <blockquote style={{ margin: 0, fontSize: "1.02rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
-                    “Why has identity theft surged into one of the most lucrative financial crimes globally, and why is restoring a stolen identity so notoriously arduous for victims?”
+                    “Why do modern highway maps across Europe still follow roads paved by Roman soldiers two thousand years ago?”
                   </blockquote>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "4px" }}>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 1: Is individual carelessness to blame, or is the root cause systemic corporate security failures?
+                      Follow-up 1: Did public panic during COVID-19 prove that human compliance during pandemics hasn't changed since 1918?
                     </span>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 2: Why do financial institutions often place the burden of proof onto the traumatized victim?
+                      Follow-up 2: Why did building the massive Maginot Line wall fail to protect France in World War II?
                     </span>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 3: How does the borderless nature of cybercrime syndicates shield perpetrators from prosecution?
+                      Follow-up 3: Can studying the 1637 Dutch Tulip Mania help everyday investors avoid losing money in cryptocurrency crashes?
                     </span>
                   </div>
                   <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--slate-600)", fontStyle: "italic" }}>
-                    ✦ Pedagogical Purpose: These questions help students perceive that identity theft is an organized, industrial shadow economy enabled by flawed digital infrastructure, resulting in protracted legal and psychological trauma for individuals.
+                    ✦ Pedagogical Purpose: These concrete questions instantly prove to students that history is not an abstract subject in old textbooks—it is physically under our car tires and psychologically behind our financial decisions today.
                   </p>
                 </div>
 
                 {/* 8 Faculty Analytical Angles */}
                 <div>
                   <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "12px" }}>
-                    Faculty / Teacher Idea Bank (8 Analytical Discussion Angles)
+                    Teacher Idea Bank (Strictly View 1 &amp; View 2 Points)
                   </h4>
                   <div className="stage-grid-2col" style={{ gap: "14px" }}>
-                    {/* Causes of Identity Theft */}
+                    {/* View 1: History Fails Modernity */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                       <span className="apple-badge warning" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fef3c7", color: "#92400e" }}>
-                        ⚡ BODY 1: ROOT CAUSES OF IDENTITY THEFT
+                        ⚡ VIEW 1: WHY HISTORY FAILS TO GUIDE US TODAY
                       </span>
                       {[
                         {
-                          title: "Ubiquitous Cashless Transactions",
-                          desc: "The transition to mobile banking and online merchant checkouts drastically multiplies the attack surface, exposing payment credentials at countless digital touchpoints."
+                          title: "Survivorship Bias in Historical Records",
+                          desc: "History was recorded exclusively by victorious monarchs and elites, offering zero practical guidance for common citizens' modern struggles."
                         },
                         {
-                          title: "Systemic Corporate Data Breaches",
-                          desc: "Hackers breach centralized commercial databases, exfiltrating millions of unencrypted government ID numbers and credit records for dark-web distribution."
+                          title: "The 'Fighting the Last War' Blindspot",
+                          desc: "Fixating on past crises creates a false sense of security, blinding modern leadership to novel, asymmetric technological threats like aircraft and cyberattacks."
                         },
                         {
-                          title: "Sophisticated Social Engineering",
-                          desc: "Phishing emails and spoofed banking portals impersonate trusted authorities, manipulating vulnerable individuals into surrendering one-time passcodes and pins."
+                          title: "Radical Megacity Demographic Scale",
+                          desc: "Ancient small-town governance frameworks cannot manage modern twenty-million-person multicultural megacities with automated infrastructure."
                         },
                         {
-                          title: "Transnational Cybercrime Impunity",
-                          desc: "Syndicates operate from foreign jurisdictions with weak extradition pacts, laundering illicit profits via crypto with minimal fear of law enforcement retribution."
+                          title: "Hyper-Fragile Global Supply Chains",
+                          desc: "Ancient economies were localized and self-contained, whereas today a single foreign disruption halts international food and medicine."
                         }
                       ].map((item, idx) => (
                         <div key={idx} style={{ background: "#fffbeb", border: "1px solid #fde68a", borderRadius: "12px", padding: "12px 14px" }}>
@@ -266,32 +241,32 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                       ))}
                     </div>
 
-                    {/* Effects on Victims */}
+                    {/* View 2: Past Silently Shapes Present */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                      <span className="apple-badge accent" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fee2e2", color: "#b91c1c" }}>
-                        🔴 BODY 2: DEVASTATING FALLOUT FOR VICTIMS
+                      <span className="apple-badge accent" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#dcfce7", color: "#166534" }}>
+                        🟢 VIEW 2: HOW THE PAST SILENTLY SHAPES THE PRESENT
                       </span>
                       {[
                         {
-                          title: "Catastrophic Financial Depletion",
-                          desc: "Perpetrators rapidly siphon liquid savings, max out existing credit cards, and secure unauthorized loans, leaving victims facing sudden insolvency."
+                          title: "Physical Path Dependency & Roman Roads",
+                          desc: "Modern European highways, railway lines, and city centers are built directly on top of ancient Roman and medieval engineering foundations."
                         },
                         {
-                          title: "Decimated Credit Ratings",
-                          desc: "Unpaid fraudulent liabilities register as defaults, causing victims' credit scores to plummet and disqualifying them from mortgages and vehicle loans."
+                          title: "The Psychology of Speculative Bubbles",
+                          desc: "While financial technology changes, human greed and collective delusion during market crashes follow the identical stages of the 1637 Dutch Tulip Mania."
                         },
                         {
-                          title: "Protracted Bureaucratic Ordeal",
-                          desc: "Victims spend hundreds of agonizing hours disputing false claims, acquiring notarized affidavits, and battling recalcitrant credit bureaus to clean their names."
+                          title: "Epidemiological Protocols & Pandemics",
+                          desc: "Human behavioral reactions and containment strategies during disease outbreaks repeat identically; COVID-19 rules were adapted from the 1918 Spanish Flu."
                         },
                         {
-                          title: "Chronic Psychological Distress",
-                          desc: "Having one's identity weaponized triggers intense anxiety, paranoia, feelings of severe violation, and insomnia akin to post-traumatic stress."
+                          title: "Century-Old Peace Treaties & Diplomacy",
+                          desc: "Contemporary international law, sovereign borders, and diplomatic neutrality (such as Swiss neutrality) are direct continuations of historic peace treaties."
                         }
                       ].map((item, idx) => (
-                        <div key={idx} style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "12px", padding: "12px 14px" }}>
-                          <strong style={{ fontSize: "0.88rem", color: "#991b1b" }}>{item.title}:</strong>
-                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#7f1d1d", lineHeight: 1.45 }}>{item.desc}</p>
+                        <div key={idx} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "12px 14px" }}>
+                          <strong style={{ fontSize: "0.88rem", color: "#166534" }}>{item.title}:</strong>
+                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#14532d", lineHeight: 1.45 }}>{item.desc}</p>
                         </div>
                       ))}
                     </div>
@@ -300,7 +275,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               </motion.div>
             )}
 
-            {/* TAB 2: THE 3-TIER ARCHITECTURE */}
+            {/* TAB 2: THE 5-PARAGRAPH ARCHITECTURE */}
             {activeTab === "method" && (
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
@@ -309,31 +284,45 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 <div style={{ background: "var(--slate-50)", borderRadius: "16px", padding: "16px 20px", border: "1px solid var(--border-subtle)" }}>
                   <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-                    <strong>Mandatory Body Paragraph Format:</strong> Cause 1 + Effect 1 + Example. Construct every body paragraph with this cohesive cause-and-effect progression:
+                    <strong>Mandatory 5-Paragraph Structure:</strong> Intro (Paraphrase + Opinion) → Body 1 (Ideas for 1st View) → Body 2 (Ideas for 2nd View) → Body 3 (Ideas for Opinion) → Conclusion (Sum-up main points + Restate opinion).
                   </p>
                 </div>
 
                 {[
                   {
-                    step: "Tier 01",
-                    badge: "Cause 1",
-                    title: "State 1 Clear Primary Cause / Driver",
-                    say: "“Foremost among the drivers behind the surge in identity theft is the ubiquity of digital financial transactions coupled with vulnerable corporate data repositories.”",
-                    takeaway: "Direct, unequivocal topic sentence establishing the primary root cause."
+                    step: "Para 01",
+                    badge: "Introduction",
+                    title: "Paraphrase Prompt + State Defensible Opinion",
+                    say: "“While some individuals argue that historical records provide little practical guidance in our fast-evolving modern world, others maintain that analyzing the past is essential for comprehending contemporary reality. In my opinion, although rapid urban and technological changes present unprecedented challenges, studying historical human psychology and institutional foundations remains indispensable for sound decision-making.”",
+                    takeaway: "Directly satisfies Band 9 Task Achievement by stating a clear, consistent stance from the beginning."
                   },
                   {
-                    step: "Tier 02",
-                    badge: "Effect 1",
-                    title: "Unpack the Immediate Effect & Causal Mechanism",
-                    say: "“As everyday commerce transitions online, consumers submit personal information across countless platforms. When corporate security fails, cyber syndicates exfiltrate sensitive data in bulk and auction credentials on dark-web marketplaces to facilitate automated fraud.”",
-                    takeaway: "Explains how the root cause generates immediate destructive effects."
+                    step: "Para 02",
+                    badge: "Body 1 (1st View)",
+                    title: "Develop Survivorship Bias & 'Fighting the Last War'",
+                    say: "“On the one hand, proponents argue that historical lessons are inherently flawed because historical archives suffer from profound survivorship bias and prepare policymakers for yesterday's battles rather than today's reality.”",
+                    takeaway: "Gives full analytical weight to View 1 with the Maginot Line and megacity scale examples."
                   },
                   {
-                    step: "Tier 03",
-                    badge: "Example",
-                    title: "Substantiate with Specific Real-World Evidence",
-                    say: "“A prominent illustration is the Equifax breach, in which hackers compromised the financial dossiers of over 147 million consumers, triggering an unprecedented wave of unauthorized credit cards and fraudulent loans.”",
-                    takeaway: "Anchors the cause and effect to an undeniable real-world cybercrime event."
+                    step: "Para 03",
+                    badge: "Body 2 (2nd View)",
+                    title: "Develop Path Dependency & Cyclical Human Psychology",
+                    say: "“On the other hand, analyzing historical developments is indispensable because through path dependency, modern society is physically anchored to ancient foundations, while human speculative greed remains immutable.”",
+                    takeaway: "Grounds View 2 in tangible evidence: Roman road maps, Tulip Mania, and 1918 flu quarantines."
+                  },
+                  {
+                    step: "Para 04",
+                    badge: "Body 3 (Opinion)",
+                    title: "Develop the Author's Nuanced Stance",
+                    say: "“In my view, while the demographic and technological scale of modern life is novel, the underlying architecture of human society cannot be understood in isolation from its origins.”",
+                    takeaway: "Reconciles modern novelty with timeless historical patterns logically."
+                  },
+                  {
+                    step: "Para 05",
+                    badge: "Conclusion",
+                    title: "Sum-Up Main Points + Restate Opinion",
+                    say: "“In conclusion, although the elitist bias of historical archives and the novel scale of modern society lead some to dismiss the past, history remains an indispensable guide for interpreting the present.”",
+                    takeaway: "Crisp 2-sentence closure that synthesizes the debate without introducing new ideas."
                   }
                 ].map((item) => (
                   <div
@@ -372,22 +361,22 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    topic: "Root Causes: Cyber Breaches & Digital Banking (Body 1)",
-                    band6: "Identity theft is increasing because everyone buys things on their phone now and hackers steal passwords from companies.",
-                    band9: "The rapid proliferation of identity fraud is catalyzed by ubiquitous cashless transactions and systemic corporate database vulnerabilities, allowing cybercrime syndicates to exfiltrate personally identifiable information en masse.",
-                    why: "Replaces vague everyday words with precise technological and academic terminology: 'ubiquitous cashless transactions', 'systemic vulnerabilities', 'exfiltrate personally identifiable information en masse'."
+                    topic: "View 1: Historical Bias & Blindspots (Body 1)",
+                    band6: "History doesn't help us because books were written by old kings who only cared about winning wars.",
+                    band9: "Historical archives suffer from profound survivorship bias, having been authored almost exclusively by ruling elites to chronicle military triumphs rather than the lived socioeconomic realities of ordinary citizens.",
+                    why: "Replaces basic vocabulary with precise academic terms: 'survivorship bias', 'socioeconomic realities of ordinary citizens'."
                   },
                   {
-                    topic: "Victim Effects: Financial Ruin & Decimated Credit (Body 2)",
-                    band6: "Victims lose all their money and their bank accounts are empty so they cannot buy a house or get a loan.",
-                    band9: "Beyond immediate capital depletion, victims endure decimated credit ratings and false debt liabilities, effectively blacklisting them from obtaining mortgages, auto loans, or employment opportunities.",
-                    why: "Frames the consequence comprehensively: 'immediate capital depletion', 'decimated credit ratings', 'blacklisting them from mortgages'."
+                    topic: "View 2: Physical Foundations & Roman Roads (Body 2)",
+                    band6: "We need history because roads and streets in cities were made a long time ago by Romans.",
+                    band9: "Through the lens of path dependency, modern infrastructure remains physically anchored to ancient foundations, with contemporary European transport corridors directly tracing Roman military roads.",
+                    why: "Elevates informal expressions into academic concepts: 'path dependency', 'physically anchored to ancient foundations'."
                   },
                   {
-                    topic: "Victim Effects: Psychological & Bureaucratic Toll (Body 2)",
-                    band6: "People feel very sad and stressed out because they have to call the police and banks for many months.",
-                    band9: "Compounding the economic damage, victims endure chronic psychological trauma and an exhausting bureaucratic ordeal, spending months filing notarized affidavits to expunge fraudulent records from credit bureaus.",
-                    why: "Captures the emotional and institutional reality with precision: 'chronic psychological trauma', 'exhausting bureaucratic ordeal', 'expunge fraudulent records'."
+                    topic: "Author Opinion: Synthesis of Both Sides (Body 3)",
+                    band6: "I think history is still useful because when people get crazy over money like in tulips or crypto, it is the same thing.",
+                    band9: "In my view, while the demographic and technological scale of modern life is novel, the cyclical human psychology of speculative mania and disease containment proves that historical literacy is an indispensable compass.",
+                    why: "Demonstrates high-level nuance and synthesis: 'cyclical human psychology of speculative mania', 'historical literacy is an indispensable compass'."
                   }
                 ].map((item, index) => (
                   <div
@@ -431,20 +420,24 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    title: "1. Introduction Formula (Paraphrase + Direct Outline)",
-                    formula: "“In the contemporary digital era, financial crimes centered around identity theft are escalating at an alarming velocity worldwide. In this essay, I will examine how [ubiquitous online banking and corporate data breaches] have catalyzed this illicit trend, before illustrating the [catastrophic financial devastation, ruined creditworthiness, and profound psychological distress] inflicted upon victimized individuals.”"
+                    title: "1. Introduction Formula (Paraphrase + Clear Opinion)",
+                    formula: "“While some individuals argue that [historical records provide little practical guidance in our fast-evolving modern world], others maintain that [analyzing the past is essential for comprehending contemporary reality]. In my opinion, although [rapid urban and technological changes present unprecedented challenges], [studying historical human psychology and institutional foundations remains indispensable for sound decision-making].”"
                   },
                   {
-                    title: "2. Body 1 Opener Formula (Root Causes)",
-                    formula: "“Foremost among the drivers behind the escalating incidence of identity theft is the [ubiquity of electronic financial transactions combined with systemic corporate cybersecurity vulnerabilities]...”"
+                    title: "2. Body 1 Opener Formula (1st View: History Fails Modernity)",
+                    formula: "“On the one hand, proponents argue that historical lessons are inherently flawed because past archives suffer from [profound survivorship bias and prepare policymakers for yesterday's battles rather than today's reality]...”"
                   },
                   {
-                    title: "3. Body 2 Opener Formula (Effects on Victims)",
-                    formula: "“Turning to the ramifications, the consequences inflicted upon victims are both financially devastating and psychologically debilitating, characterized by [immediate monetary drainage and protracted bureaucratic struggles]...”"
+                    title: "3. Body 2 Opener Formula (2nd View: Past Silently Shapes Present)",
+                    formula: "“On the other hand, analyzing historical developments is indispensable because through [path dependency, modern society is physically anchored to ancient foundations, while human speculative greed remains immutable]...”"
                   },
                   {
-                    title: "4. Conclusion Formula (Sum-up Causes + Synthesize Effects)",
-                    formula: "“In conclusion, the alarming surge in identity theft is propelled primarily by [widespread digital commerce and corporate database leaks]. Consequently, innocent victims endure devastating repercussions, spanning [immediate financial deprivation, ruined credit ratings, and enduring psychological trauma]...”"
+                    title: "4. Body 3 Opener Formula (Author Opinion)",
+                    formula: "“In my view, while the demographic and technological scale of modern life is novel, the underlying architecture of [human governance and financial mania remains identical across eras]...”"
+                  },
+                  {
+                    title: "5. Conclusion Formula (Sum-Up Points + Restate Opinion)",
+                    formula: "“In conclusion, although the elitist bias of historical archives and the novel scale of modern society lead some to [dismiss the past], history remains an indispensable guide, as [understanding the physical foundations of our cities and the cyclical nature of human psychology is essential for interpreting the present]...”"
                   }
                 ].map((item, index) => (
                   <div
@@ -465,27 +458,6 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </p>
                   </div>
                 ))}
-
-                {/* Teaching Recommendation */}
-                <div
-                  style={{
-                    background: "linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%)",
-                    border: "1.5px solid #86efac",
-                    borderRadius: "16px",
-                    padding: "16px 20px",
-                    boxShadow: "var(--shadow-sm)"
-                  }}
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "#166534", marginBottom: "6px" }}>
-                    <Award size={18} />
-                    <h5 style={{ fontSize: "0.95rem", fontWeight: 800, margin: 0 }}>
-                      Faculty Teaching Recommendation
-                    </h5>
-                  </div>
-                  <p style={{ fontSize: "0.9rem", color: "#14532d", margin: 0, lineHeight: 1.55 }}>
-                    Instruct students to strictly maintain the <strong>Cause 1 + Effect 1 + Example</strong> formula in every body paragraph. Build Body 1 around digital transaction ubiquity and corporate database breaches, and construct Body 2 around direct financial ruin, destroyed credit ratings, and protracted bureaucratic/mental trauma. Symmetrical 50/50 paragraph balance between causes and effects guarantees maximum Band 9 Task Achievement.
-                  </p>
-                </div>
               </motion.div>
             )}
           </div>

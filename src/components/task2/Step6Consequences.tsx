@@ -17,11 +17,11 @@ export const Step6ConsequencesT2: React.FC = () => {
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px", background: "#fef3c7", color: "#92400e" }}>
-          Step 06 / 09 • Body Para 1 (Causes of Identity Theft)
+          Step 06 / 09 • Body Para 1 (1st View: History is Outdated)
         </span>
-        <h2 className="stage-title">Body 1: Root Causes of Surging Identity Theft</h2>
+        <h2 className="stage-title">Body 1: Ideas for 1st View (History Has Little to Teach Us)</h2>
         <p className="stage-subtitle">
-          Mandatory Body Paragraph Format: <strong>Cause 1 + Effect 1 + Example</strong>. Analyze the technological and systemic vulnerabilities driving the global surge in financial cybercrime.
+          Structure: <strong>Topic Sentence + Supporting Explanation + Concrete Real Example</strong>. Analyze how survivorship bias in ancient records, the 'fighting the last war' trap, and megacity demographic scale render historical models ineffective today.
         </p>
       </div>
 
@@ -45,7 +45,7 @@ export const Step6ConsequencesT2: React.FC = () => {
             TEACHING RULE
           </span>
           <span style={{ fontSize: "0.98rem", fontWeight: 700, color: "#92400e" }}>
-            Students select ONE or TWO core causes below to construct Body 1. Always substantiate with concrete causal mechanisms and real-world breaches!
+            Students select ONE or TWO ideas below to construct Body 1. Always back up the argument with clear reasoning and modern real-world examples!
           </span>
         </div>
         <motion.button
@@ -71,7 +71,7 @@ export const Step6ConsequencesT2: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          ALL 4 CAUSES DISPLAYED SIMULTANEOUSLY (ZERO CLICKS REQUIRED FOR TEACHER)
+          ALL 4 VIEW 1 POINTS DISPLAYED SIMULTANEOUSLY (ZERO CLICKS REQUIRED FOR TEACHER)
          ========================================================================= */}
       <div
         style={{
@@ -108,7 +108,7 @@ export const Step6ConsequencesT2: React.FC = () => {
                     borderRadius: "7px"
                   }}
                 >
-                  ⚡ CAUSE 0{idx + 1}
+                  ⚡ VIEW 1 • POINT 0{idx + 1}
                 </span>
                 <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
                   {reason.title}
@@ -128,7 +128,7 @@ export const Step6ConsequencesT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
                 <Lightbulb size={16} color="var(--apple-blue)" />
                 <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "var(--apple-blue)", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  1. Main Cause (Topic Sentence)
+                  1. Main Idea (One-Liner)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "1.04rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
@@ -148,7 +148,7 @@ export const Step6ConsequencesT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
                 <ArrowRight size={16} color="#b45309" />
                 <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#92400e", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  2. Causal Progression (How Cybercriminals Exploit It)
+                  2. Why It Matters (One-Liner)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "0.98rem", color: "#78350f", lineHeight: 1.55 }}>
@@ -168,7 +168,7 @@ export const Step6ConsequencesT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
                 <CircleCheck size={16} color="#16a34a" />
                 <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#166534", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  3. Real-World Illustration (Breaches &amp; Exploits)
+                  3. Real Example (One-Liner)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "0.98rem", color: "#14532d", lineHeight: 1.55, fontWeight: 550 }}>

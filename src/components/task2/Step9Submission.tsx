@@ -8,9 +8,9 @@ export const Step9SubmissionT2: React.FC = () => (
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
         Step 09 / 09 • Final Essay Structure &amp; Model
       </span>
-      <h2 className="stage-title">Write Your Complete Cause &amp; Effect Essay</h2>
+      <h2 className="stage-title">Write Your Complete Discussion with Opinion Essay</h2>
       <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-        Review your 4-paragraph architecture and mandatory formatting rules before writing the complete Band 9 response.
+        Review your 5-paragraph architecture and mandatory formatting rules before writing the complete Band 9 response.
       </p>
     </div>
 
@@ -25,7 +25,7 @@ export const Step9SubmissionT2: React.FC = () => (
         alignItems: "stretch"
       }}
     >
-      {/* Card 01: 4-Paragraph Format (Cause & Effect Architecture) */}
+      {/* Card 01: 5-Paragraph Format */}
       <div
         style={{
           background: "#ffffff",
@@ -40,39 +40,54 @@ export const Step9SubmissionT2: React.FC = () => (
       >
         <div>
           <span style={{ fontSize: "0.92rem", fontWeight: 700, color: "var(--apple-blue)" }}>
-            4-PARAGRAPH FORMAT
+            5-PARAGRAPH FORMAT
           </span>
           <h3 style={{ fontSize: "1.28rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-            Direct Cause &amp; Effect Architecture
+            Discussion Architecture
           </h3>
           <p style={{ margin: "4px 0 0", fontSize: "0.96rem", color: "var(--slate-600)" }}>
-            [ Intro + Body 1 Causes + Body 2 Effects + Conclusion ]
+            [ Intro + Body 1 + Body 2 + Body 3 + Conclusion ]
           </p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1, overflowY: "auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1, overflowY: "auto" }}>
+          {/* Intro Box */}
+          <div
+            style={{
+              background: "var(--slate-50)",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "10px",
+              padding: "10px 12px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ fontSize: "0.78rem", fontWeight: 800, background: "#f3e8ff", color: "#7e22ce", padding: "2px 6px", borderRadius: "4px" }}>
+                INTRO
+              </span>
+              <strong style={{ fontSize: "0.94rem", color: "var(--slate-900)" }}>Paraphrase + Clear Opinion</strong>
+            </div>
+            <div style={{ fontSize: "0.85rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.45 }}>
+              Paraphrase both viewpoints and state your opinion upfront.
+            </div>
+          </div>
+
           {/* Body 1 Box */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid var(--border-subtle)",
-              borderRadius: "12px",
-              padding: "12px 14px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px"
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "10px",
+              padding: "10px 12px"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#fef3c7", color: "#92400e", padding: "3px 8px", borderRadius: "6px" }}>
-                BODY 1 • CAUSES
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ fontSize: "0.78rem", fontWeight: 800, background: "#fef3c7", color: "#92400e", padding: "2px 6px", borderRadius: "4px" }}>
+                BODY 1
               </span>
-              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Digital Proliferation &amp; Data Leaks</strong>
+              <strong style={{ fontSize: "0.94rem", color: "var(--slate-900)" }}>Ideas for 1st View (History Outdated)</strong>
             </div>
-            <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Cause 1:</strong> Ubiquitous online transactions and vulnerable corporate repositories<br />
-              • <strong>Effect 1:</strong> Infiltrators exfiltrate sensitive credentials and trade them on dark-web forums<br />
-              • <strong>Example:</strong> Equifax breach compromising 147 million identities and credit files
+            <div style={{ fontSize: "0.85rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.45 }}>
+              Survivorship bias in records, the "fighting the last war" trap, and megacity demographic scale.
             </div>
           </div>
 
@@ -80,48 +95,59 @@ export const Step9SubmissionT2: React.FC = () => (
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid var(--border-subtle)",
-              borderRadius: "12px",
-              padding: "12px 14px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px"
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "10px",
+              padding: "10px 12px"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#fee2e2", color: "#b91c1c", padding: "3px 8px", borderRadius: "6px" }}>
-                BODY 2 • EFFECTS
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ fontSize: "0.78rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "2px 6px", borderRadius: "4px" }}>
+                BODY 2
               </span>
-              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Financial Ruin &amp; Psychological Trauma</strong>
+              <strong style={{ fontSize: "0.94rem", color: "var(--slate-900)" }}>Ideas for 2nd View (History Guides Us)</strong>
             </div>
-            <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Cause 1:</strong> Direct account depletion, decimated credit scores, and unauthorized loans<br />
-              • <strong>Effect 1:</strong> Fraudulent debts freeze livelihoods; victims face grueling multi-year bureaucratic battles<br />
-              • <strong>Example:</strong> Victims denied home loans or battling credit agencies for years to clear their record
+            <div style={{ fontSize: "0.85rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.45 }}>
+              Physical Roman road foundations, Tulip Mania market psychology, and 1918 flu playbooks.
             </div>
           </div>
 
-          {/* Task Balance Box */}
+          {/* Body 3 Box */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid var(--border-subtle)",
-              borderRadius: "12px",
-              padding: "12px 14px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px"
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "10px",
+              padding: "10px 12px"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "3px 8px", borderRadius: "6px" }}>
-                TASK ACHIEVEMENT
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ fontSize: "0.78rem", fontWeight: 800, background: "#ffedd5", color: "#c2410c", padding: "2px 6px", borderRadius: "4px" }}>
+                BODY 3
               </span>
-              <strong style={{ fontSize: "1.02rem", color: "var(--slate-900)" }}>Symmetrical 50/50 Coverage</strong>
+              <strong style={{ fontSize: "0.94rem", color: "var(--slate-900)" }}>Ideas for Opinion (Author's Stance)</strong>
             </div>
-            <div style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.55 }}>
-              • <strong>Causes (50%):</strong> Explaining the systemic and technological mechanisms driving fraud<br />
-              • <strong>Victim Fallout (50%):</strong> Fully detailing the economic, legal, and mental ramifications
+            <div style={{ fontSize: "0.85rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.45 }}>
+              Reconciling novel megacity scale with enduring physical foundations and cyclical human psychology.
+            </div>
+          </div>
+
+          {/* Conclusion Box */}
+          <div
+            style={{
+              background: "var(--slate-50)",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "10px",
+              padding: "10px 12px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <span style={{ fontSize: "0.78rem", fontWeight: 800, background: "#f1f5f9", color: "#334155", padding: "2px 6px", borderRadius: "4px" }}>
+                CONCLUSION
+              </span>
+              <strong style={{ fontSize: "0.94rem", color: "var(--slate-900)" }}>Sum-Up Points + Restate Opinion</strong>
+            </div>
+            <div style={{ fontSize: "0.85rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.45 }}>
+              Recap both sides concisely and affirm your final defensible stance.
             </div>
           </div>
         </div>
@@ -142,33 +168,33 @@ export const Step9SubmissionT2: React.FC = () => (
       >
         <div>
           <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#059669" }}>
-            PARAGRAPH FORMAT
+            PARAGRAPH DEVELOPMENT
           </span>
           <h3 style={{ fontSize: "1.18rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-            Body Paragraph Structure
+            Paragraph Logic &amp; Balance
           </h3>
           <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "var(--slate-500)" }}>
-            [ Cause 1 + Effect 1 + Example ]
+            [ Topic Sentence + Explanation + Evidence ]
           </p>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
           {[
             {
-              step: "1. Cause 1",
-              desc: "Anchor each body paragraph around 1 clear primary root cause or vulnerability (Body 1: cyber infrastructure vulnerabilities; Body 2: unauthorized borrowing and identity weaponization)."
+              step: "1. View 1 Development",
+              desc: "Articulate how survivorship bias in ancient archives and the 'fighting the last war' trap create dangerous modern blindspots."
             },
             {
-              step: "2. Effect 1",
-              desc: "Articulate the precise 'how' and 'why' causal progression (e.g., how credential harvesting leads to illicit loan creation, or how falsified credit logs trigger wrongful debt collection and trauma)."
+              step: "2. View 2 Development",
+              desc: "Demonstrate that physical infrastructure (Roman roads) and market psychology (Tulip Mania vs crypto) directly continue today."
             },
             {
-              step: "3. Example",
-              desc: "Provide verifiable, high-impact evidence (corporate data leaks like Equifax/Target, credit rating rejections, dark web credential auctions)."
+              step: "3. Opinion Paragraph",
+              desc: "Develop your own stance (Body 3): argue that while instruments are novel, the foundational wisdom to govern responsibly comes from history."
             },
             {
-              step: "4. Synthesis",
-              desc: "Ensure the topic sentences and conclusion mirror each other, weaving causes and effects into a coherent analytical narrative."
+              step: "4. Conclusion Restatement",
+              desc: "Sum up all key ideas in 2 crisp sentences and restate your opinion with total clarity and conviction."
             }
           ].map((item, i) => (
             <div
@@ -231,7 +257,18 @@ export const Step9SubmissionT2: React.FC = () => (
               PRECISION VOCABULARY:
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-              {["exfiltrate", "credential stuffing", "impersonation", "siphon", "decimate", "bureaucratic ordeal", "ubiquitous", "illicit", "rectify", "vulnerabilities"].map((w) => (
+              {[
+                "path dependency",
+                "survivorship bias",
+                "speculative mania",
+                "epidemiological",
+                "fallacy",
+                "conurbation",
+                "autarky",
+                "anachronistic",
+                "precedent",
+                "immutable"
+              ].map((w) => (
                 <span
                   key={w}
                   style={{
@@ -263,10 +300,11 @@ export const Step9SubmissionT2: React.FC = () => (
           >
             <strong style={{ color: "var(--slate-900)" }}>Discourse Linkers:</strong>
             <br />
-            • <em>Body 1 opener:</em> “Foremost among the drivers behind the escalating incidence of identity theft is the ubiquity of...”<br />
-            • <em>Body 2 opener:</em> “Turning to the ramifications, the consequences inflicted upon victims are both financially devastating and psychologically taxing...”<br />
-            • <em>Example illustration:</em> “A salient illustration of this dynamic is observed when corporate databases are breached...”<br />
-            • <em>Conclusion opener:</em> “In conclusion, the alarming surge in identity theft is propelled primarily by... leaving victims to endure...”
+            • <em>Intro opener:</em> “While some individuals argue that historical records provide little practical guidance... others maintain...”<br />
+            • <em>Body 1 opener:</em> “On the one hand, proponents argue that historical archives suffer from profound survivorship bias...”<br />
+            • <em>Body 2 opener:</em> “On the other hand, through the lens of path dependency, modern society remains physically anchored to...”<br />
+            • <em>Body 3 opener:</em> “In my view, while the demographic scale of modern civilization is unprecedented, the underlying architecture of...”<br />
+            • <em>Conclusion opener:</em> “In conclusion, although the elitist bias of historical archives leads some to dismiss history...”
           </div>
         </div>
       </div>
