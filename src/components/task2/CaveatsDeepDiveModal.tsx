@@ -4,8 +4,6 @@ import {
   X,
   Sparkles,
   Award,
-  CheckCircle2,
-  AlertTriangle,
   Lightbulb,
   GitBranch,
   BookOpen,
@@ -92,10 +90,10 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               </div>
               <div>
                 <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  Faculty Teaching Vault &amp; Discussion Architecture
+                  Faculty Teaching Vault &amp; Essay Architecture
                 </h3>
                 <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", margin: "2px 0 0" }}>
-                  Fresh, Easily Justifiable Ideas: History &amp; Modern Society
+                  Fresh, Easily Justifiable Ideas: Growth Mindset vs. Psychological Burnout
                 </p>
               </div>
             </div>
@@ -129,7 +127,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
           >
             {[
               { id: "faculty", label: "Classroom Discussion & Idea Vault", icon: <Lightbulb size={16} /> },
-              { id: "method", label: "5-Paragraph Architecture", icon: <GitBranch size={16} /> },
+              { id: "method", label: "4-Paragraph Architecture", icon: <GitBranch size={16} /> },
               { id: "comparisons", label: "Band 6 vs Band 9 Contrasts", icon: <Award size={16} /> },
               { id: "formulas", label: "Plug & Play Sentence Formulas", icon: <BookOpen size={16} /> }
             ].map((tab) => (
@@ -187,81 +185,51 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </h5>
                   </div>
                   <blockquote style={{ margin: 0, fontSize: "1.02rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
-                    “Why do modern highway maps across Europe still follow roads paved by Roman soldiers two thousand years ago?”
+                    “When a child spends years practicing basketball but stops growing at 5 feet 4 inches, does telling them 'you can achieve anything' inspire them or set them up for heartbreak?”
                   </blockquote>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "4px" }}>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 1: Did public panic during COVID-19 prove that human compliance during pandemics hasn't changed since 1918?
+                      Follow-up 1: Why do students in high-pressure exam systems blame themselves when they fail, even after studying 14 hours a day?
                     </span>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 2: Why did building the massive Maginot Line wall fail to protect France in World War II?
+                      Follow-up 2: How does Carol Dweck's research on praising 'effort rather than talent' build emotional resilience?
                     </span>
                     <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 3: Can studying the 1637 Dutch Tulip Mania help everyday investors avoid losing money in cryptocurrency crashes?
+                      Follow-up 3: Can pure willpower conquer poverty and institutional barriers without external social support?
                     </span>
                   </div>
                   <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--slate-600)", fontStyle: "italic" }}>
-                    ✦ Pedagogical Purpose: These concrete questions instantly prove to students that history is not an abstract subject in old textbooks—it is physically under our car tires and psychologically behind our financial decisions today.
+                    ✦ Pedagogical Purpose: This concrete question helps students instantly grasp the distinction between encouraging healthy effort (growth mindset) and making false promises that defy biology and economic reality.
                   </p>
                 </div>
 
                 {/* 8 Faculty Analytical Angles */}
                 <div>
                   <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "12px" }}>
-                    Teacher Idea Bank (Strictly View 1 &amp; View 2 Points)
+                    Teacher Idea Bank (Strictly Advantages &amp; Disadvantages)
                   </h4>
                   <div className="stage-grid-2col" style={{ gap: "14px" }}>
-                    {/* View 1: History Fails Modernity */}
-                    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                      <span className="apple-badge warning" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fef3c7", color: "#92400e" }}>
-                        ⚡ VIEW 1: WHY HISTORY FAILS TO GUIDE US TODAY
-                      </span>
-                      {[
-                        {
-                          title: "Survivorship Bias in Historical Records",
-                          desc: "History was recorded exclusively by victorious monarchs and elites, offering zero practical guidance for common citizens' modern struggles."
-                        },
-                        {
-                          title: "The 'Fighting the Last War' Blindspot",
-                          desc: "Fixating on past crises creates a false sense of security, blinding modern leadership to novel, asymmetric technological threats like aircraft and cyberattacks."
-                        },
-                        {
-                          title: "Radical Megacity Demographic Scale",
-                          desc: "Ancient small-town governance frameworks cannot manage modern twenty-million-person multicultural megacities with automated infrastructure."
-                        },
-                        {
-                          title: "Hyper-Fragile Global Supply Chains",
-                          desc: "Ancient economies were localized and self-contained, whereas today a single foreign disruption halts international food and medicine."
-                        }
-                      ].map((item, idx) => (
-                        <div key={idx} style={{ background: "#fffbeb", border: "1px solid #fde68a", borderRadius: "12px", padding: "12px 14px" }}>
-                          <strong style={{ fontSize: "0.88rem", color: "#92400e" }}>{item.title}:</strong>
-                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#78350f", lineHeight: 1.45 }}>{item.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* View 2: Past Silently Shapes Present */}
+                    {/* Advantages: Growth Mindset & Upward Mobility */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                       <span className="apple-badge accent" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#dcfce7", color: "#166534" }}>
-                        🟢 VIEW 2: HOW THE PAST SILENTLY SHAPES THE PRESENT
+                        🟢 ADVANTAGES: WHY EFFORT EMPOWERS CHILDREN
                       </span>
                       {[
                         {
-                          title: "Physical Path Dependency & Roman Roads",
-                          desc: "Modern European highways, railway lines, and city centers are built directly on top of ancient Roman and medieval engineering foundations."
+                          title: "Fosters an Intrinsic Growth Mindset",
+                          desc: "Teaches children that cognitive capability is malleable through practice rather than fixed, building resilience against early academic failure."
                         },
                         {
-                          title: "The Psychology of Speculative Bubbles",
-                          desc: "While financial technology changes, human greed and collective delusion during market crashes follow the identical stages of the 1637 Dutch Tulip Mania."
+                          title: "Engine for Upward Social Mobility",
+                          desc: "Eliminates defeatist mental ceilings for youngsters from disadvantaged backgrounds, inspiring them to pursue medicine, law, and elite STEM careers."
                         },
                         {
-                          title: "Epidemiological Protocols & Pandemics",
-                          desc: "Human behavioral reactions and containment strategies during disease outbreaks repeat identically; COVID-19 rules were adapted from the 1918 Spanish Flu."
+                          title: "Long-Term Emotional Tenacity & Grit",
+                          desc: "Encourages students to perceive setbacks as constructive feedback rather than permanent personal indictments, sustaining motivation."
                         },
                         {
-                          title: "Century-Old Peace Treaties & Diplomacy",
-                          desc: "Contemporary international law, sovereign borders, and diplomatic neutrality (such as Swiss neutrality) are direct continuations of historic peace treaties."
+                          title: "Eradication of Defeatist Reluctance",
+                          desc: "Sparks willing engagement in intimidating subjects like advanced mathematics and languages without fear of appearing unintelligent."
                         }
                       ].map((item, idx) => (
                         <div key={idx} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "12px 14px" }}>
@@ -270,12 +238,42 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                         </div>
                       ))}
                     </div>
+
+                    {/* Disadvantages: Self-Blame & Inherent Limitations */}
+                    <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                      <span className="apple-badge warning" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fee2e2", color: "#991b1b" }}>
+                        ⚡ DISADVANTAGES: PSYCHOLOGICAL PERILS &amp; REALITIES
+                      </span>
+                      {[
+                        {
+                          title: "Acute Psychological Self-Blame & Guilt",
+                          desc: "Framing success purely as effort leads children to conclude that any failure is a shameful personal inadequacy and moral defect."
+                        },
+                        {
+                          title: "Denial of Inborn Biological Aptitudes",
+                          desc: "Ignores natural physical and neurological prerequisites (e.g., height in basketball, innate musical pitch), leading to wasted formative years."
+                        },
+                        {
+                          title: "Disregard for Structural Inequities",
+                          desc: "Promotes a naive meritocracy myth that blinds young people to financial inequities, systemic bottlenecks, and the unavoidable role of luck."
+                        },
+                        {
+                          title: "Severe Adolescent Burnout & Anxiety",
+                          desc: "High-stakes educational pressure (e.g., East Asian exam culture) triggers clinical depression when diligent students miss limited quotas."
+                        }
+                      ].map((item, idx) => (
+                        <div key={idx} style={{ background: "#fff1f2", border: "1px solid #fecdd3", borderRadius: "12px", padding: "12px 14px" }}>
+                          <strong style={{ fontSize: "0.88rem", color: "#991b1b" }}>{item.title}:</strong>
+                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#881337", lineHeight: 1.45 }}>{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
             )}
 
-            {/* TAB 2: THE 5-PARAGRAPH ARCHITECTURE */}
+            {/* TAB 2: THE 4-PARAGRAPH ARCHITECTURE */}
             {activeTab === "method" && (
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
@@ -284,7 +282,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 <div style={{ background: "var(--slate-50)", borderRadius: "16px", padding: "16px 20px", border: "1px solid var(--border-subtle)" }}>
                   <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-                    <strong>Mandatory 5-Paragraph Structure:</strong> Intro (Paraphrase + Opinion) → Body 1 (Ideas for 1st View) → Body 2 (Ideas for 2nd View) → Body 3 (Ideas for Opinion) → Conclusion (Sum-up main points + Restate opinion).
+                    <strong>Mandatory 4-Paragraph Structure:</strong> Intro (Paraphrase + Thesis) → Body 1 (Advantages: 2 Main Reasons + Supporting + Example) → Body 2 (Disadvantages: 2 Main Reasons + Example) → Conclusion (Sum-up main reasons + Suggestion/Recommendation).
                   </p>
                 </div>
 
@@ -292,37 +290,30 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   {
                     step: "Para 01",
                     badge: "Introduction",
-                    title: "Paraphrase Prompt + State Defensible Opinion",
-                    say: "“While some individuals argue that historical records provide little practical guidance in our fast-evolving modern world, others maintain that analyzing the past is essential for comprehending contemporary reality. In my opinion, although rapid urban and technological changes present unprecedented challenges, studying historical human psychology and institutional foundations remains indispensable for sound decision-making.”",
-                    takeaway: "Directly satisfies Band 9 Task Achievement by stating a clear, consistent stance from the beginning."
+                    title: "Paraphrase Prompt + Balanced Thesis Statement",
+                    say: "“In various parts of the world, children are consistently instilled with the belief that boundless success is achievable solely through diligence and relentless effort. While this message undeniably nurtures resilience, a growth mindset, and high personal aspirations, it simultaneously introduces notable perils, particularly the risk of severe psychological distress and an unrealistic disregard for innate limitations.”",
+                    takeaway: "Directly fulfills Task Achievement by presenting a clear, balanced overview from the opening sentences."
                   },
                   {
                     step: "Para 02",
-                    badge: "Body 1 (1st View)",
-                    title: "Develop Survivorship Bias & 'Fighting the Last War'",
-                    say: "“On the one hand, proponents argue that historical lessons are inherently flawed because historical archives suffer from profound survivorship bias and prepare policymakers for yesterday's battles rather than today's reality.”",
-                    takeaway: "Gives full analytical weight to View 1 with the Maginot Line and megacity scale examples."
+                    badge: "Body 1 (Advantages)",
+                    title: "Develop 2 Main Reasons + Supporting Reasons + Carol Dweck Example",
+                    say: "“On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it cultivates an intrinsic growth mindset and a strong work ethic... Furthermore, this outlook serves as an engine for social mobility by eliminating self-imposed psychological ceilings... A compelling illustration is evident in research by Dr. Carol Dweck; students praised for effort exhibited markedly higher perseverance.”",
+                    takeaway: "Provides two distinct advantages with thorough explanation and empirical psychological evidence."
                   },
                   {
                     step: "Para 03",
-                    badge: "Body 2 (2nd View)",
-                    title: "Develop Path Dependency & Cyclical Human Psychology",
-                    say: "“On the other hand, analyzing historical developments is indispensable because through path dependency, modern society is physically anchored to ancient foundations, while human speculative greed remains immutable.”",
-                    takeaway: "Grounds View 2 in tangible evidence: Roman road maps, Tulip Mania, and 1918 flu quarantines."
+                    badge: "Body 2 (Disadvantages)",
+                    title: "Develop 2 Main Reasons + High-Stakes Exam Example",
+                    say: "“Conversely, propagating this unconstrained narrative produces two profound drawbacks. The foremost hazard is the onset of acute psychological distress and devastating self-blame... In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations and structural societal barriers... For instance, in hyper-competitive systems like South Korea, the expectation that exertion guarantees admission precipitates severe depression when bottlenecks block hardworking candidates.”",
+                    takeaway: "Exposes psychological guilt and biological/systemic limits with compelling real-world evidence."
                   },
                   {
                     step: "Para 04",
-                    badge: "Body 3 (Opinion)",
-                    title: "Develop the Author's Nuanced Stance",
-                    say: "“In my view, while the demographic and technological scale of modern life is novel, the underlying architecture of human society cannot be understood in isolation from its origins.”",
-                    takeaway: "Reconciles modern novelty with timeless historical patterns logically."
-                  },
-                  {
-                    step: "Para 05",
                     badge: "Conclusion",
-                    title: "Sum-Up Main Points + Restate Opinion",
-                    say: "“In conclusion, although the elitist bias of historical archives and the novel scale of modern society lead some to dismiss the past, history remains an indispensable guide for interpreting the present.”",
-                    takeaway: "Crisp 2-sentence closure that synthesizes the debate without introducing new ideas."
+                    title: "Sum-Up All Main Reasons + Suggestion / Recommendation",
+                    say: "“In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity and fuels upward mobility, it can equally inflict crippling self-reproach and blind individuals to inevitable biological and socioeconomic constraints. It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance, teaching the youth that while giving their utmost effort is commendable, developing self-compassion when facing unalterable realities is equally vital.”",
+                    takeaway: "Crisp 2-sentence closure that synthesizes both sides and delivers actionable pedagogical guidance."
                   }
                 ].map((item) => (
                   <div
@@ -361,22 +352,22 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    topic: "View 1: Historical Bias & Blindspots (Body 1)",
-                    band6: "History doesn't help us because books were written by old kings who only cared about winning wars.",
-                    band9: "Historical archives suffer from profound survivorship bias, having been authored almost exclusively by ruling elites to chronicle military triumphs rather than the lived socioeconomic realities of ordinary citizens.",
-                    why: "Replaces basic vocabulary with precise academic terms: 'survivorship bias', 'socioeconomic realities of ordinary citizens'."
+                    topic: "Body 1 (Advantages): Growth Mindset & Resilience",
+                    band6: "Telling kids to work hard is good because they will try more and get better marks in school when things get tough.",
+                    band9: "Primarily, this message cultivates an intrinsic growth mindset and a strong work ethic, prompting young minds to interpret setbacks as constructive learning opportunities rather than insurmountable barriers.",
+                    why: "Replaces vague verbs and simplistic claims with precise developmental terms: 'intrinsic growth mindset', 'constructive learning opportunities'."
                   },
                   {
-                    topic: "View 2: Physical Foundations & Roman Roads (Body 2)",
-                    band6: "We need history because roads and streets in cities were made a long time ago by Romans.",
-                    band9: "Through the lens of path dependency, modern infrastructure remains physically anchored to ancient foundations, with contemporary European transport corridors directly tracing Roman military roads.",
-                    why: "Elevates informal expressions into academic concepts: 'path dependency', 'physically anchored to ancient foundations'."
+                    topic: "Body 2 (Disadvantages): Acute Psychological Guilt & Burnout",
+                    band6: "If kids fail they will feel sad and think they are stupid because their parents told them hard work is everything.",
+                    band9: "If children are led to believe that success is solely a product of willpower, they inevitably conclude that any failure is a direct personal deficiency, resulting in debilitating self-blame, perfectionism, and early burnout.",
+                    why: "Elevates conversational feelings into analytical psychology: 'product of willpower', 'debilitating self-blame', 'perfectionism'."
                   },
                   {
-                    topic: "Author Opinion: Synthesis of Both Sides (Body 3)",
-                    band6: "I think history is still useful because when people get crazy over money like in tulips or crypto, it is the same thing.",
-                    band9: "In my view, while the demographic and technological scale of modern life is novel, the cyclical human psychology of speculative mania and disease containment proves that historical literacy is an indispensable compass.",
-                    why: "Demonstrates high-level nuance and synthesis: 'cyclical human psychology of speculative mania', 'historical literacy is an indispensable compass'."
+                    topic: "Conclusion: Balanced Synthesis & Recommendation",
+                    band6: "In conclusion, hard work is good but too much pressure is bad, so parents should be careful with their advice.",
+                    band9: "In conclusion, while reassuring children that effort unlocks all doors fuels upward mobility, it is recommended that guardians balance aspirational encouragement with pragmatic guidance and self-compassion.",
+                    why: "Demonstrates high-level cohesion and adult recommendation: 'temper aspirational encouragement with pragmatic guidance and self-compassion'."
                   }
                 ].map((item, index) => (
                   <div
@@ -420,24 +411,20 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    title: "1. Introduction Formula (Paraphrase + Clear Opinion)",
-                    formula: "“While some individuals argue that [historical records provide little practical guidance in our fast-evolving modern world], others maintain that [analyzing the past is essential for comprehending contemporary reality]. In my opinion, although [rapid urban and technological changes present unprecedented challenges], [studying historical human psychology and institutional foundations remains indispensable for sound decision-making].”"
+                    title: "1. Introduction Formula (Paraphrase + Balanced Thesis)",
+                    formula: "“In various parts of the world, children are consistently instilled with the belief that [boundless success is achievable solely through diligence]. While this message undeniably [nurtures resilience, a growth mindset, and high aspirations], it simultaneously introduces notable perils, particularly [the risk of severe psychological distress and an unrealistic disregard for innate limitations].”"
                   },
                   {
-                    title: "2. Body 1 Opener Formula (1st View: History Fails Modernity)",
-                    formula: "“On the one hand, proponents argue that historical lessons are inherently flawed because past archives suffer from [profound survivorship bias and prepare policymakers for yesterday's battles rather than today's reality]...”"
+                    title: "2. Body 1 Opener Formula (Advantages: 2 Reasons + Supporting + Example)",
+                    formula: "“On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it [cultivates an intrinsic growth mindset and a strong work ethic]... Furthermore, this outlook serves as an engine for [social mobility by eliminating self-imposed psychological ceilings]...”"
                   },
                   {
-                    title: "3. Body 2 Opener Formula (2nd View: Past Silently Shapes Present)",
-                    formula: "“On the other hand, analyzing historical developments is indispensable because through [path dependency, modern society is physically anchored to ancient foundations, while human speculative greed remains immutable]...”"
+                    title: "3. Body 2 Opener Formula (Disadvantages: 2 Reasons + Example)",
+                    formula: "“Conversely, propagating this unconstrained narrative produces two profound drawbacks. The foremost hazard is [the onset of acute psychological distress and devastating self-blame]... In addition, this simplistic doctrine fosters [a naive blindness toward tangible genetic limitations and structural societal barriers]...”"
                   },
                   {
-                    title: "4. Body 3 Opener Formula (Author Opinion)",
-                    formula: "“In my view, while the demographic and technological scale of modern life is novel, the underlying architecture of [human governance and financial mania remains identical across eras]...”"
-                  },
-                  {
-                    title: "5. Conclusion Formula (Sum-Up Points + Restate Opinion)",
-                    formula: "“In conclusion, although the elitist bias of historical archives and the novel scale of modern society lead some to [dismiss the past], history remains an indispensable guide, as [understanding the physical foundations of our cities and the cyclical nature of human psychology is essential for interpreting the present]...”"
+                    title: "4. Conclusion Formula (Sum-Up Points + Suggestion / Recommendation)",
+                    formula: "“In conclusion, while reassuring children that [effort unlocks all doors effectively instills tenacity and fuels upward mobility], it can equally [inflict crippling self-reproach and blind individuals to inevitable biological constraints]. It is therefore recommended that educators and guardians [balance aspirational encouragement with pragmatic guidance and self-compassion]...”"
                   }
                 ].map((item, index) => (
                   <div
@@ -466,3 +453,4 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
     </AnimatePresence>
   );
 };
+

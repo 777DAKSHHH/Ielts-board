@@ -8,9 +8,9 @@ export const Step5IntroStructureT2: React.FC = () => (
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
         Step 05 / 09 • Sample Introduction &amp; Thesis
       </span>
-      <h2 className="stage-title">Sample Introduction: Paraphrase + Clear Opinion</h2>
+      <h2 className="stage-title">Sample Introduction: Paraphrase + Thesis Statement</h2>
       <p className="stage-subtitle">
-        Mandatory Introduction Format: <strong>Paraphrase the prompt in Sentence 1 + Deliver a clear personal opinion in Sentence 2</strong>.
+        Mandatory Introduction Format: <strong>Paraphrase the prompt in Sentence 1 + Deliver a clear thesis statement introducing both advantages and disadvantages in Sentence 2</strong>.
       </p>
     </div>
     <div className="stage-grid-2col">
@@ -24,7 +24,7 @@ export const Step5IntroStructureT2: React.FC = () => (
       >
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "14px" }}>
           <BookOpen size={22} color="var(--apple-blue)" />
-          <h4 style={{ fontSize: "1.22rem", fontWeight: 750 }}>Sample Introduction (Paraphrase + Opinion)</h4>
+          <h4 style={{ fontSize: "1.22rem", fontWeight: 750 }}>Sample Introduction (Paraphrase + Thesis)</h4>
         </div>
         <div
           style={{
@@ -42,7 +42,7 @@ export const Step5IntroStructureT2: React.FC = () => (
           {TASK2_DATA.sampleIntro}
         </div>
         <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-600)", fontSize: "0.92rem", fontWeight: 600 }}>
-          <Clock size={16} /> ~45 words • 2 sentences • Rapid exam timing (~2-2.5 mins)
+          <Clock size={16} /> ~55 words • 2 sentences • Rapid exam timing (~2-2.5 mins)
         </div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
@@ -59,26 +59,26 @@ export const Step5IntroStructureT2: React.FC = () => (
             <h5 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>One-Liner Planning Points</h5>
           </div>
           <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "1.02rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
-            <li><strong>Paraphrase:</strong> Debate over whether historical archives offer practical guidance for modern society.</li>
-            <li><strong>View 1:</strong> Survivorship bias in records and the strategic trap of fighting yesterday's battles.</li>
-            <li><strong>View 2 &amp; Opinion:</strong> Physical path dependency (Roman roads), market mania psychology, and pandemic protocols prove history is vital.</li>
+            <li><strong>Paraphrase:</strong> In various parts of the world, children are told that boundless success is attainable solely through effort.</li>
+            <li><strong>Advantages Roadmap:</strong> Nurtures intrinsic resilience, a growth mindset, and social mobility.</li>
+            <li><strong>Disadvantages Roadmap:</strong> Poses severe risks of acute self-blame, burnout, and disregard for natural limits.</li>
           </ul>
         </div>
 
         <StructureCard
           icon={<CheckCircle2 size={18} />}
-          title="1. Crisp Question Paraphrase (Sentence 1)"
-          text="“While some individuals argue that historical records provide little practical guidance in our fast-evolving modern world, others maintain that analyzing the past is essential for comprehending contemporary reality.” (Paraphrases both perspectives with academic precision)."
+          title="1. Question Paraphrase (Sentence 1)"
+          text="“In various parts of the world, children are consistently instilled with the belief that boundless success is achievable solely through diligence and relentless effort.” (Paraphrases 'in some countries', 'told they can achieve anything', and 'try hard enough')."
         />
         <StructureCard
           icon={<Award size={18} />}
-          title="2. Clear Personal Opinion (Sentence 2)"
-          text="“In my opinion, although rapid urban and technological changes present unprecedented challenges, studying historical human psychology and institutional foundations remains indispensable for sound decision-making.” (States a nuanced, defensible stance)."
+          title="2. Balanced Thesis Statement (Sentence 2)"
+          text="“While this message undeniably nurtures resilience, a growth mindset, and high personal aspirations, it simultaneously introduces notable perils, particularly the risk of severe psychological distress and an unrealistic disregard for innate limitations.” (Maps out Body 1 and Body 2 precisely)."
         />
         <StructureCard
           icon={<CheckCircle2 size={18} />}
           title="3. Word Economy & Roadmapping"
-          text="Keep the introduction concise (~45-50 words across 2 sentences). By directly addressing both sides and establishing a clear personal opinion upfront, you satisfy Band 9 Task Achievement immediately."
+          text="Keep the introduction concise (~50-60 words across 2 sentences). By directly roadmapping both advantages and disadvantages upfront, you fulfill Band 9 Task Achievement instantly."
         />
       </div>
     </div>

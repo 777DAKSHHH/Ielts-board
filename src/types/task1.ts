@@ -1,5 +1,57 @@
 import { VocabItem } from "./vocab";
 
+export type SpendingCategoryKey =
+  | "teachers_salaries"
+  | "other_workers_salaries"
+  | "furniture_and_equipment"
+  | "resources"
+  | "insurance";
+
+export interface SpendingCategoryItem {
+  id: SpendingCategoryKey;
+  label: string;
+  shortLabel: string;
+  color: string;
+  group: "staff" | "non_staff";
+  y1981: number;
+  y1991: number;
+  y2001: number;
+  netChange: number;
+  trendType: "peak_dip" | "continuous_fall" | "fluctuated_surge" | "surge_plunge" | "quadrupled";
+  trendDescription: string;
+  band9Phrase: string;
+}
+
+export interface SchoolSpendingSlice {
+  categoryId: SpendingCategoryKey;
+  label: string;
+  percentage: number;
+  color: string;
+}
+
+export interface SchoolSpendingYearData {
+  year: 1981 | 1991 | 2001;
+  slices: SchoolSpendingSlice[];
+  totalStaffPercent: number;
+  totalNonStaffPercent: number;
+  topCategory: string;
+  lowestCategory: string;
+  notes: string;
+}
+
+export interface SpendingHotspot {
+  id: string;
+  title: string;
+  category: string;
+  y1981: number;
+  y1991: number;
+  y2001: number;
+  trendText: string;
+  contrastKey: string;
+  band9Sentence: string;
+  keyFeature: string;
+}
+
 export type GenderKey = "male" | "female";
 
 export interface ActivityAgeGroup {
@@ -219,6 +271,9 @@ export interface Task1Data {
   activityData?: ActivityAgeGroup[];
   genderInfo?: ActivityGenderInfo[];
   activityHotspots?: ActivityHotspot[];
+  spendingCategories?: SpendingCategoryItem[];
+  spendingYears?: SchoolSpendingYearData[];
+  spendingHotspots?: SpendingHotspot[];
   formats: MusicFormatItem[];
   countries: CountryMarketData[];
   diagramData: Task1DiagramData;

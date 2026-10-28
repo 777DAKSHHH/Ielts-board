@@ -17,14 +17,16 @@ import {
   Compass,
   ArrowRight,
   ShieldCheck,
-  LayoutGrid
+  LayoutGrid,
+  PieChart as PieIcon
 } from "lucide-react";
 import {
   TASK1_DATA,
-  ACTIVITY_DATA,
-  ACTIVITY_GENDERS,
-  ACTIVITY_HOTSPOTS
+  SPENDING_CATEGORIES,
+  SPENDING_YEARS,
+  SPENDING_HOTSPOTS
 } from "../../data/task1Data";
+import { SpendingCategoryKey, SpendingCategoryItem } from "../../types/task1";
 import { TouchTimer } from "../common/TouchTimer";
 import { SmartBoardTableMatrix, DiagramViewMode } from "./SmartBoardGraphSvg";
 import { BitsAndPiecesMindmap } from "./BitsAndPiecesMindmap";
@@ -51,9 +53,9 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   // Default to side-by-side split view for zero-scroll on smart boards
   const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const [selectedCohortId, setSelectedCohortId] = useState<string>("35_to_44");
+  const [selectedCategoryId, setSelectedCategoryId] = useState<SpendingCategoryKey>("teachers_salaries");
   const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("all");
-  const [dockTab, setDockTab] = useState<"cohort" | "prompt" | "hotspots">("cohort");
+  const [dockTab, setDockTab] = useState<"category" | "prompt" | "hotspots">("category");
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -77,13 +79,12 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
     setIsEnlarged(true);
   };
 
-  // Synchronized active cohort data
-  const activeCohort =
-    ACTIVITY_DATA.find((g) => g.id === selectedCohortId) || ACTIVITY_DATA[2];
+  // Synchronized active category data
+  const activeCategory =
+    SPENDING_CATEGORIES.find((c) => c.id === selectedCategoryId) || SPENDING_CATEGORIES[0];
 
   const activeHotspot =
-    ACTIVITY_HOTSPOTS.find((h) => h.ageGroup === activeCohort.ageGroup) ||
-    ACTIVITY_HOTSPOTS[1];
+    SPENDING_HOTSPOTS.find((h) => h.category === activeCategory.label) || SPENDING_HOTSPOTS[0];
 
   // Presenter Dock Component for zero-scroll smart board teaching
   const renderPresenterDock = (inModal = false) => (
@@ -123,7 +124,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         {/* 3 Dock Tabs */}
         <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "3px", borderRadius: "8px" }}>
           {[
-            { id: "cohort", label: "🎯 Active Cohort" },
+            { id: "category", label: "🎯 Active Category" },
             { id: "prompt", label: "📝 Prompt" },
             { id: "hotspots", label: "⭐ Hotspots" }
           ].map((tab) => (
@@ -149,42 +150,42 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         </div>
       </div>
 
-      {/* Dock Content: Tab 1 - Active Cohort Deep Dive */}
-      {dockTab === "cohort" && (
+      {/* Dock Content: Tab 1 - Active Category Deep Dive */}
+      {dockTab === "category" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
-          {/* Quick Cohort Tap Strip */}
+          {/* Quick Category Tap Strip */}
           <div style={{ display: "flex", alignItems: "center", gap: "5px", flexWrap: "wrap" }}>
             <span style={{ fontSize: "0.7rem", fontWeight: 750, color: "#64748b", marginRight: "2px" }}>
-              TAP COHORT:
+              TAP CATEGORY:
             </span>
-            {ACTIVITY_DATA.map((grp) => {
-              const isSelected = selectedCohortId === grp.id;
+            {SPENDING_CATEGORIES.map((cat) => {
+              const isSelected = selectedCategoryId === cat.id;
               return (
                 <button
-                  key={grp.id}
+                  key={cat.id}
                   type="button"
                   onClick={() => {
-                    setSelectedCohortId(grp.id);
-                    setHighlightMode(grp.id as DiagramViewMode);
+                    setSelectedCategoryId(cat.id);
+                    setHighlightMode(cat.id as DiagramViewMode);
                   }}
                   style={{
                     padding: "3px 8px",
                     borderRadius: "6px",
                     fontSize: "0.72rem",
                     fontWeight: 750,
-                    border: isSelected ? "1.5px solid #0f172a" : "1px solid #e2e8f0",
-                    background: isSelected ? "#0f172a" : "#f8fafc",
-                    color: isSelected ? "#ffffff" : "#475569",
+                    border: isSelected ? `1.5px solid ${cat.color}` : "1px solid #e2e8f0",
+                    background: isSelected ? `${cat.color}18` : "#f8fafc",
+                    color: isSelected ? cat.color : "#475569",
                     cursor: "pointer"
                   }}
                 >
-                  {grp.shortLabel}
+                  {cat.shortLabel}
                 </button>
               );
             })}
           </div>
 
-          {/* Active Cohort Name & Dominance Banner */}
+          {/* Active Category Name & Dominance Banner */}
           <div
             style={{
               background: "#f8fafc",
@@ -196,12 +197,22 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               alignItems: "center"
             }}
           >
-            <div>
-              <span style={{ fontSize: "0.72rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase" }}>
-                Selected Age Cohort
-              </span>
-              <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a" }}>
-                {activeCohort.ageGroup}
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span
+                style={{
+                  width: "12px",
+                  height: "12px",
+                  borderRadius: "50%",
+                  background: activeCategory.color
+                }}
+              />
+              <div>
+                <span style={{ fontSize: "0.72rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase" }}>
+                  Selected Expense Category
+                </span>
+                <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a" }}>
+                  {activeCategory.label}
+                </div>
               </div>
             </div>
             <span
@@ -210,55 +221,18 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 fontWeight: 800,
                 padding: "4px 9px",
                 borderRadius: "6px",
-                background:
-                  activeCohort.higherGender === "male"
-                    ? "#fef2f2"
-                    : activeCohort.genderGap > 6
-                    ? "#eff6ff"
-                    : "#f0fdf4",
-                color:
-                  activeCohort.higherGender === "male"
-                    ? "#dc2626"
-                    : activeCohort.genderGap > 6
-                    ? "#1e40af"
-                    : "#166534",
+                background: activeCategory.group === "staff" ? "#dbeafe" : "#fef3c7",
+                color: activeCategory.group === "staff" ? "#1e40af" : "#92400e",
                 border: "1px solid currentColor"
               }}
             >
-              {activeCohort.higherGender === "male"
-                ? `Male Lead (+${Math.abs(activeCohort.genderGap)}%)`
-                : activeCohort.genderGap > 6
-                ? `Female Lead (+${activeCohort.genderGap}%)`
-                : `Near Parity (${activeCohort.genderGap}%)`}
+              {activeCategory.group === "staff" ? "Staff Costs" : "Operational / Capital"}
             </span>
           </div>
 
-          {/* Stat Cards Grid */}
+          {/* 3-Year Stat Cards Grid */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
-            {/* Men */}
-            <div
-              style={{
-                background: "#0f172a",
-                color: "#ffffff",
-                padding: "9px 10px",
-                borderRadius: "10px",
-                textAlign: "center"
-              }}
-            >
-              <div style={{ fontSize: "0.68rem", color: "#94a3b8", fontWeight: 700 }}>MEN</div>
-              <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#ffffff" }}>
-                {activeCohort.male}%
-              </div>
-              <div style={{ fontSize: "0.65rem", color: "#cbd5e1" }}>
-                {activeCohort.isPeak === "male"
-                  ? "★ Male Peak"
-                  : activeCohort.isTrough === "male"
-                  ? "▼ Lowest Figure"
-                  : "Active Rate"}
-              </div>
-            </div>
-
-            {/* Women */}
+            {/* 1981 */}
             <div
               style={{
                 background: "#f1f5f9",
@@ -268,46 +242,90 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 textAlign: "center"
               }}
             >
-              <div style={{ fontSize: "0.68rem", color: "#64748b", fontWeight: 700 }}>WOMEN</div>
+              <div style={{ fontSize: "0.68rem", color: "#64748b", fontWeight: 700 }}>1981</div>
               <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a" }}>
-                {activeCohort.ageGroup === "55 to 64" ? "53%" : `${activeCohort.female}%`}
+                {activeCategory.y1981}%
               </div>
-              <div style={{ fontSize: "0.65rem", color: "#64748b" }}>
-                {activeCohort.isPeak === "female" ? "▲ Overall Peak" : "Active Rate"}
-              </div>
+              <div style={{ fontSize: "0.65rem", color: "#64748b" }}>Baseline Year</div>
             </div>
 
-            {/* Gap Difference */}
+            {/* 1991 */}
             <div
               style={{
-                background: "#eff6ff",
-                border: "1px solid #bfdbfe",
+                background: "#f1f5f9",
+                border: "1px solid #cbd5e1",
                 padding: "9px 10px",
                 borderRadius: "10px",
                 textAlign: "center"
               }}
             >
-              <div style={{ fontSize: "0.68rem", color: "#1e40af", fontWeight: 700 }}>GAP DIFF</div>
-              <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#1d4ed8" }}>
-                {Math.abs(activeCohort.genderGap).toFixed(1)}
+              <div style={{ fontSize: "0.68rem", color: "#64748b", fontWeight: 700 }}>1991</div>
+              <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a" }}>
+                {activeCategory.y1991}%
               </div>
-              <div style={{ fontSize: "0.65rem", color: "#3b82f6" }}>percentage pts</div>
+              <div style={{ fontSize: "0.65rem", color: "#64748b" }}>
+                {activeCategory.id === "teachers_salaries"
+                  ? "★ 50% Peak"
+                  : activeCategory.id === "furniture_and_equipment"
+                  ? "▼ 5% Slump"
+                  : "Mid-Decade"}
+              </div>
+            </div>
+
+            {/* 2001 */}
+            <div
+              style={{
+                background: activeCategory.netChange >= 0 ? "#eff6ff" : "#fef2f2",
+                border:
+                  activeCategory.netChange >= 0
+                    ? "1px solid #bfdbfe"
+                    : "1px solid #fecaca",
+                padding: "9px 10px",
+                borderRadius: "10px",
+                textAlign: "center"
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "0.68rem",
+                  color: activeCategory.netChange >= 0 ? "#1e40af" : "#991b1b",
+                  fontWeight: 700
+                }}
+              >
+                2001
+              </div>
+              <div
+                style={{
+                  fontSize: "1.3rem",
+                  fontWeight: 800,
+                  color: activeCategory.netChange >= 0 ? "#1d4ed8" : "#b91c1c"
+                }}
+              >
+                {activeCategory.y2001}%
+              </div>
+              <div
+                style={{
+                  fontSize: "0.65rem",
+                  color: activeCategory.netChange >= 0 ? "#2563eb" : "#dc2626"
+                }}
+              >
+                Net: {activeCategory.netChange >= 0 ? "+" : ""}
+                {activeCategory.netChange}%
+              </div>
             </div>
           </div>
 
           {/* Annotation Detail */}
-          {activeCohort.annotation && (
-            <p style={{ fontSize: "0.8rem", color: "#475569", margin: 0, lineHeight: 1.45 }}>
-              <strong>Feature Note:</strong> {activeCohort.annotation}
-            </p>
-          )}
+          <p style={{ fontSize: "0.82rem", color: "#475569", margin: 0, lineHeight: 1.45 }}>
+            <strong>Analytical Trajectory:</strong> {activeCategory.trendDescription}
+          </p>
 
           {/* Band 9 Analytical Sentence Box */}
           <div
             style={{
               background: "#f8fafc",
               border: "1px solid #cbd5e1",
-              borderLeft: "3.5px solid #2563eb",
+              borderLeft: `3.5px solid ${activeCategory.color}`,
               borderRadius: "10px",
               padding: "10px 12px",
               fontSize: "0.84rem",
@@ -316,7 +334,14 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               marginTop: "auto"
             }}
           >
-            <div style={{ fontSize: "0.72rem", fontWeight: 800, color: "#2563eb", marginBottom: "3px" }}>
+            <div
+              style={{
+                fontSize: "0.72rem",
+                fontWeight: 800,
+                color: activeCategory.color,
+                marginBottom: "3px"
+              }}
+            >
               BAND 9 SENTENCE:
             </div>
             <em>{activeHotspot.band9Sentence}</em>
@@ -349,7 +374,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "0.78rem" }}>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
               <span style={{ color: "#64748b" }}>Format:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Double Bar Chart</strong>
+              <strong style={{ display: "block", color: "#0f172a" }}>Three Pie Charts</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
               <span style={{ color: "#64748b" }}>Scale:</span>
@@ -357,7 +382,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
               <span style={{ color: "#64748b" }}>Scope:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Australia (2010)</strong>
+              <strong style={{ display: "block", color: "#0f172a" }}>1 UK School (1981–2001)</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
               <span style={{ color: "#64748b" }}>Target:</span>
@@ -370,15 +395,15 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Dock Content: Tab 3 - Strategic Hotspots List */}
       {dockTab === "hotspots" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1, overflowY: "auto" }}>
-          {ACTIVITY_HOTSPOTS.map((h) => {
-            const isMatch = activeCohort.ageGroup === h.ageGroup;
+          {SPENDING_HOTSPOTS.map((h) => {
+            const isMatch = activeCategory.label === h.category;
             return (
               <div
                 key={h.id}
                 onClick={() => {
-                  const target = ACTIVITY_DATA.find((g) => g.ageGroup === h.ageGroup);
+                  const target = SPENDING_CATEGORIES.find((c) => c.label === h.category);
                   if (target) {
-                    setSelectedCohortId(target.id);
+                    setSelectedCategoryId(target.id);
                     setHighlightMode(target.id as DiagramViewMode);
                   }
                 }}
@@ -395,11 +420,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                   <strong style={{ color: "#0f172a" }}>{h.title}</strong>
                   <span style={{ fontSize: "0.72rem", color: "#2563eb", fontWeight: 700 }}>
-                    {h.ageGroup}
+                    {h.y1981}% → {h.y2001}%
                   </span>
                 </div>
                 <div style={{ fontSize: "0.75rem", color: "#475569", marginTop: "2px" }}>
-                  {h.gapText}
+                  {h.keyFeature}
                 </div>
               </div>
             );
@@ -414,11 +439,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; Double Bar Chart Engine
+          Step 02 / 08 • Task Prompt &amp; School Spending Pie Charts
         </span>
-        <h2 className="stage-title">Deconstruct the Australian Physical Activity (2010) Bar Chart</h2>
+        <h2 className="stage-title">Deconstruct the UK School Spending Pie Charts (1981, 1991, 2001)</h2>
         <p className="stage-subtitle">
-          Examine the prompt, deconstruct regular exercise participation across six age cohorts in 2010, identify the youth male lead (52.8%), the mid-life low (39.5%), the female peak (53.3%), and senior convergence (47%).
+          Examine the prompt, deconstruct expenditure across five categories over a 20-year span, identify the teachers' salary predominance (40% → 50% → 45%), other workers' continuous fall (28% → 15%), furniture's resurgence (5% → 23%), and insurance quadrupling (2% → 8%).
         </p>
       </div>
 
@@ -430,7 +455,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the double bar chart, note the youth male lead (15–24), the 13% gender gap at 35–44, the female peak at 45–54, and senior parity at 65+."
+          instruction="Focus Timer: 3 minutes to analyze the three pie charts, note teachers' salaries commanding the lion's share, furniture's plunge to 5% and surge to 23%, and insurance quadrupling."
         />
       </div>
 
@@ -447,156 +472,190 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           borderRadius: "16px",
           padding: "8px 12px",
           marginBottom: "14px",
-          boxShadow: "var(--shadow-sm)",
-          width: "100%"
+          boxShadow: "var(--shadow-sm)"
         }}
       >
-        {/* 4 View Mode Buttons */}
-        <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
-          <span style={{ fontSize: "0.8rem", fontWeight: 800, color: "var(--slate-800)", marginRight: "4px" }}>
-            TEACHING VIEW:
-          </span>
-
+        {/* Left: View Mode Buttons */}
+        <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
           <button
             type="button"
             onClick={() => handleSelectViewMode("smartboard_table")}
-            className="apple-touch-btn"
             style={{
-              padding: "7px 14px",
-              fontSize: "0.78rem",
-              fontWeight: 750,
-              background: viewMode === "smartboard_table" ? "var(--slate-900)" : "var(--slate-100)",
-              color: viewMode === "smartboard_table" ? "#ffffff" : "var(--slate-700)",
-              border: "1px solid var(--border-subtle)",
+              padding: "6px 12px",
               borderRadius: "10px",
+              fontSize: "0.82rem",
+              fontWeight: 750,
+              border: viewMode === "smartboard_table" ? "1.5px solid #0f172a" : "1px solid #e2e8f0",
+              background: viewMode === "smartboard_table" ? "#0f172a" : "#f8fafc",
+              color: viewMode === "smartboard_table" ? "#ffffff" : "#475569",
+              cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "6px"
             }}
           >
-            <TrendingUp size={14} color="#2563eb" /> Interactive Double Bar Chart
+            <PieIcon size={14} />
+            <span>Interactive Pie Charts</span>
           </button>
 
           <button
             type="button"
             onClick={() => handleSelectViewMode("mindmap")}
-            className="apple-touch-btn"
             style={{
-              padding: "7px 14px",
-              fontSize: "0.78rem",
-              fontWeight: 750,
-              background: viewMode === "mindmap" ? "var(--slate-900)" : "var(--slate-100)",
-              color: viewMode === "mindmap" ? "#ffffff" : "var(--slate-700)",
-              border: "1px solid var(--border-subtle)",
+              padding: "6px 12px",
               borderRadius: "10px",
+              fontSize: "0.82rem",
+              fontWeight: 750,
+              border: viewMode === "mindmap" ? "1.5px solid #2563eb" : "1px solid #e2e8f0",
+              background: viewMode === "mindmap" ? "#eff6ff" : "#f8fafc",
+              color: viewMode === "mindmap" ? "#1e40af" : "#475569",
+              cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "6px"
             }}
           >
-            <Map size={14} /> Mindmap
+            <Map size={14} />
+            <span>Strategic Mindmap</span>
           </button>
 
           <button
             type="button"
             onClick={() => handleSelectViewMode("flashcards")}
-            className="apple-touch-btn"
             style={{
-              padding: "7px 14px",
-              fontSize: "0.78rem",
-              fontWeight: 750,
-              background: viewMode === "flashcards" ? "var(--slate-900)" : "var(--slate-100)",
-              color: viewMode === "flashcards" ? "#ffffff" : "var(--slate-700)",
-              border: "1px solid var(--border-subtle)",
+              padding: "6px 12px",
               borderRadius: "10px",
+              fontSize: "0.82rem",
+              fontWeight: 750,
+              border: viewMode === "flashcards" ? "1.5px solid #059669" : "1px solid #e2e8f0",
+              background: viewMode === "flashcards" ? "#ecfdf5" : "#f8fafc",
+              color: viewMode === "flashcards" ? "#065f46" : "#475569",
+              cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "6px"
             }}
           >
-            <HelpCircle size={14} /> Flashcards
+            <HelpCircle size={14} />
+            <span>Flashcards</span>
           </button>
 
           <button
             type="button"
             onClick={() => handleSelectViewMode("original_image")}
-            className="apple-touch-btn"
             style={{
-              padding: "7px 14px",
-              fontSize: "0.78rem",
-              fontWeight: 750,
-              background: viewMode === "original_image" ? "var(--slate-900)" : "var(--slate-100)",
-              color: viewMode === "original_image" ? "#ffffff" : "var(--slate-700)",
-              border: "1px solid var(--border-subtle)",
+              padding: "6px 12px",
               borderRadius: "10px",
+              fontSize: "0.82rem",
+              fontWeight: 750,
+              border: viewMode === "original_image" ? "1.5px solid #7c3aed" : "1px solid #e2e8f0",
+              background: viewMode === "original_image" ? "#f5f3ff" : "#f8fafc",
+              color: viewMode === "original_image" ? "#5b21b6" : "#475569",
+              cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "6px"
             }}
           >
-            <ImageIcon size={14} /> Original Exam Graphic
+            <ImageIcon size={14} />
+            <span>Original Exam Scan</span>
           </button>
         </div>
 
-        {/* Layout & Fullscreen Controls */}
+        {/* Right: Layout Switcher & Fullscreen */}
         <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-          {/* Layout Toggle: Side-by-Side (Zero Scroll) vs Full Width */}
-          <button
-            type="button"
-            onClick={() => setStageLayout(stageLayout === "split" ? "full_width" : "split")}
-            className="apple-touch-btn secondary"
-            style={{
-              padding: "7px 12px",
-              fontSize: "0.76rem",
-              fontWeight: 750,
-              display: "flex",
-              alignItems: "center",
-              gap: "6px",
-              background: stageLayout === "split" ? "#eff6ff" : "#ffffff",
-              color: stageLayout === "split" ? "#1e40af" : "#334155",
-              border: stageLayout === "split" ? "1.5px solid #3b82f6" : "1px solid var(--border-subtle)"
-            }}
-          >
-            <Columns size={13} color={stageLayout === "split" ? "#2563eb" : "#64748b"} />
-            {stageLayout === "split" ? "Zero-Scroll Board Mode ✓" : "Switch to Zero-Scroll Mode"}
-          </button>
+          {/* Split vs Full-Width Layout Toggles */}
+          <div style={{ display: "flex", background: "#f1f5f9", padding: "2px", borderRadius: "8px" }}>
+            <button
+              type="button"
+              onClick={() => setStageLayout("split")}
+              title="Split View (Chart + Presenter Dock Side-by-Side)"
+              style={{
+                padding: "4px 8px",
+                borderRadius: "6px",
+                border: "none",
+                background: stageLayout === "split" ? "#ffffff" : "transparent",
+                color: stageLayout === "split" ? "#0f172a" : "#64748b",
+                boxShadow: stageLayout === "split" ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+                fontSize: "0.74rem",
+                fontWeight: 700
+              }}
+            >
+              <Columns size={13} />
+              <span>Zero-Scroll Split</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setStageLayout("full_width")}
+              title="Full Width Stage"
+              style={{
+                padding: "4px 8px",
+                borderRadius: "6px",
+                border: "none",
+                background: stageLayout === "full_width" ? "#ffffff" : "transparent",
+                color: stageLayout === "full_width" ? "#0f172a" : "#64748b",
+                boxShadow: stageLayout === "full_width" ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+                fontSize: "0.74rem",
+                fontWeight: 700
+              }}
+            >
+              <LayoutGrid size={13} />
+              <span>Full Width</span>
+            </button>
+          </div>
 
+          {/* Fullscreen Button */}
           <button
             type="button"
             onClick={openFullscreen}
-            className="apple-touch-btn primary"
             style={{
-              padding: "7px 14px",
-              fontSize: "0.76rem",
-              fontWeight: 750,
+              padding: "6px 12px",
+              borderRadius: "8px",
+              border: "1px solid #cbd5e1",
+              background: "#ffffff",
+              color: "#0f172a",
+              cursor: "pointer",
               display: "flex",
               alignItems: "center",
-              gap: "5px"
+              gap: "4px",
+              fontSize: "0.75rem",
+              fontWeight: 750
             }}
           >
-            <Maximize2 size={13} /> Fullscreen Board
+            <Maximize2 size={13} />
+            <span>Enlarge</span>
           </button>
         </div>
       </div>
 
-      {/* STAGE CONTAINER: ZERO-SCROLL SPLIT VIEW (DEFAULT) */}
+      {/* STAGE WORKSPACE: ZERO-SCROLL SPLIT OR FULL WIDTH */}
       {stageLayout === "split" ? (
+        /* ZERO-SCROLL SPLIT VIEW: Chart on left, Presenter Dock on right */
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1.28fr 1fr",
-            gap: "16px",
+            gridTemplateColumns: "1.45fr 1fr",
+            gap: "14px",
+            alignItems: "start",
             width: "100%",
-            alignItems: "stretch"
+            minWidth: 0
           }}
         >
-          {/* Left Column: Visual Container (Chart without tall bottom cards) */}
+          {/* Left Column: Visual Stage */}
           <div
             style={{
               background: "#ffffff",
               border: "1.5px solid var(--border-subtle)",
               borderRadius: "20px",
-              padding: "14px",
+              padding: "16px",
               boxShadow: "var(--shadow-sm)",
               minWidth: 0,
               display: "flex",
@@ -607,8 +666,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <SmartBoardTableMatrix
                 highlightMode={highlightMode}
                 onHighlightModeChange={(mode) => setHighlightMode(mode)}
-                selectedCohortId={selectedCohortId}
-                onSelectCohort={(id) => setSelectedCohortId(id)}
+                selectedCohortId={selectedCategoryId}
+                onSelectCohort={(id) => setSelectedCategoryId(id as SpendingCategoryKey)}
                 showInternalToolbar={true}
                 showDeepDiveCard={false} // Hidden on left because Live Presenter Dock on the right handles it with zero scroll!
               />
@@ -622,7 +681,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <div style={{ textAlign: "center", padding: "10px" }}>
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="Australian Physical Activity 2010 Bar Chart"
+                  alt="UK School Spending Pie Charts"
                   style={{ maxWidth: "100%", maxHeight: "400px", borderRadius: "10px", objectFit: "contain" }}
                 />
               </div>
@@ -652,8 +711,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <SmartBoardTableMatrix
                 highlightMode={highlightMode}
                 onHighlightModeChange={(mode) => setHighlightMode(mode)}
-                selectedCohortId={selectedCohortId}
-                onSelectCohort={(id) => setSelectedCohortId(id)}
+                selectedCohortId={selectedCategoryId}
+                onSelectCohort={(id) => setSelectedCategoryId(id as SpendingCategoryKey)}
                 showInternalToolbar={true}
                 showDeepDiveCard={true}
               />
@@ -678,7 +737,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="IELTS Academic Task 1 Australian Physical Activity 2010 Double Bar Chart"
+                  alt="IELTS Academic Task 1 UK School Spending Three Pie Charts"
                   style={{
                     maxHeight: "560px",
                     maxWidth: "100%",
@@ -689,7 +748,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   }}
                 />
                 <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
-                  Official Cambridge IELTS Academic Question Diagram • Percentage of Australian Men and Women Doing Regular Physical Activity in 2010
+                  Official Cambridge IELTS Academic Question Diagram • Three Pie Charts: Spending of One UK School (1981, 1991, 2001)
                 </div>
               </div>
             )}
@@ -749,188 +808,142 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 gap: "10px"
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <Sparkles size={17} color="var(--apple-blue)" />
-                  <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                    Strategic Comparison Hotspots
-                  </h4>
-                </div>
-                <span className="apple-badge neutral" style={{ fontSize: "0.7rem" }}>
-                  Tap hotspot to view
-                </span>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <Sparkles size={17} color="#d97706" />
+                <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                  Strategic Spending Hotspots (Examiner Key Features)
+                </h4>
               </div>
-
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
-                {ACTIVITY_HOTSPOTS.map((h) => {
-                  const targetGrp = ACTIVITY_DATA.find((g) => g.ageGroup === h.ageGroup);
-                  const isSelected = targetGrp && selectedCohortId === targetGrp.id;
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px", maxHeight: "200px", overflowY: "auto" }}>
+                {SPENDING_HOTSPOTS.map((h) => {
+                  const targetCat = SPENDING_CATEGORIES.find((c) => c.label === h.category);
                   return (
-                    <button
+                    <div
                       key={h.id}
-                      type="button"
                       onClick={() => {
-                        if (targetGrp) {
-                          setSelectedCohortId(targetGrp.id);
-                          setHighlightMode(targetGrp.id as DiagramViewMode);
+                        if (targetCat) {
+                          setSelectedCategoryId(targetCat.id);
+                          setHighlightMode(targetCat.id as DiagramViewMode);
                         }
                       }}
                       style={{
-                        padding: "7px 10px",
-                        borderRadius: "8px",
-                        fontSize: "0.76rem",
-                        fontWeight: 750,
-                        border: isSelected ? "1.5px solid var(--slate-900)" : "1px solid var(--border-subtle)",
-                        background: isSelected ? "var(--slate-900)" : "var(--slate-50)",
-                        color: isSelected ? "#ffffff" : "var(--slate-800)",
-                        cursor: "pointer",
-                        textAlign: "left",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
-                        whiteSpace: "nowrap"
+                        padding: "8px 12px",
+                        borderRadius: "10px",
+                        background: "#f8fafc",
+                        border: "1px solid #e2e8f0",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        cursor: "pointer"
                       }}
                     >
-                      {h.title}
-                    </button>
+                      <div>
+                        <strong style={{ fontSize: "0.85rem", color: "#0f172a" }}>{h.title}</strong>
+                        <div style={{ fontSize: "0.74rem", color: "#64748b" }}>{h.keyFeature}</div>
+                      </div>
+                      <span
+                        style={{
+                          fontSize: "0.78rem",
+                          fontWeight: 800,
+                          padding: "2px 8px",
+                          borderRadius: "6px",
+                          background: "#e0f2fe",
+                          color: "#0369a1"
+                        }}
+                      >
+                        {h.y1981}% → {h.y2001}%
+                      </span>
+                    </div>
                   );
                 })}
-              </div>
-
-              {/* Active Hotspot Details */}
-              <div
-                style={{
-                  background: "var(--slate-50)",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "12px",
-                  padding: "12px 14px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "6px",
-                  fontSize: "0.82rem"
-                }}
-              >
-                <div>
-                  <strong style={{ color: "#0f172a" }}>Male Participation:</strong>{" "}
-                  {activeCohort.male}%
-                </div>
-                <div>
-                  <strong style={{ color: "#475569" }}>Female Participation:</strong>{" "}
-                  {activeCohort.female}%
-                </div>
-                <div style={{ marginTop: "4px", fontStyle: "italic", color: "var(--slate-800)", borderTop: "1px dashed var(--border-subtle)", paddingTop: "6px" }}>
-                  {activeHotspot.band9Sentence}
-                </div>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* FULLSCREEN ZERO-SCROLL ENLARGED MODAL */}
+      {/* FULLSCREEN SMARTBOARD MODAL */}
       <AnimatePresence>
         {isEnlarged && (
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             style={{
               position: "fixed",
-              inset: 0,
-              zIndex: 99999,
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: "rgba(15, 23, 42, 0.85)",
+              backdropFilter: "blur(8px)",
+              zIndex: 9999,
               display: "flex",
-              flexDirection: "column",
-              background: "#0f172a",
-              overflow: "hidden"
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "24px"
             }}
           >
-            {/* Fullscreen Header Bar */}
             <div
               style={{
-                padding: "12px 24px",
-                background: "#090d16",
-                borderBottom: "1px solid #1e293b",
-                color: "#ffffff",
+                background: "#ffffff",
+                borderRadius: "24px",
+                width: "95vw",
+                maxWidth: "1400px",
+                maxHeight: "92vh",
+                overflowY: "auto",
+                padding: "24px",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                flexShrink: 0,
-                flexWrap: "wrap",
-                gap: "12px"
+                flexDirection: "column",
+                gap: "16px",
+                position: "relative",
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <TrendingUp size={22} color="var(--apple-blue)" />
+              {/* Modal Header */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1.5px solid #f1f5f9", paddingBottom: "12px" }}>
                 <div>
-                  <h3 style={{ fontSize: "1.05rem", fontWeight: 800, margin: 0, color: "#ffffff" }}>
-                    Smart Board Zero-Scroll Presentation • Australian Physical Activity by Age &amp; Gender (2010)
+                  <span className="apple-badge accent" style={{ marginBottom: "4px" }}>
+                    Enlarged Presentation Mode
+                  </span>
+                  <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+                    UK School Spending Three Pie Charts (1981, 1991, 2001)
                   </h3>
-                  <p style={{ fontSize: "0.76rem", color: "#94a3b8", margin: "2px 0 0 0" }}>
-                    Double Bar Chart • 6 Age Cohorts • Live Synchronized Presenter Dock
-                  </p>
                 </div>
-              </div>
-
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <button
+                  type="button"
                   onClick={() => setIsEnlarged(false)}
                   style={{
-                    background: "#ef4444",
-                    border: "none",
-                    color: "#ffffff",
-                    padding: "7px 16px",
-                    borderRadius: "9px",
+                    padding: "8px",
+                    borderRadius: "10px",
+                    border: "1px solid #e2e8f0",
+                    background: "#f8fafc",
                     cursor: "pointer",
                     display: "flex",
                     alignItems: "center",
-                    gap: "6px",
-                    fontWeight: 750,
-                    fontSize: "0.82rem"
+                    justifyContent: "center"
                   }}
                 >
-                  <X size={15} /> Exit Fullscreen (Esc)
+                  <X size={20} color="#0f172a" />
                 </button>
               </div>
-            </div>
 
-            {/* Fullscreen Content: Side-by-Side Zero-Scroll Kiosk Layout */}
-            <div
-              style={{
-                flex: 1,
-                padding: "16px 24px",
-                background: "#f1f5f9",
-                display: "grid",
-                gridTemplateColumns: "1.3fr 1fr",
-                gap: "16px",
-                alignItems: "stretch",
-                overflow: "hidden"
-              }}
-            >
-              {/* Left Column: Big Chart */}
-              <div
-                style={{
-                  background: "#ffffff",
-                  borderRadius: "20px",
-                  padding: "16px",
-                  border: "1.5px solid #cbd5e1",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.05)"
-                }}
-              >
-                <SmartBoardTableMatrix
-                  highlightMode={highlightMode}
-                  onHighlightModeChange={(mode) => setHighlightMode(mode)}
-                  selectedCohortId={selectedCohortId}
-                  onSelectCohort={(id) => setSelectedCohortId(id)}
-                  showInternalToolbar={true}
-                  showDeepDiveCard={false}
-                />
-              </div>
-
-              {/* Right Column: Presenter Dock (fits full height without scroll!) */}
-              <div style={{ height: "100%", overflowY: "auto" }}>
-                {renderPresenterDock(true)}
+              {/* Modal Split View */}
+              <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: "18px", alignItems: "start" }}>
+                <div style={{ background: "#ffffff", borderRadius: "18px", border: "1.5px solid #e2e8f0", padding: "16px" }}>
+                  <SmartBoardTableMatrix
+                    highlightMode={highlightMode}
+                    onHighlightModeChange={(mode) => setHighlightMode(mode)}
+                    selectedCohortId={selectedCategoryId}
+                    onSelectCohort={(id) => setSelectedCategoryId(id as SpendingCategoryKey)}
+                    showInternalToolbar={true}
+                    showDeepDiveCard={false}
+                  />
+                </div>
+                <div>{renderPresenterDock(true)}</div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

@@ -16,38 +16,31 @@ interface Step2BrainstormProps {
 const ESSAY_FORMAT_STEPS = [
   {
     stepNum: "1",
-    label: "Introduction",
+    label: "INTRODUCTION",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    formatRule: "Paraphrase the question + Opinion"
+    formatRule: "Paraphrase the question + Thesis"
   },
   {
     stepNum: "2",
     label: "Body Paragraph 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    formatRule: "Mention ideas for 1st view"
+    formatRule: "Advantages points [ 2 Main Reasons + Supporting reasons + Example ]"
   },
   {
     stepNum: "3",
     label: "Body Paragraph 2",
-    badgeBg: "rgba(13, 148, 136, 0.12)",
-    badgeColor: "#0f766e",
-    formatRule: "Mention ideas for 2nd view"
+    badgeBg: "rgba(220, 38, 38, 0.12)",
+    badgeColor: "#b91c1c",
+    formatRule: "Disadvantages [ 2 Main reasons + Example ]"
   },
   {
     stepNum: "4",
-    label: "Body Paragraph 3",
-    badgeBg: "rgba(234, 88, 12, 0.12)",
-    badgeColor: "#c2410c",
-    formatRule: "Mention ideas for opinion"
-  },
-  {
-    stepNum: "5",
-    label: "Conclusion",
-    badgeBg: "rgba(100, 116, 139, 0.15)",
-    badgeColor: "#334155",
-    formatRule: "Sum-up all the main points + restate the opinion"
+    label: "CONCLUSION",
+    badgeBg: "rgba(13, 148, 136, 0.12)",
+    badgeColor: "#0f766e",
+    formatRule: "Sum-up all the main reasons + Suggestion / Recommendation"
   }
 ];
 
@@ -66,9 +59,9 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 02 / 09 • Task Reveal &amp; Essay Format
         </span>
-        <h2 className="stage-title">Deconstruct the 'Discuss Both Views &amp; Give Opinion' Architecture</h2>
+        <h2 className="stage-title">Deconstruct the Advantages &amp; Disadvantages Architecture</h2>
         <p className="stage-subtitle">
-          Discussion Essay: <strong>View 1 (History is outdated) vs View 2 (History guides us) + Your Opinion</strong>. Master the 5-paragraph structure.
+          Essay Type: <strong>Advantages and Disadvantages</strong>. Master the mandatory 4-paragraph structure (Intro + Body 1 Advantages + Body 2 Disadvantages + Conclusion Recommendation).
         </p>
       </div>
 
@@ -79,7 +72,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to plan your ideas for View 1 and View 2."
+          instruction="Focus Timer: 3 minutes to plan your 2 Main Advantages and 2 Main Disadvantages."
         />
       </div>
 
@@ -139,7 +132,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           </div>
         </div>
 
-        {/* Right Column: Standard Discussion with Opinion Essay Format Card (Blurred until Revealed) */}
+        {/* Right Column: Standard 4-Paragraph Essay Format Card (Blurred until Revealed) */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
           <div
             style={{
@@ -165,7 +158,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <Layers size={22} color="var(--apple-blue)" />
                 <h4 style={{ fontSize: "1.15rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  Discussion with Opinion Format
+                  Mandatory Essay Format
                 </h4>
               </div>
 
@@ -192,7 +185,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   </motion.button>
                 )}
                 <span className="apple-badge neutral" style={{ fontSize: "0.82rem" }}>
-                  5-Paragraph Structure
+                  4-Paragraph Structure
                 </span>
               </div>
             </div>
@@ -223,7 +216,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   color: "#1d4ed8"
                 }}
               >
-                ⚡ Essay Structure: <strong>5-Paragraph Discussion with Opinion Architecture</strong>
+                ⚡ Essay Structure: <strong>4-Paragraph Advantages &amp; Disadvantages Architecture</strong>
               </div>
 
               {/* Format Content Cards (Large, Bold, Clean) */}
@@ -258,7 +251,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                         borderRadius: "8px",
                         background: step.badgeBg,
                         color: step.badgeColor,
-                        minWidth: "155px",
+                        minWidth: "165px",
                         textAlign: "center",
                         flexShrink: 0
                       }}
@@ -331,7 +324,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                       Format Hidden
                     </h4>
                     <p style={{ fontSize: "0.86rem", color: "var(--slate-500)", margin: "4px 0 0", lineHeight: 1.45 }}>
-                      Ask students to recall the Discussion with Opinion essay structure, then click to reveal.
+                      Ask students to recall the Advantages &amp; Disadvantages essay structure, then click to reveal.
                     </p>
                   </div>
 

@@ -25,458 +25,463 @@ export type {
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "history-relevance-discussion-task2",
+  id: "children-can-achieve-anything-advantages-disadvantages",
 
-  taskType: "Discussion with Opinion (Discuss Both Views & Give Opinion)",
+  taskType: "Advantages and Disadvantages Essay",
 
-  title: "IELTS Writing Task 2 — The Relevance of History in Understanding the Present",
+  title: "IELTS Writing Task 2 — Telling Children They Can Achieve Anything",
 
   questionText:
-    "Some people believe that history has little to teach us about today, while others think that the study of the past helps us to understand the present.\n\nDiscuss both the views and give your opinion.",
+    "In some countries, children are often told that they can achieve anything if they try hard enough.\n\nWhat are the advantages and disadvantages of giving children this message?",
 
   audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
 
   timingSeconds: 180,
 
   recommendedPosition:
-    "Balanced View: While modern demographic scale and novel technology create blindspots for historical archives, physical path dependency and cyclical human psychology make studying the past indispensable.",
+    "Balanced Assessment: While instilling unbridled ambition cultivates resilience and spurs social mobility, it must be counterbalanced with pragmatic realism to avert chronic self-blame, burnout, and disillusionment.",
 
   strongestArgument:
-    "The strongest argument is that while modern cities and technologies operate on an unprecedented scale, our physical infrastructure (such as Roman roads), financial psychology (speculative manias like Tulip Mania), and public health responses (1918 flu quarantines) are direct continuations of historical patterns.",
+    "The strongest argument is that praising effort cultivates a growth mindset that frees children from defeatist thinking; however, promising that effort guarantees every outcome blinds children to genetic and systemic limits, turning unavoidable failure into devastating personal guilt.",
 
   // 1. Sample introduction planning points
   introPlanningPoints: [
-    "Paraphrase: Divergent views on whether historical archives offer practical guidance for modern society.",
-    "Outline View 1: Survivorship bias in historical texts and the trap of preparing for past crises.",
-    "Outline View 2 & Opinion: Physical path dependency, cyclical market psychology, and pandemic protocols proving the past remains vital."
+    "Paraphrase Prompt: In various societies, youth are frequently told that limitless accomplishments are attainable solely through diligence.",
+    "Thesis Statement: While this message instills admirable resilience, a growth mindset, and upward aspiration, it simultaneously introduces grave hazards, namely acute psychological distress and a naive disregard for innate boundaries."
   ],
 
   sampleIntro:
-    "While some individuals argue that historical records provide little practical guidance in our fast-evolving modern world, others maintain that analyzing the past is essential for comprehending contemporary reality. In my opinion, although rapid urban and technological changes present unprecedented challenges, studying historical human psychology and institutional foundations remains indispensable for sound decision-making.",
+    "In various parts of the world, children are consistently instilled with the belief that boundless success is achievable solely through diligence and relentless effort. While this message undeniably nurtures resilience, a growth mindset, and high personal aspirations, it simultaneously introduces notable perils, particularly the risk of severe psychological distress and an unrealistic disregard for innate limitations.",
 
   // 2. Sample conclusion planning points
   conclusionPlanningPoints: [
-    "Summary of View 1: Elitist bias in ancient records and the novel scale of modern megacities.",
-    "Summary of View 2: Physical infrastructure foundations, market mania psychology, and public health playbooks.",
-    "Final Opinion Restatement: History provides the indispensable blueprint to navigate recurring human patterns."
+    "Sum-up Main Reasons: Effort fuels determination and breaks social ceilings, but unconstrained expectations trigger self-reproach, burnout, and disillusionment.",
+    "Suggestion / Recommendation: Parents and educators should temper aspirational optimism with pragmatic realism and self-compassion."
   ],
 
   sampleConclusion:
-    "In conclusion, although the elitist bias of historical archives and the novel scale of modern society lead some to dismiss the past, history remains an indispensable guide. Understanding the physical foundations of our cities and the cyclical nature of human psychology is essential for interpreting the present and making defensible decisions.",
+    "In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity and fuels upward mobility, it can equally inflict crippling self-reproach and blind individuals to inevitable biological and socioeconomic constraints. It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance, teaching the youth that while giving their utmost effort is commendable, recognizing personal boundaries and developing self-compassion when facing unalterable realities are equally vital for lifelong well-being.",
 
-  // Five-Minute Planning Map — Strictly showing points for View 1 and View 2 (ONE-LINERS ONLY)
+  // Five-Minute Planning Map — Strictly showing Advantages vs Disadvantages in ONE-LINERS
   fiveMinutePlanningMap: {
     positive: [
-      "Survivorship Bias in Records: History was written only by victorious kings, ignoring how ordinary people survived crises.",
-      "The 'Fighting the Last War' Trap: Fixating on past historical disasters blinds leaders to completely new, unexpected threats.",
-      "Radical Megacity Scale: Ancient small-town direct democracies cannot manage modern twenty-million-person megacities.",
-      "Fragile Global Supply Chains: Ancient localized kingdoms offer zero playbook for hyper-synchronized international supply shocks."
+      "Cultivates a Growth Mindset: Teaches children that intelligence and skills can be expanded through practice, building emotional grit against early failure.",
+      "Promotes Upward Social Mobility: Inspires youth from impoverished or marginalized backgrounds to break generational ceilings and pursue ambitious vocations.",
+      "Eradicates Defeatist Attitudes: Encourages perseverance in challenging disciplines like mathematics, athletics, and foreign languages without premature surrender."
     ],
     negative: [
-      "Physical Path Dependency: Modern highways and city centers are built directly on ancient Roman and medieval roads.",
-      "Speculative Market Manias: Modern cryptocurrency and stock crashes follow the exact psychological stages of the 1637 Dutch Tulip Mania.",
-      "Pandemic Containment Playbooks: Modern quarantine protocols, contact tracing, and mask rules were copied directly from the 1918 Spanish Flu.",
-      "Diplomatic Peace Pacts: Centuries-old international treaties (like the 1815 Treaty of Paris) still sustain modern Swiss neutrality."
+      "Induces Severe Self-Blame & Burnout: Children erroneously believe every setback stems from personal laziness, leading to chronic perfectionism, anxiety, and depression.",
+      "Denies Natural Biological Realities: Fosters false expectations in arenas demanding rare genetic prerequisites (e.g. height in basketball or innate musical pitch).",
+      "Ignores Structural Socioeconomic Barriers: Overlooks economic inequalities and institutional bottlenecks, setting young adults up for bitter disillusionment."
     ],
-    position: "5-Paragraph Discussion with Opinion Structure",
-    body1: "Body 1 (1st View): Survivorship bias in records, fighting the last war, megacity scale, and fragile supply chains.",
-    body2: "Body 2 (2nd View): Physical Roman road foundations, Tulip Mania market psychology, 1918 flu playbooks, and peace pacts.",
+    position: "4-Paragraph Advantages & Disadvantages Architecture",
+    body1: "Body 1 (Advantages): 2 Main Reasons (Growth Mindset & Upward Mobility) + Supporting Explanation + Carol Dweck Educational Study Example.",
+    body2: "Body 2 (Disadvantages): 2 Main Reasons (Self-Blame/Burnout & Inherent Limitations) + High-Stakes Competitive Exam Example.",
     teachingRecommendation:
-      "Instruct students to follow the exact 5-paragraph structure: Intro (Paraphrase + Opinion), Body 1 (Ideas for 1st View), Body 2 (Ideas for 2nd View), Body 3 (Ideas for Opinion), Conclusion (Sum-up main points + Restate opinion). Use these fresh, easy-to-justify one-liners!"
+      "Follow the exact 4-paragraph format: Introduction (Paraphrase + Thesis), Body 1 (Advantages: 2 Main Reasons + Supporting + Example), Body 2 (Disadvantages: 2 Main Reasons + Example), Conclusion (Sum-up all main reasons + Suggestion/Recommendation)."
   },
 
   // Strongest Classroom Discussion Question
   classroomDiscussion: {
     question:
-      "Why do modern highway maps across Europe still follow roads paved by Roman soldiers two thousand years ago?",
+      "When a child spends years practicing basketball but stops growing at 5 feet 4 inches, does telling them 'you can achieve anything' inspire them or set them up for heartbreak?",
     followUps: [
-      "Did the public panic during COVID-19 reveal that human nature in a pandemic hasn't changed since 1918?",
-      "Why did building the giant Maginot Line wall fail to protect France in World War II?",
-      "Can studying the 1637 Dutch Tulip Mania help regular investors avoid losing money in modern cryptocurrency bubbles?"
+      "Why do students in high-pressure educational systems blame themselves when they fail entrance exams, even after studying 14 hours a day?",
+      "How does Carol Dweck's concept of praising 'effort rather than talent' transform a child's resilience?",
+      "Can pure willpower overcome structural poverty and economic disadvantages without institutional support?"
     ],
     pedagogicalInsight:
-      "These concrete questions instantly prove to students that history is not an abstract subject in old textbooks—it is physically under our car tires and psychologically behind our financial decisions today."
+      "This question helps students immediately grasp the crucial distinction between encouraging healthy effort (growth mindset) and making false promises that defy biology and economic reality."
   },
 
-  // 3. Student Idea Bank — Strictly Points for View 1 (Body 1) and View 2 (Body 2) in ONE-LINERS
+  // 3. Body Paragraphs Data Structure (Format-Compliant)
   bodyParagraphs: [
     {
       paraNumber: 1,
       side: "strong_opinion",
-      title: "Body Para 1 (1st View) — Why History Fails to Guide Modern Society",
-      theme: "Survivorship Bias, Strategic Blindspots & Unprecedented Scale",
+      title: "Body Para 1: Advantages of the 'Achieve Anything' Message",
+      theme: "Growth Mindset, Resilience & Social Mobility",
       mainReason:
-        "Historical records were written only by ruling elites and victors, offering zero advice for common people's problems.",
+        "1. Cultivates an intrinsic growth mindset and resilient work ethic; 2. Promotes upward social mobility by dismantling defeatist ceilings.",
       supportingReasons:
-        "Preparing for past crises blinds modern leaders to novel threats, just as small ancient town rules fail in modern megacities.",
+        "When children view outcomes as dependent on dedication rather than fixed talent, they treat setbacks as learning steps; furthermore, it empowers underprivileged children to dream boldly.",
       example:
-        "France built the static Maginot Line wall to prevent another trench war, but modern tanks easily bypassed it in days.",
+        "Research by Dr. Carol Dweck demonstrated that students praised for effort exhibited significantly higher academic stamina than those praised for innate ability.",
       band9Snippet:
-        "“On the one hand, proponents argue that historical archives suffer from profound survivorship bias and prepare policymakers for yesterday's battles rather than today's reality.”",
+        "“On the positive side, imparting this empowering philosophy yields two substantial benefits: cultivating an intrinsic growth mindset and serving as a potent engine for social mobility.”",
       alternativeReasons: [
         {
-          id: "body1-alt1",
-          badge: "View 1 • Point 1: Survivorship Bias",
-          title: "Survivorship Bias & Elitist Historical Records",
+          id: "adv-reason-1",
+          badge: "Main Reason 1: Growth Mindset",
+          title: "Fostering a Growth Mindset & Tenacious Work Ethic",
           mainReason:
-            "History was recorded exclusively by victorious kings and elites, ignoring how ordinary citizens survived daily crises.",
+            "It teaches children that intelligence and capability are malleable assets developed through disciplined practice rather than unchangeable genetic gifts.",
           supportingReasons:
-            "Ancient chronicles glorify royal conquests and palace intrigues rather than the economic struggles of common laborers.",
+            "When youth believe that effort dictates success, they interpret mistakes and setbacks not as humiliating verdicts on their worth, but as constructive feedback, developing long-term grit.",
           example:
-            "Ancient texts celebrate emperor military triumphs, but record virtually nothing about how working-class families coped with famine.",
+            "Stanford psychologist Carol Dweck's landmark studies revealed that children praised for diligent exertion consistently outpaced peers who were praised for natural brilliance.",
           band9Snippet:
-            "“Historical archives suffer from profound survivorship bias, having been authored almost exclusively by ruling elites to chronicle military triumphs rather than the lived realities of ordinary citizens.”",
+            "“Primarily, this message cultivates an intrinsic growth mindset and a strong work ethic, prompting young minds to interpret setbacks as constructive learning opportunities rather than insurmountable barriers.”",
           modelParagraph:
-            "On the one hand, proponents argue that historical lessons are inherently flawed because the historical archive suffers from profound survivorship bias. Throughout antiquity, documentation was written almost exclusively by the victorious ruling elite, monks, and monarchical scribes. Consequently, history predominantly chronicles royal palace intrigues and imperial battlefield conquests, while entirely ignoring the socioeconomic realities and survival strategies of ordinary working-class citizens. For instance, ancient Greek and Roman chronicles offer detailed accounts of military generals, but record virtually nothing regarding how common artisans and laborers navigated localized economic depressions.",
+            "On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it cultivates an intrinsic growth mindset and a strong work ethic. When young minds are taught that achievement is determined by dedication rather than fixed hereditary talent, they interpret setbacks as constructive learning opportunities rather than insurmountable barriers, which bolsters emotional grit. Furthermore, this outlook serves as an engine for social mobility by eliminating self-imposed psychological ceilings, particularly for children from impoverished or marginalized backgrounds who might otherwise feel confined by their circumstances. A compelling illustration of this is evident in educational psychology research by Dr. Carol Dweck; students praised specifically for effort rather than innate intelligence demonstrated markedly higher perseverance and achieved superior long-term academic results across diverse socio-economic groups.",
           examinerNotes:
-            "A brilliant, original argument exposing the structural incompleteness of historical evidence."
+            "A rock-solid Band 9 argument pairing psychological theory with empirical educational research."
         },
         {
-          id: "body1-alt2",
-          badge: "View 1 • Point 2: The 'Last War' Trap",
-          title: "The Past-Crisis Blindspot ('Fighting the Last War')",
+          id: "adv-reason-2",
+          badge: "Main Reason 2: Social Mobility",
+          title: "Unlocking Social Mobility & Eliminating Self-Doubt",
           mainReason:
-            "Fixating on past historical disasters blinds modern leaders to completely new, unexpected forms of crisis.",
+            "It breaks generational defeatism by encouraging disadvantaged children to aspire toward prestigious, competitive vocations.",
           supportingReasons:
-            "Applying yesterday's defensive solutions creates a false sense of security against novel technological threats.",
+            "Children raised in marginalized environments frequently internalize social ceilings; telling them effort unlocks success provides the vital optimism needed to apply for top universities and careers.",
           example:
-            "France built the massive static Maginot Line wall to prevent another WWI trench war, only for modern tanks and planes to bypass it in days.",
+            "Pioneering figures from humble origins—such as former presidents, scientists, and entrepreneurs—often cite childhood encouragement as the catalyst that kept them striving.",
           band9Snippet:
-            "“Overreliance on historical precedent frequently induces the dangerous fallacy of 'fighting the last war,' leaving institutions fatally blind to novel, asymmetric threats.”",
+            "“Furthermore, this optimistic outlook serves as a catalyst for social mobility by removing defeatist mental ceilings for youngsters from disadvantaged backgrounds.”",
           modelParagraph:
-            "Furthermore, an overreliance on historical precedent often traps policymakers in the dangerous psychological fallacy of 'fighting the last war.' When leaders uncritically apply solutions from previous crises, they construct rigid defenses that leave them fatally vulnerable to unprecedented modern threats. A salient military illustration is the French construction of the Maginot Line following World War I; having studied the trench warfare of the previous conflict, planners built an impenetrable concrete barrier, only for modern mechanized divisions and aircraft to easily bypass it within days.",
+            "Secondly, this message functions as a vital catalyst for upward social mobility. Children from low-income or marginalized demographics frequently absorb defeatist expectations from their surroundings, assuming that elite professions like medicine, law, or engineering are reserved for privileged classes. Instilling the belief that dedication is the ultimate arbiter of success inspires these young individuals to dismantle internal barriers, apply to top-tier universities, and pursue ambitious vocations regardless of their family background.",
           examinerNotes:
-            "Compelling historical proof showing how excessive historical focus creates modern strategic blindspots."
-        },
-        {
-          id: "body1-alt3",
-          badge: "View 1 • Point 3: Radical Demographic Scale",
-          title: "Radical Demographic Scale & Megacity Realities",
-          mainReason:
-            "Ancient agrarian governance was designed for tiny populations and cannot manage modern twenty-million-person megacities.",
-          supportingReasons:
-            "Administrative mechanisms that succeeded in homogeneous ancient city-states fail completely in complex, hyper-dense global metropolises.",
-          example:
-            "Ancient Athenian direct democracy required citizens to physically gather in a town square, a model mathematically impossible in modern multi-million nations.",
-          band9Snippet:
-            "“The unprecedented demographic scale of contemporary megacities renders the administrative frameworks of small, ancient city-states mathematically and practically unworkable.”",
-          modelParagraph:
-            "Additionally, the sheer demographic scale of contemporary society invalidates ancient administrative models. Ancient classical civilizations operated on minuscule population scales compared to today's twenty-million-person urban conurbations. For example, ancient Athenian direct democracy functioned only because a few thousand citizens could assemble in a single town square to vote on municipal policies. Attempting to derive modern civic administration from such small-scale historical models is mathematically unworkable in an era of sprawling, multicultural megacities managing complex automated transit and sanitation systems.",
-          examinerNotes:
-            "Sharp, intuitive contrast highlighting the immense population and urban scale divergence."
-        },
-        {
-          id: "body1-alt4",
-          badge: "View 1 • Point 4: Global Supply Chains",
-          title: "Hyper-Fragile Global Supply Chain Networks",
-          mainReason:
-            "Ancient economies were localized and self-contained, whereas today a single foreign disruption paralyzes global survival.",
-          supportingReasons:
-            "Historical isolationist doctrines offer no playbook for managing just-in-time international food, energy, and semiconductor networks.",
-          example:
-            "A single container ship stuck in the Suez Canal halted ten billion dollars in global daily trade, an economic shock unknown in ancient history.",
-          band9Snippet:
-            "“Unlike ancient self-sufficient agrarian fiefdoms, contemporary civilization depends on hyper-synchronized global supply chains that have no historical equivalent.”",
-          modelParagraph:
-            "Finally, contemporary economic vulnerability is rooted in hyper-connected global supply networks that have no historical parallel. Ancient civilizations operated as largely localized, self-contained agrarian economies where supply disruptions were geographically confined. In contrast, modern nations rely on fragile, just-in-time international supply chains for food, energy, and microchips. For instance, when a single container vessel ran aground in the Suez Canal in 2021, it paralyzed nearly ten billion dollars in global trade daily—an interconnected systemic shock that historical economic models offer zero guidance to resolve.",
-          examinerNotes:
-            "Fresh, highly modern real-world evidence demonstrating supply chain vulnerability."
+            "Directly addresses societal progress and equity, demonstrating deep maturity in Task Response."
         }
       ]
     },
     {
       paraNumber: 2,
       side: "non_opinion",
-      title: "Body Para 2 (2nd View) — How the Past Silently Shapes the Present",
-      theme: "Physical Path Dependency, Cyclical Psychology & Epidemiological Playbooks",
+      title: "Body Para 2: Disadvantages of the 'Achieve Anything' Message",
+      theme: "Self-Blame, Psychological Burnout & Disillusionment",
       mainReason:
-        "Modern infrastructure, speculative financial psychology, and public health playbooks are direct continuations of history.",
+        "1. Inflicts acute self-blame, chronic anxiety, and burnout; 2. Fosters blindness toward natural biological limitations and systemic hurdles.",
       supportingReasons:
-        "European highways still follow Roman soldier roads, while human panic during modern crypto crashes and pandemics repeats past events.",
+        "If success is framed solely as effort, every failure feels like a shameful personal inadequacy; additionally, it encourages youth to waste years chasing goals physically or structurally unfeasible.",
       example:
-        "Modern quarantine and mask mandates during COVID-19 were copied directly from public health rules used during the 1918 Spanish Flu.",
+        "In high-stakes East Asian school systems, hyper-focus on effort causes severe adolescent depression when hardworking students fail to gain admission to capped elite academies.",
       band9Snippet:
-        "“On the other hand, the study of the past is indispensable because modern physical infrastructure, financial speculation, and epidemiological responses are direct legacies of historical blueprints.”",
+        "“Conversely, propagating this unconstrained narrative produces two profound drawbacks: the onset of acute psychological self-blame and a naive blindness toward tangible genetic limitations.”",
       alternativeReasons: [
         {
-          id: "body2-alt1",
-          badge: "View 2 • Point 1: Physical Infrastructure",
-          title: "Physical Path Dependency & Roman Road Networks",
+          id: "disadv-reason-1",
+          badge: "Main Reason 1: Self-Blame & Burnout",
+          title: "Acute Psychological Guilt, Perfectionism & Burnout",
           mainReason:
-            "Modern highways, railway lines, and European city centers are built directly on ancient Roman and medieval foundations.",
+            "Framing success purely as a product of willpower causes children to view every failure as evidence of personal laziness and moral deficiency.",
           supportingReasons:
-            "Contemporary traffic bottlenecks and urban growth patterns can only be understood by studying the routes ancient military engineers laid down.",
+            "When hardworking children inevitably fall short due to external competition or bad luck, they shoulder crushing guilt, precipitating anxiety, imposter syndrome, and emotional exhaustion.",
           example:
-            "Major British and European highways (such as Watling Street in the UK) still follow the exact paved routes constructed by Roman soldiers two thousand years ago.",
+            "In intensely competitive academic cultures across South Korea and Singapore, extreme rates of adolescent stress and depressive symptoms are directly tied to the belief that lower marks mean one simply did not try hard enough.",
           band9Snippet:
-            "“Through the lens of path dependency, modern infrastructure remains physically anchored to ancient foundations, with contemporary European transit corridors directly tracing Roman military roads.”",
+            "“The foremost hazard is the onset of acute psychological distress and devastating self-blame; when children are led to believe that success is solely a product of willpower, they inevitably conclude that any failure is a shameful personal inadequacy.”",
           modelParagraph:
-            "On the other hand, advocates emphasize that contemporary society is physically anchored to historical foundations through the phenomenon of path dependency. Modern transport corridors, city layouts, and trade hubs did not emerge in a vacuum; they sit directly on top of ancient engineering decisions. For example, across the United Kingdom and continental Europe, major contemporary highways and freight corridors still follow the exact paved trajectories surveyed and constructed by Roman military engineers over two millennia ago. Understanding why modern cities experience specific logistical bottlenecks requires studying the historical urban footprints that dictate their expansion.",
+            "Conversely, propagating this unconstrained narrative produces two profound drawbacks. The foremost hazard is the onset of acute psychological distress and devastating self-blame. If children are led to believe that success is solely a product of willpower, they inevitably conclude that any failure is a direct personal deficiency, resulting in chronic anxiety, perfectionism, and early burnout. In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations and structural societal barriers, encouraging youngsters to pursue unviable ambitions where natural physical or intellectual prerequisites cannot be bridged by effort alone. For instance, in hyper-competitive educational environments such as South Korea, the relentless expectation that sheer exertion guarantees admission to elite academies has precipitated alarming rates of adolescent depression, as dedicated students shoulder overwhelming guilt when biological aptitudes or systemic bottlenecks prevent them from reaching top percentiles.",
           examinerNotes:
-            "Fascinating, concrete physical proof that history literally lies under our modern roads."
+            "Exposes the dark psychological downside of relentless meritocracy with razor-sharp analytical precision."
         },
         {
-          id: "body2-alt2",
-          badge: "View 2 • Point 2: Speculative Market Manias",
-          title: "The Psychology of Speculative Financial Bubbles",
+          id: "disadv-reason-2",
+          badge: "Main Reason 2: Inherent Limitations",
+          title: "Disregard for Genetic Aptitudes & Structural Barriers",
           mainReason:
-            "While financial technology changes, human greed and collective delusion during market crashes follow identical historical patterns.",
+            "It promotes an unrealistic worldview that denies biological predispositions, financial inequities, and the undeniable role of luck.",
           supportingReasons:
-            "Studying how public hysteria inflates speculative assets helps modern investors and regulators recognize irrational market bubbles before they burst.",
+            "Encouraging children to pursue careers where they lack necessary physical or cognitive attributes leads to squandered time, lost opportunities, and bitter adult disillusionment.",
           example:
-            "The rapid rise and catastrophic collapse of speculative cryptocurrency schemes mirrored the exact stages of the 1637 Dutch Tulip Mania.",
+            "A person lacking natural pitch perception or height cannot reach elite operatic or professional basketball tiers, regardless of thousands of practice hours.",
           band9Snippet:
-            "“While financial instruments evolve, the collective psychology of speculative greed remains immutable, with modern digital asset collapses mirroring the classic anatomy of seventeenth-century Dutch Tulip Mania.”",
+            "“Furthermore, this doctrine fosters a naive disregard for biological realities and socioeconomic barriers, inducing youth to invest years chasing vocations where natural prerequisites cannot be bridged by effort alone.”",
           modelParagraph:
-            "Equally compelling is the realization that human financial psychology follows cyclical patterns that history documents with remarkable precision. While financial technology has progressed from physical ledgers to decentralized digital algorithms, the underlying human vices of irrational exuberance and panic remain identical. A salient illustration is observed in modern cryptocurrency and meme-stock crashes, which unfolded through the exact psychological stages of speculative mania and sudden collapse first recorded during the Dutch Tulip Mania of 1637. By analyzing historical asset bubbles, economists can identify the warning signs of market irrationality before widespread economic devastation ensues.",
+            "Additionally, this narrative breeds an ungrounded blindness toward biological predispositions and structural economic bottlenecks. Human beings possess distinct genetic aptitudes; an individual with below-average height or poor stereoscopic vision cannot become a professional basketball player or fighter pilot through sheer determination. Convincing children otherwise squanders precious formative years on unviable dreams, culminating in bitter adult disillusionment when unalterable realities assert themselves.",
           examinerNotes:
-            "Brilliant comparison between 1637 Tulip Mania and modern cryptocurrency crashes."
-        },
-        {
-          id: "body2-alt3",
-          badge: "View 2 • Point 3: Pandemic Containment",
-          title: "Epidemiological Protocols & Human Compliance",
-          mainReason:
-            "Human behavioral reactions and containment strategies during deadly disease outbreaks repeat identically across centuries.",
-          supportingReasons:
-            "Modern epidemiologists successfully deployed border quarantines and mask policies because historical data proved they flatten infection curves.",
-          example:
-            "Modern public health responses during COVID-19—such as isolation zones and social distancing—were directly derived from protocols refined during the 1918 Spanish Flu.",
-          band9Snippet:
-            "“In public health, contemporary epidemiological strategies—spanning quarantine mandates to contact tracing—derive directly from empirical protocols developed during the 1918 influenza pandemic.”",
-          modelParagraph:
-            "Furthermore, historical archives supply proven blueprints for managing acute global crises, particularly in public health. When novel epidemics emerge, human sociological responses—including initial denial, panic buying, and resistance to restrictions—mirror past behavioral patterns. During the recent COVID-19 pandemic, public health authorities did not invent containment protocols from scratch; they dusted off empirical non-pharmaceutical interventions, such as municipal quarantines, contact tracing, and mask mandates, that were rigorously refined during the 1918 Spanish Influenza pandemic. Without historical epidemiological data demonstrating that social distancing flattens mortality curves, modern response efforts would have been drastically delayed.",
-          examinerNotes:
-            "Exceptionally relatable and justifiable evidence linking the 1918 flu to COVID-19 response measures."
-        },
-        {
-          id: "body2-alt4",
-          badge: "View 2 • Point 4: Century-Old Peace Pacts",
-          title: "Diplomatic Neutrality & Century-Old Peace Pacts",
-          mainReason:
-            "Contemporary international diplomacy and border stability rely entirely on enduring peace treaties established centuries ago.",
-          supportingReasons:
-            "Diplomats cannot maintain international peace accords without honoring the historical grievances and compromises that created them.",
-          example:
-            "Switzerland's renowned modern role as a neutral diplomatic mediator is the direct result of the 1815 Treaty of Paris signed after the Napoleonic Wars.",
-          band9Snippet:
-            "“Contemporary geopolitical stability is sustained by long-standing institutional pacts, exemplified by Swiss diplomatic neutrality rooted in the post-Napoleonic 1815 Treaty of Paris.”",
-          modelParagraph:
-            "Finally, contemporary international law and diplomatic stability are direct outcomes of historical treaties that have endured for centuries. Peaceful coexistence among nations requires an understanding of the historical compromises that established modern borders and sovereign statuses. For instance, Switzerland's modern status as an unshakeable, neutral sanctuary for international peace talks is not an arbitrary modern policy, but the direct legacy of the 1815 Treaty of Paris following the Napoleonic Wars. Ignoring the historical foundations of such treaties would dismantle the fragile international consensus that maintains global diplomatic order.",
-          examinerNotes:
-            "Elevated geopolitical insight illustrating the enduring validity of historic diplomatic treaties."
+            "A compelling argument grounded in biological realism and pragmatic life balance."
         }
       ]
     }
   ],
 
-  // 4. Band 9 Academic Power Vocabulary (History & Modern Era)
+  // 4. Band 9 Vocabulary List (12 Curated Items with Collocations & Phonetics)
   vocabList: [
     {
-      word: "path dependency",
-      pos: "noun phrase",
-      meaning: "The tendency of past decisions and ancient layouts to constrain and dictate modern choices and routes.",
-      example: "Modern European railway and road networks exhibit profound path dependency, following ancient Roman routes."
+      word: "Growth Mindset",
+      term: "Growth Mindset",
+      phonetic: "/ɡrəʊθ ˈmaɪndset/",
+      meaning: "The underlying belief that a person's intelligence, talents, and capabilities can be developed through dedication and effort.",
+      definition: "The underlying belief that a person's intelligence, talents, and capabilities can be developed through dedication and effort.",
+      example: "Instilling a growth mindset encourages young learners to treat mistakes as stepping stones toward mastery.",
+      sampleSentence: "Instilling a growth mindset encourages young learners to treat mistakes as stepping stones toward mastery.",
+      collocations: ["cultivate a growth mindset", "embrace a growth mindset", "growth mindset philosophy"]
     },
     {
-      word: "survivorship bias",
-      pos: "noun phrase",
-      meaning: "A logical error focusing only on successful or surviving records while ignoring hidden or forgotten failures.",
-      example: "Historical archives suffer from survivorship bias because ancient scribes only preserved the triumphs of victorious kings."
+      word: "Intrinsic Resilience",
+      term: "Intrinsic Resilience",
+      phonetic: "/ɪnˈtrɪnzɪk rɪˈzɪliəns/",
+      meaning: "Inherent psychological toughness and emotional capacity to recover quickly from difficulties.",
+      definition: "Inherent psychological toughness and emotional capacity to recover quickly from difficulties.",
+      example: "Children who possess intrinsic resilience are far less likely to abandon difficult academic subjects.",
+      sampleSentence: "Children who possess intrinsic resilience are far less likely to abandon difficult academic subjects.",
+      collocations: ["bolster intrinsic resilience", "exhibit intrinsic resilience", "build emotional resilience"]
     },
     {
-      word: "speculative mania",
-      pos: "noun phrase",
-      meaning: "An irrational period of collective financial greed where asset prices skyrocket far beyond their real value.",
-      example: "The sudden boom and bust of cryptocurrency mirrored the speculative mania of seventeenth-century Dutch tulips."
+      word: "Social Mobility",
+      term: "Social Mobility",
+      phonetic: "/ˈsəʊʃl məʊˈbɪləti/",
+      meaning: "The ability of individuals or families to move up or down the socioeconomic ladder.",
+      definition: "The ability of individuals or families to move up or down the socioeconomic ladder.",
+      example: "Telling youth that effort yields success serves as a powerful engine for upward social mobility.",
+      sampleSentence: "Telling youth that effort yields success serves as a powerful engine for upward social mobility.",
+      collocations: ["upward social mobility", "spur social mobility", "generational mobility"]
     },
     {
-      word: "epidemiological",
-      pos: "adjective",
-      meaning: "Relating to the branch of medicine and science dealing with the incidence, distribution, and control of disease.",
-      example: "Modern epidemiological playbooks on quarantine and social distancing were adapted directly from the 1918 influenza records."
+      word: "Self-Imposed Ceilings",
+      term: "Self-Imposed Ceilings",
+      phonetic: "/ˌself ɪmˈpəʊzd ˈsiːlɪŋz/",
+      meaning: "Artificial psychological limitations or low expectations that individuals place upon their own potential.",
+      definition: "Artificial psychological limitations or low expectations that individuals place upon their own potential.",
+      example: "The encouraging message empowers disadvantaged pupils to shatter self-imposed ceilings.",
+      sampleSentence: "The encouraging message empowers disadvantaged pupils to shatter self-imposed ceilings.",
+      collocations: ["dismantle self-imposed ceilings", "eliminate self-imposed barriers", "break mental ceilings"]
     },
     {
-      word: "fallacy",
-      pos: "noun",
-      meaning: "A mistaken belief or flawed reasoning, especially one based on unsound argument.",
-      example: "Preparing solely for past military battles commits the strategic fallacy of fighting the last war."
+      word: "Debilitating Self-Blame",
+      term: "Debilitating Self-Blame",
+      phonetic: "/dɪˈbɪlɪteɪtɪŋ ˌself ˈbleɪm/",
+      meaning: "Crushing guilt and harsh internal criticism that paralyzes a person's mental well-being.",
+      definition: "Crushing guilt and harsh internal criticism that paralyzes a person's mental well-being.",
+      example: "When promised that effort guarantees victory, failed attempts often lead to debilitating self-blame.",
+      sampleSentence: "When promised that effort guarantees victory, failed attempts often lead to debilitating self-blame.",
+      collocations: ["inflict debilitating self-blame", "experience self-blame", "shoulder excessive self-blame"]
     },
     {
-      word: "conurbation",
-      pos: "noun",
-      meaning: "An extended urban area, typically consisting of several towns merging with the suburbs of one or more cities.",
-      example: "Managing a modern conurbation of twenty million citizens requires tools unknown to ancient village democracies."
+      word: "Perfectionism & Burnout",
+      term: "Perfectionism & Burnout",
+      phonetic: "/pəˈfekʃənɪzəm ænd ˈbɜːnaʊt/",
+      meaning: "The relentless demand for flawless performance coupled with state of acute physical and mental exhaustion.",
+      definition: "The relentless demand for flawless performance coupled with state of acute physical and mental exhaustion.",
+      example: "Hyper-competitive adolescents frequently collapse under the combined weight of perfectionism and burnout.",
+      sampleSentence: "Hyper-competitive adolescents frequently collapse under the combined weight of perfectionism and burnout.",
+      collocations: ["suffer from burnout", "toxic perfectionism", "academic burnout"]
     },
     {
-      word: "autarky",
-      pos: "noun",
-      meaning: "Economic independence or self-sufficiency, where a kingdom or nation does not rely on international trade.",
-      example: "Ancient feudal kingdoms operated under relative autarky, whereas modern economies collapse if international shipping halts."
+      word: "Innate Aptitude",
+      term: "Innate Aptitude",
+      phonetic: "/ɪˈneɪt ˈæptɪtjuːd/",
+      meaning: "Natural, inborn talent or physiological capability that exists independently of training.",
+      definition: "Natural, inborn talent or physiological capability that exists independently of training.",
+      example: "No amount of training can fully compensate for a complete lack of innate aptitude in elite athletics.",
+      sampleSentence: "No amount of training can fully compensate for a complete lack of innate aptitude in elite athletics.",
+      collocations: ["possess innate aptitude", "biological aptitude", "differing innate aptitudes"]
     },
     {
-      word: "anachronistic",
-      pos: "adjective",
-      meaning: "Belonging to a past era; out of date or chronologically misplaced in modern society.",
-      example: "Applying ancient agrarian laws to regulate modern automated financial algorithms is entirely anachronistic."
+      word: "Structural Inequities",
+      term: "Structural Inequities",
+      phonetic: "/ˈstrʌktʃərəl ɪnˈekwətiz/",
+      meaning: "Systemic, institutional disadvantages in society that restrict opportunity regardless of individual effort.",
+      definition: "Systemic, institutional disadvantages in society that restrict opportunity regardless of individual effort.",
+      example: "The naive myth that anyone can make it overlooks persistent structural inequities in education.",
+      sampleSentence: "The naive myth that anyone can make it overlooks persistent structural inequities in education.",
+      collocations: ["entrenched structural inequities", "address structural barriers", "systemic inequities"]
     },
     {
-      word: "precedent",
-      pos: "noun",
-      meaning: "An earlier event, decision, or action that serves as an authoritative guide or model for subsequent situations.",
-      example: "Historical judicial precedents provide the constitutional backbone for modern democratic legal systems."
+      word: "Bitter Disillusionment",
+      term: "Bitter Disillusionment",
+      phonetic: "/ˈbɪtə ˌdɪsɪˈluːʒnmənt/",
+      meaning: "A painful feeling of disappointment when discovering that an idealized belief is false in reality.",
+      definition: "A painful feeling of disappointment when discovering that an idealized belief is false in reality.",
+      example: "Young adults face bitter disillusionment when dedication fails to overcome entrenched nepotism.",
+      sampleSentence: "Young adults face bitter disillusionment when dedication fails to overcome entrenched nepotism.",
+      collocations: ["culminate in disillusionment", "suffer bitter disillusionment", "confront disillusionment"]
     },
     {
-      word: "indispensable",
-      pos: "adjective",
-      meaning: "Absolutely essential; impossible to operate effectively without.",
-      example: "Studying past market panics is indispensable for central bankers trying to prevent modern economic collapse."
+      word: "Pragmatic Guidance",
+      term: "Pragmatic Guidance",
+      phonetic: "/præɡˈmætɪk ˈɡaɪdns/",
+      meaning: "Realistic, sensible counsel that considers practical facts and limitations rather than pure idealism.",
+      definition: "Realistic, sensible counsel that considers practical facts and limitations rather than pure idealism.",
+      example: "Mentors should combine emotional encouragement with pragmatic guidance regarding career choices.",
+      sampleSentence: "Mentors should combine emotional encouragement with pragmatic guidance regarding career choices.",
+      collocations: ["offer pragmatic guidance", "pragmatic realism", "grounded guidance"]
     },
     {
-      word: "immutable",
-      pos: "adjective",
-      meaning: "Unchanging over time or unable to be altered.",
-      example: "While modern digital gadgets evolve rapidly, basic human emotions of fear and greed remain essentially immutable."
+      word: "Self-Compassion",
+      term: "Self-Compassion",
+      phonetic: "/ˌself kəmˈpæʃn/",
+      meaning: "Treating oneself with kindness and understanding during times of failure or inadequacy.",
+      definition: "Treating oneself with kindness and understanding during times of failure or inadequacy.",
+      example: "Developing self-compassion allows students to process defeat constructively without feeling worthless.",
+      sampleSentence: "Developing self-compassion allows students to process defeat constructively without feeling worthless.",
+      collocations: ["cultivate self-compassion", "practice self-compassion", "emotional self-compassion"]
     },
     {
-      word: "unprecedented",
-      pos: "adjective",
-      meaning: "Never having occurred or existed at any point in prior human history.",
-      example: "The global synchronization of modern just-in-time supply chains is unprecedented in scale."
+      word: "Tenacity",
+      term: "Tenacity",
+      phonetic: "/təˈnæsəti/",
+      meaning: "The quality of being determined and persistent; refusing to give up easily.",
+      definition: "The quality of being determined and persistent; refusing to give up easily.",
+      example: "Children praised for their diligence develop the tenacity required to master complex disciplines.",
+      sampleSentence: "Children praised for their diligence develop the tenacity required to master complex disciplines.",
+      collocations: ["unyielding tenacity", "demonstrate tenacity", "admirable tenacity"]
     }
   ],
 
   vocabHunt: [
-    "path dependency",
-    "survivorship bias",
-    "speculative mania",
-    "epidemiological",
-    "fallacy",
-    "conurbation",
-    "autarky",
-    "anachronistic",
-    "precedent",
-    "indispensable",
-    "immutable",
-    "unprecedented"
+    "growth mindset",
+    "resilience",
+    "social mobility",
+    "self-blame",
+    "burnout",
+    "aptitude",
+    "structural",
+    "disillusionment",
+    "pragmatic",
+    "compassion",
+    "tenacity",
+    "perfectionism"
   ],
 
-  // 5. Guided Brainstorm Challenge Cards (Strictly View 1 & View 2 — Easy to Understand, One-Liner Ideas)
-  brainstormCards: [
+  // 5. Power Expressions for Advantages & Disadvantages
+  powerExpressions: [
     {
-      question: "Why do ancient historical books fail to help ordinary working people today?",
-      thinkingLens: "Survivorship Bias (History written by kings & victors)",
-      selfCheck: "Did ancient scrolls record everyday citizens or just wealthy emperors?",
-      idea: "Ancient history only recorded the victories of emperors and kings, leaving out how everyday people lived and solved problems."
+      expression: "Cultivating an intrinsic growth mindset",
+      meaning: "Fostering the belief that competence is expanded through deliberate practice",
+      example: "Cultivating an intrinsic growth mindset equips children with resilience against early scholastic failure."
     },
     {
-      question: "How can preparing for past disasters actually make us weaker against modern threats?",
-      thinkingLens: "The 'Fighting the Last War' Trap (Preparing for yesterday's crisis)",
-      selfCheck: "Does building a wall protect against modern airplanes and tanks?",
-      idea: "Obsessing over past mistakes blinds leaders to completely new threats, just as France built a huge wall that modern tanks simply bypassed."
+      expression: "Serving as an engine for social mobility",
+      meaning: "Acting as a powerful vehicle to help disadvantaged individuals rise economically",
+      example: "Optimistic encouragement serves as an engine for social mobility among marginalized youths."
     },
     {
-      question: "Why can't ancient city rules run modern megacities?",
-      thinkingLens: "Population Scale (Small tribes vs 20-million-person megacities)",
-      selfCheck: "Can millions of modern city residents meet in a town square like ancient Athens?",
-      idea: "Ancient direct democracy required small crowds in a town square, which is mathematically impossible in a city of twenty million people."
+      expression: "Dismantling self-imposed ceilings",
+      meaning: "Eliminating internal mental boundaries that prevent ambitious pursuits",
+      example: "Telling children they can succeed helps dismantle self-imposed ceilings in competitive fields."
     },
     {
-      question: "How do ancient Roman roads still dictate our daily commute today?",
-      thinkingLens: "Physical Path Dependency (Cities built on ancient foundations)",
-      selfCheck: "Why do modern European highway maps trace Roman soldier paths?",
-      idea: "Modern highways and train routes in Europe still sit directly on top of paved stone roads built by Roman soldiers two thousand years ago."
+      expression: "Inflicting debilitating self-reproach",
+      meaning: "Causing severe personal guilt and emotional torment following a disappointment",
+      example: "The belief that effort guarantees success inflicts debilitating self-reproach when goals are not reached."
     },
     {
-      question: "Why does the 1637 Dutch Tulip Mania explain today's cryptocurrency crashes?",
-      thinkingLens: "Speculative Greed & Market Manias",
-      selfCheck: "Does human greed change when buying internet coins instead of flowers?",
-      idea: "Human greed and panic during financial crashes are identical whether people are speculating on seventeenth-century tulips or modern internet coins."
+      expression: "A naive disregard for biological realities",
+      meaning: "An unrealistic refusal to acknowledge inborn physical or cognitive boundaries",
+      example: "Chasing unviable athletic dreams reflects a naive disregard for biological realities."
     },
     {
-      question: "Where did modern pandemic rules like quarantine and masks come from?",
-      thinkingLens: "Epidemiological History (1918 Spanish Flu)",
-      selfCheck: "Did doctors invent quarantine during COVID-19 or copy it from the past?",
-      idea: "Modern lockdown and mask rules were copied directly from public health strategies developed during the 1918 Spanish Flu pandemic."
+      expression: "Balancing aspirational optimism with pragmatic realism",
+      meaning: "Pairing high ambition with sensible, objective awareness of constraints",
+      example: "Wise educators succeed by balancing aspirational optimism with pragmatic realism."
     }
   ],
 
+  // 6. Strategic Brainstorm Cards (Step 3: Easy to explain on smart board)
+  brainstormCards: [
+    {
+      question: "How does telling children that effort dictates success transform how they handle failure?",
+      thinkingLens: "Psychological Attribution: Effort vs Inborn Talent",
+      selfCheck: "Does it build grit, or does it make children give up when tasks become hard?",
+      idea: "When children believe ability is built through practice (growth mindset), they treat mistakes as lessons; but if told effort always guarantees success, failing makes them feel lazy and ashamed."
+    },
+    {
+      question: "How does this message impact children from economically disadvantaged backgrounds?",
+      thinkingLens: "Social Mobility and Psychological Horizons",
+      selfCheck: "Does it help break generational poverty or blind them to structural inequality?",
+      idea: "It breaks defeatist generational cycles, encouraging underprivileged youth to aim for competitive careers like medicine or law without assuming they are disqualified from birth."
+    },
+    {
+      question: "What happens when an adolescent tries their hardest but still cannot overcome a natural limitation?",
+      thinkingLens: "Biological Aptitude vs Unrealistic Expectations",
+      selfCheck: "Can dedication really compensate for every physical or cognitive constraint?",
+      idea: "Biological constraints (e.g. height in basketball or innate spatial aptitude) cannot be bridged by effort alone; denying this leads to wasted years and bitter adult disillusionment."
+    },
+    {
+      question: "Why do students in high-pressure school systems often suffer high rates of burnout and depression?",
+      thinkingLens: "The Dark Side of Meritocracy and Guilt",
+      selfCheck: "What occurs when failure is treated solely as a lack of effort?",
+      idea: "Because success is framed entirely as personal willpower, students assume failing an exam means they are morally flawed and lazy, leading to chronic anxiety and suicidal ideation."
+    }
+  ],
+
+  // 7. Connectors Tier & Strategic Linkers
   connectorsTier: {
     sTier: [
-      "On the one hand, proponents argue that historical archives suffer from profound survivorship bias...",
-      "On the other hand, through the lens of path dependency, modern society remains physically anchored to...",
-      "In my view, while the demographic and technological scale of modern life is novel, the cyclical patterns of...",
-      "Consequently, analyzing past market crashes and epidemiological records provides an indispensable blueprint..."
+      "On the positive side, imparting this empowering philosophy yields two substantial benefits:",
+      "Primarily, it cultivates an intrinsic growth mindset...",
+      "Furthermore, this outlook serves as an engine for upward social mobility...",
+      "Conversely, propagating this unconstrained narrative produces two profound drawbacks:",
+      "The foremost hazard is the onset of acute psychological distress and devastating self-blame...",
+      "In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations..."
     ],
     aTier: [
-      "Furthermore, fixating on past battles creates the dangerous fallacy of...",
-      "Equally compelling is the realization that human financial psychology...",
-      "A salient historical illustration of this dynamic is observed in...",
-      "In conclusion, although the elitist bias of historical records leads some to..."
+      "A compelling illustration of this is evident in...",
+      "Consequently, when children fall short of impossible standards,...",
+      "In conclusion, while reassuring children that effort unlocks all doors...",
+      "It is therefore recommended that educators and guardians balance..."
     ],
     bTier: [
-      "In addition to this...",
-      "For instance, studying Roman roads...",
-      "Therefore, history teaches us...",
-      "To summarize everything..."
+      "On the one hand,... / On the other hand,...",
+      "For instance,...",
+      "Moreover,...",
+      "To summarize,..."
     ]
   },
 
   strategicLinkers: [
     {
-      zone: "Zone 1: Opening 1st View (History Fails Modernity)",
-      badge: "View 1 Transitions",
-      placementRule: "Use at the beginning of Body 1 to establish the perspective that past archives are biased and structurally mismatched with modernity.",
+      zone: "Advantages (Body 1)",
+      badge: "Positive Merits",
+      placementRule: "Use to introduce the primary and secondary psychological advantages",
       items: [
         {
-          phrase: "On the one hand, proponents argue that historical lessons are increasingly unhelpful because past archives suffer from...",
-          functionDesc: "Introduces the argument that ancient evidence is incomplete and biased toward ruling elites.",
-          example:
-            "On the one hand, proponents argue that historical lessons are increasingly unhelpful because past archives suffer from severe survivorship bias."
+          phrase: "On the positive side, imparting this empowering philosophy yields two substantial benefits:",
+          functionDesc: "Topic sentence signaling the presentation of dual positive advantages",
+          example: "On the positive side, imparting this empowering philosophy yields two substantial benefits."
         },
         {
-          phrase: "Advocates of this viewpoint emphasize that fixating on past precedents blinds leaders to...",
-          functionDesc: "Highlights the strategic blindspot of fighting yesterday's battles.",
-          example:
-            "Advocates of this viewpoint emphasize that fixating on past precedents blinds leaders to novel, asymmetric modern threats."
+          phrase: "Primarily, it cultivates an intrinsic growth mindset...",
+          functionDesc: "Introduces the primary internal psychological advantage",
+          example: "Primarily, it cultivates an intrinsic growth mindset and a strong work ethic."
+        },
+        {
+          phrase: "Furthermore, this outlook serves as an engine for social mobility...",
+          functionDesc: "Connects to the secondary societal and demographic advantage",
+          example: "Furthermore, this outlook serves as an engine for social mobility by dismantling defeatist ceilings."
         }
       ]
     },
     {
-      zone: "Zone 2: Opening 2nd View (Past Silently Shapes Present)",
-      badge: "View 2 Transitions",
-      placementRule: "Use at the beginning of Body 2 to pivot toward how physical infrastructure and cyclical psychology bind today to the past.",
+      zone: "Disadvantages (Body 2)",
+      badge: "Negative Perils",
+      placementRule: "Use to pivot sharply into the psychological and realistic drawbacks",
       items: [
         {
-          phrase: "On the other hand, analyzing historical developments is indispensable because through path dependency, modern society is...",
-          functionDesc: "Establishes that current city infrastructure and institutions are literally built on ancient foundations.",
-          example:
-            "On the other hand, analyzing historical developments is indispensable because through path dependency, modern society is physically anchored to ancient foundations."
+          phrase: "Conversely, propagating this unconstrained narrative produces two profound drawbacks:",
+          functionDesc: "Sharp contrastive topic sentence opening Body Paragraph 2",
+          example: "Conversely, propagating this unconstrained narrative produces two profound drawbacks."
         },
         {
-          phrase: "While financial and medical technologies evolve, the collective human psychology of...",
-          functionDesc: "Demonstrates that human reactions to market bubbles and disease outbreaks follow timeless cycles.",
-          example:
-            "While financial and medical technologies evolve, the collective human psychology of speculative greed and pandemic fear remains essentially immutable."
+          phrase: "The foremost hazard is the onset of acute psychological distress...",
+          functionDesc: "Spotlights the most damaging psychological disadvantage",
+          example: "The foremost hazard is the onset of acute psychological distress and devastating self-blame."
+        },
+        {
+          phrase: "In addition, this simplistic doctrine fosters a naive blindness toward...",
+          functionDesc: "Introduces the secondary limitation regarding genetic and structural constraints",
+          example: "In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations."
         }
       ]
     },
     {
-      zone: "Zone 3: Expressing Author Opinion & Synthesizing",
-      badge: "Opinion & Conclusion",
-      placementRule: "Use in Body 3 or Conclusion to deliver a clear, balanced, defensible stance.",
+      zone: "Recommendation (Conclusion)",
+      badge: "Synthesis & Suggestion",
+      placementRule: "Use in the final paragraph to deliver a balanced summary and actionable advice",
       items: [
         {
-          phrase: "In my view, while the demographic scale of modern civilization is unprecedented, the underlying architecture of...",
-          functionDesc: "Delivers a nuanced stance reconciling unprecedented modern scale with timeless human nature.",
-          example:
-            "In my view, while the demographic scale of modern civilization is unprecedented, the underlying architecture of human governance and financial mania remains identical."
+          phrase: "In conclusion, while reassuring children that effort unlocks all doors...",
+          functionDesc: "Concessive summary synthesizing both merits and risks",
+          example: "In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity..."
         },
         {
-          phrase: "In conclusion, although the elitist bias of historical archives leads some to dismiss history, the past remains...",
-          functionDesc: "Summarizes both perspectives succinctly before confirming the final personal stance.",
-          example:
-            "In conclusion, although the elitist bias of historical archives leads some to dismiss history, the past remains an indispensable roadmap for modern civilization."
+          phrase: "It is therefore recommended that educators and guardians balance...",
+          functionDesc: "Delivers the actionable pedagogical recommendation",
+          example: "It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance."
         }
       ]
     }
@@ -484,146 +489,114 @@ export const TASK2_DATA: Task2Data = {
 
   fluidVocab: [
     {
-      word: "path dependency",
+      word: "Growth Mindset",
       pos: "noun phrase",
-      meaning: "The structural reality where current choices and layouts are dictated by past historical decisions.",
-      naturalCollocation: "exhibit profound path dependency / physical infrastructure",
-      organicExample: "Modern European transport corridors exhibit profound path dependency, tracing Roman military roads.",
-      mechanicalPitfall: "Avoid 'history makes roads'; 'path dependency' demonstrates masterclass academic precision."
+      meaning: "Belief that intelligence and capabilities can be expanded through practice and learning.",
+      naturalCollocation: "cultivate a growth mindset in young learners",
+      organicExample: "Instilling a growth mindset encourages children to view academic struggles as constructive stepping stones.",
+      mechanicalPitfall: "Avoid writing 'they get good thinking' or 'mind is growing'.",
+      examinerInsight: "A high-scoring psychological collocation recognized internationally by Cambridge examiners."
     },
     {
-      word: "survivorship bias",
+      word: "Debilitating Self-Blame",
       pos: "noun phrase",
-      meaning: "The flaw of drawing conclusions from only surviving written records while overlooking unrecorded realities.",
-      naturalCollocation: "suffer from survivorship bias / elitist documentation",
-      organicExample: "Historical texts suffer from survivorship bias because ancient scribes only recorded the victories of emperors.",
-      mechanicalPitfall: "Do not say 'one-sided history'; 'survivorship bias' is Band 9 terminology."
+      meaning: "Excessive, paralyzing guilt where an individual holds themselves entirely responsible for failure.",
+      naturalCollocation: "induce debilitating self-blame after defeat",
+      organicExample: "Telling pupils that effort always succeeds induces debilitating self-blame when external competition prevails.",
+      mechanicalPitfall: "Avoid simplistic phrases like 'feeling very bad about yourself'.",
+      examinerInsight: "Demonstrates precise emotive and psychological vocabulary (Band 9 Lexical Resource)."
     },
     {
-      word: "speculative mania",
+      word: "Social Mobility",
       pos: "noun phrase",
-      meaning: "A period of irrational collective financial greed where asset prices skyrocket and crash.",
-      naturalCollocation: "anatomy of speculative mania / financial bubble",
-      organicExample: "The boom and bust of cryptocurrency mirrored the classic anatomy of seventeenth-century Dutch Tulip Mania.",
-      mechanicalPitfall: "Saying 'people got too greedy' is informal; use 'speculative mania'."
+      meaning: "The movement of individuals or socioeconomic groups up or down the economic hierarchy.",
+      naturalCollocation: "serve as a catalyst for upward social mobility",
+      organicExample: "Believing that diligence trumps pedigree functions as a powerful catalyst for upward social mobility.",
+      mechanicalPitfall: "Avoid vague phrasing like 'poor people getting rich'.",
+      examinerInsight: "Accurately frames demographic and socioeconomic impacts."
     },
     {
-      word: "immutable",
-      pos: "adjective",
-      meaning: "Unchanging and permanent across all eras of human existence.",
-      naturalCollocation: "immutable human nature / psychological traits",
-      organicExample: "While digital gadgets evolve rapidly, human psychological reactions to crisis remain immutable.",
-      mechanicalPitfall: "Avoid 'stays the same'; 'immutable human psychology' is Band 9."
+      word: "Structural Inequities",
+      pos: "noun phrase",
+      meaning: "Systemic institutional barriers that restrict opportunity regardless of personal exertion.",
+      naturalCollocation: "confront entrenched structural inequities",
+      organicExample: "Individual determination often crashes against entrenched structural inequities in higher education.",
+      mechanicalPitfall: "Do not confuse with general 'problems' or 'unfair things'.",
+      examinerInsight: "Exhibits advanced sociological awareness in IELTS argumentation."
+    },
+    {
+      word: "Pragmatic Realism",
+      pos: "noun phrase",
+      meaning: "A sensible, grounded approach that evaluates real-world constraints objectively.",
+      naturalCollocation: "temper optimism with pragmatic realism",
+      organicExample: "Wise mentors temper aspirational enthusiasm with pragmatic realism regarding career viability.",
+      mechanicalPitfall: "Avoid informal terms like 'thinking practically'.",
+      examinerInsight: "Ideal for the conclusion's recommendation sentence."
+    },
+    {
+      word: "Self-Compassion",
+      pos: "noun phrase",
+      meaning: "Kindness and emotional forgiveness toward oneself when encountering limitations or defeat.",
+      naturalCollocation: "foster emotional resilience and self-compassion",
+      organicExample: "Learning self-compassion protects adolescents from the toxic perfectionism of modern meritocracy.",
+      mechanicalPitfall: "Avoid confusing with self-pity.",
+      examinerInsight: "A highly sophisticated modern psychological term that elevates the essay's conclusion."
     }
   ],
 
-  powerExpressions: [
-    {
-      expression: "physical path dependency",
-      meaning: "The concept that modern physical infrastructure remains locked into ancient routes and layouts.",
-      example: "European highway systems demonstrate physical path dependency by directly following Roman military roads."
-    },
-    {
-      expression: "the fallacy of fighting the last war",
-      meaning: "The dangerous strategic mistake of preparing for previous crises rather than modern threats.",
-      example: "Military planners fell victim to the fallacy of fighting the last war by building static fortifications against aircraft."
-    },
-    {
-      expression: "cyclical anatomy of speculative bubbles",
-      meaning: "The repeating psychological pattern of greed, euphoria, and collapse in financial markets.",
-      example: "Understanding the cyclical anatomy of speculative bubbles protects investors from recurring market crashes."
-    },
-    {
-      expression: "empirical epidemiological blueprints",
-      meaning: "Proven public health strategies derived from historical disease outbreaks.",
-      example: "Modern quarantine mandates during global pandemics rely on empirical epidemiological blueprints refined since 1918."
-    }
-  ],
-
-  // Consequences strictly for View 1
+  // Extra helper arrays for compatibility
   consequences: [
     {
       type: "positive",
-      title: "Survivorship Bias & Elitist Records",
-      desc: "History was recorded exclusively by victorious monarchs and wealthy elites, offering zero practical guidance for common citizens' modern struggles.",
-      example: "Ancient chronicles celebrate royal conquests, but record virtually nothing about how working-class families coped with economic depressions.",
-      collocation: "survivorship bias / elitist documentation"
+      title: "Advantage 1: Intrinsic Growth Mindset & Grit",
+      desc: "Children learn that ability is developed through practice, making them resilient when encountering academic or athletic hurdles.",
+      example: "Dr. Carol Dweck's research confirms that effort-praised students demonstrate far higher persistence.",
+      level: "Primary Advantage",
+      simpleTakeaway: "Effort equals improvement, not instant defeat.",
+      collocation: "cultivate an intrinsic growth mindset"
     },
     {
       type: "positive",
-      title: "The 'Fighting the Last War' Blindspot",
-      desc: "Fixating on past crises creates a false sense of security, blinding modern leadership to novel, asymmetric technological threats.",
-      example: "France heavily fortified the static Maginot Line after WWI, only for modern tanks and aircraft to bypass it in days.",
-      collocation: "strategic blindspot / fighting the last war"
-    },
-    {
-      type: "positive",
-      title: "Radical Megacity Demographic Scale",
-      desc: "Ancient small-town governance frameworks cannot manage modern twenty-million-person multicultural megacities with automated infrastructure.",
-      example: "Ancient Athenian direct democracy required a few thousand citizens in a town square, a model mathematically impossible in modern nations.",
-      collocation: "radical demographic scale / unworkable civic models"
-    },
-    {
-      type: "positive",
-      title: "Fragile Global Supply Chains",
-      desc: "Ancient economies were localized and self-contained, whereas today a single foreign disruption halts international food and medicine.",
-      example: "A single container vessel grounded in the Suez Canal halted $10 billion in global daily trade, an economic shock unknown in ancient history.",
-      collocation: "hyper-synchronized supply chains / systemic vulnerability"
+      title: "Advantage 2: Upward Social Mobility & Aspiration",
+      desc: "Dismantles defeatist generational mindsets, empowering children from modest origins to pursue elite careers.",
+      example: "Underprivileged youth aiming for medical school or engineering without assuming they are disqualified.",
+      level: "Secondary Advantage",
+      simpleTakeaway: "Breaks internal glass ceilings.",
+      collocation: "catalyst for upward social mobility"
     }
   ],
 
-  // Arguments strictly for View 2
   evaluationArguments: [
     {
-      title: "Physical Path Dependency & Roman Roads",
-      reason: "Modern highways, train routes, and city centers are built directly on top of ancient Roman and medieval engineering foundations.",
-      development: "Contemporary European transit corridors and logistical bottlenecks can only be understood by examining the routes Roman legions paved two thousand years ago.",
-      example: "Major British highways (like Watling Street) still follow the exact stone routes paved by Roman soldiers over two millennia ago.",
+      title: "Disadvantage 1: Severe Self-Blame, Anxiety & Burnout",
+      reason: "Framing success purely as effort leads children to conclude that any failure is proof of personal laziness and worthlessness.",
+      development: "This produces toxic perfectionism and severe mental health crises when goals prove unattainable.",
+      example: "High adolescent stress rates in East Asian educational systems tied to extreme academic guilt.",
       type: "argument",
-      collocation: "physical path dependency / ancient Roman foundations"
+      level: "Primary Disadvantage",
+      simpleTakeaway: "Unchecked failure causes mental health collapse.",
+      collocation: "induce debilitating self-blame"
     },
     {
-      title: "The Psychology of Speculative Bubbles",
-      reason: "While financial instruments change from physical ledgers to internet coins, human greed and collective panic follow identical historical cycles.",
-      development: "Studying past market manias enables economists and investors to identify the psychological warning signs of an asset bubble before it collapses.",
-      example: "Modern cryptocurrency and meme-stock crashes mirrored the exact psychological stages of the 1637 Dutch Tulip Mania.",
+      title: "Disadvantage 2: Blindness to Inborn Limits & Structural Realities",
+      reason: "Denies biological predispositions and socioeconomic inequalities that effort alone cannot conquer.",
+      development: "Encourages young adults to waste years chasing unviable careers, ending in bitter disillusionment.",
+      example: "A person with below-average height spending years hoping to become an NBA center.",
       type: "argument",
-      collocation: "speculative market mania / cyclical financial euphoria"
-    },
-    {
-      title: "Epidemiological Protocols & Pandemics",
-      reason: "Human behavioral reactions and containment strategies during disease outbreaks repeat identically across historical eras.",
-      development: "Modern public health agencies successfully managed recent outbreaks because historical records from 1918 proved that quarantines and mask-wearing flatten mortality curves.",
-      example: "Modern COVID-19 containment measures—including municipal quarantines and social distancing—were adapted directly from the 1918 Spanish Flu playbook.",
-      type: "argument",
-      collocation: "epidemiological protocols / empirical containment blueprints"
-    },
-    {
-      title: "Century-Old Peace Treaties & Diplomacy",
-      reason: "Contemporary international law, sovereign borders, and diplomatic neutrality are direct continuations of historic peace treaties.",
-      development: "International peace accords cannot be maintained without honoring the historical compromises and border treaties that established modern sovereign states.",
-      example: "Switzerland's modern status as an unshakeable neutral mediator is the direct legacy of the 1815 Treaty of Paris signed after the Napoleonic Wars.",
-      type: "argument",
-      collocation: "enduring peace treaties / institutional diplomatic neutrality"
+      level: "Secondary Disadvantage",
+      simpleTakeaway: "Effort cannot rewrite biology or economic barriers.",
+      collocation: "naive disregard for biological realities"
     }
   ],
 
   facultyAngles: [
     {
-      title: "Historical Bias & Methodology Angle (View 1)",
-      development: "Explains how survivorship bias and elite-centered records distort our understanding of common human problems, making ancient chronicles a flawed guide."
+      title: "Educational Psychology",
+      development: "Focuses on growth mindset vs performance goals; effort praise builds resilience, while outcome promises trigger anxiety."
     },
     {
-      title: "Technological & Demographic Scale Angle (View 1)",
-      development: "Highlights that twenty-million-person megacities and synchronized global supply chains are mathematically beyond the scope of ancient village rules."
-    },
-    {
-      title: "Physical Infrastructure & Path Dependency Angle (View 2)",
-      development: "Demonstrates that history is not an abstract concept; modern highways, city centers, and train lines literally rest upon Roman foundations."
-    },
-    {
-      title: "Behavioral Constancy Angle (View 2)",
-      development: "Shows that human greed during financial bubbles (Tulip Mania vs Crypto) and fear during pandemics (1918 Flu vs COVID-19) remain completely immutable."
+      title: "Sociology & Economics",
+      development: "Examines the myth of pure meritocracy; systemic inequalities require institutional solutions, not just personal willpower."
     }
   ]
 };

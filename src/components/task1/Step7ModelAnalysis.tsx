@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layers, CheckCircle2, FileText, Sparkles, Tv, Radio } from "lucide-react";
+import { Layers, CheckCircle2, FileText, Sparkles, PieChart as PieIcon } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step7ModelAnalysis: React.FC = () => {
@@ -12,9 +12,9 @@ export const Step7ModelAnalysis: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 07 / 08 • Body 2 &amp; Full Model Response
         </span>
-        <h2 className="stage-title">Male U-Shaped Trajectory &amp; Complete Band 9 Model Report</h2>
+        <h2 className="stage-title">Non-Staff Outlay &amp; Complete Band 9 Model Report</h2>
         <p className="stage-subtitle">
-          Master the three essential analytical frameworks for double bar charts, alongside the complete 188-word Band 9 model response organized across four balanced paragraphs.
+          Master the three essential grammatical frameworks for multi-year pie charts, alongside the complete 285-word Band 9 model response organized across four balanced paragraphs.
         </p>
       </div>
 
@@ -33,7 +33,7 @@ export const Step7ModelAnalysis: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
               <Layers
                 size={17}
-                color={idx === 0 ? "#dc2626" : idx === 1 ? "#d97706" : "#2563eb"}
+                color={idx === 0 ? "#2563eb" : idx === 1 ? "#059669" : "#7c3aed"}
               />
               <h4 style={{ fontSize: "0.92rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
                 {group.title}
@@ -91,8 +91,8 @@ export const Step7ModelAnalysis: React.FC = () => {
                   { id: "all", label: "Full Report (All)" },
                   { id: "intro", label: "Intro" },
                   { id: "overview", label: "Overview" },
-                  { id: "body1", label: "Body 1 (Females)" },
-                  { id: "body2", label: "Body 2 (Males & Divergence)" }
+                  { id: "body1", label: "Body 1 (Staff)" },
+                  { id: "body2", label: "Body 2 (Non-Staff)" }
                 ] as const
               ).map((tab) => (
                 <button

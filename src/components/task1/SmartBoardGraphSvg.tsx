@@ -4,31 +4,35 @@ import {
   Sparkles,
   TrendingDown,
   TrendingUp,
-  Eye,
   Info,
   CheckCircle2,
   Users,
   Award,
-  Layers
+  Layers,
+  PieChart as PieIcon,
+  ChevronRight,
+  ShieldAlert
 } from "lucide-react";
 import {
   TASK1_DATA,
-  ACTIVITY_DATA,
-  ACTIVITY_GENDERS,
-  ACTIVITY_HOTSPOTS
+  SPENDING_CATEGORIES,
+  SPENDING_YEARS,
+  SPENDING_HOTSPOTS
 } from "../../data/task1Data";
-import { ActivityAgeGroup } from "../../types/task1";
+import { SpendingCategoryKey, SpendingCategoryItem } from "../../types/task1";
 
 export type DiagramViewMode =
   | "all"
-  | "15_to_24"
-  | "25_to_34"
-  | "35_to_44"
-  | "45_to_54"
-  | "55_to_64"
-  | "65_and_over"
-  | "male_only"
-  | "female_only"
+  | "1981"
+  | "1991"
+  | "2001"
+  | "teachers_salaries"
+  | "other_workers_salaries"
+  | "furniture_and_equipment"
+  | "resources"
+  | "insurance"
+  | "staff_only"
+  | "non_staff_only"
   | string;
 
 export type TableHighlightMode = DiagramViewMode;
@@ -46,711 +50,608 @@ interface SmartBoardDiagramProps {
   forcedLayoutMode?: "stacked" | "split";
 }
 
+// Math helpers for SVG Pie Arcs
+function polarToCartesian(cx: number, cy: number, r: number, angleInDegrees: number) {
+  const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
+  return {
+    x: cx + r * Math.cos(angleInRadians),
+    y: cy + r * Math.sin(angleInRadians)
+  };
+}
+
+function describeArc(cx: number, cy: number, r: number, startAngle: number, endAngle: number) {
+  const deltaAngle = endAngle - startAngle;
+  const safeEndAngle = deltaAngle >= 360 ? startAngle + 359.99 : endAngle;
+  const start = polarToCartesian(cx, cy, r, safeEndAngle);
+  const end = polarToCartesian(cx, cy, r, startAngle);
+  const largeArcFlag = safeEndAngle - startAngle <= 180 ? "0" : "1";
+
+  return [
+    "M", cx, cy,
+    "L", end.x, end.y,
+    "A", r, r, 0, largeArcFlag, 1, start.x, start.y,
+    "Z"
+  ].join(" ");
+}
+
 export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
   highlightMode = "all",
   onHighlightModeChange,
-  selectedCohortId: controlledCohortId,
+  selectedCohortId: controlledCategoryId,
   onSelectCohort,
   showInternalToolbar = true,
   showDeepDiveCard = true
 }) => {
   const [activeMode, setActiveMode] = useState<DiagramViewMode>(highlightMode);
-  const [showMale, setShowMale] = useState(true);
-  const [showFemale, setShowFemale] = useState(true);
-  const [hoveredGroup, setHoveredGroup] = useState<ActivityAgeGroup | null>(null);
-  const [internalCohortId, setInternalCohortId] = useState<string>("35_to_44");
+  const [internalCategoryId, setInternalCategoryId] = useState<SpendingCategoryKey>("teachers_salaries");
+  const [hoveredCategory, setHoveredCategory] = useState<SpendingCategoryItem | null>(null);
+  const [yearFilter, setYearFilter] = useState<"all" | "1981" | "1991" | "2001">("all");
 
-  const effectiveCohortId = controlledCohortId || internalCohortId;
+  const effectiveCategoryId = (controlledCategoryId as SpendingCategoryKey) || internalCategoryId;
 
-  const handleModeChange = (mode: DiagramViewMode) => {
-    setActiveMode(mode);
-    if (onHighlightModeChange) onHighlightModeChange(mode);
-
-    if (mode === "male_only") {
-      setShowMale(true);
-      setShowFemale(false);
-    } else if (mode === "female_only") {
-      setShowMale(false);
-      setShowFemale(true);
-    } else {
-      setShowMale(true);
-      setShowFemale(true);
-      if (mode !== "all") {
-        setInternalCohortId(mode);
-        if (onSelectCohort) onSelectCohort(mode);
-      }
-    }
+  const handleSelectCategory = (catId: SpendingCategoryKey) => {
+    setInternalCategoryId(catId);
+    if (onSelectCohort) onSelectCohort(catId);
+    if (onHighlightModeChange) onHighlightModeChange(catId);
   };
 
   const handleReset = () => {
     setActiveMode("all");
-    setShowMale(true);
-    setShowFemale(true);
-    setInternalCohortId("35_to_44");
-    if (onSelectCohort) onSelectCohort("35_to_44");
+    setYearFilter("all");
+    setInternalCategoryId("teachers_salaries");
+    setHoveredCategory(null);
+    if (onSelectCohort) onSelectCohort("teachers_salaries");
     if (onHighlightModeChange) onHighlightModeChange("all");
   };
 
-  // SVG Geometry Settings
-  const svgWidth = 920;
-  const svgHeight = 410;
-  const margin = { top: 52, right: 36, bottom: 64, left: 60 };
-  const chartWidth = svgWidth - margin.left - margin.right;
-  const chartHeight = svgHeight - margin.top - margin.bottom;
+  const activeCategory =
+    SPENDING_CATEGORIES.find((c) => c.id === effectiveCategoryId) || SPENDING_CATEGORIES[0];
 
-  // Y-Scale: 0 to 60 (%)
-  const maxY = 60;
-  const yTicks = [0, 10, 20, 30, 40, 50, 60];
+  const activeHotspot =
+    SPENDING_HOTSPOTS.find((h) => h.category === activeCategory.label) || SPENDING_HOTSPOTS[0];
 
-  const getYPos = (val: number) => {
-    return margin.top + chartHeight - (val / maxY) * chartHeight;
-  };
-
-  // 6 Age Groups
-  const numGroups = ACTIVITY_DATA.length;
-  const groupSlotWidth = chartWidth / numGroups;
-  const barWidth = 36;
-  const barGap = 6;
-  const clusterWidth = barWidth * 2 + barGap;
-
-  const activeCohort =
-    ACTIVITY_DATA.find((g) => g.id === effectiveCohortId) ||
-    hoveredGroup ||
-    ACTIVITY_DATA[2]; // default 35 to 44
-
-  const activeHotspot = ACTIVITY_HOTSPOTS.find(
-    (h) => h.ageGroup === activeCohort.ageGroup
-  );
+  // Visible years based on filter
+  const displayedYears =
+    yearFilter === "all"
+      ? SPENDING_YEARS
+      : SPENDING_YEARS.filter((y) => y.year.toString() === yearFilter);
 
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "14px",
+        gap: "12px",
         width: "100%",
-        fontFamily: "var(--font-sans, -apple-system, BlinkMacSystemFont, sans-serif)"
+        fontFamily: "inherit"
       }}
     >
-      {/* Smart Board Control Strip */}
+      {/* SmartBoard Presentation Controls Toolbar */}
       {showInternalToolbar && (
         <div
           style={{
             display: "flex",
-            alignItems: "center",
             justifyContent: "space-between",
+            alignItems: "center",
             flexWrap: "wrap",
-            gap: "8px",
-            background: "#f8fafc",
-            border: "1.5px solid var(--border-subtle, #e2e8f0)",
+            gap: "10px",
+            background: "#ffffff",
+            padding: "10px 14px",
             borderRadius: "14px",
-            padding: "8px 12px"
+            border: "1px solid var(--border-subtle, #cbd5e1)",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
           }}
         >
-          {/* Preset Hotspot Filters */}
-          <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
-            <span
-              style={{
-                fontSize: "0.78rem",
-                fontWeight: 800,
-                color: "#1e293b",
-                marginRight: "4px"
-              }}
-            >
-              HIGHLIGHT COHORT:
+          {/* Year View Toggles */}
+          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--slate-500, #64748b)" }}>
+              Year:
             </span>
+            {(["all", "1981", "1991", "2001"] as const).map((yr) => (
+              <button
+                key={yr}
+                onClick={() => setYearFilter(yr)}
+                style={{
+                  padding: "5px 12px",
+                  borderRadius: "8px",
+                  fontSize: "0.78rem",
+                  fontWeight: 750,
+                  border: yearFilter === yr ? "1.5px solid #0f172a" : "1px solid #e2e8f0",
+                  background: yearFilter === yr ? "#0f172a" : "#f8fafc",
+                  color: yearFilter === yr ? "#ffffff" : "#334155",
+                  cursor: "pointer",
+                  transition: "all 0.15s ease"
+                }}
+              >
+                {yr === "all" ? "All 3 Years" : yr}
+              </button>
+            ))}
+          </div>
 
-            {[
-              { id: "all", label: "All Demographics" },
-              { id: "15_to_24", label: "15–24 (Male Lead)" },
-              { id: "35_to_44", label: "35–44 (Widest Gap / Low Point)" },
-              { id: "45_to_54", label: "45–54 (Female Peak)" },
-              { id: "65_and_over", label: "65+ (Convergence)" }
-            ].map((btn) => {
-              const isSelected = activeMode === btn.id;
+          {/* Category Highlight Quick-Toggles */}
+          <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--slate-500, #64748b)" }}>
+              Filter:
+            </span>
+            {SPENDING_CATEGORIES.map((cat) => {
+              const isSelected = effectiveCategoryId === cat.id;
               return (
                 <button
-                  key={btn.id}
-                  type="button"
-                  onClick={() => handleModeChange(btn.id)}
+                  key={cat.id}
+                  onClick={() => handleSelectCategory(cat.id)}
                   style={{
-                    padding: "6px 12px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    padding: "4px 10px",
                     borderRadius: "8px",
-                    fontSize: "0.76rem",
-                    fontWeight: 750,
-                    border: isSelected ? "1.5px solid #0f172a" : "1px solid #cbd5e1",
-                    background: isSelected ? "#0f172a" : "#ffffff",
-                    color: isSelected ? "#ffffff" : "#334155",
+                    fontSize: "0.75rem",
+                    fontWeight: 700,
+                    border: isSelected ? `2px solid ${cat.color}` : "1px solid #e2e8f0",
+                    background: isSelected ? `${cat.color}18` : "#ffffff",
+                    color: isSelected ? cat.color : "#475569",
                     cursor: "pointer",
+                    boxShadow: isSelected ? "0 2px 6px rgba(0,0,0,0.06)" : "none",
                     transition: "all 0.15s ease"
                   }}
                 >
-                  {btn.label}
+                  <span
+                    style={{
+                      width: "8px",
+                      height: "8px",
+                      borderRadius: "50%",
+                      background: cat.color
+                    }}
+                  />
+                  <span>{cat.shortLabel}</span>
                 </button>
               );
             })}
-          </div>
-
-          {/* Gender Filter Toggles & Reset */}
-          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <button
-              type="button"
-              onClick={() => {
-                setShowMale(!showMale);
-              }}
-              style={{
-                padding: "6px 10px",
-                borderRadius: "8px",
-                fontSize: "0.75rem",
-                fontWeight: 700,
-                border: "1px solid #cbd5e1",
-                background: showMale ? "#0f172a" : "#f1f5f9",
-                color: showMale ? "#ffffff" : "#64748b",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "5px"
-              }}
-            >
-              <span
-                style={{
-                  width: "10px",
-                  height: "10px",
-                  borderRadius: "2px",
-                  background: showMale ? "#ffffff" : "#0f172a",
-                  display: "inline-block"
-                }}
-              />
-              Men {showMale ? "On" : "Off"}
-            </button>
 
             <button
-              type="button"
-              onClick={() => {
-                setShowFemale(!showFemale);
-              }}
-              style={{
-                padding: "6px 10px",
-                borderRadius: "8px",
-                fontSize: "0.75rem",
-                fontWeight: 700,
-                border: "1px solid #cbd5e1",
-                background: showFemale ? "#64748b" : "#f1f5f9",
-                color: showFemale ? "#ffffff" : "#64748b",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "5px"
-              }}
-            >
-              <span
-                style={{
-                  width: "10px",
-                  height: "10px",
-                  borderRadius: "2px",
-                  background: "#cbd5e1",
-                  border: "1px solid #94a3b8",
-                  display: "inline-block"
-                }}
-              />
-              Women {showFemale ? "On" : "Off"}
-            </button>
-
-            <button
-              type="button"
               onClick={handleReset}
-              title="Reset Chart View"
+              title="Reset Filters"
               style={{
-                padding: "6px 10px",
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+                padding: "4px 8px",
                 borderRadius: "8px",
                 fontSize: "0.75rem",
                 fontWeight: 700,
-                border: "1px solid #cbd5e1",
-                background: "#ffffff",
-                color: "#64748b",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "4px"
+                border: "1px solid #e2e8f0",
+                background: "#f1f5f9",
+                color: "#475569",
+                cursor: "pointer"
               }}
             >
-              <RotateCcw size={12} /> Reset
+              <RotateCcw size={12} />
+              <span>Reset</span>
             </button>
           </div>
         </div>
       )}
 
-      {/* Main Interactive Double Bar Chart SVG Canvas */}
+      {/* Interactive Pie Charts Grid */}
       <div
         style={{
-          width: "100%",
           background: "#ffffff",
-          borderRadius: "16px",
-          border: "1.5px solid #e2e8f0",
-          boxShadow: "0 2px 10px rgba(0, 0, 0, 0.04)",
-          overflow: "hidden",
-          position: "relative"
+          borderRadius: "18px",
+          border: "1.5px solid var(--border-subtle, #cbd5e1)",
+          padding: "16px",
+          boxShadow: "0 4px 16px rgba(0,0,0,0.03)",
+          display: "flex",
+          flexDirection: "column",
+          gap: "14px"
         }}
       >
-        <svg
-          viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-          style={{ width: "100%", height: "auto", display: "block" }}
+        {/* Main Charts Row */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              displayedYears.length === 3
+                ? "repeat(3, 1fr)"
+                : "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "14px"
+          }}
         >
-          {/* Background fill */}
-          <rect width={svgWidth} height={svgHeight} fill="#ffffff" />
+          {displayedYears.map((yearData) => {
+            // Calculate slice angles for this pie
+            let currentAngle = 0;
+            const computedSlices = yearData.slices.map((slice) => {
+              const sliceAngle = (slice.percentage / 100) * 360;
+              const startAngle = currentAngle;
+              const endAngle = currentAngle + sliceAngle;
+              currentAngle = endAngle;
+              const midAngle = startAngle + sliceAngle / 2;
+              return {
+                ...slice,
+                startAngle,
+                endAngle,
+                midAngle
+              };
+            });
 
-          {/* Chart Header Title inside SVG */}
-          <text
-            x={svgWidth / 2}
-            y={32}
-            textAnchor="middle"
-            fill="#334155"
-            fontSize="15"
-            fontWeight="700"
-            letterSpacing="-0.01em"
-          >
-            Percentage of Australian men and women doing regular physical activity in 2010
-          </text>
-
-          {/* Y-Axis Gridlines and Labels */}
-          {yTicks.map((val) => {
-            const yPos = getYPos(val);
-            const isZero = val === 0;
-            return (
-              <g key={val}>
-                <line
-                  x1={margin.left}
-                  y1={yPos}
-                  x2={svgWidth - margin.right}
-                  y2={yPos}
-                  stroke={isZero ? "#94a3b8" : "#f1f5f9"}
-                  strokeWidth={isZero ? 1.5 : 1}
-                />
-                <text
-                  x={margin.left - 12}
-                  y={yPos + 4}
-                  textAnchor="end"
-                  fill="#64748b"
-                  fontSize="12.5"
-                  fontWeight="600"
-                >
-                  {val}
-                </text>
-              </g>
-            );
-          })}
-
-          {/* Y-Axis Main Baseline */}
-          <line
-            x1={margin.left}
-            y1={margin.top}
-            x2={margin.left}
-            y2={margin.top + chartHeight}
-            stroke="#94a3b8"
-            strokeWidth={1.5}
-          />
-
-          {/* Render Clustered Bars for Each Age Cohort */}
-          {ACTIVITY_DATA.map((group, index) => {
-            const groupCenterX = margin.left + (index + 0.5) * groupSlotWidth;
-            const maleX = groupCenterX - clusterWidth / 2;
-            const femaleX = maleX + barWidth + barGap;
-
-            const maleY = getYPos(group.male);
-            const maleBarHeight = getYPos(0) - maleY;
-
-            const femaleY = getYPos(group.female);
-            const femaleBarHeight = getYPos(0) - femaleY;
-
-            const isCohortSelected =
-              activeMode === group.id ||
-              effectiveCohortId === group.id ||
-              hoveredGroup?.id === group.id;
-
-            const isDimmed =
-              activeMode !== "all" &&
-              activeMode !== "male_only" &&
-              activeMode !== "female_only" &&
-              !isCohortSelected;
+            const pieSize = 250;
+            const cx = pieSize / 2;
+            const cy = pieSize / 2;
+            const radius = 95;
 
             return (
-              <g
-                key={group.id}
-                cursor="pointer"
-                opacity={isDimmed ? 0.3 : 1}
-                onMouseEnter={() => setHoveredGroup(group)}
-                onMouseLeave={() => setHoveredGroup(null)}
-                onClick={() => {
-                  setInternalCohortId(group.id);
-                  if (onSelectCohort) onSelectCohort(group.id);
-                  if (activeMode !== "male_only" && activeMode !== "female_only") {
-                    setActiveMode(group.id);
-                  }
+              <div
+                key={yearData.year}
+                style={{
+                  background: "#f8fafc",
+                  borderRadius: "16px",
+                  border: "1px solid #e2e8f0",
+                  padding: "14px 10px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "8px",
+                  position: "relative"
                 }}
-                style={{ transition: "opacity 0.2s ease" }}
               >
-                {/* Highlight Background Pillar if selected */}
-                {isCohortSelected && (
-                  <rect
-                    x={groupCenterX - groupSlotWidth / 2 + 4}
-                    y={margin.top}
-                    width={groupSlotWidth - 8}
-                    height={chartHeight}
-                    fill="rgba(59, 130, 246, 0.05)"
-                    rx={8}
-                    stroke="rgba(59, 130, 246, 0.2)"
-                    strokeWidth={1}
-                    strokeDasharray="4 3"
-                  />
-                )}
-
-                {/* Male Bar (Black: #0f172a) */}
-                {showMale && (
-                  <g>
-                    <rect
-                      x={maleX}
-                      y={maleY}
-                      width={barWidth}
-                      height={maleBarHeight}
-                      fill="#0f172a"
-                      rx={2}
-                      style={{ transition: "all 0.25s ease" }}
-                    />
-                    {/* Value Label above Male Bar */}
-                    <text
-                      x={maleX + barWidth / 2}
-                      y={maleY - 7}
-                      textAnchor="middle"
-                      fill="#0f172a"
-                      fontSize="12.5"
-                      fontWeight="750"
+                {/* Year Header & Total Badges */}
+                <div style={{ textAlign: "center", width: "100%" }}>
+                  <div
+                    style={{
+                      fontSize: "1.1rem",
+                      fontWeight: 850,
+                      color: "#0f172a",
+                      letterSpacing: "-0.01em"
+                    }}
+                  >
+                    Total School Spending {yearData.year}
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      gap: "8px",
+                      marginTop: "4px"
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.7rem",
+                        fontWeight: 750,
+                        padding: "2px 7px",
+                        borderRadius: "6px",
+                        background: "#dbeafe",
+                        color: "#1e40af"
+                      }}
                     >
-                      {group.male}
-                    </text>
-                  </g>
-                )}
-
-                {/* Female Bar (Light Grey: #cbd5e1 with subtle border) */}
-                {showFemale && (
-                  <g>
-                    <rect
-                      x={femaleX}
-                      y={femaleY}
-                      width={barWidth}
-                      height={femaleBarHeight}
-                      fill="#cbd5e1"
-                      stroke="#94a3b8"
-                      strokeWidth={1}
-                      rx={2}
-                      style={{ transition: "all 0.25s ease" }}
-                    />
-                    {/* Value Label above Female Bar (displaying 53 for 55 to 64 as in original graphic) */}
-                    <text
-                      x={femaleX + barWidth / 2}
-                      y={femaleY - 7}
-                      textAnchor="middle"
-                      fill="#475569"
-                      fontSize="12.5"
-                      fontWeight="750"
+                      Staff: {yearData.totalStaffPercent}%
+                    </span>
+                    <span
+                      style={{
+                        fontSize: "0.7rem",
+                        fontWeight: 750,
+                        padding: "2px 7px",
+                        borderRadius: "6px",
+                        background: "#fef3c7",
+                        color: "#92400e"
+                      }}
                     >
-                      {group.ageGroup === "55 to 64" ? "53" : group.female}
-                    </text>
-                  </g>
-                )}
+                      Non-Staff: {yearData.totalNonStaffPercent}%
+                    </span>
+                  </div>
+                </div>
 
-                {/* X-Axis Category Label */}
-                <text
-                  x={groupCenterX}
-                  y={margin.top + chartHeight + 24}
-                  textAnchor="middle"
-                  fill={isCohortSelected ? "#0f172a" : "#475569"}
-                  fontSize={isCohortSelected ? "13.5" : "13"}
-                  fontWeight={isCohortSelected ? "800" : "600"}
+                {/* SVG Pie Chart Canvas */}
+                <svg
+                  viewBox={`0 0 ${pieSize} ${pieSize}`}
+                  style={{
+                    width: "100%",
+                    maxWidth: "250px",
+                    height: "auto",
+                    overflow: "visible"
+                  }}
                 >
-                  {group.ageGroup}
-                </text>
+                  <defs>
+                    <filter id={`shadow-${yearData.year}`} x="-10%" y="-10%" width="120%" height="120%">
+                      <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15" />
+                    </filter>
+                  </defs>
 
-                {/* Special Hotspot Badges on Canvas */}
-                {group.id === "15_to_24" && (
-                  <g>
-                    <rect
-                      x={groupCenterX - 56}
-                      y={margin.top + chartHeight + 36}
-                      width={112}
-                      height={18}
-                      rx={4}
-                      fill="#fef2f2"
-                      stroke="#fecaca"
-                      strokeWidth={0.8}
-                    />
-                    <text
-                      x={groupCenterX}
-                      y={margin.top + chartHeight + 49}
-                      textAnchor="middle"
-                      fill="#dc2626"
-                      fontSize="9.5"
-                      fontWeight="750"
-                    >
-                      ★ Sole Male Lead (+5.1%)
-                    </text>
-                  </g>
-                )}
+                  {/* Render Slices */}
+                  {computedSlices.map((slice) => {
+                    const isSelected = effectiveCategoryId === slice.categoryId;
+                    const pathD = describeArc(cx, cy, radius, slice.startAngle, slice.endAngle);
 
-                {group.id === "35_to_44" && (
-                  <g>
-                    <rect
-                      x={groupCenterX - 56}
-                      y={margin.top + chartHeight + 36}
-                      width={112}
-                      height={18}
-                      rx={4}
-                      fill="#eff6ff"
-                      stroke="#bfdbfe"
-                      strokeWidth={0.8}
-                    />
-                    <text
-                      x={groupCenterX}
-                      y={margin.top + chartHeight + 49}
-                      textAnchor="middle"
-                      fill="#2563eb"
-                      fontSize="9.5"
-                      fontWeight="750"
-                    >
-                      Widest Gap (13.0%) • Lowest Point
-                    </text>
-                  </g>
-                )}
+                    // Label coordinates
+                    // If slice is small (<= 5%), place label outside with pointer
+                    const isSmall = slice.percentage <= 5;
+                    const labelDist = isSmall ? radius * 1.25 : radius * 0.65;
+                    const labelPos = polarToCartesian(cx, cy, labelDist, slice.midAngle);
+                    const pointerStart = polarToCartesian(cx, cy, radius * 0.95, slice.midAngle);
 
-                {group.id === "45_to_54" && (
-                  <g>
-                    <rect
-                      x={groupCenterX - 56}
-                      y={margin.top + chartHeight + 36}
-                      width={112}
-                      height={18}
-                      rx={4}
-                      fill="#f0fdf4"
-                      stroke="#bbf7d0"
-                      strokeWidth={0.8}
-                    />
-                    <text
-                      x={groupCenterX}
-                      y={margin.top + chartHeight + 49}
-                      textAnchor="middle"
-                      fill="#16a34a"
-                      fontSize="9.5"
-                      fontWeight="750"
-                    >
-                      ▲ Overall Peak (53.3%)
-                    </text>
-                  </g>
-                )}
+                    return (
+                      <g
+                        key={slice.categoryId}
+                        onClick={() => handleSelectCategory(slice.categoryId)}
+                        onMouseEnter={() => {
+                          const cat = SPENDING_CATEGORIES.find((c) => c.id === slice.categoryId);
+                          if (cat) setHoveredCategory(cat);
+                        }}
+                        onMouseLeave={() => setHoveredCategory(null)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        {/* Slice Path */}
+                        <path
+                          d={pathD}
+                          fill={slice.color}
+                          stroke="#ffffff"
+                          strokeWidth={isSelected ? 3.5 : 1.5}
+                          opacity={effectiveCategoryId && !isSelected ? 0.45 : 1}
+                          filter={isSelected ? `url(#shadow-${yearData.year})` : undefined}
+                          transform={
+                            isSelected
+                              ? `scale(1.03) translate(${cx * -0.03}, ${cy * -0.03})`
+                              : undefined
+                          }
+                          style={{
+                            transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+                            transformOrigin: `${cx}px ${cy}px`
+                          }}
+                        />
 
-                {group.id === "65_and_over" && (
-                  <g>
-                    <rect
-                      x={groupCenterX - 56}
-                      y={margin.top + chartHeight + 36}
-                      width={112}
-                      height={18}
-                      rx={4}
-                      fill="#f8fafc"
-                      stroke="#cbd5e1"
-                      strokeWidth={0.8}
-                    />
-                    <text
-                      x={groupCenterX}
-                      y={margin.top + chartHeight + 49}
-                      textAnchor="middle"
-                      fill="#475569"
-                      fontSize="9.5"
-                      fontWeight="750"
-                    >
-                      ≈ Virtual Parity (0.4%)
-                    </text>
-                  </g>
-                )}
-              </g>
+                        {/* Leader line for small slices */}
+                        {isSmall && (
+                          <line
+                            x1={pointerStart.x}
+                            y1={pointerStart.y}
+                            x2={labelPos.x}
+                            y2={labelPos.y}
+                            stroke="#475569"
+                            strokeWidth="1"
+                            strokeDasharray="2,2"
+                          />
+                        )}
+
+                        {/* Percentage Label */}
+                        <text
+                          x={labelPos.x}
+                          y={labelPos.y}
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          fill={isSmall ? "#0f172a" : "#ffffff"}
+                          fontSize={isSmall ? "11px" : "12px"}
+                          fontWeight="800"
+                          style={{
+                            textShadow: isSmall
+                              ? "0 1px 2px rgba(255,255,255,0.8)"
+                              : "0 1px 3px rgba(0,0,0,0.5)",
+                            pointerEvents: "none"
+                          }}
+                        >
+                          {slice.percentage}%
+                        </text>
+                      </g>
+                    );
+                  })}
+                </svg>
+
+                {/* Slices Mini-Breakdown Table for Classroom Zero-Scroll Viewing */}
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "4px",
+                    marginTop: "4px"
+                  }}
+                >
+                  {yearData.slices.map((slice) => {
+                    const isSelected = effectiveCategoryId === slice.categoryId;
+                    return (
+                      <div
+                        key={slice.categoryId}
+                        onClick={() => handleSelectCategory(slice.categoryId)}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          padding: "4px 8px",
+                          borderRadius: "6px",
+                          background: isSelected ? "#e2e8f0" : "#ffffff",
+                          border: isSelected ? `1.5px solid ${slice.color}` : "1px solid #f1f5f9",
+                          fontSize: "0.75rem",
+                          cursor: "pointer",
+                          fontWeight: isSelected ? 800 : 600,
+                          color: isSelected ? "#0f172a" : "#475569"
+                        }}
+                      >
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                          <span
+                            style={{
+                              width: "8px",
+                              height: "8px",
+                              borderRadius: "2px",
+                              background: slice.color
+                            }}
+                          />
+                          <span>{slice.label}</span>
+                        </div>
+                        <span
+                          style={{
+                            fontWeight: 850,
+                            color: isSelected ? slice.color : "#1e293b"
+                          }}
+                        >
+                          {slice.percentage}%
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             );
           })}
+        </div>
 
-          {/* Interactive Legend Box at Bottom Center */}
-          <g transform={`translate(${svgWidth / 2 - 120}, ${svgHeight - 16})`}>
-            {/* Male Legend Item */}
-            <g
-              cursor="pointer"
-              onClick={() => setShowMale(!showMale)}
-              opacity={showMale ? 1 : 0.4}
+        {/* Multi-Year Trend Tracker Strip Across 1981 -> 1991 -> 2001 */}
+        <div
+          style={{
+            background: "#f8fafc",
+            borderRadius: "14px",
+            border: "1px solid #e2e8f0",
+            padding: "12px 16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "10px"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span
+              style={{
+                width: "14px",
+                height: "14px",
+                borderRadius: "50%",
+                background: activeCategory.color
+              }}
+            />
+            <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>
+              Active Focus: {activeCategory.label}
+            </strong>
+            <span
+              style={{
+                fontSize: "0.75rem",
+                padding: "2px 8px",
+                borderRadius: "6px",
+                background: activeCategory.group === "staff" ? "#dbeafe" : "#fef3c7",
+                color: activeCategory.group === "staff" ? "#1e40af" : "#92400e",
+                fontWeight: 750
+              }}
             >
-              <rect
-                x={0}
-                y={-10}
-                width={14}
-                height={14}
-                fill="#0f172a"
-                rx={2}
-              />
-              <text
-                x={22}
-                y={2}
-                fill="#1e293b"
-                fontSize="12.5"
-                fontWeight="700"
-              >
-                ■ Male
-              </text>
-            </g>
+              {activeCategory.group === "staff" ? "Staff Costs" : "Operational / Capital Costs"}
+            </span>
+          </div>
 
-            {/* Female Legend Item */}
-            <g
-              cursor="pointer"
-              transform="translate(130, 0)"
-              onClick={() => setShowFemale(!showFemale)}
-              opacity={showFemale ? 1 : 0.4}
+          {/* 3-Year Trajectory Badges */}
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <div
+              style={{
+                background: "#ffffff",
+                padding: "4px 10px",
+                borderRadius: "8px",
+                border: "1px solid #e2e8f0",
+                fontSize: "0.82rem"
+              }}
             >
-              <rect
-                x={0}
-                y={-10}
-                width={14}
-                height={14}
-                fill="#cbd5e1"
-                stroke="#94a3b8"
-                strokeWidth={1}
-                rx={2}
-              />
-              <text
-                x={22}
-                y={2}
-                fill="#475569"
-                fontSize="12.5"
-                fontWeight="700"
-              >
-                ■ Female
-              </text>
-            </g>
-          </g>
-        </svg>
+              <span style={{ color: "#64748b", fontWeight: 600 }}>1981: </span>
+              <strong style={{ color: "#0f172a" }}>{activeCategory.y1981}%</strong>
+            </div>
+            <ChevronRight size={14} color="#94a3b8" />
+            <div
+              style={{
+                background: "#ffffff",
+                padding: "4px 10px",
+                borderRadius: "8px",
+                border: "1px solid #e2e8f0",
+                fontSize: "0.82rem"
+              }}
+            >
+              <span style={{ color: "#64748b", fontWeight: 600 }}>1991: </span>
+              <strong style={{ color: "#0f172a" }}>{activeCategory.y1991}%</strong>
+            </div>
+            <ChevronRight size={14} color="#94a3b8" />
+            <div
+              style={{
+                background: "#ffffff",
+                padding: "4px 10px",
+                borderRadius: "8px",
+                border: "1px solid #e2e8f0",
+                fontSize: "0.82rem"
+              }}
+            >
+              <span style={{ color: "#64748b", fontWeight: 600 }}>2001: </span>
+              <strong style={{ color: "#0f172a" }}>{activeCategory.y2001}%</strong>
+            </div>
+
+            <div
+              style={{
+                padding: "4px 10px",
+                borderRadius: "8px",
+                fontSize: "0.82rem",
+                fontWeight: 800,
+                background:
+                  activeCategory.netChange > 0
+                    ? "#dcfce7"
+                    : activeCategory.netChange < 0
+                    ? "#fee2e2"
+                    : "#f1f5f9",
+                color:
+                  activeCategory.netChange > 0
+                    ? "#166534"
+                    : activeCategory.netChange < 0
+                    ? "#991b1b"
+                    : "#475569"
+              }}
+            >
+              20-Yr Net: {activeCategory.netChange > 0 ? "+" : ""}
+              {activeCategory.netChange}%
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Active Demographic Deep-Dive Card */}
-      {showDeepDiveCard && (
+      {/* SmartBoard Pedagogical Deep Dive Card */}
+      {showDeepDiveCard && activeCategory && (
         <div
           style={{
             background: "#ffffff",
-            border: "1.5px solid var(--border-subtle, #e2e8f0)",
-            borderRadius: "16px",
+            borderRadius: "18px",
+            border: `1.5px solid ${activeCategory.color}40`,
             padding: "16px 20px",
-            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.03)",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "16px",
-            alignItems: "center"
+            boxShadow: "0 4px 16px rgba(0,0,0,0.03)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px"
           }}
         >
-          {/* Left Column: Stat Summary */}
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-              <span
-                style={{
-                  background: "#0f172a",
-                  color: "#ffffff",
-                  fontSize: "0.72rem",
-                  fontWeight: 800,
-                  padding: "3px 8px",
-                  borderRadius: "6px"
-                }}
-              >
-                COHORT: {activeCohort.ageGroup}
-              </span>
-              {activeCohort.higherGender === "male" ? (
-                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#dc2626" }}>
-                  Male Dominance (+{Math.abs(activeCohort.genderGap)}%)
-                </span>
-              ) : activeCohort.genderGap > 5 ? (
-                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#2563eb" }}>
-                  Female Dominance (+{activeCohort.genderGap}%)
-                </span>
-              ) : (
-                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#16a34a" }}>
-                  Near Convergence (Gap: {activeCohort.genderGap}%)
-                </span>
-              )}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <Award size={18} color={activeCategory.color} />
+              <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+                {activeHotspot.title}
+              </h4>
             </div>
-
-            <div style={{ display: "flex", alignItems: "center", gap: "16px", marginTop: "8px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <span
-                  style={{
-                    width: "12px",
-                    height: "12px",
-                    background: "#0f172a",
-                    borderRadius: "3px",
-                    display: "inline-block"
-                  }}
-                />
-                <span style={{ fontSize: "0.85rem", color: "#64748b" }}>Men:</span>
-                <strong style={{ fontSize: "1.15rem", color: "#0f172a" }}>
-                  {activeCohort.male}%
-                </strong>
-              </div>
-
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <span
-                  style={{
-                    width: "12px",
-                    height: "12px",
-                    background: "#cbd5e1",
-                    border: "1px solid #94a3b8",
-                    borderRadius: "3px",
-                    display: "inline-block"
-                  }}
-                />
-                <span style={{ fontSize: "0.85rem", color: "#64748b" }}>Women:</span>
-                <strong style={{ fontSize: "1.15rem", color: "#334155" }}>
-                  {activeCohort.female}%
-                </strong>
-              </div>
-
-              <div style={{ fontSize: "0.82rem", color: "#64748b", borderLeft: "1px solid #e2e8f0", paddingLeft: "12px" }}>
-                Difference:{" "}
-                <strong style={{ color: "#0f172a" }}>
-                  {Math.abs(activeCohort.genderGap).toFixed(1)} percentage points
-                </strong>
-              </div>
-            </div>
-
-            {activeCohort.annotation && (
-              <p style={{ fontSize: "0.82rem", color: "#475569", margin: "6px 0 0 0" }}>
-                {activeCohort.annotation}
-              </p>
-            )}
+            <span
+              style={{
+                fontSize: "0.75rem",
+                fontWeight: 800,
+                padding: "3px 10px",
+                borderRadius: "8px",
+                background: `${activeCategory.color}15`,
+                color: activeCategory.color
+              }}
+            >
+              Band 9 Essential Citation
+            </span>
           </div>
 
-          {/* Right Column: Band 9 Academic Sentence Formulation */}
+          <p style={{ fontSize: "0.88rem", color: "#334155", margin: 0, lineHeight: 1.5 }}>
+            <strong>Analytical Trajectory:</strong> {activeCategory.trendDescription}
+          </p>
+
           <div
             style={{
               background: "#f8fafc",
-              border: "1px solid #e2e8f0",
-              borderRadius: "12px",
-              padding: "12px 14px",
-              fontSize: "0.84rem",
-              lineHeight: 1.5,
-              color: "#334155"
+              borderLeft: `3px solid ${activeCategory.color}`,
+              borderRadius: "8px",
+              padding: "10px 14px",
+              fontSize: "0.9rem",
+              color: "#1e293b",
+              lineHeight: 1.55,
+              fontStyle: "italic"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
-              <Sparkles size={14} color="#2563eb" />
-              <strong style={{ color: "#0f172a", fontSize: "0.82rem" }}>
-                Band 9 Analytical Sentence:
-              </strong>
-            </div>
-            {activeHotspot ? (
-              <em>{activeHotspot.band9Sentence}</em>
-            ) : (
-              <em>
-                “In the {activeCohort.ageGroup} bracket, {activeCohort.higherGender === "male" ? "men" : "women"} registered a participation rate of {activeCohort.higherGender === "male" ? activeCohort.male : activeCohort.female}%, exceeding their counterparts by {Math.abs(activeCohort.genderGap)} percentage points.”
-              </em>
-            )}
+            {activeCategory.band9Phrase}
           </div>
         </div>
       )}

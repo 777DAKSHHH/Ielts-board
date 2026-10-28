@@ -24,22 +24,22 @@ export const Step4IntroOverview: React.FC = () => (
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction &amp; Overview</span>
       <h2 className="stage-title">Build the Introduction and Macro Overview</h2>
       <p className="stage-subtitle">
-        Master the Band 9 approach for double bar charts depicting demographic comparisons: state the graphic format, surveyed population, gender categories, age brackets, survey year, and exact percentage measurement scale, followed by a 3-pillar macro overview.
+        Master the Band 9 approach for multi-year pie charts: state the graphic format, surveyed institution, 5 spending categories, three snapshot years (1981, 1991, 2001), and the percentage measurement scale, followed by a 3-pillar macro synthesis.
       </p>
     </div>
 
     <div className="stage-grid-2col">
       <QuoteCard
         icon={<BookOpen size={20} color="var(--slate-800)" />}
-        title="1. Sample Introduction (With Scale & Demographic Scope)"
+        title="1. Sample Introduction (With Scale & Categorical Scope)"
         text={TASK1_DATA.sampleIntro}
-        annotation="Paraphrases the prompt by integrating all 5 critical parameters: 1) Graphic type (double bar chart), 2) Demographic audience (Australian men and women), 3) Age distribution (six distinct cohorts from 15 to 65+), 4) Subject & temporal span (regular physical activity in 2010), and 5) The explicit measurement unit (measured as a percentage of each demographic cohort / %), satisfying examiner Band 9 Task Achievement expectations."
+        annotation="Paraphrases the prompt by integrating all 5 critical parameters: 1) Graphic type (three pie charts), 2) Surveyed entity (a single school in the United Kingdom), 3) Spending sectors (five operational and capital categories), 4) Multi-decade temporal anchors (1981, 1991, 2001), and 5) The explicit measurement unit (proportions / percentage of annual expenditure %), fulfilling examiner Band 9 Task Achievement requirements."
       />
       <QuoteCard
         icon={<Sparkles size={20} color="var(--slate-800)" />}
         title="2. Sample Macro Overview (3 Core Pillars)"
         text={TASK1_DATA.sampleOverview}
-        annotation="Synthesizes the 3 macro pillars: 1) Overall female preponderance (women lead across 5 of 6 age groups); 2) Youth anomaly (young men aged 15–24 are the sole demographic where males outpace females); 3) Trajectory divergence & senior convergence (female mid-life peak at 53.3% vs male U-shaped dip to 39.5%, culminating in virtual parity at 47% in retirement)."
+        annotation="Synthesizes the 3 macro pillars: 1) Teachers' salaries lion's share (consistently the largest expenditure throughout, peaking at 50% in 1991); 2) Insurance baseline (consistently the lowest outlay in all three periods, despite quadrupling from 2% to 8%); 3) Category divergence & volatility (furniture collapsing to 5% before rebounding strongly to 23%, contrasted with overall declines in other workers' wages and educational resources)."
       />
     </div>
 
@@ -56,23 +56,23 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-            <span><strong>Graphic Format &amp; Action:</strong> <em>“The bar chart compares / illustrates...”</em> (accurate academic reporting verb).</span>
+            <span><strong>Graphic Format &amp; Action:</strong> <em>“The three pie charts illustrate / compare...”</em> (accurate academic reporting verb).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-            <span><strong>Demographic Subject &amp; Gender:</strong> <em>“...the proportions of Australian men and women...”</em></span>
+            <span><strong>Institutional Subject:</strong> <em>“...the annual expenditure allocated by one school in the United Kingdom...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>3</span>
-            <span><strong>Age Distribution:</strong> <em>“...across six distinct age brackets (ranging from 15 to 65 and over)...”</em></span>
+            <span><strong>Categorical Scope:</strong> <em>“...across five distinct operational and capital areas...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>4</span>
-            <span><strong>Activity &amp; Temporal Anchor:</strong> <em>“...who engaged in regular physical activity in the year 2010...”</em></span>
+            <span><strong>Temporal Span &amp; Snapshot Years:</strong> <em>“...in three separate years: 1981, 1991, and 2001...”</em></span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center", background: "#dbeafe", color: "#1e40af", fontWeight: 800 }}>5</span>
-            <span><strong>Measurement Scale (Crucial):</strong> <em>“...measured as a percentage of each demographic cohort (%).”</em></span>
+            <span><strong>Measurement Scale (Crucial):</strong> <em>“...measured as a proportion / percentage of total spending (%).”</em></span>
           </div>
         </div>
       </div>
@@ -88,15 +88,15 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 1 — Female Participation Lead:</strong> Australian women generally recorded higher rates of regular exercise than men across five out of the six age categories.</span>
+            <span><strong>Pillar 1 — Teachers' Salaries Predominance:</strong> Teachers' salaries swallowed the lion's share in all three years, reaching a peak of exactly half (50%) in 1991.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 2 — Youth Male Inversion:</strong> Young men (15–24) formed the sole exception where male participation outpaced females (52.8% vs 47.7%).</span>
+            <span><strong>Pillar 2 — Insurance Minimum Share:</strong> Insurance consistently comprised the smallest expenditure throughout, even though it experienced a continuous fourfold surge (from 2% to 8%).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 3 — Mid-Life Gap &amp; Senior Parity:</strong> Women reached a peak of 53.3% (45–54), while men dropped to a low of 39.5% (widest 13-point gap), before both sexes converged to near equality at age 65+ (~47%).</span>
+            <span><strong>Pillar 3 — Furniture Volatility &amp; Reductions:</strong> Furniture and equipment dropped to a third of its level (5% in 1991) before surging to 23% in 2001, while other workers' salaries and resources fell over the period.</span>
           </div>
         </div>
       </div>

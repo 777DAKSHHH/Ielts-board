@@ -26,87 +26,87 @@ const FLASHCARDS: FlashcardItem[] = [
     id: 1,
     category: "Card 1: The Macro Overview Split",
     badgeColor: "#0284c7",
-    question: "What are the three essential macro features that must appear in a Band 9 overview for this Australian physical activity bar chart?",
-    answerTitle: "1) Overall Female Preponderance, 2) Youth Male Exception (15–24), 3) Mid-Life Divergence & Senior Parity",
+    question: "What are the three essential macro features that must appear in a Band 9 overview for this UK school spending pie chart task?",
+    answerTitle: "1) Teachers' Salaries Lion's Share, 2) Insurance as Smallest Proportion, 3) Furniture Volatility vs Staff Decreases",
     bulletPoints: [
-      "Australian females recorded higher rates of regular exercise than males across five out of the six age cohorts.",
-      "Australian males recorded their sole statistical advantage in the youngest cohort (15 to 24), leading by 5.1 percentage points (52.8% vs 47.7%).",
-      "While female activity peaked at 53.3% in middle age (45–54), males experienced a U-shaped dip to 39.5% before rebounding to converge with females at ~47% in retirement."
+      "Teachers' salaries consistently formed the largest expenditure across all three years, peaking at exactly half (50%) of all funds in 1991.",
+      "Insurance remained the lowest cost in every period, despite undergoing a continuous fourfold increase from 2% to 8%.",
+      "While other workers' salaries and resources experienced net drops by 2001, furniture and equipment displayed marked fluctuation, falling to 5% before surging to 23%."
     ],
     band9Phrase:
-      "“Overall, Australian females generally recorded higher rates of regular physical exercise than males across most age cohorts, with the notable exception of the youngest demographic (aged 15 to 24). Additionally, while female participation peaked during mid-adulthood, male activity exhibited a distinct dip-and-recovery trajectory, touching its lowest point before rebounding to converge with women in retirement.”"
+      "“Overall, teachers’ salaries consistently represented the largest share of the school’s budget throughout the entire twenty-year timeframe, peaking at precisely half of all expenditure in 1991. Conversely, insurance consistently accounted for the lowest proportion, despite undergoing a continuous fourfold increase. Furthermore, while other workers’ salaries and resources saw overall reductions by 2001, spending on furniture and equipment exhibited dramatic fluctuation, recovering strongly after an initial slump.”"
   },
   {
     id: 2,
-    category: "Card 2: Youth Inversion & Sole Male Lead (15–24)",
-    badgeColor: "#dc2626",
-    question: "How should you report the youth demographic (15–24) compared to all subsequent age brackets?",
-    answerTitle: "The Sole Demographic Where Men Outpaced Women (52.8% vs 47.7%), Marking the Male Peak",
+    category: "Card 2: Staff Remuneration Dominance (Body 1)",
+    badgeColor: "#2563eb",
+    question: "How should you report and group teachers' salaries and other workers' salaries to demonstrate Band 9 Coherence and Cohesion?",
+    answerTitle: "Group as Combined Staff Remuneration (60%–72% of budget), Contrasting the Peak with the Steady Decline",
     bulletPoints: [
-      "Australian men attained their highest participation rate in this youth bracket at 52.8%.",
-      "Young women recorded 47.7%, giving men a 5.1 percentage point margin.",
-      "Key analytical contrast: This was the only age cohort in the entire graphic where male physical activity exceeded female participation."
+      "Teachers' salaries: 40% (1981) → 50% (1991 peak) → 45% (2001). Always the predominant cost.",
+      "Other workers' salaries: 28% (1981) → 22% (1991) → 15% (2001). Unbroken downward trend, almost halving over 20 years.",
+      "Synthesis: Combined staff pay absorbed 68% in 1981, 72% in 1991, and 60% in 2001, consistently commanding well over half the budget."
     ],
     band9Phrase:
-      "“Among 15-to-24-year-olds, men registered their highest participation rate at 52.8%, outstripping their female peers (47.7%) in what was the sole demographic where male activity prevailed.”"
+      "“In terms of staffing costs, teachers’ salaries constituted the school’s principal outlay in every year surveyed, beginning at 40% in 1981, climbing to a peak of 50% in 1991, and subsequently dipping to 45% in 2001. By contrast, expenditure on other workers’ salaries followed an unbroken downward trajectory, diminishing from 28% to 22% and almost halving to 15% by 2001.”"
   },
   {
     id: 3,
-    category: "Card 3: Widest Disparity & Lowest Level (35–44)",
-    badgeColor: "#d97706",
-    question: "Why is the 35-to-44 demographic considered a critical analytical focal point for examiners?",
-    answerTitle: "The Maximum Gender Divergence (13.0%) and the Lowest Figure in the Chart (Males 39.5%)",
+    category: "Card 3: Furniture & Equipment Volatility (Body 2)",
+    badgeColor: "#059669",
+    question: "Why is the trajectory of furniture and equipment considered the most dramatic trend in the visual?",
+    answerTitle: "A Two-Thirds Collapse to 5% Followed by an 18-Point Surge to 23% (Overtaking Other Staff)",
     bulletPoints: [
-      "Men slumped to 39.5%, representing the absolute lowest figure recorded across the entire chart.",
-      "Women climbed to 52.5%, comfortably crossing the 50% milestone.",
-      "The resulting 13.0 percentage point divide constituted the widest disparity between sexes in the visual."
+      "1981 baseline: Started at 15%, tied with educational resources.",
+      "1991 slump: Plunged to just 5%, a reduction of two-thirds, becoming almost negligible.",
+      "2001 resurgence: Surged to 23%, more than quadrupling from its 1991 low and becoming the second-largest cost that year."
     ],
     band9Phrase:
-      "“The divergence between sexes peaked in the 35-to-44 demographic, where a substantial 13-percentage-point gap emerged between active women (52.5%) and men, who touched their lowest recorded level of 39.5%.”"
+      "“Allocations for furniture and equipment stood at 15% in 1981, plummeted to just 5% in 1991, and then experienced a dramatic resurgence to 23% in 2001, making it the second most significant budget component that year.”"
   },
   {
     id: 4,
-    category: "Card 4: Overall Chart Peak (45–54 Females) & Plateau",
-    badgeColor: "#16a34a",
-    question: "How should you report the participation peak and plateau among middle-aged Australian women?",
-    answerTitle: "Overall Peak of 53.3% at Ages 45–54, Followed by a Sustained 53.0% Plateau",
+    category: "Card 4: Educational Resources (Books) Rise and Fall",
+    badgeColor: "#d97706",
+    question: "How did spending on educational resources evolve compared to the other non-staff categories?",
+    answerTitle: "Temporary Expansion from 15% to 20% in 1991, Followed by a Steep Fall to Single Digits (9% in 2001)",
     bulletPoints: [
-      "Women aged 45 to 54 achieved 53.3%, the single highest data point recorded across the entire visual.",
-      "This elevated level was sustained in the 55-to-64 demographic at precisely 53.0%.",
-      "Concurrently, men began their multi-decade recovery, rising through 43.1% and 45.1%."
+      "1981: Represented 15% of spending, equal to furniture.",
+      "1991: Rose by 5 percentage points to reach 20%, ranking 3rd behind staff salaries.",
+      "2001: Steep drop to 9%, falling below double digits and ending at an all-time low."
     ],
     band9Phrase:
-      "“Physical activity reached its peak among women aged 45 to 54 at 53.3%, representing the highest figure in the entire chart. This elevated participation was sustained in the 55-to-64 demographic at precisely 53.0%.”"
+      "“Meanwhile, spending on educational resources such as books initially rose from 15% to 20% between 1981 and 1991, before declining steeply to a twenty-year low of 9% in 2001.”"
   },
   {
     id: 5,
-    category: "Card 5: Senior Convergence & Virtual Parity (65 and over)",
-    badgeColor: "#64748b",
-    question: "What unique demographic phenomenon occurs in the 65-and-over cohort?",
-    answerTitle: "Virtual Gender Parity (0.4% Gap) as Disparities Effectively Dissolve in Retirement",
+    category: "Card 5: Insurance Fourfold Expansion",
+    badgeColor: "#dc2626",
+    question: "What is the key analytical nuance to highlight when reporting insurance spending?",
+    answerTitle: "Smallest Absolute Percentage in Every Year, Yet Experienced the Greatest Relative Expansion (Quadrupled)",
     bulletPoints: [
-      "Senior men completed their steady rebound, climbing to 46.7%.",
-      "Senior women dropped by 5.9 points to 47.1%, their lowest rate across all cohorts.",
-      "The gender divide virtually disappeared, narrowing to an insignificant margin of just 0.4 percentage points."
+      "1981: Started at a negligible 2% (lowest in the visual).",
+      "1991: Edged up marginally to 3%, remaining the smallest slice.",
+      "2001: Surged to 8%, representing a fourfold increase over the initial 1981 figure."
     ],
     band9Phrase:
-      "“In the senior cohort (65 and over), gender disparities virtually dissolved, with male (46.7%) and female (47.1%) participation rates converging at near-identical levels.”"
+      "“Finally, insurance accounted for the smallest percentage in all three periods, edging up from a negligible 2% in 1981 to 3% in 1991, before surging to 8% in 2001 (a fourfold increase).”"
   },
   {
     id: 6,
     category: "Card 6: Exam Pitfalls & Band 9 Precautions",
     badgeColor: "#ea580c",
     isWarning: true,
-    question: "What are the most frequent examiner-penalized mistakes in this Australian physical activity bar chart?",
-    answerTitle: "Margin Units (Percentage vs Percentage Points), Omitting Scale (%), and Rote Listing",
+    question: "What are the most frequent examiner-penalized mistakes in this UK school spending pie chart task?",
+    answerTitle: "Mechanical Slice-by-Slice Listing, Using Informal Words (nadir/chasm), and Omitting Combined Totals",
     bulletPoints: [
-      "Margin Error: Confusing 'percentages' with 'percentage points' (e.g. say 'outstripped by 5.1 percentage points', NOT '5.1% more').",
-      "Scale Omission: Failing to state that figures represent the percentage of each demographic cohort (%).",
-      "Trend Failure: Listing figures cohort-by-cohort without identifying the male U-shaped trajectory or female mid-life plateau.",
-      "Factual Precision: Forgetting that men led in only one cohort (15–24) or misquoting the lowest figure (39.5%)."
+      "Mechanical Listing: Merely describing Pie 1, then Pie 2, then Pie 3 in sequence without synthesizing trends across years.",
+      "Unnatural Vocabulary: Strictly avoid banned melodramatic terms like 'nadir', 'chasm', 'zenith', or 'ebb'. Use standard academic phrasing like 'peak', 'lowest figure', 'downward trajectory'.",
+      "Overlooking Grouping: Examiners award Band 9 for grouping data into logical categories (Staff Remuneration vs Operational/Capital Outlay).",
+      "Confusing Units: Remember all numbers are percentages of annual expenditure (%), not raw pound amounts (£)."
     ],
     band9Phrase:
-      "“Band 9 Criterion: Accurate demographic framing (Australian men & women across 6 age cohorts), precise margin reporting (e.g., a 13.0 percentage point gap), and synthesizing trajectories rather than mechanically listing numbers.”"
+      "“Band 9 Criterion: Grouping data logically into Staff Remuneration (Body 1) and Non-Staff Outlay (Body 2), accurately synthesizing multi-decade trajectories, and using precise academic collocations without overly dramatic jargon.”"
   }
 ];
 
@@ -138,280 +138,233 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
         alignItems: "center",
         gap: "18px",
         width: "100%",
-        fontFamily: "var(--font-sans)"
+        fontFamily: "inherit"
       }}
     >
-      {/* Category Strip & Counter */}
+      {/* Top Card Counter Strip */}
       <div
         style={{
           display: "flex",
-          alignItems: "center",
           justifyContent: "space-between",
+          alignItems: "center",
           width: "100%",
-          maxWidth: "760px",
-          padding: "4px 8px"
+          maxWidth: "680px"
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          {card.isWarning ? (
-            <AlertTriangle size={18} color="#ea580c" />
-          ) : (
-            <Sparkles size={18} color={card.badgeColor} />
-          )}
           <span
             style={{
-              fontSize: "0.85rem",
+              fontSize: "0.76rem",
               fontWeight: 800,
-              color: card.badgeColor,
-              letterSpacing: "0.02em"
+              padding: "4px 10px",
+              borderRadius: "8px",
+              background: card.isWarning ? "#fee2e2" : "#f1f5f9",
+              color: card.isWarning ? "#dc2626" : card.badgeColor
             }}
           >
             {card.category}
           </span>
+          <span style={{ fontSize: "0.78rem", color: "#64748b", fontWeight: 600 }}>
+            Card {currentIdx + 1} of {FLASHCARDS.length}
+          </span>
         </div>
 
-        <span
-          style={{
-            fontSize: "0.82rem",
-            fontWeight: 700,
-            color: "var(--slate-500)",
-            background: "var(--slate-100)",
-            padding: "4px 10px",
-            borderRadius: "999px"
-          }}
-        >
-          {currentIdx + 1} of {FLASHCARDS.length}
-        </span>
-      </div>
-
-      {/* Interactive 3D Flip Card */}
-      <div
-        onClick={handleFlip}
-        style={{
-          perspective: "1000px",
-          width: "100%",
-          maxWidth: "760px",
-          minHeight: "340px",
-          cursor: "pointer"
-        }}
-      >
-        <motion.div
-          animate={{ rotateY: isFlipped ? 180 : 0 }}
-          transition={{ duration: 0.45, ease: "easeInOut" }}
-          style={{
-            width: "100%",
-            height: "100%",
-            position: "relative",
-            transformStyle: "preserve-3d"
-          }}
-        >
-          {/* Card Front: Question */}
-          <div
+        <div style={{ display: "flex", gap: "6px" }}>
+          <button
+            onClick={handlePrev}
             style={{
-              width: "100%",
-              minHeight: "340px",
+              padding: "6px 12px",
+              borderRadius: "8px",
+              border: "1px solid #e2e8f0",
               background: "#ffffff",
-              border: `2px solid ${card.badgeColor}`,
-              borderRadius: "22px",
-              padding: "32px",
+              cursor: "pointer",
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
-              backfaceVisibility: "hidden",
-              position: isFlipped ? "absolute" : "relative",
-              inset: 0
+              alignItems: "center",
+              gap: "4px",
+              fontSize: "0.78rem",
+              fontWeight: 700
             }}
           >
-            <div>
+            <ChevronLeft size={16} /> Prev
+          </button>
+          <button
+            onClick={handleNext}
+            style={{
+              padding: "6px 12px",
+              borderRadius: "8px",
+              border: "1px solid #e2e8f0",
+              background: "#ffffff",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+              fontSize: "0.78rem",
+              fontWeight: 700
+            }}
+          >
+            Next <ChevronRight size={16} />
+          </button>
+        </div>
+      </div>
+
+      {/* Main Flashcard Card (Interactive Flip) */}
+      <motion.div
+        whileTap={tactilePress}
+        onClick={handleFlip}
+        style={{
+          width: "100%",
+          maxWidth: "680px",
+          minHeight: "340px",
+          background: "#ffffff",
+          borderRadius: "22px",
+          border: card.isWarning ? "2px solid #f87171" : "1.5px solid #cbd5e1",
+          padding: "26px 28px",
+          boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
+          cursor: "pointer",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          position: "relative",
+          transition: "border-color 0.2s ease"
+        }}
+      >
+        {!isFlipped ? (
+          /* Question Side */
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px", height: "100%" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span
                 style={{
-                  fontSize: "0.76rem",
+                  fontSize: "0.75rem",
                   fontWeight: 800,
-                  color: card.badgeColor,
+                  color: "#64748b",
                   textTransform: "uppercase",
-                  letterSpacing: "0.04em",
-                  display: "block",
-                  marginBottom: "12px"
+                  letterSpacing: "0.05em"
                 }}
               >
-                Question Prompt • Tap Anywhere to Flip
+                Question / Prompt
               </span>
-              <h3
+              <span
                 style={{
-                  fontSize: "1.32rem",
-                  fontWeight: 800,
-                  color: "var(--slate-900)",
-                  lineHeight: 1.45,
-                  margin: 0
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  fontSize: "0.75rem",
+                  color: "#2563eb",
+                  fontWeight: 700
                 }}
               >
-                {card.question}
-              </h3>
+                <RotateCw size={12} /> Tap card to reveal Band 9 analysis
+              </span>
             </div>
 
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                paddingTop: "16px",
-                borderTop: "1px solid var(--border-subtle)",
-                color: "var(--slate-500)",
-                fontSize: "0.82rem"
+                fontSize: "1.25rem",
+                fontWeight: 800,
+                color: "#0f172a",
+                lineHeight: 1.45,
+                marginTop: "12px"
               }}
             >
-              <span>Tap card to see Band 9 key features</span>
-              <RotateCw size={15} color="var(--slate-400)" />
+              {card.question}
+            </div>
+
+            <div
+              style={{
+                marginTop: "auto",
+                background: "#f8fafc",
+                borderRadius: "12px",
+                padding: "12px 14px",
+                fontSize: "0.82rem",
+                color: "#64748b",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px"
+              }}
+            >
+              <Sparkles size={16} color="#2563eb" />
+              <span>
+                Think about the analytical grouping and Band 9 reporting vocabulary before flipping!
+              </span>
             </div>
           </div>
-
-          {/* Card Back: Answer, Bullets & Band 9 Formula */}
-          <div
-            style={{
-              width: "100%",
-              minHeight: "340px",
-              background: "#ffffff",
-              border: `2px solid ${card.badgeColor}`,
-              borderRadius: "22px",
-              padding: "28px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "14px",
-              boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
-              backfaceVisibility: "hidden",
-              transform: "rotateY(180deg)",
-              position: isFlipped ? "relative" : "absolute",
-              inset: 0
-            }}
-          >
-            <div>
+        ) : (
+          /* Answer Side */
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px", height: "100%" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span
                 style={{
-                  fontSize: "0.72rem",
+                  fontSize: "0.75rem",
                   fontWeight: 800,
                   color: card.badgeColor,
                   textTransform: "uppercase",
-                  letterSpacing: "0.04em"
+                  letterSpacing: "0.05em"
                 }}
               >
                 Band 9 Analytical Answer
               </span>
-              <h4
+              <span
                 style={{
-                  fontSize: "1.1rem",
-                  fontWeight: 800,
-                  color: "var(--slate-900)",
-                  margin: "4px 0 0 0"
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  fontSize: "0.75rem",
+                  color: "#64748b",
+                  fontWeight: 700
                 }}
               >
-                {card.answerTitle}
-              </h4>
+                <RotateCw size={12} /> Tap to flip back
+              </span>
             </div>
 
-            {/* Bullet Points */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+            <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.35 }}>
+              {card.answerTitle}
+            </div>
+
+            <ul
+              style={{
+                margin: 0,
+                paddingLeft: "20px",
+                fontSize: "0.86rem",
+                color: "#334155",
+                display: "flex",
+                flexDirection: "column",
+                gap: "6px",
+                lineHeight: 1.45
+              }}
+            >
               {card.bulletPoints.map((pt, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "8px",
-                    fontSize: "0.85rem",
-                    color: "var(--slate-700)",
-                    lineHeight: 1.45
-                  }}
-                >
-                  <CheckCircle2
-                    size={15}
-                    color={card.badgeColor}
-                    style={{ flexShrink: 0, marginTop: "2px" }}
-                  />
-                  <span>{pt}</span>
-                </div>
+                <li key={i}>{pt}</li>
               ))}
-            </div>
+            </ul>
 
-            {/* Band 9 Formula Quote Box */}
             <div
               style={{
-                background: "var(--slate-50)",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "12px",
+                background: "#f8fafc",
+                borderLeft: `3.5px solid ${card.badgeColor}`,
+                borderRadius: "8px",
                 padding: "10px 14px",
-                fontSize: "0.84rem",
-                fontStyle: "italic",
-                color: "var(--slate-800)",
+                fontSize: "0.85rem",
+                color: "#1e293b",
                 lineHeight: 1.5,
-                borderLeft: `3px solid ${card.badgeColor}`,
                 marginTop: "auto"
               }}
             >
-              {card.band9Phrase}
+              <div
+                style={{
+                  fontSize: "0.7rem",
+                  fontWeight: 800,
+                  color: card.badgeColor,
+                  marginBottom: "3px"
+                }}
+              >
+                MODEL SENTENCE:
+              </div>
+              <em>{card.band9Phrase}</em>
             </div>
           </div>
-        </motion.div>
-      </div>
-
-      {/* Navigation Controls Bar */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "12px",
-          marginTop: "4px"
-        }}
-      >
-        <motion.button
-          whileTap={tactilePress}
-          onClick={handlePrev}
-          className="apple-touch-btn secondary"
-          style={{
-            padding: "8px 16px",
-            fontSize: "0.82rem",
-            fontWeight: 700,
-            display: "flex",
-            alignItems: "center",
-            gap: "4px"
-          }}
-        >
-          <ChevronLeft size={16} /> Previous Card
-        </motion.button>
-
-        <motion.button
-          whileTap={tactilePress}
-          onClick={handleFlip}
-          className="apple-touch-btn secondary"
-          style={{
-            padding: "8px 18px",
-            fontSize: "0.82rem",
-            fontWeight: 700,
-            display: "flex",
-            alignItems: "center",
-            gap: "6px"
-          }}
-        >
-          <RotateCw size={15} /> Flip Card
-        </motion.button>
-
-        <motion.button
-          whileTap={tactilePress}
-          onClick={handleNext}
-          className="apple-touch-btn primary"
-          style={{
-            padding: "8px 18px",
-            fontSize: "0.82rem",
-            fontWeight: 700,
-            display: "flex",
-            alignItems: "center",
-            gap: "4px"
-          }}
-        >
-          Next Card <ChevronRight size={16} />
-        </motion.button>
-      </div>
+        )}
+      </motion.div>
     </div>
   );
 };

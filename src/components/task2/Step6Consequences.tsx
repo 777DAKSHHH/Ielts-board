@@ -16,20 +16,20 @@ export const Step6ConsequencesT2: React.FC = () => {
     <div className="stage-card-wrapper">
       {/* Step Header */}
       <div>
-        <span className="apple-badge accent" style={{ marginBottom: "8px", background: "#fef3c7", color: "#92400e" }}>
-          Step 06 / 09 • Body Para 1 (1st View: History is Outdated)
+        <span className="apple-badge accent" style={{ marginBottom: "8px", background: "#dbeafe", color: "#1e40af" }}>
+          Step 06 / 09 • Body Para 1 (Advantages: 2 Main Reasons + Supporting + Example)
         </span>
-        <h2 className="stage-title">Body 1: Ideas for 1st View (History Has Little to Teach Us)</h2>
+        <h2 className="stage-title">Body 1: Advantages of the 'Achieve Anything' Message</h2>
         <p className="stage-subtitle">
-          Structure: <strong>Topic Sentence + Supporting Explanation + Concrete Real Example</strong>. Analyze how survivorship bias in ancient records, the 'fighting the last war' trap, and megacity demographic scale render historical models ineffective today.
+          Mandatory Format: <strong>Advantages Points [ 2 Main Reasons + Supporting reasons + Example ]</strong>. Show how this empowering philosophy builds an intrinsic growth mindset and unlocks upward social mobility.
         </p>
       </div>
 
       {/* Teaching Strategy Banner */}
       <div
         style={{
-          background: "#fffbeb",
-          border: "1.5px solid #fde68a",
+          background: "#eff6ff",
+          border: "1.5px solid #bfdbfe",
           borderRadius: "16px",
           padding: "14px 20px",
           display: "flex",
@@ -41,11 +41,11 @@ export const Step6ConsequencesT2: React.FC = () => {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#b45309", color: "#ffffff", padding: "4px 10px", borderRadius: "8px" }}>
-            TEACHING RULE
+          <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#1d4ed8", color: "#ffffff", padding: "4px 10px", borderRadius: "8px" }}>
+            MANDATORY FORMAT
           </span>
-          <span style={{ fontSize: "0.98rem", fontWeight: 700, color: "#92400e" }}>
-            Students select ONE or TWO ideas below to construct Body 1. Always back up the argument with clear reasoning and modern real-world examples!
+          <span style={{ fontSize: "0.98rem", fontWeight: 700, color: "#1e40af" }}>
+            Body 1 requires 2 Main Reasons + Supporting reasons + Concrete Example. Both key advantages are detailed below!
           </span>
         </div>
         <motion.button
@@ -58,21 +58,19 @@ export const Step6ConsequencesT2: React.FC = () => {
             fontSize: "0.82rem",
             fontWeight: 750,
             gap: "6px",
-            color: "#92400e",
+            color: "#1e40af",
             background: "#ffffff",
-            border: "1.5px solid #fde68a",
+            border: "1.5px solid #bfdbfe",
             cursor: "pointer",
             borderRadius: "10px"
           }}
         >
-          <Sparkles size={15} color="#d97706" />
+          <Sparkles size={15} color="#2563eb" />
           <span>Faculty Deep Dive &amp; Angles</span>
         </motion.button>
       </div>
 
-      {/* =========================================================================
-          ALL 4 VIEW 1 POINTS DISPLAYED SIMULTANEOUSLY (ZERO CLICKS REQUIRED FOR TEACHER)
-         ========================================================================= */}
+      {/* 2 MAIN ADVANTAGES DISPLAYED SIMULTANEOUSLY */}
       <div
         style={{
           display: "grid",
@@ -100,23 +98,23 @@ export const Step6ConsequencesT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <span
                   style={{
-                    background: "#fef3c7",
-                    color: "#92400e",
+                    background: "#dbeafe",
+                    color: "#1e40af",
                     fontSize: "0.84rem",
                     fontWeight: 800,
                     padding: "3px 10px",
                     borderRadius: "7px"
                   }}
                 >
-                  ⚡ VIEW 1 • POINT 0{idx + 1}
+                  ⭐ ADVANTAGE 0{idx + 1}
                 </span>
-                <h4 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                <h4 style={{ fontSize: "1.15rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
                   {reason.title}
                 </h4>
               </div>
             </div>
 
-            {/* 1. Main Idea */}
+            {/* 1. Main Reason */}
             <div
               style={{
                 background: "#f8fafc",
@@ -128,7 +126,7 @@ export const Step6ConsequencesT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
                 <Lightbulb size={16} color="var(--apple-blue)" />
                 <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "var(--apple-blue)", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  1. Main Idea (One-Liner)
+                  Main Reason 0{idx + 1}
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "1.04rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
@@ -136,27 +134,27 @@ export const Step6ConsequencesT2: React.FC = () => {
               </p>
             </div>
 
-            {/* 2. Development */}
+            {/* 2. Supporting Reasons */}
             <div
               style={{
-                background: "#fffbeb",
-                border: "1px solid #fde68a",
+                background: "#eff6ff",
+                border: "1px solid #bfdbfe",
                 borderRadius: "12px",
                 padding: "12px 14px"
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
-                <ArrowRight size={16} color="#b45309" />
-                <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#92400e", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  2. Why It Matters (One-Liner)
+                <ArrowRight size={16} color="#1d4ed8" />
+                <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#1e40af", textTransform: "uppercase", letterSpacing: "0.03em" }}>
+                  Supporting Explanation (Why It Works)
                 </span>
               </div>
-              <p style={{ margin: 0, fontSize: "0.98rem", color: "#78350f", lineHeight: 1.55 }}>
+              <p style={{ margin: 0, fontSize: "0.98rem", color: "#1e3a8a", lineHeight: 1.55 }}>
                 {reason.supportingReasons}
               </p>
             </div>
 
-            {/* 3. Real-Life Example */}
+            {/* 3. Real Example */}
             <div
               style={{
                 background: "#f0fdf4",
@@ -168,7 +166,7 @@ export const Step6ConsequencesT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
                 <CircleCheck size={16} color="#16a34a" />
                 <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#166534", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  3. Real Example (One-Liner)
+                  Concrete Example
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "0.98rem", color: "#14532d", lineHeight: 1.55, fontWeight: 550 }}>
@@ -179,9 +177,7 @@ export const Step6ConsequencesT2: React.FC = () => {
         ))}
       </div>
 
-      {/* =========================================================================
-          EXAMINER MODEL BODY PARAGRAPH SECTION
-         ========================================================================= */}
+      {/* EXAMINER MODEL BODY 1 PARAGRAPH */}
       <div
         style={{
           background: "#ffffff",
@@ -199,7 +195,7 @@ export const Step6ConsequencesT2: React.FC = () => {
                 Examiner Band 9 Model Paragraph Synthesis
               </h4>
               <p style={{ margin: "2px 0 0", fontSize: "0.88rem", color: "var(--slate-600)" }}>
-                See how a Band 9 writer constructs a cohesive body paragraph from the root causes above
+                Notice how the 2 Main Reasons, supporting explanation, and Carol Dweck example fuse into a unified Band 9 paragraph:
               </p>
             </div>
           </div>
@@ -207,7 +203,7 @@ export const Step6ConsequencesT2: React.FC = () => {
           {/* Model Switcher Chips */}
           <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "var(--slate-100)", padding: "3px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
             <span style={{ fontSize: "0.76rem", fontWeight: 750, color: "var(--slate-500)", padding: "0 6px" }}>
-              Show Model for:
+              Focus View:
             </span>
             {allReasons.map((r, idx) => (
               <button
@@ -225,7 +221,7 @@ export const Step6ConsequencesT2: React.FC = () => {
                   transition: "all 0.12s ease"
                 }}
               >
-                Cause 0{idx + 1}
+                Reason 0{idx + 1}
               </button>
             ))}
           </div>
@@ -258,13 +254,13 @@ export const Step6ConsequencesT2: React.FC = () => {
             <div style={{ marginTop: "12px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
-                  ✦ 1 Main Cause
+                  ✦ 2 Main Reasons
                 </span>
                 <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
-                  ✦ Causal Progression
+                  ✦ Supporting Reasons
                 </span>
                 <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
-                  ✦ Real-World Proof
+                  ✦ Carol Dweck Example
                 </span>
               </div>
               <span style={{ fontSize: "0.88rem", color: "var(--slate-600)", fontWeight: 600 }}>

@@ -7,27 +7,27 @@ import { tactilePress } from "../../motion";
 const CONCLUSION_VARIATIONS = [
   {
     id: "balanced",
-    title: "Style 1: Standard Balanced Synthesis",
+    title: "Style 1: Standard Balanced Synthesis & Recommendation",
     badge: "Band 8.5–9 • Recommended",
-    summary: "Synthesizes archival survivorship bias against physical path dependency and cyclical human psychology.",
-    text: "In conclusion, although the elitist bias of historical archives and the novel scale of modern society lead some to dismiss the past, history remains an indispensable guide. Understanding the physical foundations of our cities and the cyclical nature of human psychology is essential for interpreting the present and making defensible decisions.",
-    breakdown: "Sentence 1: Summarizes View 1 (survivorship bias & megacity scale) | Sentence 2: Synthesizes View 2 (physical path dependency & cyclical market psychology) and restates personal stance."
+    summary: "Synthesizes resilience and social mobility against psychological burnout and inborn limits, concluding with pragmatic guidance.",
+    text: "In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity and fuels upward mobility, it can equally inflict crippling self-reproach and blind individuals to inevitable biological and socioeconomic constraints. It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance, teaching the youth that while giving their utmost effort is commendable, recognizing personal boundaries and developing self-compassion when facing unalterable realities are equally vital for lifelong well-being.",
+    breakdown: "Sentence 1: Sums up main reasons (tenacity/mobility vs self-reproach/constraints) | Sentence 2: Actionable recommendation (balance aspirational encouragement with pragmatic guidance and self-compassion)."
   },
   {
     id: "academic",
-    title: "Style 2: Academic Causal Synthesis",
+    title: "Style 2: Academic Pedagogical Recommendation",
     badge: "Band 9 • Advanced Lexicon",
-    summary: "Contrasts the trap of fighting the last war with enduring epidemiological playbooks and Roman infrastructure foundations.",
-    text: "To conclude, while ancient chronicles ignore ordinary citizens and prepare leaders for yesterday's battles, modern infrastructure and human psychology remain deeply anchored in the past. Therefore, analyzing historical roadmaps and epidemiological playbooks provides contemporary society with an essential compass to navigate future crises.",
-    breakdown: "Sentence 1: Contrasts past-crisis blindspots with physical and psychological continuity | Sentence 2: Restates defensible opinion with academic precision."
+    summary: "Contrasts growth mindset empowerment against the fallacy of meritocracy, recommending a dual approach of ambition and emotional support.",
+    text: "To conclude, imparting the philosophy that effort guarantees accomplishment fosters an invaluable growth mindset and dismantles defeatist ceilings, yet it risks precipitating acute mental distress when structural or genetic boundaries intervene. Consequently, society ought to promote effort-based praise while concurrently cultivating emotional resilience, ensuring young people understand that unavoidable failure is not an indictment of personal worth.",
+    breakdown: "Sentence 1: Recaps advantages vs disadvantages | Sentence 2: Recommends effort-based praise paired with emotional resilience."
   },
   {
     id: "rapid-exam",
     title: "Style 3: Rapid 2-Sentence Exam Model",
-    badge: "Rapid Timing • Under 45 Words",
+    badge: "Rapid Timing • Under 50 Words",
     summary: "Ultra-compact, high-speed conclusion ideal when running short on time in the real exam.",
-    text: "In conclusion, despite the limitations of ancient records, studying the past remains vital. From modern highway routes to market crash psychology, history provides the essential blueprint needed to understand today's world.",
-    breakdown: "Sentence 1: Compact recap of prompt tension | Sentence 2: Crisp, concrete restatement of personal opinion."
+    text: "In conclusion, although telling children they can achieve anything builds admirable grit and ambition, it can also lead to severe self-blame and unrealistic expectations. Mentors should therefore encourage diligent effort while teaching youth to accept unavoidable limitations with self-compassion.",
+    breakdown: "Sentence 1: Compact recap of both sides | Sentence 2: Crisp, actionable suggestion."
   }
 ];
 
@@ -39,11 +39,11 @@ export const Step8ConclusionT2: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 08 / 09 • Sample Conclusion &amp; Restatement
+          Step 08 / 09 • Sample Conclusion &amp; Recommendation
         </span>
-        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Points + Restate Opinion</h2>
+        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Reasons + Suggestion / Recommendation</h2>
         <p className="stage-subtitle">
-          Mandatory Conclusion Format: <strong>Sum-up all the main points + restate the opinion</strong>. Acknowledge why some consider history outdated in sentence 1, and synthesize the enduring relevance of past lessons to confirm your opinion in sentence 2.
+          Mandatory Conclusion Format: <strong>Sentence 1: Sum-up all the main reasons (advantages vs disadvantages) + Sentence 2: Suggestion / Pedagogical Recommendation</strong>.
         </p>
       </div>
 
@@ -62,213 +62,48 @@ export const Step8ConclusionT2: React.FC = () => {
           >
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <Award size={24} color="var(--apple-blue)" />
-                <h4 style={{ fontSize: "1.24rem", fontWeight: 750, color: "var(--slate-900)" }}>
-                  Sample Conclusion (Band 9 Model)
+                <BookOpen size={22} color="var(--apple-blue)" />
+                <h4 style={{ fontSize: "1.2rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                  Master Conclusion (Sum-Up + Recommendation)
                 </h4>
               </div>
-              <span className="apple-badge success">
-                Sum-Up + Restate Opinion
+              <span className="apple-badge neutral" style={{ background: "#ecfdf5", color: "#065f46", fontWeight: 750 }}>
+                Band 9 Standard
               </span>
             </div>
 
             <div
               style={{
-                background: "#ffffff",
-                border: "1.5px solid var(--border-default)",
-                borderRadius: "16px",
-                padding: "22px 24px",
-                fontSize: "1.24rem",
-                fontWeight: 650,
+                background: "var(--slate-50)",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: "14px",
+                padding: "20px",
+                fontSize: "1.2rem",
                 lineHeight: 1.75,
-                color: "var(--slate-900)"
+                color: "var(--slate-900)",
+                fontWeight: 550,
+                boxShadow: "inset 0 1px 3px rgba(0,0,0,0.03)"
               }}
             >
-              {TASK2_DATA.sampleConclusion}
+              “{TASK2_DATA.sampleConclusion}”
             </div>
 
-            <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "12px", color: "var(--slate-600)", fontSize: "0.92rem", fontWeight: 600 }}>
-              <span style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                <Clock size={16} /> ~50 words • 2 sentences
+            <div style={{ marginTop: "14px", display: "flex", alignItems: "center", gap: "12px", color: "var(--slate-600)", fontSize: "0.88rem", fontWeight: 600 }}>
+              <span style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                <Clock size={15} /> ~70 words
               </span>
               <span>•</span>
-              <span>Rapid exam timing (~2-2.5 minutes)</span>
+              <span>2 Balanced Sentences</span>
+              <span>•</span>
+              <span>Satisfies Format 100%</span>
             </div>
           </div>
 
-          {/* One-Liner Planning Points */}
-          <div
-            style={{
-              background: "#eff6ff",
-              border: "1.5px solid #bfdbfe",
-              borderRadius: "18px",
-              padding: "18px 20px",
-              boxShadow: "var(--shadow-sm)"
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--apple-blue)", marginBottom: "8px" }}>
-              <CheckCircle2 size={20} />
-              <h5 style={{ fontSize: "1.05rem", fontWeight: 750, margin: 0 }}>One-Liner Planning Points</h5>
-            </div>
-            <ul style={{ margin: "6px 0 0", paddingLeft: "18px", fontSize: "1.02rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
-              <li><strong>View 1 Recap:</strong> Survivorship bias in ancient chronicles and the strategic trap of fighting yesterday's battles.</li>
-              <li><strong>View 2 Recap:</strong> Physical path dependency of Roman roads and recurring psychology in market manias and pandemics.</li>
-              <li><strong>Opinion Restatement:</strong> Studying the past provides an indispensable blueprint to navigate recurring human patterns.</li>
-            </ul>
-          </div>
-
-          {/* 2-Step Conclusion Formula */}
+          {/* 2-Step Structural Blueprint */}
           <div
             style={{
               background: "#ffffff",
-              border: "1.5px solid var(--border-default)",
-              borderRadius: "18px",
-              padding: "20px",
-              boxShadow: "var(--shadow-sm)",
-              display: "flex",
-              flexDirection: "column",
-              gap: "12px"
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <Layers size={18} color="var(--apple-blue)" />
-              <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                The Discussion Conclusion Formula
-              </h5>
-            </div>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#1e40af" }}>
-                <strong>Step 1: Sum-Up Both Perspectives:</strong> Signal conclusion and acknowledge both sides (`"In conclusion, although the uniqueness of contemporary dilemmas leads some to dismiss history..."`)
-              </div>
-              <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "10px 14px", fontSize: "0.88rem", color: "#166534" }}>
-                <strong>Step 2: Restate Opinion Defensively:</strong> Confirm your definitive personal stance (`"...understanding historical patterns of governance and economic crises remains vital for interpreting the present."`)
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Column: 3 Interactive Smartboard Conclusion Styles */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          {/* Switcher Strip */}
-          <div
-            style={{
-              background: "#ffffff",
-              border: "1.5px solid var(--border-default)",
-              borderRadius: "18px",
-              padding: "16px",
-              boxShadow: "var(--shadow-sm)"
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "12px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Sparkles size={18} color="var(--apple-blue)" />
-                <h4 style={{ fontSize: "1.02rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  Interactive Smartboard Conclusion Variations
-                </h4>
-              </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
-                Tap to Switch
-              </span>
-            </div>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "8px", marginBottom: "14px" }}>
-              {CONCLUSION_VARIATIONS.map((style, idx) => {
-                const isSelected = selectedStyleIdx === idx;
-                return (
-                  <motion.button
-                    key={style.id}
-                    whileTap={tactilePress}
-                    onClick={() => setSelectedStyleIdx(idx)}
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      textAlign: "left",
-                      padding: "10px 12px",
-                      borderRadius: "12px",
-                      border: isSelected ? "2px solid #0066cc" : "1.5px solid var(--border-subtle)",
-                      background: isSelected ? "#eff6ff" : "var(--slate-100)",
-                      cursor: "pointer",
-                      boxShadow: isSelected ? "0 4px 12px rgba(0, 102, 204, 0.12)" : "none",
-                      transition: "all 0.15s ease"
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: "0.84rem",
-                        fontWeight: 800,
-                        color: isSelected ? "#0066cc" : "var(--slate-600)"
-                      }}
-                    >
-                      Option 0{idx + 1}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: "0.95rem",
-                        fontWeight: 750,
-                        color: isSelected ? "var(--slate-900)" : "var(--slate-700)",
-                        marginTop: "2px"
-                      }}
-                    >
-                      {style.title.split(":")[1]?.trim()}
-                    </span>
-                  </motion.button>
-                );
-              })}
-            </div>
-
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedStyleIdx}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.16 }}
-                style={{
-                  background: "var(--slate-50)",
-                  border: "1.5px solid var(--border-default)",
-                  borderRadius: "14px",
-                  padding: "18px"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
-                  <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
-                    {currentStyle.badge}
-                  </span>
-                  <span style={{ fontSize: "0.88rem", color: "var(--slate-600)", fontWeight: 600 }}>
-                    {currentStyle.summary}
-                  </span>
-                </div>
-
-                <div
-                  style={{
-                    background: "#ffffff",
-                    border: "1.5px solid var(--border-subtle)",
-                    borderRadius: "12px",
-                    padding: "18px 20px",
-                    fontSize: "1.15rem",
-                    lineHeight: 1.7,
-                    color: "var(--slate-900)",
-                    marginBottom: "12px"
-                  }}
-                >
-                  {currentStyle.text}
-                </div>
-
-                <div style={{ fontSize: "0.95rem", color: "var(--slate-700)", lineHeight: 1.55, background: "#ffffff", padding: "12px 14px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
-                  <CheckCircle2 size={16} color="#059669" style={{ verticalAlign: "-3px", marginRight: "6px", display: "inline" }} />
-                  <strong>Structural Logic:</strong> {currentStyle.breakdown}
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Discussion Signposting Toolkit */}
-          <div
-            style={{
-              background: "#ffffff",
-              border: "1.5px solid var(--border-default)",
+              border: "1.5px solid var(--border-subtle)",
               borderRadius: "18px",
               padding: "20px",
               boxShadow: "var(--shadow-sm)",
@@ -278,24 +113,121 @@ export const Step8ConclusionT2: React.FC = () => {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <BookOpen size={18} color="var(--apple-blue)" />
-              <h5 style={{ fontSize: "0.98rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                Band 9 Discussion Signposting Toolkit
+              <Award size={18} color="#16a34a" />
+              <h5 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                Band 9 Conclusion Blueprint (Sum-Up + Recommendation)
               </h5>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-              <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "10px", padding: "8px 12px", fontSize: "0.82rem" }}>
-                <strong style={{ color: "#0066cc" }}>Summary Openers:</strong><br />
-                • "In conclusion, although the unprecedented scale of modern dilemmas leads some to..."<br />
-                • "To conclude, while the digital epoch presents challenges lacking past precedents..."
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.95rem" }}>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
+                <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "3px" }} />
+                <span>
+                  <strong>Sentence 1 (Sum-Up):</strong> Synthesizes the core advantages (grit, social mobility) against the severe disadvantages (crippling self-blame, unyielding constraints).
+                </span>
               </div>
-              <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "10px", padding: "8px 12px", fontSize: "0.82rem" }}>
-                <strong style={{ color: "#059669" }}>Opinion Restatement:</strong><br />
-                • "...the past remains an invaluable guide for interpreting the present."<br />
-                • "...historical insight into human psychology provides the wisdom needed to guide decisions."
+              <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
+                <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "3px" }} />
+                <span>
+                  <strong>Sentence 2 (Recommendation):</strong> Delivers a practical, mature pedagogical suggestion (e.g. balancing aspirational effort with pragmatic realism and self-compassion).
+                </span>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Right Column: Interactive Variations for Smart Board Teaching */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+          {/* Style Selector Tabs */}
+          <div
+            style={{
+              background: "var(--slate-100)",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "14px",
+              padding: "4px",
+              display: "flex",
+              gap: "4px"
+            }}
+          >
+            {CONCLUSION_VARIATIONS.map((style, idx) => (
+              <button
+                key={style.id}
+                onClick={() => setSelectedStyleIdx(idx)}
+                style={{
+                  flex: 1,
+                  padding: "8px 12px",
+                  borderRadius: "10px",
+                  fontSize: "0.82rem",
+                  fontWeight: 750,
+                  border: "none",
+                  background: selectedStyleIdx === idx ? "#ffffff" : "transparent",
+                  color: selectedStyleIdx === idx ? "var(--slate-900)" : "var(--slate-600)",
+                  boxShadow: selectedStyleIdx === idx ? "var(--shadow-sm)" : "none",
+                  cursor: "pointer",
+                  transition: "all 0.15s ease"
+                }}
+              >
+                {style.title.split(":")[0]}
+              </button>
+            ))}
+          </div>
+
+          {/* Active Variation Display Card */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentStyle.id}
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.15 }}
+              style={{
+                background: "#ffffff",
+                border: "1.5px solid var(--border-default)",
+                borderRadius: "20px",
+                padding: "24px",
+                boxShadow: "var(--shadow-sm)",
+                display: "flex",
+                flexDirection: "column",
+                gap: "14px"
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                  {currentStyle.title}
+                </h4>
+                <span className="apple-badge accent" style={{ fontSize: "0.76rem" }}>
+                  {currentStyle.badge}
+                </span>
+              </div>
+
+              <div
+                style={{
+                  background: "#f8fafc",
+                  border: "1px solid #cbd5e1",
+                  borderRadius: "14px",
+                  padding: "18px 20px",
+                  fontSize: "1.15rem",
+                  lineHeight: 1.7,
+                  color: "var(--slate-800)"
+                }}
+              >
+                “{currentStyle.text}”
+              </div>
+
+              <div
+                style={{
+                  background: "#eff6ff",
+                  borderRadius: "12px",
+                  padding: "12px 14px",
+                  fontSize: "0.9rem",
+                  color: "#1e40af",
+                  lineHeight: 1.5
+                }}
+              >
+                <strong>Sentence Breakdown:</strong> {currentStyle.breakdown}
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
