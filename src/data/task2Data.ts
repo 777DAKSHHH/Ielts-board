@@ -39,44 +39,49 @@ export const TASK2_DATA: Task2Data = {
   timingSeconds: 180,
 
   recommendedPosition:
-    "Balanced Assessment: While instilling unbridled ambition cultivates resilience and spurs social mobility, it must be counterbalanced with pragmatic realism to avert chronic self-blame, burnout, and disillusionment.",
+    "Balanced Assessment: While encouraging diligence fosters resilience and upward mobility, it must be counterbalanced with pragmatic realism to prevent severe self-blame, burnout, and disillusionment.",
 
   strongestArgument:
-    "The strongest argument is that praising effort cultivates a growth mindset that frees children from defeatist thinking; however, promising that effort guarantees every outcome blinds children to genetic and systemic limits, turning unavoidable failure into devastating personal guilt.",
+    "Praising effort builds a growth mindset that frees children from defeatism; however, promising that effort guarantees every outcome blinds children to genetic and structural limits, turning unavoidable failure into personal guilt.",
 
   // 1. Sample introduction planning points
   introPlanningPoints: [
-    "Paraphrase Prompt: In various societies, youth are frequently told that limitless accomplishments are attainable solely through diligence.",
-    "Thesis Statement: While this message instills admirable resilience, a growth mindset, and upward aspiration, it simultaneously introduces grave hazards, namely acute psychological distress and a naive disregard for innate boundaries."
+    "Sentence 1 (Paraphrase): In many societies, children are consistently taught that hard work guarantees success in any endeavor.",
+    "Sentence 2 (Thesis Statement): While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations."
   ],
 
   sampleIntro:
-    "In various parts of the world, children are consistently instilled with the belief that boundless success is achievable solely through diligence and relentless effort. While this message undeniably nurtures resilience, a growth mindset, and high personal aspirations, it simultaneously introduces notable perils, particularly the risk of severe psychological distress and an unrealistic disregard for innate limitations.",
+    "In many societies, children are consistently taught that hard work guarantees success in any endeavor. While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations.",
 
   // 2. Sample conclusion planning points
   conclusionPlanningPoints: [
-    "Sum-up Main Reasons: Effort fuels determination and breaks social ceilings, but unconstrained expectations trigger self-reproach, burnout, and disillusionment.",
-    "Suggestion / Recommendation: Parents and educators should temper aspirational optimism with pragmatic realism and self-compassion."
+    "Sum-up Main Reasons: Diligence fuels perseverance and upward mobility, yet absolutist expectations foster crippling self-reproach and blind youth to unalterable limits.",
+    "Suggestion / Recommendation: Parents and educators should balance aspirational encouragement with pragmatic realism and self-compassion."
   ],
 
   sampleConclusion:
-    "In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity and fuels upward mobility, it can equally inflict crippling self-reproach and blind individuals to inevitable biological and socioeconomic constraints. It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance, teaching the youth that while giving their utmost effort is commendable, recognizing personal boundaries and developing self-compassion when facing unalterable realities are equally vital for lifelong well-being.",
+    "In conclusion, while reassuring children that diligence guarantees success fosters admirable tenacity and upward mobility, it can equally inflict crippling self-reproach and blind individuals to inevitable biological boundaries. Educators and guardians should therefore temper aspirational encouragement with pragmatic realism, teaching youth that while striving for excellence is commendable, developing self-compassion when facing unalterable realities is equally vital.",
 
   // Five-Minute Planning Map — Strictly showing Advantages vs Disadvantages in ONE-LINERS
   fiveMinutePlanningMap: {
     positive: [
-      "Cultivates a Growth Mindset: Teaches children that intelligence and skills can be expanded through practice, building emotional grit against early failure.",
-      "Promotes Upward Social Mobility: Inspires youth from impoverished or marginalized backgrounds to break generational ceilings and pursue ambitious vocations.",
-      "Eradicates Defeatist Attitudes: Encourages perseverance in challenging disciplines like mathematics, athletics, and foreign languages without premature surrender."
+      "1. Builds Perseverance: Children practise difficult skills rather than giving up (e.g. struggling math student improving through regular practice).",
+      "2. Encourages Self-Confidence & Ambition: Children attempt challenging tasks and ambitious careers (e.g. nervous child auditioning for a school play).",
+      "3. Develops Personal Responsibility: Children learn that consistent effort and preparation influence progress rather than waiting for luck.",
+      "4. Reduces Fear of Making Mistakes: Children view errors as part of learning rather than incompetence (e.g. child practising bicycle after falling).",
+      "5. Fosters Independent Problem-Solving: Children experiment with solutions and take learning ownership (e.g. revising a science project design).",
+      "6. Cultivates a Strong Work Ethic: Establishes lifelong habits of practice and discipline (e.g. young athlete gaining fitness and teamwork skills)."
     ],
     negative: [
-      "Induces Severe Self-Blame & Burnout: Children erroneously believe every setback stems from personal laziness, leading to chronic perfectionism, anxiety, and depression.",
-      "Denies Natural Biological Realities: Fosters false expectations in arenas demanding rare genetic prerequisites (e.g. height in basketball or innate musical pitch).",
-      "Ignores Structural Socioeconomic Barriers: Overlooks economic inequalities and institutional bottlenecks, setting young adults up for bitter disillusionment."
+      "1. Creates Unrealistic Expectations: Overlooks financial limits, unequal opportunities, and aptitude (e.g. hardworking student unable to afford university fees).",
+      "2. Leads to Guilt & Low Self-Esteem: Children interpret unavoidable failure as personal inadequacy (e.g. child losing sports match despite thorough prep).",
+      "3. Encourages Excessive Pressure & Burnout: Children overwork and sacrifice sleep fearing failure (e.g. student studying late nightly experiencing exhaustion).",
+      "4. Confuses Persistence with Misguided Stubbornness: Children persist in unsuitable paths fearing quitting equals failure (e.g. teenager preparing for disliked career).",
+      "5. Encourages Unhealthy Social Comparisons: Assumes higher achievers simply worked harder, ignoring unequal tutoring and support (e.g. student feeling inferior to wealthy peer)."
     ],
     position: "4-Paragraph Advantages & Disadvantages Architecture",
-    body1: "Body 1 (Advantages): 2 Main Reasons (Growth Mindset & Upward Mobility) + Supporting Explanation + Carol Dweck Educational Study Example.",
-    body2: "Body 2 (Disadvantages): 2 Main Reasons (Self-Blame/Burnout & Inherent Limitations) + High-Stakes Competitive Exam Example.",
+    body1: "Body 1 (Advantages): Pick 2 Main Reasons (e.g. Perseverance + Confidence/Problem-Solving) + Supporting Explanation + Relatable Student Example.",
+    body2: "Body 2 (Disadvantages): Pick 2 Main Reasons (e.g. Unrealistic Expectations + Guilt/Burnout) + Supporting Explanation + Relatable Real-World Example.",
     teachingRecommendation:
       "Follow the exact 4-paragraph format: Introduction (Paraphrase + Thesis), Body 1 (Advantages: 2 Main Reasons + Supporting + Example), Body 2 (Disadvantages: 2 Main Reasons + Example), Conclusion (Sum-up all main reasons + Suggestion/Recommendation)."
   },
@@ -100,49 +105,123 @@ export const TASK2_DATA: Task2Data = {
       paraNumber: 1,
       side: "strong_opinion",
       title: "Body Para 1: Advantages of the 'Achieve Anything' Message",
-      theme: "Growth Mindset, Resilience & Social Mobility",
+      theme: "Perseverance, Ambition & Independent Problem-Solving",
       mainReason:
-        "1. Cultivates an intrinsic growth mindset and resilient work ethic; 2. Promotes upward social mobility by dismantling defeatist ceilings.",
+        "1. Builds perseverance and personal responsibility; 2. Fosters independent problem-solving and reduces fear of mistakes.",
       supportingReasons:
-        "When children view outcomes as dependent on dedication rather than fixed talent, they treat setbacks as learning steps; furthermore, it empowers underprivileged children to dream boldly.",
+        "When children believe that effort determines improvement, they view mistakes as natural learning steps and take proactive ownership of difficult tasks.",
       example:
-        "Research by Dr. Carol Dweck demonstrated that students praised for effort exhibited significantly higher academic stamina than those praised for innate ability.",
+        "A student who performs poorly in mathematics practises regularly and seeks help, while a child learning to ride a bicycle persists after falling instead of quitting out of embarrassment.",
       band9Snippet:
-        "“On the positive side, imparting this empowering philosophy yields two substantial benefits: cultivating an intrinsic growth mindset and serving as a potent engine for social mobility.”",
+        "“On the positive side, imparting this message yields two primary advantages: cultivating unyielding perseverance in the face of initial failure and fostering independent problem-solving skills.”",
       alternativeReasons: [
         {
           id: "adv-reason-1",
-          badge: "Main Reason 1: Growth Mindset",
-          title: "Fostering a Growth Mindset & Tenacious Work Ethic",
+          badge: "Advantage 01 • Builds Perseverance",
+          title: "Builds Perseverance & Practice Habits",
+          category: "standard",
           mainReason:
-            "It teaches children that intelligence and capability are malleable assets developed through disciplined practice rather than unchangeable genetic gifts.",
+            "Children may be more willing to practise difficult skills instead of giving up after initial failure.",
           supportingReasons:
-            "When youth believe that effort dictates success, they interpret mistakes and setbacks not as humiliating verdicts on their worth, but as constructive feedback, developing long-term grit.",
+            "Believing that improvement comes from practice encourages children to view difficulty as a normal learning stage rather than a permanent barrier.",
           example:
-            "Stanford psychologist Carol Dweck's landmark studies revealed that children praised for diligent exertion consistently outpaced peers who were praised for natural brilliance.",
+            "A student who performs poorly in mathematics may practise regularly, seek help and gradually improve their results.",
           band9Snippet:
-            "“Primarily, this message cultivates an intrinsic growth mindset and a strong work ethic, prompting young minds to interpret setbacks as constructive learning opportunities rather than insurmountable barriers.”",
+            "“Primarily, this message instills admirable perseverance, encouraging pupils to practise demanding competencies rather than surrendering after early setbacks.”",
           modelParagraph:
-            "On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it cultivates an intrinsic growth mindset and a strong work ethic. When young minds are taught that achievement is determined by dedication rather than fixed hereditary talent, they interpret setbacks as constructive learning opportunities rather than insurmountable barriers, which bolsters emotional grit. Furthermore, this outlook serves as an engine for social mobility by eliminating self-imposed psychological ceilings, particularly for children from impoverished or marginalized backgrounds who might otherwise feel confined by their circumstances. A compelling illustration of this is evident in educational psychology research by Dr. Carol Dweck; students praised specifically for effort rather than innate intelligence demonstrated markedly higher perseverance and achieved superior long-term academic results across diverse socio-economic groups.",
+            "On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it builds perseverance; children taught that diligence determines success are far more willing to practise challenging skills instead of quitting after early defeat. A clear example of this is a student who struggles in mathematics; rather than resigning to poor marks, they practise regularly, seek guidance, and steadily elevate their performance. Furthermore, this mindset fosters personal ambition and confidence, encouraging youngsters to audition for competitive roles or pursue demanding vocations without being paralyzed by self-doubt.",
           examinerNotes:
-            "A rock-solid Band 9 argument pairing psychological theory with empirical educational research."
+            "Relatable real-world academic perseverance example that examiners find immediately persuasive."
         },
         {
           id: "adv-reason-2",
-          badge: "Main Reason 2: Social Mobility",
-          title: "Unlocking Social Mobility & Eliminating Self-Doubt",
+          badge: "Advantage 02 • Self-Confidence & Ambition",
+          title: "Encourages Self-Confidence & Ambition",
+          category: "standard",
           mainReason:
-            "It breaks generational defeatism by encouraging disadvantaged children to aspire toward prestigious, competitive vocations.",
+            "Children may become more willing to attempt challenging tasks, participate in competitions or pursue demanding careers.",
           supportingReasons:
-            "Children raised in marginalized environments frequently internalize social ceilings; telling them effort unlocks success provides the vital optimism needed to apply for top universities and careers.",
+            "Believing improvement is always achievable lowers the fear of public evaluation and empowers youth to set bolder life targets.",
           example:
-            "Pioneering figures from humble origins—such as former presidents, scientists, and entrepreneurs—often cite childhood encouragement as the catalyst that kept them striving.",
+            "A child who believes improvement is possible may audition for a school play despite being nervous about performing in public.",
           band9Snippet:
-            "“Furthermore, this optimistic outlook serves as a catalyst for social mobility by removing defeatist mental ceilings for youngsters from disadvantaged backgrounds.”",
+            "“Furthermore, this encouraging belief bolsters self-confidence and ambition, inspiring young individuals to embrace intimidating public challenges.”",
           modelParagraph:
-            "Secondly, this message functions as a vital catalyst for upward social mobility. Children from low-income or marginalized demographics frequently absorb defeatist expectations from their surroundings, assuming that elite professions like medicine, law, or engineering are reserved for privileged classes. Instilling the belief that dedication is the ultimate arbiter of success inspires these young individuals to dismantle internal barriers, apply to top-tier universities, and pursue ambitious vocations regardless of their family background.",
+            "Secondly, this message functions as a powerful catalyst for self-confidence and personal ambition. Children conditioned to believe in the efficacy of effort become willing to undertake daunting challenges and enter competitive arenas. For instance, a child who believes that capability is expandable may courageously audition for a school theatrical production despite initial stage fright, recognizing that practice will bridge the gap between inexperience and competence.",
           examinerNotes:
-            "Directly addresses societal progress and equity, demonstrating deep maturity in Task Response."
+            "Excellent psychological connection between effort attribution and public confidence."
+        },
+        {
+          id: "adv-reason-3",
+          badge: "Advantage 03 • Personal Responsibility",
+          title: "Develops Personal Responsibility & Agency",
+          category: "standard",
+          mainReason:
+            "Children learn that their choices, preparation and consistent effort can influence their progress rather than waiting for success to happen automatically.",
+          supportingReasons:
+            "Fosters an internal locus of control, replacing passive reliance on luck with disciplined self-directed preparation.",
+          example:
+            "A student creates an organized daily revision schedule for exams rather than relying on parents or luck.",
+          band9Snippet:
+            "“Additionally, it develops a robust sense of personal responsibility, teaching youth that proactive preparation dictates outcomes rather than passive fortune.”",
+          modelParagraph:
+            "Additionally, this philosophy cultivates a profound sense of personal responsibility. Young learners come to understand that their daily habits, preparation, and discipline directly govern their progress rather than waiting passively for good fortune. For example, a student facing final examinations will proactively design an organized daily revision schedule instead of relying on parental reminders or leaving outcomes to chance.",
+          examinerNotes:
+            "Emphasizes autonomy and self-directed discipline (Band 9 Task Response)."
+        },
+        {
+          id: "adv-reason-4",
+          badge: "Advantage 04 • Less Fear of Mistakes",
+          title: "Children Become Less Afraid of Making Mistakes",
+          category: "additional",
+          mainReason:
+            "If children believe that effort leads to improvement, they may see mistakes as part of learning rather than as evidence of incompetence.",
+          supportingReasons:
+            "Removes the social stigma and embarrassment of error, allowing learners to experiment freely without performance anxiety.",
+          example:
+            "A child learning to ride a bicycle may keep practising after falling instead of giving up out of embarrassment.",
+          band9Snippet:
+            "“Crucially, children become far less intimidated by mistakes, interpreting errors as informative feedback rather than humiliating verdicts on their competence.”",
+          modelParagraph:
+            "Moreover, children exposed to this ethos become significantly less fearful of making errors. When mistakes are viewed as necessary feedback on the road to mastery rather than proofs of incompetence, the emotional stigma of failure dissipates. This is clearly seen when a child learns to ride a bicycle; having fallen repeatedly, they simply brush themselves off and resume pedaling, untroubled by embarrassment because they understand falling is simply part of learning.",
+          examinerNotes:
+            "Highly original developmental insight that moves beyond conventional motivation cliches."
+        },
+        {
+          id: "adv-reason-5",
+          badge: "Advantage 05 • Independent Problem-Solving",
+          title: "Fosters Independent Problem-Solving",
+          category: "additional",
+          mainReason:
+            "Rather than immediately asking adults to solve every difficulty, children may experiment with different approaches and take greater ownership of their learning.",
+          supportingReasons:
+            "Overcomes learned helplessness by cultivating proactive resourcefulness and creative perseverance in the face of obstacles.",
+          example:
+            "A student struggling with a science project may research alternatives and revise the design instead of abandoning it.",
+          band9Snippet:
+            "“It also nurtures independent problem-solving skills, as young minds take ownership of their difficulties rather than demanding immediate adult intervention.”",
+          modelParagraph:
+            "Furthermore, this message nurtures independent problem-solving capabilities. Rather than succumbing to learned helplessness and demanding immediate adult rescue, children are inspired to test alternative solutions. A notable illustration is a student struggling with an uncooperative science project; instead of abandoning the experiment, they independently research alternative designs and iteratively refine their model until it succeeds.",
+          examinerNotes:
+            "Demonstrates self-regulation and intellectual independence."
+        },
+        {
+          id: "adv-reason-6",
+          badge: "Advantage 06 • Stronger Work Ethic",
+          title: "Cultivates a Stronger, Lifelong Work Ethic",
+          category: "additional",
+          mainReason:
+            "Repeated encouragement can help establish habits such as regular practice, preparation and discipline, which are valuable even when a particular goal remains out of reach.",
+          supportingReasons:
+            "Builds enduring self-discipline and character traits that transfer directly into adult professional and personal endeavors.",
+          example:
+            "A young athlete may not become a professional player but can still gain fitness, discipline and teamwork skills.",
+          band9Snippet:
+            "“Finally, it establishes an enduring work ethic, instilling disciplined routines whose value persists long after specific childhood targets have passed.”",
+          modelParagraph:
+            "Finally, this encouragement helps establish a lifelong, transferable work ethic. The daily discipline of structured preparation and regular practice remains immensely valuable even if a specific childhood aspiration is never fulfilled. For example, a young athlete who fails to secure a professional sports contract nonetheless retains physical health, mental resilience, and collaborative teamwork skills that enrich their subsequent adult career.",
+          examinerNotes:
+            "Pragmatic, mature argument recognizing the long-term utility of work habits."
         }
       ]
     },
@@ -150,49 +229,105 @@ export const TASK2_DATA: Task2Data = {
       paraNumber: 2,
       side: "non_opinion",
       title: "Body Para 2: Disadvantages of the 'Achieve Anything' Message",
-      theme: "Self-Blame, Psychological Burnout & Disillusionment",
+      theme: "Unrealistic Expectations, Guilt & Misguided Stubbornness",
       mainReason:
-        "1. Inflicts acute self-blame, chronic anxiety, and burnout; 2. Fosters blindness toward natural biological limitations and systemic hurdles.",
+        "1. Creates unrealistic expectations and excessive burnout; 2. Leads to crippling guilt, low self-esteem, and misguided stubbornness.",
       supportingReasons:
-        "If success is framed solely as effort, every failure feels like a shameful personal inadequacy; additionally, it encourages youth to waste years chasing goals physically or structurally unfeasible.",
+        "When success is framed solely as willpower, children blame themselves for external economic bottlenecks, overwork themselves to exhaustion, and refuse to abandon unsuitable goals.",
       example:
-        "In high-stakes East Asian school systems, hyper-focus on effort causes severe adolescent depression when hardworking students fail to gain admission to capped elite academies.",
+        "A talented student unable to afford university fees feels inadequate, while an overworked pupil experiences severe sleep deprivation and burnout.",
       band9Snippet:
-        "“Conversely, propagating this unconstrained narrative produces two profound drawbacks: the onset of acute psychological self-blame and a naive blindness toward tangible genetic limitations.”",
+        "“Conversely, propagating this unconstrained narrative entails profound drawbacks: the creation of unrealistic expectations and the infliction of acute self-blame.”",
       alternativeReasons: [
         {
           id: "disadv-reason-1",
-          badge: "Main Reason 1: Self-Blame & Burnout",
-          title: "Acute Psychological Guilt, Perfectionism & Burnout",
+          badge: "Disadvantage 01 • Unrealistic Expectations",
+          title: "Creates Unrealistic Expectations & Ignores Limits",
+          category: "standard",
           mainReason:
-            "Framing success purely as a product of willpower causes children to view every failure as evidence of personal laziness and moral deficiency.",
+            "Children may assume that effort alone guarantees success, overlooking financial limitations, unequal opportunities, natural aptitude or circumstances beyond their control.",
           supportingReasons:
-            "When hardworking children inevitably fall short due to external competition or bad luck, they shoulder crushing guilt, precipitating anxiety, imposter syndrome, and emotional exhaustion.",
+            "Blinds youth to real-world structural bottlenecks and resource barriers that personal exertion alone cannot dismantle.",
           example:
-            "In intensely competitive academic cultures across South Korea and Singapore, extreme rates of adolescent stress and depressive symptoms are directly tied to the belief that lower marks mean one simply did not try hard enough.",
+            "A talented student may work extremely hard to enter a prestigious university but still be unable to afford the fees.",
           band9Snippet:
-            "“The foremost hazard is the onset of acute psychological distress and devastating self-blame; when children are led to believe that success is solely a product of willpower, they inevitably conclude that any failure is a shameful personal inadequacy.”",
+            "“Foremost among these pitfalls is the cultivation of unrealistic expectations, as children are led to overlook tangible financial and systemic constraints.”",
           modelParagraph:
-            "Conversely, propagating this unconstrained narrative produces two profound drawbacks. The foremost hazard is the onset of acute psychological distress and devastating self-blame. If children are led to believe that success is solely a product of willpower, they inevitably conclude that any failure is a direct personal deficiency, resulting in chronic anxiety, perfectionism, and early burnout. In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations and structural societal barriers, encouraging youngsters to pursue unviable ambitions where natural physical or intellectual prerequisites cannot be bridged by effort alone. For instance, in hyper-competitive educational environments such as South Korea, the relentless expectation that sheer exertion guarantees admission to elite academies has precipitated alarming rates of adolescent depression, as dedicated students shoulder overwhelming guilt when biological aptitudes or systemic bottlenecks prevent them from reaching top percentiles.",
+            "Conversely, propagating this unconstrained narrative entails severe disadvantages. Foremost among these is the creation of unrealistic expectations. When youth are told that dedication guarantees every outcome, they fail to account for structural economic hurdles, unequal opportunities, and inborn physical limits. For instance, a remarkably talented student may study relentlessly and earn admission to an elite university, only to find that exorbitant tuition fees render attendance impossible, shattering their worldview through no fault of their own.",
           examinerNotes:
-            "Exposes the dark psychological downside of relentless meritocracy with razor-sharp analytical precision."
+            "Exposes socioeconomic reality and financial boundaries with high persuasive power."
         },
         {
           id: "disadv-reason-2",
-          badge: "Main Reason 2: Inherent Limitations",
-          title: "Disregard for Genetic Aptitudes & Structural Barriers",
+          badge: "Disadvantage 02 • Guilt & Low Self-Esteem",
+          title: "Leads to Guilt & Damaged Self-Esteem",
+          category: "standard",
           mainReason:
-            "It promotes an unrealistic worldview that denies biological predispositions, financial inequities, and the undeniable role of luck.",
+            "When children fail despite working hard, they may interpret the outcome as proof that they are not capable or did not try enough.",
           supportingReasons:
-            "Encouraging children to pursue careers where they lack necessary physical or cognitive attributes leads to squandered time, lost opportunities, and bitter adult disillusionment.",
+            "Because success is framed solely as personal willpower, any loss is internalized as a shameful moral and intellectual shortcoming.",
           example:
-            "A person lacking natural pitch perception or height cannot reach elite operatic or professional basketball tiers, regardless of thousands of practice hours.",
+            "A child who prepares thoroughly but loses a sports competition may feel personally inadequate rather than recognising the role of other competitors and circumstances.",
           band9Snippet:
-            "“Furthermore, this doctrine fosters a naive disregard for biological realities and socioeconomic barriers, inducing youth to invest years chasing vocations where natural prerequisites cannot be bridged by effort alone.”",
+            "“Furthermore, it frequently precipitates acute guilt and diminished self-esteem, prompting diligent children to interpret inevitable losses as personal inadequacies.”",
           modelParagraph:
-            "Additionally, this narrative breeds an ungrounded blindness toward biological predispositions and structural economic bottlenecks. Human beings possess distinct genetic aptitudes; an individual with below-average height or poor stereoscopic vision cannot become a professional basketball player or fighter pilot through sheer determination. Convincing children otherwise squanders precious formative years on unviable dreams, culminating in bitter adult disillusionment when unalterable realities assert themselves.",
+            "Additionally, this doctrine frequently induces deep-seated guilt and diminished self-worth. If children believe that effort always yields victory, any subsequent failure is interpreted not as bad luck or superior competition, but as definitive proof of their own laziness or inadequacy. For example, a young athlete who trains exhaustively yet loses a match may spiral into self-loathing, completely blind to the fact that their opponent possessed greater experience or physiological advantages.",
           examinerNotes:
-            "A compelling argument grounded in biological realism and pragmatic life balance."
+            "Penetrating psychological analysis of attribution error in young learners."
+        },
+        {
+          id: "disadv-reason-3",
+          badge: "Disadvantage 03 • Excessive Pressure & Burnout",
+          title: "Encourages Excessive Pressure & Exhaustion",
+          category: "standard",
+          mainReason:
+            "Children may overwork themselves, become afraid of failure or sacrifice sleep and leisure because they believe they must succeed at everything.",
+          supportingReasons:
+            "The relentless demand for perfection generates chronic anxiety, physical depletion, and early academic burnout.",
+          example:
+            "A student may study late every night to achieve top grades, eventually experiencing exhaustion and reduced concentration.",
+          band9Snippet:
+            "“In addition, it encourages excessive pressure and physical exhaustion, as youths sacrifice vital sleep and recreation in pursuit of flawless marks.”",
+          modelParagraph:
+            "Moreover, this message subjects impressionable minds to excessive psychological pressure and physical exhaustion. Believing that success in every arena is purely a matter of effort, students routinely overwork themselves, sacrificing restorative sleep and recreation. A typical case is an ambitious pupil who studies late every night to maintain flawless grades, only to experience severe fatigue, weakened immunity, and compromised concentration in the examination hall.",
+          examinerNotes:
+            "Directly addresses modern adolescent health and work-life balance."
+        },
+        {
+          id: "disadv-reason-4",
+          badge: "Disadvantage 04 • Misguided Persistence",
+          title: "Confuses Persistence with Misguided Stubbornness",
+          category: "additional",
+          mainReason:
+            "They might continue pursuing an unsuitable goal simply because they believe changing direction means they have failed.",
+          supportingReasons:
+            "Traps individuals in the sunk-cost fallacy, preventing them from pivoting toward vocations better matched to their genuine talents.",
+          example:
+            "A teenager may continue preparing for a career they dislike rather than exploring a field better suited to their interests.",
+          band9Snippet:
+            "“A less obvious danger is that youth may confuse healthy perseverance with obstinate refusal to pivot away from unsuitable goals.”",
+          modelParagraph:
+            "A further, less obvious drawback is that children may confuse healthy perseverance with misguided stubbornness. Conditioned to believe that abandoning any goal equates to personal failure, young people often cling obstinately to unsuitable pursuits. For instance, a teenager may spend years miserably preparing for a medical career they detest simply because quitting feels like cowardice, missing valuable opportunities to flourish in fields aligned with their natural affinities.",
+          examinerNotes:
+            "Brilliant analysis of the sunk-cost fallacy in youth career planning."
+        },
+        {
+          id: "disadv-reason-5",
+          badge: "Disadvantage 05 • Unhealthy Comparisons",
+          title: "Encourages Unhealthy Social Comparisons",
+          category: "additional",
+          mainReason:
+            "Children may assume that anyone who achieves more must have worked harder, overlooking differences in support, resources, prior experience and individual circumstances.",
+          supportingReasons:
+            "Breeds unwarranted feelings of inferiority or false arrogance, ignoring the immense role of private tutoring, wealth, and genetics.",
+          example:
+            "A student who receives lower marks than a classmate may feel inferior despite having made substantial progress.",
+          band9Snippet:
+            "“Finally, it invites corrosive social comparisons, prompting pupils to assume that peers who outperform them merely worked harder, regardless of systemic advantages.”",
+          modelParagraph:
+            "Finally, this simplistic outlook fuels toxic social comparisons. Children frequently assume that any classmate who scores higher simply exerted greater discipline, entirely overlooking disparities in parental assistance, private tutoring, or early childhood enrichment. Consequently, a hardworking student who makes tremendous personal progress may still feel bitter and inferior when outranked by an affluent peer who had access to expensive educational resources.",
+          examinerNotes:
+            "Highly sophisticated sociological argument exposing the myth of meritocratic equality."
         }
       ]
     }
@@ -311,14 +446,34 @@ export const TASK2_DATA: Task2Data = {
       collocations: ["cultivate self-compassion", "practice self-compassion", "emotional self-compassion"]
     },
     {
-      word: "Tenacity",
-      term: "Tenacity",
-      phonetic: "/təˈnæsəti/",
-      meaning: "The quality of being determined and persistent; refusing to give up easily.",
-      definition: "The quality of being determined and persistent; refusing to give up easily.",
-      example: "Children praised for their diligence develop the tenacity required to master complex disciplines.",
-      sampleSentence: "Children praised for their diligence develop the tenacity required to master complex disciplines.",
-      collocations: ["unyielding tenacity", "demonstrate tenacity", "admirable tenacity"]
+      word: "Tenacity & Grit",
+      term: "Tenacity & Grit",
+      phonetic: "/təˈnæsəti ænd ɡrɪt/",
+      meaning: "The quality of persistent determination and courage when working toward long-term goals.",
+      definition: "The quality of persistent determination and courage when working toward long-term goals.",
+      example: "Teaching children that skills improve with practice fosters the tenacity needed to master difficult subjects.",
+      sampleSentence: "Teaching children that skills improve with practice fosters the tenacity needed to master difficult subjects.",
+      collocations: ["unyielding tenacity", "demonstrate grit", "cultivate persistence and grit"]
+    },
+    {
+      word: "Toxic Perfectionism",
+      term: "Toxic Perfectionism",
+      phonetic: "/ˈtɒksɪk pəˈfekʃənɪzəm/",
+      meaning: "The pathological belief that anything less than flawless perfection is a humiliating personal failure.",
+      definition: "The pathological belief that anything less than flawless perfection is a humiliating personal failure.",
+      example: "Promising that effort guarantees every outcome inadvertently breeds toxic perfectionism in impressionable children.",
+      sampleSentence: "Promising that effort guarantees every outcome inadvertently breeds toxic perfectionism in impressionable children.",
+      collocations: ["foster toxic perfectionism", "paralyzing perfectionism", "combat perfectionism"]
+    },
+    {
+      word: "Meritocratic Fallacy",
+      term: "Meritocratic Fallacy",
+      phonetic: "/ˌmerɪtəˈkrætɪk ˈfæləsi/",
+      meaning: "The flawed assumption that individual success is determined solely by effort, ignoring systemic privilege and luck.",
+      definition: "The flawed assumption that individual success is determined solely by effort, ignoring systemic privilege and luck.",
+      example: "Telling disadvantaged youth that willpower conquers all perpetuates the meritocratic fallacy by downplaying structural poverty.",
+      sampleSentence: "Telling disadvantaged youth that willpower conquers all perpetuates the meritocratic fallacy by downplaying structural poverty.",
+      collocations: ["expose the meritocratic fallacy", "myth of meritocracy", "critique meritocracy"]
     }
   ],
 
@@ -334,7 +489,8 @@ export const TASK2_DATA: Task2Data = {
     "pragmatic",
     "compassion",
     "tenacity",
-    "perfectionism"
+    "perfectionism",
+    "meritocratic"
   ],
 
   // 5. Power Expressions for Advantages & Disadvantages
@@ -374,28 +530,58 @@ export const TASK2_DATA: Task2Data = {
   // 6. Strategic Brainstorm Cards (Step 3: Easy to explain on smart board)
   brainstormCards: [
     {
-      question: "How does telling children that effort dictates success transform how they handle failure?",
-      thinkingLens: "Psychological Attribution: Effort vs Inborn Talent",
-      selfCheck: "Does it build grit, or does it make children give up when tasks become hard?",
-      idea: "When children believe ability is built through practice (growth mindset), they treat mistakes as lessons; but if told effort always guarantees success, failing makes them feel lazy and ashamed."
+      question: "What happens when a student who performs poorly in mathematics is told they can achieve anything?",
+      thinkingLens: "Academic Perseverance vs Giving Up Early",
+      selfCheck: "Does it build steady practice habits or cause immediate surrender?",
+      idea: "Believing improvement is possible encourages the student to practise regularly, seek help, and steadily elevate their performance instead of giving up."
     },
     {
-      question: "How does this message impact children from economically disadvantaged backgrounds?",
-      thinkingLens: "Social Mobility and Psychological Horizons",
-      selfCheck: "Does it help break generational poverty or blind them to structural inequality?",
-      idea: "It breaks defeatist generational cycles, encouraging underprivileged youth to aim for competitive careers like medicine or law without assuming they are disqualified from birth."
+      question: "How does this belief encourage a nervous child when considering a public school play audition?",
+      thinkingLens: "Self-Confidence, Courage & Expanding Ambition",
+      selfCheck: "Does knowing ability can grow lower the paralyzing fear of public failure?",
+      idea: "The child auditions despite stage fright, knowing that skills and confidence develop through repeated practice rather than being an innate gift."
     },
     {
-      question: "What happens when an adolescent tries their hardest but still cannot overcome a natural limitation?",
-      thinkingLens: "Biological Aptitude vs Unrealistic Expectations",
-      selfCheck: "Can dedication really compensate for every physical or cognitive constraint?",
-      idea: "Biological constraints (e.g. height in basketball or innate spatial aptitude) cannot be bridged by effort alone; denying this leads to wasted years and bitter adult disillusionment."
+      question: "Why does a child learning to ride a bicycle keep practising after falling off?",
+      thinkingLens: "Redefining Mistakes: Part of Learning vs Evidence of Incompetence",
+      selfCheck: "What separates healthy persistence from embarrassment and quitting?",
+      idea: "When effort leads to improvement, falling is seen as natural feedback rather than incompetence, eliminating embarrassment and sustaining determination."
     },
     {
-      question: "Why do students in high-pressure school systems often suffer high rates of burnout and depression?",
-      thinkingLens: "The Dark Side of Meritocracy and Guilt",
-      selfCheck: "What occurs when failure is treated solely as a lack of effort?",
-      idea: "Because success is framed entirely as personal willpower, students assume failing an exam means they are morally flawed and lazy, leading to chronic anxiety and suicidal ideation."
+      question: "How does a student react when an important science project design malfunctions?",
+      thinkingLens: "Independent Problem-Solving vs Learned Helplessness",
+      selfCheck: "Do they abandon the project or take proactive ownership?",
+      idea: "Instead of immediately demanding adult intervention or quitting, the student independently tests alternative designs and takes ownership of their learning."
+    },
+    {
+      question: "What happens when a hardworking student earns university admission but cannot afford tuition fees?",
+      thinkingLens: "Unrealistic Expectations vs Financial & Structural Realities",
+      selfCheck: "Can sheer effort overcome severe economic inequality alone?",
+      idea: "Promising that effort guarantees success blinds youth to external financial limits, leading to bitter disappointment when poverty blocks attendance."
+    },
+    {
+      question: "Why does a child who loses a sports competition despite thorough training feel deeply inadequate?",
+      thinkingLens: "Unfair Self-Blame & Ignoring External Competitors",
+      selfCheck: "What happens when failure is interpreted purely as a personal defect?",
+      idea: "If children believe effort always wins, losing makes them feel personally incapable, ignoring competitors' superior experience or circumstances."
+    },
+    {
+      question: "Why do students who study late every night often end up exhausted and unfocused in exams?",
+      thinkingLens: "Excessive Pressure, Sleep Deprivation & Academic Burnout",
+      selfCheck: "Does the belief that you must succeed at everything lead to overwork?",
+      idea: "Fear of failure drives students to sacrifice sleep and recreation, causing chronic physical fatigue and cognitive burnout rather than success."
+    },
+    {
+      question: "Why might a teenager continue preparing for a career they detest instead of switching fields?",
+      thinkingLens: "Confusing Persistence with Misguided Stubbornness",
+      selfCheck: "Does the fear of quitting prevent healthy, intelligent pivots?",
+      idea: "Believing that changing direction equates to failure traps youngsters in disliked paths, preventing them from exploring careers matched to their natural talents."
+    },
+    {
+      question: "Why does a student who receives lower test marks than a classmate with private tutors feel inferior?",
+      thinkingLens: "Unhealthy Social Comparisons & Meritocratic Fallacy",
+      selfCheck: "Do children overlook differences in resources, tutoring, and support?",
+      idea: "Children assume the higher achiever simply worked harder, overlooking disparities in tutoring and wealth, producing unwarranted feelings of personal inferiority."
     }
   ],
 
@@ -548,44 +734,121 @@ export const TASK2_DATA: Task2Data = {
   consequences: [
     {
       type: "positive",
-      title: "Advantage 1: Intrinsic Growth Mindset & Grit",
-      desc: "Children learn that ability is developed through practice, making them resilient when encountering academic or athletic hurdles.",
-      example: "Dr. Carol Dweck's research confirms that effort-praised students demonstrate far higher persistence.",
-      level: "Primary Advantage",
-      simpleTakeaway: "Effort equals improvement, not instant defeat.",
-      collocation: "cultivate an intrinsic growth mindset"
+      title: "Advantage 01: Builds Perseverance",
+      category: "standard",
+      desc: "Children may be more willing to practise difficult skills instead of giving up after initial failure.",
+      example: "A student who performs poorly in mathematics may practise regularly, seek help and gradually improve their results.",
+      level: "Core Advantage",
+      simpleTakeaway: "Effort drives steady practice over early surrender.",
+      collocation: "cultivate unyielding perseverance"
     },
     {
       type: "positive",
-      title: "Advantage 2: Upward Social Mobility & Aspiration",
-      desc: "Dismantles defeatist generational mindsets, empowering children from modest origins to pursue elite careers.",
-      example: "Underprivileged youth aiming for medical school or engineering without assuming they are disqualified.",
-      level: "Secondary Advantage",
-      simpleTakeaway: "Breaks internal glass ceilings.",
-      collocation: "catalyst for upward social mobility"
+      title: "Advantage 02: Self-Confidence & Ambition",
+      category: "standard",
+      desc: "Children may become more willing to attempt challenging tasks, participate in competitions or pursue demanding careers.",
+      example: "A child who believes improvement is possible may audition for a school play despite being nervous about performing in public.",
+      level: "Core Advantage",
+      simpleTakeaway: "Expands courage and ambitious life horizons.",
+      collocation: "bolster self-confidence and ambition"
+    },
+    {
+      type: "positive",
+      title: "Advantage 03: Personal Responsibility",
+      category: "standard",
+      desc: "Children learn that their choices, preparation and consistent effort can influence their progress rather than waiting for success automatically.",
+      example: "A student creates an organized daily revision schedule for exams rather than relying on parents or luck.",
+      level: "Core Advantage",
+      simpleTakeaway: "Fosters an internal locus of control and agency.",
+      collocation: "develop a sense of personal responsibility"
+    },
+    {
+      type: "positive",
+      title: "Advantage 04: Less Fear of Making Mistakes",
+      category: "additional",
+      desc: "If children believe effort leads to improvement, they see mistakes as part of learning rather than evidence of incompetence.",
+      example: "A child learning to ride a bicycle may keep practising after falling instead of giving up out of embarrassment.",
+      level: "Real-Life Angle",
+      simpleTakeaway: "Dissolves embarrassment, treating errors as feedback.",
+      collocation: "view mistakes as iterative feedback"
+    },
+    {
+      type: "positive",
+      title: "Advantage 05: Independent Problem-Solving",
+      category: "additional",
+      desc: "Rather than immediately asking adults to solve every difficulty, children experiment with different approaches and take ownership.",
+      example: "A student struggling with a science project may research alternatives and revise the design instead of abandoning it.",
+      level: "Real-Life Angle",
+      simpleTakeaway: "Overcomes learned helplessness with creative autonomy.",
+      collocation: "foster independent problem-solving skills"
+    },
+    {
+      type: "positive",
+      title: "Advantage 06: Stronger Work Ethic",
+      category: "additional",
+      desc: "Repeated encouragement helps establish habits of regular practice, preparation and discipline whose value persists lifelong.",
+      example: "A young athlete may not become a professional player but can still gain fitness, discipline and teamwork skills.",
+      level: "Real-Life Angle",
+      simpleTakeaway: "Builds transferable lifelong habits of discipline.",
+      collocation: "instill an enduring work ethic"
     }
   ],
 
   evaluationArguments: [
     {
-      title: "Disadvantage 1: Severe Self-Blame, Anxiety & Burnout",
-      reason: "Framing success purely as effort leads children to conclude that any failure is proof of personal laziness and worthlessness.",
-      development: "This produces toxic perfectionism and severe mental health crises when goals prove unattainable.",
-      example: "High adolescent stress rates in East Asian educational systems tied to extreme academic guilt.",
+      title: "Disadvantage 01: Creates Unrealistic Expectations",
+      category: "standard",
+      reason: "Children may assume that effort alone guarantees success, overlooking financial limitations, unequal opportunities, and inborn limits.",
+      development: "Blinds youth to real-world structural bottlenecks and resource barriers that personal exertion alone cannot dismantle.",
+      example: "A talented student may work extremely hard to enter a prestigious university but still be unable to afford the fees.",
       type: "argument",
-      level: "Primary Disadvantage",
-      simpleTakeaway: "Unchecked failure causes mental health collapse.",
-      collocation: "induce debilitating self-blame"
+      level: "Core Drawback",
+      simpleTakeaway: "Willpower cannot overcome structural and financial limits alone.",
+      collocation: "cultivate unrealistic expectations"
     },
     {
-      title: "Disadvantage 2: Blindness to Inborn Limits & Structural Realities",
-      reason: "Denies biological predispositions and socioeconomic inequalities that effort alone cannot conquer.",
-      development: "Encourages young adults to waste years chasing unviable careers, ending in bitter disillusionment.",
-      example: "A person with below-average height spending years hoping to become an NBA center.",
+      title: "Disadvantage 02: Leads to Guilt & Low Self-Esteem",
+      category: "standard",
+      reason: "When children fail despite working hard, they may interpret the outcome as proof that they are not capable or did not try enough.",
+      development: "Because success is framed solely as willpower, any loss is internalized as a shameful moral and personal inadequacy.",
+      example: "A child who prepares thoroughly but loses a sports competition may feel personally inadequate rather than recognising competitors' advantages.",
       type: "argument",
-      level: "Secondary Disadvantage",
-      simpleTakeaway: "Effort cannot rewrite biology or economic barriers.",
-      collocation: "naive disregard for biological realities"
+      level: "Core Drawback",
+      simpleTakeaway: "Framing all failure as laziness breeds self-loathing.",
+      collocation: "inflict acute guilt and self-reproach"
+    },
+    {
+      title: "Disadvantage 03: Encourages Excessive Pressure & Burnout",
+      category: "standard",
+      reason: "Children may overwork themselves, become afraid of failure or sacrifice sleep and leisure because they believe they must succeed at everything.",
+      development: "The unrelenting demand for continuous striving precipitates chronic physical fatigue, emotional burnout, and weakened focus.",
+      example: "A student may study late every night to achieve top grades, eventually experiencing exhaustion and reduced concentration.",
+      type: "argument",
+      level: "Core Drawback",
+      simpleTakeaway: "Sacrificing rest and recreation causes early burnout.",
+      collocation: "succumb to severe academic burnout"
+    },
+    {
+      title: "Disadvantage 04: Confuses Persistence with Misguided Stubbornness",
+      category: "additional",
+      reason: "Children might continue pursuing an unsuitable goal simply because they believe changing direction means they have failed.",
+      development: "Traps young people in the sunk-cost fallacy, preventing them from pivoting toward vocations better matched to their genuine talents.",
+      example: "A teenager may continue preparing for a career they dislike rather than exploring a field better suited to their interests.",
+      type: "argument",
+      level: "Real-Life Angle",
+      simpleTakeaway: "Fear of quitting prevents intelligent career pivots.",
+      collocation: "confuse persistence with obstinacy"
+    },
+    {
+      title: "Disadvantage 05: Encourages Unhealthy Social Comparisons",
+      category: "additional",
+      reason: "Children may assume that anyone who achieves more must have worked harder, overlooking differences in support, resources, and circumstances.",
+      development: "Breeds unwarranted feelings of inferiority or false superiority, ignoring the immense role of private tutoring and wealth disparities.",
+      example: "A student who receives lower marks than a classmate may feel inferior despite having made substantial progress.",
+      type: "argument",
+      level: "Real-Life Angle",
+      simpleTakeaway: "Ignores tutoring and resource disparities, damaging self-worth.",
+      collocation: "invite corrosive social comparisons"
     }
   ],
 

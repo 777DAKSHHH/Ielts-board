@@ -8,6 +8,7 @@ export interface ConsequenceItem {
   level?: string;
   simpleTakeaway?: string;
   collocation?: string;
+  category?: "standard" | "additional";
 }
 
 export interface EvaluationArgument {
@@ -19,6 +20,7 @@ export interface EvaluationArgument {
   level?: string;
   simpleTakeaway?: string;
   collocation?: string;
+  category?: "standard" | "additional";
 }
 
 export interface FacultyAngle {
@@ -77,6 +79,7 @@ export interface MainReasonOption {
   band9Snippet?: string;
   modelParagraph?: string;
   examinerNotes?: string;
+  category?: "standard" | "additional";
 }
 
 export interface BodyParaStructure {

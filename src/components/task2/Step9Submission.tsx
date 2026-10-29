@@ -5,13 +5,13 @@ export const Step9SubmissionT2: React.FC = () => {
   const [viewMode, setViewMode] = useState<"essay" | "vocab">("essay");
   const [copied, setCopied] = useState(false);
 
-  const fullModelEssay = `In various parts of the world, children are consistently instilled with the belief that boundless success is achievable solely through diligence and relentless effort. While this message undeniably nurtures resilience, a growth mindset, and high personal aspirations, it simultaneously introduces notable perils, particularly the risk of severe psychological distress and an unrealistic disregard for innate limitations.
+  const fullModelEssay = `In many societies, children are consistently taught that hard work guarantees success in any endeavor. While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations.
 
-On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it cultivates an intrinsic growth mindset and a strong work ethic. When young minds are taught that achievement is determined by dedication rather than fixed hereditary talent, they interpret setbacks as constructive learning opportunities rather than insurmountable barriers, which bolsters emotional grit. Furthermore, this outlook serves as an engine for social mobility by eliminating self-imposed psychological ceilings, particularly for children from impoverished or marginalized backgrounds who might otherwise feel confined by their circumstances. A compelling illustration of this is evident in educational psychology research by Dr. Carol Dweck; students praised specifically for effort rather than innate intelligence demonstrated markedly higher perseverance and achieved superior long-term academic results across diverse socio-economic groups.
+On the positive side, imparting this message yields two primary advantages. First, it cultivates unyielding perseverance; when children believe that effort determines improvement, they view mistakes as constructive feedback rather than permanent defeat. For example, a student who performs poorly in mathematics is far more likely to practise regularly, seek assistance, and steadily elevate their performance instead of quitting out of embarrassment. Second, this mindset fosters ambition and independent problem-solving, encouraging youngsters to audition for challenging roles or experiment with alternative designs in science projects rather than waiting for adults to intervene. Through repeated practice, children develop a disciplined, transferable work ethic that enriches their adult endeavors.
 
-Conversely, propagating this unconstrained narrative produces two profound drawbacks. The foremost hazard is the onset of acute psychological distress and devastating self-blame. If children are led to believe that success is solely a product of willpower, they inevitably conclude that any failure is a direct personal deficiency, resulting in chronic anxiety, perfectionism, and early burnout. In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations and structural societal barriers, encouraging youngsters to pursue unviable ambitions where natural physical or intellectual prerequisites cannot be bridged by effort alone. For instance, in hyper-competitive educational environments such as South Korea, the relentless expectation that sheer exertion guarantees admission to elite academies has precipitated alarming rates of adolescent depression, as dedicated students shoulder overwhelming guilt when biological aptitudes or systemic bottlenecks prevent them from reaching top percentiles.
+Conversely, propagating this unconstrained narrative entails serious disadvantages. Foremost among these is the creation of unrealistic expectations, as children may assume that willpower alone guarantees success, overlooking financial boundaries, unequal opportunities, or natural aptitude. A talented student, for instance, may work exceptionally hard to gain admission into a prestigious university yet still find themselves unable to attend due to unaffordable tuition fees. Furthermore, when prolonged exertion fails to yield victory, children frequently experience acute guilt and diminished self-esteem, interpreting defeat as proof of personal inadequacy rather than recognizing external factors. This relentless pressure can also precipitate severe academic burnout or lead teenagers to stubbornly pursue unsuitable career paths simply because they fear quitting.
 
-In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity and fuels upward mobility, it can equally inflict crippling self-reproach and blind individuals to inevitable biological and socioeconomic constraints. It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance, teaching the youth that while giving their utmost effort is commendable, recognizing personal boundaries and developing self-compassion when facing unalterable realities are equally vital for lifelong well-being.`;
+In conclusion, while reassuring children that diligence guarantees accomplishment instills commendable perseverance and ambition, it can equally foster unrealistic expectations and inflict debilitating self-reproach when uncontrollable obstacles arise. Educators and parents should therefore temper aspirational encouragement with pragmatic guidance, teaching young people to strive diligently while developing the self-compassion necessary to navigate real-world limitations.`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fullModelEssay);
@@ -85,7 +85,7 @@ In conclusion, while reassuring children that effort unlocks all doors effective
                 <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Paraphrase + Thesis</strong>
               </div>
               <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                Paraphrase the prompt + balanced thesis outlining growth mindset vs psychological risks.
+                S1 Paraphrase (15 words) + S2 Explicit Thesis roadmapping resilience vs self-blame (18 words).
               </div>
             </div>
 
@@ -105,7 +105,8 @@ In conclusion, while reassuring children that effort unlocks all doors effective
                 <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Advantages [2 Reasons + Supporting + Example]</strong>
               </div>
               <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                1. Growth Mindset &amp; emotional grit; 2. Social mobility breaking generational ceilings. Example: Dr. Carol Dweck Stanford study.
+                • <em>6 Idea Bank Options:</em> Builds perseverance (math student) • Ambition (school play audition) • Personal responsibility • Less fear of mistakes (bicycle) • Independent problem-solving (science project) • Strong work ethic (young athlete).<br />
+                • <em>Model Choice:</em> Perseverance + Ambition &amp; independent problem-solving.
               </div>
             </div>
 
@@ -125,7 +126,8 @@ In conclusion, while reassuring children that effort unlocks all doors effective
                 <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Disadvantages [2 Reasons + Example]</strong>
               </div>
               <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                1. Severe self-blame, perfectionism &amp; burnout; 2. Biological &amp; structural ceilings. Example: East Asian high-stakes exams.
+                • <em>5 Idea Bank Options:</em> Unrealistic expectations (university fees) • Guilt &amp; low self-esteem (sports defeat) • Excessive pressure &amp; burnout (late-night study) • Confusing persistence with stubbornness (disliked career) • Unhealthy comparisons (peer tutors).<br />
+                • <em>Model Choice:</em> Unrealistic expectations + Guilt &amp; burnout.
               </div>
             </div>
 
@@ -145,7 +147,7 @@ In conclusion, while reassuring children that effort unlocks all doors effective
                 <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Sum-Up + Suggestion / Recommendation</strong>
               </div>
               <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                Recap dual impacts concisely + recommend balancing aspirational goals with pragmatic guidance &amp; self-compassion.
+                S1 Sum up main reasons (perseverance &amp; ambition vs unrealistic expectations &amp; guilt) + S2 Pedagogical recommendation (balance effort with self-compassion).
               </div>
             </div>
           </div>
@@ -180,19 +182,19 @@ In conclusion, while reassuring children that effort unlocks all doors effective
             {[
               {
                 step: "1. Introduction Formula",
-                desc: "Paraphrase the prompt objectively, then present a thesis acknowledging both resilience benefits and psychological hazards."
+                desc: "S1 Paraphrase (children told effort guarantees success) + S2 Explicit Thesis roadmapping resilience vs self-blame & natural limitations (33 words total)."
               },
               {
-                step: "2. Body 1 (Advantages)",
-                desc: "Open with a clear topic sentence. Detail Reason 1 (growth mindset & grit) + Reason 2 (social mobility) + Dr. Carol Dweck study."
+                step: "2. Body 1 (Advantages: 2 Reasons + Example)",
+                desc: "Topic sentence + Reason 1 (Builds perseverance / seeing mistakes as feedback) + Relatable example (maths practice) + Reason 2 (Ambition & independent problem-solving: school play / science project)."
               },
               {
-                step: "3. Body 2 (Disadvantages)",
-                desc: "Pivot sharply to drawbacks. Unpack Reason 1 (crippling self-blame & burnout) + Reason 2 (inborn/systemic limits) + exam pressure example."
+                step: "3. Body 2 (Disadvantages: 2 Reasons + Example)",
+                desc: "Contrastive pivot + Reason 1 (Unrealistic expectations ignoring financial/structural realities: university tuition barrier) + Reason 2 (Guilt & low self-esteem after failure: sports defeat / burnout)."
               },
               {
                 step: "4. Conclusion & Advice",
-                desc: "Sum up all key points in 2 sentences, followed by an actionable recommendation for educators: pragmatic guidance with self-compassion."
+                desc: "S1 Recap dual impacts + S2 Actionable pedagogical recommendation: temper aspirational encouragement with pragmatic guidance and self-compassion."
               }
             ].map((item, i) => (
               <div
@@ -304,10 +306,10 @@ In conclusion, while reassuring children that effort unlocks all doors effective
             >
               <div>
                 <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#f3e8ff", color: "#7e22ce", padding: "1px 6px", borderRadius: "4px" }}>
-                  INTRODUCTION
+                  INTRODUCTION (33 WORDS)
                 </span>
                 <p style={{ margin: "4px 0 0" }}>
-                  In various parts of the world, children are consistently instilled with the belief that boundless success is achievable solely through diligence and relentless effort. While this message undeniably nurtures resilience, a growth mindset, and high personal aspirations, it simultaneously introduces notable perils, particularly the risk of severe psychological distress and an unrealistic disregard for innate limitations.
+                  In many societies, children are consistently taught that hard work guarantees success in any endeavor. While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations.
                 </p>
               </div>
 
@@ -316,7 +318,7 @@ In conclusion, while reassuring children that effort unlocks all doors effective
                   BODY 1: ADVANTAGES [2 REASONS + SUPPORT + EXAMPLE]
                 </span>
                 <p style={{ margin: "4px 0 0" }}>
-                  On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it cultivates an intrinsic growth mindset and a strong work ethic. When young minds are taught that achievement is determined by dedication rather than fixed hereditary talent, they interpret setbacks as constructive learning opportunities rather than insurmountable barriers, which bolsters emotional grit. Furthermore, this outlook serves as an engine for social mobility by eliminating self-imposed psychological ceilings, particularly for children from impoverished or marginalized backgrounds who might otherwise feel confined by their circumstances. A compelling illustration of this is evident in educational psychology research by Dr. Carol Dweck; students praised specifically for effort rather than innate intelligence demonstrated markedly higher perseverance and achieved superior long-term academic results across diverse socio-economic groups.
+                  On the positive side, imparting this message yields two primary advantages. First, it cultivates unyielding perseverance; when children believe that effort determines improvement, they view mistakes as constructive feedback rather than permanent defeat. For example, a student who performs poorly in mathematics is far more likely to practise regularly, seek assistance, and steadily elevate their performance instead of quitting out of embarrassment. Second, this mindset fosters ambition and independent problem-solving, encouraging youngsters to audition for challenging roles or experiment with alternative designs in science projects rather than waiting for adults to intervene. Through repeated practice, children develop a disciplined, transferable work ethic that enriches their adult endeavors.
                 </p>
               </div>
 
@@ -325,7 +327,7 @@ In conclusion, while reassuring children that effort unlocks all doors effective
                   BODY 2: DISADVANTAGES [2 REASONS + EXAMPLE]
                 </span>
                 <p style={{ margin: "4px 0 0" }}>
-                  Conversely, propagating this unconstrained narrative produces two profound drawbacks. The foremost hazard is the onset of acute psychological distress and devastating self-blame. If children are led to believe that success is solely a product of willpower, they inevitably conclude that any failure is a direct personal deficiency, resulting in chronic anxiety, perfectionism, and early burnout. In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations and structural societal barriers, encouraging youngsters to pursue unviable ambitions where natural physical or intellectual prerequisites cannot be bridged by effort alone. For instance, in hyper-competitive educational environments such as South Korea, the relentless expectation that sheer exertion guarantees admission to elite academies has precipitated alarming rates of adolescent depression, as dedicated students shoulder overwhelming guilt when biological aptitudes or systemic bottlenecks prevent them from reaching top percentiles.
+                  Conversely, propagating this unconstrained narrative entails serious disadvantages. Foremost among these is the creation of unrealistic expectations, as children may assume that willpower alone guarantees success, overlooking financial boundaries, unequal opportunities, or natural aptitude. A talented student, for instance, may work exceptionally hard to gain admission into a prestigious university yet still find themselves unable to attend due to unaffordable tuition fees. Furthermore, when prolonged exertion fails to yield victory, children frequently experience acute guilt and diminished self-esteem, interpreting defeat as proof of personal inadequacy rather than recognizing external factors. This relentless pressure can also precipitate severe academic burnout or lead teenagers to stubbornly pursue unsuitable career paths simply because they fear quitting.
                 </p>
               </div>
 
@@ -334,7 +336,7 @@ In conclusion, while reassuring children that effort unlocks all doors effective
                   CONCLUSION: SUM-UP + RECOMMENDATION
                 </span>
                 <p style={{ margin: "4px 0 0" }}>
-                  In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity and fuels upward mobility, it can equally inflict crippling self-reproach and blind individuals to inevitable biological and socioeconomic constraints. It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance, teaching the youth that while giving their utmost effort is commendable, recognizing personal boundaries and developing self-compassion when facing unalterable realities are equally vital for lifelong well-being.
+                  In conclusion, while reassuring children that diligence guarantees accomplishment instills commendable perseverance and ambition, it can equally foster unrealistic expectations and inflict debilitating self-reproach when uncontrollable obstacles arise. Educators and parents should therefore temper aspirational encouragement with pragmatic guidance, teaching young people to strive diligently while developing the self-compassion necessary to navigate real-world limitations.
                 </p>
               </div>
             </div>
@@ -349,20 +351,24 @@ In conclusion, while reassuring children that effort unlocks all doors effective
                 }}
               >
                 <div style={{ fontSize: "0.78rem", fontWeight: 750, color: "var(--slate-500)", marginBottom: "6px" }}>
-                  PRECISION VOCABULARY:
+                  PRECISION BAND 9 VOCABULARY:
                 </div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                   {[
                     "growth mindset",
                     "intrinsic resilience",
-                    "social mobility",
-                    "self-imposed ceilings",
+                    "unyielding perseverance",
+                    "independent problem-solving",
+                    "personal responsibility",
+                    "transferable work ethic",
+                    "unrealistic expectations",
                     "debilitating self-blame",
-                    "perfectionism & burnout",
+                    "academic burnout",
                     "innate aptitude",
                     "structural inequities",
-                    "pragmatic realism",
-                    "self-compassion"
+                    "pragmatic guidance",
+                    "self-compassion",
+                    "tenacity & grit"
                   ].map((w) => (
                     <span
                       key={w}
@@ -395,11 +401,11 @@ In conclusion, while reassuring children that effort unlocks all doors effective
               >
                 <strong style={{ color: "var(--slate-900)" }}>Discourse Linkers:</strong>
                 <br />
-                • <em>Intro opener:</em> “In various parts of the world, children are consistently instilled with the belief that...”<br />
-                • <em>Body 1 opener:</em> “On the positive side, imparting this empowering philosophy yields two substantial benefits...”<br />
-                • <em>Body 2 opener:</em> “Conversely, propagating this unconstrained narrative produces two profound drawbacks...”<br />
-                • <em>Conclusion opener:</em> “In conclusion, while reassuring children that effort unlocks all doors...”<br />
-                • <em>Recommendation:</em> “It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance...”
+                • <em>Intro opener:</em> “In many societies, children are consistently taught that hard work guarantees...”<br />
+                • <em>Body 1 opener:</em> “On the positive side, imparting this message yields two primary advantages. First,... Second,...”<br />
+                • <em>Body 2 opener:</em> “Conversely, propagating this unconstrained narrative entails two serious disadvantages. Foremost among these is...”<br />
+                • <em>Conclusion opener:</em> “In conclusion, while reassuring children that diligence guarantees success...”<br />
+                • <em>Recommendation:</em> “Educators and guardians should therefore temper aspirational encouragement with pragmatic realism...”
               </div>
             </div>
           )}

@@ -203,68 +203,114 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   </p>
                 </div>
 
-                {/* 8 Faculty Analytical Angles */}
+                {/* 11 Faculty Analytical Angles (6 Advantages + 5 Disadvantages) */}
                 <div>
                   <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "12px" }}>
-                    Teacher Idea Bank (Strictly Advantages &amp; Disadvantages)
+                    Student Idea Bank — Relatable Examples &amp; Real-Life Angles
                   </h4>
                   <div className="stage-grid-2col" style={{ gap: "14px" }}>
-                    {/* Advantages: Growth Mindset & Upward Mobility */}
+                    {/* Advantages: 6 Points */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                       <span className="apple-badge accent" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#dcfce7", color: "#166534" }}>
-                        🟢 ADVANTAGES: WHY EFFORT EMPOWERS CHILDREN
+                        🟢 ADVANTAGES: 6 RELATABLE REASONS &amp; EXAMPLES
                       </span>
                       {[
                         {
-                          title: "Fosters an Intrinsic Growth Mindset",
-                          desc: "Teaches children that cognitive capability is malleable through practice rather than fixed, building resilience against early academic failure."
+                          tag: "Standard Idea 1",
+                          title: "1. Builds Perseverance",
+                          desc: "Children may be more willing to practise difficult skills instead of giving up after initial failure.",
+                          example: "Example: A student who performs poorly in mathematics may practise regularly, seek help and gradually improve their results."
                         },
                         {
-                          title: "Engine for Upward Social Mobility",
-                          desc: "Eliminates defeatist mental ceilings for youngsters from disadvantaged backgrounds, inspiring them to pursue medicine, law, and elite STEM careers."
+                          tag: "Standard Idea 2",
+                          title: "2. Encourages Self-Confidence & Ambition",
+                          desc: "Children may become more willing to attempt challenging tasks, participate in competitions or pursue demanding careers.",
+                          example: "Example: A child who believes improvement is possible may audition for a school play despite being nervous about performing in public."
                         },
                         {
-                          title: "Long-Term Emotional Tenacity & Grit",
-                          desc: "Encourages students to perceive setbacks as constructive feedback rather than permanent personal indictments, sustaining motivation."
+                          tag: "Standard Idea 3",
+                          title: "3. Develops Personal Responsibility",
+                          desc: "Children learn that their choices, preparation and consistent effort can influence their progress rather than waiting for success automatically.",
+                          example: "Example: A student creates an organized daily revision schedule for exams rather than relying on parents or luck."
                         },
                         {
-                          title: "Eradication of Defeatist Reluctance",
-                          desc: "Sparks willing engagement in intimidating subjects like advanced mathematics and languages without fear of appearing unintelligent."
+                          tag: "Real-Life Angle 1",
+                          title: "4. Less Afraid of Making Mistakes",
+                          desc: "If children believe effort leads to improvement, they see mistakes as part of learning rather than evidence of incompetence.",
+                          example: "Example: A child learning to ride a bicycle may keep practising after falling instead of giving up out of embarrassment."
+                        },
+                        {
+                          tag: "Real-Life Angle 2",
+                          title: "5. Independent Problem-Solvers",
+                          desc: "Rather than immediately asking adults to solve every difficulty, children experiment with different approaches and take ownership.",
+                          example: "Example: A student struggling with a science project may research alternatives and revise the design instead of abandoning it."
+                        },
+                        {
+                          tag: "Real-Life Angle 3",
+                          title: "6. Stronger Work Ethic",
+                          desc: "Repeated encouragement establishes habits such as regular practice, preparation and discipline, whose value persists lifelong.",
+                          example: "Example: A young athlete may not become a professional player but can still gain fitness, discipline and teamwork skills."
                         }
                       ].map((item, idx) => (
-                        <div key={idx} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "12px 14px" }}>
-                          <strong style={{ fontSize: "0.88rem", color: "#166534" }}>{item.title}:</strong>
-                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#14532d", lineHeight: 1.45 }}>{item.desc}</p>
+                        <div key={idx} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "10px 12px" }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "4px" }}>
+                            <strong style={{ fontSize: "0.86rem", color: "#166534" }}>{item.title}</strong>
+                            <span style={{ fontSize: "0.68rem", fontWeight: 700, background: "#dcfce7", color: "#166534", padding: "1px 6px", borderRadius: "4px" }}>
+                              {item.tag}
+                            </span>
+                          </div>
+                          <p style={{ margin: "2px 0 4px", fontSize: "0.82rem", color: "#14532d", lineHeight: 1.4 }}>{item.desc}</p>
+                          <p style={{ margin: 0, fontSize: "0.78rem", color: "#15803d", fontStyle: "italic", lineHeight: 1.35 }}>{item.example}</p>
                         </div>
                       ))}
                     </div>
 
-                    {/* Disadvantages: Self-Blame & Inherent Limitations */}
+                    {/* Disadvantages: 5 Points */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                       <span className="apple-badge warning" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fee2e2", color: "#991b1b" }}>
-                        ⚡ DISADVANTAGES: PSYCHOLOGICAL PERILS &amp; REALITIES
+                        ⚡ DISADVANTAGES: 5 RELATABLE DRAWBACKS &amp; EXAMPLES
                       </span>
                       {[
                         {
-                          title: "Acute Psychological Self-Blame & Guilt",
-                          desc: "Framing success purely as effort leads children to conclude that any failure is a shameful personal inadequacy and moral defect."
+                          tag: "Standard Idea 1",
+                          title: "1. Creates Unrealistic Expectations",
+                          desc: "Children may assume that effort alone guarantees success, overlooking financial limits, unequal opportunities, or natural aptitude.",
+                          example: "Example: A talented student may work extremely hard to enter a prestigious university but still be unable to afford the fees."
                         },
                         {
-                          title: "Denial of Inborn Biological Aptitudes",
-                          desc: "Ignores natural physical and neurological prerequisites (e.g., height in basketball, innate musical pitch), leading to wasted formative years."
+                          tag: "Standard Idea 2",
+                          title: "2. Leads to Guilt & Low Self-Esteem",
+                          desc: "When children fail despite working hard, they may interpret the outcome as proof that they are not capable or did not try enough.",
+                          example: "Example: A child who prepares thoroughly but loses a sports competition may feel personally inadequate rather than recognising competitors' advantages."
                         },
                         {
-                          title: "Disregard for Structural Inequities",
-                          desc: "Promotes a naive meritocracy myth that blinds young people to financial inequities, systemic bottlenecks, and the unavoidable role of luck."
+                          tag: "Standard Idea 3",
+                          title: "3. Encourages Excessive Pressure",
+                          desc: "Children may overwork themselves, become afraid of failure or sacrifice sleep and leisure because they believe they must succeed at everything.",
+                          example: "Example: A student may study late every night to achieve top grades, eventually experiencing exhaustion and reduced concentration."
                         },
                         {
-                          title: "Severe Adolescent Burnout & Anxiety",
-                          desc: "High-stakes educational pressure (e.g., East Asian exam culture) triggers clinical depression when diligent students miss limited quotas."
+                          tag: "Real-Life Angle 1",
+                          title: "4. Confusing Persistence with Never Giving Up",
+                          desc: "They might continue pursuing an unsuitable goal simply because they believe changing direction means they have failed.",
+                          example: "Example: A teenager may continue preparing for a career they dislike rather than exploring a field better suited to their interests."
+                        },
+                        {
+                          tag: "Real-Life Angle 2",
+                          title: "5. Encourages Unhealthy Comparisons",
+                          desc: "Children may assume that anyone who achieves more must have worked harder, overlooking differences in resources and support.",
+                          example: "Example: A student who receives lower marks than a classmate may feel inferior despite having made substantial progress."
                         }
                       ].map((item, idx) => (
-                        <div key={idx} style={{ background: "#fff1f2", border: "1px solid #fecdd3", borderRadius: "12px", padding: "12px 14px" }}>
-                          <strong style={{ fontSize: "0.88rem", color: "#991b1b" }}>{item.title}:</strong>
-                          <p style={{ margin: "4px 0 0", fontSize: "0.84rem", color: "#881337", lineHeight: 1.45 }}>{item.desc}</p>
+                        <div key={idx} style={{ background: "#fff1f2", border: "1px solid #fecdd3", borderRadius: "12px", padding: "10px 12px" }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "4px" }}>
+                            <strong style={{ fontSize: "0.86rem", color: "#991b1b" }}>{item.title}</strong>
+                            <span style={{ fontSize: "0.68rem", fontWeight: 700, background: "#fee2e2", color: "#991b1b", padding: "1px 6px", borderRadius: "4px" }}>
+                              {item.tag}
+                            </span>
+                          </div>
+                          <p style={{ margin: "2px 0 4px", fontSize: "0.82rem", color: "#881337", lineHeight: 1.4 }}>{item.desc}</p>
+                          <p style={{ margin: 0, fontSize: "0.78rem", color: "#be123c", fontStyle: "italic", lineHeight: 1.35 }}>{item.example}</p>
                         </div>
                       ))}
                     </div>
@@ -290,23 +336,23 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   {
                     step: "Para 01",
                     badge: "Introduction",
-                    title: "Paraphrase Prompt + Balanced Thesis Statement",
-                    say: "“In various parts of the world, children are consistently instilled with the belief that boundless success is achievable solely through diligence and relentless effort. While this message undeniably nurtures resilience, a growth mindset, and high personal aspirations, it simultaneously introduces notable perils, particularly the risk of severe psychological distress and an unrealistic disregard for innate limitations.”",
-                    takeaway: "Directly fulfills Task Achievement by presenting a clear, balanced overview from the opening sentences."
+                    title: "Paraphrase Prompt + Explicit Thesis Statement",
+                    say: "“In many societies, children are consistently taught that hard work guarantees success in any endeavor. While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations.”",
+                    takeaway: "Directly fulfills Task Achievement with a concise 33-word opening and an unmistakable roadmap."
                   },
                   {
                     step: "Para 02",
                     badge: "Body 1 (Advantages)",
-                    title: "Develop 2 Main Reasons + Supporting Reasons + Carol Dweck Example",
-                    say: "“On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it cultivates an intrinsic growth mindset and a strong work ethic... Furthermore, this outlook serves as an engine for social mobility by eliminating self-imposed psychological ceilings... A compelling illustration is evident in research by Dr. Carol Dweck; students praised for effort exhibited markedly higher perseverance.”",
-                    takeaway: "Provides two distinct advantages with thorough explanation and empirical psychological evidence."
+                    title: "Develop 2 Main Reasons + Relatable Student Examples",
+                    say: "“On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it builds perseverance; children taught that diligence determines success are far more willing to practise challenging skills instead of quitting after early defeat, as seen in a student who struggles with mathematics but practises regularly to steadily elevate their performance. Furthermore, this belief inspires ambition, encouraging youngsters to audition for competitive school plays or tackle daunting projects without paralyzing fear of failure.”",
+                    takeaway: "Provides two distinct advantages with thorough explanation and relatable student examples."
                   },
                   {
                     step: "Para 03",
                     badge: "Body 2 (Disadvantages)",
-                    title: "Develop 2 Main Reasons + High-Stakes Exam Example",
-                    say: "“Conversely, propagating this unconstrained narrative produces two profound drawbacks. The foremost hazard is the onset of acute psychological distress and devastating self-blame... In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations and structural societal barriers... For instance, in hyper-competitive systems like South Korea, the expectation that exertion guarantees admission precipitates severe depression when bottlenecks block hardworking candidates.”",
-                    takeaway: "Exposes psychological guilt and biological/systemic limits with compelling real-world evidence."
+                    title: "Develop 2 Main Reasons + Real-Life Drawbacks",
+                    say: "“Conversely, propagating this unconstrained narrative produces two profound drawbacks. Foremost among these is the creation of unrealistic expectations that blind youth to financial limits and unequal opportunities, such as when a talented student works relentlessly for an elite university but remains unable to afford tuition fees. Additionally, it frequently induces deep-seated guilt and low self-esteem, causing a dedicated child who loses a sports tournament to feel personally inadequate rather than recognising superior competition.”",
+                    takeaway: "Exposes psychological guilt and financial/systemic constraints with relatable real-world evidence."
                   },
                   {
                     step: "Para 04",
@@ -352,22 +398,22 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    topic: "Body 1 (Advantages): Growth Mindset & Resilience",
-                    band6: "Telling kids to work hard is good because they will try more and get better marks in school when things get tough.",
-                    band9: "Primarily, this message cultivates an intrinsic growth mindset and a strong work ethic, prompting young minds to interpret setbacks as constructive learning opportunities rather than insurmountable barriers.",
-                    why: "Replaces vague verbs and simplistic claims with precise developmental terms: 'intrinsic growth mindset', 'constructive learning opportunities'."
+                    topic: "Body 1 (Advantages): Perseverance & Mathematics Example",
+                    band6: "Telling kids to work hard is good because a student who is bad at math will practice every day and finally pass their exams.",
+                    band9: "Primarily, this message instills admirable perseverance, encouraging pupils to practise demanding competencies rather than surrendering after early setbacks, as demonstrated when struggling mathematics students seek assistance and steadily elevate their performance.",
+                    why: "Replaces simplistic language with precise academic structures and natural cohesive development."
                   },
                   {
-                    topic: "Body 2 (Disadvantages): Acute Psychological Guilt & Burnout",
-                    band6: "If kids fail they will feel sad and think they are stupid because their parents told them hard work is everything.",
-                    band9: "If children are led to believe that success is solely a product of willpower, they inevitably conclude that any failure is a direct personal deficiency, resulting in debilitating self-blame, perfectionism, and early burnout.",
-                    why: "Elevates conversational feelings into analytical psychology: 'product of willpower', 'debilitating self-blame', 'perfectionism'."
+                    topic: "Body 2 (Disadvantages): Sports Defeat & Unfair Guilt",
+                    band6: "When children lose a game after training hard, they feel stupid and think their parents were lying about hard work.",
+                    band9: "If children are taught that effort guarantees success, any defeat is interpreted as a shameful personal inadequacy, causing dedicated young athletes who lose matches to shoulder deep guilt while overlooking competitors' superior experience.",
+                    why: "Elevates informal emotional complaints into mature psychological attribution analysis."
                   },
                   {
                     topic: "Conclusion: Balanced Synthesis & Recommendation",
-                    band6: "In conclusion, hard work is good but too much pressure is bad, so parents should be careful with their advice.",
-                    band9: "In conclusion, while reassuring children that effort unlocks all doors fuels upward mobility, it is recommended that guardians balance aspirational encouragement with pragmatic guidance and self-compassion.",
-                    why: "Demonstrates high-level cohesion and adult recommendation: 'temper aspirational encouragement with pragmatic guidance and self-compassion'."
+                    band6: "In conclusion, hard work is good for school but too much pressure is bad, so parents should be careful with their advice.",
+                    band9: "In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity, guardians must temper aspirational optimism with pragmatic realism, ensuring youth develop self-compassion alongside ambition.",
+                    why: "Demonstrates high-level cohesion, lexical precision, and an actionable pedagogical recommendation."
                   }
                 ].map((item, index) => (
                   <div
@@ -411,8 +457,8 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    title: "1. Introduction Formula (Paraphrase + Balanced Thesis)",
-                    formula: "“In various parts of the world, children are consistently instilled with the belief that [boundless success is achievable solely through diligence]. While this message undeniably [nurtures resilience, a growth mindset, and high aspirations], it simultaneously introduces notable perils, particularly [the risk of severe psychological distress and an unrealistic disregard for innate limitations].”"
+                    title: "1. Introduction Formula (Paraphrase + Explicit Thesis Statement)",
+                    formula: "“In many societies, children are consistently taught that [hard work guarantees success in any endeavor]. While this message fosters [admirable resilience and ambition], it also risks [severe self-blame and overlooks natural limitations].”"
                   },
                   {
                     title: "2. Body 1 Opener Formula (Advantages: 2 Reasons + Supporting + Example)",

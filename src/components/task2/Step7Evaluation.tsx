@@ -1,254 +1,277 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, CircleCheck, CheckCircle2, ShieldCheck, AlertTriangle, ArrowRight, Lightbulb } from "lucide-react";
+import { Award, AlertTriangle, ArrowRight, Lightbulb, Copy, Check, Filter } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 
 export const Step7EvaluationT2: React.FC = () => {
   const [activeModelIdx, setActiveModelIdx] = useState(0);
+  const [filterCategory, setFilterCategory] = useState<"all" | "standard" | "additional">("all");
+  const [copied, setCopied] = useState(false);
 
   const body2 = TASK2_DATA.bodyParagraphs?.[1];
   const allDisadvantages = body2?.alternativeReasons || [];
+
+  const filteredDisadvantages = allDisadvantages.filter((d) => {
+    if (filterCategory === "all") return true;
+    return d.category === filterCategory;
+  });
+
+  const activeDisadvantage = allDisadvantages[activeModelIdx] || allDisadvantages[0];
+
+  const handleCopy = () => {
+    const textToCopy = activeDisadvantage?.modelParagraph || "";
+    navigator.clipboard.writeText(textToCopy);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <div className="stage-card-wrapper">
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px", background: "#fee2e2", color: "#991b1b" }}>
-          Step 07 / 09 • Body Para 2 (Disadvantages: 2 Main Reasons + Example)
+          Step 07 / 09 • Body Para 2 (5 Relatable Disadvantages &amp; Real-Life Angles)
         </span>
-        <h2 className="stage-title">Body 2: Disadvantages of the 'Achieve Anything' Message</h2>
+        <h2 className="stage-title">Body 2 Ideas: 5 Relatable Disadvantages with Concrete Examples</h2>
         <p className="stage-subtitle">
-          Mandatory Format: <strong>Disadvantages [ 2 Main reasons + Example ]</strong>. Examine the severe psychological fallout of internalizing failure as personal inadequacy and the danger of ignoring inborn biological boundaries.
+          Mandatory Format: <strong>Disadvantages Points [ 2 Main reasons + Example ]</strong>. Examine all 5 relatable drawbacks and real-life psychological angles below.
         </p>
       </div>
 
-      {/* Teaching Strategy Banner */}
+      {/* Strategy & Filter Bar */}
       <div
         style={{
           background: "#fef2f2",
           border: "1.5px solid #fecaca",
-          borderRadius: "16px",
-          padding: "14px 20px",
+          borderRadius: "14px",
+          padding: "10px 16px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           flexWrap: "wrap",
-          gap: "12px",
-          marginBottom: "18px"
+          gap: "10px",
+          marginBottom: "12px"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontSize: "0.82rem", fontWeight: 800, background: "#dc2626", color: "#ffffff", padding: "4px 10px", borderRadius: "8px" }}>
-            MANDATORY FORMAT
+        {/* Category Tabs */}
+        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#991b1b", display: "flex", alignItems: "center", gap: "4px", marginRight: "4px" }}>
+            <Filter size={13} /> View Drawbacks:
           </span>
-          <span style={{ fontSize: "0.98rem", fontWeight: 700, color: "#991b1b" }}>
-            Body 2 requires 2 Main Reasons + Concrete Example. Both key disadvantages and real-world proof are detailed below!
-          </span>
+          {[
+            { id: "all", label: "All 5 Disadvantages" },
+            { id: "standard", label: "Student Idea Bank (3)" },
+            { id: "additional", label: "Real-Life Angles (2)" }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setFilterCategory(tab.id as any)}
+              style={{
+                border: "none",
+                background: filterCategory === tab.id ? "#dc2626" : "#ffffff",
+                color: filterCategory === tab.id ? "#ffffff" : "#991b1b",
+                padding: "4px 10px",
+                borderRadius: "7px",
+                fontSize: "0.78rem",
+                fontWeight: 750,
+                cursor: "pointer",
+                boxShadow: "var(--shadow-sm)",
+                transition: "all 0.12s ease"
+              }}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
-        <span className="apple-badge" style={{ background: "#fee2e2", color: "#991b1b", fontWeight: 750 }}>
-          Disadvantages • Body Para 2
+
+        <span className="apple-badge" style={{ background: "#fee2e2", color: "#991b1b", fontWeight: 750, fontSize: "0.78rem" }}>
+          Disadvantages • Body 2
         </span>
       </div>
 
-      {/* 2 MAIN DISADVANTAGES DISPLAYED SIMULTANEOUSLY */}
+      {/* ALL 5 DISADVANTAGES DISPLAYED IN A CLEAN SMART BOARD GRID */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "18px",
-          marginBottom: "22px"
+          gridTemplateColumns: filterCategory === "all" ? "repeat(3, 1fr)" : "repeat(3, 1fr)",
+          gap: "10px",
+          marginBottom: "14px"
         }}
       >
-        {allDisadvantages.map((disadv, idx) => (
-          <div
-            key={disadv.id}
-            style={{
-              background: "#ffffff",
-              border: "1.5px solid var(--border-default)",
-              borderRadius: "18px",
-              padding: "20px 22px",
-              boxShadow: "var(--shadow-sm)",
-              display: "flex",
-              flexDirection: "column",
-              gap: "14px"
-            }}
-          >
-            {/* Card Header */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1.5px solid var(--border-subtle)", paddingBottom: "10px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        {filteredDisadvantages.map((disadv) => {
+          const originalIdx = allDisadvantages.findIndex((d) => d.id === disadv.id);
+          const isSelected = activeModelIdx === originalIdx;
+
+          return (
+            <div
+              key={disadv.id}
+              onClick={() => setActiveModelIdx(originalIdx)}
+              style={{
+                background: isSelected ? "#fff1f2" : "#ffffff",
+                border: isSelected ? "2px solid #e11d48" : "1.5px solid var(--border-default)",
+                borderRadius: "12px",
+                padding: "12px 14px",
+                boxShadow: isSelected ? "0 4px 12px rgba(225, 29, 72, 0.12)" : "var(--shadow-sm)",
+                display: "flex",
+                flexDirection: "column",
+                gap: "8px",
+                cursor: "pointer",
+                transition: "all 0.15s ease"
+              }}
+            >
+              {/* Card Header & Badges */}
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <span
                   style={{
-                    background: "#fee2e2",
-                    color: "#991b1b",
-                    fontSize: "0.84rem",
+                    background: isSelected ? "#e11d48" : "#fee2e2",
+                    color: isSelected ? "#ffffff" : "#991b1b",
+                    fontSize: "0.7rem",
                     fontWeight: 800,
-                    padding: "3px 10px",
-                    borderRadius: "7px"
+                    padding: "2px 7px",
+                    borderRadius: "5px"
                   }}
                 >
-                  ⚠️ DISADVANTAGE 0{idx + 1}
+                  {disadv.badge}
                 </span>
-                <h4 style={{ fontSize: "1.15rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  {disadv.title}
-                </h4>
-              </div>
-            </div>
 
-            {/* 1. Main Reason */}
-            <div
-              style={{
-                background: "#f8fafc",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "12px",
-                padding: "12px 14px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
-                <Lightbulb size={16} color="#dc2626" />
-                <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#dc2626", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  Main Reason 0{idx + 1}
+                <span
+                  style={{
+                    fontSize: "0.68rem",
+                    fontWeight: 700,
+                    padding: "1px 6px",
+                    borderRadius: "4px",
+                    background: disadv.category === "standard" ? "#fee2e2" : "#ffedd5",
+                    color: disadv.category === "standard" ? "#991b1b" : "#c2410c"
+                  }}
+                >
+                  {disadv.category === "standard" ? "Student Idea" : "Real-Life Angle"}
                 </span>
               </div>
-              <p style={{ margin: 0, fontSize: "1.04rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
-                {disadv.mainReason}
-              </p>
-            </div>
 
-            {/* 2. Supporting Explanation */}
-            <div
-              style={{
-                background: "#fff1f2",
-                border: "1px solid #fecdd3",
-                borderRadius: "12px",
-                padding: "12px 14px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
-                <ArrowRight size={16} color="#be123c" />
-                <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#be123c", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  Why It Causes Harm (Explanation)
-                </span>
+              {/* Core Idea (One-Liner) */}
+              <div
+                style={{
+                  background: isSelected ? "#ffffff" : "#f8fafc",
+                  border: "1px solid var(--border-subtle)",
+                  borderRadius: "8px",
+                  padding: "8px 10px",
+                  flex: 1
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "2px" }}>
+                  <Lightbulb size={12} color="#dc2626" />
+                  <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#dc2626", textTransform: "uppercase" }}>
+                    Core Drawback
+                  </span>
+                </div>
+                <p style={{ margin: 0, fontSize: "0.84rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.4 }}>
+                  {disadv.mainReason}
+                </p>
               </div>
-              <p style={{ margin: 0, fontSize: "0.98rem", color: "#881337", lineHeight: 1.55 }}>
-                {disadv.supportingReasons}
-              </p>
-            </div>
 
-            {/* 3. Real Example */}
-            <div
-              style={{
-                background: "#f0fdf4",
-                border: "1.5px solid #86efac",
-                borderRadius: "12px",
-                padding: "12px 14px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
-                <CircleCheck size={16} color="#16a34a" />
-                <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#166534", textTransform: "uppercase", letterSpacing: "0.03em" }}>
-                  Concrete Example
-                </span>
+              {/* Concrete Relatable Example (One-Liner) */}
+              <div
+                style={{
+                  background: "#fff1f2",
+                  border: "1px solid #fecdd3",
+                  borderRadius: "8px",
+                  padding: "8px 10px"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "2px" }}>
+                  <AlertTriangle size={12} color="#be123c" />
+                  <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#be123c", textTransform: "uppercase" }}>
+                    Concrete Example
+                  </span>
+                </div>
+                <p style={{ margin: 0, fontSize: "0.8rem", color: "#881337", lineHeight: 1.35, fontWeight: 550 }}>
+                  {disadv.example}
+                </p>
               </div>
-              <p style={{ margin: 0, fontSize: "0.98rem", color: "#14532d", lineHeight: 1.55, fontWeight: 550 }}>
-                {disadv.example}
-              </p>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* EXAMINER MODEL BODY 2 PARAGRAPH */}
+      {/* SYNTHESIS & BAND 9 MODEL ESSAY BOX */}
       <div
         style={{
           background: "#ffffff",
           border: "1.5px solid var(--border-default)",
-          borderRadius: "20px",
-          padding: "24px",
-          boxShadow: "var(--shadow-sm)"
+          borderRadius: "16px",
+          padding: "16px 18px",
+          boxShadow: "var(--shadow-sm)",
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "14px", flexWrap: "wrap", gap: "10px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Award size={24} color="#dc2626" />
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Award size={18} color="#dc2626" />
             <div>
-              <h4 style={{ fontSize: "1.24rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                Examiner Band 9 Model Paragraph Synthesis
+              <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                Band 9 Model Integration: {activeDisadvantage?.title}
               </h4>
-              <p style={{ margin: "2px 0 0", fontSize: "0.88rem", color: "var(--slate-600)" }}>
-                See how a Band 9 response articulates both disadvantages and integrates the East Asian school exam example:
+              <p style={{ margin: "1px 0 0", fontSize: "0.78rem", color: "var(--slate-600)" }}>
+                Examiner demonstration of how to integrate this drawback and its concrete example into a unified Band 9 Body 2 paragraph:
               </p>
             </div>
           </div>
 
-          {/* Model Switcher Chips */}
-          <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "var(--slate-100)", padding: "3px", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
-            <span style={{ fontSize: "0.76rem", fontWeight: 750, color: "var(--slate-500)", padding: "0 6px" }}>
-              Focus View:
-            </span>
-            {allDisadvantages.map((d, idx) => (
-              <button
-                key={d.id}
-                onClick={() => setActiveModelIdx(idx)}
-                style={{
-                  border: "none",
-                  padding: "4px 10px",
-                  borderRadius: "7px",
-                  fontSize: "0.82rem",
-                  fontWeight: 750,
-                  cursor: "pointer",
-                  background: activeModelIdx === idx ? "var(--slate-900)" : "transparent",
-                  color: activeModelIdx === idx ? "#ffffff" : "var(--slate-700)",
-                  transition: "all 0.12s ease"
-                }}
-              >
-                Disadvantage 0{idx + 1}
-              </button>
-            ))}
-          </div>
+          <button
+            onClick={handleCopy}
+            style={{
+              border: "1px solid var(--border-subtle)",
+              background: copied ? "#dcfce7" : "#ffffff",
+              padding: "4px 10px",
+              borderRadius: "8px",
+              fontSize: "0.76rem",
+              fontWeight: 700,
+              color: copied ? "#166534" : "var(--slate-700)",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "4px"
+            }}
+          >
+            {copied ? <Check size={12} /> : <Copy size={12} />}
+            <span>{copied ? "Copied" : "Copy Model Paragraph"}</span>
+          </button>
         </div>
 
         {/* Model Paragraph Text */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeModelIdx}
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.15 }}
-          >
-            <div
-              style={{
-                background: "#f8fafc",
-                border: "1.5px solid #cbd5e1",
-                borderRadius: "16px",
-                padding: "20px 24px",
-                fontSize: "1.18rem",
-                lineHeight: 1.75,
-                color: "var(--slate-900)",
-                fontWeight: 500
-              }}
-            >
-              {allDisadvantages[activeModelIdx]?.modelParagraph}
-            </div>
+        <div
+          style={{
+            background: "#f8fafc",
+            border: "1.5px solid #cbd5e1",
+            borderRadius: "10px",
+            padding: "12px 16px",
+            fontSize: "0.98rem",
+            lineHeight: 1.6,
+            color: "var(--slate-900)",
+            fontWeight: 500
+          }}
+        >
+          {activeDisadvantage?.modelParagraph}
+        </div>
 
-            <div style={{ marginTop: "12px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
-                  ✦ 2 Main Reasons
-                </span>
-                <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
-                  ✦ Psychological &amp; Biological Depth
-                </span>
-                <span className="apple-badge accent" style={{ fontSize: "0.82rem" }}>
-                  ✦ Exam System Proof
-                </span>
-              </div>
-              <span style={{ fontSize: "0.88rem", color: "var(--slate-600)", fontWeight: 600 }}>
-                💡 <em>{allDisadvantages[activeModelIdx]?.examinerNotes}</em>
-              </span>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <span className="apple-badge warning" style={{ fontSize: "0.72rem", padding: "1px 6px", background: "#fee2e2", color: "#991b1b" }}>
+              ✓ Topic Sentence
+            </span>
+            <span className="apple-badge warning" style={{ fontSize: "0.72rem", padding: "1px 6px", background: "#fee2e2", color: "#991b1b" }}>
+              ✓ Relatable Real-World Example
+            </span>
+            <span className="apple-badge warning" style={{ fontSize: "0.72rem", padding: "1px 6px", background: "#fee2e2", color: "#991b1b" }}>
+              ✓ Analytical Rigor
+            </span>
+          </div>
+          <span style={{ fontSize: "0.78rem", color: "var(--slate-600)", fontWeight: 600 }}>
+            💡 <em>{activeDisadvantage?.examinerNotes}</em>
+          </span>
+        </div>
       </div>
     </div>
   );
