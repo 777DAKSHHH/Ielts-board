@@ -6,7 +6,9 @@ import {
   ChevronRight,
   Sparkles,
   CheckCircle2,
-  AlertTriangle
+  Workflow,
+  Flame,
+  Boxes
 } from "lucide-react";
 import { tactilePress } from "../../motion";
 
@@ -24,89 +26,77 @@ interface FlashcardItem {
 const FLASHCARDS: FlashcardItem[] = [
   {
     id: 1,
-    category: "Card 1: The Macro Overview Split",
+    category: "Card 1: The Macro Overview Contrast",
     badgeColor: "#0284c7",
-    question: "What are the three essential macro features that must appear in a Band 9 overview for this UK school spending pie chart task?",
-    answerTitle: "1) Teachers' Salaries Lion's Share, 2) Insurance as Smallest Proportion, 3) Furniture Volatility vs Staff Decreases",
+    question: "What are the two core overarching features that must be contrasted in a Band 9 overview for this dual process task?",
+    answerTitle: "1) Cement as a Linear Multi-Stage Thermal Process vs 2) Concrete as a Single-Stage Batch Mixture",
     bulletPoints: [
-      "Teachers' salaries consistently formed the largest expenditure across all three years, peaking at exactly half (50%) of all funds in 1991.",
-      "Insurance remained the lowest cost in every period, despite undergoing a continuous fourfold increase from 2% to 8%.",
-      "While other workers' salaries and resources experienced net drops by 2001, furniture and equipment displayed marked fluctuation, falling to 5% before surging to 23%."
+      "Cement production is a multi-step, sequential industrial procedure requiring physical crushing, thorough mixing, and high-heat transformation in a rotating kiln.",
+      "Concrete manufacturing, by contrast, is a straightforward single-stage batch mixing process where raw ingredients are poured into a rotating drum.",
+      "Aggregates (gravel and sand) form the dominant bulk of concrete, bound together by cement and activated with water (avoid all specific numerical figures in the overview; reserve exact percentages for Body Paragraph 2)."
     ],
     band9Phrase:
-      "“Overall, teachers’ salaries consistently represented the largest share of the school’s budget throughout the entire twenty-year timeframe, peaking at precisely half of all expenditure in 1991. Conversely, insurance consistently accounted for the lowest proportion, despite undergoing a continuous fourfold increase. Furthermore, while other workers’ salaries and resources saw overall reductions by 2001, spending on furniture and equipment exhibited dramatic fluctuation, recovering strongly after an initial slump.”"
+      "“Overall, cement production is a multi-step, sequential process requiring specialized equipment, physical crushing, and intense heating, whereas concrete manufacturing is a straightforward, single-stage batch mixing procedure wherein coarse and fine aggregates constitute the vast majority of the mixture, bound together by cement and activated with water.”"
   },
   {
     id: 2,
-    category: "Card 2: Staff Remuneration Dominance (Body 1)",
-    badgeColor: "#2563eb",
-    question: "How should you report and group teachers' salaries and other workers' salaries to demonstrate Band 9 Coherence and Cohesion?",
-    answerTitle: "Group as Combined Staff Remuneration (60%–72% of budget), Contrasting the Peak with the Steady Decline",
+    category: "Card 2: Cement Manufacturing Flow (Body 1)",
+    badgeColor: "#ea580c",
+    question: "How should you chronologically sequence and report the 5 stages of cement production using passive voice?",
+    answerTitle: "Crusher (Powder) → Mixer → Rotating Heater (Heat from base) → Conveyor Grinder → Bagging",
     bulletPoints: [
-      "Teachers' salaries: 40% (1981) → 50% (1991 peak) → 45% (2001). Always the predominant cost.",
-      "Other workers' salaries: 28% (1981) → 22% (1991) → 15% (2001). Unbroken downward trend, almost halving over 20 years.",
-      "Synthesis: Combined staff pay absorbed 68% in 1981, 72% in 1991, and 60% in 2001, consistently commanding well over half the budget."
+      "Stage 1: Limestone and clay are fed into a mechanical crusher to be pulverized into fine powder.",
+      "Stage 2: Powder is transferred to an industrial mixer to create a uniform blend.",
+      "Stage 3: Mixture passes through an inclined rotating cylinder heater with intense heat applied from the base.",
+      "Stage 4: Heated material travels along a conveyor belt into a grinder to be milled into fine cement.",
+      "Stage 5: Finished cement is poured into heavy-duty bags ready for transport or concrete mixing."
     ],
     band9Phrase:
-      "“In terms of staffing costs, teachers’ salaries constituted the school’s principal outlay in every year surveyed, beginning at 40% in 1981, climbing to a peak of 50% in 1991, and subsequently dipping to 45% in 2001. By contrast, expenditure on other workers’ salaries followed an unbroken downward trajectory, diminishing from 28% to 22% and almost halving to 15% by 2001.”"
+      "“Regarding the manufacture of cement, limestone and clay are initially passed through a crusher to be pulverized into a fine powder. This powdered mixture is then fed into an industrial mixer to achieve a uniform blend before entering an elongated, rotating cylinder heater...”"
   },
   {
     id: 3,
-    category: "Card 3: Furniture & Equipment Volatility (Body 2)",
-    badgeColor: "#059669",
-    question: "Why is the trajectory of furniture and equipment considered the most dramatic trend in the visual?",
-    answerTitle: "A Two-Thirds Collapse to 5% Followed by an 18-Point Surge to 23% (Overtaking Other Staff)",
+    category: "Card 3: Concrete Recipe Proportions (Body 2)",
+    badgeColor: "#7c3aed",
+    question: "What are the exact four ingredient proportions for concrete, and how should their structural roles be described?",
+    answerTitle: "Gravel 50% (Coarse Aggregate), Sand 25% (Fine Aggregate), Cement 15% (Binder), Water 10% (Hydration)",
     bulletPoints: [
-      "1981 baseline: Started at 15%, tied with educational resources.",
-      "1991 slump: Plunged to just 5%, a reduction of two-thirds, becoming almost negligible.",
-      "2001 resurgence: Surged to 23%, more than quadrupling from its 1991 low and becoming the second-largest cost that year."
+      "Gravel (small stones) constitutes half (50%) of the mixture, functioning as the primary structural coarse aggregate.",
+      "Sand represents a quarter (25%) of the volume as the fine aggregate, making total aggregate content 75%.",
+      "Cement represents 15%, functioning as the manufactured binding agent that glues the aggregates together.",
+      "Water forms the smallest fraction at 10%, activating the hydration reaction to yield wet workable concrete."
     ],
     band9Phrase:
-      "“Allocations for furniture and equipment stood at 15% in 1981, plummeted to just 5% in 1991, and then experienced a dramatic resurgence to 23% in 2001, making it the second most significant budget component that year.”"
+      "“Turning to concrete production, gravel constitutes half (50%) of the total mixture, followed by sand, which accounts for a quarter (25%). Cement makes up 15% to bind the components together, while water represents the smallest portion at 10%.”"
   },
   {
     id: 4,
-    category: "Card 4: Educational Resources (Books) Rise and Fall",
-    badgeColor: "#d97706",
-    question: "How did spending on educational resources evolve compared to the other non-staff categories?",
-    answerTitle: "Temporary Expansion from 15% to 20% in 1991, Followed by a Steep Fall to Single Digits (9% in 2001)",
+    category: "Card 4: Passive Voice Mastery in Process Diagrams",
+    badgeColor: "#059669",
+    question: "Why is the passive voice mandatory in process tasks, and what are the key grammatical patterns?",
+    answerTitle: "The Agent is Irrelevant; Focus on the Material and Mechanical Transformation",
     bulletPoints: [
-      "1981: Represented 15% of spending, equal to furniture.",
-      "1991: Rose by 5 percentage points to reach 20%, ranking 3rd behind staff salaries.",
-      "2001: Steep drop to 9%, falling below double digits and ending at an all-time low."
+      "Formula: Subject + is / are + past participle (e.g., 'limestone and clay are crushed', 'the powder is blended').",
+      "Never write: 'Workers crush limestone' or 'The factory makes cement'. Always maintain objective scientific voice.",
+      "Combine with participial clauses: 'Having been heated in the rotating kiln, the material is transported...'"
     ],
     band9Phrase:
-      "“Meanwhile, spending on educational resources such as books initially rose from 15% to 20% between 1981 and 1991, before declining steeply to a twenty-year low of 9% in 2001.”"
+      "“...in this chamber, the substance is subjected to intense heat applied from the lower end as the drum continuously revolves. After being heated, the resulting mixture is transported along a conveyor belt to a grinder...”"
   },
   {
     id: 5,
-    category: "Card 5: Insurance Fourfold Expansion",
-    badgeColor: "#dc2626",
-    question: "What is the key analytical nuance to highlight when reporting insurance spending?",
-    answerTitle: "Smallest Absolute Percentage in Every Year, Yet Experienced the Greatest Relative Expansion (Quadrupled)",
+    category: "Card 5: Sequence Linkers & Macro Transition",
+    badgeColor: "#2563eb",
+    question: "Which discourse linkers ensure seamless flow across the 5 cement steps and into the concrete diagram?",
+    answerTitle: "Initially → Following this → Next → After being heated → Finally → Turning to concrete production",
     bulletPoints: [
-      "1981: Started at a negligible 2% (lowest in the visual).",
-      "1991: Edged up marginally to 3%, remaining the smallest slice.",
-      "2001: Surged to 8%, representing a fourfold increase over the initial 1981 figure."
+      "Initial stage: 'Initially,' / 'To begin with,'",
+      "Intermediate steps: 'Following this,' / 'Subsequently,' / 'The next phase entails...'",
+      "Culmination: 'Finally, the completed cement is packaged into bags...'",
+      "Macro Transition to Diagram 2: 'Turning to concrete production, four distinct raw materials are combined inside a cylindrical mixer...'"
     ],
     band9Phrase:
-      "“Finally, insurance accounted for the smallest percentage in all three periods, edging up from a negligible 2% in 1981 to 3% in 1991, before surging to 8% in 2001 (a fourfold increase).”"
-  },
-  {
-    id: 6,
-    category: "Card 6: Exam Pitfalls & Band 9 Precautions",
-    badgeColor: "#ea580c",
-    isWarning: true,
-    question: "What are the most frequent examiner-penalized mistakes in this UK school spending pie chart task?",
-    answerTitle: "Mechanical Slice-by-Slice Listing, Using Informal Words (nadir/chasm), and Omitting Combined Totals",
-    bulletPoints: [
-      "Mechanical Listing: Merely describing Pie 1, then Pie 2, then Pie 3 in sequence without synthesizing trends across years.",
-      "Unnatural Vocabulary: Strictly avoid banned melodramatic terms like 'nadir', 'chasm', 'zenith', or 'ebb'. Use standard academic phrasing like 'peak', 'lowest figure', 'downward trajectory'.",
-      "Overlooking Grouping: Examiners award Band 9 for grouping data into logical categories (Staff Remuneration vs Operational/Capital Outlay).",
-      "Confusing Units: Remember all numbers are percentages of annual expenditure (%), not raw pound amounts (£)."
-    ],
-    band9Phrase:
-      "“Band 9 Criterion: Grouping data logically into Staff Remuneration (Body 1) and Non-Staff Outlay (Body 2), accurately synthesizing multi-decade trajectories, and using precise academic collocations without overly dramatic jargon.”"
+      "“Turning to concrete production, four distinct raw materials are combined inside a cylindrical concrete mixer in precise proportions. Once all four elements are poured simultaneously into the concrete drum, the machine rotates...”"
   }
 ];
 
@@ -126,7 +116,7 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
     setCurrentIdx((prev) => (prev - 1 + FLASHCARDS.length) % FLASHCARDS.length);
   };
 
-  const handleFlip = () => {
+  const toggleFlip = () => {
     setIsFlipped(!isFlipped);
   };
 
@@ -135,41 +125,32 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
       style={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        gap: "18px",
-        width: "100%",
-        fontFamily: "inherit"
+        gap: "14px",
+        background: "#ffffff",
+        borderRadius: "18px",
+        border: "1.5px solid var(--border-subtle, #cbd5e1)",
+        padding: "16px",
+        boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
       }}
     >
-      {/* Top Card Counter Strip */}
+      {/* Top Header Controls */}
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          width: "100%",
-          maxWidth: "680px"
+          paddingBottom: "10px",
+          borderBottom: "1px solid #f1f5f9"
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span
-            style={{
-              fontSize: "0.76rem",
-              fontWeight: 800,
-              padding: "4px 10px",
-              borderRadius: "8px",
-              background: card.isWarning ? "#fee2e2" : "#f1f5f9",
-              color: card.isWarning ? "#dc2626" : card.badgeColor
-            }}
-          >
-            {card.category}
-          </span>
-          <span style={{ fontSize: "0.78rem", color: "#64748b", fontWeight: 600 }}>
-            Card {currentIdx + 1} of {FLASHCARDS.length}
-          </span>
+          <Sparkles size={18} color="#2563eb" />
+          <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>
+            Bits &amp; Pieces Teaching Flashcards ({currentIdx + 1} of {FLASHCARDS.length})
+          </strong>
         </div>
 
-        <div style={{ display: "flex", gap: "6px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <button
             onClick={handlePrev}
             style={{
@@ -181,11 +162,12 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
               display: "flex",
               alignItems: "center",
               gap: "4px",
-              fontSize: "0.78rem",
-              fontWeight: 700
+              fontSize: "0.8rem",
+              fontWeight: 700,
+              color: "#475569"
             }}
           >
-            <ChevronLeft size={16} /> Prev
+            <ChevronLeft size={14} /> Prev
           </button>
           <button
             onClick={handleNext}
@@ -198,173 +180,125 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
               display: "flex",
               alignItems: "center",
               gap: "4px",
-              fontSize: "0.78rem",
-              fontWeight: 700
+              fontSize: "0.8rem",
+              fontWeight: 700,
+              color: "#475569"
             }}
           >
-            Next <ChevronRight size={16} />
+            Next <ChevronRight size={14} />
           </button>
         </div>
       </div>
 
-      {/* Main Flashcard Card (Interactive Flip) */}
-      <motion.div
-        whileTap={tactilePress}
-        onClick={handleFlip}
+      {/* Main Flashcard Container */}
+      <div
+        onClick={toggleFlip}
         style={{
-          width: "100%",
-          maxWidth: "680px",
-          minHeight: "340px",
-          background: "#ffffff",
-          borderRadius: "22px",
-          border: card.isWarning ? "2px solid #f87171" : "1.5px solid #cbd5e1",
-          padding: "26px 28px",
-          boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
-          cursor: "pointer",
+          minHeight: "310px",
+          borderRadius: "16px",
+          border: `2px solid ${card.badgeColor}30`,
+          background: isFlipped ? "#ffffff" : "#f8fafc",
+          padding: "22px 26px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          position: "relative",
-          transition: "border-color 0.2s ease"
+          cursor: "pointer",
+          boxShadow: "0 6px 20px rgba(0,0,0,0.04)",
+          transition: "all 0.2s ease"
         }}
       >
+        {/* Card Header */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span
+            style={{
+              fontSize: "0.76rem",
+              fontWeight: 800,
+              padding: "3px 10px",
+              borderRadius: "6px",
+              background: `${card.badgeColor}18`,
+              color: card.badgeColor
+            }}
+          >
+            {card.category}
+          </span>
+
+          <span
+            style={{
+              fontSize: "0.74rem",
+              fontWeight: 700,
+              color: "#64748b",
+              display: "flex",
+              alignItems: "center",
+              gap: "4px"
+            }}
+          >
+            <RotateCw size={12} /> Click Card to {isFlipped ? "See Question" : "Reveal Answer"}
+          </span>
+        </div>
+
+        {/* Card Content Area */}
         {!isFlipped ? (
-          /* Question Side */
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", height: "100%" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span
-                style={{
-                  fontSize: "0.75rem",
-                  fontWeight: 800,
-                  color: "#64748b",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em"
-                }}
-              >
-                Question / Prompt
-              </span>
-              <span
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "4px",
-                  fontSize: "0.75rem",
-                  color: "#2563eb",
-                  fontWeight: 700
-                }}
-              >
-                <RotateCw size={12} /> Tap card to reveal Band 9 analysis
-              </span>
-            </div>
-
-            <div
-              style={{
-                fontSize: "1.25rem",
-                fontWeight: 800,
-                color: "#0f172a",
-                lineHeight: 1.45,
-                marginTop: "12px"
-              }}
-            >
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px", margin: "auto 0" }}>
+            <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#64748b" }}>
+              EXAMINER CHALLENGE QUESTION:
+            </span>
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0, lineHeight: 1.45 }}>
               {card.question}
-            </div>
-
-            <div
-              style={{
-                marginTop: "auto",
-                background: "#f8fafc",
-                borderRadius: "12px",
-                padding: "12px 14px",
-                fontSize: "0.82rem",
-                color: "#64748b",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px"
-              }}
-            >
-              <Sparkles size={16} color="#2563eb" />
-              <span>
-                Think about the analytical grouping and Band 9 reporting vocabulary before flipping!
-              </span>
-            </div>
+            </h3>
           </div>
         ) : (
-          /* Answer Side */
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px", height: "100%" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span
-                style={{
-                  fontSize: "0.75rem",
-                  fontWeight: 800,
-                  color: card.badgeColor,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.05em"
-                }}
-              >
-                Band 9 Analytical Answer
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", margin: "auto 0" }}>
+            <div>
+              <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#16a34a" }}>
+                BAND 9 ANSWER BLUEPRINT:
               </span>
-              <span
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "4px",
-                  fontSize: "0.75rem",
-                  color: "#64748b",
-                  fontWeight: 700
-                }}
-              >
-                <RotateCw size={12} /> Tap to flip back
-              </span>
+              <h4 style={{ fontSize: "1.08rem", fontWeight: 800, color: "#0f172a", margin: "4px 0 0" }}>
+                {card.answerTitle}
+              </h4>
             </div>
 
-            <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.35 }}>
-              {card.answerTitle}
+            <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+              {card.bulletPoints.map((bp, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.84rem", color: "#334155", lineHeight: 1.4 }}>
+                  <CheckCircle2 size={14} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <span>{bp}</span>
+                </div>
+              ))}
             </div>
 
-            <ul
+            <div
               style={{
-                margin: 0,
-                paddingLeft: "20px",
-                fontSize: "0.86rem",
-                color: "#334155",
-                display: "flex",
-                flexDirection: "column",
-                gap: "6px",
+                background: "#f8fafc",
+                borderLeft: `3px solid ${card.badgeColor}`,
+                borderRadius: "6px",
+                padding: "8px 12px",
+                fontSize: "0.84rem",
+                color: "#1e293b",
+                fontStyle: "italic",
                 lineHeight: 1.45
               }}
             >
-              {card.bulletPoints.map((pt, i) => (
-                <li key={i}>{pt}</li>
-              ))}
-            </ul>
-
-            <div
-              style={{
-                background: "#f8fafc",
-                borderLeft: `3.5px solid ${card.badgeColor}`,
-                borderRadius: "8px",
-                padding: "10px 14px",
-                fontSize: "0.85rem",
-                color: "#1e293b",
-                lineHeight: 1.5,
-                marginTop: "auto"
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "0.7rem",
-                  fontWeight: 800,
-                  color: card.badgeColor,
-                  marginBottom: "3px"
-                }}
-              >
-                MODEL SENTENCE:
-              </div>
-              <em>{card.band9Phrase}</em>
+              {card.band9Phrase}
             </div>
           </div>
         )}
-      </motion.div>
+
+        {/* Card Footer Indicator */}
+        <div style={{ display: "flex", justifyContent: "center", gap: "6px" }}>
+          {FLASHCARDS.map((_, i) => (
+            <span
+              key={i}
+              style={{
+                width: i === currentIdx ? "20px" : "6px",
+                height: "6px",
+                borderRadius: "3px",
+                background: i === currentIdx ? card.badgeColor : "#cbd5e1",
+                transition: "all 0.2s ease"
+              }}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

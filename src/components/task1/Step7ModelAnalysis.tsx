@@ -12,9 +12,9 @@ export const Step7ModelAnalysis: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 07 / 08 • Body 2 &amp; Full Model Response
         </span>
-        <h2 className="stage-title">Non-Staff Outlay &amp; Complete Band 9 Model Report</h2>
+        <h2 className="stage-title">Concrete Formulation &amp; Complete Band 9 Model Report</h2>
         <p className="stage-subtitle">
-          Master the three essential grammatical frameworks for multi-year pie charts, alongside the complete 285-word Band 9 model response organized across four balanced paragraphs.
+          Master the three essential grammatical frameworks for dual process diagrams, alongside the complete 228-word Band 9 model response organized across four balanced paragraphs.
         </p>
       </div>
 
@@ -91,8 +91,8 @@ export const Step7ModelAnalysis: React.FC = () => {
                   { id: "all", label: "Full Report (All)" },
                   { id: "intro", label: "Intro" },
                   { id: "overview", label: "Overview" },
-                  { id: "body1", label: "Body 1 (Staff)" },
-                  { id: "body2", label: "Body 2 (Non-Staff)" }
+                  { id: "body1", label: "Body 1 (Cement)" },
+                  { id: "body2", label: "Body 2 (Concrete)" }
                 ] as const
               ).map((tab) => (
                 <button

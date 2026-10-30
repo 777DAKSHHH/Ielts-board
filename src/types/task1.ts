@@ -250,6 +250,29 @@ export interface ConnectorItem {
   example: string;
 }
 
+export interface ProcessStageItem {
+  stageNumber: number;
+  id: string;
+  name: string;
+  equipment: string;
+  inputs: string;
+  output: string;
+  actionText: string;
+  passiveVerb: string;
+  band9Phrase: string;
+  color: string;
+}
+
+export interface ConcreteIngredientItem {
+  id: string;
+  name: string;
+  percentage: number;
+  role: string;
+  note?: string;
+  color: string;
+  band9Phrase: string;
+}
+
 export interface Task1Data {
   id: string;
   taskType: string;
@@ -274,6 +297,8 @@ export interface Task1Data {
   spendingCategories?: SpendingCategoryItem[];
   spendingYears?: SchoolSpendingYearData[];
   spendingHotspots?: SpendingHotspot[];
+  processStages?: ProcessStageItem[];
+  concreteIngredients?: ConcreteIngredientItem[];
   formats: MusicFormatItem[];
   countries: CountryMarketData[];
   diagramData: Task1DiagramData;

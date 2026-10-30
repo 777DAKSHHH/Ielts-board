@@ -2,41 +2,257 @@ import React, { useState } from "react";
 import {
   RotateCcw,
   Sparkles,
-  TrendingDown,
-  TrendingUp,
   Info,
   CheckCircle2,
-  Users,
   Award,
   Layers,
-  PieChart as PieIcon,
   ChevronRight,
-  ShieldAlert
+  Flame,
+  Boxes,
+  Workflow,
+  Eye,
+  EyeOff,
+  Maximize2
 } from "lucide-react";
-import {
-  TASK1_DATA,
-  SPENDING_CATEGORIES,
-  SPENDING_YEARS,
-  SPENDING_HOTSPOTS
-} from "../../data/task1Data";
-import { SpendingCategoryKey, SpendingCategoryItem } from "../../types/task1";
 
 export type DiagramViewMode =
   | "all"
-  | "1981"
-  | "1991"
-  | "2001"
-  | "teachers_salaries"
-  | "other_workers_salaries"
-  | "furniture_and_equipment"
-  | "resources"
-  | "insurance"
-  | "staff_only"
-  | "non_staff_only"
+  | "both"
+  | "cement"
+  | "concrete"
+  | "crushing"
+  | "mixing"
+  | "heating"
+  | "grinding"
+  | "packaging"
+  | "gravel"
+  | "sand"
+  | "cement_ing"
+  | "water"
+  | "mixer_drum"
   | string;
 
 export type TableHighlightMode = DiagramViewMode;
 export type GraphHighlightMode = DiagramViewMode;
+
+export interface ParameterMetric {
+  label: string;
+  value: string;
+}
+
+export interface HotspotDefinition {
+  id: string;
+  box: "cement" | "concrete";
+  number: string;
+  name: string;
+  equipmentOrRole: string;
+  color: string;
+  pin: { left: string; top: string };
+  highlight: { x: string; y: string; w: string; h: string };
+  description: string;
+  band9Phrase: string;
+  grammaticalFocus: string;
+  examinerFocus?: string;
+  parameterMetrics?: ParameterMetric[];
+}
+
+export const CEMENT_HOTSPOTS: HotspotDefinition[] = [
+  {
+    id: "crushing",
+    box: "cement",
+    number: "1",
+    name: "1. Limestone & Clay Crusher",
+    equipmentOrRole: "Crusher (Two Rollers)",
+    color: "#2563eb",
+    pin: { left: "44%", top: "21%" },
+    highlight: { x: "18%", y: "13%", w: "58%", h: "23%" },
+    description: "Raw limestone and clay are fed into a mechanical crusher to be pulverized into a fine powder.",
+    band9Phrase: "“Initially, limestone and clay are passed through a crusher to be pulverized into a fine powder.”",
+    grammaticalFocus: "Passive Voice: 'are passed through... to be pulverized'",
+    examinerFocus: "Accurately specifies raw input minerals (limestone and clay) and passive transformation into fine powder.",
+    parameterMetrics: [
+      { label: "Process Stage", value: "Stage 1 of 5" },
+      { label: "Machinery", value: "Two Counter-Rotating Rollers" },
+      { label: "Physical Change", value: "Pulverized into Powder" }
+    ]
+  },
+  {
+    id: "mixing",
+    box: "cement",
+    number: "2",
+    name: "2. Industrial Blending Mixer",
+    equipmentOrRole: "Mixer (Horizontal Drum)",
+    color: "#0284c7",
+    pin: { left: "76%", top: "35%" },
+    highlight: { x: "54%", y: "27%", w: "43%", h: "20%" },
+    description: "The powdered mixture is transferred to an industrial mixer to achieve a uniform, homogeneous blend.",
+    band9Phrase: "“This powdered mixture is then fed into an industrial mixer to achieve a uniform blend...”",
+    grammaticalFocus: "Sequential Linker: 'is then fed into... to achieve a uniform blend'",
+    examinerFocus: "Bridges mechanical crushing with thermal processing using clear sequential discourse cohesion.",
+    parameterMetrics: [
+      { label: "Process Stage", value: "Stage 2 of 5" },
+      { label: "Machinery", value: "Industrial Blending Chamber" },
+      { label: "Outcome", value: "Uniform Mineral Blend" }
+    ]
+  },
+  {
+    id: "heating",
+    box: "cement",
+    number: "3",
+    name: "3. Rotating Heater / Kiln",
+    equipmentOrRole: "Rotating Heater + Direct Flame",
+    color: "#ea580c",
+    pin: { left: "55%", top: "54%" },
+    highlight: { x: "15%", y: "47%", w: "76%", h: "27%" },
+    description: "The mixture enters an inclined rotating cylinder heater where intense heat is applied directly from the base as the drum turns.",
+    band9Phrase: "“...entering an elongated, rotating cylinder heater, where the substance is subjected to intense heat applied from the lower end.”",
+    grammaticalFocus: "Participial Detail: 'subjected to intense heat applied from the lower end as the drum revolves'",
+    examinerFocus: "Identifies central thermal alteration in an inclined rotating cylinder kiln with direct flame from the base.",
+    parameterMetrics: [
+      { label: "Process Stage", value: "Stage 3 of 5" },
+      { label: "Machinery", value: "Inclined Rotating Cylinder" },
+      { label: "Thermal Source", value: "Direct Intense Heat from Base" }
+    ]
+  },
+  {
+    id: "grinding",
+    box: "cement",
+    number: "4",
+    name: "4. Conveyor Belt & Grinder",
+    equipmentOrRole: "Grinder & Moving Belt",
+    color: "#7c3aed",
+    pin: { left: "36%", top: "75%" },
+    highlight: { x: "18%", y: "68%", w: "52%", h: "20%" },
+    description: "Having exited the heater, the material travels along a conveyor belt to a grinder, where it is milled into fine cement.",
+    band9Phrase: "“After being heated, the resulting mixture is transported along a conveyor belt to a grinder, where it is milled into fine cement.”",
+    grammaticalFocus: "Prepositional Clause: 'After being heated, the resulting mixture is transported...'",
+    examinerFocus: "Captures intermediate conveyor transport and secondary milling into refined finished cement clinker.",
+    parameterMetrics: [
+      { label: "Process Stage", value: "Stage 4 of 5" },
+      { label: "Transport", value: "Moving Conveyor Belt" },
+      { label: "Final Milling", value: "Milled into Fine Cement" }
+    ]
+  },
+  {
+    id: "packaging",
+    box: "cement",
+    number: "5",
+    name: "5. Packaging & Bagging",
+    equipmentOrRole: "Bags of Cement",
+    color: "#059669",
+    pin: { left: "80%", top: "84%" },
+    highlight: { x: "62%", y: "77%", w: "35%", h: "20%" },
+    description: "The finished cement is poured into heavy-duty bags, ready for commercial storage, transport, or immediate concrete mixing.",
+    band9Phrase: "“Finally, the finished product is poured into heavy-duty bags, ready for commercial distribution or immediate construction use.”",
+    grammaticalFocus: "Concluding Marker: 'Finally, the finished product is poured into bags...'",
+    examinerFocus: "Marks culminating output: commercial bagging ready for distribution or the subsequent concrete batch mix.",
+    parameterMetrics: [
+      { label: "Process Stage", value: "Stage 5 of 5" },
+      { label: "Packaging Format", value: "Heavy-Duty Sealed Sacks" },
+      { label: "Application", value: "Storage / Concrete Formulation" }
+    ]
+  }
+];
+
+export const CONCRETE_HOTSPOTS: HotspotDefinition[] = [
+  {
+    id: "gravel",
+    box: "concrete",
+    number: "50%",
+    name: "Gravel* (50%) — Coarse Aggregate",
+    equipmentOrRole: "Coarse Aggregate (*small stones)",
+    color: "#475569",
+    pin: { left: "75%", top: "25%" },
+    highlight: { x: "58%", y: "17%", w: "38%", h: "22%" },
+    description: "Gravel (small stones) constitutes precisely half (50%) of the total mixture, serving as the primary bulk aggregate.",
+    band9Phrase: "“Gravel, consisting of small stones, constitutes half (50%) of the total mixture, serving as the primary coarse aggregate.”",
+    grammaticalFocus: "Proportion Verb: 'constitutes half (50%) of the total mixture'",
+    examinerFocus: "Reports the dominant 50% coarse aggregate (small stones) that accounts for half the entire volume.",
+    parameterMetrics: [
+      { label: "Mixture Ratio", value: "50% (Exactly Half)" },
+      { label: "Structural Role", value: "Primary Coarse Aggregate" },
+      { label: "Physical Form", value: "Small Stones" }
+    ]
+  },
+  {
+    id: "sand",
+    box: "concrete",
+    number: "25%",
+    name: "Sand (25%) — Fine Aggregate",
+    equipmentOrRole: "Fine Aggregate",
+    color: "#d97706",
+    pin: { left: "32%", top: "25%" },
+    highlight: { x: "12%", y: "17%", w: "38%", h: "22%" },
+    description: "Sand accounts for a quarter (25%) of the blend, filling interstitial voids between the larger gravel stones.",
+    band9Phrase: "“...followed by sand, which accounts for a quarter (25%) of the blend as a fine aggregate.”",
+    grammaticalFocus: "Fractional Precision: 'accounts for a quarter (25%)'",
+    examinerFocus: "Combines with gravel to form total aggregates (75%) while accurately isolating the 25% fraction.",
+    parameterMetrics: [
+      { label: "Mixture Ratio", value: "25% (One Quarter)" },
+      { label: "Structural Role", value: "Fine Aggregate" },
+      { label: "Combined Aggregates", value: "75% (Gravel + Sand)" }
+    ]
+  },
+  {
+    id: "cement_ing",
+    box: "concrete",
+    number: "15%",
+    name: "Cement (15%) — Binding Agent",
+    equipmentOrRole: "Binder (from Diagram 1)",
+    color: "#2563eb",
+    pin: { left: "18%", top: "15%" },
+    highlight: { x: "6%", y: "7%", w: "36%", h: "20%" },
+    description: "Manufactured cement from Diagram 1 comprises 15% of the composition to act as the essential binding adhesive.",
+    band9Phrase: "“Cement makes up 15% of the composition to bind the components together.”",
+    grammaticalFocus: "Purpose Infinitive: 'makes up 15% to bind the components together'",
+    examinerFocus: "Vital inter-diagram cohesion: output of Diagram 1 serves as the prerequisite 15% binder in Diagram 2.",
+    parameterMetrics: [
+      { label: "Mixture Ratio", value: "15% Binder" },
+      { label: "Structural Role", value: "Primary Binding Adhesive" },
+      { label: "Prerequisite", value: "Manufactured via Diagram 1" }
+    ]
+  },
+  {
+    id: "water",
+    box: "concrete",
+    number: "10%",
+    name: "Water (10%) — Hydration Liquid",
+    equipmentOrRole: "Hydration Activator",
+    color: "#0284c7",
+    pin: { left: "82%", top: "15%" },
+    highlight: { x: "65%", y: "7%", w: "32%", h: "22%" },
+    description: "Water represents the smallest fraction at 10%, activating the chemical hydration reaction to turn dry powders into workable wet slurry.",
+    band9Phrase: "“...while water represents the smallest portion at just 10% to activate hydration.”",
+    grammaticalFocus: "Superlative Comparison: 'represents the smallest portion at just 10%'",
+    examinerFocus: "Identifies smallest proportion (10%) triggering hydration without which the binder cannot harden.",
+    parameterMetrics: [
+      { label: "Mixture Ratio", value: "10% (Smallest Portion)" },
+      { label: "Chemical Role", value: "Hydration Activator" },
+      { label: "Output State", value: "Fluid Workable Slurry" }
+    ]
+  },
+  {
+    id: "mixer_drum",
+    box: "concrete",
+    number: "Mixer",
+    name: "Concrete Mixer (Rotating Drum)",
+    equipmentOrRole: "Rotating Mechanical Mixer",
+    color: "#059669",
+    pin: { left: "50%", top: "68%" },
+    highlight: { x: "14%", y: "44%", w: "74%", h: "50%" },
+    description: "All four ingredients are poured simultaneously into the concrete drum, which rotates clockwise to blend them into usable wet concrete.",
+    band9Phrase: "“Once all four elements are poured simultaneously into the concrete drum, the machine rotates to blend the slurry into usable wet concrete.”",
+    grammaticalFocus: "Simultaneous Process: 'Once all four elements are poured simultaneously...'",
+    examinerFocus: "Highlights contrast between single-stage simultaneous rotation and the 5 linear cement stages.",
+    parameterMetrics: [
+      { label: "Mixing Mode", value: "Single-Stage Batch Mix" },
+      { label: "Vessel", value: "Rotating Cylindrical Drum" },
+      { label: "Final Product", value: "Usable Wet Concrete" }
+    ]
+  }
+];
+
+export const ALL_HOTSPOTS = [...CEMENT_HOTSPOTS, ...CONCRETE_HOTSPOTS];
 
 interface SmartBoardDiagramProps {
   onSelectCountry?: (id: string) => void;
@@ -50,30 +266,6 @@ interface SmartBoardDiagramProps {
   forcedLayoutMode?: "stacked" | "split";
 }
 
-// Math helpers for SVG Pie Arcs
-function polarToCartesian(cx: number, cy: number, r: number, angleInDegrees: number) {
-  const angleInRadians = ((angleInDegrees - 90) * Math.PI) / 180.0;
-  return {
-    x: cx + r * Math.cos(angleInRadians),
-    y: cy + r * Math.sin(angleInRadians)
-  };
-}
-
-function describeArc(cx: number, cy: number, r: number, startAngle: number, endAngle: number) {
-  const deltaAngle = endAngle - startAngle;
-  const safeEndAngle = deltaAngle >= 360 ? startAngle + 359.99 : endAngle;
-  const start = polarToCartesian(cx, cy, r, safeEndAngle);
-  const end = polarToCartesian(cx, cy, r, startAngle);
-  const largeArcFlag = safeEndAngle - startAngle <= 180 ? "0" : "1";
-
-  return [
-    "M", cx, cy,
-    "L", end.x, end.y,
-    "A", r, r, 0, largeArcFlag, 1, start.x, start.y,
-    "Z"
-  ].join(" ");
-}
-
 export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
   highlightMode = "all",
   onHighlightModeChange,
@@ -82,39 +274,54 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
   showInternalToolbar = true,
   showDeepDiveCard = true
 }) => {
-  const [activeMode, setActiveMode] = useState<DiagramViewMode>(highlightMode);
-  const [internalCategoryId, setInternalCategoryId] = useState<SpendingCategoryKey>("teachers_salaries");
-  const [hoveredCategory, setHoveredCategory] = useState<SpendingCategoryItem | null>(null);
-  const [yearFilter, setYearFilter] = useState<"all" | "1981" | "1991" | "2001">("all");
+  const [activeViewTab, setActiveViewTab] = useState<"both" | "cement" | "concrete">("both");
+  const [activeHotspotId, setActiveHotspotId] = useState<string>("heating");
+  const [showPins, setShowPins] = useState<boolean>(true);
 
-  const effectiveCategoryId = (controlledCategoryId as SpendingCategoryKey) || internalCategoryId;
+  // Synchronize internal state when controlled selection changes from the presenter dock
+  React.useEffect(() => {
+    if (controlledCategoryId && controlledCategoryId !== "all") {
+      setActiveHotspotId(controlledCategoryId);
+      const match = ALL_HOTSPOTS.find((h) => h.id === controlledCategoryId);
+      if (match && activeViewTab !== "both" && activeViewTab !== match.box) {
+        setActiveViewTab(match.box);
+      }
+    }
+  }, [controlledCategoryId]);
 
-  const handleSelectCategory = (catId: SpendingCategoryKey) => {
-    setInternalCategoryId(catId);
-    if (onSelectCohort) onSelectCohort(catId);
-    if (onHighlightModeChange) onHighlightModeChange(catId);
+  React.useEffect(() => {
+    if (
+      highlightMode &&
+      highlightMode !== "all" &&
+      highlightMode !== "both" &&
+      highlightMode !== "cement" &&
+      highlightMode !== "concrete"
+    ) {
+      const match = ALL_HOTSPOTS.find((h) => h.id === highlightMode);
+      if (match) {
+        setActiveHotspotId(match.id);
+        if (activeViewTab !== "both" && activeViewTab !== match.box) {
+          setActiveViewTab(match.box);
+        }
+      }
+    }
+  }, [highlightMode]);
+
+  const activeHotspot =
+    ALL_HOTSPOTS.find((h) => h.id === activeHotspotId) || CEMENT_HOTSPOTS[2];
+
+  const handleSelectHotspot = (hotspot: HotspotDefinition) => {
+    setActiveHotspotId(hotspot.id);
+    if (onSelectCohort) onSelectCohort(hotspot.id);
+    if (onHighlightModeChange) onHighlightModeChange(hotspot.id);
   };
 
   const handleReset = () => {
-    setActiveMode("all");
-    setYearFilter("all");
-    setInternalCategoryId("teachers_salaries");
-    setHoveredCategory(null);
-    if (onSelectCohort) onSelectCohort("teachers_salaries");
+    setActiveViewTab("both");
+    setActiveHotspotId("heating");
+    setShowPins(true);
     if (onHighlightModeChange) onHighlightModeChange("all");
   };
-
-  const activeCategory =
-    SPENDING_CATEGORIES.find((c) => c.id === effectiveCategoryId) || SPENDING_CATEGORIES[0];
-
-  const activeHotspot =
-    SPENDING_HOTSPOTS.find((h) => h.category === activeCategory.label) || SPENDING_HOTSPOTS[0];
-
-  // Visible years based on filter
-  const displayedYears =
-    yearFilter === "all"
-      ? SPENDING_YEARS
-      : SPENDING_YEARS.filter((y) => y.year.toString() === yearFilter);
 
   return (
     <div
@@ -142,72 +349,135 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
             boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
           }}
         >
-          {/* Year View Toggles */}
+          {/* View Toggles */}
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
             <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--slate-500, #64748b)" }}>
-              Year:
+              View:
             </span>
-            {(["all", "1981", "1991", "2001"] as const).map((yr) => (
+            {[
+              { id: "both", label: "Both Diagrams (Student Pamphlet Format)" },
+              { id: "cement", label: "1. Cement Production (5 Stages)" },
+              { id: "concrete", label: "2. Concrete Production (4 Ingredients)" }
+            ].map((tab) => (
               <button
-                key={yr}
-                onClick={() => setYearFilter(yr)}
+                key={tab.id}
+                onClick={() => setActiveViewTab(tab.id as any)}
                 style={{
                   padding: "5px 12px",
                   borderRadius: "8px",
                   fontSize: "0.78rem",
                   fontWeight: 750,
-                  border: yearFilter === yr ? "1.5px solid #0f172a" : "1px solid #e2e8f0",
-                  background: yearFilter === yr ? "#0f172a" : "#f8fafc",
-                  color: yearFilter === yr ? "#ffffff" : "#334155",
+                  border: activeViewTab === tab.id ? "1.5px solid #0f172a" : "1px solid #e2e8f0",
+                  background: activeViewTab === tab.id ? "#0f172a" : "#f8fafc",
+                  color: activeViewTab === tab.id ? "#ffffff" : "#334155",
                   cursor: "pointer",
                   transition: "all 0.15s ease"
                 }}
               >
-                {yr === "all" ? "All 3 Years" : yr}
+                {tab.label}
               </button>
             ))}
           </div>
 
-          {/* Category Highlight Quick-Toggles */}
+          {/* Quick-Jump Step Chips & Controls */}
           <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
             <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--slate-500, #64748b)" }}>
-              Filter:
+              Steps:
             </span>
-            {SPENDING_CATEGORIES.map((cat) => {
-              const isSelected = effectiveCategoryId === cat.id;
+
+            {/* Cement Stage Buttons */}
+            {CEMENT_HOTSPOTS.map((h) => {
+              const isSelected = activeHotspotId === h.id;
               return (
                 <button
-                  key={cat.id}
-                  onClick={() => handleSelectCategory(cat.id)}
+                  key={h.id}
+                  onClick={() => handleSelectHotspot(h)}
+                  title={h.name}
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: "6px",
-                    padding: "4px 10px",
-                    borderRadius: "8px",
-                    fontSize: "0.75rem",
-                    fontWeight: 700,
-                    border: isSelected ? `2px solid ${cat.color}` : "1px solid #e2e8f0",
-                    background: isSelected ? `${cat.color}18` : "#ffffff",
-                    color: isSelected ? cat.color : "#475569",
-                    cursor: "pointer",
-                    boxShadow: isSelected ? "0 2px 6px rgba(0,0,0,0.06)" : "none",
-                    transition: "all 0.15s ease"
+                    gap: "4px",
+                    padding: "3px 8px",
+                    borderRadius: "6px",
+                    fontSize: "0.74rem",
+                    fontWeight: 750,
+                    border: isSelected ? `2px solid ${h.color}` : "1px solid #e2e8f0",
+                    background: isSelected ? `${h.color}18` : "#ffffff",
+                    color: isSelected ? h.color : "#475569",
+                    cursor: "pointer"
                   }}
                 >
                   <span
                     style={{
-                      width: "8px",
-                      height: "8px",
+                      width: "6px",
+                      height: "6px",
                       borderRadius: "50%",
-                      background: cat.color
+                      background: h.color
                     }}
                   />
-                  <span>{cat.shortLabel}</span>
+                  <span>{h.equipmentOrRole.split(" ")[0]}</span>
                 </button>
               );
             })}
 
+            {/* Concrete Ingredient Buttons */}
+            {CONCRETE_HOTSPOTS.map((h) => {
+              const isSelected = activeHotspotId === h.id;
+              return (
+                <button
+                  key={h.id}
+                  onClick={() => handleSelectHotspot(h)}
+                  title={h.name}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "4px",
+                    padding: "3px 8px",
+                    borderRadius: "6px",
+                    fontSize: "0.74rem",
+                    fontWeight: 750,
+                    border: isSelected ? `2px solid ${h.color}` : "1px solid #e2e8f0",
+                    background: isSelected ? `${h.color}18` : "#ffffff",
+                    color: isSelected ? h.color : "#475569",
+                    cursor: "pointer"
+                  }}
+                >
+                  <span
+                    style={{
+                      width: "6px",
+                      height: "6px",
+                      borderRadius: "50%",
+                      background: h.color
+                    }}
+                  />
+                  <span>{h.number}</span>
+                </button>
+              );
+            })}
+
+            {/* Toggle Pins Button */}
+            <button
+              onClick={() => setShowPins(!showPins)}
+              title={showPins ? "Hide Hotspot Pins" : "Show Hotspot Pins"}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "4px",
+                padding: "3px 8px",
+                borderRadius: "6px",
+                fontSize: "0.74rem",
+                fontWeight: 700,
+                border: "1px solid #e2e8f0",
+                background: showPins ? "#f8fafc" : "#e2e8f0",
+                color: "#475569",
+                cursor: "pointer"
+              }}
+            >
+              {showPins ? <Eye size={12} /> : <EyeOff size={12} />}
+              <span>{showPins ? "Pins On" : "Pins Off"}</span>
+            </button>
+
+            {/* Reset */}
             <button
               onClick={handleReset}
               title="Reset Filters"
@@ -215,9 +485,9 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
                 display: "flex",
                 alignItems: "center",
                 gap: "4px",
-                padding: "4px 8px",
-                borderRadius: "8px",
-                fontSize: "0.75rem",
+                padding: "3px 8px",
+                borderRadius: "6px",
+                fontSize: "0.74rem",
                 fontWeight: 700,
                 border: "1px solid #e2e8f0",
                 background: "#f1f5f9",
@@ -232,381 +502,316 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
         </div>
       )}
 
-      {/* Interactive Pie Charts Grid */}
+      {/* Main Diagrams Stage — EXACT IDENTICAL PAMPHLET LAYOUT (SIDE-BY-SIDE BOXES) */}
       <div
         style={{
           background: "#ffffff",
           borderRadius: "18px",
           border: "1.5px solid var(--border-subtle, #cbd5e1)",
-          padding: "16px",
+          padding: "16px 20px",
           boxShadow: "0 4px 16px rgba(0,0,0,0.03)",
           display: "flex",
           flexDirection: "column",
-          gap: "14px"
+          gap: "12px",
+          alignItems: "center"
         }}
       >
-        {/* Main Charts Row */}
+        {/* Stage Header Info Banner */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", flexWrap: "wrap", gap: "8px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Workflow size={18} color="#2563eb" />
+            <strong style={{ fontSize: "0.98rem", color: "#0f172a" }}>
+              Authentic Task Visuals • Identical Format to Student Pamphlet
+            </strong>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span
+              style={{
+                fontSize: "0.74rem",
+                fontWeight: 750,
+                background: "#f1f5f9",
+                color: "#475569",
+                padding: "2px 8px",
+                borderRadius: "6px",
+                border: "1px solid #e2e8f0"
+              }}
+            >
+              Touch any equipment or pin on the Smartboard to explore
+            </span>
+          </div>
+        </div>
+
+        {/* Side-by-Side Diagram Boxes */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns:
-              displayedYears.length === 3
-                ? "repeat(3, 1fr)"
-                : "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "14px"
+              activeViewTab === "both"
+                ? "repeat(2, minmax(0, 1fr))"
+                : "minmax(0, 520px)",
+            justifyContent: "center",
+            gap: "20px",
+            width: "100%",
+            maxWidth: activeViewTab === "both" ? "880px" : "520px",
+            margin: "0 auto"
           }}
         >
-          {displayedYears.map((yearData) => {
-            // Calculate slice angles for this pie
-            let currentAngle = 0;
-            const computedSlices = yearData.slices.map((slice) => {
-              const sliceAngle = (slice.percentage / 100) * 360;
-              const startAngle = currentAngle;
-              const endAngle = currentAngle + sliceAngle;
-              currentAngle = endAngle;
-              const midAngle = startAngle + sliceAngle / 2;
-              return {
-                ...slice,
-                startAngle,
-                endAngle,
-                midAngle
-              };
-            });
-
-            const pieSize = 250;
-            const cx = pieSize / 2;
-            const cy = pieSize / 2;
-            const radius = 95;
-
-            return (
-              <div
-                key={yearData.year}
+          {/* Box 1: Cement Production (Left Box in Student Pamphlet) */}
+          {(activeViewTab === "both" || activeViewTab === "cement") && (
+            <div
+              style={{
+                position: "relative",
+                background: "#ffffff",
+                border: "2px solid #1e293b",
+                borderRadius: "10px",
+                overflow: "hidden",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
+              }}
+            >
+              {/* Box Image: Exact reproduction of Cement Production from student pamphlet */}
+              <img
+                src="materials/cement_production_clean.png"
+                alt="Cement Production Process Diagram"
                 style={{
-                  background: "#f8fafc",
-                  borderRadius: "16px",
-                  border: "1px solid #e2e8f0",
-                  padding: "14px 10px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: "8px",
-                  position: "relative"
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  userSelect: "none",
+                  pointerEvents: "none"
+                }}
+              />
+
+              {/* Interactive SVG Hotspot Overlays */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  pointerEvents: "auto"
                 }}
               >
-                {/* Year Header & Total Badges */}
-                <div style={{ textAlign: "center", width: "100%" }}>
-                  <div
-                    style={{
-                      fontSize: "1.1rem",
-                      fontWeight: 850,
-                      color: "#0f172a",
-                      letterSpacing: "-0.01em"
-                    }}
-                  >
-                    Total School Spending {yearData.year}
-                  </div>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      gap: "8px",
-                      marginTop: "4px"
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: "0.7rem",
-                        fontWeight: 750,
-                        padding: "2px 7px",
-                        borderRadius: "6px",
-                        background: "#dbeafe",
-                        color: "#1e40af"
-                      }}
-                    >
-                      Staff: {yearData.totalStaffPercent}%
-                    </span>
-                    <span
-                      style={{
-                        fontSize: "0.7rem",
-                        fontWeight: 750,
-                        padding: "2px 7px",
-                        borderRadius: "6px",
-                        background: "#fef3c7",
-                        color: "#92400e"
-                      }}
-                    >
-                      Non-Staff: {yearData.totalNonStaffPercent}%
-                    </span>
-                  </div>
-                </div>
-
-                {/* SVG Pie Chart Canvas */}
-                <svg
-                  viewBox={`0 0 ${pieSize} ${pieSize}`}
-                  style={{
-                    width: "100%",
-                    maxWidth: "250px",
-                    height: "auto",
-                    overflow: "visible"
-                  }}
-                >
-                  <defs>
-                    <filter id={`shadow-${yearData.year}`} x="-10%" y="-10%" width="120%" height="120%">
-                      <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15" />
-                    </filter>
-                  </defs>
-
-                  {/* Render Slices */}
-                  {computedSlices.map((slice) => {
-                    const isSelected = effectiveCategoryId === slice.categoryId;
-                    const pathD = describeArc(cx, cy, radius, slice.startAngle, slice.endAngle);
-
-                    // Label coordinates
-                    // If slice is small (<= 5%), place label outside with pointer
-                    const isSmall = slice.percentage <= 5;
-                    const labelDist = isSmall ? radius * 1.25 : radius * 0.65;
-                    const labelPos = polarToCartesian(cx, cy, labelDist, slice.midAngle);
-                    const pointerStart = polarToCartesian(cx, cy, radius * 0.95, slice.midAngle);
-
-                    return (
-                      <g
-                        key={slice.categoryId}
-                        onClick={() => handleSelectCategory(slice.categoryId)}
-                        onMouseEnter={() => {
-                          const cat = SPENDING_CATEGORIES.find((c) => c.id === slice.categoryId);
-                          if (cat) setHoveredCategory(cat);
-                        }}
-                        onMouseLeave={() => setHoveredCategory(null)}
-                        style={{ cursor: "pointer" }}
-                      >
-                        {/* Slice Path */}
-                        <path
-                          d={pathD}
-                          fill={slice.color}
-                          stroke="#ffffff"
-                          strokeWidth={isSelected ? 3.5 : 1.5}
-                          opacity={effectiveCategoryId && !isSelected ? 0.45 : 1}
-                          filter={isSelected ? `url(#shadow-${yearData.year})` : undefined}
-                          transform={
-                            isSelected
-                              ? `scale(1.03) translate(${cx * -0.03}, ${cy * -0.03})`
-                              : undefined
-                          }
-                          style={{
-                            transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-                            transformOrigin: `${cx}px ${cy}px`
-                          }}
-                        />
-
-                        {/* Leader line for small slices */}
-                        {isSmall && (
-                          <line
-                            x1={pointerStart.x}
-                            y1={pointerStart.y}
-                            x2={labelPos.x}
-                            y2={labelPos.y}
-                            stroke="#475569"
-                            strokeWidth="1"
-                            strokeDasharray="2,2"
-                          />
-                        )}
-
-                        {/* Percentage Label */}
-                        <text
-                          x={labelPos.x}
-                          y={labelPos.y}
-                          textAnchor="middle"
-                          dominantBaseline="central"
-                          fill={isSmall ? "#0f172a" : "#ffffff"}
-                          fontSize={isSmall ? "11px" : "12px"}
-                          fontWeight="800"
-                          style={{
-                            textShadow: isSmall
-                              ? "0 1px 2px rgba(255,255,255,0.8)"
-                              : "0 1px 3px rgba(0,0,0,0.5)",
-                            pointerEvents: "none"
-                          }}
-                        >
-                          {slice.percentage}%
-                        </text>
-                      </g>
-                    );
-                  })}
-                </svg>
-
-                {/* Slices Mini-Breakdown Table for Classroom Zero-Scroll Viewing */}
-                <div
-                  style={{
-                    width: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "4px",
-                    marginTop: "4px"
-                  }}
-                >
-                  {yearData.slices.map((slice) => {
-                    const isSelected = effectiveCategoryId === slice.categoryId;
-                    return (
+                {CEMENT_HOTSPOTS.map((h) => {
+                  const isSelected = activeHotspotId === h.id;
+                  return (
+                    <React.Fragment key={h.id}>
+                      {/* Clickable Zone & Glowing Highlight Halo */}
                       <div
-                        key={slice.categoryId}
-                        onClick={() => handleSelectCategory(slice.categoryId)}
+                        onClick={() => handleSelectHotspot(h)}
                         style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          padding: "4px 8px",
-                          borderRadius: "6px",
-                          background: isSelected ? "#e2e8f0" : "#ffffff",
-                          border: isSelected ? `1.5px solid ${slice.color}` : "1px solid #f1f5f9",
-                          fontSize: "0.75rem",
+                          position: "absolute",
+                          left: h.highlight.x,
+                          top: h.highlight.y,
+                          width: h.highlight.w,
+                          height: h.highlight.h,
+                          borderRadius: "8px",
+                          border: isSelected
+                            ? `2.5px solid ${h.color}`
+                            : "1.5px solid transparent",
+                          background: isSelected ? `${h.color}15` : "transparent",
+                          boxShadow: isSelected ? `0 0 12px ${h.color}60` : "none",
                           cursor: "pointer",
-                          fontWeight: isSelected ? 800 : 600,
-                          color: isSelected ? "#0f172a" : "#475569"
+                          transition: "all 0.2s ease",
+                          zIndex: isSelected ? 15 : 5
                         }}
-                      >
-                        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                          <span
-                            style={{
-                              width: "8px",
-                              height: "8px",
-                              borderRadius: "2px",
-                              background: slice.color
-                            }}
-                          />
-                          <span>{slice.label}</span>
-                        </div>
-                        <span
+                      />
+
+                      {/* Floating Hotspot Pin Beacon */}
+                      {showPins && (
+                        <div
+                          onClick={() => handleSelectHotspot(h)}
+                          title={`${h.name} — Click to inspect`}
                           style={{
-                            fontWeight: 850,
-                            color: isSelected ? slice.color : "#1e293b"
+                            position: "absolute",
+                            left: h.pin.left,
+                            top: h.pin.top,
+                            transform: "translate(-50%, -50%)",
+                            cursor: "pointer",
+                            zIndex: isSelected ? 20 : 10,
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "4px"
                           }}
                         >
-                          {slice.percentage}%
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
+                          <div
+                            style={{
+                              width: isSelected ? "24px" : "20px",
+                              height: isSelected ? "24px" : "20px",
+                              borderRadius: "50%",
+                              background: h.color,
+                              color: "#ffffff",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontWeight: 800,
+                              fontSize: isSelected ? "0.76rem" : "0.7rem",
+                              boxShadow: isSelected
+                                ? `0 0 0 4px ${h.color}30, 0 3px 8px rgba(0,0,0,0.3)`
+                                : "0 2px 5px rgba(0,0,0,0.25)",
+                              transition: "all 0.2s ease"
+                            }}
+                          >
+                            {h.number}
+                          </div>
+
+                          {isSelected && (
+                            <span
+                              style={{
+                                background: "#0f172a",
+                                color: "#ffffff",
+                                fontSize: "0.68rem",
+                                fontWeight: 750,
+                                padding: "2px 6px",
+                                borderRadius: "4px",
+                                whiteSpace: "nowrap",
+                                boxShadow: "0 2px 6px rgba(0,0,0,0.2)"
+                              }}
+                            >
+                              {h.equipmentOrRole.split(" ")[0]}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                    </React.Fragment>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
+            </div>
+          )}
 
-        {/* Multi-Year Trend Tracker Strip Across 1981 -> 1991 -> 2001 */}
-        <div
-          style={{
-            background: "#f8fafc",
-            borderRadius: "14px",
-            border: "1px solid #e2e8f0",
-            padding: "12px 16px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "10px"
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <span
+          {/* Box 2: Concrete Production (Right Box in Student Pamphlet) */}
+          {(activeViewTab === "both" || activeViewTab === "concrete") && (
+            <div
               style={{
-                width: "14px",
-                height: "14px",
-                borderRadius: "50%",
-                background: activeCategory.color
-              }}
-            />
-            <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>
-              Active Focus: {activeCategory.label}
-            </strong>
-            <span
-              style={{
-                fontSize: "0.75rem",
-                padding: "2px 8px",
-                borderRadius: "6px",
-                background: activeCategory.group === "staff" ? "#dbeafe" : "#fef3c7",
-                color: activeCategory.group === "staff" ? "#1e40af" : "#92400e",
-                fontWeight: 750
+                position: "relative",
+                background: "#ffffff",
+                border: "2px solid #1e293b",
+                borderRadius: "10px",
+                overflow: "hidden",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
               }}
             >
-              {activeCategory.group === "staff" ? "Staff Costs" : "Operational / Capital Costs"}
-            </span>
-          </div>
+              {/* Box Image: Exact reproduction of Concrete Production from student pamphlet */}
+              <img
+                src="materials/concrete_production_clean.png"
+                alt="Concrete Production Process Diagram"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  userSelect: "none",
+                  pointerEvents: "none"
+                }}
+              />
 
-          {/* 3-Year Trajectory Badges */}
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <div
-              style={{
-                background: "#ffffff",
-                padding: "4px 10px",
-                borderRadius: "8px",
-                border: "1px solid #e2e8f0",
-                fontSize: "0.82rem"
-              }}
-            >
-              <span style={{ color: "#64748b", fontWeight: 600 }}>1981: </span>
-              <strong style={{ color: "#0f172a" }}>{activeCategory.y1981}%</strong>
-            </div>
-            <ChevronRight size={14} color="#94a3b8" />
-            <div
-              style={{
-                background: "#ffffff",
-                padding: "4px 10px",
-                borderRadius: "8px",
-                border: "1px solid #e2e8f0",
-                fontSize: "0.82rem"
-              }}
-            >
-              <span style={{ color: "#64748b", fontWeight: 600 }}>1991: </span>
-              <strong style={{ color: "#0f172a" }}>{activeCategory.y1991}%</strong>
-            </div>
-            <ChevronRight size={14} color="#94a3b8" />
-            <div
-              style={{
-                background: "#ffffff",
-                padding: "4px 10px",
-                borderRadius: "8px",
-                border: "1px solid #e2e8f0",
-                fontSize: "0.82rem"
-              }}
-            >
-              <span style={{ color: "#64748b", fontWeight: 600 }}>2001: </span>
-              <strong style={{ color: "#0f172a" }}>{activeCategory.y2001}%</strong>
-            </div>
+              {/* Interactive SVG Hotspot Overlays */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  pointerEvents: "auto"
+                }}
+              >
+                {CONCRETE_HOTSPOTS.map((h) => {
+                  const isSelected = activeHotspotId === h.id;
+                  return (
+                    <React.Fragment key={h.id}>
+                      {/* Clickable Zone & Glowing Highlight Halo */}
+                      <div
+                        onClick={() => handleSelectHotspot(h)}
+                        style={{
+                          position: "absolute",
+                          left: h.highlight.x,
+                          top: h.highlight.y,
+                          width: h.highlight.w,
+                          height: h.highlight.h,
+                          borderRadius: "8px",
+                          border: isSelected
+                            ? `2.5px solid ${h.color}`
+                            : "1.5px solid transparent",
+                          background: isSelected ? `${h.color}15` : "transparent",
+                          boxShadow: isSelected ? `0 0 12px ${h.color}60` : "none",
+                          cursor: "pointer",
+                          transition: "all 0.2s ease",
+                          zIndex: isSelected ? 15 : 5
+                        }}
+                      />
 
-            <div
-              style={{
-                padding: "4px 10px",
-                borderRadius: "8px",
-                fontSize: "0.82rem",
-                fontWeight: 800,
-                background:
-                  activeCategory.netChange > 0
-                    ? "#dcfce7"
-                    : activeCategory.netChange < 0
-                    ? "#fee2e2"
-                    : "#f1f5f9",
-                color:
-                  activeCategory.netChange > 0
-                    ? "#166534"
-                    : activeCategory.netChange < 0
-                    ? "#991b1b"
-                    : "#475569"
-              }}
-            >
-              20-Yr Net: {activeCategory.netChange > 0 ? "+" : ""}
-              {activeCategory.netChange}%
+                      {/* Floating Hotspot Pin Beacon */}
+                      {showPins && (
+                        <div
+                          onClick={() => handleSelectHotspot(h)}
+                          title={`${h.name} — Click to inspect`}
+                          style={{
+                            position: "absolute",
+                            left: h.pin.left,
+                            top: h.pin.top,
+                            transform: "translate(-50%, -50%)",
+                            cursor: "pointer",
+                            zIndex: isSelected ? 20 : 10,
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "4px"
+                          }}
+                        >
+                          <div
+                            style={{
+                              padding: "2px 6px",
+                              borderRadius: "10px",
+                              background: h.color,
+                              color: "#ffffff",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontWeight: 800,
+                              fontSize: "0.68rem",
+                              boxShadow: isSelected
+                                ? `0 0 0 4px ${h.color}30, 0 3px 8px rgba(0,0,0,0.3)`
+                                : "0 2px 5px rgba(0,0,0,0.25)",
+                              transition: "all 0.2s ease"
+                            }}
+                          >
+                            {h.number}
+                          </div>
+
+                          {isSelected && (
+                            <span
+                              style={{
+                                background: "#0f172a",
+                                color: "#ffffff",
+                                fontSize: "0.68rem",
+                                fontWeight: 750,
+                                padding: "2px 6px",
+                                borderRadius: "4px",
+                                whiteSpace: "nowrap",
+                                boxShadow: "0 2px 6px rgba(0,0,0,0.2)"
+                              }}
+                            >
+                              {h.name.split(" ")[0]}
+                            </span>
+                          )}
+                        </div>
+                      )}
+                    </React.Fragment>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
-      {/* SmartBoard Pedagogical Deep Dive Card */}
-      {showDeepDiveCard && activeCategory && (
+      {/* Synchronized Smartboard Pedagogical Deep Dive Card */}
+      {showDeepDiveCard && activeHotspot && (
         <div
           style={{
             background: "#ffffff",
             borderRadius: "18px",
-            border: `1.5px solid ${activeCategory.color}40`,
+            border: `1.5px solid ${activeHotspot.color}40`,
             padding: "16px 20px",
             boxShadow: "0 4px 16px rgba(0,0,0,0.03)",
             display: "flex",
@@ -614,44 +819,57 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
             gap: "10px"
           }}
         >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <Award size={18} color={activeCategory.color} />
-              <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                {activeHotspot.title}
+              <Award size={18} color={activeHotspot.color} />
+              <h4 style={{ fontSize: "1.02rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+                {activeHotspot.name}
               </h4>
+              <span
+                style={{
+                  fontSize: "0.72rem",
+                  fontWeight: 800,
+                  padding: "2px 8px",
+                  borderRadius: "6px",
+                  background: activeHotspot.box === "cement" ? "#eff6ff" : "#ecfdf5",
+                  color: activeHotspot.box === "cement" ? "#1e40af" : "#065f46"
+                }}
+              >
+                {activeHotspot.box === "cement" ? "Cement Production Stage" : "Concrete Component"}
+              </span>
             </div>
+
             <span
               style={{
-                fontSize: "0.75rem",
+                fontSize: "0.74rem",
                 fontWeight: 800,
                 padding: "3px 10px",
                 borderRadius: "8px",
-                background: `${activeCategory.color}15`,
-                color: activeCategory.color
+                background: `${activeHotspot.color}15`,
+                color: activeHotspot.color
               }}
             >
-              Band 9 Essential Citation
+              {activeHotspot.grammaticalFocus}
             </span>
           </div>
 
           <p style={{ fontSize: "0.88rem", color: "#334155", margin: 0, lineHeight: 1.5 }}>
-            <strong>Analytical Trajectory:</strong> {activeCategory.trendDescription}
+            <strong>Mechanical Operation:</strong> {activeHotspot.description}
           </p>
 
           <div
             style={{
               background: "#f8fafc",
-              borderLeft: `3px solid ${activeCategory.color}`,
+              borderLeft: `3.5px solid ${activeHotspot.color}`,
               borderRadius: "8px",
               padding: "10px 14px",
-              fontSize: "0.9rem",
+              fontSize: "0.92rem",
               color: "#1e293b",
               lineHeight: 1.55,
               fontStyle: "italic"
             }}
           >
-            {activeCategory.band9Phrase}
+            {activeHotspot.band9Phrase}
           </div>
         </div>
       )}

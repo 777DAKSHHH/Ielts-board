@@ -110,7 +110,7 @@ export const GeneralTask1Modal: React.FC<GeneralTask1ModalProps> = ({
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                   <h3 style={{ fontSize: "1.15rem", fontWeight: 800, margin: 0, color: "#ffffff" }}>
-                    IELTS General Training Task 1 • Semi-Formal Letter Writing
+                    IELTS General Training Task 1 • {data.letterType} Letter Writing
                   </h3>
                   <span
                     style={{
@@ -122,11 +122,11 @@ export const GeneralTask1Modal: React.FC<GeneralTask1ModalProps> = ({
                       borderRadius: "6px"
                     }}
                   >
-                    Semi-Formal Register
+                    {data.letterType} Register
                   </span>
                 </div>
                 <p style={{ fontSize: "0.8rem", color: "#94a3b8", margin: "2px 0 0 0" }}>
-                  Hardware Procurement Inquiry &amp; Price Quotation Request • 150+ Words
+                  {data.title} • 150+ Words
                 </p>
               </div>
             </div>
@@ -200,7 +200,7 @@ export const GeneralTask1Modal: React.FC<GeneralTask1ModalProps> = ({
                   Question Prompt:
                 </strong>
                 <span style={{ fontSize: "0.86rem", color: "#334155", lineHeight: 1.45 }}>
-                  “You want to buy some computers. Therefore, write to a vendor seeking information and price quotation for the same. In your letter, introduce yourself, give details on what type of computers you are looking for, and request the quotation.”
+                  “{data.questionText.replace(/\n\n/g, " • ")}”
                 </span>
               </div>
             </div>
@@ -210,7 +210,7 @@ export const GeneralTask1Modal: React.FC<GeneralTask1ModalProps> = ({
               {[
                 { id: "model", label: "Model Letter & 3 Bullets" },
                 { id: "structure", label: "Format & Tone Rules" },
-                { id: "vocab", label: "Procurement Lexicon" }
+                { id: "vocab", label: "Letter Lexicon" }
               ].map((tab) => (
                 <button
                   key={tab.id}
@@ -474,41 +474,41 @@ export const GeneralTask1Modal: React.FC<GeneralTask1ModalProps> = ({
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "14px" }}>
                   <div style={{ background: "#f8fafc", padding: "16px", borderRadius: "14px", border: "1px solid #e2e8f0" }}>
                     <div style={{ fontWeight: 800, color: "#2563eb", fontSize: "0.88rem" }}>1. Salutation</div>
-                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“Dear Sales Manager,” / “Dear Mr. Jenkins,”</div>
+                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“{data.salutation}”</div>
                     <p style={{ fontSize: "0.8rem", color: "#64748b", margin: "6px 0 0 0" }}>
-                      Since you are writing to a company representative you have not personally met, use their job title or surname.
+                      Since you are writing an informal letter to a friend, open warmly using their first name followed by a comma.
                     </p>
                   </div>
 
                   <div style={{ background: "#f8fafc", padding: "16px", borderRadius: "14px", border: "1px solid #e2e8f0" }}>
-                    <div style={{ fontWeight: 800, color: "#2563eb", fontSize: "0.88rem" }}>2. Purpose &amp; Introduction (Bullet 1)</div>
-                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“I am writing to inquire about purchasing...”</div>
+                    <div style={{ fontWeight: 800, color: "#2563eb", fontSize: "0.88rem" }}>2. Warm Opening &amp; Friendly Context</div>
+                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“I hope you and the family are doing well! You mentioned...”</div>
                     <p style={{ fontSize: "0.8rem", color: "#64748b", margin: "6px 0 0 0" }}>
-                      Introduce yourself, your position, and state the exact purpose of the letter in the very first sentence.
+                      Catch up casually, reference their previous request, and enthusiastically announce that you found the perfect instructor.
                     </p>
                   </div>
 
                   <div style={{ background: "#f8fafc", padding: "16px", borderRadius: "14px", border: "1px solid #e2e8f0" }}>
-                    <div style={{ fontWeight: 800, color: "#2563eb", fontSize: "0.88rem" }}>3. Specifications (Bullet 2)</div>
-                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“Specifically, we are looking to procure...”</div>
+                    <div style={{ fontWeight: 800, color: "#2563eb", fontSize: "0.88rem" }}>3. Teacher's Experience (Bullet 1)</div>
+                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“Her name is Clara Bennett, and she has over a decade...”</div>
                     <p style={{ fontSize: "0.8rem", color: "#64748b", margin: "6px 0 0 0" }}>
-                      Provide exact hardware parameters (CPU, RAM, storage, GPU, screens, quantity) to prove thorough task completion.
+                      Present their musical credentials, conservatory training, years of youth instruction, and exam track record.
                     </p>
                   </div>
 
                   <div style={{ background: "#f8fafc", padding: "16px", borderRadius: "14px", border: "1px solid #e2e8f0" }}>
-                    <div style={{ fontWeight: 800, color: "#2563eb", fontSize: "0.88rem" }}>4. Quotation Request (Bullet 3)</div>
-                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“Could you please provide an itemized quote...”</div>
+                    <div style={{ fontWeight: 800, color: "#2563eb", fontSize: "0.88rem" }}>4. Why She Is Suitable (Bullet 2)</div>
+                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“I immediately thought of Leo because Clara possesses exceptional patience...”</div>
                     <p style={{ fontSize: "0.8rem", color: "#64748b", margin: "6px 0 0 0" }}>
-                      Inquire about bulk pricing discounts, warranty terms, delivery timelines, and technical maintenance.
+                      Highlight her playful pedagogy, games-based approach, and personal proof of success with young children.
                     </p>
                   </div>
 
                   <div style={{ background: "#f8fafc", padding: "16px", borderRadius: "14px", border: "1px solid #e2e8f0" }}>
-                    <div style={{ fontWeight: 800, color: "#2563eb", fontSize: "0.88rem" }}>5. Professional Sign-off</div>
-                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“Yours sincerely, Marcus Vance”</div>
+                    <div style={{ fontWeight: 800, color: "#2563eb", fontSize: "0.88rem" }}>5. How to Get in Touch (Bullet 3) &amp; Sign-off</div>
+                    <div style={{ fontWeight: 700, color: "#0f172a", marginTop: "4px" }}>“You can reach Clara directly on 07891... Warmly, {data.senderName}”</div>
                     <p style={{ fontSize: "0.8rem", color: "#64748b", margin: "6px 0 0 0" }}>
-                      Always finish with standard semi-formal complimentary close and your full name.
+                      Provide direct contact info, suggest a trial lesson, and close with a friendly informal sign-off and first name.
                     </p>
                   </div>
                 </div>
@@ -516,7 +516,7 @@ export const GeneralTask1Modal: React.FC<GeneralTask1ModalProps> = ({
                 {/* Tone Comparison Dos & Don'ts */}
                 <div style={{ marginTop: "10px" }}>
                   <h4 style={{ fontSize: "0.98rem", fontWeight: 800, color: "#0f172a", marginBottom: "12px" }}>
-                    Tone &amp; Register: Dos vs Don'ts
+                    Tone &amp; Register: Dos vs Don'ts (Informal Friend Letter)
                   </h4>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
                     {data.toneGuidelines.map((rule, idx) => (
@@ -550,7 +550,7 @@ export const GeneralTask1Modal: React.FC<GeneralTask1ModalProps> = ({
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 <div>
                   <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a" }}>
-                    Commercial Procurement &amp; Hardware Lexicon
+                    Musical Pedagogy &amp; Informal Letter Lexicon
                   </h4>
                   <p style={{ fontSize: "0.85rem", color: "#64748b", margin: "2px 0 0 0" }}>
                     Band 9 vocabulary for business correspondence, technical computing specifications, and commercial inquiries:

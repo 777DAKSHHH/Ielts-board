@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2, TrendingUp, Users, ShieldCheck, Sparkles, Award } from "lucide-react";
+import { CheckCircle2, Workflow, Flame, ShieldCheck, Sparkles, Award } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step6FlowBreakdown: React.FC = () => {
@@ -9,18 +9,18 @@ export const Step6FlowBreakdown: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 06 / 08 • Body 1 — Staff Costs &amp; Wage Trajectories
+          Step 06 / 08 • Body 1 — Cement Manufacturing Pipeline
         </span>
-        <h2 className="stage-title">Deconstructing Body Paragraph 1: Staff Remuneration</h2>
+        <h2 className="stage-title">Deconstructing Body Paragraph 1: The 5 Stages of Cement Production</h2>
         <p className="stage-subtitle">
-          Examine the sentence-by-sentence architectural breakdown for employee remuneration: teachers' salaries commanding the lion's share (40% → 50% → 45%), other workers' continuous downward trajectory (28% → 22% → 15%), and combined staff costs absorbing 60%–72% of annual outlay.
+          Examine the stage-by-stage mechanical breakdown: crushing limestone and clay into powder, mechanical blending, heating in an inclined rotating cylinder, conveyor milling, and commercial bagging.
         </p>
       </div>
 
       <div className="stage-grid-2col">
-        {/* Left Column: Feature Breakdown for Staff Remuneration */}
+        {/* Left Column: 4 Key Stages of Cement Production */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          {/* Feature 1: Teachers' Baseline */}
+          {/* Stage 1: Crushing */}
           <div
             style={{
               background: "var(--slate-50)",
@@ -36,35 +36,35 @@ export const Step6FlowBreakdown: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#2563eb" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  1. Teachers' Salaries Baseline (1981)
+                  1. Raw Mineral Crushing: Limestone &amp; Clay
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.72rem" }}>
-                Starting Baseline: 40%
+                Equipment: Crusher
               </span>
             </div>
 
             <div style={{ background: "#ffffff", borderRadius: "10px", padding: "12px", border: "1px solid var(--border-subtle)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--slate-700)" }}>
-                  Premier Single Expense (1981)
+                  Mechanical Action:
                 </span>
-                <span style={{ fontSize: "1.2rem", fontWeight: 800, color: "#2563eb" }}>
-                  40%
+                <span style={{ fontSize: "0.95rem", fontWeight: 800, color: "#2563eb" }}>
+                  Limestone + Clay → Powder
                 </span>
               </div>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Analytical Role:</strong> Establishes the school's primary expense right from the start. Teachers' salaries formed two-fifths of all funding in 1981, well ahead of other workers (28%).
+              <strong>Analytical Role:</strong> Opens the report with the initial raw mineral extraction. Both solids pass through a mechanical crusher to be pulverized into a fine dry powder.
             </p>
           </div>
 
-          {/* Feature 2: Peak Expansion to 50% & Slight Moderation */}
+          {/* Stage 2: Blending in Mixer */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid rgba(37, 99, 235, 0.3)",
+              border: "1.5px solid rgba(2, 132, 199, 0.3)",
               borderRadius: "18px",
               padding: "20px",
               display: "flex",
@@ -74,39 +74,26 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#2563eb" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#0284c7" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  2. Peak at 50% (1991) &amp; Moderation to 45% (2001)
+                  2. Industrial Blending Chamber
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#eff6ff", color: "#1e40af" }}>
-                Peak: 50% (Half of Budget)
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f0f9ff", color: "#0369a1" }}>
+                Equipment: Mixer
               </span>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
-                <div style={{ fontSize: "0.75rem", color: "#2563eb", fontWeight: 700 }}>1991 PEAK</div>
-                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#1d4ed8" }}>50%</div>
-                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>Exactly half of outlay</div>
-              </div>
-              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
-                <div style={{ fontSize: "0.75rem", color: "#64748b", fontWeight: 700 }}>2001 SETTLEMENT</div>
-                <div style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a" }}>45%</div>
-                <div style={{ fontSize: "0.68rem", color: "var(--slate-500)" }}>Remains dominant #1</div>
-              </div>
-            </div>
-
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Key Phrasing:</strong> <em>“...climbing to a peak of 50% in 1991, and subsequently dipping to 45% in 2001.”</em>
+              <strong>Key Phrasing:</strong> <em>“This powdered mixture is then fed into an industrial mixer to achieve a uniform blend...”</em> Ensures homogeneous consistency before thermal treatment.
             </p>
           </div>
 
-          {/* Feature 3: Other Workers' Unbroken Downward Trajectory */}
+          {/* Stage 3: Rotating Kiln & High Heat */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid rgba(124, 58, 237, 0.3)",
+              border: "1.5px solid rgba(234, 88, 12, 0.3)",
               borderRadius: "18px",
               padding: "20px",
               display: "flex",
@@ -116,44 +103,26 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#7c3aed" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ea580c" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  3. Other Staff Salaries: Unbroken Downward Trend
+                  3. Thermal Processing: Rotating Heater
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f5f3ff", color: "#6d28d9" }}>
-                Almost Halved: 28% → 15%
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#fff7ed", color: "#c2410c" }}>
+                Equipment: Rotating Kiln + Heat
               </span>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
-              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
-                <div style={{ fontSize: "0.7rem", color: "#64748b", fontWeight: 700 }}>1981</div>
-                <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "#0f172a" }}>28%</div>
-                <div style={{ fontSize: "0.65rem", color: "var(--slate-500)" }}>2nd largest cost</div>
-              </div>
-              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
-                <div style={{ fontSize: "0.7rem", color: "#7c3aed", fontWeight: 700 }}>1991</div>
-                <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "#7c3aed" }}>22%</div>
-                <div style={{ fontSize: "0.65rem", color: "var(--slate-500)" }}>-6% drop</div>
-              </div>
-              <div style={{ background: "#ffffff", borderRadius: "10px", padding: "10px", border: "1px solid var(--border-subtle)", textAlign: "center" }}>
-                <div style={{ fontSize: "0.7rem", color: "#991b1b", fontWeight: 700 }}>2001</div>
-                <div style={{ fontSize: "1.2rem", fontWeight: 800, color: "#991b1b" }}>15%</div>
-                <div style={{ fontSize: "0.65rem", color: "var(--slate-500)" }}>Nearly halved</div>
-              </div>
-            </div>
-
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Examiner Precision:</strong> Describing this as an <em>“unbroken downward trajectory, diminishing from 28% to 22% and almost halving to 15%”</em> demonstrates Band 9 lexical resource.
+              <strong>Crucial Visual Detail:</strong> The heater is an <strong>inclined cylinder</strong> rotating continuously while heat is applied directly from the lower end, synthesizing intermediate clinker.
             </p>
           </div>
 
-          {/* Feature 4: Combined Staff Total */}
+          {/* Stage 4 & 5: Conveyor Grinder & Bagging */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid var(--border-subtle)",
+              border: "1.5px solid rgba(5, 150, 105, 0.3)",
               borderRadius: "18px",
               padding: "16px 20px",
               display: "flex",
@@ -163,14 +132,14 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div>
               <h4 style={{ fontSize: "0.95rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                4. Combined Staff Outlay Synthesis
+                4 &amp; 5. Conveyor Grinding &amp; Final Packaging
               </h4>
               <p style={{ fontSize: "0.8rem", color: "var(--slate-600)", margin: "4px 0 0 0" }}>
-                Staff wages consistently accounted for 60% to 72% of total school expenditure.
+                Transported via conveyor belt to a grinder, milled into cement, and packed into bags.
               </p>
             </div>
-            <span style={{ fontSize: "1.2rem", fontWeight: 800, color: "#1e40af" }}>
-              60%–72%
+            <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#059669", background: "#dcfce7", padding: "4px 8px", borderRadius: "6px" }}>
+              Bags Ready
             </span>
           </div>
         </div>
@@ -192,13 +161,13 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Users size={20} color="var(--apple-blue)" />
+                <Workflow size={20} color="var(--apple-blue)" />
                 <h4 style={{ fontSize: "1.1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
                   Body Paragraph 1 Model ({body1Model?.wordCount} words)
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.75rem", fontWeight: 750 }}>
-                Staff Focus
+                Cement Sequence
               </span>
             </div>
 
@@ -242,26 +211,26 @@ export const Step6FlowBreakdown: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <ShieldCheck size={18} color="#16a34a" />
               <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                Band 9 Sentence Sequencing Blueprint
+                Band 9 Process Sentence Flow Blueprint
               </h4>
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.85rem" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>1</span>
-                <span><strong>Categorical Signal &amp; Baseline:</strong> <em>“In terms of staffing costs, teachers’ salaries constituted the school’s principal outlay in every year surveyed, beginning at 40% in 1981...”</em></span>
+                <span><strong>Opening Process Signal:</strong> <em>“Regarding the manufacture of cement, limestone and clay are initially passed through a crusher to be pulverized into a fine powder.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>2</span>
-                <span><strong>Peak Milestone &amp; Dip:</strong> <em>“...climbing to a peak of 50% in 1991, and subsequently dipping to 45% in 2001.”</em></span>
+                <span><strong>Sequential Link &amp; Blending:</strong> <em>“This powdered mixture is then fed into an industrial mixer to achieve a uniform blend before entering an elongated, rotating cylinder heater.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>3</span>
-                <span><strong>Contrastive Downward Trajectory:</strong> <em>“By contrast, expenditure on other workers’ salaries followed an unbroken downward trajectory; having formed the second-largest cost at 28% in 1981, it diminished to 22% in 1991 before almost halving to 15% by 2001.”</em></span>
+                <span><strong>Thermal Detail &amp; Heat Direction:</strong> <em>“In this chamber, the substance is subjected to intense heat applied from the lower end as the drum continuously revolves.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>4</span>
-                <span><strong>High-Level Macro Total:</strong> <em>“Combined, staff remuneration consistently absorbed well over half of the school’s annual funding, ranging between 60% and 72%.”</em></span>
+                <span><strong>Participial Clause &amp; Packaging:</strong> <em>“After being heated, the resulting mixture is transported along a conveyor belt to a grinder, where it is milled into fine cement. Finally, the finished product is poured into heavy-duty bags...”</em></span>
               </div>
             </div>
           </div>

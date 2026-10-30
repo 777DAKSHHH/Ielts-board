@@ -6,56 +6,56 @@ export const TASK1_STEPS: StepDefinition[] = [
     stepNumber: 1,
     title: "Cryptic Audio Guess",
     badge: "Step 01 / 08 • Cryptic Audio Guess",
-    description: "Listen First: Australian Physical Activity (2010) — Youth Male Lead, Mid-Life Gap & Senior Parity"
+    description: "Listen First: Cement & Concrete Manufacturing Process Briefing"
   },
   {
     id: "task1-step2",
     stepNumber: 2,
-    title: "Task Prompt & School Spending Pie Charts",
-    badge: "Step 02 / 08 • Prompt & Interactive Visual Engine",
-    description: "Interactive Pie Charts Engine: UK School Expenditure across 5 Categories in 1981, 1991 & 2001"
+    title: "Task Prompt & Process Diagrams",
+    badge: "Step 02 / 08 • Prompt & Interactive Process Engine",
+    description: "Interactive Process Engine: Cement Manufacturing Pipeline (5 Stages) & Concrete Batch Mixing (4 Ingredients)"
   },
   {
     id: "task1-step3",
     stepNumber: 3,
-    title: "Budget & Proportion Lexicon",
-    badge: "Step 03 / 08 • Lexical Resource",
-    description: "Allocation, Lion's Share, Account For, Quadruple, Resurgence, Trajectory, Halve, Negligible & Fluctuate"
+    title: "Manufacturing & Process Lexicon",
+    badge: "Step 03 / 08 • Process Lexical Resource",
+    description: "Pulverize, Kiln / Rotating Heater, Conveyor Belt, Grinder, Aggregate, Binding Agent, Hydration, Batch Mixing"
   },
   {
     id: "task1-step4",
     stepNumber: 4,
     title: "Sample Introduction & Macro Overview",
     badge: "Step 04 / 08 • Sample Introduction & Overview",
-    description: "5-Element Prompt Paraphrase (5 Spending Categories & 20-Year Span) & 3-Pillar Macro Synthesis"
+    description: "Dual-Diagram Prompt Paraphrase & 2-Pillar Macro Synthesis (Sequential Thermal Pipeline vs Single Batch Mix)"
   },
   {
     id: "task1-step5",
     stepNumber: 5,
-    title: "Data Bifurcation & Grouping",
+    title: "Process Bifurcation Strategy",
     badge: "Step 05 / 08 • Structural Grouping Strategy",
-    description: "Bifurcation Tactics: Staff Remuneration (Body 1: 60%–72%) vs Non-Staff Capital & Operational Outlay (Body 2)"
+    description: "Bifurcation Tactics: Body 1 Cement Production (5 Sequential Stages) vs Body 2 Concrete Formulation (4 Ratios & Mixer)"
   },
   {
     id: "task1-step6",
     stepNumber: 6,
-    title: "Body 1: Staff Remuneration Breakdown",
-    badge: "Step 06 / 08 • Body 1 — Staff Costs & Wage Trajectories",
-    description: "Teachers' Salaries Peak (40% → 50% → 45%), Other Workers' Decline (28% → 15%) & Combined Staff Dominance"
+    title: "Body 1: Cement Production Flow",
+    badge: "Step 06 / 08 • Body 1 — Cement Manufacturing Pipeline",
+    description: "Crushing Limestone & Clay, Mixing, Rotating Heater, Conveyor Belt Grinder, and Bagging"
   },
   {
     id: "task1-step7",
     stepNumber: 7,
     title: "Body 2 & Complete Band 9 Model",
     badge: "Step 07 / 08 • Body 2 & Full Model Response",
-    description: "Furniture Crash & Resurgence (5% → 23%), Resources Fall (9%), Insurance Quadrupling (2% → 8%) & Full Model"
+    description: "Concrete Ratios (Gravel 50%, Sand 25%, Cement 15%, Water 10%), Rotating Drum Mixer & Full 228-Word Model"
   },
   {
     id: "task1-step8",
     stepNumber: 8,
-    title: "Comparative & Proportion Connectors",
+    title: "Chronological & Process Connectors",
     badge: "Step 08 / 08 • Academic Discourse Connectors",
-    description: "Budget Categorical Signaling, Peak Allocations, Unbroken Downward Trends, Resurgences & General Task 1 Modal"
+    description: "Sequential Progression, Passive Voice Linkers, Participial Clauses, Proportion Framing & General Task 1 Modal"
   }
 ];
 

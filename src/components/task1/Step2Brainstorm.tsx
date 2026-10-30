@@ -18,17 +18,22 @@ import {
   ArrowRight,
   ShieldCheck,
   LayoutGrid,
-  PieChart as PieIcon
+  Workflow,
+  Flame,
+  Boxes,
+  Eye,
+  Info
 } from "lucide-react";
-import {
-  TASK1_DATA,
-  SPENDING_CATEGORIES,
-  SPENDING_YEARS,
-  SPENDING_HOTSPOTS
-} from "../../data/task1Data";
-import { SpendingCategoryKey, SpendingCategoryItem } from "../../types/task1";
+import { TASK1_DATA } from "../../data/task1Data";
 import { TouchTimer } from "../common/TouchTimer";
-import { SmartBoardTableMatrix, DiagramViewMode } from "./SmartBoardGraphSvg";
+import {
+  SmartBoardTableMatrix,
+  DiagramViewMode,
+  HotspotDefinition,
+  CEMENT_HOTSPOTS,
+  CONCRETE_HOTSPOTS,
+  ALL_HOTSPOTS
+} from "./SmartBoardGraphSvg";
 import { BitsAndPiecesMindmap } from "./BitsAndPiecesMindmap";
 import { BitsAndPiecesFlashcards } from "./BitsAndPiecesFlashcards";
 
@@ -53,8 +58,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   // Default to side-by-side split view for zero-scroll on smart boards
   const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const [selectedCategoryId, setSelectedCategoryId] = useState<SpendingCategoryKey>("teachers_salaries");
-  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("all");
+  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("heating");
+  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("heating");
   const [dockTab, setDockTab] = useState<"category" | "prompt" | "hotspots">("category");
 
   useEffect(() => {
@@ -79,14 +84,16 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
     setIsEnlarged(true);
   };
 
-  // Synchronized active category data
-  const activeCategory =
-    SPENDING_CATEGORIES.find((c) => c.id === selectedCategoryId) || SPENDING_CATEGORIES[0];
+  // Synchronized active component data (from Smartboard SVG)
+  const activeHotspot: HotspotDefinition =
+    ALL_HOTSPOTS.find((h) => h.id === selectedHotspotId) || CEMENT_HOTSPOTS[2];
 
-  const activeHotspot =
-    SPENDING_HOTSPOTS.find((h) => h.category === activeCategory.label) || SPENDING_HOTSPOTS[0];
+  const handleSelectComponent = (id: string) => {
+    setSelectedHotspotId(id);
+    setHighlightMode(id as DiagramViewMode);
+  };
 
-  // Presenter Dock Component for zero-scroll smart board teaching
+  // Presenter Dock Component for zero-scroll smart board teaching — 100% Synced with Diagram
   const renderPresenterDock = (inModal = false) => (
     <div
       style={{
@@ -99,7 +106,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         flexDirection: "column",
         gap: "12px",
         height: "100%",
-        minHeight: inModal ? "auto" : "420px"
+        minHeight: inModal ? "auto" : "440px"
       }}
     >
       {/* Dock Tabs Header */}
@@ -119,14 +126,26 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#0f172a" }}>
             Smart Board Presenter Dock
           </span>
+          <span
+            style={{
+              fontSize: "0.7rem",
+              fontWeight: 800,
+              padding: "2px 7px",
+              borderRadius: "5px",
+              background: activeHotspot.box === "cement" ? "#eff6ff" : "#ecfdf5",
+              color: activeHotspot.box === "cement" ? "#1e40af" : "#065f46"
+            }}
+          >
+            {activeHotspot.box === "cement" ? "Cement Pipeline" : "Concrete Formulation"}
+          </span>
         </div>
 
         {/* 3 Dock Tabs */}
         <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "3px", borderRadius: "8px" }}>
           {[
-            { id: "category", label: "🎯 Active Category" },
+            { id: "category", label: "🎯 Active Component" },
             { id: "prompt", label: "📝 Prompt" },
-            { id: "hotspots", label: "⭐ Hotspots" }
+            { id: "hotspots", label: "⭐ All 10 Steps" }
           ].map((tab) => (
             <button
               key={tab.id}
@@ -150,46 +169,77 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         </div>
       </div>
 
-      {/* Dock Content: Tab 1 - Active Category Deep Dive */}
+      {/* Dock Content: Tab 1 - Active Component Deep Dive (Synced with Smartboard SVG) */}
       {dockTab === "category" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
-          {/* Quick Category Tap Strip */}
-          <div style={{ display: "flex", alignItems: "center", gap: "5px", flexWrap: "wrap" }}>
-            <span style={{ fontSize: "0.7rem", fontWeight: 750, color: "#64748b", marginRight: "2px" }}>
-              TAP CATEGORY:
-            </span>
-            {SPENDING_CATEGORIES.map((cat) => {
-              const isSelected = selectedCategoryId === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  type="button"
-                  onClick={() => {
-                    setSelectedCategoryId(cat.id);
-                    setHighlightMode(cat.id as DiagramViewMode);
-                  }}
-                  style={{
-                    padding: "3px 8px",
-                    borderRadius: "6px",
-                    fontSize: "0.72rem",
-                    fontWeight: 750,
-                    border: isSelected ? `1.5px solid ${cat.color}` : "1px solid #e2e8f0",
-                    background: isSelected ? `${cat.color}18` : "#f8fafc",
-                    color: isSelected ? cat.color : "#475569",
-                    cursor: "pointer"
-                  }}
-                >
-                  {cat.shortLabel}
-                </button>
-              );
-            })}
+          {/* Quick Component Tap Strip — Touch any chip to highlight on the diagram */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+            {/* Cement 5 Stages */}
+            <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#1e40af", marginRight: "2px", textTransform: "uppercase" }}>
+                Cement:
+              </span>
+              {CEMENT_HOTSPOTS.map((h) => {
+                const isSelected = selectedHotspotId === h.id;
+                return (
+                  <button
+                    key={h.id}
+                    type="button"
+                    onClick={() => handleSelectComponent(h.id)}
+                    style={{
+                      padding: "2px 7px",
+                      borderRadius: "6px",
+                      fontSize: "0.71rem",
+                      fontWeight: 750,
+                      border: isSelected ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
+                      background: isSelected ? `${h.color}18` : "#f8fafc",
+                      color: isSelected ? h.color : "#475569",
+                      cursor: "pointer",
+                      transition: "all 0.15s ease"
+                    }}
+                  >
+                    {h.name.split(". ")[1]?.split(" ")[0] || h.name}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Concrete 5 Components */}
+            <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#065f46", marginRight: "2px", textTransform: "uppercase" }}>
+                Concrete:
+              </span>
+              {CONCRETE_HOTSPOTS.map((h) => {
+                const isSelected = selectedHotspotId === h.id;
+                return (
+                  <button
+                    key={h.id}
+                    type="button"
+                    onClick={() => handleSelectComponent(h.id)}
+                    style={{
+                      padding: "2px 7px",
+                      borderRadius: "6px",
+                      fontSize: "0.71rem",
+                      fontWeight: 750,
+                      border: isSelected ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
+                      background: isSelected ? `${h.color}18` : "#f8fafc",
+                      color: isSelected ? h.color : "#475569",
+                      cursor: "pointer",
+                      transition: "all 0.15s ease"
+                    }}
+                  >
+                    {h.number}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Active Category Name & Dominance Banner */}
+          {/* Active Component Title & Equipment Banner */}
           <div
             style={{
               background: "#f8fafc",
-              border: "1px solid #e2e8f0",
+              border: `1.5px solid ${activeHotspot.color}35`,
               borderRadius: "12px",
               padding: "10px 14px",
               display: "flex",
@@ -197,154 +247,139 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               alignItems: "center"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <span
                 style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
-                  background: activeCategory.color
+                  minWidth: "28px",
+                  height: "28px",
+                  borderRadius: "8px",
+                  background: activeHotspot.color,
+                  color: "#ffffff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: 800,
+                  fontSize: "0.78rem"
                 }}
-              />
+              >
+                {activeHotspot.number}
+              </span>
               <div>
-                <span style={{ fontSize: "0.72rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase" }}>
-                  Selected Expense Category
+                <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase" }}>
+                  {activeHotspot.box === "cement" ? "Cement Stage" : "Concrete Ingredient / Mixer"}
                 </span>
-                <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a" }}>
-                  {activeCategory.label}
+                <div style={{ fontSize: "0.98rem", fontWeight: 800, color: "#0f172a" }}>
+                  {activeHotspot.name}
                 </div>
               </div>
             </div>
             <span
               style={{
-                fontSize: "0.75rem",
+                fontSize: "0.72rem",
                 fontWeight: 800,
-                padding: "4px 9px",
+                padding: "3px 8px",
                 borderRadius: "6px",
-                background: activeCategory.group === "staff" ? "#dbeafe" : "#fef3c7",
-                color: activeCategory.group === "staff" ? "#1e40af" : "#92400e",
-                border: "1px solid currentColor"
+                background: "#ffffff",
+                color: activeHotspot.color,
+                border: `1px solid ${activeHotspot.color}40`
               }}
             >
-              {activeCategory.group === "staff" ? "Staff Costs" : "Operational / Capital"}
+              {activeHotspot.equipmentOrRole}
             </span>
           </div>
 
-          {/* 3-Year Stat Cards Grid */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
-            {/* 1981 */}
-            <div
-              style={{
-                background: "#f1f5f9",
-                border: "1px solid #cbd5e1",
-                padding: "9px 10px",
-                borderRadius: "10px",
-                textAlign: "center"
-              }}
-            >
-              <div style={{ fontSize: "0.68rem", color: "#64748b", fontWeight: 700 }}>1981</div>
-              <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a" }}>
-                {activeCategory.y1981}%
-              </div>
-              <div style={{ fontSize: "0.65rem", color: "#64748b" }}>Baseline Year</div>
+          {/* 3 Parameter Metric Stat Cards */}
+          {activeHotspot.parameterMetrics && (
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
+              {activeHotspot.parameterMetrics.map((pm, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    padding: "8px 9px",
+                    borderRadius: "10px",
+                    textAlign: "center"
+                  }}
+                >
+                  <div style={{ fontSize: "0.66rem", color: "#64748b", fontWeight: 700 }}>
+                    {pm.label}
+                  </div>
+                  <div style={{ fontSize: "0.82rem", fontWeight: 800, color: "#0f172a", marginTop: "2px" }}>
+                    {pm.value}
+                  </div>
+                </div>
+              ))}
             </div>
+          )}
 
-            {/* 1991 */}
-            <div
-              style={{
-                background: "#f1f5f9",
-                border: "1px solid #cbd5e1",
-                padding: "9px 10px",
-                borderRadius: "10px",
-                textAlign: "center"
-              }}
-            >
-              <div style={{ fontSize: "0.68rem", color: "#64748b", fontWeight: 700 }}>1991</div>
-              <div style={{ fontSize: "1.3rem", fontWeight: 800, color: "#0f172a" }}>
-                {activeCategory.y1991}%
-              </div>
-              <div style={{ fontSize: "0.65rem", color: "#64748b" }}>
-                {activeCategory.id === "teachers_salaries"
-                  ? "★ 50% Peak"
-                  : activeCategory.id === "furniture_and_equipment"
-                  ? "▼ 5% Slump"
-                  : "Mid-Decade"}
-              </div>
-            </div>
-
-            {/* 2001 */}
-            <div
-              style={{
-                background: activeCategory.netChange >= 0 ? "#eff6ff" : "#fef2f2",
-                border:
-                  activeCategory.netChange >= 0
-                    ? "1px solid #bfdbfe"
-                    : "1px solid #fecaca",
-                padding: "9px 10px",
-                borderRadius: "10px",
-                textAlign: "center"
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "0.68rem",
-                  color: activeCategory.netChange >= 0 ? "#1e40af" : "#991b1b",
-                  fontWeight: 700
-                }}
-              >
-                2001
-              </div>
-              <div
-                style={{
-                  fontSize: "1.3rem",
-                  fontWeight: 800,
-                  color: activeCategory.netChange >= 0 ? "#1d4ed8" : "#b91c1c"
-                }}
-              >
-                {activeCategory.y2001}%
-              </div>
-              <div
-                style={{
-                  fontSize: "0.65rem",
-                  color: activeCategory.netChange >= 0 ? "#2563eb" : "#dc2626"
-                }}
-              >
-                Net: {activeCategory.netChange >= 0 ? "+" : ""}
-                {activeCategory.netChange}%
-              </div>
-            </div>
+          {/* Operational Mechanics Description */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1px solid #e2e8f0",
+              borderRadius: "10px",
+              padding: "9px 12px",
+              fontSize: "0.82rem",
+              color: "#334155",
+              lineHeight: 1.45
+            }}
+          >
+            <strong style={{ color: "#0f172a", display: "block", marginBottom: "2px" }}>
+              Operational Mechanics:
+            </strong>
+            {activeHotspot.description}
           </div>
-
-          {/* Annotation Detail */}
-          <p style={{ fontSize: "0.82rem", color: "#475569", margin: 0, lineHeight: 1.45 }}>
-            <strong>Analytical Trajectory:</strong> {activeCategory.trendDescription}
-          </p>
 
           {/* Band 9 Analytical Sentence Box */}
           <div
             style={{
               background: "#f8fafc",
               border: "1px solid #cbd5e1",
-              borderLeft: `3.5px solid ${activeCategory.color}`,
+              borderLeft: `3.5px solid ${activeHotspot.color}`,
               borderRadius: "10px",
-              padding: "10px 12px",
+              padding: "9px 12px",
               fontSize: "0.84rem",
               lineHeight: 1.5,
-              color: "#1e293b",
-              marginTop: "auto"
+              color: "#1e293b"
             }}
           >
             <div
               style={{
-                fontSize: "0.72rem",
+                fontSize: "0.7rem",
                 fontWeight: 800,
-                color: activeCategory.color,
+                color: activeHotspot.color,
                 marginBottom: "3px"
               }}
             >
-              BAND 9 SENTENCE:
+              ★ BAND 9 MODEL SENTENCE:
             </div>
-            <em>{activeHotspot.band9Sentence}</em>
+            <em>{activeHotspot.band9Phrase}</em>
+          </div>
+
+          {/* Grammar & Examiner Anchor */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "8px",
+              flexWrap: "wrap",
+              background: "#f1f5f9",
+              padding: "6px 10px",
+              borderRadius: "8px",
+              fontSize: "0.75rem",
+              marginTop: "auto"
+            }}
+          >
+            <span style={{ color: "#475569" }}>
+              <strong>Grammar:</strong> {activeHotspot.grammaticalFocus}
+            </span>
+            {activeHotspot.examinerFocus && (
+              <span style={{ color: "#0369a1", fontWeight: 750 }}>
+                {activeHotspot.examinerFocus}
+              </span>
+            )}
           </div>
         </div>
       )}
@@ -374,58 +409,80 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "0.78rem" }}>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
               <span style={{ color: "#64748b" }}>Format:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Three Pie Charts</strong>
+              <strong style={{ display: "block", color: "#0f172a" }}>Two Process Diagrams</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Scale:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Percentage (%)</strong>
+              <span style={{ color: "#64748b" }}>Pipeline 1:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>5 Sequential Stages</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Scope:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>1 UK School (1981–2001)</strong>
+              <span style={{ color: "#64748b" }}>Pipeline 2:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>4 Batch Ingredients</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Target:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>150+ Words</strong>
+              <span style={{ color: "#64748b" }}>Cross Link:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>Cement is 15% Binder</strong>
             </div>
           </div>
         </div>
       )}
 
-      {/* Dock Content: Tab 3 - Strategic Hotspots List */}
+      {/* Dock Content: Tab 3 - All 10 Components */}
       {dockTab === "hotspots" && (
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1, overflowY: "auto" }}>
-          {SPENDING_HOTSPOTS.map((h) => {
-            const isMatch = activeCategory.label === h.category;
+        <div style={{ display: "flex", flexDirection: "column", gap: "6px", flex: 1, overflowY: "auto" }}>
+          {ALL_HOTSPOTS.map((h) => {
+            const isMatch = selectedHotspotId === h.id;
             return (
               <div
                 key={h.id}
-                onClick={() => {
-                  const target = SPENDING_CATEGORIES.find((c) => c.label === h.category);
-                  if (target) {
-                    setSelectedCategoryId(target.id);
-                    setHighlightMode(target.id as DiagramViewMode);
-                  }
-                }}
+                onClick={() => handleSelectComponent(h.id)}
                 style={{
                   background: isMatch ? "#eff6ff" : "#f8fafc",
-                  border: isMatch ? "1.5px solid #2563eb" : "1px solid #e2e8f0",
+                  border: isMatch ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
                   borderRadius: "10px",
-                  padding: "8px 10px",
+                  padding: "7px 10px",
                   cursor: "pointer",
                   fontSize: "0.8rem",
-                  transition: "all 0.15s ease"
+                  transition: "all 0.15s ease",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center"
                 }}
               >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <strong style={{ color: "#0f172a" }}>{h.title}</strong>
-                  <span style={{ fontSize: "0.72rem", color: "#2563eb", fontWeight: 700 }}>
-                    {h.y1981}% → {h.y2001}%
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <span
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      borderRadius: "6px",
+                      background: h.color,
+                      color: "#ffffff",
+                      fontSize: "0.68rem",
+                      fontWeight: 800,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center"
+                    }}
+                  >
+                    {h.number}
                   </span>
+                  <div>
+                    <strong style={{ color: "#0f172a", fontSize: "0.82rem" }}>{h.name}</strong>
+                    <div style={{ fontSize: "0.72rem", color: "#64748b" }}>{h.equipmentOrRole}</div>
+                  </div>
                 </div>
-                <div style={{ fontSize: "0.75rem", color: "#475569", marginTop: "2px" }}>
-                  {h.keyFeature}
-                </div>
+                <span
+                  style={{
+                    fontSize: "0.7rem",
+                    fontWeight: 750,
+                    padding: "2px 6px",
+                    borderRadius: "4px",
+                    background: h.box === "cement" ? "#dbeafe" : "#dcfce7",
+                    color: h.box === "cement" ? "#1e40af" : "#166534"
+                  }}
+                >
+                  {h.box === "cement" ? "Cement" : "Concrete"}
+                </span>
               </div>
             );
           })}
@@ -439,11 +496,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; School Spending Pie Charts
+          Step 02 / 08 • Task Prompt &amp; Process Diagrams
         </span>
-        <h2 className="stage-title">Deconstruct the UK School Spending Pie Charts (1981, 1991, 2001)</h2>
+        <h2 className="stage-title">Deconstruct the Cement &amp; Concrete Production Diagrams</h2>
         <p className="stage-subtitle">
-          Examine the prompt, deconstruct expenditure across five categories over a 20-year span, identify the teachers' salary predominance (40% → 50% → 45%), other workers' continuous fall (28% → 15%), furniture's resurgence (5% → 23%), and insurance quadrupling (2% → 8%).
+          Examine the prompt, deconstruct the 5 sequential manufacturing stages of cement, and analyze the 4-ingredient formulation for concrete (50% gravel, 25% sand, 15% cement, 10% water) in the rotating mixer.
         </p>
       </div>
 
@@ -455,7 +512,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the three pie charts, note teachers' salaries commanding the lion's share, furniture's plunge to 5% and surge to 23%, and insurance quadrupling."
+          instruction="Focus Timer: 3 minutes to analyze the two diagrams: sequence the 5 cement stages and calculate the 4 concrete ingredient proportions (50% gravel, 25% sand, 15% cement, 10% water)."
         />
       </div>
 
@@ -494,8 +551,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <PieIcon size={14} />
-            <span>Interactive Pie Charts</span>
+            <Workflow size={14} />
+            <span>Interactive Process Engine</span>
           </button>
 
           <button
@@ -637,7 +694,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       </div>
 
       {/* STAGE WORKSPACE: ZERO-SCROLL SPLIT OR FULL WIDTH */}
-      {stageLayout === "split" ? (
+      {stageLayout === "split" && viewMode === "smartboard_table" ? (
         /* ZERO-SCROLL SPLIT VIEW: Chart on left, Presenter Dock on right */
         <div
           style={{
@@ -662,30 +719,19 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               flexDirection: "column"
             }}
           >
-            {viewMode === "smartboard_table" && (
-              <SmartBoardTableMatrix
-                highlightMode={highlightMode}
-                onHighlightModeChange={(mode) => setHighlightMode(mode)}
-                selectedCohortId={selectedCategoryId}
-                onSelectCohort={(id) => setSelectedCategoryId(id as SpendingCategoryKey)}
-                showInternalToolbar={true}
-                showDeepDiveCard={false} // Hidden on left because Live Presenter Dock on the right handles it with zero scroll!
-              />
-            )}
-
-            {viewMode === "mindmap" && <BitsAndPiecesMindmap />}
-
-            {viewMode === "flashcards" && <BitsAndPiecesFlashcards />}
-
-            {viewMode === "original_image" && (
-              <div style={{ textAlign: "center", padding: "10px" }}>
-                <img
-                  src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="UK School Spending Pie Charts"
-                  style={{ maxWidth: "100%", maxHeight: "400px", borderRadius: "10px", objectFit: "contain" }}
-                />
-              </div>
-            )}
+            <SmartBoardTableMatrix
+              highlightMode={highlightMode}
+              onHighlightModeChange={(mode) => {
+                setHighlightMode(mode);
+                if (mode !== "all" && mode !== "both" && mode !== "cement" && mode !== "concrete") {
+                  setSelectedHotspotId(mode);
+                }
+              }}
+              selectedCohortId={selectedHotspotId}
+              onSelectCohort={(id) => handleSelectComponent(id)}
+              showInternalToolbar={true}
+              showDeepDiveCard={false} // Hidden on left because Live Presenter Dock on the right handles it with zero scroll!
+            />
           </div>
 
           {/* Right Column: Live Smart Board Presenter Dock (Directly Beside Chart!) */}
@@ -710,9 +756,14 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             {viewMode === "smartboard_table" && (
               <SmartBoardTableMatrix
                 highlightMode={highlightMode}
-                onHighlightModeChange={(mode) => setHighlightMode(mode)}
-                selectedCohortId={selectedCategoryId}
-                onSelectCohort={(id) => setSelectedCategoryId(id as SpendingCategoryKey)}
+                onHighlightModeChange={(mode) => {
+                  setHighlightMode(mode);
+                  if (mode !== "all" && mode !== "both" && mode !== "cement" && mode !== "concrete") {
+                    setSelectedHotspotId(mode);
+                  }
+                }}
+                selectedCohortId={selectedHotspotId}
+                onSelectCohort={(id) => handleSelectComponent(id)}
                 showInternalToolbar={true}
                 showDeepDiveCard={true}
               />
@@ -737,7 +788,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="IELTS Academic Task 1 UK School Spending Three Pie Charts"
+                  alt="IELTS Academic Task 1 Cement and Concrete Production Diagrams"
                   style={{
                     maxHeight: "560px",
                     maxWidth: "100%",
@@ -748,7 +799,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   }}
                 />
                 <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
-                  Official Cambridge IELTS Academic Question Diagram • Three Pie Charts: Spending of One UK School (1981, 1991, 2001)
+                  Official Cambridge IELTS Academic Question Diagram • Cement &amp; Concrete Production Procedure
                 </div>
               </div>
             )}
@@ -809,49 +860,63 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <Sparkles size={17} color="#d97706" />
+                <Sparkles size={17} color="#2563eb" />
                 <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  Strategic Spending Hotspots (Examiner Key Features)
+                  Strategic Process Stages &amp; Components Inspector (10 Items)
                 </h4>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "8px", maxHeight: "200px", overflowY: "auto" }}>
-                {SPENDING_HOTSPOTS.map((h) => {
-                  const targetCat = SPENDING_CATEGORIES.find((c) => c.label === h.category);
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px", maxHeight: "220px", overflowY: "auto" }}>
+                {ALL_HOTSPOTS.map((h) => {
+                  const isSelected = selectedHotspotId === h.id;
                   return (
                     <div
                       key={h.id}
-                      onClick={() => {
-                        if (targetCat) {
-                          setSelectedCategoryId(targetCat.id);
-                          setHighlightMode(targetCat.id as DiagramViewMode);
-                        }
-                      }}
+                      onClick={() => handleSelectComponent(h.id)}
                       style={{
                         padding: "8px 12px",
                         borderRadius: "10px",
-                        background: "#f8fafc",
-                        border: "1px solid #e2e8f0",
+                        background: isSelected ? "#eff6ff" : "#f8fafc",
+                        border: isSelected ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
-                        cursor: "pointer"
+                        cursor: "pointer",
+                        transition: "all 0.15s ease"
                       }}
                     >
-                      <div>
-                        <strong style={{ fontSize: "0.85rem", color: "#0f172a" }}>{h.title}</strong>
-                        <div style={{ fontSize: "0.74rem", color: "#64748b" }}>{h.keyFeature}</div>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                        <span
+                          style={{
+                            width: "24px",
+                            height: "24px",
+                            borderRadius: "6px",
+                            background: h.color,
+                            color: "#ffffff",
+                            fontSize: "0.7rem",
+                            fontWeight: 800,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
+                          }}
+                        >
+                          {h.number}
+                        </span>
+                        <div>
+                          <strong style={{ fontSize: "0.85rem", color: "#0f172a" }}>{h.name}</strong>
+                          <div style={{ fontSize: "0.74rem", color: "#64748b" }}>{h.equipmentOrRole}</div>
+                        </div>
                       </div>
                       <span
                         style={{
-                          fontSize: "0.78rem",
+                          fontSize: "0.74rem",
                           fontWeight: 800,
                           padding: "2px 8px",
                           borderRadius: "6px",
-                          background: "#e0f2fe",
-                          color: "#0369a1"
+                          background: h.box === "cement" ? "#dbeafe" : "#dcfce7",
+                          color: h.box === "cement" ? "#1e40af" : "#166534"
                         }}
                       >
-                        {h.y1981}% → {h.y2001}%
+                        {h.box === "cement" ? "Cement" : "Concrete"}
                       </span>
                     </div>
                   );
@@ -907,7 +972,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     Enlarged Presentation Mode
                   </span>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                    UK School Spending Three Pie Charts (1981, 1991, 2001)
+                    Cement &amp; Concrete Production Procedure
                   </h3>
                 </div>
                 <button
@@ -933,9 +998,14 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 <div style={{ background: "#ffffff", borderRadius: "18px", border: "1.5px solid #e2e8f0", padding: "16px" }}>
                   <SmartBoardTableMatrix
                     highlightMode={highlightMode}
-                    onHighlightModeChange={(mode) => setHighlightMode(mode)}
-                    selectedCohortId={selectedCategoryId}
-                    onSelectCohort={(id) => setSelectedCategoryId(id as SpendingCategoryKey)}
+                    onHighlightModeChange={(mode) => {
+                      setHighlightMode(mode);
+                      if (mode !== "all" && mode !== "both" && mode !== "cement" && mode !== "concrete") {
+                        setSelectedHotspotId(mode);
+                      }
+                    }}
+                    selectedCohortId={selectedHotspotId}
+                    onSelectCohort={(id) => handleSelectComponent(id)}
                     showInternalToolbar={true}
                     showDeepDiveCard={false}
                   />

@@ -37,72 +37,72 @@ export interface GeneralTask1Data {
     term: string;
     definition: string;
     example: string;
-    category: "Hardware Specs" | "Commercial & Pricing" | "Semi-Formal Phrasing";
+    category: "Musical Credentials" | "Pedagogical Temperament" | "Informal Letter Phrasing" | string;
   }[];
 }
 
 export const GENERAL_TASK1_DATA: GeneralTask1Data = {
-  id: "general-task1-computer-quotation",
+  id: "general-task1-music-teacher-recommendation",
   taskType: "IELTS General Training • Writing Task 1",
-  letterType: "Semi-Formal",
-  title: "Computer Procurement Inquiry & Price Quotation Letter",
+  letterType: "Informal",
+  title: "Recommending a Music Teacher for a Friend's Child",
   questionText:
-    "You want to buy some computers. Therefore, write to a vendor seeking information and price quotation for the same.\n\nIn your letter,\n• Introduce yourself\n• Give details on what type of computers you are looking for\n• Request the quotation",
-  salutation: "Dear Sales Manager,",
-  signoff: "Yours sincerely,",
-  senderName: "Marcus Vance",
-  wordCount: 188,
+    "Your friend has asked you to help him to find a music teacher for his/her child. Write a letter to your friend that you have found a suitable teacher.\n\nIn your letter,\n• What experience the teacher has\n• Why you think he/she is suitable\n• How to get in touch with the teacher",
+  salutation: "Dear Mark,",
+  signoff: "Warmly,",
+  senderName: "Alex",
+  wordCount: 202,
 
   bullets: [
     {
       id: "bullet-1",
       bulletNumber: 1,
-      promptText: "Introduce yourself",
-      targetParagraph: "Opening & Background",
+      promptText: "What experience the teacher has",
+      targetParagraph: "Teacher's Background & Musical Credentials (Paragraph 2)",
       explanation:
-        "State who you are, your organizational role or company background, and the clear commercial context of why you are reaching out to the vendor.",
+        "Detail the instructor's background, years of teaching, formal musical qualifications, and track record guiding young beginners through graded examinations.",
       modelExcerpt:
-        "“I am writing to inquire about purchasing a batch of desktop computers for our creative agency, Apex Media Solutions, where I serve as the Senior IT Procurement Officer. As our design team is expanding next month, we need to upgrade our current workstations...”",
+        "“Her name is Clara Bennett, and she has over a decade of teaching experience in classical and contemporary piano, backed by a master’s degree from the Royal Academy of Music. For the past six years, she has directed the youth music curriculum at Oakridge Arts Academy...”",
       keyCollocations: [
-        "serve as the Senior IT Procurement Officer",
-        "inquire about purchasing a batch of...",
-        "our team is expanding",
-        "upgrade our current workstations"
+        "over a decade of teaching experience",
+        "master’s degree from the Royal Academy of Music",
+        "directed the youth music curriculum",
+        "guiding young beginners through graded exams",
+        "classical and contemporary piano"
       ]
     },
     {
       id: "bullet-2",
       bulletNumber: 2,
-      promptText: "Give details on what type of computers you are looking for",
-      targetParagraph: "Technical Specifications & Hardware Scope",
+      promptText: "Why you think he/she is suitable",
+      targetParagraph: "Teaching Philosophy & Rapport with Children (Paragraph 3)",
       explanation:
-        "Provide explicit, realistic technical specifications: machine category (desktops vs laptops), processor, RAM, storage, graphics capability, peripherals, and quantity required (15 units).",
+        "Explain why this particular teacher is ideal for a child: highlight patience, playful pedagogy, engaging interactive games, and personal evidence from a relative's success.",
       modelExcerpt:
-        "“Specifically, we are looking to procure 15 high-performance desktop systems. Each unit should be equipped with an Intel Core i7 processor (13th generation or later), a minimum of 32 GB of RAM, and a 1 TB NVMe SSD for fast data processing. Furthermore, each machine must feature a dedicated graphics card with at least 8 GB of VRAM, bundled with a 27-inch 4K monitor.”",
+        "“I immediately thought of Leo because Clara possesses exceptional patience and a wonderfully playful teaching manner. Rather than drilling dry theory, she incorporates interactive rhythm games and familiar movie themes, which keeps young children engaged and eager to practise...”",
       keyCollocations: [
-        "looking to procure 15 high-performance desktop systems",
-        "equipped with an Intel Core i7 processor",
-        "a minimum of 32 GB of RAM",
-        "fast data processing",
-        "dedicated graphics card with at least 8 GB of VRAM",
-        "bundled with a 27-inch 4K monitor"
+        "exceptional patience and a playful teaching manner",
+        "rather than drilling dry theory",
+        "interactive rhythm games and ear training",
+        "keeps young children engaged and eager to practise",
+        "enthusiastically composing her own melodies"
       ]
     },
     {
       id: "bullet-3",
       bulletNumber: 3,
-      promptText: "Request the quotation",
-      targetParagraph: "Commercial Terms, Pricing & Quotation Request",
+      promptText: "How to get in touch with the teacher",
+      targetParagraph: "Contact Details, Availability & Trial Lesson (Paragraph 4)",
       explanation:
-        "Politely and formally request an itemized quotation, inquire about volume/bulk discounts, warranty terms, delivery timelines, and after-sales support.",
+        "Provide direct contact information (phone number, email), mention available schedules, and suggest booking a complimentary trial session.",
       modelExcerpt:
-        "“Could you please provide an itemized price quotation for the hardware described above, including all applicable taxes? In addition, I would be grateful if you could clarify whether your company offers corporate volume discounts for bulk orders, as well as details regarding delivery lead times, warranty coverage, and ongoing technical support.”",
+        "“You can reach Clara directly on 07891 456 820 or email her at clara.music@email.com. She has a few afternoon slots opening up next term and is happy to offer a free 20-minute trial lesson. Give her a call and let me know how it goes!”",
       keyCollocations: [
-        "itemized price quotation",
-        "including all applicable taxes",
-        "corporate volume discounts for bulk orders",
-        "delivery lead times",
-        "warranty coverage and technical support"
+        "reach her directly on...",
+        "afternoon slots opening up next term",
+        "free 20-minute trial lesson",
+        "give her a call",
+        "let me know how it goes"
       ]
     }
   ],
@@ -111,127 +111,134 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
     {
       id: "salutation",
       title: "Salutation",
-      purpose: "Formal business address to vendor",
-      text: "Dear Sales Manager,",
-      wordCount: 3
+      purpose: "Friendly, informal greeting using friend's first name",
+      text: "Dear Mark,",
+      wordCount: 2
     },
     {
       id: "p1",
-      title: "Paragraph 1: Purpose & Introduction (Bullet 1)",
-      purpose: "Establish identity, organizational context, and reason for writing",
-      text: "I am writing to inquire about purchasing a batch of desktop computers for our creative agency, Apex Media Solutions, where I serve as the Senior IT Procurement Officer. As our design department is expanding next month, we need to upgrade our current workstations to comfortably handle high-demand digital media applications.",
-      wordCount: 52,
-      bulletRef: 1
+      title: "Paragraph 1: Warm Opening & Reason for Writing",
+      purpose: "Catch up informally and announce that a suitable teacher has been found",
+      text: "I hope you and the family are doing well! You mentioned last week that you were looking for a talented music teacher for Leo, and I am thrilled to let you know that I have found the perfect person.",
+      wordCount: 39
     },
     {
       id: "p2",
-      title: "Paragraph 2: Hardware Specifications (Bullet 2)",
-      purpose: "Detail required specs, computing power, peripherals, and quantity",
-      text: "Specifically, we are looking to procure 15 high-performance desktop workstations. Each unit should ideally be equipped with an Intel Core i7 processor (13th generation or later), a minimum of 32 GB of RAM, and a 1 TB NVMe solid-state drive for rapid rendering and data processing. Furthermore, as our personnel routinely produce video animation and 3D modeling, each machine must feature a dedicated graphics card with at least 8 GB of VRAM. We would also appreciate each computer being bundled with a 27-inch 4K color-calibrated monitor.",
-      wordCount: 88,
-      bulletRef: 2
+      title: "Paragraph 2: Teacher's Experience & Qualifications (Bullet 1)",
+      purpose: "Detail credentials, conservatory training, and track record with youth",
+      text: "Her name is Clara Bennett, and she has over a decade of teaching experience in classical and contemporary piano, backed by a master’s degree from the Royal Academy of Music. For the past six years, she has directed the youth music curriculum at Oakridge Arts Academy, guiding dozens of young beginners through their initial grades with flawless distinction.",
+      wordCount: 58,
+      bulletRef: 1
     },
     {
       id: "p3",
-      title: "Paragraph 3: Quotation Request & Terms (Bullet 3)",
-      purpose: "Request itemized quotation, discounts, warranty, and lead times",
-      text: "Could you please provide an itemized price quotation for the configuration outlined above, including applicable taxes? Furthermore, I would be grateful if you could state whether your firm offers corporate volume discounts for bulk orders, alongside details regarding delivery lead times, warranty coverage, and after-sales technical maintenance.",
-      wordCount: 51,
+      title: "Paragraph 3: Why She Is Suitable for the Child (Bullet 2)",
+      purpose: "Highlight patience, gamified learning, and personal evidence of success",
+      text: "I immediately thought of Leo because Clara possesses exceptional patience and a wonderfully playful teaching manner. Rather than drilling dry theory, she incorporates interactive rhythm games and familiar movie themes, which keeps young children engaged and eager to practise. In fact, she taught my niece Sophie, who went from being hesitant about music to enthusiastically composing her own little melodies within months.",
+      wordCount: 65,
+      bulletRef: 2
+    },
+    {
+      id: "p4",
+      title: "Paragraph 4: How to Contact Her & Trial Lesson (Bullet 3)",
+      purpose: "Provide contact details, schedule openings, and offer trial advice",
+      text: "You can reach Clara directly on 07891 456 820 or email her at clara.music@email.com. She has a few afternoon slots opening up next term and is happy to offer a free 20-minute trial lesson. Give her a call and let me know how it goes!",
+      wordCount: 47,
       bulletRef: 3
     },
     {
       id: "closing",
       title: "Closing & Sign-off",
-      purpose: "Polite call to action and professional sign-off",
-      text: "I look forward to receiving your prompt quotation.\n\nYours sincerely,\nMarcus Vance",
-      wordCount: 14
+      purpose: "Warm, informal sign-off with first name",
+      text: "Warmly,\nAlex",
+      wordCount: 2
     }
   ],
 
-  modelLetter: `Dear Sales Manager,
+  modelLetter: `Dear Mark,
 
-I am writing to inquire about purchasing a batch of desktop computers for our creative agency, Apex Media Solutions, where I serve as the Senior IT Procurement Officer. As our design department is expanding next month, we need to upgrade our current workstations to comfortably handle high-demand digital media applications.
+I hope you and the family are doing well! You mentioned last week that you were looking for a talented music teacher for Leo, and I am thrilled to let you know that I have found the perfect person.
 
-Specifically, we are looking to procure 15 high-performance desktop workstations. Each unit should ideally be equipped with an Intel Core i7 processor (13th generation or later), a minimum of 32 GB of RAM, and a 1 TB NVMe solid-state drive for rapid rendering and data processing. Furthermore, as our personnel routinely produce video animation and 3D modeling, each machine must feature a dedicated graphics card with at least 8 GB of VRAM. We would also appreciate each computer being bundled with a 27-inch 4K color-calibrated monitor.
+Her name is Clara Bennett, and she has over a decade of teaching experience in classical and contemporary piano, backed by a master’s degree from the Royal Academy of Music. For the past six years, she has directed the youth music curriculum at Oakridge Arts Academy, guiding dozens of young beginners through their initial grades with flawless distinction.
 
-Could you please provide an itemized price quotation for the configuration outlined above, including applicable taxes? Furthermore, I would be grateful if you could state whether your firm offers corporate volume discounts for bulk orders, alongside details regarding delivery lead times, warranty coverage, and after-sales technical maintenance.
+I immediately thought of Leo because Clara possesses exceptional patience and a wonderfully playful teaching manner. Rather than drilling dry theory, she incorporates interactive rhythm games and familiar movie themes, which keeps young children engaged and eager to practise. In fact, she taught my niece Sophie, who went from being hesitant about music to enthusiastically composing her own little melodies within months.
 
-I look forward to receiving your prompt quotation.
+You can reach Clara directly on 07891 456 820 or email her at clara.music@email.com. She has a few afternoon slots opening up next term and is happy to offer a free 20-minute trial lesson. Give her a call and let me know how it goes!
 
-Yours sincerely,
-Marcus Vance`,
+Warmly,
+Alex`,
 
   toneGuidelines: [
     {
-      rule: "Professional & Polite Opening",
-      doExample: "“I am writing to inquire about purchasing a batch of computers...”",
-      dontExample: "“Hey, I want to buy some PCs from your shop...” (too casual)"
+      rule: "Friendly & Natural Informal Opening",
+      doExample: "“I hope you and the family are doing well! You mentioned last week...”",
+      dontExample: "“I am writing this letter to notify you that I have found an instructor...” (too stiff and formal)"
     },
     {
-      rule: "Indirect Polite Modals for Commercial Requests",
-      doExample: "“Could you please provide an itemized price quotation...” / “I would be grateful if you could clarify...”",
-      dontExample: "“Send me your price list right now.” (too abrupt/demanding)"
+      rule: "Conversational Contractions & Phrasal Verbs",
+      doExample: "“I’m thrilled,” “opening up,” “give her a call,” “let me know”",
+      dontExample: "“I am writing with reference to...” / “Please be informed that...” (inappropriate for a friend)"
     },
     {
-      rule: "Precise Commercial & Technical Terminology",
-      doExample: "“procure 15 workstations,” “volume discount,” “warranty coverage,” “lead times”",
-      dontExample: "“get some stuff,” “cheaper deal,” “send it fast” (informal vocabulary)"
+      rule: "Authentic Personal Endorsement",
+      doExample: "“In fact, she taught my niece Sophie, who went from hesitant to composing her own songs...”",
+      dontExample: "“Her pedagogical rating is 4.8 out of 5 based on external reviews.” (unnatural in a friendly letter)"
     },
     {
-      rule: "Standard Semi-Formal Sign-off",
-      doExample: "“Yours sincerely,” or “Kind regards,” + Full Name",
-      dontExample: "“Cheers,” “Talk soon,” or “Bye”"
+      rule: "Warm Informal Sign-off",
+      doExample: "“Warmly,” / “All the best,” / “Best wishes,” followed by First Name",
+      dontExample: "“Yours faithfully,” or “Yours sincerely, Alex Vance” (formal letter sign-offs)"
     }
   ],
 
   vocabList: [
     {
-      term: "Procure / Procurement",
-      definition: "The formal process of obtaining or purchasing goods and equipment for an organization.",
-      example: "We are looking to procure 15 desktop workstations for our design department.",
-      category: "Commercial & Pricing"
+      term: "Playful Pedagogy",
+      definition: "An educational approach that uses games, interactive challenges, and curiosity to teach foundational concepts.",
+      example: "Clara's playful pedagogy ensures young learners master complex notation without feeling overwhelmed.",
+      category: "Pedagogical Temperament"
     },
     {
-      term: "Itemized Price Quotation",
-      definition: "A detailed breakdown listing the individual prices of each component, service, and tax.",
-      example: "Could you please supply an itemized quotation covering both the units and installation?",
-      category: "Commercial & Pricing"
+      term: "Royal Academy Credentials",
+      definition: "Prestigious formal training and degree accreditation from a world-renowned music conservatory.",
+      example: "She pairs her Royal Academy credentials with an innate warmth that puts timid children at ease.",
+      category: "Musical Credentials"
     },
     {
-      term: "Corporate Volume Discount",
-      definition: "A reduced unit price offered to commercial clients ordering in bulk quantities.",
-      example: "We would like to confirm if a volume discount applies to orders exceeding ten units.",
-      category: "Commercial & Pricing"
+      term: "Ear Training & Rhythm Games",
+      definition: "Interactive activities designed to develop a child's listening skills, pitch recognition, and timing.",
+      example: "Rather than dry drills, she uses rhythm games and ear training to build musical intuition.",
+      category: "Musical Credentials"
     },
     {
-      term: "High-Performance Workstation",
-      definition: "A powerful computer designed for demanding technical and creative tasks.",
-      example: "The workstations must feature multi-core processors and expanded RAM.",
-      category: "Hardware Specs"
+      term: "Graded Exam Distinction",
+      definition: "The highest grade tier achieved in international music evaluation frameworks (such as ABRSM or Trinity).",
+      example: "She has guided dozens of students through graded examinations, often achieving high distinction.",
+      category: "Musical Credentials"
     },
     {
-      term: "Dedicated Graphics Card (VRAM)",
-      definition: "A discrete video card with independent memory for graphic-intensive processing.",
-      example: "A dedicated GPU with 8 GB VRAM is required for video rendering.",
-      category: "Hardware Specs"
+      term: "Complimentary Trial Session",
+      definition: "A free introductory lesson to assess a student's interests and ensure good rapport before committing.",
+      example: "She offered to arrange a complimentary 20-minute trial session so Leo can explore the piano.",
+      category: "Informal Letter Phrasing"
     },
     {
-      term: "Delivery Lead Time",
-      definition: "The total duration required between placing an order and receiving delivery.",
-      example: "Please indicate your standard delivery lead times for dispatched hardware.",
-      category: "Commercial & Pricing"
+      term: "Customized Learning Pace",
+      definition: "Tailoring the speed and style of instruction to match an individual student's temperament and aptitude.",
+      example: "Her greatest strength is adapting to each child's customized learning pace without pressure.",
+      category: "Pedagogical Temperament"
     },
     {
-      term: "Warranty Coverage & After-Sales Support",
-      definition: "Manufacturer guarantee for repairs and replacement accompanied by technical assistance.",
-      example: "We require information regarding warranty coverage and on-site servicing options.",
-      category: "Commercial & Pricing"
+      term: "Enthusiastic Endorsement",
+      definition: "A warm and genuine recommendation based on firsthand experience or credible witness.",
+      example: "After seeing Sophie's progress, I give Clara my most enthusiastic endorsement.",
+      category: "Informal Letter Phrasing"
     },
     {
-      term: "I would be grateful if you could...",
-      definition: "A polite semi-formal formula for requesting information or commercial terms.",
-      example: "I would be grateful if you could clarify payment options and invoicing terms.",
-      category: "Semi-Formal Phrasing"
+      term: "Repertoire Breadth",
+      definition: "The variety and scope of musical styles a teacher is capable of introducing, from classical to modern.",
+      example: "Her repertoire breadth allows children to learn songs from movies alongside standard classical etudes.",
+      category: "Musical Credentials"
     }
   ]
 };

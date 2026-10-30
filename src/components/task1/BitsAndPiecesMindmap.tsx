@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import {
   Layers,
-  TrendingDown,
-  TrendingUp,
   ChevronRight,
   Sparkles,
   BookOpen,
-  Users,
   Award,
   CheckCircle2,
-  PieChart as PieIcon
+  Workflow,
+  Flame,
+  Boxes,
+  Eye,
+  ArrowRight
 } from "lucide-react";
 
 interface MindmapPiece {
@@ -28,155 +29,164 @@ interface MindmapBranch {
   bgLight: string;
   icon: React.ReactNode;
   summary: string;
+  diagramCorrelation: string;
   pieces: MindmapPiece[];
 }
 
 const MINDMAP_BRANCHES: MindmapBranch[] = [
   {
     id: "parameters",
-    title: "Piece 1: Introduction & Pie Chart Parameters",
+    title: "Piece 1: Introduction & Diagram Parameters",
     badge: "Introduction Anchor",
     color: "#2563eb",
     borderColor: "#bfdbfe",
     bgLight: "#eff6ff",
-    icon: <BookOpen size={20} color="#2563eb" />,
+    icon: <BookOpen size={18} color="#2563eb" />,
     summary:
-      "A Band 9 introduction paraphrases all essential parameters: visual format (three pie charts), institution (one UK school), five spending categories, 20-year multi-decade temporal span (1981, 1991, 2001), and the percentage measurement scale (%).",
+      "A Band 9 introduction paraphrases the two visual diagrams: the multi-stage industrial procedure involved in manufacturing cement, followed by how it is combined with other raw ingredients to produce concrete.",
+    diagramCorrelation:
+      "Correlates with the overall prompt scope: links Diagram 1 (Cement Production) directly to Diagram 2 (Concrete Production).",
     pieces: [
       {
-        label: "Visual Format & Action",
-        value: "Three Pie Charts (Proportional Spending)",
+        label: "Visual Format & Scope",
+        value: "Two Process Diagrams (Dual Flowchart)",
         detail:
-          "Three circular pie charts illustrating proportional budget distribution across five operational categories.",
+          "Left diagram depicts a linear 5-stage manufacturing sequence; right diagram illustrates a proportional batch mixing procedure.",
         band9Application:
-          "“The three pie charts illustrate the proportion of annual expenditure allocated across five different categories by a single school in the United Kingdom...”"
+          "“The two diagrams illustrate the multi-stage industrial procedure involved in manufacturing cement, followed by how it is subsequently combined with other raw ingredients to produce concrete.”"
       },
       {
-        label: "Temporal Scope & Surveyed Years",
-        value: "Three Distinct Milestone Years: 1981, 1991, 2001",
+        label: "Raw Material Inputs",
+        value: "Limestone & Clay (Cement) • 4 Ingredients (Concrete)",
         detail:
-          "A 20-year chronological span tracked at decade intervals across three distinct snapshot years.",
+          "Cement relies on quarried limestone and clay. Concrete combines gravel (50%), sand (25%), cement (15%), and water (10%).",
         band9Application:
-          "“...tracking expenditure patterns in three separate years: 1981, 1991, and 2001.”"
+          "“...tracking the transformation of raw minerals into finished cement, and its subsequent role as a binding agent in concrete formulation.”"
       },
       {
-        label: "Categorical Scope & Unit",
-        value: "5 Categories • Percentage Unit (%)",
+        label: "Inter-Process Functional Prerequisite",
+        value: "Cement as 15% Mandatory Binder",
         detail:
-          "Staff salaries (teachers & other workers), furniture/equipment, resources (books), and insurance, summing to 100% per year.",
+          "Cement is not just an independent product; it is the vital 15% binder required for the second manufacturing process.",
         band9Application:
-          "“...segmented into five budgetary sectors, with figures expressed as a percentage of total annual outlay.”"
+          "“...wherein finished cement serves as the essential binder in the secondary concrete production process.”"
       }
     ]
   },
   {
     id: "overview",
-    title: "Piece 2: Macro Overview (3-Pillar Synthesis)",
+    title: "Piece 2: Macro Overview (2-Pillar Synthesis)",
     badge: "Overview Engine",
     color: "#059669",
     borderColor: "#a7f3d0",
     bgLight: "#ecfdf5",
-    icon: <Layers size={20} color="#059669" />,
+    icon: <Layers size={18} color="#059669" />,
     summary:
-      "The macro overview synthesizes the three decisive high-level features: 1) Teachers' salaries consistently swallowed the lion's share (peaking at 50%); 2) Insurance consistently absorbed the smallest share despite quadrupling (2% to 8%); 3) Volatility in furniture/equipment (falling to 5% then surging to 23%) vs general decline in other staff and resources.",
+      "The macro overview contrasts the fundamental nature of the two operations: 1) Cement is a complex, multi-stage linear sequence requiring mechanical pulverization and intense heat; 2) Concrete is a simple, single-stage batch mixing process where coarse and fine aggregates form the vast bulk of the mixture, bound together by cement and water without quoting exact statistics.",
+    diagramCorrelation:
+      "Synthesizes the macro contrast between the linear thermal pipeline of Box 1 and the mechanical batch mixer of Box 2.",
     pieces: [
       {
-        label: "Pillar 1: Teachers' Salaries Lion's Share",
-        value: "Dominant cost in all 3 periods (40% → 50% → 45%)",
+        label: "Pillar 1: Multi-Step Sequential Cement Process",
+        value: "Linear Industrial Pipeline with Thermal Transformation",
         detail:
-          "Teachers' salaries formed the single largest outlay in every year, absorbing up to half the budget in 1991.",
+          "Involves 5 consecutive mechanical and chemical stages: crushing, mixing, rotating heating, milling, and bagging.",
         band9Application:
-          "“Overall, teachers’ salaries consistently represented the largest share of the school’s budget throughout the entire twenty-year timeframe, peaking at precisely half of all expenditure in 1991.”"
+          "“Overall, cement production is a multi-step, sequential process requiring specialized equipment, physical crushing, and intense heating...”"
       },
       {
-        label: "Pillar 2: Insurance as Smallest Outlay",
-        value: "Lowest share in all years (2% → 3% → 8%)",
+        label: "Pillar 2: Single-Stage Concrete Batch Blend",
+        value: "Mechanical Batch Mixing with Dominant Aggregates",
         detail:
-          "Insurance remained the smallest allocation throughout, even though it experienced a continuous fourfold surge.",
+          "Concrete is produced in a single step inside a rotating drum where aggregates form the dominant bulk and cement acts as a binding agent (all numerical percentages are reserved for Body Paragraph 2).",
         band9Application:
-          "“Conversely, insurance consistently accounted for the lowest proportion, despite undergoing a continuous fourfold increase.”"
-      },
-      {
-        label: "Pillar 3: Furniture Volatility vs Staff Reductions",
-        value: "Furniture: 15% → 5% → 23% Resurgence",
-        detail:
-          "Furniture collapsed in 1991 before rebounding strongly to 23%, while other workers' salaries fell steadily.",
-        band9Application:
-          "“Furthermore, while other workers’ salaries and resources saw overall reductions by 2001, spending on furniture and equipment exhibited dramatic fluctuation, recovering strongly after an initial slump.”"
+          "“...whereas concrete manufacturing is a straightforward, single-stage batch mixing procedure wherein coarse and fine aggregates constitute the vast majority of the mixture, bound together by cement and activated with water.”"
       }
     ]
   },
   {
-    id: "body1_staff",
-    title: "Piece 3: Body 1 (Staff Remuneration & Wage Trajectories)",
-    badge: "Body 1 Focus",
+    id: "cement-flow",
+    title: "Piece 3: Body 1 — The 5 Cement Stages",
+    badge: "Body 1 Sequence",
+    color: "#ea580c",
+    borderColor: "#fed7aa",
+    bgLight: "#fff7ed",
+    icon: <Flame size={18} color="#ea580c" />,
+    summary:
+      "Systematically report each stage of cement production using precise passive voice constructions and sequential linkers: Crusher → Mixer → Rotating Heater → Grinder → Bags.",
+    diagramCorrelation:
+      "Correlates with Diagram 1 (left box): Limestone/Clay → Crusher → Powder → Mixer → Rotating Kiln → Grinder → Bags.",
+    pieces: [
+      {
+        label: "Stage 1 & 2: Crushing & Blending",
+        value: "Limestone + Clay → Crusher → Mixer",
+        detail:
+          "Limestone and clay are pulverized into fine powder by a mechanical crusher, then mixed to achieve a uniform blend.",
+        band9Application:
+          "“Initially, limestone and clay are passed through a crusher to be pulverized into powder, which is then fed into an industrial mixer.”"
+      },
+      {
+        label: "Stage 3: Thermal Kiln Heating",
+        value: "Rotating Heater with Heat Applied from Base",
+        detail:
+          "The powder travels down an inclined rotating cylinder while intense heat is applied from the lower end.",
+        band9Application:
+          "“Next, the mixture enters an inclined rotating cylinder heater where it is subjected to high heat applied from the lower end as the drum turns.”"
+      },
+      {
+        label: "Stage 4 & 5: Grinding & Packaging",
+        value: "Conveyor Belt → Grinder → Bags",
+        detail:
+          "The heated material travels via conveyor belt into a grinder to be milled into fine cement, then poured into commercial bags.",
+        band9Application:
+          "“After thermal treatment, the substance is transported along a conveyor belt to a grinder, before the finished cement is packaged into bags.”"
+      }
+    ]
+  },
+  {
+    id: "concrete-mix",
+    title: "Piece 4: Body 2 — Concrete Formulation & Mixer",
+    badge: "Body 2 Synthesis",
     color: "#7c3aed",
     borderColor: "#ddd6fe",
     bgLight: "#f5f3ff",
-    icon: <Users size={20} color="#7c3aed" />,
+    icon: <Boxes size={18} color="#7c3aed" />,
     summary:
-      "Document staff-related costs: Teachers' salaries began at 40%, peaked at 50% in 1991, and moderated to 45% in 2001. Other workers' salaries declined continuously from 28% to 22% and almost halved to 15%. Combined staff costs consistently accounted for 60%–72% of total outlay.",
+      "Report the exact proportions of all four concrete ingredients in descending order, detailing their roles and their simultaneous loading into the rotating concrete mixer drum.",
+    diagramCorrelation:
+      "Correlates with Diagram 2 (right box): Cement 15%, Water 10%, Sand 25%, Gravel* 50% poured into the rotating Concrete mixer.",
     pieces: [
       {
-        label: "Feature 1: Teachers' Dominant Trajectory",
-        value: "40% (1981) → 50% (1991 Peak) → 45% (2001)",
+        label: "Dominant Aggregate: Gravel (50%)",
+        value: "Half (50%) of Total Composition",
         detail:
-          "Teachers' pay was the premier cost in every year, expanding by 10 points in 1991 before easing to 45%.",
+          "Gravel (small stones) constitutes half of the entire mixture, acting as the main structural coarse aggregate.",
         band9Application:
-          "“In terms of staffing costs, teachers’ salaries constituted the school’s principal outlay in every year surveyed, beginning at 40% in 1981, climbing to a peak of 50% in 1991, and subsequently dipping to 45% in 2001.”"
+          "“Gravel, consisting of small stones, constitutes half (50%) of the total mixture, serving as the primary coarse aggregate.”"
       },
       {
-        label: "Feature 2: Other Staff Wage Decline",
-        value: "28% (1981) → 22% (1991) → 15% (2001)",
+        label: "Fine Aggregate: Sand (25%)",
+        value: "One Quarter (25%) of Composition",
         detail:
-          "Other workers' salaries formed the second-largest cost in 1981 but dropped steadily, nearly halving by 2001.",
+          "Sand acts as the fine aggregate, filling voids between stones and making total aggregates 75%.",
         band9Application:
-          "“By contrast, expenditure on other workers’ salaries followed an unbroken downward trajectory; having formed the second-largest cost at 28% in 1981, it diminished to 22% in 1991 before almost halving to 15% by 2001.”"
+          "“Sand accounts for a quarter (25%) of the blend, functioning as a fine aggregate.”"
       },
       {
-        label: "Feature 3: Combined Staff Outlay Synthesis",
-        value: "68% (1981) → 72% (1991) → 60% (2001)",
+        label: "Binder & Hydration: Cement (15%) & Water (10%)",
+        value: "15% Cement Binder • 10% Water Activator",
         detail:
-          "Staff wages consistently absorbed well over half the budget, reaching nearly three-quarters in 1991.",
+          "Cement binds the stones together, while 10% water initiates hydration to create the wet concrete slurry.",
         band9Application:
-          "“Combined, staff remuneration consistently absorbed well over half of the school’s annual funding, ranging between 60% and 72%.”"
-      }
-    ]
-  },
-  {
-    id: "body2_non_staff",
-    title: "Piece 4: Body 2 (Non-Staff Operational & Capital Outlay)",
-    badge: "Body 2 Focus",
-    color: "#d97706",
-    borderColor: "#fde68a",
-    bgLight: "#fffbeb",
-    icon: <TrendingUp size={20} color="#d97706" />,
-    summary:
-      "Document the three non-staff categories: Furniture & equipment plunged from 15% to 5% before surging to 23% (2nd largest item). Resources e.g. books rose from 15% to 20% then dropped to 9%. Insurance edged from 2% to 3% then surged to 8% (quadrupled).",
-    pieces: [
-      {
-        label: "Feature 1: Furniture Fluctuation & Resurgence",
-        value: "15% (1981) → 5% (1991) → 23% (2001)",
-        detail:
-          "Plummeted by two-thirds in 1991 to just 5%, then rebounded by 18 points to become the second most expensive cost.",
-        band9Application:
-          "“Turning to non-staff expenditure, allocations for furniture and equipment stood at 15% in 1981, plummeted to just 5% in 1991, and then experienced a dramatic resurgence to 23% in 2001...”"
+          "“Cement makes up 15% to bind the components together, while water represents the smallest portion at 10% to activate hydration.”"
       },
       {
-        label: "Feature 2: Resources (Books) Rise and Fall",
-        value: "15% (1981) → 20% (1991) → 9% (2001)",
+        label: "Mechanical Agitation: Concrete Mixer",
+        value: "Rotating Drum Blending All 4 Ingredients",
         detail:
-          "Initially tied with furniture in 1981 at 15%, expanded to 20% in 1991, but shrank to single digits (9%) in 2001.",
+          "All ingredients are poured simultaneously into a cylindrical mixer rotating clockwise to yield usable wet concrete.",
         band9Application:
-          "“Meanwhile, spending on educational resources such as books initially rose from 15% to 20% between 1981 and 1991, before declining steeply to a twenty-year low of 9% in 2001.”"
-      },
-      {
-        label: "Feature 3: Insurance Fourfold Expansion",
-        value: "2% (1981) → 3% (1991) → 8% (2001)",
-        detail:
-          "Ranked last in all three charts, starting at a negligible 2% before rising to 3% and quadrupling to 8%.",
-        band9Application:
-          "“Finally, insurance accounted for the smallest percentage in all three periods, edging up from a negligible 2% in 1981 to 3% in 1991, before surging to 8% in 2001.”"
+          "“Once all four elements are poured simultaneously into the concrete drum, the machine rotates to blend the slurry into usable wet concrete.”"
       }
     ]
   }
@@ -184,11 +194,8 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
 
 export const BitsAndPiecesMindmap: React.FC = () => {
   const [selectedBranchId, setSelectedBranchId] = useState<string>("parameters");
-  const [selectedPieceIndex, setSelectedPieceIndex] = useState<number>(0);
-
   const activeBranch =
     MINDMAP_BRANCHES.find((b) => b.id === selectedBranchId) || MINDMAP_BRANCHES[0];
-  const activePiece = activeBranch.pieces[selectedPieceIndex] || activeBranch.pieces[0];
 
   return (
     <div
@@ -196,211 +203,290 @@ export const BitsAndPiecesMindmap: React.FC = () => {
         display: "flex",
         flexDirection: "column",
         gap: "14px",
-        width: "100%",
-        fontFamily: "inherit"
+        width: "100%"
       }}
     >
-      {/* Mindmap Branch Tabs */}
+      {/* Branch Navigation Pills (Top Bar) */}
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "8px"
-        }}
-      >
-        {MINDMAP_BRANCHES.map((branch) => {
-          const isSelected = selectedBranchId === branch.id;
-          return (
-            <button
-              key={branch.id}
-              onClick={() => {
-                setSelectedBranchId(branch.id);
-                setSelectedPieceIndex(0);
-              }}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "10px 14px",
-                borderRadius: "12px",
-                border: isSelected ? `2px solid ${branch.color}` : "1.5px solid #e2e8f0",
-                background: isSelected ? branch.bgLight : "#ffffff",
-                cursor: "pointer",
-                textAlign: "left",
-                boxShadow: isSelected ? "0 2px 8px rgba(0,0,0,0.05)" : "none",
-                transition: "all 0.15s ease"
-              }}
-            >
-              <div
-                style={{
-                  width: "32px",
-                  height: "32px",
-                  borderRadius: "8px",
-                  background: isSelected ? branch.color : "#f1f5f9",
-                  color: isSelected ? "#ffffff" : "#64748b",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0
-                }}
-              >
-                {branch.icon}
-              </div>
-              <div style={{ minWidth: 0 }}>
-                <span
-                  style={{
-                    fontSize: "0.68rem",
-                    fontWeight: 800,
-                    color: branch.color,
-                    textTransform: "uppercase"
-                  }}
-                >
-                  {branch.badge}
-                </span>
-                <div
-                  style={{
-                    fontSize: "0.85rem",
-                    fontWeight: 750,
-                    color: "#0f172a",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis"
-                  }}
-                >
-                  {branch.title.split(":")[1]?.trim() || branch.title}
-                </div>
-              </div>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Active Branch Deep Dive Stage */}
-      <div
-        style={{
-          background: "#ffffff",
-          borderRadius: "16px",
-          border: `1.5px solid ${activeBranch.borderColor}`,
-          padding: "18px 20px",
-          boxShadow: "0 4px 16px rgba(0,0,0,0.03)",
           display: "flex",
-          flexDirection: "column",
-          gap: "14px"
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: "8px",
+          background: "#ffffff",
+          borderRadius: "14px",
+          border: "1.5px solid var(--border-subtle, #cbd5e1)",
+          padding: "10px 14px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
         }}
       >
-        <div>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-            <span
-              style={{
-                fontSize: "0.74rem",
-                fontWeight: 800,
-                padding: "3px 8px",
-                borderRadius: "6px",
-                background: activeBranch.bgLight,
-                color: activeBranch.color
-              }}
-            >
-              {activeBranch.badge}
-            </span>
-            <h3 style={{ fontSize: "1.05rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-              {activeBranch.title}
-            </h3>
-          </div>
-          <p style={{ fontSize: "0.86rem", color: "#475569", margin: 0, lineHeight: 1.5 }}>
-            {activeBranch.summary}
-          </p>
+        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <Sparkles size={16} color="#2563eb" />
+          <strong style={{ fontSize: "0.88rem", color: "#0f172a" }}>
+            Strategic Mindmap Pillars:
+          </strong>
         </div>
 
-        {/* Pieces Selector Strip */}
-        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-          {activeBranch.pieces.map((piece, idx) => {
-            const isPieceActive = selectedPieceIndex === idx;
+        <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+          {MINDMAP_BRANCHES.map((b) => {
+            const isSelected = b.id === selectedBranchId;
             return (
               <button
-                key={piece.label}
-                onClick={() => setSelectedPieceIndex(idx)}
+                key={b.id}
+                onClick={() => setSelectedBranchId(b.id)}
                 style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
                   padding: "6px 12px",
                   borderRadius: "8px",
-                  fontSize: "0.78rem",
+                  fontSize: "0.8rem",
                   fontWeight: 750,
-                  border: isPieceActive
-                    ? `1.5px solid ${activeBranch.color}`
-                    : "1px solid #e2e8f0",
-                  background: isPieceActive ? activeBranch.color : "#f8fafc",
-                  color: isPieceActive ? "#ffffff" : "#334155",
+                  border: isSelected ? `2px solid ${b.color}` : "1px solid #e2e8f0",
+                  background: isSelected ? b.bgLight : "#ffffff",
+                  color: isSelected ? b.color : "#475569",
                   cursor: "pointer",
+                  boxShadow: isSelected ? "0 2px 6px rgba(0,0,0,0.05)" : "none",
                   transition: "all 0.15s ease"
                 }}
               >
-                {piece.label}
+                {b.icon}
+                <span>{b.title.split(":")[0]}</span>
               </button>
             );
           })}
         </div>
+      </div>
 
-        {/* Selected Piece Interactive Card */}
-        {activePiece && (
+      {/* Side-by-Side Reference POV Grid (Diagram on Left, Mindmap on Right) */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "minmax(320px, 0.9fr) minmax(360px, 1.1fr)",
+          gap: "16px",
+          alignItems: "start",
+          width: "100%"
+        }}
+      >
+        {/* Left Column: Reference Task Diagram (Same Style as Smart Board) */}
+        <div
+          style={{
+            background: "#ffffff",
+            border: "1.5px solid var(--border-subtle, #cbd5e1)",
+            borderRadius: "18px",
+            padding: "16px",
+            boxShadow: "var(--shadow-sm)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
+            position: "sticky",
+            top: "12px"
+          }}
+        >
+          {/* Header */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <Eye size={17} color="#2563eb" />
+              <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>
+                Reference Task Diagram (Student Pamphlet)
+              </strong>
+            </div>
+            <span
+              style={{
+                fontSize: "0.72rem",
+                fontWeight: 750,
+                background: "#eff6ff",
+                color: "#1e40af",
+                padding: "2px 8px",
+                borderRadius: "6px"
+              }}
+            >
+              Side-by-Side POV
+            </span>
+          </div>
+
+          {/* Diagram Box: Two authentic pamphlet boxes rendered side by side */}
           <div
             style={{
               background: "#f8fafc",
-              border: "1px solid #e2e8f0",
-              borderRadius: "14px",
-              padding: "16px",
+              border: "1.5px solid #cbd5e1",
+              borderRadius: "12px",
+              padding: "10px",
               display: "flex",
-              flexDirection: "column",
-              gap: "10px"
+              justifyContent: "center",
+              alignItems: "center"
             }}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>{activePiece.label}</strong>
-              {activePiece.value && (
-                <span
-                  style={{
-                    fontSize: "0.8rem",
-                    fontWeight: 800,
-                    padding: "3px 10px",
-                    borderRadius: "6px",
-                    background: "#ffffff",
-                    border: "1px solid #cbd5e1",
-                    color: activeBranch.color
-                  }}
-                >
-                  {activePiece.value}
-                </span>
-              )}
-            </div>
+            <img
+              src="materials/cement_concrete_diagrams_clean.png"
+              alt="Cement and Concrete Production Diagrams from Pamphlet"
+              style={{
+                width: "100%",
+                maxHeight: "360px",
+                objectFit: "contain",
+                display: "block",
+                borderRadius: "6px"
+              }}
+            />
+          </div>
 
-            <p style={{ fontSize: "0.86rem", color: "#334155", margin: 0, lineHeight: 1.5 }}>
-              {activePiece.detail}
-            </p>
+          {/* Quick Cross-Reference Guide */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "0.78rem" }}>
+            <div
+              style={{
+                background: "#eff6ff",
+                border: "1px solid #bfdbfe",
+                borderRadius: "8px",
+                padding: "8px 10px",
+                color: "#1e40af",
+                lineHeight: 1.4
+              }}
+            >
+              <strong>Diagram 1 (Left):</strong> Cement Pipeline — 5 Linear Steps (Crushing → Blending → Rotary Kiln + Heat → Milling → Bagging).
+            </div>
 
             <div
               style={{
-                background: "#ffffff",
-                borderLeft: `3.5px solid ${activeBranch.color}`,
+                background: "#f0fdf4",
+                border: "1px solid #bbf7d0",
                 borderRadius: "8px",
-                padding: "12px 14px",
-                fontSize: "0.9rem",
-                color: "#1e293b",
-                lineHeight: 1.55,
-                boxShadow: "0 1px 3px rgba(0,0,0,0.04)"
+                padding: "8px 10px",
+                color: "#166534",
+                lineHeight: 1.4
               }}
             >
-              <div
-                style={{
-                  fontSize: "0.72rem",
-                  fontWeight: 800,
-                  color: activeBranch.color,
-                  marginBottom: "4px"
-                }}
-              >
-                BAND 9 MODEL CITATION:
-              </div>
-              <em>{activePiece.band9Application}</em>
+              <strong>Diagram 2 (Right):</strong> Concrete Mixer — 4 Ingredients (Gravel 50%, Sand 25%, Cement 15%, Water 10%).
             </div>
           </div>
-        )}
+
+          {/* Active Branch Visual Correlation Callout */}
+          <div
+            style={{
+              background: activeBranch.bgLight,
+              border: `1.5px solid ${activeBranch.borderColor}`,
+              borderRadius: "10px",
+              padding: "10px 12px",
+              fontSize: "0.8rem",
+              color: "#334155",
+              lineHeight: 1.45
+            }}
+          >
+            <div style={{ fontWeight: 800, color: activeBranch.color, marginBottom: "3px" }}>
+              ✦ Visual Anchor for {activeBranch.title.split(":")[0]}:
+            </div>
+            {activeBranch.diagramCorrelation}
+          </div>
+        </div>
+
+        {/* Right Column: Strategic Mindmap Decomposition Content */}
+        <div
+          style={{
+            background: "#ffffff",
+            border: "1.5px solid var(--border-subtle, #cbd5e1)",
+            borderRadius: "18px",
+            padding: "18px 20px",
+            boxShadow: "var(--shadow-sm)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px"
+          }}
+        >
+          {/* Active Branch Header */}
+          <div
+            style={{
+              background: activeBranch.bgLight,
+              border: `1.5px solid ${activeBranch.borderColor}`,
+              borderRadius: "12px",
+              padding: "12px 16px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "6px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <span
+                  style={{
+                    fontSize: "0.72rem",
+                    fontWeight: 800,
+                    background: activeBranch.color,
+                    color: "#ffffff",
+                    padding: "2px 8px",
+                    borderRadius: "6px"
+                  }}
+                >
+                  {activeBranch.badge}
+                </span>
+                <strong style={{ fontSize: "1rem", color: "#0f172a" }}>
+                  {activeBranch.title}
+                </strong>
+              </div>
+              <span style={{ fontSize: "0.76rem", fontWeight: 700, color: activeBranch.color }}>
+                {activeBranch.pieces.length} Core Components
+              </span>
+            </div>
+            <p style={{ fontSize: "0.85rem", color: "#334155", margin: 0, lineHeight: 1.45 }}>
+              {activeBranch.summary}
+            </p>
+          </div>
+
+          {/* Pieces Cards List (Spacious & Clean with Zero Congestion) */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            {activeBranch.pieces.map((p, idx) => (
+              <div
+                key={idx}
+                style={{
+                  background: "#ffffff",
+                  border: "1.5px solid #e2e8f0",
+                  borderRadius: "12px",
+                  padding: "14px 16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "6px",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.02)"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
+                  <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
+                    {p.label}
+                  </strong>
+                  {p.value && (
+                    <span
+                      style={{
+                        fontSize: "0.76rem",
+                        fontWeight: 750,
+                        padding: "2px 8px",
+                        borderRadius: "6px",
+                        background: "#f1f5f9",
+                        color: "#334155"
+                      }}
+                    >
+                      {p.value}
+                    </span>
+                  )}
+                </div>
+                <p style={{ fontSize: "0.84rem", color: "#64748b", margin: 0, lineHeight: 1.45 }}>
+                  {p.detail}
+                </p>
+                <div
+                  style={{
+                    background: "#f8fafc",
+                    borderLeft: `3px solid ${activeBranch.color}`,
+                    borderRadius: "6px",
+                    padding: "8px 12px",
+                    fontSize: "0.85rem",
+                    color: "#1e293b",
+                    fontStyle: "italic",
+                    lineHeight: 1.45
+                  }}
+                >
+                  {p.band9Application}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
