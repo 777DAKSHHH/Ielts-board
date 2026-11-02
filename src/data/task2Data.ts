@@ -25,649 +25,462 @@ export type {
 };
 
 export const TASK2_DATA: Task2Data = {
-  id: "children-can-achieve-anything-advantages-disadvantages",
+  id: "children-technology-younger-age-positive-or-negative",
 
-  taskType: "Advantages and Disadvantages Essay",
+  taskType: "Opinion Essay (Positive or Negative Development)",
 
-  title: "IELTS Writing Task 2 — Telling Children They Can Achieve Anything",
+  title: "IELTS Writing Task 2 — Children Using Technology at a Younger Age",
 
   questionText:
-    "In some countries, children are often told that they can achieve anything if they try hard enough.\n\nWhat are the advantages and disadvantages of giving children this message?",
+    "Nowadays, children are using technology at a younger age.\n\nIs this a positive or a negative development?",
 
   audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
 
   timingSeconds: 180,
 
   recommendedPosition:
-    "Balanced Assessment: While encouraging diligence fosters resilience and upward mobility, it must be counterbalanced with pragmatic realism to prevent severe self-blame, burnout, and disillusionment.",
+    "Predominantly Negative Development: While basic digital fluency is acquired, the pervasive displacement of physical activity and the discernible delays in interpersonal communication render this trend predominantly detrimental.",
 
   strongestArgument:
-    "Praising effort builds a growth mindset that frees children from defeatism; however, promising that effort guarantees every outcome blinds children to genetic and structural limits, turning unavoidable failure into personal guilt.",
+    "The pervasive immersion in digital devices inevitably displaces essential outdoor exercise and produces discernible deficits in real-world conversational empathy.",
 
   // 1. Sample introduction planning points
   introPlanningPoints: [
-    "Sentence 1 (Paraphrase): In many societies, children are consistently taught that hard work guarantees success in any endeavor.",
-    "Sentence 2 (Thesis Statement): While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations."
+    "Sentence 1 (Paraphrase): In contemporary society, the pervasive presence of digital technology has made early exposure among young children practically inevitable.",
+    "Sentence 2 (Opinion): While interactive tools can foster digital fluency, I firmly contend that this trend is predominantly a negative development due to detrimental health consequences and discernible social delays."
   ],
 
   sampleIntro:
-    "In many societies, children are consistently taught that hard work guarantees success in any endeavor. While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations.",
+    "In contemporary society, the pervasive presence of digital technology has made early exposure among young children practically inevitable. While interactive software can foster foundational digital fluency, I firmly contend that this trend is predominantly a negative development due to its detrimental health consequences and discernible social delays.",
 
   // 2. Sample conclusion planning points
   conclusionPlanningPoints: [
-    "Sum-up Main Reasons: Diligence fuels perseverance and upward mobility, yet absolutist expectations foster crippling self-reproach and blind youth to unalterable limits.",
-    "Suggestion / Recommendation: Parents and educators should balance aspirational encouragement with pragmatic realism and self-compassion."
+    "Sentence 1 (Sum-up Main Reasons): Early screen dependency entrenches sedentary habits that trigger pediatric obesity, while transient virtual entertainment weakens sustained attention and interpersonal empathy.",
+    "Sentence 2 (Restate Opinion): Therefore, despite minor educational conveniences, premature technological immersion remains an overwhelmingly unfavorable development."
   ],
 
   sampleConclusion:
-    "In conclusion, while reassuring children that diligence guarantees success fosters admirable tenacity and upward mobility, it can equally inflict crippling self-reproach and blind individuals to inevitable biological boundaries. Educators and guardians should therefore temper aspirational encouragement with pragmatic realism, teaching youth that while striving for excellence is commendable, developing self-compassion when facing unalterable realities is equally vital.",
+    "In conclusion, although educational applications can provide transient academic benefits, I remain convinced that early technology immersion is an overwhelmingly negative development. Unchecked screen viewing makes sedentary habits inevitable and inflicts discernible harm on restorative sleep and face-to-face social competence during formative childhood years.",
 
-  // Five-Minute Planning Map — Strictly showing Advantages vs Disadvantages in ONE-LINERS
+  // Five-Minute Planning Map — Strictly CUT-TO-THE-CHASE ONE-LINERS
   fiveMinutePlanningMap: {
     positive: [
-      "1. Builds Perseverance: Children practise difficult skills rather than giving up (e.g. struggling math student improving through regular practice).",
-      "2. Encourages Self-Confidence & Ambition: Children attempt challenging tasks and ambitious careers (e.g. nervous child auditioning for a school play).",
-      "3. Develops Personal Responsibility: Children learn that consistent effort and preparation influence progress rather than waiting for luck.",
-      "4. Reduces Fear of Making Mistakes: Children view errors as part of learning rather than incompetence (e.g. child practising bicycle after falling).",
-      "5. Fosters Independent Problem-Solving: Children experiment with solutions and take learning ownership (e.g. revising a science project design).",
-      "6. Cultivates a Strong Work Ethic: Establishes lifelong habits of practice and discipline (e.g. young athlete gaining fitness and teamwork skills)."
+      "1. Interactive Learning: Gamified educational apps make abstract math and literacy intuitive through playful challenges.",
+      "2. Early Digital Fluency: Interface familiarity provides foundational tech competence essential for computerized modern schooling.",
+      "3. Long-Distance Connection: High-definition video calling sustains vital emotional bonds with distant relatives across time zones.",
+      "4. Creative Exploration: Age-appropriate digital software enables children to experiment freely with digital art, music, and storytelling."
     ],
     negative: [
-      "1. Creates Unrealistic Expectations: Overlooks financial limits, unequal opportunities, and aptitude (e.g. hardworking student unable to afford university fees).",
-      "2. Leads to Guilt & Low Self-Esteem: Children interpret unavoidable failure as personal inadequacy (e.g. child losing sports match despite thorough prep).",
-      "3. Encourages Excessive Pressure & Burnout: Children overwork and sacrifice sleep fearing failure (e.g. student studying late nightly experiencing exhaustion).",
-      "4. Confuses Persistence with Misguided Stubbornness: Children persist in unsuitable paths fearing quitting equals failure (e.g. teenager preparing for disliked career).",
-      "5. Encourages Unhealthy Social Comparisons: Assumes higher achievers simply worked harder, ignoring unequal tutoring and support (e.g. student feeling inferior to wealthy peer)."
+      "1. Reduces Physical Activity: Prolonged screen staring displaces active outdoor exercise, elevating risks of childhood obesity.",
+      "2. Disrupts Sleep Architecture: Night-time screen viewing and blue light delay bedtime routines, causing chronic morning exhaustion.",
+      "3. Weakens Social Communication: Passive digital entertainment replaces family dialogue, stunting conversational manners and emotional empathy.",
+      "4. Erodes Attention Span: Fast-paced short videos condition young brains to crave instant gratification, undermining classroom focus.",
+      "5. Inappropriate Online Content: Young children lack critical maturity, making them acutely susceptible to violent or harmful media.",
+      "6. Creates Screen Dependency: Constant virtual amusement leaves children restless and unable to entertain themselves through independent play."
     ],
-    position: "4-Paragraph Advantages & Disadvantages Architecture",
-    body1: "Body 1 (Advantages): Pick 2 Main Reasons (e.g. Perseverance + Confidence/Problem-Solving) + Supporting Explanation + Relatable Student Example.",
-    body2: "Body 2 (Disadvantages): Pick 2 Main Reasons (e.g. Unrealistic Expectations + Guilt/Burnout) + Supporting Explanation + Relatable Real-World Example.",
+    position: "4-Paragraph Opinion Architecture",
+    body1: "Body 1 (Opinion Side - Reason 1): Sedentary Habits & Pediatric Health Risks [ 1 Main Reason + Supporting Reasoning + Example ].",
+    body2: "Body 2 (Opinion Side - Reason 2): Weakened Social Communication & Attention Span [ 1 Main Reason + Supporting Reasoning + Example ].",
     teachingRecommendation:
-      "Follow the exact 4-paragraph format: Introduction (Paraphrase + Thesis), Body 1 (Advantages: 2 Main Reasons + Supporting + Example), Body 2 (Disadvantages: 2 Main Reasons + Example), Conclusion (Sum-up all main reasons + Suggestion/Recommendation)."
+      "Follow the exact 4-paragraph format: Introduction (Paraphrase + Opinion), Body 1 (Opinion side: 1 Main Reason + Supporting Reasoning + Example), Body 2 (Opinion side: 1 Main Reason + Supporting Reasoning + Example), Conclusion (Sum-up main reasons + Restate opinion)."
   },
 
   // Strongest Classroom Discussion Question
   classroomDiscussion: {
     question:
-      "When a child spends years practicing basketball but stops growing at 5 feet 4 inches, does telling them 'you can achieve anything' inspire them or set them up for heartbreak?",
+      "When a three-year-old child knows how to swipe an iPad but struggles to speak or run outside, is technology accelerating their future or stealing their childhood?",
     followUps: [
-      "Why do students in high-pressure educational systems blame themselves when they fail entrance exams, even after studying 14 hours a day?",
-      "How does Carol Dweck's concept of praising 'effort rather than talent' transform a child's resilience?",
-      "Can pure willpower overcome structural poverty and economic disadvantages without institutional support?"
+      "Why are tech executives in Silicon Valley famously restricting their own young children from using smartphones and tablets?",
+      "Can interactive educational applications ever replicate the cognitive and social benefits of playing with real physical toys and peers?",
+      "What is the optimal age threshold for introducing personal touchscreen devices to children?"
     ],
     pedagogicalInsight:
-      "This question helps students immediately grasp the crucial distinction between encouraging healthy effort (growth mindset) and making false promises that defy biology and economic reality."
+      "This prompt immediately sparks active classroom engagement by juxtaposing modern technological necessity against biological and developmental health realities."
   },
 
-  // 3. Body Paragraphs Data Structure (Format-Compliant)
+  // 3. Body Paragraphs Data Structure (Format-Compliant: 1 Main Reason + Supporting Reasoning + Example)
   bodyParagraphs: [
     {
       paraNumber: 1,
       side: "strong_opinion",
-      title: "Body Para 1: Advantages of the 'Achieve Anything' Message",
-      theme: "Perseverance, Ambition & Independent Problem-Solving",
+      title: "Body Para 1 (Opinion Side): Sedentary Habits & Physical Health Complications",
+      theme: "Physical Inactivity, Pediatric Obesity & Melatonin Suppression",
       mainReason:
-        "1. Builds perseverance and personal responsibility; 2. Fosters independent problem-solving and reduces fear of mistakes.",
+        "Premature technology adoption fosters an intensely sedentary lifestyle, leading to severe physical health complications such as juvenile obesity and chronic sleep disruption.",
       supportingReasons:
-        "When children believe that effort determines improvement, they view mistakes as natural learning steps and take proactive ownership of difficult tasks.",
+        "Extended hours in front of screens inevitably displace energetic outdoor play vital for muscular growth, while night-time blue light suppresses natural melatonin synthesis.",
       example:
-        "A student who performs poorly in mathematics practises regularly and seeks help, while a child learning to ride a bicycle persists after falling instead of quitting out of embarrassment.",
+        "For example, medical research demonstrates that preschoolers using tablets for over two hours daily suffer double the rates of pediatric obesity and struggle to fall asleep.",
       band9Snippet:
-        "“On the positive side, imparting this message yields two primary advantages: cultivating unyielding perseverance in the face of initial failure and fostering independent problem-solving skills.”",
+        "“Primarily, premature technology adoption promotes an intensely sedentary routine, displacing energetic outdoor recreation vital for musculoskeletal growth and escalating the risk of pediatric obesity.”",
       alternativeReasons: [
         {
-          id: "adv-reason-1",
-          badge: "Advantage 01 • Builds Perseverance",
-          title: "Builds Perseverance & Practice Habits",
+          id: "neg-reason-1",
+          badge: "Disadvantage 01 • Sedentary Health Risks",
+          title: "Reduces Physical Activity & Elevates Health Risks",
           category: "standard",
           mainReason:
-            "Children may be more willing to practise difficult skills instead of giving up after initial failure.",
+            "Prolonged screen viewing displaces active outdoor exercise, elevating risks of childhood obesity, poor posture, and early eye strain.",
           supportingReasons:
-            "Believing that improvement comes from practice encourages children to view difficulty as a normal learning stage rather than a permanent barrier.",
+            "Physical recreation is biologically indispensable for cardiovascular health, yet it is inevitably curtailed by continuous indoor screen sitting.",
           example:
-            "A student who performs poorly in mathematics may practise regularly, seek help and gradually improve their results.",
+            "Preschoolers who spend multiple hours daily on tablets face doubled risks of juvenile obesity and pediatric myopia.",
           band9Snippet:
-            "“Primarily, this message instills admirable perseverance, encouraging pupils to practise demanding competencies rather than surrendering after early setbacks.”",
+            "“Primarily, premature exposure to digital screens fosters a deeply sedentary routine, displacing energetic outdoor play and escalating childhood obesity.”",
           modelParagraph:
-            "On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it builds perseverance; children taught that diligence determines success are far more willing to practise challenging skills instead of quitting after early defeat. A clear example of this is a student who struggles in mathematics; rather than resigning to poor marks, they practise regularly, seek guidance, and steadily elevate their performance. Furthermore, this mindset fosters personal ambition and confidence, encouraging youngsters to audition for competitive roles or pursue demanding vocations without being paralyzed by self-doubt.",
+            "First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to severe physical health complications. When young children spend multiple hours glued to tablets or smartphones, active outdoor recreation and physical exercise—which are biologically vital for cardiovascular and skeletal development—are inevitably displaced. Furthermore, prolonged exposure to blue light emitted by screens suppresses nocturnal melatonin production, leading to chronic sleep deficits. For example, pediatric health research demonstrates that toddlers who regularly consume more than two hours of daily screen time exhibit double the rate of childhood obesity and experience frequent sleep disturbances compared to less screen-reliant peers.",
           examinerNotes:
-            "Relatable real-world academic perseverance example that examiners find immediately persuasive."
+            "Focuses on tangible physiological consequences supported by credible medical reasoning (Band 9 Task Response)."
         },
         {
-          id: "adv-reason-2",
-          badge: "Advantage 02 • Self-Confidence & Ambition",
-          title: "Encourages Self-Confidence & Ambition",
+          id: "neg-reason-2",
+          badge: "Disadvantage 02 • Social Communication Deficits",
+          title: "Weakens Real-World Social Communication & Empathy",
           category: "standard",
           mainReason:
-            "Children may become more willing to attempt challenging tasks, participate in competitions or pursue demanding careers.",
+            "Excessive reliance on virtual entertainment hinders the development of natural conversation, emotional empathy, and social confidence.",
           supportingReasons:
-            "Believing improvement is always achievable lowers the fear of public evaluation and empowers youth to set bolder life targets.",
+            "One-way digital interfaces lack reciprocal feedback, stunting a child's ability to read facial expressions, vocal inflections, and cooperative sharing cues.",
           example:
-            "A child who believes improvement is possible may audition for a school play despite being nervous about performing in public.",
+            "Toddlers with heavy device use often show discernible speech delays and struggle to cooperate harmoniously with peers in nursery school.",
           band9Snippet:
-            "“Furthermore, this encouraging belief bolsters self-confidence and ambition, inspiring young individuals to embrace intimidating public challenges.”",
+            "“Furthermore, early device dependency severely stunts interpersonal communication, as artificial digital interfaces cannot replicate reciprocal human interaction.”",
           modelParagraph:
-            "Secondly, this message functions as a powerful catalyst for self-confidence and personal ambition. Children conditioned to believe in the efficacy of effort become willing to undertake daunting challenges and enter competitive arenas. For instance, a child who believes that capability is expandable may courageously audition for a school theatrical production despite initial stage fright, recognizing that practice will bridge the gap between inexperience and competence.",
+            "Additionally, early dependency on technology severely undermines the cultivation of interpersonal communication skills and emotional empathy. Developing social competence requires reciprocal, face-to-face interaction where children learn to interpret vocal inflections, decipher subtle facial expressions, and navigate peer disputes. In contrast, digital interfaces offer one-way, algorithmically curated stimulation that encourages passive consumption rather than active social dialogue. A clear illustration of this is observed in kindergarten classrooms, where teachers increasingly report that screen-accustomed toddlers frequently suffer from expressive language delays and struggle to engage in collaborative group activities.",
           examinerNotes:
-            "Excellent psychological connection between effort attribution and public confidence."
+            "Highlights psychological and developmental drawbacks with highly persuasive classroom evidence."
         },
         {
-          id: "adv-reason-3",
-          badge: "Advantage 03 • Personal Responsibility",
-          title: "Develops Personal Responsibility & Agency",
+          id: "neg-reason-3",
+          badge: "Disadvantage 03 • Sleep Architecture Disruption",
+          title: "Disrupts Sleep Architecture & Causes Behavioral Tantrums",
           category: "standard",
           mainReason:
-            "Children learn that their choices, preparation and consistent effort can influence their progress rather than waiting for success to happen automatically.",
+            "Night-time screen exposure disrupts restorative sleep cycles, while sudden device restriction triggers acute emotional tantrums.",
           supportingReasons:
-            "Fosters an internal locus of control, replacing passive reliance on luck with disciplined self-directed preparation.",
+            "Dopamine-driven digital loops condition young brains to crave nonstop stimulation, making device withdrawal emotionally distressing for toddlers.",
           example:
-            "A student creates an organized daily revision schedule for exams rather than relying on parents or luck.",
+            "Children allowed to use smartphones before bedtime take 45 minutes longer to sleep and exhibit aggressive tantrums when devices are confiscated.",
           band9Snippet:
-            "“Additionally, it develops a robust sense of personal responsibility, teaching youth that proactive preparation dictates outcomes rather than passive fortune.”",
+            "“Moreover, nighttime screen exposure disrupts restorative sleep cycles and triggers acute emotional volatility when devices are restricted.”",
           modelParagraph:
-            "Additionally, this philosophy cultivates a profound sense of personal responsibility. Young learners come to understand that their daily habits, preparation, and discipline directly govern their progress rather than waiting passively for good fortune. For example, a student facing final examinations will proactively design an organized daily revision schedule instead of relying on parental reminders or leaving outcomes to chance.",
+            "Moreover, unmonitored digital access profoundly disrupts sleep architecture and induces behavioral dysregulation. The artificial illumination produced by handheld screens delays the circadian rhythm, rendering young children irritable and fatigued during daylight hours. When parents attempt to enforce screen-free boundaries, the abrupt withdrawal of hyper-stimulating dopamine loops frequently triggers explosive emotional tantrums. For instance, clinical surveys indicate that young children using interactive media before bedtime take substantially longer to fall asleep and exhibit heightened daytime aggression.",
           examinerNotes:
-            "Emphasizes autonomy and self-directed discipline (Band 9 Task Response)."
+            "Connects physiological sleep science to observable behavioral problems."
         },
         {
-          id: "adv-reason-4",
-          badge: "Advantage 04 • Less Fear of Mistakes",
-          title: "Children Become Less Afraid of Making Mistakes",
+          id: "neg-reason-4",
+          badge: "Disadvantage 04 • Attention Span Erosion",
+          title: "Erodes Cognitive Attention Span & Fosters Impatience",
           category: "additional",
           mainReason:
-            "If children believe that effort leads to improvement, they may see mistakes as part of learning rather than as evidence of incompetence.",
+            "Fast-paced digital media conditions young minds to crave constant novelty, eroding sustained focus and academic patience.",
           supportingReasons:
-            "Removes the social stigma and embarrassment of error, allowing learners to experiment freely without performance anxiety.",
+            "Rapid video switching habituates attention to jump continuously, making traditional school tasks like book reading feel painfully tedious.",
           example:
-            "A child learning to ride a bicycle may keep practising after falling instead of giving up out of embarrassment.",
+            "Pupils accustomed to short online video clips struggle to concentrate on single-page reading worksheets without becoming restless.",
           band9Snippet:
-            "“Crucially, children become far less intimidated by mistakes, interpreting errors as informative feedback rather than humiliating verdicts on their competence.”",
+            "“Crucially, bite-sized digital entertainment habituates young minds to instant gratification, rapidly eroding their capacity for sustained academic focus.”",
           modelParagraph:
-            "Moreover, children exposed to this ethos become significantly less fearful of making errors. When mistakes are viewed as necessary feedback on the road to mastery rather than proofs of incompetence, the emotional stigma of failure dissipates. This is clearly seen when a child learns to ride a bicycle; having fallen repeatedly, they simply brush themselves off and resume pedaling, untroubled by embarrassment because they understand falling is simply part of learning.",
+            "Crucially, rapid multimedia stimuli condition young minds to demand instant gratification, eroding their capacity for sustained cognitive focus. When children grow accustomed to short video algorithms that deliver immediate sensory novelty every few seconds, their tolerance for patient, contemplative tasks diminishes. In academic environments, this deficit becomes apparent when pupils struggle to concentrate on lengthy reading passages or deliberate arithmetic problem-solving. Education surveys confirm that young learners with extensive screen habits find static book reading exceptionally difficult to endure.",
           examinerNotes:
-            "Highly original developmental insight that moves beyond conventional motivation cliches."
-        },
-        {
-          id: "adv-reason-5",
-          badge: "Advantage 05 • Independent Problem-Solving",
-          title: "Fosters Independent Problem-Solving",
-          category: "additional",
-          mainReason:
-            "Rather than immediately asking adults to solve every difficulty, children may experiment with different approaches and take greater ownership of their learning.",
-          supportingReasons:
-            "Overcomes learned helplessness by cultivating proactive resourcefulness and creative perseverance in the face of obstacles.",
-          example:
-            "A student struggling with a science project may research alternatives and revise the design instead of abandoning it.",
-          band9Snippet:
-            "“It also nurtures independent problem-solving skills, as young minds take ownership of their difficulties rather than demanding immediate adult intervention.”",
-          modelParagraph:
-            "Furthermore, this message nurtures independent problem-solving capabilities. Rather than succumbing to learned helplessness and demanding immediate adult rescue, children are inspired to test alternative solutions. A notable illustration is a student struggling with an uncooperative science project; instead of abandoning the experiment, they independently research alternative designs and iteratively refine their model until it succeeds.",
-          examinerNotes:
-            "Demonstrates self-regulation and intellectual independence."
-        },
-        {
-          id: "adv-reason-6",
-          badge: "Advantage 06 • Stronger Work Ethic",
-          title: "Cultivates a Stronger, Lifelong Work Ethic",
-          category: "additional",
-          mainReason:
-            "Repeated encouragement can help establish habits such as regular practice, preparation and discipline, which are valuable even when a particular goal remains out of reach.",
-          supportingReasons:
-            "Builds enduring self-discipline and character traits that transfer directly into adult professional and personal endeavors.",
-          example:
-            "A young athlete may not become a professional player but can still gain fitness, discipline and teamwork skills.",
-          band9Snippet:
-            "“Finally, it establishes an enduring work ethic, instilling disciplined routines whose value persists long after specific childhood targets have passed.”",
-          modelParagraph:
-            "Finally, this encouragement helps establish a lifelong, transferable work ethic. The daily discipline of structured preparation and regular practice remains immensely valuable even if a specific childhood aspiration is never fulfilled. For example, a young athlete who fails to secure a professional sports contract nonetheless retains physical health, mental resilience, and collaborative teamwork skills that enrich their subsequent adult career.",
-          examinerNotes:
-            "Pragmatic, mature argument recognizing the long-term utility of work habits."
-        }
-      ]
-    },
-    {
-      paraNumber: 2,
-      side: "non_opinion",
-      title: "Body Para 2: Disadvantages of the 'Achieve Anything' Message",
-      theme: "Unrealistic Expectations, Guilt & Misguided Stubbornness",
-      mainReason:
-        "1. Creates unrealistic expectations and excessive burnout; 2. Leads to crippling guilt, low self-esteem, and misguided stubbornness.",
-      supportingReasons:
-        "When success is framed solely as willpower, children blame themselves for external economic bottlenecks, overwork themselves to exhaustion, and refuse to abandon unsuitable goals.",
-      example:
-        "A talented student unable to afford university fees feels inadequate, while an overworked pupil experiences severe sleep deprivation and burnout.",
-      band9Snippet:
-        "“Conversely, propagating this unconstrained narrative entails profound drawbacks: the creation of unrealistic expectations and the infliction of acute self-blame.”",
-      alternativeReasons: [
-        {
-          id: "disadv-reason-1",
-          badge: "Disadvantage 01 • Unrealistic Expectations",
-          title: "Creates Unrealistic Expectations & Ignores Limits",
-          category: "standard",
-          mainReason:
-            "Children may assume that effort alone guarantees success, overlooking financial limitations, unequal opportunities, natural aptitude or circumstances beyond their control.",
-          supportingReasons:
-            "Blinds youth to real-world structural bottlenecks and resource barriers that personal exertion alone cannot dismantle.",
-          example:
-            "A talented student may work extremely hard to enter a prestigious university but still be unable to afford the fees.",
-          band9Snippet:
-            "“Foremost among these pitfalls is the cultivation of unrealistic expectations, as children are led to overlook tangible financial and systemic constraints.”",
-          modelParagraph:
-            "Conversely, propagating this unconstrained narrative entails severe disadvantages. Foremost among these is the creation of unrealistic expectations. When youth are told that dedication guarantees every outcome, they fail to account for structural economic hurdles, unequal opportunities, and inborn physical limits. For instance, a remarkably talented student may study relentlessly and earn admission to an elite university, only to find that exorbitant tuition fees render attendance impossible, shattering their worldview through no fault of their own.",
-          examinerNotes:
-            "Exposes socioeconomic reality and financial boundaries with high persuasive power."
-        },
-        {
-          id: "disadv-reason-2",
-          badge: "Disadvantage 02 • Guilt & Low Self-Esteem",
-          title: "Leads to Guilt & Damaged Self-Esteem",
-          category: "standard",
-          mainReason:
-            "When children fail despite working hard, they may interpret the outcome as proof that they are not capable or did not try enough.",
-          supportingReasons:
-            "Because success is framed solely as personal willpower, any loss is internalized as a shameful moral and intellectual shortcoming.",
-          example:
-            "A child who prepares thoroughly but loses a sports competition may feel personally inadequate rather than recognising the role of other competitors and circumstances.",
-          band9Snippet:
-            "“Furthermore, it frequently precipitates acute guilt and diminished self-esteem, prompting diligent children to interpret inevitable losses as personal inadequacies.”",
-          modelParagraph:
-            "Additionally, this doctrine frequently induces deep-seated guilt and diminished self-worth. If children believe that effort always yields victory, any subsequent failure is interpreted not as bad luck or superior competition, but as definitive proof of their own laziness or inadequacy. For example, a young athlete who trains exhaustively yet loses a match may spiral into self-loathing, completely blind to the fact that their opponent possessed greater experience or physiological advantages.",
-          examinerNotes:
-            "Penetrating psychological analysis of attribution error in young learners."
-        },
-        {
-          id: "disadv-reason-3",
-          badge: "Disadvantage 03 • Excessive Pressure & Burnout",
-          title: "Encourages Excessive Pressure & Exhaustion",
-          category: "standard",
-          mainReason:
-            "Children may overwork themselves, become afraid of failure or sacrifice sleep and leisure because they believe they must succeed at everything.",
-          supportingReasons:
-            "The relentless demand for perfection generates chronic anxiety, physical depletion, and early academic burnout.",
-          example:
-            "A student may study late every night to achieve top grades, eventually experiencing exhaustion and reduced concentration.",
-          band9Snippet:
-            "“In addition, it encourages excessive pressure and physical exhaustion, as youths sacrifice vital sleep and recreation in pursuit of flawless marks.”",
-          modelParagraph:
-            "Moreover, this message subjects impressionable minds to excessive psychological pressure and physical exhaustion. Believing that success in every arena is purely a matter of effort, students routinely overwork themselves, sacrificing restorative sleep and recreation. A typical case is an ambitious pupil who studies late every night to maintain flawless grades, only to experience severe fatigue, weakened immunity, and compromised concentration in the examination hall.",
-          examinerNotes:
-            "Directly addresses modern adolescent health and work-life balance."
-        },
-        {
-          id: "disadv-reason-4",
-          badge: "Disadvantage 04 • Misguided Persistence",
-          title: "Confuses Persistence with Misguided Stubbornness",
-          category: "additional",
-          mainReason:
-            "They might continue pursuing an unsuitable goal simply because they believe changing direction means they have failed.",
-          supportingReasons:
-            "Traps individuals in the sunk-cost fallacy, preventing them from pivoting toward vocations better matched to their genuine talents.",
-          example:
-            "A teenager may continue preparing for a career they dislike rather than exploring a field better suited to their interests.",
-          band9Snippet:
-            "“A less obvious danger is that youth may confuse healthy perseverance with obstinate refusal to pivot away from unsuitable goals.”",
-          modelParagraph:
-            "A further, less obvious drawback is that children may confuse healthy perseverance with misguided stubbornness. Conditioned to believe that abandoning any goal equates to personal failure, young people often cling obstinately to unsuitable pursuits. For instance, a teenager may spend years miserably preparing for a medical career they detest simply because quitting feels like cowardice, missing valuable opportunities to flourish in fields aligned with their natural affinities.",
-          examinerNotes:
-            "Brilliant analysis of the sunk-cost fallacy in youth career planning."
-        },
-        {
-          id: "disadv-reason-5",
-          badge: "Disadvantage 05 • Unhealthy Comparisons",
-          title: "Encourages Unhealthy Social Comparisons",
-          category: "additional",
-          mainReason:
-            "Children may assume that anyone who achieves more must have worked harder, overlooking differences in support, resources, prior experience and individual circumstances.",
-          supportingReasons:
-            "Breeds unwarranted feelings of inferiority or false arrogance, ignoring the immense role of private tutoring, wealth, and genetics.",
-          example:
-            "A student who receives lower marks than a classmate may feel inferior despite having made substantial progress.",
-          band9Snippet:
-            "“Finally, it invites corrosive social comparisons, prompting pupils to assume that peers who outperform them merely worked harder, regardless of systemic advantages.”",
-          modelParagraph:
-            "Finally, this simplistic outlook fuels toxic social comparisons. Children frequently assume that any classmate who scores higher simply exerted greater discipline, entirely overlooking disparities in parental assistance, private tutoring, or early childhood enrichment. Consequently, a hardworking student who makes tremendous personal progress may still feel bitter and inferior when outranked by an affluent peer who had access to expensive educational resources.",
-          examinerNotes:
-            "Highly sophisticated sociological argument exposing the myth of meritocratic equality."
+            "Connects cognitive habituation to real classroom learning deficits."
         }
       ]
     }
   ],
 
-  // 4. Band 9 Vocabulary List (12 Curated Items with Collocations & Phonetics)
+  // 4. Academic Vocabulary List (12 Genuine Band 8.5/9 Items Requested by Instructor)
   vocabList: [
     {
-      word: "Growth Mindset",
-      term: "Growth Mindset",
-      phonetic: "/ɡrəʊθ ˈmaɪndset/",
-      meaning: "The underlying belief that a person's intelligence, talents, and capabilities can be developed through dedication and effort.",
-      definition: "The underlying belief that a person's intelligence, talents, and capabilities can be developed through dedication and effort.",
-      example: "Instilling a growth mindset encourages young learners to treat mistakes as stepping stones toward mastery.",
-      sampleSentence: "Instilling a growth mindset encourages young learners to treat mistakes as stepping stones toward mastery.",
-      collocations: ["cultivate a growth mindset", "embrace a growth mindset", "growth mindset philosophy"]
+      word: "Pervasive",
+      definition: "Spreading widely throughout an area, society, or aspect of life.",
+      phonetic: "/pəˈveɪsɪv/",
+      term: "Pervasive",
+      meaning: "Spreading widely throughout an area, society, or aspect of life.",
+      example: "The pervasive presence of handheld touchscreens has made early digital immersion almost inevitable.",
+      sampleSentence: "The pervasive presence of handheld touchscreens has made early digital immersion almost inevitable.",
+      collocations: ["pervasive influence", "pervasive presence", "pervasive technology"]
     },
     {
-      word: "Intrinsic Resilience",
-      term: "Intrinsic Resilience",
-      phonetic: "/ɪnˈtrɪnzɪk rɪˈzɪliəns/",
-      meaning: "Inherent psychological toughness and emotional capacity to recover quickly from difficulties.",
-      definition: "Inherent psychological toughness and emotional capacity to recover quickly from difficulties.",
-      example: "Children who possess intrinsic resilience are far less likely to abandon difficult academic subjects.",
-      sampleSentence: "Children who possess intrinsic resilience are far less likely to abandon difficult academic subjects.",
-      collocations: ["bolster intrinsic resilience", "exhibit intrinsic resilience", "build emotional resilience"]
+      word: "Inevitable",
+      definition: "Certain to happen; unavoidable in the natural course of events.",
+      phonetic: "/ɪnˈevɪtəbl/",
+      term: "Inevitable",
+      meaning: "Certain to happen; unavoidable in the natural course of events.",
+      example: "A reduction in physical play is an inevitable outcome when children spend hours seated before screens.",
+      sampleSentence: "A reduction in physical play is an inevitable outcome when children spend hours seated before screens.",
+      collocations: ["inevitable consequence", "inevitable outcome", "practically inevitable"]
     },
     {
-      word: "Social Mobility",
-      term: "Social Mobility",
-      phonetic: "/ˈsəʊʃl məʊˈbɪləti/",
-      meaning: "The ability of individuals or families to move up or down the socioeconomic ladder.",
-      definition: "The ability of individuals or families to move up or down the socioeconomic ladder.",
-      example: "Telling youth that effort yields success serves as a powerful engine for upward social mobility.",
-      sampleSentence: "Telling youth that effort yields success serves as a powerful engine for upward social mobility.",
-      collocations: ["upward social mobility", "spur social mobility", "generational mobility"]
+      word: "Discernible",
+      definition: "Able to be detected, noticed, or clearly distinguished.",
+      phonetic: "/dɪˈsɜːnəbl/",
+      term: "Discernible",
+      meaning: "Able to be detected, noticed, or clearly distinguished.",
+      example: "Heavy device dependency produces discernible deficits in a toddler's interpersonal communication skills.",
+      sampleSentence: "Heavy device dependency produces discernible deficits in a toddler's interpersonal communication skills.",
+      collocations: ["discernible delay", "discernible deficit", "discernible improvement"]
     },
     {
-      word: "Self-Imposed Ceilings",
-      term: "Self-Imposed Ceilings",
-      phonetic: "/ˌself ɪmˈpəʊzd ˈsiːlɪŋz/",
-      meaning: "Artificial psychological limitations or low expectations that individuals place upon their own potential.",
-      definition: "Artificial psychological limitations or low expectations that individuals place upon their own potential.",
-      example: "The encouraging message empowers disadvantaged pupils to shatter self-imposed ceilings.",
-      sampleSentence: "The encouraging message empowers disadvantaged pupils to shatter self-imposed ceilings.",
-      collocations: ["dismantle self-imposed ceilings", "eliminate self-imposed barriers", "break mental ceilings"]
+      word: "Transient",
+      definition: "Lasting only for a short time; fleeting and impermanent.",
+      phonetic: "/ˈtrænziənt/",
+      term: "Transient",
+      meaning: "Lasting only for a short time; fleeting and impermanent.",
+      example: "Digital video games provide transient amusement rather than cultivating resilient, long-term cognitive patience.",
+      sampleSentence: "Digital video games provide transient amusement rather than cultivating resilient, long-term cognitive patience.",
+      collocations: ["transient satisfaction", "transient entertainment", "transient novelty"]
     },
     {
-      word: "Debilitating Self-Blame",
-      term: "Debilitating Self-Blame",
-      phonetic: "/dɪˈbɪlɪteɪtɪŋ ˌself ˈbleɪm/",
-      meaning: "Crushing guilt and harsh internal criticism that paralyzes a person's mental well-being.",
-      definition: "Crushing guilt and harsh internal criticism that paralyzes a person's mental well-being.",
-      example: "When promised that effort guarantees victory, failed attempts often lead to debilitating self-blame.",
-      sampleSentence: "When promised that effort guarantees victory, failed attempts often lead to debilitating self-blame.",
-      collocations: ["inflict debilitating self-blame", "experience self-blame", "shoulder excessive self-blame"]
+      word: "Resilient",
+      definition: "Able to withstand challenges, recover rapidly, and adapt constructively.",
+      phonetic: "/rɪˈzɪliənt/",
+      term: "Resilient",
+      meaning: "Able to withstand challenges, recover rapidly, and adapt constructively.",
+      example: "Children deprived of real-world social problem-solving struggle to build resilient emotional coping mechanisms.",
+      sampleSentence: "Children deprived of real-world social problem-solving struggle to build resilient emotional coping mechanisms.",
+      collocations: ["resilient mindset", "emotionally resilient", "resilient coping skills"]
     },
     {
-      word: "Perfectionism & Burnout",
-      term: "Perfectionism & Burnout",
-      phonetic: "/pəˈfekʃənɪzəm ænd ˈbɜːnaʊt/",
-      meaning: "The relentless demand for flawless performance coupled with state of acute physical and mental exhaustion.",
-      definition: "The relentless demand for flawless performance coupled with state of acute physical and mental exhaustion.",
-      example: "Hyper-competitive adolescents frequently collapse under the combined weight of perfectionism and burnout.",
-      sampleSentence: "Hyper-competitive adolescents frequently collapse under the combined weight of perfectionism and burnout.",
-      collocations: ["suffer from burnout", "toxic perfectionism", "academic burnout"]
+      word: "Detrimental",
+      definition: "Tending to cause noticeable harm, injury, or impairment.",
+      phonetic: "/ˌdetrɪˈmentl/",
+      term: "Detrimental",
+      meaning: "Tending to cause noticeable harm, injury, or impairment.",
+      example: "Excessive device immersion exerts a highly detrimental impact on a child's natural sleep architecture.",
+      sampleSentence: "Excessive device immersion exerts a highly detrimental impact on a child's natural sleep architecture.",
+      collocations: ["detrimental impact", "detrimental effect", "highly detrimental"]
     },
     {
-      word: "Innate Aptitude",
-      term: "Innate Aptitude",
-      phonetic: "/ɪˈneɪt ˈæptɪtjuːd/",
-      meaning: "Natural, inborn talent or physiological capability that exists independently of training.",
-      definition: "Natural, inborn talent or physiological capability that exists independently of training.",
-      example: "No amount of training can fully compensate for a complete lack of innate aptitude in elite athletics.",
-      sampleSentence: "No amount of training can fully compensate for a complete lack of innate aptitude in elite athletics.",
-      collocations: ["possess innate aptitude", "biological aptitude", "differing innate aptitudes"]
+      word: "Conducive",
+      definition: "Making a desirable situation, skill, or outcome likely or possible.",
+      phonetic: "/kənˈdjuːsɪv/",
+      term: "Conducive",
+      meaning: "Making a desirable situation, skill, or outcome likely or possible.",
+      example: "Interactive counting software is conducive to accelerated numeracy acquisition during preschool years.",
+      sampleSentence: "Interactive counting software is conducive to accelerated numeracy acquisition during preschool years.",
+      collocations: ["conducive to learning", "conducive to development", "highly conducive"]
     },
     {
-      word: "Structural Inequities",
-      term: "Structural Inequities",
-      phonetic: "/ˈstrʌktʃərəl ɪnˈekwətiz/",
-      meaning: "Systemic, institutional disadvantages in society that restrict opportunity regardless of individual effort.",
-      definition: "Systemic, institutional disadvantages in society that restrict opportunity regardless of individual effort.",
-      example: "The naive myth that anyone can make it overlooks persistent structural inequities in education.",
-      sampleSentence: "The naive myth that anyone can make it overlooks persistent structural inequities in education.",
-      collocations: ["entrenched structural inequities", "address structural barriers", "systemic inequities"]
+      word: "Susceptible",
+      definition: "Likely or liable to be influenced, harmed, or swayed by external forces.",
+      phonetic: "/səˈseptəbl/",
+      term: "Susceptible",
+      meaning: "Likely or liable to be influenced, harmed, or swayed by external forces.",
+      example: "Preschoolers lack analytical discernment, rendering them acutely susceptible to inappropriate online content.",
+      sampleSentence: "Preschoolers lack analytical discernment, rendering them acutely susceptible to inappropriate online content.",
+      collocations: ["acutely susceptible", "highly susceptible", "susceptible to manipulation"]
     },
     {
-      word: "Bitter Disillusionment",
-      term: "Bitter Disillusionment",
-      phonetic: "/ˈbɪtə ˌdɪsɪˈluːʒnmənt/",
-      meaning: "A painful feeling of disappointment when discovering that an idealized belief is false in reality.",
-      definition: "A painful feeling of disappointment when discovering that an idealized belief is false in reality.",
-      example: "Young adults face bitter disillusionment when dedication fails to overcome entrenched nepotism.",
-      sampleSentence: "Young adults face bitter disillusionment when dedication fails to overcome entrenched nepotism.",
-      collocations: ["culminate in disillusionment", "suffer bitter disillusionment", "confront disillusionment"]
+      word: "Indispensable",
+      definition: "Absolutely essential; unable to be managed without.",
+      phonetic: "/ˌɪndɪˈspensəbl/",
+      term: "Indispensable",
+      meaning: "Absolutely essential; unable to be managed without.",
+      example: "Physical recreation is indispensable for cardiovascular health, bone density, and gross motor development.",
+      sampleSentence: "Physical recreation is indispensable for cardiovascular health, bone density, and gross motor development.",
+      collocations: ["indispensable asset", "indispensable tool", "biologically indispensable"]
     },
     {
-      word: "Pragmatic Guidance",
-      term: "Pragmatic Guidance",
-      phonetic: "/præɡˈmætɪk ˈɡaɪdns/",
-      meaning: "Realistic, sensible counsel that considers practical facts and limitations rather than pure idealism.",
-      definition: "Realistic, sensible counsel that considers practical facts and limitations rather than pure idealism.",
-      example: "Mentors should combine emotional encouragement with pragmatic guidance regarding career choices.",
-      sampleSentence: "Mentors should combine emotional encouragement with pragmatic guidance regarding career choices.",
-      collocations: ["offer pragmatic guidance", "pragmatic realism", "grounded guidance"]
+      word: "Ubiquitous",
+      definition: "Present, appearing, or encountered everywhere simultaneously.",
+      phonetic: "/juːˈbɪkwɪtəs/",
+      term: "Ubiquitous",
+      meaning: "Present, appearing, or encountered everywhere simultaneously.",
+      example: "Because digital touchscreens are now ubiquitous, establishing strict screen limits has become paramount.",
+      sampleSentence: "Because digital touchscreens are now ubiquitous, establishing strict screen limits has become paramount.",
+      collocations: ["ubiquitous technology", "ubiquitous presence", "increasingly ubiquitous"]
     },
     {
-      word: "Self-Compassion",
-      term: "Self-Compassion",
-      phonetic: "/ˌself kəmˈpæʃn/",
-      meaning: "Treating oneself with kindness and understanding during times of failure or inadequacy.",
-      definition: "Treating oneself with kindness and understanding during times of failure or inadequacy.",
-      example: "Developing self-compassion allows students to process defeat constructively without feeling worthless.",
-      sampleSentence: "Developing self-compassion allows students to process defeat constructively without feeling worthless.",
-      collocations: ["cultivate self-compassion", "practice self-compassion", "emotional self-compassion"]
+      word: "Erode",
+      definition: "Gradually destroy, diminish, or wear away over time.",
+      phonetic: "/ɪˈrəʊd/",
+      term: "Erode",
+      meaning: "Gradually destroy, diminish, or wear away over time.",
+      example: "Fast-paced digital media rapidly erodes a child's capacity for sustained academic concentration.",
+      sampleSentence: "Fast-paced digital media rapidly erodes a child's capacity for sustained academic concentration.",
+      collocations: ["erode attention span", "erode social skills", "erode patience"]
     },
     {
-      word: "Tenacity & Grit",
-      term: "Tenacity & Grit",
-      phonetic: "/təˈnæsəti ænd ɡrɪt/",
-      meaning: "The quality of persistent determination and courage when working toward long-term goals.",
-      definition: "The quality of persistent determination and courage when working toward long-term goals.",
-      example: "Teaching children that skills improve with practice fosters the tenacity needed to master difficult subjects.",
-      sampleSentence: "Teaching children that skills improve with practice fosters the tenacity needed to master difficult subjects.",
-      collocations: ["unyielding tenacity", "demonstrate grit", "cultivate persistence and grit"]
-    },
-    {
-      word: "Toxic Perfectionism",
-      term: "Toxic Perfectionism",
-      phonetic: "/ˈtɒksɪk pəˈfekʃənɪzəm/",
-      meaning: "The pathological belief that anything less than flawless perfection is a humiliating personal failure.",
-      definition: "The pathological belief that anything less than flawless perfection is a humiliating personal failure.",
-      example: "Promising that effort guarantees every outcome inadvertently breeds toxic perfectionism in impressionable children.",
-      sampleSentence: "Promising that effort guarantees every outcome inadvertently breeds toxic perfectionism in impressionable children.",
-      collocations: ["foster toxic perfectionism", "paralyzing perfectionism", "combat perfectionism"]
-    },
-    {
-      word: "Meritocratic Fallacy",
-      term: "Meritocratic Fallacy",
-      phonetic: "/ˌmerɪtəˈkrætɪk ˈfæləsi/",
-      meaning: "The flawed assumption that individual success is determined solely by effort, ignoring systemic privilege and luck.",
-      definition: "The flawed assumption that individual success is determined solely by effort, ignoring systemic privilege and luck.",
-      example: "Telling disadvantaged youth that willpower conquers all perpetuates the meritocratic fallacy by downplaying structural poverty.",
-      sampleSentence: "Telling disadvantaged youth that willpower conquers all perpetuates the meritocratic fallacy by downplaying structural poverty.",
-      collocations: ["expose the meritocratic fallacy", "myth of meritocracy", "critique meritocracy"]
+      word: "Sedentary",
+      definition: "Involving prolonged periods of sitting and minimal physical exertion.",
+      phonetic: "/ˈsedntri/",
+      term: "Sedentary",
+      meaning: "Involving prolonged periods of sitting and minimal physical exertion.",
+      example: "Premature device addiction entrenches a sedentary routine directly tied to rising pediatric obesity rates.",
+      sampleSentence: "Premature device addiction entrenches a sedentary routine directly tied to rising pediatric obesity rates.",
+      collocations: ["sedentary lifestyle", "sedentary habits", "sedentary routine"]
     }
   ],
 
   vocabHunt: [
-    "growth mindset",
-    "resilience",
-    "social mobility",
-    "self-blame",
-    "burnout",
-    "aptitude",
-    "structural",
-    "disillusionment",
-    "pragmatic",
-    "compassion",
-    "tenacity",
-    "perfectionism",
-    "meritocratic"
+    "pervasive",
+    "inevitable",
+    "discernible",
+    "transient",
+    "resilient",
+    "detrimental",
+    "conducive",
+    "susceptible",
+    "indispensable",
+    "ubiquitous",
+    "erode",
+    "sedentary"
   ],
 
-  // 5. Power Expressions for Advantages & Disadvantages
+  // 5. Power Expressions
   powerExpressions: [
     {
-      expression: "Cultivating an intrinsic growth mindset",
-      meaning: "Fostering the belief that competence is expanded through deliberate practice",
-      example: "Cultivating an intrinsic growth mindset equips children with resilience against early scholastic failure."
+      expression: "Pervasive digital immersion",
+      meaning: "All-encompassing daily screen exposure that dominates a child's waking hours",
+      example: "Pervasive digital immersion displaces vital physical play and social learning milestones."
     },
     {
-      expression: "Serving as an engine for social mobility",
-      meaning: "Acting as a powerful vehicle to help disadvantaged individuals rise economically",
-      example: "Optimistic encouragement serves as an engine for social mobility among marginalized youths."
+      expression: "Displacing outdoor recreation",
+      meaning: "Crowding out healthy physical play and active exercise in favor of sedentary viewing",
+      example: "Excessive tablet usage directly displaces outdoor recreation in growing toddlers."
     },
     {
-      expression: "Dismantling self-imposed ceilings",
-      meaning: "Eliminating internal mental boundaries that prevent ambitious pursuits",
-      example: "Telling children they can succeed helps dismantle self-imposed ceilings in competitive fields."
+      expression: "Eroding sustained cognitive focus",
+      meaning: "Gradually weakening an individual's capacity to concentrate on lengthy scholastic tasks",
+      example: "Fast-paced video algorithms undermine academic discipline by eroding sustained cognitive focus."
     },
     {
-      expression: "Inflicting debilitating self-reproach",
-      meaning: "Causing severe personal guilt and emotional torment following a disappointment",
-      example: "The belief that effort guarantees success inflicts debilitating self-reproach when goals are not reached."
+      expression: "Fostering foundational digital fluency",
+      meaning: "Equipping young minds with natural, intuitive competence in navigating technology",
+      example: "Early software engagement succeeds in fostering foundational digital fluency for future schooling."
     },
     {
-      expression: "A naive disregard for biological realities",
-      meaning: "An unrealistic refusal to acknowledge inborn physical or cognitive boundaries",
-      example: "Chasing unviable athletic dreams reflects a naive disregard for biological realities."
+      expression: "Disrupting natural circadian rhythms",
+      meaning: "Interfering with the biological internal clock that regulates sleep and wakefulness via blue light",
+      example: "Evening screen exposure harms young children by disrupting natural circadian rhythms."
     },
     {
-      expression: "Balancing aspirational optimism with pragmatic realism",
-      meaning: "Pairing high ambition with sensible, objective awareness of constraints",
-      example: "Wise educators succeed by balancing aspirational optimism with pragmatic realism."
+      expression: "Stunting reciprocal human communication",
+      meaning: "Impairing two-way conversational abilities that depend on empathy, eye contact, and vocal cues",
+      example: "Substituting touchscreen games for family dialogue risks stunting reciprocal human communication."
     }
   ],
 
-  // 6. Strategic Brainstorm Cards (Step 3: Easy to explain on smart board)
+  // 6. Strategic Brainstorm Cards (Step 3: Exactly 4 Cards — Under 5, Non-Ambiguous & Cut-to-the-Chase)
   brainstormCards: [
     {
-      question: "What happens when a student who performs poorly in mathematics is told they can achieve anything?",
-      thinkingLens: "Academic Perseverance vs Giving Up Early",
-      selfCheck: "Does it build steady practice habits or cause immediate surrender?",
-      idea: "Believing improvement is possible encourages the student to practise regularly, seek help, and steadily elevate their performance instead of giving up."
+      question: "How do interactive educational apps and games enhance early childhood learning?",
+      thinkingLens: "Multisensory Gamification & Visual Comprehension",
+      selfCheck: "Do interactive counting games simplify abstract math concepts better than textbooks?",
+      idea: "Gamified educational apps turn abstract math and literacy concepts into intuitive, easy-to-grasp games."
     },
     {
-      question: "How does this belief encourage a nervous child when considering a public school play audition?",
-      thinkingLens: "Self-Confidence, Courage & Expanding Ambition",
-      selfCheck: "Does knowing ability can grow lower the paralyzing fear of public failure?",
-      idea: "The child auditions despite stage fright, knowing that skills and confidence develop through repeated practice rather than being an innate gift."
+      question: "Why is early familiarity with computer interfaces an asset for modern schooling?",
+      thinkingLens: "Foundational Digital Fluency & Academic Readiness",
+      selfCheck: "Does early touchscreen experience give young students confidence in computer-based classes?",
+      idea: "Early device familiarity equips children with foundational digital fluency, easing their transition into computerized schoolwork."
     },
     {
-      question: "Why does a child learning to ride a bicycle keep practising after falling off?",
-      thinkingLens: "Redefining Mistakes: Part of Learning vs Evidence of Incompetence",
-      selfCheck: "What separates healthy persistence from embarrassment and quitting?",
-      idea: "When effort leads to improvement, falling is seen as natural feedback rather than incompetence, eliminating embarrassment and sustaining determination."
+      question: "How does prolonged screen viewing directly harm a young child's physical health?",
+      thinkingLens: "Sedentary Displacement & Sleep Architecture Disruption",
+      selfCheck: "What happens to a child's fitness and sleep when screens replace active sports?",
+      idea: "Prolonged screen viewing entrenches sedentary habits, displacing healthy physical exercise and delaying restful bedtime sleep."
     },
     {
-      question: "How does a student react when an important science project design malfunctions?",
-      thinkingLens: "Independent Problem-Solving vs Learned Helplessness",
-      selfCheck: "Do they abandon the project or take proactive ownership?",
-      idea: "Instead of immediately demanding adult intervention or quitting, the student independently tests alternative designs and takes ownership of their learning."
-    },
-    {
-      question: "What happens when a hardworking student earns university admission but cannot afford tuition fees?",
-      thinkingLens: "Unrealistic Expectations vs Financial & Structural Realities",
-      selfCheck: "Can sheer effort overcome severe economic inequality alone?",
-      idea: "Promising that effort guarantees success blinds youth to external financial limits, leading to bitter disappointment when poverty blocks attendance."
-    },
-    {
-      question: "Why does a child who loses a sports competition despite thorough training feel deeply inadequate?",
-      thinkingLens: "Unfair Self-Blame & Ignoring External Competitors",
-      selfCheck: "What happens when failure is interpreted purely as a personal defect?",
-      idea: "If children believe effort always wins, losing makes them feel personally incapable, ignoring competitors' superior experience or circumstances."
-    },
-    {
-      question: "Why do students who study late every night often end up exhausted and unfocused in exams?",
-      thinkingLens: "Excessive Pressure, Sleep Deprivation & Academic Burnout",
-      selfCheck: "Does the belief that you must succeed at everything lead to overwork?",
-      idea: "Fear of failure drives students to sacrifice sleep and recreation, causing chronic physical fatigue and cognitive burnout rather than success."
-    },
-    {
-      question: "Why might a teenager continue preparing for a career they detest instead of switching fields?",
-      thinkingLens: "Confusing Persistence with Misguided Stubbornness",
-      selfCheck: "Does the fear of quitting prevent healthy, intelligent pivots?",
-      idea: "Believing that changing direction equates to failure traps youngsters in disliked paths, preventing them from exploring careers matched to their natural talents."
-    },
-    {
-      question: "Why does a student who receives lower test marks than a classmate with private tutors feel inferior?",
-      thinkingLens: "Unhealthy Social Comparisons & Meritocratic Fallacy",
-      selfCheck: "Do children overlook differences in resources, tutoring, and support?",
-      idea: "Children assume the higher achiever simply worked harder, overlooking disparities in tutoring and wealth, producing unwarranted feelings of personal inferiority."
+      question: "Why does excessive reliance on digital entertainment weaken social skills and classroom focus?",
+      thinkingLens: "Interpersonal Interaction & Sustained Cognitive Focus",
+      selfCheck: "Can passive digital screens teach conversational empathy or develop patient academic concentration?",
+      idea: "Over-reliance on screens stunts face-to-face conversational empathy and rapidly erodes patience for sustained reading."
     }
   ],
 
   // 7. Connectors Tier & Strategic Linkers
   connectorsTier: {
     sTier: [
-      "On the positive side, imparting this empowering philosophy yields two substantial benefits:",
-      "Primarily, it cultivates an intrinsic growth mindset...",
-      "Furthermore, this outlook serves as an engine for upward social mobility...",
-      "Conversely, propagating this unconstrained narrative produces two profound drawbacks:",
-      "The foremost hazard is the onset of acute psychological distress and devastating self-blame...",
-      "In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations..."
+      "In contemporary society, it is increasingly observable that...",
+      "While early exposure fosters foundational digital fluency, I firmly contend...",
+      "Primarily, premature technology adoption promotes an intensely sedentary routine...",
+      "Furthermore, early device dependency produces discernible deficits in interpersonal communication...",
+      "In conclusion, although educational applications can provide transient benefits...",
+      "Therefore, the physical detriments overwhelmingly render this trend an unfavorable development."
     ],
     aTier: [
-      "A compelling illustration of this is evident in...",
-      "Consequently, when children fall short of impossible standards,...",
-      "In conclusion, while reassuring children that effort unlocks all doors...",
-      "It is therefore recommended that educators and guardians balance..."
+      "For instance, pediatric clinical research consistently reveals...",
+      "Consequently, when young children are deprived of outdoor physical play,...",
+      "A clear illustration of this is observed in early primary classrooms...",
+      "In contrast, digital interfaces offer one-way, algorithmically curated stimulation..."
     ],
     bTier: [
-      "On the one hand,... / On the other hand,...",
-      "For instance,...",
+      "First and foremost,...",
+      "Additionally,...",
       "Moreover,...",
-      "To summarize,..."
+      "To conclude,..."
     ]
   },
 
   strategicLinkers: [
     {
-      zone: "Advantages (Body 1)",
-      badge: "Positive Merits",
-      placementRule: "Use to introduce the primary and secondary psychological advantages",
+      zone: "Introduction",
+      badge: "Paraphrase + Opinion",
+      placementRule: "Use to paraphrase the prompt and state a decisive personal opinion",
       items: [
         {
-          phrase: "On the positive side, imparting this empowering philosophy yields two substantial benefits:",
-          functionDesc: "Topic sentence signaling the presentation of dual positive advantages",
-          example: "On the positive side, imparting this empowering philosophy yields two substantial benefits."
+          phrase: "In contemporary society, the pervasive presence of digital technology has made early exposure practically inevitable.",
+          functionDesc: "Opening paraphrase establishing the prompt's widespread modern reality",
+          example: "In contemporary society, the pervasive presence of digital technology has made early exposure practically inevitable."
         },
         {
-          phrase: "Primarily, it cultivates an intrinsic growth mindset...",
-          functionDesc: "Introduces the primary internal psychological advantage",
-          example: "Primarily, it cultivates an intrinsic growth mindset and a strong work ethic."
-        },
-        {
-          phrase: "Furthermore, this outlook serves as an engine for social mobility...",
-          functionDesc: "Connects to the secondary societal and demographic advantage",
-          example: "Furthermore, this outlook serves as an engine for social mobility by dismantling defeatist ceilings."
+          phrase: "While early technological exposure fosters digital fluency, I firmly believe that this is predominantly a negative development...",
+          functionDesc: "Clear thesis statement establishing a decisive personal stance",
+          example: "While early technological exposure fosters digital fluency, I firmly believe that this is predominantly a negative development due to physical health hazards and impaired social skills."
         }
       ]
     },
     {
-      zone: "Disadvantages (Body 2)",
-      badge: "Negative Perils",
-      placementRule: "Use to pivot sharply into the psychological and realistic drawbacks",
+      zone: "Body Paragraph 1 (Reason 1)",
+      badge: "Physical Health",
+      placementRule: "Use to introduce the primary physical health drawback with supporting explanation and example",
       items: [
         {
-          phrase: "Conversely, propagating this unconstrained narrative produces two profound drawbacks:",
-          functionDesc: "Sharp contrastive topic sentence opening Body Paragraph 2",
-          example: "Conversely, propagating this unconstrained narrative produces two profound drawbacks."
+          phrase: "First and foremost, premature technology adoption promotes an intensely sedentary lifestyle...",
+          functionDesc: "Topic sentence introducing the physical health argument",
+          example: "First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to severe physical complications."
         },
         {
-          phrase: "The foremost hazard is the onset of acute psychological distress...",
-          functionDesc: "Spotlights the most damaging psychological disadvantage",
-          example: "The foremost hazard is the onset of acute psychological distress and devastating self-blame."
-        },
-        {
-          phrase: "In addition, this simplistic doctrine fosters a naive blindness toward...",
-          functionDesc: "Introduces the secondary limitation regarding genetic and structural constraints",
-          example: "In addition, this simplistic doctrine fosters a naive blindness toward tangible genetic limitations."
+          phrase: "Pediatric health research consistently demonstrates that...",
+          functionDesc: "Introduces concrete empirical evidence and medical examples",
+          example: "Pediatric health research consistently demonstrates that toddlers with heavy daily screen time exhibit double the rate of childhood obesity."
         }
       ]
     },
     {
-      zone: "Recommendation (Conclusion)",
-      badge: "Synthesis & Suggestion",
-      placementRule: "Use in the final paragraph to deliver a balanced summary and actionable advice",
+      zone: "Body Paragraph 2 (Reason 2)",
+      badge: "Social Skills",
+      placementRule: "Use to introduce the second major developmental drawback regarding communication and focus",
       items: [
         {
-          phrase: "In conclusion, while reassuring children that effort unlocks all doors...",
-          functionDesc: "Concessive summary synthesizing both merits and risks",
-          example: "In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity..."
+          phrase: "Furthermore, early dependency on technology severely undermines the cultivation of interpersonal communication...",
+          functionDesc: "Topic sentence introducing the social and cognitive communication argument",
+          example: "Furthermore, early dependency on technology severely undermines the cultivation of interpersonal communication skills."
         },
         {
-          phrase: "It is therefore recommended that educators and guardians balance...",
-          functionDesc: "Delivers the actionable pedagogical recommendation",
-          example: "It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance."
+          phrase: "A clear illustration of this is observed in early primary classrooms, where...",
+          functionDesc: "Presents real-world educational evidence of speech and attention delays",
+          example: "A clear illustration of this is observed in early primary classrooms, where screen-dependent toddlers struggle to collaborate harmoniously with peers."
+        }
+      ]
+    },
+    {
+      zone: "Conclusion",
+      badge: "Sum-Up + Restatement",
+      placementRule: "Use in the final paragraph to recap the two main reasons and restate your opinion",
+      items: [
+        {
+          phrase: "In conclusion, although early engagement can cultivate foundational digital fluency, I am convinced that...",
+          functionDesc: "Concessive restatement summarizing the two core pillars",
+          example: "In conclusion, although early engagement can cultivate foundational digital fluency, I am convinced that this trend represents an overwhelmingly negative development."
+        },
+        {
+          phrase: "Therefore, the physical health hazards coupled with social skill degradation clearly render early device adoption an unfavorable phenomenon.",
+          functionDesc: "Final decisive clincher restating the personal opinion",
+          example: "Therefore, the physical health hazards coupled with social skill degradation clearly render early device adoption an unfavorable phenomenon for developing minds."
         }
       ]
     }
@@ -675,58 +488,58 @@ export const TASK2_DATA: Task2Data = {
 
   fluidVocab: [
     {
-      word: "Growth Mindset",
-      pos: "noun phrase",
-      meaning: "Belief that intelligence and capabilities can be expanded through practice and learning.",
-      naturalCollocation: "cultivate a growth mindset in young learners",
-      organicExample: "Instilling a growth mindset encourages children to view academic struggles as constructive stepping stones.",
-      mechanicalPitfall: "Avoid writing 'they get good thinking' or 'mind is growing'.",
-      examinerInsight: "A high-scoring psychological collocation recognized internationally by Cambridge examiners."
+      word: "Pervasive",
+      pos: "adjective",
+      meaning: "Existing or spreading everywhere within modern society.",
+      naturalCollocation: "pervasive digital presence",
+      organicExample: "The pervasive presence of smartphones makes early technological immersion virtually inevitable.",
+      mechanicalPitfall: "Do not write 'very common' when pervasive conveys deep societal saturation.",
+      examinerInsight: "Immediately signals sophisticated sociological commentary."
     },
     {
-      word: "Debilitating Self-Blame",
-      pos: "noun phrase",
-      meaning: "Excessive, paralyzing guilt where an individual holds themselves entirely responsible for failure.",
-      naturalCollocation: "induce debilitating self-blame after defeat",
-      organicExample: "Telling pupils that effort always succeeds induces debilitating self-blame when external competition prevails.",
-      mechanicalPitfall: "Avoid simplistic phrases like 'feeling very bad about yourself'.",
-      examinerInsight: "Demonstrates precise emotive and psychological vocabulary (Band 9 Lexical Resource)."
+      word: "Inevitable",
+      pos: "adjective",
+      meaning: "Completely unavoidable in contemporary life.",
+      naturalCollocation: "practically inevitable",
+      organicExample: "Sedentary lifestyle habits become inevitable when virtual gaming displaces outdoor exercise.",
+      mechanicalPitfall: "Avoid 'bound to happen' in formal academic writing.",
+      examinerInsight: "Demonstrates high-level Task Response and analytical precision."
     },
     {
-      word: "Social Mobility",
-      pos: "noun phrase",
-      meaning: "The movement of individuals or socioeconomic groups up or down the economic hierarchy.",
-      naturalCollocation: "serve as a catalyst for upward social mobility",
-      organicExample: "Believing that diligence trumps pedigree functions as a powerful catalyst for upward social mobility.",
-      mechanicalPitfall: "Avoid vague phrasing like 'poor people getting rich'.",
-      examinerInsight: "Accurately frames demographic and socioeconomic impacts."
+      word: "Discernible",
+      pos: "adjective",
+      meaning: "Noticeable and measurable by observation.",
+      naturalCollocation: "discernible developmental delay",
+      organicExample: "Preschoolers accustomed to prolonged screen viewing exhibit discernible deficits in peer collaboration.",
+      mechanicalPitfall: "Avoid informal words like 'clear' or 'seen'.",
+      examinerInsight: "A high-scoring adjective widely celebrated in Band 9 IELTS evaluations."
     },
     {
-      word: "Structural Inequities",
-      pos: "noun phrase",
-      meaning: "Systemic institutional barriers that restrict opportunity regardless of personal exertion.",
-      naturalCollocation: "confront entrenched structural inequities",
-      organicExample: "Individual determination often crashes against entrenched structural inequities in higher education.",
-      mechanicalPitfall: "Do not confuse with general 'problems' or 'unfair things'.",
-      examinerInsight: "Exhibits advanced sociological awareness in IELTS argumentation."
+      word: "Transient",
+      pos: "adjective",
+      meaning: "Lasting only briefly; temporary and fleeting.",
+      naturalCollocation: "transient amusement",
+      organicExample: "Short video clips provide transient entertainment but fail to foster enduring cognitive stamina.",
+      mechanicalPitfall: "Do not confuse with 'short-term' when describing emotional dopamine spikes.",
+      examinerInsight: "Contrasts temporary sensory satisfaction against long-term developmental growth."
     },
     {
-      word: "Pragmatic Realism",
-      pos: "noun phrase",
-      meaning: "A sensible, grounded approach that evaluates real-world constraints objectively.",
-      naturalCollocation: "temper optimism with pragmatic realism",
-      organicExample: "Wise mentors temper aspirational enthusiasm with pragmatic realism regarding career viability.",
-      mechanicalPitfall: "Avoid informal terms like 'thinking practically'.",
-      examinerInsight: "Ideal for the conclusion's recommendation sentence."
+      word: "Resilient",
+      pos: "adjective",
+      meaning: "Capable of recovering readily from adversity and frustration.",
+      naturalCollocation: "resilient problem-solving",
+      organicExample: "Children who rely on digital devices for instant comfort struggle to build resilient emotional coping skills.",
+      mechanicalPitfall: "Avoid simplistic phrases like 'being strong'.",
+      examinerInsight: "Key term in modern child psychology and cognitive resilience."
     },
     {
-      word: "Self-Compassion",
-      pos: "noun phrase",
-      meaning: "Kindness and emotional forgiveness toward oneself when encountering limitations or defeat.",
-      naturalCollocation: "foster emotional resilience and self-compassion",
-      organicExample: "Learning self-compassion protects adolescents from the toxic perfectionism of modern meritocracy.",
-      mechanicalPitfall: "Avoid confusing with self-pity.",
-      examinerInsight: "A highly sophisticated modern psychological term that elevates the essay's conclusion."
+      word: "Sedentary",
+      pos: "adjective",
+      meaning: "Involving prolonged sitting and minimal physical movement.",
+      naturalCollocation: "foster an intensely sedentary lifestyle",
+      organicExample: "Premature device adoption fosters an intensely sedentary lifestyle linked to rising pediatric obesity.",
+      mechanicalPitfall: "Do not write 'lazy life' or 'sitting without moving'.",
+      examinerInsight: "Essential high-scoring collocation for health and lifestyle prompts."
     }
   ],
 
@@ -734,132 +547,123 @@ export const TASK2_DATA: Task2Data = {
   consequences: [
     {
       type: "positive",
-      title: "Advantage 01: Builds Perseverance",
+      title: "Advantage 01: Makes Learning Interactive",
       category: "standard",
-      desc: "Children may be more willing to practise difficult skills instead of giving up after initial failure.",
-      example: "A student who performs poorly in mathematics may practise regularly, seek help and gradually improve their results.",
+      desc: "Gamified educational apps make abstract math and literacy intuitive through playful challenges.",
+      example: "A preschooler learns basic addition through counting games rather than paper drill sheets.",
       level: "Core Advantage",
-      simpleTakeaway: "Effort drives steady practice over early surrender.",
-      collocation: "cultivate unyielding perseverance"
+      simpleTakeaway: "Gamified apps make abstract math and literacy intuitive.",
+      collocation: "conducive to rapid numeracy acquisition"
     },
     {
       type: "positive",
-      title: "Advantage 02: Self-Confidence & Ambition",
+      title: "Advantage 02: Develops Early Digital Literacy",
       category: "standard",
-      desc: "Children may become more willing to attempt challenging tasks, participate in competitions or pursue demanding careers.",
-      example: "A child who believes improvement is possible may audition for a school play despite being nervous about performing in public.",
+      desc: "Interface familiarity provides foundational tech competence essential for computerized modern schooling.",
+      example: "Children who use tablets early transition effortlessly to school research portals and typing assignments.",
       level: "Core Advantage",
-      simpleTakeaway: "Expands courage and ambitious life horizons.",
-      collocation: "bolster self-confidence and ambition"
+      simpleTakeaway: "Early device navigation prepares learners for computer-based classes.",
+      collocation: "acquire indispensable digital fluency"
     },
     {
       type: "positive",
-      title: "Advantage 03: Personal Responsibility",
+      title: "Advantage 03: Maintains Long-Distance Relationships",
       category: "standard",
-      desc: "Children learn that their choices, preparation and consistent effort can influence their progress rather than waiting for success automatically.",
-      example: "A student creates an organized daily revision schedule for exams rather than relying on parents or luck.",
+      desc: "High-definition video calling sustains vital emotional bonds with distant relatives across time zones.",
+      example: "Toddlers stay emotionally bonded with grandparents living abroad via weekly video calls.",
       level: "Core Advantage",
-      simpleTakeaway: "Fosters an internal locus of control and agency.",
-      collocation: "develop a sense of personal responsibility"
+      simpleTakeaway: "Video calls preserve emotional ties with distant relatives.",
+      collocation: "sustain meaningful familial bonds"
     },
     {
       type: "positive",
-      title: "Advantage 04: Less Fear of Making Mistakes",
+      title: "Advantage 04: Encourages Creativity & Exploration",
       category: "additional",
-      desc: "If children believe effort leads to improvement, they see mistakes as part of learning rather than evidence of incompetence.",
-      example: "A child learning to ride a bicycle may keep practising after falling instead of giving up out of embarrassment.",
+      desc: "Age-appropriate digital software enables children to experiment freely with digital art, music, and storytelling.",
+      example: "Children create animations or record spoken stories using beginner creative applications.",
       level: "Real-Life Angle",
-      simpleTakeaway: "Dissolves embarrassment, treating errors as feedback.",
-      collocation: "view mistakes as iterative feedback"
-    },
-    {
-      type: "positive",
-      title: "Advantage 05: Independent Problem-Solving",
-      category: "additional",
-      desc: "Rather than immediately asking adults to solve every difficulty, children experiment with different approaches and take ownership.",
-      example: "A student struggling with a science project may research alternatives and revise the design instead of abandoning it.",
-      level: "Real-Life Angle",
-      simpleTakeaway: "Overcomes learned helplessness with creative autonomy.",
-      collocation: "foster independent problem-solving skills"
-    },
-    {
-      type: "positive",
-      title: "Advantage 06: Stronger Work Ethic",
-      category: "additional",
-      desc: "Repeated encouragement helps establish habits of regular practice, preparation and discipline whose value persists lifelong.",
-      example: "A young athlete may not become a professional player but can still gain fitness, discipline and teamwork skills.",
-      level: "Real-Life Angle",
-      simpleTakeaway: "Builds transferable lifelong habits of discipline.",
-      collocation: "instill an enduring work ethic"
+      simpleTakeaway: "Creative software lets children explore art, music, and storytelling.",
+      collocation: "stimulate creative self-expression"
     }
   ],
 
   evaluationArguments: [
     {
-      title: "Disadvantage 01: Creates Unrealistic Expectations",
+      title: "Disadvantage 01: Reduces Physical Activity",
       category: "standard",
-      reason: "Children may assume that effort alone guarantees success, overlooking financial limitations, unequal opportunities, and inborn limits.",
-      development: "Blinds youth to real-world structural bottlenecks and resource barriers that personal exertion alone cannot dismantle.",
-      example: "A talented student may work extremely hard to enter a prestigious university but still be unable to afford the fees.",
+      reason: "Prolonged screen staring displaces active outdoor exercise, elevating risks of childhood obesity.",
+      development: "Physical recreation is indispensable for cardiovascular health, yet it is inevitably curtailed by continuous indoor sitting.",
+      example: "Spending afternoons watching videos leaves children with fewer chances to cycle, run, or play football.",
       type: "argument",
       level: "Core Drawback",
-      simpleTakeaway: "Willpower cannot overcome structural and financial limits alone.",
-      collocation: "cultivate unrealistic expectations"
+      simpleTakeaway: "Screen staring replaces outdoor sports, fueling childhood obesity.",
+      collocation: "entrench a sedentary routine"
     },
     {
-      title: "Disadvantage 02: Leads to Guilt & Low Self-Esteem",
+      title: "Disadvantage 02: Disrupts Sleeping Habits",
       category: "standard",
-      reason: "When children fail despite working hard, they may interpret the outcome as proof that they are not capable or did not try enough.",
-      development: "Because success is framed solely as willpower, any loss is internalized as a shameful moral and personal inadequacy.",
-      example: "A child who prepares thoroughly but loses a sports competition may feel personally inadequate rather than recognising competitors' advantages.",
+      reason: "Night-time screen viewing and blue light delay bedtime routines, causing chronic morning exhaustion.",
+      development: "The artificial illumination emitted by handheld screens suppresses natural melatonin release, postponing restorative sleep.",
+      example: "Watching cartoons on tablets before bed pushes sleep onset back by up to an hour.",
       type: "argument",
       level: "Core Drawback",
-      simpleTakeaway: "Framing all failure as laziness breeds self-loathing.",
-      collocation: "inflict acute guilt and self-reproach"
+      simpleTakeaway: "Night-time screen light delays sleep and causes morning exhaustion.",
+      collocation: "disrupt restorative sleep architecture"
     },
     {
-      title: "Disadvantage 03: Encourages Excessive Pressure & Burnout",
+      title: "Disadvantage 03: Weakens Face-to-Face Communication",
       category: "standard",
-      reason: "Children may overwork themselves, become afraid of failure or sacrifice sleep and leisure because they believe they must succeed at everything.",
-      development: "The unrelenting demand for continuous striving precipitates chronic physical fatigue, emotional burnout, and weakened focus.",
-      example: "A student may study late every night to achieve top grades, eventually experiencing exhaustion and reduced concentration.",
+      reason: "Passive digital entertainment replaces family dialogue, stunting conversational manners and emotional empathy.",
+      development: "One-way screens provide artificial stimulation that fails to teach subtle facial expressions and reciprocal conversational turns.",
+      example: "Children glued to phones at family meals miss crucial opportunities to practise conversational manners.",
       type: "argument",
       level: "Core Drawback",
-      simpleTakeaway: "Sacrificing rest and recreation causes early burnout.",
-      collocation: "succumb to severe academic burnout"
+      simpleTakeaway: "Screens lack human feedback, causing speech and empathy delays.",
+      collocation: "produce discernible communication deficits"
     },
     {
-      title: "Disadvantage 04: Confuses Persistence with Misguided Stubbornness",
+      title: "Disadvantage 04: Reduces Attention Span & Focus",
       category: "additional",
-      reason: "Children might continue pursuing an unsuitable goal simply because they believe changing direction means they have failed.",
-      development: "Traps young people in the sunk-cost fallacy, preventing them from pivoting toward vocations better matched to their genuine talents.",
-      example: "A teenager may continue preparing for a career they dislike rather than exploring a field better suited to their interests.",
+      reason: "Fast-paced short videos condition young brains to crave instant gratification, undermining classroom focus.",
+      development: "Rapid multimedia stimuli make traditional cognitive tasks like book reading feel excruciatingly tedious.",
+      example: "Pupils accustomed to short clips grow restless when reading full book pages or doing extended homework.",
       type: "argument",
       level: "Real-Life Angle",
-      simpleTakeaway: "Fear of quitting prevents intelligent career pivots.",
-      collocation: "confuse persistence with obstinacy"
+      simpleTakeaway: "Fast-paced media erodes patience and classroom reading focus.",
+      collocation: "erode cognitive attention span"
     },
     {
-      title: "Disadvantage 05: Encourages Unhealthy Social Comparisons",
+      title: "Disadvantage 05: Exposes Inappropriate Content",
       category: "additional",
-      reason: "Children may assume that anyone who achieves more must have worked harder, overlooking differences in support, resources, and circumstances.",
-      development: "Breeds unwarranted feelings of inferiority or false superiority, ignoring the immense role of private tutoring and wealth disparities.",
-      example: "A student who receives lower marks than a classmate may feel inferior despite having made substantial progress.",
+      reason: "Young children lack critical maturity, making them acutely susceptible to violent or harmful media.",
+      development: "Immature young minds lack analytical filters to distinguish advertising manipulation or graphic online violence.",
+      example: "Video autoplay algorithms can expose unattended preschoolers to graphic or frightening videos.",
       type: "argument",
       level: "Real-Life Angle",
-      simpleTakeaway: "Ignores tutoring and resource disparities, damaging self-worth.",
-      collocation: "invite corrosive social comparisons"
+      simpleTakeaway: "Preschoolers easily encounter violent or age-inappropriate online media.",
+      collocation: "acutely susceptible to cyber hazards"
+    },
+    {
+      title: "Disadvantage 06: Creates Screen Dependency",
+      category: "additional",
+      reason: "Constant virtual amusement leaves children restless and unable to entertain themselves through independent play.",
+      development: "When digital entertainment is constantly used to cure boredom, children lose the capacity for imaginative, self-directed play.",
+      example: "A toddler throws an intense tantrum and becomes restless whenever a mobile phone is removed.",
+      type: "argument",
+      level: "Real-Life Angle",
+      simpleTakeaway: "Constant screen use prevents children from learning independent play.",
+      collocation: "develop compulsive screen dependency"
     }
   ],
 
   facultyAngles: [
     {
-      title: "Educational Psychology",
-      development: "Focuses on growth mindset vs performance goals; effort praise builds resilience, while outcome promises trigger anxiety."
+      title: "Pediatric Health & Physical Fitness",
+      development: "Focuses on sedentary screen time, blue light melatonin suppression, juvenile obesity, and myopia."
     },
     {
-      title: "Sociology & Economics",
-      development: "Examines the myth of pure meritocracy; systemic inequalities require institutional solutions, not just personal willpower."
+      title: "Childhood Social & Cognitive Psychology",
+      development: "Examines face-to-face social reciprocity, speech delays, attention span erosion, and digital dopamine loops."
     }
   ]
 };

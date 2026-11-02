@@ -119,7 +119,7 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
           <h2 className="stage-title">Think First. Reveal Later.</h2>
 
           <p className="stage-subtitle">
-            Simple brainstorm cards for View 1 &amp; View 2: Answer the question aloud first, check the lens, then reveal the one-liner IELTS idea.
+            Simple brainstorm cards for Positive &amp; Negative Development: Answer the question aloud first, check the lens, then reveal the one-liner IELTS idea.
           </p>
         </div>
 
@@ -616,6 +616,7 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
 
               const fullyExplored = itemSide === 2;
               const lensReached = itemSide === 1;
+              const isPositive = index < 2;
 
               return (
                 <button
@@ -623,50 +624,76 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
                   onClick={() => selectCard(index)}
                   style={{
                     textAlign: "left",
-                    padding: "11px 12px",
-                    borderRadius: "12px",
+                    padding: "12px 14px",
+                    borderRadius: "14px",
                     border:
                       index === active
-                        ? "1.5px solid var(--slate-900)"
+                        ? isPositive
+                          ? "2px solid #16a34a"
+                          : "2px solid #dc2626"
                         : "1px solid var(--border-subtle)",
                     background:
-                      index === active ? "#fff" : "transparent",
-                    color: "var(--slate-700)",
+                      index === active
+                        ? isPositive
+                          ? "#f0fdf4"
+                          : "#fef2f2"
+                        : "#fff",
+                    color: "var(--slate-800)",
                     fontWeight: index === active ? 700 : 550,
                     fontSize: "0.82rem",
                     cursor: "pointer",
+                    transition: "all 0.15s ease",
+                    boxShadow: index === active ? "0 2px 8px rgba(0,0,0,0.06)" : "none"
                   }}
                 >
-                  <span
-                    style={{
-                      display: "inline-flex",
-                      width: "23px",
-                      height: "23px",
-                      borderRadius: "8px",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: fullyExplored
-                        ? "#dcfce7"
-                        : lensReached
-                          ? "#fef3c7"
-                          : "var(--slate-200)",
-                      color: fullyExplored
-                        ? "#15803d"
-                        : lensReached
-                          ? "#92400e"
-                          : "var(--slate-700)",
-                      marginRight: "8px",
-                      flexShrink: 0,
-                    }}
-                  >
-                    {fullyExplored ? (
-                      <Check size={14} />
-                    ) : (
-                      index + 1
-                    )}
-                  </span>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "6px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                      <span
+                        style={{
+                          display: "inline-flex",
+                          width: "22px",
+                          height: "22px",
+                          borderRadius: "7px",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          background: fullyExplored
+                            ? "#dcfce7"
+                            : lensReached
+                              ? "#fef3c7"
+                              : "var(--slate-100)",
+                          color: fullyExplored
+                            ? "#15803d"
+                            : lensReached
+                              ? "#92400e"
+                              : "var(--slate-600)",
+                          fontSize: "0.74rem",
+                          fontWeight: 800
+                        }}
+                      >
+                        {fullyExplored ? <Check size={13} /> : index + 1}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: "0.68rem",
+                          fontWeight: 800,
+                          padding: "2px 6px",
+                          borderRadius: "4px",
+                          background: isPositive ? "#dcfce7" : "#fee2e2",
+                          color: isPositive ? "#15803d" : "#991b1b"
+                        }}
+                      >
+                        {isPositive ? "POSITIVE ASPECT" : "NEGATIVE ASPECT"}
+                      </span>
+                    </div>
 
-                  {item.question}
+                    <span style={{ fontSize: "0.72rem", color: "var(--slate-400)", fontWeight: 700 }}>
+                      Card {index + 1}/4
+                    </span>
+                  </div>
+
+                  <div style={{ fontSize: "0.82rem", lineHeight: 1.4, color: "var(--slate-900)" }}>
+                    {item.thinkingLens}
+                  </div>
                 </button>
               );
             })}

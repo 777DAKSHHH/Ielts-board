@@ -9,6 +9,7 @@ import {
   BookOpen,
   Compass
 } from "lucide-react";
+import { TASK2_DATA } from "../../data/task2Data";
 
 interface CaveatsDeepDiveModalProps {
   isOpen: boolean;
@@ -93,7 +94,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   Faculty Teaching Vault &amp; Essay Architecture
                 </h3>
                 <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", margin: "2px 0 0" }}>
-                  Fresh, Easily Justifiable Ideas: Growth Mindset vs. Psychological Burnout
+                  One-Liner Arguments &amp; 4-Paragraph Opinion Logic: Children &amp; Early Technology Usage
                 </p>
               </div>
             </div>
@@ -126,8 +127,8 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
             }}
           >
             {[
-              { id: "faculty", label: "Classroom Discussion & Idea Vault", icon: <Lightbulb size={16} /> },
-              { id: "method", label: "4-Paragraph Architecture", icon: <GitBranch size={16} /> },
+              { id: "faculty", label: "Classroom Discussion & One-Liner Vault", icon: <Lightbulb size={16} /> },
+              { id: "method", label: "4-Paragraph Opinion Architecture", icon: <GitBranch size={16} /> },
               { id: "comparisons", label: "Band 6 vs Band 9 Contrasts", icon: <Award size={16} /> },
               { id: "formulas", label: "Plug & Play Sentence Formulas", icon: <BookOpen size={16} /> }
             ].map((tab) => (
@@ -185,132 +186,50 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                     </h5>
                   </div>
                   <blockquote style={{ margin: 0, fontSize: "1.02rem", fontWeight: 700, color: "var(--slate-900)", lineHeight: 1.5 }}>
-                    “When a child spends years practicing basketball but stops growing at 5 feet 4 inches, does telling them 'you can achieve anything' inspire them or set them up for heartbreak?”
+                    “{TASK2_DATA.classroomDiscussion?.question}”
                   </blockquote>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "4px" }}>
-                    <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 1: Why do students in high-pressure exam systems blame themselves when they fail, even after studying 14 hours a day?
-                    </span>
-                    <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 2: How does Carol Dweck's research on praising 'effort rather than talent' build emotional resilience?
-                    </span>
-                    <span className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
-                      Follow-up 3: Can pure willpower conquer poverty and institutional barriers without external social support?
-                    </span>
+                    {TASK2_DATA.classroomDiscussion?.followUps.map((fu, idx) => (
+                      <span key={idx} className="apple-badge neutral" style={{ background: "#ffffff", fontSize: "0.78rem" }}>
+                        Follow-up {idx + 1}: {fu}
+                      </span>
+                    ))}
                   </div>
                   <p style={{ margin: 0, fontSize: "0.85rem", color: "var(--slate-600)", fontStyle: "italic" }}>
-                    ✦ Pedagogical Purpose: This concrete question helps students instantly grasp the distinction between encouraging healthy effort (growth mindset) and making false promises that defy biology and economic reality.
+                    ✦ Pedagogical Purpose: {TASK2_DATA.classroomDiscussion?.pedagogicalInsight}
                   </p>
                 </div>
 
-                {/* 11 Faculty Analytical Angles (6 Advantages + 5 Disadvantages) */}
+                {/* Dual Comparison Board: Positive vs Negative One-Liners */}
                 <div>
                   <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", marginBottom: "12px" }}>
-                    Student Idea Bank — Relatable Examples &amp; Real-Life Angles
+                    Student Idea Bank — Scannable One-Liners for Both Perspectives
                   </h4>
                   <div className="stage-grid-2col" style={{ gap: "14px" }}>
-                    {/* Advantages: 6 Points */}
+                    {/* Positive One-Liners */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                       <span className="apple-badge accent" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#dcfce7", color: "#166534" }}>
-                        🟢 ADVANTAGES: 6 RELATABLE REASONS &amp; EXAMPLES
+                        🟢 POSITIVE DEVELOPMENT (4 ONE-LINERS)
                       </span>
-                      {[
-                        {
-                          tag: "Standard Idea 1",
-                          title: "1. Builds Perseverance",
-                          desc: "Children may be more willing to practise difficult skills instead of giving up after initial failure.",
-                          example: "Example: A student who performs poorly in mathematics may practise regularly, seek help and gradually improve their results."
-                        },
-                        {
-                          tag: "Standard Idea 2",
-                          title: "2. Encourages Self-Confidence & Ambition",
-                          desc: "Children may become more willing to attempt challenging tasks, participate in competitions or pursue demanding careers.",
-                          example: "Example: A child who believes improvement is possible may audition for a school play despite being nervous about performing in public."
-                        },
-                        {
-                          tag: "Standard Idea 3",
-                          title: "3. Develops Personal Responsibility",
-                          desc: "Children learn that their choices, preparation and consistent effort can influence their progress rather than waiting for success automatically.",
-                          example: "Example: A student creates an organized daily revision schedule for exams rather than relying on parents or luck."
-                        },
-                        {
-                          tag: "Real-Life Angle 1",
-                          title: "4. Less Afraid of Making Mistakes",
-                          desc: "If children believe effort leads to improvement, they see mistakes as part of learning rather than evidence of incompetence.",
-                          example: "Example: A child learning to ride a bicycle may keep practising after falling instead of giving up out of embarrassment."
-                        },
-                        {
-                          tag: "Real-Life Angle 2",
-                          title: "5. Independent Problem-Solvers",
-                          desc: "Rather than immediately asking adults to solve every difficulty, children experiment with different approaches and take ownership.",
-                          example: "Example: A student struggling with a science project may research alternatives and revise the design instead of abandoning it."
-                        },
-                        {
-                          tag: "Real-Life Angle 3",
-                          title: "6. Stronger Work Ethic",
-                          desc: "Repeated encouragement establishes habits such as regular practice, preparation and discipline, whose value persists lifelong.",
-                          example: "Example: A young athlete may not become a professional player but can still gain fitness, discipline and teamwork skills."
-                        }
-                      ].map((item, idx) => (
+                      {TASK2_DATA.fiveMinutePlanningMap?.positive?.map((item, idx) => (
                         <div key={idx} style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "12px", padding: "10px 12px" }}>
-                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "4px" }}>
-                            <strong style={{ fontSize: "0.86rem", color: "#166534" }}>{item.title}</strong>
-                            <span style={{ fontSize: "0.68rem", fontWeight: 700, background: "#dcfce7", color: "#166534", padding: "1px 6px", borderRadius: "4px" }}>
-                              {item.tag}
-                            </span>
-                          </div>
-                          <p style={{ margin: "2px 0 4px", fontSize: "0.82rem", color: "#14532d", lineHeight: 1.4 }}>{item.desc}</p>
-                          <p style={{ margin: 0, fontSize: "0.78rem", color: "#15803d", fontStyle: "italic", lineHeight: 1.35 }}>{item.example}</p>
+                          <p style={{ margin: 0, fontSize: "0.85rem", color: "#14532d", fontWeight: 650, lineHeight: 1.45 }}>
+                            {item}
+                          </p>
                         </div>
                       ))}
                     </div>
 
-                    {/* Disadvantages: 5 Points */}
+                    {/* Negative One-Liners */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                       <span className="apple-badge warning" style={{ alignSelf: "flex-start", fontSize: "0.75rem", background: "#fee2e2", color: "#991b1b" }}>
-                        ⚡ DISADVANTAGES: 5 RELATABLE DRAWBACKS &amp; EXAMPLES
+                        ⚡ NEGATIVE DEVELOPMENT (6 ONE-LINERS)
                       </span>
-                      {[
-                        {
-                          tag: "Standard Idea 1",
-                          title: "1. Creates Unrealistic Expectations",
-                          desc: "Children may assume that effort alone guarantees success, overlooking financial limits, unequal opportunities, or natural aptitude.",
-                          example: "Example: A talented student may work extremely hard to enter a prestigious university but still be unable to afford the fees."
-                        },
-                        {
-                          tag: "Standard Idea 2",
-                          title: "2. Leads to Guilt & Low Self-Esteem",
-                          desc: "When children fail despite working hard, they may interpret the outcome as proof that they are not capable or did not try enough.",
-                          example: "Example: A child who prepares thoroughly but loses a sports competition may feel personally inadequate rather than recognising competitors' advantages."
-                        },
-                        {
-                          tag: "Standard Idea 3",
-                          title: "3. Encourages Excessive Pressure",
-                          desc: "Children may overwork themselves, become afraid of failure or sacrifice sleep and leisure because they believe they must succeed at everything.",
-                          example: "Example: A student may study late every night to achieve top grades, eventually experiencing exhaustion and reduced concentration."
-                        },
-                        {
-                          tag: "Real-Life Angle 1",
-                          title: "4. Confusing Persistence with Never Giving Up",
-                          desc: "They might continue pursuing an unsuitable goal simply because they believe changing direction means they have failed.",
-                          example: "Example: A teenager may continue preparing for a career they dislike rather than exploring a field better suited to their interests."
-                        },
-                        {
-                          tag: "Real-Life Angle 2",
-                          title: "5. Encourages Unhealthy Comparisons",
-                          desc: "Children may assume that anyone who achieves more must have worked harder, overlooking differences in resources and support.",
-                          example: "Example: A student who receives lower marks than a classmate may feel inferior despite having made substantial progress."
-                        }
-                      ].map((item, idx) => (
+                      {TASK2_DATA.fiveMinutePlanningMap?.negative?.map((item, idx) => (
                         <div key={idx} style={{ background: "#fff1f2", border: "1px solid #fecdd3", borderRadius: "12px", padding: "10px 12px" }}>
-                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "4px" }}>
-                            <strong style={{ fontSize: "0.86rem", color: "#991b1b" }}>{item.title}</strong>
-                            <span style={{ fontSize: "0.68rem", fontWeight: 700, background: "#fee2e2", color: "#991b1b", padding: "1px 6px", borderRadius: "4px" }}>
-                              {item.tag}
-                            </span>
-                          </div>
-                          <p style={{ margin: "2px 0 4px", fontSize: "0.82rem", color: "#881337", lineHeight: 1.4 }}>{item.desc}</p>
-                          <p style={{ margin: 0, fontSize: "0.78rem", color: "#be123c", fontStyle: "italic", lineHeight: 1.35 }}>{item.example}</p>
+                          <p style={{ margin: 0, fontSize: "0.85rem", color: "#881337", fontWeight: 650, lineHeight: 1.45 }}>
+                            {item}
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -328,7 +247,7 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 <div style={{ background: "var(--slate-50)", borderRadius: "16px", padding: "16px 20px", border: "1px solid var(--border-subtle)" }}>
                   <p style={{ margin: 0, fontSize: "0.92rem", color: "var(--slate-700)", lineHeight: 1.5 }}>
-                    <strong>Mandatory 4-Paragraph Structure:</strong> Intro (Paraphrase + Thesis) → Body 1 (Advantages: 2 Main Reasons + Supporting + Example) → Body 2 (Disadvantages: 2 Main Reasons + Example) → Conclusion (Sum-up main reasons + Suggestion/Recommendation).
+                    <strong>Mandatory 4-Paragraph Opinion Structure:</strong> Intro (Paraphrase + Opinion) → Body 1 (Opinion side: 1 Main Reason + Supporting Reasoning + Example) → Body 2 (Opinion side: 1 Main Reason + Supporting Reasoning + Example) → Conclusion (Sum-up main reasons + Restate opinion).
                   </p>
                 </div>
 
@@ -336,30 +255,30 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
                   {
                     step: "Para 01",
                     badge: "Introduction",
-                    title: "Paraphrase Prompt + Explicit Thesis Statement",
-                    say: "“In many societies, children are consistently taught that hard work guarantees success in any endeavor. While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations.”",
-                    takeaway: "Directly fulfills Task Achievement with a concise 33-word opening and an unmistakable roadmap."
+                    title: "Paraphrase Prompt + Clear Opinion",
+                    say: "“In contemporary society, children are being exposed to digital devices and technology at an increasingly early age. While early technological exposure fosters basic digital literacy, I firmly believe that this is predominantly a negative development due to the physical health hazards and impaired social communication it causes.”",
+                    takeaway: "Directly answers the prompt question with a clear personal stance and a 2-part roadmap."
                   },
                   {
                     step: "Para 02",
-                    badge: "Body 1 (Advantages)",
-                    title: "Develop 2 Main Reasons + Relatable Student Examples",
-                    say: "“On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it builds perseverance; children taught that diligence determines success are far more willing to practise challenging skills instead of quitting after early defeat, as seen in a student who struggles with mathematics but practises regularly to steadily elevate their performance. Furthermore, this belief inspires ambition, encouraging youngsters to audition for competitive school plays or tackle daunting projects without paralyzing fear of failure.”",
-                    takeaway: "Provides two distinct advantages with thorough explanation and relatable student examples."
+                    badge: "Body 1 (Opinion Side: Reason 1)",
+                    title: "Sedentary Habits & Physical Health Complications",
+                    say: "“First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to severe physical health complications. When young children spend prolonged hours engrossed in tablets, energetic outdoor recreation—which is biologically vital for muscular and skeletal growth—is inevitably displaced. Furthermore, blue light suppresses nocturnal melatonin production, causing chronic sleep deficits. For example, pediatric studies reveal that preschoolers using tablets over two hours daily suffer double the rates of childhood obesity and frequent sleep disturbances.”",
+                    takeaway: "1 Main Reason (one-liner) + Supporting reasoning + Tangible pediatric medical example."
                   },
                   {
                     step: "Para 03",
-                    badge: "Body 2 (Disadvantages)",
-                    title: "Develop 2 Main Reasons + Real-Life Drawbacks",
-                    say: "“Conversely, propagating this unconstrained narrative produces two profound drawbacks. Foremost among these is the creation of unrealistic expectations that blind youth to financial limits and unequal opportunities, such as when a talented student works relentlessly for an elite university but remains unable to afford tuition fees. Additionally, it frequently induces deep-seated guilt and low self-esteem, causing a dedicated child who loses a sports tournament to feel personally inadequate rather than recognising superior competition.”",
-                    takeaway: "Exposes psychological guilt and financial/systemic constraints with relatable real-world evidence."
+                    badge: "Body 2 (Opinion Side: Reason 2)",
+                    title: "Impaired Interpersonal Communication & Social Delays",
+                    say: "“Additionally, early dependency on technology severely undermines the cultivation of interpersonal communication skills and emotional empathy. Developing social competence requires reciprocal, face-to-face interaction where children learn to interpret vocal inflections, decipher subtle facial expressions, and navigate peer disputes. In contrast, digital interfaces offer one-way stimulation that encourages passive consumption. A clear illustration of this is observed in kindergarten classrooms, where teachers increasingly report that screen-accustomed toddlers frequently suffer expressive speech delays and struggle to cooperate harmoniously with peers.”",
+                    takeaway: "1 Main Reason (one-liner) + Supporting reasoning + Real-world classroom evidence."
                   },
                   {
                     step: "Para 04",
                     badge: "Conclusion",
-                    title: "Sum-Up All Main Reasons + Suggestion / Recommendation",
-                    say: "“In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity and fuels upward mobility, it can equally inflict crippling self-reproach and blind individuals to inevitable biological and socioeconomic constraints. It is therefore recommended that educators and guardians balance aspirational encouragement with pragmatic guidance, teaching the youth that while giving their utmost effort is commendable, developing self-compassion when facing unalterable realities is equally vital.”",
-                    takeaway: "Crisp 2-sentence closure that synthesizes both sides and delivers actionable pedagogical guidance."
+                    title: "Sum-Up All Main Reasons + Restate Your Opinion",
+                    say: "“In conclusion, although early engagement with technology can cultivate basic digital literacy, I am convinced that this trend represents an overwhelmingly negative development. Unrestricted screen immersion directly promotes sedentary health complications such as childhood obesity, while concurrently stunting essential emotional empathy and face-to-face communication skills during formative developmental years.”",
+                    takeaway: "Concise 2-sentence closure that synthesizes both arguments and firmly restates the opinion."
                   }
                 ].map((item) => (
                   <div
@@ -398,22 +317,22 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    topic: "Body 1 (Advantages): Perseverance & Mathematics Example",
-                    band6: "Telling kids to work hard is good because a student who is bad at math will practice every day and finally pass their exams.",
-                    band9: "Primarily, this message instills admirable perseverance, encouraging pupils to practise demanding competencies rather than surrendering after early setbacks, as demonstrated when struggling mathematics students seek assistance and steadily elevate their performance.",
-                    why: "Replaces simplistic language with precise academic structures and natural cohesive development."
+                    topic: "Body 1 (Physical Health): Sedentary Lifestyle & Obesity",
+                    band6: "Kids who play with tablets all day don't run around outside, so they become fat and get bad eyesight.",
+                    band9: "First and foremost, premature technology adoption promotes an intensely sedentary routine, displacing energetic outdoor recreation vital for musculoskeletal growth and escalating the risk of pediatric obesity.",
+                    why: "Replaces simplistic vocabulary with medical precision and mature physiological causation."
                   },
                   {
-                    topic: "Body 2 (Disadvantages): Sports Defeat & Unfair Guilt",
-                    band6: "When children lose a game after training hard, they feel stupid and think their parents were lying about hard work.",
-                    band9: "If children are taught that effort guarantees success, any defeat is interpreted as a shameful personal inadequacy, causing dedicated young athletes who lose matches to shoulder deep guilt while overlooking competitors' superior experience.",
-                    why: "Elevates informal emotional complaints into mature psychological attribution analysis."
+                    topic: "Body 2 (Social Development): Delayed Speech & Peer Communication",
+                    band6: "When toddlers only look at phones they cannot talk to other children nicely and cry in school.",
+                    band9: "Additionally, early screen immersion stunts interpersonal communication, as passive, one-way digital interfaces fail to teach the subtle facial cues and reciprocal dialogue required for peer collaboration.",
+                    why: "Transforms descriptive complaint into developmental psychology analysis (Band 9 Lexical & Task Response)."
                   },
                   {
-                    topic: "Conclusion: Balanced Synthesis & Recommendation",
-                    band6: "In conclusion, hard work is good for school but too much pressure is bad, so parents should be careful with their advice.",
-                    band9: "In conclusion, while reassuring children that effort unlocks all doors effectively instills tenacity, guardians must temper aspirational optimism with pragmatic realism, ensuring youth develop self-compassion alongside ambition.",
-                    why: "Demonstrates high-level cohesion, lexical precision, and an actionable pedagogical recommendation."
+                    topic: "Conclusion: Sum-Up & Firm Restatement of Opinion",
+                    band6: "In conclusion, tech is useful for school but it has bad points so overall I think it is negative.",
+                    band9: "In conclusion, while early device usage confers foundational digital literacy, the physical health detriments and impaired conversational competencies overwhelmingly render this an unfavorable development.",
+                    why: "Delivers sophisticated concessive synthesis with zero repetitive filler phrasing."
                   }
                 ].map((item, index) => (
                   <div
@@ -457,20 +376,20 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
               >
                 {[
                   {
-                    title: "1. Introduction Formula (Paraphrase + Explicit Thesis Statement)",
-                    formula: "“In many societies, children are consistently taught that [hard work guarantees success in any endeavor]. While this message fosters [admirable resilience and ambition], it also risks [severe self-blame and overlooks natural limitations].”"
+                    title: "1. Introduction Formula (Paraphrase + Opinion)",
+                    formula: "“In contemporary society, children are being exposed to [digital devices at an increasingly early age]. While early exposure fosters [basic digital literacy], I firmly believe that this is predominantly a [negative development due to physical health hazards and impaired interpersonal communication].”"
                   },
                   {
-                    title: "2. Body 1 Opener Formula (Advantages: 2 Reasons + Supporting + Example)",
-                    formula: "“On the positive side, imparting this empowering philosophy yields two substantial benefits. Primarily, it [cultivates an intrinsic growth mindset and a strong work ethic]... Furthermore, this outlook serves as an engine for [social mobility by eliminating self-imposed psychological ceilings]...”"
+                    title: "2. Body 1 Opener Formula (Opinion Side: Reason 1 + Reasoning + Example)",
+                    formula: "“First and foremost, premature technology adoption promotes [an intensely sedentary lifestyle], leading to [severe physical health complications including juvenile obesity and chronic sleep disruption]...”"
                   },
                   {
-                    title: "3. Body 2 Opener Formula (Disadvantages: 2 Reasons + Example)",
-                    formula: "“Conversely, propagating this unconstrained narrative produces two profound drawbacks. The foremost hazard is [the onset of acute psychological distress and devastating self-blame]... In addition, this simplistic doctrine fosters [a naive blindness toward tangible genetic limitations and structural societal barriers]...”"
+                    title: "3. Body 2 Opener Formula (Opinion Side: Reason 2 + Reasoning + Example)",
+                    formula: "“Additionally, early dependency on technology severely undermines [the cultivation of face-to-face communication skills and emotional empathy]...”"
                   },
                   {
-                    title: "4. Conclusion Formula (Sum-Up Points + Suggestion / Recommendation)",
-                    formula: "“In conclusion, while reassuring children that [effort unlocks all doors effectively instills tenacity and fuels upward mobility], it can equally [inflict crippling self-reproach and blind individuals to inevitable biological constraints]. It is therefore recommended that educators and guardians [balance aspirational encouragement with pragmatic guidance and self-compassion]...”"
+                    title: "4. Conclusion Formula (Sum-Up Points + Restate Opinion)",
+                    formula: "“In conclusion, although early engagement can cultivate [foundational digital literacy], I am convinced that this trend represents an [overwhelmingly negative development due to sedentary health hazards and the erosion of social skills]...”"
                   }
                 ].map((item, index) => (
                   <div
@@ -499,4 +418,3 @@ export const CaveatsDeepDiveModal: React.FC<CaveatsDeepDiveModalProps> = ({ isOp
     </AnimatePresence>
   );
 };
-

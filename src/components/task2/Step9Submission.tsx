@@ -5,13 +5,13 @@ export const Step9SubmissionT2: React.FC = () => {
   const [viewMode, setViewMode] = useState<"essay" | "vocab">("essay");
   const [copied, setCopied] = useState(false);
 
-  const fullModelEssay = `In many societies, children are consistently taught that hard work guarantees success in any endeavor. While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations.
+  const fullModelEssay = `In contemporary society, the pervasive presence of digital technology has made early exposure among young children practically inevitable. While interactive software can foster foundational digital fluency, I firmly contend that this trend is predominantly a negative development due to its detrimental health consequences and discernible social delays.
 
-On the positive side, imparting this message yields two primary advantages. First, it cultivates unyielding perseverance; when children believe that effort determines improvement, they view mistakes as constructive feedback rather than permanent defeat. For example, a student who performs poorly in mathematics is far more likely to practise regularly, seek assistance, and steadily elevate their performance instead of quitting out of embarrassment. Second, this mindset fosters ambition and independent problem-solving, encouraging youngsters to audition for challenging roles or experiment with alternative designs in science projects rather than waiting for adults to intervene. Through repeated practice, children develop a disciplined, transferable work ethic that enriches their adult endeavors.
+First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to severe physical health complications. When young children spend prolonged hours engrossed in tablets, energetic outdoor play—which is biologically indispensable for cardiovascular and muscular growth—is inevitably displaced. Furthermore, excessive exposure to blue light emitted by screens suppresses nocturnal melatonin production, leading to chronic sleep deficits. For example, pediatric health research demonstrates that toddlers who regularly consume more than two hours of daily screen time exhibit double the rate of childhood obesity and experience frequent sleep disturbances compared to less screen-reliant peers.
 
-Conversely, propagating this unconstrained narrative entails serious disadvantages. Foremost among these is the creation of unrealistic expectations, as children may assume that willpower alone guarantees success, overlooking financial boundaries, unequal opportunities, or natural aptitude. A talented student, for instance, may work exceptionally hard to gain admission into a prestigious university yet still find themselves unable to attend due to unaffordable tuition fees. Furthermore, when prolonged exertion fails to yield victory, children frequently experience acute guilt and diminished self-esteem, interpreting defeat as proof of personal inadequacy rather than recognizing external factors. This relentless pressure can also precipitate severe academic burnout or lead teenagers to stubbornly pursue unsuitable career paths simply because they fear quitting.
+Additionally, early dependency on technology severely undermines the cultivation of interpersonal communication skills and emotional empathy. Developing social competence requires reciprocal, face-to-face interaction where children learn to interpret vocal inflections, decipher subtle facial expressions, and build resilient emotional problem-solving habits. In contrast, digital interfaces offer one-way, algorithmically curated stimulation that provides transient amusement rather than deep cognitive focus. A clear illustration of this is observed in early primary classrooms, where kindergarten teachers increasingly report that screen-accustomed toddlers frequently suffer from discernible language delays and struggle to cooperate harmoniously with their peers.
 
-In conclusion, while reassuring children that diligence guarantees accomplishment instills commendable perseverance and ambition, it can equally foster unrealistic expectations and inflict debilitating self-reproach when uncontrollable obstacles arise. Educators and parents should therefore temper aspirational encouragement with pragmatic guidance, teaching young people to strive diligently while developing the self-compassion necessary to navigate real-world limitations.`;
+In conclusion, although educational applications can provide transient academic benefits, I remain convinced that early technology immersion is an overwhelmingly negative development. Unchecked screen viewing makes sedentary habits inevitable and inflicts discernible harm on restorative sleep and face-to-face social competence during formative childhood years.`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fullModelEssay);
@@ -26,7 +26,7 @@ In conclusion, while reassuring children that diligence guarantees accomplishmen
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 09 / 09 • Final Essay Structure &amp; Model
         </span>
-        <h2 className="stage-title">Write Your Complete Advantages &amp; Disadvantages Essay</h2>
+        <h2 className="stage-title">Write Your Complete Opinion Essay (Positive vs. Negative Development)</h2>
         <p className="stage-subtitle" style={{ marginBottom: 0 }}>
           Review your 4-paragraph architecture and mandatory formatting rules before writing the complete Band 9 response.
         </p>
@@ -82,10 +82,10 @@ In conclusion, while reassuring children that diligence guarantees accomplishmen
                 <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#f3e8ff", color: "#7e22ce", padding: "2px 6px", borderRadius: "4px" }}>
                   INTRO
                 </span>
-                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Paraphrase + Thesis</strong>
+                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Paraphrase + Opinion</strong>
               </div>
               <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                S1 Paraphrase (15 words) + S2 Explicit Thesis roadmapping resilience vs self-blame (18 words).
+                S1 Paraphrase (pervasive technology makes early exposure inevitable) + S2 Decisive personal opinion (predominantly negative development).
               </div>
             </div>
 
@@ -99,14 +99,15 @@ In conclusion, while reassuring children that diligence guarantees accomplishmen
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "2px 6px", borderRadius: "4px" }}>
+                <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#fee2e2", color: "#991b1b", padding: "2px 6px", borderRadius: "4px" }}>
                   BODY 1
                 </span>
-                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Advantages [2 Reasons + Supporting + Example]</strong>
+                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Opinion Side: Reason 1 + Reasoning + Example</strong>
               </div>
               <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                • <em>6 Idea Bank Options:</em> Builds perseverance (math student) • Ambition (school play audition) • Personal responsibility • Less fear of mistakes (bicycle) • Independent problem-solving (science project) • Strong work ethic (young athlete).<br />
-                • <em>Model Choice:</em> Perseverance + Ambition &amp; independent problem-solving.
+                • <em>Main Reason (One-Liner):</em> Promotes sedentary habits, leading to obesity, eye strain, and sleep disruption.<br />
+                • <em>Supporting Reasoning:</em> Displaces outdoor exercise vital for skeletal growth; blue light suppresses melatonin.<br />
+                • <em>Concrete Example:</em> Preschoolers using tablets &gt;2 hrs/day show doubled rates of pediatric obesity.
               </div>
             </div>
 
@@ -123,11 +124,12 @@ In conclusion, while reassuring children that diligence guarantees accomplishmen
                 <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#fee2e2", color: "#991b1b", padding: "2px 6px", borderRadius: "4px" }}>
                   BODY 2
                 </span>
-                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Disadvantages [2 Reasons + Example]</strong>
+                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Opinion Side: Reason 2 + Reasoning + Example</strong>
               </div>
               <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                • <em>5 Idea Bank Options:</em> Unrealistic expectations (university fees) • Guilt &amp; low self-esteem (sports defeat) • Excessive pressure &amp; burnout (late-night study) • Confusing persistence with stubbornness (disliked career) • Unhealthy comparisons (peer tutors).<br />
-                • <em>Model Choice:</em> Unrealistic expectations + Guilt &amp; burnout.
+                • <em>Main Reason (One-Liner):</em> Impairs face-to-face interpersonal communication and emotional empathy.<br />
+                • <em>Supporting Reasoning:</em> One-way digital stimuli cannot teach facial expressions, vocal cues, or sharing.<br />
+                • <em>Concrete Example:</em> Kindergarten teachers report screen-heavy toddlers suffer language delays and social friction.
               </div>
             </div>
 
@@ -144,10 +146,10 @@ In conclusion, while reassuring children that diligence guarantees accomplishmen
                 <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#f1f5f9", color: "#334155", padding: "2px 6px", borderRadius: "4px" }}>
                   CONCLUSION
                 </span>
-                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Sum-Up + Suggestion / Recommendation</strong>
+                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Sum-Up + Restate Opinion</strong>
               </div>
               <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                S1 Sum up main reasons (perseverance &amp; ambition vs unrealistic expectations &amp; guilt) + S2 Pedagogical recommendation (balance effort with self-compassion).
+                S1 Sum-up the two main reasons (sedentary health risks + social communication deficits) + S2 Decisive restatement confirming it as an overwhelmingly negative development.
               </div>
             </div>
           </div>
@@ -182,19 +184,19 @@ In conclusion, while reassuring children that diligence guarantees accomplishmen
             {[
               {
                 step: "1. Introduction Formula",
-                desc: "S1 Paraphrase (children told effort guarantees success) + S2 Explicit Thesis roadmapping resilience vs self-blame & natural limitations (33 words total)."
+                desc: "S1 Paraphrase (pervasive technology makes early exposure inevitable) + S2 Clear Opinion (predominantly a negative development due to physical health hazards and social deficits)."
               },
               {
-                step: "2. Body 1 (Advantages: 2 Reasons + Example)",
-                desc: "Topic sentence + Reason 1 (Builds perseverance / seeing mistakes as feedback) + Relatable example (maths practice) + Reason 2 (Ambition & independent problem-solving: school play / science project)."
+                step: "2. Body 1 (Opinion Side: Reason 1 + Reasoning + Example)",
+                desc: "Topic sentence + Reason 1 (Sedentary lifestyle and obesity) + Supporting explanation (outdoor exercise displacement and blue light melatonin suppression) + Medical example (pediatric studies on doubled obesity rates)."
               },
               {
-                step: "3. Body 2 (Disadvantages: 2 Reasons + Example)",
-                desc: "Contrastive pivot + Reason 1 (Unrealistic expectations ignoring financial/structural realities: university tuition barrier) + Reason 2 (Guilt & low self-esteem after failure: sports defeat / burnout)."
+                step: "3. Body 2 (Opinion Side: Reason 2 + Reasoning + Example)",
+                desc: "Second pillar topic sentence + Reason 2 (Interpersonal communication and social delay) + Supporting explanation (screens deliver one-way stimulation devoid of human empathy) + Classroom evidence (speech delays and peer conflict in kindergarten)."
               },
               {
-                step: "4. Conclusion & Advice",
-                desc: "S1 Recap dual impacts + S2 Actionable pedagogical recommendation: temper aspirational encouragement with pragmatic guidance and self-compassion."
+                step: "4. Conclusion Formula",
+                desc: "S1 Sum-up main reasons (sedentary obesity and communication setbacks) + S2 Restatement of personal opinion confirming the negative assessment."
               }
             ].map((item, i) => (
               <div
@@ -306,37 +308,37 @@ In conclusion, while reassuring children that diligence guarantees accomplishmen
             >
               <div>
                 <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#f3e8ff", color: "#7e22ce", padding: "1px 6px", borderRadius: "4px" }}>
-                  INTRODUCTION (33 WORDS)
+                  INTRODUCTION (PARAPHRASE + OPINION)
                 </span>
                 <p style={{ margin: "4px 0 0" }}>
-                  In many societies, children are consistently taught that hard work guarantees success in any endeavor. While this message fosters admirable resilience and ambition, it also risks severe self-blame and overlooks natural limitations.
-                </p>
-              </div>
-
-              <div>
-                <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#dcfce7", color: "#166534", padding: "1px 6px", borderRadius: "4px" }}>
-                  BODY 1: ADVANTAGES [2 REASONS + SUPPORT + EXAMPLE]
-                </span>
-                <p style={{ margin: "4px 0 0" }}>
-                  On the positive side, imparting this message yields two primary advantages. First, it cultivates unyielding perseverance; when children believe that effort determines improvement, they view mistakes as constructive feedback rather than permanent defeat. For example, a student who performs poorly in mathematics is far more likely to practise regularly, seek assistance, and steadily elevate their performance instead of quitting out of embarrassment. Second, this mindset fosters ambition and independent problem-solving, encouraging youngsters to audition for challenging roles or experiment with alternative designs in science projects rather than waiting for adults to intervene. Through repeated practice, children develop a disciplined, transferable work ethic that enriches their adult endeavors.
+                  In contemporary society, the pervasive presence of digital technology has made early exposure among young children practically inevitable. While interactive software can foster foundational digital fluency, I firmly contend that this trend is predominantly a negative development due to its detrimental health consequences and discernible social delays.
                 </p>
               </div>
 
               <div>
                 <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#fee2e2", color: "#991b1b", padding: "1px 6px", borderRadius: "4px" }}>
-                  BODY 2: DISADVANTAGES [2 REASONS + EXAMPLE]
+                  BODY 1: OPINION SIDE — REASON 1 + REASONING + EXAMPLE
                 </span>
                 <p style={{ margin: "4px 0 0" }}>
-                  Conversely, propagating this unconstrained narrative entails serious disadvantages. Foremost among these is the creation of unrealistic expectations, as children may assume that willpower alone guarantees success, overlooking financial boundaries, unequal opportunities, or natural aptitude. A talented student, for instance, may work exceptionally hard to gain admission into a prestigious university yet still find themselves unable to attend due to unaffordable tuition fees. Furthermore, when prolonged exertion fails to yield victory, children frequently experience acute guilt and diminished self-esteem, interpreting defeat as proof of personal inadequacy rather than recognizing external factors. This relentless pressure can also precipitate severe academic burnout or lead teenagers to stubbornly pursue unsuitable career paths simply because they fear quitting.
+                  First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to severe physical health complications. When young children spend prolonged hours engrossed in tablets, energetic outdoor play—which is biologically indispensable for cardiovascular and muscular growth—is inevitably displaced. Furthermore, excessive exposure to blue light emitted by screens suppresses nocturnal melatonin production, leading to chronic sleep deficits. For example, pediatric health research demonstrates that toddlers who regularly consume more than two hours of daily screen time exhibit double the rate of childhood obesity and experience frequent sleep disturbances compared to less screen-reliant peers.
+                </p>
+              </div>
+
+              <div>
+                <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#fee2e2", color: "#991b1b", padding: "1px 6px", borderRadius: "4px" }}>
+                  BODY 2: OPINION SIDE — REASON 2 + REASONING + EXAMPLE
+                </span>
+                <p style={{ margin: "4px 0 0" }}>
+                  Additionally, early dependency on technology severely undermines the cultivation of interpersonal communication skills and emotional empathy. Developing social competence requires reciprocal, face-to-face interaction where children learn to interpret vocal inflections, decipher subtle facial expressions, and build resilient emotional problem-solving habits. In contrast, digital interfaces offer one-way, algorithmically curated stimulation that provides transient amusement rather than deep cognitive focus. A clear illustration of this is observed in early primary classrooms, where kindergarten teachers increasingly report that screen-accustomed toddlers frequently suffer from discernible language delays and struggle to cooperate harmoniously with their peers.
                 </p>
               </div>
 
               <div>
                 <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#f1f5f9", color: "#334155", padding: "1px 6px", borderRadius: "4px" }}>
-                  CONCLUSION: SUM-UP + RECOMMENDATION
+                  CONCLUSION: SUM-UP MAIN REASONS + RESTATE OPINION
                 </span>
                 <p style={{ margin: "4px 0 0" }}>
-                  In conclusion, while reassuring children that diligence guarantees accomplishment instills commendable perseverance and ambition, it can equally foster unrealistic expectations and inflict debilitating self-reproach when uncontrollable obstacles arise. Educators and parents should therefore temper aspirational encouragement with pragmatic guidance, teaching young people to strive diligently while developing the self-compassion necessary to navigate real-world limitations.
+                  In conclusion, although educational applications can provide transient academic benefits, I remain convinced that early technology immersion is an overwhelmingly negative development. Unchecked screen viewing makes sedentary habits inevitable and inflicts discernible harm on restorative sleep and face-to-face social competence during formative childhood years.
                 </p>
               </div>
             </div>
@@ -351,24 +353,24 @@ In conclusion, while reassuring children that diligence guarantees accomplishmen
                 }}
               >
                 <div style={{ fontSize: "0.78rem", fontWeight: 750, color: "var(--slate-500)", marginBottom: "6px" }}>
-                  PRECISION BAND 9 VOCABULARY:
+                  GENUINE HIGH-SCORING ESSAY VOCABULARY:
                 </div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
                   {[
-                    "growth mindset",
-                    "intrinsic resilience",
-                    "unyielding perseverance",
-                    "independent problem-solving",
-                    "personal responsibility",
-                    "transferable work ethic",
-                    "unrealistic expectations",
-                    "debilitating self-blame",
-                    "academic burnout",
-                    "innate aptitude",
-                    "structural inequities",
-                    "pragmatic guidance",
-                    "self-compassion",
-                    "tenacity & grit"
+                    "pervasive",
+                    "inevitable",
+                    "discernible",
+                    "transient",
+                    "resilient",
+                    "detrimental",
+                    "conducive",
+                    "susceptible",
+                    "indispensable",
+                    "ubiquitous",
+                    "erode",
+                    "sedentary lifestyle",
+                    "melatonin suppression",
+                    "reciprocal dialogue"
                   ].map((w) => (
                     <span
                       key={w}
@@ -401,11 +403,12 @@ In conclusion, while reassuring children that diligence guarantees accomplishmen
               >
                 <strong style={{ color: "var(--slate-900)" }}>Discourse Linkers:</strong>
                 <br />
-                • <em>Intro opener:</em> “In many societies, children are consistently taught that hard work guarantees...”<br />
-                • <em>Body 1 opener:</em> “On the positive side, imparting this message yields two primary advantages. First,... Second,...”<br />
-                • <em>Body 2 opener:</em> “Conversely, propagating this unconstrained narrative entails two serious disadvantages. Foremost among these is...”<br />
-                • <em>Conclusion opener:</em> “In conclusion, while reassuring children that diligence guarantees success...”<br />
-                • <em>Recommendation:</em> “Educators and guardians should therefore temper aspirational encouragement with pragmatic realism...”
+                • <em>Intro opener:</em> “In contemporary society, the pervasive presence of digital technology has made early exposure practically inevitable...”<br />
+                • <em>Opinion statement:</em> “While interactive software can foster foundational digital fluency, I firmly contend that this trend is predominantly a negative development...”<br />
+                • <em>Body 1 opener:</em> “First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to...”<br />
+                • <em>Body 2 opener:</em> “Additionally, early dependency on technology severely undermines the cultivation of interpersonal communication skills...”<br />
+                • <em>Conclusion opener:</em> “In conclusion, although educational applications can provide transient academic benefits, I remain convinced that...”<br />
+                • <em>Restatement:</em> “Unchecked screen viewing makes sedentary habits inevitable and inflicts discernible harm on restorative sleep...”
               </div>
             </div>
           )}
