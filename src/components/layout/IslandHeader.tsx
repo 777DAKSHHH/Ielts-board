@@ -68,7 +68,8 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
               boxShadow: currentModule === "task1" ? "var(--shadow-xs)" : "none",
               border: "none",
               cursor: "pointer",
-              transition: "color 0.15s ease, background 0.15s ease"
+              transition: "color 0.15s ease, background 0.15s ease",
+              whiteSpace: "nowrap"
             }}
           >
             Task 1 (Academic)
@@ -89,12 +90,38 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
               boxShadow: currentModule === "task2" ? "var(--shadow-xs)" : "none",
               border: "none",
               cursor: "pointer",
-              transition: "color 0.15s ease, background 0.15s ease"
+              transition: "color 0.15s ease, background 0.15s ease",
+              whiteSpace: "nowrap"
             }}
           >
             Task 2 (Essay)
           </motion.button>
         </div>
+
+        {/* Quick Return Pill when viewing Extension Modules */}
+        {(currentModule === "general1" || currentModule === "cambridge7test2") && (
+          <motion.button
+            whileTap={tactilePress}
+            onClick={() => onSelectModule("task1")}
+            style={{
+              minHeight: "34px",
+              padding: "0 13px",
+              borderRadius: "8px",
+              fontSize: "0.80rem",
+              fontWeight: 750,
+              color: "#1d4ed8",
+              background: "#eff6ff",
+              border: "1.5px solid #bfdbfe",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px"
+            }}
+            title="Return to Academic Task 1 Step 8"
+          >
+            <span>← Return to Step 8</span>
+          </motion.button>
+        )}
 
         {/* Stage Pill & Title */}
         <div
@@ -116,48 +143,72 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "0.82rem",
+              fontSize: "0.78rem",
               fontWeight: 800
             }}
           >
-            {currentStep}
+            {currentModule === "general1" ? "GT" : currentModule === "cambridge7test2" ? "C7" : currentStep}
           </div>
           <div>
             <div style={{ fontSize: "0.92rem", fontWeight: 750, color: "var(--slate-900)", lineHeight: 1.2 }}>
-              {stepTitle}
+              {currentModule === "general1"
+                ? "General Training Task 1 (Letter)"
+                : currentModule === "cambridge7test2"
+                ? "Cambridge 7 Test 2 Reading Solutions"
+                : stepTitle}
             </div>
             <div style={{ fontSize: "0.74rem", color: "var(--slate-500)", fontWeight: 600 }}>
-              Step {currentStep} of {totalSteps}
+              {currentModule === "general1"
+                ? "Semi-Formal 5-Paragraph Architectural Rules"
+                : currentModule === "cambridge7test2"
+                ? "Passages 1–3 • Exact Locations & Explanations"
+                : `Step ${currentStep} of ${totalSteps}`}
             </div>
           </div>
         </div>
       </div>
 
       {/* Center: Slim Progress Indicator */}
-      <div style={{ width: "22%", minWidth: "140px", display: "flex", alignItems: "center", gap: "10px" }}>
-        <div
-          style={{
-            flex: 1,
-            height: "6px",
-            background: "var(--slate-100)",
-            borderRadius: "999px",
-            overflow: "hidden",
-            border: "1px solid var(--border-subtle)"
-          }}
-        >
-          <div
-            style={{
-              width: `${progressPercent}%`,
-              height: "100%",
-              background: "var(--apple-blue)",
-              borderRadius: "999px",
-              transition: "width 0.3s cubic-bezier(0.16, 1, 0.3, 1)"
-            }}
-          />
-        </div>
-        <span style={{ fontSize: "0.78rem", fontWeight: 750, color: "var(--slate-600)", minWidth: "34px", textAlign: "right" }}>
-          {progressPercent}%
-        </span>
+      <div style={{ width: "20%", minWidth: "140px", display: "flex", alignItems: "center", gap: "10px" }}>
+        {currentModule === "task1" || currentModule === "task2" ? (
+          <>
+            <div
+              style={{
+                flex: 1,
+                height: "6px",
+                background: "var(--slate-100)",
+                borderRadius: "999px",
+                overflow: "hidden",
+                border: "1px solid var(--border-subtle)"
+              }}
+            >
+              <div
+                style={{
+                  width: `${progressPercent}%`,
+                  height: "100%",
+                  background: "var(--apple-blue)",
+                  borderRadius: "999px",
+                  transition: "width 0.3s cubic-bezier(0.16, 1, 0.3, 1)"
+                }}
+              />
+            </div>
+            <span style={{ fontSize: "0.78rem", fontWeight: 750, color: "var(--slate-600)", minWidth: "34px", textAlign: "right" }}>
+              {progressPercent}%
+            </span>
+          </>
+        ) : currentModule === "general1" ? (
+          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <span style={{ fontSize: "0.76rem", fontWeight: 750, background: "#f0fdf4", color: "#16a34a", padding: "3px 10px", borderRadius: "8px", border: "1px solid #bbf7d0" }}>
+              ✓ Dedicated Standalone Page
+            </span>
+          </div>
+        ) : (
+          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+            <span style={{ fontSize: "0.76rem", fontWeight: 750, background: "#eff6ff", color: "#2563eb", padding: "3px 10px", borderRadius: "8px", border: "1px solid #bfdbfe" }}>
+              40 Cambridge Explanations
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Right Controls: Board Scale Stepper, Tactile Timer, Stage Menu, Lock */}

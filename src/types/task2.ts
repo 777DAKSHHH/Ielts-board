@@ -34,6 +34,13 @@ export interface BrainstormCard {
   thinkingLens: string;
   selfCheck: string;
   idea: string;
+  id?: string;
+  stepNum?: number;
+  badge?: string;
+  title?: string;
+  promptInsight?: string;
+  collocations?: string[];
+  example?: string;
 }
 
 export interface PowerExpression {
@@ -49,13 +56,26 @@ export interface ConnectorsTier {
 }
 
 export interface StrategicLinkerGroup {
-  zone: string;
-  badge: string;
+  zone?: string;
+  badge?: string;
   placementRule: string;
-  items: {
+  items?: {
     phrase: string;
     functionDesc: string;
     example: string;
+  }[];
+  id?: string;
+  title?: string;
+  themeColor?: string;
+  badgeText?: string;
+  academicRole?: string;
+  zoneGroup?: {
+    zoneName: string;
+    placementRule: string;
+  };
+  linkers?: {
+    linker: string;
+    functionNote: string;
   }[];
 }
 
@@ -67,6 +87,16 @@ export interface FluidVocabItem {
   organicExample: string;
   mechanicalPitfall: string;
   examinerInsight?: string;
+}
+
+export interface IdeaBankItem {
+  id: string;
+  badge: string;
+  title: string;
+  mainIdea: string;
+  supportingReason: string;
+  example: string;
+  collocations?: string[];
 }
 
 export interface MainReasonOption {
@@ -118,14 +148,18 @@ export interface Task2Data {
     balanced: string;
   };
   fiveMinutePlanningMap?: {
-    positive: string[];
-    negative: string[];
-    position: string;
-    body1: string;
-    body2: string;
-    teachingRecommendation: string;
+    positive?: string[];
+    negative?: string[];
+    causes?: { id: string; label: string; note: string }[];
+    solutions?: { id: string; label: string; note: string }[];
+    position?: string;
+    body1?: string;
+    body2?: string;
+    teachingRecommendation?: string;
   };
   bodyParagraphs?: BodyParaStructure[];
+  causesIdeaBank?: IdeaBankItem[];
+  solutionsIdeaBank?: IdeaBankItem[];
   vocabList: VocabItem[];
   vocabHunt: string[];
   consequences: ConsequenceItem[];

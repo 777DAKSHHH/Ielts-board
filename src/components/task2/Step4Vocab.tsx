@@ -455,11 +455,11 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
                   <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                     <Layers size={18} color="var(--apple-blue)" />
                     <h4 style={{ fontSize: "1.02rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                      {zoneGroup.zone}
+                      {zoneGroup.zone || zoneGroup.title}
                     </h4>
                   </div>
                   <span className="apple-badge accent" style={{ fontSize: "0.78rem" }}>
-                    {zoneGroup.badge}
+                    {zoneGroup.badge || zoneGroup.badgeText}
                   </span>
                 </div>
 
@@ -482,7 +482,7 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
 
                 {/* Linker Items */}
                 <div style={{ padding: "16px 20px", display: "flex", flexDirection: "column", gap: "14px" }}>
-                  {zoneGroup.items.map((item, itemIdx) => (
+                  {(zoneGroup.items || []).map((item, itemIdx) => (
                     <div
                       key={itemIdx}
                       style={{

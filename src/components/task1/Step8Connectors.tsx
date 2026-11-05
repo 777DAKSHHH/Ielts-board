@@ -1,63 +1,107 @@
-import React, { useState } from "react";
-import { ArrowRight, CheckCircle2, Mail, Sparkles } from "lucide-react";
+import React from "react";
+import { ArrowRight, BookOpen, CheckCircle2, Mail, Sparkles } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
-import { GeneralTask1Modal } from "./GeneralTask1Modal";
 
 interface Step8ConnectorsProps {
   onSpeak?: (text: string) => void;
+  onNavigateToGeneral?: () => void;
+  onNavigateToCambridge?: () => void;
 }
 
-export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({ onSpeak }) => {
-  const [isGeneralModalOpen, setIsGeneralModalOpen] = useState(false);
-
+export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
+  onSpeak,
+  onNavigateToGeneral,
+  onNavigateToCambridge
+}) => {
   return (
     <div className="stage-card-wrapper">
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
         <div>
           <span className="apple-badge success" style={{ marginBottom: "8px" }}>
-            Step 08 / 08 • Academic Transitions &amp; Process Cohesion
+            Step 08 / 08 • Academic Transitions &amp; Comparative Cohesion
           </span>
-          <h2 className="stage-title">Discourse Connectors &amp; Cohesive Flow for Process Diagrams</h2>
+          <h2 className="stage-title">Discourse Connectors &amp; Cohesive Flow for Comparative Tables</h2>
           <p className="stage-subtitle">
-            Master academic discourse markers to establish seamless logical transitions between sequential stages, passive voice operations, participial clauses, and recipe proportion formulations.
+            Master academic discourse markers to establish seamless logical transitions between category pivots, superlative leaders, clustered data brackets, and respective reporting.
           </p>
         </div>
 
-        {/* General Training Task 1 Launcher Button */}
-        <button
-          type="button"
-          onClick={() => setIsGeneralModalOpen(true)}
-          style={{
-            padding: "10px 18px",
-            background: "linear-gradient(135deg, #0f172a, #1e293b)",
-            color: "#ffffff",
-            border: "1.5px solid #334155",
-            borderRadius: "14px",
-            fontSize: "0.88rem",
-            fontWeight: 800,
-            display: "flex",
-            alignItems: "center",
-            gap: "9px",
-            cursor: "pointer",
-            boxShadow: "0 4px 16px rgba(15, 23, 42, 0.15)",
-            transition: "all 0.15s ease"
-          }}
-        >
-          <Mail size={18} color="#60a5fa" />
-          <span>General Training Task 1 (Letter Writing)</span>
-          <span
-            style={{
-              fontSize: "0.72rem",
-              background: "#16a34a",
-              color: "#ffffff",
-              padding: "2px 7px",
-              borderRadius: "6px",
-              fontWeight: 750
-            }}
-          >
-            Informal
-          </span>
-        </button>
+        {/* Header Action Buttons for Extension Suites */}
+        <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
+          {onNavigateToGeneral && (
+            <button
+              type="button"
+              onClick={onNavigateToGeneral}
+              style={{
+                padding: "9px 16px",
+                background: "linear-gradient(135deg, #0f172a, #1e293b)",
+                color: "#ffffff",
+                border: "1.5px solid #334155",
+                borderRadius: "12px",
+                fontSize: "0.84rem",
+                fontWeight: 800,
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                cursor: "pointer",
+                boxShadow: "0 4px 14px rgba(15, 23, 42, 0.12)",
+                transition: "all 0.15s ease"
+              }}
+            >
+              <Mail size={16} color="#60a5fa" />
+              <span>General Task 1 (Letter)</span>
+              <span
+                style={{
+                  fontSize: "0.70rem",
+                  background: "#16a34a",
+                  color: "#ffffff",
+                  padding: "2px 6px",
+                  borderRadius: "5px",
+                  fontWeight: 750
+                }}
+              >
+                Semi-Formal
+              </span>
+            </button>
+          )}
+
+          {onNavigateToCambridge && (
+            <button
+              type="button"
+              onClick={onNavigateToCambridge}
+              style={{
+                padding: "9px 16px",
+                background: "linear-gradient(135deg, #091e3a, #173865)",
+                color: "#ffffff",
+                border: "1.5px solid #1e3a8a",
+                borderRadius: "12px",
+                fontSize: "0.84rem",
+                fontWeight: 800,
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                cursor: "pointer",
+                boxShadow: "0 4px 14px rgba(9, 30, 58, 0.18)",
+                transition: "all 0.15s ease"
+              }}
+            >
+              <BookOpen size={16} color="#34d399" />
+              <span>Cambridge 7 Test 2 Reading</span>
+              <span
+                style={{
+                  fontSize: "0.70rem",
+                  background: "#2563eb",
+                  color: "#ffffff",
+                  padding: "2px 6px",
+                  borderRadius: "5px",
+                  fontWeight: 750
+                }}
+              >
+                Passages 1–3
+              </span>
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Connector Cards Grid — Spacious & Prominent */}
@@ -118,7 +162,7 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({ onSpeak }) => 
         ))}
       </div>
 
-      {/* Recommended Cohesive Flow Pathway for Process Diagrams */}
+      {/* Recommended Cohesive Flow Pathway for Comparative Tables */}
       <div
         style={{
           background: "#ffffff",
@@ -134,12 +178,12 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({ onSpeak }) => 
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <CheckCircle2 size={18} color="#16a34a" />
           <strong style={{ color: "#0f172a", fontSize: "0.95rem" }}>
-            Recommended Cohesive Discourse Pathway for Dual Process Diagrams
+            Recommended Cohesive Discourse Pathway for Comparative Tables
           </strong>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
-          {/* Paragraph 3 / Body 1 Flow: Cement Production Pipeline */}
+          {/* Paragraph 3 / Body 1 Flow: Food Sector */}
           <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "#f8fafc", padding: "10px 14px", borderRadius: "12px", border: "1px solid #e2e8f0" }}>
             <span
               style={{
@@ -151,66 +195,162 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({ onSpeak }) => 
                 borderRadius: "6px"
               }}
             >
-              Body 1: Cement Sequence
+              Body 1: Sustenance Flow
             </span>
-            <span style={{ fontWeight: 700, color: "#1e40af" }}>“Initially, ...”</span>
+            <span style={{ fontWeight: 700, color: "#1e40af" }}>“In terms of food, ...”</span>
             <ArrowRight size={13} color="#2563eb" />
-            <span>Raw limestone &amp; clay pulverized in crusher</span>
+            <span>Turkey leads (nearly a third at 32.14%)</span>
             <ArrowRight size={13} color="#2563eb" />
-            <span style={{ fontWeight: 700, color: "#1e40af" }}>“Following this, ...”</span>
+            <span style={{ fontWeight: 700, color: "#1e40af" }}>“followed closely behind by Ireland (28.91%)”</span>
             <ArrowRight size={13} color="#2563eb" />
-            <span>Mixed into uniform blend</span>
+            <span style={{ fontWeight: 700, color: "#1e40af" }}>“In marked contrast, ...”</span>
             <ArrowRight size={13} color="#2563eb" />
-            <span style={{ fontWeight: 700, color: "#1e40af" }}>“Next, ...”</span>
+            <span>Spain at 18.80%</span>
             <ArrowRight size={13} color="#2563eb" />
-            <span>Rotary kiln + intense heating</span>
+            <span style={{ fontWeight: 700, color: "#1e40af" }}>“at 16.36% and 15.77% respectively”</span>
             <ArrowRight size={13} color="#2563eb" />
-            <span style={{ fontWeight: 700, color: "#1e40af" }}>“After being heated, ...”</span>
-            <ArrowRight size={13} color="#2563eb" />
-            <span>Conveyor to grinder</span>
-            <ArrowRight size={13} color="#2563eb" />
-            <span style={{ fontWeight: 700, color: "#1e40af" }}>“Finally, ...”</span>
-            <ArrowRight size={13} color="#2563eb" />
-            <span>Cement bagged into sacks</span>
+            <span>Italy &amp; Sweden lower tier</span>
           </div>
 
-          {/* Paragraph 4 / Body 2 Flow: Concrete Batch Formulation */}
+          {/* Paragraph 4 / Body 2 Flow: Clothing & Leisure Sectors */}
           <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "#f8fafc", padding: "10px 14px", borderRadius: "12px", border: "1px solid #e2e8f0" }}>
             <span
               style={{
                 fontWeight: 800,
                 fontSize: "0.76rem",
-                background: "#059669",
+                background: "#d97706",
                 color: "#ffffff",
                 padding: "2px 8px",
                 borderRadius: "6px"
               }}
             >
-              Body 2: Concrete Batch Recipe
+              Body 2: Clothing &amp; Leisure
             </span>
-            <span style={{ fontWeight: 700, color: "#065f46" }}>“Turning to concrete production, ...”</span>
-            <ArrowRight size={13} color="#059669" />
-            <span>Gravel represents exactly half (50%)</span>
-            <ArrowRight size={13} color="#059669" />
-            <span>Sand accounts for a quarter (25%)</span>
-            <ArrowRight size={13} color="#059669" />
-            <span>Cement constitutes 15% (binding agent)</span>
-            <ArrowRight size={13} color="#059669" />
-            <span>Water forms the remaining 10%</span>
-            <ArrowRight size={13} color="#059669" />
-            <span style={{ fontWeight: 700, color: "#065f46" }}>“All ingredients poured simultaneously into rotating drum”</span>
-            <ArrowRight size={13} color="#059669" />
-            <span>Homogeneous concrete paste produced</span>
+            <span style={{ fontWeight: 700, color: "#9a3412" }}>“Turning to clothing and footwear, ...”</span>
+            <ArrowRight size={13} color="#d97706" />
+            <span>Italy undisputed leader (9.00%)</span>
+            <ArrowRight size={13} color="#d97706" />
+            <span style={{ fontWeight: 700, color: "#9a3412" }}>“outstripping Turkey, Spain &amp; Ireland”</span>
+            <ArrowRight size={13} color="#d97706" />
+            <span>Trio clustered around 6.5%</span>
+            <ArrowRight size={13} color="#d97706" />
+            <span>Sweden lowest at 5.40%</span>
+            <ArrowRight size={13} color="#d97706" />
+            <span style={{ fontWeight: 700, color: "#9a3412" }}>“Finally, leisure and education ...”</span>
+            <ArrowRight size={13} color="#d97706" />
+            <span>Turkey tops (4.35%)</span>
+            <ArrowRight size={13} color="#d97706" />
+            <span>Sweden &amp; Italy matched (~3.2%)</span>
+            <ArrowRight size={13} color="#d97706" />
+            <span style={{ fontWeight: 700, color: "#9a3412" }}>“Spain lowest single figure in table at 1.98%”</span>
           </div>
         </div>
       </div>
 
-      {/* General Training Task 1 Semi-Formal Letter Writing Modal */}
-      <GeneralTask1Modal
-        isOpen={isGeneralModalOpen}
-        onClose={() => setIsGeneralModalOpen(false)}
-        onSpeak={onSpeak}
-      />
+      {/* Specialist Extensions & Practice Suites Launchpad */}
+      <div
+        style={{
+          background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
+          border: "2px solid #cbd5e1",
+          borderRadius: "20px",
+          padding: "22px 24px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "16px"
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
+          <div>
+            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", margin: "0 0 4px" }}>
+              Specialist Modules &amp; Academic Reading Solutions
+            </h3>
+            <p style={{ fontSize: "0.85rem", color: "#64748b", margin: 0 }}>
+              Launch dedicated full-screen pages for letter writing rules or Cambridge 7 Test 2 reading answer keys.
+            </p>
+          </div>
+          <span style={{ fontSize: "0.76rem", fontWeight: 800, background: "#e2e8f0", color: "#475569", padding: "4px 10px", borderRadius: "8px" }}>
+            Step 8 Teaching Hub
+          </span>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "14px" }}>
+          {/* Card 1: General Training Task 1 Letter Masterclass */}
+          {onNavigateToGeneral && (
+            <div
+              onClick={onNavigateToGeneral}
+              style={{
+                background: "#ffffff",
+                border: "1.5px solid #cbd5e1",
+                borderRadius: "16px",
+                padding: "18px 20px",
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                transition: "all 0.2s ease"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Mail size={18} color="#2563eb" />
+                  </div>
+                  <strong style={{ fontSize: "0.96rem", color: "#0f172a" }}>General Task 1 (Letter Masterclass)</strong>
+                </div>
+                <span style={{ fontSize: "0.72rem", background: "#ecfdf5", color: "#047857", fontWeight: 750, padding: "2px 8px", borderRadius: "6px", border: "1px solid #a7f3d0" }}>
+                  Semi-Formal
+                </span>
+              </div>
+              <p style={{ fontSize: "0.82rem", color: "#64748b", margin: 0, lineHeight: 1.45 }}>
+                Master the strict 5-paragraph architecture, forbidden essay linkers, and neighbour problem resolution model.
+              </p>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#2563eb", fontSize: "0.84rem", fontWeight: 750, marginTop: "4px" }}>
+                <span>Open Dedicated Letter Page</span>
+                <ArrowRight size={14} />
+              </div>
+            </div>
+          )}
+
+          {/* Card 2: Cambridge Book 7 Test 2 Reading Solutions */}
+          {onNavigateToCambridge && (
+            <div
+              onClick={onNavigateToCambridge}
+              style={{
+                background: "#ffffff",
+                border: "1.5px solid #cbd5e1",
+                borderRadius: "16px",
+                padding: "18px 20px",
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                transition: "all 0.2s ease"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "#f0fdf4", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <BookOpen size={18} color="#16a34a" />
+                  </div>
+                  <strong style={{ fontSize: "0.96rem", color: "#0f172a" }}>Cambridge 7 Test 2 Reading Key</strong>
+                </div>
+                <span style={{ fontSize: "0.72rem", background: "#eff6ff", color: "#1d4ed8", fontWeight: 750, padding: "2px 8px", borderRadius: "6px", border: "1px solid #bfdbfe" }}>
+                  Passages 1–3
+                </span>
+              </div>
+              <p style={{ fontSize: "0.82rem", color: "#64748b", margin: 0, lineHeight: 1.45 }}>
+                Step-by-step analytical breakdown: paragraph context, exact text quotes, keyword synonym bridges, and answer keys.
+              </p>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#16a34a", fontSize: "0.84rem", fontWeight: 750, marginTop: "4px" }}>
+                <span>Open Cambridge Reading Solutions</span>
+                <ArrowRight size={14} />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

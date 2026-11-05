@@ -5,6 +5,7 @@ import type {
   EvaluationArgument,
   FacultyAngle,
   FluidVocabItem,
+  IdeaBankItem,
   PowerExpression,
   StrategicLinkerGroup,
   Task2Data,
@@ -18,652 +19,878 @@ export type {
   EvaluationArgument,
   FacultyAngle,
   FluidVocabItem,
+  IdeaBankItem,
   PowerExpression,
   StrategicLinkerGroup,
   Task2Data,
   VocabItem
 };
 
+export const CAUSES_IDEA_BANK: IdeaBankItem[] = [
+  {
+    id: "cause-1",
+    badge: "Cause 01 • Satellite Services Demand",
+    title: "Growing demand for satellite-based services",
+    mainIdea: "Modern society increasingly depends on satellite technology for internet connectivity, GPS navigation, weather forecasting and communication. Consequently, companies are launching large numbers of satellites to meet this demand.",
+    supportingReason: "Rapid expansion in consumer telecommunications and navigation needs drives commercial providers to place extensive satellite networks in near-Earth orbit.",
+    example: "Satellite internet providers deploy thousands of small satellites to deliver broadband connectivity to remote areas.",
+    collocations: ["satellite-based services", "broadband connectivity", "growing demand", "satellite technology"]
+  },
+  {
+    id: "cause-2",
+    badge: "Cause 02 • Commercial Space Race",
+    title: "Commercialisation of space exploration",
+    mainIdea: "The growing involvement of private companies has made space activities more commercially attractive. Businesses are competing to develop satellite networks and launch services, increasing the frequency of rocket launches.",
+    supportingReason: "Private capital and declining launch costs have turned near-Earth space into an active competitive commercial marketplace.",
+    example: "Private aerospace companies regularly conduct launches to deploy satellites and provide services to other organisations.",
+    collocations: ["commercialisation of space", "private aerospace", "commercial satellite networks", "launch frequency"]
+  },
+  {
+    id: "cause-3",
+    badge: "Cause 03 • Derelict Space Junk",
+    title: "Abandoned satellites and rocket components",
+    mainIdea: "Many satellites eventually stop functioning, while discarded rocket stages and other equipment may remain in orbit. Without proper disposal procedures, these objects accumulate over time.",
+    supportingReason: "Hardware left in orbit without dedicated deorbit systems circles the planet indefinitely as hazardous floating metal debris.",
+    example: "A satellite that has completed its operational life may remain in orbit if it is not moved to a safer disposal orbit or deorbited.",
+    collocations: ["abandoned satellites", "discarded rocket stages", "disposal procedures", "orbital accumulation"]
+  },
+  {
+    id: "cause-4",
+    badge: "Cause 04 • Cascading Collision Risk",
+    title: "Collisions and fragmentation",
+    mainIdea: "When satellites or other orbital objects collide, they can break into thousands of smaller fragments. These fragments may remain in orbit and create further collision risks.",
+    supportingReason: "High-speed orbital impacts pulverize larger bodies into clouds of untrackable shrapnel, compounding the danger for all operational missions.",
+    example: "The destruction of an old satellite during an accidental collision can produce debris that threatens other functioning spacecraft.",
+    collocations: ["orbital collisions", "satellite fragmentation", "debris cloud", "collision risks"]
+  },
+  {
+    id: "cause-5",
+    badge: "Cause 05 • Geopolitical Interests",
+    title: "International competition and strategic interests",
+    mainIdea: "Countries are investing heavily in space technology for scientific, economic and national-security purposes. This competition can encourage frequent launches without sufficient attention to the long-term environmental consequences.",
+    supportingReason: "National security priorities and technological prestige often take precedence over international debris-mitigation agreements.",
+    example: "Governments may prioritise establishing satellite networks and strengthening space capabilities over investing in debris-management systems.",
+    collocations: ["international competition", "strategic interests", "national security", "space capabilities"]
+  }
+];
+
+export const SOLUTIONS_IDEA_BANK: IdeaBankItem[] = [
+  {
+    id: "sol-1",
+    badge: "Solution 01 • Active Removal Tech",
+    title: "Develop active debris-removal technology",
+    mainIdea: "Space agencies and private companies should invest in spacecraft capable of capturing and removing dangerous debris from orbit.",
+    supportingReason: "Targeting and deorbiting the heaviest defunct satellites directly eliminates the highest-risk collision hazards.",
+    example: "Robotic spacecraft could attach to defunct satellites and guide them towards controlled re-entry into Earth's atmosphere.",
+    collocations: ["active debris removal", "robotic spacecraft", "controlled re-entry", "defunct satellites"]
+  },
+  {
+    id: "sol-2",
+    badge: "Solution 02 • Disposal Protocols",
+    title: "Enforce responsible satellite disposal",
+    mainIdea: "Satellite operators should be required to remove inactive satellites from valuable orbital regions within a specified period after their missions end.",
+    supportingReason: "Ensuring spacecraft vacate crowded orbits prevents dead hardware from cluttering prime operational altitudes.",
+    example: "Operators could design satellites with propulsion systems that allow them to descend safely towards Earth's atmosphere after completing their operational lives.",
+    collocations: ["responsible disposal", "propulsion systems", "post-mission descent", "inactive satellites"]
+  },
+  {
+    id: "sol-3",
+    badge: "Solution 03 • Surveillance & Warning",
+    title: "Improve satellite tracking and collision prevention",
+    mainIdea: "Countries should strengthen space surveillance systems to monitor objects in orbit and identify potential collisions before they occur.",
+    supportingReason: "Precise real-time radar tracking enables mission controllers to detect hazardous flybys early and execute evasive burns.",
+    example: "Satellite operators can receive collision warnings and adjust spacecraft trajectories to avoid dangerous encounters.",
+    collocations: ["space surveillance", "collision warnings", "trajectory adjustment", "space tracking"]
+  },
+  {
+    id: "sol-4",
+    badge: "Solution 04 • Regulatory Governance",
+    title: "Introduce stricter international regulations",
+    mainIdea: "Governments should cooperate to establish common standards for satellite launches, orbital disposal and debris prevention.",
+    supportingReason: "A unified global regulatory standard holds private corporations and nations equally accountable for sustainable operations.",
+    example: "International agreements could make responsible disposal plans compulsory before a satellite receives launch approval.",
+    collocations: ["international regulations", "common standards", "compulsory disposal plans", "launch approval"]
+  },
+  {
+    id: "sol-5",
+    badge: "Solution 05 • Sustainable Engineering",
+    title: "Design satellites for sustainability",
+    mainIdea: "Manufacturers should develop spacecraft that are easier to repair, reuse or safely dispose of once their missions are completed.",
+    supportingReason: "Building satellites with modular hardware and non-fragmenting materials prevents debris generation at the engineering stage.",
+    example: "Satellites could be designed with reliable deorbiting mechanisms and components that minimise the creation of additional fragments.",
+    collocations: ["design for sustainability", "deorbiting mechanisms", "fragmentation minimisation", "spacecraft design"]
+  }
+];
+
 export const TASK2_DATA: Task2Data = {
-  id: "children-technology-younger-age-positive-or-negative",
+  id: "satellite-launches-space-debris-causes-solutions",
 
-  taskType: "Opinion Essay (Positive or Negative Development)",
+  taskType: "Causes & Solutions Essay",
 
-  title: "IELTS Writing Task 2 — Children Using Technology at a Younger Age",
+  title: "IELTS Writing Task 2 — Satellite Launches & Space Debris",
 
   questionText:
-    "Nowadays, children are using technology at a younger age.\n\nIs this a positive or a negative development?",
+    "The increasing frequency of the satellite launches & space debris is becoming a threat to the Earth.\n\n• What are the main causes?\n• What measures can be taken to address this?",
 
   audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
 
   timingSeconds: 180,
 
   recommendedPosition:
-    "Predominantly Negative Development: While basic digital fluency is acquired, the pervasive displacement of physical activity and the discernible delays in interpersonal communication render this trend predominantly detrimental.",
+    "Two-Part Linked Causes & Solutions: Orbital endangerment is primarily catalyzed by the rapid proliferation of commercial mega-constellations and decades of discarded rocket hardware; however, this crisis can be mitigated through mandatory built-in self-deorbiting propulsion and multilateral active robotic cleanup accords.",
 
   strongestArgument:
-    "The pervasive immersion in digital devices inevitably displaces essential outdoor exercise and produces discernible deficits in real-world conversational empathy.",
+    "Compelling commercial satellite operators to install automated self-deorbiting mechanisms and establishing enforceable UN treaties with mandatory orbital remediation bonds provides direct technological and legal remedies.",
 
   // 1. Sample introduction planning points
   introPlanningPoints: [
-    "Sentence 1 (Paraphrase): In contemporary society, the pervasive presence of digital technology has made early exposure among young children practically inevitable.",
-    "Sentence 2 (Opinion): While interactive tools can foster digital fluency, I firmly contend that this trend is predominantly a negative development due to detrimental health consequences and discernible social delays."
+    "Sentence 1 (Paraphrase): In contemporary times, the exponential escalation in satellite launches and the accumulation of space debris orbiting Earth have emerged as severe planetary and technological threats.",
+    "Sentence 2 (Thesis): This critical crisis is primarily driven by the commercial space race and inadequate post-mission disposal protocols; however, it can be mitigated through mandatory self-deorbiting mechanisms and international space debris remediation treaties."
   ],
 
   sampleIntro:
-    "In contemporary society, the pervasive presence of digital technology has made early exposure among young children practically inevitable. While interactive software can foster foundational digital fluency, I firmly contend that this trend is predominantly a negative development due to its detrimental health consequences and discernible social delays.",
-
-  // 2. Sample conclusion planning points
-  conclusionPlanningPoints: [
-    "Sentence 1 (Sum-up Main Reasons): Early screen dependency entrenches sedentary habits that trigger pediatric obesity, while transient virtual entertainment weakens sustained attention and interpersonal empathy.",
-    "Sentence 2 (Restate Opinion): Therefore, despite minor educational conveniences, premature technological immersion remains an overwhelmingly unfavorable development."
-  ],
+    "In contemporary times, the exponential escalation in satellite launches and the accumulation of space debris orbiting Earth have emerged as severe planetary and technological threats. This critical crisis is primarily driven by the commercial space race and inadequate post-mission disposal protocols; however, it can be mitigated through mandatory self-deorbiting mechanisms and international space debris remediation treaties.",
 
   sampleConclusion:
-    "In conclusion, although educational applications can provide transient academic benefits, I remain convinced that early technology immersion is an overwhelmingly negative development. Unchecked screen viewing makes sedentary habits inevitable and inflicts discernible harm on restorative sleep and face-to-face social competence during formative childhood years.",
+    "In conclusion, the escalating menace of orbital overcrowding is driven primarily by the rapid expansion of commercial satellite constellations and the presence of uncontrolled legacy space debris. However, this planetary crisis can be effectively resolved through the mandatory enforcement of automated self-deorbiting thrusters alongside international robotic debris removal missions. Moving forward, the global community must swiftly adopt an updated, legally binding United Nations space sustainability treaty before low-Earth orbit becomes permanently unusable.",
 
-  // Five-Minute Planning Map — Strictly CUT-TO-THE-CHASE ONE-LINERS
+  // 2. Five-minute planning map: 5 Causes + 5 Solutions (Student Idea Bank)
   fiveMinutePlanningMap: {
-    positive: [
-      "1. Interactive Learning: Gamified educational apps make abstract math and literacy intuitive through playful challenges.",
-      "2. Early Digital Fluency: Interface familiarity provides foundational tech competence essential for computerized modern schooling.",
-      "3. Long-Distance Connection: High-definition video calling sustains vital emotional bonds with distant relatives across time zones.",
-      "4. Creative Exploration: Age-appropriate digital software enables children to experiment freely with digital art, music, and storytelling."
+    causes: [
+      {
+        id: "c1",
+        label: "Growing demand for satellite-based services",
+        note: "Modern society increasingly depends on satellite technology for internet connectivity, GPS navigation, weather forecasting and communication."
+      },
+      {
+        id: "c2",
+        label: "Commercialisation of space exploration",
+        note: "The growing involvement of private companies has made space activities commercially attractive, increasing the frequency of rocket launches."
+      },
+      {
+        id: "c3",
+        label: "Abandoned satellites and rocket components",
+        note: "Many satellites stop functioning, while discarded rocket stages remain in orbit without proper disposal procedures, accumulating over time."
+      },
+      {
+        id: "c4",
+        label: "Collisions and fragmentation",
+        note: "When satellites or other orbital objects collide, they break into thousands of smaller fragments that create further collision risks."
+      },
+      {
+        id: "c5",
+        label: "International competition and strategic interests",
+        note: "Countries invest heavily in space technology for national security, encouraging frequent launches with insufficient attention to debris."
+      }
     ],
-    negative: [
-      "1. Reduces Physical Activity: Prolonged screen staring displaces active outdoor exercise, elevating risks of childhood obesity.",
-      "2. Disrupts Sleep Architecture: Night-time screen viewing and blue light delay bedtime routines, causing chronic morning exhaustion.",
-      "3. Weakens Social Communication: Passive digital entertainment replaces family dialogue, stunting conversational manners and emotional empathy.",
-      "4. Erodes Attention Span: Fast-paced short videos condition young brains to crave instant gratification, undermining classroom focus.",
-      "5. Inappropriate Online Content: Young children lack critical maturity, making them acutely susceptible to violent or harmful media.",
-      "6. Creates Screen Dependency: Constant virtual amusement leaves children restless and unable to entertain themselves through independent play."
-    ],
-    position: "4-Paragraph Opinion Architecture",
-    body1: "Body 1 (Opinion Side - Reason 1): Sedentary Habits & Pediatric Health Risks [ 1 Main Reason + Supporting Reasoning + Example ].",
-    body2: "Body 2 (Opinion Side - Reason 2): Weakened Social Communication & Attention Span [ 1 Main Reason + Supporting Reasoning + Example ].",
-    teachingRecommendation:
-      "Follow the exact 4-paragraph format: Introduction (Paraphrase + Opinion), Body 1 (Opinion side: 1 Main Reason + Supporting Reasoning + Example), Body 2 (Opinion side: 1 Main Reason + Supporting Reasoning + Example), Conclusion (Sum-up main reasons + Restate opinion)."
+    solutions: [
+      {
+        id: "s1",
+        label: "Develop active debris-removal technology",
+        note: "Space agencies and private companies should invest in spacecraft capable of capturing and removing dangerous debris from orbit."
+      },
+      {
+        id: "s2",
+        label: "Enforce responsible satellite disposal",
+        note: "Satellite operators should be required to remove inactive satellites from valuable orbital regions within a specified period."
+      },
+      {
+        id: "s3",
+        label: "Improve satellite tracking and collision prevention",
+        note: "Countries should strengthen space surveillance systems to monitor objects in orbit and identify potential collisions before they occur."
+      },
+      {
+        id: "s4",
+        label: "Introduce stricter international regulations",
+        note: "Governments should cooperate to establish common standards for satellite launches, orbital disposal and debris prevention."
+      },
+      {
+        id: "s5",
+        label: "Design satellites for sustainability",
+        note: "Manufacturers should develop spacecraft that are easier to repair, reuse or safely dispose of once their missions are completed."
+      }
+    ]
   },
 
-  // Strongest Classroom Discussion Question
-  classroomDiscussion: {
-    question:
-      "When a three-year-old child knows how to swipe an iPad but struggles to speak or run outside, is technology accelerating their future or stealing their childhood?",
-    followUps: [
-      "Why are tech executives in Silicon Valley famously restricting their own young children from using smartphones and tablets?",
-      "Can interactive educational applications ever replicate the cognitive and social benefits of playing with real physical toys and peers?",
-      "What is the optimal age threshold for introducing personal touchscreen devices to children?"
-    ],
-    pedagogicalInsight:
-      "This prompt immediately sparks active classroom engagement by juxtaposing modern technological necessity against biological and developmental health realities."
-  },
+  causesIdeaBank: CAUSES_IDEA_BANK,
+  solutionsIdeaBank: SOLUTIONS_IDEA_BANK,
 
-  // 3. Body Paragraphs Data Structure (Format-Compliant: 1 Main Reason + Supporting Reasoning + Example)
+  // 3. Body paragraphs matching the MANDATORY LINKED STRUCTURE:
+  // Body 1: Cause 1 + Solution 1 + Example
+  // Body 2: Cause 2 + Solution 2 + Example
   bodyParagraphs: [
     {
       paraNumber: 1,
       side: "strong_opinion",
-      title: "Body Para 1 (Opinion Side): Sedentary Habits & Physical Health Complications",
-      theme: "Physical Inactivity, Pediatric Obesity & Melatonin Suppression",
+      title: "Body Para 1: Cause 1 + Solution 1 + Example",
+      theme: "Commercial Mega-Constellations + Mandatory Automated Self-Deorbiting",
       mainReason:
-        "Premature technology adoption fosters an intensely sedentary lifestyle, leading to severe physical health complications such as juvenile obesity and chronic sleep disruption.",
+        "The primary catalyst for orbital overcrowding is the rapid proliferation of commercial satellite constellations launched by private aerospace corporations.",
       supportingReasons:
-        "Extended hours in front of screens inevitably displace energetic outdoor play vital for muscular growth, while night-time blue light suppresses natural melatonin synthesis.",
+        "With thousands of mass-produced orbiters deployed in dense orbital shells, low-Earth orbital highways have become dangerously congested; to counteract this, regulators must mandate automated self-deorbiting thrusters that guide defunct units into the atmosphere to vaporize safely.",
       example:
-        "For example, medical research demonstrates that preschoolers using tablets for over two hours daily suffer double the rates of pediatric obesity and struggle to fall asleep.",
+        "For instance, requiring commercial broadband fleets such as Starlink to equip every orbiter with autonomous thrusters guarantees they lower altitude and incinerate in the atmosphere within five years of retirement.",
       band9Snippet:
-        "“Primarily, premature technology adoption promotes an intensely sedentary routine, displacing energetic outdoor recreation vital for musculoskeletal growth and escalating the risk of pediatric obesity.”",
+        "“Primarily, the unregulated proliferation of commercial satellite mega-constellations severely congests low-Earth orbit, necessitating mandatory automated deorbiting thrusters to ensure defunct units re-enter and vaporize safely.”",
       alternativeReasons: [
         {
-          id: "neg-reason-1",
-          badge: "Disadvantage 01 • Sedentary Health Risks",
-          title: "Reduces Physical Activity & Elevates Health Risks",
+          id: "cause-sol-1",
+          badge: "Pairing 01 • Commercial Constellations & Auto-Deorbiting",
+          title: "Commercial Mega-Constellations & Mandatory Re-Entry",
           category: "standard",
           mainReason:
-            "Prolonged screen viewing displaces active outdoor exercise, elevating risks of childhood obesity, poor posture, and early eye strain.",
+            "Private aerospace enterprises are launching thousands of low-orbit satellites for broadband coverage, severely overcrowding critical orbital pathways.",
           supportingReasons:
-            "Physical recreation is biologically indispensable for cardiovascular health, yet it is inevitably curtailed by continuous indoor screen sitting.",
+            "When thousands of mass-produced orbiters occupy narrow altitude shells, the probability of catastrophic orbital gridlock escalates rapidly.",
           example:
-            "Preschoolers who spend multiple hours daily on tablets face doubled risks of juvenile obesity and pediatric myopia.",
+            "Commercial internet fleets launching up to 60 satellites in a single rocket without standardized global altitude caps.",
           band9Snippet:
-            "“Primarily, premature exposure to digital screens fosters a deeply sedentary routine, displacing energetic outdoor play and escalating childhood obesity.”",
+            "“First and foremost, the exponential growth of private aerospace fleets creates extreme orbital saturation, demanding strict engineering requirements for automated atmospheric burn-up.”",
           modelParagraph:
-            "First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to severe physical health complications. When young children spend multiple hours glued to tablets or smartphones, active outdoor recreation and physical exercise—which are biologically vital for cardiovascular and skeletal development—are inevitably displaced. Furthermore, prolonged exposure to blue light emitted by screens suppresses nocturnal melatonin production, leading to chronic sleep deficits. For example, pediatric health research demonstrates that toddlers who regularly consume more than two hours of daily screen time exhibit double the rate of childhood obesity and experience frequent sleep disturbances compared to less screen-reliant peers.",
+            "To begin with, the primary catalyst for orbital overcrowding is the rapid proliferation of commercial satellite constellations launched by private aerospace enterprises. With thousands of low-Earth orbit (LEO) satellites deployed simultaneously for telecommunications, orbital pathways are becoming dangerously congested. To mitigate this hazard, international regulatory bodies must mandate self-deorbiting mechanisms on all newly manufactured satellites. Equipping orbiters with automated propulsive thrusters or passive drag sails ensures that defunct hardware re-enters Earth's atmosphere and vaporizes safely upon mission conclusion. For instance, aerospace regulations requiring commercial fleets like Starlink to execute automated atmospheric burn-up within five years of retirement would substantially reduce long-term collision risks.",
           examinerNotes:
-            "Focuses on tangible physiological consequences supported by credible medical reasoning (Band 9 Task Response)."
+            "Perfect cause-solution linkage: directly links private commercial saturation to automated engineering deorbiting solutions."
         },
         {
-          id: "neg-reason-2",
-          badge: "Disadvantage 02 • Social Communication Deficits",
-          title: "Weakens Real-World Social Communication & Empathy",
+          id: "cause-sol-2",
+          badge: "Pairing 02 • Abandoned Rocket Stages & Standardized Disposal",
+          title: "Spent Rocket Stages & Compulsory Atmospheric Disposal",
           category: "standard",
           mainReason:
-            "Excessive reliance on virtual entertainment hinders the development of natural conversation, emotional empathy, and social confidence.",
+            "Launch vehicles routinely discard empty upper rocket stages and booster casings in orbit, leaving massive metal hazards floating indefinitely.",
           supportingReasons:
-            "One-way digital interfaces lack reciprocal feedback, stunting a child's ability to read facial expressions, vocal inflections, and cooperative sharing cues.",
+            "Residual propellants inside abandoned booster tanks can explode over time due to solar radiation, generating thousands of sharp metal shards.",
           example:
-            "Toddlers with heavy device use often show discernible speech delays and struggle to cooperate harmoniously with peers in nursery school.",
+            "Derelict rocket booster casings from past decades continuing to circle the Earth as uncontrolled multi-ton kinetic projectiles.",
           band9Snippet:
-            "“Furthermore, early device dependency severely stunts interpersonal communication, as artificial digital interfaces cannot replicate reciprocal human interaction.”",
+            "“Furthermore, discarding massive booster stages without controlled deorbit burns turns orbital corridors into hazardous obstacle courses, requiring mandatory fuel venting and tethered drag disposal.”",
           modelParagraph:
-            "Additionally, early dependency on technology severely undermines the cultivation of interpersonal communication skills and emotional empathy. Developing social competence requires reciprocal, face-to-face interaction where children learn to interpret vocal inflections, decipher subtle facial expressions, and navigate peer disputes. In contrast, digital interfaces offer one-way, algorithmically curated stimulation that encourages passive consumption rather than active social dialogue. A clear illustration of this is observed in kindergarten classrooms, where teachers increasingly report that screen-accustomed toddlers frequently suffer from expressive language delays and struggle to engage in collaborative group activities.",
+            "In addition, space launches frequently abandon expended upper rocket stages in orbit once payloads are released. Over decades, leftover propellants inside these floating fuel tanks degrade and detonate, scattering jagged metallic shrapnel across orbital corridors. To counteract this neglect, launch licensing agencies must enforce mandatory controlled deorbit burns on all booster stages immediately following payload deployment. Requiring aerospace contractors to retain sufficient propellant for a targeted ocean re-entry ensures that massive rocket bodies are removed before they can fragment into dangerous projectiles.",
           examinerNotes:
-            "Highlights psychological and developmental drawbacks with highly persuasive classroom evidence."
-        },
+            "Highlights the physical danger of exploded boosters and presents a practical propulsion disposal mandate."
+        }
+      ]
+    },
+    {
+      paraNumber: 2,
+      side: "strong_opinion",
+      title: "Body Para 2: Cause 2 + Solution 2 + Example",
+      theme: "Legacy Debris & Cascading Shrapnel + Active Debris Removal Treaties",
+      mainReason:
+        "Another critical hazard is the accumulation of legacy orbital debris and cascading hypervelocity collisions (the Kessler syndrome), left unchecked by outdated space laws.",
+      supportingReasons:
+        "Dead satellites travel at hypervelocity speeds of over 25,000 km/h, meaning even millimeter-sized fragments can shatter operating spacecraft; resolving this requires active debris removal (ADR) technology backed by binding UN space treaties.",
+      example:
+        "For example, the European Space Agency's ClearSpace-1 initiative plans to deploy robotic capture arms and magnetic grapplers to capture and deorbit defunct satellite bodies.",
+      band9Snippet:
+        "“Furthermore, decades of abandoned space shrapnel threaten catastrophic kinetic collisions, demanding international investment in active debris removal technologies and binding UN orbital treaties.”",
+      alternativeReasons: [
         {
-          id: "neg-reason-3",
-          badge: "Disadvantage 03 • Sleep Architecture Disruption",
-          title: "Disrupts Sleep Architecture & Causes Behavioral Tantrums",
+          id: "cause-sol-3",
+          badge: "Pairing 03 • Cascading Collisions & Robotic Debris Removal",
+          title: "Kessler Syndrome Cascades & Active Robotic Salvage",
           category: "standard",
           mainReason:
-            "Night-time screen exposure disrupts restorative sleep cycles, while sudden device restriction triggers acute emotional tantrums.",
+            "Decades of accumulated space junk create a cascading chain reaction where collisions produce more shrapnel, exponentially multiplying debris.",
           supportingReasons:
-            "Dopamine-driven digital loops condition young brains to crave nonstop stimulation, making device withdrawal emotionally distressing for toddlers.",
+            "High-speed kinetic impacts between derelict objects pulverize metal into untrackable clouds that threaten space stations and Earth satellites alike.",
           example:
-            "Children allowed to use smartphones before bedtime take 45 minutes longer to sleep and exhibit aggressive tantrums when devices are confiscated.",
+            "The 2009 collision between the Cosmos and Iridium satellites which generated over 2,000 pieces of cataloged debris in seconds.",
           band9Snippet:
-            "“Moreover, nighttime screen exposure disrupts restorative sleep cycles and triggers acute emotional volatility when devices are restricted.”",
+            "“Moreover, unchecked orbital debris risks triggering the Kessler syndrome, necessitating active debris removal craft equipped with robotic arms, nets, and magnetic clamps.”",
           modelParagraph:
-            "Moreover, unmonitored digital access profoundly disrupts sleep architecture and induces behavioral dysregulation. The artificial illumination produced by handheld screens delays the circadian rhythm, rendering young children irritable and fatigued during daylight hours. When parents attempt to enforce screen-free boundaries, the abrupt withdrawal of hyper-stimulating dopamine loops frequently triggers explosive emotional tantrums. For instance, clinical surveys indicate that young children using interactive media before bedtime take substantially longer to fall asleep and exhibit heightened daytime aggression.",
+            "Furthermore, the hazard is exacerbated by decades of abandoned space junk and kinetic orbital collisions, which shatter defunct hardware into thousands of untrackable, hypervelocity fragments. A minor paint fleck traveling at orbital velocity can catastrophically pierce space stations, while uncontrolled dead satellites threaten satellite communication networks. The most viable remedy is the rapid deployment of Active Debris Removal (ADR) missions governed by legally binding international treaties. Space agencies must collaborate to finance robotic capture craft equipped with harpoons, nets, and magnetic claws to deorbit hazardous derelict objects. A prime example is the European Space Agency's ClearSpace-1 project, which aims to rendezvous with and capture a discarded rocket stage, demonstrating that technological remediation can actively purge congested orbits.",
           examinerNotes:
-            "Connects physiological sleep science to observable behavioral problems."
+            "Articulates the scientific concept of cascading collisions and couples it with state-of-the-art robotic cleanup missions."
         },
         {
-          id: "neg-reason-4",
-          badge: "Disadvantage 04 • Attention Span Erosion",
-          title: "Erodes Cognitive Attention Span & Fosters Impatience",
+          id: "cause-sol-4",
+          badge: "Pairing 04 • Unregulated Space Treaties & UN Quota Frameworks",
+          title: "Outdated Outer Space Treaties & Global Launch Quotas",
           category: "additional",
           mainReason:
-            "Fast-paced digital media conditions young minds to crave constant novelty, eroding sustained focus and academic patience.",
+            "The 1967 Outer Space Treaty fails to regulate modern commercial launches, offering no financial penalties or cleanup obligations for space polluters.",
           supportingReasons:
-            "Rapid video switching habituates attention to jump continuously, making traditional school tasks like book reading feel painfully tedious.",
+            "Without multilateral legal accountability, individual nations and private corporations have zero economic incentive to limit launches or clean up orbits.",
           example:
-            "Pupils accustomed to short online video clips struggle to concentrate on single-page reading worksheets without becoming restless.",
+            "Nations conducting destructive anti-satellite (ASAT) missile tests without facing international financial sanctions or legal consequences.",
           band9Snippet:
-            "“Crucially, bite-sized digital entertainment habituates young minds to instant gratification, rapidly eroding their capacity for sustained academic focus.”",
+            "“Crucially, the absence of binding international legislation allows corporations and nations to pollute orbital lanes with impunity, requiring an updated UN space sustainability accord.”",
           modelParagraph:
-            "Crucially, rapid multimedia stimuli condition young minds to demand instant gratification, eroding their capacity for sustained cognitive focus. When children grow accustomed to short video algorithms that deliver immediate sensory novelty every few seconds, their tolerance for patient, contemplative tasks diminishes. In academic environments, this deficit becomes apparent when pupils struggle to concentrate on lengthy reading passages or deliberate arithmetic problem-solving. Education surveys confirm that young learners with extensive screen habits find static book reading exceptionally difficult to endure.",
+            "Crucially, the root cause of this crisis is the inadequacy of current international space law. The foundational Outer Space Treaty of 1967 was formulated long before commercial spaceflight existed, leaving low-Earth orbit completely devoid of enforceable pollution quotas or corporate liability. Consequently, operators face no legal penalties for abandoning defective hardware. To establish order, the United Nations Office for Outer Space Affairs (UNOOSA) must formulate a legally binding space governance framework. Under this treaty, all nations would enforce strict launch quotas and require operators to contribute to an international orbital remediation bond prior to launch authorization.",
           examinerNotes:
-            "Connects cognitive habituation to real classroom learning deficits."
+            "Analyzes the geopolitical and legal root causes and proposes an enforceable United Nations multilateral framework."
         }
       ]
     }
   ],
 
-  // 4. Academic Vocabulary List (12 Genuine Band 8.5/9 Items Requested by Instructor)
+  // 4. Academic Vocabulary List (12 Genuine Band 8.5/9 Space & Environmental Items)
   vocabList: [
     {
-      word: "Pervasive",
-      definition: "Spreading widely throughout an area, society, or aspect of life.",
-      phonetic: "/pəˈveɪsɪv/",
-      term: "Pervasive",
-      meaning: "Spreading widely throughout an area, society, or aspect of life.",
-      example: "The pervasive presence of handheld touchscreens has made early digital immersion almost inevitable.",
-      sampleSentence: "The pervasive presence of handheld touchscreens has made early digital immersion almost inevitable.",
-      collocations: ["pervasive influence", "pervasive presence", "pervasive technology"]
+      word: "Proliferation",
+      definition: "Rapid increase in numbers, volume, or spread of something.",
+      phonetic: "/prəˌlɪf.əˈreɪ.ʃən/",
+      term: "Proliferation",
+      meaning: "Rapid increase in numbers, volume, or spread of something.",
+      example: "The rapid proliferation of commercial satellite constellations has severely congested low-Earth orbit.",
+      sampleSentence: "The rapid proliferation of commercial satellite constellations has severely congested low-Earth orbit.",
+      collocations: ["rapid proliferation", "satellite proliferation", "commercial proliferation"]
     },
     {
-      word: "Inevitable",
-      definition: "Certain to happen; unavoidable in the natural course of events.",
-      phonetic: "/ɪnˈevɪtəbl/",
-      term: "Inevitable",
-      meaning: "Certain to happen; unavoidable in the natural course of events.",
-      example: "A reduction in physical play is an inevitable outcome when children spend hours seated before screens.",
-      sampleSentence: "A reduction in physical play is an inevitable outcome when children spend hours seated before screens.",
-      collocations: ["inevitable consequence", "inevitable outcome", "practically inevitable"]
+      word: "Congested",
+      definition: "Extremely crowded and blocked with traffic or objects.",
+      phonetic: "/kənˈdʒes.tɪd/",
+      term: "Congested",
+      meaning: "Extremely crowded and blocked with traffic or objects.",
+      example: "Critical low-Earth orbital lanes are becoming dangerously congested, raising collision risks.",
+      sampleSentence: "Critical low-Earth orbital lanes are becoming dangerously congested, raising collision risks.",
+      collocations: ["congested orbits", "dangerously congested", "congested pathways"]
     },
     {
-      word: "Discernible",
-      definition: "Able to be detected, noticed, or clearly distinguished.",
-      phonetic: "/dɪˈsɜːnəbl/",
-      term: "Discernible",
-      meaning: "Able to be detected, noticed, or clearly distinguished.",
-      example: "Heavy device dependency produces discernible deficits in a toddler's interpersonal communication skills.",
-      sampleSentence: "Heavy device dependency produces discernible deficits in a toddler's interpersonal communication skills.",
-      collocations: ["discernible delay", "discernible deficit", "discernible improvement"]
+      word: "Defunct",
+      definition: "No longer existing, operating, or functioning.",
+      phonetic: "/dɪˈfʌŋkt/",
+      term: "Defunct",
+      meaning: "No longer existing, operating, or functioning.",
+      example: "Thousands of defunct satellites remain adrift in space, posing severe collision hazards to active spacecraft.",
+      sampleSentence: "Thousands of defunct satellites remain adrift in space, posing severe collision hazards to active spacecraft.",
+      collocations: ["defunct satellites", "defunct hardware", "defunct equipment"]
     },
     {
-      word: "Transient",
-      definition: "Lasting only for a short time; fleeting and impermanent.",
-      phonetic: "/ˈtrænziənt/",
-      term: "Transient",
-      meaning: "Lasting only for a short time; fleeting and impermanent.",
-      example: "Digital video games provide transient amusement rather than cultivating resilient, long-term cognitive patience.",
-      sampleSentence: "Digital video games provide transient amusement rather than cultivating resilient, long-term cognitive patience.",
-      collocations: ["transient satisfaction", "transient entertainment", "transient novelty"]
+      word: "Catastrophic",
+      definition: "Involving or causing sudden, disastrous damage and ruin.",
+      phonetic: "/ˌkæt.əˈstrɒf.ɪk/",
+      term: "Catastrophic",
+      meaning: "Involving or causing sudden, disastrous damage and ruin.",
+      example: "A single hypervelocity impact could trigger a catastrophic chain reaction of orbital collisions.",
+      sampleSentence: "A single hypervelocity impact could trigger a catastrophic chain reaction of orbital collisions.",
+      collocations: ["catastrophic collision", "catastrophic damage", "catastrophic chain reaction"]
     },
     {
-      word: "Resilient",
-      definition: "Able to withstand challenges, recover rapidly, and adapt constructively.",
-      phonetic: "/rɪˈzɪliənt/",
-      term: "Resilient",
-      meaning: "Able to withstand challenges, recover rapidly, and adapt constructively.",
-      example: "Children deprived of real-world social problem-solving struggle to build resilient emotional coping mechanisms.",
-      sampleSentence: "Children deprived of real-world social problem-solving struggle to build resilient emotional coping mechanisms.",
-      collocations: ["resilient mindset", "emotionally resilient", "resilient coping skills"]
+      word: "Remediation",
+      definition: "The act of reversing, correcting, or cleaning up environmental damage.",
+      phonetic: "/rɪˌmiː.diˈeɪ.ʃən/",
+      term: "Remediation",
+      meaning: "The act of reversing, correcting, or cleaning up environmental damage.",
+      example: "Active orbital remediation craft are essential to capture and deorbit massive derelict rocket bodies.",
+      sampleSentence: "Active orbital remediation craft are essential to capture and deorbit massive derelict rocket bodies.",
+      collocations: ["orbital remediation", "environmental remediation", "remediation technology"]
     },
     {
-      word: "Detrimental",
-      definition: "Tending to cause noticeable harm, injury, or impairment.",
-      phonetic: "/ˌdetrɪˈmentl/",
-      term: "Detrimental",
-      meaning: "Tending to cause noticeable harm, injury, or impairment.",
-      example: "Excessive device immersion exerts a highly detrimental impact on a child's natural sleep architecture.",
-      sampleSentence: "Excessive device immersion exerts a highly detrimental impact on a child's natural sleep architecture.",
-      collocations: ["detrimental impact", "detrimental effect", "highly detrimental"]
+      word: "Decommission",
+      definition: "To officially withdraw an installation, spacecraft, or vessel from operational service.",
+      phonetic: "/ˌdiː.kəˈmɪʃ.ən/",
+      term: "Decommission",
+      meaning: "To officially withdraw an installation, spacecraft, or vessel from operational service.",
+      example: "Space agencies must enforce protocols to decommission and burn up satellites within five years of mission end.",
+      sampleSentence: "Space agencies must enforce protocols to decommission and burn up satellites within five years of mission end.",
+      collocations: ["decommission satellites", "safely decommission", "post-mission decommission"]
     },
     {
-      word: "Conducive",
-      definition: "Making a desirable situation, skill, or outcome likely or possible.",
-      phonetic: "/kənˈdjuːsɪv/",
-      term: "Conducive",
-      meaning: "Making a desirable situation, skill, or outcome likely or possible.",
-      example: "Interactive counting software is conducive to accelerated numeracy acquisition during preschool years.",
-      sampleSentence: "Interactive counting software is conducive to accelerated numeracy acquisition during preschool years.",
-      collocations: ["conducive to learning", "conducive to development", "highly conducive"]
+      word: "Hypervelocity",
+      definition: "Extremely high speed, typically exceeding 3,000 meters per second.",
+      phonetic: "/ˌhaɪ.pə.vəˈlɒs.ɪ.ti/",
+      term: "Hypervelocity",
+      meaning: "Extremely high speed, typically exceeding 3,000 meters per second.",
+      example: "Even millimeter-sized flecks of paint traveling at hypervelocity speeds can shatter spacecraft hulls.",
+      sampleSentence: "Even millimeter-sized flecks of paint traveling at hypervelocity speeds can shatter spacecraft hulls.",
+      collocations: ["hypervelocity impact", "hypervelocity speeds", "hypervelocity projectile"]
     },
     {
-      word: "Susceptible",
-      definition: "Likely or liable to be influenced, harmed, or swayed by external forces.",
-      phonetic: "/səˈseptəbl/",
-      term: "Susceptible",
-      meaning: "Likely or liable to be influenced, harmed, or swayed by external forces.",
-      example: "Preschoolers lack analytical discernment, rendering them acutely susceptible to inappropriate online content.",
-      sampleSentence: "Preschoolers lack analytical discernment, rendering them acutely susceptible to inappropriate online content.",
-      collocations: ["acutely susceptible", "highly susceptible", "susceptible to manipulation"]
+      word: "Derelict",
+      definition: "Abandoned, dilapidated, and discarded by the owner.",
+      phonetic: "/ˈder.ə.lɪkt/",
+      term: "Derelict",
+      meaning: "Abandoned, dilapidated, and discarded by the owner.",
+      example: "Derelict rocket stages continue to circle the globe as multi-ton uncontrollable kinetic missiles.",
+      sampleSentence: "Derelict rocket stages continue to circle the globe as multi-ton uncontrollable kinetic missiles.",
+      collocations: ["derelict rocket stages", "derelict satellites", "derelict craft"]
     },
     {
-      word: "Indispensable",
-      definition: "Absolutely essential; unable to be managed without.",
-      phonetic: "/ˌɪndɪˈspensəbl/",
-      term: "Indispensable",
-      meaning: "Absolutely essential; unable to be managed without.",
-      example: "Physical recreation is indispensable for cardiovascular health, bone density, and gross motor development.",
-      sampleSentence: "Physical recreation is indispensable for cardiovascular health, bone density, and gross motor development.",
-      collocations: ["indispensable asset", "indispensable tool", "biologically indispensable"]
+      word: "Mitigate",
+      definition: "To make less severe, serious, painful, or damaging.",
+      phonetic: "/ˈmɪt.ɪ.ɡeɪt/",
+      term: "Mitigate",
+      meaning: "To make less severe, serious, painful, or damaging.",
+      example: "Mandatory deorbiting thrusters can substantially mitigate the dangers of low-Earth orbit saturation.",
+      sampleSentence: "Mandatory deorbiting thrusters can substantially mitigate the dangers of low-Earth orbit saturation.",
+      collocations: ["mitigate collision risks", "mitigate orbital hazards", "mitigate the threat"]
     },
     {
-      word: "Ubiquitous",
-      definition: "Present, appearing, or encountered everywhere simultaneously.",
-      phonetic: "/juːˈbɪkwɪtəs/",
-      term: "Ubiquitous",
-      meaning: "Present, appearing, or encountered everywhere simultaneously.",
-      example: "Because digital touchscreens are now ubiquitous, establishing strict screen limits has become paramount.",
-      sampleSentence: "Because digital touchscreens are now ubiquitous, establishing strict screen limits has become paramount.",
-      collocations: ["ubiquitous technology", "ubiquitous presence", "increasingly ubiquitous"]
+      word: "Shrapnel",
+      definition: "Fragments of a bomb, shell, or shattered object thrown out by an explosion or collision.",
+      phonetic: "/ˈʃræp.nəl/",
+      term: "Shrapnel",
+      meaning: "Fragments of a bomb, shell, or shattered object thrown out by an explosion or collision.",
+      example: "Exploding booster tanks scatter millions of tiny pieces of untrackable metallic shrapnel.",
+      sampleSentence: "Exploding booster tanks scatter millions of tiny pieces of untrackable metallic shrapnel.",
+      collocations: ["metallic shrapnel", "orbital shrapnel", "clouds of shrapnel"]
     },
     {
-      word: "Erode",
-      definition: "Gradually destroy, diminish, or wear away over time.",
-      phonetic: "/ɪˈrəʊd/",
-      term: "Erode",
-      meaning: "Gradually destroy, diminish, or wear away over time.",
-      example: "Fast-paced digital media rapidly erodes a child's capacity for sustained academic concentration.",
-      sampleSentence: "Fast-paced digital media rapidly erodes a child's capacity for sustained academic concentration.",
-      collocations: ["erode attention span", "erode social skills", "erode patience"]
+      word: "Multilateral",
+      definition: "Agreed upon, conducted by, or participated in by three or more governments or parties.",
+      phonetic: "/ˌmʌl.tiˈlæt.ər.əl/",
+      term: "Multilateral",
+      meaning: "Agreed upon, conducted by, or participated in by three or more governments or parties.",
+      example: "Solving orbital space junk requires a robust multilateral treaty with enforceable international sanctions.",
+      sampleSentence: "Solving orbital space junk requires a robust multilateral treaty with enforceable international sanctions.",
+      collocations: ["multilateral treaty", "multilateral cooperation", "multilateral framework"]
     },
     {
-      word: "Sedentary",
-      definition: "Involving prolonged periods of sitting and minimal physical exertion.",
-      phonetic: "/ˈsedntri/",
-      term: "Sedentary",
-      meaning: "Involving prolonged periods of sitting and minimal physical exertion.",
-      example: "Premature device addiction entrenches a sedentary routine directly tied to rising pediatric obesity rates.",
-      sampleSentence: "Premature device addiction entrenches a sedentary routine directly tied to rising pediatric obesity rates.",
-      collocations: ["sedentary lifestyle", "sedentary habits", "sedentary routine"]
+      word: "Sustainable",
+      definition: "Able to be maintained over time without depleting resources or causing ecological collapse.",
+      phonetic: "/səˈsteɪ.nə.bl/",
+      term: "Sustainable",
+      meaning: "Able to be maintained over time without depleting resources or causing ecological collapse.",
+      example: "Enforcing responsible satellite disposal is critical to ensure sustainable outer space exploration.",
+      sampleSentence: "Enforcing responsible satellite disposal is critical to ensure sustainable outer space exploration.",
+      collocations: ["sustainable space exploration", "sustainable orbital environment", "sustainable practices"]
     }
   ],
 
   vocabHunt: [
-    "pervasive",
-    "inevitable",
-    "discernible",
-    "transient",
-    "resilient",
-    "detrimental",
-    "conducive",
-    "susceptible",
-    "indispensable",
-    "ubiquitous",
-    "erode",
-    "sedentary"
+    "proliferation",
+    "congested",
+    "defunct",
+    "catastrophic",
+    "remediation",
+    "decommission",
+    "hypervelocity",
+    "derelict",
+    "mitigate",
+    "shrapnel",
+    "multilateral",
+    "sustainable"
   ],
 
   // 5. Power Expressions
   powerExpressions: [
     {
-      expression: "Pervasive digital immersion",
-      meaning: "All-encompassing daily screen exposure that dominates a child's waking hours",
-      example: "Pervasive digital immersion displaces vital physical play and social learning milestones."
+      expression: "Unchecked commercial proliferation",
+      meaning: "The rapid, unregulated mass deployment of private satellites overloading orbital corridors",
+      example: "Unchecked commercial proliferation has led to unprecedented satellite crowding."
     },
     {
-      expression: "Displacing outdoor recreation",
-      meaning: "Crowding out healthy physical play and active exercise in favor of sedentary viewing",
-      example: "Excessive tablet usage directly displaces outdoor recreation in growing toddlers."
+      expression: "Cascading hypervelocity collisions",
+      meaning: "Chain-reaction kinetic impacts where shattered fragments create further collisions (Kessler syndrome)",
+      example: "Cascading hypervelocity collisions could render low-Earth orbit completely unusable for generations."
     },
     {
-      expression: "Eroding sustained cognitive focus",
-      meaning: "Gradually weakening an individual's capacity to concentrate on lengthy scholastic tasks",
-      example: "Fast-paced video algorithms undermine academic discipline by eroding sustained cognitive focus."
+      expression: "Autonomous atmospheric re-entry",
+      meaning: "Pre-programmed thrusters that automatically steer dead spacecraft into Earth's atmosphere to burn up",
+      example: "Satellites must be engineered with autonomous atmospheric re-entry thrusters."
     },
     {
-      expression: "Fostering foundational digital fluency",
-      meaning: "Equipping young minds with natural, intuitive competence in navigating technology",
-      example: "Early software engagement succeeds in fostering foundational digital fluency for future schooling."
+      expression: "Active orbital remediation",
+      meaning: "Direct technological missions to capture and deorbit existing space junk using robotic salvage craft",
+      example: "Active orbital remediation is essential to remove multi-ton derelict rocket stages."
     },
     {
-      expression: "Disrupting natural circadian rhythms",
-      meaning: "Interfering with the biological internal clock that regulates sleep and wakefulness via blue light",
-      example: "Evening screen exposure harms young children by disrupting natural circadian rhythms."
-    },
-    {
-      expression: "Stunting reciprocal human communication",
-      meaning: "Impairing two-way conversational abilities that depend on empathy, eye contact, and vocal cues",
-      example: "Substituting touchscreen games for family dialogue risks stunting reciprocal human communication."
+      expression: "Multilateral space sustainability treaty",
+      meaning: "A legally binding global agreement with mandatory corporate disposal bonds and launch caps",
+      example: "World governments must ratify a multilateral space sustainability treaty."
     }
   ],
 
-  // 6. Strategic Brainstorm Cards (Step 3: Exactly 4 Cards — Under 5, Non-Ambiguous & Cut-to-the-Chase)
+  // 6. Strategic Linker Groups
+  strategicLinkers: [
+    {
+      id: "intro-linkers",
+      zone: "Zone 1: Introductory Discourse & Thesis",
+      title: "Introduction: Paraphrase & Thesis Linkers",
+      themeColor: "#9333ea",
+      badge: "Intro Architecture",
+      badgeText: "Intro Architecture",
+      academicRole: "Establishes contextual gravity and maps causes and solutions.",
+      placementRule: "Use to paraphrase the prompt and state a clear causes and solutions thesis",
+      zoneGroup: {
+        zoneName: "Introductory Discourse",
+        placementRule: "Deploy Sentence 1 to contextualize the threat, and Sentence 2 to roadmap causes and solutions."
+      },
+      items: [
+        {
+          phrase: "In contemporary times / In recent decades",
+          functionDesc: "Formal academic substitute for 'Nowadays' establishing current urgency.",
+          example: "In contemporary times, the exponential escalation of orbital satellite launches has triggered profound alarms."
+        },
+        {
+          phrase: "This critical crisis is primarily driven by... however, it can be mitigated through...",
+          functionDesc: "Symmetrical causes-and-solutions thesis sentence pairing.",
+          example: "This critical crisis is primarily driven by commercial launch proliferation and uncurbed space shrapnel; however, it can be mitigated through mandated deorbit protocols and active debris removal."
+        }
+      ],
+      linkers: [
+        {
+          linker: "In contemporary times",
+          functionNote: "Formal academic substitute for 'Nowadays' establishing current urgency."
+        },
+        {
+          linker: "This critical crisis is primarily driven by... however, it can be mitigated through...",
+          functionNote: "Symmetrical causes-and-solutions thesis sentence pairing."
+        }
+      ]
+    },
+    {
+      id: "body1-linkers",
+      zone: "Zone 2: Cause 1 + Solution 1 Progression",
+      title: "Body 1: Cause 1 + Solution 1 Linkers",
+      themeColor: "#2563eb",
+      badge: "Body 1 Progression",
+      badgeText: "Body 1 Progression",
+      academicRole: "Introduces the commercial launch cause and links it directly to the technical solution.",
+      placementRule: "Use to introduce the primary cause (commercial constellations) and immediately link it to the primary technical solution (self-deorbiting thrusters)",
+      zoneGroup: {
+        zoneName: "Pillar 1 Architecture",
+        placementRule: "Open with Cause 1, develop the risk, then present Solution 1 with concrete examples."
+      },
+      items: [
+        {
+          phrase: "To begin with / The foremost catalyst behind this crisis is...",
+          functionDesc: "Signals the primary catalyst (commercial mega-constellations).",
+          example: "The foremost catalyst behind this crisis is the rapid expansion of private commercial space enterprises deploying massive mega-constellations."
+        },
+        {
+          phrase: "To counteract this escalating hazard / To mitigate this risk, authorities must mandate...",
+          functionDesc: "Pivots seamlessly from the cause to the targeted technological remedy.",
+          example: "To counteract this escalating hazard, aviation authorities must legally mandate that all satellites incorporate automated self-deorbiting thrusters."
+        },
+        {
+          phrase: "For instance / A clear illustration is",
+          functionDesc: "Introduces concrete real-world evidence (Starlink 5-year deorbit rule).",
+          example: "A clear illustration is the recent regulatory requirement compelling low-Earth operators to safely deorbit craft within five years of mission end."
+        }
+      ],
+      linkers: [
+        {
+          linker: "To begin with / First and foremost",
+          functionNote: "Signals the primary catalyst (commercial mega-constellations)."
+        },
+        {
+          linker: "To mitigate this hazard / To counteract this trend",
+          functionNote: "Pivots seamlessly from the cause to the targeted technological remedy."
+        },
+        {
+          linker: "For instance / A clear illustration is",
+          functionNote: "Introduces concrete real-world evidence (Starlink 5-year deorbit rule)."
+        }
+      ]
+    },
+    {
+      id: "body2-linkers",
+      zone: "Zone 3: Cause 2 + Solution 2 Progression",
+      title: "Body 2: Cause 2 + Solution 2 Linkers",
+      themeColor: "#059669",
+      badge: "Body 2 Progression",
+      badgeText: "Body 2 Progression",
+      academicRole: "Introduces the cascading debris hazard and connects to active robotic cleanup and UN treaties.",
+      placementRule: "Use to introduce the secondary cause (cascading legacy debris) and link it to the secondary solution (robotic cleanup and global treaties)",
+      zoneGroup: {
+        zoneName: "Pillar 2 Architecture",
+        placementRule: "Open with Cause 2 (Kessler syndrome), then introduce Solution 2 (ADR robotics + treaties)."
+      },
+      items: [
+        {
+          phrase: "Furthermore / Compounding this predicament is...",
+          functionDesc: "Transitions to the second major cause (legacy debris and cascading collisions).",
+          example: "Furthermore, compounding this predicament is the accumulation of defunct satellites and rocket stages that spawn thousands of hypervelocity shrapnel pieces."
+        },
+        {
+          phrase: "The most viable remedy involves / An indispensable countermeasure is...",
+          functionDesc: "Pivots directly to active robotic removal and multilateral treaties.",
+          example: "The most viable remedy involves investing in active robotic remediation technologies, complemented by a binding United Nations space treaty."
+        },
+        {
+          phrase: "A prime example is / Exemplifying this approach is...",
+          functionDesc: "Grounds the argument with verifiable initiatives (ESA ClearSpace-1).",
+          example: "Exemplifying this approach is the European Space Agency's ClearSpace-1 mission, designed to capture derelict rocket debris using robotic tentacles."
+        }
+      ],
+      linkers: [
+        {
+          linker: "Furthermore / In addition to this",
+          functionNote: "Transitions to the second major cause (legacy debris and shrapnel)."
+        },
+        {
+          linker: "The most viable remedy is / An indispensable countermeasure is",
+          functionNote: "Pivots directly to active robotic removal and multilateral treaties."
+        },
+        {
+          linker: "A prime example is / Exemplifying this approach is",
+          functionNote: "Grounds the argument with verifiable initiatives (ESA ClearSpace-1)."
+        }
+      ]
+    },
+    {
+      id: "conclusion-linkers",
+      zone: "Zone 4: Concluding Synthesis & Policy Recommendation",
+      title: "Conclusion: Sum-Up & Recommendation Linkers",
+      themeColor: "#0f766e",
+      badge: "Conclusion Synthesis",
+      badgeText: "Conclusion Synthesis",
+      academicRole: "Recaps causes and solutions, then offers a forward-looking policy suggestion.",
+      placementRule: "Use in the final paragraph to recap both cause-solution pairings and offer a forward-looking recommendation",
+      zoneGroup: {
+        zoneName: "Concluding Synthesis",
+        placementRule: "Sentence 1 synthesizes both causes; Sentence 2 recaps solutions; Sentence 3 provides the policy recommendation."
+      },
+      items: [
+        {
+          phrase: "In conclusion / To conclude",
+          functionDesc: "Definitive marker signaling the final synthesis.",
+          example: "In conclusion, while commercial expansion and derelict debris severely jeopardize orbital lanes, strict technical mandates and international robotic missions offer effective solutions."
+        },
+        {
+          phrase: "Moving forward, it is imperative that...",
+          functionDesc: "Transitions smoothly into the forward-looking global recommendation.",
+          example: "Moving forward, it is imperative that global governments sign a multilateral treaty imposing mandatory launch deposits to guarantee orbital sustainability."
+        }
+      ],
+      linkers: [
+        {
+          linker: "In conclusion / To conclude",
+          functionNote: "Definitive marker signaling the final synthesis."
+        },
+        {
+          linker: "Moving forward, it is imperative that...",
+          functionNote: "Transitions smoothly into the forward-looking global recommendation."
+        }
+      ]
+    }
+  ],
+
+  // 7. Brainstorm Cards (UNDER 5 STEPS: EXACTLY 4 CARDS, ACCURATE & CUT-TO-THE-CHASE)
   brainstormCards: [
     {
-      question: "How do interactive educational apps and games enhance early childhood learning?",
-      thinkingLens: "Multisensory Gamification & Visual Comprehension",
-      selfCheck: "Do interactive counting games simplify abstract math concepts better than textbooks?",
-      idea: "Gamified educational apps turn abstract math and literacy concepts into intuitive, easy-to-grasp games."
+      id: "card-1",
+      stepNum: 1,
+      badge: "Cause 01 • Orbital Saturation",
+      title: "Commercial Mega-Constellations",
+      question: "What is the primary commercial cause driving the sudden overcrowding of near-Earth orbit?",
+      thinkingLens: "Focus on the transition from government missions to private aerospace corporations mass-producing satellite fleets.",
+      selfCheck: "Did you mention mega-constellations like broadband networks filling narrow orbital lanes?",
+      idea: "Private aerospace enterprises deploy thousands of mass-produced broadband satellites, dangerously saturating low-Earth orbital highways.",
+      promptInsight: "Private broadband fleets launch thousands of orbiters, clogging narrow low-Earth altitudes.",
+      collocations: ["commercial proliferation", "congested orbital lanes", "mega-constellations"],
+      example: "Fleets deploying hundreds of mass-produced satellites annually without global altitude caps."
     },
     {
-      question: "Why is early familiarity with computer interfaces an asset for modern schooling?",
-      thinkingLens: "Foundational Digital Fluency & Academic Readiness",
-      selfCheck: "Does early touchscreen experience give young students confidence in computer-based classes?",
-      idea: "Early device familiarity equips children with foundational digital fluency, easing their transition into computerized schoolwork."
+      id: "card-2",
+      stepNum: 2,
+      badge: "Solution 01 • Engineering Mandate",
+      title: "Mandatory Self-Deorbiting Thrusters",
+      question: "How can satellite manufacturers technically prevent retired spacecraft from becoming permanent hazards?",
+      thinkingLens: "Think about automated end-of-life disposal mechanisms built directly into the satellite.",
+      selfCheck: "Did you recommend automated thrusters or drag sails for atmospheric re-entry burn-up?",
+      idea: "Mandate built-in automated deorbiting thrusters or drag sails that steer retired satellites into the atmosphere to vaporize safely.",
+      promptInsight: "Require automated propulsive thrusters to guarantee satellites burn up in the atmosphere at end of life.",
+      collocations: ["automated deorbiting thrusters", "atmospheric burn-up", "post-mission disposal"],
+      example: "Mandating low-orbit satellites to execute automated atmospheric incinerations within five years."
     },
     {
-      question: "How does prolonged screen viewing directly harm a young child's physical health?",
-      thinkingLens: "Sedentary Displacement & Sleep Architecture Disruption",
-      selfCheck: "What happens to a child's fitness and sleep when screens replace active sports?",
-      idea: "Prolonged screen viewing entrenches sedentary habits, displacing healthy physical exercise and delaying restful bedtime sleep."
+      id: "card-3",
+      stepNum: 3,
+      badge: "Cause 02 • Kinetic Shrapnel",
+      title: "Cascading Debris (Kessler Syndrome)",
+      question: "Why does space debris multiply exponentially even when new launches are paused?",
+      thinkingLens: "Examine the physics of hypervelocity collisions between abandoned rocket stages (the Kessler syndrome).",
+      selfCheck: "Did you explain how high-speed kinetic impacts shatter metal into clouds of untrackable shrapnel?",
+      idea: "Hypervelocity kinetic collisions smash derelict rocket stages into tens of thousands of bullet-speed shrapnel fragments.",
+      promptInsight: "Decades of abandoned rocket bodies and hypervelocity collisions fragment metal into bullet-speed debris.",
+      collocations: ["hypervelocity collisions", "metallic shrapnel", "Kessler syndrome"],
+      example: "The 2009 Cosmos-Iridium collision producing over 2,000 pieces of lethal high-speed fragments."
     },
     {
-      question: "Why does excessive reliance on digital entertainment weaken social skills and classroom focus?",
-      thinkingLens: "Interpersonal Interaction & Sustained Cognitive Focus",
-      selfCheck: "Can passive digital screens teach conversational empathy or develop patient academic concentration?",
-      idea: "Over-reliance on screens stunts face-to-face conversational empathy and rapidly erodes patience for sustained reading."
+      id: "card-4",
+      stepNum: 4,
+      badge: "Solution 02 • Global Remediation",
+      title: "Active Robotic Removal & UN Treaties",
+      question: "What international and technological countermeasures are needed to clean up existing space debris?",
+      thinkingLens: "Combine active robotic salvage technology with enforceable multilateral United Nations treaties.",
+      selfCheck: "Did you pair active robotic capture missions (like ClearSpace-1) with mandatory pollution bonds?",
+      idea: "Deploy robotic capture craft to deorbit heavy derelict hardware, funded by mandatory UN orbital remediation bonds.",
+      promptInsight: "Deploy robotic capture craft to deorbit heavy junk, backed by enforceable UN space pollution treaties.",
+      collocations: ["active debris removal", "robotic salvage missions", "multilateral space treaties"],
+      example: "The ESA ClearSpace-1 robotic arm capturing derelict rocket stages from orbit."
     }
   ],
 
-  // 7. Connectors Tier & Strategic Linkers
   connectorsTier: {
     sTier: [
-      "In contemporary society, it is increasingly observable that...",
-      "While early exposure fosters foundational digital fluency, I firmly contend...",
-      "Primarily, premature technology adoption promotes an intensely sedentary routine...",
-      "Furthermore, early device dependency produces discernible deficits in interpersonal communication...",
-      "In conclusion, although educational applications can provide transient benefits...",
-      "Therefore, the physical detriments overwhelmingly render this trend an unfavorable development."
+      "In contemporary times",
+      "To mitigate this hazard",
+      "Active orbital remediation",
+      "Multilateral space sustainability"
     ],
     aTier: [
-      "For instance, pediatric clinical research consistently reveals...",
-      "Consequently, when young children are deprived of outdoor physical play,...",
-      "A clear illustration of this is observed in early primary classrooms...",
-      "In contrast, digital interfaces offer one-way, algorithmically curated stimulation..."
+      "To begin with",
+      "Furthermore",
+      "A prime catalyst is",
+      "Exemplifying this approach"
     ],
     bTier: [
-      "First and foremost,...",
-      "Additionally,...",
-      "Moreover,...",
-      "To conclude,..."
+      "Additionally",
+      "Specifically",
+      "In conclusion",
+      "Consequently"
     ]
   },
 
-  strategicLinkers: [
-    {
-      zone: "Introduction",
-      badge: "Paraphrase + Opinion",
-      placementRule: "Use to paraphrase the prompt and state a decisive personal opinion",
-      items: [
-        {
-          phrase: "In contemporary society, the pervasive presence of digital technology has made early exposure practically inevitable.",
-          functionDesc: "Opening paraphrase establishing the prompt's widespread modern reality",
-          example: "In contemporary society, the pervasive presence of digital technology has made early exposure practically inevitable."
-        },
-        {
-          phrase: "While early technological exposure fosters digital fluency, I firmly believe that this is predominantly a negative development...",
-          functionDesc: "Clear thesis statement establishing a decisive personal stance",
-          example: "While early technological exposure fosters digital fluency, I firmly believe that this is predominantly a negative development due to physical health hazards and impaired social skills."
-        }
-      ]
-    },
-    {
-      zone: "Body Paragraph 1 (Reason 1)",
-      badge: "Physical Health",
-      placementRule: "Use to introduce the primary physical health drawback with supporting explanation and example",
-      items: [
-        {
-          phrase: "First and foremost, premature technology adoption promotes an intensely sedentary lifestyle...",
-          functionDesc: "Topic sentence introducing the physical health argument",
-          example: "First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to severe physical complications."
-        },
-        {
-          phrase: "Pediatric health research consistently demonstrates that...",
-          functionDesc: "Introduces concrete empirical evidence and medical examples",
-          example: "Pediatric health research consistently demonstrates that toddlers with heavy daily screen time exhibit double the rate of childhood obesity."
-        }
-      ]
-    },
-    {
-      zone: "Body Paragraph 2 (Reason 2)",
-      badge: "Social Skills",
-      placementRule: "Use to introduce the second major developmental drawback regarding communication and focus",
-      items: [
-        {
-          phrase: "Furthermore, early dependency on technology severely undermines the cultivation of interpersonal communication...",
-          functionDesc: "Topic sentence introducing the social and cognitive communication argument",
-          example: "Furthermore, early dependency on technology severely undermines the cultivation of interpersonal communication skills."
-        },
-        {
-          phrase: "A clear illustration of this is observed in early primary classrooms, where...",
-          functionDesc: "Presents real-world educational evidence of speech and attention delays",
-          example: "A clear illustration of this is observed in early primary classrooms, where screen-dependent toddlers struggle to collaborate harmoniously with peers."
-        }
-      ]
-    },
-    {
-      zone: "Conclusion",
-      badge: "Sum-Up + Restatement",
-      placementRule: "Use in the final paragraph to recap the two main reasons and restate your opinion",
-      items: [
-        {
-          phrase: "In conclusion, although early engagement can cultivate foundational digital fluency, I am convinced that...",
-          functionDesc: "Concessive restatement summarizing the two core pillars",
-          example: "In conclusion, although early engagement can cultivate foundational digital fluency, I am convinced that this trend represents an overwhelmingly negative development."
-        },
-        {
-          phrase: "Therefore, the physical health hazards coupled with social skill degradation clearly render early device adoption an unfavorable phenomenon.",
-          functionDesc: "Final decisive clincher restating the personal opinion",
-          example: "Therefore, the physical health hazards coupled with social skill degradation clearly render early device adoption an unfavorable phenomenon for developing minds."
-        }
-      ]
-    }
-  ],
-
   fluidVocab: [
     {
-      word: "Pervasive",
-      pos: "adjective",
-      meaning: "Existing or spreading everywhere within modern society.",
-      naturalCollocation: "pervasive digital presence",
-      organicExample: "The pervasive presence of smartphones makes early technological immersion virtually inevitable.",
-      mechanicalPitfall: "Do not write 'very common' when pervasive conveys deep societal saturation.",
-      examinerInsight: "Immediately signals sophisticated sociological commentary."
+      word: "Proliferation",
+      pos: "noun",
+      meaning: "Rapid and uncontrolled increase in the volume or quantity of something.",
+      naturalCollocation: "proliferation of commercial satellite constellations",
+      organicExample: "The proliferation of commercial satellite fleets has severely congested low-Earth orbital highways.",
+      mechanicalPitfall: "Avoid writing 'a lot of new satellites' in formal academic writing.",
+      examinerInsight: "Immediately signals sophisticated technological and sociological analysis."
     },
     {
-      word: "Inevitable",
+      word: "Congested",
       pos: "adjective",
-      meaning: "Completely unavoidable in contemporary life.",
-      naturalCollocation: "practically inevitable",
-      organicExample: "Sedentary lifestyle habits become inevitable when virtual gaming displaces outdoor exercise.",
-      mechanicalPitfall: "Avoid 'bound to happen' in formal academic writing.",
-      examinerInsight: "Demonstrates high-level Task Response and analytical precision."
+      meaning: "Excessively crowded and packed to the point of blocking movement.",
+      naturalCollocation: "dangerously congested orbital corridors",
+      organicExample: "Without strict launch permits, low-Earth orbit will become too congested for safe spaceflight.",
+      mechanicalPitfall: "Do not confuse with traffic congestion on city roads; explain orbital path density.",
+      examinerInsight: "Establishes precise spatial comprehension of near-Earth orbits."
     },
     {
-      word: "Discernible",
+      word: "Defunct",
       pos: "adjective",
-      meaning: "Noticeable and measurable by observation.",
-      naturalCollocation: "discernible developmental delay",
-      organicExample: "Preschoolers accustomed to prolonged screen viewing exhibit discernible deficits in peer collaboration.",
-      mechanicalPitfall: "Avoid informal words like 'clear' or 'seen'.",
-      examinerInsight: "A high-scoring adjective widely celebrated in Band 9 IELTS evaluations."
+      meaning: "No longer functioning, active, or in working order.",
+      naturalCollocation: "defunct satellites and derelict rocket boosters",
+      organicExample: "Hundreds of defunct satellites remain in orbit as floating, unguided kinetic projectiles.",
+      mechanicalPitfall: "Avoid simplistic words like 'dead' or 'broken' spacecraft.",
+      examinerInsight: "Standard high-level terminology utilized by NASA and ESA orbital analysts."
     },
     {
-      word: "Transient",
-      pos: "adjective",
-      meaning: "Lasting only briefly; temporary and fleeting.",
-      naturalCollocation: "transient amusement",
-      organicExample: "Short video clips provide transient entertainment but fail to foster enduring cognitive stamina.",
-      mechanicalPitfall: "Do not confuse with 'short-term' when describing emotional dopamine spikes.",
-      examinerInsight: "Contrasts temporary sensory satisfaction against long-term developmental growth."
+      word: "Remediation",
+      pos: "noun",
+      meaning: "The technical process of reversing, neutralizing, or repairing environmental damage.",
+      naturalCollocation: "active orbital debris remediation",
+      organicExample: "Active debris remediation craft are essential to capture and deorbit multi-ton rocket upper stages.",
+      mechanicalPitfall: "Do not write 'cleaning up'; remediation conveys scientific ecological restoration.",
+      examinerInsight: "Celebrated Band 9 vocabulary demonstrating advanced policy discourse."
     },
     {
-      word: "Resilient",
-      pos: "adjective",
-      meaning: "Capable of recovering readily from adversity and frustration.",
-      naturalCollocation: "resilient problem-solving",
-      organicExample: "Children who rely on digital devices for instant comfort struggle to build resilient emotional coping skills.",
-      mechanicalPitfall: "Avoid simplistic phrases like 'being strong'.",
-      examinerInsight: "Key term in modern child psychology and cognitive resilience."
+      word: "Decommission",
+      pos: "verb",
+      meaning: "To formally withdraw a satellite or system from operational service at mission end.",
+      naturalCollocation: "decommission satellites via automated atmospheric burn-up",
+      organicExample: "Operators must be legally mandated to decommission retired satellites within five years.",
+      mechanicalPitfall: "Avoid 'turning off'; decommission includes safe orbital retirement.",
+      examinerInsight: "Directly addresses Task Response regarding technological lifecycle management."
     },
     {
-      word: "Sedentary",
+      word: "Multilateral",
       pos: "adjective",
-      meaning: "Involving prolonged sitting and minimal physical movement.",
-      naturalCollocation: "foster an intensely sedentary lifestyle",
-      organicExample: "Premature device adoption fosters an intensely sedentary lifestyle linked to rising pediatric obesity.",
-      mechanicalPitfall: "Do not write 'lazy life' or 'sitting without moving'.",
-      examinerInsight: "Essential high-scoring collocation for health and lifestyle prompts."
+      meaning: "Agreed upon and enforced collectively by multiple nations and governments.",
+      naturalCollocation: "enforceable multilateral space treaties",
+      organicExample: "Mitigating orbital clutter necessitates a multilateral treaty with mandatory corporate compliance bonds.",
+      mechanicalPitfall: "Do not confuse with bilateral; space governance requires worldwide consensus.",
+      examinerInsight: "Signals elevated understanding of global governance and international law."
     }
   ],
 
-  // Extra helper arrays for compatibility
   consequences: [
     {
       type: "positive",
-      title: "Advantage 01: Makes Learning Interactive",
+      title: "Cause 01: Commercial Mega-Constellations",
       category: "standard",
-      desc: "Gamified educational apps make abstract math and literacy intuitive through playful challenges.",
-      example: "A preschooler learns basic addition through counting games rather than paper drill sheets.",
-      level: "Core Advantage",
-      simpleTakeaway: "Gamified apps make abstract math and literacy intuitive.",
-      collocation: "conducive to rapid numeracy acquisition"
+      desc: "Private aerospace enterprises launch thousands of broadband satellites, severely saturating narrow low-Earth orbital corridors.",
+      example: "Commercial operators deploying hundreds of mass-produced orbiters in dense orbital shells.",
+      level: "Core Cause",
+      simpleTakeaway: "Private telecom fleets flood low-Earth orbit with thousands of mass-produced satellites.",
+      collocation: "rapid proliferation of commercial constellations"
     },
     {
       type: "positive",
-      title: "Advantage 02: Develops Early Digital Literacy",
+      title: "Cause 02: Abandoned Booster Hardware",
       category: "standard",
-      desc: "Interface familiarity provides foundational tech competence essential for computerized modern schooling.",
-      example: "Children who use tablets early transition effortlessly to school research portals and typing assignments.",
-      level: "Core Advantage",
-      simpleTakeaway: "Early device navigation prepares learners for computer-based classes.",
-      collocation: "acquire indispensable digital fluency"
+      desc: "Expended rocket stages and booster casings are left adrift in space for decades without fuel or propulsion to re-enter.",
+      example: "Multi-ton metallic rocket casings circling Earth uncontrolled for over forty years.",
+      level: "Core Cause",
+      simpleTakeaway: "Spent rocket bodies are abandoned in orbit without means to deorbit.",
+      collocation: "derelict upper rocket stages"
     },
     {
       type: "positive",
-      title: "Advantage 03: Maintains Long-Distance Relationships",
+      title: "Cause 03: Cascading Shrapnel (Kessler Syndrome)",
       category: "standard",
-      desc: "High-definition video calling sustains vital emotional bonds with distant relatives across time zones.",
-      example: "Toddlers stay emotionally bonded with grandparents living abroad via weekly video calls.",
-      level: "Core Advantage",
-      simpleTakeaway: "Video calls preserve emotional ties with distant relatives.",
-      collocation: "sustain meaningful familial bonds"
+      desc: "High-speed kinetic collisions and anti-satellite missile tests pulverize dead hardware into tens of thousands of bullet-speed metal fragments.",
+      example: "The 2009 Iridium-Cosmos collision generating over 2,000 trackable pieces of hypervelocity shrapnel.",
+      level: "Core Cause",
+      simpleTakeaway: "Hypervelocity collisions shatter hardware into clouds of bullet-speed shrapnel.",
+      collocation: "catastrophic cascading collisions"
     },
     {
       type: "positive",
-      title: "Advantage 04: Encourages Creativity & Exploration",
+      title: "Cause 04: Outdated International Space Treaties",
       category: "additional",
-      desc: "Age-appropriate digital software enables children to experiment freely with digital art, music, and storytelling.",
-      example: "Children create animations or record spoken stories using beginner creative applications.",
-      level: "Real-Life Angle",
-      simpleTakeaway: "Creative software lets children explore art, music, and storytelling.",
-      collocation: "stimulate creative self-expression"
+      desc: "The 1967 Outer Space Treaty lacks modern regulatory mandates, launch quotas, or pollution penalties for private aerospace firms.",
+      example: "Private corporations launching mega-fleets with zero financial liability for debris cleanup.",
+      level: "Root Legal Cause",
+      simpleTakeaway: "Outdated space laws provide no legal penalties for creating orbital pollution.",
+      collocation: "inadequacy of international space governance"
     }
   ],
 
   evaluationArguments: [
     {
-      title: "Disadvantage 01: Reduces Physical Activity",
+      title: "Solution 01: Mandatory Built-In Self-Deorbiting Thrusters",
       category: "standard",
-      reason: "Prolonged screen staring displaces active outdoor exercise, elevating risks of childhood obesity.",
-      development: "Physical recreation is indispensable for cardiovascular health, yet it is inevitably curtailed by continuous indoor sitting.",
-      example: "Spending afternoons watching videos leaves children with fewer chances to cycle, run, or play football.",
+      reason: "Compel all newly manufactured satellites to carry automated thrusters or plasma drag sails that steer them into the atmosphere upon retirement.",
+      development: "Autonomous propulsion ensures that dead satellites lower their altitude and vaporize safely within Earth's dense atmosphere rather than becoming permanent hazards.",
+      example: "Requiring low-orbit broadband orbiters to burn up harmlessly within five years of decommission.",
       type: "argument",
-      level: "Core Drawback",
-      simpleTakeaway: "Screen staring replaces outdoor sports, fueling childhood obesity.",
-      collocation: "entrench a sedentary routine"
+      level: "Core Solution",
+      simpleTakeaway: "Require all satellites to carry thrusters to burn up in the atmosphere at end of life.",
+      collocation: "mandatory post-mission deorbiting protocols"
     },
     {
-      title: "Disadvantage 02: Disrupts Sleeping Habits",
+      title: "Solution 02: Active Debris Removal (ADR) Robotic Missions",
       category: "standard",
-      reason: "Night-time screen viewing and blue light delay bedtime routines, causing chronic morning exhaustion.",
-      development: "The artificial illumination emitted by handheld screens suppresses natural melatonin release, postponing restorative sleep.",
-      example: "Watching cartoons on tablets before bed pushes sleep onset back by up to an hour.",
+      reason: "Deploy specialized robotic space craft equipped with nets, harpoons, and magnetic grapplers to capture and deorbit heavy existing space junk.",
+      development: "Robotic salvage craft can rendezvous with uncontrolled multi-ton rocket bodies and guide them into safe oceanic re-entry corridors.",
+      example: "The European Space Agency's ClearSpace-1 mission deploying robotic arms to capture defunct rocket stages.",
       type: "argument",
-      level: "Core Drawback",
-      simpleTakeaway: "Night-time screen light delays sleep and causes morning exhaustion.",
-      collocation: "disrupt restorative sleep architecture"
+      level: "Core Solution",
+      simpleTakeaway: "Launch robotic space tugs to capture and deorbit large floating derelict hardware.",
+      collocation: "active debris remediation technologies"
     },
     {
-      title: "Disadvantage 03: Weakens Face-to-Face Communication",
+      title: "Solution 03: Legally Binding UN Space Treaties & Launch Quotas",
       category: "standard",
-      reason: "Passive digital entertainment replaces family dialogue, stunting conversational manners and emotional empathy.",
-      development: "One-way screens provide artificial stimulation that fails to teach subtle facial expressions and reciprocal conversational turns.",
-      example: "Children glued to phones at family meals miss crucial opportunities to practise conversational manners.",
+      reason: "Establish enforceable United Nations launch licensing permits and mandatory orbital cleanup insurance bonds for all space operators.",
+      development: "Imposing heavy financial fines and capping annual launches forces aerospace corporations to prioritize reusable and recyclable mission profiles.",
+      example: "Withholding launch authorizations unless satellite operators prove pre-funded disposal and deorbiting plans.",
       type: "argument",
-      level: "Core Drawback",
-      simpleTakeaway: "Screens lack human feedback, causing speech and empathy delays.",
-      collocation: "produce discernible communication deficits"
+      level: "Core Solution",
+      simpleTakeaway: "Enforce UN launch permits with mandatory cleanup insurance bonds.",
+      collocation: "binding multilateral space treaties"
     },
     {
-      title: "Disadvantage 04: Reduces Attention Span & Focus",
+      title: "Solution 04: Real-Time AI Collision Avoidance Systems",
       category: "additional",
-      reason: "Fast-paced short videos condition young brains to crave instant gratification, undermining classroom focus.",
-      development: "Rapid multimedia stimuli make traditional cognitive tasks like book reading feel excruciatingly tedious.",
-      example: "Pupils accustomed to short clips grow restless when reading full book pages or doing extended homework.",
+      reason: "Equip active satellite constellations with automated radar tracking sensors and AI-guided thrusters to dodge space shrapnel autonomously.",
+      development: "Ground-based radar paired with autonomous orbital thrusters enables active spacecraft to perform evasive maneuvers without human delay.",
+      example: "Modern communication orbiters automatically adjusting trajectories to dodge passing debris fragments.",
       type: "argument",
-      level: "Real-Life Angle",
-      simpleTakeaway: "Fast-paced media erodes patience and classroom reading focus.",
-      collocation: "erode cognitive attention span"
-    },
-    {
-      title: "Disadvantage 05: Exposes Inappropriate Content",
-      category: "additional",
-      reason: "Young children lack critical maturity, making them acutely susceptible to violent or harmful media.",
-      development: "Immature young minds lack analytical filters to distinguish advertising manipulation or graphic online violence.",
-      example: "Video autoplay algorithms can expose unattended preschoolers to graphic or frightening videos.",
-      type: "argument",
-      level: "Real-Life Angle",
-      simpleTakeaway: "Preschoolers easily encounter violent or age-inappropriate online media.",
-      collocation: "acutely susceptible to cyber hazards"
-    },
-    {
-      title: "Disadvantage 06: Creates Screen Dependency",
-      category: "additional",
-      reason: "Constant virtual amusement leaves children restless and unable to entertain themselves through independent play.",
-      development: "When digital entertainment is constantly used to cure boredom, children lose the capacity for imaginative, self-directed play.",
-      example: "A toddler throws an intense tantrum and becomes restless whenever a mobile phone is removed.",
-      type: "argument",
-      level: "Real-Life Angle",
-      simpleTakeaway: "Constant screen use prevents children from learning independent play.",
-      collocation: "develop compulsive screen dependency"
+      level: "Technological Solution",
+      simpleTakeaway: "Equip active satellites with AI thrusters to dodge space debris autonomously.",
+      collocation: "autonomous collision-avoidance maneuvers"
     }
   ],
 
   facultyAngles: [
     {
-      title: "Pediatric Health & Physical Fitness",
-      development: "Focuses on sedentary screen time, blue light melatonin suppression, juvenile obesity, and myopia."
+      title: "Orbital Mechanics & Aerospace Engineering",
+      development: "Focuses on satellite constellation density, low-Earth orbit saturation, autonomous propulsive deorbiting, and atmospheric re-entry burn-up."
     },
     {
-      title: "Childhood Social & Cognitive Psychology",
-      development: "Examines face-to-face social reciprocity, speech delays, attention span erosion, and digital dopamine loops."
+      title: "International Space Law & Environmental Governance",
+      development: "Examines United Nations space treaties (UNOOSA), corporate launch quotas, active debris removal salvage rights, and the Kessler syndrome."
     }
   ]
 };

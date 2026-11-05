@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { CheckCircle2, Split, Workflow, Boxes, Flame, Sparkles, Layers } from "lucide-react";
+import { CheckCircle2, Split, Table, TrendingUp, Layers, Sparkles } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step5Bifurcation: React.FC = () => {
-  const [selectedStrategy, setSelectedStrategy] = useState<"diagrammatic" | "functional">("diagrammatic");
+  const [selectedStrategy, setSelectedStrategy] = useState<"category" | "country">("category");
 
   return (
     <div className="stage-card-wrapper">
@@ -11,37 +11,37 @@ export const Step5Bifurcation: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 05 / 08 • Structural Grouping Strategy
         </span>
-        <h2 className="stage-title">Bifurcation Tactics: How to Group Cement &amp; Concrete Diagrams</h2>
+        <h2 className="stage-title">Bifurcation Tactics: How to Group the Comparative Table</h2>
         <p className="stage-subtitle">
-          With two interrelated industrial graphics (a 5-stage linear sequence and a 4-ingredient batch mixing recipe), establishing the optimal paragraph architecture guarantees Band 9 in Coherence &amp; Cohesion (CC) and Task Achievement (TA).
+          With a 5-country by 3-category data table, choosing the right paragraph organization prevents repetitive listing and secures Band 9 in Coherence &amp; Cohesion (CC) and Task Achievement (TA).
         </p>
       </div>
 
       {/* Strategy Switcher */}
       <div style={{ display: "flex", gap: "12px", marginBottom: "8px" }}>
         <button
-          onClick={() => setSelectedStrategy("diagrammatic")}
+          onClick={() => setSelectedStrategy("category")}
           style={{
             flex: 1,
             padding: "14px 18px",
             borderRadius: "14px",
-            border: selectedStrategy === "diagrammatic" ? "2px solid #2563eb" : "1.5px solid var(--border-subtle)",
-            background: selectedStrategy === "diagrammatic" ? "#eff6ff" : "#ffffff",
+            border: selectedStrategy === "category" ? "2px solid #2563eb" : "1.5px solid var(--border-subtle)",
+            background: selectedStrategy === "category" ? "#eff6ff" : "#ffffff",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             cursor: "pointer",
-            boxShadow: selectedStrategy === "diagrammatic" ? "var(--shadow-sm)" : "none"
+            boxShadow: selectedStrategy === "category" ? "var(--shadow-sm)" : "none"
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Workflow size={20} color={selectedStrategy === "diagrammatic" ? "#2563eb" : "var(--slate-600)"} />
+            <Table size={20} color={selectedStrategy === "category" ? "#2563eb" : "var(--slate-600)"} />
             <div style={{ textAlign: "left" }}>
               <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)", display: "block" }}>
-                Strategy A: Diagrammatic Bifurcation (Recommended)
+                Strategy A: Category Grouping (Recommended)
               </strong>
               <span style={{ fontSize: "0.78rem", color: "var(--slate-600)" }}>
-                Body 1: The 5 Cement Stages (Crushing to Bagging) • Body 2: Concrete Batch Proportions (Gravel 50%, Sand 25%, Cement 15%, Water 10%)
+                Body 1: Food, Drink &amp; Tobacco (Dominant Sector) • Body 2: Clothing/Footwear &amp; Leisure/Education (Secondary &amp; Minority Sectors)
               </span>
             </div>
           </div>
@@ -51,28 +51,28 @@ export const Step5Bifurcation: React.FC = () => {
         </button>
 
         <button
-          onClick={() => setSelectedStrategy("functional")}
+          onClick={() => setSelectedStrategy("country")}
           style={{
             flex: 1,
             padding: "14px 18px",
             borderRadius: "14px",
-            border: selectedStrategy === "functional" ? "2px solid #059669" : "1.5px solid var(--border-subtle)",
-            background: selectedStrategy === "functional" ? "#ecfdf5" : "#ffffff",
+            border: selectedStrategy === "country" ? "2px solid #059669" : "1.5px solid var(--border-subtle)",
+            background: selectedStrategy === "country" ? "#ecfdf5" : "#ffffff",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             cursor: "pointer",
-            boxShadow: selectedStrategy === "functional" ? "var(--shadow-sm)" : "none"
+            boxShadow: selectedStrategy === "country" ? "var(--shadow-sm)" : "none"
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Layers size={20} color={selectedStrategy === "functional" ? "#059669" : "var(--slate-600)"} />
+            <Layers size={20} color={selectedStrategy === "country" ? "#059669" : "var(--slate-600)"} />
             <div style={{ textAlign: "left" }}>
               <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)", display: "block" }}>
-                Strategy B: Functional Prerequisite Bifurcation
+                Strategy B: Country Grouping (Alternative)
               </strong>
               <span style={{ fontSize: "0.78rem", color: "var(--slate-600)" }}>
-                Body 1: Thermal &amp; Mechanical Refinement of Cement • Body 2: Aggregate Binding &amp; Mechanical Concrete Agitation
+                Body 1: High Spenders &amp; Outliers (Turkey, Ireland, Italy) • Body 2: Moderate &amp; Low Spenders (Spain &amp; Sweden)
               </span>
             </div>
           </div>
@@ -83,7 +83,7 @@ export const Step5Bifurcation: React.FC = () => {
       </div>
 
       {/* Selected Strategy Deep Dive Grid */}
-      {selectedStrategy === "diagrammatic" ? (
+      {selectedStrategy === "category" ? (
         <div className="stage-grid-2col">
           {/* Body 1 Column */}
           <div
@@ -102,35 +102,32 @@ export const Step5Bifurcation: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#2563eb" }} />
                 <h4 style={{ fontSize: "1.08rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  Body 1: The 5 Stages of Cement Production
+                  Body 1: Food, Drink &amp; Tobacco (Dominant Sector)
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ background: "#eff6ff", color: "#1e40af", fontWeight: 750 }}>
-                76 Words
+                65 Words
               </span>
             </div>
 
             <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.5 }}>
-              Traces the step-by-step linear transformation of raw minerals into finished bagged cement: crushing, mixing, rotating cylinder heating with direct flame, conveyor grinding, and final bagging.
+              Focuses exclusively on the primary expenditure category across all five nations, contrasting the leading pair against the lower tier.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>1. Raw Inputs &amp; Crushing:</strong> Limestone and clay pass through a mechanical crusher to be pulverized into fine powder.
+                <strong style={{ color: "var(--slate-900)" }}>1. Upper Tier (Turkey &amp; Ireland):</strong> Turkey peaked at 32.14% (highest in the entire table), closely followed by Ireland at 28.91%.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>2. Uniform Blending:</strong> Powder enters an industrial mixer for thorough blending before thermal processing.
+                <strong style={{ color: "var(--slate-900)" }}>2. Lower Tier (Spain, Italy, Sweden):</strong> Spain stood at 18.80%, while Italy (16.36%) and Sweden (15.77%) spent the least on sustenance.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>3. Rotating Kiln / Heater:</strong> Substance travels down an inclined rotating cylinder while heat is applied from the base.
-              </div>
-              <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>4. Conveyor Grinding &amp; Bagging:</strong> Transported via conveyor belt to a grinder, milled into cement, and packed into bags.
+                <strong style={{ color: "var(--slate-900)" }}>3. Why Group Here:</strong> Allows clear internal contrast: Turkish/Irish food spending was nearly double that of Sweden.
               </div>
             </div>
 
             <div style={{ marginTop: "auto", background: "#f8fafc", padding: "12px 14px", borderRadius: "12px", fontSize: "0.83rem", color: "#1e293b", fontStyle: "italic", borderLeft: "3px solid #2563eb" }}>
-              “Regarding the manufacture of cement, limestone and clay are initially passed through a crusher to be pulverized into a fine powder...”
+              “In terms of food, drinks, and tobacco, Turkey allocated the highest proportion of any country, with nearly a third of all consumer expenditure (32.14%) directed towards this category...”
             </div>
           </div>
 
@@ -149,37 +146,34 @@ export const Step5Bifurcation: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#059669" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#d97706" }} />
                 <h4 style={{ fontSize: "1.08rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  Body 2: Concrete Batch Production &amp; Ratios
+                  Body 2: Clothing/Footwear &amp; Leisure/Education
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ background: "#ecfdf5", color: "#065f46", fontWeight: 750 }}>
-                66 Words
+              <span className="apple-badge neutral" style={{ background: "#fff7ed", color: "#9a3412", fontWeight: 750 }}>
+                69 Words
               </span>
             </div>
 
             <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.5 }}>
-              Details the four ingredients in descending mathematical order, establishing the structural roles of coarse aggregate, fine aggregate, cement binder, and water slurry in the rotating mixer.
+              Analyzes Italy's clothing outlier alongside the tightly clustered group, then synthesizes the minority leisure and education figures.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>1. Coarse Aggregate (50% Gravel):</strong> Small stones constitute half of the entire concrete recipe, providing primary structural bulk.
+                <strong style={{ color: "var(--slate-900)" }}>1. Italian Clothing Outlier:</strong> Italy was the undisputed leader at 9.00%, outstripping all other nations by over 2.3 percentage points.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>2. Fine Aggregate (25% Sand):</strong> Sand accounts for a quarter of the composition, filling the voids between gravel stones.
+                <strong style={{ color: "var(--slate-900)" }}>2. Clothing Cluster &amp; Floor:</strong> Turkey (6.63%), Spain (6.51%), and Ireland (6.43%) clustered around 6.5%, with Sweden lowest at 5.40%.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>3. Binding Agent (15% Cement):</strong> Produced in Diagram 1, cement forms 15% to bind the dry aggregates together.
-              </div>
-              <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>4. Hydration &amp; Mixing (10% Water):</strong> Water activates hydration as all 4 components rotate in the concrete mixer drum.
+                <strong style={{ color: "var(--slate-900)" }}>3. Leisure/Education Spectrum:</strong> Turkey again topped this sector (4.35%), Sweden &amp; Italy matched at ~3.2%, and Spain fell to 1.98% (table floor).
               </div>
             </div>
 
-            <div style={{ marginTop: "auto", background: "#f8fafc", padding: "12px 14px", borderRadius: "12px", fontSize: "0.83rem", color: "#1e293b", fontStyle: "italic", borderLeft: "3px solid #059669" }}>
-              “Turning to concrete production, four distinct raw materials are combined inside a cylindrical concrete mixer in precise proportions. Gravel constitutes half (50%)...”
+            <div style={{ marginTop: "auto", background: "#f8fafc", padding: "12px 14px", borderRadius: "12px", fontSize: "0.83rem", color: "#1e293b", fontStyle: "italic", borderLeft: "3px solid #d97706" }}>
+              “Turning to clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outstripping Turkey (6.63%), Spain (6.51%), and Ireland (6.43%)...”
             </div>
           </div>
         </div>
@@ -188,18 +182,18 @@ export const Step5Bifurcation: React.FC = () => {
         <div className="stage-grid-2col">
           <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "22px", display: "flex", flexDirection: "column", gap: "12px" }}>
             <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-              Phase 1: Raw Mineral Extraction &amp; Chemical Alteration
+              Group 1: Turkey, Ireland &amp; Italy (Distinctive High Spenders)
             </h4>
             <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", lineHeight: 1.5 }}>
-              Groups all thermodynamic and chemical procedures: crushing limestone and clay, blending the raw powder, and subjecting it to intense rotary kiln heating to synthesize intermediate clinker.
+              Groups the three countries with the most prominent peaks: Turkey (leading food 32.14% and leisure 4.35%), Ireland (second in food 28.91%), and Italy (undisputed clothing leader at 9.00%).
             </p>
           </div>
           <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "22px", display: "flex", flexDirection: "column", gap: "12px" }}>
             <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-              Phase 2: Final Mechanical Processing &amp; Construction Blending
+              Group 2: Spain &amp; Sweden (Moderate &amp; Frugal Economies)
             </h4>
             <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", lineHeight: 1.5 }}>
-              Groups all final mechanical steps: grinding clinker into cement, packaging into bags, and combining the finished cement with gravel, sand, and water in the rotating mixer.
+              Covers Spain (intermediate food 18.80%, table floor in leisure 1.98%) and Sweden (lowest sustenance 15.77% and apparel 5.40%, but moderate leisure 3.22%).
             </p>
           </div>
         </div>

@@ -45,189 +45,190 @@ export type {
 };
 
 // ==========================================
-// 1. CEMENT PRODUCTION PROCESS STAGES
+// 1. CONSUMER SPENDING TABLE DATA (2002)
 // ==========================================
 
-export const CEMENT_PROCESS_STAGES: ProcessStageItem[] = [
+export interface ConsumerSpendingCountryRow {
+  id: string;
+  country: string;
+  foodDrinkTobacco: number; // Percentage
+  clothingFootwear: number;
+  leisureEducation: number;
+  totalSpending?: number;
+  foodRank: number;
+  clothingRank: number;
+  leisureRank: number;
+  notableFeature: string;
+  band9Sentence: string;
+}
+
+export const CONSUMER_SPENDING_ROWS: ConsumerSpendingCountryRow[] = [
   {
-    stageNumber: 1,
-    id: "crushing",
-    name: "1. Crushing Limestone & Clay",
-    equipment: "Crusher",
-    inputs: "Limestone + Clay (Raw Minerals)",
-    output: "Fine Powder",
-    actionText: "Limestone and clay are introduced into a heavy-duty crusher to be pulverized into a fine powder.",
-    passiveVerb: "are crushed / pulverized",
-    band9Phrase: "“Initially, limestone and clay are introduced into a crusher to be pulverized into a fine powder.”",
-    color: "#2563eb"
+    id: "turkey",
+    country: "Turkey",
+    foodDrinkTobacco: 32.14,
+    clothingFootwear: 6.63,
+    leisureEducation: 4.35,
+    foodRank: 1,
+    clothingRank: 2,
+    leisureRank: 1,
+    notableFeature: "Highest overall spender on Food (32.14%) and Leisure/Education (4.35%)",
+    band9Sentence:
+      "“Turkey allocated nearly a third of all consumer expenditure to food, drinks, and tobacco (32.14%), representing the highest single proportion in the entire table, while also leading the leisure and education sector at 4.35%.”"
   },
   {
-    stageNumber: 2,
-    id: "mixing",
-    name: "2. Mechanical Blending",
-    equipment: "Mixer",
-    inputs: "Crushed Powder",
-    output: "Uniform Powder Blend",
-    actionText: "The crushed powder passes into an industrial mixer where it is blended thoroughly into a homogeneous mixture.",
-    passiveVerb: "is mixed / blended",
-    band9Phrase: "“Following this, the powder is transferred to an industrial mixer to achieve a uniform blend.”",
-    color: "#0284c7"
+    id: "ireland",
+    country: "Ireland",
+    foodDrinkTobacco: 28.91,
+    clothingFootwear: 6.43,
+    leisureEducation: 2.21,
+    foodRank: 2,
+    clothingRank: 4,
+    leisureRank: 4,
+    notableFeature: "Second highest food spending (28.91%), but modest leisure allocation (2.21%)",
+    band9Sentence:
+      "“Ireland followed closely behind Turkey in sustenance spending, with 28.91% of consumer budgets directed towards food, drink, and tobacco.”"
   },
   {
-    stageNumber: 3,
-    id: "heating",
-    name: "3. Rotating Kiln / Thermal Treatment",
-    equipment: "Rotating Heater (Inclined Cylinder)",
-    inputs: "Blended Powder + Direct Heat",
-    output: "Heated Material / Clinker",
-    actionText: "The mixture enters an inclined rotating cylinder heater where intense heat is applied directly from the base as the drum turns.",
-    passiveVerb: "is heated / rotated",
-    band9Phrase: "“Next, the blended substance enters an inclined rotating cylinder heater where it is subjected to high temperatures applied from the lower end.”",
-    color: "#ea580c"
+    id: "spain",
+    country: "Spain",
+    foodDrinkTobacco: 18.80,
+    clothingFootwear: 6.51,
+    leisureEducation: 1.98,
+    foodRank: 3,
+    clothingRank: 3,
+    leisureRank: 5,
+    notableFeature: "Lowest leisure/education spending in entire table (1.98%), moderate food (18.80%)",
+    band9Sentence:
+      "“Spanish expenditure on food stood at 18.80%, while its spending on leisure and education was the lowest recorded in the entire table at just 1.98%.”"
   },
   {
-    stageNumber: 4,
-    id: "grinding",
-    name: "4. Milling & Grinding",
-    equipment: "Grinder & Conveyor Belt",
-    inputs: "Heated Material",
-    output: "Finished Cement Powder",
-    actionText: "Having exited the rotating heater, the material travels along a conveyor belt to a grinder, where it is milled into fine cement.",
-    passiveVerb: "is conveyed / ground",
-    band9Phrase: "“After being heated, the mixture travels along a conveyor belt into a grinder, where it is finely milled into cement.”",
-    color: "#7c3aed"
+    id: "italy",
+    country: "Italy",
+    foodDrinkTobacco: 16.36,
+    clothingFootwear: 9.00,
+    leisureEducation: 3.20,
+    foodRank: 4,
+    clothingRank: 1,
+    leisureRank: 3,
+    notableFeature: "Clear leader in Clothing & Footwear (9.00%), outspending all other nations",
+    band9Sentence:
+      "“Italy was the undisputed leader in clothing and footwear expenditure at exactly 9.00%, outstripping all other surveyed countries by a noticeable margin.”"
   },
   {
-    stageNumber: 5,
-    id: "packaging",
-    name: "5. Packaging & Bagging",
-    equipment: "Bagging Unit",
-    inputs: "Finished Cement",
-    output: "Bags of Cement",
-    actionText: "The completed cement is poured into heavy-duty bags, ready for commercial storage, transport, or immediate concrete production.",
-    passiveVerb: "is packed / bagged",
-    band9Phrase: "“Finally, the resulting cement is packed into bags, ready for commercial distribution or immediate construction use.”",
-    color: "#059669"
+    id: "sweden",
+    country: "Sweden",
+    foodDrinkTobacco: 15.77,
+    clothingFootwear: 5.40,
+    leisureEducation: 3.22,
+    foodRank: 5,
+    clothingRank: 5,
+    leisureRank: 2,
+    notableFeature: "Lowest proportion on Food (15.77%) and Clothing (5.40%), but second in Leisure (3.22%)",
+    band9Sentence:
+      "“Sweden registered the lowest spending figures for both sustenance (15.77%) and clothing (5.40%), yet allocated a comparatively healthy 3.22% to leisure and education.”"
   }
 ];
 
-// ==========================================
-// 2. CONCRETE PRODUCTION INGREDIENTS
-// ==========================================
+export interface ConsumerSpendingCategorySummary {
+  id: "food" | "clothing" | "leisure";
+  title: string;
+  shortLabel: string;
+  rangeText: string;
+  highestCountry: string;
+  highestVal: number;
+  lowestCountry: string;
+  lowestVal: number;
+  color: string;
+  macroRole: string;
+  band9OverviewClause: string;
+}
 
-export const CONCRETE_INGREDIENTS: ConcreteIngredientItem[] = [
+export const CONSUMER_CATEGORIES: ConsumerSpendingCategorySummary[] = [
   {
-    id: "gravel",
-    name: "Gravel (small stones)",
-    percentage: 50,
-    role: "Dominant Coarse Aggregate (Half of entire mixture)",
-    note: "Provides compressive strength and bulk structure",
-    color: "#475569",
-    band9Phrase: "“Gravel, consisting of small stones, constitutes half (50%) of the total mixture, serving as the primary coarse aggregate.”"
-  },
-  {
-    id: "sand",
-    name: "Sand",
-    percentage: 25,
-    role: "Fine Aggregate (One quarter of mixture)",
-    note: "Fills interstitial voids between gravel stones",
-    color: "#d97706",
-    band9Phrase: "“Sand accounts for a quarter (25%) of the blend, functioning as a fine aggregate.”"
-  },
-  {
-    id: "cement",
-    name: "Cement",
-    percentage: 15,
-    role: "Binding Agent (Manufactured in Diagram 1)",
-    note: "Glues aggregates together when activated by water",
+    id: "food",
+    title: "Food / Drink / Tobacco",
+    shortLabel: "Food & Sustenance",
+    rangeText: "15.77% – 32.14%",
+    highestCountry: "Turkey (32.14%)",
+    highestVal: 32.14,
+    lowestCountry: "Sweden (15.77%)",
+    lowestVal: 15.77,
     color: "#2563eb",
-    band9Phrase: "“Manufactured cement comprises 15% of the composition to act as the essential binding agent.”"
+    macroRole: "Overwhelmingly dominant expenditure category across all five nations",
+    band9OverviewClause: "Food, drinks, and tobacco accounted for the largest proportion of consumer expenditure across all five surveyed nations."
   },
   {
-    id: "water",
-    name: "Water",
-    percentage: 10,
-    role: "Hydration & Slurry Agent (Smallest portion)",
-    note: "Triggers chemical curing and enables workability",
-    color: "#0284c7",
-    band9Phrase: "“Water represents the smallest fraction at just 10%, activating the hydration process.”"
+    id: "clothing",
+    title: "Clothing / Footwear",
+    shortLabel: "Clothing & Footwear",
+    rangeText: "5.40% – 9.00%",
+    highestCountry: "Italy (9.00%)",
+    highestVal: 9.00,
+    lowestCountry: "Sweden (5.40%)",
+    lowestVal: 5.40,
+    color: "#d97706",
+    macroRole: "Second highest spending category in every single nation",
+    band9OverviewClause: "Clothing and footwear consistently represented the second highest category of spending, led by Italy."
+  },
+  {
+    id: "leisure",
+    title: "Leisure / Education",
+    shortLabel: "Leisure & Education",
+    rangeText: "1.98% – 4.35%",
+    highestCountry: "Turkey (4.35%)",
+    highestVal: 4.35,
+    lowestCountry: "Spain (1.98%)",
+    lowestVal: 1.98,
+    color: "#059669",
+    macroRole: "Consistently the lowest expenditure share throughout all countries",
+    band9OverviewClause: "Leisure and education consistently accounted for the lowest share of consumer spending throughout."
   }
 ];
 
-// ==========================================
-// 3. BACKWARD COMPATIBILITY DATA SHIMS
-// ==========================================
-
+// Backward compatibility shims
 export const SPENDING_CATEGORIES: SpendingCategoryItem[] = [
   {
     id: "teachers_salaries",
-    label: "Crusher & Mixing (Stage 1 & 2)",
-    shortLabel: "Crush & Mix",
+    label: "Food/ Drink/ Tobacco (Dominant Category)",
+    shortLabel: "Food (15.77% – 32.14%)",
     color: "#2563eb",
     group: "staff",
-    y1981: 50,
-    y1991: 50,
-    y2001: 50,
-    netChange: 0,
+    y1981: 15.77,
+    y1991: 22.8,
+    y2001: 32.14,
+    netChange: 16.37,
     trendType: "peak_dip",
-    trendDescription: "Limestone and clay are crushed into powder and mixed thoroughly.",
-    band9Phrase: "“Initially, limestone and clay are crushed into powder and mixed thoroughly.”"
+    trendDescription: "Turkey (32.14%) and Ireland (28.91%) lead sustenance spending.",
+    band9Phrase: "“Food, drink, and tobacco constituted the largest share of consumer expenditure in all five nations.”"
   },
   {
     id: "other_workers_salaries",
-    label: "Rotating Heater (Stage 3)",
-    shortLabel: "Rotary Kiln",
-    color: "#ea580c",
+    label: "Clothing/ Footwear (Secondary Category)",
+    shortLabel: "Clothing (5.40% – 9.00%)",
+    color: "#d97706",
     group: "staff",
-    y1981: 25,
-    y1991: 25,
-    y2001: 25,
-    netChange: 0,
+    y1981: 5.4,
+    y1991: 6.8,
+    y2001: 9.0,
+    netChange: 3.6,
     trendType: "continuous_fall",
-    trendDescription: "Substance is heated in an inclined rotating cylinder with heat from the base.",
-    band9Phrase: "“The mixture is subjected to high heat in an inclined rotating cylinder.”"
+    trendDescription: "Italy (9.00%) allocated the highest proportion to clothing, with Sweden lowest (5.40%).",
+    band9Phrase: "“Italy stood out as the largest spender on clothing and footwear at exactly 9.00%.”"
   },
   {
     id: "furniture_and_equipment",
-    label: "Grinding & Bagging (Stage 4 & 5)",
-    shortLabel: "Grind & Bag",
+    label: "Leisure/ Education (Minority Category)",
+    shortLabel: "Leisure (1.98% – 4.35%)",
     color: "#059669",
     group: "non_staff",
-    y1981: 25,
-    y1991: 25,
-    y2001: 25,
-    netChange: 0,
+    y1981: 1.98,
+    y1991: 3.0,
+    y2001: 4.35,
+    netChange: 2.37,
     trendType: "fluctuated_surge",
-    trendDescription: "Cooled mixture is ground into fine cement and bagged for transport.",
-    band9Phrase: "“After thermal treatment, the substance is ground into fine cement and bagged.”"
-  },
-  {
-    id: "resources",
-    label: "Concrete Aggregates: Gravel (50%) & Sand (25%)",
-    shortLabel: "Aggregates (75%)",
-    color: "#d97706",
-    group: "non_staff",
-    y1981: 75,
-    y1991: 75,
-    y2001: 75,
-    netChange: 0,
-    trendType: "surge_plunge",
-    trendDescription: "Gravel (50%) and sand (25%) together form three-quarters (75%) of concrete.",
-    band9Phrase: "“Gravel and sand combined make up 75% of the total concrete mixture.”"
-  },
-  {
-    id: "insurance",
-    label: "Concrete Binder & Liquid: Cement (15%) & Water (10%)",
-    shortLabel: "Binder & Water (25%)",
-    color: "#7c3aed",
-    group: "non_staff",
-    y1981: 25,
-    y1991: 25,
-    y2001: 25,
-    netChange: 0,
-    trendType: "quadrupled",
-    trendDescription: "Cement (15%) and water (10%) form the remaining quarter (25%) as binder and activator.",
-    band9Phrase: "“Cement and water comprise the remaining 25% of the concrete formulation.”"
+    trendDescription: "Leisure and education accounted for the smallest portion in every country, never exceeding 4.35%.",
+    band9Phrase: "“Leisure and education accounted for the lowest proportion of spending in every nation.”"
   }
 ];
 
@@ -235,583 +236,396 @@ export const SPENDING_YEARS: SchoolSpendingYearData[] = [
   {
     year: 1981,
     slices: [
-      { categoryId: "teachers_salaries", label: "Crush & Mix", percentage: 35, color: "#2563eb" },
-      { categoryId: "other_workers_salaries", label: "Rotating Heater", percentage: 35, color: "#ea580c" },
-      { categoryId: "furniture_and_equipment", label: "Grind & Bag", percentage: 30, color: "#059669" }
+      { categoryId: "teachers_salaries", label: "Food/Drink/Tobacco", percentage: 55, color: "#2563eb" },
+      { categoryId: "other_workers_salaries", label: "Clothing/Footwear", percentage: 30, color: "#d97706" },
+      { categoryId: "furniture_and_equipment", label: "Leisure/Education", percentage: 15, color: "#059669" }
     ],
-    totalStaffPercent: 70,
-    totalNonStaffPercent: 30,
-    topCategory: "Cement Production Line",
-    lowestCategory: "Packaging",
-    notes: "5 linear manufacturing stages transform raw minerals into bagged cement."
-  },
-  {
-    year: 1991,
-    slices: [
-      { categoryId: "resources", label: "Gravel (50%)", percentage: 50, color: "#475569" },
-      { categoryId: "resources", label: "Sand (25%)", percentage: 25, color: "#d97706" },
-      { categoryId: "insurance", label: "Cement (15%)", percentage: 15, color: "#2563eb" },
-      { categoryId: "insurance", label: "Water (10%)", percentage: 10, color: "#0284c7" }
-    ],
-    totalStaffPercent: 75,
-    totalNonStaffPercent: 25,
-    topCategory: "Gravel (50%)",
-    lowestCategory: "Water (10%)",
-    notes: "Concrete batch mixing: 4 ingredients combined in a rotating mixer."
-  },
-  {
-    year: 2001,
-    slices: [
-      { categoryId: "resources", label: "Coarse Aggregates (50%)", percentage: 50, color: "#475569" },
-      { categoryId: "resources", label: "Fine Aggregates (25%)", percentage: 25, color: "#d97706" },
-      { categoryId: "insurance", label: "Binder & Hydration (25%)", percentage: 25, color: "#2563eb" }
-    ],
-    totalStaffPercent: 75,
-    totalNonStaffPercent: 25,
-    topCategory: "Total Aggregates (75%)",
-    lowestCategory: "Binder & Hydration (25%)",
-    notes: "Aggregates account for three-quarters of the final volume."
+    totalStaffPercent: 85,
+    totalNonStaffPercent: 15,
+    topCategory: "Food/Drink/Tobacco (Turkey: 32.14%)",
+    lowestCategory: "Leisure/Education (Spain: 1.98%)",
+    notes: "Comparative table of consumer expenditure across 5 nations in 2002."
   }
 ];
 
 export const SPENDING_HOTSPOTS: SpendingHotspot[] = [
   {
-    id: "stage-1-crushing",
-    title: "1. Crushing Limestone & Clay",
-    category: "Crusher & Mixing (Stage 1 & 2)",
-    y1981: 1,
-    y1991: 1,
-    y2001: 1,
-    trendText: "Limestone and clay are crushed into fine powder by a mechanical crusher.",
-    contrastKey: "First mechanical step in cement manufacturing.",
-    band9Sentence: "Initially, limestone and clay are fed into a mechanical crusher to be pulverized into a fine powder.",
-    keyFeature: "Raw minerals $\\rightarrow$ Crusher $\\rightarrow$ Powder."
+    id: "turkey-food",
+    title: "Turkey: Peak Food Spender (32.14%)",
+    category: "Food/ Drink/ Tobacco",
+    y1981: 32.14,
+    y1991: 32.14,
+    y2001: 32.14,
+    trendText: "Nearly a third of total Turkish expenditure went towards sustenance.",
+    contrastKey: "Highest single value in the entire table.",
+    band9Sentence: "Turkey allocated the highest single proportion to food, drink, and tobacco at 32.14%.",
+    keyFeature: "Overwhelmingly highest spending figure across all categories and countries."
   },
   {
-    id: "stage-2-mixing",
-    title: "2. Industrial Mixing Chamber",
-    category: "Crusher & Mixing (Stage 1 & 2)",
-    y1981: 2,
-    y1991: 2,
-    y2001: 2,
-    trendText: "Crushed powder enters an industrial mixer for thorough blending.",
-    contrastKey: "Ensures uniform distribution before heating.",
-    band9Sentence: "Following this, the powder is blended thoroughly in an industrial mixer to achieve a uniform consistency.",
-    keyFeature: "Homogeneous blending of crushed minerals."
+    id: "ireland-food",
+    title: "Ireland: High Food Spender (28.91%)",
+    category: "Food/ Drink/ Tobacco",
+    y1981: 28.91,
+    y1991: 28.91,
+    y2001: 28.91,
+    trendText: "Second highest food expenditure, just 3.23% below Turkey.",
+    contrastKey: "Substantially higher than Italy, Spain, and Sweden.",
+    band9Sentence: "Ireland recorded the second highest food expenditure at 28.91%, far exceeding the remaining three nations.",
+    keyFeature: "Forms the top tier of food spenders alongside Turkey."
   },
   {
-    id: "stage-3-heater",
-    title: "3. Rotating Heater / Kiln",
-    category: "Rotating Heater (Stage 3)",
-    y1981: 3,
-    y1991: 3,
-    y2001: 3,
-    trendText: "Mixture passes through an inclined rotating cylinder while intense heat is applied from the base.",
-    contrastKey: "Core thermal processing stage of cement production.",
-    band9Sentence: "The blended material then enters an inclined rotating cylinder heater where it is subjected to high heat applied from the lower end.",
-    keyFeature: "Direct heat application in a continuously rotating drum."
+    id: "italy-clothing",
+    title: "Italy: Leader in Clothing (9.00%)",
+    category: "Clothing/ Footwear",
+    y1981: 9.0,
+    y1991: 9.0,
+    y2001: 9.0,
+    trendText: "Italy spent 9.00% on clothing and footwear, well above the other four nations.",
+    contrastKey: "Outstrips Sweden (5.40%) by 3.6 percentage points.",
+    band9Sentence: "In terms of clothing and footwear, Italy was the clear leader, with consumers allocating 9.00% of expenditure.",
+    keyFeature: "The only country where clothing reached 9%."
   },
   {
-    id: "stage-4-grinding",
-    title: "4. Conveyor Belt & Grinder",
-    category: "Grinding & Bagging (Stage 4 & 5)",
-    y1981: 4,
-    y1991: 4,
-    y2001: 4,
-    trendText: "Heated output is transported by conveyor belt into a grinder, milling it into fine cement.",
-    contrastKey: "Transforms heated clinker into usable powdery cement.",
-    band9Sentence: "Having exited the heater, the material travels along a conveyor belt to a grinder, where it is milled into fine cement powder.",
-    keyFeature: "Conveyor belt transport $\\rightarrow$ Grinder $\\rightarrow$ Cement."
+    id: "spain-leisure",
+    title: "Spain: Lowest Table Figure (1.98%)",
+    category: "Leisure/ Education",
+    y1981: 1.98,
+    y1991: 1.98,
+    y2001: 1.98,
+    trendText: "Leisure and education in Spain was the only figure in the entire table below 2%.",
+    contrastKey: "Lowest value in the entire dataset.",
+    band9Sentence: "Spain registered the lowest figure in the entire table, devoting a mere 1.98% to leisure and education.",
+    keyFeature: "Sub-2% national expenditure record."
   },
   {
-    id: "stage-5-packaging",
-    title: "5. Packaging into Bags",
-    category: "Grinding & Bagging (Stage 4 & 5)",
-    y1981: 5,
-    y1991: 5,
-    y2001: 5,
-    trendText: "Finished cement is poured into bags for storage or transportation.",
-    contrastKey: "Final output of Diagram 1, ready for commercial distribution.",
-    band9Sentence: "Finally, the completed cement is packaged into bags, ready for transport or immediate use in concrete production.",
-    keyFeature: "Bags of cement ready for use."
-  },
-  {
-    id: "concrete-proportions",
-    title: "6. Concrete Recipe: 4 Ingredients",
-    category: "Concrete Aggregates: Gravel (50%) & Sand (25%)",
-    y1981: 50,
-    y1991: 50,
-    y2001: 50,
-    trendText: "Concrete comprises 50% gravel, 25% sand, 15% cement, and 10% water.",
-    contrastKey: "Aggregates (gravel + sand) account for 75% of total volume.",
-    band9Sentence: "Regarding concrete production, gravel forms half (50%) of the mixture, sand makes up 25%, cement accounts for 15%, and water represents 10%.",
-    keyFeature: "Gravel (50%) + Sand (25%) + Cement (15%) + Water (10%)."
-  },
-  {
-    id: "concrete-mixer",
-    title: "7. Rotating Concrete Mixer",
-    category: "Concrete Binder & Liquid: Cement (15%) & Water (10%)",
-    y1981: 100,
-    y1991: 100,
-    y2001: 100,
-    trendText: "All four ingredients are loaded simultaneously into a rotating concrete mixer to yield wet concrete.",
-    contrastKey: "Single-stage batch mixing compared to 5-stage linear cement process.",
-    band9Sentence: "All four elements are loaded simultaneously into a cylindrical concrete mixer, which rotates to produce an even slurry of concrete.",
-    keyFeature: "Mechanical rotating drum yielding wet concrete."
+    id: "sweden-profile",
+    title: "Sweden: Frugal Sustenance & Apparel (15.77% & 5.40%)",
+    category: "Overall Profile",
+    y1981: 15.77,
+    y1991: 5.4,
+    y2001: 3.22,
+    trendText: "Sweden had the lowest spending on both food (15.77%) and clothing (5.40%).",
+    contrastKey: "Second highest in leisure/education (3.22%).",
+    band9Sentence: "Swedish consumers spent the lowest proportions on food (15.77%) and clothing (5.40%), yet allocated 3.22% to leisure.",
+    keyFeature: "Inverted spending dynamic compared to Turkey and Ireland."
   }
 ];
 
-export const ACTIVITY_DATA: ActivityAgeGroup[] = SPENDING_CATEGORIES.map((c) => ({
-  id: c.id,
-  ageGroup: c.label,
-  shortLabel: c.shortLabel,
-  male: c.y1981,
-  female: c.y2001,
-  genderGap: c.y2001 - c.y1981,
-  higherGender: "equal",
-  annotation: c.trendDescription,
-  isPeak: undefined,
-  isTrough: undefined
-}));
-
-export const ACTIVITY_GENDERS: ActivityGenderInfo[] = [
-  {
-    id: "male",
-    name: "Cement Production",
-    color: "#2563eb",
-    barColor: "#2563eb",
-    bgBadge: "rgba(37, 99, 235, 0.12)",
-    peakAge: "Crushing & Heating (5 Stages)",
-    peakValue: 100,
-    lowestAge: "Raw Limestone & Clay",
-    lowestValue: 0,
-    summary: "Linear 5-stage manufacturing process transforming limestone and clay into bagged cement.",
-    band9Phrase: "“Cement production is a multi-step industrial procedure requiring specialized equipment and intense heat.”"
-  },
-  {
-    id: "female",
-    name: "Concrete Production",
-    color: "#059669",
-    barColor: "#059669",
-    bgBadge: "rgba(5, 150, 105, 0.12)",
-    peakAge: "Gravel (50%)",
-    peakValue: 50,
-    lowestAge: "Water (10%)",
-    lowestValue: 10,
-    summary: "Single-stage batch mixing combining gravel (50%), sand (25%), cement (15%), and water (10%) in a rotating drum.",
-    band9Phrase: "“Concrete production is a single-stage batch mixing process combining four distinct materials.”"
-  }
-];
-
-export const ACTIVITY_HOTSPOTS: ActivityHotspot[] = SPENDING_HOTSPOTS.map((h) => ({
-  id: h.id,
-  title: h.title,
-  ageGroup: h.category,
-  maleValue: h.y1981,
-  femaleValue: h.y2001,
-  gapText: "Stage",
-  contrastKey: h.contrastKey,
-  band9Sentence: h.band9Sentence,
-  keyFeature: h.keyFeature
-}));
-
-export const HOURLY_AUDIENCE_DATA: HourlyAudiencePoint[] = [
-  { hour: 1, timeLabel: "Crush", tv: 50, radio: 50 },
-  { hour: 2, timeLabel: "Mix", tv: 50, radio: 50 },
-  { hour: 3, timeLabel: "Heat", tv: 100, radio: 25 },
-  { hour: 4, timeLabel: "Grind", tv: 50, radio: 25 },
-  { hour: 5, timeLabel: "Bag", tv: 25, radio: 25 }
-];
-
-export const MEDIA_CHANNELS: MediaChannelInfo[] = [
-  {
-    id: "tv",
-    name: "Cement Production Stages",
-    color: "#2563eb",
-    lineStroke: "#2563eb",
-    bgBadge: "rgba(37, 99, 235, 0.15)",
-    peakTime: "Heating",
-    peakValue: 100,
-    troughTime: "Crush",
-    troughValue: 20,
-    summary: "5 sequential stages from raw materials to bagged cement.",
-    band9Phrase: "“Cement requires 5 sequential mechanical and thermal stages.”"
-  },
-  {
-    id: "radio",
-    name: "Concrete Batch Ingredients",
-    color: "#059669",
-    lineStroke: "#059669",
-    bgBadge: "rgba(5, 150, 105, 0.12)",
-    peakTime: "Gravel (50%)",
-    peakValue: 50,
-    troughTime: "Water (10%)",
-    troughValue: 10,
-    summary: "4 ingredients mixed simultaneously in a rotating drum.",
-    band9Phrase: "“Concrete mixes 4 ingredients simultaneously in a rotating drum.”"
-  }
-];
-
-export const AUDIENCE_HOTSPOTS: AudienceHotspot[] = ACTIVITY_HOTSPOTS.map((h) => ({
-  id: h.id,
-  title: h.title,
-  zone: "morning",
-  timeRange: h.ageGroup,
-  radioState: h.contrastKey,
-  tvState: h.keyFeature,
-  contrastKey: h.contrastKey,
-  band9Sentence: h.band9Sentence,
-  keyFeature: h.keyFeature
-}));
-
-export const TASK1_HOTSPOTS: ComparisonHotspot[] = SPENDING_HOTSPOTS.map((h) => ({
-  id: h.id,
-  title: h.title,
-  zone: h.category,
-  normalState: h.contrastKey,
-  elNinoState: h.keyFeature,
-  contrastKey: h.contrastKey,
-  band9Sentence: h.band9Sentence
-}));
+export const CEMENT_PROCESS_STAGES: ProcessStageItem[] = [];
+export const CONCRETE_INGREDIENTS: ConcreteIngredientItem[] = [];
 
 // ==========================================
-// 4. MASTER TASK 1 DATA OBJECT
+// 2. MASTER TASK 1 DATA OBJECT (TABLE ANALYSIS)
 // ==========================================
 
 export const TASK1_DATA: Task1Data = {
-  id: "cement-concrete-production-process",
-  taskType: "IELTS Academic Writing Task 1 • Process Diagrams",
-  title: "The Procedure of Making Cement and Concrete",
+  id: "consumer-spending-five-countries-2002-table",
+  taskType: "IELTS Academic Writing Task 1 • Comparative Table Analysis",
+  title: "Consumer Spending on Different Items in Five Countries (2002)",
   companyName: "Cambridge IELTS Academic Writing Task 1",
-  unit: "Percentage (%) & Industrial Stages",
+  unit: "Percentage of Consumer Expenditure (%)",
   questionText:
-    "The diagrams show the procedure of making cement and concrete.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
-  imageFileName: "cement_concrete_production.png",
-  hdImageFileName: "cement_concrete_production.jpg",
-  scanImageFileName: "cement_concrete_production.png",
-  audioUrl: "materials/flowchart-for-task-1.png",
+    "The table below gives information on consumer spending on different items in five different countries in 2002.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+  imageFileName: "materials/consumer_spending_table_2002.jpg",
+  hdImageFileName: "materials/consumer_spending_table_2002.jpg",
+  scanImageFileName: "materials/consumer_spending_table_2002.jpg",
+  audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
   audioClueText:
-    "The diagrams illustrate the multi-stage procedure of manufacturing cement from limestone and clay, followed by the four-ingredient batch mixing required to produce concrete in a rotating mixer.",
+    "The table compares consumer spending across Ireland, Italy, Spain, Sweden, and Turkey in 2002. Food, drink, and tobacco dominated spending across all five nations, while leisure and education consistently represented the smallest share.",
   timingSeconds: 1200,
 
   sampleIntro:
-    "The two diagrams illustrate the multi-stage industrial procedure involved in manufacturing cement, followed by how it is subsequently combined with other raw ingredients to produce concrete.",
+    "The table compares the proportion of national consumer expenditure allocated to three broad categories of goods and services across five European countries in 2002.",
 
   sampleOverview:
-    "Overall, cement production is a multi-step, sequential process requiring specialized equipment, physical crushing, and intense heating, whereas concrete manufacturing is a straightforward, single-stage batch mixing procedure wherein coarse and fine aggregates constitute the vast majority of the mixture, bound together by cement and activated with water.",
-
-  processStages: CEMENT_PROCESS_STAGES,
-  concreteIngredients: CONCRETE_INGREDIENTS,
+    "Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations, whereas leisure and education accounted for the smallest share of spending throughout. Furthermore, Turkish and Irish consumers devoted significantly larger proportions of their budgets to sustenance than their European counterparts, while Italy recorded the largest proportion spent on clothing and footwear.",
 
   spendingCategories: SPENDING_CATEGORIES,
   spendingYears: SPENDING_YEARS,
   spendingHotspots: SPENDING_HOTSPOTS,
 
-  hourlyPoints: HOURLY_AUDIENCE_DATA,
-  channels: MEDIA_CHANNELS,
-  audienceHotspots: AUDIENCE_HOTSPOTS,
-  activityData: ACTIVITY_DATA,
-  genderInfo: ACTIVITY_GENDERS,
-  activityHotspots: ACTIVITY_HOTSPOTS,
+  diagramData: {
+    hotspots: SPENDING_HOTSPOTS.map((h) => ({
+      id: h.id,
+      title: h.title,
+      zone: h.category,
+      normalState: h.contrastKey,
+      elNinoState: h.keyFeature,
+      contrastKey: h.contrastKey,
+      band9Sentence: h.band9Sentence
+    })),
+    comparisonsSummary: {
+      food_dominance: "Food, drink, and tobacco was by far the largest expenditure category in every country (15.77% to 32.14%).",
+      clothing_rank: "Clothing and footwear ranked second throughout, with Italy leading at 9.00%.",
+      leisure_minority: "Leisure and education received the lowest funding across all nations, ranging between 1.98% and 4.35%."
+    }
+  },
+  graphData: {
+    hotspots: SPENDING_HOTSPOTS.map((h) => ({
+      id: h.id,
+      title: h.title,
+      zone: h.category,
+      normalState: h.contrastKey,
+      elNinoState: h.keyFeature,
+      contrastKey: h.contrastKey,
+      band9Sentence: h.band9Sentence
+    })),
+    comparisonsSummary: {
+      highest_vs_lowest: "Turkey spent the most on food (32.14%) and leisure (4.35%), while Spain had the lowest single figure in leisure (1.98%)."
+    }
+  },
 
   formats: [],
   countries: [],
 
-  diagramData: {
-    hotspots: TASK1_HOTSPOTS,
-    comparisonsSummary: {
-      cement_stages: "Cement involves 5 linear stages: Crushing $\\rightarrow$ Mixing $\\rightarrow$ Rotating Heater $\\rightarrow$ Grinding $\\rightarrow$ Packaging.",
-      concrete_mix: "Concrete requires 4 ingredients: Gravel (50%), Sand (25%), Cement (15%), Water (10%) poured into a rotating drum.",
-      aggregates_ratio: "Aggregates (gravel + sand) account for 75% of concrete volume, while cement serves as a 15% binder.",
-      structural_contrast: "Cement undergoes chemical/thermal transformation, whereas concrete is a mechanical batch blend."
-    }
-  },
-  graphData: {
-    hotspots: TASK1_HOTSPOTS,
-    comparisonsSummary: {
-      linear_vs_batch: "Cement production follows a strict linear sequence, while concrete is produced through a single batch mixing step.",
-      ingredient_hierarchy: "Gravel forms the largest component at half (50%), while water forms the smallest at 10%."
-    }
-  },
-
   vocabList: [
     {
-      word: "Pulverize / Crush",
-      term: "Pulverize / Crush",
-      phonetic: "/ˈpʌlvəraɪz/ – /krʌʃ/",
-      meaning: "To mechanically grind, smash, or crush raw solids into extremely fine dust or powder.",
-      definition: "To mechanically grind, smash, or crush raw solids into extremely fine dust or powder.",
-      example: "Limestone and clay are first introduced into a crusher to be pulverized into a fine powder.",
-      sampleSentence: "Limestone and clay are first introduced into a crusher to be pulverized into a fine powder.",
-      collocations: ["pulverized into fine powder", "mechanical crusher", "crushed raw minerals"]
+      word: "Consumer Expenditure",
+      term: "Consumer Expenditure",
+      phonetic: "/kənˈsjuːmər ɪkˈspendɪtʃər/",
+      meaning: "The total spending of households on goods and services within an economy.",
+      definition: "The total spending of households on goods and services within an economy.",
+      example: "Consumer expenditure was distributed across three primary categories in 2002.",
+      sampleSentence: "Consumer expenditure was distributed across three primary categories in 2002.",
+      collocations: ["national consumer expenditure", "allocated to consumer expenditure", "patterns of expenditure"]
     },
     {
-      word: "Rotating Heater / Kiln",
-      term: "Rotating Heater / Kiln",
-      phonetic: "/rəʊˈteɪtɪŋ ˈhiːtə/ – /kɪln/",
-      meaning: "A large inclined revolving cylindrical furnace where chemical thermal reactions occur under high heat.",
-      definition: "A large inclined revolving cylindrical furnace where chemical thermal reactions occur under high heat.",
-      example: "The blended mixture is fed into an inclined rotating heater where intense heat is applied from the base.",
-      sampleSentence: "The blended mixture is fed into an inclined rotating heater where intense heat is applied from the base.",
-      collocations: ["inclined rotating heater", "cylindrical kiln", "subjected to high heat"]
+      word: "Sustenance",
+      term: "Sustenance",
+      phonetic: "/ˈsʌstənəns/",
+      meaning: "Food and drink regarded as a source of physical strength and nourishment.",
+      definition: "Food and drink regarded as a source of physical strength and nourishment.",
+      example: "Consumers in Turkey and Ireland dedicated substantial portions of their income to basic sustenance.",
+      sampleSentence: "Consumers in Turkey and Ireland dedicated substantial portions of their income to basic sustenance.",
+      collocations: ["expenditure on sustenance", "basic sustenance needs", "vital sustenance"]
     },
     {
-      word: "Conveyor Belt",
-      term: "Conveyor Belt",
-      phonetic: "/kənˈveɪə belt/",
-      meaning: "A continuous moving band of fabric or rubber used to transport industrial substances between processing units.",
-      definition: "A continuous moving band of fabric or rubber used to transport industrial substances between processing units.",
-      example: "After heating, the material travels along a conveyor belt into a grinder.",
-      sampleSentence: "After heating, the material travels along a conveyor belt into a grinder.",
-      collocations: ["transported via conveyor belt", "transferred along a conveyor belt", "industrial conveyor"]
+      word: "Account For / Constitute",
+      term: "Account For / Constitute",
+      phonetic: "/əˈkaʊnt fɔːr/ – /ˈkɒnstɪtjuːt/",
+      meaning: "To form, comprise, or make up a specified proportion or fraction of a total.",
+      definition: "To form, comprise, or make up a specified proportion or fraction of a total.",
+      example: "Food and drink accounted for over 30% of total expenditure in Turkey.",
+      sampleSentence: "Food and drink accounted for over 30% of total expenditure in Turkey.",
+      collocations: ["account for nearly a third", "constitute the largest share", "account for the smallest portion"]
     },
     {
-      word: "Grinder / Mill",
-      term: "Grinder / Mill",
-      phonetic: "/ˈɡraɪndə/ – /mɪl/",
-      meaning: "Heavy industrial machinery that crushes roasted material into fine finished cement.",
-      definition: "Heavy industrial machinery that crushes roasted material into fine finished cement.",
-      example: "The heated clinker is conveyed to a grinder, where it is milled into fine cement powder.",
-      sampleSentence: "The heated clinker is conveyed to a grinder, where it is milled into fine cement powder.",
-      collocations: ["milled into fine cement", "industrial grinder", "finely ground"]
+      word: "Outstrip / Exceed",
+      term: "Outstrip / Exceed",
+      phonetic: "/aʊtˈstrɪp/ – /ɪkˈsiːd/",
+      meaning: "To be greater in quantity, degree, or proportion than something else.",
+      definition: "To be greater in quantity, degree, or proportion than something else.",
+      example: "Italian expenditure on clothing outstripped all other nations at exactly 9.00%.",
+      sampleSentence: "Italian expenditure on clothing outstripped all other nations at exactly 9.00%.",
+      collocations: ["outstrip all other nations", "exceed the average", "substantially outstrip"]
     },
     {
-      word: "Aggregate",
-      term: "Aggregate",
-      phonetic: "/ˈæɡrɪɡət/",
-      meaning: "Coarse granular materials like gravel (50%) and sand (25%) used in construction mixtures.",
-      definition: "Coarse granular materials like gravel (50%) and sand (25%) used in construction mixtures.",
-      example: "Gravel and sand serve as the coarse and fine aggregates, comprising three-quarters of the concrete volume.",
-      sampleSentence: "Gravel and sand serve as the coarse and fine aggregates, comprising three-quarters of the concrete volume.",
-      collocations: ["coarse aggregate", "fine aggregate", "mineral aggregates"]
+      word: "By a Noticeable Margin",
+      term: "By a Noticeable Margin",
+      phonetic: "/baɪ ə ˈnəʊtɪsəbl ˈmɑːdʒɪn/",
+      meaning: "By an amount that is distinct, clearly visible, and statistically noteworthy.",
+      definition: "By an amount that is distinct, clearly visible, and statistically noteworthy.",
+      example: "Turkey led food expenditure by a noticeable margin over Sweden and Italy.",
+      sampleSentence: "Turkey led food expenditure by a noticeable margin over Sweden and Italy.",
+      collocations: ["lead by a noticeable margin", "surpass by a significant margin", "differ by a narrow margin"]
     },
     {
-      word: "Binding Agent",
-      term: "Binding Agent",
-      phonetic: "/ˈbaɪndɪŋ ˈeɪdʒənt/",
-      meaning: "A substance like cement that chemically hardens to hold other aggregate particles firmly together.",
-      definition: "A substance like cement that chemically hardens to hold other aggregate particles firmly together.",
-      example: "Manufactured cement functions as the primary binding agent, making up 15% of the concrete recipe.",
-      sampleSentence: "Manufactured cement functions as the primary binding agent, making up 15% of the concrete recipe.",
-      collocations: ["act as a binding agent", "primary binder", "cohesive binding agent"]
+      word: "Cluster Around",
+      term: "Cluster Around",
+      phonetic: "/ˈklʌstər əˈraʊnd/",
+      meaning: "To group closely together within a narrow numeric or percentage band.",
+      definition: "To group closely together within a narrow numeric or percentage band.",
+      example: "Clothing spending in Spain, Turkey, and Ireland clustered closely around 6.5%.",
+      sampleSentence: "Clothing spending in Spain, Turkey, and Ireland clustered closely around 6.5%.",
+      collocations: ["cluster closely around", "clustered within a narrow range", "figures cluster near"]
     },
     {
-      word: "Hydration & Slurry",
-      term: "Hydration & Slurry",
-      phonetic: "/haɪˈdreɪʃn ænd ˈslʌri/",
-      meaning: "The chemical reaction triggered by adding 10% water, creating a workable, fluid wet concrete paste.",
-      definition: "The chemical reaction triggered by adding 10% water, creating a workable, fluid wet concrete paste.",
-      example: "Water accounts for 10% of the composition, activating hydration to turn dry aggregates into wet concrete.",
-      sampleSentence: "Water accounts for 10% of the composition, activating hydration to turn dry aggregates into wet concrete.",
-      collocations: ["activate hydration", "concrete slurry", "hydration reaction"]
+      word: "Apparel & Footwear",
+      term: "Apparel & Footwear",
+      phonetic: "/əˈpærəl ænd ˈfʊtweər/",
+      meaning: "Clothing, garments, shoes, and wearable personal attire.",
+      definition: "Clothing, garments, shoes, and wearable personal attire.",
+      example: "Italy directed nearly a tenth of its spending towards apparel and footwear.",
+      sampleSentence: "Italy directed nearly a tenth of its spending towards apparel and footwear.",
+      collocations: ["outlay on apparel", "expenditure on footwear", "clothing and apparel"]
     },
     {
-      word: "Batch Mixing",
-      term: "Batch Mixing",
-      phonetic: "/bætʃ ˈmɪksɪŋ/",
-      meaning: "Combining discrete quantities of different ingredients simultaneously inside a mechanical drum.",
-      definition: "Combining discrete quantities of different ingredients simultaneously inside a mechanical drum.",
-      example: "Unlike the sequential cement pipeline, concrete production relies on single-stage batch mixing.",
-      sampleSentence: "Unlike the sequential cement pipeline, concrete production relies on single-stage batch mixing.",
-      collocations: ["single-stage batch mixing", "batch mixer drum", "batch production"]
+      word: "Represent the Smallest Share",
+      term: "Represent the Smallest Share",
+      phonetic: "/ˌreprɪˈzent ðə ˈsmɔːlɪst ʃeər/",
+      meaning: "To form the lowest numerical fraction or minority percentage among all categories.",
+      definition: "To form the lowest numerical fraction or minority percentage among all categories.",
+      example: "Leisure and education represented the smallest share in every surveyed country.",
+      sampleSentence: "Leisure and education represented the smallest share in every surveyed country.",
+      collocations: ["represent the smallest share", "account for the lowest fraction", "smallest portion throughout"]
     },
     {
-      word: "Sequential Progression",
-      term: "Sequential Progression",
-      phonetic: "/sɪˈkwenʃl prəˈɡreʃn/",
-      meaning: "An orderly progression through distinct consecutive phases where each step depends on the previous one.",
-      definition: "An orderly progression through distinct consecutive phases where each step depends on the previous one.",
-      example: "Cement production follows a strict sequential progression from raw limestone to bagged product.",
-      sampleSentence: "Cement production follows a strict sequential progression from raw limestone to bagged product.",
-      collocations: ["sequential progression", "sequential stages", "step-by-step sequence"]
+      word: "Respectively",
+      term: "Respectively",
+      phonetic: "/rɪˈspektɪvli/",
+      meaning: "Separately or individually in the exact order previously mentioned.",
+      definition: "Separately or individually in the exact order previously mentioned.",
+      example: "Turkey and Ireland allocated 32.14% and 28.91% to food, respectively.",
+      sampleSentence: "Turkey and Ireland allocated 32.14% and 28.91% to food, respectively.",
+      collocations: ["standing at X and Y respectively", "recorded respectively", "allocated respectively"]
     },
     {
-      word: "Uniform Consistency",
-      term: "Uniform Consistency",
-      phonetic: "/ˈjuːnɪfɔːm kənˈsɪstənsi/",
-      meaning: "An evenly blended physical state with no clumps, air gaps, or unmixed raw dry powder.",
-      definition: "An evenly blended physical state with no clumps, air gaps, or unmixed raw dry powder.",
-      example: "The rotating mixer agitates all four materials until a uniform consistency is achieved.",
-      sampleSentence: "The rotating mixer agitates all four materials until a uniform consistency is achieved.",
-      collocations: ["achieve a uniform consistency", "uniform blend", "homogeneous mixture"]
+      word: "Disproportionately",
+      term: "Disproportionately",
+      phonetic: "/ˌdɪsprəˈpɔːʃənətli/",
+      meaning: "To a degree that is unequal or out of proportion compared to other entities.",
+      definition: "To a degree that is unequal or out of proportion compared to other entities.",
+      example: "Turkish consumers spent disproportionately high amounts on sustenance compared to leisure.",
+      sampleSentence: "Turkish consumers spent disproportionately high amounts on sustenance compared to leisure.",
+      collocations: ["disproportionately high", "allocated disproportionately", "disproportionate share"]
     },
     {
-      word: "Simultaneously Introduced",
-      term: "Simultaneously Introduced",
-      phonetic: "/ˌsɪmlˈteɪniəsli ˌɪntrəˈdjuːst/",
-      meaning: "Poured or added together at the exact same moment into a vessel or container.",
-      definition: "Poured or added together at the exact same moment into a vessel or container.",
-      example: "All four concrete components are simultaneously introduced into the revolving mixer.",
-      sampleSentence: "All four concrete components are simultaneously introduced into the revolving mixer.",
-      collocations: ["simultaneously introduced", "poured simultaneously", "added concurrently"]
+      word: "Undisputed Leader",
+      term: "Undisputed Leader",
+      phonetic: "/ˌʌndɪˈspjuːtɪd ˈliːdər/",
+      meaning: "The entity that holds the clear, acknowledged highest position without rivalry.",
+      definition: "The entity that holds the clear, acknowledged highest position without rivalry.",
+      example: "Italy was the undisputed leader in apparel expenditure at 9.00%.",
+      sampleSentence: "Italy was the undisputed leader in apparel expenditure at 9.00%.",
+      collocations: ["undisputed leader", "clear leader in spending", "lead all surveyed nations"]
     },
     {
-      word: "Packaged / Bagged",
-      term: "Packaged / Bagged",
-      phonetic: "/ˈpækɪdʒd/ – /bæɡd/",
-      meaning: "Sealed into commercial paper sacks for easy transport, wholesale storage, or retail sale.",
-      definition: "Sealed into commercial paper sacks for easy transport, wholesale storage, or retail sale.",
-      example: "In the final stage, the refined cement is bagged for distribution to construction sites.",
-      sampleSentence: "In the final stage, the refined cement is bagged for distribution to construction sites.",
-      collocations: ["bagged into sacks", "packaged for distribution", "commercial packaging"]
+      word: "Sub-Two Percent",
+      term: "Sub-Two Percent",
+      phonetic: "/sʌb tuː pəˈsent/",
+      meaning: "Falling below the threshold of two percentage points (under 2.0%).",
+      definition: "Falling below the threshold of two percentage points (under 2.0%).",
+      example: "Spain was the solitary country with a sub-two percent allocation for leisure and education.",
+      sampleSentence: "Spain was the solitary country with a sub-two percent allocation for leisure and education.",
+      collocations: ["sub-two percent figure", "sub-five percent share", "minority proportion"]
     }
   ],
 
   vocabHunt: [
-    "pulverize",
-    "crush",
-    "kiln",
-    "conveyor belt",
-    "grinder",
-    "aggregate",
-    "binding agent",
-    "hydration",
-    "batch mixing",
-    "sequential",
-    "uniform consistency",
-    "simultaneously"
+    "consumer expenditure",
+    "sustenance",
+    "account for",
+    "outstrip",
+    "by a noticeable margin",
+    "cluster around",
+    "apparel",
+    "represent the smallest share",
+    "respectively",
+    "disproportionately",
+    "undisputed leader",
+    "sub-two percent"
   ],
 
   bp1: {
-    title: "Body Paragraph 1: The Multi-Stage Manufacturing of Cement",
-    focus: "5 Sequential Stages: Limestone & clay crushing $\\rightarrow$ mixing $\\rightarrow$ heating in rotating kiln $\\rightarrow$ grinding $\\rightarrow$ packaging",
+    title: "Body 1: Food, Drink, and Tobacco (The Dominant Expenditure)",
+    focus: "Report and compare the largest category across all five nations (Turkey & Ireland leading vs Spain, Italy, Sweden).",
     points: [
-      "Limestone and clay are first introduced into a crusher to be pulverized into a fine powder.",
-      "The powder is then transferred to an industrial mixer to achieve a uniform blend.",
-      "Next, the mixture enters an inclined rotating cylinder heater where intense heat is applied from the lower end.",
-      "After thermal processing, the substance is moved along a conveyor belt to a grinder, milling it into fine cement.",
-      "Finally, the completed cement is poured into bags, ready for commercial storage or construction."
-    ],
-    flow: [
-      "1. Raw Materials: Limestone + Clay",
-      "2. Crushing: Mechanically pulverized into fine powder",
-      "3. Mixing: Blended uniformly in industrial mixer",
-      "4. Heating: Passed through rotating heater with direct heat applied",
-      "5. Grinding: Conveyed to grinder and milled into cement",
-      "6. Packaging: Poured into bags ready for distribution"
-    ],
-    takeaways: [
-      "Cement manufacturing requires linear thermal and mechanical transformation across 5 distinct stages.",
-      "The resulting cement is a mandatory prerequisite before concrete can be made."
+      "Turkey allocated the largest share of any nation to food, drink, and tobacco at nearly a third (32.14%).",
+      "Ireland followed closely in second position with 28.91% devoted to sustenance.",
+      "In marked contrast, Spain recorded 18.80%, while Italy and Sweden registered the lowest proportions in this category at 16.36% and 15.77% respectively."
     ]
   },
 
   bp2: {
-    title: "Body Paragraph 2: Concrete Batch Production & Proportional Synthesis",
-    focus: "4 Ingredients (Gravel 50%, Sand 25%, Cement 15%, Water 10%) & Concrete Mixer",
+    title: "Body 2: Clothing/Footwear and Leisure/Education (Secondary & Minority Shares)",
+    focus: "Report Italy's lead in clothing (9.00%) and contrast with the minor figures for leisure and education (1.98% to 4.35%).",
     points: [
-      "Gravel (small stones) constitutes half (50%) of the total concrete mixture, forming the primary coarse aggregate.",
-      "Sand accounts for a quarter (25%) of the blend as the fine aggregate.",
-      "Manufactured cement represents 15% of the composition, serving as the essential binding agent.",
-      "Water forms the smallest fraction at 10%, activating the hydration reaction.",
-      "All four components are poured simultaneously into a cylindrical concrete mixer, which rotates to yield homogeneous wet concrete."
-    ],
-    flow: [
-      "1. Formulation: 50% Gravel, 25% Sand, 15% Cement, 10% Water",
-      "2. Loading: Simultaneous addition into rotating concrete mixer drum",
-      "3. Agitation: Mechanical rotation blends aggregates and slurry",
-      "4. Output: Usable wet concrete ready for building"
-    ],
-    takeaways: [
-      "Concrete is a single-stage batch mix, in contrast to the five sequential phases of cement production.",
-      "Aggregates (gravel + sand) account for 75% of the total, with cement acting only as a 15% binding agent."
+      "In clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outspending Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), while Sweden trailed at 5.40%.",
+      "Leisure and education constituted the smallest expenditure throughout, with Turkey again highest at 4.35%, followed by Sweden (3.22%) and Italy (3.20%).",
+      "Ireland allocated 2.21%, while Spain registered the lowest single figure in the entire table at a mere 1.98%."
     ]
   },
 
   processingGroups: [
     {
-      title: "Group 1: Sequential Process Verbs (Passive Voice)",
+      title: "1. Food & Drink: Dominant Cluster",
       items: [
-        "are fed into a mechanical crusher to be pulverized",
-        "is blended thoroughly in an industrial mixer",
-        "is subjected to intense heat in an inclined rotating cylinder",
-        "is transported along a conveyor belt to be milled",
-        "is poured into heavy-duty bags for commercial distribution"
+        "Turkey: 32.14% (Highest in entire table)",
+        "Ireland: 28.91% (Second highest food share)",
+        "Spain (18.80%), Italy (16.36%), Sweden (15.77%)"
       ]
     },
     {
-      title: "Group 2: Mathematical Proportion Phrases (Strictly Band 9)",
+      title: "2. Clothing & Footwear: Moderate Outlay",
       items: [
-        "constitutes precisely half (50%) of the total mixture",
-        "accounts for exactly a quarter (25%) of the overall composition",
-        "comprises 15% to function as the essential binding agent",
-        "represents the smallest fraction at a modest 10%"
+        "Italy: 9.00% (National leader in clothing)",
+        "Turkey (6.63%), Spain (6.51%), Ireland (6.43%)",
+        "Sweden: 5.40% (Lowest apparel expenditure)"
       ]
     },
     {
-      title: "Group 3: Industrial & Comparative Connectors",
+      title: "3. Leisure & Education: Minor Fraction",
       items: [
-        "regarding the manufacture of cement / turning to concrete production",
-        "initially, ... / following this, ... / subsequently, ...",
-        "after being subjected to intense heat, ...",
-        "by contrast, concrete manufacturing relies on a single-stage batch mixing process"
+        "Turkey: 4.35% (Peak leisure spending)",
+        "Sweden (3.22%) & Italy (3.20%) closely matched",
+        "Ireland (2.21%) & Spain (1.98% - lowest in table)"
       ]
     }
   ],
 
   connectors: [
     {
-      phrase: "Initially, ... / To begin with, ...",
-      purpose: "Introducing the opening stage of a multi-step manufacturing procedure",
-      example: "Initially, raw limestone and clay are fed into a crusher to be pulverized into a fine powder."
+      phrase: "In terms of / Regarding...",
+      purpose: "Category Transition Marker",
+      example: "In terms of clothing and footwear, Italy was the undisputed leader at 9.00%."
     },
     {
-      phrase: "Following this, ... / Subsequently, ...",
-      purpose: "Signaling progression to the next sequential mechanical phase",
-      example: "Following this, the powdered minerals are transferred to an industrial mixer to achieve a uniform blend."
+      phrase: "In marked contrast,...",
+      purpose: "Sharp Comparative Pivot",
+      example: "In marked contrast to Turkey's 32.14%, Swedish consumers spent just 15.77% on food."
     },
     {
-      phrase: "After being heated, ... / Having exited the kiln, ...",
-      purpose: "Using participial clauses to link consecutive thermal and milling operations",
-      example: "After being heated in the rotating cylinder, the material travels along a conveyor belt into a grinder."
+      phrase: "..., standing at X and Y respectively.",
+      purpose: "Orderly Multiple Data Reporting",
+      example: "Turkey and Ireland led food expenditure, standing at 32.14% and 28.91% respectively."
     },
     {
-      phrase: "Finally, the resulting [product] is [verb-ed]...",
-      purpose: "Marking the culminating output and commercial packaging stage",
-      example: "Finally, the finished cement is packed into bags, ready for transport or use in concrete production."
+      phrase: "..., closely followed by...",
+      purpose: "Sequential Comparative Ranking",
+      example: "Turkey was the highest spender on food, closely followed by Ireland at 28.91%."
     },
     {
-      phrase: "Turning to [second process], ... / In contrast to [first process], ...",
-      purpose: "Creating a seamless macro transition between two contrasting diagrams",
-      example: "Turning to concrete production, four distinct raw materials are combined inside a rotating mixer."
+      phrase: "Outstripping all other surveyed nations,...",
+      purpose: "Participial Superlative Framing",
+      example: "Outstripping all other surveyed nations, Italy dedicated 9.00% to clothing and footwear."
     },
     {
-      phrase: "Constitutes half (50%) of... / Accounts for a quarter (25%)...",
-      purpose: "Accurately reporting statistical proportions and aggregate ratios",
-      example: "Gravel constitutes half (50%) of the mixture, while sand accounts for a quarter (25%)."
+      phrase: "Registering the lowest proportion throughout,...",
+      purpose: "Bottom-Rank Reporting Marker",
+      example: "Registering the lowest proportion throughout, Spain spent a mere 1.98% on leisure and education."
     }
   ],
 
   modelReport: {
-    wordCount: 228,
+    wordCount: 182,
     paragraphs: [
       {
         id: "intro",
-        title: "Introduction",
-        text: "The two diagrams illustrate the multi-stage industrial procedure involved in manufacturing cement, followed by how it is subsequently combined with other raw ingredients to produce concrete.",
-        wordCount: 28,
-        badges: ["Band 9 Paraphrase", "Two Diagrams Identified", "Cement & Concrete Roles"]
+        title: "Introduction: Table Scope & Parameter Paraphrase",
+        text: "The table compares the proportion of national consumer expenditure allocated to three broad categories of goods and services across five European countries in 2002.",
+        wordCount: 24,
+        badges: ["Paraphrase", "3 Categories", "5 Countries", "Year 2002"]
       },
       {
         id: "overview",
-        title: "Overview",
-        text: "Overall, cement production is a multi-step, sequential process requiring specialized equipment, physical crushing, and intense heating, whereas concrete manufacturing is a straightforward, single-stage batch mixing procedure wherein coarse and fine aggregates constitute the vast majority of the mixture, bound together by cement and activated with water.",
-        wordCount: 47,
-        badges: ["Macro Contrast", "Sequential Thermal Pipeline vs Single Batch Mix", "Aggregates Bulk & Cement Binder"]
+        title: "Macro Overview: Key Trends & Outliers (NO NUMBERS)",
+        text: "Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations, whereas leisure and education accounted for the smallest share of spending throughout. Furthermore, Turkish and Irish consumers devoted significantly larger proportions of their budgets to sustenance than their European counterparts, while Italy recorded the largest proportion spent on clothing and footwear.",
+        wordCount: 57,
+        badges: ["Macro Trends", "Zero Numerical Figures", "Food Dominance", "Italian Apparel Lead"]
       },
       {
         id: "body1",
-        title: "Body 1: The 5 Stages of Cement Production",
-        text: "Regarding the manufacture of cement, limestone and clay are initially passed through a crusher to be pulverized into a fine powder. This powdered mixture is then fed into an industrial mixer to achieve a uniform blend before entering an elongated, rotating cylinder heater. In this chamber, the substance is subjected to intense heat applied from the lower end as the drum continuously revolves. After being heated, the resulting mixture is transported along a conveyor belt to a grinder, where it is milled into fine cement. Finally, the finished product is poured into heavy-duty bags, ready for commercial distribution or immediate construction use.",
-        wordCount: 76,
-        badges: ["Limestone & Clay Crusher", "Mixer & Rotating Heater", "Conveyor Belt & Grinder", "Bagging"]
+        title: "Body Paragraph 1: Food, Drink, and Tobacco (The Major Category)",
+        text: "In terms of food, drinks, and tobacco, Turkey allocated the highest proportion of any country, with nearly a third of all consumer expenditure (32.14%) directed towards this category. Ireland followed closely behind at 28.91%. In marked contrast, the remaining three nations registered substantially lower figures; Spain recorded 18.80%, while Italy and Sweden spent the least on sustenance at 16.36% and 15.77% respectively.",
+        wordCount: 65,
+        badges: ["Top Tier (Turkey & Ireland)", "Lower Tier (Spain, Italy, Sweden)", "Comparative Linking"]
       },
       {
         id: "body2",
-        title: "Body 2: Concrete Batch Production & Proportions",
-        text: "Turning to concrete production, four distinct raw materials are combined inside a cylindrical concrete mixer in precise proportions. Gravel, consisting of small stones, constitutes half (50%) of the total mixture, followed by sand, which accounts for a quarter (25%). Cement makes up 15% of the composition to bind the components together, while water represents the smallest portion at just 10%. Once all four elements are poured simultaneously into the concrete drum, the machine rotates in a clockwise direction to blend the aggregates and slurry into usable wet concrete.",
-        wordCount: 66,
-        badges: ["Gravel 50% (Half)", "Sand 25% (Quarter)", "Cement 15% Binder", "Water 10% Hydration", "Rotating Mixer"]
+        title: "Body Paragraph 2: Clothing/Footwear & Leisure/Education",
+        text: "Turning to clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outstripping Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), with Sweden recording the lowest share at 5.40%. Finally, leisure and education represented the smallest expenditure throughout all five nations; Turkey again topped the list at 4.35%, followed by Sweden (3.22%) and Italy (3.20%), while Spain registered the lowest single figure in the table at just 1.98%.",
+        wordCount: 69,
+        badges: ["Italy Clothing Lead (9.00%)", "Clustered Nations (6.4–6.6%)", "Spain Lowest Value (1.98%)"]
       }
     ]
   }

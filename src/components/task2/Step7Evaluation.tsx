@@ -1,288 +1,233 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Award, AlertTriangle, ArrowRight, Lightbulb, Copy, Check, Filter, Layers, CircleCheck } from "lucide-react";
-import { TASK2_DATA } from "../../data/task2Data";
+import { Lightbulb, CircleCheck, Copy, Check, ShieldCheck, Sparkles } from "lucide-react";
+import { SOLUTIONS_IDEA_BANK } from "../../data/task2Data";
 
 export const Step7EvaluationT2: React.FC = () => {
-  const [activeModelIdx, setActiveModelIdx] = useState(1);
-  const [perspective, setPerspective] = useState<"negative" | "positive">("negative");
-  const [copied, setCopied] = useState(false);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [activeFilter, setActiveFilter] = useState<string>("all");
 
-  const body1Negative = TASK2_DATA.bodyParagraphs?.[0]?.alternativeReasons || [];
-  const body2Positive = TASK2_DATA.bodyParagraphs?.[1]?.alternativeReasons || [];
+  const solutions = SOLUTIONS_IDEA_BANK;
 
-  const currentReasons = perspective === "negative" ? body1Negative : body2Positive;
-  const activeReason = currentReasons[activeModelIdx] || currentReasons[0];
+  const filteredSolutions = activeFilter === "all"
+    ? solutions
+    : solutions.filter((s) => s.id === activeFilter);
 
-  const handleCopy = () => {
-    const textToCopy = activeReason?.modelParagraph || "";
-    navigator.clipboard.writeText(textToCopy);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleCopy = (id: string, text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
   };
 
   return (
-    <div className="stage-card-wrapper">
+    <div className="stage-card-wrapper" style={{ overflowY: "auto", maxHeight: "100%" }}>
       {/* Step Header */}
-      <div>
-        <span className="apple-badge accent" style={{ marginBottom: "8px", background: "#fee2e2", color: "#991b1b" }}>
-          Step 07 / 09 • Body Para 2 (1 Main Reason + Supporting Reasoning + Example)
+      <div style={{ marginBottom: "16px" }}>
+        <span
+          className="apple-badge accent"
+          style={{ marginBottom: "8px", background: "#dcfce7", color: "#166534" }}
+        >
+          Step 07 / 09 • Student Idea Bank: Measures &amp; Solutions
         </span>
-        <h2 className="stage-title">Body 2 Ideas: Social Communication, Sleep &amp; Cognitive Focus</h2>
+        <h2 className="stage-title">
+          Measures &amp; Solutions — Student Idea Bank
+        </h2>
         <p className="stage-subtitle">
-          Mandatory Format: <strong>Opinion Side — 1 Main Reason + Supporting Reasoning + Example</strong>. Select your second decisive supporting argument from the one-liners below.
+          These are actionable, student-friendly solutions that can be easily supported and linked in body paragraphs.
         </p>
       </div>
 
-      {/* Perspective Toggles Bar */}
+      {/* Quick Filter Bar */}
       <div
         style={{
-          background: perspective === "negative" ? "#fef2f2" : "#f0fdf4",
-          border: perspective === "negative" ? "1.5px solid #fecaca" : "1.5px solid #bbf7d0",
+          background: "#ffffff",
+          border: "1.5px solid var(--border-subtle)",
           borderRadius: "14px",
-          padding: "10px 16px",
+          padding: "10px 14px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           flexWrap: "wrap",
-          gap: "10px",
-          marginBottom: "12px"
+          gap: "8px",
+          marginBottom: "16px"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <span style={{ fontSize: "0.82rem", fontWeight: 800, color: perspective === "negative" ? "#991b1b" : "#166534", display: "flex", alignItems: "center", gap: "4px" }}>
-            <Layers size={14} /> Active Perspective:
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+          <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#475569", display: "flex", alignItems: "center", gap: "4px" }}>
+            <ShieldCheck size={14} color="#16a34a" /> Quick Jump:
           </span>
           <button
             type="button"
-            onClick={() => {
-              setPerspective("negative");
-              setActiveModelIdx(1);
-            }}
+            onClick={() => setActiveFilter("all")}
             style={{
-              border: perspective === "negative" ? "1.5px solid #dc2626" : "1px solid #e2e8f0",
-              background: perspective === "negative" ? "#dc2626" : "#ffffff",
-              color: perspective === "negative" ? "#ffffff" : "#475569",
-              padding: "4px 12px",
+              border: activeFilter === "all" ? "1.5px solid #16a34a" : "1px solid #e2e8f0",
+              background: activeFilter === "all" ? "#16a34a" : "#f8fafc",
+              color: activeFilter === "all" ? "#ffffff" : "#475569",
+              padding: "4px 10px",
               borderRadius: "7px",
-              fontSize: "0.78rem",
+              fontSize: "0.76rem",
               fontWeight: 800,
               cursor: "pointer",
               transition: "all 0.12s ease"
             }}
           >
-            Opinion Side: Negative Development (5 Points)
+            All 5 Solutions
           </button>
-          <button
-            type="button"
-            onClick={() => {
-              setPerspective("positive");
-              setActiveModelIdx(0);
-            }}
-            style={{
-              border: perspective === "positive" ? "1.5px solid #16a34a" : "1px solid #e2e8f0",
-              background: perspective === "positive" ? "#16a34a" : "#ffffff",
-              color: perspective === "positive" ? "#ffffff" : "#475569",
-              padding: "4px 12px",
-              borderRadius: "7px",
-              fontSize: "0.78rem",
-              fontWeight: 800,
-              cursor: "pointer",
-              transition: "all 0.12s ease"
-            }}
-          >
-            Counter-Perspective: Positive Development (5 Points)
-          </button>
+          {solutions.map((s, idx) => (
+            <button
+              key={s.id}
+              type="button"
+              onClick={() => setActiveFilter(s.id)}
+              style={{
+                border: activeFilter === s.id ? "1.5px solid #16a34a" : "1px solid #e2e8f0",
+                background: activeFilter === s.id ? "#16a34a" : "#f8fafc",
+                color: activeFilter === s.id ? "#ffffff" : "#475569",
+                padding: "4px 10px",
+                borderRadius: "7px",
+                fontSize: "0.76rem",
+                fontWeight: 800,
+                cursor: "pointer",
+                transition: "all 0.12s ease"
+              }}
+            >
+              Solution {idx + 1}
+            </button>
+          ))}
         </div>
 
-        <span style={{ fontSize: "0.76rem", color: "#64748b", fontWeight: 700 }}>
-          {perspective === "negative" ? "Recommended: Option 2 (Social Skills)" : "Positive Contrast"}
+        <span style={{ fontSize: "0.74rem", color: "#64748b", fontWeight: 700 }}>
+          Structured: Core Measure + Concrete Relatable Example
         </span>
       </div>
 
-      {/* ALL 5 ONE-LINER POINTS IN A HIGH-READABILITY SMART BOARD GRID */}
+      {/* ALL 5 STUDENT SOLUTIONS IN A CLEAN HIGH-READABILITY SMART BOARD GRID */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "12px",
-          marginBottom: "14px"
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: "14px",
+          marginBottom: "16px"
         }}
       >
-        {currentReasons.map((reason, idx) => {
-          const isSelected = activeModelIdx === idx;
+        {filteredSolutions.map((solution) => {
+          const isCopied = copiedId === solution.id;
+          const fullText = `${solution.title}\n\n${solution.mainIdea}\n\nExample: ${solution.example}`;
 
           return (
             <div
-              key={reason.id}
-              onClick={() => setActiveModelIdx(idx)}
+              key={solution.id}
               style={{
-                background: isSelected ? (perspective === "negative" ? "#fff5f5" : "#f0fdf4") : "#ffffff",
-                border: isSelected
-                  ? perspective === "negative" ? "2px solid #dc2626" : "2px solid #16a34a"
-                  : "1.5px solid var(--border-default)",
-                borderRadius: "14px",
-                padding: "14px",
-                boxShadow: isSelected ? "0 4px 12px rgba(0, 0, 0, 0.08)" : "var(--shadow-sm)",
+                background: "#ffffff",
+                border: "1.5px solid #bbf7d0",
+                borderRadius: "16px",
+                padding: "18px",
+                boxShadow: "0 2px 8px rgba(22, 163, 74, 0.04)",
                 display: "flex",
                 flexDirection: "column",
-                gap: "10px",
-                cursor: "pointer",
-                transition: "all 0.15s ease"
+                gap: "12px",
+                position: "relative"
               }}
             >
               {/* Card Header & Badge */}
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px" }}>
                 <span
                   style={{
-                    background: isSelected
-                      ? perspective === "negative" ? "#dc2626" : "#16a34a"
-                      : perspective === "negative" ? "#fee2e2" : "#dcfce7",
-                    color: isSelected ? "#ffffff" : perspective === "negative" ? "#991b1b" : "#166534",
-                    fontSize: "0.72rem",
+                    background: "#dcfce7",
+                    color: "#166534",
+                    fontSize: "0.74rem",
                     fontWeight: 800,
-                    padding: "3px 8px",
+                    padding: "3px 9px",
                     borderRadius: "6px"
                   }}
                 >
-                  {reason.badge}
+                  {solution.badge}
                 </span>
 
-                <span style={{ fontSize: "0.72rem", color: "#64748b", fontWeight: 700 }}>
-                  Option {idx + 1}
-                </span>
+                <button
+                  type="button"
+                  onClick={() => handleCopy(solution.id, fullText)}
+                  style={{
+                    background: isCopied ? "#dcfce7" : "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    color: isCopied ? "#166534" : "#475569",
+                    padding: "3px 8px",
+                    borderRadius: "6px",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "4px"
+                  }}
+                  title="Copy this solution idea"
+                >
+                  {isCopied ? <Check size={12} color="#166534" /> : <Copy size={12} />}
+                  <span>{isCopied ? "Copied" : "Copy"}</span>
+                </button>
               </div>
 
-              {/* 1. Main Reason (One-Liner) */}
-              <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "8px", padding: "8px 10px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "2px" }}>
-                  <Lightbulb size={13} color="#2563eb" />
-                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#1e40af", textTransform: "uppercase" }}>
-                    1. Main Reason (One-Liner)
+              {/* Title */}
+              <h4 style={{ margin: 0, fontSize: "1.05rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.35 }}>
+                {solution.title}
+              </h4>
+
+              {/* Core Measure / Relatable Explanation */}
+              <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "12px 14px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "4px" }}>
+                  <Lightbulb size={13} color="#16a34a" />
+                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#166534", textTransform: "uppercase" }}>
+                    Core Measure &amp; Implementation
                   </span>
                 </div>
-                <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: 700, color: "#0f172a", lineHeight: 1.4 }}>
-                  {reason.mainReason}
+                <p style={{ margin: 0, fontSize: "0.88rem", fontWeight: 650, color: "#0f172a", lineHeight: 1.5 }}>
+                  {solution.mainIdea}
                 </p>
               </div>
 
-              {/* 2. Supporting Reasoning (One-Liner) */}
-              <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "8px", padding: "8px 10px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "2px" }}>
-                  <ArrowRight size={13} color="#059669" />
-                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#059669", textTransform: "uppercase" }}>
-                    2. Supporting Reasoning (One-Liner)
-                  </span>
-                </div>
-                <p style={{ margin: 0, fontSize: "0.82rem", color: "#334155", lineHeight: 1.4 }}>
-                  {reason.supportingReasons}
-                </p>
-              </div>
-
-              {/* 3. Concrete Example (One-Liner) */}
+              {/* Relatable Concrete Example */}
               <div
                 style={{
-                  background: perspective === "negative" ? "#fff1f2" : "#f0fdf4",
-                  border: perspective === "negative" ? "1px solid #fecdd3" : "1px solid #bbf7d0",
-                  borderRadius: "8px",
-                  padding: "8px 10px",
+                  background: "#f0fdf4",
+                  border: "1px solid #86efac",
+                  borderRadius: "10px",
+                  padding: "12px 14px",
                   marginTop: "auto"
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "4px", marginBottom: "2px" }}>
-                  <CircleCheck size={13} color={perspective === "negative" ? "#e11d48" : "#16a34a"} />
-                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: perspective === "negative" ? "#9f1239" : "#166534", textTransform: "uppercase" }}>
-                    3. Concrete Example (One-Liner)
+                <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "4px" }}>
+                  <CircleCheck size={13} color="#16a34a" />
+                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#15803d", textTransform: "uppercase" }}>
+                    Relatable Student Example
                   </span>
                 </div>
-                <p style={{ margin: 0, fontSize: "0.82rem", color: perspective === "negative" ? "#881337" : "#14532d", lineHeight: 1.4, fontWeight: 600 }}>
-                  {reason.example}
+                <p style={{ margin: 0, fontSize: "0.85rem", color: "#14532d", lineHeight: 1.5, fontWeight: 600 }}>
+                  {solution.example}
                 </p>
               </div>
+
+              {/* Collocations Tag Strip */}
+              {solution.collocations && solution.collocations.length > 0 && (
+                <div style={{ display: "flex", alignItems: "center", gap: "5px", flexWrap: "wrap", paddingTop: "4px" }}>
+                  <Sparkles size={12} color="#94a3b8" />
+                  {solution.collocations.map((col, cIdx) => (
+                    <span
+                      key={cIdx}
+                      style={{
+                        fontSize: "0.70rem",
+                        fontWeight: 700,
+                        background: "#f1f5f9",
+                        color: "#475569",
+                        padding: "2px 7px",
+                        borderRadius: "5px"
+                      }}
+                    >
+                      {col}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           );
         })}
-      </div>
-
-      {/* SYNTHESIS & BAND 9 MODEL PARAGRAPH BOX */}
-      <div
-        style={{
-          background: "#ffffff",
-          border: "1.5px solid var(--border-default)",
-          borderRadius: "16px",
-          padding: "16px 18px",
-          boxShadow: "var(--shadow-sm)",
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px"
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <Award size={18} color="var(--apple-blue)" />
-            <div>
-              <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                Band 9 Paragraph Integration: {activeReason?.title}
-              </h4>
-              <p style={{ margin: "1px 0 0", fontSize: "0.78rem", color: "var(--slate-600)" }}>
-                Format check: 1 Main Reason (Topic Sentence) + Supporting Reasoning + Concrete Example
-              </p>
-            </div>
-          </div>
-
-          <button
-            onClick={handleCopy}
-            style={{
-              border: "1px solid var(--border-subtle)",
-              background: copied ? "#dcfce7" : "#ffffff",
-              padding: "4px 10px",
-              borderRadius: "8px",
-              fontSize: "0.76rem",
-              fontWeight: 700,
-              color: copied ? "#166534" : "var(--slate-700)",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              gap: "4px"
-            }}
-          >
-            {copied ? <Check size={12} /> : <Copy size={12} />}
-            <span>{copied ? "Copied" : "Copy Model Paragraph"}</span>
-          </button>
-        </div>
-
-        {/* Model Paragraph Text */}
-        <div
-          style={{
-            background: "#f8fafc",
-            border: "1.5px solid #cbd5e1",
-            borderRadius: "10px",
-            padding: "12px 16px",
-            fontSize: "0.96rem",
-            lineHeight: 1.6,
-            color: "var(--slate-900)",
-            fontWeight: 500
-          }}
-        >
-          {activeReason?.modelParagraph}
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <span className="apple-badge accent" style={{ fontSize: "0.72rem", padding: "1px 6px" }}>
-              ✓ 1 Main Reason
-            </span>
-            <span className="apple-badge accent" style={{ fontSize: "0.72rem", padding: "1px 6px" }}>
-              ✓ Supporting Reasoning
-            </span>
-            <span className="apple-badge accent" style={{ fontSize: "0.72rem", padding: "1px 6px" }}>
-              ✓ Concrete Example
-            </span>
-          </div>
-          <span style={{ fontSize: "0.78rem", color: "var(--slate-600)", fontWeight: 600 }}>
-            💡 <em>{activeReason?.examinerNotes}</em>
-          </span>
-        </div>
       </div>
     </div>
   );

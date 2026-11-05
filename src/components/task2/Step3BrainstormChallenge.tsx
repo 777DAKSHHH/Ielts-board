@@ -119,7 +119,7 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
           <h2 className="stage-title">Think First. Reveal Later.</h2>
 
           <p className="stage-subtitle">
-            Simple brainstorm cards for Positive &amp; Negative Development: Answer the question aloud first, check the lens, then reveal the one-liner IELTS idea.
+            Simple brainstorm cards for Causes &amp; Solutions: Answer the question aloud first, check the lens, then reveal the one-liner IELTS idea.
           </p>
         </div>
 

@@ -43,6 +43,10 @@ import { Step9SubmissionT2 } from "./components/task2/Step9Submission";
 import type { ModuleType } from "./types";
 import { TASK1_STEPS, TASK1_TITLES, TASK2_STEPS, TASK2_TITLES } from "./config";
 
+// Standalone Pages (General Training Task 1 & Cambridge Reading Solutions)
+import { GeneralTask1Page } from "./components/generalTask1/GeneralTask1Page";
+import { Cambridge7Test2Page } from "./components/cambridge/Cambridge7Test2Page";
+
 export function App() {
   // Gatekeeper Auth
   const { isUnlocked, errorMsg, unlock, lock, setErrorMsg } = useGatekeeper();
@@ -62,9 +66,25 @@ export function App() {
   const speech = useSpeech();
   const boardScale = useBoardScale();
 
-  const totalSteps = currentModule === "task1" ? TASK1_STEPS.length : TASK2_STEPS.length;
-  const stepTitles = currentModule === "task1" ? TASK1_TITLES : TASK2_TITLES;
-  const currentStepTitle = stepTitles[currentStep - 1];
+  const isStepModule = currentModule === "task1" || currentModule === "task2";
+  const totalSteps =
+    currentModule === "task1"
+      ? TASK1_STEPS.length
+      : currentModule === "task2"
+      ? TASK2_STEPS.length
+      : 1;
+
+  const stepTitles =
+    currentModule === "task1"
+      ? TASK1_TITLES
+      : currentModule === "task2"
+      ? TASK2_TITLES
+      : currentModule === "general1"
+      ? ["General Training Task 1 Letter Masterclass"]
+      : ["Cambridge 7 Test 2 Reading Solutions"];
+
+  const currentStepTitle =
+    stepTitles[Math.min(currentStep - 1, stepTitles.length - 1)] || "Lesson Overview";
 
   // Navigation Handlers
   const handlePrev = () => {
@@ -86,14 +106,37 @@ export function App() {
     setCurrentStep(step);
   };
 
-  const handleSelectModule = (mod: ModuleType) => {
+  const handleSelectModule = (mod: ModuleType, targetStep?: number) => {
+    const nextStep =
+      targetStep ??
+      (mod === "task1" && (currentModule === "general1" || currentModule === "cambridge7test2") ? 8 : 1);
     setCurrentModule(mod);
-    setCurrentStep(1);
+    setCurrentStep(nextStep);
     timer.reset(180);
   };
 
   // Render Active Stage Component
   const renderStageContent = () => {
+    if (currentModule === "general1") {
+      return (
+        <GeneralTask1Page
+          onSpeak={speech.speak}
+          accent={speech.accent}
+          onNavigateModule={handleSelectModule}
+        />
+      );
+    }
+
+    if (currentModule === "cambridge7test2") {
+      return (
+        <Cambridge7Test2Page
+          onSpeak={speech.speak}
+          accent={speech.accent}
+          onNavigateModule={handleSelectModule}
+        />
+      );
+    }
+
     if (currentModule === "task1") {
       switch (currentStep) {
         case 1:
@@ -119,7 +162,13 @@ export function App() {
         case 7:
           return <Step7ModelAnalysis />;
         case 8:
-          return <Step8Connectors onSpeak={speech.speak} />;
+          return (
+            <Step8Connectors
+              onSpeak={speech.speak}
+              onNavigateToGeneral={() => handleSelectModule("general1")}
+              onNavigateToCambridge={() => handleSelectModule("cambridge7test2")}
+            />
+          );
         default:
           return null;
       }
@@ -183,7 +232,7 @@ export function App() {
       />
 
       {/* Center Stage Viewport with Tactile Spring Motion */}
-      <main className="stage-viewport">
+      <main className={`stage-viewport ${!isStepModule ? "standalone-mode" : ""}`}>
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={`${currentModule}-${currentStep}`}
@@ -192,23 +241,32 @@ export function App() {
             initial="enter"
             animate="center"
             exit="exit"
-            style={{ width: "100%", height: "100%" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              minHeight: 0,
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden"
+            }}
           >
             {renderStageContent()}
           </motion.div>
         </AnimatePresence>
       </main>
 
-      {/* Floating Bottom Touch Dock */}
-      <TouchDock
-        currentStep={currentStep}
-        totalSteps={totalSteps}
-        onPrev={handlePrev}
-        onNext={handleNext}
-        onSelectStep={handleSelectStep}
-        canPrev={currentStep > 1}
-        canNext={currentStep < totalSteps}
-      />
+      {/* Floating Bottom Touch Dock (Only on multi-step modules Task 1 & Task 2) */}
+      {isStepModule && (
+        <TouchDock
+          currentStep={currentStep}
+          totalSteps={totalSteps}
+          onPrev={handlePrev}
+          onNext={handleNext}
+          onSelectStep={handleSelectStep}
+          canPrev={currentStep > 1}
+          canNext={currentStep < totalSteps}
+        />
+      )}
 
       {/* Stage Navigation Quick Jump Drawer */}
       <QuickJumpMenu

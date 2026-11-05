@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { CheckCircle2, Copy, Check, BookOpen, Layers } from "lucide-react";
+import { CheckCircle2, Copy, Check, ChevronDown, ChevronUp, Layers, ShieldCheck, Sparkles } from "lucide-react";
 
 export const Step9SubmissionT2: React.FC = () => {
-  const [viewMode, setViewMode] = useState<"essay" | "vocab">("essay");
   const [copied, setCopied] = useState(false);
+  const [showEssay, setShowEssay] = useState(false);
 
-  const fullModelEssay = `In contemporary society, the pervasive presence of digital technology has made early exposure among young children practically inevitable. While interactive software can foster foundational digital fluency, I firmly contend that this trend is predominantly a negative development due to its detrimental health consequences and discernible social delays.
+  const fullModelEssay = `In contemporary times, the exponential escalation in satellite launches and the accumulation of space debris orbiting Earth have emerged as severe planetary and technological threats. This critical crisis is primarily driven by the commercial space race and inadequate post-mission disposal protocols; however, it can be mitigated through mandatory self-deorbiting mechanisms and international space debris remediation treaties.
 
-First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to severe physical health complications. When young children spend prolonged hours engrossed in tablets, energetic outdoor play—which is biologically indispensable for cardiovascular and muscular growth—is inevitably displaced. Furthermore, excessive exposure to blue light emitted by screens suppresses nocturnal melatonin production, leading to chronic sleep deficits. For example, pediatric health research demonstrates that toddlers who regularly consume more than two hours of daily screen time exhibit double the rate of childhood obesity and experience frequent sleep disturbances compared to less screen-reliant peers.
+To begin with, the primary catalyst for orbital overcrowding is the rapid proliferation of commercial satellite constellations launched by private aerospace enterprises. With thousands of low-Earth orbit (LEO) satellites deployed simultaneously for telecommunications, orbital pathways are becoming dangerously congested. To mitigate this hazard, international regulatory bodies must mandate self-deorbiting mechanisms on all newly manufactured satellites. Equipping orbiters with automated propulsive thrusters ensures that defunct hardware re-enters Earth's atmosphere and vaporizes safely upon mission conclusion. For instance, aerospace regulations requiring commercial fleets like Starlink to execute automated atmospheric burn-up within five years of retirement substantially reduce long-term collision risks.
 
-Additionally, early dependency on technology severely undermines the cultivation of interpersonal communication skills and emotional empathy. Developing social competence requires reciprocal, face-to-face interaction where children learn to interpret vocal inflections, decipher subtle facial expressions, and build resilient emotional problem-solving habits. In contrast, digital interfaces offer one-way, algorithmically curated stimulation that provides transient amusement rather than deep cognitive focus. A clear illustration of this is observed in early primary classrooms, where kindergarten teachers increasingly report that screen-accustomed toddlers frequently suffer from discernible language delays and struggle to cooperate harmoniously with their peers.
+Furthermore, the hazard is exacerbated by decades of abandoned space junk and kinetic orbital collisions, which shatter defunct hardware into thousands of untrackable, hypervelocity fragments. A minor paint fleck traveling at orbital velocity can catastrophically pierce spacecraft, while uncontrolled dead satellites threaten satellite communication networks. The most viable remedy is the rapid deployment of Active Debris Removal (ADR) missions governed by legally binding international treaties. Space agencies must collaborate to finance robotic capture craft equipped with nets and magnetic claws to deorbit hazardous derelict objects. A prime example is the European Space Agency's ClearSpace-1 project, which aims to capture a discarded rocket stage, demonstrating that technological remediation can actively purge congested orbits.
 
-In conclusion, although educational applications can provide transient academic benefits, I remain convinced that early technology immersion is an overwhelmingly negative development. Unchecked screen viewing makes sedentary habits inevitable and inflicts discernible harm on restorative sleep and face-to-face social competence during formative childhood years.`;
+In conclusion, the escalating menace of orbital overcrowding is driven primarily by the rapid expansion of commercial satellite constellations and the presence of uncontrolled legacy space debris. However, this crisis can be effectively resolved through the mandatory enforcement of automated self-deorbiting thrusters alongside international robotic debris removal missions. Moving forward, the global community must swiftly adopt an updated, legally binding United Nations space sustainability treaty before low-Earth orbit becomes permanently unusable.`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fullModelEssay);
@@ -20,399 +20,260 @@ In conclusion, although educational applications can provide transient academic 
   };
 
   return (
-    <div className="stage-card-wrapper">
+    <div className="stage-card-wrapper" style={{ overflowY: "auto", maxHeight: "100%" }}>
       {/* Stage Header */}
-      <div style={{ flexShrink: 0, marginBottom: "16px" }}>
-        <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 09 / 09 • Final Essay Structure &amp; Model
-        </span>
-        <h2 className="stage-title">Write Your Complete Opinion Essay (Positive vs. Negative Development)</h2>
-        <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-          Review your 4-paragraph architecture and mandatory formatting rules before writing the complete Band 9 response.
-        </p>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "10px", marginBottom: "14px" }}>
+        <div>
+          <span className="apple-badge accent" style={{ marginBottom: "6px" }}>
+            Step 09 / 09 • Final Essay Structure &amp; Revision
+          </span>
+          <h2 className="stage-title">Essay Structure &amp; Revision Cheat Sheet</h2>
+          <p className="stage-subtitle" style={{ marginBottom: 0 }}>
+            Extreme concise one-liner revision checks for your Band 9 Causes &amp; Solutions response.
+          </p>
+        </div>
+
+        <button
+          onClick={handleCopy}
+          style={{
+            padding: "8px 14px",
+            borderRadius: "10px",
+            border: "1px solid var(--border-subtle)",
+            background: copied ? "#dcfce7" : "#0f172a",
+            color: copied ? "#166534" : "#ffffff",
+            fontSize: "0.82rem",
+            fontWeight: 800,
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+          }}
+        >
+          {copied ? <Check size={14} color="#166534" /> : <Copy size={14} />}
+          <span>{copied ? "Copied Full Essay" : "Copy Complete Model Essay"}</span>
+        </button>
       </div>
 
-      {/* 3 Pillars Grid */}
+      {/* SECTION 1: 4-PARAGRAPH ARCHITECTURE (STRICT ONE-LINERS) */}
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "18px",
-          flex: 1,
-          minHeight: 0,
-          alignItems: "stretch"
+          background: "#ffffff",
+          border: "1.5px solid var(--border-subtle)",
+          borderRadius: "16px",
+          padding: "16px 20px",
+          marginBottom: "14px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px"
         }}
       >
-        {/* Card 01: 4-Paragraph Format */}
-        <div
-          style={{
-            background: "#ffffff",
-            border: "1.5px solid var(--border-subtle)",
-            borderRadius: "18px",
-            padding: "20px 22px",
-            boxShadow: "var(--shadow-sm)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px"
-          }}
-        >
-          <div>
-            <span style={{ fontSize: "0.85rem", fontWeight: 750, color: "var(--apple-blue)" }}>
-              4-PARAGRAPH FORMAT
-            </span>
-            <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-              Essay Architecture
-            </h3>
-            <p style={{ margin: "2px 0 0", fontSize: "0.86rem", color: "var(--slate-500)" }}>
-              [ Intro + Body 1 + Body 2 + Conclusion ]
-            </p>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1, overflowY: "auto" }}>
-            {/* Intro Box */}
-            <div
-              style={{
-                background: "var(--slate-50)",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "10px",
-                padding: "9px 12px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#f3e8ff", color: "#7e22ce", padding: "2px 6px", borderRadius: "4px" }}>
-                  INTRO
-                </span>
-                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Paraphrase + Opinion</strong>
-              </div>
-              <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                S1 Paraphrase (pervasive technology makes early exposure inevitable) + S2 Decisive personal opinion (predominantly negative development).
-              </div>
-            </div>
-
-            {/* Body 1 Box */}
-            <div
-              style={{
-                background: "var(--slate-50)",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "10px",
-                padding: "9px 12px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#fee2e2", color: "#991b1b", padding: "2px 6px", borderRadius: "4px" }}>
-                  BODY 1
-                </span>
-                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Opinion Side: Reason 1 + Reasoning + Example</strong>
-              </div>
-              <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                • <em>Main Reason (One-Liner):</em> Promotes sedentary habits, leading to obesity, eye strain, and sleep disruption.<br />
-                • <em>Supporting Reasoning:</em> Displaces outdoor exercise vital for skeletal growth; blue light suppresses melatonin.<br />
-                • <em>Concrete Example:</em> Preschoolers using tablets &gt;2 hrs/day show doubled rates of pediatric obesity.
-              </div>
-            </div>
-
-            {/* Body 2 Box */}
-            <div
-              style={{
-                background: "var(--slate-50)",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "10px",
-                padding: "9px 12px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#fee2e2", color: "#991b1b", padding: "2px 6px", borderRadius: "4px" }}>
-                  BODY 2
-                </span>
-                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Opinion Side: Reason 2 + Reasoning + Example</strong>
-              </div>
-              <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                • <em>Main Reason (One-Liner):</em> Impairs face-to-face interpersonal communication and emotional empathy.<br />
-                • <em>Supporting Reasoning:</em> One-way digital stimuli cannot teach facial expressions, vocal cues, or sharing.<br />
-                • <em>Concrete Example:</em> Kindergarten teachers report screen-heavy toddlers suffer language delays and social friction.
-              </div>
-            </div>
-
-            {/* Conclusion Box */}
-            <div
-              style={{
-                background: "var(--slate-50)",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "10px",
-                padding: "9px 12px"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#f1f5f9", color: "#334155", padding: "2px 6px", borderRadius: "4px" }}>
-                  CONCLUSION
-                </span>
-                <strong style={{ fontSize: "0.9rem", color: "var(--slate-900)" }}>Sum-Up + Restate Opinion</strong>
-              </div>
-              <div style={{ fontSize: "0.82rem", color: "var(--slate-700)", marginTop: "4px", lineHeight: 1.4 }}>
-                S1 Sum-up the two main reasons (sedentary health risks + social communication deficits) + S2 Decisive restatement confirming it as an overwhelmingly negative development.
-              </div>
-            </div>
-          </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", borderBottom: "1px solid #f1f5f9", paddingBottom: "8px" }}>
+          <Layers size={16} color="var(--apple-blue)" />
+          <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+            4-Paragraph Linked Structure (One-Liner Revision)
+          </h3>
         </div>
 
-        {/* Card 02: Paragraph Development Logic */}
-        <div
-          style={{
-            background: "#ffffff",
-            border: "1.5px solid var(--border-subtle)",
-            borderRadius: "18px",
-            padding: "20px 22px",
-            boxShadow: "var(--shadow-sm)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px"
-          }}
-        >
-          <div>
-            <span style={{ fontSize: "0.82rem", fontWeight: 750, color: "#059669" }}>
-              PARAGRAPH DEVELOPMENT
-            </span>
-            <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-              Paragraph Logic &amp; Balance
-            </h3>
-            <p style={{ margin: "2px 0 0", fontSize: "0.86rem", color: "var(--slate-500)" }}>
-              [ Topic Sentence + Explanation + Concrete Evidence ]
-            </p>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "9px", flex: 1, overflowY: "auto" }}>
-            {[
-              {
-                step: "1. Introduction Formula",
-                desc: "S1 Paraphrase (pervasive technology makes early exposure inevitable) + S2 Clear Opinion (predominantly a negative development due to physical health hazards and social deficits)."
-              },
-              {
-                step: "2. Body 1 (Opinion Side: Reason 1 + Reasoning + Example)",
-                desc: "Topic sentence + Reason 1 (Sedentary lifestyle and obesity) + Supporting explanation (outdoor exercise displacement and blue light melatonin suppression) + Medical example (pediatric studies on doubled obesity rates)."
-              },
-              {
-                step: "3. Body 2 (Opinion Side: Reason 2 + Reasoning + Example)",
-                desc: "Second pillar topic sentence + Reason 2 (Interpersonal communication and social delay) + Supporting explanation (screens deliver one-way stimulation devoid of human empathy) + Classroom evidence (speech delays and peer conflict in kindergarten)."
-              },
-              {
-                step: "4. Conclusion Formula",
-                desc: "S1 Sum-up main reasons (sedentary obesity and communication setbacks) + S2 Restatement of personal opinion confirming the negative assessment."
-              }
-            ].map((item, i) => (
-              <div
-                key={i}
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "10px",
-                  background: "var(--slate-50)",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "10px",
-                  padding: "9px 12px"
-                }}
-              >
-                <CheckCircle2 size={16} color="#059669" style={{ flexShrink: 0, marginTop: "2px" }} />
-                <div style={{ fontSize: "0.84rem", lineHeight: 1.45 }}>
-                  <strong style={{ color: "var(--slate-900)" }}>{item.step}:</strong>{" "}
-                  <span style={{ color: "var(--slate-700)" }}>{item.desc}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Card 03: Complete Model Essay & Lexical Resource */}
-        <div
-          style={{
-            background: "#ffffff",
-            border: "1.5px solid var(--border-subtle)",
-            borderRadius: "18px",
-            padding: "20px 22px",
-            boxShadow: "var(--shadow-sm)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px"
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
-            <div>
-              <span style={{ fontSize: "0.82rem", fontWeight: 750, color: "#9333ea" }}>
-                BAND 9 MODEL &amp; VOCABULARY
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+          {/* Intro */}
+          <div style={{ background: "#faf5ff", border: "1px solid #e9d5ff", borderRadius: "10px", padding: "10px 14px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#9333ea", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
+                1. INTRODUCTION
               </span>
-              <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--slate-900)", margin: "4px 0 0" }}>
-                {viewMode === "essay" ? "Complete Model Essay" : "Precision Academic Lexis"}
-              </h3>
+              <strong style={{ fontSize: "0.86rem", color: "#6b21a8" }}>Paraphrase Question + Causes &amp; Solutions Thesis</strong>
             </div>
-
-            <div style={{ display: "flex", gap: "6px" }}>
-              <button
-                onClick={() => setViewMode(viewMode === "essay" ? "vocab" : "essay")}
-                style={{
-                  padding: "4px 10px",
-                  borderRadius: "8px",
-                  border: "1px solid var(--border-subtle)",
-                  background: "var(--slate-100)",
-                  fontSize: "0.78rem",
-                  fontWeight: 700,
-                  color: "var(--slate-700)",
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "4px"
-                }}
-              >
-                {viewMode === "essay" ? <Layers size={13} /> : <BookOpen size={13} />}
-                <span>{viewMode === "essay" ? "View Lexis" : "View Essay"}</span>
-              </button>
-
-              {viewMode === "essay" && (
-                <button
-                  onClick={handleCopy}
-                  style={{
-                    padding: "4px 10px",
-                    borderRadius: "8px",
-                    border: "1px solid var(--border-subtle)",
-                    background: copied ? "#dcfce7" : "var(--slate-100)",
-                    fontSize: "0.78rem",
-                    fontWeight: 700,
-                    color: copied ? "#166534" : "var(--slate-700)",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px"
-                  }}
-                >
-                  {copied ? <Check size={13} /> : <Copy size={13} />}
-                  <span>{copied ? "Copied" : "Copy"}</span>
-                </button>
-              )}
-            </div>
+            <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#3b0764", lineHeight: 1.45 }}>
+              Paraphrase commercial satellite proliferation &amp; debris threat + deliver a thesis mapping the commercial space race &amp; legacy debris to deorbit mandates &amp; UN cleanup treaties.
+            </p>
           </div>
 
-          {viewMode === "essay" ? (
+          {/* Body 1 */}
+          <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#2563eb", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
+                2. BODY PARA 1
+              </span>
+              <strong style={{ fontSize: "0.86rem", color: "#1d4ed8" }}>Cause 1 + Solution 1 + Concrete Example</strong>
+            </div>
+            <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e3a8a", lineHeight: 1.45 }}>
+              <strong>Cause 1:</strong> Commercial mega-constellations saturate low-Earth orbits → <strong>Solution 1:</strong> Regulators mandate automated self-deorbiting thrusters → <strong>Example:</strong> Starlink 5-year atmospheric burn-up rule.
+            </p>
+          </div>
+
+          {/* Body 2 */}
+          <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "10px 14px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#16a34a", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
+                3. BODY PARA 2
+              </span>
+              <strong style={{ fontSize: "0.86rem", color: "#15803d" }}>Cause 2 + Solution 2 + Concrete Example</strong>
+            </div>
+            <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#14532d", lineHeight: 1.45 }}>
+              <strong>Cause 2:</strong> Cascading hypervelocity shrapnel (Kessler syndrome) &amp; abandoned stages → <strong>Solution 2:</strong> Active robotic debris removal (ADR) &amp; UN launch treaties → <strong>Example:</strong> ESA ClearSpace-1 claw mission.
+            </p>
+          </div>
+
+          {/* Conclusion */}
+          <div style={{ background: "#f8fafc", border: "1px solid #cbd5e1", borderRadius: "10px", padding: "10px 14px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#0f172a", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
+                4. CONCLUSION
+              </span>
+              <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Sum-Up Causes, Solutions + Forward-Looking Policy Recommendation</strong>
+            </div>
+            <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e293b", lineHeight: 1.45 }}>
+              Synthesize commercial constellation saturation and legacy debris, restate automated deorbiting thrusters and robotic removal, and recommend a legally binding UN space sustainability treaty.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* SECTION 2: BAND 9 EXAMINER REVISION CHECKPOINTS (STRICT ONE-LINERS) */}
+      <div
+        style={{
+          background: "#ffffff",
+          border: "1.5px solid var(--border-subtle)",
+          borderRadius: "16px",
+          padding: "16px 20px",
+          marginBottom: "14px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px"
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", borderBottom: "1px solid #f1f5f9", paddingBottom: "8px" }}>
+          <ShieldCheck size={16} color="#16a34a" />
+          <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+            4 Band 9 Examiner Revision Checkpoints (Strict One-Liners)
+          </h3>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "10px" }}>
+          {[
+            {
+              code: "TR",
+              title: "Task Response",
+              color: "#2563eb",
+              bg: "#eff6ff",
+              rule: "Both causes and both linked solutions are directly developed with verifiable real-world evidence."
+            },
+            {
+              code: "CC",
+              title: "Coherence & Cohesion",
+              color: "#16a34a",
+              bg: "#f0fdf4",
+              rule: "Seamless progression markers: 'To begin with... To mitigate this hazard... Furthermore... In conclusion...'."
+            },
+            {
+              code: "LR",
+              title: "Lexical Resource",
+              color: "#9333ea",
+              bg: "#faf5ff",
+              rule: "Natural Band 9 aerospace lexis: 'proliferation', 'congested', 'defunct', 'hypervelocity', 'remediation'."
+            },
+            {
+              code: "GRA",
+              title: "Grammatical Accuracy",
+              color: "#d97706",
+              bg: "#fffbeb",
+              rule: "Complex passive constructions and conditional recommendations without punctuation or agreement errors."
+            }
+          ].map((chk) => (
             <div
+              key={chk.code}
               style={{
-                flex: 1,
-                overflowY: "auto",
-                background: "var(--slate-50)",
-                border: "1px solid var(--border-subtle)",
+                background: chk.bg,
+                border: `1px solid ${chk.color}30`,
                 borderRadius: "10px",
-                padding: "12px 14px",
-                fontSize: "0.82rem",
-                color: "var(--slate-800)",
-                lineHeight: 1.55,
+                padding: "10px 12px",
                 display: "flex",
                 flexDirection: "column",
-                gap: "10px"
+                gap: "4px"
               }}
             >
-              <div>
-                <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#f3e8ff", color: "#7e22ce", padding: "1px 6px", borderRadius: "4px" }}>
-                  INTRODUCTION (PARAPHRASE + OPINION)
+              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                <span style={{ fontSize: "0.68rem", fontWeight: 800, background: chk.color, color: "#ffffff", padding: "1px 6px", borderRadius: "4px" }}>
+                  {chk.code}
                 </span>
-                <p style={{ margin: "4px 0 0" }}>
-                  In contemporary society, the pervasive presence of digital technology has made early exposure among young children practically inevitable. While interactive software can foster foundational digital fluency, I firmly contend that this trend is predominantly a negative development due to its detrimental health consequences and discernible social delays.
-                </p>
+                <strong style={{ fontSize: "0.84rem", color: "#0f172a" }}>{chk.title}</strong>
               </div>
-
-              <div>
-                <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#fee2e2", color: "#991b1b", padding: "1px 6px", borderRadius: "4px" }}>
-                  BODY 1: OPINION SIDE — REASON 1 + REASONING + EXAMPLE
-                </span>
-                <p style={{ margin: "4px 0 0" }}>
-                  First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to severe physical health complications. When young children spend prolonged hours engrossed in tablets, energetic outdoor play—which is biologically indispensable for cardiovascular and muscular growth—is inevitably displaced. Furthermore, excessive exposure to blue light emitted by screens suppresses nocturnal melatonin production, leading to chronic sleep deficits. For example, pediatric health research demonstrates that toddlers who regularly consume more than two hours of daily screen time exhibit double the rate of childhood obesity and experience frequent sleep disturbances compared to less screen-reliant peers.
-                </p>
-              </div>
-
-              <div>
-                <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#fee2e2", color: "#991b1b", padding: "1px 6px", borderRadius: "4px" }}>
-                  BODY 2: OPINION SIDE — REASON 2 + REASONING + EXAMPLE
-                </span>
-                <p style={{ margin: "4px 0 0" }}>
-                  Additionally, early dependency on technology severely undermines the cultivation of interpersonal communication skills and emotional empathy. Developing social competence requires reciprocal, face-to-face interaction where children learn to interpret vocal inflections, decipher subtle facial expressions, and build resilient emotional problem-solving habits. In contrast, digital interfaces offer one-way, algorithmically curated stimulation that provides transient amusement rather than deep cognitive focus. A clear illustration of this is observed in early primary classrooms, where kindergarten teachers increasingly report that screen-accustomed toddlers frequently suffer from discernible language delays and struggle to cooperate harmoniously with their peers.
-                </p>
-              </div>
-
-              <div>
-                <span style={{ fontSize: "0.7rem", fontWeight: 800, background: "#f1f5f9", color: "#334155", padding: "1px 6px", borderRadius: "4px" }}>
-                  CONCLUSION: SUM-UP MAIN REASONS + RESTATE OPINION
-                </span>
-                <p style={{ margin: "4px 0 0" }}>
-                  In conclusion, although educational applications can provide transient academic benefits, I remain convinced that early technology immersion is an overwhelmingly negative development. Unchecked screen viewing makes sedentary habits inevitable and inflicts discernible harm on restorative sleep and face-to-face social competence during formative childhood years.
-                </p>
-              </div>
+              <p style={{ margin: 0, fontSize: "0.82rem", color: "#334155", lineHeight: 1.4 }}>
+                {chk.rule}
+              </p>
             </div>
-          ) : (
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1, overflowY: "auto" }}>
-              <div
-                style={{
-                  background: "var(--slate-50)",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "10px",
-                  padding: "10px 12px"
-                }}
-              >
-                <div style={{ fontSize: "0.78rem", fontWeight: 750, color: "var(--slate-500)", marginBottom: "6px" }}>
-                  GENUINE HIGH-SCORING ESSAY VOCABULARY:
-                </div>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-                  {[
-                    "pervasive",
-                    "inevitable",
-                    "discernible",
-                    "transient",
-                    "resilient",
-                    "detrimental",
-                    "conducive",
-                    "susceptible",
-                    "indispensable",
-                    "ubiquitous",
-                    "erode",
-                    "sedentary lifestyle",
-                    "melatonin suppression",
-                    "reciprocal dialogue"
-                  ].map((w) => (
-                    <span
-                      key={w}
-                      style={{
-                        background: "#fff",
-                        border: "1px solid var(--border-subtle)",
-                        padding: "3px 8px",
-                        borderRadius: "6px",
-                        fontSize: "0.8rem",
-                        fontWeight: 700,
-                        color: "var(--slate-800)"
-                      }}
-                    >
-                      {w}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div
-                style={{
-                  background: "var(--slate-50)",
-                  border: "1px solid var(--border-subtle)",
-                  borderRadius: "10px",
-                  padding: "10px 12px",
-                  fontSize: "0.82rem",
-                  color: "var(--slate-700)",
-                  lineHeight: 1.45
-                }}
-              >
-                <strong style={{ color: "var(--slate-900)" }}>Discourse Linkers:</strong>
-                <br />
-                • <em>Intro opener:</em> “In contemporary society, the pervasive presence of digital technology has made early exposure practically inevitable...”<br />
-                • <em>Opinion statement:</em> “While interactive software can foster foundational digital fluency, I firmly contend that this trend is predominantly a negative development...”<br />
-                • <em>Body 1 opener:</em> “First and foremost, premature technology adoption promotes an intensely sedentary lifestyle, leading to...”<br />
-                • <em>Body 2 opener:</em> “Additionally, early dependency on technology severely undermines the cultivation of interpersonal communication skills...”<br />
-                • <em>Conclusion opener:</em> “In conclusion, although educational applications can provide transient academic benefits, I remain convinced that...”<br />
-                • <em>Restatement:</em> “Unchecked screen viewing makes sedentary habits inevitable and inflicts discernible harm on restorative sleep...”
-              </div>
-            </div>
-          )}
+          ))}
         </div>
+      </div>
+
+      {/* SECTION 3: COMPACT EXPANDABLE FULL MODEL ESSAY DRAWER */}
+      <div
+        style={{
+          background: "#ffffff",
+          border: "1.5px solid var(--border-subtle)",
+          borderRadius: "16px",
+          padding: "14px 18px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
+        }}
+      >
+        <button
+          type="button"
+          onClick={() => setShowEssay(!showEssay)}
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            background: "none",
+            border: "none",
+            padding: 0,
+            cursor: "pointer"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <Sparkles size={16} color="var(--apple-blue)" />
+            <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
+              Complete Band 9 Model Essay (280 Words • Causes &amp; Solutions)
+            </strong>
+            <span style={{ fontSize: "0.72rem", background: "#f1f5f9", color: "#475569", padding: "2px 8px", borderRadius: "6px" }}>
+              {showEssay ? "Click to collapse" : "Click to view full text"}
+            </span>
+          </div>
+
+          {showEssay ? <ChevronUp size={16} color="#64748b" /> : <ChevronDown size={16} color="#64748b" />}
+        </button>
+
+        {showEssay && (
+          <div
+            style={{
+              marginTop: "12px",
+              paddingTop: "12px",
+              borderTop: "1px solid #f1f5f9",
+              fontSize: "0.90rem",
+              lineHeight: 1.65,
+              color: "#1e293b",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px"
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              <strong>Introduction:</strong> In contemporary times, the exponential escalation in satellite launches and the accumulation of space debris orbiting Earth have emerged as severe planetary and technological threats. This critical crisis is primarily driven by the commercial space race and inadequate post-mission disposal protocols; however, it can be mitigated through mandatory self-deorbiting mechanisms and international space debris remediation treaties.
+            </p>
+            <p style={{ margin: 0 }}>
+              <strong>Body 1 (Cause 1 + Solution 1 + Example):</strong> To begin with, the primary catalyst for orbital overcrowding is the rapid proliferation of commercial satellite constellations launched by private aerospace enterprises. With thousands of low-Earth orbit (LEO) satellites deployed simultaneously for telecommunications, orbital pathways are becoming dangerously congested. To mitigate this hazard, international regulatory bodies must mandate self-deorbiting mechanisms on all newly manufactured satellites. Equipping orbiters with automated propulsive thrusters ensures that defunct hardware re-enters Earth's atmosphere and vaporizes safely upon mission conclusion. For instance, aerospace regulations requiring commercial fleets like Starlink to execute automated atmospheric burn-up within five years of retirement substantially reduce long-term collision risks.
+            </p>
+            <p style={{ margin: 0 }}>
+              <strong>Body 2 (Cause 2 + Solution 2 + Example):</strong> Furthermore, the hazard is exacerbated by decades of abandoned space junk and kinetic orbital collisions, which shatter defunct hardware into thousands of untrackable, hypervelocity fragments. A minor paint fleck traveling at orbital velocity can catastrophically pierce spacecraft, while uncontrolled dead satellites threaten satellite communication networks. The most viable remedy is the rapid deployment of Active Debris Removal (ADR) missions governed by legally binding international treaties. Space agencies must collaborate to finance robotic capture craft equipped with nets and magnetic claws to deorbit hazardous derelict objects. A prime example is the European Space Agency's ClearSpace-1 project, which aims to capture a discarded rocket stage, demonstrating that technological remediation can actively purge congested orbits.
+            </p>
+            <p style={{ margin: 0 }}>
+              <strong>Conclusion:</strong> In conclusion, the escalating menace of orbital overcrowding is driven primarily by the rapid expansion of commercial satellite constellations and the presence of uncontrolled legacy space debris. However, this crisis can be effectively resolved through the mandatory enforcement of automated self-deorbiting thrusters alongside international robotic debris removal missions. Moving forward, the global community must swiftly adopt an updated, legally binding United Nations space sustainability treaty before low-Earth orbit becomes permanently unusable.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

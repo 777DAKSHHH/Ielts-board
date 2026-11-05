@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  FileText,
+  Sparkles,
   Layers,
+  FileText,
   Eye,
   EyeOff,
-  Sparkles,
-  Check,
-  Copy,
   BookOpen,
-  CheckCircle2
+  Copy,
+  Check,
+  Rocket,
+  ShieldAlert,
+  ArrowRight
 } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { TouchTimer } from "../common/TouchTimer";
@@ -29,125 +31,129 @@ const ESSAY_FORMAT_STEPS = [
     label: "INTRODUCTION",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    formatRule: "Paraphrase the question + Opinion"
+    formatRule: "Paraphrase the question + Thesis"
   },
   {
     stepNum: "2",
     label: "Body Paragraph 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    formatRule: "Opinion side: 1 Main Reason + Supporting Reasoning + Example"
+    formatRule: "Cause 1 + Solution 1 + Example"
   },
   {
     stepNum: "3",
     label: "Body Paragraph 2",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    formatRule: "Opinion side: 1 Main Reason + Supporting Reasoning + Example"
+    formatRule: "Cause 2 + Solution 2 + Example"
   },
   {
     stepNum: "4",
     label: "CONCLUSION",
     badgeBg: "rgba(13, 148, 136, 0.12)",
     badgeColor: "#0f766e",
-    formatRule: "Sum-up all the main reasons + Restate your opinion"
+    formatRule: "Sum-up all the main causes, solutions + Suggestion / Recommendation"
   }
 ];
 
 // Structured cut-to-the-chase student idea cards
 interface IdeaItem {
   id: string;
-  type: "positive" | "negative";
+  type: "cause" | "solution";
   tag: string;
   oneLiner: string;
   example: string;
 }
 
 const STUDENT_IDEAS: IdeaItem[] = [
-  // 4 Positive cut-to-the-chase ideas
+  // 5 Causes from Student Idea Bank
   {
-    id: "pos-1",
-    type: "positive",
-    tag: "Interactive Learning",
-    oneLiner: "Gamified educational apps make abstract math and literacy intuitive through playful challenges.",
-    example: "A preschooler learns basic addition through counting games rather than paper drill sheets."
+    id: "cause-1",
+    type: "cause",
+    tag: "Growing demand for satellite-based services",
+    oneLiner: "Modern society increasingly depends on satellite technology for internet connectivity, GPS navigation, weather forecasting and communication, prompting companies to launch large numbers of satellites.",
+    example: "Satellite internet providers deploy thousands of small satellites to deliver broadband connectivity to remote areas."
   },
   {
-    id: "pos-2",
-    type: "positive",
-    tag: "Early Digital Fluency",
-    oneLiner: "Interface familiarity provides foundational tech competence essential for computerized modern schooling.",
-    example: "Children who use tablets early transition effortlessly to school research portals and typing assignments."
+    id: "cause-2",
+    type: "cause",
+    tag: "Commercialisation of space exploration",
+    oneLiner: "The growing involvement of private companies has made space activities commercially attractive, increasing the frequency of rocket launches as businesses compete.",
+    example: "Private aerospace companies regularly conduct launches to deploy satellites and provide services to other organisations."
   },
   {
-    id: "pos-3",
-    type: "positive",
-    tag: "Long-Distance Connection",
-    oneLiner: "High-definition video calling sustains vital emotional bonds with distant relatives across time zones.",
-    example: "Toddlers stay emotionally bonded with grandparents living abroad via weekly video calls."
+    id: "cause-3",
+    type: "cause",
+    tag: "Abandoned satellites and rocket components",
+    oneLiner: "Many satellites eventually stop functioning, while discarded rocket stages and equipment remain in orbit without proper disposal procedures, accumulating over time.",
+    example: "A satellite that has completed its operational life may remain in orbit if it is not moved to a safer disposal orbit or deorbited."
   },
   {
-    id: "pos-4",
-    type: "positive",
-    tag: "Creative Exploration",
-    oneLiner: "Age-appropriate digital software enables children to experiment freely with digital art, music, and storytelling.",
-    example: "Children create animations or record spoken stories using beginner creative applications."
+    id: "cause-4",
+    type: "cause",
+    tag: "Collisions and fragmentation",
+    oneLiner: "When satellites or other orbital objects collide, they break into thousands of smaller fragments that remain in orbit and create further collision risks.",
+    example: "The destruction of an old satellite during an accidental collision can produce debris that threatens other functioning spacecraft."
+  },
+  {
+    id: "cause-5",
+    type: "cause",
+    tag: "International competition and strategic interests",
+    oneLiner: "Countries invest heavily in space technology for scientific, economic and national-security purposes, encouraging frequent launches without sufficient attention to environmental consequences.",
+    example: "Governments may prioritise establishing satellite networks and strengthening space capabilities over investing in debris-management systems."
   },
 
-  // 6 Negative cut-to-the-chase ideas
+  // 5 Solutions from Student Idea Bank
   {
-    id: "neg-1",
-    type: "negative",
-    tag: "Reduces Physical Activity",
-    oneLiner: "Prolonged screen staring displaces active outdoor exercise, elevating risks of childhood obesity.",
-    example: "Spending afternoons watching videos leaves children with fewer chances to cycle, run, or play football."
+    id: "sol-1",
+    type: "solution",
+    tag: "Develop active debris-removal technology",
+    oneLiner: "Space agencies and private companies should invest in spacecraft capable of capturing and removing dangerous debris from orbit.",
+    example: "Robotic spacecraft could attach to defunct satellites and guide them towards controlled re-entry into Earth's atmosphere."
   },
   {
-    id: "neg-2",
-    type: "negative",
-    tag: "Disrupts Sleep Habits",
-    oneLiner: "Night-time screen viewing and blue light delay bedtime routines, causing chronic morning exhaustion.",
-    example: "Watching cartoons on tablets before bed pushes sleep onset back by up to an hour."
+    id: "sol-2",
+    type: "solution",
+    tag: "Enforce responsible satellite disposal",
+    oneLiner: "Satellite operators should be required to remove inactive satellites from valuable orbital regions within a specified period after their missions end.",
+    example: "Operators could design satellites with propulsion systems that allow them to descend safely towards Earth's atmosphere after completing their operational lives."
   },
   {
-    id: "neg-3",
-    type: "negative",
-    tag: "Weakens Social Skills",
-    oneLiner: "Passive digital entertainment replaces family dialogue, stunting conversational manners and emotional empathy.",
-    example: "Children glued to phones at family meals miss crucial opportunities to practise conversational manners."
+    id: "sol-3",
+    type: "solution",
+    tag: "Improve satellite tracking and collision prevention",
+    oneLiner: "Countries should strengthen space surveillance systems to monitor objects in orbit and identify potential collisions before they occur.",
+    example: "Satellite operators can receive collision warnings and adjust spacecraft trajectories to avoid dangerous encounters."
   },
   {
-    id: "neg-4",
-    type: "negative",
-    tag: "Erodes Attention Span",
-    oneLiner: "Fast-paced short videos condition young brains to crave instant gratification, undermining classroom focus.",
-    example: "Pupils accustomed to short clips grow restless when reading full book pages or doing extended homework."
+    id: "sol-4",
+    type: "solution",
+    tag: "Introduce stricter international regulations",
+    oneLiner: "Governments should cooperate to establish common standards for satellite launches, orbital disposal and debris prevention.",
+    example: "International agreements could make responsible disposal plans compulsory before a satellite receives launch approval."
   },
   {
-    id: "neg-5",
-    type: "negative",
-    tag: "Inappropriate Content",
-    oneLiner: "Young children lack critical maturity, making them acutely susceptible to violent or harmful media.",
-    example: "Video autoplay algorithms can expose unattended preschoolers to graphic or frightening videos."
-  },
-  {
-    id: "neg-6",
-    type: "negative",
-    tag: "Screen Dependency",
-    oneLiner: "Constant virtual amusement leaves children restless and unable to entertain themselves through independent play.",
-    example: "A toddler throws an intense tantrum and becomes restless whenever a mobile phone is removed."
+    id: "sol-5",
+    type: "solution",
+    tag: "Design satellites for sustainability",
+    oneLiner: "Manufacturers should develop spacecraft that are easier to repair, reuse or safely dispose of once their missions are completed.",
+    example: "Satellites could be designed with reliable deorbiting mechanisms and components that minimise the creation of additional fragments."
   }
 ];
 
 const TARGET_LEXIS = [
-  { word: "inevitable", note: "sedentary habits become inevitable" },
-  { word: "transient", note: "transient digital stimulation" },
-  { word: "discernible", note: "discernible speech & empathy deficits" },
-  { word: "resilient", note: "lacks resilient problem-solving" },
-  { word: "pervasive", note: "pervasive presence of touchscreens" },
-  { word: "indispensable", note: "digital fluency is indispensable" },
-  { word: "sedentary", note: "entrenches a sedentary routine" },
-  { word: "susceptible", note: "acutely susceptible to cyber risks" }
+  { word: "proliferation", note: "rapid proliferation of commercial satellites" },
+  { word: "congested", note: "dangerously congested orbital lanes" },
+  { word: "defunct", note: "thousands of defunct satellites adrift" },
+  { word: "catastrophic", note: "risk of catastrophic chain reactions" },
+  { word: "remediation", note: "active orbital debris remediation" },
+  { word: "decommission", note: "mandatory protocol to decommission units" },
+  { word: "hypervelocity", note: "shrapnel traveling at hypervelocity speeds" },
+  { word: "derelict", note: "multi-ton derelict rocket boosters" },
+  { word: "mitigate", note: "mitigate orbital saturation hazards" },
+  { word: "shrapnel", note: "clouds of untrackable metallic shrapnel" },
+  { word: "multilateral", note: "enforceable multilateral space treaties" },
+  { word: "sustainable", note: "preserving a sustainable orbital commons" }
 ];
 
 export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
@@ -158,7 +164,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
   onTimerReset
 }) => {
   const [isFormatRevealed, setIsFormatRevealed] = useState(false);
-  const [activeTab, setActiveTab] = useState<"all" | "positive" | "negative">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "cause" | "solution">("all");
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const handleCopy = (id: string, text: string) => {
@@ -168,8 +174,8 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
   };
 
   const filteredIdeas = STUDENT_IDEAS.filter((item) => {
-    if (activeTab === "positive") return item.type === "positive";
-    if (activeTab === "negative") return item.type === "negative";
+    if (activeTab === "cause") return item.type === "cause";
+    if (activeTab === "solution") return item.type === "solution";
     return true;
   });
 
@@ -179,9 +185,9 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 02 / 09 • Task Reveal &amp; Essay Format
         </span>
-        <h2 className="stage-title">Deconstruct the Opinion Essay Architecture &amp; One-Liner Points</h2>
+        <h2 className="stage-title">Deconstruct the Causes &amp; Solutions Architecture &amp; One-Liner Points</h2>
         <p className="stage-subtitle">
-          Essay Type: <strong>Direct Opinion (Positive or Negative Development)</strong>. Master the mandatory 4-paragraph format and review cut-to-the-chase arguments for both perspectives.
+          Essay Type: <strong>Causes &amp; Solutions Essay</strong>. Master the mandatory linked format: Cause 1 + Solution 1 and Cause 2 + Solution 2.
         </p>
       </div>
 
@@ -192,7 +198,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to evaluate both sides, select your opinion stance, and choose two sharp supporting reasons."
+          instruction="Focus Timer: 3 minutes to review the two direct questions, pair each cause with its direct solution, and lock in your thesis."
         />
       </div>
 
@@ -219,7 +225,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <FileText size={22} color="var(--slate-800)" />
+                <Rocket size={22} color="var(--slate-800)" />
                 <h4 style={{ fontSize: "1.15rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
                   IELTS Academic Writing Task 2
                 </h4>
@@ -235,9 +241,9 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 border: "1.5px solid var(--border-default)",
                 borderRadius: "16px",
                 padding: "24px 26px",
-                fontSize: "1.28rem",
+                fontSize: "1.22rem",
                 fontWeight: 750,
-                lineHeight: 1.65,
+                lineHeight: 1.6,
                 boxShadow: "var(--shadow-sm)",
                 color: "var(--slate-900)",
                 flex: 1
@@ -262,7 +268,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 lineHeight: 1.5
               }}
             >
-              <strong>Examiner Requirement:</strong> State a decisive opinion in the introduction and defend that exact side across Body 1 and Body 2 using concrete reasoning and examples.
+              <strong>Examiner Requirement:</strong> Answer both questions fully. Symmetrically pair each cause with its direct solution in Body 1 and Body 2 with concrete examples.
             </div>
           </div>
         </div>
@@ -350,7 +356,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   color: "#1d4ed8"
                 }}
               >
-                ⚡ Essay Format: <strong>4-Paragraph Opinion Architecture</strong>
+                ⚡ Essay Format: <strong>Linked Causes &amp; Solutions Architecture</strong>
               </div>
 
               <div
@@ -393,7 +399,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                     </span>
                     <div
                       style={{
-                        fontSize: "1.05rem",
+                        fontSize: "1.02rem",
                         fontWeight: 800,
                         color: "var(--slate-900)",
                         letterSpacing: "0.01em"
@@ -457,7 +463,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                       Format Hidden
                     </h4>
                     <p style={{ fontSize: "0.86rem", color: "var(--slate-500)", margin: "4px 0 0", lineHeight: 1.45 }}>
-                      Ask students to recall the 4-Paragraph Opinion Essay format, then click to reveal.
+                      Ask students to recall the Causes &amp; Solutions linked format, then click to reveal.
                     </p>
                   </div>
 
@@ -485,7 +491,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         </div>
       </div>
 
-      {/* BRAND NEW REDESIGNED HIGH-READABILITY STUDENT IDEA DECK */}
+      {/* STUDENT IDEA DECK: ONE-LINER ONLY */}
       <div
         style={{
           marginTop: "24px",
@@ -529,7 +535,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 Student Idea Bank • Cut-to-the-Chase One-Liners
               </h3>
               <p style={{ margin: "2px 0 0", fontSize: "0.82rem", color: "var(--slate-500)" }}>
-                Relatable real-world arguments: 1 Core Sentence + 1 Concrete Example. No fluff.
+                Relatable arguments: 1 Core Sentence + 1 Concrete Example. Strictly one-liner only.
               </p>
             </div>
           </div>
@@ -551,41 +557,41 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 transition: "all 0.15s ease"
               }}
             >
-              All Ideas (10)
+              All Ideas (8)
             </button>
             <button
-              onClick={() => setActiveTab("positive")}
+              onClick={() => setActiveTab("cause")}
               style={{
                 padding: "6px 14px",
                 borderRadius: "8px",
                 border: "none",
-                background: activeTab === "positive" ? "#16a34a" : "transparent",
-                color: activeTab === "positive" ? "#ffffff" : "#166534",
-                fontWeight: activeTab === "positive" ? 800 : 600,
+                background: activeTab === "cause" ? "#dc2626" : "transparent",
+                color: activeTab === "cause" ? "#ffffff" : "#991b1b",
+                fontWeight: activeTab === "cause" ? 800 : 600,
                 fontSize: "0.82rem",
-                boxShadow: activeTab === "positive" ? "0 2px 6px rgba(22,163,74,0.3)" : "none",
+                boxShadow: activeTab === "cause" ? "0 2px 6px rgba(220,38,38,0.3)" : "none",
                 cursor: "pointer",
                 transition: "all 0.15s ease"
               }}
             >
-              🟢 Positive (4)
+              🔴 Causes (4)
             </button>
             <button
-              onClick={() => setActiveTab("negative")}
+              onClick={() => setActiveTab("solution")}
               style={{
                 padding: "6px 14px",
                 borderRadius: "8px",
                 border: "none",
-                background: activeTab === "negative" ? "#dc2626" : "transparent",
-                color: activeTab === "negative" ? "#ffffff" : "#991b1b",
-                fontWeight: activeTab === "negative" ? 800 : 600,
+                background: activeTab === "solution" ? "#16a34a" : "transparent",
+                color: activeTab === "solution" ? "#ffffff" : "#166534",
+                fontWeight: activeTab === "solution" ? 800 : 600,
                 fontSize: "0.82rem",
-                boxShadow: activeTab === "negative" ? "0 2px 6px rgba(220,38,38,0.3)" : "none",
+                boxShadow: activeTab === "solution" ? "0 2px 6px rgba(22,163,74,0.3)" : "none",
                 cursor: "pointer",
                 transition: "all 0.15s ease"
               }}
             >
-              ⚡ Negative (6)
+              🟢 Solutions (4)
             </button>
           </div>
         </div>
@@ -606,7 +612,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         >
           <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--slate-700)", flexShrink: 0 }}>
             <BookOpen size={15} color="var(--apple-blue)" />
-            <strong style={{ fontSize: "0.78rem" }}>High-Utility Essay Vocabulary:</strong>
+            <strong style={{ fontSize: "0.78rem" }}>Band 8.5/9 Space &amp; Remediation Lexis:</strong>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
             {TARGET_LEXIS.map((lex) => (
@@ -639,27 +645,25 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           }}
         >
           {filteredIdeas.map((idea, index) => {
-            const isPos = idea.type === "positive";
+            const isCause = idea.type === "cause";
             const isCopied = copiedId === idea.id;
 
             return (
               <div
                 key={idea.id}
                 style={{
-                  background: isPos ? "#fcfdfc" : "#fffcfc",
-                  border: isPos ? "1.5px solid #bbf7d0" : "1.5px solid #fecaca",
-                  borderLeft: isPos ? "5px solid #16a34a" : "5px solid #dc2626",
-                  borderRadius: "14px",
-                  padding: "14px 16px",
+                  background: isCause ? "#fffcfc" : "#fcfdfc",
+                  border: isCause ? "1.5px solid #fecaca" : "1.5px solid #bbf7d0",
+                  borderRadius: "16px",
+                  padding: "16px 18px",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "8px",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
+                  gap: "10px",
                   transition: "transform 0.15s ease, box-shadow 0.15s ease"
                 }}
               >
-                {/* Card Top: Number, Badge Tag & Copy Action */}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                     <span
                       style={{
@@ -667,65 +671,66 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                         fontWeight: 800,
                         padding: "2px 8px",
                         borderRadius: "6px",
-                        background: isPos ? "#dcfce7" : "#fee2e2",
-                        color: isPos ? "#15803d" : "#b91c1c"
+                        background: isCause ? "#fee2e2" : "#dcfce7",
+                        color: isCause ? "#991b1b" : "#166534",
+                        textTransform: "uppercase"
                       }}
                     >
-                      {isPos ? `+ ADVANTAGE 0${(index % 4) + 1}` : `− DISADVANTAGE 0${(index % 6) + 1}`}
+                      {isCause ? "🔴 Cause" : "🟢 Solution"} #{index + 1}
                     </span>
-                    <strong style={{ fontSize: "0.88rem", color: isPos ? "#166534" : "#991b1b" }}>
+                    <strong style={{ fontSize: "0.96rem", color: "#0f172a" }}>
                       {idea.tag}
                     </strong>
                   </div>
 
                   <button
-                    type="button"
-                    onClick={() => handleCopy(idea.id, `${idea.tag}: ${idea.oneLiner} (e.g., ${idea.example})`)}
-                    title="Copy full point and example"
+                    onClick={() => handleCopy(idea.id, `${idea.oneLiner} Example: ${idea.example}`)}
                     style={{
-                      background: isCopied ? (isPos ? "#dcfce7" : "#fee2e2") : "#ffffff",
-                      border: "1px solid #cbd5e1",
-                      borderRadius: "6px",
+                      border: "1px solid #e2e8f0",
+                      background: isCopied ? "#dcfce7" : "#ffffff",
+                      color: isCopied ? "#166534" : "#64748b",
                       padding: "3px 8px",
+                      borderRadius: "6px",
+                      fontSize: "0.72rem",
+                      fontWeight: 700,
                       cursor: "pointer",
-                      color: isCopied ? (isPos ? "#15803d" : "#b91c1c") : "#64748b",
-                      fontSize: "0.7rem",
-                      fontWeight: 750,
                       display: "flex",
                       alignItems: "center",
                       gap: "4px"
                     }}
                   >
-                    {isCopied ? <Check size={12} /> : <Copy size={12} />}
+                    {isCopied ? <Check size={11} /> : <Copy size={11} />}
                     <span>{isCopied ? "Copied" : "Copy"}</span>
                   </button>
                 </div>
 
-                {/* Core One-Liner Argument */}
                 <div
                   style={{
-                    fontSize: "0.93rem",
-                    fontWeight: 700,
-                    lineHeight: 1.45,
-                    color: "var(--slate-900)"
+                    fontSize: "0.94rem",
+                    color: "#1e293b",
+                    fontWeight: 650,
+                    lineHeight: 1.5,
+                    borderLeft: isCause ? "3px solid #ef4444" : "3px solid #22c55e",
+                    paddingLeft: "10px"
                   }}
                 >
-                  {idea.oneLiner}
+                  “{idea.oneLiner}”
                 </div>
 
-                {/* Relatable Mini Example Pill */}
                 <div
                   style={{
-                    background: isPos ? "#f0fdf4" : "#fef2f2",
-                    border: isPos ? "1px dashed #86efac" : "1px dashed #fca5a5",
+                    background: isCause ? "#fef2f2" : "#f0fdf4",
+                    border: isCause ? "1px dashed #fca5a5" : "1px dashed #86efac",
                     borderRadius: "8px",
                     padding: "6px 10px",
-                    fontSize: "0.8rem",
-                    color: isPos ? "#14532d" : "#7f1d1d",
-                    lineHeight: 1.4
+                    fontSize: "0.82rem",
+                    color: isCause ? "#7f1d1d" : "#14532d",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px"
                   }}
                 >
-                  <strong style={{ color: isPos ? "#166534" : "#991b1b" }}>💡 Example: </strong>
+                  <span style={{ fontWeight: 800 }}>Example:</span>
                   <span>{idea.example}</span>
                 </div>
               </div>

@@ -7,27 +7,27 @@ import { tactilePress } from "../../motion";
 const CONCLUSION_VARIATIONS = [
   {
     id: "standard",
-    title: "Style 1: Standard Opinion Restatement & Synthesis",
+    title: "Style 1: Standard Causes & Solutions Synthesis & Recommendation",
     badge: "Band 8.5–9 • Recommended",
-    summary: "Recaps the concession (digital literacy), delivers a decisive negative stance, and synthesizes sedentary health and social setbacks.",
-    text: "In conclusion, although early engagement with technology can cultivate basic digital literacy, I am convinced that this trend represents an overwhelmingly negative development. Unrestricted screen immersion directly promotes sedentary health complications such as childhood obesity, while concurrently stunting essential emotional and face-to-face communication skills during formative developmental years.",
-    breakdown: "Sentence 1: Decisive restatement of negative opinion | Sentence 2: Sum-up of main reasons (sedentary health risks + stunted social communication)."
+    summary: "Synthesizes the twin catalysts (commercial mega-constellations and legacy debris), recaps targeted technological remedies, and offers a decisive forward-looking UN policy recommendation.",
+    text: "In conclusion, the escalating threat of orbital overcrowding is driven primarily by the rapid expansion of commercial satellite constellations and the presence of uncontrolled legacy space debris. However, this crisis can be mitigated through mandatory automated self-deorbiting thrusters alongside international robotic cleanup missions. Moving forward, the global community must swiftly adopt an updated, legally binding United Nations space sustainability treaty before low-Earth orbit becomes permanently unusable.",
+    breakdown: "Sentence 1: Sum-up of main causes (commercial constellations + legacy debris) | Sentence 2: Recap of technical solutions (auto-deorbiting + robotic cleanup) | Sentence 3: Forward-looking UN recommendation."
   },
   {
     id: "academic",
-    title: "Style 2: Academic Analytical Synthesis",
+    title: "Style 2: Academic Analytical Synthesis & Policy Mandate",
     badge: "Band 9 • Advanced Lexicon",
-    summary: "Contrasts digital literacy against physiological inactivity and interpersonal empathy erosion with elevated academic vocabulary.",
-    text: "To conclude, while proponents rightfully highlight the advantages of foundational digital fluency, I maintain that introducing technology at a premature age is largely detrimental. The profound physical risks of sedentary inactivity and the erosion of real-world interpersonal empathy far outweigh any minor educational conveniences.",
-    breakdown: "Sentence 1: Acknowledges counter-view then restates negative opinion | Sentence 2: Recaps sedentary physical risks vs social empathy erosion."
+    summary: "Elevated academic syntax directly coupling private orbital proliferation with international legal accountability.",
+    text: "To conclude, while commercial spaceflight and legacy debris critically imperil Earth's orbital lanes, targeted engineering mandates and active remediation technologies provide actionable solutions. It is imperative that international aviation bodies compel manufacturers to install autonomous re-entry systems, supported by multilateral treaties with non-refundable cleanup deposits.",
+    breakdown: "Sentence 1: Synthesis of causes and viable solutions | Sentence 2: Actionable policy recommendation for manufacturers and global regulators."
   },
   {
     id: "rapid-exam",
     title: "Style 3: Rapid 2-Sentence Exam Model",
     badge: "Rapid Timing • Under 45 Words",
-    summary: "Ultra-compact, high-speed conclusion ideal when running short on time in the real exam.",
-    text: "In conclusion, while technology builds early digital literacy, I firmly believe it is predominantly a negative development. Excessive screen time fosters an unhealthy sedentary lifestyle and impairs vital face-to-face social skills during early childhood.",
-    breakdown: "Sentence 1: Clear opinion stance | Sentence 2: Crisp recap of physical health and social delays."
+    summary: "High-speed, 42-word concise model balancing causes, solutions, and recommendation under time pressure.",
+    text: "In conclusion, although commercial satellite proliferation and uncurbed space junk severely threaten near-Earth orbit, mandatory automated deorbiting thrusters and international robotic removal offer decisive solutions. Moving forward, world governments must establish binding treaties with strict corporate cleanup liabilities.",
+    breakdown: "Sentence 1: Clear cause-solution synthesis | Sentence 2: Crisp global policy recommendation."
   }
 ];
 
@@ -46,11 +46,11 @@ export const Step8ConclusionT2: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 08 / 09 • Sample Conclusion &amp; Restating Opinion
+          Step 08 / 09 • Sample Conclusion &amp; Recommendation
         </span>
-        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Reasons + Restate Your Opinion</h2>
+        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Causes, Solutions + Recommendation</h2>
         <p className="stage-subtitle">
-          Mandatory Conclusion Format: <strong>Sum-up all the main reasons (health + social development) + Restate your opinion decisively</strong>.
+          Mandatory Conclusion Format: <strong>Sum-up all the main causes and solutions + provide a forward-looking suggestion / recommendation</strong>.
         </p>
       </div>
 
@@ -181,18 +181,18 @@ export const Step8ConclusionT2: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <Award size={18} color="var(--apple-blue)" />
               <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                2-Element Conclusion Architecture
+                2-Element Causes &amp; Solutions Conclusion Architecture
               </h4>
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-                <span><strong>Sum-up Main Reasons:</strong> Concisely synthesize the physical health issues (sedentary lifestyle/obesity) and interpersonal social delays discussed in Body 1 and Body 2.</span>
+                <span><strong>Sum-Up Main Causes &amp; Solutions:</strong> Concisely synthesize the primary catalysts (commercial fleets and legacy shrapnel) alongside their targeted remedies (automated deorbit thrusters and active robotic removal).</span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-                <span><strong>Restate Opinion:</strong> Clearly reiterate your firm stance that early technology immersion is predominantly a negative development (using fresh paraphrased vocabulary).</span>
+                <span><strong>Suggestion / Policy Recommendation:</strong> Provide a forward-looking international governance recommendation (e.g., ratifying a binding United Nations space sustainability treaty before orbital lanes become unusable).</span>
               </div>
             </div>
           </div>

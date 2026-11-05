@@ -6,11 +6,11 @@ import {
   BookOpen,
   Award,
   CheckCircle2,
-  Workflow,
-  Flame,
-  Boxes,
+  Table,
+  TrendingUp,
   Eye,
-  ArrowRight
+  ArrowRight,
+  FileSpreadsheet
 } from "lucide-react";
 
 interface MindmapPiece {
@@ -29,164 +29,148 @@ interface MindmapBranch {
   bgLight: string;
   icon: React.ReactNode;
   summary: string;
-  diagramCorrelation: string;
+  tableCorrelation: string;
   pieces: MindmapPiece[];
 }
 
 const MINDMAP_BRANCHES: MindmapBranch[] = [
   {
     id: "parameters",
-    title: "Piece 1: Introduction & Diagram Parameters",
-    badge: "Introduction Anchor",
+    title: "Piece 1: Introduction & Data Parameters",
+    badge: "Intro Anchor",
     color: "#2563eb",
     borderColor: "#bfdbfe",
     bgLight: "#eff6ff",
     icon: <BookOpen size={18} color="#2563eb" />,
     summary:
-      "A Band 9 introduction paraphrases the two visual diagrams: the multi-stage industrial procedure involved in manufacturing cement, followed by how it is combined with other raw ingredients to produce concrete.",
-    diagramCorrelation:
-      "Correlates with the overall prompt scope: links Diagram 1 (Cement Production) directly to Diagram 2 (Concrete Production).",
+      "A Band 9 introduction paraphrases the prompt parameters: the proportion of national consumer spending allocated to three distinct sectors across five European nations in 2002.",
+    tableCorrelation:
+      "Sets up the entire 5x3 table matrix: 5 rows (Ireland, Italy, Spain, Sweden, Turkey) across 3 expenditure columns in the calendar year 2002.",
     pieces: [
       {
-        label: "Visual Format & Scope",
-        value: "Two Process Diagrams (Dual Flowchart)",
+        label: "Visual Format & Topic",
+        value: "Comparative Data Table (Household Budgets)",
         detail:
-          "Left diagram depicts a linear 5-stage manufacturing sequence; right diagram illustrates a proportional batch mixing procedure.",
+          "Presents consumer expenditure proportions across 5 nations in 2002, measured strictly in percentage shares of total national spending.",
         band9Application:
-          "“The two diagrams illustrate the multi-stage industrial procedure involved in manufacturing cement, followed by how it is subsequently combined with other raw ingredients to produce concrete.”"
+          "“The table compares the proportion of national consumer expenditure allocated to three broad categories of goods and services across five European countries in 2002.”"
       },
       {
-        label: "Raw Material Inputs",
-        value: "Limestone & Clay (Cement) • 4 Ingredients (Concrete)",
+        label: "Geographic & Temporal Parameters",
+        value: "5 European Countries • Single Year (2002)",
         detail:
-          "Cement relies on quarried limestone and clay. Concrete combines gravel (50%), sand (25%), cement (15%), and water (10%).",
+          "Ireland, Italy, Spain, Sweden, and Turkey in 2002 (requires static past simple verbs: 'allocated', 'accounted for', 'stood at').",
         band9Application:
-          "“...tracking the transformation of raw minerals into finished cement, and its subsequent role as a binding agent in concrete formulation.”"
+          "“...across five European countries—namely Ireland, Italy, Spain, Sweden, and Turkey—during the year 2002.”"
       },
       {
-        label: "Inter-Process Functional Prerequisite",
-        value: "Cement as 15% Mandatory Binder",
+        label: "Expenditure Category Classification",
+        value: "3 Primary Consumer Sectors",
         detail:
-          "Cement is not just an independent product; it is the vital 15% binder required for the second manufacturing process.",
+          "Food/Drink/Tobacco (basic sustenance), Clothing/Footwear (semi-essential attire), and Leisure/Education (discretionary spending).",
         band9Application:
-          "“...wherein finished cement serves as the essential binder in the secondary concrete production process.”"
+          "“...categorized into basic sustenance (food, drink, and tobacco), apparel and footwear, and leisure and education.”"
       }
     ]
   },
   {
     id: "overview",
-    title: "Piece 2: Macro Overview (2-Pillar Synthesis)",
+    title: "Piece 2: Macro Qualitative Overview (Zero Numbers)",
     badge: "Overview Engine",
     color: "#059669",
     borderColor: "#a7f3d0",
     bgLight: "#ecfdf5",
     icon: <Layers size={18} color="#059669" />,
     summary:
-      "The macro overview contrasts the fundamental nature of the two operations: 1) Cement is a complex, multi-stage linear sequence requiring mechanical pulverization and intense heat; 2) Concrete is a simple, single-stage batch mixing process where coarse and fine aggregates form the vast bulk of the mixture, bound together by cement and water without quoting exact statistics.",
-    diagramCorrelation:
-      "Synthesizes the macro contrast between the linear thermal pipeline of Box 1 and the mechanical batch mixer of Box 2.",
+      "Synthesizes macro trends without quoting any numerical statistics: 1) Food was universally the dominant category; 2) Leisure was universally the lowest; 3) Turkish/Irish households spent most on food, while Italy led in clothing.",
+    tableCorrelation:
+      "Extracts global macro hierarchies: Column 1 > Column 2 > Column 3 across all 5 nations, plus key outliers Turkey, Ireland, and Italy.",
     pieces: [
       {
-        label: "Pillar 1: Multi-Step Sequential Cement Process",
-        value: "Linear Industrial Pipeline with Thermal Transformation",
+        label: "Pillar 1: Sustenance as Universal Leader",
+        value: "Dominant Spending Across All 5 Nations",
         detail:
-          "Involves 5 consecutive mechanical and chemical stages: crushing, mixing, rotating heating, milling, and bagging.",
+          "Food, drinks, and tobacco represented the highest proportion of household spending in every single surveyed country without exception.",
         band9Application:
-          "“Overall, cement production is a multi-step, sequential process requiring specialized equipment, physical crushing, and intense heating...”"
+          "“Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations...”"
       },
       {
-        label: "Pillar 2: Single-Stage Concrete Batch Blend",
-        value: "Mechanical Batch Mixing with Dominant Aggregates",
+        label: "Pillar 2: Leisure/Education as Universal Minority",
+        value: "Lowest Expenditure Proportion Throughout",
         detail:
-          "Concrete is produced in a single step inside a rotating drum where aggregates form the dominant bulk and cement acts as a binding agent (all numerical percentages are reserved for Body Paragraph 2).",
+          "Recreation and education accounted for the smallest portion of consumer budgets in every country, never exceeding single digits.",
         band9Application:
-          "“...whereas concrete manufacturing is a straightforward, single-stage batch mixing procedure wherein coarse and fine aggregates constitute the vast majority of the mixture, bound together by cement and activated with water.”"
+          "“...whereas leisure and education consistently accounted for the smallest share of spending throughout.”"
+      },
+      {
+        label: "Pillar 3: National Outliers & Divergences",
+        value: "Turkey & Ireland (Food) vs Italy (Clothing)",
+        detail:
+          "Turkish and Irish consumers spent far more on food than their peers, whereas Italy directed the largest relative share towards attire.",
+        band9Application:
+          "“Furthermore, Turkish and Irish consumers devoted significantly larger proportions to sustenance than other nations, while Italy recorded the largest proportion on clothing and footwear.”"
       }
     ]
   },
   {
-    id: "cement-flow",
-    title: "Piece 3: Body 1 — The 5 Cement Stages",
-    badge: "Body 1 Sequence",
-    color: "#ea580c",
+    id: "body1-food",
+    title: "Piece 3: Body 1 — Food, Drink & Tobacco (Dominant Sector)",
+    badge: "Body 1 Dominance",
+    color: "#2563eb",
+    borderColor: "#bfdbfe",
+    bgLight: "#eff6ff",
+    icon: <TrendingUp size={18} color="#2563eb" />,
+    summary:
+      "Reports and compares the dominant food sector: Turkey's global peak (32.14%) and Ireland's close second (28.91%) contrasted against Spain (18.80%), Italy (16.36%), and Sweden (15.77%).",
+    tableCorrelation:
+      "Covers the entire Column 2 data: Turkey (32.14%) > Ireland (28.91%) >> Spain (18.80%) > Italy (16.36%) > Sweden (15.77%).",
+    pieces: [
+      {
+        label: "The Upper Tier: Turkey & Ireland",
+        value: "32.14% (Global Peak) & 28.91%",
+        detail:
+          "Turkey allocated nearly a third of all consumer expenditure to sustenance, followed closely by Ireland at over a quarter.",
+        band9Application:
+          "“In terms of food, drinks, and tobacco, Turkey allocated the highest proportion of any country, with nearly a third of all consumer expenditure (32.14%) directed towards this category, closely followed by Ireland at 28.91%.”"
+      },
+      {
+        label: "The Lower Tier: Spain, Italy & Sweden",
+        value: "18.80%, 16.36% & 15.77%",
+        detail:
+          "The other three nations spent substantially less on food; Spain stood at 18.80%, while Italy and Sweden registered just 16.36% and 15.77%.",
+        band9Application:
+          "“In marked contrast, the remaining three nations registered substantially lower figures; Spain recorded 18.80%, while Italy and Sweden spent the least on sustenance at 16.36% and 15.77% respectively.”"
+      }
+    ]
+  },
+  {
+    id: "body2-clothing-leisure",
+    title: "Piece 4: Body 2 — Clothing & Leisure Sectors",
+    badge: "Body 2 Synthesis",
+    color: "#d97706",
     borderColor: "#fed7aa",
     bgLight: "#fff7ed",
-    icon: <Flame size={18} color="#ea580c" />,
+    icon: <Table size={18} color="#d97706" />,
     summary:
-      "Systematically report each stage of cement production using precise passive voice constructions and sequential linkers: Crusher → Mixer → Rotating Heater → Grinder → Bags.",
-    diagramCorrelation:
-      "Correlates with Diagram 1 (left box): Limestone/Clay → Crusher → Powder → Mixer → Rotating Kiln → Grinder → Bags.",
+      "Reports Italy's undisputed lead in clothing (9.00%) against the 6.5% cluster, and contrasts the minor figures for leisure and education (1.98% to 4.35%).",
+    tableCorrelation:
+      "Covers Columns 3 & 4: Clothing (Italy 9.00% leader, Sweden 5.40% lowest) + Leisure (Turkey 4.35% leader, Spain 1.98% absolute lowest).",
     pieces: [
       {
-        label: "Stage 1 & 2: Crushing & Blending",
-        value: "Limestone + Clay → Crusher → Mixer",
+        label: "Clothing & Footwear Outlier: Italy",
+        value: "9.00% (Undisputed Leader)",
         detail:
-          "Limestone and clay are pulverized into fine powder by a mechanical crusher, then mixed to achieve a uniform blend.",
+          "Italy dedicated 9.00% to clothing, clearly outspending Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), while Sweden lagged at 5.40%.",
         band9Application:
-          "“Initially, limestone and clay are passed through a crusher to be pulverized into powder, which is then fed into an industrial mixer.”"
+          "“Turning to clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outstripping Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), with Sweden recording the lowest share at 5.40%.”"
       },
       {
-        label: "Stage 3: Thermal Kiln Heating",
-        value: "Rotating Heater with Heat Applied from Base",
+        label: "Leisure & Education: Minor Allocations",
+        value: "1.98% – 4.35% (Spain Table Floor)",
         detail:
-          "The powder travels down an inclined rotating cylinder while intense heat is applied from the lower end.",
+          "Turkey again led at 4.35%, followed by Sweden (3.22%) and Italy (3.20%), while Spain recorded the lowest figure in the entire table at 1.98%.",
         band9Application:
-          "“Next, the mixture enters an inclined rotating cylinder heater where it is subjected to high heat applied from the lower end as the drum turns.”"
-      },
-      {
-        label: "Stage 4 & 5: Grinding & Packaging",
-        value: "Conveyor Belt → Grinder → Bags",
-        detail:
-          "The heated material travels via conveyor belt into a grinder to be milled into fine cement, then poured into commercial bags.",
-        band9Application:
-          "“After thermal treatment, the substance is transported along a conveyor belt to a grinder, before the finished cement is packaged into bags.”"
-      }
-    ]
-  },
-  {
-    id: "concrete-mix",
-    title: "Piece 4: Body 2 — Concrete Formulation & Mixer",
-    badge: "Body 2 Synthesis",
-    color: "#7c3aed",
-    borderColor: "#ddd6fe",
-    bgLight: "#f5f3ff",
-    icon: <Boxes size={18} color="#7c3aed" />,
-    summary:
-      "Report the exact proportions of all four concrete ingredients in descending order, detailing their roles and their simultaneous loading into the rotating concrete mixer drum.",
-    diagramCorrelation:
-      "Correlates with Diagram 2 (right box): Cement 15%, Water 10%, Sand 25%, Gravel* 50% poured into the rotating Concrete mixer.",
-    pieces: [
-      {
-        label: "Dominant Aggregate: Gravel (50%)",
-        value: "Half (50%) of Total Composition",
-        detail:
-          "Gravel (small stones) constitutes half of the entire mixture, acting as the main structural coarse aggregate.",
-        band9Application:
-          "“Gravel, consisting of small stones, constitutes half (50%) of the total mixture, serving as the primary coarse aggregate.”"
-      },
-      {
-        label: "Fine Aggregate: Sand (25%)",
-        value: "One Quarter (25%) of Composition",
-        detail:
-          "Sand acts as the fine aggregate, filling voids between stones and making total aggregates 75%.",
-        band9Application:
-          "“Sand accounts for a quarter (25%) of the blend, functioning as a fine aggregate.”"
-      },
-      {
-        label: "Binder & Hydration: Cement (15%) & Water (10%)",
-        value: "15% Cement Binder • 10% Water Activator",
-        detail:
-          "Cement binds the stones together, while 10% water initiates hydration to create the wet concrete slurry.",
-        band9Application:
-          "“Cement makes up 15% to bind the components together, while water represents the smallest portion at 10% to activate hydration.”"
-      },
-      {
-        label: "Mechanical Agitation: Concrete Mixer",
-        value: "Rotating Drum Blending All 4 Ingredients",
-        detail:
-          "All ingredients are poured simultaneously into a cylindrical mixer rotating clockwise to yield usable wet concrete.",
-        band9Application:
-          "“Once all four elements are poured simultaneously into the concrete drum, the machine rotates to blend the slurry into usable wet concrete.”"
+          "“Finally, leisure and education represented the smallest expenditure throughout; Turkey again topped the list at 4.35%, followed by Sweden (3.22%) and Italy (3.20%), while Spain registered the lowest single figure in the table at just 1.98%.”"
       }
     ]
   }
@@ -194,8 +178,18 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
 
 export const BitsAndPiecesMindmap: React.FC = () => {
   const [selectedBranchId, setSelectedBranchId] = useState<string>("parameters");
+  const [viewStyle, setViewStyle] = useState<"smart_table" | "pamphlet_scan">("smart_table");
+
   const activeBranch =
     MINDMAP_BRANCHES.find((b) => b.id === selectedBranchId) || MINDMAP_BRANCHES[0];
+
+  const tableRows = [
+    { country: "Ireland", food: "28.91%", clothing: "6.43%", leisure: "2.21%" },
+    { country: "Italy", food: "16.36%", clothing: "9.00%", leisure: "3.20%" },
+    { country: "Spain", food: "18.80%", clothing: "6.51%", leisure: "1.98%" },
+    { country: "Sweden", food: "15.77%", clothing: "5.40%", leisure: "3.22%" },
+    { country: "Turkey", food: "32.14%", clothing: "6.63%", leisure: "4.35%" }
+  ];
 
   return (
     <div
@@ -259,17 +253,17 @@ export const BitsAndPiecesMindmap: React.FC = () => {
         </div>
       </div>
 
-      {/* Side-by-Side Reference POV Grid (Diagram on Left, Mindmap on Right) */}
+      {/* Side-by-Side Reference POV Grid (Diagram/Table on Left, Mindmap on Right) */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "minmax(320px, 0.9fr) minmax(360px, 1.1fr)",
+          gridTemplateColumns: "minmax(340px, 0.95fr) minmax(360px, 1.05fr)",
           gap: "16px",
           alignItems: "start",
           width: "100%"
         }}
       >
-        {/* Left Column: Reference Task Diagram (Same Style as Smart Board) */}
+        {/* Left Column: Reference Task Visual (Smart Board Style Table or Pamphlet Scan) */}
         <div
           style={{
             background: "#ffffff",
@@ -284,66 +278,157 @@ export const BitsAndPiecesMindmap: React.FC = () => {
             top: "12px"
           }}
         >
-          {/* Header */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          {/* Header with View Toggle */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "6px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <Eye size={17} color="#2563eb" />
-              <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>
-                Reference Task Diagram (Student Pamphlet)
+              <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
+                Reference Task Visual
               </strong>
             </div>
-            <span
+            <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "2px", borderRadius: "6px" }}>
+              <button
+                type="button"
+                onClick={() => setViewStyle("smart_table")}
+                style={{
+                  padding: "3px 8px",
+                  fontSize: "0.72rem",
+                  fontWeight: 750,
+                  borderRadius: "5px",
+                  border: "none",
+                  background: viewStyle === "smart_table" ? "#ffffff" : "transparent",
+                  color: viewStyle === "smart_table" ? "#0f172a" : "#64748b",
+                  cursor: "pointer"
+                }}
+              >
+                Smart Table
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewStyle("pamphlet_scan")}
+                style={{
+                  padding: "3px 8px",
+                  fontSize: "0.72rem",
+                  fontWeight: 750,
+                  borderRadius: "5px",
+                  border: "none",
+                  background: viewStyle === "pamphlet_scan" ? "#ffffff" : "transparent",
+                  color: viewStyle === "pamphlet_scan" ? "#0f172a" : "#64748b",
+                  cursor: "pointer"
+                }}
+              >
+                Pamphlet Scan
+              </button>
+            </div>
+          </div>
+
+          {/* Authentic Smart Board Styled Table — Clean, Crisp, Never Congested */}
+          {viewStyle === "smart_table" ? (
+            <div
               style={{
-                fontSize: "0.72rem",
-                fontWeight: 750,
-                background: "#eff6ff",
-                color: "#1e40af",
-                padding: "2px 8px",
-                borderRadius: "6px"
+                borderRadius: "10px",
+                border: "2px solid #cbd5e1",
+                overflow: "hidden",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.04)"
               }}
             >
-              Side-by-Side POV
-            </span>
-          </div>
-
-          {/* Diagram Box: Two authentic pamphlet boxes rendered side by side */}
-          <div
-            style={{
-              background: "#f8fafc",
-              border: "1.5px solid #cbd5e1",
-              borderRadius: "12px",
-              padding: "10px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <img
-              src="materials/cement_concrete_diagrams_clean.png"
-              alt="Cement and Concrete Production Diagrams from Pamphlet"
+              <table
+                style={{
+                  width: "100%",
+                  borderCollapse: "collapse",
+                  fontFamily: "system-ui, -apple-system, sans-serif",
+                  fontSize: "0.82rem",
+                  textAlign: "center"
+                }}
+              >
+                <thead>
+                  <tr style={{ background: "#346294", color: "#ffffff" }}>
+                    <th style={{ padding: "8px 10px", textAlign: "left", borderRight: "1.5px solid #ffffff", width: "25%" }}>
+                      Country
+                    </th>
+                    <th style={{ padding: "8px 10px", borderRight: "1.5px solid #ffffff", width: "25%" }}>
+                      Food/Drink
+                    </th>
+                    <th style={{ padding: "8px 10px", borderRight: "1.5px solid #ffffff", width: "25%" }}>
+                      Clothing
+                    </th>
+                    <th style={{ padding: "8px 10px", width: "25%" }}>
+                      Leisure
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tableRows.map((r, i) => {
+                    const isEven = i % 2 === 0;
+                    const bg = isEven ? "#cddbe8" : "#e4edf5";
+                    return (
+                      <tr key={r.country} style={{ borderBottom: "1.5px solid #ffffff" }}>
+                        <td style={{ background: "#4478ae", color: "#ffffff", padding: "8px 10px", textAlign: "left", fontWeight: 700, borderRight: "1.5px solid #ffffff" }}>
+                          {r.country}
+                        </td>
+                        <td style={{ background: bg, padding: "8px 10px", fontWeight: 650, color: "#1e293b", borderRight: "1.5px solid #ffffff" }}>
+                          {r.food}
+                        </td>
+                        <td style={{ background: bg, padding: "8px 10px", fontWeight: 650, color: "#1e293b", borderRight: "1.5px solid #ffffff" }}>
+                          {r.clothing}
+                        </td>
+                        <td style={{ background: bg, padding: "8px 10px", fontWeight: 650, color: "#1e293b" }}>
+                          {r.leisure}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div
               style={{
-                width: "100%",
-                maxHeight: "360px",
-                objectFit: "contain",
-                display: "block",
-                borderRadius: "6px"
+                background: "#f8fafc",
+                border: "1.5px solid #cbd5e1",
+                borderRadius: "10px",
+                overflow: "hidden"
               }}
-            />
-          </div>
+            >
+              <img
+                src="materials/consumer_spending_table_2002.jpg"
+                alt="Consumer Spending Table Scan"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  objectFit: "contain"
+                }}
+              />
+            </div>
+          )}
 
-          {/* Quick Cross-Reference Guide */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "0.78rem" }}>
+          {/* Quick Cross-Reference Insights Strip */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "0.76rem" }}>
             <div
               style={{
                 background: "#eff6ff",
                 border: "1px solid #bfdbfe",
                 borderRadius: "8px",
-                padding: "8px 10px",
+                padding: "7px 10px",
                 color: "#1e40af",
                 lineHeight: 1.4
               }}
             >
-              <strong>Diagram 1 (Left):</strong> Cement Pipeline — 5 Linear Steps (Crushing → Blending → Rotary Kiln + Heat → Milling → Bagging).
+              <strong>Food/Drink/Tobacco:</strong> Ranks 1st in all 5 nations (Turkey 32.14% peak → Sweden 15.77% lowest).
+            </div>
+
+            <div
+              style={{
+                background: "#fff7ed",
+                border: "1px solid #fed7aa",
+                borderRadius: "8px",
+                padding: "7px 10px",
+                color: "#9a3412",
+                lineHeight: 1.4
+              }}
+            >
+              <strong>Clothing/Footwear:</strong> Ranks 2nd throughout (Italy 9.00% leader → Sweden 5.40% lowest).
             </div>
 
             <div
@@ -351,12 +436,12 @@ export const BitsAndPiecesMindmap: React.FC = () => {
                 background: "#f0fdf4",
                 border: "1px solid #bbf7d0",
                 borderRadius: "8px",
-                padding: "8px 10px",
+                padding: "7px 10px",
                 color: "#166534",
                 lineHeight: 1.4
               }}
             >
-              <strong>Diagram 2 (Right):</strong> Concrete Mixer — 4 Ingredients (Gravel 50%, Sand 25%, Cement 15%, Water 10%).
+              <strong>Leisure/Education:</strong> Ranks 3rd throughout (Turkey 4.35% leader → Spain 1.98% floor).
             </div>
           </div>
 
@@ -367,7 +452,7 @@ export const BitsAndPiecesMindmap: React.FC = () => {
               border: `1.5px solid ${activeBranch.borderColor}`,
               borderRadius: "10px",
               padding: "10px 12px",
-              fontSize: "0.8rem",
+              fontSize: "0.78rem",
               color: "#334155",
               lineHeight: 1.45
             }}
@@ -375,7 +460,7 @@ export const BitsAndPiecesMindmap: React.FC = () => {
             <div style={{ fontWeight: 800, color: activeBranch.color, marginBottom: "3px" }}>
               ✦ Visual Anchor for {activeBranch.title.split(":")[0]}:
             </div>
-            {activeBranch.diagramCorrelation}
+            {activeBranch.tableCorrelation}
           </div>
         </div>
 
@@ -423,7 +508,7 @@ export const BitsAndPiecesMindmap: React.FC = () => {
                 </strong>
               </div>
               <span style={{ fontSize: "0.76rem", fontWeight: 700, color: activeBranch.color }}>
-                {activeBranch.pieces.length} Core Components
+                {activeBranch.pieces.length} Core Elements
               </span>
             </div>
             <p style={{ fontSize: "0.85rem", color: "#334155", margin: 0, lineHeight: 1.45 }}>

@@ -1,5 +1,4 @@
-
-export type ModuleType = "task1" | "task2";
+export type ModuleType = "task1" | "task2" | "general1" | "cambridge7test2";
 
 export interface StepDefinition {
   id: string;

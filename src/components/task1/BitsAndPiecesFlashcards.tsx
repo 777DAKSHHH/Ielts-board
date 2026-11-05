@@ -6,9 +6,9 @@ import {
   ChevronRight,
   Sparkles,
   CheckCircle2,
-  Workflow,
-  Flame,
-  Boxes
+  Table,
+  TrendingUp,
+  Award
 } from "lucide-react";
 import { tactilePress } from "../../motion";
 
@@ -26,77 +26,77 @@ interface FlashcardItem {
 const FLASHCARDS: FlashcardItem[] = [
   {
     id: 1,
-    category: "Card 1: The Macro Overview Contrast",
+    category: "Card 1: Macro Qualitative Overview (Zero Numbers Rule)",
     badgeColor: "#0284c7",
-    question: "What are the two core overarching features that must be contrasted in a Band 9 overview for this dual process task?",
-    answerTitle: "1) Cement as a Linear Multi-Stage Thermal Process vs 2) Concrete as a Single-Stage Batch Mixture",
+    question: "What are the core overarching trends that must be highlighted in the overview for this consumer spending table?",
+    answerTitle: "Universal Sector Hierarchy + Key National Outliers (Without Numbers!)",
     bulletPoints: [
-      "Cement production is a multi-step, sequential industrial procedure requiring physical crushing, thorough mixing, and high-heat transformation in a rotating kiln.",
-      "Concrete manufacturing, by contrast, is a straightforward single-stage batch mixing process where raw ingredients are poured into a rotating drum.",
-      "Aggregates (gravel and sand) form the dominant bulk of concrete, bound together by cement and activated with water (avoid all specific numerical figures in the overview; reserve exact percentages for Body Paragraph 2)."
+      "Pillar 1: Food, drinks, and tobacco accounted for the largest proportion of consumer expenditure across all five surveyed nations without exception.",
+      "Pillar 2: Leisure and education consistently represented the smallest category of spending throughout.",
+      "Pillar 3: Turkish and Irish consumers devoted significantly larger proportions to sustenance than their European peers, while Italy recorded the largest proportion spent on clothing and footwear.",
+      "Rule: Never include raw numerical figures in the overview; keep observations strictly macro and qualitative."
     ],
     band9Phrase:
-      "“Overall, cement production is a multi-step, sequential process requiring specialized equipment, physical crushing, and intense heating, whereas concrete manufacturing is a straightforward, single-stage batch mixing procedure wherein coarse and fine aggregates constitute the vast majority of the mixture, bound together by cement and activated with water.”"
+      "“Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations, whereas leisure and education accounted for the smallest share of spending throughout. Furthermore, Turkish and Irish consumers devoted significantly larger proportions of their budgets to sustenance than their European counterparts, while Italy recorded the largest proportion spent on clothing and footwear.”"
   },
   {
     id: 2,
-    category: "Card 2: Cement Manufacturing Flow (Body 1)",
-    badgeColor: "#ea580c",
-    question: "How should you chronologically sequence and report the 5 stages of cement production using passive voice?",
-    answerTitle: "Crusher (Powder) → Mixer → Rotating Heater (Heat from base) → Conveyor Grinder → Bagging",
+    category: "Card 2: Food, Drink & Tobacco Comparison (Body 1)",
+    badgeColor: "#2563eb",
+    question: "How should you group and contrast the 5 countries for sustenance spending?",
+    answerTitle: "High-Spending Upper Pair (Turkey & Ireland) vs Lower Tier (Spain, Italy, Sweden)",
     bulletPoints: [
-      "Stage 1: Limestone and clay are fed into a mechanical crusher to be pulverized into fine powder.",
-      "Stage 2: Powder is transferred to an industrial mixer to create a uniform blend.",
-      "Stage 3: Mixture passes through an inclined rotating cylinder heater with intense heat applied from the base.",
-      "Stage 4: Heated material travels along a conveyor belt into a grinder to be milled into fine cement.",
-      "Stage 5: Finished cement is poured into heavy-duty bags ready for transport or concrete mixing."
+      "Group 1 (Upper Tier): Turkey allocated nearly a third of all consumer expenditure (32.14%), representing the highest single proportion in the entire table, closely followed by Ireland at 28.91%.",
+      "Group 2 (Lower Tier): In marked contrast, Spain recorded 18.80%, while Italy and Sweden registered the lowest proportions in this category at 16.36% and 15.77% respectively.",
+      "Key Contrast: Turkish and Irish spending was nearly double that of Italian and Swedish households."
     ],
     band9Phrase:
-      "“Regarding the manufacture of cement, limestone and clay are initially passed through a crusher to be pulverized into a fine powder. This powdered mixture is then fed into an industrial mixer to achieve a uniform blend before entering an elongated, rotating cylinder heater...”"
+      "“In terms of food, drinks, and tobacco, Turkey allocated the highest proportion of any country, with nearly a third of all consumer expenditure (32.14%) directed towards this category. Ireland followed closely behind at 28.91%. In marked contrast, the remaining three nations registered substantially lower figures; Spain recorded 18.80%, while Italy and Sweden spent the least on sustenance at 16.36% and 15.77% respectively.”"
   },
   {
     id: 3,
-    category: "Card 3: Concrete Recipe Proportions (Body 2)",
-    badgeColor: "#7c3aed",
-    question: "What are the exact four ingredient proportions for concrete, and how should their structural roles be described?",
-    answerTitle: "Gravel 50% (Coarse Aggregate), Sand 25% (Fine Aggregate), Cement 15% (Binder), Water 10% (Hydration)",
+    category: "Card 3: Clothing & Footwear Outlier (Body 2)",
+    badgeColor: "#d97706",
+    question: "How do you effectively report Italy's unique clothing figure against the other nations?",
+    answerTitle: "Identify Italy as the Undisputed Leader and Cluster Turkey, Spain, and Ireland",
     bulletPoints: [
-      "Gravel (small stones) constitutes half (50%) of the mixture, functioning as the primary structural coarse aggregate.",
-      "Sand represents a quarter (25%) of the volume as the fine aggregate, making total aggregate content 75%.",
-      "Cement represents 15%, functioning as the manufactured binding agent that glues the aggregates together.",
-      "Water forms the smallest fraction at 10%, activating the hydration reaction to yield wet workable concrete."
+      "Italian Outlier: Italy dedicated exactly 9.00% to clothing and footwear, making it the clear continental leader.",
+      "Clustered Trio: Turkey (6.63%), Spain (6.51%), and Ireland (6.43%) all grouped tightly around 6.5%.",
+      "Category Floor: Sweden registered the lowest proportion at just 5.40%, trailing Italy by 3.60 percentage points.",
+      "Grammatical Tip: Use participial phrasing ('outstripping all other surveyed nations') to avoid repetitive verbs."
     ],
     band9Phrase:
-      "“Turning to concrete production, gravel constitutes half (50%) of the total mixture, followed by sand, which accounts for a quarter (25%). Cement makes up 15% to bind the components together, while water represents the smallest portion at 10%.”"
+      "“Turning to clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outstripping Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), with Sweden recording the lowest share at 5.40%.”"
   },
   {
     id: 4,
-    category: "Card 4: Passive Voice Mastery in Process Diagrams",
+    category: "Card 4: Leisure & Education Sector & Spain's Floor (Body 2)",
     badgeColor: "#059669",
-    question: "Why is the passive voice mandatory in process tasks, and what are the key grammatical patterns?",
-    answerTitle: "The Agent is Irrelevant; Focus on the Material and Mechanical Transformation",
+    question: "What are the key data points to report for the minority leisure and education category?",
+    answerTitle: "Turkey Tops the List (4.35%), Sweden/Italy Parity (~3.2%), and Spain's Table Floor (1.98%)",
     bulletPoints: [
-      "Formula: Subject + is / are + past participle (e.g., 'limestone and clay are crushed', 'the powder is blended').",
-      "Never write: 'Workers crush limestone' or 'The factory makes cement'. Always maintain objective scientific voice.",
-      "Combine with participial clauses: 'Having been heated in the rotating kiln, the material is transported...'"
+      "Category Peak: Turkey allocated 4.35% to leisure and education, ranking first in 2 out of the 3 overall table categories.",
+      "Middle Parity: Sweden (3.22%) and Italy (3.20%) were virtually tied in leisure expenditure.",
+      "Moderate Allocation: Ireland directed 2.21% towards recreation and education.",
+      "Table Minimum: Spain recorded the lowest single figure in the entire table at a mere 1.98% (the sole sub-2% value)."
     ],
     band9Phrase:
-      "“...in this chamber, the substance is subjected to intense heat applied from the lower end as the drum continuously revolves. After being heated, the resulting mixture is transported along a conveyor belt to a grinder...”"
+      "“Finally, leisure and education represented the smallest expenditure throughout all five nations; Turkey again topped the list at 4.35%, followed by Sweden (3.22%) and Italy (3.20%), while Spain registered the lowest single figure in the table at just 1.98%.”"
   },
   {
     id: 5,
-    category: "Card 5: Sequence Linkers & Macro Transition",
-    badgeColor: "#2563eb",
-    question: "Which discourse linkers ensure seamless flow across the 5 cement steps and into the concrete diagram?",
-    answerTitle: "Initially → Following this → Next → After being heated → Finally → Turning to concrete production",
+    category: "Card 5: Advanced Comparative Vocabulary & Syntax",
+    badgeColor: "#7c3aed",
+    question: "Which lexical items and syntactic patterns guarantee Band 9 in Lexical Resource and Grammatical Range?",
+    answerTitle: "Precision Collocations + Varied Comparison Structures",
     bulletPoints: [
-      "Initial stage: 'Initially,' / 'To begin with,'",
-      "Intermediate steps: 'Following this,' / 'Subsequently,' / 'The next phase entails...'",
-      "Culmination: 'Finally, the completed cement is packaged into bags...'",
-      "Macro Transition to Diagram 2: 'Turning to concrete production, four distinct raw materials are combined inside a cylindrical mixer...'"
+      "Proportion verbs: 'accounted for', 'constituted', 'represented the smallest share', 'allocated'.",
+      "Comparative adverbs/prepositions: 'outstripping', 'followed closely by', 'in marked contrast', 'respectively'.",
+      "Clustering phrases: 'clustered tightly around 6.5%', 'virtual parity between Sweden and Italy'.",
+      "Avoid writing lists: Always synthesize figures with comparative clauses rather than simply reciting rows."
     ],
     band9Phrase:
-      "“Turning to concrete production, four distinct raw materials are combined inside a cylindrical concrete mixer in precise proportions. Once all four elements are poured simultaneously into the concrete drum, the machine rotates...”"
+      "“Outstripping all other surveyed nations, Italy dedicated 9.00% to apparel and footwear, whereas Swedish households committed the lowest proportion to sustenance at 15.77%.”"
   }
 ];
 
@@ -126,179 +126,229 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
         display: "flex",
         flexDirection: "column",
         gap: "14px",
-        background: "#ffffff",
-        borderRadius: "18px",
-        border: "1.5px solid var(--border-subtle, #cbd5e1)",
-        padding: "16px",
-        boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
+        width: "100%",
+        maxWidth: "880px",
+        margin: "0 auto"
       }}
     >
-      {/* Top Header Controls */}
+      {/* Top Controls Strip */}
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          paddingBottom: "10px",
-          borderBottom: "1px solid #f1f5f9"
+          flexWrap: "wrap",
+          gap: "8px",
+          background: "#ffffff",
+          borderRadius: "14px",
+          border: "1.5px solid var(--border-subtle, #cbd5e1)",
+          padding: "10px 16px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Sparkles size={18} color="#2563eb" />
-          <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>
-            Bits &amp; Pieces Teaching Flashcards ({currentIdx + 1} of {FLASHCARDS.length})
-          </strong>
+          <Sparkles size={16} color={card.badgeColor} />
+          <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#0f172a" }}>
+            Comparative Table Flashcard {currentIdx + 1} of {FLASHCARDS.length}
+          </span>
+          <span
+            style={{
+              fontSize: "0.72rem",
+              fontWeight: 800,
+              padding: "2px 8px",
+              borderRadius: "6px",
+              background: `${card.badgeColor}15`,
+              color: card.badgeColor
+            }}
+          >
+            {card.category.split(":")[0]}
+          </span>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        {/* Prev / Next Navigation */}
+        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
           <button
+            type="button"
             onClick={handlePrev}
             style={{
-              padding: "6px 12px",
+              padding: "6px 10px",
               borderRadius: "8px",
               border: "1px solid #e2e8f0",
               background: "#ffffff",
+              color: "#334155",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "4px",
-              fontSize: "0.8rem",
-              fontWeight: 700,
-              color: "#475569"
+              fontSize: "0.78rem",
+              fontWeight: 700
             }}
           >
-            <ChevronLeft size={14} /> Prev
+            <ChevronLeft size={14} />
+            <span>Prev</span>
           </button>
+
           <button
+            type="button"
+            onClick={toggleFlip}
+            style={{
+              padding: "6px 14px",
+              borderRadius: "8px",
+              border: "1.5px solid #0f172a",
+              background: isFlipped ? "#0f172a" : "#f8fafc",
+              color: isFlipped ? "#ffffff" : "#0f172a",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              fontSize: "0.78rem",
+              fontWeight: 800,
+              boxShadow: "0 2px 6px rgba(0,0,0,0.05)"
+            }}
+          >
+            <RotateCw size={13} />
+            <span>{isFlipped ? "Show Question" : "Reveal Answer"}</span>
+          </button>
+
+          <button
+            type="button"
             onClick={handleNext}
             style={{
-              padding: "6px 12px",
+              padding: "6px 10px",
               borderRadius: "8px",
               border: "1px solid #e2e8f0",
               background: "#ffffff",
+              color: "#334155",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "4px",
-              fontSize: "0.8rem",
-              fontWeight: 700,
-              color: "#475569"
+              fontSize: "0.78rem",
+              fontWeight: 700
             }}
           >
-            Next <ChevronRight size={14} />
+            <span>Next</span>
+            <ChevronRight size={14} />
           </button>
         </div>
       </div>
 
-      {/* Main Flashcard Container */}
-      <div
+      {/* Main Flashcard Body (Card Face or Back) */}
+      <motion.div
+        key={card.id + (isFlipped ? "-back" : "-front")}
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.2 }}
         onClick={toggleFlip}
         style={{
-          minHeight: "310px",
-          borderRadius: "16px",
-          border: `2px solid ${card.badgeColor}30`,
-          background: isFlipped ? "#ffffff" : "#f8fafc",
-          padding: "22px 26px",
+          background: "#ffffff",
+          border: `2px solid ${isFlipped ? card.badgeColor : "#e2e8f0"}`,
+          borderRadius: "20px",
+          padding: "24px",
+          minHeight: "300px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
           cursor: "pointer",
-          boxShadow: "0 6px 20px rgba(0,0,0,0.04)",
-          transition: "all 0.2s ease"
+          boxShadow: isFlipped
+            ? `0 10px 25px -5px ${card.badgeColor}25`
+            : "0 4px 16px rgba(0,0,0,0.04)",
+          transition: "border-color 0.2s ease"
         }}
       >
-        {/* Card Header */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span
-            style={{
-              fontSize: "0.76rem",
-              fontWeight: 800,
-              padding: "3px 10px",
-              borderRadius: "6px",
-              background: `${card.badgeColor}18`,
-              color: card.badgeColor
-            }}
-          >
-            {card.category}
-          </span>
-
-          <span
-            style={{
-              fontSize: "0.74rem",
-              fontWeight: 700,
-              color: "#64748b",
-              display: "flex",
-              alignItems: "center",
-              gap: "4px"
-            }}
-          >
-            <RotateCw size={12} /> Click Card to {isFlipped ? "See Question" : "Reveal Answer"}
-          </span>
-        </div>
-
-        {/* Card Content Area */}
         {!isFlipped ? (
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px", margin: "auto 0" }}>
-            <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#64748b" }}>
-              EXAMINER CHALLENGE QUESTION:
-            </span>
-            <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0, lineHeight: 1.45 }}>
-              {card.question}
-            </h3>
-          </div>
-        ) : (
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px", margin: "auto 0" }}>
-            <div>
-              <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#16a34a" }}>
-                BAND 9 ANSWER BLUEPRINT:
+          /* FRONT: QUESTION SIDE */
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px", flex: 1, justifyContent: "center" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span
+                style={{
+                  fontSize: "0.75rem",
+                  fontWeight: 800,
+                  padding: "3px 10px",
+                  borderRadius: "6px",
+                  background: `${card.badgeColor}15`,
+                  color: card.badgeColor
+                }}
+              >
+                {card.category}
               </span>
-              <h4 style={{ fontSize: "1.08rem", fontWeight: 800, color: "#0f172a", margin: "4px 0 0" }}>
-                {card.answerTitle}
-              </h4>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-              {card.bulletPoints.map((bp, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.84rem", color: "#334155", lineHeight: 1.4 }}>
-                  <CheckCircle2 size={14} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-                  <span>{bp}</span>
+            <h3 style={{ fontSize: "1.35rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.45, margin: 0 }}>
+              {card.question}
+            </h3>
+
+            <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#64748b", fontSize: "0.82rem" }}>
+              <RotateCw size={14} />
+              <span>Click anywhere on the card or use the button above to reveal Band 9 analysis</span>
+            </div>
+          </div>
+        ) : (
+          /* BACK: ANSWER & BAND 9 ANALYSIS SIDE */
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px", flex: 1 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <CheckCircle2 size={18} color={card.badgeColor} />
+                <h4 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+                  {card.answerTitle}
+                </h4>
+              </div>
+              <span
+                style={{
+                  fontSize: "0.7rem",
+                  fontWeight: 800,
+                  padding: "2px 8px",
+                  borderRadius: "6px",
+                  background: "#f1f5f9",
+                  color: "#475569"
+                }}
+              >
+                Band 9 Key Feature Analysis
+              </span>
+            </div>
+
+            {/* Bullet Points */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              {card.bulletPoints.map((pt, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.88rem", color: "#334155", lineHeight: 1.5 }}>
+                  <span style={{ color: card.badgeColor, fontWeight: 800, marginTop: "1px" }}>•</span>
+                  <span>{pt}</span>
                 </div>
               ))}
             </div>
 
+            {/* Band 9 Application Quote */}
             <div
               style={{
                 background: "#f8fafc",
-                borderLeft: `3px solid ${card.badgeColor}`,
-                borderRadius: "6px",
-                padding: "8px 12px",
-                fontSize: "0.84rem",
+                borderLeft: `3.5px solid ${card.badgeColor}`,
+                borderRadius: "8px",
+                padding: "10px 14px",
+                fontSize: "0.9rem",
                 color: "#1e293b",
+                lineHeight: 1.55,
                 fontStyle: "italic",
-                lineHeight: 1.45
+                marginTop: "auto"
               }}
             >
+              <div style={{ fontSize: "0.72rem", fontWeight: 800, color: card.badgeColor, marginBottom: "3px", fontStyle: "normal" }}>
+                ★ EXAMINER BAND 9 PHRASING:
+              </div>
               {card.band9Phrase}
             </div>
           </div>
         )}
 
-        {/* Card Footer Indicator */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "6px" }}>
-          {FLASHCARDS.map((_, i) => (
-            <span
-              key={i}
-              style={{
-                width: i === currentIdx ? "20px" : "6px",
-                height: "6px",
-                borderRadius: "3px",
-                background: i === currentIdx ? card.badgeColor : "#cbd5e1",
-                transition: "all 0.2s ease"
-              }}
-            />
-          ))}
+        {/* Footer Hint */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderTop: "1px solid #f1f5f9", paddingTop: "12px", marginTop: "14px" }}>
+          <span style={{ fontSize: "0.74rem", color: "#94a3b8" }}>
+            Tap card to flip • Card {currentIdx + 1} of {FLASHCARDS.length}
+          </span>
+          <span style={{ fontSize: "0.74rem", fontWeight: 700, color: card.badgeColor }}>
+            {isFlipped ? "Answer View" : "Question View"}
+          </span>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

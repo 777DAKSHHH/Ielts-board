@@ -13,14 +13,10 @@ import {
   Award,
   Layers,
   CheckCircle2,
-  Users,
-  Compass,
+  Table,
   ArrowRight,
   ShieldCheck,
   LayoutGrid,
-  Workflow,
-  Flame,
-  Boxes,
   Eye,
   Info
 } from "lucide-react";
@@ -30,8 +26,9 @@ import {
   SmartBoardTableMatrix,
   DiagramViewMode,
   HotspotDefinition,
-  CEMENT_HOTSPOTS,
-  CONCRETE_HOTSPOTS,
+  TABLE_CELL_HOTSPOTS,
+  CATEGORY_HOTSPOTS,
+  COUNTRY_HOTSPOTS,
   ALL_HOTSPOTS
 } from "./SmartBoardGraphSvg";
 import { BitsAndPiecesMindmap } from "./BitsAndPiecesMindmap";
@@ -58,8 +55,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   // Default to side-by-side split view for zero-scroll on smart boards
   const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("heating");
-  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("heating");
+  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("turkey-food");
+  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("turkey-food");
   const [dockTab, setDockTab] = useState<"category" | "prompt" | "hotspots">("category");
 
   useEffect(() => {
@@ -84,16 +81,21 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
     setIsEnlarged(true);
   };
 
-  // Synchronized active component data (from Smartboard SVG)
+  // Synchronized active component data (from Smartboard Table Hotspots)
   const activeHotspot: HotspotDefinition =
-    ALL_HOTSPOTS.find((h) => h.id === selectedHotspotId) || CEMENT_HOTSPOTS[2];
+    ALL_HOTSPOTS.find((h) => h.id === selectedHotspotId) || TABLE_CELL_HOTSPOTS[0];
 
   const handleSelectComponent = (id: string) => {
     setSelectedHotspotId(id);
     setHighlightMode(id as DiagramViewMode);
   };
 
-  // Presenter Dock Component for zero-scroll smart board teaching — 100% Synced with Diagram
+  // Food, Clothing, and Leisure groups for quick dock strips
+  const foodHotspots = TABLE_CELL_HOTSPOTS.filter((h) => h.box === "food");
+  const clothingHotspots = TABLE_CELL_HOTSPOTS.filter((h) => h.box === "clothing");
+  const leisureHotspots = TABLE_CELL_HOTSPOTS.filter((h) => h.box === "leisure");
+
+  // Presenter Dock Component for zero-scroll smart board teaching — 100% Synced with Table Visual
   const renderPresenterDock = (inModal = false) => (
     <div
       style={{
@@ -132,20 +134,20 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               fontWeight: 800,
               padding: "2px 7px",
               borderRadius: "5px",
-              background: activeHotspot.box === "cement" ? "#eff6ff" : "#ecfdf5",
-              color: activeHotspot.box === "cement" ? "#1e40af" : "#065f46"
+              background: `${activeHotspot.color}15`,
+              color: activeHotspot.color
             }}
           >
-            {activeHotspot.box === "cement" ? "Cement Pipeline" : "Concrete Formulation"}
+            {activeHotspot.category || activeHotspot.name.split("•")[0]}
           </span>
         </div>
 
         {/* 3 Dock Tabs */}
         <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "3px", borderRadius: "8px" }}>
           {[
-            { id: "category", label: "🎯 Active Component" },
+            { id: "category", label: "🎯 Active Cell" },
             { id: "prompt", label: "📝 Prompt" },
-            { id: "hotspots", label: "⭐ All 10 Steps" }
+            { id: "hotspots", label: "⭐ All 15 Data Points" }
           ].map((tab) => (
             <button
               key={tab.id}
@@ -169,17 +171,17 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         </div>
       </div>
 
-      {/* Dock Content: Tab 1 - Active Component Deep Dive (Synced with Smartboard SVG) */}
+      {/* Dock Content: Tab 1 - Active Cell Deep Dive (Synced with Smartboard Table) */}
       {dockTab === "category" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
-          {/* Quick Component Tap Strip — Touch any chip to highlight on the diagram */}
+          {/* Quick Cell Tap Strips — Touch any chip to highlight on the smartboard table */}
           <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-            {/* Cement 5 Stages */}
+            {/* Food 5 Countries */}
             <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
-              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#1e40af", marginRight: "2px", textTransform: "uppercase" }}>
-                Cement:
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#2563eb", marginRight: "2px", textTransform: "uppercase" }}>
+                Food:
               </span>
-              {CEMENT_HOTSPOTS.map((h) => {
+              {foodHotspots.map((h) => {
                 const isSelected = selectedHotspotId === h.id;
                 return (
                   <button
@@ -198,18 +200,78 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       transition: "all 0.15s ease"
                     }}
                   >
-                    {h.name.split(". ")[1]?.split(" ")[0] || h.name}
+                    {h.country} ({h.number})
                   </button>
                 );
               })}
             </div>
 
-            {/* Concrete 5 Components */}
+            {/* Clothing 5 Countries */}
             <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
-              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#065f46", marginRight: "2px", textTransform: "uppercase" }}>
-                Concrete:
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#d97706", marginRight: "2px", textTransform: "uppercase" }}>
+                Clothing:
               </span>
-              {CONCRETE_HOTSPOTS.map((h) => {
+              {clothingHotspots.map((h) => {
+                const isSelected = selectedHotspotId === h.id;
+                return (
+                  <button
+                    key={h.id}
+                    type="button"
+                    onClick={() => handleSelectComponent(h.id)}
+                    style={{
+                      padding: "2px 7px",
+                      borderRadius: "6px",
+                      fontSize: "0.71rem",
+                      fontWeight: 750,
+                      border: isSelected ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
+                      background: isSelected ? `${h.color}18` : "#f8fafc",
+                      color: isSelected ? h.color : "#475569",
+                      cursor: "pointer",
+                      transition: "all 0.15s ease"
+                    }}
+                  >
+                    {h.country} ({h.number})
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Leisure 5 Countries */}
+            <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#059669", marginRight: "2px", textTransform: "uppercase" }}>
+                Leisure:
+              </span>
+              {leisureHotspots.map((h) => {
+                const isSelected = selectedHotspotId === h.id;
+                return (
+                  <button
+                    key={h.id}
+                    type="button"
+                    onClick={() => handleSelectComponent(h.id)}
+                    style={{
+                      padding: "2px 7px",
+                      borderRadius: "6px",
+                      fontSize: "0.71rem",
+                      fontWeight: 750,
+                      border: isSelected ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
+                      background: isSelected ? `${h.color}18` : "#f8fafc",
+                      color: isSelected ? h.color : "#475569",
+                      cursor: "pointer",
+                      transition: "all 0.15s ease"
+                    }}
+                  >
+                    {h.country} ({h.number})
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Nations & Overview Quick Strips */}
+            <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap", paddingTop: "2px" }}>
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#1e40af", marginRight: "2px", textTransform: "uppercase" }}>
+                Nations:
+              </span>
+              {COUNTRY_HOTSPOTS.map((h) => {
                 const isSelected = selectedHotspotId === h.id;
                 return (
                   <button
@@ -250,8 +312,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <span
                 style={{
-                  minWidth: "28px",
-                  height: "28px",
+                  minWidth: "32px",
+                  height: "32px",
                   borderRadius: "8px",
                   background: activeHotspot.color,
                   color: "#ffffff",
@@ -266,7 +328,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               </span>
               <div>
                 <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase" }}>
-                  {activeHotspot.box === "cement" ? "Cement Stage" : "Concrete Ingredient / Mixer"}
+                  {activeHotspot.category || "Comparative Metric"} • 2002
                 </span>
                 <div style={{ fontSize: "0.98rem", fontWeight: 800, color: "#0f172a" }}>
                   {activeHotspot.name}
@@ -288,9 +350,9 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             </span>
           </div>
 
-          {/* 3 Parameter Metric Stat Cards */}
+          {/* 3–4 Parameter Metric Stat Cards */}
           {activeHotspot.parameterMetrics && (
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: `repeat(${activeHotspot.parameterMetrics.length > 3 ? 4 : 3}, 1fr)`, gap: "8px" }}>
               {activeHotspot.parameterMetrics.map((pm, idx) => (
                 <div
                   key={idx}
@@ -326,7 +388,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             }}
           >
             <strong style={{ color: "#0f172a", display: "block", marginBottom: "2px" }}>
-              Operational Mechanics:
+              Analytical Insight:
             </strong>
             {activeHotspot.description}
           </div>
@@ -409,28 +471,28 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "0.78rem" }}>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
               <span style={{ color: "#64748b" }}>Format:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Two Process Diagrams</strong>
+              <strong style={{ display: "block", color: "#0f172a" }}>Comparative Data Table</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Pipeline 1:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>5 Sequential Stages</strong>
+              <span style={{ color: "#64748b" }}>Timeframe:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>Single Year (2002)</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Pipeline 2:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>4 Batch Ingredients</strong>
+              <span style={{ color: "#64748b" }}>Entities:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>5 European Countries</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Cross Link:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Cement is 15% Binder</strong>
+              <span style={{ color: "#64748b" }}>Categories:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>3 Consumer Sectors</strong>
             </div>
           </div>
         </div>
       )}
 
-      {/* Dock Content: Tab 3 - All 10 Components */}
+      {/* Dock Content: Tab 3 - All 15 Hotspot Data Cells */}
       {dockTab === "hotspots" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "6px", flex: 1, overflowY: "auto" }}>
-          {ALL_HOTSPOTS.map((h) => {
+          {TABLE_CELL_HOTSPOTS.map((h) => {
             const isMatch = selectedHotspotId === h.id;
             return (
               <div
@@ -452,8 +514,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                   <span
                     style={{
-                      width: "22px",
-                      height: "22px",
+                      width: "30px",
+                      height: "24px",
                       borderRadius: "6px",
                       background: h.color,
                       color: "#ffffff",
@@ -477,11 +539,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     fontWeight: 750,
                     padding: "2px 6px",
                     borderRadius: "4px",
-                    background: h.box === "cement" ? "#dbeafe" : "#dcfce7",
-                    color: h.box === "cement" ? "#1e40af" : "#166534"
+                    background: `${h.color}15`,
+                    color: h.color
                   }}
                 >
-                  {h.box === "cement" ? "Cement" : "Concrete"}
+                  {h.box.toUpperCase()}
                 </span>
               </div>
             );
@@ -496,11 +558,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; Process Diagrams
+          Step 02 / 08 • Task Prompt &amp; Comparative Table
         </span>
-        <h2 className="stage-title">Deconstruct the Cement &amp; Concrete Production Diagrams</h2>
+        <h2 className="stage-title">Deconstruct the Consumer Spending Table (2002)</h2>
         <p className="stage-subtitle">
-          Examine the prompt, deconstruct the 5 sequential manufacturing stages of cement, and analyze the 4-ingredient formulation for concrete (50% gravel, 25% sand, 15% cement, 10% water) in the rotating mixer.
+          Examine national consumer expenditure across 5 European countries (Ireland, Italy, Spain, Sweden, Turkey) and 3 core categories: Food/Drink/Tobacco (dominant), Clothing/Footwear (secondary), and Leisure/Education (minority).
         </p>
       </div>
 
@@ -512,7 +574,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the two diagrams: sequence the 5 cement stages and calculate the 4 concrete ingredient proportions (50% gravel, 25% sand, 15% cement, 10% water)."
+          instruction="Focus Timer: 3 minutes to analyze the comparative table: identify the universal rank order across all 5 nations, note Turkey's food peak (32.14%), Italy's clothing lead (9.00%), and Spain's leisure floor (1.98%)."
         />
       </div>
 
@@ -551,8 +613,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               gap: "6px"
             }}
           >
-            <Workflow size={14} />
-            <span>Interactive Process Engine</span>
+            <Table size={14} />
+            <span>Interactive Table Engine</span>
           </button>
 
           <button
@@ -626,7 +688,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             <button
               type="button"
               onClick={() => setStageLayout("split")}
-              title="Split View (Chart + Presenter Dock Side-by-Side)"
+              title="Split View (Table + Presenter Dock Side-by-Side)"
               style={{
                 padding: "4px 8px",
                 borderRadius: "6px",
@@ -695,7 +757,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
       {/* STAGE WORKSPACE: ZERO-SCROLL SPLIT OR FULL WIDTH */}
       {stageLayout === "split" && viewMode === "smartboard_table" ? (
-        /* ZERO-SCROLL SPLIT VIEW: Chart on left, Presenter Dock on right */
+        /* ZERO-SCROLL SPLIT VIEW: Table on left, Presenter Dock on right */
         <div
           style={{
             display: "grid",
@@ -723,7 +785,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               highlightMode={highlightMode}
               onHighlightModeChange={(mode) => {
                 setHighlightMode(mode);
-                if (mode !== "all" && mode !== "both" && mode !== "cement" && mode !== "concrete") {
+                if (mode !== "all" && mode !== "both") {
                   setSelectedHotspotId(mode);
                 }
               }}
@@ -734,7 +796,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             />
           </div>
 
-          {/* Right Column: Live Smart Board Presenter Dock (Directly Beside Chart!) */}
+          {/* Right Column: Live Smart Board Presenter Dock (Directly Beside Table!) */}
           <div style={{ minWidth: 0, height: "100%" }}>
             {renderPresenterDock(false)}
           </div>
@@ -758,7 +820,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 highlightMode={highlightMode}
                 onHighlightModeChange={(mode) => {
                   setHighlightMode(mode);
-                  if (mode !== "all" && mode !== "both" && mode !== "cement" && mode !== "concrete") {
+                  if (mode !== "all" && mode !== "both") {
                     setSelectedHotspotId(mode);
                   }
                 }}
@@ -788,7 +850,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="IELTS Academic Task 1 Cement and Concrete Production Diagrams"
+                  alt="IELTS Academic Task 1 Consumer Spending Table 2002"
                   style={{
                     maxHeight: "560px",
                     maxWidth: "100%",
@@ -799,7 +861,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   }}
                 />
                 <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
-                  Official Cambridge IELTS Academic Question Diagram • Cement &amp; Concrete Production Procedure
+                  Official Cambridge IELTS Academic Question Table • Consumer Spending in Five Countries (2002)
                 </div>
               </div>
             )}
@@ -862,11 +924,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <Sparkles size={17} color="#2563eb" />
                 <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  Strategic Process Stages &amp; Components Inspector (10 Items)
+                  Strategic Comparative Cells Inspector (15 Items)
                 </h4>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "8px", maxHeight: "220px", overflowY: "auto" }}>
-                {ALL_HOTSPOTS.map((h) => {
+                {TABLE_CELL_HOTSPOTS.map((h) => {
                   const isSelected = selectedHotspotId === h.id;
                   return (
                     <div
@@ -887,7 +949,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                         <span
                           style={{
-                            width: "24px",
+                            width: "32px",
                             height: "24px",
                             borderRadius: "6px",
                             background: h.color,
@@ -912,11 +974,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                           fontWeight: 800,
                           padding: "2px 8px",
                           borderRadius: "6px",
-                          background: h.box === "cement" ? "#dbeafe" : "#dcfce7",
-                          color: h.box === "cement" ? "#1e40af" : "#166534"
+                          background: `${h.color}15`,
+                          color: h.color
                         }}
                       >
-                        {h.box === "cement" ? "Cement" : "Concrete"}
+                        {h.box.toUpperCase()}
                       </span>
                     </div>
                   );
@@ -972,7 +1034,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     Enlarged Presentation Mode
                   </span>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                    Cement &amp; Concrete Production Procedure
+                    Consumer Spending on Different Items in Five Countries (2002)
                   </h3>
                 </div>
                 <button
@@ -1000,7 +1062,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     highlightMode={highlightMode}
                     onHighlightModeChange={(mode) => {
                       setHighlightMode(mode);
-                      if (mode !== "all" && mode !== "both" && mode !== "cement" && mode !== "concrete") {
+                      if (mode !== "all" && mode !== "both") {
                         setSelectedHotspotId(mode);
                       }
                     }}
