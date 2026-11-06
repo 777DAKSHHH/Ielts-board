@@ -273,6 +273,18 @@ export interface ConcreteIngredientItem {
   band9Phrase: string;
 }
 
+export interface ProfessionWorkloadStress {
+  id: string;
+  profession: string;
+  hoursWorked: number;
+  stressPercentage: number;
+  hoursRank: number;
+  stressRank: number;
+  color: string;
+  notableFeature: string;
+  band9Sentence: string;
+}
+
 export interface Task1Data {
   id: string;
   taskType: string;
@@ -299,6 +311,7 @@ export interface Task1Data {
   spendingHotspots?: SpendingHotspot[];
   processStages?: ProcessStageItem[];
   concreteIngredients?: ConcreteIngredientItem[];
+  professionData?: ProfessionWorkloadStress[];
   formats: MusicFormatItem[];
   countries: CountryMarketData[];
   diagramData: Task1DiagramData;

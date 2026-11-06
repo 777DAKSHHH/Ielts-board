@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layers, CheckCircle2, FileText, Sparkles, Table } from "lucide-react";
+import { Layers, CheckCircle2, FileText, Sparkles, BarChart2 } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step7ModelAnalysis: React.FC = () => {
@@ -14,7 +14,7 @@ export const Step7ModelAnalysis: React.FC = () => {
         </span>
         <h2 className="stage-title">Comparative Analysis &amp; Complete Band 9 Model Report</h2>
         <p className="stage-subtitle">
-          Master the three essential analytical frameworks for consumer expenditure tables, alongside the complete 182-word Band 9 model response organized across four balanced paragraphs.
+          Master the three essential analytical frameworks for dual bar and pie charts, alongside the complete {modelReport?.wordCount || 216}-word Band 9 model response organized across four balanced paragraphs.
         </p>
       </div>
 
@@ -33,7 +33,7 @@ export const Step7ModelAnalysis: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
               <Layers
                 size={17}
-                color={idx === 0 ? "#2563eb" : idx === 1 ? "#d97706" : "#059669"}
+                color={idx === 0 ? "#dc2626" : idx === 1 ? "#0891b2" : "#0d9488"}
               />
               <h4 style={{ fontSize: "0.92rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
                 {group.title}
@@ -91,8 +91,8 @@ export const Step7ModelAnalysis: React.FC = () => {
                   { id: "all", label: "Full Report (All)" },
                   { id: "intro", label: "Intro" },
                   { id: "overview", label: "Overview" },
-                  { id: "body1", label: "Body 1 (Food)" },
-                  { id: "body2", label: "Body 2 (Clothing & Leisure)" }
+                  { id: "body1", label: "Body 1 (Hours Worked)" },
+                  { id: "body2", label: "Body 2 (Stress Illness)" }
                 ] as const
               ).map((tab) => (
                 <button

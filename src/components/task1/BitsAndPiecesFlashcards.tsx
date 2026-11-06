@@ -6,8 +6,8 @@ import {
   ChevronRight,
   Sparkles,
   CheckCircle2,
-  Table,
-  TrendingUp,
+  BarChart2,
+  PieChart as PieIcon,
   Award
 } from "lucide-react";
 import { tactilePress } from "../../motion";
@@ -28,75 +28,76 @@ const FLASHCARDS: FlashcardItem[] = [
     id: 1,
     category: "Card 1: Macro Qualitative Overview (Zero Numbers Rule)",
     badgeColor: "#0284c7",
-    question: "What are the core overarching trends that must be highlighted in the overview for this consumer spending table?",
-    answerTitle: "Universal Sector Hierarchy + Key National Outliers (Without Numbers!)",
+    question: "What are the core overarching trends that must be highlighted in the overview for this dual bar and pie chart task?",
+    answerTitle: "Workweek Extremes + Lack of Direct Correlation with Stress (Without Numbers!)",
     bulletPoints: [
-      "Pillar 1: Food, drinks, and tobacco accounted for the largest proportion of consumer expenditure across all five surveyed nations without exception.",
-      "Pillar 2: Leisure and education consistently represented the smallest category of spending throughout.",
-      "Pillar 3: Turkish and Irish consumers devoted significantly larger proportions to sustenance than their European peers, while Italy recorded the largest proportion spent on clothing and footwear.",
-      "Rule: Never include raw numerical figures in the overview; keep observations strictly macro and qualitative."
+      "Pillar 1: Business men committed the longest hours per week by a considerable margin, whereas lecturers logged the fewest hours.",
+      "Pillar 2: Working time did not correlate directly with stress-related conditions; movie producers and lecturers constituted the two largest segments of stress sufferers.",
+      "Pillar 3: Programmers recorded the lowest prevalence of stress-induced illnesses throughout the surveyed cohort.",
+      "Golden Rule: Never include raw numerical figures (70 hrs, 25%, 18%, etc.) in the overview; keep observations strictly qualitative."
     ],
     band9Phrase:
-      "“Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations, whereas leisure and education accounted for the smallest share of spending throughout. Furthermore, Turkish and Irish consumers devoted significantly larger proportions of their budgets to sustenance than their European counterparts, while Italy recorded the largest proportion spent on clothing and footwear.”"
+      "“Overall, business men committed the longest hours per week by a considerable margin, whereas lecturers logged the fewest hours. However, working time did not correlate directly with stress-related conditions; movie producers and lecturers constituted the two largest segments of stress sufferers, while programmers recorded the lowest prevalence of stress-induced illnesses.”"
   },
   {
     id: 2,
-    category: "Card 2: Food, Drink & Tobacco Comparison (Body 1)",
-    badgeColor: "#2563eb",
-    question: "How should you group and contrast the 5 countries for sustenance spending?",
-    answerTitle: "High-Spending Upper Pair (Turkey & Ireland) vs Lower Tier (Spain, Italy, Sweden)",
+    category: "Card 2: Bar Chart Breakdown — Weekly Hours Worked (Body 1)",
+    badgeColor: "#dc2626",
+    question: "How should you structure the report of weekly hours worked across the 8 professions in Body Paragraph 1?",
+    answerTitle: "Rank from Peak Workweek (Business Men) Down to Minimum Floor (Lecturers)",
     bulletPoints: [
-      "Group 1 (Upper Tier): Turkey allocated nearly a third of all consumer expenditure (32.14%), representing the highest single proportion in the entire table, closely followed by Ireland at 28.91%.",
-      "Group 2 (Lower Tier): In marked contrast, Spain recorded 18.80%, while Italy and Sweden registered the lowest proportions in this category at 16.36% and 15.77% respectively.",
-      "Key Contrast: Turkish and Irish spending was nearly double that of Italian and Swedish households."
+      "Workweek Leader: Business men logged the longest workweek at an astounding 70 hours—nearly triple the hours of lecturers.",
+      "Upper Tier Followers: Movie producers and doctors followed closely at 60 and 52 hours per week respectively.",
+      "Intermediate Standard: Writers averaged 45 hours, while programmers completed a standard 40-hour workweek.",
+      "Lower Tier & Floor: Lawyers (35 hours) and chefs (30 hours) worked somewhat fewer hours, with lecturers recording the lowest figure at just 25 hours per week."
     ],
     band9Phrase:
-      "“In terms of food, drinks, and tobacco, Turkey allocated the highest proportion of any country, with nearly a third of all consumer expenditure (32.14%) directed towards this category. Ireland followed closely behind at 28.91%. In marked contrast, the remaining three nations registered substantially lower figures; Spain recorded 18.80%, while Italy and Sweden spent the least on sustenance at 16.36% and 15.77% respectively.”"
+      "“Regarding working hours, business men logged the longest workweek at an average of 70 hours, followed by movie producers and doctors at 60 and 52 hours per week respectively. Writers averaged 45 hours on the job, while programmers completed a standard 40-hour week. Lawyers and chefs worked somewhat fewer hours (35 and 30 hours respectively), whereas lecturers recorded the lowest figure across all groups at merely 25 hours per week.”"
   },
   {
     id: 3,
-    category: "Card 3: Clothing & Footwear Outlier (Body 2)",
-    badgeColor: "#d97706",
-    question: "How do you effectively report Italy's unique clothing figure against the other nations?",
-    answerTitle: "Identify Italy as the Undisputed Leader and Cluster Turkey, Spain, and Ireland",
+    category: "Card 3: Pie Chart Breakdown — Stress Illness & The Lecturer Paradox (Body 2)",
+    badgeColor: "#0891b2",
+    question: "What is the central analytical paradox in the pie chart that examiners look for to award Band 9?",
+    answerTitle: "The Lecturer Disparity (Lowest Hours vs Second Highest Stress) & Movie Producers Leader",
     bulletPoints: [
-      "Italian Outlier: Italy dedicated exactly 9.00% to clothing and footwear, making it the clear continental leader.",
-      "Clustered Trio: Turkey (6.63%), Spain (6.51%), and Ireland (6.43%) all grouped tightly around 6.5%.",
-      "Category Floor: Sweden registered the lowest proportion at just 5.40%, trailing Italy by 3.60 percentage points.",
-      "Grammatical Tip: Use participial phrasing ('outstripping all other surveyed nations') to avoid repetitive verbs."
+      "Stress Leader: Movie producers accounted for the largest single proportion at exactly a quarter (25%) of all cases.",
+      "Central Paradox: Lecturers comprised the second highest proportion of stress sufferers at 18%, despite working the fewest hours of any group (25 hrs/week).",
+      "Business Men Disparity: Conversely, business men worked 70 hours weekly but accounted for only 11% of stress sufferers.",
+      "Remaining Slices: Doctors made up 15%, chefs 10%, writers and lawyers shared an identical 8% each, and programmers recorded the lowest rate at 5%."
     ],
     band9Phrase:
-      "“Turning to clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outstripping Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), with Sweden recording the lowest share at 5.40%.”"
+      "“In terms of stress-related illness, movie producers accounted for the largest single proportion at exactly 25%. Paradoxically, lecturers represented the second highest group at 18%, despite working the fewest hours. Doctors constituted 15% of the total, whereas business men comprised a modest 11% despite their extensive workweek. Chefs made up exactly one-tenth of sufferers, while writers and lawyers shared an identical 8% each. At merely 5%, programmers formed the smallest proportion of the illness cohort.”"
   },
   {
     id: 4,
-    category: "Card 4: Leisure & Education Sector & Spain's Floor (Body 2)",
-    badgeColor: "#059669",
-    question: "What are the key data points to report for the minority leisure and education category?",
-    answerTitle: "Turkey Tops the List (4.35%), Sweden/Italy Parity (~3.2%), and Spain's Table Floor (1.98%)",
+    category: "Card 4: Lack of Correlation Analysis (Task Achievement Discriminator)",
+    badgeColor: "#7c3aed",
+    question: "Why is pointing out the absence of direct correlation essential for scoring Band 9 in Task Achievement?",
+    answerTitle: "Demonstrates Synthesis Across Dual Visuals Rather Than Isolated Listing",
     bulletPoints: [
-      "Category Peak: Turkey allocated 4.35% to leisure and education, ranking first in 2 out of the 3 overall table categories.",
-      "Middle Parity: Sweden (3.22%) and Italy (3.20%) were virtually tied in leisure expenditure.",
-      "Moderate Allocation: Ireland directed 2.21% towards recreation and education.",
-      "Table Minimum: Spain recorded the lowest single figure in the entire table at a mere 1.98% (the sole sub-2% value)."
+      "Task Achievement Requirement: The prompt asks to 'make comparisons where relevant.' Merely summarizing the bar chart and then the pie chart in isolation caps the score at Band 7.",
+      "Cross-Visual Synthesis: You must connect labor duration with mental health outcomes to show that working more hours does NOT automatically produce higher illness.",
+      "Prime Evidence: Business men work nearly 3 times as long as lecturers (70h vs 25h), yet suffer significantly less stress illness (11% vs 18%).",
+      "Vocabulary Cue: Use phrases like 'paradoxical disparity', 'no direct correlation', and 'in marked contrast'."
     ],
     band9Phrase:
-      "“Finally, leisure and education represented the smallest expenditure throughout all five nations; Turkey again topped the list at 4.35%, followed by Sweden (3.22%) and Italy (3.20%), while Spain registered the lowest single figure in the table at just 1.98%.”"
+      "“There was no direct correlation between hours worked and the incidence of stress illness, as illustrated by lecturers, who logged the shortest workweek yet endured the second greatest health burden.”"
   },
   {
     id: 5,
-    category: "Card 5: Advanced Comparative Vocabulary & Syntax",
-    badgeColor: "#7c3aed",
-    question: "Which lexical items and syntactic patterns guarantee Band 9 in Lexical Resource and Grammatical Range?",
-    answerTitle: "Precision Collocations + Varied Comparison Structures",
+    category: "Card 5: Band 9 Lexical Collocations & Grammatical Variety",
+    badgeColor: "#059669",
+    question: "Which high-scoring collocations and grammatical structures elevate a dual chart report to Band 9?",
+    answerTitle: "Respective Reporting, Fractional Parity, Participial Clauses, and Adverbial Contrast",
     bulletPoints: [
-      "Proportion verbs: 'accounted for', 'constituted', 'represented the smallest share', 'allocated'.",
-      "Comparative adverbs/prepositions: 'outstripping', 'followed closely by', 'in marked contrast', 'respectively'.",
-      "Clustering phrases: 'clustered tightly around 6.5%', 'virtual parity between Sweden and Italy'.",
-      "Avoid writing lists: Always synthesize figures with comparative clauses rather than simply reciting rows."
+      "Fractional Equivalences: 'account for a quarter (25%)', 'exactly one-tenth (10%)', 'merely 5%'.",
+      "Respective Precision: '...followed by movie producers and doctors at 60 and 52 hours per week respectively.'",
+      "Shared Parity: '...writers and lawyers shared an identical 8% each.'",
+      "Contrasting Adverbials: 'In marked contrast', 'Paradoxically', 'By a considerable margin', 'At the opposite end of the spectrum'."
     ],
     band9Phrase:
-      "“Outstripping all other surveyed nations, Italy dedicated 9.00% to apparel and footwear, whereas Swedish households committed the lowest proportion to sustenance at 15.77%.”"
+      "“Writers and lawyers accounted for an identical proportion of stress illness at 8% each, while movie producers experienced the greatest stress burden, accounting for a full quarter of all reported cases.”"
   }
 ];
 
@@ -127,108 +128,117 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
         flexDirection: "column",
         gap: "14px",
         width: "100%",
-        maxWidth: "880px",
-        margin: "0 auto"
+        fontFamily: "system-ui, -apple-system, sans-serif"
       }}
     >
-      {/* Top Controls Strip */}
+      {/* Top Banner & Flashcard Stepper Controls */}
       <div
         style={{
+          background: "#ffffff",
+          borderRadius: "16px",
+          border: "1.5px solid var(--border-subtle, #cbd5e1)",
+          padding: "16px 20px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: "8px",
-          background: "#ffffff",
-          borderRadius: "14px",
-          border: "1.5px solid var(--border-subtle, #cbd5e1)",
-          padding: "10px 16px",
+          gap: "10px",
           boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Sparkles size={16} color={card.badgeColor} />
-          <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#0f172a" }}>
-            Comparative Table Flashcard {currentIdx + 1} of {FLASHCARDS.length}
-          </span>
-          <span
-            style={{
-              fontSize: "0.72rem",
-              fontWeight: 800,
-              padding: "2px 8px",
-              borderRadius: "6px",
-              background: `${card.badgeColor}15`,
-              color: card.badgeColor
-            }}
-          >
-            {card.category.split(":")[0]}
-          </span>
+        <div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+            <Sparkles size={18} color="#2563eb" />
+            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+              Dual Visual Band 9 Mastery Flashcards
+            </h3>
+            <span
+              style={{
+                fontSize: "0.72rem",
+                fontWeight: 800,
+                background: "#eff6ff",
+                color: "#1d4ed8",
+                padding: "2px 8px",
+                borderRadius: "6px"
+              }}
+            >
+              Tactile Study Engine
+            </span>
+          </div>
+          <p style={{ fontSize: "0.85rem", color: "#64748b", margin: 0 }}>
+            Flip through essential examiner criteria, paragraph bifurcation rules, and Band 9 analytical sentences.
+          </p>
         </div>
 
-        {/* Prev / Next Navigation */}
-        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+        {/* Stepper Buttons */}
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <button
             type="button"
             onClick={handlePrev}
             style={{
-              padding: "6px 10px",
-              borderRadius: "8px",
-              border: "1px solid #e2e8f0",
+              padding: "7px 12px",
+              borderRadius: "10px",
+              border: "1.5px solid #cbd5e1",
               background: "#ffffff",
               color: "#334155",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "4px",
-              fontSize: "0.78rem",
+              fontSize: "0.82rem",
               fontWeight: 700
             }}
           >
-            <ChevronLeft size={14} />
+            <ChevronLeft size={16} />
             <span>Prev</span>
+          </button>
+
+          <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#0f172a", minWidth: "48px", textAlign: "center" }}>
+            {currentIdx + 1} / {FLASHCARDS.length}
+          </span>
+
+          <button
+            type="button"
+            onClick={handleNext}
+            style={{
+              padding: "7px 12px",
+              borderRadius: "10px",
+              border: "1.5px solid #cbd5e1",
+              background: "#ffffff",
+              color: "#334155",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "4px",
+              fontSize: "0.82rem",
+              fontWeight: 700
+            }}
+          >
+            <span>Next</span>
+            <ChevronRight size={16} />
           </button>
 
           <button
             type="button"
             onClick={toggleFlip}
             style={{
-              padding: "6px 14px",
-              borderRadius: "8px",
-              border: "1.5px solid #0f172a",
-              background: isFlipped ? "#0f172a" : "#f8fafc",
-              color: isFlipped ? "#ffffff" : "#0f172a",
+              padding: "7px 14px",
+              borderRadius: "10px",
+              border: "none",
+              background: "#0f172a",
+              color: "#ffffff",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "6px",
-              fontSize: "0.78rem",
-              fontWeight: 800,
-              boxShadow: "0 2px 6px rgba(0,0,0,0.05)"
+              fontSize: "0.82rem",
+              fontWeight: 750,
+              boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
+              marginLeft: "4px"
             }}
           >
-            <RotateCw size={13} />
+            <RotateCw size={14} />
             <span>{isFlipped ? "Show Question" : "Reveal Answer"}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={handleNext}
-            style={{
-              padding: "6px 10px",
-              borderRadius: "8px",
-              border: "1px solid #e2e8f0",
-              background: "#ffffff",
-              color: "#334155",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              gap: "4px",
-              fontSize: "0.78rem",
-              fontWeight: 700
-            }}
-          >
-            <span>Next</span>
-            <ChevronRight size={14} />
           </button>
         </div>
       </div>

@@ -52,17 +52,22 @@
 
 .stage-viewport.standalone-mode {
   margin-bottom: 12px;
+  height: calc(100vh - var(--header-height) - 36px);
+  max-height: calc(100vh - var(--header-height) - 36px);
 }
 
 /* Standalone Full-Page Container & Scrollbar Architecture */
 .standalone-scroll-container {
   width: 100%;
   height: 100%;
-  overflow-y: auto !important;
+  max-height: 100%;
+  overflow-y: scroll !important;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
-  padding-bottom: 80px;
+  touch-action: pan-y;
+  overscroll-behavior-y: auto;
+  padding-bottom: 90px;
+  box-sizing: border-box;
 }
 
 /* Visible, touch-friendly tactile scrollbars */

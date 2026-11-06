@@ -2,30 +2,31 @@ import React, { useState } from "react";
 import {
   RotateCcw,
   Sparkles,
-  Info,
-  CheckCircle2,
   Award,
   Layers,
-  ChevronRight,
   Eye,
   EyeOff,
   Maximize2,
-  Table,
   TrendingUp,
   BarChart2,
-  SlidersHorizontal
+  PieChart as PieIcon,
+  AlertCircle
 } from "lucide-react";
+import { PROFESSIONS_DATA } from "../../data/task1Data";
 
 export type DiagramViewMode =
   | "all"
-  | "food"
-  | "clothing"
-  | "leisure"
-  | "turkey"
-  | "ireland"
-  | "spain"
-  | "italy"
-  | "sweden"
+  | "business-men"
+  | "movie-producers"
+  | "doctors"
+  | "writers"
+  | "programmers"
+  | "lawyers"
+  | "chefs"
+  | "lecturers"
+  | "macro-hours"
+  | "macro-stress"
+  | "macro-paradox"
   | string;
 
 export type TableHighlightMode = DiagramViewMode;
@@ -38,7 +39,7 @@ export interface ParameterMetric {
 
 export interface HotspotDefinition {
   id: string;
-  box: "food" | "clothing" | "leisure" | "country" | "all" | string;
+  box: "hours" | "stress" | "paradox" | "all" | string;
   country?: string;
   category?: string;
   number: string;
@@ -54,1352 +55,830 @@ export interface HotspotDefinition {
   parameterMetrics?: ParameterMetric[];
 }
 
-// 15 Key Table Cell Hotspots (5 Countries x 3 Expenditure Categories)
-export const TABLE_CELL_HOTSPOTS: HotspotDefinition[] = [
-  // --- FOOD / DRINK / TOBACCO (Dominant Category) ---
+// 8 Primary Profession Hotspots
+export const PROFESSION_HOTSPOTS: HotspotDefinition[] = [
   {
-    id: "turkey-food",
-    box: "food",
-    country: "Turkey",
-    category: "Food/Drink/Tobacco",
-    number: "32.14%",
-    name: "Turkey • Food, Drink & Tobacco (32.14%)",
-    equipmentOrRole: "Global Peak (Rank 1 of 15 in Entire Table)",
-    color: "#2563eb",
-    pin: { left: "37%", top: "86%" },
-    highlight: { x: "25%", y: "81%", w: "25%", h: "18%" },
+    id: "business-men",
+    box: "hours",
+    number: "70 hrs / 11%",
+    name: "Business Men • 70 hrs/wk | 11% Stress",
+    equipmentOrRole: "Rank 1 in Hours (Workweek Leader)",
+    color: "#ec4899",
+    pin: { left: "88%", top: "25%" },
+    highlight: { x: "85%", y: "15%", w: "12%", h: "70%" },
     description:
-      "Turkish consumers allocated nearly a third (32.14%) of their entire budget towards food, drink, and tobacco—representing the highest single percentage recorded in the entire table.",
+      "Business men logged the longest workweek of all professions at an astounding 70 hours—nearly triple the hours of lecturers. However, they accounted for a modest 11% of stress sufferers.",
     band9Phrase:
-      "“Turkey allocated nearly a third of all consumer expenditure to food, drinks, and tobacco (32.14%), representing the highest single proportion in the entire table...”",
-    grammaticalFocus: "Fractional Approximation: 'allocated nearly a third of all consumer expenditure (32.14%)'",
-    examinerFocus:
-      "Primary global peak feature: mandatory reporting requirement for Task Achievement Band 9.",
+      "“Business men worked the longest week of all professions at 70 hours, yet represented a comparatively modest 11% of stress sufferers.”",
+    grammaticalFocus: "Superlative Ranking + Contrastive Conjunction: 'worked the longest week of all professions at 70 hours, yet represented...'",
+    examinerFocus: "Demonstrates key contrast between maximum workweek duration and moderate illness prevalence.",
     parameterMetrics: [
-      { label: "Category", value: "Food / Drink / Tobacco" },
-      { label: "Expenditure", value: "32.14%" },
-      { label: "Table Rank", value: "1st of 15 (Global Peak)" },
-      { label: "National Status", value: "Nearly 1/3 of consumer budget" }
+      { label: "Weekly Hours", value: "70 hrs (Peak)" },
+      { label: "Stress Share", value: "11% (Rank 4)" },
+      { label: "Hours Rank", value: "1st of 8" },
+      { label: "Stress Rank", value: "4th of 8" }
     ]
   },
   {
-    id: "ireland-food",
-    box: "food",
-    country: "Ireland",
-    category: "Food/Drink/Tobacco",
-    number: "28.91%",
-    name: "Ireland • Food, Drink & Tobacco (28.91%)",
-    equipmentOrRole: "Rank 2 in Food (Close to Three-Tenths)",
-    color: "#0284c7",
-    pin: { left: "37%", top: "26%" },
-    highlight: { x: "25%", y: "19%", w: "25%", h: "16%" },
+    id: "movie-producers",
+    box: "stress",
+    number: "60 hrs / 25%",
+    name: "Movie Producers • 60 hrs/wk | 25% Stress",
+    equipmentOrRole: "Rank 1 in Stress Illness (1 in 4)",
+    color: "#0891b2",
+    pin: { left: "68%", top: "35%" },
+    highlight: { x: "65%", y: "25%", w: "12%", h: "60%" },
     description:
-      "Irish spending on sustenance was second only to Turkey at 28.91%, outpacing the next closest country (Spain) by more than 10 percentage points.",
+      "Movie producers endured the greatest stress burden, comprising a quarter (25%) of all stress-related illness cases while also recording the second highest workweek at 60 hours.",
     band9Phrase:
-      "“Ireland followed closely behind Turkey in sustenance spending, with 28.91% of consumer budgets directed towards food, drink, and tobacco.”",
-    grammaticalFocus: "Sequential Comparative: 'followed closely behind Turkey at 28.91%'",
-    examinerFocus:
-      "Groups Ireland and Turkey together as the high-spending upper tier in sustenance.",
+      "“Movie producers experienced the greatest stress burden, accounting for a full quarter (25%) of all reported illness cases alongside a 60-hour workweek.”",
+    grammaticalFocus: "Fractional Collocation: 'accounting for a full quarter (25%) of all reported illness cases'",
+    examinerFocus: "Essential leader: represents the dominant segment in the pie chart distribution.",
     parameterMetrics: [
-      { label: "Category", value: "Food / Drink / Tobacco" },
-      { label: "Expenditure", value: "28.91%" },
-      { label: "Category Rank", value: "2nd of 5" },
-      { label: "Contrast", value: "+10.11% higher than Spain" }
+      { label: "Weekly Hours", value: "60 hrs (Rank 2)" },
+      { label: "Stress Share", value: "25% (Peak / 1 in 4)" },
+      { label: "Hours Rank", value: "2nd of 8" },
+      { label: "Stress Rank", value: "1st of 8" }
     ]
   },
   {
-    id: "spain-food",
-    box: "food",
-    country: "Spain",
-    category: "Food/Drink/Tobacco",
-    number: "18.80%",
-    name: "Spain • Food, Drink & Tobacco (18.80%)",
-    equipmentOrRole: "Rank 3 in Food (Intermediate Tier)",
-    color: "#0369a1",
-    pin: { left: "37%", top: "56%" },
-    highlight: { x: "25%", y: "51%", w: "25%", h: "16%" },
+    id: "doctors",
+    box: "hours",
+    number: "52 hrs / 15%",
+    name: "Doctors • 52 hrs/wk | 15% Stress",
+    equipmentOrRole: "Rank 3 in Hours & Rank 3 in Stress",
+    color: "#c026d3",
+    pin: { left: "28%", top: "45%" },
+    highlight: { x: "25%", y: "35%", w: "12%", h: "50%" },
     description:
-      "Spanish consumers committed 18.80% of expenditure to sustenance, establishing an intermediate position between the leading pair and Italy/Sweden.",
+      "Doctors logged an average of 52 hours per week, holding the third highest position in both weekly working hours and stress-related illness at 15%.",
     band9Phrase:
-      "“In marked contrast, Spanish expenditure on food stood at 18.80%, substantially lower than Turkey and Ireland.”",
-    grammaticalFocus: "Sharp Contrast Marker: 'In marked contrast, Spanish expenditure on food stood at 18.80%'",
-    examinerFocus:
-      "Marks the dividing threshold between the high-spending pair (>28%) and the remaining European nations (<19%).",
+      "“Doctors followed with 52 hours per week and constituted 15% of the individuals suffering from occupational stress.”",
+    grammaticalFocus: "Quantitative Sequencing: 'Doctors followed with 52 hours per week and constituted 15%...'",
+    examinerFocus: "Exhibits consistent dual-ranking alignment across both charts.",
     parameterMetrics: [
-      { label: "Category", value: "Food / Drink / Tobacco" },
-      { label: "Expenditure", value: "18.80%" },
-      { label: "Category Rank", value: "3rd of 5" },
-      { label: "Role", value: "Intermediate Benchmark" }
+      { label: "Weekly Hours", value: "52 hrs (Rank 3)" },
+      { label: "Stress Share", value: "15% (Rank 3)" },
+      { label: "Hours Rank", value: "3rd of 8" },
+      { label: "Stress Rank", value: "3rd of 8" }
     ]
   },
   {
-    id: "italy-food",
-    box: "food",
-    country: "Italy",
-    category: "Food/Drink/Tobacco",
-    number: "16.36%",
-    name: "Italy • Food, Drink & Tobacco (16.36%)",
-    equipmentOrRole: "Rank 4 in Food (Lower Tier Pair)",
-    color: "#64748b",
-    pin: { left: "37%", top: "41%" },
-    highlight: { x: "25%", y: "35%", w: "25%", h: "16%" },
+    id: "writers",
+    box: "stress",
+    number: "45 hrs / 8%",
+    name: "Writers • 45 hrs/wk | 8% Stress",
+    equipmentOrRole: "Rank 4 in Hours | Joint Rank 6 in Stress",
+    color: "#84cc16",
+    pin: { left: "15%", top: "52%" },
+    highlight: { x: "12%", y: "42%", w: "12%", h: "45%" },
     description:
-      "Italian spending on food and drinks stood at 16.36%, nearly half the Turkish level and clustering closely with Sweden.",
+      "Writers averaged 45 hours weekly, while contributing 8% to the stress illness total—sharing exact parity with lawyers despite logging 10 hours more per week.",
     band9Phrase:
-      "“...while Italy and Sweden spent the least on sustenance at 16.36% and 15.77% respectively.”",
-    grammaticalFocus: "Dual Data Reporting with 'respectively': 'at 16.36% and 15.77% respectively'",
-    examinerFocus:
-      "Demonstrates high-level grammatical bundling without repetitive verb usage.",
+      "“Writers averaged 45 hours on the job, contributing 8% to the stress illness total.”",
+    grammaticalFocus: "Participial Addition: 'Writers averaged 45 hours on the job, contributing 8%...'",
+    examinerFocus: "Useful comparison anchor for parity with lawyers.",
     parameterMetrics: [
-      { label: "Category", value: "Food / Drink / Tobacco" },
-      { label: "Expenditure", value: "16.36%" },
-      { label: "Category Rank", value: "4th of 5" },
-      { label: "Pairing", value: "Closely aligned with Sweden" }
+      { label: "Weekly Hours", value: "45 hrs (Rank 4)" },
+      { label: "Stress Share", value: "8% (Joint Rank 6)" },
+      { label: "Hours Rank", value: "4th of 8" },
+      { label: "Stress Rank", value: "6th of 8" }
     ]
   },
   {
-    id: "sweden-food",
-    box: "food",
-    country: "Sweden",
-    category: "Food/Drink/Tobacco",
-    number: "15.77%",
-    name: "Sweden • Food, Drink & Tobacco (15.77%)",
-    equipmentOrRole: "Rank 5 in Food (Category Minimum)",
-    color: "#475569",
-    pin: { left: "37%", top: "71%" },
-    highlight: { x: "25%", y: "67%", w: "25%", h: "16%" },
+    id: "programmers",
+    box: "hours",
+    number: "40 hrs / 5%",
+    name: "Programmers • 40 hrs/wk | 5% Stress",
+    equipmentOrRole: "Standard 40h Baseline & Lowest Stress (5%)",
+    color: "#a3e635",
+    pin: { left: "78%", top: "60%" },
+    highlight: { x: "75%", y: "50%", w: "12%", h: "40%" },
     description:
-      "Swedish households dedicated the lowest proportion to sustenance among all surveyed nations at 15.77%—less than half the Turkish figure.",
+      "Programmers maintained a conventional 40-hour workweek and recorded the absolute lowest prevalence of stress-related illness across all surveyed occupations at just 5%.",
     band9Phrase:
-      "“Swedish consumers recorded the lowest proportion in this category, with a modest 15.77% devoted to sustenance.”",
-    grammaticalFocus: "Superlative Outlier Clause: 'recorded the lowest proportion in this category at 15.77%'",
-    examinerFocus:
-      "Critical outlier: represents the lower bound of the primary spending category.",
+      "“Programmers completed a standard 40-hour workweek while recording the lowest incidence of stress-related illness at merely 5%.”",
+    grammaticalFocus: "Absolute Superlative Minimum: 'recording the lowest incidence of stress-related illness at merely 5%'",
+    examinerFocus: "Mandatory floor figure in the pie chart distribution.",
     parameterMetrics: [
-      { label: "Category", value: "Food / Drink / Tobacco" },
-      { label: "Expenditure", value: "15.77%" },
-      { label: "Category Rank", value: "5th of 5 (Lowest in Food)" },
-      { label: "Ratio to Turkey", value: "Roughly half of Turkey's 32.14%" }
-    ]
-  },
-
-  // --- CLOTHING / FOOTWEAR (Secondary Category) ---
-  {
-    id: "italy-clothing",
-    box: "clothing",
-    country: "Italy",
-    category: "Clothing/Footwear",
-    number: "9.00%",
-    name: "Italy • Clothing & Footwear (9.00%)",
-    equipmentOrRole: "National Leader in Apparel (Rank 1 of 5)",
-    color: "#d97706",
-    pin: { left: "62%", top: "41%" },
-    highlight: { x: "50%", y: "35%", w: "25%", h: "16%" },
-    description:
-      "Italy was the undisputed leader in clothing and footwear expenditure at exactly 9.00%, outstripping all other surveyed nations by a substantial margin.",
-    band9Phrase:
-      "“Turning to clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outstripping all other surveyed countries by a noticeable margin.”",
-    grammaticalFocus: "Participial Superlative: 'the undisputed leader at exactly 9.00%, outstripping all other surveyed countries'",
-    examinerFocus:
-      "Essential outlier: Italy defied the continental norm, dedicating nearly a tenth of its spending to apparel.",
-    parameterMetrics: [
-      { label: "Category", value: "Clothing / Footwear" },
-      { label: "Expenditure", value: "9.00%" },
-      { label: "Category Rank", value: "1st of 5 (Leader)" },
-      { label: "Gap to 2nd", value: "+2.37% above Turkey" }
+      { label: "Weekly Hours", value: "40 hrs (Baseline)" },
+      { label: "Stress Share", value: "5% (Lowest Floor)" },
+      { label: "Hours Rank", value: "5th of 8" },
+      { label: "Stress Rank", value: "8th of 8" }
     ]
   },
   {
-    id: "turkey-clothing",
-    box: "clothing",
-    country: "Turkey",
-    category: "Clothing/Footwear",
-    number: "6.63%",
-    name: "Turkey • Clothing & Footwear (6.63%)",
-    equipmentOrRole: "Rank 2 in Clothing (Cluster Anchor)",
-    color: "#ea580c",
-    pin: { left: "62%", top: "86%" },
-    highlight: { x: "50%", y: "81%", w: "25%", h: "18%" },
+    id: "lawyers",
+    box: "stress",
+    number: "35 hrs / 8%",
+    name: "Lawyers • 35 hrs/wk | 8% Stress",
+    equipmentOrRole: "Rank 6 in Hours | Joint Parity in Stress (8%)",
+    color: "#3b82f6",
+    pin: { left: "55%", top: "65%" },
+    highlight: { x: "52%", y: "55%", w: "12%", h: "35%" },
     description:
-      "Turkish expenditure on clothing and footwear reached 6.63%, heading a tightly grouped cluster alongside Spain and Ireland.",
+      "Lawyers worked an average of 35 hours weekly, matching writers with an identical 8% share of stress-related illness sufferers.",
     band9Phrase:
-      "“...outstripping Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), which all clustered closely around 6.5%.”",
-    grammaticalFocus: "Clustering Verb: 'which all clustered closely around 6.5%'",
-    examinerFocus:
-      "Prevents mechanical reporting by clustering 3 similar values into a coherent narrative.",
+      "“Lawyers worked an average of 35 hours weekly and matched writers with an identical 8% share of stress illness sufferers.”",
+    grammaticalFocus: "Equivalence Formulation: 'matched writers with an identical 8% share'",
+    examinerFocus: "Synthesizes data points to avoid repetitive mechanical listings.",
     parameterMetrics: [
-      { label: "Category", value: "Clothing / Footwear" },
-      { label: "Expenditure", value: "6.63%" },
-      { label: "Category Rank", value: "2nd of 5" },
-      { label: "Cluster Band", value: "Tight 6.4%–6.6% bracket" }
+      { label: "Weekly Hours", value: "35 hrs (Rank 6)" },
+      { label: "Stress Share", value: "8% (Joint Rank 6)" },
+      { label: "Hours Rank", value: "6th of 8" },
+      { label: "Stress Rank", value: "6th of 8" }
     ]
   },
   {
-    id: "spain-clothing",
-    box: "clothing",
-    country: "Spain",
-    category: "Clothing/Footwear",
-    number: "6.51%",
-    name: "Spain • Clothing & Footwear (6.51%)",
-    equipmentOrRole: "Rank 3 in Clothing (Cluster Member)",
+    id: "chefs",
+    box: "hours",
+    number: "30 hrs / 10%",
+    name: "Chefs • 30 hrs/wk | 10% Stress",
+    equipmentOrRole: "Rank 7 in Hours | 1 in 10 in Stress",
     color: "#f59e0b",
-    pin: { left: "62%", top: "56%" },
-    highlight: { x: "50%", y: "51%", w: "25%", h: "16%" },
+    pin: { left: "38%", top: "70%" },
+    highlight: { x: "35%", y: "60%", w: "12%", h: "30%" },
     description:
-      "Spanish consumers directed 6.51% of expenditure towards clothing, virtually identical to figures recorded in Turkey and Ireland.",
+      "Chefs worked an average of 30 hours per week and accounted for exactly one-tenth (10%) of stress illness sufferers.",
     band9Phrase:
-      "“Spanish consumers committed 6.51% to apparel, mirroring closely the proportions seen in Turkey and Ireland.”",
-    grammaticalFocus: "Comparative Analogy: 'mirroring closely the proportions seen in...'",
-    examinerFocus:
-      "Highlights subtle parity between nations without repeating redundant data points.",
+      "“Chefs recorded an average of 30 hours of work per week and represented exactly one-tenth of stress-related illness cases.”",
+    grammaticalFocus: "Fractional Precision: 'represented exactly one-tenth of stress-related illness cases'",
+    examinerFocus: "Clean intermediate grouping between high-stress and low-stress sectors.",
     parameterMetrics: [
-      { label: "Category", value: "Clothing / Footwear" },
-      { label: "Expenditure", value: "6.51%" },
-      { label: "Category Rank", value: "3rd of 5" },
-      { label: "Cluster Band", value: "Within 0.12% of Turkey" }
+      { label: "Weekly Hours", value: "30 hrs (Rank 7)" },
+      { label: "Stress Share", value: "10% (Rank 5)" },
+      { label: "Hours Rank", value: "7th of 8" },
+      { label: "Stress Rank", value: "5th of 8" }
     ]
   },
   {
-    id: "ireland-clothing",
-    box: "clothing",
-    country: "Ireland",
-    category: "Clothing/Footwear",
-    number: "6.43%",
-    name: "Ireland • Clothing & Footwear (6.43%)",
-    equipmentOrRole: "Rank 4 in Clothing (Cluster Member)",
-    color: "#b45309",
-    pin: { left: "62%", top: "26%" },
-    highlight: { x: "50%", y: "19%", w: "25%", h: "16%" },
+    id: "lecturers",
+    box: "paradox",
+    number: "25 hrs / 18%",
+    name: "Lecturers • 25 hrs/wk | 18% Stress (Central Paradox)",
+    equipmentOrRole: "Fewest Hours (25h) vs 2nd Highest Stress (18%)",
+    color: "#0d9488",
+    pin: { left: "48%", top: "75%" },
+    highlight: { x: "45%", y: "65%", w: "12%", h: "25%" },
     description:
-      "Irish spending on apparel stood at 6.43%, completing the trio of countries spending approximately one-fifteenth of their budget on attire.",
+      "The Central Paradox: Lecturers worked the shortest week of all surveyed groups at just 25 hours, yet constituted the second largest proportion of stress illness sufferers at 18%—exceeding doctors and business men.",
     band9Phrase:
-      "“...followed closely by Ireland, where clothing spending was recorded at 6.43%.”",
-    grammaticalFocus: "Relative Clause Qualification: 'where clothing spending was recorded at 6.43%'",
-    examinerFocus:
-      "Maintains paragraph flow while anchoring the lower edge of the 6.5% cluster.",
+      "“Paradoxically, lecturers logged the shortest workweek at just 25 hours, yet represented the second largest proportion of stress sufferers at 18%.”",
+    grammaticalFocus: "Adverbial Concession: 'Paradoxically, lecturers logged the shortest workweek... yet represented the second largest proportion...'",
+    examinerFocus: "Core analytical requirement for Band 9 Task Achievement: recognizing non-correlation between hours and stress.",
     parameterMetrics: [
-      { label: "Category", value: "Clothing / Footwear" },
-      { label: "Expenditure", value: "6.43%" },
-      { label: "Category Rank", value: "4th of 5" },
-      { label: "Cluster Band", value: "Within 0.08% of Spain" }
-    ]
-  },
-  {
-    id: "sweden-clothing",
-    box: "clothing",
-    country: "Sweden",
-    category: "Clothing/Footwear",
-    number: "5.40%",
-    name: "Sweden • Clothing & Footwear (5.40%)",
-    equipmentOrRole: "Rank 5 in Clothing (Category Floor)",
-    color: "#78716c",
-    pin: { left: "62%", top: "71%" },
-    highlight: { x: "50%", y: "67%", w: "25%", h: "16%" },
-    description:
-      "Sweden recorded the lowest apparel figure across all five nations at 5.40%, trailing Italy by 3.60 percentage points.",
-    band9Phrase:
-      "“Sweden registered the lowest spending figure for apparel at just 5.40%, almost half that of Italy.”",
-    grammaticalFocus: "Proportional Contrast: 'at just 5.40%, almost half that of Italy'",
-    examinerFocus:
-      "Bridges the top and bottom values within the clothing category for high Task Achievement.",
-    parameterMetrics: [
-      { label: "Category", value: "Clothing / Footwear" },
-      { label: "Expenditure", value: "5.40%" },
-      { label: "Category Rank", value: "5th of 5 (Lowest in Apparel)" },
-      { label: "Contrast", value: "3.60% lower than Italy" }
-    ]
-  },
-
-  // --- LEISURE / EDUCATION (Minority Category) ---
-  {
-    id: "turkey-leisure",
-    box: "leisure",
-    country: "Turkey",
-    category: "Leisure/Education",
-    number: "4.35%",
-    name: "Turkey • Leisure & Education (4.35%)",
-    equipmentOrRole: "Category Leader (Rank 1 of 5)",
-    color: "#059669",
-    pin: { left: "87%", top: "86%" },
-    highlight: { x: "75%", y: "81%", w: "25%", h: "18%" },
-    description:
-      "Turkey allocated 4.35% of consumer funds to leisure and education, ranking first in this sector and leading in 2 of the 3 overall categories.",
-    band9Phrase:
-      "“Finally, leisure and education represented the smallest expenditure throughout; Turkey again topped the list at 4.35%.”",
-    grammaticalFocus: "Adverbial Reiterative: 'Turkey again topped the list at 4.35%'",
-    examinerFocus:
-      "Shows macro synthesis by highlighting Turkey's dual leadership (Food and Leisure).",
-    parameterMetrics: [
-      { label: "Category", value: "Leisure / Education" },
-      { label: "Expenditure", value: "4.35%" },
-      { label: "Category Rank", value: "1st of 5 (Leader)" },
-      { label: "Dual Lead", value: "Leads Food (32.14%) & Leisure (4.35%)" }
-    ]
-  },
-  {
-    id: "sweden-leisure",
-    box: "leisure",
-    country: "Sweden",
-    category: "Leisure/Education",
-    number: "3.22%",
-    name: "Sweden • Leisure & Education (3.22%)",
-    equipmentOrRole: "Rank 2 in Leisure (Parity with Italy)",
-    color: "#10b981",
-    pin: { left: "87%", top: "71%" },
-    highlight: { x: "75%", y: "67%", w: "25%", h: "16%" },
-    description:
-      "Swedish households spent 3.22% on leisure and education—outstripping its clothing spending relative rank and matching Italy.",
-    band9Phrase:
-      "“...followed by Sweden (3.22%) and Italy (3.20%), which were virtually tied.”",
-    grammaticalFocus: "Virtual Parity Phrase: 'which were virtually tied at 3.22% and 3.20% respectively'",
-    examinerFocus:
-      "Identifies that Sweden ranked higher in leisure (2nd) than in food (5th) or clothing (5th).",
-    parameterMetrics: [
-      { label: "Category", value: "Leisure / Education" },
-      { label: "Expenditure", value: "3.22%" },
-      { label: "Category Rank", value: "2nd of 5" },
-      { label: "Parity", value: "Virtually identical to Italy (3.20%)" }
-    ]
-  },
-  {
-    id: "italy-leisure",
-    box: "leisure",
-    country: "Italy",
-    category: "Leisure/Education",
-    number: "3.20%",
-    name: "Italy • Leisure & Education (3.20%)",
-    equipmentOrRole: "Rank 3 in Leisure (Parity with Sweden)",
-    color: "#047857",
-    pin: { left: "87%", top: "41%" },
-    highlight: { x: "75%", y: "35%", w: "25%", h: "16%" },
-    description:
-      "Italy allocated 3.20% to leisure and education, nearly identical to Sweden's 3.22% and comfortably above Ireland and Spain.",
-    band9Phrase:
-      "“Italian consumers allocated 3.20% to leisure and education, registering near parity with Sweden.”",
-    grammaticalFocus: "Noun Phrase Precision: 'registering near parity with Sweden'",
-    examinerFocus:
-      "Highlights qualitative equilibrium between two distinct European economies.",
-    parameterMetrics: [
-      { label: "Category", value: "Leisure / Education" },
-      { label: "Expenditure", value: "3.20%" },
-      { label: "Category Rank", value: "3rd of 5" },
-      { label: "Difference", value: "Merely 0.02% behind Sweden" }
-    ]
-  },
-  {
-    id: "ireland-leisure",
-    box: "leisure",
-    country: "Ireland",
-    category: "Leisure/Education",
-    number: "2.21%",
-    name: "Ireland • Leisure & Education (2.21%)",
-    equipmentOrRole: "Rank 4 in Leisure (Subdued Outlay)",
-    color: "#065f46",
-    pin: { left: "87%", top: "26%" },
-    highlight: { x: "75%", y: "19%", w: "25%", h: "16%" },
-    description:
-      "Irish spending on leisure and education was a modest 2.21%, creating a sharp internal contrast with its high sustenance budget (28.91%).",
-    band9Phrase:
-      "“Ireland allocated a comparatively modest 2.21% to leisure and educational pursuits.”",
-    grammaticalFocus: "Internal Disparity Marker: 'a comparatively modest 2.21% compared to 28.91% for sustenance'",
-    examinerFocus:
-      "Captures the profound internal budget imbalance in Irish expenditure.",
-    parameterMetrics: [
-      { label: "Category", value: "Leisure / Education" },
-      { label: "Expenditure", value: "2.21%" },
-      { label: "Category Rank", value: "4th of 5" },
-      { label: "Internal Gap", value: "Food was 13 times higher (28.91%)" }
-    ]
-  },
-  {
-    id: "spain-leisure",
-    box: "leisure",
-    country: "Spain",
-    category: "Leisure/Education",
-    number: "1.98%",
-    name: "Spain • Leisure & Education (1.98%)",
-    equipmentOrRole: "Absolute Lowest Figure in Table (Rank 15 of 15)",
-    color: "#0f766e",
-    pin: { left: "87%", top: "56%" },
-    highlight: { x: "75%", y: "51%", w: "25%", h: "16%" },
-    description:
-      "Spain committed just 1.98% to leisure and education—the sole figure under two percent and the lowest single value in the entire table.",
-    band9Phrase:
-      "“...while Spain registered the lowest single figure in the entire table at just 1.98%.”",
-    grammaticalFocus: "Absolute Superlative Outlier: 'the lowest single figure in the entire table at just 1.98%'",
-    examinerFocus:
-      "Mandatory outlier: absolute floor value of the entire Cambridge dataset.",
-    parameterMetrics: [
-      { label: "Category", value: "Leisure / Education" },
-      { label: "Expenditure", value: "1.98%" },
-      { label: "Table Rank", value: "15th of 15 (Absolute Lowest)" },
-      { label: "Threshold", value: "Sole sub-2.0% figure in dataset" }
+      { label: "Weekly Hours", value: "25 hrs (Lowest)" },
+      { label: "Stress Share", value: "18% (Rank 2)" },
+      { label: "Hours Rank", value: "8th of 8 (Fewest)" },
+      { label: "Stress Rank", value: "2nd of 8 (2nd Highest)" }
     ]
   }
 ];
 
-// Additional Macro Hotspots (Row / Column Focus)
-export const CATEGORY_HOTSPOTS: HotspotDefinition[] = [
+// Macro & Analytical Hotspots
+export const MACRO_HOTSPOTS: HotspotDefinition[] = [
   {
-    id: "cat-food",
-    box: "food",
-    number: "Food",
-    name: "Category 1 • Food, Drink & Tobacco (15.77% – 32.14%)",
-    equipmentOrRole: "Overwhelmingly Dominant Sector Across All Nations",
-    color: "#2563eb",
-    pin: { left: "37%", top: "8%" },
-    highlight: { x: "25%", y: "0%", w: "25%", h: "100%" },
+    id: "macro-hours",
+    box: "hours",
+    number: "25h – 70h",
+    name: "Macro Trend 1 • Weekly Working Hours Spectrum",
+    equipmentOrRole: "Bar Chart Range: 25 hrs (Lecturers) to 70 hrs (Business men)",
+    color: "#ef4444",
+    pin: { left: "50%", top: "10%" },
+    highlight: { x: "5%", y: "5%", w: "90%", h: "45%" },
     description:
-      "Sustenance consumed by far the greatest share of consumer income in all five countries, ranging from 15.77% in Sweden to 32.14% in Turkey.",
+      "Business men worked the longest week by a considerable margin at 70 hours, followed by movie producers (60h) and doctors (52h), while lecturers recorded the lowest figure at just 25 hours.",
     band9Phrase:
-      "“Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations...”",
-    grammaticalFocus: "Macro Superlative: 'was consistently highest on food, drinks, and tobacco across all five nations'",
-    examinerFocus: "Pillar 1 of the zero-number macro overview.",
+      "“Overall, business men committed the longest hours per week by a considerable margin, whereas lecturers logged the fewest hours.”",
+    grammaticalFocus: "Macro Overview Sentence 1: 'Overall, business men committed the longest hours... whereas lecturers logged the fewest hours.'",
+    examinerFocus: "Essential opening pillar of the zero-number overview.",
     parameterMetrics: [
-      { label: "Category Scope", value: "Food, Drink & Tobacco" },
-      { label: "Range", value: "15.77% (Sweden) – 32.14% (Turkey)" },
-      { label: "Status", value: "Rank 1 expenditure in 100% of nations" }
+      { label: "Peak Workweek", value: "Business men (70 hrs)" },
+      { label: "Minimum Workweek", value: "Lecturers (25 hrs)" },
+      { label: "Spectrum Span", value: "45-hour gap between extremes" }
     ]
   },
   {
-    id: "cat-clothing",
-    box: "clothing",
-    number: "Clothing",
-    name: "Category 2 • Clothing & Footwear (5.40% – 9.00%)",
-    equipmentOrRole: "Universal Second-Rank Category Led by Italy",
-    color: "#d97706",
-    pin: { left: "62%", top: "8%" },
-    highlight: { x: "50%", y: "0%", w: "25%", h: "100%" },
+    id: "macro-stress",
+    box: "stress",
+    number: "5% – 25%",
+    name: "Macro Trend 2 • Stress Illness Distribution",
+    equipmentOrRole: "Pie Chart Range: 5% (Programmers) to 25% (Movie Producers)",
+    color: "#0284c7",
+    pin: { left: "50%", top: "60%" },
+    highlight: { x: "5%", y: "50%", w: "90%", h: "45%" },
     description:
-      "Apparel formed the secondary spending tier in every nation, consistently outranking leisure/education but remaining far below food.",
+      "Movie producers made up the single largest cohort of stress illness sufferers at 25%, with lecturers ranking second at 18%. In contrast, programmers formed the smallest proportion at only 5%.",
     band9Phrase:
-      "“Clothing and footwear consistently represented the second highest category of spending, led by Italy.”",
-    grammaticalFocus: "Consistent Trend Marker: 'consistently represented the second highest category of spending'",
-    examinerFocus: "Pillar 2 of the macro comparative structure.",
+      "“Movie producers and lecturers constituted the two largest segments of stress sufferers, while programmers recorded the lowest prevalence of stress-induced illnesses.”",
+    grammaticalFocus: "Macro Contrast: 'constituted the two largest segments... while programmers recorded the lowest prevalence'",
+    examinerFocus: "Essential second pillar of the zero-number overview.",
     parameterMetrics: [
-      { label: "Category Scope", value: "Clothing / Footwear" },
-      { label: "Range", value: "5.40% (Sweden) – 9.00% (Italy)" },
-      { label: "Status", value: "Rank 2 expenditure in 100% of nations" }
+      { label: "Peak Stress Group", value: "Movie producers (25% / 1 in 4)" },
+      { label: "Lowest Stress Group", value: "Programmers (5%)" },
+      { label: "Top 2 Combined", value: "43% of total illness (Producers + Lecturers)" }
     ]
   },
   {
-    id: "cat-leisure",
-    box: "leisure",
-    number: "Leisure",
-    name: "Category 3 • Leisure & Education (1.98% – 4.35%)",
-    equipmentOrRole: "Universal Lowest Sector in Every Country",
-    color: "#059669",
-    pin: { left: "87%", top: "8%" },
-    highlight: { x: "75%", y: "0%", w: "25%", h: "100%" },
+    id: "macro-paradox",
+    box: "paradox",
+    number: "Non-Correlation",
+    name: "Macro Insight 3 • Absence of Direct Correlation",
+    equipmentOrRole: "Core Analytical Contrast: Working Time vs Illness Rate",
+    color: "#8b5cf6",
+    pin: { left: "50%", top: "45%" },
+    highlight: { x: "10%", y: "25%", w: "80%", h: "50%" },
     description:
-      "Recreational and educational expenditures received the lowest portion of consumer budgets throughout, never surpassing 4.35% in any country.",
+      "There was no direct correlation between hours worked and stress illness. Despite working the shortest week (25h), lecturers were second highest in stress (18%), whereas business men worked 70h but had only 11% stress.",
     band9Phrase:
-      "“...whereas leisure and education accounted for the smallest share of spending throughout.”",
-    grammaticalFocus: "Minority Proportion Clause: 'accounted for the smallest share of spending throughout'",
-    examinerFocus: "Pillar 3 of the macro overview contrast.",
+      "“However, working time did not correlate directly with stress-related conditions; movie producers and lecturers constituted the two largest segments of stress sufferers...”",
+    grammaticalFocus: "Analytical Transition: 'However, working time did not correlate directly with stress-related conditions...'",
+    examinerFocus: "The critical discriminator between Band 7 (pure listing) and Band 9 (synthesis).",
     parameterMetrics: [
-      { label: "Category Scope", value: "Leisure / Education" },
-      { label: "Range", value: "1.98% (Spain) – 4.35% (Turkey)" },
-      { label: "Status", value: "Rank 3 expenditure in 100% of nations" }
+      { label: "Correlation Type", value: "No direct / inverse relationship" },
+      { label: "Lecturer Disparity", value: "Lowest hours (25h) → 2nd highest stress (18%)" },
+      { label: "Business Men Disparity", value: "Highest hours (70h) → Modest stress (11%)" }
     ]
   }
 ];
 
-export const COUNTRY_HOTSPOTS: HotspotDefinition[] = [
-  {
-    id: "country-turkey",
-    box: "country",
-    number: "Turkey",
-    name: "Country • Turkey (Total Profile)",
-    equipmentOrRole: "Dual Category Leader (Food & Leisure)",
-    color: "#dc2626",
-    pin: { left: "12%", top: "86%" },
-    highlight: { x: "0%", y: "81%", w: "100%", h: "18%" },
-    description:
-      "Turkey exhibited the most distinctive profile, leading the table in food (32.14%) and leisure (4.35%), and ranking second in clothing (6.63%).",
-    band9Phrase:
-      "“Furthermore, Turkish consumers devoted significantly larger proportions of their budgets to sustenance than their European counterparts, while also leading the leisure sector.”",
-    grammaticalFocus: "Comparative Outlier: 'devoted significantly larger proportions than their counterparts'",
-    examinerFocus: "National outlier profile synthesis.",
-    parameterMetrics: [
-      { label: "Country", value: "Turkey" },
-      { label: "Food", value: "32.14% (1st)" },
-      { label: "Clothing", value: "6.63% (2nd)" },
-      { label: "Leisure", value: "4.35% (1st)" }
-    ]
-  },
-  {
-    id: "country-ireland",
-    box: "country",
-    number: "Ireland",
-    name: "Country • Ireland (Total Profile)",
-    equipmentOrRole: "Second Highest Sustenance Spender (28.91%)",
-    color: "#2563eb",
-    pin: { left: "12%", top: "26%" },
-    highlight: { x: "0%", y: "19%", w: "100%", h: "16%" },
-    description:
-      "Ireland directed nearly 29% of consumer expenditure towards food, drink, and tobacco—second only to Turkey—while allocating modest proportions to clothing (6.43%) and leisure/education (2.21%).",
-    band9Phrase:
-      "“Ireland followed closely behind Turkey in sustenance spending, with 28.91% of consumer budgets directed towards food, drink, and tobacco, while leisure received only 2.21%.”",
-    grammaticalFocus: "Proportional Contrast: 'followed closely behind Turkey in sustenance spending'",
-    examinerFocus: "Second highest essential expenditure profile.",
-    parameterMetrics: [
-      { label: "Country", value: "Ireland" },
-      { label: "Food", value: "28.91% (2nd)" },
-      { label: "Clothing", value: "6.43% (4th)" },
-      { label: "Leisure", value: "2.21% (4th)" }
-    ]
-  },
-  {
-    id: "country-italy",
-    box: "country",
-    number: "Italy",
-    name: "Country • Italy (Total Profile)",
-    equipmentOrRole: "Undisputed Fashion Leader (9.00%)",
-    color: "#d97706",
-    pin: { left: "12%", top: "41%" },
-    highlight: { x: "0%", y: "35%", w: "100%", h: "16%" },
-    description:
-      "Italy allocated 9.00% to clothing—the highest of any nation—while food spending was low at 16.36% and leisure was moderate at 3.20%.",
-    band9Phrase:
-      "“Italy was the undisputed leader in clothing and footwear expenditure at exactly 9.00%, outstripping all other surveyed countries.”",
-    grammaticalFocus: "Superlative Focus: 'undisputed leader in clothing at exactly 9.00%'",
-    examinerFocus: "National outlier in apparel expenditure.",
-    parameterMetrics: [
-      { label: "Country", value: "Italy" },
-      { label: "Clothing", value: "9.00% (1st - Outlier)" },
-      { label: "Food", value: "16.36% (4th)" },
-      { label: "Leisure", value: "3.20% (3rd)" }
-    ]
-  },
-  {
-    id: "country-spain",
-    box: "country",
-    number: "Spain",
-    name: "Country • Spain (Total Profile)",
-    equipmentOrRole: "Lowest Leisure Allocation (1.98%)",
-    color: "#e11d48",
-    pin: { left: "12%", top: "56%" },
-    highlight: { x: "0%", y: "51%", w: "100%", h: "16%" },
-    description:
-      "Spain spent 18.80% on food and 6.51% on clothing, while registering the lowest proportion of all surveyed nations on leisure and education at just 1.98%.",
-    band9Phrase:
-      "“Spanish expenditure on food stood at 18.80%, while its spending on leisure and education was the lowest recorded in the entire table at just 1.98%.”",
-    grammaticalFocus: "Floor Marker: 'lowest recorded in the entire table at just 1.98%'",
-    examinerFocus: "Lowest leisure allocation across all surveyed nations.",
-    parameterMetrics: [
-      { label: "Country", value: "Spain" },
-      { label: "Food", value: "18.80% (3rd)" },
-      { label: "Clothing", value: "6.51% (3rd)" },
-      { label: "Leisure", value: "1.98% (5th - Floor)" }
-    ]
-  },
-  {
-    id: "country-sweden",
-    box: "country",
-    number: "Sweden",
-    name: "Country • Sweden (Total Profile)",
-    equipmentOrRole: "Lowest Food & Clothing, Strong Leisure (3.22%)",
-    color: "#475569",
-    pin: { left: "12%", top: "71%" },
-    highlight: { x: "0%", y: "67%", w: "100%", h: "16%" },
-    description:
-      "Sweden recorded the lowest spending figures for both food (15.77%) and clothing (5.40%), yet committed a comparatively substantial 3.22% to leisure and education.",
-    band9Phrase:
-      "“Sweden registered the lowest spending figures for both sustenance (15.77%) and clothing (5.40%), yet allocated a comparatively healthy 3.22% to leisure and education.”",
-    grammaticalFocus: "Dual Low Superlative: 'lowest spending figures for both sustenance and clothing'",
-    examinerFocus: "Discretionary spending prioritization profile.",
-    parameterMetrics: [
-      { label: "Country", value: "Sweden" },
-      { label: "Food", value: "15.77% (5th - Lowest)" },
-      { label: "Clothing", value: "5.40% (5th - Lowest)" },
-      { label: "Leisure", value: "3.22% (2nd)" }
-    ]
-  },
-  {
-    id: "cat-country",
-    box: "country",
-    number: "5 Nations",
-    name: "Overview • All 5 Surveyed Countries (2002)",
-    equipmentOrRole: "Pan-European Comparative Matrix",
-    color: "#1e40af",
-    pin: { left: "12%", top: "8%" },
-    highlight: { x: "0%", y: "0%", w: "25%", h: "100%" },
-    description:
-      "The five countries (Ireland, Italy, Spain, Sweden, Turkey) show a consistent hierarchical spending pattern where food expenditure dominated, clothing ranked second, and leisure represented the smallest share.",
-    band9Phrase:
-      "“Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations, whereas leisure and education accounted for the smallest share of spending throughout.”",
-    grammaticalFocus: "Macro Overview Sentence: 'consistently highest... whereas leisure and education accounted for the smallest share'",
-    examinerFocus: "Comprehensive Task Achievement overview without numerical figures.",
-    parameterMetrics: [
-      { label: "Survey Scope", value: "5 European Nations" },
-      { label: "Year", value: "2002" },
-      { label: "Dominant Sector", value: "Food, Drink & Tobacco (15.77% – 32.14%)" },
-      { label: "Smallest Sector", value: "Leisure & Education (1.98% – 4.35%)" }
-    ]
-  }
+// Compatibility aliases
+export const TABLE_CELL_HOTSPOTS = PROFESSION_HOTSPOTS;
+export const CATEGORY_HOTSPOTS = MACRO_HOTSPOTS;
+export const COUNTRY_HOTSPOTS = PROFESSION_HOTSPOTS;
+export const ALL_HOTSPOTS = [...PROFESSION_HOTSPOTS, ...MACRO_HOTSPOTS];
+
+// Colors for the Pie Chart slices (matching prompt visual)
+const PIE_SLICES = [
+  { id: "movie-producers", name: "Movie Producers", percent: 25, color: "#0891b2", text: "25%" },
+  { id: "lecturers", name: "Lecturers", percent: 18, color: "#0d9488", text: "18%" },
+  { id: "doctors", name: "Doctors", percent: 15, color: "#c026d3", text: "15%" },
+  { id: "business-men", name: "Business men", percent: 11, color: "#ec4899", text: "11%" },
+  { id: "chefs", name: "Chefs", percent: 10, color: "#f59e0b", text: "10%" },
+  { id: "writers", name: "Writers", percent: 8, color: "#84cc16", text: "8%" },
+  { id: "lawyers", name: "Lawyers", percent: 8, color: "#3b82f6", text: "8%" },
+  { id: "programmers", name: "Programmers", percent: 5, color: "#a3e635", text: "5%" }
 ];
 
-export const ALL_HOTSPOTS: HotspotDefinition[] = [
-  ...TABLE_CELL_HOTSPOTS,
-  ...CATEGORY_HOTSPOTS,
-  ...COUNTRY_HOTSPOTS
+// Bar Chart Professions in exact order from prompt image
+const BAR_PROFESSIONS = [
+  { id: "writers", name: "Writers", hours: 45 },
+  { id: "doctors", name: "Doctors", hours: 52 },
+  { id: "chefs", name: "Chefs", hours: 30 },
+  { id: "lecturers", name: "Lecturers", hours: 25 },
+  { id: "lawyers", name: "Lawyers", hours: 35 },
+  { id: "movie-producers", name: "Movie Producers", hours: 60 },
+  { id: "programmers", name: "Programmers", hours: 40 },
+  { id: "business-men", name: "Business men", hours: 70 }
 ];
 
-// Backward-compatibility shims
-export const CEMENT_HOTSPOTS = TABLE_CELL_HOTSPOTS.filter((h) => h.box === "food");
-export const CONCRETE_HOTSPOTS = TABLE_CELL_HOTSPOTS.filter(
-  (h) => h.box === "clothing" || h.box === "leisure"
-);
-
-interface SmartBoardDiagramProps {
-  onSelectCountry?: (id: string) => void;
-  selectedCountryId?: string | null;
+interface SmartBoardTableMatrixProps {
   highlightMode?: DiagramViewMode;
   onHighlightModeChange?: (mode: DiagramViewMode) => void;
+  selectedComponentId?: string;
   selectedCohortId?: string;
+  onSelectComponent?: (id: string) => void;
   onSelectCohort?: (id: string) => void;
   showInternalToolbar?: boolean;
   showDeepDiveCard?: boolean;
-  forcedLayoutMode?: "stacked" | "split";
 }
 
-export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
+export const SmartBoardTableMatrix: React.FC<SmartBoardTableMatrixProps> = ({
   highlightMode = "all",
   onHighlightModeChange,
-  selectedCohortId: controlledCategoryId,
+  selectedComponentId,
+  selectedCohortId,
+  onSelectComponent,
   onSelectCohort,
-  showInternalToolbar = true,
+  showInternalToolbar,
   showDeepDiveCard = true
 }) => {
-  const [activeCategoryFilter, setActiveCategoryFilter] = useState<"all" | "food" | "clothing" | "leisure">("all");
-  const [activeHotspotId, setActiveHotspotId] = useState<string>("turkey-food");
-  const [showPins, setShowPins] = useState<boolean>(true);
-  const [viewFormat, setViewFormat] = useState<"interactive" | "side_by_side" | "original">("interactive");
+  const [activeTab, setActiveTab] = useState<"smartboard_vector" | "scanned_exam">("smartboard_vector");
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  // Synchronize internal state when controlled selection changes from the presenter dock
-  React.useEffect(() => {
-    if (controlledCategoryId && controlledCategoryId !== "all") {
-      setActiveHotspotId(controlledCategoryId);
-      const match = ALL_HOTSPOTS.find((h) => h.id === controlledCategoryId);
-      if (match && match.box !== "all" && match.box !== "country") {
-        setActiveCategoryFilter(match.box as any);
-      }
-    }
-  }, [controlledCategoryId]);
+  const activeId = selectedCohortId || selectedComponentId || (highlightMode !== "all" ? highlightMode : null);
+  const activeHotspot = ALL_HOTSPOTS.find((h) => h.id === activeId);
 
-  React.useEffect(() => {
-    if (
-      highlightMode &&
-      highlightMode !== "all" &&
-      highlightMode !== "both"
-    ) {
-      const match = ALL_HOTSPOTS.find((h) => h.id === highlightMode);
-      if (match) {
-        setActiveHotspotId(match.id);
-        if (match.box !== "all" && match.box !== "country") {
-          setActiveCategoryFilter(match.box as any);
-        }
-      }
-    }
-  }, [highlightMode]);
-
-  const activeHotspot =
-    ALL_HOTSPOTS.find((h) => h.id === activeHotspotId) || TABLE_CELL_HOTSPOTS[0];
-
-  const handleSelectHotspot = (hotspot: HotspotDefinition) => {
-    setActiveHotspotId(hotspot.id);
-    if (onSelectCohort) onSelectCohort(hotspot.id);
-    if (onHighlightModeChange) onHighlightModeChange(hotspot.id);
+  const handleSelect = (id: string) => {
+    if (onSelectCohort) onSelectCohort(id);
+    if (onSelectComponent) onSelectComponent(id);
+    if (onHighlightModeChange) onHighlightModeChange(id as DiagramViewMode);
   };
 
-  const handleReset = () => {
-    setActiveCategoryFilter("all");
-    setActiveHotspotId("turkey-food");
-    setShowPins(true);
-    setViewFormat("interactive");
-    if (onHighlightModeChange) onHighlightModeChange("all");
-  };
+  // SVG dimensions for the Bar Chart
+  const barChartWidth = 560;
+  const barChartHeight = 260;
+  const barMargin = { top: 30, right: 20, bottom: 50, left: 45 };
+  const innerWidth = barChartWidth - barMargin.left - barMargin.right;
+  const innerHeight = barChartHeight - barMargin.top - barMargin.bottom;
+  const maxHours = 70;
 
-  // 5 Countries Data in authentic pamphlet order: Ireland, Italy, Spain, Sweden, Turkey
-  const tableRows = [
-    {
-      countryId: "ireland",
-      countryName: "Ireland",
-      foodId: "ireland-food",
-      foodVal: "28.91%",
-      clothingId: "ireland-clothing",
-      clothingVal: "6.43%",
-      leisureId: "ireland-leisure",
-      leisureVal: "2.21%"
-    },
-    {
-      countryId: "italy",
-      countryName: "Italy",
-      foodId: "italy-food",
-      foodVal: "16.36%",
-      clothingId: "italy-clothing",
-      clothingVal: "9.00%",
-      leisureId: "italy-leisure",
-      leisureVal: "3.20%"
-    },
-    {
-      countryId: "spain",
-      countryName: "Spain",
-      foodId: "spain-food",
-      foodVal: "18.80%",
-      clothingId: "spain-clothing",
-      clothingVal: "6.51%",
-      leisureId: "spain-leisure",
-      leisureVal: "1.98%"
-    },
-    {
-      countryId: "sweden",
-      countryName: "Sweden",
-      foodId: "sweden-food",
-      foodVal: "15.77%",
-      clothingId: "sweden-clothing",
-      clothingVal: "5.40%",
-      leisureId: "sweden-leisure",
-      leisureVal: "3.22%"
-    },
-    {
-      countryId: "turkey",
-      countryName: "Turkey",
-      foodId: "turkey-food",
-      foodVal: "32.14%",
-      clothingId: "turkey-clothing",
-      clothingVal: "6.63%",
-      leisureId: "turkey-leisure",
-      leisureVal: "4.35%"
-    }
-  ];
+  // Calculate SVG Pie paths
+  const pieSize = 240;
+  const center = pieSize / 2;
+  const radius = 90;
+
+  let cumulativeAngle = -Math.PI / 2; // Start from top
+  const piePaths = PIE_SLICES.map((slice) => {
+    const angle = (slice.percent / 100) * (2 * Math.PI);
+    const startAngle = cumulativeAngle;
+    const endAngle = cumulativeAngle + angle;
+    cumulativeAngle = endAngle;
+
+    const x1 = center + radius * Math.cos(startAngle);
+    const y1 = center + radius * Math.sin(startAngle);
+    const x2 = center + radius * Math.cos(endAngle);
+    const y2 = center + radius * Math.sin(endAngle);
+
+    const midAngle = startAngle + angle / 2;
+    const labelRadius = radius * 0.65;
+    const labelX = center + labelRadius * Math.cos(midAngle);
+    const labelY = center + labelRadius * Math.sin(midAngle);
+
+    const largeArcFlag = angle > Math.PI ? 1 : 0;
+    const pathData = `M ${center} ${center} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
+
+    return {
+      ...slice,
+      pathData,
+      labelX,
+      labelY
+    };
+  });
 
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "12px",
+        gap: "14px",
         width: "100%",
-        fontFamily: "inherit"
+        fontFamily: "system-ui, -apple-system, sans-serif"
       }}
     >
-      {/* SmartBoard Presentation Controls Toolbar */}
-      {showInternalToolbar && (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: "10px",
-            background: "#ffffff",
-            padding: "10px 14px",
-            borderRadius: "14px",
-            border: "1px solid var(--border-subtle, #cbd5e1)",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
-          }}
-        >
-          {/* View Toggles */}
-          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--slate-500, #64748b)" }}>
-              View:
-            </span>
-            {[
-              { id: "interactive", label: "Smartboard Interactive Table" },
-              { id: "side_by_side", label: "Side-by-Side (Table + Original Scan)" },
-              { id: "original", label: "Pamphlet Task Scan" }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setViewFormat(tab.id as any)}
-                style={{
-                  padding: "5px 12px",
-                  borderRadius: "8px",
-                  fontSize: "0.78rem",
-                  fontWeight: 750,
-                  border: viewFormat === tab.id ? "1.5px solid #0f172a" : "1px solid #e2e8f0",
-                  background: viewFormat === tab.id ? "#0f172a" : "#f8fafc",
-                  color: viewFormat === tab.id ? "#ffffff" : "#334155",
-                  cursor: "pointer",
-                  transition: "all 0.15s ease"
-                }}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Quick-Jump Outlier Chips & Controls */}
-          <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
-            <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "var(--slate-500, #64748b)" }}>
-              Key Outliers:
-            </span>
-
-            {/* Quick Outlier Jump Buttons */}
-            {[
-              { id: "turkey-food", label: "Turkey Food (32.14% Peak)", color: "#2563eb" },
-              { id: "italy-clothing", label: "Italy Clothing (9.00% Leader)", color: "#d97706" },
-              { id: "spain-leisure", label: "Spain Leisure (1.98% Min)", color: "#059669" },
-              { id: "sweden-food", label: "Sweden Food (15.77% Lowest)", color: "#475569" },
-              { id: "turkey-leisure", label: "Turkey Leisure (4.35% Peak)", color: "#0f766e" }
-            ].map((chip) => {
-              const isSelected = activeHotspotId === chip.id;
-              const hotspot = ALL_HOTSPOTS.find((h) => h.id === chip.id);
-              return (
-                <button
-                  key={chip.id}
-                  onClick={() => hotspot && handleSelectHotspot(hotspot)}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px",
-                    padding: "3px 9px",
-                    borderRadius: "6px",
-                    fontSize: "0.74rem",
-                    fontWeight: 750,
-                    border: isSelected ? `2px solid ${chip.color}` : "1px solid #e2e8f0",
-                    background: isSelected ? `${chip.color}18` : "#ffffff",
-                    color: isSelected ? chip.color : "#475569",
-                    cursor: "pointer",
-                    transition: "all 0.15s ease"
-                  }}
-                >
-                  <span
-                    style={{
-                      width: "6px",
-                      height: "6px",
-                      borderRadius: "50%",
-                      background: chip.color
-                    }}
-                  />
-                  <span>{chip.label}</span>
-                </button>
-              );
-            })}
-
-            {/* Toggle Pins */}
-            <button
-              onClick={() => setShowPins(!showPins)}
-              title={showPins ? "Hide Hotspot Pin Beacons" : "Show Hotspot Pin Beacons"}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                padding: "3px 8px",
-                borderRadius: "6px",
-                fontSize: "0.74rem",
-                fontWeight: 700,
-                border: "1px solid #e2e8f0",
-                background: showPins ? "#f8fafc" : "#e2e8f0",
-                color: "#475569",
-                cursor: "pointer"
-              }}
-            >
-              {showPins ? <Eye size={12} /> : <EyeOff size={12} />}
-              <span>{showPins ? "Pins On" : "Pins Off"}</span>
-            </button>
-
-            {/* Reset */}
-            <button
-              onClick={handleReset}
-              title="Reset Filters"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                padding: "3px 8px",
-                borderRadius: "6px",
-                fontSize: "0.74rem",
-                fontWeight: 700,
-                border: "1px solid #e2e8f0",
-                background: "#f1f5f9",
-                color: "#475569",
-                cursor: "pointer"
-              }}
-            >
-              <RotateCcw size={12} />
-              <span>Reset</span>
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Main Diagrams Stage — EXACT IDENTICAL FORMAT TO STUDENT PAMPHLET */}
+      {/* Top Controls: View Mode Toggle & Active Highlight Pill */}
       <div
         style={{
-          background: "#ffffff",
-          borderRadius: "18px",
-          border: "1.5px solid var(--border-subtle, #cbd5e1)",
-          padding: "16px 20px",
-          boxShadow: "0 4px 16px rgba(0,0,0,0.03)",
           display: "flex",
-          flexDirection: "column",
-          gap: "12px",
-          alignItems: "center"
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: "10px"
         }}
       >
-        {/* Stage Header Info Banner */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", flexWrap: "wrap", gap: "8px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <Table size={18} color="#2563eb" />
-            <strong style={{ fontSize: "0.98rem", color: "#0f172a" }}>
-              Authentic Task Visual • Identical Format to Student Pamphlet
-            </strong>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <span
-              style={{
-                fontSize: "0.74rem",
-                fontWeight: 750,
-                background: "#eff6ff",
-                color: "#1e40af",
-                padding: "3px 10px",
-                borderRadius: "6px",
-                border: "1px solid #bfdbfe"
-              }}
-            >
-              Touch any cell, header, or pin to sync with the Presenter Dock
-            </span>
-          </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <button
+            type="button"
+            onClick={() => setActiveTab("smartboard_vector")}
+            style={{
+              padding: "7px 14px",
+              borderRadius: "10px",
+              fontSize: "0.82rem",
+              fontWeight: 800,
+              border: activeTab === "smartboard_vector" ? "2px solid #0f172a" : "1.5px solid #cbd5e1",
+              background: activeTab === "smartboard_vector" ? "#0f172a" : "#ffffff",
+              color: activeTab === "smartboard_vector" ? "#ffffff" : "#475569",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px"
+            }}
+          >
+            <BarChart2 size={15} />
+            <span>SmartBoard Vector View</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveTab("scanned_exam")}
+            style={{
+              padding: "7px 14px",
+              borderRadius: "10px",
+              fontSize: "0.82rem",
+              fontWeight: 800,
+              border: activeTab === "scanned_exam" ? "2px solid #0f172a" : "1.5px solid #cbd5e1",
+              background: activeTab === "scanned_exam" ? "#0f172a" : "#ffffff",
+              color: activeTab === "scanned_exam" ? "#ffffff" : "#475569",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px"
+            }}
+          >
+            <Eye size={15} />
+            <span>Authentic Exam Scan</span>
+          </button>
         </div>
 
-        {/* Visual Content Container (Interactive Table, Side-by-Side, or Scan) */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns:
-              viewFormat === "side_by_side"
-                ? "repeat(2, minmax(0, 1fr))"
-                : "minmax(0, 100%)",
-            gap: "20px",
-            width: "100%",
-            maxWidth: viewFormat === "side_by_side" ? "1060px" : "860px",
-            margin: "0 auto",
-            alignItems: "center"
-          }}
-        >
-          {/* Interactive SmartBoard Table (Rendered in identical Cambridge Blue layout) */}
-          {(viewFormat === "interactive" || viewFormat === "side_by_side") && (
-            <div
-              style={{
-                width: "100%",
-                background: "#ffffff",
-                border: "2px solid #cbd5e1",
-                borderRadius: "10px",
-                overflow: "hidden",
-                boxShadow: "0 4px 14px rgba(0,0,0,0.06)",
-                position: "relative"
-              }}
-            >
-              {/* Authentic Cambridge Prompt Card directly matching Image 1 */}
-              <div
+        {/* Quick Filter Strips */}
+        <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap" }}>
+          <span style={{ fontSize: "0.74rem", fontWeight: 700, color: "#64748b" }}>Quick Focus:</span>
+          {[
+            { id: "business-men", label: "Business Men (70h)" },
+            { id: "movie-producers", label: "Producers (25% stress)" },
+            { id: "lecturers", label: "Lecturer Paradox (25h / 18%)" },
+            { id: "programmers", label: "Programmers (5%)" }
+          ].map((pill) => {
+            const isSelected = activeId === pill.id;
+            return (
+              <button
+                key={pill.id}
+                type="button"
+                onClick={() => handleSelect(pill.id)}
                 style={{
-                  background: "#f8fafc",
-                  borderBottom: "2px solid #cbd5e1",
-                  padding: "16px 20px",
-                  fontFamily: "Georgia, 'Times New Roman', serif",
-                  color: "#1e293b",
-                  fontSize: "1.02rem",
-                  lineHeight: 1.55
+                  padding: "4px 10px",
+                  borderRadius: "8px",
+                  fontSize: "0.74rem",
+                  fontWeight: 750,
+                  border: isSelected ? "1.5px solid #2563eb" : "1px solid #e2e8f0",
+                  background: isSelected ? "#eff6ff" : "#f8fafc",
+                  color: isSelected ? "#1d4ed8" : "#475569",
+                  cursor: "pointer"
                 }}
               >
-                <p style={{ margin: "0 0 10px 0" }}>
-                  The table below gives information on consumer spending on different items in five different countries in 2002.
-                </p>
-                <p style={{ margin: "0 0 10px 0" }}>
-                  Summarise the information by selecting and reporting the main features, and make comparisons where relevant.
-                </p>
-                <p style={{ margin: 0, fontWeight: 700 }}>
-                  Write at least 150 words.
-                </p>
-              </div>
-
-              <table
-                style={{
-                  width: "100%",
-                  borderCollapse: "collapse",
-                  fontFamily: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-                  textAlign: "center"
-                }}
-              >
-                {/* Cambridge Pamphlet Steel Blue Header Bar */}
-                <thead>
-                  <tr style={{ background: "#346294", color: "#ffffff" }}>
-                    <th
-                      style={{
-                        padding: "14px 16px",
-                        textAlign: "left",
-                        fontSize: "0.98rem",
-                        fontWeight: 700,
-                        borderRight: "2px solid #ffffff",
-                        borderBottom: "2px solid #ffffff",
-                        width: "25%",
-                        cursor: "pointer",
-                        background: activeHotspot.id === "cat-country" ? "#234973" : "#346294"
-                      }}
-                      onClick={() => {
-                        const h = ALL_HOTSPOTS.find((x) => x.id === "cat-country");
-                        if (h) handleSelectHotspot(h);
-                        else handleReset();
-                      }}
-                      title="Country column — Click to view national breakdown overview"
-                    >
-                      Country
-                    </th>
-                    <th
-                      style={{
-                        padding: "14px 16px",
-                        fontSize: "0.98rem",
-                        fontWeight: 700,
-                        borderRight: "2px solid #ffffff",
-                        borderBottom: "2px solid #ffffff",
-                        width: "25%",
-                        cursor: "pointer",
-                        background: activeHotspot.category === "Food/Drink/Tobacco" ? "#234973" : "#346294",
-                        transition: "background 0.2s",
-                        textAlign: "left"
-                      }}
-                      onClick={() => {
-                        const h = ALL_HOTSPOTS.find((x) => x.id === "cat-food");
-                        if (h) handleSelectHotspot(h);
-                      }}
-                      title="Food/Drink/Tobacco column — Click to view category overview"
-                    >
-                      Food/ Drink/<br />Tobacco
-                    </th>
-                    <th
-                      style={{
-                        padding: "14px 16px",
-                        fontSize: "0.98rem",
-                        fontWeight: 700,
-                        borderRight: "2px solid #ffffff",
-                        borderBottom: "2px solid #ffffff",
-                        width: "25%",
-                        cursor: "pointer",
-                        background: activeHotspot.category === "Clothing/Footwear" ? "#234973" : "#346294",
-                        transition: "background 0.2s",
-                        textAlign: "left"
-                      }}
-                      onClick={() => {
-                        const h = ALL_HOTSPOTS.find((x) => x.id === "cat-clothing");
-                        if (h) handleSelectHotspot(h);
-                      }}
-                      title="Clothing/Footwear column — Click to view category overview"
-                    >
-                      Clothing/<br />Footwear
-                    </th>
-                    <th
-                      style={{
-                        padding: "14px 16px",
-                        fontSize: "0.98rem",
-                        fontWeight: 700,
-                        borderBottom: "2px solid #ffffff",
-                        width: "25%",
-                        cursor: "pointer",
-                        background: activeHotspot.category === "Leisure/Education" ? "#234973" : "#346294",
-                        transition: "background 0.2s",
-                        textAlign: "left"
-                      }}
-                      onClick={() => {
-                        const h = ALL_HOTSPOTS.find((x) => x.id === "cat-leisure");
-                        if (h) handleSelectHotspot(h);
-                      }}
-                      title="Leisure/Education column — Click to view category overview"
-                    >
-                      Leisure/<br />Education
-                    </th>
-                  </tr>
-                </thead>
-
-                {/* 5 Authentic Country Rows with Zebra Tint and White Dividers */}
-                <tbody>
-                  {tableRows.map((row, index) => {
-                    const isEven = index % 2 === 0;
-                    // Matching original pamphlet zebra soft-blue colors
-                    const cellBg = isEven ? "#cddbe8" : "#e4edf5";
-
-                    const isFoodSelected = activeHotspotId === row.foodId;
-                    const isClothingSelected = activeHotspotId === row.clothingId;
-                    const isLeisureSelected = activeHotspotId === row.leisureId;
-                    const isCountrySelected = activeHotspot.country === row.countryName;
-
-                    return (
-                      <tr key={row.countryId} style={{ borderBottom: "2px solid #ffffff" }}>
-                        {/* Country Cell (Medium Steel Blue Background with White Text) */}
-                        <td
-                          onClick={() => {
-                            const h = ALL_HOTSPOTS.find((x) => x.id === `country-${row.countryId}`) || ALL_HOTSPOTS.find((x) => x.id === row.foodId);
-                            if (h) handleSelectHotspot(h);
-                          }}
-                          style={{
-                            background: isCountrySelected ? "#2a598c" : "#4478ae",
-                            color: "#ffffff",
-                            padding: "14px 16px",
-                            textAlign: "left",
-                            fontWeight: 700,
-                            fontSize: "0.96rem",
-                            borderRight: "2px solid #ffffff",
-                            cursor: "pointer",
-                            transition: "background 0.15s ease",
-                            position: "relative"
-                          }}
-                          title={`Click to inspect ${row.countryName}'s entire national profile`}
-                        >
-                          {row.countryName}
-                          {isCountrySelected && (
-                            <span
-                              style={{
-                                marginLeft: "8px",
-                                display: "inline-block",
-                                width: "7px",
-                                height: "7px",
-                                borderRadius: "50%",
-                                background: "#fbbf24"
-                              }}
-                            />
-                          )}
-                        </td>
-
-                        {/* Food/Drink/Tobacco Cell */}
-                        <td
-                          onClick={() => {
-                            const h = ALL_HOTSPOTS.find((x) => x.id === row.foodId);
-                            if (h) handleSelectHotspot(h);
-                          }}
-                          style={{
-                            background: isFoodSelected
-                              ? "#bfdbfe"
-                              : cellBg,
-                            padding: "14px 16px",
-                            fontWeight: isFoodSelected ? 800 : 650,
-                            fontSize: "0.98rem",
-                            color: isFoodSelected ? "#1e40af" : "#1e293b",
-                            borderRight: "2px solid #ffffff",
-                            cursor: "pointer",
-                            position: "relative",
-                            outline: isFoodSelected ? "2.5px solid #2563eb" : "none",
-                            outlineOffset: "-2px",
-                            transition: "all 0.15s ease"
-                          }}
-                        >
-                          <span>{row.foodVal}</span>
-                          {showPins && (
-                            <div
-                              style={{
-                                position: "absolute",
-                                top: "4px",
-                                right: "6px",
-                                width: isFoodSelected ? "8px" : "6px",
-                                height: isFoodSelected ? "8px" : "6px",
-                                borderRadius: "50%",
-                                background: isFoodSelected ? "#2563eb" : "#3b82f680",
-                                boxShadow: isFoodSelected ? "0 0 6px #2563eb" : "none"
-                              }}
-                            />
-                          )}
-                          {row.foodId === "turkey-food" && (
-                            <span
-                              style={{
-                                position: "absolute",
-                                bottom: "2px",
-                                right: "6px",
-                                fontSize: "0.62rem",
-                                fontWeight: 800,
-                                color: "#1e40af",
-                                background: "#dbeafe",
-                                padding: "1px 4px",
-                                borderRadius: "4px"
-                              }}
-                            >
-                              PEAK
-                            </span>
-                          )}
-                        </td>
-
-                        {/* Clothing/Footwear Cell */}
-                        <td
-                          onClick={() => {
-                            const h = ALL_HOTSPOTS.find((x) => x.id === row.clothingId);
-                            if (h) handleSelectHotspot(h);
-                          }}
-                          style={{
-                            background: isClothingSelected
-                              ? "#fed7aa"
-                              : cellBg,
-                            padding: "14px 16px",
-                            fontWeight: isClothingSelected ? 800 : 650,
-                            fontSize: "0.98rem",
-                            color: isClothingSelected ? "#9a3412" : "#1e293b",
-                            borderRight: "2px solid #ffffff",
-                            cursor: "pointer",
-                            position: "relative",
-                            outline: isClothingSelected ? "2.5px solid #d97706" : "none",
-                            outlineOffset: "-2px",
-                            transition: "all 0.15s ease"
-                          }}
-                        >
-                          <span>{row.clothingVal}</span>
-                          {showPins && (
-                            <div
-                              style={{
-                                position: "absolute",
-                                top: "4px",
-                                right: "6px",
-                                width: isClothingSelected ? "8px" : "6px",
-                                height: isClothingSelected ? "8px" : "6px",
-                                borderRadius: "50%",
-                                background: isClothingSelected ? "#d97706" : "#f59e0b80",
-                                boxShadow: isClothingSelected ? "0 0 6px #d97706" : "none"
-                              }}
-                            />
-                          )}
-                          {row.clothingId === "italy-clothing" && (
-                            <span
-                              style={{
-                                position: "absolute",
-                                bottom: "2px",
-                                right: "6px",
-                                fontSize: "0.62rem",
-                                fontWeight: 800,
-                                color: "#9a3412",
-                                background: "#ffedd5",
-                                padding: "1px 4px",
-                                borderRadius: "4px"
-                              }}
-                            >
-                              LEADER
-                            </span>
-                          )}
-                        </td>
-
-                        {/* Leisure/Education Cell */}
-                        <td
-                          onClick={() => {
-                            const h = ALL_HOTSPOTS.find((x) => x.id === row.leisureId);
-                            if (h) handleSelectHotspot(h);
-                          }}
-                          style={{
-                            background: isLeisureSelected
-                              ? "#bbf7d0"
-                              : cellBg,
-                            padding: "14px 16px",
-                            fontWeight: isLeisureSelected ? 800 : 650,
-                            fontSize: "0.98rem",
-                            color: isLeisureSelected ? "#065f46" : "#1e293b",
-                            cursor: "pointer",
-                            position: "relative",
-                            outline: isLeisureSelected ? "2.5px solid #059669" : "none",
-                            outlineOffset: "-2px",
-                            transition: "all 0.15s ease"
-                          }}
-                        >
-                          <span>{row.leisureVal}</span>
-                          {showPins && (
-                            <div
-                              style={{
-                                position: "absolute",
-                                top: "4px",
-                                right: "6px",
-                                width: isLeisureSelected ? "8px" : "6px",
-                                height: isLeisureSelected ? "8px" : "6px",
-                                borderRadius: "50%",
-                                background: isLeisureSelected ? "#059669" : "#10b98180",
-                                boxShadow: isLeisureSelected ? "0 0 6px #059669" : "none"
-                              }}
-                            />
-                          )}
-                          {row.leisureId === "spain-leisure" && (
-                            <span
-                              style={{
-                                position: "absolute",
-                                bottom: "2px",
-                                right: "6px",
-                                fontSize: "0.62rem",
-                                fontWeight: 800,
-                                color: "#065f46",
-                                background: "#dcfce7",
-                                padding: "1px 4px",
-                                borderRadius: "4px"
-                              }}
-                            >
-                              LOWEST
-                            </span>
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          )}
-
-          {/* Original Student Pamphlet Image Scan */}
-          {(viewFormat === "original" || viewFormat === "side_by_side") && (
-            <div
-              style={{
-                width: "100%",
-                background: "#ffffff",
-                border: "2px solid #cbd5e1",
-                borderRadius: "10px",
-                overflow: "hidden",
-                boxShadow: "0 4px 14px rgba(0,0,0,0.06)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center"
-              }}
-            >
-              <div
-                style={{
-                  background: "#f8fafc",
-                  width: "100%",
-                  padding: "6px 12px",
-                  borderBottom: "1px solid #e2e8f0",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center"
-                }}
-              >
-                <span style={{ fontSize: "0.75rem", fontWeight: 750, color: "#475569" }}>
-                  Official Cambridge IELTS 7 Test 1 Task Prompt &amp; Table
-                </span>
-                <span
-                  style={{
-                    fontSize: "0.68rem",
-                    fontWeight: 800,
-                    padding: "2px 6px",
-                    borderRadius: "4px",
-                    background: "#eff6ff",
-                    color: "#1e40af"
-                  }}
-                >
-                  Pamphlet Scan
-                </span>
-              </div>
-              <img
-                src="materials/consumer_spending_table_2002.jpg"
-                alt="Original Cambridge Student Pamphlet Task 1 Table"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  objectFit: "contain"
-                }}
-              />
-            </div>
-          )}
+                {pill.label}
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Synchronized Smartboard Pedagogical Deep Dive Card */}
+      {/* Main Visual Display Container */}
+      <div
+        style={{
+          background: "#ffffff",
+          borderRadius: "20px",
+          border: "1.5px solid var(--border-subtle, #cbd5e1)",
+          boxShadow: "0 4px 18px rgba(0,0,0,0.04)",
+          overflow: "hidden",
+          padding: "20px"
+        }}
+      >
+        {activeTab === "smartboard_vector" ? (
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            {/* Top Prompt Instruction Banner */}
+            <div
+              style={{
+                background: "#f8fafc",
+                borderLeft: "4px solid #2563eb",
+                padding: "12px 16px",
+                borderRadius: "0 10px 10px 0",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: "8px"
+              }}
+            >
+              <div>
+                <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
+                  IELTS Academic Task 1 • Dual Visual Breakdown
+                </strong>
+                <p style={{ fontSize: "0.82rem", color: "#64748b", margin: "2px 0 0" }}>
+                  Graph 1 (Bar Chart): Hours worked per week • Graph 2 (Pie Chart): Proportion suffering from stress-related illness.
+                </p>
+              </div>
+              <span
+                style={{
+                  fontSize: "0.72rem",
+                  fontWeight: 800,
+                  padding: "3px 10px",
+                  borderRadius: "6px",
+                  background: "#dcfce7",
+                  color: "#166534"
+                }}
+              >
+                Tap any bar or slice to inspect
+              </span>
+            </div>
+
+            {/* Dual Chart Grid: Left = Bar Chart, Right = Pie Chart */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(440px, 1fr))",
+                gap: "24px",
+                alignItems: "center"
+              }}
+            >
+              {/* GRAPH 1: BAR CHART */}
+              <div
+                style={{
+                  background: "#ffffff",
+                  border: "1.5px solid #e2e8f0",
+                  borderRadius: "16px",
+                  padding: "16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.02)"
+                }}
+              >
+                <div style={{ textAlign: "center", marginBottom: "10px" }}>
+                  <h4 style={{ fontSize: "1.02rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+                    Average number of hours worked per week
+                  </h4>
+                  <span style={{ fontSize: "0.74rem", color: "#64748b" }}>
+                    Red bars represent weekly hours logged across 8 professional groups
+                  </span>
+                </div>
+
+                <svg
+                  viewBox={`0 0 ${barChartWidth} ${barChartHeight}`}
+                  style={{ width: "100%", height: "auto", maxHeight: "250px" }}
+                >
+                  {/* Grid Lines and Y-Axis Ticks (0, 10, 20, 30, 40, 50, 60, 70) */}
+                  {[0, 10, 20, 30, 40, 50, 60, 70].map((tick) => {
+                    const y = barMargin.top + innerHeight - (tick / maxHours) * innerHeight;
+                    return (
+                      <g key={tick}>
+                        <line
+                          x1={barMargin.left}
+                          y1={y}
+                          x2={barMargin.left + innerWidth}
+                          y2={y}
+                          stroke="#e2e8f0"
+                          strokeDasharray={tick === 0 ? "none" : "3,3"}
+                        />
+                        <text
+                          x={barMargin.left - 8}
+                          y={y + 4}
+                          textAnchor="end"
+                          fontSize="11"
+                          fontWeight="600"
+                          fill="#64748b"
+                        >
+                          {tick}
+                        </text>
+                      </g>
+                    );
+                  })}
+
+                  {/* Y-Axis Line */}
+                  <line
+                    x1={barMargin.left}
+                    y1={barMargin.top}
+                    x2={barMargin.left}
+                    y2={barMargin.top + innerHeight}
+                    stroke="#94a3b8"
+                    strokeWidth="1.5"
+                  />
+
+                  {/* X-Axis Line */}
+                  <line
+                    x1={barMargin.left}
+                    y1={barMargin.top + innerHeight}
+                    x2={barMargin.left + innerWidth}
+                    y2={barMargin.top + innerHeight}
+                    stroke="#94a3b8"
+                    strokeWidth="1.5"
+                  />
+
+                  {/* 8 Bars */}
+                  {BAR_PROFESSIONS.map((prof, index) => {
+                    const barCount = BAR_PROFESSIONS.length;
+                    const slotWidth = innerWidth / barCount;
+                    const barWidth = 26;
+                    const x = barMargin.left + index * slotWidth + (slotWidth - barWidth) / 2;
+                    const barHeight = (prof.hours / maxHours) * innerHeight;
+                    const y = barMargin.top + innerHeight - barHeight;
+
+                    const isSelected = activeId === prof.id;
+                    const isHovered = hoveredId === prof.id;
+
+                    return (
+                      <g
+                        key={prof.id}
+                        onClick={() => handleSelect(prof.id)}
+                        onMouseEnter={() => setHoveredId(prof.id)}
+                        onMouseLeave={() => setHoveredId(null)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        {/* Bar Rect */}
+                        <rect
+                          x={x}
+                          y={y}
+                          width={barWidth}
+                          height={barHeight}
+                          fill={isSelected ? "#b91c1c" : isHovered ? "#ea580c" : "#dc2626"}
+                          rx="3"
+                          stroke={isSelected ? "#0f172a" : "none"}
+                          strokeWidth={isSelected ? 2 : 0}
+                          style={{ transition: "all 0.15s ease" }}
+                        />
+
+                        {/* Exact Value Label above bar */}
+                        <text
+                          x={x + barWidth / 2}
+                          y={y - 5}
+                          textAnchor="middle"
+                          fontSize="11"
+                          fontWeight="800"
+                          fill={isSelected ? "#0f172a" : "#dc2626"}
+                        >
+                          {prof.hours}
+                        </text>
+
+                        {/* Angled Label below axis */}
+                        <text
+                          x={x + barWidth / 2}
+                          y={barMargin.top + innerHeight + 14}
+                          textAnchor="end"
+                          fontSize="10"
+                          fontWeight={isSelected ? "800" : "600"}
+                          fill={isSelected ? "#0f172a" : "#334155"}
+                          transform={`rotate(-40, ${x + barWidth / 2}, ${barMargin.top + innerHeight + 14})`}
+                        >
+                          {prof.name}
+                        </text>
+                      </g>
+                    );
+                  })}
+                </svg>
+              </div>
+
+              {/* GRAPH 2: PIE CHART */}
+              <div
+                style={{
+                  background: "#ffffff",
+                  border: "1.5px solid #e2e8f0",
+                  borderRadius: "16px",
+                  padding: "16px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.02)"
+                }}
+              >
+                <div style={{ textAlign: "center", marginBottom: "10px" }}>
+                  <h4 style={{ fontSize: "1.02rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+                    Occupations of people suffering from stress related illness
+                  </h4>
+                  <span style={{ fontSize: "0.74rem", color: "#64748b" }}>
+                    Percentages indicate each profession's share of the illness cohort (Total = 100%)
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexWrap: "wrap",
+                    gap: "16px",
+                    width: "100%"
+                  }}
+                >
+                  {/* SVG Pie */}
+                  <svg
+                    viewBox={`0 0 ${pieSize} ${pieSize}`}
+                    style={{ width: "210px", height: "210px" }}
+                  >
+                    {piePaths.map((slice) => {
+                      const isSelected = activeId === slice.id;
+                      const isHovered = hoveredId === slice.id;
+
+                      return (
+                        <g
+                          key={slice.id}
+                          onClick={() => handleSelect(slice.id)}
+                          onMouseEnter={() => setHoveredId(slice.id)}
+                          onMouseLeave={() => setHoveredId(null)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          <path
+                            d={slice.pathData}
+                            fill={slice.color}
+                            stroke="#ffffff"
+                            strokeWidth={isSelected ? "3" : "1.5"}
+                            opacity={isSelected || isHovered ? 1 : 0.9}
+                            style={{
+                              transition: "all 0.2s ease",
+                              filter: isSelected ? "drop-shadow(0 4px 6px rgba(0,0,0,0.3))" : "none"
+                            }}
+                          />
+                          <text
+                            x={slice.labelX}
+                            y={slice.labelY}
+                            textAnchor="middle"
+                            dominantBaseline="central"
+                            fontSize="11"
+                            fontWeight="800"
+                            fill="#ffffff"
+                            style={{ pointerEvents: "none" }}
+                          >
+                            {slice.text}
+                          </text>
+                        </g>
+                      );
+                    })}
+                  </svg>
+
+                  {/* Pie Legend (Matching image style) */}
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "4px",
+                      background: "#f8fafc",
+                      padding: "8px 12px",
+                      borderRadius: "12px",
+                      border: "1px solid #e2e8f0"
+                    }}
+                  >
+                    {PIE_SLICES.map((slice) => {
+                      const isSelected = activeId === slice.id;
+                      return (
+                        <div
+                          key={slice.id}
+                          onClick={() => handleSelect(slice.id)}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "7px",
+                            cursor: "pointer",
+                            padding: "3px 6px",
+                            borderRadius: "6px",
+                            background: isSelected ? "#e2e8f0" : "transparent"
+                          }}
+                        >
+                          <span
+                            style={{
+                              width: "10px",
+                              height: "10px",
+                              borderRadius: "2px",
+                              background: slice.color,
+                              display: "inline-block"
+                            }}
+                          />
+                          <span
+                            style={{
+                              fontSize: "0.78rem",
+                              fontWeight: isSelected ? 800 : 600,
+                              color: isSelected ? "#0f172a" : "#475569"
+                            }}
+                          >
+                            {slice.name} ({slice.percent}%)
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          /* Scanned Exam Visual View */
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "10px"
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", width: "100%", alignItems: "center" }}>
+              <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#475569" }}>
+                Authentic Cambridge Exam Paper Question Scan
+              </span>
+              <span
+                style={{
+                  fontSize: "0.72rem",
+                  fontWeight: 800,
+                  background: "#eff6ff",
+                  color: "#1e40af",
+                  padding: "2px 8px",
+                  borderRadius: "6px"
+                }}
+              >
+                Official Visual
+              </span>
+            </div>
+
+            <img
+              src="materials/hours_worked_stress_levels.jpg"
+              alt="Official IELTS Prompt: Hours worked and stress levels"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "420px",
+                objectFit: "contain",
+                borderRadius: "12px",
+                border: "1px solid #cbd5e1",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.06)"
+              }}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Synchronized Deep Dive Card */}
       {showDeepDiveCard && activeHotspot && (
         <div
           style={{
             background: "#ffffff",
             borderRadius: "18px",
-            border: `1.5px solid ${activeHotspot.color}40`,
+            border: `1.5px solid ${activeHotspot.color}50`,
             padding: "16px 20px",
             boxShadow: "0 4px 16px rgba(0,0,0,0.03)",
             display: "flex",
@@ -1419,7 +898,7 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardDiagramProps> = ({
                   fontWeight: 800,
                   padding: "2px 8px",
                   borderRadius: "6px",
-                  background: `${activeHotspot.color}15`,
+                  background: `${activeHotspot.color}18`,
                   color: activeHotspot.color
                 }}
               >

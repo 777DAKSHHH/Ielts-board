@@ -34,6 +34,27 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
 
   const data = GENERAL_TASK1_DATA;
 
+  const getCategoryBadgeStyle = (category: string) => {
+    switch (category) {
+      case "Festive Traditions":
+        return { bg: "#fef3c7", color: "#92400e" };
+      case "Cultural Significance":
+        return { bg: "#eff6ff", color: "#1e40af" };
+      case "Personal Impressions":
+        return { bg: "#f0fdf4", color: "#166534" };
+      case "Informal Conversational":
+        return { bg: "#fdf4ff", color: "#86198f" };
+      case "Problem Description":
+        return { bg: "#fee2e2", color: "#991b1b" };
+      case "Constructive Solutions":
+        return { bg: "#dcfce7", color: "#166534" };
+      case "Escalation & Legal Action":
+        return { bg: "#fef3c7", color: "#92400e" };
+      default:
+        return { bg: "#e0e7ff", color: "#3730a3" };
+    }
+  };
+
   const handleCopyLetter = () => {
     navigator.clipboard.writeText(
       `${data.salutation}\n\n${data.paragraphs.map((p) => p.text).join("\n\n")}\n\n${data.signoff}\n${data.senderName}`
@@ -108,13 +129,13 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
               style={{
                 fontSize: "0.76rem",
                 fontWeight: 800,
-                background: "#059669",
+                background: data.letterType === "Informal" ? "#d97706" : "#059669",
                 color: "#ffffff",
                 padding: "3px 10px",
                 borderRadius: "6px"
               }}
             >
-              Semi-Formal Register
+              {data.letterType} Register
             </span>
             <span
               style={{
@@ -131,10 +152,10 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
           </div>
 
           <h1 style={{ fontSize: "1.75rem", fontWeight: 800, margin: "4px 0 0", color: "#ffffff" }}>
-            Addressing a Persistent Neighbour Issue (Letter Writing)
+            {data.title}
           </h1>
           <p style={{ fontSize: "0.92rem", color: "#94a3b8", margin: 0 }}>
-            Master the strict 5-paragraph architectural format, critical linker rules, and semi-formal diplomatic phrasing.
+            Master the strict 5-paragraph architectural format, critical linker rules, and authentic {data.letterType.toLowerCase()} expressions.
           </p>
         </div>
 
@@ -228,7 +249,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
           {[
             { id: "model", label: "Model Letter & 5-Paragraph Architecture", icon: <FileText size={16} /> },
             { id: "rules", label: "Official PPT Rules & Linker Matrix", icon: <ShieldCheck size={16} /> },
-            { id: "lexical", label: "Semi-Formal Lexical Vault (12 Collocations)", icon: <Sparkles size={16} /> },
+            { id: "lexical", label: `${data.letterType} Lexical Vault (12 Collocations)`, icon: <Sparkles size={16} /> },
             { id: "prompt", label: "Task Prompt & Situational Brief", icon: <HelpCircle size={16} /> }
           ].map((tab) => {
             const isSelected = activeTab === tab.id;
@@ -317,7 +338,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   Official IELTS General Training Format
                 </span>
                 <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a" }}>
-                  Model Response (Band 9 • 178 Words)
+                  Model Response (Band 9 • {data.wordCount} Words)
                 </div>
               </div>
               <span
@@ -345,164 +366,55 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   marginBottom: "4px"
                 }}
               >
-                ✦ Salutation (Semi-Formal with Surname)
+                ✦ Salutation ({data.letterType === "Informal" ? "Informal with First Name" : data.letterType === "Semi-Formal" ? "Semi-Formal with Surname" : "Formal"})
               </div>
               <div style={{ fontFamily: "Georgia, serif", fontSize: "1.1rem", fontWeight: 700, color: "#0f172a" }}>
                 {data.salutation}
               </div>
             </div>
 
-            {/* Paragraph 1: Opening */}
-            <div
-              style={{
-                background: "#f8fafc",
-                borderLeft: "4px solid #3b82f6",
-                padding: "16px 20px",
-                borderRadius: "0 12px 12px 0"
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                <span style={{ fontSize: "0.72rem", fontWeight: 800, color: "#1e40af", textTransform: "uppercase" }}>
-                  Paragraph 1: Opening • Who are you? + Why are you writing?
-                </span>
-                <span style={{ fontSize: "0.7rem", fontWeight: 700, color: "#64748b" }}>
-                  {data.paragraphs[0].wordCount} words
-                </span>
-              </div>
-              <p
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "1.05rem",
-                  color: "#1e293b",
-                  lineHeight: 1.85,
-                  margin: 0
-                }}
-              >
-                {data.paragraphs[0].text}
-              </p>
-            </div>
-
-            {/* Paragraph 2: Body 1 (Bullet 1 - Problem) */}
-            <div
-              style={{
-                background: "#f8fafc",
-                borderLeft: "4px solid #ef4444",
-                padding: "16px 20px",
-                borderRadius: "0 12px 12px 0"
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                <span style={{ fontSize: "0.72rem", fontWeight: 800, color: "#b91c1c", textTransform: "uppercase" }}>
-                  Paragraph 2: Bullet 1 (The Problem) • CRITICAL: NO LINKER!
-                </span>
-                <span style={{ fontSize: "0.7rem", fontWeight: 700, color: "#64748b" }}>
-                  {data.paragraphs[1].wordCount} words
-                </span>
-              </div>
-              <p
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "1.05rem",
-                  color: "#1e293b",
-                  lineHeight: 1.85,
-                  margin: 0
-                }}
-              >
-                {data.paragraphs[1].text}
-              </p>
-            </div>
-
-            {/* Paragraph 3: Body 2 (Bullet 2 - Solution) */}
-            <div
-              style={{
-                background: "#f8fafc",
-                borderLeft: "4px solid #f59e0b",
-                padding: "16px 20px",
-                borderRadius: "0 12px 12px 0"
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                <span style={{ fontSize: "0.72rem", fontWeight: 800, color: "#b45309", textTransform: "uppercase" }}>
-                  Paragraph 3: Bullet 2 (The Solution) • BEGINS WITH SUPPORTING LINKER
-                </span>
-                <span style={{ fontSize: "0.7rem", fontWeight: 700, color: "#64748b" }}>
-                  {data.paragraphs[2].wordCount} words
-                </span>
-              </div>
-              <p
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "1.05rem",
-                  color: "#1e293b",
-                  lineHeight: 1.85,
-                  margin: 0
-                }}
-              >
-                <strong style={{ color: "#b45309", textDecoration: "underline" }}>Furthermore,</strong>{" "}
-                {data.paragraphs[2].text.replace("Furthermore, ", "")}
-              </p>
-            </div>
-
-            {/* Paragraph 4: Body 3 (Bullet 3 - Action) */}
-            <div
-              style={{
-                background: "#f8fafc",
-                borderLeft: "4px solid #8b5cf6",
-                padding: "16px 20px",
-                borderRadius: "0 12px 12px 0"
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                <span style={{ fontSize: "0.72rem", fontWeight: 800, color: "#6d28d9", textTransform: "uppercase" }}>
-                  Paragraph 4: Bullet 3 (Action If Unresolved) • BEGINS WITH CONTRADICTING LINKER
-                </span>
-                <span style={{ fontSize: "0.7rem", fontWeight: 700, color: "#64748b" }}>
-                  {data.paragraphs[3].wordCount} words
-                </span>
-              </div>
-              <p
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "1.05rem",
-                  color: "#1e293b",
-                  lineHeight: 1.85,
-                  margin: 0
-                }}
-              >
-                <strong style={{ color: "#6d28d9", textDecoration: "underline" }}>However,</strong>{" "}
-                {data.paragraphs[3].text.replace("However, ", "")}
-              </p>
-            </div>
-
-            {/* Paragraph 5: Closing & Closure */}
-            <div
-              style={{
-                background: "#f8fafc",
-                borderLeft: "4px solid #10b981",
-                padding: "16px 20px",
-                borderRadius: "0 12px 12px 0"
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-                <span style={{ fontSize: "0.72rem", fontWeight: 800, color: "#047857", textTransform: "uppercase" }}>
-                  Paragraph 5: Closing Statement • Expectation of Resolution
-                </span>
-                <span style={{ fontSize: "0.7rem", fontWeight: 700, color: "#64748b" }}>
-                  {data.paragraphs[4].wordCount} words
-                </span>
-              </div>
-              <p
-                style={{
-                  fontFamily: "Georgia, serif",
-                  fontSize: "1.05rem",
-                  color: "#1e293b",
-                  lineHeight: 1.85,
-                  margin: 0
-                }}
-              >
-                {data.paragraphs[4].text}
-              </p>
-            </div>
+            {/* Dynamic 5 Paragraphs */}
+            {data.paragraphs.map((p, idx) => {
+              const borderColors = ["#3b82f6", "#ef4444", "#f59e0b", "#8b5cf6", "#10b981"];
+              const titleColors = ["#1e40af", "#b91c1c", "#b45309", "#6d28d9", "#047857"];
+              return (
+                <div
+                  key={p.id}
+                  style={{
+                    background: "#f8fafc",
+                    borderLeft: `4px solid ${borderColors[idx % borderColors.length]}`,
+                    padding: "16px 20px",
+                    borderRadius: "0 12px 12px 0"
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+                    <span style={{ fontSize: "0.72rem", fontWeight: 800, color: titleColors[idx % titleColors.length], textTransform: "uppercase" }}>
+                      {p.title}
+                    </span>
+                    <span style={{ fontSize: "0.7rem", fontWeight: 700, color: "#64748b" }}>
+                      {p.wordCount} words
+                    </span>
+                  </div>
+                  <p
+                    style={{
+                      fontFamily: "Georgia, serif",
+                      fontSize: "1.05rem",
+                      color: "#1e293b",
+                      lineHeight: 1.85,
+                      margin: 0,
+                      whiteSpace: "pre-line"
+                    }}
+                  >
+                    {p.text}
+                  </p>
+                  {p.ruleHighlight && (
+                    <div style={{ fontSize: "0.76rem", color: "#64748b", marginTop: "8px", fontStyle: "italic", borderTop: "1px dashed #e2e8f0", paddingTop: "6px" }}>
+                      ✦ {p.ruleHighlight}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
 
             {/* Complementary Closure & Sender Name */}
             <div style={{ marginTop: "12px", borderTop: "1.5px solid #e2e8f0", paddingTop: "16px" }}>
@@ -515,7 +427,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   marginBottom: "4px"
                 }}
               >
-                ✦ Complementary Closure + Full Real Name (Never XYZ)
+                ✦ Complementary Closure + First Name (Warm Informal Sign-off)
               </div>
               <div style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "#1e293b", lineHeight: 1.6 }}>
                 <div>{data.signoff}</div>
@@ -544,13 +456,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.84rem" }}>
-                {[
-                  { step: "Para 1: Opening", rule: "State your name & flat number, then declare the exact reason for writing." },
-                  { step: "Para 2: Body 1", rule: "Cover Bullet 1. CRITICAL: Never start with a linker (e.g. 'Firstly' or 'Moreover')." },
-                  { step: "Para 3: Body 2", rule: "Cover Bullet 2. MUST begin with a Supporting Linker (e.g. 'Furthermore,')." },
-                  { step: "Para 4: Body 3", rule: "Cover Bullet 3. MUST begin with a Contradicting Linker (e.g. 'However,')." },
-                  { step: "Para 5: Closing", rule: "Express expectation of an amicable solution, followed by 'Yours sincerely,'." }
-                ].map((item, idx) => (
+                {data.pptFormatRules.map((rule, idx) => (
                   <div
                     key={idx}
                     style={{
@@ -561,9 +467,12 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                     }}
                   >
                     <div style={{ fontWeight: 800, color: "#0f172a", marginBottom: "2px" }}>
-                      {item.step}
+                      {rule.stage}
                     </div>
-                    <div style={{ color: "#475569", lineHeight: 1.45 }}>{item.rule}</div>
+                    <div style={{ color: "#475569", lineHeight: 1.45 }}>{rule.description}</div>
+                    <div style={{ fontSize: "0.78rem", color: "#2563eb", marginTop: "4px", fontStyle: "italic" }}>
+                      ✦ Rule: {rule.specificRule}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -587,16 +496,16 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
 
               <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.82rem", color: "#1e3a8a", lineHeight: 1.5 }}>
                 <div>
-                  <strong>Task Achievement:</strong> Fully addresses all three prompt bullets with equal weighting and realistic, plausible details.
+                  <strong>Task Achievement:</strong> Fully addresses all three prompt bullets (say how important, describe celebrations, explain what you like) with rich, authentic cultural Gujarati/Indian details.
                 </div>
                 <div>
-                  <strong>Coherence &amp; Cohesion:</strong> Seamless logical flow created by deliberate linker placement and paragraph discipline.
+                  <strong>Coherence &amp; Cohesion:</strong> Seamless conversational transitions with natural paragraphing and informal discourse markers.
                 </div>
                 <div>
-                  <strong>Lexical Resource:</strong> Diplomatic vocabulary ('persistent late-night disturbance', 'incurring unnecessary friction', 'amicable solution').
+                  <strong>Lexical Resource:</strong> Rich cultural collocations ('immense spiritual and cultural importance', 'clean slate', 'intricate rangoli patterns', 'vibrant traditional attire', 'touch the feet of our elders', 'open-hearted hospitality').
                 </div>
                 <div>
-                  <strong>Grammatical Range:</strong> Conditionals ('If this situation does not improve'), polite modals ('I would be grateful if'), and passive constructions.
+                  <strong>Grammatical Range:</strong> Natural informal structures: conversational exclamation, friendly enthusiasm, relative clauses, and compound-complex sentences.
                 </div>
               </div>
             </div>
@@ -621,95 +530,45 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
               <ShieldCheck size={22} color="#2563eb" />
               <div>
                 <h3 style={{ fontSize: "1.15rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                  Official PPT Linker Directive Matrix
+                  Official PPT Bullet-by-Bullet Directive Matrix
                 </h3>
                 <p style={{ fontSize: "0.84rem", color: "#64748b", margin: 0 }}>
-                  The PPT explicitly mandates distinct linker rules for Body Paragraphs 1, 2, and 3.
+                  The PPT explicitly mandates distinct structural objectives and discourse linkers for each body paragraph.
                 </p>
               </div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "14px" }}>
-              {/* Rule for Body 1 */}
-              <div
-                style={{
-                  background: "#fef2f2",
-                  border: "1.5px solid #fecaca",
-                  borderRadius: "14px",
-                  padding: "16px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                  <AlertTriangle size={16} color="#dc2626" />
-                  <strong style={{ color: "#991b1b", fontSize: "0.92rem" }}>Body 1 (Problem)</strong>
+              {data.bullets.map((b, idx) => (
+                <div
+                  key={b.id}
+                  style={{
+                    background: idx === 0 ? "#eff6ff" : idx === 1 ? "#fffbeb" : "#f0fdf4",
+                    border: `1.5px solid ${idx === 0 ? "#bfdbfe" : idx === 1 ? "#fde68a" : "#bbf7d0"}`,
+                    borderRadius: "14px",
+                    padding: "16px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "8px"
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <CheckCircle2 size={16} color={idx === 0 ? "#2563eb" : idx === 1 ? "#d97706" : "#16a34a"} />
+                    <strong style={{ color: idx === 0 ? "#1e40af" : idx === 1 ? "#92400e" : "#166534", fontSize: "0.92rem" }}>
+                      Bullet {b.bulletNumber}: {b.targetParagraph}
+                    </strong>
+                  </div>
+                  <div style={{ fontSize: "0.82rem", fontWeight: 800, color: idx === 0 ? "#1e3a8a" : idx === 1 ? "#78350f" : "#14532d" }}>
+                    RULE: {b.linkerRule}
+                  </div>
+                  <p style={{ fontSize: "0.82rem", color: "#475569", margin: 0, lineHeight: 1.45 }}>
+                    {b.explanation}
+                  </p>
+                  <div style={{ background: "#ffffff", padding: "10px", borderRadius: "8px", fontSize: "0.80rem", fontStyle: "italic", color: "#1e293b", marginTop: "auto", borderLeft: `3px solid ${idx === 0 ? "#2563eb" : idx === 1 ? "#d97706" : "#16a34a"}` }}>
+                    “{b.modelExcerpt.length > 120 ? b.modelExcerpt.slice(0, 120) + "..." : b.modelExcerpt}”
+                  </div>
                 </div>
-                <div style={{ fontSize: "0.82rem", fontWeight: 800, color: "#b91c1c" }}>
-                  STRICT RULE: NO LINKER
-                </div>
-                <p style={{ fontSize: "0.82rem", color: "#7f1d1d", margin: 0, lineHeight: 1.45 }}>
-                  Do NOT start with linkers like "Firstly", "To begin with", or "Moreover". Dive straight into describing the problem context.
-                </p>
-                <div style={{ background: "#ffffff", padding: "8px", borderRadius: "6px", fontSize: "0.78rem", fontStyle: "italic", color: "#1e293b", marginTop: "auto" }}>
-                  “Over the past few months, there has been a persistent late-night disturbance...”
-                </div>
-              </div>
-
-              {/* Rule for Body 2 */}
-              <div
-                style={{
-                  background: "#fffbeb",
-                  border: "1.5px solid #fde68a",
-                  borderRadius: "14px",
-                  padding: "16px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                  <CheckCircle2 size={16} color="#d97706" />
-                  <strong style={{ color: "#92400e", fontSize: "0.92rem" }}>Body 2 (Solution)</strong>
-                </div>
-                <div style={{ fontSize: "0.82rem", fontWeight: 800, color: "#b45309" }}>
-                  RULE: SUPPORTING LINKER
-                </div>
-                <p style={{ fontSize: "0.82rem", color: "#78350f", margin: 0, lineHeight: 1.45 }}>
-                  MUST open with a supporting connector: <em>Furthermore, In addition to this, Additionally, Apart from this.</em>
-                </p>
-                <div style={{ background: "#ffffff", padding: "8px", borderRadius: "6px", fontSize: "0.78rem", fontStyle: "italic", color: "#1e293b", marginTop: "auto" }}>
-                  “Furthermore, I would be grateful if you could keep the volume down after 10:00 pm...”
-                </div>
-              </div>
-
-              {/* Rule for Body 3 */}
-              <div
-                style={{
-                  background: "#f5f3ff",
-                  border: "1.5px solid #ddd6fe",
-                  borderRadius: "14px",
-                  padding: "16px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                  <CheckCircle2 size={16} color="#7c3aed" />
-                  <strong style={{ color: "#5b21b6", fontSize: "0.92rem" }}>Body 3 (Action)</strong>
-                </div>
-                <div style={{ fontSize: "0.82rem", fontWeight: 800, color: "#6d28d9" }}>
-                  RULE: CONTRADICTING LINKER
-                </div>
-                <p style={{ fontSize: "0.82rem", color: "#4c1d95", margin: 0, lineHeight: 1.45 }}>
-                  MUST open with a contradicting connector: <em>However, On the other hand, On the contrary, Nonetheless.</em>
-                </p>
-                <div style={{ background: "#ffffff", padding: "8px", borderRadius: "6px", fontSize: "0.78rem", fontStyle: "italic", color: "#1e293b", marginTop: "auto" }}>
-                  “However, if this situation does not improve despite this notice, I will have no alternative...”
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -756,7 +615,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
         </div>
       )}
 
-      {/* TAB 3: SEMI-FORMAL LEXICAL VAULT */}
+      {/* TAB 3: LEXICAL VAULT */}
       {activeTab === "lexical" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div
@@ -772,79 +631,68 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
               <Sparkles size={20} color="#2563eb" />
               <div>
                 <h3 style={{ fontSize: "1.15rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                  Semi-Formal Lexical Vault &amp; Collocations
+                  {data.letterType} Lexical Vault &amp; Collocations
                 </h3>
                 <p style={{ fontSize: "0.84rem", color: "#64748b", margin: 0 }}>
-                  12 high-scoring phrases categorized for diplomatic, assertive, and constructive neighbour communication.
+                  12 high-scoring band 9 collocations and cultural expressions for authentic {data.letterType.toLowerCase()} letter writing.
                 </p>
               </div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "14px" }}>
-              {data.vocabList.map((item) => (
-                <div
-                  key={item.term}
-                  style={{
-                    background: "#f8fafc",
-                    border: "1.5px solid #e2e8f0",
-                    borderRadius: "14px",
-                    padding: "16px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "8px"
-                  }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>{item.term}</strong>
-                    <span
-                      style={{
-                        fontSize: "0.7rem",
-                        fontWeight: 800,
-                        padding: "2px 8px",
-                        borderRadius: "6px",
-                        background:
-                          item.category === "Problem Description"
-                            ? "#fee2e2"
-                            : item.category === "Constructive Solutions"
-                            ? "#dcfce7"
-                            : item.category === "Escalation & Legal Action"
-                            ? "#fef3c7"
-                            : "#e0e7ff",
-                        color:
-                          item.category === "Problem Description"
-                            ? "#991b1b"
-                            : item.category === "Constructive Solutions"
-                            ? "#166534"
-                            : item.category === "Escalation & Legal Action"
-                            ? "#92400e"
-                            : "#3730a3"
-                      }}
-                    >
-                      {item.category}
-                    </span>
-                  </div>
-
-                  <p style={{ fontSize: "0.82rem", color: "#64748b", margin: 0, lineHeight: 1.45 }}>
-                    {item.definition}
-                  </p>
-
+              {data.vocabList.map((item) => {
+                const badgeStyle = getCategoryBadgeStyle(item.category);
+                return (
                   <div
+                    key={item.term}
                     style={{
-                      background: "#ffffff",
-                      borderLeft: "3px solid #2563eb",
-                      borderRadius: "6px",
-                      padding: "8px 10px",
-                      fontSize: "0.82rem",
-                      fontStyle: "italic",
-                      color: "#1e293b",
-                      marginTop: "auto",
-                      lineHeight: 1.4
+                      background: "#f8fafc",
+                      border: "1.5px solid #e2e8f0",
+                      borderRadius: "14px",
+                      padding: "16px",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "8px"
                     }}
                   >
-                    “{item.example}”
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>{item.term}</strong>
+                      <span
+                        style={{
+                          fontSize: "0.7rem",
+                          fontWeight: 800,
+                          padding: "2px 8px",
+                          borderRadius: "6px",
+                          background: badgeStyle.bg,
+                          color: badgeStyle.color
+                        }}
+                      >
+                        {item.category}
+                      </span>
+                    </div>
+
+                    <p style={{ fontSize: "0.82rem", color: "#64748b", margin: 0, lineHeight: 1.45 }}>
+                      {item.definition}
+                    </p>
+
+                    <div
+                      style={{
+                        background: "#ffffff",
+                        borderLeft: "3px solid #2563eb",
+                        borderRadius: "6px",
+                        padding: "8px 10px",
+                        fontSize: "0.82rem",
+                        fontStyle: "italic",
+                        color: "#1e293b",
+                        marginTop: "auto",
+                        lineHeight: 1.4
+                      }}
+                    >
+                      “{item.example}”
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -870,7 +718,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                 Official Task Instructions
               </span>
               <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                Writing Task 1 Prompt (Semi-Formal Letter)
+                Writing Task 1 Prompt ({data.letterType} Letter)
               </h3>
             </div>
 
@@ -896,28 +744,28 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px" }}>
               <div style={{ background: "#eff6ff", padding: "14px", borderRadius: "12px", border: "1px solid #bfdbfe" }}>
                 <strong style={{ color: "#1e40af", fontSize: "0.88rem", display: "block", marginBottom: "4px" }}>
-                  Recipient Relationship
+                  Recipient &amp; Relationship
                 </strong>
                 <p style={{ fontSize: "0.82rem", color: "#1e3a8a", margin: 0, lineHeight: 1.4 }}>
-                  Neighbour living in the same apartment building. Semi-formal tone required: respectful, firm, and diplomatic.
+                  English-speaking friend (Alex) working on a college academic project. Informal, warm, and highly supportive tone.
                 </p>
               </div>
 
               <div style={{ background: "#fef3c7", padding: "14px", borderRadius: "12px", border: "1px solid #fde68a" }}>
                 <strong style={{ color: "#92400e", fontSize: "0.88rem", display: "block", marginBottom: "4px" }}>
-                  Why Write Instead of Talk?
+                  Cultural Authenticity
                 </strong>
                 <p style={{ fontSize: "0.82rem", color: "#78350f", margin: 0, lineHeight: 1.4 }}>
-                  Prompt explicitly states: "You have not been able to meet your neighbour." Letter must briefly explain why (conflicting schedules).
+                  Authentic Indian / Gujarati New Year (Bestu Varas / Diwali season) context: spiritual clean slate, Saal Mubarak, sweets, and family blessings.
                 </p>
               </div>
 
               <div style={{ background: "#f0fdf4", padding: "14px", borderRadius: "12px", border: "1px solid #bbf7d0" }}>
                 <strong style={{ color: "#166534", fontSize: "0.88rem", display: "block", marginBottom: "4px" }}>
-                  Resolution Balance
+                  Tone &amp; PPT Requirements
                 </strong>
                 <p style={{ fontSize: "0.82rem", color: "#14532d", margin: 0, lineHeight: 1.4 }}>
-                  Propose reasonable accommodations first before mentioning formal escalation to building management.
+                  Enthusiastic opening acknowledging the request, clear bullet paragraphing with natural discourse linkers, and warm sign-off from Devang.
                 </p>
               </div>
             </div>

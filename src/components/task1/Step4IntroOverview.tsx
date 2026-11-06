@@ -32,14 +32,14 @@ export const Step4IntroOverview: React.FC = () => (
       <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction &amp; Macro Overview</span>
       <h2 className="stage-title">Build the Introduction and Macro Overview</h2>
       <p className="stage-subtitle">
-        Paraphrase the prompt parameters (5 countries, 3 expenditure categories, year 2002), and formulate a Band 9 macro overview strictly omitting all exact numerical figures.
+        Paraphrase the dual chart parameters (8 occupations, weekly hours worked, stress-related illness), and formulate a Band 9 macro overview strictly omitting all exact numerical figures.
       </p>
     </div>
 
     <div className="stage-grid-2col">
       <QuoteCard
         icon={<BookOpen size={20} color="var(--slate-800)" />}
-        title="1. Sample Introduction (Table Parameter Paraphrase)"
+        title="1. Sample Introduction (Dual Chart Scope Paraphrase)"
         text={TASK1_DATA.sampleIntro}
         badge="Accurate Scope"
       />
@@ -53,30 +53,30 @@ export const Step4IntroOverview: React.FC = () => (
 
     {/* Pedagogical Breakdown Grid */}
     <div className="stage-grid-2col" style={{ marginTop: "6px" }}>
-      {/* 4-Element Table Introduction Architecture */}
+      {/* 4-Element Introduction Architecture */}
       <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px", boxShadow: "var(--shadow-sm)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Compass size={18} color="var(--apple-blue)" />
-          <h4 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-            4-Element Introduction Architecture for Comparative Tables
+          <h4 style={{ fontSize: "1rem", fontWeight: 750, color: "#0f172a", margin: 0 }}>
+            4-Element Introduction Architecture for Dual Charts
           </h4>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-            <span><strong>Graphic Format &amp; Reporting Verb:</strong> <em>“The table compares / delineates...”</em> (avoids copying prompt words like 'gives information on').</span>
+            <span><strong>Graphic Types &amp; Reporting Verb:</strong> <em>“The bar chart and pie chart illustrate...”</em> (explicitly names both visual components).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-            <span><strong>Measured Metric:</strong> <em>“...the proportion of national consumer expenditure allocated to...”</em> (identifies household budget percentages).</span>
+            <span><strong>First Metric (Bar Chart):</strong> <em>“...the average weekly working hours...”</em> (captures weekly labor volume).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>3</span>
-            <span><strong>Categories &amp; Geographies:</strong> <em>“...three broad categories of goods and services across five European countries...”</em></span>
+            <span><strong>Second Metric (Pie Chart):</strong> <em>“...and the proportion of individuals suffering from stress-related illnesses...”</em> (captures medical illness distribution).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center", background: "#dbeafe", color: "#1e40af", fontWeight: 800 }}>4</span>
-            <span><strong>Timeframe Anchor:</strong> <em>“...in 2002.”</em> (single past year, dictating consistent past simple tense throughout).</span>
+            <span><strong>Professional Scope:</strong> <em>“...across eight professional occupations.”</em> (defines the comparative groups).</span>
           </div>
         </div>
       </div>
@@ -85,22 +85,22 @@ export const Step4IntroOverview: React.FC = () => (
       <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "20px", display: "flex", flexDirection: "column", gap: "10px", boxShadow: "var(--shadow-sm)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Split size={18} color="#16a34a" />
-          <h4 style={{ fontSize: "1rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+          <h4 style={{ fontSize: "1rem", fontWeight: 750, color: "#0f172a", margin: 0 }}>
             Macro Overview Architecture • Qualitative Synthesis
           </h4>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 1 — Universal Sector Hierarchy:</strong> Food, drinks, and tobacco constituted the largest share of consumer expenditure across all five nations, while leisure and education consistently accounted for the smallest portion throughout.</span>
+            <span><strong>Pillar 1 — Working Hours Spectrum:</strong> Business men committed the longest hours per week by a considerable margin, whereas lecturers logged the fewest hours.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 2 — Distinct National Outliers:</strong> Turkish and Irish consumers devoted markedly higher proportions to sustenance than their European peers, whereas Italy registered the highest proportion spent on clothing and footwear.</span>
+            <span><strong>Pillar 2 — The Non-Correlation Paradox:</strong> Working time did not correlate directly with stress-related conditions; movie producers and lecturers constituted the two largest segments of stress sufferers, while programmers recorded the lowest prevalence.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Examiner Criterion:</strong> Strictly avoid any exact numbers, percentages, or statistics in the overview. Reserving specific data points for the body paragraphs ensures the overview functions as a true macro synthesis.</span>
+            <span><strong>Strict Rule — Zero Numbers:</strong> Reserving all exact statistics (70h, 25%, 18%, etc.) for the body paragraphs ensures the overview functions as a true macro qualitative synthesis.</span>
           </div>
         </div>
       </div>

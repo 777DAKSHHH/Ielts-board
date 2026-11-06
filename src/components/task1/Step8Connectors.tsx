@@ -20,9 +20,9 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
           <span className="apple-badge success" style={{ marginBottom: "8px" }}>
             Step 08 / 08 • Academic Transitions &amp; Comparative Cohesion
           </span>
-          <h2 className="stage-title">Discourse Connectors &amp; Cohesive Flow for Comparative Tables</h2>
+          <h2 className="stage-title">Discourse Connectors &amp; Cohesive Flow for Dual Visuals</h2>
           <p className="stage-subtitle">
-            Master academic discourse markers to establish seamless logical transitions between category pivots, superlative leaders, clustered data brackets, and respective reporting.
+            Master academic discourse markers to establish seamless logical transitions across dual visual parameters: bar chart labor rankings, pie chart illness distributions, and the central lecturer paradox.
           </p>
         </div>
 
@@ -53,14 +53,14 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
               <span
                 style={{
                   fontSize: "0.70rem",
-                  background: "#16a34a",
+                  background: "#d97706",
                   color: "#ffffff",
                   padding: "2px 6px",
                   borderRadius: "5px",
                   fontWeight: 750
                 }}
               >
-                Semi-Formal
+                Informal
               </span>
             </button>
           )}
@@ -126,34 +126,42 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
                   style={{
                     fontSize: "0.76rem",
                     fontWeight: 800,
-                    background: "#eff6ff",
-                    color: "#2563eb",
-                    border: "1px solid #bfdbfe",
-                    padding: "2px 8px",
-                    borderRadius: "6px"
+                    width: "24px",
+                    height: "24px",
+                    borderRadius: "6px",
+                    background: "var(--slate-100)",
+                    color: "var(--slate-700)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
                   }}
                 >
-                  Step {index + 1}
+                  {index + 1}
                 </span>
-                <strong style={{ color: "#0f172a", fontSize: "0.96rem" }}>{connector.phrase}</strong>
+                <strong style={{ fontSize: "1.05rem", color: "var(--slate-900)" }}>
+                  {connector.phrase}
+                </strong>
               </div>
+              <span className="apple-badge neutral" style={{ background: "#eff6ff", color: "#1d4ed8", fontWeight: 750, fontSize: "0.72rem" }}>
+                Dual Chart Transition
+              </span>
             </div>
 
-            <div style={{ color: "#475569", fontSize: "0.82rem", fontWeight: 650, display: "flex", alignItems: "center", gap: "6px" }}>
-              <Sparkles size={14} color="#059669" />
-              <span>Function: {connector.purpose}</span>
-            </div>
+            <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
+              {connector.purpose}
+            </p>
 
             <div
               style={{
-                background: "#f8fafc",
-                borderLeft: "3.5px solid #2563eb",
+                background: "var(--slate-50)",
+                borderLeft: "3.5px solid var(--apple-blue)",
                 borderRadius: "8px",
-                padding: "12px 14px",
-                color: "#1e293b",
-                lineHeight: 1.55,
+                padding: "10px 14px",
                 fontSize: "0.88rem",
-                fontStyle: "italic"
+                color: "var(--slate-800)",
+                lineHeight: 1.55,
+                fontStyle: "italic",
+                marginTop: "auto"
               }}
             >
               “{connector.example}”
@@ -162,104 +170,21 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
         ))}
       </div>
 
-      {/* Recommended Cohesive Flow Pathway for Comparative Tables */}
+      {/* Prominent Launch Pad for General Task 1 & Cambridge Solutions */}
       <div
         style={{
-          background: "#ffffff",
-          border: "1.5px solid var(--border-subtle, #cbd5e1)",
-          borderRadius: "18px",
-          padding: "18px 20px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "12px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.02)"
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <CheckCircle2 size={18} color="#16a34a" />
-          <strong style={{ color: "#0f172a", fontSize: "0.95rem" }}>
-            Recommended Cohesive Discourse Pathway for Comparative Tables
-          </strong>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px", fontSize: "0.86rem", color: "var(--slate-700)" }}>
-          {/* Paragraph 3 / Body 1 Flow: Food Sector */}
-          <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "#f8fafc", padding: "10px 14px", borderRadius: "12px", border: "1px solid #e2e8f0" }}>
-            <span
-              style={{
-                fontWeight: 800,
-                fontSize: "0.76rem",
-                background: "#2563eb",
-                color: "#ffffff",
-                padding: "2px 8px",
-                borderRadius: "6px"
-              }}
-            >
-              Body 1: Sustenance Flow
-            </span>
-            <span style={{ fontWeight: 700, color: "#1e40af" }}>“In terms of food, ...”</span>
-            <ArrowRight size={13} color="#2563eb" />
-            <span>Turkey leads (nearly a third at 32.14%)</span>
-            <ArrowRight size={13} color="#2563eb" />
-            <span style={{ fontWeight: 700, color: "#1e40af" }}>“followed closely behind by Ireland (28.91%)”</span>
-            <ArrowRight size={13} color="#2563eb" />
-            <span style={{ fontWeight: 700, color: "#1e40af" }}>“In marked contrast, ...”</span>
-            <ArrowRight size={13} color="#2563eb" />
-            <span>Spain at 18.80%</span>
-            <ArrowRight size={13} color="#2563eb" />
-            <span style={{ fontWeight: 700, color: "#1e40af" }}>“at 16.36% and 15.77% respectively”</span>
-            <ArrowRight size={13} color="#2563eb" />
-            <span>Italy &amp; Sweden lower tier</span>
-          </div>
-
-          {/* Paragraph 4 / Body 2 Flow: Clothing & Leisure Sectors */}
-          <div style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "wrap", background: "#f8fafc", padding: "10px 14px", borderRadius: "12px", border: "1px solid #e2e8f0" }}>
-            <span
-              style={{
-                fontWeight: 800,
-                fontSize: "0.76rem",
-                background: "#d97706",
-                color: "#ffffff",
-                padding: "2px 8px",
-                borderRadius: "6px"
-              }}
-            >
-              Body 2: Clothing &amp; Leisure
-            </span>
-            <span style={{ fontWeight: 700, color: "#9a3412" }}>“Turning to clothing and footwear, ...”</span>
-            <ArrowRight size={13} color="#d97706" />
-            <span>Italy undisputed leader (9.00%)</span>
-            <ArrowRight size={13} color="#d97706" />
-            <span style={{ fontWeight: 700, color: "#9a3412" }}>“outstripping Turkey, Spain &amp; Ireland”</span>
-            <ArrowRight size={13} color="#d97706" />
-            <span>Trio clustered around 6.5%</span>
-            <ArrowRight size={13} color="#d97706" />
-            <span>Sweden lowest at 5.40%</span>
-            <ArrowRight size={13} color="#d97706" />
-            <span style={{ fontWeight: 700, color: "#9a3412" }}>“Finally, leisure and education ...”</span>
-            <ArrowRight size={13} color="#d97706" />
-            <span>Turkey tops (4.35%)</span>
-            <ArrowRight size={13} color="#d97706" />
-            <span>Sweden &amp; Italy matched (~3.2%)</span>
-            <ArrowRight size={13} color="#d97706" />
-            <span style={{ fontWeight: 700, color: "#9a3412" }}>“Spain lowest single figure in table at 1.98%”</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Specialist Extensions & Practice Suites Launchpad */}
-      <div
-        style={{
+          marginTop: "16px",
           background: "linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)",
           border: "2px solid #cbd5e1",
           borderRadius: "20px",
           padding: "22px 24px",
           display: "flex",
           flexDirection: "column",
-          gap: "16px"
+          gap: "16px",
+          boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
           <div>
             <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", margin: "0 0 4px" }}>
               Specialist Modules &amp; Academic Reading Solutions
@@ -293,19 +218,19 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Mail size={18} color="#2563eb" />
+                  <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "#fef3c7", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Mail size={18} color="#d97706" />
                   </div>
-                  <strong style={{ fontSize: "0.96rem", color: "#0f172a" }}>General Task 1 (Letter Masterclass)</strong>
+                  <strong style={{ fontSize: "0.96rem", color: "#0f172a" }}>General Task 1 (Informal Letter)</strong>
                 </div>
-                <span style={{ fontSize: "0.72rem", background: "#ecfdf5", color: "#047857", fontWeight: 750, padding: "2px 8px", borderRadius: "6px", border: "1px solid #a7f3d0" }}>
-                  Semi-Formal
+                <span style={{ fontSize: "0.72rem", background: "#fef3c7", color: "#92400e", fontWeight: 750, padding: "2px 8px", borderRadius: "6px", border: "1px solid #fde68a" }}>
+                  Informal Register
                 </span>
               </div>
               <p style={{ fontSize: "0.82rem", color: "#64748b", margin: 0, lineHeight: 1.45 }}>
-                Master the strict 5-paragraph architecture, forbidden essay linkers, and neighbour problem resolution model.
+                Master the strict 5-paragraph architecture, warm friendly register, and Indian / Gujarati New Year celebration customs (Bestu Varas).
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#2563eb", fontSize: "0.84rem", fontWeight: 750, marginTop: "4px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#d97706", fontSize: "0.84rem", fontWeight: 750, marginTop: "4px" }}>
                 <span>Open Dedicated Letter Page</span>
                 <ArrowRight size={14} />
               </div>

@@ -55,8 +55,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   // Default to side-by-side split view for zero-scroll on smart boards
   const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("turkey-food");
-  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("turkey-food");
+  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("business-men");
+  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("business-men");
   const [dockTab, setDockTab] = useState<"category" | "prompt" | "hotspots">("category");
 
   useEffect(() => {
@@ -145,9 +145,9 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         {/* 3 Dock Tabs */}
         <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "3px", borderRadius: "8px" }}>
           {[
-            { id: "category", label: "🎯 Active Cell" },
-            { id: "prompt", label: "📝 Prompt" },
-            { id: "hotspots", label: "⭐ All 15 Data Points" }
+            { id: "category", label: "🎯 Active Focus" },
+            { id: "prompt", label: "📝 Prompt Parameters" },
+            { id: "hotspots", label: "⭐ All 8 Professions" }
           ].map((tab) => (
             <button
               key={tab.id}
@@ -171,17 +171,17 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         </div>
       </div>
 
-      {/* Dock Content: Tab 1 - Active Cell Deep Dive (Synced with Smartboard Table) */}
+      {/* Dock Content: Tab 1 - Active Cell Deep Dive (Synced with Smartboard Dual Visual) */}
       {dockTab === "category" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
-          {/* Quick Cell Tap Strips — Touch any chip to highlight on the smartboard table */}
+          {/* Quick Cell Tap Strips — Touch any chip to highlight on the smartboard */}
           <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-            {/* Food 5 Countries */}
+            {/* Hours Rankings */}
             <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
-              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#2563eb", marginRight: "2px", textTransform: "uppercase" }}>
-                Food:
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#dc2626", marginRight: "2px", textTransform: "uppercase" }}>
+                Hours:
               </span>
-              {foodHotspots.map((h) => {
+              {TABLE_CELL_HOTSPOTS.slice(0, 8).map((h) => {
                 const isSelected = selectedHotspotId === h.id;
                 return (
                   <button
@@ -200,18 +200,18 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       transition: "all 0.15s ease"
                     }}
                   >
-                    {h.country} ({h.number})
+                    {h.name.split("•")[0].trim()} ({h.number.split("/")[0].trim()})
                   </button>
                 );
               })}
             </div>
 
-            {/* Clothing 5 Countries */}
+            {/* Stress Shares */}
             <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
-              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#d97706", marginRight: "2px", textTransform: "uppercase" }}>
-                Clothing:
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#0891b2", marginRight: "2px", textTransform: "uppercase" }}>
+                Stress:
               </span>
-              {clothingHotspots.map((h) => {
+              {TABLE_CELL_HOTSPOTS.slice(0, 8).map((h) => {
                 const isSelected = selectedHotspotId === h.id;
                 return (
                   <button
@@ -230,48 +230,18 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       transition: "all 0.15s ease"
                     }}
                   >
-                    {h.country} ({h.number})
+                    {h.name.split("•")[0].trim()} ({h.number.split("/")[1]?.trim() || h.number})
                   </button>
                 );
               })}
             </div>
 
-            {/* Leisure 5 Countries */}
-            <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
-              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#059669", marginRight: "2px", textTransform: "uppercase" }}>
-                Leisure:
-              </span>
-              {leisureHotspots.map((h) => {
-                const isSelected = selectedHotspotId === h.id;
-                return (
-                  <button
-                    key={h.id}
-                    type="button"
-                    onClick={() => handleSelectComponent(h.id)}
-                    style={{
-                      padding: "2px 7px",
-                      borderRadius: "6px",
-                      fontSize: "0.71rem",
-                      fontWeight: 750,
-                      border: isSelected ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
-                      background: isSelected ? `${h.color}18` : "#f8fafc",
-                      color: isSelected ? h.color : "#475569",
-                      cursor: "pointer",
-                      transition: "all 0.15s ease"
-                    }}
-                  >
-                    {h.country} ({h.number})
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Nations & Overview Quick Strips */}
+            {/* Macro Trends */}
             <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap", paddingTop: "2px" }}>
-              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#1e40af", marginRight: "2px", textTransform: "uppercase" }}>
-                Nations:
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#7c3aed", marginRight: "2px", textTransform: "uppercase" }}>
+                Macro:
               </span>
-              {COUNTRY_HOTSPOTS.map((h) => {
+              {CATEGORY_HOTSPOTS.map((h) => {
                 const isSelected = selectedHotspotId === h.id;
                 return (
                   <button
@@ -290,7 +260,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       transition: "all 0.15s ease"
                     }}
                   >
-                    {h.number}
+                    {h.name.split("•")[0].trim()}
                   </button>
                 );
               })}
@@ -471,19 +441,19 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "0.78rem" }}>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
               <span style={{ color: "#64748b" }}>Format:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Comparative Data Table</strong>
+              <strong style={{ display: "block", color: "#0f172a" }}>Dual Graph (Bar Chart + Pie Chart)</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Timeframe:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Single Year (2002)</strong>
+              <span style={{ color: "#64748b" }}>Occupations:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>8 Professional Groups</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Entities:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>5 European Countries</strong>
+              <span style={{ color: "#64748b" }}>Chart 1 (Bar):</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>Average Weekly Hours Worked (25–70 hrs)</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Categories:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>3 Consumer Sectors</strong>
+              <span style={{ color: "#64748b" }}>Chart 2 (Pie):</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>Stress-Related Illness Share (5%–25%)</strong>
             </div>
           </div>
         </div>
@@ -492,7 +462,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Dock Content: Tab 3 - All 15 Hotspot Data Cells */}
       {dockTab === "hotspots" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "6px", flex: 1, overflowY: "auto" }}>
-          {TABLE_CELL_HOTSPOTS.map((h) => {
+          {ALL_HOTSPOTS.map((h) => {
             const isMatch = selectedHotspotId === h.id;
             return (
               <div
@@ -558,11 +528,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Task Prompt &amp; Comparative Table
+          Step 02 / 08 • Dual Visual Deconstruction &amp; Brainstorm
         </span>
-        <h2 className="stage-title">Deconstruct the Consumer Spending Table (2002)</h2>
+        <h2 className="stage-title">Deconstruct Dual Visuals: Hours Worked &amp; Stress Levels</h2>
         <p className="stage-subtitle">
-          Examine national consumer expenditure across 5 European countries (Ireland, Italy, Spain, Sweden, Turkey) and 3 core categories: Food/Drink/Tobacco (dominant), Clothing/Footwear (secondary), and Leisure/Education (minority).
+          Examine average weekly hours worked across eight professional groups (Bar Chart) alongside their share of stress-related illness (Pie Chart). Identify the central paradox: lecturers work the least (25 hrs) but suffer the second highest stress (18%).
         </p>
       </div>
 
@@ -574,7 +544,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the comparative table: identify the universal rank order across all 5 nations, note Turkey's food peak (32.14%), Italy's clothing lead (9.00%), and Spain's leisure floor (1.98%)."
+          instruction="Focus Timer: 3 minutes to analyze the bar chart and pie chart: identify peak working hours (business men at 70 hrs), peak stress illness (movie producers at 25%), and the central lecturer paradox (25 hrs worked vs 18% stress illness)."
         />
       </div>
 

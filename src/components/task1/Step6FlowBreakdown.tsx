@@ -9,18 +9,18 @@ export const Step6FlowBreakdown: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 06 / 08 • Body 1 — Food, Drink &amp; Tobacco
+          Step 06 / 08 • Body 1 — Weekly Hours Worked (Bar Chart)
         </span>
-        <h2 className="stage-title">Deconstructing Body Paragraph 1: Sustenance Expenditure</h2>
+        <h2 className="stage-title">Deconstructing Body Paragraph 1: Working Hours Breakdown</h2>
         <p className="stage-subtitle">
-          Examine the comparative data flow: opening with Turkey's peak proportion (32.14%), pairing with Ireland (28.91%), and contrasting with the lower tier of Spain (18.80%), Italy (16.36%), and Sweden (15.77%).
+          Examine the comparative data flow: opening with Business men's peak workweek (70 hrs), following with Movie Producers (60 hrs) and Doctors (52 hrs), down through Programmers (40 hrs) to Lecturers' floor (25 hrs).
         </p>
       </div>
 
       <div className="stage-grid-2col">
         {/* Left Column: 4 Analytical Data Clusters */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          {/* Cluster 1: Turkey Global Peak */}
+          {/* Cluster 1: Business Men Global Peak */}
           <div
             style={{
               background: "var(--slate-50)",
@@ -34,37 +34,37 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#2563eb" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#dc2626" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  1. Global Table Peak: Turkey (32.14%)
+                  1. Peak Workweek: Business Men (70 hrs)
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#dbeafe", color: "#1e40af", fontWeight: 800 }}>
-                Rank 1 in Table
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#fef2f2", color: "#991b1b", fontWeight: 800 }}>
+                Rank 1 in Hours
               </span>
             </div>
 
             <div style={{ background: "#ffffff", borderRadius: "10px", padding: "12px", border: "1px solid var(--border-subtle)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--slate-700)" }}>
-                  Fractional Approximation:
+                  Comparative Extent:
                 </span>
-                <span style={{ fontSize: "0.95rem", fontWeight: 800, color: "#2563eb" }}>
-                  Nearly a third (32.14%)
+                <span style={{ fontSize: "0.95rem", fontWeight: 800, color: "#dc2626" }}>
+                  70 hrs/wk (Nearly triple lecturers)
                 </span>
               </div>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Analytical Role:</strong> Opens the paragraph with the highest single proportion in the entire table. Turkish consumers allocated nearly one out of every three euros to sustenance.
+              <strong>Analytical Role:</strong> Opens the paragraph with the highest single figure in the bar chart. Business men completed an average of 70 hours weekly, outworking every other group.
             </p>
           </div>
 
-          {/* Cluster 2: Ireland Upper Tier */}
+          {/* Cluster 2: Upper Tier Followers */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid rgba(2, 132, 199, 0.3)",
+              border: "1.5px solid rgba(8, 145, 178, 0.3)",
               borderRadius: "18px",
               padding: "20px",
               display: "flex",
@@ -74,26 +74,26 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#0284c7" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#0891b2" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  2. Upper Tier Partner: Ireland (28.91%)
+                  2. Upper Tier: Movie Producers (60h) &amp; Doctors (52h)
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f0f9ff", color: "#0369a1" }}>
-                Rank 2 in Food
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#ecfeff", color: "#0e7490" }}>
+                Ranks 2 &amp; 3
               </span>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Key Phrasing:</strong> <em>“Ireland followed closely behind at 28.91%.”</em> Couples seamlessly with Turkey, establishing that both countries spent over 28% on basic nourishment.
+              <strong>Key Phrasing:</strong> <em>“Movie producers and doctors followed with 60 and 52 hours per week respectively.”</em> Smoothly bridges from the peak to the remaining full-time professionals.
             </p>
           </div>
 
-          {/* Cluster 3: Spain Intermediate Benchmark */}
+          {/* Cluster 3: Intermediate & Standard 40h Baseline */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid rgba(217, 119, 6, 0.3)",
+              border: "1.5px solid rgba(132, 204, 22, 0.3)",
               borderRadius: "18px",
               padding: "20px",
               display: "flex",
@@ -103,43 +103,46 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#d97706" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#84cc16" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  3. Transitional Pivot: Spain (18.80%)
+                  3. Standard Baseline: Writers (45h) &amp; Programmers (40h)
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#fff7ed", color: "#c2410c" }}>
-                Mid-Tier Split
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f7fee7", color: "#4d7c0f" }}>
+                Standard Baseline
               </span>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Sharp Contrast:</strong> Introduced with <em>“In marked contrast, the remaining three nations registered substantially lower figures; Spain recorded 18.80%...”</em>
+              <strong>Analytical Role:</strong> Establishes the conventional working norm: writers logged 45 hours, while programmers completed a standard 40-hour week.
             </p>
           </div>
 
-          {/* Cluster 4: Italy & Sweden Low Spending Duo */}
+          {/* Cluster 4: Lower Tier & Spectrum Minimum */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid rgba(71, 85, 105, 0.3)",
+              border: "1.5px solid rgba(13, 148, 136, 0.3)",
               borderRadius: "18px",
-              padding: "16px 20px",
+              padding: "20px",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center"
             }}
           >
-            <div>
-              <h4 style={{ fontSize: "0.95rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                4. Lowest Food Allocations: Italy (16.36%) &amp; Sweden (15.77%)
-              </h4>
-              <p style={{ fontSize: "0.8rem", color: "var(--slate-600)", margin: "4px 0 0 0" }}>
-                Reported economically using the adverb <em>“respectively”</em> to conclude the paragraph.
-              </p>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#0d9488" }} />
+              <div>
+                <h4 style={{ fontSize: "0.95rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+                  4. Lower Tier: Lawyers (35h), Chefs (30h) &amp; Lecturers (25h)
+                </h4>
+                <span style={{ fontSize: "0.78rem", color: "var(--slate-500)" }}>
+                  Lecturers recorded the lowest working hours in the entire survey at 25 hrs
+                </span>
+              </div>
             </div>
-            <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#475569", background: "#f1f5f9", padding: "4px 8px", borderRadius: "6px" }}>
-              15.77% – 16.36%
+            <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#ccfbf1", color: "#115e59", fontWeight: 800 }}>
+              25 – 35 hrs/wk
             </span>
           </div>
         </div>
@@ -167,7 +170,7 @@ export const Step6FlowBreakdown: React.FC = () => {
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.75rem", fontWeight: 750 }}>
-                Sustenance Sector
+                Bar Chart Analysis
               </span>
             </div>
 
@@ -218,19 +221,19 @@ export const Step6FlowBreakdown: React.FC = () => {
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.85rem" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>1</span>
-                <span><strong>Category Topic Opener:</strong> <em>“In terms of food, drinks, and tobacco, Turkey allocated the highest proportion of any country...”</em></span>
+                <span><strong>Visual Topic Opener:</strong> <em>“Regarding working hours, business men logged the longest workweek at an average of 70 hours...”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>2</span>
-                <span><strong>Fractional Data Anchor:</strong> <em>“...with nearly a third of all consumer expenditure (32.14%) directed towards this category.”</em></span>
+                <span><strong>Sequential Coupling:</strong> <em>“...followed by movie producers and doctors at 60 and 52 hours per week respectively.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>3</span>
-                <span><strong>Sequential Follower:</strong> <em>“Ireland followed closely behind at 28.91%.”</em></span>
+                <span><strong>Intermediate Cluster:</strong> <em>“Writers averaged 45 hours on the job, while programmers completed a standard 40-hour week.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>4</span>
-                <span><strong>Contrastive Linker &amp; Respective Coupling:</strong> <em>“In marked contrast, the remaining three nations registered substantially lower figures; Spain recorded 18.80%, while Italy and Sweden spent the least on sustenance at 16.36% and 15.77% respectively.”</em></span>
+                <span><strong>Lower Tier &amp; Superlative Floor:</strong> <em>“Lawyers and chefs worked somewhat fewer hours (35 and 30 hours respectively), whereas lecturers recorded the lowest figure across all groups at merely 25 hours per week.”</em></span>
               </div>
             </div>
           </div>

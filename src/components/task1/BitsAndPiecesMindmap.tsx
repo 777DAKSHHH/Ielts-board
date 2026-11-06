@@ -8,9 +8,10 @@ import {
   CheckCircle2,
   Table,
   TrendingUp,
+  BarChart2,
+  PieChart as PieIcon,
   Eye,
-  ArrowRight,
-  FileSpreadsheet
+  ArrowRight
 } from "lucide-react";
 
 interface MindmapPiece {
@@ -43,33 +44,33 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
     bgLight: "#eff6ff",
     icon: <BookOpen size={18} color="#2563eb" />,
     summary:
-      "A Band 9 introduction paraphrases the prompt parameters: the proportion of national consumer spending allocated to three distinct sectors across five European nations in 2002.",
+      "A Band 9 introduction paraphrases the dual visual parameters: the bar chart delineates average weekly working hours, while the pie chart demonstrates the proportion suffering from stress-related illness across eight professional groups.",
     tableCorrelation:
-      "Sets up the entire 5x3 table matrix: 5 rows (Ireland, Italy, Spain, Sweden, Turkey) across 3 expenditure columns in the calendar year 2002.",
+      "Captures both visual graphics: Bar Chart (0 to 70 hours/week) and Pie Chart (proportions summing to 100%) across 8 distinct occupations.",
     pieces: [
       {
-        label: "Visual Format & Topic",
-        value: "Comparative Data Table (Household Budgets)",
+        label: "Visual Graphics & Scope",
+        value: "Dual Graph (Bar Chart + Pie Chart)",
         detail:
-          "Presents consumer expenditure proportions across 5 nations in 2002, measured strictly in percentage shares of total national spending.",
+          "Combines labor volume (hours worked) with occupational health outcomes (stress illness proportion) across 8 groups.",
         band9Application:
-          "“The table compares the proportion of national consumer expenditure allocated to three broad categories of goods and services across five European countries in 2002.”"
+          "“The bar chart and pie chart illustrate the average weekly working hours and the proportion of individuals suffering from stress-related illnesses across eight professional occupations.”"
       },
       {
-        label: "Geographic & Temporal Parameters",
-        value: "5 European Countries • Single Year (2002)",
+        label: "Target Occupations",
+        value: "8 Professional Sectors",
         detail:
-          "Ireland, Italy, Spain, Sweden, and Turkey in 2002 (requires static past simple verbs: 'allocated', 'accounted for', 'stood at').",
+          "Business men, movie producers, doctors, writers, programmers, lawyers, chefs, and lecturers.",
         band9Application:
-          "“...across five European countries—namely Ireland, Italy, Spain, Sweden, and Turkey—during the year 2002.”"
+          "“...across eight distinct occupational categories, ranging from commercial executives to academic lecturers.”"
       },
       {
-        label: "Expenditure Category Classification",
-        value: "3 Primary Consumer Sectors",
+        label: "Comparative Dynamic",
+        value: "Workload Volume vs Health Incidence",
         detail:
-          "Food/Drink/Tobacco (basic sustenance), Clothing/Footwear (semi-essential attire), and Leisure/Education (discretionary spending).",
+          "Enables examiners to see immediate qualitative comparisons between how long each profession worked and how severely they suffered from stress.",
         band9Application:
-          "“...categorized into basic sustenance (food, drink, and tobacco), apparel and footwear, and leisure and education.”"
+          "“...enabling direct evaluation between occupational time commitment and psychological health burdens.”"
       }
     ]
   },
@@ -82,95 +83,127 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
     bgLight: "#ecfdf5",
     icon: <Layers size={18} color="#059669" />,
     summary:
-      "Synthesizes macro trends without quoting any numerical statistics: 1) Food was universally the dominant category; 2) Leisure was universally the lowest; 3) Turkish/Irish households spent most on food, while Italy led in clothing.",
+      "Synthesizes overarching trends without quoting numerical statistics: 1) Business men committed the longest hours while lecturers worked the least; 2) Working time did not correlate directly with stress; 3) Movie producers and lecturers led in illness, while programmers recorded the lowest rate.",
     tableCorrelation:
-      "Extracts global macro hierarchies: Column 1 > Column 2 > Column 3 across all 5 nations, plus key outliers Turkey, Ireland, and Italy.",
+      "Synthesizes extremes from both visuals: Hours extreme (Business men vs Lecturers) and Stress extreme (Producers vs Programmers), underscoring the non-correlation paradox.",
     pieces: [
       {
-        label: "Pillar 1: Sustenance as Universal Leader",
-        value: "Dominant Spending Across All 5 Nations",
+        label: "Pillar 1: Working Hours Spectrum",
+        value: "Business Men Peak vs Lecturers Floor",
         detail:
-          "Food, drinks, and tobacco represented the highest proportion of household spending in every single surveyed country without exception.",
+          "Business men worked the longest week of all professions by a noticeable margin, whereas lecturers spent the fewest hours on the job.",
         band9Application:
-          "“Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations...”"
+          "“Overall, business men committed the longest hours per week by a considerable margin, whereas lecturers logged the fewest hours.”"
       },
       {
-        label: "Pillar 2: Leisure/Education as Universal Minority",
-        value: "Lowest Expenditure Proportion Throughout",
+        label: "Pillar 2: The Non-Correlation Paradox",
+        value: "Disparity Between Labor and Health Strain",
         detail:
-          "Recreation and education accounted for the smallest portion of consumer budgets in every country, never exceeding single digits.",
+          "There was no direct linear relationship between long hours and stress illness; movie producers and lecturers formed the two largest groups of stress sufferers.",
         band9Application:
-          "“...whereas leisure and education consistently accounted for the smallest share of spending throughout.”"
+          "“However, working time did not correlate directly with stress-related conditions; movie producers and lecturers constituted the two largest segments of stress sufferers...”"
       },
       {
-        label: "Pillar 3: National Outliers & Divergences",
-        value: "Turkey & Ireland (Food) vs Italy (Clothing)",
+        label: "Pillar 3: The Minimum Illness Floor",
+        value: "Programmers Record Minimum Stress",
         detail:
-          "Turkish and Irish consumers spent far more on food than their peers, whereas Italy directed the largest relative share towards attire.",
+          "Despite working a standard 40-hour week, programmers recorded the absolute lowest prevalence of stress illness.",
         band9Application:
-          "“Furthermore, Turkish and Irish consumers devoted significantly larger proportions to sustenance than other nations, while Italy recorded the largest proportion on clothing and footwear.”"
+          "“...while programmers recorded the lowest prevalence of stress-induced illnesses throughout the surveyed cohort.”"
       }
     ]
   },
   {
-    id: "body1-food",
-    title: "Piece 3: Body 1 — Food, Drink & Tobacco (Dominant Sector)",
-    badge: "Body 1 Dominance",
-    color: "#2563eb",
-    borderColor: "#bfdbfe",
-    bgLight: "#eff6ff",
-    icon: <TrendingUp size={18} color="#2563eb" />,
+    id: "body1-hours",
+    title: "Piece 3: Body 1 — Weekly Hours Worked (Bar Chart)",
+    badge: "Bar Chart Breakdown",
+    color: "#dc2626",
+    borderColor: "#fecaca",
+    bgLight: "#fef2f2",
+    icon: <BarChart2 size={18} color="#dc2626" />,
     summary:
-      "Reports and compares the dominant food sector: Turkey's global peak (32.14%) and Ireland's close second (28.91%) contrasted against Spain (18.80%), Italy (16.36%), and Sweden (15.77%).",
+      "Ranks the weekly working hours in descending order from the longest workweeks (Business men 70h, Movie producers 60h, Doctors 52h) to intermediate groups (Writers 45h, Programmers 40h) and the lower tier (Lawyers 35h, Chefs 30h, Lecturers 25h).",
     tableCorrelation:
-      "Covers the entire Column 2 data: Turkey (32.14%) > Ireland (28.91%) >> Spain (18.80%) > Italy (16.36%) > Sweden (15.77%).",
+      "Covers all 8 bars in the bar chart: 70h, 60h, 52h, 45h, 40h, 35h, 30h, 25h.",
     pieces: [
       {
-        label: "The Upper Tier: Turkey & Ireland",
-        value: "32.14% (Global Peak) & 28.91%",
+        label: "1. Peak Workweek Leader",
+        value: "Business Men (70 hrs/week)",
         detail:
-          "Turkey allocated nearly a third of all consumer expenditure to sustenance, followed closely by Ireland at over a quarter.",
+          "Business men worked the longest week of all professions at 70 hours—nearly triple the hours of lecturers.",
         band9Application:
-          "“In terms of food, drinks, and tobacco, Turkey allocated the highest proportion of any country, with nearly a third of all consumer expenditure (32.14%) directed towards this category, closely followed by Ireland at 28.91%.”"
+          "“Regarding working hours, business men logged the longest workweek at an average of 70 hours...”"
       },
       {
-        label: "The Lower Tier: Spain, Italy & Sweden",
-        value: "18.80%, 16.36% & 15.77%",
+        label: "2. Upper Tier Followers",
+        value: "Movie Producers (60h) & Doctors (52h)",
         detail:
-          "The other three nations spent substantially less on food; Spain stood at 18.80%, while Italy and Sweden registered just 16.36% and 15.77%.",
+          "Movie producers followed at 60 hours per week, while doctors averaged 52 hours.",
         band9Application:
-          "“In marked contrast, the remaining three nations registered substantially lower figures; Spain recorded 18.80%, while Italy and Sweden spent the least on sustenance at 16.36% and 15.77% respectively.”"
+          "“...followed by movie producers and doctors at 60 and 52 hours per week respectively.”"
+      },
+      {
+        label: "3. Intermediate Standard & Baseline",
+        value: "Writers (45h) & Programmers (40h)",
+        detail:
+          "Writers averaged 45 hours, while programmers completed a standard 40-hour workweek.",
+        band9Application:
+          "“Writers averaged 45 hours on the job, while programmers completed a standard 40-hour week.”"
+      },
+      {
+        label: "4. Lower Tier & Workweek Minimum",
+        value: "Lawyers (35h), Chefs (30h) & Lecturers (25h)",
+        detail:
+          "Lawyers and chefs completed 35 and 30 hours respectively, while lecturers worked the least at just 25 hours per week.",
+        band9Application:
+          "“Lawyers and chefs worked somewhat fewer hours (35 and 30 hours respectively), whereas lecturers recorded the lowest figure across all groups at merely 25 hours per week.”"
       }
     ]
   },
   {
-    id: "body2-clothing-leisure",
-    title: "Piece 4: Body 2 — Clothing & Leisure Sectors",
-    badge: "Body 2 Synthesis",
-    color: "#d97706",
-    borderColor: "#fed7aa",
-    bgLight: "#fff7ed",
-    icon: <Table size={18} color="#d97706" />,
+    id: "body2-stress",
+    title: "Piece 4: Body 2 — Stress Illness & Contrasts (Pie Chart)",
+    badge: "Pie Chart Breakdown",
+    color: "#0891b2",
+    borderColor: "#a5f3fc",
+    bgLight: "#ecfeff",
+    icon: <PieIcon size={18} color="#0891b2" />,
     summary:
-      "Reports Italy's undisputed lead in clothing (9.00%) against the 6.5% cluster, and contrasts the minor figures for leisure and education (1.98% to 4.35%).",
+      "Details each profession's share of the stress illness cohort: Movie producers leading at 25%, the central lecturer paradox at 18%, down through Doctors (15%), Business men (11%), Chefs (10%), Writers & Lawyers (8% each), and Programmers (5%).",
     tableCorrelation:
-      "Covers Columns 3 & 4: Clothing (Italy 9.00% leader, Sweden 5.40% lowest) + Leisure (Turkey 4.35% leader, Spain 1.98% absolute lowest).",
+      "Deconstructs the pie chart slices summing to 100%, emphasizing the central paradox where lecturers work the least yet suffer the 2nd highest stress.",
     pieces: [
       {
-        label: "Clothing & Footwear Outlier: Italy",
-        value: "9.00% (Undisputed Leader)",
+        label: "1. Dominant Slice (Peak Stress)",
+        value: "Movie Producers (25% / One in Four)",
         detail:
-          "Italy dedicated 9.00% to clothing, clearly outspending Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), while Sweden lagged at 5.40%.",
+          "Movie producers constituted a full quarter of all individuals suffering from stress-related illness.",
         band9Application:
-          "“Turning to clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outstripping Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), with Sweden recording the lowest share at 5.40%.”"
+          "“In terms of stress-related illness, movie producers accounted for the largest single proportion at exactly 25%.”"
       },
       {
-        label: "Leisure & Education: Minor Allocations",
-        value: "1.98% – 4.35% (Spain Table Floor)",
+        label: "2. The Central Paradox",
+        value: "Lecturers (18% — 2nd Highest Stress)",
         detail:
-          "Turkey again led at 4.35%, followed by Sweden (3.22%) and Italy (3.20%), while Spain recorded the lowest figure in the entire table at 1.98%.",
+          "Despite logging the shortest workweek (25h), lecturers made up the second highest share of stress sufferers at 18%.",
         band9Application:
-          "“Finally, leisure and education represented the smallest expenditure throughout; Turkey again topped the list at 4.35%, followed by Sweden (3.22%) and Italy (3.20%), while Spain registered the lowest single figure in the table at just 1.98%.”"
+          "“Paradoxically, lecturers represented the second highest group at 18%, despite working the fewest hours.”"
+      },
+      {
+        label: "3. Moderate Stress & Business Men Disparity",
+        value: "Doctors (15%) & Business Men (11%)",
+        detail:
+          "Doctors constituted 15%, while business men made up only 11% of stress cases despite their 70-hour workweek.",
+        band9Application:
+          "“Doctors constituted 15% of the total, whereas business men comprised a modest 11% despite their extensive workweek.”"
+      },
+      {
+        label: "4. Parities & Minimum Floor",
+        value: "Chefs (10%), Writers & Lawyers (8%), Programmers (5%)",
+        detail:
+          "Chefs made up 10%, writers and lawyers tied at 8% each, and programmers formed the smallest segment at 5%.",
+        band9Application:
+          "“Chefs made up exactly one-tenth of sufferers, while writers and lawyers shared an identical 8% each. At merely 5%, programmers formed the smallest proportion of the illness cohort.”"
       }
     ]
   }
@@ -178,18 +211,8 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
 
 export const BitsAndPiecesMindmap: React.FC = () => {
   const [selectedBranchId, setSelectedBranchId] = useState<string>("parameters");
-  const [viewStyle, setViewStyle] = useState<"smart_table" | "pamphlet_scan">("smart_table");
-
   const activeBranch =
     MINDMAP_BRANCHES.find((b) => b.id === selectedBranchId) || MINDMAP_BRANCHES[0];
-
-  const tableRows = [
-    { country: "Ireland", food: "28.91%", clothing: "6.43%", leisure: "2.21%" },
-    { country: "Italy", food: "16.36%", clothing: "9.00%", leisure: "3.20%" },
-    { country: "Spain", food: "18.80%", clothing: "6.51%", leisure: "1.98%" },
-    { country: "Sweden", food: "15.77%", clothing: "5.40%", leisure: "3.22%" },
-    { country: "Turkey", food: "32.14%", clothing: "6.63%", leisure: "4.35%" }
-  ];
 
   return (
     <div
@@ -197,73 +220,73 @@ export const BitsAndPiecesMindmap: React.FC = () => {
         display: "flex",
         flexDirection: "column",
         gap: "14px",
-        width: "100%"
+        width: "100%",
+        fontFamily: "system-ui, -apple-system, sans-serif"
       }}
     >
-      {/* Branch Navigation Pills (Top Bar) */}
+      {/* Top Banner */}
       <div
         style={{
+          background: "#ffffff",
+          borderRadius: "16px",
+          border: "1.5px solid var(--border-subtle, #cbd5e1)",
+          padding: "16px 20px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: "8px",
-          background: "#ffffff",
-          borderRadius: "14px",
-          border: "1.5px solid var(--border-subtle, #cbd5e1)",
-          padding: "10px 14px",
+          gap: "10px",
           boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-          <Sparkles size={16} color="#2563eb" />
-          <strong style={{ fontSize: "0.88rem", color: "#0f172a" }}>
-            Strategic Mindmap Pillars:
-          </strong>
+        <div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+            <Sparkles size={18} color="#2563eb" />
+            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+              Dual Visual Strategic Decomposition Mindmap
+            </h3>
+            <span
+              style={{
+                fontSize: "0.72rem",
+                fontWeight: 800,
+                background: "#eff6ff",
+                color: "#1d4ed8",
+                padding: "2px 8px",
+                borderRadius: "6px"
+              }}
+            >
+              Dual Graph Framework
+            </span>
+          </div>
+          <p style={{ fontSize: "0.85rem", color: "#64748b", margin: 0 }}>
+            Master the structural anatomy: Introduction scope, zero-number macro overview, Bar Chart labor flow, and Pie Chart health synthesis.
+          </p>
         </div>
 
-        <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-          {MINDMAP_BRANCHES.map((b) => {
-            const isSelected = b.id === selectedBranchId;
-            return (
-              <button
-                key={b.id}
-                onClick={() => setSelectedBranchId(b.id)}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  padding: "6px 12px",
-                  borderRadius: "8px",
-                  fontSize: "0.8rem",
-                  fontWeight: 750,
-                  border: isSelected ? `2px solid ${b.color}` : "1px solid #e2e8f0",
-                  background: isSelected ? b.bgLight : "#ffffff",
-                  color: isSelected ? b.color : "#475569",
-                  cursor: "pointer",
-                  boxShadow: isSelected ? "0 2px 6px rgba(0,0,0,0.05)" : "none",
-                  transition: "all 0.15s ease"
-                }}
-              >
-                {b.icon}
-                <span>{b.title.split(":")[0]}</span>
-              </button>
-            );
-          })}
-        </div>
+        <span
+          style={{
+            fontSize: "0.76rem",
+            fontWeight: 800,
+            background: "#f1f5f9",
+            color: "#475569",
+            padding: "4px 10px",
+            borderRadius: "8px"
+          }}
+        >
+          4 Architecture Pillars
+        </span>
       </div>
 
-      {/* Side-by-Side Reference POV Grid (Diagram/Table on Left, Mindmap on Right) */}
+      {/* Main 2-Column Responsive Layout */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "minmax(340px, 0.95fr) minmax(360px, 1.05fr)",
+          gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
           gap: "16px",
-          alignItems: "start",
-          width: "100%"
+          alignItems: "stretch"
         }}
       >
-        {/* Left Column: Reference Task Visual (Smart Board Style Table or Pamphlet Scan) */}
+        {/* Left Column: Interactive Pillar Navigator */}
         <div
           style={{
             background: "#ffffff",
@@ -273,176 +296,71 @@ export const BitsAndPiecesMindmap: React.FC = () => {
             boxShadow: "var(--shadow-sm)",
             display: "flex",
             flexDirection: "column",
-            gap: "12px",
-            position: "sticky",
-            top: "12px"
+            gap: "10px"
           }}
         >
-          {/* Header with View Toggle */}
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "6px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <Eye size={17} color="#2563eb" />
-              <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
-                Reference Task Visual
-              </strong>
-            </div>
-            <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "2px", borderRadius: "6px" }}>
-              <button
-                type="button"
-                onClick={() => setViewStyle("smart_table")}
-                style={{
-                  padding: "3px 8px",
-                  fontSize: "0.72rem",
-                  fontWeight: 750,
-                  borderRadius: "5px",
-                  border: "none",
-                  background: viewStyle === "smart_table" ? "#ffffff" : "transparent",
-                  color: viewStyle === "smart_table" ? "#0f172a" : "#64748b",
-                  cursor: "pointer"
-                }}
-              >
-                Smart Table
-              </button>
-              <button
-                type="button"
-                onClick={() => setViewStyle("pamphlet_scan")}
-                style={{
-                  padding: "3px 8px",
-                  fontSize: "0.72rem",
-                  fontWeight: 750,
-                  borderRadius: "5px",
-                  border: "none",
-                  background: viewStyle === "pamphlet_scan" ? "#ffffff" : "transparent",
-                  color: viewStyle === "pamphlet_scan" ? "#0f172a" : "#64748b",
-                  cursor: "pointer"
-                }}
-              >
-                Pamphlet Scan
-              </button>
-            </div>
+          <div style={{ fontSize: "0.82rem", fontWeight: 750, color: "#64748b", paddingLeft: "4px" }}>
+            Select Strategic Architectural Pillar:
           </div>
 
-          {/* Authentic Smart Board Styled Table — Clean, Crisp, Never Congested */}
-          {viewStyle === "smart_table" ? (
-            <div
-              style={{
-                borderRadius: "10px",
-                border: "2px solid #cbd5e1",
-                overflow: "hidden",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.04)"
-              }}
-            >
-              <table
-                style={{
-                  width: "100%",
-                  borderCollapse: "collapse",
-                  fontFamily: "system-ui, -apple-system, sans-serif",
-                  fontSize: "0.82rem",
-                  textAlign: "center"
-                }}
-              >
-                <thead>
-                  <tr style={{ background: "#346294", color: "#ffffff" }}>
-                    <th style={{ padding: "8px 10px", textAlign: "left", borderRight: "1.5px solid #ffffff", width: "25%" }}>
-                      Country
-                    </th>
-                    <th style={{ padding: "8px 10px", borderRight: "1.5px solid #ffffff", width: "25%" }}>
-                      Food/Drink
-                    </th>
-                    <th style={{ padding: "8px 10px", borderRight: "1.5px solid #ffffff", width: "25%" }}>
-                      Clothing
-                    </th>
-                    <th style={{ padding: "8px 10px", width: "25%" }}>
-                      Leisure
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tableRows.map((r, i) => {
-                    const isEven = i % 2 === 0;
-                    const bg = isEven ? "#cddbe8" : "#e4edf5";
-                    return (
-                      <tr key={r.country} style={{ borderBottom: "1.5px solid #ffffff" }}>
-                        <td style={{ background: "#4478ae", color: "#ffffff", padding: "8px 10px", textAlign: "left", fontWeight: 700, borderRight: "1.5px solid #ffffff" }}>
-                          {r.country}
-                        </td>
-                        <td style={{ background: bg, padding: "8px 10px", fontWeight: 650, color: "#1e293b", borderRight: "1.5px solid #ffffff" }}>
-                          {r.food}
-                        </td>
-                        <td style={{ background: bg, padding: "8px 10px", fontWeight: 650, color: "#1e293b", borderRight: "1.5px solid #ffffff" }}>
-                          {r.clothing}
-                        </td>
-                        <td style={{ background: bg, padding: "8px 10px", fontWeight: 650, color: "#1e293b" }}>
-                          {r.leisure}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <div
-              style={{
-                background: "#f8fafc",
-                border: "1.5px solid #cbd5e1",
-                borderRadius: "10px",
-                overflow: "hidden"
-              }}
-            >
-              <img
-                src="materials/consumer_spending_table_2002.jpg"
-                alt="Consumer Spending Table Scan"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  objectFit: "contain"
-                }}
-              />
-            </div>
-          )}
-
-          {/* Quick Cross-Reference Insights Strip */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "0.76rem" }}>
-            <div
-              style={{
-                background: "#eff6ff",
-                border: "1px solid #bfdbfe",
-                borderRadius: "8px",
-                padding: "7px 10px",
-                color: "#1e40af",
-                lineHeight: 1.4
-              }}
-            >
-              <strong>Food/Drink/Tobacco:</strong> Ranks 1st in all 5 nations (Turkey 32.14% peak → Sweden 15.77% lowest).
-            </div>
-
-            <div
-              style={{
-                background: "#fff7ed",
-                border: "1px solid #fed7aa",
-                borderRadius: "8px",
-                padding: "7px 10px",
-                color: "#9a3412",
-                lineHeight: 1.4
-              }}
-            >
-              <strong>Clothing/Footwear:</strong> Ranks 2nd throughout (Italy 9.00% leader → Sweden 5.40% lowest).
-            </div>
-
-            <div
-              style={{
-                background: "#f0fdf4",
-                border: "1px solid #bbf7d0",
-                borderRadius: "8px",
-                padding: "7px 10px",
-                color: "#166534",
-                lineHeight: 1.4
-              }}
-            >
-              <strong>Leisure/Education:</strong> Ranks 3rd throughout (Turkey 4.35% leader → Spain 1.98% floor).
-            </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1 }}>
+            {MINDMAP_BRANCHES.map((b) => {
+              const isSelected = selectedBranchId === b.id;
+              return (
+                <button
+                  key={b.id}
+                  type="button"
+                  onClick={() => setSelectedBranchId(b.id)}
+                  style={{
+                    padding: "12px 14px",
+                    borderRadius: "12px",
+                    border: isSelected ? `2px solid ${b.color}` : "1.5px solid #e2e8f0",
+                    background: isSelected ? b.bgLight : "#f8fafc",
+                    textAlign: "left",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "10px",
+                    boxShadow: isSelected ? "0 4px 12px rgba(0,0,0,0.05)" : "none",
+                    transition: "all 0.15s ease"
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <div
+                      style={{
+                        width: "32px",
+                        height: "32px",
+                        borderRadius: "8px",
+                        background: isSelected ? b.color : "#ffffff",
+                        color: isSelected ? "#ffffff" : b.color,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        border: isSelected ? "none" : `1px solid ${b.borderColor}`
+                      }}
+                    >
+                      {b.icon}
+                    </div>
+                    <div>
+                      <div
+                        style={{
+                          fontSize: "0.88rem",
+                          fontWeight: 800,
+                          color: isSelected ? "#0f172a" : "#334155"
+                        }}
+                      >
+                        {b.title}
+                      </div>
+                      <div style={{ fontSize: "0.72rem", color: "#64748b" }}>
+                        {b.pieces.length} Essential Analytical Components
+                      </div>
+                    </div>
+                  </div>
+                  <ChevronRight size={16} color={isSelected ? b.color : "#94a3b8"} />
+                </button>
+              );
+            })}
           </div>
 
           {/* Active Branch Visual Correlation Callout */}
@@ -516,7 +434,7 @@ export const BitsAndPiecesMindmap: React.FC = () => {
             </p>
           </div>
 
-          {/* Pieces Cards List (Spacious & Clean with Zero Congestion) */}
+          {/* Pieces Cards List */}
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {activeBranch.pieces.map((p, idx) => (
               <div

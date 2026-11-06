@@ -18,7 +18,8 @@ import type {
   SchoolSpendingYearData,
   SpendingHotspot,
   ProcessStageItem,
-  ConcreteIngredientItem
+  ConcreteIngredientItem,
+  ProfessionWorkloadStress
 } from "../types";
 
 export type {
@@ -41,591 +42,441 @@ export type {
   SchoolSpendingYearData,
   SpendingHotspot,
   ProcessStageItem,
-  ConcreteIngredientItem
+  ConcreteIngredientItem,
+  ProfessionWorkloadStress
 };
 
 // ==========================================
-// 1. CONSUMER SPENDING TABLE DATA (2002)
+// 1. PROFESSIONS WORKLOAD & STRESS DATA
 // ==========================================
 
-export interface ConsumerSpendingCountryRow {
-  id: string;
-  country: string;
-  foodDrinkTobacco: number; // Percentage
-  clothingFootwear: number;
-  leisureEducation: number;
-  totalSpending?: number;
-  foodRank: number;
-  clothingRank: number;
-  leisureRank: number;
-  notableFeature: string;
-  band9Sentence: string;
-}
-
-export const CONSUMER_SPENDING_ROWS: ConsumerSpendingCountryRow[] = [
+export const PROFESSIONS_DATA: ProfessionWorkloadStress[] = [
   {
-    id: "turkey",
-    country: "Turkey",
-    foodDrinkTobacco: 32.14,
-    clothingFootwear: 6.63,
-    leisureEducation: 4.35,
-    foodRank: 1,
-    clothingRank: 2,
-    leisureRank: 1,
-    notableFeature: "Highest overall spender on Food (32.14%) and Leisure/Education (4.35%)",
+    id: "business-men",
+    profession: "Business men",
+    hoursWorked: 70,
+    stressPercentage: 11,
+    hoursRank: 1,
+    stressRank: 4,
+    color: "#ec4899",
+    notableFeature: "Highest weekly hours (70 hrs/week), yet only 11% of stress sufferers.",
     band9Sentence:
-      "“Turkey allocated nearly a third of all consumer expenditure to food, drinks, and tobacco (32.14%), representing the highest single proportion in the entire table, while also leading the leisure and education sector at 4.35%.”"
+      "“Business men logged the longest workweek by a considerable margin at 70 hours, yet accounted for only 11% of stress-related illnesses.”"
   },
   {
-    id: "ireland",
-    country: "Ireland",
-    foodDrinkTobacco: 28.91,
-    clothingFootwear: 6.43,
-    leisureEducation: 2.21,
-    foodRank: 2,
-    clothingRank: 4,
-    leisureRank: 4,
-    notableFeature: "Second highest food spending (28.91%), but modest leisure allocation (2.21%)",
+    id: "movie-producers",
+    profession: "Movie Producers",
+    hoursWorked: 60,
+    stressPercentage: 25,
+    hoursRank: 2,
+    stressRank: 1,
+    color: "#0284c7",
+    notableFeature: "Second longest hours (60 hrs/week) and the undisputed leader in stress illness (25% - one in four).",
     band9Sentence:
-      "“Ireland followed closely behind Turkey in sustenance spending, with 28.91% of consumer budgets directed towards food, drink, and tobacco.”"
+      "“Movie producers represented a full quarter (25%) of all stress-related illness cases, while working the second longest hours at 60 per week.”"
   },
   {
-    id: "spain",
-    country: "Spain",
-    foodDrinkTobacco: 18.80,
-    clothingFootwear: 6.51,
-    leisureEducation: 1.98,
-    foodRank: 3,
-    clothingRank: 3,
-    leisureRank: 5,
-    notableFeature: "Lowest leisure/education spending in entire table (1.98%), moderate food (18.80%)",
+    id: "doctors",
+    profession: "Doctors",
+    hoursWorked: 52,
+    stressPercentage: 15,
+    hoursRank: 3,
+    stressRank: 3,
+    color: "#e11d48",
+    notableFeature: "Worked 52 hours per week and constituted 15% of those suffering from stress-related ailments.",
     band9Sentence:
-      "“Spanish expenditure on food stood at 18.80%, while its spending on leisure and education was the lowest recorded in the entire table at just 1.98%.”"
+      "“Doctors worked an average of 52 hours weekly and made up 15% of individuals suffering from stress-induced conditions.”"
   },
   {
-    id: "italy",
-    country: "Italy",
-    foodDrinkTobacco: 16.36,
-    clothingFootwear: 9.00,
-    leisureEducation: 3.20,
-    foodRank: 4,
-    clothingRank: 1,
-    leisureRank: 3,
-    notableFeature: "Clear leader in Clothing & Footwear (9.00%), outspending all other nations",
+    id: "writers",
+    profession: "Writers",
+    hoursWorked: 45,
+    stressPercentage: 8,
+    hoursRank: 4,
+    stressRank: 6,
+    color: "#16a34a",
+    notableFeature: "Worked 45 hours per week and tied with lawyers at 8% of stress-related illness.",
     band9Sentence:
-      "“Italy was the undisputed leader in clothing and footwear expenditure at exactly 9.00%, outstripping all other surveyed countries by a noticeable margin.”"
+      "“Writers averaged 45 hours on the job each week and shared an identical 8% stress illness proportion with lawyers.”"
   },
   {
-    id: "sweden",
-    country: "Sweden",
-    foodDrinkTobacco: 15.77,
-    clothingFootwear: 5.40,
-    leisureEducation: 3.22,
-    foodRank: 5,
-    clothingRank: 5,
-    leisureRank: 2,
-    notableFeature: "Lowest proportion on Food (15.77%) and Clothing (5.40%), but second in Leisure (3.22%)",
+    id: "programmers",
+    profession: "Programmers",
+    hoursWorked: 40,
+    stressPercentage: 5,
+    hoursRank: 5,
+    stressRank: 8,
+    color: "#10b981",
+    notableFeature: "Standard 40-hour workweek with the lowest recorded stress percentage at just 5%.",
     band9Sentence:
-      "“Sweden registered the lowest spending figures for both sustenance (15.77%) and clothing (5.40%), yet allocated a comparatively healthy 3.22% to leisure and education.”"
+      "“Programmers completed a standard 40-hour workweek and registered the lowest incidence of stress-related illness at merely 5%.”"
+  },
+  {
+    id: "lawyers",
+    profession: "Lawyers",
+    hoursWorked: 35,
+    stressPercentage: 8,
+    hoursRank: 6,
+    stressRank: 6,
+    color: "#6366f1",
+    notableFeature: "Worked 35 hours per week with 8% suffering from stress illness.",
+    band9Sentence:
+      "“Lawyers worked an average of 35 hours weekly, contributing 8% to the total cohort of stress sufferers.”"
+  },
+  {
+    id: "chefs",
+    profession: "Chefs",
+    hoursWorked: 30,
+    stressPercentage: 10,
+    hoursRank: 7,
+    stressRank: 5,
+    color: "#f59e0b",
+    notableFeature: "Worked 30 hours per week and accounted for a tenth (10%) of stress illness sufferers.",
+    band9Sentence:
+      "“Chefs recorded an average of 30 hours of work per week and represented exactly one-tenth of stress-related illness cases.”"
+  },
+  {
+    id: "lecturers",
+    profession: "Lecturers",
+    hoursWorked: 25,
+    stressPercentage: 18,
+    hoursRank: 8,
+    stressRank: 2,
+    color: "#0d9488",
+    notableFeature: "Major Paradox: Worked the fewest hours (25 hrs/week), yet suffered the second highest stress level (18%).",
+    band9Sentence:
+      "“In stark contrast to working the shortest workweek at just 25 hours, lecturers made up the second largest proportion of stress sufferers at 18%.”"
   }
 ];
 
-export interface ConsumerSpendingCategorySummary {
-  id: "food" | "clothing" | "leisure";
-  title: string;
-  shortLabel: string;
-  rangeText: string;
-  highestCountry: string;
-  highestVal: number;
-  lowestCountry: string;
-  lowestVal: number;
-  color: string;
-  macroRole: string;
-  band9OverviewClause: string;
-}
-
-export const CONSUMER_CATEGORIES: ConsumerSpendingCategorySummary[] = [
-  {
-    id: "food",
-    title: "Food / Drink / Tobacco",
-    shortLabel: "Food & Sustenance",
-    rangeText: "15.77% – 32.14%",
-    highestCountry: "Turkey (32.14%)",
-    highestVal: 32.14,
-    lowestCountry: "Sweden (15.77%)",
-    lowestVal: 15.77,
-    color: "#2563eb",
-    macroRole: "Overwhelmingly dominant expenditure category across all five nations",
-    band9OverviewClause: "Food, drinks, and tobacco accounted for the largest proportion of consumer expenditure across all five surveyed nations."
-  },
-  {
-    id: "clothing",
-    title: "Clothing / Footwear",
-    shortLabel: "Clothing & Footwear",
-    rangeText: "5.40% – 9.00%",
-    highestCountry: "Italy (9.00%)",
-    highestVal: 9.00,
-    lowestCountry: "Sweden (5.40%)",
-    lowestVal: 5.40,
-    color: "#d97706",
-    macroRole: "Second highest spending category in every single nation",
-    band9OverviewClause: "Clothing and footwear consistently represented the second highest category of spending, led by Italy."
-  },
-  {
-    id: "leisure",
-    title: "Leisure / Education",
-    shortLabel: "Leisure & Education",
-    rangeText: "1.98% – 4.35%",
-    highestCountry: "Turkey (4.35%)",
-    highestVal: 4.35,
-    lowestCountry: "Spain (1.98%)",
-    lowestVal: 1.98,
-    color: "#059669",
-    macroRole: "Consistently the lowest expenditure share throughout all countries",
-    band9OverviewClause: "Leisure and education consistently accounted for the lowest share of consumer spending throughout."
-  }
-];
-
-// Backward compatibility shims
-export const SPENDING_CATEGORIES: SpendingCategoryItem[] = [
-  {
-    id: "teachers_salaries",
-    label: "Food/ Drink/ Tobacco (Dominant Category)",
-    shortLabel: "Food (15.77% – 32.14%)",
-    color: "#2563eb",
-    group: "staff",
-    y1981: 15.77,
-    y1991: 22.8,
-    y2001: 32.14,
-    netChange: 16.37,
-    trendType: "peak_dip",
-    trendDescription: "Turkey (32.14%) and Ireland (28.91%) lead sustenance spending.",
-    band9Phrase: "“Food, drink, and tobacco constituted the largest share of consumer expenditure in all five nations.”"
-  },
-  {
-    id: "other_workers_salaries",
-    label: "Clothing/ Footwear (Secondary Category)",
-    shortLabel: "Clothing (5.40% – 9.00%)",
-    color: "#d97706",
-    group: "staff",
-    y1981: 5.4,
-    y1991: 6.8,
-    y2001: 9.0,
-    netChange: 3.6,
-    trendType: "continuous_fall",
-    trendDescription: "Italy (9.00%) allocated the highest proportion to clothing, with Sweden lowest (5.40%).",
-    band9Phrase: "“Italy stood out as the largest spender on clothing and footwear at exactly 9.00%.”"
-  },
-  {
-    id: "furniture_and_equipment",
-    label: "Leisure/ Education (Minority Category)",
-    shortLabel: "Leisure (1.98% – 4.35%)",
-    color: "#059669",
-    group: "non_staff",
-    y1981: 1.98,
-    y1991: 3.0,
-    y2001: 4.35,
-    netChange: 2.37,
-    trendType: "fluctuated_surge",
-    trendDescription: "Leisure and education accounted for the smallest portion in every country, never exceeding 4.35%.",
-    band9Phrase: "“Leisure and education accounted for the lowest proportion of spending in every nation.”"
-  }
-];
-
-export const SPENDING_YEARS: SchoolSpendingYearData[] = [
-  {
-    year: 1981,
-    slices: [
-      { categoryId: "teachers_salaries", label: "Food/Drink/Tobacco", percentage: 55, color: "#2563eb" },
-      { categoryId: "other_workers_salaries", label: "Clothing/Footwear", percentage: 30, color: "#d97706" },
-      { categoryId: "furniture_and_equipment", label: "Leisure/Education", percentage: 15, color: "#059669" }
-    ],
-    totalStaffPercent: 85,
-    totalNonStaffPercent: 15,
-    topCategory: "Food/Drink/Tobacco (Turkey: 32.14%)",
-    lowestCategory: "Leisure/Education (Spain: 1.98%)",
-    notes: "Comparative table of consumer expenditure across 5 nations in 2002."
-  }
-];
-
-export const SPENDING_HOTSPOTS: SpendingHotspot[] = [
-  {
-    id: "turkey-food",
-    title: "Turkey: Peak Food Spender (32.14%)",
-    category: "Food/ Drink/ Tobacco",
-    y1981: 32.14,
-    y1991: 32.14,
-    y2001: 32.14,
-    trendText: "Nearly a third of total Turkish expenditure went towards sustenance.",
-    contrastKey: "Highest single value in the entire table.",
-    band9Sentence: "Turkey allocated the highest single proportion to food, drink, and tobacco at 32.14%.",
-    keyFeature: "Overwhelmingly highest spending figure across all categories and countries."
-  },
-  {
-    id: "ireland-food",
-    title: "Ireland: High Food Spender (28.91%)",
-    category: "Food/ Drink/ Tobacco",
-    y1981: 28.91,
-    y1991: 28.91,
-    y2001: 28.91,
-    trendText: "Second highest food expenditure, just 3.23% below Turkey.",
-    contrastKey: "Substantially higher than Italy, Spain, and Sweden.",
-    band9Sentence: "Ireland recorded the second highest food expenditure at 28.91%, far exceeding the remaining three nations.",
-    keyFeature: "Forms the top tier of food spenders alongside Turkey."
-  },
-  {
-    id: "italy-clothing",
-    title: "Italy: Leader in Clothing (9.00%)",
-    category: "Clothing/ Footwear",
-    y1981: 9.0,
-    y1991: 9.0,
-    y2001: 9.0,
-    trendText: "Italy spent 9.00% on clothing and footwear, well above the other four nations.",
-    contrastKey: "Outstrips Sweden (5.40%) by 3.6 percentage points.",
-    band9Sentence: "In terms of clothing and footwear, Italy was the clear leader, with consumers allocating 9.00% of expenditure.",
-    keyFeature: "The only country where clothing reached 9%."
-  },
-  {
-    id: "spain-leisure",
-    title: "Spain: Lowest Table Figure (1.98%)",
-    category: "Leisure/ Education",
-    y1981: 1.98,
-    y1991: 1.98,
-    y2001: 1.98,
-    trendText: "Leisure and education in Spain was the only figure in the entire table below 2%.",
-    contrastKey: "Lowest value in the entire dataset.",
-    band9Sentence: "Spain registered the lowest figure in the entire table, devoting a mere 1.98% to leisure and education.",
-    keyFeature: "Sub-2% national expenditure record."
-  },
-  {
-    id: "sweden-profile",
-    title: "Sweden: Frugal Sustenance & Apparel (15.77% & 5.40%)",
-    category: "Overall Profile",
-    y1981: 15.77,
-    y1991: 5.4,
-    y2001: 3.22,
-    trendText: "Sweden had the lowest spending on both food (15.77%) and clothing (5.40%).",
-    contrastKey: "Second highest in leisure/education (3.22%).",
-    band9Sentence: "Swedish consumers spent the lowest proportions on food (15.77%) and clothing (5.40%), yet allocated 3.22% to leisure.",
-    keyFeature: "Inverted spending dynamic compared to Turkey and Ireland."
-  }
-];
-
+// Compatibility shims
+export const SPENDING_CATEGORIES: SpendingCategoryItem[] = [];
+export const SPENDING_YEARS: SchoolSpendingYearData[] = [];
+export const SPENDING_HOTSPOTS: SpendingHotspot[] = [];
 export const CEMENT_PROCESS_STAGES: ProcessStageItem[] = [];
 export const CONCRETE_INGREDIENTS: ConcreteIngredientItem[] = [];
 
 // ==========================================
-// 2. MASTER TASK 1 DATA OBJECT (TABLE ANALYSIS)
+// 2. MASTER TASK 1 DATA OBJECT (DUAL CHART)
 // ==========================================
 
 export const TASK1_DATA: Task1Data = {
-  id: "consumer-spending-five-countries-2002-table",
-  taskType: "IELTS Academic Writing Task 1 • Comparative Table Analysis",
-  title: "Consumer Spending on Different Items in Five Countries (2002)",
+  id: "hours-worked-stress-levels-eight-occupations",
+  taskType: "IELTS Academic Writing Task 1 • Dual Bar & Pie Chart Analysis",
+  title: "Hours Worked and Stress Levels in Eight Occupations",
   companyName: "Cambridge IELTS Academic Writing Task 1",
-  unit: "Percentage of Consumer Expenditure (%)",
+  unit: "Hours per week (Bar Chart) & Proportion of Stress-Related Illness (%) (Pie Chart)",
   questionText:
-    "The table below gives information on consumer spending on different items in five different countries in 2002.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
-  imageFileName: "materials/consumer_spending_table_2002.jpg",
-  hdImageFileName: "materials/consumer_spending_table_2002.jpg",
-  scanImageFileName: "materials/consumer_spending_table_2002.jpg",
+    "The graphs show figures relating to hours worked and stress levels amongst professionals in eight groups.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+  imageFileName: "materials/hours_worked_stress_levels.jpg",
+  hdImageFileName: "materials/hours_worked_stress_levels.jpg",
+  scanImageFileName: "materials/hours_worked_stress_levels.jpg",
   audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
   audioClueText:
-    "The table compares consumer spending across Ireland, Italy, Spain, Sweden, and Turkey in 2002. Food, drink, and tobacco dominated spending across all five nations, while leisure and education consistently represented the smallest share.",
+    "The bar chart compares weekly hours worked across eight professions, led by business men at 70 hours and movie producers at 60 hours, with lecturers working the fewest at 25 hours. The pie chart displays stress-related illness, where movie producers suffer the highest rate at 25% and lecturers paradoxically rank second at 18%.",
   timingSeconds: 1200,
 
   sampleIntro:
-    "The table compares the proportion of national consumer expenditure allocated to three broad categories of goods and services across five European countries in 2002.",
+    "The bar chart and pie chart illustrate the average weekly working hours and the proportion of individuals suffering from stress-related illnesses across eight professional occupations.",
 
   sampleOverview:
-    "Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations, whereas leisure and education accounted for the smallest share of spending throughout. Furthermore, Turkish and Irish consumers devoted significantly larger proportions of their budgets to sustenance than their European counterparts, while Italy recorded the largest proportion spent on clothing and footwear.",
+    "Overall, business men committed the longest hours per week by a considerable margin, whereas lecturers logged the fewest hours. However, working time did not correlate directly with stress-related conditions; movie producers and lecturers constituted the two largest segments of stress sufferers, while programmers recorded the lowest prevalence of stress-induced illnesses.",
 
-  spendingCategories: SPENDING_CATEGORIES,
-  spendingYears: SPENDING_YEARS,
-  spendingHotspots: SPENDING_HOTSPOTS,
-
-  diagramData: {
-    hotspots: SPENDING_HOTSPOTS.map((h) => ({
-      id: h.id,
-      title: h.title,
-      zone: h.category,
-      normalState: h.contrastKey,
-      elNinoState: h.keyFeature,
-      contrastKey: h.contrastKey,
-      band9Sentence: h.band9Sentence
-    })),
-    comparisonsSummary: {
-      food_dominance: "Food, drink, and tobacco was by far the largest expenditure category in every country (15.77% to 32.14%).",
-      clothing_rank: "Clothing and footwear ranked second throughout, with Italy leading at 9.00%.",
-      leisure_minority: "Leisure and education received the lowest funding across all nations, ranging between 1.98% and 4.35%."
-    }
-  },
-  graphData: {
-    hotspots: SPENDING_HOTSPOTS.map((h) => ({
-      id: h.id,
-      title: h.title,
-      zone: h.category,
-      normalState: h.contrastKey,
-      elNinoState: h.keyFeature,
-      contrastKey: h.contrastKey,
-      band9Sentence: h.band9Sentence
-    })),
-    comparisonsSummary: {
-      highest_vs_lowest: "Turkey spent the most on food (32.14%) and leisure (4.35%), while Spain had the lowest single figure in leisure (1.98%)."
-    }
-  },
-
+  professionData: PROFESSIONS_DATA,
   formats: [],
   countries: [],
 
+  diagramData: {
+    hotspots: PROFESSIONS_DATA.map((p) => ({
+      id: p.id,
+      title: p.profession,
+      zone: `${p.hoursWorked} hrs/wk • ${p.stressPercentage}% stress`,
+      normalState: `Hours Rank: #${p.hoursRank} (${p.hoursWorked}h)`,
+      elNinoState: `Stress Rank: #${p.stressRank} (${p.stressPercentage}%)`,
+      contrastKey: p.notableFeature,
+      band9Sentence: p.band9Sentence
+    })),
+    comparisonsSummary: {
+      highest_hours: "Business men logged the longest workweek at 70 hours.",
+      highest_stress: "Movie producers experienced the greatest stress burden at 25%.",
+      lecturer_paradox: "Lecturers worked the least (25 hours) but suffered the second highest stress level (18%).",
+      lowest_stress: "Programmers recorded the lowest stress rate at just 5% with a standard 40-hour week."
+    }
+  },
+  graphData: {
+    hotspots: PROFESSIONS_DATA.map((p) => ({
+      id: p.id,
+      title: p.profession,
+      zone: `${p.hoursWorked} hrs/wk • ${p.stressPercentage}% stress`,
+      normalState: `Hours: ${p.hoursWorked} hrs`,
+      elNinoState: `Stress: ${p.stressPercentage}%`,
+      contrastKey: p.notableFeature,
+      band9Sentence: p.band9Sentence
+    })),
+    comparisonsSummary: {
+      hours_vs_stress: "Long working hours did not guarantee high stress levels, as seen in the contrast between business men and lecturers."
+    }
+  },
+
   vocabList: [
     {
-      word: "Consumer Expenditure",
-      term: "Consumer Expenditure",
-      phonetic: "/kənˈsjuːmər ɪkˈspendɪtʃər/",
-      meaning: "The total spending of households on goods and services within an economy.",
-      definition: "The total spending of households on goods and services within an economy.",
-      example: "Consumer expenditure was distributed across three primary categories in 2002.",
-      sampleSentence: "Consumer expenditure was distributed across three primary categories in 2002.",
-      collocations: ["national consumer expenditure", "allocated to consumer expenditure", "patterns of expenditure"]
+      word: "Stress-Related Illness",
+      term: "Stress-Related Illness",
+      phonetic: "/stres rɪˈleɪtɪd ˈɪlnəs/",
+      meaning: "Medical conditions or ailments triggered or exacerbated by occupational tension and pressure.",
+      definition: "Medical conditions or ailments triggered or exacerbated by occupational tension and pressure.",
+      example: "Movie producers accounted for a quarter of all individuals suffering from stress-related illness.",
+      sampleSentence: "Movie producers accounted for a quarter of all individuals suffering from stress-related illness.",
+      collocations: ["suffer from stress-related illness", "incidence of stress-related illness", "stress-induced conditions"]
     },
     {
-      word: "Sustenance",
-      term: "Sustenance",
-      phonetic: "/ˈsʌstənəns/",
-      meaning: "Food and drink regarded as a source of physical strength and nourishment.",
-      definition: "Food and drink regarded as a source of physical strength and nourishment.",
-      example: "Consumers in Turkey and Ireland dedicated substantial portions of their income to basic sustenance.",
-      sampleSentence: "Consumers in Turkey and Ireland dedicated substantial portions of their income to basic sustenance.",
-      collocations: ["expenditure on sustenance", "basic sustenance needs", "vital sustenance"]
+      word: "Log Hours",
+      term: "Log Hours",
+      phonetic: "/lɒɡ ˈaʊərz/",
+      meaning: "To work, record, or complete a specific number of working hours.",
+      definition: "To work, record, or complete a specific number of working hours.",
+      example: "Business men logged an average of 70 hours per week, far exceeding all other professions.",
+      sampleSentence: "Business men logged an average of 70 hours per week, far exceeding all other professions.",
+      collocations: ["log substantial hours", "logged the longest workweek", "log on the job"]
     },
     {
-      word: "Account For / Constitute",
-      term: "Account For / Constitute",
-      phonetic: "/əˈkaʊnt fɔːr/ – /ˈkɒnstɪtjuːt/",
-      meaning: "To form, comprise, or make up a specified proportion or fraction of a total.",
-      definition: "To form, comprise, or make up a specified proportion or fraction of a total.",
-      example: "Food and drink accounted for over 30% of total expenditure in Turkey.",
-      sampleSentence: "Food and drink accounted for over 30% of total expenditure in Turkey.",
-      collocations: ["account for nearly a third", "constitute the largest share", "account for the smallest portion"]
+      word: "In Marked Contrast",
+      term: "In Marked Contrast",
+      phonetic: "/ɪn mɑːkt ˈkɒntrɑːst/",
+      meaning: "Emphasizing a clear, sharp, and unmistakable difference between two data points.",
+      definition: "Emphasizing a clear, sharp, and unmistakable difference between two data points.",
+      example: "In marked contrast to business men, lecturers spent just 25 hours per week at work.",
+      sampleSentence: "In marked contrast to business men, lecturers spent just 25 hours per week at work.",
+      collocations: ["in marked contrast to", "marked contrast between", "stands in marked contrast"]
     },
     {
-      word: "Outstrip / Exceed",
-      term: "Outstrip / Exceed",
-      phonetic: "/aʊtˈstrɪp/ – /ɪkˈsiːd/",
-      meaning: "To be greater in quantity, degree, or proportion than something else.",
-      definition: "To be greater in quantity, degree, or proportion than something else.",
-      example: "Italian expenditure on clothing outstripped all other nations at exactly 9.00%.",
-      sampleSentence: "Italian expenditure on clothing outstripped all other nations at exactly 9.00%.",
-      collocations: ["outstrip all other nations", "exceed the average", "substantially outstrip"]
+      word: "Account For a Quarter",
+      term: "Account For a Quarter",
+      phonetic: "/əˈkaʊnt fɔːr ə ˈkwɔːtər/",
+      meaning: "To comprise or represent exactly 25% of a whole dataset.",
+      definition: "To comprise or represent exactly 25% of a whole dataset.",
+      example: "Movie producers accounted for a quarter (25%) of all reported stress cases.",
+      sampleSentence: "Movie producers accounted for a quarter (25%) of all reported stress cases.",
+      collocations: ["account for a quarter of the total", "constitute a quarter", "represent one in four"]
     },
     {
-      word: "By a Noticeable Margin",
-      term: "By a Noticeable Margin",
-      phonetic: "/baɪ ə ˈnəʊtɪsəbl ˈmɑːdʒɪn/",
-      meaning: "By an amount that is distinct, clearly visible, and statistically noteworthy.",
-      definition: "By an amount that is distinct, clearly visible, and statistically noteworthy.",
-      example: "Turkey led food expenditure by a noticeable margin over Sweden and Italy.",
-      sampleSentence: "Turkey led food expenditure by a noticeable margin over Sweden and Italy.",
-      collocations: ["lead by a noticeable margin", "surpass by a significant margin", "differ by a narrow margin"]
+      word: "Paradoxical Disparity",
+      term: "Paradoxical Disparity",
+      phonetic: "/ˌpærəˈdɒksɪkl dɪˈspærəti/",
+      meaning: "A surprising contradiction where reality contradicts logical expectation.",
+      definition: "A surprising contradiction where reality contradicts logical expectation.",
+      example: "A paradoxical disparity exists for lecturers, who worked the fewest hours yet suffered high stress.",
+      sampleSentence: "A paradoxical disparity exists for lecturers, who worked the fewest hours yet suffered high stress.",
+      collocations: ["paradoxical disparity", "apparent paradox", "contradictory pattern"]
     },
     {
-      word: "Cluster Around",
-      term: "Cluster Around",
-      phonetic: "/ˈklʌstər əˈraʊnd/",
-      meaning: "To group closely together within a narrow numeric or percentage band.",
-      definition: "To group closely together within a narrow numeric or percentage band.",
-      example: "Clothing spending in Spain, Turkey, and Ireland clustered closely around 6.5%.",
-      sampleSentence: "Clothing spending in Spain, Turkey, and Ireland clustered closely around 6.5%.",
-      collocations: ["cluster closely around", "clustered within a narrow range", "figures cluster near"]
+      word: "Standard Workweek",
+      term: "Standard Workweek",
+      phonetic: "/ˈstændəd ˈwɜːkwiːk/",
+      meaning: "The typical baseline of employment time, conventionally 40 hours per week.",
+      definition: "The typical baseline of employment time, conventionally 40 hours per week.",
+      example: "Programmers maintained a standard 40-hour workweek with the lowest stress levels.",
+      sampleSentence: "Programmers maintained a standard 40-hour workweek with the lowest stress levels.",
+      collocations: ["standard workweek", "conventional 40-hour workweek", "standard working baseline"]
     },
     {
-      word: "Apparel & Footwear",
-      term: "Apparel & Footwear",
-      phonetic: "/əˈpærəl ænd ˈfʊtweər/",
-      meaning: "Clothing, garments, shoes, and wearable personal attire.",
-      definition: "Clothing, garments, shoes, and wearable personal attire.",
-      example: "Italy directed nearly a tenth of its spending towards apparel and footwear.",
-      sampleSentence: "Italy directed nearly a tenth of its spending towards apparel and footwear.",
-      collocations: ["outlay on apparel", "expenditure on footwear", "clothing and apparel"]
+      word: "By a Considerable Margin",
+      term: "By a Considerable Margin",
+      phonetic: "/baɪ ə kənˈsɪdərəbl ˈmɑːdʒɪn/",
+      meaning: "By a noticeable, significant, and undeniable difference in quantity.",
+      definition: "By a noticeable, significant, and undeniable difference in quantity.",
+      example: "Business men outworked all other professions by a considerable margin.",
+      sampleSentence: "Business men outworked all other professions by a considerable margin.",
+      collocations: ["lead by a considerable margin", "surpass by a considerable margin", "differ by a margin"]
     },
     {
-      word: "Represent the Smallest Share",
-      term: "Represent the Smallest Share",
-      phonetic: "/ˌreprɪˈzent ðə ˈsmɔːlɪst ʃeər/",
-      meaning: "To form the lowest numerical fraction or minority percentage among all categories.",
-      definition: "To form the lowest numerical fraction or minority percentage among all categories.",
-      example: "Leisure and education represented the smallest share in every surveyed country.",
-      sampleSentence: "Leisure and education represented the smallest share in every surveyed country.",
-      collocations: ["represent the smallest share", "account for the lowest fraction", "smallest portion throughout"]
+      word: "Prevalence",
+      term: "Prevalence",
+      phonetic: "/ˈprevələns/",
+      meaning: "The proportion or frequency of a condition found to affect a particular population.",
+      definition: "The proportion or frequency of a condition found to affect a particular population.",
+      example: "The prevalence of stress illness was lowest among programmers at only 5%.",
+      sampleSentence: "The prevalence of stress illness was lowest among programmers at only 5%.",
+      collocations: ["prevalence of stress illness", "lowest prevalence", "high prevalence rate"]
     },
     {
-      word: "Respectively",
-      term: "Respectively",
-      phonetic: "/rɪˈspektɪvli/",
-      meaning: "Separately or individually in the exact order previously mentioned.",
-      definition: "Separately or individually in the exact order previously mentioned.",
-      example: "Turkey and Ireland allocated 32.14% and 28.91% to food, respectively.",
-      sampleSentence: "Turkey and Ireland allocated 32.14% and 28.91% to food, respectively.",
-      collocations: ["standing at X and Y respectively", "recorded respectively", "allocated respectively"]
+      word: "Opposite End of the Spectrum",
+      term: "Opposite End of the Spectrum",
+      phonetic: "/ˈɒpəzɪt end əv ðə ˈspektrəm/",
+      meaning: "Occupying the diametrically extreme lowest or highest position in a comparison.",
+      definition: "Occupying the diametrically extreme lowest or highest position in a comparison.",
+      example: "At the opposite end of the spectrum, lecturers recorded only 25 hours per week.",
+      sampleSentence: "At the opposite end of the spectrum, lecturers recorded only 25 hours per week.",
+      collocations: ["at the opposite end of the spectrum", "opposite extreme", "polar opposite"]
     },
     {
-      word: "Disproportionately",
-      term: "Disproportionately",
-      phonetic: "/ˌdɪsprəˈpɔːʃənətli/",
-      meaning: "To a degree that is unequal or out of proportion compared to other entities.",
-      definition: "To a degree that is unequal or out of proportion compared to other entities.",
-      example: "Turkish consumers spent disproportionately high amounts on sustenance compared to leisure.",
-      sampleSentence: "Turkish consumers spent disproportionately high amounts on sustenance compared to leisure.",
-      collocations: ["disproportionately high", "allocated disproportionately", "disproportionate share"]
+      word: "Direct Correlation",
+      term: "Direct Correlation",
+      phonetic: "/daɪˈrekt ˌkɒrəˈleɪʃn/",
+      meaning: "A mutual relationship where an increase in one variable corresponds to an increase in another.",
+      definition: "A mutual relationship where an increase in one variable corresponds to an increase in another.",
+      example: "There was no direct correlation between long working hours and the percentage of stress sufferers.",
+      sampleSentence: "There was no direct correlation between long working hours and the percentage of stress sufferers.",
+      collocations: ["direct correlation between", "positive correlation", "lack of direct correlation"]
     },
     {
-      word: "Undisputed Leader",
-      term: "Undisputed Leader",
-      phonetic: "/ˌʌndɪˈspjuːtɪd ˈliːdər/",
-      meaning: "The entity that holds the clear, acknowledged highest position without rivalry.",
-      definition: "The entity that holds the clear, acknowledged highest position without rivalry.",
-      example: "Italy was the undisputed leader in apparel expenditure at 9.00%.",
-      sampleSentence: "Italy was the undisputed leader in apparel expenditure at 9.00%.",
-      collocations: ["undisputed leader", "clear leader in spending", "lead all surveyed nations"]
+      word: "Identical Proportion",
+      term: "Identical Proportion",
+      phonetic: "/aɪˈdentɪkl prəˈpɔːʃn/",
+      meaning: "Sharing the exact same percentage or numerical share as another group.",
+      definition: "Sharing the exact same percentage or numerical share as another group.",
+      example: "Writers and lawyers accounted for an identical proportion of stress illness at 8% each.",
+      sampleSentence: "Writers and lawyers accounted for an identical proportion of stress illness at 8% each.",
+      collocations: ["share an identical proportion", "identical share of 8%", "equal proportions"]
     },
     {
-      word: "Sub-Two Percent",
-      term: "Sub-Two Percent",
-      phonetic: "/sʌb tuː pəˈsent/",
-      meaning: "Falling below the threshold of two percentage points (under 2.0%).",
-      definition: "Falling below the threshold of two percentage points (under 2.0%).",
-      example: "Spain was the solitary country with a sub-two percent allocation for leisure and education.",
-      sampleSentence: "Spain was the solitary country with a sub-two percent allocation for leisure and education.",
-      collocations: ["sub-two percent figure", "sub-five percent share", "minority proportion"]
+      word: "Constitutes the Smallest Segment",
+      term: "Constitutes the Smallest Segment",
+      phonetic: "/ˈkɒnstɪtjuːts ðə ˈsmɔːlɪst ˈseɡmənt/",
+      meaning: "Forms the lowest fraction or slice in a comparative breakdown.",
+      definition: "Forms the lowest fraction or slice in a comparative breakdown.",
+      example: "At merely 5%, programmers constituted the smallest segment of the pie chart.",
+      sampleSentence: "At merely 5%, programmers constituted the smallest segment of the pie chart.",
+      collocations: ["constitute the smallest segment", "form the smallest portion", "minimal segment"]
     }
   ],
 
   vocabHunt: [
-    "consumer expenditure",
-    "sustenance",
-    "account for",
-    "outstrip",
-    "by a noticeable margin",
-    "cluster around",
-    "apparel",
-    "represent the smallest share",
-    "respectively",
-    "disproportionately",
-    "undisputed leader",
-    "sub-two percent"
+    "stress-related illness",
+    "log hours",
+    "in marked contrast",
+    "account for a quarter",
+    "paradoxical disparity",
+    "standard workweek",
+    "by a considerable margin",
+    "prevalence",
+    "opposite end of the spectrum",
+    "direct correlation",
+    "identical proportion",
+    "smallest segment"
   ],
 
   bp1: {
-    title: "Body 1: Food, Drink, and Tobacco (The Dominant Expenditure)",
-    focus: "Report and compare the largest category across all five nations (Turkey & Ireland leading vs Spain, Italy, Sweden).",
+    title: "Body 1: Weekly Hours Worked (The Bar Chart Breakdown)",
+    focus: "Report and rank working hours from longest (business men & movie producers) down to shortest (chefs & lecturers).",
     points: [
-      "Turkey allocated the largest share of any nation to food, drink, and tobacco at nearly a third (32.14%).",
-      "Ireland followed closely in second position with 28.91% devoted to sustenance.",
-      "In marked contrast, Spain recorded 18.80%, while Italy and Sweden registered the lowest proportions in this category at 16.36% and 15.77% respectively."
+      "Business men worked the longest week of all professions at 70 hours.",
+      "Movie producers and doctors followed with 60 and 52 hours per week respectively.",
+      "Writers averaged 45 hours, while programmers completed a standard 40-hour workweek.",
+      "Lawyers (35 hours) and chefs (30 hours) worked noticeably less, with lecturers recording the lowest figure at 25 hours."
     ]
   },
 
   bp2: {
-    title: "Body 2: Clothing/Footwear and Leisure/Education (Secondary & Minority Shares)",
-    focus: "Report Italy's lead in clothing (9.00%) and contrast with the minor figures for leisure and education (1.98% to 4.35%).",
+    title: "Body 2: Stress-Related Illness (The Pie Chart & Key Contrasts)",
+    focus: "Report the pie chart percentages and highlight the central paradoxes (movie producers 25%, lecturers 18% vs business men 11%).",
     points: [
-      "In clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outspending Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), while Sweden trailed at 5.40%.",
-      "Leisure and education constituted the smallest expenditure throughout, with Turkey again highest at 4.35%, followed by Sweden (3.22%) and Italy (3.20%).",
-      "Ireland allocated 2.21%, while Spain registered the lowest single figure in the entire table at a mere 1.98%."
+      "Movie producers constituted a quarter (25%) of all stress illness sufferers, forming the largest single group.",
+      "Paradoxically, lecturers represented the second highest proportion at 18%, despite logging the fewest hours.",
+      "Doctors made up 15%, while business men accounted for 11% despite their 70-hour workweek.",
+      "Chefs comprised 10%, writers and lawyers shared an identical 8%, and programmers had the lowest rate at 5%."
     ]
   },
 
   processingGroups: [
     {
-      title: "1. Food & Drink: Dominant Cluster",
+      title: "1. Workweek Leaders (50–70 Hours)",
       items: [
-        "Turkey: 32.14% (Highest in entire table)",
-        "Ireland: 28.91% (Second highest food share)",
-        "Spain (18.80%), Italy (16.36%), Sweden (15.77%)"
+        "Business men: 70 hours (Peak of entire bar chart)",
+        "Movie Producers: 60 hours (Second longest)",
+        "Doctors: 52 hours (Exceeding 50 hours)"
       ]
     },
     {
-      title: "2. Clothing & Footwear: Moderate Outlay",
+      title: "2. Mid-Tier Workloads (35–45 Hours)",
       items: [
-        "Italy: 9.00% (National leader in clothing)",
-        "Turkey (6.63%), Spain (6.51%), Ireland (6.43%)",
-        "Sweden: 5.40% (Lowest apparel expenditure)"
+        "Writers: 45 hours (Moderate overtime)",
+        "Programmers: 40 hours (Standard baseline)",
+        "Lawyers: 35 hours (Sub-40 hours)"
       ]
     },
     {
-      title: "3. Leisure & Education: Minor Fraction",
+      title: "3. Shortest Workweeks (25–30 Hours)",
       items: [
-        "Turkey: 4.35% (Peak leisure spending)",
-        "Sweden (3.22%) & Italy (3.20%) closely matched",
-        "Ireland (2.21%) & Spain (1.98% - lowest in table)"
+        "Chefs: 30 hours per week",
+        "Lecturers: 25 hours (Lowest across all 8 groups)"
+      ]
+    },
+    {
+      title: "4. Stress Illness Outliers (Pie Chart)",
+      items: [
+        "Movie Producers: 25% (1 in 4 stress cases - Highest)",
+        "Lecturers: 18% (2nd Highest despite lowest hours!)",
+        "Doctors (15%) & Business men (11%)",
+        "Chefs (10%), Writers & Lawyers (8% each)",
+        "Programmers: 5% (Lowest stress rate)"
       ]
     }
   ],
 
   connectors: [
     {
-      phrase: "In terms of / Regarding...",
-      purpose: "Category Transition Marker",
-      example: "In terms of clothing and footwear, Italy was the undisputed leader at 9.00%."
+      phrase: "Regarding weekly working hours,...",
+      purpose: "Category Transition Marker for Chart 1",
+      example: "Regarding weekly working hours, business men were the clear leaders, logging 70 hours per week."
+    },
+    {
+      phrase: "Turning to stress-related illness,...",
+      purpose: "Category Transition Marker for Chart 2",
+      example: "Turning to stress-related illness, movie producers accounted for a quarter of all cases."
     },
     {
       phrase: "In marked contrast,...",
       purpose: "Sharp Comparative Pivot",
-      example: "In marked contrast to Turkey's 32.14%, Swedish consumers spent just 15.77% on food."
+      example: "In marked contrast to business men, lecturers spent just 25 hours per week at work."
     },
     {
       phrase: "..., standing at X and Y respectively.",
       purpose: "Orderly Multiple Data Reporting",
-      example: "Turkey and Ireland led food expenditure, standing at 32.14% and 28.91% respectively."
+      example: "Movie producers and doctors followed, standing at 60 and 52 hours respectively."
     },
     {
-      phrase: "..., closely followed by...",
-      purpose: "Sequential Comparative Ranking",
-      example: "Turkey was the highest spender on food, closely followed by Ireland at 28.91%."
+      phrase: "Remarkably,... / Paradoxically,...",
+      purpose: "Counter-Intuitive Trend Marker",
+      example: "Remarkably, lecturers constituted the second highest proportion at 18%, despite working the shortest workweek."
     },
     {
-      phrase: "Outstripping all other surveyed nations,...",
-      purpose: "Participial Superlative Framing",
-      example: "Outstripping all other surveyed nations, Italy dedicated 9.00% to clothing and footwear."
-    },
-    {
-      phrase: "Registering the lowest proportion throughout,...",
+      phrase: "At the opposite end of the spectrum,...",
       purpose: "Bottom-Rank Reporting Marker",
-      example: "Registering the lowest proportion throughout, Spain spent a mere 1.98% on leisure and education."
+      example: "At the opposite end of the spectrum, programmers represented the lowest share of stress sufferers at merely 5%."
     }
   ],
 
   modelReport: {
-    wordCount: 182,
+    wordCount: 216,
     paragraphs: [
       {
         id: "intro",
-        title: "Introduction: Table Scope & Parameter Paraphrase",
-        text: "The table compares the proportion of national consumer expenditure allocated to three broad categories of goods and services across five European countries in 2002.",
+        title: "Introduction: Dual Visual Scope & Parameter Paraphrase",
+        text: "The bar chart and pie chart illustrate the average weekly working hours and the proportion of individuals suffering from stress-related illnesses across eight professional occupations.",
         wordCount: 24,
-        badges: ["Paraphrase", "3 Categories", "5 Countries", "Year 2002"]
+        badges: ["Paraphrase", "Bar & Pie Charts", "8 Occupations", "Hours & Stress Levels"]
       },
       {
         id: "overview",
-        title: "Macro Overview: Key Trends & Outliers (NO NUMBERS)",
-        text: "Overall, consumer expenditure was consistently highest on food, drinks, and tobacco across all five nations, whereas leisure and education accounted for the smallest share of spending throughout. Furthermore, Turkish and Irish consumers devoted significantly larger proportions of their budgets to sustenance than their European counterparts, while Italy recorded the largest proportion spent on clothing and footwear.",
-        wordCount: 57,
-        badges: ["Macro Trends", "Zero Numerical Figures", "Food Dominance", "Italian Apparel Lead"]
+        title: "Macro Overview: Key Trends & Central Paradox (NO NUMBERS)",
+        text: "Overall, business men committed the longest hours per week by a considerable margin, whereas lecturers logged the fewest hours. However, working time did not correlate directly with stress-related conditions; movie producers and lecturers constituted the two largest segments of stress sufferers, while programmers recorded the lowest prevalence of stress-induced illnesses.",
+        wordCount: 52,
+        badges: ["Macro Trends", "Zero Numerical Figures", "Hours Peak (Business men)", "Lecturer & Producer Stress Lead"]
       },
       {
         id: "body1",
-        title: "Body Paragraph 1: Food, Drink, and Tobacco (The Major Category)",
-        text: "In terms of food, drinks, and tobacco, Turkey allocated the highest proportion of any country, with nearly a third of all consumer expenditure (32.14%) directed towards this category. Ireland followed closely behind at 28.91%. In marked contrast, the remaining three nations registered substantially lower figures; Spain recorded 18.80%, while Italy and Sweden spent the least on sustenance at 16.36% and 15.77% respectively.",
-        wordCount: 65,
-        badges: ["Top Tier (Turkey & Ireland)", "Lower Tier (Spain, Italy, Sweden)", "Comparative Linking"]
+        title: "Body Paragraph 1: Weekly Hours Worked (Bar Chart Analysis)",
+        text: "Regarding weekly working hours, business men were the clear leaders, logging 70 hours per week, followed by movie producers and doctors at 60 and 52 hours respectively. Writers worked an average of 45 hours, while programmers completed a standard 40-hour workweek. In contrast, lawyers and chefs spent noticeably less time on the job, recording 35 and 30 hours respectively. Finally, lecturers worked the fewest hours among all surveyed professions at just 25 hours per week.",
+        wordCount: 69,
+        badges: ["Top Tier (70h & 60h)", "Mid Tier (52h, 45h, 40h)", "Lower Tier (35h, 30h, 25h)"]
       },
       {
         id: "body2",
-        title: "Body Paragraph 2: Clothing/Footwear & Leisure/Education",
-        text: "Turning to clothing and footwear, Italy was the undisputed leader at exactly 9.00%, outstripping Turkey (6.63%), Spain (6.51%), and Ireland (6.43%), with Sweden recording the lowest share at 5.40%. Finally, leisure and education represented the smallest expenditure throughout all five nations; Turkey again topped the list at 4.35%, followed by Sweden (3.22%) and Italy (3.20%), while Spain registered the lowest single figure in the table at just 1.98%.",
-        wordCount: 69,
-        badges: ["Italy Clothing Lead (9.00%)", "Clustered Nations (6.4–6.6%)", "Spain Lowest Value (1.98%)"]
+        title: "Body Paragraph 2: Stress-Related Illness & Correlations (Pie Chart Analysis)",
+        text: "Turning to stress-related illness, movie producers accounted for a quarter (25%) of all cases, representing the largest single category. Remarkably, lecturers constituted the second highest proportion at 18%, despite working the shortest workweek. Doctors formed 15% of the total, while business men made up 11%, even though they had the highest working hours. Chefs accounted for 10%, while writers and lawyers each contributed an identical 8%. Lastly, programmers represented the lowest share of stress sufferers at merely 5%.",
+        wordCount: 71,
+        badges: ["Producer Lead (25%)", "Lecturer Paradox (18%)", "Business Men Contrast (11%)", "Programmer Minimum (5%)"]
       }
     ]
   }

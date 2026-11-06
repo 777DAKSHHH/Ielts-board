@@ -159,7 +159,7 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
             </div>
             <div style={{ fontSize: "0.74rem", color: "var(--slate-500)", fontWeight: 600 }}>
               {currentModule === "general1"
-                ? "Semi-Formal 5-Paragraph Architectural Rules"
+                ? "Informal 5-Paragraph Architectural Rules"
                 : currentModule === "cambridge7test2"
                 ? "Passages 1–3 • Exact Locations & Explanations"
                 : `Step ${currentStep} of ${totalSteps}`}

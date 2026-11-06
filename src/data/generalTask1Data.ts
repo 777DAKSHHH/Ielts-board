@@ -44,52 +44,52 @@ export interface GeneralTask1Data {
     term: string;
     definition: string;
     example: string;
-    category: "Problem Description" | "Constructive Solutions" | "Escalation & Legal Action" | "Semi-Formal Register";
+    category: "Festive Traditions" | "Cultural Significance" | "Personal Impressions" | "Informal Conversational";
   }[];
 }
 
 export const GENERAL_TASK1_DATA: GeneralTask1Data = {
-  id: "general-task1-neighbour-problem-complaint",
+  id: "general-task1-new-year-friend-project",
   taskType: "IELTS General Training • Writing Task 1",
-  letterType: "Semi-Formal",
-  title: "Addressing a Persistent Problem with a Neighbour",
+  letterType: "Informal",
+  title: "Helping a Friend with a College Project on New Year Celebrations",
   questionText:
-    "You have had a problem with your neighbour for the past few months. You have not been able to meet your neighbour to discuss the problem. Write a letter to your neighbour.\n\nIn your letter,\n• Explain the problem\n• Suggest a solution\n• Explain what action you will take if the situation does not improve",
-  salutation: "Dear Mr. Patel,",
-  signoff: "Yours sincerely,",
-  senderName: "Chirag Mehta",
-  wordCount: 178,
+    "You have had a friend who has asked for your help with a college project he/she is doing about celebrating New Year in a different country. Write a letter to your friend.\n\nIn your letter,\n• Say how important New Year is to people in your country\n• Describe how New Year is celebrated in your country\n• Explain what you like about New Year celebration in your country",
+  salutation: "Dear Alex,",
+  signoff: "Warm regards,",
+  senderName: "Devang",
+  wordCount: 195,
 
   pptFormatRules: [
     {
       stage: "1. Salutation",
-      description: "Semi-Formal greeting using neighbor's surname (Dear Mr./Ms. [Surname],)",
-      specificRule: "Never use informal 'Hi' or overly formal 'Dear Sir/Madam' when writing to a known neighbor."
+      description: "Informal friendly greeting using first name only (Dear [First Name],)",
+      specificRule: "Never use formal 'Dear Mr. Smith' or 'Dear Sir/Madam' when writing to a personal friend."
     },
     {
       stage: "2. Opening (Paragraph 1)",
-      description: "State 'Who are you?' followed immediately by 'Why are you writing?'",
-      specificRule: "Identify your residence clearly: 'My name is [Name], your next-door neighbor at [Apt]... I am writing this letter to bring an issue to your attention...'"
+      description: "Warm social opening & immediate acknowledgement of the college project request.",
+      specificRule: "Enquire warmly about their wellbeing and enthusiastically offer assistance: 'It was fantastic to hear from you... I would love to help with your college project...'"
     },
     {
       stage: "3. Body Para 1 (Bullet 1)",
-      description: "Explain the problem in detail with dates, times, and why in-person meeting failed.",
-      specificRule: "CRITICAL PPT RULE: Do NOT begin Body Paragraph 1 / Bullet 1 with a linker!"
+      description: "Say how important New Year is to people in your country (cultural & spiritual significance).",
+      specificRule: "Explain the deep-rooted cultural importance: renewal, spiritual fresh start, family bonding, and auspicious beginnings."
     },
     {
       stage: "4. Body Para 2 (Bullet 2)",
-      description: "Suggest constructive, practical, and courteous solutions.",
-      specificRule: "CRITICAL PPT RULE: Begin with a SUPPORTING LINKER (e.g. Furthermore, In addition to this, Additionally, Apart from this)."
+      description: "Describe how New Year is celebrated in your country (decorations, rituals, food, greetings).",
+      specificRule: "Provide sensory, colorful details: thorough house cleaning, rangoli patterns, temple visits, blessings from elders ('Saal Mubarak'), and traditional festive sweets."
     },
     {
       stage: "5. Body Para 3 (Bullet 3)",
-      description: "Explain subsequent steps if unresolved (building management / municipal council).",
-      specificRule: "CRITICAL PPT RULE: Begin with a CONTRADICTING LINKER (e.g. However, On the other hand, On the contrary)."
+      description: "Explain what you personally like about New Year celebration in your country.",
+      specificRule: "Highlight personal connection: the boundless warmth, forgiveness of past grudges, open-door hospitality, and sense of community harmony."
     },
     {
       stage: "6. Closing & Sign-off",
-      description: "Assertive yet polite expectation of resolution + Semi-formal closure.",
-      specificRule: "Tone: 'I trust/hope you will resolve this...' + 'Yours sincerely,' + Real Full Name (NO XYZ)."
+      description: "Warm concluding offer + Informal sign-off with first name.",
+      specificRule: "Offer further project support: 'Let me know if you need photos or further details...' + 'Warm regards,' / 'Best wishes,' + First name only ('Devang')."
     }
   ],
 
@@ -97,224 +97,188 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
     {
       id: "bullet-1",
       bulletNumber: 1,
-      promptText: "Explain the problem",
-      targetParagraph: "The Problem & Failed In-Person Meeting (Paragraph 2)",
-      linkerRule: "DO NOT start with a linker (PPT Slide 7 Rule)",
+      promptText: "Say how important New Year is to people in your country",
+      targetParagraph: "Body Paragraph 1",
+      linkerRule: "Natural transition establishing cultural context (e.g. 'To begin with', 'In my country')",
       explanation:
-        "Detail the nature of the issue (late-night television/music noise, hours between 11:30 PM and 2:00 AM), explain that conflicting shifts prevented meeting in person, and state the personal impact (sleep deprivation).",
+        "Frame the celebration within Indian / Gujarati culture (Bestu Varas / Diwali season), highlighting how it symbolizes spiritual renewal, financial closure, and family unity across generations.",
       modelExcerpt:
-        "“For the past three months, excessive noise has been emanating from your apartment late at night, particularly loud television audio and heavy bass music between 11:30 PM and 2:00 AM on weekdays. I have knocked on your door on several occasions to discuss this in person, but our contrasting work schedules have made a face-to-face meeting impossible. This persistent disturbance severely disrupts my sleep, leaving me chronically exhausted for my early morning commitments.”",
+        "In India, and particularly in my home state of Gujarat, New Year—known locally as Bestu Varas—is celebrated right after Diwali and holds immense spiritual and cultural importance. It symbolizes a clean slate, marking a time when people close old financial accounts, forgive past grievances, and welcome prosperity and positivity into their lives. For families, it is by far the most anticipated time of the year.",
       keyCollocations: [
-        "excessive noise emanating from your apartment",
-        "between 11:30 PM and 2:00 AM on weekdays",
-        "contrasting work schedules",
-        "face-to-face meeting impossible",
-        "chronically exhausted for morning commitments"
+        "spiritual and cultural importance",
+        "symbolizes a clean slate",
+        "forgive past grievances",
+        "welcome prosperity"
       ]
     },
     {
       id: "bullet-2",
       bulletNumber: 2,
-      promptText: "Suggest a solution",
-      targetParagraph: "Constructive & Practical Remedies (Paragraph 3)",
-      linkerRule: "Must begin with a Supporting Linker: 'Furthermore,' (PPT Slide 8 & 9 Rule)",
+      promptText: "Describe how New Year is celebrated in your country",
+      targetParagraph: "Body Paragraph 2",
+      linkerRule: "Descriptive sequencing linkers (e.g. 'The festivities begin with', 'On the day itself', 'Furthermore')",
       explanation:
-        "Offer realistic, reasonable compromises: lowering volume after 10 PM on weeknights, wearing wireless headphones, or moving sound equipment away from shared walls / adding a rug.",
+        "Walk your friend through authentic visual customs: cleaning and decorating homes with rangoli and diyas, donning new clothes, touching elders' feet for blessings, visiting neighbors, and relishing festive treats.",
       modelExcerpt:
-        "“Furthermore, I would like to propose a straightforward and practical compromise that would resolve this matter comfortably for both of us. If you could kindly lower the volume after 10:00 PM on weeknights or consider utilizing wireless headphones when watching television late, it would make an immediate difference. Alternatively, positioning your sound system away from the shared bedroom wall or placing a thick rug underneath would significantly dampen the acoustic vibrations.”",
+        "The preparations start days beforehand with rigorous house cleaning and decorating front porches with intricate, colorful rangoli patterns and oil lamps. On New Year’s Day, we wake up at dawn, dress in vibrant traditional attire, and head to local temples for early morning prayers. Afterwards, we visit relatives and neighbors to exchange the traditional greeting of 'Saal Mubarak' (Happy New Year) and touch the feet of our elders to receive their blessings. The day is filled with bursting fireworks and sharing lavish homemade sweets such as kaju katli and ghughra.",
       keyCollocations: [
-        "propose a straightforward compromise",
-        "lower the volume after 10:00 PM",
-        "utilizing wireless headphones",
-        "shared bedroom wall",
-        "dampen the acoustic vibrations"
+        "intricate rangoli patterns",
+        "vibrant traditional attire",
+        "touch the feet of our elders",
+        "lavish homemade sweets"
       ]
     },
     {
       id: "bullet-3",
       bulletNumber: 3,
-      promptText: "Explain what action you will take if the situation does not improve",
-      targetParagraph: "Formal Escalation & Legal Recourse (Paragraph 4)",
-      linkerRule: "Must begin with a Contradicting Linker: 'However,' (PPT Slide 8 & 9 Rule)",
+      promptText: "Explain what you like about New Year celebration in your country",
+      targetParagraph: "Body Paragraph 3",
+      linkerRule: "Personal reflection marker (e.g. 'What I love most about it is', 'The aspect I cherish the most')",
       explanation:
-        "Outline clear, polite escalation measures if the nuisance continues: reporting to building management committee and lodging a noise complaint with the municipal council, while expressing a sincere desire to avoid conflict.",
+        "Express genuine heartfelt appreciation for the open-door hospitality, the spirit of universal reconciliation, and the joyous community vibe where everyone feels included.",
       modelExcerpt:
-        "“However, if this excessive noise continues unabated and no discernible effort is made to rectify the situation, I will be left with no choice but to escalate this matter to the building management committee and lodge a formal complaint with the local municipal council for noise ordinance violations. I sincerely hope this will not be necessary, as I genuinely value maintaining a cordial and respectful relationship between neighbours.”",
+        "What I cherish most about our New Year is the sheer warmth and open-hearted hospitality. Front doors are kept wide open all day, and anyone can drop by without an appointment to celebrate and share food. There is no lingering bitterness—old disputes are dissolved with warm hugs, creating an infectious sense of harmony that brings the entire community together.",
       keyCollocations: [
-        "continues unabated",
-        "no discernible effort is made",
-        "left with no choice but to escalate",
-        "building management committee",
-        "lodge a formal complaint with the municipal council",
-        "cordial and respectful relationship"
+        "open-hearted hospitality",
+        "sheer warmth",
+        "drop by without an appointment",
+        "infectious sense of harmony"
       ]
     }
   ],
 
   paragraphs: [
     {
-      id: "salutation",
-      title: "Salutation",
-      purpose: "Semi-formal greeting using neighbour's surname (PPT Slide 5)",
-      text: "Dear Mr. Patel,",
-      wordCount: 3,
-      ruleHighlight: "Semi-Formal: Dear + Title + Surname (Never Dear Sir/Madam for a known neighbour)"
+      id: "opening",
+      title: "Opening Paragraph: Friendly Social Opening & Project Acknowledgement",
+      purpose: "Warm social greeting + Enthusiastic response to your friend's project request",
+      text: "It was wonderful to hear from you! I hope everything is going well with your studies. I would be more than happy to help you with your college project on international New Year celebrations—it sounds like a fascinating topic!",
+      wordCount: 41,
+      ruleHighlight: "Informal tone: enthusiastic, supportive, and immediately addressing the friend's request."
     },
     {
-      id: "p1",
-      title: "Paragraph 1: Identification & Reason for Writing",
-      purpose: "State who you are and clearly declare the purpose of the letter (PPT Slide 6)",
-      text: "My name is Chirag Mehta, and I am your next-door neighbour residing at Apartment 3B. I am writing this letter to bring an urgent and persistent matter to your attention regarding recurring disturbances over the past few months.",
-      wordCount: 38,
-      ruleHighlight: "Opening formula: Who are you? + Why are you writing? (No informal conversational greetings)"
-    },
-    {
-      id: "p2",
-      title: "Paragraph 2 (Bullet 1): Nature of the Problem",
-      purpose: "Explain the issue in detail and why in-person discussion failed (PPT Slide 7)",
-      text: "For the past three months, excessive noise has been emanating from your apartment late at night, particularly loud television audio and heavy bass music between 11:30 PM and 2:00 AM on weekdays. I have knocked on your door on several occasions to discuss this in person, but our contrasting work schedules have made a face-to-face meeting impossible. This persistent disturbance severely disrupts my sleep, leaving me chronically exhausted for my early morning commitments.",
-      wordCount: 76,
+      id: "body1",
+      title: "Body Paragraph 1: Importance of New Year (Bullet 1)",
+      purpose: "Say how important New Year is to people in your country",
       bulletRef: 1,
-      ruleHighlight: "MANDATORY PPT RULE: Bullet 1 / Body Paragraph 1 must NOT begin with a linker!"
+      text: "In India, and particularly in my home state of Gujarat, New Year—known locally as Bestu Varas—is celebrated right after Diwali and holds immense spiritual and cultural importance. It symbolizes a clean slate, marking a time when people close old financial accounts, forgive past grievances, and welcome prosperity and positivity into their lives. For families, it is by far the most anticipated time of the year.",
+      wordCount: 68,
+      ruleHighlight: "Bullet 1 covered: clearly explains cultural significance, renewal, and spiritual weight."
     },
     {
-      id: "p3",
-      title: "Paragraph 3 (Bullet 2): Suggested Solutions",
-      purpose: "Propose reasonable, practical compromises (PPT Slide 8 & 9)",
-      text: "Furthermore, I would like to propose a straightforward and practical compromise that would resolve this matter comfortably for both of us. If you could kindly lower the volume after 10:00 PM on weeknights or consider utilizing wireless headphones when watching television late, it would make an immediate difference. Alternatively, positioning your sound system away from the shared bedroom wall or placing a thick rug underneath would significantly dampen the acoustic vibrations.",
-      wordCount: 72,
+      id: "body2",
+      title: "Body Paragraph 2: Celebration Customs & Traditions (Bullet 2)",
+      purpose: "Describe how New Year is celebrated in your country",
       bulletRef: 2,
-      ruleHighlight: "MANDATORY PPT RULE: Bullet 2 must begin with a SUPPORTING LINKER ('Furthermore,')"
+      text: "The preparations start days beforehand with rigorous house cleaning and decorating front porches with intricate, colorful rangoli patterns and oil lamps. On New Year’s Day, we wake up at dawn, dress in vibrant traditional attire, and head to local temples for early morning prayers. Afterwards, we visit relatives and neighbors to exchange the traditional greeting of 'Saal Mubarak' (Happy New Year) and touch the feet of our elders to receive their blessings. The day is filled with bursting fireworks and sharing lavish homemade sweets such as kaju katli and ghughra.",
+      wordCount: 92,
+      ruleHighlight: "Bullet 2 covered: rich sensory descriptions of decorations, rituals, greetings, and festive food."
     },
     {
-      id: "p4",
-      title: "Paragraph 4 (Bullet 3): Subsequent Action if Unresolved",
-      purpose: "Outline escalation steps while expressing goodwill (PPT Slide 8 & 9)",
-      text: "However, if this excessive noise continues unabated and no discernible effort is made to rectify the situation, I will be left with no choice but to escalate this matter to the building management committee and lodge a formal complaint with the local municipal council for noise ordinance violations. I sincerely hope this will not be necessary, as I genuinely value maintaining a cordial and respectful relationship between neighbours.",
-      wordCount: 69,
+      id: "body3",
+      title: "Body Paragraph 3: Personal Highlight & Community Spirit (Bullet 3)",
+      purpose: "Explain what you like about New Year celebration in your country",
       bulletRef: 3,
-      ruleHighlight: "MANDATORY PPT RULE: Bullet 3 must begin with a CONTRADICTING LINKER ('However,')"
+      text: "What I cherish most about our New Year is the sheer warmth and open-hearted hospitality. Front doors are kept wide open all day, and anyone can drop by without an appointment to celebrate and share food. There is no lingering bitterness—old disputes are dissolved with warm hugs, creating an infectious sense of harmony that brings the entire community together.",
+      wordCount: 61,
+      ruleHighlight: "Bullet 3 covered: authentic personal reflection highlighting hospitality and community unity."
     },
     {
       id: "closing",
-      title: "Paragraph 5: Closing & Complementary Sign-off",
-      purpose: "Polite expectation of resolution + Semi-formal closure (PPT Slide 10 & 11)",
-      text: "I trust that you will take this matter seriously and that we can reach an amicable resolution.\n\nYours sincerely,\nChirag Mehta",
-      wordCount: 22,
-      ruleHighlight: "Semi-Formal Closure: Yours sincerely, + Full Name (Never 'Yours faithfully' or informal 'Best regards')"
+      title: "Closing Paragraph & Sign-off",
+      purpose: "Offer further help + Warm closing sign-off with first name",
+      text: "I really hope this gives you rich, authentic material for your project! Please let me know if you need any photographs or extra details. Best of luck with your presentation, and let's catch up soon!\n\nWarm regards,\nDevang",
+      wordCount: 42,
+      ruleHighlight: "Informal sign-off: friendly concluding offer + 'Warm regards,' + first name only."
     }
   ],
 
-  modelLetter: `Dear Mr. Patel,
+  modelLetter: `Dear Alex,
 
-My name is Chirag Mehta, and I am your next-door neighbour residing at Apartment 3B. I am writing this letter to bring an urgent and persistent matter to your attention regarding recurring disturbances over the past few months.
+It was wonderful to hear from you! I hope everything is going well with your studies. I would be more than happy to help you with your college project on international New Year celebrations—it sounds like a fascinating topic!
 
-For the past three months, excessive noise has been emanating from your apartment late at night, particularly loud television audio and heavy bass music between 11:30 PM and 2:00 AM on weekdays. I have knocked on your door on several occasions to discuss this in person, but our contrasting work schedules have made a face-to-face meeting impossible. This persistent disturbance severely disrupts my sleep, leaving me chronically exhausted for my early morning commitments.
+In India, and particularly in my home state of Gujarat, New Year—known locally as Bestu Varas—is celebrated right after Diwali and holds immense spiritual and cultural importance. It symbolizes a clean slate, marking a time when people close old financial accounts, forgive past grievances, and welcome prosperity and positivity into their lives. For families, it is by far the most anticipated time of the year.
 
-Furthermore, I would like to propose a straightforward and practical compromise that would resolve this matter comfortably for both of us. If you could kindly lower the volume after 10:00 PM on weeknights or consider utilizing wireless headphones when watching television late, it would make an immediate difference. Alternatively, positioning your sound system away from the shared bedroom wall or placing a thick rug underneath would significantly dampen the acoustic vibrations.
+The preparations start days beforehand with rigorous house cleaning and decorating front porches with intricate, colorful rangoli patterns and oil lamps. On New Year’s Day, we wake up at dawn, dress in vibrant traditional attire, and head to local temples for early morning prayers. Afterwards, we visit relatives and neighbors to exchange the traditional greeting of 'Saal Mubarak' (Happy New Year) and touch the feet of our elders to receive their blessings. The day is filled with bursting fireworks and sharing lavish homemade sweets such as kaju katli and ghughra.
 
-However, if this excessive noise continues unabated and no discernible effort is made to rectify the situation, I will be left with no choice but to escalate this matter to the building management committee and lodge a formal complaint with the local municipal council for noise ordinance violations. I sincerely hope this will not be necessary, as I genuinely value maintaining a cordial and respectful relationship between neighbours.
+What I cherish most about our New Year is the sheer warmth and open-hearted hospitality. Front doors are kept wide open all day, and anyone can drop by without an appointment to celebrate and share food. There is no lingering bitterness—old disputes are dissolved with warm hugs, creating an infectious sense of harmony that brings the entire community together.
 
-I trust that you will take this matter seriously and that we can reach an amicable resolution.
+I really hope this gives you rich, authentic material for your project! Please let me know if you need any photographs or extra details. Best of luck with your presentation, and let's catch up soon!
 
-Yours sincerely,
-Chirag Mehta`,
+Warm regards,
+Devang`,
 
   toneGuidelines: [
     {
-      rule: "Opening Formula (PPT Slide 6)",
-      doExample: "“My name is Chirag Mehta, your next-door neighbour at Apartment 3B. I am writing to bring a matter to your attention...”",
-      dontExample: "“Hi mate, how are you doing? Hope all is well...” (Overly informal) or “To Whom It May Concern” (Too distant)"
+      rule: "Use natural conversational contractions and warmth",
+      doExample: "I'd be more than happy to help you with your project...",
+      dontExample: "I am writing this communication to render formal assistance regarding..."
     },
     {
-      rule: "Linker Placement Rule (PPT Slide 7, 8, 9)",
-      doExample: "Start Body 1 with direct context ('For the past three months...'). Start Body 2 with 'Furthermore,'. Start Body 3 with 'However,'.",
-      dontExample: "Beginning Body 1 with 'Firstly,' or 'Furthermore,' which violates Cambridge cohesion rules."
+      rule: "Keep salutation and sign-off informal",
+      doExample: "Dear Alex, ... Warm regards, Devang",
+      dontExample: "Dear Mr. Alex, ... Yours faithfully, D. Patel"
     },
     {
-      rule: "Tone of Complaint (PPT Slide 10)",
-      doExample: "“I would appreciate it if you could lower the volume after 10:00 PM...” (Polite, firm, and constructive)",
-      dontExample: "“You are being completely inconsiderate and driving me crazy!” (Aggressive, emotional, and unprofessional)"
+      rule: "Engage your friend with active enthusiasm",
+      doExample: "It sounds like a fascinating topic! / What I cherish most is...",
+      dontExample: "The prompt necessitates a description of the festive occurrences."
     },
     {
-      rule: "Sign-Off & Name (PPT Slide 11 & 12)",
-      doExample: "“Yours sincerely,” followed by full name “Chirag Mehta” (Proper semi-formal closing)",
-      dontExample: "“Yours faithfully” (used only for Dear Sir/Madam) or “With love” / “XYZ”"
+      rule: "Vivid, culturally authentic descriptions",
+      doExample: "intricate rangoli patterns, oil lamps, touching elders' feet for blessings...",
+      dontExample: "People do some decorations and eat food."
     }
   ],
 
   vocabList: [
     {
-      term: "Emanating from",
-      definition: "Originating, issuing, or spreading out from a specific physical source.",
-      example: "Excessive television bass has been persistently emanating from your apartment past midnight.",
-      category: "Problem Description"
+      term: "Bestu Varas",
+      definition: "The Gujarati New Year celebrated immediately following the day of Diwali.",
+      example: "Bestu Varas marks the start of the new fiscal and cultural calendar across Gujarat.",
+      category: "Festive Traditions"
     },
     {
-      term: "Contrasting work schedules",
-      definition: "Differing daily work hours that prevent two individuals from meeting directly.",
-      example: "Our contrasting work schedules have made direct face-to-face dialogue impossible to arrange.",
-      category: "Problem Description"
+      term: "Clean Slate",
+      definition: "A fresh beginning with all previous debts, grievances, or mistakes forgiven.",
+      example: "The arrival of the New Year symbolizes a spiritual clean slate for families.",
+      category: "Cultural Significance"
     },
     {
-      term: "Chronically exhausted",
-      definition: "Suffering from severe, ongoing physical and mental fatigue due to sleeplessness.",
-      example: "Continuous late-night noise has left me chronically exhausted for my early morning commitments.",
-      category: "Problem Description"
+      term: "Saal Mubarak",
+      definition: "Traditional festive greeting in Gujarati meaning 'Happy and Blessed New Year'.",
+      example: "Neighbors warmly greet each other with hugs and exclaim 'Saal Mubarak!'.",
+      category: "Festive Traditions"
     },
     {
-      term: "Straightforward compromise",
-      definition: "An uncomplicated, practical mutual agreement that satisfies both parties fairly.",
-      example: "I would like to propose a straightforward compromise that comfortably resolves this situation.",
-      category: "Constructive Solutions"
+      term: "Open-Hearted Hospitality",
+      definition: "Generous, welcoming, and warm treatment of guests without formality.",
+      example: "The open-hearted hospitality during New Year means anyone can visit without prior notice.",
+      category: "Personal Impressions"
     },
     {
-      term: "Dampen acoustic vibrations",
-      definition: "To absorb or lessen the intensity of sound waves passing through physical walls or floors.",
-      example: "Placing a thick rug beneath the subwoofer would significantly dampen acoustic vibrations.",
-      category: "Constructive Solutions"
+      term: "Infectious Harmony",
+      definition: "A positive, joyful atmosphere that quickly spreads and influences everyone.",
+      example: "The festivities create an infectious harmony that dissolves past misunderstandings.",
+      category: "Personal Impressions"
     },
     {
-      term: "Wireless headphones",
-      definition: "Audio listening devices that allow private late-night listening without wall transmission.",
-      example: "Utilizing wireless headphones late at night would ensure zero disturbance to surrounding units.",
-      category: "Constructive Solutions"
+      term: "Intricate Rangoli",
+      definition: "Detailed, colorful floor art created at house entrances using colored powders.",
+      example: "Front porches are adorned with intricate rangoli patterns to welcome prosperity.",
+      category: "Festive Traditions"
     },
     {
-      term: "Continues unabated",
-      definition: "Persisting without any reduction in intensity, volume, or frequency.",
-      example: "If the late-night music continues unabated, I will have no choice but to escalate the complaint.",
-      category: "Escalation & Legal Action"
+      term: "Auspicious Beginnings",
+      definition: "Promising success, good fortune, and favorable outcomes for the future.",
+      example: "Families visit the temple at dawn to offer prayers for auspicious beginnings.",
+      category: "Cultural Significance"
     },
     {
-      term: "Discernible effort",
-      definition: "A clear, noticeable, and measurable attempt to fix or improve a situation.",
-      example: "If no discernible effort is made to rectify the noise level, formal steps will be taken.",
-      category: "Escalation & Legal Action"
-    },
-    {
-      term: "Building management committee",
-      definition: "The governing administrative body overseeing resident conduct and building bylaws.",
-      example: "I will be compelled to lodge a formal petition with the building management committee.",
-      category: "Escalation & Legal Action"
-    },
-    {
-      term: "Noise ordinance violations",
-      definition: "Breaches of municipal statutes and local residential noise regulations.",
-      example: "Local council authorities actively enforce strict penalties for residential noise ordinance violations.",
-      category: "Escalation & Legal Action"
-    },
-    {
-      term: "Cordial and respectful",
-      definition: "Warm, polite, friendly, and considerate toward another person.",
-      example: "I genuinely prioritize maintaining a cordial and respectful relationship between neighbours.",
-      category: "Semi-Formal Register"
-    },
-    {
-      term: "Amicable resolution",
-      definition: "A peaceful, friendly agreement achieved without hostility or legal conflict.",
-      example: "I trust that we can communicate constructively and reach an amicable resolution.",
-      category: "Semi-Formal Register"
+      term: "Drop By Without an Appointment",
+      definition: "Informal, spontaneous visits demonstrating high social closeness.",
+      example: "During New Year, relatives and neighbors drop by without an appointment to celebrate.",
+      category: "Informal Conversational"
     }
   ]
 };

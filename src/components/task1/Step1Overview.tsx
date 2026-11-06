@@ -20,9 +20,9 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 08 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: Consumer Spending in Five Countries (2002)</h2>
+        <h2 className="stage-title">Listen First: Working Hours &amp; Stress Levels Across Eight Professions</h2>
         <p className="stage-subtitle">
-          Play the briefing before revealing the table. Deduce which sector dominated household budgets everywhere, which country committed nearly a third to sustenance, who led in clothing, and where the table's absolute lowest figure occurred.
+          Play the briefing before revealing the graphs. Deduce which profession logged the longest workweek, which cohort suffered a quarter of all stress illness, which group formed the central paradox, and where the lowest stress rate occurred.
         </p>
       </div>
 
@@ -59,7 +59,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
                 Cryptic Audio Briefing
               </h4>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", marginTop: "2px" }}>
-                Comparative Table • 5 European Countries • 3 Expenditure Categories (2002)
+                Dual Graph • 8 Professional Groups • Weekly Hours Worked vs Stress Illness
               </p>
             </div>
           </div>
@@ -96,7 +96,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "16px", color: "var(--slate-700)", lineHeight: 1.55 }}>
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify the primary category that commanded the highest proportion in all five nations, the single country that reached the global peak of 32.14% in food, the nation that stood out as the undisputed leader in clothing at 9.00%, and the category that received the smallest allocation throughout.
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify the profession logging 70 hours per week, the group accounting for 25% of all stress cases, the striking disparity for lecturers (25h vs 18%), and the 40-hour baseline with minimum stress.
           </div>
         </div>
 
@@ -118,10 +118,10 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           {[
-            "Which single expenditure sector was universally the highest in every surveyed country (ranging from 15.77% to 32.14%)?",
-            "Which two nations formed the high-spending upper tier in sustenance (>28%), almost doubling Swedish spending?",
-            "Which country stood out as the solitary undisputed leader in clothing and footwear, reaching exactly 9.00%?",
-            "Which nation and category recorded the lowest single figure in the entire table at just 1.98%?"
+            "Which profession worked the longest week of all eight groups at an astounding 70 hours?",
+            "Which professional cohort constituted a full quarter (25%) of all individuals suffering from stress-related illness?",
+            "What is the striking paradox between lecturers' working hours (25 hrs, lowest) and their stress illness rate (18%, second highest)?",
+            "Which occupation maintained a standard 40-hour workweek while recording the absolute lowest stress rate at just 5%?"
           ].map((question, index) => (
             <div key={question} style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "15px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
               <span className="apple-badge neutral" style={{ minWidth: "32px", justifyContent: "center", fontWeight: 800 }}>{index + 1}</span>
@@ -141,7 +141,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             className="apple-touch-btn primary"
             style={{ minHeight: "52px", gap: "8px", marginTop: "auto", fontSize: "1.02rem", fontWeight: 700 }}
           >
-            <Sparkles size={18} /> {revealed ? "Continue to Comparative Table Analysis" : "Reveal Task & Comparative Table"}
+            <Sparkles size={18} /> {revealed ? "Continue to Dual Visual Analysis" : "Reveal Task & Dual Visuals"}
           </motion.button>
 
           {revealed && (
@@ -150,7 +150,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
               animate={{ opacity: 1, y: 0 }}
               style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "14px", padding: "14px 16px", color: "#1e3a8a", fontSize: "0.9rem", lineHeight: 1.5 }}
             >
-              The full task prompt and interactive Cambridge Table Engine are revealed in Step 02.
+              The full task prompt and interactive SmartBoard Dual Visual Engine are revealed in Step 02.
             </motion.div>
           )}
         </div>
