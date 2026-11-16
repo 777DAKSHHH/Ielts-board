@@ -26,634 +26,774 @@ export type {
   VocabItem
 };
 
-export const CAUSES_IDEA_BANK: IdeaBankItem[] = [
+/* ==========================================================================
+   STUDENT IDEA BANK: OPINION SIDE (BODY PARA 1 & 2)
+   Primacy of Profit Generation, Economic Viability & Shareholder Duty (DISAGREE)
+   ========================================================================== */
+export const OPINION_IDEA_BANK: IdeaBankItem[] = [
   {
-    id: "cause-1",
-    badge: "Cause 01 • Satellite Services Demand",
-    title: "Growing demand for satellite-based services",
-    mainIdea: "Modern society increasingly depends on satellite technology for internet connectivity, GPS navigation, weather forecasting and communication. Consequently, companies are launching large numbers of satellites to meet this demand.",
-    supportingReason: "Rapid expansion in consumer telecommunications and navigation needs drives commercial providers to place extensive satellite networks in near-Earth orbit.",
-    example: "Satellite internet providers deploy thousands of small satellites to deliver broadband connectivity to remote areas.",
-    collocations: ["satellite-based services", "broadband connectivity", "growing demand", "satellite technology"]
+    id: "opinion-1",
+    badge: "Opinion 01 • Commercial Solvency",
+    title: "Financial survival and preventing enterprise bankruptcy",
+    mainIdea:
+      "A company's foremost and non-negotiable duty is to remain commercially profitable; without steady cash flow and net profits, an enterprise collapses into insolvency.",
+    supportingReason:
+      "If a business fails financially, it cannot employ workers, pay suppliers, or generate tax revenue, making profit generation the essential prerequisite for all corporate existence.",
+    example:
+      "Small and medium-sized enterprises (SMEs) struggling with overhead must prioritize sales revenue simply to pay monthly wages, rent, and supplier invoices.",
+    collocations: [
+      "commercial solvency",
+      "financial viability",
+      "insolvency prevention",
+      "operational overhead"
+    ]
   },
   {
-    id: "cause-2",
-    badge: "Cause 02 • Commercial Space Race",
-    title: "Commercialisation of space exploration",
-    mainIdea: "The growing involvement of private companies has made space activities more commercially attractive. Businesses are competing to develop satellite networks and launch services, increasing the frequency of rocket launches.",
-    supportingReason: "Private capital and declining launch costs have turned near-Earth space into an active competitive commercial marketplace.",
-    example: "Private aerospace companies regularly conduct launches to deploy satellites and provide services to other organisations.",
-    collocations: ["commercialisation of space", "private aerospace", "commercial satellite networks", "launch frequency"]
+    id: "opinion-2",
+    badge: "Opinion 02 • Employment Creation",
+    title: "Job security and sustaining family livelihoods",
+    mainIdea:
+      "Profitable corporations employ millions of citizens, which constitutes the most vital and direct economic contribution to modern society.",
+    supportingReason:
+      "By focusing strictly on financial health, businesses guarantee dependable paychecks, career opportunities, and pension security for their workforce.",
+    example:
+      "Large industrial corporations maintaining profitability during recessions, thereby preserving stable livelihoods for thousands of working households.",
+    collocations: [
+      "employment creation",
+      "job security",
+      "stable livelihoods",
+      "economic stability"
+    ]
   },
   {
-    id: "cause-3",
-    badge: "Cause 03 • Derelict Space Junk",
-    title: "Abandoned satellites and rocket components",
-    mainIdea: "Many satellites eventually stop functioning, while discarded rocket stages and other equipment may remain in orbit. Without proper disposal procedures, these objects accumulate over time.",
-    supportingReason: "Hardware left in orbit without dedicated deorbit systems circles the planet indefinitely as hazardous floating metal debris.",
-    example: "A satellite that has completed its operational life may remain in orbit if it is not moved to a safer disposal orbit or deorbited.",
-    collocations: ["abandoned satellites", "discarded rocket stages", "disposal procedures", "orbital accumulation"]
+    id: "opinion-3",
+    badge: "Opinion 03 • Government Welfare Mandate",
+    title: "Funding public welfare via corporate taxation rather than private charity",
+    mainIdea:
+      "Social welfare, public healthcare, schools, and environmental infrastructure are the constitutional responsibility of elected governments, not private companies.",
+    supportingReason:
+      "Profitable firms already fulfill their civic duty by paying substantial corporate income taxes, providing the state with billions to finance public services democratically.",
+    example:
+      "Corporate tax revenues collected from thriving commercial sectors enabling governments to finance universal healthcare and national highway networks.",
+    collocations: [
+      "corporate taxation",
+      "public revenues",
+      "welfare systems",
+      "democratic mandate"
+    ]
   },
   {
-    id: "cause-4",
-    badge: "Cause 04 • Cascading Collision Risk",
-    title: "Collisions and fragmentation",
-    mainIdea: "When satellites or other orbital objects collide, they can break into thousands of smaller fragments. These fragments may remain in orbit and create further collision risks.",
-    supportingReason: "High-speed orbital impacts pulverize larger bodies into clouds of untrackable shrapnel, compounding the danger for all operational missions.",
-    example: "The destruction of an old satellite during an accidental collision can produce debris that threatens other functioning spacecraft.",
-    collocations: ["orbital collisions", "satellite fragmentation", "debris cloud", "collision risks"]
+    id: "opinion-4",
+    badge: "Opinion 04 • Shareholder & Investor Duty",
+    title: "Fiduciary responsibility to capital investors and pension funds",
+    mainIdea:
+      "Corporate executives are legally bound fiduciaries entrusted with shareholder capital; diverting private funds to social causes breaches their fiduciary trust.",
+    supportingReason:
+      "Millions of ordinary citizens and retirees depend on the dividends generated by corporate shares held in retirement pension funds, requiring executives to maximize profit.",
+    example:
+      "Pension funds investing in publicly traded companies to guarantee dependable monthly disbursements for retired teachers, nurses, and factory workers.",
+    collocations: [
+      "fiduciary responsibility",
+      "capital investors",
+      "shareholder returns",
+      "pension fund disbursements"
+    ]
   },
   {
-    id: "cause-5",
-    badge: "Cause 05 • Geopolitical Interests",
-    title: "International competition and strategic interests",
-    mainIdea: "Countries are investing heavily in space technology for scientific, economic and national-security purposes. This competition can encourage frequent launches without sufficient attention to the long-term environmental consequences.",
-    supportingReason: "National security priorities and technological prestige often take precedence over international debris-mitigation agreements.",
-    example: "Governments may prioritise establishing satellite networks and strengthening space capabilities over investing in debris-management systems.",
-    collocations: ["international competition", "strategic interests", "national security", "space capabilities"]
+    id: "opinion-5",
+    badge: "Opinion 05 • Efficient Capital Allocation",
+    title: "Specialized commercial efficiency vs inefficient social engineering",
+    mainIdea:
+      "Corporate managers are trained in commerce, manufacturing, and logistics, not public welfare or social administration.",
+    supportingReason:
+      "Forcing private enterprises to solve complex societal problems leads to misallocated resources, commercial distraction, and superficial greenwashing.",
+    example:
+      "Corporations squandering capital on publicity-driven philanthropic campaigns rather than reinvesting in technological innovation and product quality.",
+    collocations: [
+      "efficient capital allocation",
+      "commercial specialization",
+      "avoiding greenwashing",
+      "resource misallocation"
+    ]
   }
 ];
 
-export const SOLUTIONS_IDEA_BANK: IdeaBankItem[] = [
+/* ==========================================================================
+   STUDENT IDEA BANK: NON-OPINION SIDE (BODY PARA 3)
+   Concession: Statutory Environmental & Labor Regulations (AGREE COUNTERPOINT)
+   ========================================================================== */
+export const NON_OPINION_IDEA_BANK: IdeaBankItem[] = [
   {
-    id: "sol-1",
-    badge: "Solution 01 • Active Removal Tech",
-    title: "Develop active debris-removal technology",
-    mainIdea: "Space agencies and private companies should invest in spacecraft capable of capturing and removing dangerous debris from orbit.",
-    supportingReason: "Targeting and deorbiting the heaviest defunct satellites directly eliminates the highest-risk collision hazards.",
-    example: "Robotic spacecraft could attach to defunct satellites and guide them towards controlled re-entry into Earth's atmosphere.",
-    collocations: ["active debris removal", "robotic spacecraft", "controlled re-entry", "defunct satellites"]
+    id: "non-opinion-1",
+    badge: "Non-Opinion 01 • Environmental Compliance",
+    title: "Statutory environmental regulations and pollution limits",
+    mainIdea:
+      "Opponents argue that industrial activities consume shared natural resources and produce waste, requiring businesses to minimize ecological damage.",
+    supportingReason:
+      "However, adhering to emission limits and waste management laws represents mandatory statutory compliance rather than voluntary social altruism.",
+    example:
+      "Manufacturing facilities installing industrial smoke filters and wastewater treatment plants to meet legal government environmental standards.",
+    collocations: [
+      "statutory compliance",
+      "emission thresholds",
+      "environmental regulations",
+      "mandatory standards"
+    ]
   },
   {
-    id: "sol-2",
-    badge: "Solution 02 • Disposal Protocols",
-    title: "Enforce responsible satellite disposal",
-    mainIdea: "Satellite operators should be required to remove inactive satellites from valuable orbital regions within a specified period after their missions end.",
-    supportingReason: "Ensuring spacecraft vacate crowded orbits prevents dead hardware from cluttering prime operational altitudes.",
-    example: "Operators could design satellites with propulsion systems that allow them to descend safely towards Earth's atmosphere after completing their operational lives.",
-    collocations: ["responsible disposal", "propulsion systems", "post-mission descent", "inactive satellites"]
+    id: "non-opinion-2",
+    badge: "Non-Opinion 02 • Workplace Safety",
+    title: "Basic labor standards and occupational hazard prevention",
+    mainIdea:
+      "Proponents of CSR assert that corporations have a moral duty to prioritize employee welfare over unrestrained profit extraction.",
+    supportingReason:
+      "While providing safe working environments is essential, it is strictly enforced by state labor laws and collective bargaining agreements.",
+    example:
+      "Retail and factory employers complying with mandatory fire safety codes, minimum wage legislation, and maximum weekly working hours.",
+    collocations: [
+      "occupational safety",
+      "labor codes",
+      "workplace standards",
+      "regulatory compliance"
+    ]
   },
   {
-    id: "sol-3",
-    badge: "Solution 03 • Surveillance & Warning",
-    title: "Improve satellite tracking and collision prevention",
-    mainIdea: "Countries should strengthen space surveillance systems to monitor objects in orbit and identify potential collisions before they occur.",
-    supportingReason: "Precise real-time radar tracking enables mission controllers to detect hazardous flybys early and execute evasive burns.",
-    example: "Satellite operators can receive collision warnings and adjust spacecraft trajectories to avoid dangerous encounters.",
-    collocations: ["space surveillance", "collision warnings", "trajectory adjustment", "space tracking"]
+    id: "non-opinion-3",
+    badge: "Non-Opinion 03 • Consumer Safety",
+    title: "Product integrity and non-hazardous consumer goods",
+    mainIdea:
+      "It is claimed that businesses must guarantee product safety and refrain from deceptive marketing practices.",
+    supportingReason:
+      "Ensuring non-toxic, safe merchandise is a fundamental commercial prerequisite enforced by consumer protection laws, not voluntary social philanthropy.",
+    example:
+      "Pharmaceutical and food producers adhering to rigorous government inspection and safety certification standards.",
+    collocations: [
+      "product integrity",
+      "consumer protection",
+      "regulatory inspection",
+      "commercial prerequisite"
+    ]
   },
   {
-    id: "sol-4",
-    badge: "Solution 04 • Regulatory Governance",
-    title: "Introduce stricter international regulations",
-    mainIdea: "Governments should cooperate to establish common standards for satellite launches, orbital disposal and debris prevention.",
-    supportingReason: "A unified global regulatory standard holds private corporations and nations equally accountable for sustainable operations.",
-    example: "International agreements could make responsible disposal plans compulsory before a satellite receives launch approval.",
-    collocations: ["international regulations", "common standards", "compulsory disposal plans", "launch approval"]
+    id: "non-opinion-4",
+    badge: "Non-Opinion 04 • Corporate Reputation",
+    title: "Incidental brand reputation and avoiding consumer boycotts",
+    mainIdea:
+      "Some maintain that social initiatives help businesses build goodwill and attract ethical consumers.",
+    supportingReason:
+      "In reality, engaging in charitable causes is often a calculated marketing strategy aimed at protecting brand equity and boosting long-term profits.",
+    example:
+      "Apparel brands publicizing organic fabric lines to attract premium customers and maintain market share.",
+    collocations: [
+      "brand equity",
+      "calculated marketing",
+      "public relations",
+      "commercial self-interest"
+    ]
   },
   {
-    id: "sol-5",
-    badge: "Solution 05 • Sustainable Engineering",
-    title: "Design satellites for sustainability",
-    mainIdea: "Manufacturers should develop spacecraft that are easier to repair, reuse or safely dispose of once their missions are completed.",
-    supportingReason: "Building satellites with modular hardware and non-fragmenting materials prevents debris generation at the engineering stage.",
-    example: "Satellites could be designed with reliable deorbiting mechanisms and components that minimise the creation of additional fragments.",
-    collocations: ["design for sustainability", "deorbiting mechanisms", "fragmentation minimisation", "spacecraft design"]
+    id: "non-opinion-5",
+    badge: "Non-Opinion 05 • Local Community Relations",
+    title: "Civic cooperation and neighborly business relations",
+    mainIdea:
+      "Firms operating in residential areas often support local sports clubs or festivals to maintain harmony with nearby residents.",
+    supportingReason:
+      "Such community gestures help businesses secure local operational permits and goodwill, aligning directly with long-term commercial interests.",
+    example:
+      "Supermarkets sponsoring local neighborhood clean-up drives to strengthen community standing.",
+    collocations: [
+      "civic cooperation",
+      "community standing",
+      "operational permits",
+      "commercial alignment"
+    ]
   }
 ];
 
+// Aliases for backward compatibility
+export const CAUSES_IDEA_BANK = OPINION_IDEA_BANK;
+export const SOLUTIONS_IDEA_BANK = NON_OPINION_IDEA_BANK;
+
+/* ==========================================================================
+   MASTER TASK 2 DATASET: CORPORATE SOCIAL RESPONSIBILITY
+   5-Paragraph Opinion Essay Architecture (DISAGREE POSITION)
+   ========================================================================== */
 export const TASK2_DATA: Task2Data = {
-  id: "satellite-launches-space-debris-causes-solutions",
+  id: "businesses-profit-social-responsibility-opinion",
 
-  taskType: "Causes & Solutions Essay",
+  taskType: "Opinion Essay (Agree or Disagree)",
 
-  title: "IELTS Writing Task 2 — Satellite Launches & Space Debris",
+  title: "IELTS Writing Task 2 — Corporate Social Responsibility",
 
   questionText:
-    "The increasing frequency of the satellite launches & space debris is becoming a threat to the Earth.\n\n• What are the main causes?\n• What measures can be taken to address this?",
+    "Apart from making money, businesses also have social responsibility.\n\n• To what extent do you agree or disagree?",
 
   audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
 
   timingSeconds: 180,
 
   recommendedPosition:
-    "Two-Part Linked Causes & Solutions: Orbital endangerment is primarily catalyzed by the rapid proliferation of commercial mega-constellations and decades of discarded rocket hardware; however, this crisis can be mitigated through mandatory built-in self-deorbiting propulsion and multilateral active robotic cleanup accords.",
+    "Firm Disagreement with Concession: While commercial entities must strictly abide by statutory environmental and labor regulations, I firmly disagree that businesses bear broader social responsibilities beyond generating revenue. The legitimate purpose of private enterprise is economic viability, job preservation, and shareholder returns, whereas societal welfare and public infrastructure are the constitutional responsibility of governments financed through corporate taxation.",
 
   strongestArgument:
-    "Compelling commercial satellite operators to install automated self-deorbiting mechanisms and establishing enforceable UN treaties with mandatory orbital remediation bonds provides direct technological and legal remedies.",
+    "The fundamental duty of a business is commercial solvency and wealth generation; democratic governments, funded by corporate taxes, are the rightful administrators of social welfare and public services.",
 
-  // 1. Sample introduction planning points
+  // 1. Sample introduction planning points (DISAGREE)
   introPlanningPoints: [
-    "Sentence 1 (Paraphrase): In contemporary times, the exponential escalation in satellite launches and the accumulation of space debris orbiting Earth have emerged as severe planetary and technological threats.",
-    "Sentence 2 (Thesis): This critical crisis is primarily driven by the commercial space race and inadequate post-mission disposal protocols; however, it can be mitigated through mandatory self-deorbiting mechanisms and international space debris remediation treaties."
+    "Sentence 1 (Paraphrase): It is widely argued that commercial enterprises ought to shoulder social responsibilities extending beyond their primary objective of making money.",
+    "Sentence 2 (Opinion / Thesis): However, I strongly disagree with this view, as the fundamental purpose of any business is to maximize profit and guarantee economic survival, whereas social welfare remains the exclusive responsibility of government authorities."
   ],
 
   sampleIntro:
-    "In contemporary times, the exponential escalation in satellite launches and the accumulation of space debris orbiting Earth have emerged as severe planetary and technological threats. This critical crisis is primarily driven by the commercial space race and inadequate post-mission disposal protocols; however, it can be mitigated through mandatory self-deorbiting mechanisms and international space debris remediation treaties.",
+    "It is widely argued that commercial enterprises ought to shoulder social responsibilities extending beyond their primary objective of making money. However, I strongly disagree with this view, as the fundamental purpose of any business is to maximize profit and guarantee economic survival, whereas social welfare remains the exclusive responsibility of government authorities.",
 
   sampleConclusion:
-    "In conclusion, the escalating menace of orbital overcrowding is driven primarily by the rapid expansion of commercial satellite constellations and the presence of uncontrolled legacy space debris. However, this planetary crisis can be effectively resolved through the mandatory enforcement of automated self-deorbiting thrusters alongside international robotic debris removal missions. Moving forward, the global community must swiftly adopt an updated, legally binding United Nations space sustainability treaty before low-Earth orbit becomes permanently unusable.",
+    "In conclusion, although companies must operate within statutory environmental and employment codes, I firmly disagree that they possess social responsibilities beyond generating profit. The primary duty of commerce is economic viability, job preservation, and shareholder returns, leaving public welfare initiatives to governments financed through corporate taxation.",
 
-  // 2. Five-minute planning map: 5 Causes + 5 Solutions (Student Idea Bank)
+  // 2. Five-minute planning map
   fiveMinutePlanningMap: {
     causes: [
       {
-        id: "c1",
-        label: "Growing demand for satellite-based services",
-        note: "Modern society increasingly depends on satellite technology for internet connectivity, GPS navigation, weather forecasting and communication."
+        id: "op1",
+        label: "Commercial solvency and avoiding enterprise bankruptcy",
+        note: "Profit is the fundamental prerequisite; without commercial viability, a firm collapses into insolvency and cannot employ anyone."
       },
       {
-        id: "c2",
-        label: "Commercialisation of space exploration",
-        note: "The growing involvement of private companies has made space activities commercially attractive, increasing the frequency of rocket launches."
+        id: "op2",
+        label: "Employment creation and sustaining family livelihoods",
+        note: "Profitable businesses provide dependable salaries and career progression, which is their greatest direct societal contribution."
       },
       {
-        id: "c3",
-        label: "Abandoned satellites and rocket components",
-        note: "Many satellites stop functioning, while discarded rocket stages remain in orbit without proper disposal procedures, accumulating over time."
+        id: "op3",
+        label: "Corporate tax revenues funding democratic public welfare",
+        note: "Businesses pay substantial corporate taxes; elected governments, not unelected executives, bear the mandate to administer social services."
       },
       {
-        id: "c4",
-        label: "Collisions and fragmentation",
-        note: "When satellites or other orbital objects collide, they break into thousands of smaller fragments that create further collision risks."
+        id: "op4",
+        label: "Fiduciary responsibility to shareholders and pensioners",
+        note: "Corporate leaders are legally bound to deliver returns to ordinary citizens and retirement pension funds who invested capital."
       },
       {
-        id: "c5",
-        label: "International competition and strategic interests",
-        note: "Countries invest heavily in space technology for national security, encouraging frequent launches with insufficient attention to debris."
+        id: "op5",
+        label: "Specialized commercial efficiency vs misallocated capital",
+        note: "Executives specialize in commerce and logistics; forcing them to manage social engineering produces inefficiency and greenwashing."
       }
     ],
     solutions: [
       {
-        id: "s1",
-        label: "Develop active debris-removal technology",
-        note: "Space agencies and private companies should invest in spacecraft capable of capturing and removing dangerous debris from orbit."
+        id: "nop1",
+        label: "Statutory environmental regulations and emission thresholds",
+        note: "Businesses must obey pollution limits, but this constitutes legal regulatory compliance rather than voluntary social altruism."
       },
       {
-        id: "s2",
-        label: "Enforce responsible satellite disposal",
-        note: "Satellite operators should be required to remove inactive satellites from valuable orbital regions within a specified period."
+        id: "nop2",
+        label: "Workplace safety and mandatory labor protection codes",
+        note: "Providing safe conditions and living wages is legally enforced by state labor standards, not charitable corporate goodwill."
       },
       {
-        id: "s3",
-        label: "Improve satellite tracking and collision prevention",
-        note: "Countries should strengthen space surveillance systems to monitor objects in orbit and identify potential collisions before they occur."
+        id: "nop3",
+        label: "Consumer protection and product integrity standards",
+        note: "Selling non-hazardous goods is a commercial prerequisite mandated by consumer protection legislation."
       },
       {
-        id: "s4",
-        label: "Introduce stricter international regulations",
-        note: "Governments should cooperate to establish common standards for satellite launches, orbital disposal and debris prevention."
+        id: "nop4",
+        label: "Brand reputation and calculated marketing advantages",
+        note: "Social initiatives are often strategic public relations tools designed to protect brand equity and long-term sales."
       },
       {
-        id: "s5",
-        label: "Design satellites for sustainability",
-        note: "Manufacturers should develop spacecraft that are easier to repair, reuse or safely dispose of once their missions are completed."
+        id: "nop5",
+        label: "Local community relations and operating licenses",
+        note: "Community gestures secure neighborly cooperation and operational permits, serving enterprise commercial interests."
       }
     ]
   },
 
-  causesIdeaBank: CAUSES_IDEA_BANK,
-  solutionsIdeaBank: SOLUTIONS_IDEA_BANK,
+  causesIdeaBank: OPINION_IDEA_BANK,
+  solutionsIdeaBank: NON_OPINION_IDEA_BANK,
 
-  // 3. Body paragraphs matching the MANDATORY LINKED STRUCTURE:
-  // Body 1: Cause 1 + Solution 1 + Example
-  // Body 2: Cause 2 + Solution 2 + Example
+  // 3. Body paragraphs matching the MANDATORY 5-PARAGRAPH ARCHITECTURE (DISAGREE):
+  // Body 1: Opinion side (Commercial Solvency & Enterprise Survival)
+  // Body 2: Opinion side (Fiduciary Duty, Job Security & Public Tax Contribution)
+  // Body 3: Non-opinion side (Concession: Statutory Environmental & Labor Compliance)
   bodyParagraphs: [
     {
       paraNumber: 1,
       side: "strong_opinion",
-      title: "Body Para 1: Cause 1 + Solution 1 + Example",
-      theme: "Commercial Mega-Constellations + Mandatory Automated Self-Deorbiting",
+      title: "Body Para 1: Opinion Side — Commercial Solvency & Survival",
+      theme: "The Non-Negotiable Prerequisite of Financial Profitability",
       mainReason:
-        "The primary catalyst for orbital overcrowding is the rapid proliferation of commercial satellite constellations launched by private aerospace corporations.",
+        "The primary justification for rejecting corporate social responsibility is that financial viability remains the indispensable prerequisite for enterprise survival.",
       supportingReasons:
-        "With thousands of mass-produced orbiters deployed in dense orbital shells, low-Earth orbital highways have become dangerously congested; to counteract this, regulators must mandate automated self-deorbiting thrusters that guide defunct units into the atmosphere to vaporize safely.",
+        "If an enterprise fails to achieve profitability, it inevitably collapses into insolvency, precipitating mass unemployment, disrupted supply chains, and the destruction of invested capital.",
       example:
-        "For instance, requiring commercial broadband fleets such as Starlink to equip every orbiter with autonomous thrusters guarantees they lower altitude and incinerate in the atmosphere within five years of retirement.",
+        "Small and medium-sized enterprises (SMEs) operating on narrow margins must prioritize revenue generation simply to meet payroll, service debt, and pay operational rent.",
       band9Snippet:
-        "“Primarily, the unregulated proliferation of commercial satellite mega-constellations severely congests low-Earth orbit, necessitating mandatory automated deorbiting thrusters to ensure defunct units re-enter and vaporize safely.”",
+        "“To begin with, the fundamental justification for rejecting corporate social obligations is that commercial viability remains the indispensable prerequisite for enterprise existence.”",
       alternativeReasons: [
         {
-          id: "cause-sol-1",
-          badge: "Pairing 01 • Commercial Constellations & Auto-Deorbiting",
-          title: "Commercial Mega-Constellations & Mandatory Re-Entry",
+          id: "opinion-profit-1",
+          badge: "Argument 01 • Economic Foundation",
+          title: "Commercial Solvency & Insolvency Prevention",
           category: "standard",
           mainReason:
-            "Private aerospace enterprises are launching thousands of low-orbit satellites for broadband coverage, severely overcrowding critical orbital pathways.",
+            "A commercial entity exists fundamentally to generate financial returns and avoid bankruptcy.",
           supportingReasons:
-            "When thousands of mass-produced orbiters occupy narrow altitude shells, the probability of catastrophic orbital gridlock escalates rapidly.",
+            "An insolvent company cannot employ staff or produce tax revenues; profit generation must remain the uncompromised primary objective.",
           example:
-            "Commercial internet fleets launching up to 60 satellites in a single rocket without standardized global altitude caps.",
+            "Enterprises facing competitive market pressures must reinvest all earnings into operational efficiency rather than philanthropic projects.",
           band9Snippet:
-            "“First and foremost, the exponential growth of private aerospace fleets creates extreme orbital saturation, demanding strict engineering requirements for automated atmospheric burn-up.”",
+            "“First and foremost, commercial survival is the bedrock of corporate existence, since bankrupt firms cannot employ workers or pay taxes.”",
           modelParagraph:
-            "To begin with, the primary catalyst for orbital overcrowding is the rapid proliferation of commercial satellite constellations launched by private aerospace enterprises. With thousands of low-Earth orbit (LEO) satellites deployed simultaneously for telecommunications, orbital pathways are becoming dangerously congested. To mitigate this hazard, international regulatory bodies must mandate self-deorbiting mechanisms on all newly manufactured satellites. Equipping orbiters with automated propulsive thrusters or passive drag sails ensures that defunct hardware re-enters Earth's atmosphere and vaporizes safely upon mission conclusion. For instance, aerospace regulations requiring commercial fleets like Starlink to execute automated atmospheric burn-up within five years of retirement would substantially reduce long-term collision risks.",
+            "To begin with, the fundamental justification for rejecting corporate social obligations is that commercial viability remains the indispensable prerequisite for enterprise existence. The primary purpose of any private firm is to generate revenue, service operational expenses, and avoid insolvency. If a company fails to operate profitably, it inevitably collapses, precipitating mass unemployment, disrupted supply chains, and the immediate destruction of capital. For instance, small and medium-sized enterprises operating on razor-thin profit margins must prioritize revenue generation simply to meet payroll, pay rent, and service supplier invoices; compelling them to divert scarce financial resources toward broader social initiatives would jeopardize their very survival.",
           examinerNotes:
-            "Perfect cause-solution linkage: directly links private commercial saturation to automated engineering deorbiting solutions."
-        },
-        {
-          id: "cause-sol-2",
-          badge: "Pairing 02 • Abandoned Rocket Stages & Standardized Disposal",
-          title: "Spent Rocket Stages & Compulsory Atmospheric Disposal",
-          category: "standard",
-          mainReason:
-            "Launch vehicles routinely discard empty upper rocket stages and booster casings in orbit, leaving massive metal hazards floating indefinitely.",
-          supportingReasons:
-            "Residual propellants inside abandoned booster tanks can explode over time due to solar radiation, generating thousands of sharp metal shards.",
-          example:
-            "Derelict rocket booster casings from past decades continuing to circle the Earth as uncontrolled multi-ton kinetic projectiles.",
-          band9Snippet:
-            "“Furthermore, discarding massive booster stages without controlled deorbit burns turns orbital corridors into hazardous obstacle courses, requiring mandatory fuel venting and tethered drag disposal.”",
-          modelParagraph:
-            "In addition, space launches frequently abandon expended upper rocket stages in orbit once payloads are released. Over decades, leftover propellants inside these floating fuel tanks degrade and detonate, scattering jagged metallic shrapnel across orbital corridors. To counteract this neglect, launch licensing agencies must enforce mandatory controlled deorbit burns on all booster stages immediately following payload deployment. Requiring aerospace contractors to retain sufficient propellant for a targeted ocean re-entry ensures that massive rocket bodies are removed before they can fragment into dangerous projectiles.",
-          examinerNotes:
-            "Highlights the physical danger of exploded boosters and presents a practical propulsion disposal mandate."
+            "Flawless academic cohesion: establishes economic survival as the foundational rationale, links lack of profit to insolvency and layoffs, and illustrates with SME operational realities."
         }
       ]
     },
     {
       paraNumber: 2,
       side: "strong_opinion",
-      title: "Body Para 2: Cause 2 + Solution 2 + Example",
-      theme: "Legacy Debris & Cascading Shrapnel + Active Debris Removal Treaties",
+      title: "Body Para 2: Opinion Side — Fiduciary Duty & State Welfare Mandate",
+      theme: "Shareholder Responsibility, Job Creation & Government Role",
       mainReason:
-        "Another critical hazard is the accumulation of legacy orbital debris and cascading hypervelocity collisions (the Kessler syndrome), left unchecked by outdated space laws.",
+        "Furthermore, corporate executives bear a strict fiduciary duty to deliver returns to shareholders, while social welfare is the democratic responsibility of elected governments funded by corporate taxes.",
       supportingReasons:
-        "Dead satellites travel at hypervelocity speeds of over 25,000 km/h, meaning even millimeter-sized fragments can shatter operating spacecraft; resolving this requires active debris removal (ADR) technology backed by binding UN space treaties.",
+        "Retirement pension funds rely on corporate dividends for retiree payouts; moreover, profitable firms already fulfill their societal role through employment and corporate tax revenues.",
       example:
-        "For example, the European Space Agency's ClearSpace-1 initiative plans to deploy robotic capture arms and magnetic grapplers to capture and deorbit defunct satellite bodies.",
+        "Corporate income taxes collected from thriving commercial sectors enabling national governments to finance universal healthcare, state schools, and public highways.",
       band9Snippet:
-        "“Furthermore, decades of abandoned space shrapnel threaten catastrophic kinetic collisions, demanding international investment in active debris removal technologies and binding UN orbital treaties.”",
+        "“Furthermore, business managers bear a strict fiduciary responsibility to deliver financial returns to shareholders and pension funds whose capital is invested in the enterprise.”",
       alternativeReasons: [
         {
-          id: "cause-sol-3",
-          badge: "Pairing 03 • Cascading Collisions & Robotic Debris Removal",
-          title: "Kessler Syndrome Cascades & Active Robotic Salvage",
+          id: "opinion-fiduciary-1",
+          badge: "Argument 02 • Fiduciary & Civic Mandate",
+          title: "Shareholder Rights & Government Social Mandate",
           category: "standard",
           mainReason:
-            "Decades of accumulated space junk create a cascading chain reaction where collisions produce more shrapnel, exponentially multiplying debris.",
+            "Diverting private investment capital toward social programs breaches fiduciary trust, while elected governments possess the legitimate mandate for public welfare.",
           supportingReasons:
-            "High-speed kinetic impacts between derelict objects pulverize metal into untrackable clouds that threaten space stations and Earth satellites alike.",
+            "Businesses pay high taxes so that public authorities can administer social safety nets with democratic accountability.",
           example:
-            "The 2009 collision between the Cosmos and Iridium satellites which generated over 2,000 pieces of cataloged debris in seconds.",
+            "Pension funds investing in profitable corporations to guarantee dependable monthly disbursements for retired citizens.",
           band9Snippet:
-            "“Moreover, unchecked orbital debris risks triggering the Kessler syndrome, necessitating active debris removal craft equipped with robotic arms, nets, and magnetic clamps.”",
+            "“Moreover, public welfare administration falls within the constitutional remit of democratic governments financed by corporate tax revenues, not unelected corporate boards.”",
           modelParagraph:
-            "Furthermore, the hazard is exacerbated by decades of abandoned space junk and kinetic orbital collisions, which shatter defunct hardware into thousands of untrackable, hypervelocity fragments. A minor paint fleck traveling at orbital velocity can catastrophically pierce space stations, while uncontrolled dead satellites threaten satellite communication networks. The most viable remedy is the rapid deployment of Active Debris Removal (ADR) missions governed by legally binding international treaties. Space agencies must collaborate to finance robotic capture craft equipped with harpoons, nets, and magnetic claws to deorbit hazardous derelict objects. A prime example is the European Space Agency's ClearSpace-1 project, which aims to rendezvous with and capture a discarded rocket stage, demonstrating that technological remediation can actively purge congested orbits.",
+            "Furthermore, business managers bear a strict fiduciary responsibility to deliver financial returns to shareholders and pension funds whose capital is invested in the enterprise. Diverting corporate earnings toward discretionary social causes without shareholder consent represents a misallocation of private capital. Crucially, profitable corporations already make an immense societal contribution by providing millions of citizens with stable livelihoods and contributing substantial corporate taxes. It is the constitutional duty of elected governments—not private corporations—to utilize these tax revenues to build public healthcare, schools, and environmental infrastructure, as state authorities possess the democratic mandate and specialized competence to manage public welfare.",
           examinerNotes:
-            "Articulates the scientific concept of cascading collisions and couples it with state-of-the-art robotic cleanup missions."
-        },
+            "Sophisticated legal and macroeconomic argumentation contrasting private fiduciary obligations with constitutional government welfare mandates."
+        }
+      ]
+    },
+    {
+      paraNumber: 3,
+      side: "non_opinion",
+      title: "Body Para 3: Non-Opinion Side — Statutory Environmental & Labor Compliance",
+      theme: "Legal Regulatory Compliance vs Voluntary Social Altruism",
+      mainReason:
+        "On the other hand, critics argue that businesses have a social responsibility because industrial production consumes public natural resources and generates pollution.",
+      supportingReasons:
+        "However, adhering to emission limits and labor standards represents mandatory statutory compliance rather than voluntary social philanthropy.",
+      example:
+        "Industrial factories installing emission filters and wastewater treatment equipment to comply with environmental laws.",
+      band9Snippet:
+        "“On the other hand, critics argue that businesses have a social responsibility because industrial production consumes public natural resources and generates environmental degradation.”",
+      alternativeReasons: [
         {
-          id: "cause-sol-4",
-          badge: "Pairing 04 • Unregulated Space Treaties & UN Quota Frameworks",
-          title: "Outdated Outer Space Treaties & Global Launch Quotas",
-          category: "additional",
+          id: "non-opinion-compliance-1",
+          badge: "Concession • Regulatory Compliance",
+          title: "Mandatory Statutory Codes vs Voluntary Philanthropy",
+          category: "standard",
           mainReason:
-            "The 1967 Outer Space Treaty fails to regulate modern commercial launches, offering no financial penalties or cleanup obligations for space polluters.",
+            "Operating ethically and avoiding ecological destruction is enforced by state laws rather than discretionary corporate benevolence.",
           supportingReasons:
-            "Without multilateral legal accountability, individual nations and private corporations have zero economic incentive to limit launches or clean up orbits.",
+            "Companies must obey labor codes and environmental regulations to retain operating licenses, which is legal compliance, not social responsibility.",
           example:
-            "Nations conducting destructive anti-satellite (ASAT) missile tests without facing international financial sanctions or legal consequences.",
+            "Enterprises complying with minimum wage legislation, fire safety regulations, and environmental disposal laws.",
           band9Snippet:
-            "“Crucially, the absence of binding international legislation allows corporations and nations to pollute orbital lanes with impunity, requiring an updated UN space sustainability accord.”",
+            "“Nevertheless, adhering to statutory environmental and labor regulations is a legal obligation rather than evidence of voluntary social responsibility.”",
           modelParagraph:
-            "Crucially, the root cause of this crisis is the inadequacy of current international space law. The foundational Outer Space Treaty of 1967 was formulated long before commercial spaceflight existed, leaving low-Earth orbit completely devoid of enforceable pollution quotas or corporate liability. Consequently, operators face no legal penalties for abandoning defective hardware. To establish order, the United Nations Office for Outer Space Affairs (UNOOSA) must formulate a legally binding space governance framework. Under this treaty, all nations would enforce strict launch quotas and require operators to contribute to an international orbital remediation bond prior to launch authorization.",
+            "On the other hand, critics argue that businesses have a social responsibility because industrial production consumes public natural resources and generates environmental degradation. While it is undeniable that firms must not pollute local ecosystems or exploit vulnerable workers, adhering to emission standards and occupational safety regulations represents statutory compliance rather than voluntary social philanthropy. Enterprises must operate within the boundaries of the law, but expecting them to proactively solve complex societal challenges beyond legal compliance confuses the distinct roles of private enterprise and the state.",
           examinerNotes:
-            "Analyzes the geopolitical and legal root causes and proposes an enforceable United Nations multilateral framework."
+            "Balanced, nuanced concession: respects the environmental and ethical critique while clarifying the vital distinction between statutory legal compliance and voluntary social altruism."
         }
       ]
     }
   ],
 
-  // 4. Academic Vocabulary List (12 Genuine Band 8.5/9 Space & Environmental Items)
+  // 4. Academic Vocabulary List (12 Genuine Band 8.5/9 Corporate Ethics & Economics Items)
   vocabList: [
     {
-      word: "Proliferation",
-      definition: "Rapid increase in numbers, volume, or spread of something.",
-      phonetic: "/prəˌlɪf.əˈreɪ.ʃən/",
-      term: "Proliferation",
-      meaning: "Rapid increase in numbers, volume, or spread of something.",
-      example: "The rapid proliferation of commercial satellite constellations has severely congested low-Earth orbit.",
-      sampleSentence: "The rapid proliferation of commercial satellite constellations has severely congested low-Earth orbit.",
-      collocations: ["rapid proliferation", "satellite proliferation", "commercial proliferation"]
+      word: "Philanthropy",
+      definition: "The practice of donating money, resources, or time to promote human welfare.",
+      phonetic: "/fɪˈlæn.θrə.pi/",
+      term: "Philanthropy",
+      meaning: "The practice of donating money, resources, or time to promote human welfare.",
+      example: "Corporate philanthropy should not merely serve as public relations but genuinely enrich community welfare.",
+      sampleSentence: "Corporate philanthropy should not merely serve as public relations but genuinely enrich community welfare.",
+      collocations: ["corporate philanthropy", "philanthropic initiatives", "strategic philanthropy"]
     },
     {
-      word: "Congested",
-      definition: "Extremely crowded and blocked with traffic or objects.",
-      phonetic: "/kənˈdʒes.tɪd/",
-      term: "Congested",
-      meaning: "Extremely crowded and blocked with traffic or objects.",
-      example: "Critical low-Earth orbital lanes are becoming dangerously congested, raising collision risks.",
-      sampleSentence: "Critical low-Earth orbital lanes are becoming dangerously congested, raising collision risks.",
-      collocations: ["congested orbits", "dangerously congested", "congested pathways"]
+      word: "Viability",
+      definition: "The ability of an enterprise or plan to survive, succeed, and remain financially solvent.",
+      phonetic: "/ˌvaɪ.əˈbɪl.ə.ti/",
+      term: "Viability",
+      meaning: "The ability of an enterprise or plan to survive, succeed, and remain financially solvent.",
+      example: "Maintaining commercial viability is an essential prerequisite before a firm can fund social programs.",
+      sampleSentence: "Maintaining commercial viability is an essential prerequisite before a firm can fund social programs.",
+      collocations: ["commercial viability", "financial viability", "long-term viability"]
     },
     {
-      word: "Defunct",
-      definition: "No longer existing, operating, or functioning.",
-      phonetic: "/dɪˈfʌŋkt/",
-      term: "Defunct",
-      meaning: "No longer existing, operating, or functioning.",
-      example: "Thousands of defunct satellites remain adrift in space, posing severe collision hazards to active spacecraft.",
-      sampleSentence: "Thousands of defunct satellites remain adrift in space, posing severe collision hazards to active spacecraft.",
-      collocations: ["defunct satellites", "defunct hardware", "defunct equipment"]
+      word: "Stewardship",
+      definition: "The responsible overseeing, management, and protection of environmental and social resources.",
+      phonetic: "/ˈstjuː.əd.ʃɪp/",
+      term: "Stewardship",
+      meaning: "The responsible overseeing, management, and protection of environmental and social resources.",
+      example: "Modern businesses must demonstrate environmental stewardship by curtailing industrial emissions.",
+      sampleSentence: "Modern businesses must demonstrate environmental stewardship by curtailing industrial emissions.",
+      collocations: ["environmental stewardship", "responsible stewardship", "corporate stewardship"]
     },
     {
-      word: "Catastrophic",
-      definition: "Involving or causing sudden, disastrous damage and ruin.",
-      phonetic: "/ˌkæt.əˈstrɒf.ɪk/",
-      term: "Catastrophic",
-      meaning: "Involving or causing sudden, disastrous damage and ruin.",
-      example: "A single hypervelocity impact could trigger a catastrophic chain reaction of orbital collisions.",
-      sampleSentence: "A single hypervelocity impact could trigger a catastrophic chain reaction of orbital collisions.",
-      collocations: ["catastrophic collision", "catastrophic damage", "catastrophic chain reaction"]
+      word: "Exploitation",
+      definition: "The unfair or abusive utilization of workers or natural resources for monetary gain.",
+      phonetic: "/ˌek.splɔɪˈteɪ.ʃən/",
+      term: "Exploitation",
+      meaning: "The unfair or abusive utilization of workers or natural resources for monetary gain.",
+      example: "Strict regulations are necessary to prevent the exploitation of low-wage factory workers in developing nations.",
+      sampleSentence: "Strict regulations are necessary to prevent the exploitation of low-wage factory workers in developing nations.",
+      collocations: ["labor exploitation", "resource exploitation", "prevent exploitation"]
     },
     {
-      word: "Remediation",
-      definition: "The act of reversing, correcting, or cleaning up environmental damage.",
-      phonetic: "/rɪˌmiː.diˈeɪ.ʃən/",
-      term: "Remediation",
-      meaning: "The act of reversing, correcting, or cleaning up environmental damage.",
-      example: "Active orbital remediation craft are essential to capture and deorbit massive derelict rocket bodies.",
-      sampleSentence: "Active orbital remediation craft are essential to capture and deorbit massive derelict rocket bodies.",
-      collocations: ["orbital remediation", "environmental remediation", "remediation technology"]
+      word: "Accountability",
+      definition: "The obligation of an organization or individual to account for actions and accept responsibility.",
+      phonetic: "/əˌkaʊn.təˈbɪl.ə.ti/",
+      term: "Accountability",
+      meaning: "The obligation of an organization or individual to account for actions and accept responsibility.",
+      example: "Governments must enforce corporate accountability for chemical dumping and industrial pollution.",
+      sampleSentence: "Governments must enforce corporate accountability for chemical dumping and industrial pollution.",
+      collocations: ["corporate accountability", "hold accountable", "environmental accountability"]
     },
     {
-      word: "Decommission",
-      definition: "To officially withdraw an installation, spacecraft, or vessel from operational service.",
-      phonetic: "/ˌdiː.kəˈmɪʃ.ən/",
-      term: "Decommission",
-      meaning: "To officially withdraw an installation, spacecraft, or vessel from operational service.",
-      example: "Space agencies must enforce protocols to decommission and burn up satellites within five years of mission end.",
-      sampleSentence: "Space agencies must enforce protocols to decommission and burn up satellites within five years of mission end.",
-      collocations: ["decommission satellites", "safely decommission", "post-mission decommission"]
-    },
-    {
-      word: "Hypervelocity",
-      definition: "Extremely high speed, typically exceeding 3,000 meters per second.",
-      phonetic: "/ˌhaɪ.pə.vəˈlɒs.ɪ.ti/",
-      term: "Hypervelocity",
-      meaning: "Extremely high speed, typically exceeding 3,000 meters per second.",
-      example: "Even millimeter-sized flecks of paint traveling at hypervelocity speeds can shatter spacecraft hulls.",
-      sampleSentence: "Even millimeter-sized flecks of paint traveling at hypervelocity speeds can shatter spacecraft hulls.",
-      collocations: ["hypervelocity impact", "hypervelocity speeds", "hypervelocity projectile"]
-    },
-    {
-      word: "Derelict",
-      definition: "Abandoned, dilapidated, and discarded by the owner.",
-      phonetic: "/ˈder.ə.lɪkt/",
-      term: "Derelict",
-      meaning: "Abandoned, dilapidated, and discarded by the owner.",
-      example: "Derelict rocket stages continue to circle the globe as multi-ton uncontrollable kinetic missiles.",
-      sampleSentence: "Derelict rocket stages continue to circle the globe as multi-ton uncontrollable kinetic missiles.",
-      collocations: ["derelict rocket stages", "derelict satellites", "derelict craft"]
-    },
-    {
-      word: "Mitigate",
-      definition: "To make less severe, serious, painful, or damaging.",
-      phonetic: "/ˈmɪt.ɪ.ɡeɪt/",
-      term: "Mitigate",
-      meaning: "To make less severe, serious, painful, or damaging.",
-      example: "Mandatory deorbiting thrusters can substantially mitigate the dangers of low-Earth orbit saturation.",
-      sampleSentence: "Mandatory deorbiting thrusters can substantially mitigate the dangers of low-Earth orbit saturation.",
-      collocations: ["mitigate collision risks", "mitigate orbital hazards", "mitigate the threat"]
-    },
-    {
-      word: "Shrapnel",
-      definition: "Fragments of a bomb, shell, or shattered object thrown out by an explosion or collision.",
-      phonetic: "/ˈʃræp.nəl/",
-      term: "Shrapnel",
-      meaning: "Fragments of a bomb, shell, or shattered object thrown out by an explosion or collision.",
-      example: "Exploding booster tanks scatter millions of tiny pieces of untrackable metallic shrapnel.",
-      sampleSentence: "Exploding booster tanks scatter millions of tiny pieces of untrackable metallic shrapnel.",
-      collocations: ["metallic shrapnel", "orbital shrapnel", "clouds of shrapnel"]
-    },
-    {
-      word: "Multilateral",
-      definition: "Agreed upon, conducted by, or participated in by three or more governments or parties.",
-      phonetic: "/ˌmʌl.tiˈlæt.ər.əl/",
-      term: "Multilateral",
-      meaning: "Agreed upon, conducted by, or participated in by three or more governments or parties.",
-      example: "Solving orbital space junk requires a robust multilateral treaty with enforceable international sanctions.",
-      sampleSentence: "Solving orbital space junk requires a robust multilateral treaty with enforceable international sanctions.",
-      collocations: ["multilateral treaty", "multilateral cooperation", "multilateral framework"]
+      word: "Remuneration",
+      definition: "Payment, wages, or financial compensation received for work or services rendered.",
+      phonetic: "/rɪˌmjuː.nəˈreɪ.ʃən/",
+      term: "Remuneration",
+      meaning: "Payment, wages, or financial compensation received for work or services rendered.",
+      example: "Companies have a social duty to provide equitable remuneration that reflects rising living costs.",
+      sampleSentence: "Companies have a social duty to provide equitable remuneration that reflects rising living costs.",
+      collocations: ["equitable remuneration", "fair remuneration", "financial remuneration"]
     },
     {
       word: "Sustainable",
-      definition: "Able to be maintained over time without depleting resources or causing ecological collapse.",
-      phonetic: "/səˈsteɪ.nə.bl/",
+      definition: "Capable of being maintained over time without depleting ecological resources or causing collapse.",
+      phonetic: "/səˈsteɪ.nə.bəl/",
       term: "Sustainable",
-      meaning: "Able to be maintained over time without depleting resources or causing ecological collapse.",
-      example: "Enforcing responsible satellite disposal is critical to ensure sustainable outer space exploration.",
-      sampleSentence: "Enforcing responsible satellite disposal is critical to ensure sustainable outer space exploration.",
-      collocations: ["sustainable space exploration", "sustainable orbital environment", "sustainable practices"]
+      meaning: "Capable of being maintained over time without depleting ecological resources or causing collapse.",
+      example: "Adopting sustainable production techniques ensures economic growth does not destroy biodiversity.",
+      sampleSentence: "Adopting sustainable production techniques ensures economic growth does not destroy biodiversity.",
+      collocations: ["sustainable practices", "sustainable commerce", "sustainable development"]
+    },
+    {
+      word: "Altruism",
+      definition: "Disinterested and selfless concern for the well-being of others without financial motive.",
+      phonetic: "/ˈæl.tru.ɪ.zəm/",
+      term: "Altruism",
+      meaning: "Disinterested and selfless concern for the well-being of others without financial motive.",
+      example: "Critics argue that corporations rarely act out of pure altruism, making statutory regulations indispensable.",
+      sampleSentence: "Critics argue that corporations rarely act out of pure altruism, making statutory regulations indispensable.",
+      collocations: ["pure altruism", "corporate altruism", "ethical altruism"]
+    },
+    {
+      word: "Degradation",
+      definition: "The process of deteriorating, decaying, or damaging the natural environment.",
+      phonetic: "/ˌdeɡ.rəˈdeɪ.ʃən/",
+      term: "Degradation",
+      meaning: "The process of deteriorating, decaying, or damaging the natural environment.",
+      example: "Unchecked industrial effluent causes severe ecological degradation in surrounding river basins.",
+      sampleSentence: "Unchecked industrial effluent causes severe ecological degradation in surrounding river basins.",
+      collocations: ["environmental degradation", "ecological degradation", "prevent degradation"]
+    },
+    {
+      word: "Concession",
+      definition: "The rhetorical acknowledgment that an opposing perspective or argument has validity.",
+      phonetic: "/kənˈseʃ.ən/",
+      term: "Concession",
+      meaning: "The rhetorical acknowledgment that an opposing perspective or argument has validity.",
+      example: "Making a balanced concession regarding profit necessity strengthens an academic opinion essay.",
+      sampleSentence: "Making a balanced concession regarding profit necessity strengthens an academic opinion essay.",
+      collocations: ["academic concession", "valid concession", "make a concession"]
+    },
+    {
+      word: "Compliance",
+      definition: "The act of obeying and conforming to official rules, environmental laws, and labor codes.",
+      phonetic: "/kəmˈplaɪ.əns/",
+      term: "Compliance",
+      meaning: "The act of obeying and conforming to official rules, environmental laws, and labor codes.",
+      example: "Regulatory agencies inspect commercial facilities to ensure full compliance with emission standards.",
+      sampleSentence: "Regulatory agencies inspect commercial facilities to ensure full compliance with emission standards.",
+      collocations: ["regulatory compliance", "ensure compliance", "environmental compliance"]
+    },
+    {
+      word: "Prosperity",
+      definition: "A successful, flourishing, and financially thriving condition of individuals or society.",
+      phonetic: "/prɒsˈper.ə.ti/",
+      term: "Prosperity",
+      meaning: "A successful, flourishing, and financially thriving condition of individuals or society.",
+      example: "True societal prosperity occurs when corporate profits directly improve the quality of human life.",
+      sampleSentence: "True societal prosperity occurs when corporate profits directly improve the quality of human life.",
+      collocations: ["societal prosperity", "economic prosperity", "shared prosperity"]
     }
   ],
 
   vocabHunt: [
-    "proliferation",
-    "congested",
-    "defunct",
-    "catastrophic",
-    "remediation",
-    "decommission",
-    "hypervelocity",
-    "derelict",
-    "mitigate",
-    "shrapnel",
-    "multilateral",
-    "sustainable"
+    "philanthropy",
+    "viability",
+    "stewardship",
+    "exploitation",
+    "accountability",
+    "remuneration",
+    "sustainable",
+    "altruism",
+    "degradation",
+    "concession",
+    "compliance",
+    "prosperity"
   ],
 
   // 5. Power Expressions
   powerExpressions: [
     {
-      expression: "Unchecked commercial proliferation",
-      meaning: "The rapid, unregulated mass deployment of private satellites overloading orbital corridors",
-      example: "Unchecked commercial proliferation has led to unprecedented satellite crowding."
+      expression: "Corporate social responsibility (CSR)",
+      meaning: "A business model by which companies integrate social and environmental concerns in their operations",
+      example: "Corporate social responsibility requires firms to measure success beyond bottom-line revenue."
     },
     {
-      expression: "Cascading hypervelocity collisions",
-      meaning: "Chain-reaction kinetic impacts where shattered fragments create further collisions (Kessler syndrome)",
-      example: "Cascading hypervelocity collisions could render low-Earth orbit completely unusable for generations."
+      expression: "Environmental, Social, and Governance (ESG)",
+      meaning: "A set of standards for a company's behavior that socially conscious investors use to screen investments",
+      example: "Institutional investors increasingly demand strict adherence to ESG metrics."
     },
     {
-      expression: "Autonomous atmospheric re-entry",
-      meaning: "Pre-programmed thrusters that automatically steer dead spacecraft into Earth's atmosphere to burn up",
-      example: "Satellites must be engineered with autonomous atmospheric re-entry thrusters."
+      expression: "Indispensable prerequisite for solvency",
+      meaning: "An absolute condition necessary for an enterprise to avoid bankruptcy and stay afloat",
+      example: "Generating profit remains an indispensable prerequisite for enterprise solvency."
     },
     {
-      expression: "Active orbital remediation",
-      meaning: "Direct technological missions to capture and deorbit existing space junk using robotic salvage craft",
-      example: "Active orbital remediation is essential to remove multi-ton derelict rocket stages."
+      expression: "Exploitation of vulnerable labor",
+      meaning: "Underpaying or overworking vulnerable workers to inflate corporate profit margins",
+      example: "Global treaties aim to eradicate the exploitation of vulnerable labor across supply chains."
     },
     {
-      expression: "Multilateral space sustainability treaty",
-      meaning: "A legally binding global agreement with mandatory corporate disposal bonds and launch caps",
-      example: "World governments must ratify a multilateral space sustainability treaty."
+      expression: "Fiduciary obligation to shareholders",
+      meaning: "The legal and ethical duty of directors to act in the best financial interests of investors",
+      example: "Corporate boards must balance their fiduciary obligation to shareholders with community welfare."
     }
   ],
 
-  // 6. Strategic Linker Groups
+  // 6. Strategic Linker Groups for 5-Paragraph Architecture
   strategicLinkers: [
     {
       id: "intro-linkers",
       zone: "Zone 1: Introductory Discourse & Thesis",
-      title: "Introduction: Paraphrase & Thesis Linkers",
+      title: "Introduction: Paraphrase & Clear Opinion Linkers",
       themeColor: "#9333ea",
       badge: "Intro Architecture",
       badgeText: "Intro Architecture",
-      academicRole: "Establishes contextual gravity and maps causes and solutions.",
-      placementRule: "Use to paraphrase the prompt and state a clear causes and solutions thesis",
+      academicRole: "Establishes societal context, paraphrases the prompt, and delivers a decisive opinion.",
+      placementRule: "Sentence 1 introduces the debate; Sentence 2 articulates your clear agree/disagree thesis with concession",
       zoneGroup: {
         zoneName: "Introductory Discourse",
-        placementRule: "Deploy Sentence 1 to contextualize the threat, and Sentence 2 to roadmap causes and solutions."
+        placementRule: "Paraphrase the prompt in Sentence 1 and present your clear position with an analytical concession in Sentence 2."
       },
       items: [
         {
-          phrase: "In contemporary times / In recent decades",
-          functionDesc: "Formal academic substitute for 'Nowadays' establishing current urgency.",
-          example: "In contemporary times, the exponential escalation of orbital satellite launches has triggered profound alarms."
+          phrase: "It is widely argued that... However, I strongly disagree with this view...",
+          functionDesc: "Establishes the societal proposition and declares an unequivocal personal disagree stance.",
+          example: "It is widely argued that enterprises should bear social obligations beyond making money. However, I strongly disagree with this view, as economic solvency is their sole legitimate purpose."
         },
         {
-          phrase: "This critical crisis is primarily driven by... however, it can be mitigated through...",
-          functionDesc: "Symmetrical causes-and-solutions thesis sentence pairing.",
-          example: "This critical crisis is primarily driven by commercial launch proliferation and uncurbed space shrapnel; however, it can be mitigated through mandated deorbit protocols and active debris removal."
+          phrase: "While companies must observe statutory regulations, the fundamental purpose of any business is to...",
+          functionDesc: "Nuanced thesis pairing a regulatory concession with a decisive disagree conviction.",
+          example: "While companies must observe statutory environmental codes, the fundamental purpose of any business is to maximize profit and guarantee economic survival."
         }
       ],
       linkers: [
         {
-          linker: "In contemporary times",
-          functionNote: "Formal academic substitute for 'Nowadays' establishing current urgency."
+          linker: "It is widely argued that",
+          functionNote: "Academic formula introducing the broad societal debate."
         },
         {
-          linker: "This critical crisis is primarily driven by... however, it can be mitigated through...",
-          functionNote: "Symmetrical causes-and-solutions thesis sentence pairing."
+          linker: "However, I strongly disagree that... whereas...",
+          functionNote: "Decisive Band 9 thesis pairing strong disagree opinion with a clear state welfare distinction."
         }
       ]
     },
     {
       id: "body1-linkers",
-      zone: "Zone 2: Cause 1 + Solution 1 Progression",
-      title: "Body 1: Cause 1 + Solution 1 Linkers",
+      zone: "Zone 2: Opinion Side 1 (Environmental Duty)",
+      title: "Body 1: Environmental Stewardship Linkers",
       themeColor: "#2563eb",
-      badge: "Body 1 Progression",
-      badgeText: "Body 1 Progression",
-      academicRole: "Introduces the commercial launch cause and links it directly to the technical solution.",
-      placementRule: "Use to introduce the primary cause (commercial constellations) and immediately link it to the primary technical solution (self-deorbiting thrusters)",
+      badge: "Body 1: Opinion Side",
+      badgeText: "Body 1: Opinion Side",
+      academicRole: "Introduces the primary supporting argument: corporate environmental responsibility.",
+      placementRule: "Use to open the first supporting body paragraph establishing environmental duty",
       zoneGroup: {
         zoneName: "Pillar 1 Architecture",
-        placementRule: "Open with Cause 1, develop the risk, then present Solution 1 with concrete examples."
+        placementRule: "Open with environmental duty, substantiate with resource consumption, and illustrate with green tech."
       },
       items: [
         {
-          phrase: "To begin with / The foremost catalyst behind this crisis is...",
-          functionDesc: "Signals the primary catalyst (commercial mega-constellations).",
-          example: "The foremost catalyst behind this crisis is the rapid expansion of private commercial space enterprises deploying massive mega-constellations."
+          phrase: "To begin with, businesses bear a profound moral duty to...",
+          functionDesc: "Opens the first argument supporting corporate social responsibility.",
+          example: "To begin with, businesses bear a profound moral duty to minimize their environmental footprints."
         },
         {
-          phrase: "To counteract this escalating hazard / To mitigate this risk, authorities must mandate...",
-          functionDesc: "Pivots seamlessly from the cause to the targeted technological remedy.",
-          example: "To counteract this escalating hazard, aviation authorities must legally mandate that all satellites incorporate automated self-deorbiting thrusters."
+          phrase: "Given that industrial production inevitably exploits public goods...",
+          functionDesc: "Explains the foundational rationale for corporate environmental restitution.",
+          example: "Given that industrial production inevitably exploits public natural resources, firms must invest in green energy."
         },
         {
-          phrase: "For instance / A clear illustration is",
-          functionDesc: "Introduces concrete real-world evidence (Starlink 5-year deorbit rule).",
-          example: "A clear illustration is the recent regulatory requirement compelling low-Earth operators to safely deorbit craft within five years of mission end."
+          phrase: "A prime illustration is seen in / For instance...",
+          functionDesc: "Introduces concrete real-world corporate examples (e.g. data centers powered by solar energy).",
+          example: "For instance, tech conglomerates powering their global facilities with clean energy illustrate effective stewardship."
         }
       ],
       linkers: [
         {
           linker: "To begin with / First and foremost",
-          functionNote: "Signals the primary catalyst (commercial mega-constellations)."
+          functionNote: "Signals the opening pillar of the opinion side."
         },
         {
-          linker: "To mitigate this hazard / To counteract this trend",
-          functionNote: "Pivots seamlessly from the cause to the targeted technological remedy."
+          linker: "Given that industrial production inevitably...",
+          functionNote: "Provides rigorous logical justification for environmental accountability."
         },
         {
           linker: "For instance / A clear illustration is",
-          functionNote: "Introduces concrete real-world evidence (Starlink 5-year deorbit rule)."
+          functionNote: "Grounds the argument with verifiable real-world evidence."
         }
       ]
     },
     {
       id: "body2-linkers",
-      zone: "Zone 3: Cause 2 + Solution 2 Progression",
-      title: "Body 2: Cause 2 + Solution 2 Linkers",
+      zone: "Zone 3: Opinion Side 2 (Worker Welfare & Community)",
+      title: "Body 2: Labor & Community Welfare Linkers",
       themeColor: "#059669",
-      badge: "Body 2 Progression",
-      badgeText: "Body 2 Progression",
-      academicRole: "Introduces the cascading debris hazard and connects to active robotic cleanup and UN treaties.",
-      placementRule: "Use to introduce the secondary cause (cascading legacy debris) and link it to the secondary solution (robotic cleanup and global treaties)",
+      badge: "Body 2: Opinion Side",
+      badgeText: "Body 2: Opinion Side",
+      academicRole: "Introduces the second supporting argument: workforce dignity and community reinvestment.",
+      placementRule: "Use to transition to the second supporting argument focusing on labor and society",
       zoneGroup: {
         zoneName: "Pillar 2 Architecture",
-        placementRule: "Open with Cause 2 (Kessler syndrome), then introduce Solution 2 (ADR robotics + treaties)."
+        placementRule: "Progress from environmental duties to human workforce rights and community development."
       },
       items: [
         {
-          phrase: "Furthermore / Compounding this predicament is...",
-          functionDesc: "Transitions to the second major cause (legacy debris and cascading collisions).",
-          example: "Furthermore, compounding this predicament is the accumulation of defunct satellites and rocket stages that spawn thousands of hypervelocity shrapnel pieces."
+          phrase: "Furthermore / In addition to ecological duties...",
+          functionDesc: "Transitions smoothly to the human and social dimensions of corporate responsibility.",
+          example: "Furthermore, corporations possess an ethical obligation to foster the welfare of their workforce and local communities."
         },
         {
-          phrase: "The most viable remedy involves / An indispensable countermeasure is...",
-          functionDesc: "Pivots directly to active robotic removal and multilateral treaties.",
-          example: "The most viable remedy involves investing in active robotic remediation technologies, complemented by a binding United Nations space treaty."
+          phrase: "Rather than treating labor as a disposable commodity, firms ought to...",
+          functionDesc: "Contrasts profit-maximizing exploitation with ethical human resource management.",
+          example: "Rather than treating labor as a disposable commodity, firms ought to reciprocate by providing fair remuneration and healthcare."
         },
         {
-          phrase: "A prime example is / Exemplifying this approach is...",
-          functionDesc: "Grounds the argument with verifiable initiatives (ESA ClearSpace-1).",
-          example: "Exemplifying this approach is the European Space Agency's ClearSpace-1 mission, designed to capture derelict rocket debris using robotic tentacles."
+          phrase: "Consequently / As a direct result...",
+          functionDesc: "Demonstrates how community reinvestment creates shared societal prosperity.",
+          example: "Consequently, reinvesting corporate revenues into municipal schools uplifts local living standards."
         }
       ],
       linkers: [
         {
           linker: "Furthermore / In addition to this",
-          functionNote: "Transitions to the second major cause (legacy debris and shrapnel)."
+          functionNote: "Transitions smoothly to the second opinion pillar."
         },
         {
-          linker: "The most viable remedy is / An indispensable countermeasure is",
-          functionNote: "Pivots directly to active robotic removal and multilateral treaties."
+          linker: "Rather than treating labor as a disposable commodity",
+          functionNote: "Powerful rhetorical contrast highlighting human dignity."
         },
         {
-          linker: "A prime example is / Exemplifying this approach is",
-          functionNote: "Grounds the argument with verifiable initiatives (ESA ClearSpace-1)."
+          linker: "Consequently / As a result",
+          functionNote: "Shows the positive social outcome of community reinvestment."
+        }
+      ]
+    },
+    {
+      id: "body3-linkers",
+      zone: "Zone 4: Non-Opinion Side (Economic Concession)",
+      title: "Body 3: Profit Necessity & Concession Linkers",
+      themeColor: "#ea580c",
+      badge: "Body 3: Non-Opinion Side",
+      badgeText: "Body 3: Non-Opinion Side",
+      academicRole: "Acknowledges the counter-perspective: profit generation is essential for survival and taxes.",
+      placementRule: "Use in Body 3 to acknowledge that profitability is necessary for solvency and employment",
+      zoneGroup: {
+        zoneName: "Pillar 3 Concession",
+        placementRule: "Respectfully validate the economic perspective without compromising your overall opinion."
+      },
+      items: [
+        {
+          phrase: "On the other hand / It is undeniable that...",
+          functionDesc: "Signals the transition to the non-opinion counter-argument.",
+          example: "On the other hand, it is undeniable that profit generation is the fundamental lifeblood of any commercial organization."
+        },
+        {
+          phrase: "Without financial viability and healthy profit margins, enterprises face...",
+          functionDesc: "Analyzes the catastrophic real-world consequences of corporate insolvency.",
+          example: "Without financial viability, enterprises face insolvency, resulting in mass layoffs and economic stagnation."
+        },
+        {
+          phrase: "Moreover, corporate taxation on net profits finances...",
+          functionDesc: "Highlights that profitability directly supports government public spending.",
+          example: "Moreover, corporate taxation on commercial profits directly finances national healthcare and public infrastructure."
+        }
+      ],
+      linkers: [
+        {
+          linker: "On the other hand / Admittedly",
+          functionNote: "Clear marker signaling a balanced academic concession."
+        },
+        {
+          linker: "Without commercial viability, enterprises face...",
+          functionNote: "Explains why financial solvency is a practical necessity."
+        },
+        {
+          linker: "Moreover / In addition",
+          functionNote: "Expands the concession to include corporate tax contributions."
         }
       ]
     },
     {
       id: "conclusion-linkers",
-      zone: "Zone 4: Concluding Synthesis & Policy Recommendation",
-      title: "Conclusion: Sum-Up & Recommendation Linkers",
+      zone: "Zone 5: Concluding Synthesis & Restated Position",
+      title: "Conclusion: Sum-Up & Restatement Linkers",
       themeColor: "#0f766e",
       badge: "Conclusion Synthesis",
       badgeText: "Conclusion Synthesis",
-      academicRole: "Recaps causes and solutions, then offers a forward-looking policy suggestion.",
-      placementRule: "Use in the final paragraph to recap both cause-solution pairings and offer a forward-looking recommendation",
+      academicRole: "Recaps the main arguments from both sides and firmly restates the opinion.",
+      placementRule: "Use in the final paragraph: Sentence 1 recaps both perspectives; Sentence 2 restates your firm opinion",
       zoneGroup: {
         zoneName: "Concluding Synthesis",
-        placementRule: "Sentence 1 synthesizes both causes; Sentence 2 recaps solutions; Sentence 3 provides the policy recommendation."
+        placementRule: "Synthesize profit necessity with social responsibility, then restate your firm opinion."
       },
       items: [
         {
-          phrase: "In conclusion / To conclude",
-          functionDesc: "Definitive marker signaling the final synthesis.",
-          example: "In conclusion, while commercial expansion and derelict debris severely jeopardize orbital lanes, strict technical mandates and international robotic missions offer effective solutions."
+          phrase: "In conclusion, while profit generation is unquestionably essential for...",
+          functionDesc: "Synthesizes the concession before delivering the decisive final verdict.",
+          example: "In conclusion, while generating profit is unquestionably essential for enterprise survival and employment, businesses cannot operate in ethical isolation."
         },
         {
-          phrase: "Moving forward, it is imperative that...",
-          functionDesc: "Transitions smoothly into the forward-looking global recommendation.",
-          example: "Moving forward, it is imperative that global governments sign a multilateral treaty imposing mandatory launch deposits to guarantee orbital sustainability."
+          phrase: "Therefore, I firmly believe that true corporate success requires...",
+          functionDesc: "Final authoritative restatement of the thesis.",
+          example: "Therefore, I firmly believe that true corporate success requires balancing financial gain with environmental stewardship and community welfare."
         }
       ],
       linkers: [
         {
           linker: "In conclusion / To conclude",
-          functionNote: "Definitive marker signaling the final synthesis."
+          functionNote: "Definitive signal of final analytical closure."
         },
         {
-          linker: "Moving forward, it is imperative that...",
-          functionNote: "Transitions smoothly into the forward-looking global recommendation."
+          linker: "Therefore, I firmly believe that...",
+          functionNote: "Unequivocal restatement of the writer's thesis."
         }
       ]
     }
@@ -664,233 +804,247 @@ export const TASK2_DATA: Task2Data = {
     {
       id: "card-1",
       stepNum: 1,
-      badge: "Cause 01 • Orbital Saturation",
-      title: "Commercial Mega-Constellations",
-      question: "What is the primary commercial cause driving the sudden overcrowding of near-Earth orbit?",
-      thinkingLens: "Focus on the transition from government missions to private aerospace corporations mass-producing satellite fleets.",
-      selfCheck: "Did you mention mega-constellations like broadband networks filling narrow orbital lanes?",
-      idea: "Private aerospace enterprises deploy thousands of mass-produced broadband satellites, dangerously saturating low-Earth orbital highways.",
-      promptInsight: "Private broadband fleets launch thousands of orbiters, clogging narrow low-Earth altitudes.",
-      collocations: ["commercial proliferation", "congested orbital lanes", "mega-constellations"],
-      example: "Fleets deploying hundreds of mass-produced satellites annually without global altitude caps."
+      badge: "Opinion Side 01 • Ecological Duty",
+      title: "Environmental Stewardship",
+      question: "Why do commercial businesses have an ethical duty to protect the natural environment?",
+      thinkingLens: "Think about industrial pollution, resource extraction, and corporate carbon footprints.",
+      selfCheck: "Did you explain that businesses consume shared public goods like air and water, creating an obligation to prevent pollution?",
+      idea: "Industrial production exploits shared air, water, and minerals; corporations must invest in clean energy and zero-waste manufacturing to curb planetary degradation.",
+      promptInsight: "Industrial operations consume shared public resources; businesses must invest in clean energy and sustainable waste disposal.",
+      collocations: ["environmental stewardship", "ecological degradation", "clean energy"],
+      example: "Global tech firms running data centers entirely on solar power to minimize environmental harm."
     },
     {
       id: "card-2",
       stepNum: 2,
-      badge: "Solution 01 • Engineering Mandate",
-      title: "Mandatory Self-Deorbiting Thrusters",
-      question: "How can satellite manufacturers technically prevent retired spacecraft from becoming permanent hazards?",
-      thinkingLens: "Think about automated end-of-life disposal mechanisms built directly into the satellite.",
-      selfCheck: "Did you recommend automated thrusters or drag sails for atmospheric re-entry burn-up?",
-      idea: "Mandate built-in automated deorbiting thrusters or drag sails that steer retired satellites into the atmosphere to vaporize safely.",
-      promptInsight: "Require automated propulsive thrusters to guarantee satellites burn up in the atmosphere at end of life.",
-      collocations: ["automated deorbiting thrusters", "atmospheric burn-up", "post-mission disposal"],
-      example: "Mandating low-orbit satellites to execute automated atmospheric incinerations within five years."
+      badge: "Opinion Side 02 • Human Welfare",
+      title: "Employee Welfare & Community Support",
+      question: "How should corporations treat their workers and the local communities where they operate?",
+      thinkingLens: "Focus on fair living wages, workplace safety, and funding local schools and hospitals.",
+      selfCheck: "Did you emphasize that labor is not a disposable commodity and deserves fair remuneration?",
+      idea: "Companies rely on human labor and public infrastructure; they must reciprocate with living wages, health coverage, and local educational funding.",
+      promptInsight: "Corporations rely on human labor and public infrastructure; they must provide fair remuneration and reinvest in local schools.",
+      collocations: ["fair remuneration", "human dignity", "community reinvestment"],
+      example: "Multinational companies paying above-minimum wages and building vocational training clinics in local towns."
     },
     {
       id: "card-3",
       stepNum: 3,
-      badge: "Cause 02 • Kinetic Shrapnel",
-      title: "Cascading Debris (Kessler Syndrome)",
-      question: "Why does space debris multiply exponentially even when new launches are paused?",
-      thinkingLens: "Examine the physics of hypervelocity collisions between abandoned rocket stages (the Kessler syndrome).",
-      selfCheck: "Did you explain how high-speed kinetic impacts shatter metal into clouds of untrackable shrapnel?",
-      idea: "Hypervelocity kinetic collisions smash derelict rocket stages into tens of thousands of bullet-speed shrapnel fragments.",
-      promptInsight: "Decades of abandoned rocket bodies and hypervelocity collisions fragment metal into bullet-speed debris.",
-      collocations: ["hypervelocity collisions", "metallic shrapnel", "Kessler syndrome"],
-      example: "The 2009 Cosmos-Iridium collision producing over 2,000 pieces of lethal high-speed fragments."
+      badge: "Non-Opinion Side • Concession",
+      title: "The Primacy of Profit Generation",
+      question: "Why is making money an indispensable prerequisite before a business can help society?",
+      thinkingLens: "Consider commercial solvency, bankruptcy prevention, job creation, and tax payments.",
+      selfCheck: "Did you explain that insolvent companies cannot employ staff, pay taxes, or fund charities?",
+      idea: "Profit is the fundamental lifeblood of enterprise; without financial solvency, firms face bankruptcy, triggering mass layoffs and eliminating tax revenues.",
+      promptInsight: "Without profit, businesses go bankrupt, destroying jobs and eliminating the tax revenues that fund public services.",
+      collocations: ["commercial solvency", "financial viability", "corporate taxation"],
+      example: "Small businesses operating on tight margins must prioritize sales simply to meet payroll and avoid closure."
     },
     {
       id: "card-4",
       stepNum: 4,
-      badge: "Solution 02 • Global Remediation",
-      title: "Active Robotic Removal & UN Treaties",
-      question: "What international and technological countermeasures are needed to clean up existing space debris?",
-      thinkingLens: "Combine active robotic salvage technology with enforceable multilateral United Nations treaties.",
-      selfCheck: "Did you pair active robotic capture missions (like ClearSpace-1) with mandatory pollution bonds?",
-      idea: "Deploy robotic capture craft to deorbit heavy derelict hardware, funded by mandatory UN orbital remediation bonds.",
-      promptInsight: "Deploy robotic capture craft to deorbit heavy junk, backed by enforceable UN space pollution treaties.",
-      collocations: ["active debris removal", "robotic salvage missions", "multilateral space treaties"],
-      example: "The ESA ClearSpace-1 robotic arm capturing derelict rocket stages from orbit."
+      badge: "Synthesis & Conclusion",
+      title: "Balancing Profit with Social Purpose",
+      question: "How should an essay conclude by harmonizing profitability with social responsibility?",
+      thinkingLens: "Combine the necessity of financial health with the ethical imperative of community and environmental care.",
+      selfCheck: "Did you sum up both sides and clearly restate your Disagree opinion that commerce's primary duty is economic solvency?",
+      idea: "While businesses must obey statutory environmental codes, their sole core responsibility is economic viability and job creation, leaving public welfare to the state.",
+      promptInsight: "Conclude by acknowledging statutory legal compliance while firmly restating that private firms do not bear social obligations beyond generating profit.",
+      collocations: ["commercial solvency", "corporate taxation", "fiduciary responsibility"],
+      example: "State safety nets financed democratically by corporate income taxes rather than discretionary private corporate charity."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "In contemporary times",
-      "To mitigate this hazard",
-      "Active orbital remediation",
-      "Multilateral space sustainability"
+      "It is widely argued that",
+      "I strongly disagree that",
+      "Indispensable prerequisite for solvency",
+      "Statutory regulatory compliance"
     ],
     aTier: [
       "To begin with",
       "Furthermore",
-      "A prime catalyst is",
-      "Exemplifying this approach"
+      "On the other hand",
+      "A prime illustration is"
     ],
     bTier: [
       "Additionally",
-      "Specifically",
+      "Consequently",
       "In conclusion",
-      "Consequently"
+      "Therefore"
     ]
   },
 
   fluidVocab: [
     {
-      word: "Proliferation",
+      word: "Philanthropy",
       pos: "noun",
-      meaning: "Rapid and uncontrolled increase in the volume or quantity of something.",
-      naturalCollocation: "proliferation of commercial satellite constellations",
-      organicExample: "The proliferation of commercial satellite fleets has severely congested low-Earth orbital highways.",
-      mechanicalPitfall: "Avoid writing 'a lot of new satellites' in formal academic writing.",
-      examinerInsight: "Immediately signals sophisticated technological and sociological analysis."
+      meaning: "The practice of donating money, time, and resources to advance human welfare.",
+      naturalCollocation: "corporate philanthropy and community development",
+      organicExample: "Corporate philanthropy should not be viewed as mere publicity, but as an ethical obligation to uplift society.",
+      mechanicalPitfall: "Avoid simplistic phrases like 'giving money away'; philanthropy implies structured social enrichment.",
+      examinerInsight: "Demonstrates sophisticated understanding of modern corporate citizenship."
     },
     {
-      word: "Congested",
-      pos: "adjective",
-      meaning: "Excessively crowded and packed to the point of blocking movement.",
-      naturalCollocation: "dangerously congested orbital corridors",
-      organicExample: "Without strict launch permits, low-Earth orbit will become too congested for safe spaceflight.",
-      mechanicalPitfall: "Do not confuse with traffic congestion on city roads; explain orbital path density.",
-      examinerInsight: "Establishes precise spatial comprehension of near-Earth orbits."
-    },
-    {
-      word: "Defunct",
-      pos: "adjective",
-      meaning: "No longer functioning, active, or in working order.",
-      naturalCollocation: "defunct satellites and derelict rocket boosters",
-      organicExample: "Hundreds of defunct satellites remain in orbit as floating, unguided kinetic projectiles.",
-      mechanicalPitfall: "Avoid simplistic words like 'dead' or 'broken' spacecraft.",
-      examinerInsight: "Standard high-level terminology utilized by NASA and ESA orbital analysts."
-    },
-    {
-      word: "Remediation",
+      word: "Viability",
       pos: "noun",
-      meaning: "The technical process of reversing, neutralizing, or repairing environmental damage.",
-      naturalCollocation: "active orbital debris remediation",
-      organicExample: "Active debris remediation craft are essential to capture and deorbit multi-ton rocket upper stages.",
-      mechanicalPitfall: "Do not write 'cleaning up'; remediation conveys scientific ecological restoration.",
-      examinerInsight: "Celebrated Band 9 vocabulary demonstrating advanced policy discourse."
+      meaning: "The capacity of a business or enterprise to remain solvent, operational, and financially sound.",
+      naturalCollocation: "commercial viability and financial solvency",
+      organicExample: "Maintaining commercial viability is the foundational prerequisite before a company can fund charitable causes.",
+      mechanicalPitfall: "Do not confuse with 'ability'; viability specifically relates to economic survival.",
+      examinerInsight: "Precise business terminology celebrated in Band 9 task response."
     },
     {
-      word: "Decommission",
-      pos: "verb",
-      meaning: "To formally withdraw a satellite or system from operational service at mission end.",
-      naturalCollocation: "decommission satellites via automated atmospheric burn-up",
-      organicExample: "Operators must be legally mandated to decommission retired satellites within five years.",
-      mechanicalPitfall: "Avoid 'turning off'; decommission includes safe orbital retirement.",
-      examinerInsight: "Directly addresses Task Response regarding technological lifecycle management."
+      word: "Stewardship",
+      pos: "noun",
+      meaning: "The ethical responsibility to manage, oversee, and safeguard shared natural resources.",
+      naturalCollocation: "rigorous environmental stewardship",
+      organicExample: "Industrial manufacturers must demonstrate ecological stewardship by neutralizing factory waste.",
+      mechanicalPitfall: "Avoid 'taking care of nature'; stewardship conveys professional, institutional responsibility.",
+      examinerInsight: "Elevated environmental and economic vocabulary signaling Band 9 Lexical Resource."
     },
     {
-      word: "Multilateral",
-      pos: "adjective",
-      meaning: "Agreed upon and enforced collectively by multiple nations and governments.",
-      naturalCollocation: "enforceable multilateral space treaties",
-      organicExample: "Mitigating orbital clutter necessitates a multilateral treaty with mandatory corporate compliance bonds.",
-      mechanicalPitfall: "Do not confuse with bilateral; space governance requires worldwide consensus.",
-      examinerInsight: "Signals elevated understanding of global governance and international law."
+      word: "Exploitation",
+      pos: "noun",
+      meaning: "The act of taking unfair advantage of vulnerable workers or environments for financial gain.",
+      naturalCollocation: "exploitation of vulnerable labor",
+      organicExample: "Maximizing short-term profit through the exploitation of factory laborers violates basic human rights.",
+      mechanicalPitfall: "Do not use 'bad treatment'; exploitation identifies systemic unfair enrichment.",
+      examinerInsight: "Directly articulates the ethical critique of uncurbed capitalism."
+    },
+    {
+      word: "Remuneration",
+      pos: "noun",
+      meaning: "Payment or financial compensation given for employment, labor, or services.",
+      naturalCollocation: "fair and equitable remuneration",
+      organicExample: "Socially responsible firms provide equitable remuneration that comfortably exceeds the local cost of living.",
+      mechanicalPitfall: "Avoid overusing 'salary' or 'pay'; remuneration encompasses comprehensive worker compensation.",
+      examinerInsight: "Formal academic diction favored by Cambridge examiners."
+    },
+    {
+      word: "Accountability",
+      pos: "noun",
+      meaning: "The obligation to accept responsibility and answer for the societal consequences of corporate actions.",
+      naturalCollocation: "corporate social and environmental accountability",
+      organicExample: "Statutory regulations are vital to enforce corporate accountability for industrial contamination.",
+      mechanicalPitfall: "Avoid saying 'responsible things'; accountability denotes legal and ethical liability.",
+      examinerInsight: "Key conceptual term in political, legal, and economic discourse."
     }
   ],
 
   consequences: [
     {
       type: "positive",
-      title: "Cause 01: Commercial Mega-Constellations",
+      title: "Opinion 01: Environmental Stewardship",
       category: "standard",
-      desc: "Private aerospace enterprises launch thousands of broadband satellites, severely saturating narrow low-Earth orbital corridors.",
-      example: "Commercial operators deploying hundreds of mass-produced orbiters in dense orbital shells.",
-      level: "Core Cause",
-      simpleTakeaway: "Private telecom fleets flood low-Earth orbit with thousands of mass-produced satellites.",
-      collocation: "rapid proliferation of commercial constellations"
+      desc: "Businesses utilize public natural resources; they bear an ethical duty to reduce greenhouse emissions and invest in clean energy.",
+      example: "Global tech corporations running facilities entirely on renewable solar power.",
+      level: "Core Opinion Pillar",
+      simpleTakeaway: "Businesses must protect the environment since they extract public natural resources.",
+      collocation: "environmental stewardship and emissions reduction"
     },
     {
       type: "positive",
-      title: "Cause 02: Abandoned Booster Hardware",
+      title: "Opinion 02: Employee Welfare & Living Wages",
       category: "standard",
-      desc: "Expended rocket stages and booster casings are left adrift in space for decades without fuel or propulsion to re-enter.",
-      example: "Multi-ton metallic rocket casings circling Earth uncontrolled for over forty years.",
-      level: "Core Cause",
-      simpleTakeaway: "Spent rocket bodies are abandoned in orbit without means to deorbit.",
-      collocation: "derelict upper rocket stages"
+      desc: "Employees generate corporate wealth; companies must respect human dignity by providing living wages, health coverage, and safe conditions.",
+      example: "Employers guaranteeing above-minimum living wages and comprehensive family health benefits.",
+      level: "Core Opinion Pillar",
+      simpleTakeaway: "Companies must provide fair wages and healthcare rather than exploiting workers.",
+      collocation: "fair remuneration and worker welfare"
     },
     {
       type: "positive",
-      title: "Cause 03: Cascading Shrapnel (Kessler Syndrome)",
+      title: "Opinion 03: Community Reinvestment",
       category: "standard",
-      desc: "High-speed kinetic collisions and anti-satellite missile tests pulverize dead hardware into tens of thousands of bullet-speed metal fragments.",
-      example: "The 2009 Iridium-Cosmos collision generating over 2,000 trackable pieces of hypervelocity shrapnel.",
-      level: "Core Cause",
-      simpleTakeaway: "Hypervelocity collisions shatter hardware into clouds of bullet-speed shrapnel.",
-      collocation: "catastrophic cascading collisions"
+      desc: "Corporations rely on municipal infrastructure and educated citizens, creating a moral duty to fund local schools, clinics, and parks.",
+      example: "Multinational companies funding STEM laboratories in underprivileged local school districts.",
+      level: "Core Opinion Pillar",
+      simpleTakeaway: "Businesses should reinvest a portion of revenue to support local schools and hospitals.",
+      collocation: "local community reinvestment"
     },
     {
       type: "positive",
-      title: "Cause 04: Outdated International Space Treaties",
+      title: "Opinion 04: Brand Loyalty & Long-Term Longevity",
       category: "additional",
-      desc: "The 1967 Outer Space Treaty lacks modern regulatory mandates, launch quotas, or pollution penalties for private aerospace firms.",
-      example: "Private corporations launching mega-fleets with zero financial liability for debris cleanup.",
-      level: "Root Legal Cause",
-      simpleTakeaway: "Outdated space laws provide no legal penalties for creating orbital pollution.",
-      collocation: "inadequacy of international space governance"
+      desc: "Socially conscious consumers and institutional investors increasingly support ethical companies, making CSR a driver of commercial success.",
+      example: "Brands with transparent fair-trade supply chains earning strong customer retention and higher enterprise valuation.",
+      level: "Strategic Advantage",
+      simpleTakeaway: "Ethical behavior builds lasting customer loyalty and protects brand reputation.",
+      collocation: "sustainable commercial longevity"
     }
   ],
 
   evaluationArguments: [
     {
-      title: "Solution 01: Mandatory Built-In Self-Deorbiting Thrusters",
+      title: "Non-Opinion 01: Financial Solvency & Preventing Bankruptcy",
       category: "standard",
-      reason: "Compel all newly manufactured satellites to carry automated thrusters or plasma drag sails that steer them into the atmosphere upon retirement.",
-      development: "Autonomous propulsion ensures that dead satellites lower their altitude and vaporize safely within Earth's dense atmosphere rather than becoming permanent hazards.",
-      example: "Requiring low-orbit broadband orbiters to burn up harmlessly within five years of decommission.",
-      type: "argument",
-      level: "Core Solution",
-      simpleTakeaway: "Require all satellites to carry thrusters to burn up in the atmosphere at end of life.",
-      collocation: "mandatory post-mission deorbiting protocols"
+      reason:
+        "Profit generation is the primary prerequisite for corporate survival; without cash flow and net profits, a firm collapses into bankruptcy.",
+      development:
+        "An insolvent enterprise cannot employ workers, pay suppliers, or fund philanthropic programs; financial health must precede social commitments.",
+      example:
+        "Small businesses operating on narrow profit margins focusing on revenue to cover rent and payroll.",
+      type: "counterpoint",
+      level: "Core Concession",
+      simpleTakeaway: "Companies must make a profit to stay afloat; bankrupt firms cannot help anyone.",
+      collocation: "commercial solvency and viability"
     },
     {
-      title: "Solution 02: Active Debris Removal (ADR) Robotic Missions",
+      title: "Non-Opinion 02: Job Creation & Economic Security",
       category: "standard",
-      reason: "Deploy specialized robotic space craft equipped with nets, harpoons, and magnetic grapplers to capture and deorbit heavy existing space junk.",
-      development: "Robotic salvage craft can rendezvous with uncontrolled multi-ton rocket bodies and guide them into safe oceanic re-entry corridors.",
-      example: "The European Space Agency's ClearSpace-1 mission deploying robotic arms to capture defunct rocket stages.",
-      type: "argument",
-      level: "Core Solution",
-      simpleTakeaway: "Launch robotic space tugs to capture and deorbit large floating derelict hardware.",
-      collocation: "active debris remediation technologies"
+      reason:
+        "Profitable enterprises employ millions of citizens, providing stable livelihoods that represent a massive direct contribution to society.",
+      development:
+        "Maintaining profitability protects workers from sudden layoffs and guarantees consistent family incomes during economic downturns.",
+      example:
+        "Major industrial employers sustaining the economies of entire townships by keeping factories open and payrolls active.",
+      type: "counterpoint",
+      level: "Core Concession",
+      simpleTakeaway: "Profitable businesses support society directly by providing millions of stable jobs.",
+      collocation: "employment creation and job security"
     },
     {
-      title: "Solution 03: Legally Binding UN Space Treaties & Launch Quotas",
+      title: "Non-Opinion 03: Corporate Tax Revenues for Public Infrastructure",
       category: "standard",
-      reason: "Establish enforceable United Nations launch licensing permits and mandatory orbital cleanup insurance bonds for all space operators.",
-      development: "Imposing heavy financial fines and capping annual launches forces aerospace corporations to prioritize reusable and recyclable mission profiles.",
-      example: "Withholding launch authorizations unless satellite operators prove pre-funded disposal and deorbiting plans.",
-      type: "argument",
-      level: "Core Solution",
-      simpleTakeaway: "Enforce UN launch permits with mandatory cleanup insurance bonds.",
-      collocation: "binding multilateral space treaties"
+      reason:
+        "Taxes paid on corporate profits fund national public services, including highways, emergency healthcare, and state education.",
+      development:
+        "Higher business profits directly expand the public treasury, enabling democratic governments to finance essential social safety nets.",
+      example:
+        "Government budgets utilizing corporate tax revenues to build state-of-the-art hospitals and public transit systems.",
+      type: "counterpoint",
+      level: "Core Concession",
+      simpleTakeaway: "Corporate profits generate taxes that governments use to build schools and hospitals.",
+      collocation: "corporate tax contributions"
     },
     {
-      title: "Solution 04: Real-Time AI Collision Avoidance Systems",
+      title: "Non-Opinion 04: Funding Technological Innovation & R&D",
       category: "additional",
-      reason: "Equip active satellite constellations with automated radar tracking sensors and AI-guided thrusters to dodge space shrapnel autonomously.",
-      development: "Ground-based radar paired with autonomous orbital thrusters enables active spacecraft to perform evasive maneuvers without human delay.",
-      example: "Modern communication orbiters automatically adjusting trajectories to dodge passing debris fragments.",
-      type: "argument",
-      level: "Technological Solution",
-      simpleTakeaway: "Equip active satellites with AI thrusters to dodge space debris autonomously.",
-      collocation: "autonomous collision-avoidance maneuvers"
+      reason:
+        "Retained corporate profits fund expensive research and development that invents green technologies and life-saving medical treatments.",
+      development:
+        "Without substantial profit margins, corporations cannot shoulder the massive financial risks required to pioneer scientific breakthroughs.",
+      example:
+        "Biotech and automotive firms investing billions in vaccine research and electric vehicle battery development.",
+      type: "counterpoint",
+      level: "Innovation Concession",
+      simpleTakeaway: "Profits fund the high-risk research needed to develop new medicines and technologies.",
+      collocation: "research and development investment"
     }
   ],
 
   facultyAngles: [
     {
-      title: "Orbital Mechanics & Aerospace Engineering",
-      development: "Focuses on satellite constellation density, low-Earth orbit saturation, autonomous propulsive deorbiting, and atmospheric re-entry burn-up."
+      title: "Business Ethics & Corporate Citizenship (Opinion Perspective)",
+      development:
+        "Analyzes corporate social responsibility (CSR), environmental stewardship, fair worker remuneration, community enrichment, and supply chain transparency."
     },
     {
-      title: "International Space Law & Environmental Governance",
-      development: "Examines United Nations space treaties (UNOOSA), corporate launch quotas, active debris removal salvage rights, and the Kessler syndrome."
+      title: "Macroeconomics & Shareholder Theory (Non-Opinion Concession)",
+      development:
+        "Examines Milton Friedman's shareholder theory, commercial solvency, job creation, corporate tax revenue generation, and research & development funding."
     }
   ]
 };

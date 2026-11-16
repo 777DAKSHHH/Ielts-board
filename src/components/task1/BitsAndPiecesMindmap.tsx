@@ -6,10 +6,8 @@ import {
   BookOpen,
   Award,
   CheckCircle2,
-  Table,
   TrendingUp,
   BarChart2,
-  PieChart as PieIcon,
   Eye,
   ArrowRight
 } from "lucide-react";
@@ -44,33 +42,33 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
     bgLight: "#eff6ff",
     icon: <BookOpen size={18} color="#2563eb" />,
     summary:
-      "A Band 9 introduction paraphrases the dual visual parameters: the bar chart delineates average weekly working hours, while the pie chart demonstrates the proportion suffering from stress-related illness across eight professional groups.",
+      "A Band 9 introduction paraphrases the line graph parameters: three regions (Australia, Canada, European Community), wheat export volumes in millions of tonnes, tracked across the six-year period from 1985 to 1990.",
     tableCorrelation:
-      "Captures both visual graphics: Bar Chart (0 to 70 hours/week) and Pie Chart (proportions summing to 100%) across 8 distinct occupations.",
+      "Captures the line graph: 3 distinct areas, 6 annual time points (1985–1990), with Y-axis scaled from 0 to 30 million tonnes.",
     pieces: [
       {
-        label: "Visual Graphics & Scope",
-        value: "Dual Graph (Bar Chart + Pie Chart)",
+        label: "Visual Graphic & Scope",
+        value: "Multi-Line Graph",
         detail:
-          "Combines labor volume (hours worked) with occupational health outcomes (stress illness proportion) across 8 groups.",
+          "Tracks volume changes and comparative trajectories in agricultural wheat exports across six years.",
         band9Application:
-          "“The bar chart and pie chart illustrate the average weekly working hours and the proportion of individuals suffering from stress-related illnesses across eight professional occupations.”"
+          "“The line graph illustrates the volume of wheat exported by three different areas—Australia, Canada, and the European Community—between 1985 and 1990, measured in millions of tonnes.”"
       },
       {
-        label: "Target Occupations",
-        value: "8 Professional Sectors",
+        label: "Target Regions",
+        value: "3 Areas (Canada, EC, Australia)",
         detail:
-          "Business men, movie producers, doctors, writers, programmers, lawyers, chefs, and lecturers.",
+          "Canada (initial #1), European Community (growing to #1), and Australia (declining to #3).",
         band9Application:
-          "“...across eight distinct occupational categories, ranging from commercial executives to academic lecturers.”"
+          "“...three major agricultural exporters: Australia, Canada, and the European Community.”"
       },
       {
-        label: "Comparative Dynamic",
-        value: "Workload Volume vs Health Incidence",
+        label: "Timeframe & Units",
+        value: "1985–1990 • Millions of Tonnes",
         detail:
-          "Enables examiners to see immediate qualitative comparisons between how long each profession worked and how severely they suffered from stress.",
+          "A historical six-year timeframe requiring past simple and past perfect comparative tenses.",
         band9Application:
-          "“...enabling direct evaluation between occupational time commitment and psychological health burdens.”"
+          "“...over a six-year timeframe spanning from 1985 through 1990, expressed in millions of tonnes.”"
       }
     ]
   },
@@ -83,127 +81,111 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
     bgLight: "#ecfdf5",
     icon: <Layers size={18} color="#059669" />,
     summary:
-      "Synthesizes overarching trends without quoting numerical statistics: 1) Business men committed the longest hours while lecturers worked the least; 2) Working time did not correlate directly with stress; 3) Movie producers and lecturers led in illness, while programmers recorded the lowest rate.",
+      "Synthesizes overarching trajectories without raw numerical data: 1) European Community experienced sustained growth to finish as the market leader; 2) Australia underwent a steady downward trajectory to finish lowest; 3) Canada exhibited marked volatility with the overall apex and a plunge before returning to its baseline.",
     tableCorrelation:
-      "Synthesizes extremes from both visuals: Hours extreme (Business men vs Lecturers) and Stress extreme (Producers vs Programmers), underscoring the non-correlation paradox.",
+      "Contrasts the expanding region (EC) against the contracting region (Australia) and the volatile oscillating region (Canada).",
     pieces: [
       {
-        label: "Pillar 1: Working Hours Spectrum",
-        value: "Business Men Peak vs Lecturers Floor",
+        label: "Pillar 1: European Community Growth",
+        value: "Upward Trajectory to Dominant Leader",
         detail:
-          "Business men worked the longest week of all professions by a noticeable margin, whereas lecturers spent the fewest hours on the job.",
+          "Sustained expansion over the second half of the period allowed the EC to surpass both competitors by 1990.",
         band9Application:
-          "“Overall, business men committed the longest hours per week by a considerable margin, whereas lecturers logged the fewest hours.”"
+          "“Overall, the European Community witnessed sustained upward growth over the period to become the dominant wheat exporter by 1990...”"
       },
       {
-        label: "Pillar 2: The Non-Correlation Paradox",
-        value: "Disparity Between Labor and Health Strain",
+        label: "Pillar 2: Australian Contraction",
+        value: "Steady Downward Trajectory to Lowest Rank",
         detail:
-          "There was no direct linear relationship between long hours and stress illness; movie producers and lecturers formed the two largest groups of stress sufferers.",
+          "Australia declined steadily after 1986, finishing in the lowest position among the three areas.",
         band9Application:
-          "“However, working time did not correlate directly with stress-related conditions; movie producers and lecturers constituted the two largest segments of stress sufferers...”"
+          "“...whereas Australia underwent a steady downward trajectory to finish in the lowest position.”"
       },
       {
-        label: "Pillar 3: The Minimum Illness Floor",
-        value: "Programmers Record Minimum Stress",
+        label: "Pillar 3: Canadian Volatility",
+        value: "Overall Apex, Dramatic Plunge & Baseline Return",
         detail:
-          "Despite working a standard 40-hour week, programmers recorded the absolute lowest prevalence of stress illness.",
+          "Canada experienced the most erratic pattern, registering the graph's highest peak before plummeting and returning to its starting point.",
         band9Application:
-          "“...while programmers recorded the lowest prevalence of stress-induced illnesses throughout the surveyed cohort.”"
+          "“In contrast, Canada exhibited marked volatility throughout the six-year span, registering both the overall peak and a dramatic plunge before returning to its starting level.”"
       }
     ]
   },
   {
-    id: "body1-hours",
-    title: "Piece 3: Body 1 — Weekly Hours Worked (Bar Chart)",
-    badge: "Bar Chart Breakdown",
-    color: "#dc2626",
-    borderColor: "#fecaca",
-    bgLight: "#fef2f2",
-    icon: <BarChart2 size={18} color="#dc2626" />,
+    id: "body1-canada-australia",
+    title: "Piece 3: Body 1 — Canada & Australia Analysis",
+    badge: "Volatile vs Declining",
+    color: "#0f172a",
+    borderColor: "#cbd5e1",
+    bgLight: "#f8fafc",
+    icon: <TrendingUp size={18} color="#0f172a" />,
     summary:
-      "Ranks the weekly working hours in descending order from the longest workweeks (Business men 70h, Movie producers 60h, Doctors 52h) to intermediate groups (Writers 45h, Programmers 40h) and the lower tier (Lawyers 35h, Chefs 30h, Lecturers 25h).",
+      "Reports Canada's opening lead (19m tonnes in 1985), climb to the 1988 global apex (25m tonnes), steep slump to 14m in 1989, and recovery to 19m in 1990; contrasted with Australia's brief rise to 16m in 1986, followed by steady decline to 11m in 1989–90.",
     tableCorrelation:
-      "Covers all 8 bars in the bar chart: 70h, 60h, 52h, 45h, 40h, 35h, 30h, 25h.",
+      "Covers Canada's rollercoaster trajectory and Australia's 4-year decline down to the lowest rank.",
     pieces: [
       {
-        label: "1. Peak Workweek Leader",
-        value: "Business Men (70 hrs/week)",
+        label: "1. Canada Starting Lead & 1988 Apex",
+        value: "19m (1985) → 25m (1988 Peak)",
         detail:
-          "Business men worked the longest week of all professions at 70 hours—nearly triple the hours of lecturers.",
+          "Started as leader at 19 million tonnes, dipped slightly to 17m in 1986, then surged to the highest point on the whole graph at 25m tonnes in 1988.",
         band9Application:
-          "“Regarding working hours, business men logged the longest workweek at an average of 70 hours...”"
+          "“In 1985, Canada was the leading wheat exporter at 19 million tonnes. Following a minor dip to 17 million tonnes in 1986, Canadian shipments surged rapidly to reach the highest point on the entire graph at 25 million tonnes in 1988.”"
       },
       {
-        label: "2. Upper Tier Followers",
-        value: "Movie Producers (60h) & Doctors (52h)",
+        label: "2. Canada 1989 Slump & Baseline Rebound",
+        value: "14m (1989) → 19m (1990 Rebound)",
         detail:
-          "Movie producers followed at 60 hours per week, while doctors averaged 52 hours.",
+          "Plunged by 11m tonnes in 1989, then recovered by 5m tonnes to end at exactly the same level as it started.",
         band9Application:
-          "“...followed by movie producers and doctors at 60 and 52 hours per week respectively.”"
+          "“However, this was immediately followed by a steep plunge to 14 million tonnes in 1989, after which exports rebounded back to their initial level of 19 million tonnes in 1990.”"
       },
       {
-        label: "3. Intermediate Standard & Baseline",
-        value: "Writers (45h) & Programmers (40h)",
+        label: "3. Australia Peak & Steady Decline",
+        value: "15m (1985) → 16m (1986) → 11m (1989–90)",
         detail:
-          "Writers averaged 45 hours, while programmers completed a standard 40-hour workweek.",
+          "Began at 15m, peaked briefly at 16m, and then diminished continuously to level off at 11m tonnes across the final two years.",
         band9Application:
-          "“Writers averaged 45 hours on the job, while programmers completed a standard 40-hour week.”"
-      },
-      {
-        label: "4. Lower Tier & Workweek Minimum",
-        value: "Lawyers (35h), Chefs (30h) & Lecturers (25h)",
-        detail:
-          "Lawyers and chefs completed 35 and 30 hours respectively, while lecturers worked the least at just 25 hours per week.",
-        band9Application:
-          "“Lawyers and chefs worked somewhat fewer hours (35 and 30 hours respectively), whereas lecturers recorded the lowest figure across all groups at merely 25 hours per week.”"
+          "“In contrast, Australia commenced at 15 million tonnes and rose slightly to a peak of 16 million tonnes in 1986. Thereafter, Australian wheat exports steadily declined over the subsequent three years to 11 million tonnes in 1989, where they remained unchanged through 1990...”"
       }
     ]
   },
   {
-    id: "body2-stress",
-    title: "Piece 4: Body 2 — Stress Illness & Contrasts (Pie Chart)",
-    badge: "Pie Chart Breakdown",
-    color: "#0891b2",
-    borderColor: "#a5f3fc",
-    bgLight: "#ecfeff",
-    icon: <PieIcon size={18} color="#0891b2" />,
+    id: "body2-ec",
+    title: "Piece 4: Body 2 — European Community Ascent",
+    badge: "Market Leader",
+    color: "#0284c7",
+    borderColor: "#bae6fd",
+    bgLight: "#f0f9ff",
+    icon: <Sparkles size={18} color="#0284c7" />,
     summary:
-      "Details each profession's share of the stress illness cohort: Movie producers leading at 25%, the central lecturer paradox at 18%, down through Doctors (15%), Business men (11%), Chefs (10%), Writers & Lawyers (8% each), and Programmers (5%).",
+      "Details the European Community's opening in second place at 17m tonnes in 1985, dip to a period low of 14m in 1986, two-year plateau at 15m (1987–88), and final two-year surge to 21m tonnes in 1990, overtaking both competitors.",
     tableCorrelation:
-      "Deconstructs the pie chart slices summing to 100%, emphasizing the central paradox where lecturers work the least yet suffer the 2nd highest stress.",
+      "Tracks the European Community from second position down to 14m, through its 15m plateau, and up to its 21m apex as the market leader.",
     pieces: [
       {
-        label: "1. Dominant Slice (Peak Stress)",
-        value: "Movie Producers (25% / One in Four)",
+        label: "1. Initial Dip to Period Trough",
+        value: "17m (1985) → 14m (1986 Trough)",
         detail:
-          "Movie producers constituted a full quarter of all individuals suffering from stress-related illness.",
+          "Started in second position, then dropped to its lowest recorded figure across the entire period.",
         band9Application:
-          "“In terms of stress-related illness, movie producers accounted for the largest single proportion at exactly 25%.”"
+          "“Wheat exports from the European Community started in second place at 17 million tonnes in 1985 before declining to a period low of 14 million tonnes in 1986.”"
       },
       {
-        label: "2. The Central Paradox",
-        value: "Lecturers (18% — 2nd Highest Stress)",
+        label: "2. Two-Year Stability Plateau",
+        value: "15m tonnes (1987 & 1988)",
         detail:
-          "Despite logging the shortest workweek (25h), lecturers made up the second highest share of stress sufferers at 18%.",
+          "Stabilized after a modest recovery, holding steady at 15m tonnes across both consecutive years.",
         band9Application:
-          "“Paradoxically, lecturers represented the second highest group at 18%, despite working the fewest hours.”"
+          "“The figures then plateaued at 15 million tonnes between 1987 and 1988.”"
       },
       {
-        label: "3. Moderate Stress & Business Men Disparity",
-        value: "Doctors (15%) & Business Men (11%)",
+        label: "3. Rapid Ascent & Overtaking Competitors",
+        value: "19m (1989) → 21m (1990 Apex)",
         detail:
-          "Doctors constituted 15%, while business men made up only 11% of stress cases despite their 70-hour workweek.",
+          "Leaped to 19m tonnes in 1989, matching Canada, and rose further to 21m in 1990 to finish as the undisputed leader.",
         band9Application:
-          "“Doctors constituted 15% of the total, whereas business men comprised a modest 11% despite their extensive workweek.”"
-      },
-      {
-        label: "4. Parities & Minimum Floor",
-        value: "Chefs (10%), Writers & Lawyers (8%), Programmers (5%)",
-        detail:
-          "Chefs made up 10%, writers and lawyers tied at 8% each, and programmers formed the smallest segment at 5%.",
-        band9Application:
-          "“Chefs made up exactly one-tenth of sufferers, while writers and lawyers shared an identical 8% each. At merely 5%, programmers formed the smallest proportion of the illness cohort.”"
+          "“Over the final two years, the European Community experienced a significant expansion, with export volumes climbing sharply to 19 million tonnes in 1989 and reaching an apex of 21 million tonnes in 1990. By doing so, the European Community overtook both Canada and Australia to become the top exporter.”"
       }
     ]
   }
@@ -211,6 +193,7 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
 
 export const BitsAndPiecesMindmap: React.FC = () => {
   const [selectedBranchId, setSelectedBranchId] = useState<string>("parameters");
+
   const activeBranch =
     MINDMAP_BRANCHES.find((b) => b.id === selectedBranchId) || MINDMAP_BRANCHES[0];
 
@@ -224,271 +207,138 @@ export const BitsAndPiecesMindmap: React.FC = () => {
         fontFamily: "system-ui, -apple-system, sans-serif"
       }}
     >
-      {/* Top Banner */}
-      <div
-        style={{
-          background: "#ffffff",
-          borderRadius: "16px",
-          border: "1.5px solid var(--border-subtle, #cbd5e1)",
-          padding: "16px 20px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "10px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
-        }}
-      >
-        <div>
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-            <Sparkles size={18} color="#2563eb" />
-            <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-              Dual Visual Strategic Decomposition Mindmap
-            </h3>
-            <span
-              style={{
-                fontSize: "0.72rem",
-                fontWeight: 800,
-                background: "#eff6ff",
-                color: "#1d4ed8",
-                padding: "2px 8px",
-                borderRadius: "6px"
-              }}
-            >
-              Dual Graph Framework
-            </span>
-          </div>
-          <p style={{ fontSize: "0.85rem", color: "#64748b", margin: 0 }}>
-            Master the structural anatomy: Introduction scope, zero-number macro overview, Bar Chart labor flow, and Pie Chart health synthesis.
-          </p>
-        </div>
-
-        <span
-          style={{
-            fontSize: "0.76rem",
-            fontWeight: 800,
-            background: "#f1f5f9",
-            color: "#475569",
-            padding: "4px 10px",
-            borderRadius: "8px"
-          }}
-        >
-          4 Architecture Pillars
-        </span>
-      </div>
-
-      {/* Main 2-Column Responsive Layout */}
+      {/* 4 Branch Selector Pills */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
-          gap: "16px",
-          alignItems: "stretch"
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: "10px"
         }}
       >
-        {/* Left Column: Interactive Pillar Navigator */}
-        <div
-          style={{
-            background: "#ffffff",
-            border: "1.5px solid var(--border-subtle, #cbd5e1)",
-            borderRadius: "18px",
-            padding: "16px",
-            boxShadow: "var(--shadow-sm)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px"
-          }}
-        >
-          <div style={{ fontSize: "0.82rem", fontWeight: 750, color: "#64748b", paddingLeft: "4px" }}>
-            Select Strategic Architectural Pillar:
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1 }}>
-            {MINDMAP_BRANCHES.map((b) => {
-              const isSelected = selectedBranchId === b.id;
-              return (
-                <button
-                  key={b.id}
-                  type="button"
-                  onClick={() => setSelectedBranchId(b.id)}
+        {MINDMAP_BRANCHES.map((branch) => {
+          const isSelected = selectedBranchId === branch.id;
+          return (
+            <div
+              key={branch.id}
+              onClick={() => setSelectedBranchId(branch.id)}
+              style={{
+                background: isSelected ? branch.bgLight : "#ffffff",
+                border: isSelected ? `2px solid ${branch.color}` : "1.5px solid #cbd5e1",
+                borderRadius: "14px",
+                padding: "12px 14px",
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
+                gap: "6px",
+                boxShadow: isSelected ? "0 4px 12px rgba(0,0,0,0.06)" : "none",
+                transition: "all 0.15s ease"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  {branch.icon}
+                  <strong style={{ fontSize: "0.88rem", color: "#0f172a" }}>{branch.title.split(":")[0]}</strong>
+                </div>
+                <span
                   style={{
-                    padding: "12px 14px",
-                    borderRadius: "12px",
-                    border: isSelected ? `2px solid ${b.color}` : "1.5px solid #e2e8f0",
-                    background: isSelected ? b.bgLight : "#f8fafc",
-                    textAlign: "left",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    gap: "10px",
-                    boxShadow: isSelected ? "0 4px 12px rgba(0,0,0,0.05)" : "none",
-                    transition: "all 0.15s ease"
+                    fontSize: "0.68rem",
+                    fontWeight: 800,
+                    padding: "2px 6px",
+                    borderRadius: "4px",
+                    background: `${branch.color}15`,
+                    color: branch.color
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                    <div
-                      style={{
-                        width: "32px",
-                        height: "32px",
-                        borderRadius: "8px",
-                        background: isSelected ? b.color : "#ffffff",
-                        color: isSelected ? "#ffffff" : b.color,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        border: isSelected ? "none" : `1px solid ${b.borderColor}`
-                      }}
-                    >
-                      {b.icon}
-                    </div>
-                    <div>
-                      <div
-                        style={{
-                          fontSize: "0.88rem",
-                          fontWeight: 800,
-                          color: isSelected ? "#0f172a" : "#334155"
-                        }}
-                      >
-                        {b.title}
-                      </div>
-                      <div style={{ fontSize: "0.72rem", color: "#64748b" }}>
-                        {b.pieces.length} Essential Analytical Components
-                      </div>
-                    </div>
-                  </div>
-                  <ChevronRight size={16} color={isSelected ? b.color : "#94a3b8"} />
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Active Branch Visual Correlation Callout */}
-          <div
-            style={{
-              background: activeBranch.bgLight,
-              border: `1.5px solid ${activeBranch.borderColor}`,
-              borderRadius: "10px",
-              padding: "10px 12px",
-              fontSize: "0.78rem",
-              color: "#334155",
-              lineHeight: 1.45
-            }}
-          >
-            <div style={{ fontWeight: 800, color: activeBranch.color, marginBottom: "3px" }}>
-              ✦ Visual Anchor for {activeBranch.title.split(":")[0]}:
+                  {branch.badge}
+                </span>
+              </div>
+              <span style={{ fontSize: "0.78rem", color: "#475569", fontWeight: 650 }}>
+                {branch.title.split(":")[1]?.trim()}
+              </span>
             </div>
-            {activeBranch.tableCorrelation}
+          );
+        })}
+      </div>
+
+      {/* Active Branch Deep Dive Card */}
+      <div
+        style={{
+          background: "#ffffff",
+          border: `1.5px solid ${activeBranch.borderColor}`,
+          borderRadius: "20px",
+          padding: "22px 24px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "14px",
+          boxShadow: "0 4px 16px rgba(0,0,0,0.03)"
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <div
+              style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "10px",
+                background: activeBranch.bgLight,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              {activeBranch.icon}
+            </div>
+            <div>
+              <h3 style={{ fontSize: "1.15rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+                {activeBranch.title}
+              </h3>
+              <p style={{ fontSize: "0.82rem", color: "#64748b", margin: "2px 0 0" }}>
+                {activeBranch.tableCorrelation}
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Right Column: Strategic Mindmap Decomposition Content */}
-        <div
-          style={{
-            background: "#ffffff",
-            border: "1.5px solid var(--border-subtle, #cbd5e1)",
-            borderRadius: "18px",
-            padding: "18px 20px",
-            boxShadow: "var(--shadow-sm)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px"
-          }}
-        >
-          {/* Active Branch Header */}
-          <div
-            style={{
-              background: activeBranch.bgLight,
-              border: `1.5px solid ${activeBranch.borderColor}`,
-              borderRadius: "12px",
-              padding: "12px 16px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px"
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span
-                  style={{
-                    fontSize: "0.72rem",
-                    fontWeight: 800,
-                    background: activeBranch.color,
-                    color: "#ffffff",
-                    padding: "2px 8px",
-                    borderRadius: "6px"
-                  }}
-                >
-                  {activeBranch.badge}
-                </span>
-                <strong style={{ fontSize: "1rem", color: "#0f172a" }}>
-                  {activeBranch.title}
-                </strong>
-              </div>
-              <span style={{ fontSize: "0.76rem", fontWeight: 700, color: activeBranch.color }}>
-                {activeBranch.pieces.length} Core Elements
-              </span>
-            </div>
-            <p style={{ fontSize: "0.85rem", color: "#334155", margin: 0, lineHeight: 1.45 }}>
-              {activeBranch.summary}
-            </p>
-          </div>
+        <p style={{ fontSize: "0.92rem", color: "#334155", margin: 0, lineHeight: 1.55 }}>
+          {activeBranch.summary}
+        </p>
 
-          {/* Pieces Cards List */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-            {activeBranch.pieces.map((p, idx) => (
-              <div
-                key={idx}
-                style={{
-                  background: "#ffffff",
-                  border: "1.5px solid #e2e8f0",
-                  borderRadius: "12px",
-                  padding: "14px 16px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "6px",
-                  boxShadow: "0 1px 4px rgba(0,0,0,0.02)"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "6px" }}>
-                  <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
-                    {p.label}
-                  </strong>
-                  {p.value && (
-                    <span
-                      style={{
-                        fontSize: "0.76rem",
-                        fontWeight: 750,
-                        padding: "2px 8px",
-                        borderRadius: "6px",
-                        background: "#f1f5f9",
-                        color: "#334155"
-                      }}
-                    >
-                      {p.value}
-                    </span>
-                  )}
-                </div>
-                <p style={{ fontSize: "0.84rem", color: "#64748b", margin: 0, lineHeight: 1.45 }}>
-                  {p.detail}
-                </p>
-                <div
-                  style={{
-                    background: "#f8fafc",
-                    borderLeft: `3px solid ${activeBranch.color}`,
-                    borderRadius: "6px",
-                    padding: "8px 12px",
-                    fontSize: "0.85rem",
-                    color: "#1e293b",
-                    fontStyle: "italic",
-                    lineHeight: 1.45
-                  }}
-                >
-                  {p.band9Application}
-                </div>
+        {/* 3 Sub-Pieces Grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "12px", marginTop: "4px" }}>
+          {activeBranch.pieces.map((piece, i) => (
+            <div
+              key={piece.label}
+              style={{
+                background: "#f8fafc",
+                border: "1px solid #e2e8f0",
+                borderRadius: "12px",
+                padding: "14px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "8px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <span style={{ fontSize: "0.78rem", fontWeight: 800, color: activeBranch.color }}>
+                  {piece.label}
+                </span>
+                {piece.value && (
+                  <span style={{ fontSize: "0.72rem", background: "#ffffff", padding: "2px 7px", borderRadius: "5px", border: "1px solid #cbd5e1", fontWeight: 750, color: "#0f172a" }}>
+                    {piece.value}
+                  </span>
+                )}
               </div>
-            ))}
-          </div>
+              <p style={{ fontSize: "0.84rem", color: "#475569", margin: 0, lineHeight: 1.45 }}>
+                {piece.detail}
+              </p>
+              <div style={{ marginTop: "auto", background: "#ffffff", border: "1px solid #e2e8f0", borderRadius: "8px", padding: "8px 10px" }}>
+                <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase" }}>Band 9 Model Text</span>
+                <p style={{ fontSize: "0.82rem", color: "#0f172a", fontStyle: "italic", margin: "2px 0 0", lineHeight: 1.4 }}>
+                  {piece.band9Application}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

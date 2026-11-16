@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lock, ShieldCheck, KeyRound } from "lucide-react";
+import { KeyRound, ShieldCheck } from "lucide-react";
 import { modalDialogVariants, tactilePress } from "../../motion";
+import { TopographicBackground } from "../common/TopographicBackground";
+import { LiquidGlassOrb, OrbState } from "../common/LiquidGlassOrb";
 
 interface GatekeeperModalProps {
   onUnlock: (passcode: string) => boolean;
@@ -15,14 +17,22 @@ export const GatekeeperModal: React.FC<GatekeeperModalProps> = ({
   setErrorMsg
 }) => {
   const [inputVal, setInputVal] = useState("");
+  const [orbState, setOrbState] = useState<OrbState>("idle");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputVal.trim()) {
       setErrorMsg("Please enter the classroom access code.");
+      setOrbState("error");
       return;
     }
-    onUnlock(inputVal);
+    setOrbState("thinking");
+    const success = onUnlock(inputVal);
+    if (!success) {
+      setOrbState("error");
+    } else {
+      setOrbState("success");
+    }
   };
 
   return (
@@ -34,46 +44,43 @@ export const GatekeeperModal: React.FC<GatekeeperModalProps> = ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "rgba(15, 23, 42, 0.75)",
-        padding: "24px"
+        background: "rgba(15, 23, 42, 0.72)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+        padding: "24px",
+        overflow: "hidden"
       }}
     >
+      {/* Ambient Topographic Terrain Backdrop */}
+      <TopographicBackground opacity={0.4} />
+
       <motion.div
         variants={modalDialogVariants}
         initial="hidden"
         animate="visible"
+        className="liquid-glass-surface"
         style={{
-          width: "min(92vw, 480px)",
-          padding: "38px 36px",
+          position: "relative",
+          zIndex: 10,
+          width: "min(92vw, 490px)",
+          padding: "40px 36px",
           textAlign: "center",
-          background: "#ffffff",
-          border: "1.5px solid var(--border-default)",
-          borderRadius: "22px",
-          boxShadow: "var(--shadow-modal)"
+          borderRadius: "26px"
         }}
       >
-        <div
-          style={{
-            width: "68px",
-            height: "68px",
-            borderRadius: "18px",
-            background: "var(--slate-100)",
-            color: "var(--slate-900)",
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: "18px",
-            border: "1px solid var(--border-subtle)",
-            boxShadow: "var(--shadow-xs)"
-          }}
-        >
-          <Lock size={30} strokeWidth={2.2} />
+        {/* Interactive Liquid Glass Orb */}
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
+          <LiquidGlassOrb
+            state={errorMsg ? "error" : orbState}
+            size={72}
+            interactive={false}
+          />
         </div>
 
-        <h2 style={{ fontSize: "1.65rem", fontWeight: 800, marginBottom: "8px", letterSpacing: "-0.02em", color: "var(--slate-900)" }}>
+        <h2 style={{ fontSize: "1.75rem", fontWeight: 800, marginBottom: "8px", letterSpacing: "-0.02em", color: "var(--slate-900)" }}>
           IELTS Smartboard OS
         </h2>
-        <p style={{ color: "var(--slate-600)", fontSize: "0.95rem", marginBottom: "26px", lineHeight: 1.45 }}>
+        <p style={{ color: "var(--slate-600)", fontSize: "0.95rem", marginBottom: "26px", lineHeight: 1.5 }}>
           Enter teacher Roman numeral access key to initialize classroom workstation.
         </p>
 
@@ -96,6 +103,7 @@ export const GatekeeperModal: React.FC<GatekeeperModalProps> = ({
               onChange={(e) => {
                 setInputVal(e.target.value);
                 if (errorMsg) setErrorMsg("");
+                if (orbState === "error") setOrbState("idle");
               }}
               autoFocus
               style={{

@@ -225,3 +225,196 @@
     padding: 14px 18px;
   }
 }
+
+/* ==========================================================================
+   REACTDROPS INSPIRED LIQUID GLASS & AMBIENT TOPOGRAPHIC ANIMATIONS
+   Smartboard Anti-Glare Safe • Hardware-Accelerated 60fps • Apple visionOS Clarity
+   ========================================================================== */
+
+/* Topographic Terrain Fluid Waves */
+@keyframes topoWaveSlow {
+  0%, 100% {
+    transform: translateY(0px) scaleY(1);
+  }
+  50% {
+    transform: translateY(-9px) scaleY(1.025);
+  }
+}
+
+@keyframes topoWaveReverse {
+  0%, 100% {
+    transform: translateY(0px) scaleY(1);
+  }
+  50% {
+    transform: translateY(9px) scaleY(0.975);
+  }
+}
+
+@keyframes topoPulseAmbient {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.topographic-bg-canvas .topo-path-1,
+.topographic-bg-canvas .topo-path-3,
+.topographic-bg-canvas .topo-path-5,
+.topographic-bg-canvas .topo-path-7 {
+  animation: topoWaveSlow 24s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.topographic-bg-canvas .topo-path-2,
+.topographic-bg-canvas .topo-path-4,
+.topographic-bg-canvas .topo-path-6,
+.topographic-bg-canvas .topo-path-8 {
+  animation: topoWaveReverse 28s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Liquid Glass Surface (ReactDrops inspired, High-contrast Smartboard safe) */
+.liquid-glass-surface {
+  background: rgba(255, 255, 255, 0.90) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 
+    0 12px 36px -4px rgba(15, 23, 42, 0.08),
+    0 4px 12px -2px rgba(15, 23, 42, 0.04),
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px 0 rgba(203, 213, 225, 0.25) !important;
+}
+
+/* Fluid Bubble Switcher Container */
+.liquid-bubble-track {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background: rgba(241, 245, 249, 0.85);
+  border: 1.5px solid rgba(226, 232, 240, 0.9);
+  border-radius: 12px;
+  padding: 3px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Liquid Bubble Tab Button */
+.liquid-bubble-btn {
+  position: relative;
+  z-index: 1;
+  min-height: 36px;
+  padding: 0 16px;
+  border-radius: 9px;
+  font-size: 0.84rem;
+  font-weight: 750;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* The Sliding Liquid Capsule indicator */
+.liquid-bubble-active-pill {
+  position: absolute;
+  inset: 3px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  box-shadow: 
+    0 4px 12px -1px rgba(15, 23, 42, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Tactile Frosted Action Buttons */
+.liquid-action-btn {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 
+    0 2px 6px rgba(15, 23, 42, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.liquid-action-btn:hover {
+  background: #ffffff !important;
+  border-color: rgba(148, 163, 184, 0.8) !important;
+  box-shadow: 
+    0 6px 16px -2px rgba(15, 23, 42, 0.1),
+    inset 0 1px 1.5px rgba(255, 255, 255, 1) !important;
+  transform: translateY(-1px);
+}
+
+/* Chromatic Glass Card Styling */
+.chromatic-glass-card {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 
+    0 8px 24px -2px rgba(15, 23, 42, 0.06),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Chromatic Glass Badge Tag */
+.chromatic-glass-badge {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  box-shadow: 
+    0 2px 6px -1px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0.5px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Liquid Glass Orb Keyframe Rotations & Pulses */
+@keyframes orbRotateCaustics {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbPulseBreathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes orbWaveRings {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.orb-rotate-anim {
+  animation: orbRotateCaustics 20s linear infinite;
+}
+
+.orb-pulse-anim {
+  animation: orbPulseBreathe 4s ease-in-out infinite;
+}
+

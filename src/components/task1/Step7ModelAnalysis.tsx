@@ -14,12 +14,12 @@ export const Step7ModelAnalysis: React.FC = () => {
         </span>
         <h2 className="stage-title">Comparative Analysis &amp; Complete Band 9 Model Report</h2>
         <p className="stage-subtitle">
-          Master the three essential analytical frameworks for dual bar and pie charts, alongside the complete {modelReport?.wordCount || 216}-word Band 9 model response organized across four balanced paragraphs.
+          Master the essential analytical frameworks for line graphs, alongside the complete {modelReport?.wordCount || 198}-word Band 9 model response organized across four balanced paragraphs.
         </p>
       </div>
 
-      {/* 3 Grammatical Processing Groups */}
-      <div className="stage-grid-2col" style={{ gridTemplateColumns: "repeat(3, 1fr)", gap: "14px" }}>
+      {/* 4 Grammatical Processing Groups */}
+      <div className="stage-grid-2col" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "14px" }}>
         {TASK1_DATA.processingGroups.map((group, idx) => (
           <div
             key={group.title}
@@ -33,7 +33,7 @@ export const Step7ModelAnalysis: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
               <Layers
                 size={17}
-                color={idx === 0 ? "#dc2626" : idx === 1 ? "#0891b2" : "#0d9488"}
+                color={idx === 0 ? "#0284c7" : idx === 1 ? "#0f172a" : idx === 2 ? "#64748b" : "#10b981"}
               />
               <h4 style={{ fontSize: "0.92rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
                 {group.title}
@@ -65,15 +65,13 @@ export const Step7ModelAnalysis: React.FC = () => {
       {/* Full Band 9 Model Report Box */}
       {modelReport && (
         <div
+          className="chromatic-glass-card"
           style={{
-            background: "#ffffff",
-            border: "1.5px solid var(--border-subtle)",
             borderRadius: "20px",
             padding: "22px",
             display: "flex",
             flexDirection: "column",
-            gap: "14px",
-            boxShadow: "var(--shadow-sm)"
+            gap: "14px"
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
@@ -91,8 +89,8 @@ export const Step7ModelAnalysis: React.FC = () => {
                   { id: "all", label: "Full Report (All)" },
                   { id: "intro", label: "Intro" },
                   { id: "overview", label: "Overview" },
-                  { id: "body1", label: "Body 1 (Hours Worked)" },
-                  { id: "body2", label: "Body 2 (Stress Illness)" }
+                  { id: "body1", label: "Body 1 (Canada & Australia)" },
+                  { id: "body2", label: "Body 2 (European Community)" }
                 ] as const
               ).map((tab) => (
                 <button

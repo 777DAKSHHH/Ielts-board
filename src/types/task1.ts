@@ -273,6 +273,31 @@ export interface ConcreteIngredientItem {
   band9Phrase: string;
 }
 
+export interface WheatExportYearPoint {
+  year: number;
+  value: number;
+  annotation?: string;
+}
+
+export interface WheatExportRegion {
+  id: "australia" | "canada" | "european-community";
+  name: string;
+  markerType: "square" | "circle" | "triangle";
+  color: string;
+  dataPoints: WheatExportYearPoint[];
+  startValue: number;
+  endValue: number;
+  peakValue: number;
+  peakYear: number;
+  troughValue: number;
+  troughYear: number;
+  netChange: number;
+  trendType: "continuous_decline" | "erratic_fluctuation" | "sustained_growth";
+  trendSummary: string;
+  band9Sentence: string;
+  examinerNotes: string;
+}
+
 export interface ProfessionWorkloadStress {
   id: string;
   profession: string;
@@ -300,6 +325,7 @@ export interface Task1Data {
   sampleIntro: string;
   sampleOverview: string;
   timingSeconds: number;
+  wheatExportData?: WheatExportRegion[];
   hourlyPoints?: HourlyAudiencePoint[];
   channels?: MediaChannelInfo[];
   audienceHotspots?: AudienceHotspot[];

@@ -13,6 +13,7 @@ import { GatekeeperModal } from "./components/layout/GatekeeperModal";
 import { IslandHeader } from "./components/layout/IslandHeader";
 import { TouchDock } from "./components/layout/TouchDock";
 import { QuickJumpMenu } from "./components/layout/QuickJumpMenu";
+import { TopographicBackground } from "./components/common/TopographicBackground";
 
 // Modals
 import { QuizModal } from "./components/modals/QuizModal";
@@ -43,9 +44,9 @@ import { Step9SubmissionT2 } from "./components/task2/Step9Submission";
 import type { ModuleType } from "./types";
 import { TASK1_STEPS, TASK1_TITLES, TASK2_STEPS, TASK2_TITLES } from "./config";
 
-// Standalone Pages (General Training Task 1 & Cambridge Reading Solutions)
+// Standalone Pages (General Training Task 1 & Confused Words Nuance Lab)
 import { GeneralTask1Page } from "./components/generalTask1/GeneralTask1Page";
-import { Cambridge7Test2Page } from "./components/cambridge/Cambridge7Test2Page";
+import { ConfusedWordsPage } from "./components/confusedWords/ConfusedWordsPage";
 
 export function App() {
   // Gatekeeper Auth
@@ -55,6 +56,7 @@ export function App() {
   const [currentModule, setCurrentModule] = useState<ModuleType>("task1");
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [direction, setDirection] = useState<number>(1);
+  const [originModuleForNuance, setOriginModuleForNuance] = useState<"task1" | "task2">("task1");
 
   // Aux Modals
   const [isQuickJumpOpen, setIsQuickJumpOpen] = useState<boolean>(false);
@@ -79,9 +81,9 @@ export function App() {
       ? TASK1_TITLES
       : currentModule === "task2"
       ? TASK2_TITLES
-      : currentModule === "general1"
-      ? ["General Training Task 1 Letter Masterclass"]
-      : ["Cambridge 7 Test 2 Reading Solutions"];
+      : currentModule === "confusedWords"
+      ? ["English Nuance Lab • Below vs. Under vs. Underneath"]
+      : ["General Training Task 1 Letter Masterclass"];
 
   const currentStepTitle =
     stepTitles[Math.min(currentStep - 1, stepTitles.length - 1)] || "Lesson Overview";
@@ -107,9 +109,16 @@ export function App() {
   };
 
   const handleSelectModule = (mod: ModuleType, targetStep?: number) => {
-    const nextStep =
-      targetStep ??
-      (mod === "task1" && (currentModule === "general1" || currentModule === "cambridge7test2") ? 8 : 1);
+    let nextStep = targetStep;
+    if (nextStep === undefined) {
+      if (mod === "task1") {
+        nextStep = currentModule === "general1" || (currentModule === "confusedWords" && originModuleForNuance === "task1") ? 8 : 1;
+      } else if (mod === "task2") {
+        nextStep = currentModule === "confusedWords" && originModuleForNuance === "task2" ? 9 : 1;
+      } else {
+        nextStep = 1;
+      }
+    }
     setCurrentModule(mod);
     setCurrentStep(nextStep);
     timer.reset(180);
@@ -127,12 +136,13 @@ export function App() {
       );
     }
 
-    if (currentModule === "cambridge7test2") {
+    if (currentModule === "confusedWords") {
       return (
-        <Cambridge7Test2Page
+        <ConfusedWordsPage
           onSpeak={speech.speak}
           accent={speech.accent}
           onNavigateModule={handleSelectModule}
+          returnModule={originModuleForNuance}
         />
       );
     }
@@ -166,7 +176,10 @@ export function App() {
             <Step8Connectors
               onSpeak={speech.speak}
               onNavigateToGeneral={() => handleSelectModule("general1")}
-              onNavigateToCambridge={() => handleSelectModule("cambridge7test2")}
+              onNavigateToNuanceLab={() => {
+                setOriginModuleForNuance("task1");
+                handleSelectModule("confusedWords");
+              }}
             />
           );
         default:
@@ -199,7 +212,14 @@ export function App() {
         case 8:
           return <Step8ConclusionT2 />;
         case 9:
-          return <Step9SubmissionT2 />;
+          return (
+            <Step9SubmissionT2
+              onNavigateToNuanceLab={() => {
+                setOriginModuleForNuance("task2");
+                handleSelectModule("confusedWords");
+              }}
+            />
+          );
         default:
           return null;
       }
@@ -216,6 +236,9 @@ export function App() {
 
   return (
     <div className="app-stage-container">
+      {/* ReactDrops-Inspired Ambient Topographic Terrain */}
+      <TopographicBackground opacity={0.65} />
+
       {/* Master Teaching Header */}
       <IslandHeader
         currentModule={currentModule}
@@ -229,6 +252,7 @@ export function App() {
         isTimerRunning={timer.isRunning}
         onTimerToggle={timer.toggle}
         boardScale={boardScale}
+        originModuleForNuance={originModuleForNuance}
       />
 
       {/* Center Stage Viewport with Tactile Spring Motion */}

@@ -230,19 +230,17 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
         </div>
       </div>
 
-      {/* Navigation Pills Bar */}
+      {/* Navigation Pills Bar (ReactDrops Liquid Glass & Bubble Tabs) */}
       <div
+        className="liquid-glass-surface"
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
           gap: "10px",
-          background: "#ffffff",
           borderRadius: "16px",
-          border: "1.5px solid var(--border-subtle, #cbd5e1)",
-          padding: "8px 14px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
+          padding: "8px 14px"
         }}
       >
         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
@@ -258,6 +256,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id as any)}
+                className="liquid-bubble-btn"
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -266,11 +265,12 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   borderRadius: "10px",
                   fontSize: "0.84rem",
                   fontWeight: 750,
-                  border: isSelected ? "1.5px solid #0f172a" : "1px solid #e2e8f0",
-                  background: isSelected ? "#0f172a" : "#f8fafc",
-                  color: isSelected ? "#ffffff" : "#475569",
+                  border: "none",
+                  background: isSelected ? "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)" : "transparent",
+                  color: isSelected ? "#ffffff" : "var(--slate-600)",
                   cursor: "pointer",
-                  transition: "all 0.15s ease"
+                  boxShadow: isSelected ? "0 4px 12px rgba(15, 23, 42, 0.2)" : "none",
+                  transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)"
                 }}
               >
                 {tab.icon}

@@ -13,10 +13,10 @@ export const Step3Vocab: React.FC<Step3VocabProps> = ({ onSpeak, accent, setAcce
   <div className="stage-card-wrapper">
     <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "16px" }}>
       <div>
-        <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 03 / 08 • Dual Chart Lexical Resource</span>
-        <h2 className="stage-title">Workload &amp; Stress Analytical Lexicon</h2>
+        <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 03 / 08 • Line Graph Lexical Resource</span>
+        <h2 className="stage-title">Wheat Exports &amp; Trend Trajectory Lexicon</h2>
         <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-          Essential Band 9 collocations for dual charts: workload duration, occupational stress illness, proportions, disparities, correlations, and comparative spectrums.
+          Essential Band 9 collocations for line graphs: apex, upward and downward trajectories, marked volatility, precipitous plunge, plateau, rebound, and overtaking dynamics.
         </p>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "var(--slate-100)", padding: "6px 10px", borderRadius: "12px" }}>

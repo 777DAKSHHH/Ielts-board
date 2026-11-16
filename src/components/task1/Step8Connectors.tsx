@@ -5,13 +5,13 @@ import { TASK1_DATA } from "../../data/task1Data";
 interface Step8ConnectorsProps {
   onSpeak?: (text: string) => void;
   onNavigateToGeneral?: () => void;
-  onNavigateToCambridge?: () => void;
+  onNavigateToNuanceLab?: () => void;
 }
 
 export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
   onSpeak,
   onNavigateToGeneral,
-  onNavigateToCambridge
+  onNavigateToNuanceLab
 }) => {
   return (
     <div className="stage-card-wrapper">
@@ -20,14 +20,51 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
           <span className="apple-badge success" style={{ marginBottom: "8px" }}>
             Step 08 / 08 • Academic Transitions &amp; Comparative Cohesion
           </span>
-          <h2 className="stage-title">Discourse Connectors &amp; Cohesive Flow for Dual Visuals</h2>
+          <h2 className="stage-title">Discourse Connectors &amp; Cohesive Flow for Wheat Exports</h2>
           <p className="stage-subtitle">
-            Master academic discourse markers to establish seamless logical transitions across dual visual parameters: bar chart labor rankings, pie chart illness distributions, and the central lecturer paradox.
+            Master academic discourse markers to establish seamless logical transitions across line graph parameters: European Community upward growth, Canadian dramatic fluctuations and 1988 apex, and Australia's steady downward trajectory.
           </p>
         </div>
 
-        {/* Header Action Buttons for Extension Suites */}
+        {/* Header Action Buttons for Extension Pages */}
         <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
+          {onNavigateToNuanceLab && (
+            <button
+              type="button"
+              onClick={onNavigateToNuanceLab}
+              style={{
+                padding: "9px 16px",
+                background: "linear-gradient(135deg, #1e1b4b, #312e81)",
+                color: "#ffffff",
+                border: "1.5px solid #4338ca",
+                borderRadius: "12px",
+                fontSize: "0.84rem",
+                fontWeight: 800,
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                cursor: "pointer",
+                boxShadow: "0 4px 14px rgba(67, 56, 202, 0.2)",
+                transition: "all 0.15s ease"
+              }}
+            >
+              <Sparkles size={16} color="#a5b4fc" />
+              <span>Nuance Lab (Below / Under / Underneath)</span>
+              <span
+                style={{
+                  fontSize: "0.70rem",
+                  background: "#4f46e5",
+                  color: "#ffffff",
+                  padding: "2px 6px",
+                  borderRadius: "5px",
+                  fontWeight: 750
+                }}
+              >
+                Ep 01
+              </span>
+            </button>
+          )}
+
           {onNavigateToGeneral && (
             <button
               type="button"
@@ -61,43 +98,6 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
                 }}
               >
                 Informal
-              </span>
-            </button>
-          )}
-
-          {onNavigateToCambridge && (
-            <button
-              type="button"
-              onClick={onNavigateToCambridge}
-              style={{
-                padding: "9px 16px",
-                background: "linear-gradient(135deg, #091e3a, #173865)",
-                color: "#ffffff",
-                border: "1.5px solid #1e3a8a",
-                borderRadius: "12px",
-                fontSize: "0.84rem",
-                fontWeight: 800,
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                cursor: "pointer",
-                boxShadow: "0 4px 14px rgba(9, 30, 58, 0.18)",
-                transition: "all 0.15s ease"
-              }}
-            >
-              <BookOpen size={16} color="#34d399" />
-              <span>Cambridge 7 Test 2 Reading</span>
-              <span
-                style={{
-                  fontSize: "0.70rem",
-                  background: "#2563eb",
-                  color: "#ffffff",
-                  padding: "2px 6px",
-                  borderRadius: "5px",
-                  fontWeight: 750
-                }}
-              >
-                Passages 1–3
               </span>
             </button>
           )}
@@ -199,7 +199,48 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "14px" }}>
-          {/* Card 1: General Training Task 1 Letter Masterclass */}
+          {/* English Nuance Lab (Below vs Under vs Underneath) */}
+          {onNavigateToNuanceLab && (
+            <div
+              onClick={onNavigateToNuanceLab}
+              style={{
+                background: "linear-gradient(135deg, #f8fafc, #eff6ff)",
+                border: "1.5px solid #bfdbfe",
+                borderRadius: "16px",
+                padding: "20px 24px",
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+                boxShadow: "0 2px 10px rgba(37, 99, 235, 0.06)",
+                transition: "all 0.2s ease"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "#dbeafe", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Sparkles size={20} color="#2563eb" />
+                  </div>
+                  <div>
+                    <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>English Nuance Lab (Words Often Misunderstood)</strong>
+                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>Episode 01: BELOW vs. UNDER vs. UNDERNEATH</div>
+                  </div>
+                </div>
+                <span style={{ fontSize: "0.74rem", background: "#dbeafe", color: "#1e40af", fontWeight: 750, padding: "3px 10px", borderRadius: "6px", border: "1px solid #bfdbfe" }}>
+                  Classroom Reveal Mode
+                </span>
+              </div>
+              <p style={{ fontSize: "0.86rem", color: "#475569", margin: "4px 0 0", lineHeight: 1.5 }}>
+                Interactive SmartBoard lesson: Ask students first about imaginary horizontal lines (below), 3D vertical shelter / abstract states (under), and hidden layers (underneath), then reveal definitive rules and practice drills.
+              </p>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#2563eb", fontSize: "0.88rem", fontWeight: 750, marginTop: "6px" }}>
+                <span>Launch Nuance Lab Page</span>
+                <ArrowRight size={16} />
+              </div>
+            </div>
+          )}
+
+          {/* General Training Task 1 Letter Masterclass */}
           {onNavigateToGeneral && (
             <div
               onClick={onNavigateToGeneral}
@@ -207,7 +248,7 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
                 background: "#ffffff",
                 border: "1.5px solid #cbd5e1",
                 borderRadius: "16px",
-                padding: "18px 20px",
+                padding: "20px 24px",
                 cursor: "pointer",
                 display: "flex",
                 flexDirection: "column",
@@ -217,60 +258,25 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
               }}
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "#fef3c7", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Mail size={18} color="#d97706" />
+                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "#fef3c7", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Mail size={20} color="#d97706" />
                   </div>
-                  <strong style={{ fontSize: "0.96rem", color: "#0f172a" }}>General Task 1 (Informal Letter)</strong>
+                  <div>
+                    <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>General Training Task 1 (Informal Letter Masterclass)</strong>
+                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>College Project Letter • Celebrating New Year in a Different Country</div>
+                  </div>
                 </div>
-                <span style={{ fontSize: "0.72rem", background: "#fef3c7", color: "#92400e", fontWeight: 750, padding: "2px 8px", borderRadius: "6px", border: "1px solid #fde68a" }}>
-                  Informal Register
+                <span style={{ fontSize: "0.74rem", background: "#fef3c7", color: "#92400e", fontWeight: 750, padding: "3px 10px", borderRadius: "6px", border: "1px solid #fde68a" }}>
+                  Informal Register (Bestu Varas)
                 </span>
               </div>
-              <p style={{ fontSize: "0.82rem", color: "#64748b", margin: 0, lineHeight: 1.45 }}>
-                Master the strict 5-paragraph architecture, warm friendly register, and Indian / Gujarati New Year celebration customs (Bestu Varas).
+              <p style={{ fontSize: "0.86rem", color: "#475569", margin: "4px 0 0", lineHeight: 1.5 }}>
+                Master the strict 5-paragraph letter architecture (Warm Opening + Prompt Bullet 1 + Prompt Bullet 2 + Prompt Bullet 3 + Warm Sign-off), authentic informal idioms, and Indian / Gujarati New Year cultural traditions.
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#d97706", fontSize: "0.84rem", fontWeight: 750, marginTop: "4px" }}>
-                <span>Open Dedicated Letter Page</span>
-                <ArrowRight size={14} />
-              </div>
-            </div>
-          )}
-
-          {/* Card 2: Cambridge Book 7 Test 2 Reading Solutions */}
-          {onNavigateToCambridge && (
-            <div
-              onClick={onNavigateToCambridge}
-              style={{
-                background: "#ffffff",
-                border: "1.5px solid #cbd5e1",
-                borderRadius: "16px",
-                padding: "18px 20px",
-                cursor: "pointer",
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-                transition: "all 0.2s ease"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                  <div style={{ width: "32px", height: "32px", borderRadius: "8px", background: "#f0fdf4", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <BookOpen size={18} color="#16a34a" />
-                  </div>
-                  <strong style={{ fontSize: "0.96rem", color: "#0f172a" }}>Cambridge 7 Test 2 Reading Key</strong>
-                </div>
-                <span style={{ fontSize: "0.72rem", background: "#eff6ff", color: "#1d4ed8", fontWeight: 750, padding: "2px 8px", borderRadius: "6px", border: "1px solid #bfdbfe" }}>
-                  Passages 1–3
-                </span>
-              </div>
-              <p style={{ fontSize: "0.82rem", color: "#64748b", margin: 0, lineHeight: 1.45 }}>
-                Step-by-step analytical breakdown: paragraph context, exact text quotes, keyword synonym bridges, and answer keys.
-              </p>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#16a34a", fontSize: "0.84rem", fontWeight: 750, marginTop: "4px" }}>
-                <span>Open Cambridge Reading Solutions</span>
-                <ArrowRight size={14} />
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#d97706", fontSize: "0.88rem", fontWeight: 750, marginTop: "6px" }}>
+                <span>Launch Dedicated Letter Page</span>
+                <ArrowRight size={16} />
               </div>
             </div>
           )}

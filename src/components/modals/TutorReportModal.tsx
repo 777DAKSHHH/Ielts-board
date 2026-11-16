@@ -66,6 +66,8 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
         alignItems: "center",
         justifyContent: "center",
         background: "rgba(15, 23, 42, 0.72)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
         padding: "24px"
       }}
       onClick={onClose}
@@ -75,17 +77,15 @@ export const TutorReportModal: React.FC<TutorReportModalProps> = ({
         initial="hidden"
         animate="visible"
         exit="exit"
+        className="liquid-glass-surface"
         style={{
           width: "min(94vw, 800px)",
           maxHeight: "86vh",
-          background: "#ffffff",
-          borderRadius: "24px",
-          border: "1px solid var(--border-default)",
+          borderRadius: "26px",
           padding: "36px",
           display: "flex",
           flexDirection: "column",
-          gap: "20px",
-          boxShadow: "var(--shadow-modal)"
+          gap: "20px"
         }}
         onClick={(e) => e.stopPropagation()}
       >

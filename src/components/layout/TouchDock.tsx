@@ -23,25 +23,24 @@ export const TouchDock: React.FC<TouchDockProps> = ({
   canNext
 }) => {
   return (
-    <footer className="touch-dock" role="navigation" aria-label="Lesson Stage Navigation Dock">
+    <footer className="touch-dock liquid-glass-surface" role="navigation" aria-label="Lesson Stage Navigation Dock">
       {/* Previous Step Button */}
       <motion.button
         whileTap={canPrev ? tactilePress : undefined}
         onClick={onPrev}
         disabled={!canPrev}
-        className="apple-touch-btn"
+        className="apple-touch-btn liquid-action-btn"
         style={{
           minHeight: "42px",
           padding: "0 18px",
           gap: "8px",
           fontSize: "0.88rem",
           fontWeight: 700,
-          background: canPrev ? "#ffffff" : "var(--slate-100)",
+          background: canPrev ? undefined : "rgba(241, 245, 249, 0.7)",
           color: canPrev ? "var(--slate-800)" : "var(--slate-400)",
-          border: `1.5px solid ${canPrev ? "var(--border-default)" : "var(--border-subtle)"}`,
+          border: `1.5px solid ${canPrev ? "rgba(203, 213, 225, 0.8)" : "rgba(226, 232, 240, 0.6)"}`,
           borderRadius: "10px",
-          cursor: canPrev ? "pointer" : "not-allowed",
-          boxShadow: canPrev ? "var(--shadow-xs)" : "none"
+          cursor: canPrev ? "pointer" : "not-allowed"
         }}
         aria-label="Previous Lesson Step"
       >
@@ -49,16 +48,17 @@ export const TouchDock: React.FC<TouchDockProps> = ({
         <span>Previous</span>
       </motion.button>
 
-      {/* Step Indicators: Tactile Interactive Pills */}
+      {/* Step Indicators: Tactile Interactive Bubble Pills */}
       <div
         style={{
           display: "flex",
           alignItems: "center",
           gap: "8px",
-          background: "var(--slate-100)",
-          padding: "5px 12px",
-          borderRadius: "12px",
-          border: "1px solid var(--border-subtle)"
+          background: "rgba(241, 245, 249, 0.85)",
+          padding: "6px 14px",
+          borderRadius: "14px",
+          border: "1.5px solid rgba(226, 232, 240, 0.8)",
+          backdropFilter: "blur(8px)"
         }}
       >
         {Array.from({ length: totalSteps }, (_, i) => i + 1).map((stepNum) => {
@@ -73,17 +73,18 @@ export const TouchDock: React.FC<TouchDockProps> = ({
               title={`Jump to Step ${stepNum}`}
               aria-label={`Step ${stepNum} of ${totalSteps}${isActive ? " (Current)" : isPassed ? " (Completed)" : ""}`}
               style={{
-                width: isActive ? "32px" : "12px",
+                width: isActive ? "34px" : "12px",
                 height: "10px",
                 borderRadius: "6px",
                 border: "none",
                 background: isActive
-                  ? "var(--slate-900)"
+                  ? "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)"
                   : isPassed
                   ? "var(--slate-400)"
                   : "var(--slate-300)",
+                boxShadow: isActive ? "0 2px 6px rgba(15, 23, 42, 0.3), inset 0 1px 0.5px rgba(255, 255, 255, 0.3)" : "none",
                 cursor: "pointer",
-                transition: "all 0.22s cubic-bezier(0.16, 1, 0.3, 1)"
+                transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)"
               }}
             />
           );
@@ -102,12 +103,14 @@ export const TouchDock: React.FC<TouchDockProps> = ({
           gap: "8px",
           fontSize: "0.88rem",
           fontWeight: 750,
-          background: canNext ? "var(--slate-900)" : "var(--slate-100)",
+          background: canNext
+            ? "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)"
+            : "rgba(241, 245, 249, 0.7)",
           color: canNext ? "#ffffff" : "var(--slate-400)",
-          border: `1.5px solid ${canNext ? "var(--slate-950)" : "var(--border-subtle)"}`,
+          border: `1.5px solid ${canNext ? "#020617" : "rgba(226, 232, 240, 0.6)"}`,
           borderRadius: "10px",
           cursor: canNext ? "pointer" : "not-allowed",
-          boxShadow: canNext ? "var(--shadow-sm)" : "none"
+          boxShadow: canNext ? "0 4px 14px -2px rgba(15, 23, 42, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.2)" : "none"
         }}
         aria-label={currentStep === totalSteps ? "Finish Lesson" : "Next Lesson Step"}
       >

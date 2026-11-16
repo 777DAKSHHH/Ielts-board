@@ -49,6 +49,8 @@ export const QuickJumpMenu: React.FC<QuickJumpMenuProps> = ({
             alignItems: "center",
             justifyContent: "center",
             background: "rgba(15, 23, 42, 0.72)",
+            backdropFilter: "blur(8px)",
+            WebkitBackdropFilter: "blur(8px)",
             padding: "24px"
           }}
           onClick={onClose}
@@ -58,16 +60,14 @@ export const QuickJumpMenu: React.FC<QuickJumpMenuProps> = ({
             initial="hidden"
             animate="visible"
             exit="exit"
+            className="liquid-glass-surface"
             style={{
               width: "min(94vw, 780px)",
               maxHeight: "88vh",
               padding: "30px 34px",
               display: "flex",
               flexDirection: "column",
-              background: "#ffffff",
-              border: "1.5px solid var(--border-default)",
-              borderRadius: "20px",
-              boxShadow: "var(--shadow-modal)"
+              borderRadius: "24px"
             }}
             onClick={(e) => e.stopPropagation()}
             role="dialog"

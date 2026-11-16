@@ -28,132 +28,132 @@ interface Step2BrainstormProps {
 const ESSAY_FORMAT_STEPS = [
   {
     stepNum: "1",
-    label: "INTRODUCTION",
+    label: "INTRO",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    formatRule: "Paraphrase the question + Thesis"
+    formatRule: "Paraphrase the question + opinion"
   },
   {
     stepNum: "2",
-    label: "Body Paragraph 1",
+    label: "body para 1 & 2",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    formatRule: "Cause 1 + Solution 1 + Example"
+    formatRule: "On your opinion side"
   },
   {
     stepNum: "3",
-    label: "Body Paragraph 2",
-    badgeBg: "rgba(37, 99, 235, 0.12)",
-    badgeColor: "#1d4ed8",
-    formatRule: "Cause 2 + Solution 2 + Example"
+    label: "body para 3",
+    badgeBg: "rgba(234, 88, 12, 0.12)",
+    badgeColor: "#c2410c",
+    formatRule: "On your non-opinion side"
   },
   {
     stepNum: "4",
-    label: "CONCLUSION",
+    label: "conclusion",
     badgeBg: "rgba(13, 148, 136, 0.12)",
     badgeColor: "#0f766e",
-    formatRule: "Sum-up all the main causes, solutions + Suggestion / Recommendation"
+    formatRule: "Sum-up all the main points + restate your opinion"
   }
 ];
 
 // Structured cut-to-the-chase student idea cards
 interface IdeaItem {
   id: string;
-  type: "cause" | "solution";
+  type: "cause" | "solution"; // "cause" mapped to opinion side, "solution" mapped to non-opinion side
   tag: string;
   oneLiner: string;
   example: string;
 }
 
 const STUDENT_IDEAS: IdeaItem[] = [
-  // 5 Causes from Student Idea Bank
+  // 5 Opinion Side arguments (Body 1 & 2 - DISAGREE)
   {
-    id: "cause-1",
+    id: "opinion-1",
     type: "cause",
-    tag: "Growing demand for satellite-based services",
-    oneLiner: "Modern society increasingly depends on satellite technology for internet connectivity, GPS navigation, weather forecasting and communication, prompting companies to launch large numbers of satellites.",
-    example: "Satellite internet providers deploy thousands of small satellites to deliver broadband connectivity to remote areas."
+    tag: "Commercial solvency & avoiding bankruptcy",
+    oneLiner: "Profit generation is the primary prerequisite for corporate survival; without healthy profit margins, a company collapses into insolvency and cannot employ anyone or sustain any social cause.",
+    example: "Small and medium-sized enterprises (SMEs) prioritizing sales revenue simply to meet payroll, pay rent, and service supplier invoices."
   },
   {
-    id: "cause-2",
+    id: "opinion-2",
     type: "cause",
-    tag: "Commercialisation of space exploration",
-    oneLiner: "The growing involvement of private companies has made space activities commercially attractive, increasing the frequency of rocket launches as businesses compete.",
-    example: "Private aerospace companies regularly conduct launches to deploy satellites and provide services to other organisations."
+    tag: "Employment creation & sustaining livelihoods",
+    oneLiner: "Profitable businesses employ millions of citizens, providing dependable household incomes and career security that represent their greatest direct contribution to society.",
+    example: "Major employers sustaining local township economies by keeping factories operational and payrolls active during economic downturns."
   },
   {
-    id: "cause-3",
+    id: "opinion-3",
     type: "cause",
-    tag: "Abandoned satellites and rocket components",
-    oneLiner: "Many satellites eventually stop functioning, while discarded rocket stages and equipment remain in orbit without proper disposal procedures, accumulating over time.",
-    example: "A satellite that has completed its operational life may remain in orbit if it is not moved to a safer disposal orbit or deorbited."
+    tag: "Government welfare mandate & corporate taxation",
+    oneLiner: "Social welfare, public healthcare, schools, and environmental governance belong exclusively to elected governments, which are democratically funded by heavy corporate tax revenues.",
+    example: "Corporate income taxes collected from thriving commercial sectors enabling national governments to finance free public healthcare and highway networks."
   },
   {
-    id: "cause-4",
+    id: "opinion-4",
     type: "cause",
-    tag: "Collisions and fragmentation",
-    oneLiner: "When satellites or other orbital objects collide, they break into thousands of smaller fragments that remain in orbit and create further collision risks.",
-    example: "The destruction of an old satellite during an accidental collision can produce debris that threatens other functioning spacecraft."
+    tag: "Fiduciary responsibility to shareholders & pensioners",
+    oneLiner: "Corporate managers are legally bound fiduciaries entrusted with investor capital; diverting private earnings to social causes without shareholder consent breaches their core mandate.",
+    example: "Pension and retirement funds relying on corporate stock dividends to disburse monthly retirement income to senior citizens."
   },
   {
-    id: "cause-5",
+    id: "opinion-5",
     type: "cause",
-    tag: "International competition and strategic interests",
-    oneLiner: "Countries invest heavily in space technology for scientific, economic and national-security purposes, encouraging frequent launches without sufficient attention to environmental consequences.",
-    example: "Governments may prioritise establishing satellite networks and strengthening space capabilities over investing in debris-management systems."
+    tag: "Specialized commercial efficiency vs social engineering",
+    oneLiner: "Corporate executives specialize in commerce, manufacturing, and logistics, not public welfare; forcing companies into social engineering leads to misallocated resources and greenwashing.",
+    example: "Companies squandering capital on publicity-driven philanthropic campaigns rather than reinvesting in technological innovation and product quality."
   },
 
-  // 5 Solutions from Student Idea Bank
+  // 5 Non-Opinion / Concession arguments (Body 3 - AGREE COUNTERPOINT)
   {
-    id: "sol-1",
+    id: "non-opinion-1",
     type: "solution",
-    tag: "Develop active debris-removal technology",
-    oneLiner: "Space agencies and private companies should invest in spacecraft capable of capturing and removing dangerous debris from orbit.",
-    example: "Robotic spacecraft could attach to defunct satellites and guide them towards controlled re-entry into Earth's atmosphere."
+    tag: "Statutory environmental regulations & pollution limits",
+    oneLiner: "Businesses consume natural resources and produce waste, requiring them to adhere to emission limits and clean disposal laws as mandatory statutory compliance.",
+    example: "Manufacturing facilities installing industrial smoke filters and wastewater treatment plants to meet legal government environmental standards."
   },
   {
-    id: "sol-2",
+    id: "non-opinion-2",
     type: "solution",
-    tag: "Enforce responsible satellite disposal",
-    oneLiner: "Satellite operators should be required to remove inactive satellites from valuable orbital regions within a specified period after their missions end.",
-    example: "Operators could design satellites with propulsion systems that allow them to descend safely towards Earth's atmosphere after completing their operational lives."
+    tag: "Workplace safety & mandatory labor codes",
+    oneLiner: "Providing safe conditions, reasonable working hours, and living wages is legally enforced by state labor standards, protecting workers from commercial exploitation.",
+    example: "Retail and factory employers complying with mandatory fire safety codes, minimum wage legislation, and maximum weekly working hours."
   },
   {
-    id: "sol-3",
+    id: "non-opinion-3",
     type: "solution",
-    tag: "Improve satellite tracking and collision prevention",
-    oneLiner: "Countries should strengthen space surveillance systems to monitor objects in orbit and identify potential collisions before they occur.",
-    example: "Satellite operators can receive collision warnings and adjust spacecraft trajectories to avoid dangerous encounters."
+    tag: "Consumer protection & product integrity",
+    oneLiner: "Ensuring non-toxic, safe merchandise is a fundamental commercial prerequisite enforced by consumer protection legislation rather than discretionary corporate goodwill.",
+    example: "Pharmaceutical and food producers adhering to rigorous government inspection and safety certification standards."
   },
   {
-    id: "sol-4",
+    id: "non-opinion-4",
     type: "solution",
-    tag: "Introduce stricter international regulations",
-    oneLiner: "Governments should cooperate to establish common standards for satellite launches, orbital disposal and debris prevention.",
-    example: "International agreements could make responsible disposal plans compulsory before a satellite receives launch approval."
+    tag: "Brand reputation & calculated marketing advantages",
+    oneLiner: "Engaging in ethical practices and charitable initiatives is often a calculated marketing strategy aimed at protecting brand equity and boosting long-term sales.",
+    example: "Apparel brands publicizing organic fabric lines to attract premium consumers and defend market share."
   },
   {
-    id: "sol-5",
+    id: "non-opinion-5",
     type: "solution",
-    tag: "Design satellites for sustainability",
-    oneLiner: "Manufacturers should develop spacecraft that are easier to repair, reuse or safely dispose of once their missions are completed.",
-    example: "Satellites could be designed with reliable deorbiting mechanisms and components that minimise the creation of additional fragments."
+    tag: "Civic cooperation & local operating permits",
+    oneLiner: "Firms supporting local neighborhood events or sports clubs do so to foster good civic relations and secure municipal operational permits, directly serving enterprise interests.",
+    example: "Supermarkets sponsoring local clean-up drives to maintain positive relations with surrounding communities."
   }
 ];
 
 const TARGET_LEXIS = [
-  { word: "proliferation", note: "rapid proliferation of commercial satellites" },
-  { word: "congested", note: "dangerously congested orbital lanes" },
-  { word: "defunct", note: "thousands of defunct satellites adrift" },
-  { word: "catastrophic", note: "risk of catastrophic chain reactions" },
-  { word: "remediation", note: "active orbital debris remediation" },
-  { word: "decommission", note: "mandatory protocol to decommission units" },
-  { word: "hypervelocity", note: "shrapnel traveling at hypervelocity speeds" },
-  { word: "derelict", note: "multi-ton derelict rocket boosters" },
-  { word: "mitigate", note: "mitigate orbital saturation hazards" },
-  { word: "shrapnel", note: "clouds of untrackable metallic shrapnel" },
-  { word: "multilateral", note: "enforceable multilateral space treaties" },
-  { word: "sustainable", note: "preserving a sustainable orbital commons" }
+  { word: "philanthropy", note: "corporate philanthropy and community development" },
+  { word: "viability", note: "commercial viability and financial solvency" },
+  { word: "stewardship", note: "environmental stewardship and emissions reduction" },
+  { word: "exploitation", note: "preventing exploitation of vulnerable labor" },
+  { word: "accountability", note: "corporate environmental and social accountability" },
+  { word: "remuneration", note: "fair and equitable worker remuneration" },
+  { word: "sustainable", note: "sustainable production and commerce" },
+  { word: "altruism", note: "pure altruism vs statutory compliance" },
+  { word: "degradation", note: "mitigating industrial ecological degradation" },
+  { word: "concession", note: "balanced academic concession on profit necessity" },
+  { word: "compliance", note: "full compliance with labor and emission codes" },
+  { word: "prosperity", note: "shared economic and societal prosperity" }
 ];
 
 export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
@@ -185,9 +185,9 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 02 / 09 • Task Reveal &amp; Essay Format
         </span>
-        <h2 className="stage-title">Deconstruct the Causes &amp; Solutions Architecture &amp; One-Liner Points</h2>
+        <h2 className="stage-title">Deconstruct the Corporate Social Responsibility Architecture &amp; One-Liner Points</h2>
         <p className="stage-subtitle">
-          Essay Type: <strong>Causes &amp; Solutions Essay</strong>. Master the mandatory linked format: Cause 1 + Solution 1 and Cause 2 + Solution 2.
+          Essay Type: <strong>Opinion Essay (Agree or Disagree)</strong>. Master the mandatory 5-paragraph format: Opinion in Body 1 &amp; 2, Non-Opinion in Body 3.
         </p>
       </div>
 
@@ -198,7 +198,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to review the two direct questions, pair each cause with its direct solution, and lock in your thesis."
+          instruction="Focus Timer: 3 minutes to review the opinion prompt, formulate your balanced thesis, and lock in your core arguments."
         />
       </div>
 
@@ -268,12 +268,12 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 lineHeight: 1.5
               }}
             >
-              <strong>Examiner Requirement:</strong> Answer both questions fully. Symmetrically pair each cause with its direct solution in Body 1 and Body 2 with concrete examples.
+              <strong>Examiner Requirement:</strong> Present a clear opinion in the introduction, develop two body paragraphs on your opinion side (environmental stewardship and worker/community welfare), examine the non-opinion counterpoint in body 3 (profit necessity), and restate your balanced opinion in the conclusion.
             </div>
           </div>
         </div>
 
-        {/* Right Column: Standard 4-Paragraph Essay Format Card (Blurred until Revealed) */}
+        {/* Right Column: Standard 5-Paragraph Essay Format Card (Blurred until Revealed) */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
           <div
             style={{
@@ -326,7 +326,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   </motion.button>
                 )}
                 <span className="apple-badge neutral" style={{ fontSize: "0.82rem" }}>
-                  4-Paragraph Architecture
+                  5-Paragraph Architecture
                 </span>
               </div>
             </div>
@@ -356,7 +356,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   color: "#1d4ed8"
                 }}
               >
-                ⚡ Essay Format: <strong>Linked Causes &amp; Solutions Architecture</strong>
+                ⚡ Essay Format: <strong>5-Paragraph Opinion Architecture (with Concession)</strong>
               </div>
 
               <div
@@ -463,7 +463,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                       Format Hidden
                     </h4>
                     <p style={{ fontSize: "0.86rem", color: "var(--slate-500)", margin: "4px 0 0", lineHeight: 1.45 }}>
-                      Ask students to recall the Causes &amp; Solutions linked format, then click to reveal.
+                      Ask students to recall the 5-paragraph opinion format with concession, then click to reveal.
                     </p>
                   </div>
 
@@ -557,7 +557,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 transition: "all 0.15s ease"
               }}
             >
-              All Ideas (8)
+              All Ideas (10)
             </button>
             <button
               onClick={() => setActiveTab("cause")}
@@ -565,16 +565,16 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 padding: "6px 14px",
                 borderRadius: "8px",
                 border: "none",
-                background: activeTab === "cause" ? "#dc2626" : "transparent",
-                color: activeTab === "cause" ? "#ffffff" : "#991b1b",
+                background: activeTab === "cause" ? "#2563eb" : "transparent",
+                color: activeTab === "cause" ? "#ffffff" : "#1e40af",
                 fontWeight: activeTab === "cause" ? 800 : 600,
                 fontSize: "0.82rem",
-                boxShadow: activeTab === "cause" ? "0 2px 6px rgba(220,38,38,0.3)" : "none",
+                boxShadow: activeTab === "cause" ? "0 2px 6px rgba(37,99,235,0.3)" : "none",
                 cursor: "pointer",
                 transition: "all 0.15s ease"
               }}
             >
-              🔴 Causes (4)
+              🔵 Opinion Side (5)
             </button>
             <button
               onClick={() => setActiveTab("solution")}
@@ -582,16 +582,16 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 padding: "6px 14px",
                 borderRadius: "8px",
                 border: "none",
-                background: activeTab === "solution" ? "#16a34a" : "transparent",
-                color: activeTab === "solution" ? "#ffffff" : "#166534",
+                background: activeTab === "solution" ? "#ea580c" : "transparent",
+                color: activeTab === "solution" ? "#ffffff" : "#c2410c",
                 fontWeight: activeTab === "solution" ? 800 : 600,
                 fontSize: "0.82rem",
-                boxShadow: activeTab === "solution" ? "0 2px 6px rgba(22,163,74,0.3)" : "none",
+                boxShadow: activeTab === "solution" ? "0 2px 6px rgba(234,88,12,0.3)" : "none",
                 cursor: "pointer",
                 transition: "all 0.15s ease"
               }}
             >
-              🟢 Solutions (4)
+              🟠 Non-Opinion Concession (5)
             </button>
           </div>
         </div>
@@ -612,7 +612,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         >
           <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--slate-700)", flexShrink: 0 }}>
             <BookOpen size={15} color="var(--apple-blue)" />
-            <strong style={{ fontSize: "0.78rem" }}>Band 8.5/9 Space &amp; Remediation Lexis:</strong>
+            <strong style={{ fontSize: "0.78rem" }}>Band 8.5/9 Corporate Ethics &amp; Economics Lexis:</strong>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
             {TARGET_LEXIS.map((lex) => (
@@ -652,8 +652,8 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
               <div
                 key={idea.id}
                 style={{
-                  background: isCause ? "#fffcfc" : "#fcfdfc",
-                  border: isCause ? "1.5px solid #fecaca" : "1.5px solid #bbf7d0",
+                  background: isCause ? "#f8fafc" : "#fffbeb",
+                  border: isCause ? "1.5px solid #bfdbfe" : "1.5px solid #fed7aa",
                   borderRadius: "16px",
                   padding: "16px 18px",
                   boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
@@ -671,12 +671,12 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                         fontWeight: 800,
                         padding: "2px 8px",
                         borderRadius: "6px",
-                        background: isCause ? "#fee2e2" : "#dcfce7",
-                        color: isCause ? "#991b1b" : "#166534",
+                        background: isCause ? "#eff6ff" : "#ffedd5",
+                        color: isCause ? "#1d4ed8" : "#c2410c",
                         textTransform: "uppercase"
                       }}
                     >
-                      {isCause ? "🔴 Cause" : "🟢 Solution"} #{index + 1}
+                      {isCause ? "🔵 Opinion Side" : "🟠 Non-Opinion Concession"} #{index + 1}
                     </span>
                     <strong style={{ fontSize: "0.96rem", color: "#0f172a" }}>
                       {idea.tag}
@@ -710,7 +710,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                     color: "#1e293b",
                     fontWeight: 650,
                     lineHeight: 1.5,
-                    borderLeft: isCause ? "3px solid #ef4444" : "3px solid #22c55e",
+                    borderLeft: isCause ? "3px solid #2563eb" : "3px solid #ea580c",
                     paddingLeft: "10px"
                   }}
                 >
@@ -719,12 +719,12 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
 
                 <div
                   style={{
-                    background: isCause ? "#fef2f2" : "#f0fdf4",
-                    border: isCause ? "1px dashed #fca5a5" : "1px dashed #86efac",
+                    background: isCause ? "#eff6ff" : "#fff7ed",
+                    border: isCause ? "1px dashed #93c5fd" : "1px dashed #fdba74",
                     borderRadius: "8px",
                     padding: "6px 10px",
                     fontSize: "0.82rem",
-                    color: isCause ? "#7f1d1d" : "#14532d",
+                    color: isCause ? "#1e3a8a" : "#7c2d12",
                     display: "flex",
                     alignItems: "center",
                     gap: "6px"

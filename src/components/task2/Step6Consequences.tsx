@@ -24,15 +24,15 @@ export const Step6ConsequencesT2: React.FC = () => {
       <div style={{ marginBottom: "16px" }}>
         <span
           className="apple-badge accent"
-          style={{ marginBottom: "8px", background: "#fee2e2", color: "#991b1b" }}
+          style={{ marginBottom: "8px", background: "#eff6ff", color: "#1e40af" }}
         >
-          Step 06 / 09 • Student Idea Bank: Main Causes
+          Step 06 / 09 • Student Idea Bank: Opinion Arguments
         </span>
         <h2 className="stage-title">
-          Main Causes — Student Idea Bank
+          Opinion Arguments (Body 1 &amp; 2) — Student Idea Bank
         </h2>
         <p className="stage-subtitle">
-          These are the arguments students can understand and develop with relatable, real-world examples.
+          These are compelling arguments supporting corporate social responsibility, environmental stewardship, and worker welfare that students can understand and develop with relatable real-world examples.
         </p>
       </div>
 
@@ -53,14 +53,14 @@ export const Step6ConsequencesT2: React.FC = () => {
       >
         <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
           <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#475569", display: "flex", alignItems: "center", gap: "4px" }}>
-            <AlertOctagon size={14} color="#dc2626" /> Quick Jump:
+            <AlertOctagon size={14} color="#2563eb" /> Quick Jump:
           </span>
           <button
             type="button"
             onClick={() => setActiveFilter("all")}
             style={{
-              border: activeFilter === "all" ? "1.5px solid #dc2626" : "1px solid #e2e8f0",
-              background: activeFilter === "all" ? "#dc2626" : "#f8fafc",
+              border: activeFilter === "all" ? "1.5px solid #2563eb" : "1px solid #e2e8f0",
+              background: activeFilter === "all" ? "#2563eb" : "#f8fafc",
               color: activeFilter === "all" ? "#ffffff" : "#475569",
               padding: "4px 10px",
               borderRadius: "7px",
@@ -70,7 +70,7 @@ export const Step6ConsequencesT2: React.FC = () => {
               transition: "all 0.12s ease"
             }}
           >
-            All 5 Causes
+            All 5 Arguments
           </button>
           {causes.map((c, idx) => (
             <button
@@ -78,8 +78,8 @@ export const Step6ConsequencesT2: React.FC = () => {
               type="button"
               onClick={() => setActiveFilter(c.id)}
               style={{
-                border: activeFilter === c.id ? "1.5px solid #dc2626" : "1px solid #e2e8f0",
-                background: activeFilter === c.id ? "#dc2626" : "#f8fafc",
+                border: activeFilter === c.id ? "1.5px solid #2563eb" : "1px solid #e2e8f0",
+                background: activeFilter === c.id ? "#2563eb" : "#f8fafc",
                 color: activeFilter === c.id ? "#ffffff" : "#475569",
                 padding: "4px 10px",
                 borderRadius: "7px",
@@ -89,7 +89,7 @@ export const Step6ConsequencesT2: React.FC = () => {
                 transition: "all 0.12s ease"
               }}
             >
-              Cause {idx + 1}
+              Argument {idx + 1}
             </button>
           ))}
         </div>
@@ -99,7 +99,7 @@ export const Step6ConsequencesT2: React.FC = () => {
         </span>
       </div>
 
-      {/* ALL 5 STUDENT CAUSES IN A CLEAN HIGH-READABILITY SMART BOARD GRID */}
+      {/* ALL 5 STUDENT OPINION ARGUMENTS IN A CLEAN HIGH-READABILITY SMART BOARD GRID */}
       <div
         style={{
           display: "grid",
@@ -117,10 +117,10 @@ export const Step6ConsequencesT2: React.FC = () => {
               key={cause.id}
               style={{
                 background: "#ffffff",
-                border: "1.5px solid #fecaca",
+                border: "1.5px solid #bfdbfe",
                 borderRadius: "16px",
                 padding: "18px",
-                boxShadow: "0 2px 8px rgba(220, 38, 38, 0.04)",
+                boxShadow: "0 2px 8px rgba(37, 99, 235, 0.04)",
                 display: "flex",
                 flexDirection: "column",
                 gap: "12px",
@@ -131,8 +131,8 @@ export const Step6ConsequencesT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px" }}>
                 <span
                   style={{
-                    background: "#fee2e2",
-                    color: "#991b1b",
+                    background: "#eff6ff",
+                    color: "#1d4ed8",
                     fontSize: "0.74rem",
                     fontWeight: 800,
                     padding: "3px 9px",
@@ -158,7 +158,7 @@ export const Step6ConsequencesT2: React.FC = () => {
                     alignItems: "center",
                     gap: "4px"
                   }}
-                  title="Copy this cause idea"
+                  title="Copy this opinion argument"
                 >
                   {isCopied ? <Check size={12} color="#166534" /> : <Copy size={12} />}
                   <span>{isCopied ? "Copied" : "Copy"}</span>
@@ -171,10 +171,10 @@ export const Step6ConsequencesT2: React.FC = () => {
               </h4>
 
               {/* Main Argument / Relatable Explanation */}
-              <div style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "10px", padding: "12px 14px" }}>
+              <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "12px 14px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "4px" }}>
-                  <Lightbulb size={13} color="#dc2626" />
-                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#991b1b", textTransform: "uppercase" }}>
+                  <Lightbulb size={13} color="#2563eb" />
+                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#1e40af", textTransform: "uppercase" }}>
                     Main Argument &amp; Explanation
                   </span>
                 </div>

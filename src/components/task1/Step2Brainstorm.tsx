@@ -55,8 +55,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   // Default to side-by-side split view for zero-scroll on smart boards
   const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("business-men");
-  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("business-men");
+  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("canada");
+  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("canada");
   const [dockTab, setDockTab] = useState<"category" | "prompt" | "hotspots">("category");
 
   useEffect(() => {
@@ -147,7 +147,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           {[
             { id: "category", label: "🎯 Active Focus" },
             { id: "prompt", label: "📝 Prompt Parameters" },
-            { id: "hotspots", label: "⭐ All 8 Professions" }
+            { id: "hotspots", label: "⭐ All 3 Regions" }
           ].map((tab) => (
             <button
               key={tab.id}
@@ -171,17 +171,17 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         </div>
       </div>
 
-      {/* Dock Content: Tab 1 - Active Cell Deep Dive (Synced with Smartboard Dual Visual) */}
+      {/* Dock Content: Tab 1 - Active Cell Deep Dive (Synced with Smartboard Line Graph) */}
       {dockTab === "category" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1 }}>
-          {/* Quick Cell Tap Strips — Touch any chip to highlight on the smartboard */}
+          {/* Quick Region & Macro Tap Strips */}
           <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-            {/* Hours Rankings */}
+            {/* Regions */}
             <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
-              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#dc2626", marginRight: "2px", textTransform: "uppercase" }}>
-                Hours:
+              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#0284c7", marginRight: "2px", textTransform: "uppercase" }}>
+                Regions:
               </span>
-              {TABLE_CELL_HOTSPOTS.slice(0, 8).map((h) => {
+              {TABLE_CELL_HOTSPOTS.map((h) => {
                 const isSelected = selectedHotspotId === h.id;
                 return (
                   <button
@@ -189,9 +189,9 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     type="button"
                     onClick={() => handleSelectComponent(h.id)}
                     style={{
-                      padding: "2px 7px",
+                      padding: "3px 9px",
                       borderRadius: "6px",
-                      fontSize: "0.71rem",
+                      fontSize: "0.74rem",
                       fontWeight: 750,
                       border: isSelected ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
                       background: isSelected ? `${h.color}18` : "#f8fafc",
@@ -200,37 +200,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       transition: "all 0.15s ease"
                     }}
                   >
-                    {h.name.split("•")[0].trim()} ({h.number.split("/")[0].trim()})
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Stress Shares */}
-            <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
-              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#0891b2", marginRight: "2px", textTransform: "uppercase" }}>
-                Stress:
-              </span>
-              {TABLE_CELL_HOTSPOTS.slice(0, 8).map((h) => {
-                const isSelected = selectedHotspotId === h.id;
-                return (
-                  <button
-                    key={h.id}
-                    type="button"
-                    onClick={() => handleSelectComponent(h.id)}
-                    style={{
-                      padding: "2px 7px",
-                      borderRadius: "6px",
-                      fontSize: "0.71rem",
-                      fontWeight: 750,
-                      border: isSelected ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
-                      background: isSelected ? `${h.color}18` : "#f8fafc",
-                      color: isSelected ? h.color : "#475569",
-                      cursor: "pointer",
-                      transition: "all 0.15s ease"
-                    }}
-                  >
-                    {h.name.split("•")[0].trim()} ({h.number.split("/")[1]?.trim() || h.number})
+                    {h.name.split("•")[0].trim()}
                   </button>
                 );
               })}
@@ -249,9 +219,9 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     type="button"
                     onClick={() => handleSelectComponent(h.id)}
                     style={{
-                      padding: "2px 7px",
+                      padding: "3px 9px",
                       borderRadius: "6px",
-                      fontSize: "0.71rem",
+                      fontSize: "0.74rem",
                       fontWeight: 750,
                       border: isSelected ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
                       background: isSelected ? `${h.color}18` : "#f8fafc",
@@ -441,19 +411,19 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "0.78rem" }}>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
               <span style={{ color: "#64748b" }}>Format:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Dual Graph (Bar Chart + Pie Chart)</strong>
+              <strong style={{ display: "block", color: "#0f172a" }}>Multi-Line Graph (3 Regions)</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Occupations:</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>8 Professional Groups</strong>
+              <span style={{ color: "#64748b" }}>Timeframe:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>1985–1990 (6 Years)</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Chart 1 (Bar):</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Average Weekly Hours Worked (25–70 hrs)</strong>
+              <span style={{ color: "#64748b" }}>Metric:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>Millions of Tonnes</strong>
             </div>
             <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-              <span style={{ color: "#64748b" }}>Chart 2 (Pie):</span>
-              <strong style={{ display: "block", color: "#0f172a" }}>Stress-Related Illness Share (5%–25%)</strong>
+              <span style={{ color: "#64748b" }}>Key Trends:</span>
+              <strong style={{ display: "block", color: "#0f172a" }}>EC (#1 Lead), Canada (Volatile), Australia (Decline)</strong>
             </div>
           </div>
         </div>
@@ -528,11 +498,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Dual Visual Deconstruction &amp; Brainstorm
+          Step 02 / 08 • Line Graph Deconstruction &amp; Brainstorm
         </span>
-        <h2 className="stage-title">Deconstruct Dual Visuals: Hours Worked &amp; Stress Levels</h2>
+        <h2 className="stage-title">Deconstruct Line Graph: Wheat Exports Across Three Regions (1985–1990)</h2>
         <p className="stage-subtitle">
-          Examine average weekly hours worked across eight professional groups (Bar Chart) alongside their share of stress-related illness (Pie Chart). Identify the central paradox: lecturers work the least (25 hrs) but suffer the second highest stress (18%).
+          Analyze the 6-year export trajectories for Canada, the European Community, and Australia. Identify the central features: Canada's 1988 apex (25m tonnes) and zero net change, EC's sustained surge to #1 (21m tonnes), and Australia's steady decline to #3 (11m tonnes).
         </p>
       </div>
 
@@ -544,7 +514,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to analyze the bar chart and pie chart: identify peak working hours (business men at 70 hrs), peak stress illness (movie producers at 25%), and the central lecturer paradox (25 hrs worked vs 18% stress illness)."
+          instruction="Focus Timer: 3 minutes to analyze the line graph: identify Canada's 1988 peak (25m), the European Community's sustained rise to leading rank (21m), and Australia's steady decline to 11m tonnes."
         />
       </div>
 
@@ -820,7 +790,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={`materials/${TASK1_DATA.imageFileName}`}
-                  alt="IELTS Academic Task 1 Consumer Spending Table 2002"
+                  alt="IELTS Academic Task 1 Wheat Exports 1985-1990 Diagram"
                   style={{
                     maxHeight: "560px",
                     maxWidth: "100%",
@@ -831,7 +801,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   }}
                 />
                 <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
-                  Official Cambridge IELTS Academic Question Table • Consumer Spending in Five Countries (2002)
+                  Official Cambridge IELTS Academic Question Diagram • Wheat Exports 1985–1990 (in millions of tonnes)
                 </div>
               </div>
             )}
@@ -1004,7 +974,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     Enlarged Presentation Mode
                   </span>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                    Consumer Spending on Different Items in Five Countries (2002)
+                    Wheat Exports 1985–1990 (in millions of tonnes)
                   </h3>
                 </div>
                 <button

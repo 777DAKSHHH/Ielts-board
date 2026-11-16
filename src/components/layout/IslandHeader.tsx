@@ -19,6 +19,7 @@ interface IslandHeaderProps {
   isTimerRunning: boolean;
   onTimerToggle: () => void;
   boardScale: BoardScaleHook;
+  originModuleForNuance?: "task1" | "task2";
 }
 
 export const IslandHeader: React.FC<IslandHeaderProps> = ({
@@ -32,74 +33,61 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
   formattedTime,
   isTimerRunning,
   onTimerToggle,
-  boardScale
+  boardScale,
+  originModuleForNuance = "task1"
 }) => {
   const progressPercent = Math.round((currentStep / totalSteps) * 100);
 
   return (
-    <header className="island-header">
+    <header className="island-header liquid-glass-surface">
       {/* Left: Tactile Module Switcher & Active Stage Info */}
       <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-        {/* Module Switcher Tabs */}
+        {/* Module Switcher Tabs (ReactDrops Fluid Bubble UI) */}
         <div
-          style={{
-            display: "inline-flex",
-            padding: "3px",
-            background: "var(--slate-100)",
-            borderRadius: "10px",
-            border: "1.5px solid var(--border-subtle)"
-          }}
+          className="liquid-bubble-track"
           role="tablist"
           aria-label="IELTS Module Selector"
         >
-          <motion.button
-            whileTap={tactilePress}
+          <button
             onClick={() => onSelectModule("task1")}
             role="tab"
             aria-selected={currentModule === "task1"}
+            className="liquid-bubble-btn"
             style={{
-              minHeight: "36px",
-              padding: "0 14px",
-              borderRadius: "8px",
-              fontSize: "0.84rem",
-              fontWeight: 750,
-              color: currentModule === "task1" ? "#ffffff" : "var(--slate-600)",
-              background: currentModule === "task1" ? "var(--slate-900)" : "transparent",
-              boxShadow: currentModule === "task1" ? "var(--shadow-xs)" : "none",
-              border: "none",
-              cursor: "pointer",
-              transition: "color 0.15s ease, background 0.15s ease",
-              whiteSpace: "nowrap"
+              color: currentModule === "task1" ? "#ffffff" : "var(--slate-600)"
             }}
           >
-            Task 1 (Academic)
-          </motion.button>
-          <motion.button
-            whileTap={tactilePress}
+            {currentModule === "task1" && (
+              <motion.div
+                layoutId="bubble-active-module"
+                className="liquid-bubble-active-pill"
+                transition={{ type: "spring", stiffness: 400, damping: 32 }}
+              />
+            )}
+            <span style={{ position: "relative", zIndex: 1 }}>Task 1 (Academic)</span>
+          </button>
+          <button
             onClick={() => onSelectModule("task2")}
             role="tab"
             aria-selected={currentModule === "task2"}
+            className="liquid-bubble-btn"
             style={{
-              minHeight: "36px",
-              padding: "0 14px",
-              borderRadius: "8px",
-              fontSize: "0.84rem",
-              fontWeight: 750,
-              color: currentModule === "task2" ? "#ffffff" : "var(--slate-600)",
-              background: currentModule === "task2" ? "var(--slate-900)" : "transparent",
-              boxShadow: currentModule === "task2" ? "var(--shadow-xs)" : "none",
-              border: "none",
-              cursor: "pointer",
-              transition: "color 0.15s ease, background 0.15s ease",
-              whiteSpace: "nowrap"
+              color: currentModule === "task2" ? "#ffffff" : "var(--slate-600)"
             }}
           >
-            Task 2 (Essay)
-          </motion.button>
+            {currentModule === "task2" && (
+              <motion.div
+                layoutId="bubble-active-module"
+                className="liquid-bubble-active-pill"
+                transition={{ type: "spring", stiffness: 400, damping: 32 }}
+              />
+            )}
+            <span style={{ position: "relative", zIndex: 1 }}>Task 2 (Essay)</span>
+          </button>
         </div>
 
         {/* Quick Return Pill when viewing Extension Modules */}
-        {(currentModule === "general1" || currentModule === "cambridge7test2") && (
+        {currentModule === "general1" && (
           <motion.button
             whileTap={tactilePress}
             onClick={() => onSelectModule("task1")}
@@ -120,6 +108,30 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
             title="Return to Academic Task 1 Step 8"
           >
             <span>← Return to Step 8</span>
+          </motion.button>
+        )}
+
+        {currentModule === "confusedWords" && (
+          <motion.button
+            whileTap={tactilePress}
+            onClick={() => onSelectModule(originModuleForNuance || "task1")}
+            style={{
+              minHeight: "34px",
+              padding: "0 13px",
+              borderRadius: "8px",
+              fontSize: "0.80rem",
+              fontWeight: 750,
+              color: originModuleForNuance === "task2" ? "#7c3aed" : "#1d4ed8",
+              background: originModuleForNuance === "task2" ? "#faf5ff" : "#eff6ff",
+              border: originModuleForNuance === "task2" ? "1.5px solid #ddd6fe" : "1.5px solid #bfdbfe",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px"
+            }}
+            title={`Return to ${originModuleForNuance === "task2" ? "Task 2 Step 9" : "Task 1 Step 8"}`}
+          >
+            <span>← Return to {originModuleForNuance === "task2" ? "Task 2 (Step 9)" : "Task 1 (Step 8)"}</span>
           </motion.button>
         )}
 
@@ -147,21 +159,21 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
               fontWeight: 800
             }}
           >
-            {currentModule === "general1" ? "GT" : currentModule === "cambridge7test2" ? "C7" : currentStep}
+            {currentModule === "general1" ? "GT" : currentModule === "confusedWords" ? "NL" : currentStep}
           </div>
           <div>
             <div style={{ fontSize: "0.92rem", fontWeight: 750, color: "var(--slate-900)", lineHeight: 1.2 }}>
               {currentModule === "general1"
                 ? "General Training Task 1 (Letter)"
-                : currentModule === "cambridge7test2"
-                ? "Cambridge 7 Test 2 Reading Solutions"
+                : currentModule === "confusedWords"
+                ? "English Nuance Lab • Episode 01"
                 : stepTitle}
             </div>
             <div style={{ fontSize: "0.74rem", color: "var(--slate-500)", fontWeight: 600 }}>
               {currentModule === "general1"
                 ? "Informal 5-Paragraph Architectural Rules"
-                : currentModule === "cambridge7test2"
-                ? "Passages 1–3 • Exact Locations & Explanations"
+                : currentModule === "confusedWords"
+                ? "Below vs. Under vs. Underneath • Commonly Confused Words"
                 : `Step ${currentStep} of ${totalSteps}`}
             </div>
           </div>
@@ -196,16 +208,10 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
               {progressPercent}%
             </span>
           </>
-        ) : currentModule === "general1" ? (
+        ) : (
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
             <span style={{ fontSize: "0.76rem", fontWeight: 750, background: "#f0fdf4", color: "#16a34a", padding: "3px 10px", borderRadius: "8px", border: "1px solid #bbf7d0" }}>
               ✓ Dedicated Standalone Page
-            </span>
-          </div>
-        ) : (
-          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <span style={{ fontSize: "0.76rem", fontWeight: 750, background: "#eff6ff", color: "#2563eb", padding: "3px 10px", borderRadius: "8px", border: "1px solid #bfdbfe" }}>
-              40 Cambridge Explanations
             </span>
           </div>
         )}
@@ -220,18 +226,17 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
         <motion.button
           whileTap={tactilePress}
           onClick={onTimerToggle}
-          className="apple-touch-btn"
+          className="apple-touch-btn liquid-action-btn"
           style={{
             minHeight: "38px",
             padding: "0 14px",
-            background: isTimerRunning ? "#fef2f2" : "#ffffff",
+            background: isTimerRunning ? "#fef2f2" : undefined,
             color: isTimerRunning ? "var(--apple-red)" : "var(--slate-800)",
-            border: `1.5px solid ${isTimerRunning ? "#f87171" : "var(--border-default)"}`,
+            borderColor: isTimerRunning ? "#f87171" : undefined,
             borderRadius: "10px",
             fontSize: "0.84rem",
             fontWeight: 750,
-            gap: "7px",
-            boxShadow: "var(--shadow-xs)"
+            gap: "7px"
           }}
           title={isTimerRunning ? "Pause Countdown" : "Start 3-Minute Countdown"}
         >
@@ -243,18 +248,15 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
         <motion.button
           whileTap={tactilePress}
           onClick={onOpenQuickJump}
-          className="apple-touch-btn"
+          className="apple-touch-btn liquid-action-btn"
           style={{
             minHeight: "38px",
             padding: "0 14px",
             fontSize: "0.84rem",
             fontWeight: 700,
             gap: "7px",
-            background: "#ffffff",
             color: "var(--slate-800)",
-            border: "1.5px solid var(--border-default)",
-            borderRadius: "10px",
-            boxShadow: "var(--shadow-xs)"
+            borderRadius: "10px"
           }}
           title="Jump directly to any lesson stage"
         >
@@ -266,16 +268,13 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
         <motion.button
           whileTap={tactilePress}
           onClick={onLock}
-          className="apple-touch-btn"
+          className="apple-touch-btn liquid-action-btn"
           style={{
             minHeight: "38px",
             width: "38px",
             padding: 0,
-            background: "#ffffff",
             color: "var(--slate-600)",
-            border: "1.5px solid var(--border-default)",
-            borderRadius: "10px",
-            boxShadow: "var(--shadow-xs)"
+            borderRadius: "10px"
           }}
           title="Lock Workstation"
           aria-label="Lock Workstation"

@@ -9,18 +9,18 @@ export const Step6FlowBreakdown: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 06 / 08 • Body 1 — Weekly Hours Worked (Bar Chart)
+          Step 06 / 08 • Body 1 — Canada &amp; Australia Analysis
         </span>
-        <h2 className="stage-title">Deconstructing Body Paragraph 1: Working Hours Breakdown</h2>
+        <h2 className="stage-title">Deconstructing Body Paragraph 1: Canada &amp; Australia</h2>
         <p className="stage-subtitle">
-          Examine the comparative data flow: opening with Business men's peak workweek (70 hrs), following with Movie Producers (60 hrs) and Doctors (52 hrs), down through Programmers (40 hrs) to Lecturers' floor (25 hrs).
+          Examine the comparative data flow: opening with Canada's initial lead (19m tonnes), charting its climb to the 1988 global apex (25m tonnes) and subsequent plunge (14m), contrasted against Australia's steady downward contraction (16m to 11m tonnes).
         </p>
       </div>
 
       <div className="stage-grid-2col">
         {/* Left Column: 4 Analytical Data Clusters */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          {/* Cluster 1: Business Men Global Peak */}
+          {/* Cluster 1: Canada Opening & Global Peak */}
           <div
             style={{
               background: "var(--slate-50)",
@@ -34,37 +34,37 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#dc2626" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#0f172a" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  1. Peak Workweek: Business Men (70 hrs)
+                  1. Canadian Opening &amp; 1988 Apex (25m tonnes)
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#fef2f2", color: "#991b1b", fontWeight: 800 }}>
-                Rank 1 in Hours
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f1f5f9", color: "#0f172a", fontWeight: 800 }}>
+                Apex of Diagram
               </span>
             </div>
 
             <div style={{ background: "#ffffff", borderRadius: "10px", padding: "12px", border: "1px solid var(--border-subtle)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--slate-700)" }}>
-                  Comparative Extent:
+                  Peak Trajectory:
                 </span>
-                <span style={{ fontSize: "0.95rem", fontWeight: 800, color: "#dc2626" }}>
-                  70 hrs/wk (Nearly triple lecturers)
+                <span style={{ fontSize: "0.95rem", fontWeight: 800, color: "#0f172a" }}>
+                  19m (1985) → 17m (1986) → 25m (1988 Peak)
                 </span>
               </div>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Analytical Role:</strong> Opens the paragraph with the highest single figure in the bar chart. Business men completed an average of 70 hours weekly, outworking every other group.
+              <strong>Analytical Role:</strong> Opens with the original market leader. Canada started at 19 million tonnes, dipped slightly in 1986, and then surged to achieve the overall apex of the entire diagram at 25 million tonnes in 1988.
             </p>
           </div>
 
-          {/* Cluster 2: Upper Tier Followers */}
+          {/* Cluster 2: Canada's Precipitous Plunge & Rebound */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid rgba(8, 145, 178, 0.3)",
+              border: "1.5px solid rgba(15, 23, 42, 0.2)",
               borderRadius: "18px",
               padding: "20px",
               display: "flex",
@@ -74,26 +74,26 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#0891b2" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#dc2626" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  2. Upper Tier: Movie Producers (60h) &amp; Doctors (52h)
+                  2. Canadian Plunge (14m) &amp; Baseline Rebound (19m)
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#ecfeff", color: "#0e7490" }}>
-                Ranks 2 &amp; 3
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#fef2f2", color: "#991b1b" }}>
+                Zero Net Change
               </span>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Key Phrasing:</strong> <em>“Movie producers and doctors followed with 60 and 52 hours per week respectively.”</em> Smoothly bridges from the peak to the remaining full-time professionals.
+              <strong>Key Phrasing:</strong> <em>“However, this was immediately followed by a steep plunge to 14 million tonnes in 1989, after which exports rebounded back to their initial level of 19 million tonnes in 1990.”</em>
             </p>
           </div>
 
-          {/* Cluster 3: Intermediate & Standard 40h Baseline */}
+          {/* Cluster 3: Australia's Initial Rise & Steady Decline */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid rgba(132, 204, 22, 0.3)",
+              border: "1.5px solid rgba(100, 116, 139, 0.3)",
               borderRadius: "18px",
               padding: "20px",
               display: "flex",
@@ -103,26 +103,26 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#84cc16" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "2px", background: "#64748b" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  3. Standard Baseline: Writers (45h) &amp; Programmers (40h)
+                  3. Australia: Brief Rise (16m) to Steady Contraction
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f7fee7", color: "#4d7c0f" }}>
-                Standard Baseline
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f8fafc", color: "#475569" }}>
+                Steady Downward
               </span>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Analytical Role:</strong> Establishes the conventional working norm: writers logged 45 hours, while programmers completed a standard 40-hour week.
+              <strong>Analytical Role:</strong> Contrasts sharply with Canada: Australia rose from 15 million tonnes in 1985 to a brief high of 16 million in 1986, before embarking on a steady downward trajectory over the next three years.
             </p>
           </div>
 
-          {/* Cluster 4: Lower Tier & Spectrum Minimum */}
+          {/* Cluster 4: Australia's Floor & Final Position */}
           <div
             style={{
               background: "var(--slate-50)",
-              border: "1.5px solid rgba(13, 148, 136, 0.3)",
+              border: "1.5px solid rgba(100, 116, 139, 0.3)",
               borderRadius: "18px",
               padding: "20px",
               display: "flex",
@@ -131,18 +131,18 @@ export const Step6FlowBreakdown: React.FC = () => {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#0d9488" }} />
+              <span style={{ width: "12px", height: "12px", borderRadius: "2px", background: "#64748b" }} />
               <div>
                 <h4 style={{ fontSize: "0.95rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  4. Lower Tier: Lawyers (35h), Chefs (30h) &amp; Lecturers (25h)
+                  4. Australia: Plateau at 11m Tonnes &amp; Lowest Finish
                 </h4>
                 <span style={{ fontSize: "0.78rem", color: "var(--slate-500)" }}>
-                  Lecturers recorded the lowest working hours in the entire survey at 25 hrs
+                  Remained static at 11 million tonnes across 1989 and 1990
                 </span>
               </div>
             </div>
-            <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#ccfbf1", color: "#115e59", fontWeight: 800 }}>
-              25 – 35 hrs/wk
+            <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f1f5f9", color: "#334155", fontWeight: 800 }}>
+              Final #3 Floor
             </span>
           </div>
         </div>
@@ -170,7 +170,7 @@ export const Step6FlowBreakdown: React.FC = () => {
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.75rem", fontWeight: 750 }}>
-                Bar Chart Analysis
+                Canada &amp; Australia
               </span>
             </div>
 
@@ -221,19 +221,19 @@ export const Step6FlowBreakdown: React.FC = () => {
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.85rem" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>1</span>
-                <span><strong>Visual Topic Opener:</strong> <em>“Regarding working hours, business men logged the longest workweek at an average of 70 hours...”</em></span>
+                <span><strong>Opening Baseline &amp; Surge:</strong> <em>“In 1985, Canada was the leading wheat exporter at 19 million tonnes. Following a minor dip to 17 million tonnes in 1986, Canadian shipments surged rapidly to reach the highest point on the entire graph at 25 million tonnes in 1988.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>2</span>
-                <span><strong>Sequential Coupling:</strong> <em>“...followed by movie producers and doctors at 60 and 52 hours per week respectively.”</em></span>
+                <span><strong>Sharp Reversal &amp; Return:</strong> <em>“However, this was immediately followed by a steep plunge to 14 million tonnes in 1989, after which exports rebounded back to their initial level of 19 million tonnes in 1990.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>3</span>
-                <span><strong>Intermediate Cluster:</strong> <em>“Writers averaged 45 hours on the job, while programmers completed a standard 40-hour week.”</em></span>
+                <span><strong>Sharp Contrast Transition:</strong> <em>“In contrast, Australia commenced at 15 million tonnes and rose slightly to a peak of 16 million tonnes in 1986.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>4</span>
-                <span><strong>Lower Tier &amp; Superlative Floor:</strong> <em>“Lawyers and chefs worked somewhat fewer hours (35 and 30 hours respectively), whereas lecturers recorded the lowest figure across all groups at merely 25 hours per week.”</em></span>
+                <span><strong>Floor Stabilization &amp; Lowest Rank:</strong> <em>“Thereafter, Australian wheat exports steadily declined over the subsequent three years to 11 million tonnes in 1989, where they remained unchanged through 1990, ending as the lowest of the three regions.”</em></span>
               </div>
             </div>
           </div>

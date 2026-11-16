@@ -7,27 +7,27 @@ import { tactilePress } from "../../motion";
 const CONCLUSION_VARIATIONS = [
   {
     id: "standard",
-    title: "Style 1: Standard Causes & Solutions Synthesis & Recommendation",
+    title: "Style 1: Standard Balanced Synthesis & Restatement",
     badge: "Band 8.5–9 • Recommended",
-    summary: "Synthesizes the twin catalysts (commercial mega-constellations and legacy debris), recaps targeted technological remedies, and offers a decisive forward-looking UN policy recommendation.",
-    text: "In conclusion, the escalating threat of orbital overcrowding is driven primarily by the rapid expansion of commercial satellite constellations and the presence of uncontrolled legacy space debris. However, this crisis can be mitigated through mandatory automated self-deorbiting thrusters alongside international robotic cleanup missions. Moving forward, the global community must swiftly adopt an updated, legally binding United Nations space sustainability treaty before low-Earth orbit becomes permanently unusable.",
-    breakdown: "Sentence 1: Sum-up of main causes (commercial constellations + legacy debris) | Sentence 2: Recap of technical solutions (auto-deorbiting + robotic cleanup) | Sentence 3: Forward-looking UN recommendation."
+    summary: "Acknowledges statutory regulatory compliance, recaps the profit and solvency pillars, and delivers an unequivocal restatement of the Disagree position.",
+    text: "In conclusion, although companies must operate within statutory environmental and employment codes, I firmly disagree that they possess social responsibilities beyond generating profit. The primary duty of commerce is economic viability, job preservation, and shareholder returns, leaving public welfare initiatives to governments financed through corporate taxation.",
+    breakdown: "Sentence 1: Sum-up of statutory compliance vs clear Disagree stance | Sentence 2: Restatement emphasizing economic solvency, jobs, and the government's tax-funded welfare mandate."
   },
   {
     id: "academic",
-    title: "Style 2: Academic Analytical Synthesis & Policy Mandate",
+    title: "Style 2: Academic Analytical Synthesis & Restatement",
     badge: "Band 9 • Advanced Lexicon",
-    summary: "Elevated academic syntax directly coupling private orbital proliferation with international legal accountability.",
-    text: "To conclude, while commercial spaceflight and legacy debris critically imperil Earth's orbital lanes, targeted engineering mandates and active remediation technologies provide actionable solutions. It is imperative that international aviation bodies compel manufacturers to install autonomous re-entry systems, supported by multilateral treaties with non-refundable cleanup deposits.",
-    breakdown: "Sentence 1: Synthesis of causes and viable solutions | Sentence 2: Actionable policy recommendation for manufacturers and global regulators."
+    summary: "Elevated academic syntax contrasting statutory regulatory compliance with private shareholder obligations and the state's constitutional mandate.",
+    text: "To conclude, while commercial organizations are legally bound to observe anti-pollution and occupational safety standards, I completely reject the notion that enterprises hold broader social obligations. The fundamental purpose of business is to maximize shareholder equity and sustain employment, whereas social welfare administration resides strictly within the democratic jurisdiction of the state.",
+    breakdown: "Sentence 1: Concession on legal standards coupled with decisive rejection of broader social duties | Sentence 2: Analytical restatement contrasting private capital return with state welfare jurisdiction."
   },
   {
     id: "rapid-exam",
     title: "Style 3: Rapid 2-Sentence Exam Model",
     badge: "Rapid Timing • Under 45 Words",
-    summary: "High-speed, 42-word concise model balancing causes, solutions, and recommendation under time pressure.",
-    text: "In conclusion, although commercial satellite proliferation and uncurbed space junk severely threaten near-Earth orbit, mandatory automated deorbiting thrusters and international robotic removal offer decisive solutions. Moving forward, world governments must establish binding treaties with strict corporate cleanup liabilities.",
-    breakdown: "Sentence 1: Clear cause-solution synthesis | Sentence 2: Crisp global policy recommendation."
+    summary: "High-speed, 42-word concise model affirming commercial primacy and state responsibility under exam time pressure.",
+    text: "In conclusion, while businesses must comply with statutory environmental laws, I firmly disagree that their role extends to social welfare. Their core duty is to remain profitable and protect jobs, leaving broader societal needs to state authorities funded by corporate taxes.",
+    breakdown: "Sentence 1: Rapid concession & explicit Disagree assertion | Sentence 2: Crisp restatement of commercial role vs state responsibility."
   }
 ];
 
@@ -46,11 +46,11 @@ export const Step8ConclusionT2: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 08 / 09 • Sample Conclusion &amp; Recommendation
+          Step 08 / 09 • Sample Conclusion &amp; Restatement
         </span>
-        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Causes, Solutions + Recommendation</h2>
+        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Points + Restate Your Opinion</h2>
         <p className="stage-subtitle">
-          Mandatory Conclusion Format: <strong>Sum-up all the main causes and solutions + provide a forward-looking suggestion / recommendation</strong>.
+          Mandatory Conclusion Format: <strong>Sum-up all the main points + restate your opinion</strong>.
         </p>
       </div>
 

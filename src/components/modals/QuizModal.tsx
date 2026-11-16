@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { X, HelpCircle, Volume2 } from "lucide-react";
+import { X, Volume2 } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 import { TASK2_DATA } from "../../data/task2Data";
 import { modalBackdropVariants, modalDialogVariants, tactilePress } from "../../motion";
+import { LiquidGlassOrb, OrbState } from "../common/LiquidGlassOrb";
 
 import { ModuleType } from "../../types";
 
@@ -23,6 +24,7 @@ export const QuizModal: React.FC<QuizModalProps> = ({
   const vocabList = currentModule === "task2" ? TASK2_DATA.vocabList : TASK1_DATA.vocabList;
   const [activeIdx, setActiveIdx] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [orbState, setOrbState] = useState<OrbState>("idle");
 
   // Close on Escape key
   useEffect(() => {
@@ -40,12 +42,22 @@ export const QuizModal: React.FC<QuizModalProps> = ({
 
   const handleNext = () => {
     setIsFlipped(false);
+    setOrbState("thinking");
+    setTimeout(() => setOrbState("idle"), 500);
     setActiveIdx((prev) => (prev + 1) % vocabList.length);
   };
 
   const handlePrev = () => {
     setIsFlipped(false);
+    setOrbState("thinking");
+    setTimeout(() => setOrbState("idle"), 500);
     setActiveIdx((prev) => (prev - 1 + vocabList.length) % vocabList.length);
+  };
+
+  const handleFlipCard = () => {
+    const nextFlipped = !isFlipped;
+    setIsFlipped(nextFlipped);
+    setOrbState(nextFlipped ? "success" : "idle");
   };
 
   return (
@@ -62,6 +74,8 @@ export const QuizModal: React.FC<QuizModalProps> = ({
         alignItems: "center",
         justifyContent: "center",
         background: "rgba(15, 23, 42, 0.72)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
         padding: "24px"
       }}
       onClick={onClose}
@@ -71,42 +85,31 @@ export const QuizModal: React.FC<QuizModalProps> = ({
         initial="hidden"
         animate="visible"
         exit="exit"
+        className="liquid-glass-surface"
         style={{
           width: "min(94vw, 680px)",
-          background: "#ffffff",
-          borderRadius: "24px",
-          border: "1px solid var(--border-default)",
+          borderRadius: "26px",
           padding: "36px",
           display: "flex",
           flexDirection: "column",
-          gap: "24px",
-          boxShadow: "var(--shadow-modal)"
+          gap: "24px"
         }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <div
-              style={{
-                width: "44px",
-                height: "44px",
-                borderRadius: "12px",
-                background: "var(--slate-900)",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center"
-              }}
-            >
-              <HelpCircle size={22} />
-            </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+            <LiquidGlassOrb
+              state={orbState}
+              size={48}
+              onClick={handleFlipCard}
+            />
             <div>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--slate-900)" }}>
+              <h3 style={{ fontSize: "1.35rem", fontWeight: 750, color: "var(--slate-900)" }}>
                 Interactive Vocabulary Quiz
               </h3>
               <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", marginTop: "2px" }}>
-                Card {activeIdx + 1} of {vocabList.length} • Tap card to reveal definition
+                Card {activeIdx + 1} of {vocabList.length} • Tap card or orb to reveal definition
               </p>
             </div>
           </div>
@@ -114,8 +117,8 @@ export const QuizModal: React.FC<QuizModalProps> = ({
           <motion.button
             whileTap={tactilePress}
             onClick={onClose}
-            className="apple-touch-btn"
-            style={{ width: "44px", height: "44px", padding: 0, borderRadius: "50%", background: "var(--slate-100)" }}
+            className="apple-touch-btn liquid-action-btn"
+            style={{ width: "42px", height: "42px", padding: 0, borderRadius: "50%" }}
             aria-label="Close Quiz"
           >
             <X size={20} />
@@ -125,12 +128,13 @@ export const QuizModal: React.FC<QuizModalProps> = ({
         {/* Interactive Flashcard */}
         <motion.div
           whileTap={{ scale: 0.98 }}
-          onClick={() => setIsFlipped(!isFlipped)}
+          onClick={handleFlipCard}
+          className="chromatic-glass-card"
           style={{
-            height: "240px",
-            background: isFlipped ? "#eff6ff" : "var(--slate-50)",
-            border: `1.5px solid ${isFlipped ? "#93c5fd" : "var(--border-subtle)"}`,
-            borderRadius: "20px",
+            minHeight: "240px",
+            background: isFlipped ? "rgba(239, 246, 255, 0.9)" : "rgba(255, 255, 255, 0.85)",
+            border: `1.5px solid ${isFlipped ? "#93c5fd" : "rgba(226, 232, 240, 0.9)"}`,
+            borderRadius: "22px",
             padding: "28px",
             display: "flex",
             flexDirection: "column",
@@ -138,7 +142,7 @@ export const QuizModal: React.FC<QuizModalProps> = ({
             justifyContent: "center",
             textAlign: "center",
             cursor: "pointer",
-            boxShadow: "var(--shadow-sm)",
+            boxShadow: "0 8px 24px -2px rgba(15, 23, 42, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.9)",
             userSelect: "none"
           }}
         >

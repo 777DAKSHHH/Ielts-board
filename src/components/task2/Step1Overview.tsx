@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Rocket, ArrowRight, BookOpen, AlertTriangle } from "lucide-react";
+import { Briefcase, ArrowRight, BookOpen, Scale } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { tactilePress } from "../../motion";
 
@@ -16,9 +16,9 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 09 • Question Briefing &amp; Topic Overview
         </span>
-        <h2 className="stage-title">IELTS Writing Task 2 — Satellite Launches &amp; Space Debris</h2>
+        <h2 className="stage-title">IELTS Writing Task 2 — Corporate Social Responsibility</h2>
         <p className="stage-subtitle">
-          Examine the prompt, identify the two direct question tasks (Causes &amp; Measures), and review the mandatory essay architecture.
+          Examine the prompt, identify the opinion essay task, and master the mandatory 5-paragraph opinion architecture with a balanced concession.
         </p>
       </div>
 
@@ -50,14 +50,14 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
                   justifyContent: "center"
                 }}
               >
-                <Rocket size={24} />
+                <Briefcase size={24} />
               </div>
               <div>
                 <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#2563eb", textTransform: "uppercase" }}>
                   Task 2 Essay Type
                 </span>
                 <h4 style={{ fontSize: "1.15rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                  Causes &amp; Solutions Architecture
+                  Opinion Essay (Agree or Disagree)
                 </h4>
               </div>
             </div>
@@ -66,9 +66,9 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               style={{
                 fontSize: "0.78rem",
                 fontWeight: 750,
-                background: "#fef2f2",
-                color: "#991b1b",
-                border: "1px solid #fecaca",
+                background: "#f0fdf4",
+                color: "#166534",
+                border: "1px solid #bbf7d0",
                 padding: "4px 10px",
                 borderRadius: "8px",
                 display: "flex",
@@ -76,7 +76,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
                 gap: "5px"
               }}
             >
-              <AlertTriangle size={14} /> Two-Part Prompt
+              <Scale size={14} /> 5-Paragraph Architecture
             </span>
           </div>
 
@@ -96,14 +96,11 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               Official Exam Prompt
             </span>
             <p style={{ margin: 0, fontSize: "1.2rem", fontWeight: 750, color: "#0f172a", lineHeight: 1.5 }}>
-              “The increasing frequency of the satellite launches &amp; space debris is becoming a threat to the Earth.”
+              “Apart from making money, businesses also have social responsibility.”
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginTop: "4px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "1.02rem", fontWeight: 700, color: "#2563eb" }}>
-                <span>•</span> <span>What are the main causes?</span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "1.02rem", fontWeight: 700, color: "#059669" }}>
-                <span>•</span> <span>What measures can be taken to address this?</span>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "1.05rem", fontWeight: 750, color: "#2563eb" }}>
+                <span>•</span> <span>To what extent do you agree or disagree?</span>
               </div>
             </div>
           </div>
@@ -123,14 +120,14 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <BookOpen size={16} color="#1d4ed8" />
               <strong style={{ fontSize: "0.92rem", color: "#1e3a8a", textTransform: "uppercase" }}>
-                Mandatory Format Architecture
+                Mandatory Essay Format Architecture
               </strong>
             </div>
-            <ul style={{ margin: "4px 0 0", paddingLeft: "20px", fontSize: "0.88rem", color: "#1e293b", lineHeight: 1.6 }}>
-              <li><strong>INTRODUCTION:</strong> Paraphrase the question + Thesis</li>
-              <li><strong>BODY PARA 1:</strong> Cause 1 + Solution 1 + Example</li>
-              <li><strong>BODY PARA 2:</strong> Cause 2 + Solution 2 + Example</li>
-              <li><strong>CONCLUSION:</strong> Sum-up all the main causes, solutions + Suggestion / Recommendation</li>
+            <ul style={{ margin: "4px 0 0", paddingLeft: "20px", fontSize: "0.9rem", color: "#1e293b", lineHeight: 1.65 }}>
+              <li><strong>INTRO:</strong> Paraphrase the question + opinion</li>
+              <li><strong>BODY PARA 1 &amp; 2:</strong> On your opinion side (e.g. Environmental Stewardship &amp; Worker/Community Welfare)</li>
+              <li><strong>BODY PARA 3:</strong> On your non-opinion side (e.g. Commercial Solvency, Job Creation &amp; Tax Contributions)</li>
+              <li><strong>CONCLUSION:</strong> Sum-up all the main points + restate your opinion</li>
             </ul>
           </div>
 
