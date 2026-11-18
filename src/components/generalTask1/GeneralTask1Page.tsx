@@ -299,16 +299,81 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
 
       {/* TAB 1: MODEL LETTER & 5-PARAGRAPH ARCHITECTURE */}
       {activeTab === "model" && (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.45fr 1fr",
-            gap: "20px",
-            alignItems: "start",
-            width: "100%"
-          }}
-        >
-          {/* Left Column: Authentic Stationary Letter Paper */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "18px", width: "100%" }}>
+          {/* SECTION 1: 5-PARAGRAPH INFORMAL LETTER ARCHITECTURE (ONE-LINER REVISION) */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1.5px solid #cbd5e1",
+              borderRadius: "16px",
+              padding: "16px 20px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px"
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #f1f5f9", paddingBottom: "8px", flexWrap: "wrap", gap: "8px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <Layers size={16} color="#2563eb" />
+                <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+                  5-Paragraph Informal Letter Architecture (One-Liner Revision)
+                </h3>
+              </div>
+              <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#eff6ff", color: "#1e40af", padding: "3px 8px", borderRadius: "6px" }}>
+                Band 9 Revision Cheat Sheet
+              </span>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              {data.architectureRevision?.map((rev, rIdx) => (
+                <div
+                  key={rIdx}
+                  style={{
+                    background: rev.bgColor,
+                    border: `1px solid ${rev.borderColor}`,
+                    borderRadius: "10px",
+                    padding: "9px 14px",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "12px",
+                    flexWrap: "wrap"
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "8px", minWidth: "220px" }}>
+                    <span
+                      style={{
+                        fontSize: "0.70rem",
+                        fontWeight: 800,
+                        background: rev.badgeColor,
+                        color: "#ffffff",
+                        padding: "2px 7px",
+                        borderRadius: "4px",
+                        whiteSpace: "nowrap"
+                      }}
+                    >
+                      {rev.step}
+                    </span>
+                    <strong style={{ fontSize: "0.84rem", color: rev.textColor }}>{rev.stage}</strong>
+                  </div>
+                  <p style={{ margin: 0, fontSize: "0.85rem", color: "#1e293b", lineHeight: 1.45, flex: "1 1 300px" }}>
+                    {rev.summary}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1.45fr 1fr",
+              gap: "20px",
+              alignItems: "start",
+              width: "100%"
+            }}
+          >
+            {/* Left Column: Authentic Stationary Letter Paper */}
           <div
             style={{
               background: "#ffffff",
@@ -496,13 +561,13 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
 
               <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.82rem", color: "#1e3a8a", lineHeight: 1.5 }}>
                 <div>
-                  <strong>Task Achievement:</strong> Fully addresses all three prompt bullets (say how important, describe celebrations, explain what you like) with rich, authentic cultural Gujarati/Indian details.
+                  <strong>Task Achievement:</strong> Fully addresses all three prompt bullets (when &amp; where you went, what you saw, how you felt about it) with rich aerospace museum details.
                 </div>
                 <div>
                   <strong>Coherence &amp; Cohesion:</strong> Seamless conversational transitions with natural paragraphing and informal discourse markers.
                 </div>
                 <div>
-                  <strong>Lexical Resource:</strong> Rich cultural collocations ('immense spiritual and cultural importance', 'clean slate', 'intricate rangoli patterns', 'vibrant traditional attire', 'touch the feet of our elders', 'open-hearted hospitality').
+                  <strong>Lexical Resource:</strong> Vivid descriptive collocations ('out of this world', 'authentic lunar command module', 'genuine moon rock samples', 'state-of-the-art flight simulator', 'completely spellbound', 'gave me goosebumps').
                 </div>
                 <div>
                   <strong>Grammatical Range:</strong> Natural informal structures: conversational exclamation, friendly enthusiasm, relative clauses, and compound-complex sentences.
@@ -511,7 +576,8 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
             </div>
           </div>
         </div>
-      )}
+      </div>
+    )}
 
       {/* TAB 2: OFFICIAL PPT RULES & LINKER MATRIX */}
       {activeTab === "rules" && (
@@ -747,16 +813,16 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   Recipient &amp; Relationship
                 </strong>
                 <p style={{ fontSize: "0.82rem", color: "#1e3a8a", margin: 0, lineHeight: 1.4 }}>
-                  English-speaking friend (Alex) working on a college academic project. Informal, warm, and highly supportive tone.
+                  Personal friend (Sam). Highly conversational, warm, and engaging informal tone sharing an exciting weekend experience.
                 </p>
               </div>
 
               <div style={{ background: "#fef3c7", padding: "14px", borderRadius: "12px", border: "1px solid #fde68a" }}>
                 <strong style={{ color: "#92400e", fontSize: "0.88rem", display: "block", marginBottom: "4px" }}>
-                  Cultural Authenticity
+                  Subject &amp; Setting
                 </strong>
                 <p style={{ fontSize: "0.82rem", color: "#78350f", margin: 0, lineHeight: 1.4 }}>
-                  Authentic Indian / Gujarati New Year (Bestu Varas / Diwali season) context: spiritual clean slate, Saal Mubarak, sweets, and family blessings.
+                  Recent visit to the National Science and Aerospace Museum: arrival timing, Apollo command module, VR flight simulators, and spellbound reactions.
                 </p>
               </div>
 
@@ -765,7 +831,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   Tone &amp; PPT Requirements
                 </strong>
                 <p style={{ fontSize: "0.82rem", color: "#14532d", margin: 0, lineHeight: 1.4 }}>
-                  Enthusiastic opening acknowledging the request, clear bullet paragraphing with natural discourse linkers, and warm sign-off from Devang.
+                  Enthusiastic opening hook, strict 5-paragraph letter architecture addressing all 3 bullets, vivid sensory descriptions, and warm proposal to visit together.
                 </p>
               </div>
             </div>

@@ -20,7 +20,7 @@ import {
   Award
 } from "lucide-react";
 import {
-  CONFUSED_WORDS_EPISODE_1,
+  CONFUSED_WORDS_EPISODES,
   ConfusedWordItem,
   PracticeQuizQuestion
 } from "../../data/confusedWordsData";
@@ -38,19 +38,29 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
   onNavigateModule,
   returnModule = "task1"
 }) => {
-  const data = CONFUSED_WORDS_EPISODE_1;
+  // Episode Selection (Defaults to latest Episode 2: Rise vs. Raise vs. Arise)
+  const [selectedEpisodeIndex, setSelectedEpisodeIndex] = useState<number>(1);
+  const data = CONFUSED_WORDS_EPISODES[selectedEpisodeIndex] || CONFUSED_WORDS_EPISODES[0];
 
   // Classroom teaching mode: Teacher asks first, then reveals!
   const [isRevealed, setIsRevealed] = useState<boolean>(false);
   const [activeWordTab, setActiveWordTab] = useState<string>("all");
   const [revealedHints, setRevealedHints] = useState<Record<number, boolean>>({});
-  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, "below" | "under" | "underneath">>({});
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
+
+  const handleSwitchEpisode = (idx: number) => {
+    setSelectedEpisodeIndex(idx);
+    setIsRevealed(false);
+    setActiveWordTab("all");
+    setRevealedHints({});
+    setSelectedAnswers({});
+  };
 
   const toggleHint = (id: number) => {
     setRevealedHints((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
-  const handleSelectAnswer = (questionId: number, answer: "below" | "under" | "underneath") => {
+  const handleSelectAnswer = (questionId: number, answer: string) => {
     setSelectedAnswers((prev) => ({ ...prev, [questionId]: answer }));
   };
 
@@ -61,7 +71,7 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
   const calculateScore = () => {
     let score = 0;
     data.practiceDrills.forEach((q) => {
-      if (selectedAnswers[q.id] === q.blankWord) {
+      if (selectedAnswers[q.id]?.toLowerCase() === q.blankWord.toLowerCase()) {
         score++;
       }
     });
@@ -110,7 +120,7 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
                   textTransform: "uppercase"
                 }}
               >
-                Episode 01 • Vocabulary Nuance Lab
+                Episode 0{data.episodeNumber} • Vocabulary Nuance Lab
               </span>
               <span
                 style={{
@@ -126,10 +136,17 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
               </span>
             </div>
             <h1 style={{ fontSize: "1.9rem", fontWeight: 850, margin: "0 0 6px", letterSpacing: "-0.02em" }}>
-              Below <span style={{ color: "#60a5fa" }}>vs.</span> Under <span style={{ color: "#34d399" }}>vs.</span> Underneath
+              {data.targetWords.map((tw, twIdx) => (
+                <React.Fragment key={tw}>
+                  <span style={{ color: data.words[twIdx]?.themeColor || "#60a5fa" }}>{tw}</span>
+                  {twIdx < data.targetWords.length - 1 && (
+                    <span style={{ color: "#94a3b8", margin: "0 8px", fontSize: "1.2rem", fontWeight: 600 }}>vs.</span>
+                  )}
+                </React.Fragment>
+              ))}
             </h1>
             <p style={{ fontSize: "0.94rem", color: "#cbd5e1", margin: 0, maxWidth: "750px", lineHeight: 1.5 }}>
-              Demystifying prepositions of vertical space, levels, overhead shelter, abstract pressure, and physical concealment.
+              {data.seriesSubtitle}
             </p>
           </div>
 
@@ -183,34 +200,89 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
           </div>
         </div>
 
-        {/* Quick Core Distinction Summary Strip */}
+        {/* EPISODE SELECTOR ARCHIVE BAR */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            flexWrap: "wrap",
+            background: "rgba(0, 0, 0, 0.25)",
+            padding: "8px 14px",
+            borderRadius: "12px",
+            border: "1px solid rgba(255, 255, 255, 0.08)",
+            marginBottom: "14px"
+          }}
+        >
+          <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.05em", marginRight: "6px" }}>
+            Series Episode Selector:
+          </span>
+          {CONFUSED_WORDS_EPISODES.map((ep, idx) => {
+            const isActive = selectedEpisodeIndex === idx;
+            return (
+              <button
+                key={ep.seriesId}
+                type="button"
+                onClick={() => handleSwitchEpisode(idx)}
+                style={{
+                  padding: "5px 12px",
+                  borderRadius: "8px",
+                  fontSize: "0.78rem",
+                  fontWeight: 800,
+                  cursor: "pointer",
+                  border: isActive ? "1.5px solid #60a5fa" : "1px solid rgba(255, 255, 255, 0.18)",
+                  background: isActive ? "#2563eb" : "rgba(255, 255, 255, 0.06)",
+                  color: "#ffffff",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  transition: "all 0.15s ease",
+                  boxShadow: isActive ? "0 2px 8px rgba(37, 99, 235, 0.4)" : "none"
+                }}
+              >
+                <span>Ep 0{ep.episodeNumber}: {ep.episodeTitle}</span>
+                {idx === CONFUSED_WORDS_EPISODES.length - 1 && (
+                  <span style={{ background: "#10b981", color: "#ffffff", fontSize: "0.62rem", padding: "1px 5px", borderRadius: "4px", fontWeight: 900 }}>
+                    LATEST
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Quick Core Distinction Summary Strip (Dynamic for Active Episode) */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
             gap: "12px",
-            marginTop: "16px",
-            paddingTop: "16px",
+            marginTop: "12px",
+            paddingTop: "14px",
             borderTop: "1px solid rgba(255,255,255,0.12)"
           }}
         >
-          <div style={{ background: "rgba(37, 99, 235, 0.15)", border: "1px solid rgba(59, 130, 246, 0.3)", borderRadius: "10px", padding: "10px 14px" }}>
-            <div style={{ color: "#93c5fd", fontSize: "0.74rem", fontWeight: 800, textTransform: "uppercase" }}>1. BELOW</div>
-            <strong style={{ color: "#ffffff", fontSize: "0.88rem" }}>Comparing Levels &amp; Benchmarks</strong>
-            <div style={{ color: "#cbd5e1", fontSize: "0.78rem", marginTop: "2px" }}>Horizontal reference line • Measurements • Temperatures</div>
-          </div>
-
-          <div style={{ background: "rgba(5, 150, 105, 0.15)", border: "1px solid rgba(16, 185, 129, 0.3)", borderRadius: "10px", padding: "10px 14px" }}>
-            <div style={{ color: "#6ee7b7", fontSize: "0.74rem", fontWeight: 800, textTransform: "uppercase" }}>2. UNDER</div>
-            <strong style={{ color: "#ffffff", fontSize: "0.88rem" }}>3D Position &amp; Abstract States</strong>
-            <div style={{ color: "#cbd5e1", fontSize: "0.78rem", marginTop: "2px" }}>Direct vertical cover • Under stress • Under attack • Under control</div>
-          </div>
-
-          <div style={{ background: "rgba(217, 119, 6, 0.15)", border: "1px solid rgba(245, 158, 11, 0.3)", borderRadius: "10px", padding: "10px 14px" }}>
-            <div style={{ color: "#fde68a", fontSize: "0.74rem", fontWeight: 800, textTransform: "uppercase" }}>3. UNDERNEATH</div>
-            <strong style={{ color: "#ffffff", fontSize: "0.88rem" }}>Hidden / Covered / Direct Contact</strong>
-            <div style={{ color: "#cbd5e1", fontSize: "0.78rem", marginTop: "2px" }}>Hidden from sight • Concealed beneath a doormat or clothing layer</div>
-          </div>
+          {data.words.map((w, wIdx) => (
+            <div
+              key={w.word}
+              style={{
+                background: `${w.themeColor}1a`,
+                border: `1px solid ${w.themeColor}4d`,
+                borderRadius: "10px",
+                padding: "10px 14px"
+              }}
+            >
+              <div style={{ color: w.themeColor, fontSize: "0.74rem", fontWeight: 800, textTransform: "uppercase" }}>
+                {wIdx + 1}. {w.word}
+              </div>
+              <strong style={{ color: "#ffffff", fontSize: "0.88rem", display: "block", marginTop: "2px" }}>
+                {w.coreConcept}
+              </strong>
+              <div style={{ color: "#cbd5e1", fontSize: "0.78rem", marginTop: "2px" }}>
+                {w.visualMetaphor} • {w.partOfSpeech.split("(")[0].trim()}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -377,7 +449,7 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
 
           {/* Word Filter Tabs */}
           <div style={{ display: "flex", gap: "6px", background: "#f1f5f9", padding: "4px", borderRadius: "10px" }}>
-            {["all", "BELOW", "UNDER", "UNDERNEATH"].map((tab) => (
+            {["all", ...data.targetWords].map((tab) => (
               <button
                 key={tab}
                 type="button"
@@ -394,7 +466,7 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
                   transition: "all 0.15s ease"
                 }}
               >
-                {tab === "all" ? "Show All 3" : tab}
+                {tab === "all" ? `Show All ${data.targetWords.length}` : tab}
               </button>
             ))}
           </div>
@@ -619,9 +691,18 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
             <thead>
               <tr style={{ background: "#f8fafc", borderBottom: "2px solid #cbd5e1" }}>
                 <th style={{ padding: "12px 14px", color: "#475569", fontWeight: 800 }}>Feature / Context</th>
-                <th style={{ padding: "12px 14px", color: "#2563eb", fontWeight: 850 }}>BELOW</th>
-                <th style={{ padding: "12px 14px", color: "#059669", fontWeight: 850 }}>UNDER</th>
-                <th style={{ padding: "12px 14px", color: "#d97706", fontWeight: 850 }}>UNDERNEATH</th>
+                {data.targetWords.map((tw, idx) => (
+                  <th
+                    key={tw}
+                    style={{
+                      padding: "12px 14px",
+                      color: data.words[idx]?.themeColor || "#2563eb",
+                      fontWeight: 850
+                    }}
+                  >
+                    {tw}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
@@ -634,9 +715,17 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
                   }}
                 >
                   <td style={{ padding: "11px 14px", fontWeight: 750, color: "#1e293b" }}>{row.feature}</td>
-                  <td style={{ padding: "11px 14px", color: "#1e3a8a", lineHeight: 1.4 }}>{row.below}</td>
-                  <td style={{ padding: "11px 14px", color: "#064e3b", lineHeight: 1.4 }}>{row.under}</td>
-                  <td style={{ padding: "11px 14px", color: "#78350f", lineHeight: 1.4 }}>{row.underneath}</td>
+                  {data.targetWords.map((tw) => {
+                    const val =
+                      row.wordValues?.[tw] ||
+                      (tw === "BELOW" ? row.below : tw === "UNDER" ? row.under : row.underneath) ||
+                      "—";
+                    return (
+                      <td key={tw} style={{ padding: "11px 14px", color: "#1e293b", lineHeight: 1.4 }}>
+                        {val}
+                      </td>
+                    );
+                  })}
                 </tr>
               ))}
             </tbody>
@@ -663,7 +752,7 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
               Test Your Mastery: Select the Correct Word
             </h2>
             <p style={{ fontSize: "0.84rem", color: "#64748b", margin: 0 }}>
-              Tap below, under, or underneath to fill in the blank. Instant visual feedback and rule explanations will appear.
+              Tap one of the options below to fill in the blank. Instant visual feedback and rule explanations will appear.
             </p>
           </div>
 
@@ -708,7 +797,7 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
           {data.practiceDrills.map((drill: PracticeQuizQuestion) => {
             const userAnswer = selectedAnswers[drill.id];
-            const isCorrect = userAnswer === drill.blankWord;
+            const isCorrect = userAnswer?.toLowerCase() === drill.blankWord.toLowerCase();
             const hasAnswered = !!userAnswer;
 
             return (
@@ -744,7 +833,7 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
 
                   <div>
                     <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#0f172a", lineHeight: 1.45 }}>
-                      {drill.sentence.split("______").map((part, pIdx, arr) => (
+                      {drill.sentence.split(/_{3,}/).map((part, pIdx, arr) => (
                         <React.Fragment key={pIdx}>
                           {part}
                           {pIdx < arr.length - 1 && (

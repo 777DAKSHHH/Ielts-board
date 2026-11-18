@@ -114,7 +114,7 @@ export interface MainReasonOption {
 
 export interface BodyParaStructure {
   paraNumber: 1 | 2 | 3;
-  side: "strong_opinion" | "non_opinion";
+  side: "strong_opinion" | "non_opinion" | "advantages" | "disadvantages";
   title: string;
   theme: string;
   mainReason: string;

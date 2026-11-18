@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, ArrowRight, BookOpen, Scale } from "lucide-react";
+import { SunMedium, ArrowRight, BookOpen, Scale } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { tactilePress } from "../../motion";
 
@@ -16,9 +16,9 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 09 • Question Briefing &amp; Topic Overview
         </span>
-        <h2 className="stage-title">IELTS Writing Task 2 — Corporate Social Responsibility</h2>
+        <h2 className="stage-title">IELTS Writing Task 2 — Household Solar Energy</h2>
         <p className="stage-subtitle">
-          Examine the prompt, identify the opinion essay task, and master the mandatory 5-paragraph opinion architecture with a balanced concession.
+          Examine the prompt, identify the Advantages &amp; Disadvantages essay task, and master the balanced 4-paragraph analytical architecture.
         </p>
       </div>
 
@@ -43,21 +43,21 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
                   width: "44px",
                   height: "44px",
                   borderRadius: "12px",
-                  background: "#1e3a8a",
+                  background: "#ea580c",
                   color: "#ffffff",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center"
                 }}
               >
-                <Briefcase size={24} />
+                <SunMedium size={24} />
               </div>
               <div>
-                <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#2563eb", textTransform: "uppercase" }}>
+                <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#ea580c", textTransform: "uppercase" }}>
                   Task 2 Essay Type
                 </span>
                 <h4 style={{ fontSize: "1.15rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                  Opinion Essay (Agree or Disagree)
+                  Advantages &amp; Disadvantages Essay
                 </h4>
               </div>
             </div>
@@ -76,7 +76,7 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
                 gap: "5px"
               }}
             >
-              <Scale size={14} /> 5-Paragraph Architecture
+              <Scale size={14} /> Balanced 4-Paragraph Architecture
             </span>
           </div>
 
@@ -95,12 +95,12 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase" }}>
               Official Exam Prompt
             </span>
-            <p style={{ margin: 0, fontSize: "1.2rem", fontWeight: 750, color: "#0f172a", lineHeight: 1.5 }}>
-              “Apart from making money, businesses also have social responsibility.”
+            <p style={{ margin: 0, fontSize: "1.18rem", fontWeight: 750, color: "#0f172a", lineHeight: 1.5 }}>
+              “Solar energy is becoming more and more popular as a source of household energy in many countries around the world.”
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginTop: "4px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "1.05rem", fontWeight: 750, color: "#2563eb" }}>
-                <span>•</span> <span>To what extent do you agree or disagree?</span>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "1.05rem", fontWeight: 750, color: "#ea580c" }}>
+                <span>•</span> <span>What are the advantages and disadvantages of solar energy?</span>
               </div>
             </div>
           </div>
@@ -108,8 +108,8 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
           {/* Format Panel Overview */}
           <div
             style={{
-              background: "#eff6ff",
-              border: "1.5px solid #bfdbfe",
+              background: "#fff7ed",
+              border: "1.5px solid #fed7aa",
               borderRadius: "16px",
               padding: "18px 20px",
               display: "flex",
@@ -118,16 +118,16 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <BookOpen size={16} color="#1d4ed8" />
-              <strong style={{ fontSize: "0.92rem", color: "#1e3a8a", textTransform: "uppercase" }}>
+              <BookOpen size={16} color="#c2410c" />
+              <strong style={{ fontSize: "0.92rem", color: "#9a3412", textTransform: "uppercase" }}>
                 Mandatory Essay Format Architecture
               </strong>
             </div>
             <ul style={{ margin: "4px 0 0", paddingLeft: "20px", fontSize: "0.9rem", color: "#1e293b", lineHeight: 1.65 }}>
-              <li><strong>INTRO:</strong> Paraphrase the question + opinion</li>
-              <li><strong>BODY PARA 1 &amp; 2:</strong> On your opinion side (e.g. Environmental Stewardship &amp; Worker/Community Welfare)</li>
-              <li><strong>BODY PARA 3:</strong> On your non-opinion side (e.g. Commercial Solvency, Job Creation &amp; Tax Contributions)</li>
-              <li><strong>CONCLUSION:</strong> Sum-up all the main points + restate your opinion</li>
+              <li><strong>INTRO:</strong> Paraphrase the prompt + Outline statement (introducing both benefits &amp; drawbacks)</li>
+              <li><strong>BODY PARA 1 (ADVANTAGES):</strong> Clean renewable electricity (zero emissions) + Substantial long-term utility bill savings &amp; net-metering</li>
+              <li><strong>BODY PARA 2 (DISADVANTAGES):</strong> High upfront capital expenditure &amp; installation fees + Weather intermittency &amp; costly battery storage</li>
+              <li><strong>CONCLUSION:</strong> Sum-up key advantages &amp; disadvantages + Balanced future recommendation / forward-looking insight</li>
             </ul>
           </div>
 
@@ -144,7 +144,9 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               fontWeight: 750,
               width: "100%",
               borderRadius: "14px",
-              boxShadow: "0 8px 20px -4px rgba(37, 99, 235, 0.3)",
+              background: "linear-gradient(135deg, #ea580c, #c2410c)",
+              border: "none",
+              boxShadow: "0 8px 20px -4px rgba(234, 88, 12, 0.35)",
               cursor: "pointer"
             }}
           >

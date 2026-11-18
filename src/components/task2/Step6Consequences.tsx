@@ -26,13 +26,13 @@ export const Step6ConsequencesT2: React.FC = () => {
           className="apple-badge accent"
           style={{ marginBottom: "8px", background: "#eff6ff", color: "#1e40af" }}
         >
-          Step 06 / 09 • Student Idea Bank: Opinion Arguments
+          Step 06 / 09 • Student Idea Bank: Advantages (Body Para 1)
         </span>
         <h2 className="stage-title">
-          Opinion Arguments (Body 1 &amp; 2) — Student Idea Bank
+          Advantages of Solar Energy (Body Paragraph 1) — Student Idea Bank
         </h2>
         <p className="stage-subtitle">
-          These are compelling arguments supporting corporate social responsibility, environmental stewardship, and worker welfare that students can understand and develop with relatable real-world examples.
+          These are 5 compelling arguments exploring the environmental and financial benefits of domestic solar power (clean renewable electricity, reduced power bills, grid autonomy, net-metering rebates, and low maintenance).
         </p>
       </div>
 

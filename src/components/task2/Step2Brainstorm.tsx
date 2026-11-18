@@ -31,129 +31,129 @@ const ESSAY_FORMAT_STEPS = [
     label: "INTRO",
     badgeBg: "rgba(147, 51, 234, 0.12)",
     badgeColor: "#7e22ce",
-    formatRule: "Paraphrase the question + opinion"
+    formatRule: "Paraphrase the prompt + Outline statement (benefits & drawbacks)"
   },
   {
     stepNum: "2",
-    label: "body para 1 & 2",
+    label: "BODY PARA 1",
     badgeBg: "rgba(37, 99, 235, 0.12)",
     badgeColor: "#1d4ed8",
-    formatRule: "On your opinion side"
+    formatRule: "Advantages: Clean renewable electricity + Substantial utility bill savings"
   },
   {
     stepNum: "3",
-    label: "body para 3",
+    label: "BODY PARA 2",
     badgeBg: "rgba(234, 88, 12, 0.12)",
     badgeColor: "#c2410c",
-    formatRule: "On your non-opinion side"
+    formatRule: "Disadvantages: High initial setup costs + Weather intermittency & storage"
   },
   {
     stepNum: "4",
-    label: "conclusion",
+    label: "CONCLUSION",
     badgeBg: "rgba(13, 148, 136, 0.12)",
     badgeColor: "#0f766e",
-    formatRule: "Sum-up all the main points + restate your opinion"
+    formatRule: "Sum-up main advantages & disadvantages + Balanced future recommendation"
   }
 ];
 
 // Structured cut-to-the-chase student idea cards
 interface IdeaItem {
   id: string;
-  type: "cause" | "solution"; // "cause" mapped to opinion side, "solution" mapped to non-opinion side
+  type: "cause" | "solution"; // "cause" = advantages (Body 1), "solution" = disadvantages (Body 2)
   tag: string;
   oneLiner: string;
   example: string;
 }
 
 const STUDENT_IDEAS: IdeaItem[] = [
-  // 5 Opinion Side arguments (Body 1 & 2 - DISAGREE)
+  // 5 Advantages (Body Para 1)
   {
-    id: "opinion-1",
+    id: "adv-1",
     type: "cause",
-    tag: "Commercial solvency & avoiding bankruptcy",
-    oneLiner: "Profit generation is the primary prerequisite for corporate survival; without healthy profit margins, a company collapses into insolvency and cannot employ anyone or sustain any social cause.",
-    example: "Small and medium-sized enterprises (SMEs) prioritizing sales revenue simply to meet payroll, pay rent, and service supplier invoices."
+    tag: "Clean renewable power & decarbonisation",
+    oneLiner: "Solar power converts inexhaustible sunlight into electricity with zero toxic emissions, drastically reducing residential carbon footprints and combating climate change.",
+    example: "A standard 5kW rooftop solar system preventing four to five tonnes of carbon dioxide emissions annually, equivalent to planting over a hundred trees."
   },
   {
-    id: "opinion-2",
+    id: "adv-2",
     type: "cause",
-    tag: "Employment creation & sustaining livelihoods",
-    oneLiner: "Profitable businesses employ millions of citizens, providing dependable household incomes and career security that represent their greatest direct contribution to society.",
-    example: "Major employers sustaining local township economies by keeping factories operational and payrolls active during economic downturns."
+    tag: "Drastic long-term electricity bill savings",
+    oneLiner: "Once installed, sunlight is completely free; homeowners generate their own electricity on-site and are shielded from volatile commercial power tariffs.",
+    example: "Families in sunny climates reducing their annual electricity utility bills by sixty to eighty percent after installing rooftop photovoltaic panels."
   },
   {
-    id: "opinion-3",
+    id: "adv-3",
     type: "cause",
-    tag: "Government welfare mandate & corporate taxation",
-    oneLiner: "Social welfare, public healthcare, schools, and environmental governance belong exclusively to elected governments, which are democratically funded by heavy corporate tax revenues.",
-    example: "Corporate income taxes collected from thriving commercial sectors enabling national governments to finance free public healthcare and highway networks."
+    tag: "Grid autonomy & blackout resilience",
+    oneLiner: "Equipping homes with solar panels and battery storage provides energy independence, keeping vital household appliances running during municipal grid blackouts.",
+    example: "Suburban and rural residences maintaining uninterrupted refrigeration and medical equipment during severe storm-induced power outages."
   },
   {
-    id: "opinion-4",
+    id: "adv-4",
     type: "cause",
-    tag: "Fiduciary responsibility to shareholders & pensioners",
-    oneLiner: "Corporate managers are legally bound fiduciaries entrusted with investor capital; diverting private earnings to social causes without shareholder consent breaches their core mandate.",
-    example: "Pension and retirement funds relying on corporate stock dividends to disburse monthly retirement income to senior citizens."
+    tag: "Revenue generation through net-metering",
+    oneLiner: "Many modern power companies credit homeowners for exporting surplus midday electricity back to the municipal grid, converting roofs into modest revenue streams.",
+    example: "Domestic solar owners receiving monthly financial rebates or utility credits for surplus daytime solar electricity fed into regional power lines."
   },
   {
-    id: "opinion-5",
+    id: "adv-5",
     type: "cause",
-    tag: "Specialized commercial efficiency vs social engineering",
-    oneLiner: "Corporate executives specialize in commerce, manufacturing, and logistics, not public welfare; forcing companies into social engineering leads to misallocated resources and greenwashing.",
-    example: "Companies squandering capital on publicity-driven philanthropic campaigns rather than reinvesting in technological innovation and product quality."
+    tag: "Minimal maintenance & 25-year panel longevity",
+    oneLiner: "Photovoltaic solar panels have no moving mechanical parts, resulting in negligible wear and tear, low servicing costs, and operational lifespans exceeding twenty-five years.",
+    example: "Manufacturers providing 25-year performance warranties with virtually zero required maintenance beyond periodic surface dust removal."
   },
 
-  // 5 Non-Opinion / Concession arguments (Body 3 - AGREE COUNTERPOINT)
+  // 5 Disadvantages (Body Para 2)
   {
-    id: "non-opinion-1",
+    id: "dis-1",
     type: "solution",
-    tag: "Statutory environmental regulations & pollution limits",
-    oneLiner: "Businesses consume natural resources and produce waste, requiring them to adhere to emission limits and clean disposal laws as mandatory statutory compliance.",
-    example: "Manufacturing facilities installing industrial smoke filters and wastewater treatment plants to meet legal government environmental standards."
+    tag: "High upfront capital expenditure & installation",
+    oneLiner: "Purchasing high-efficiency solar panels, power inverters, mounting equipment, and hiring certified electrical technicians requires a prohibitive upfront investment.",
+    example: "A typical residential installation costing between $12,000 and $22,000 before government subsidies, placing it out of reach for lower-income families."
   },
   {
-    id: "non-opinion-2",
+    id: "dis-2",
     type: "solution",
-    tag: "Workplace safety & mandatory labor codes",
-    oneLiner: "Providing safe conditions, reasonable working hours, and living wages is legally enforced by state labor standards, protecting workers from commercial exploitation.",
-    example: "Retail and factory employers complying with mandatory fire safety codes, minimum wage legislation, and maximum weekly working hours."
+    tag: "Weather dependency & seasonal intermittency",
+    oneLiner: "Solar energy is inherently intermittent; electricity generation plummets during overcast, rainy, or winter days, and ceases completely during night hours.",
+    example: "Households in northern European regions experiencing up to a seventy percent reduction in solar electricity production throughout dark winter months."
   },
   {
-    id: "non-opinion-3",
+    id: "dis-3",
     type: "solution",
-    tag: "Consumer protection & product integrity",
-    oneLiner: "Ensuring non-toxic, safe merchandise is a fundamental commercial prerequisite enforced by consumer protection legislation rather than discretionary corporate goodwill.",
-    example: "Pharmaceutical and food producers adhering to rigorous government inspection and safety certification standards."
+    tag: "Exorbitant cost & finite battery lifespan",
+    oneLiner: "Achieving true 24/7 power independence requires expensive lithium-ion battery banks, which degrade chemically and demand costly replacement every decade.",
+    example: "Adding a domestic battery storage unit increasing total setup costs by $7,000 to $10,000, significantly extending the system's financial payback period."
   },
   {
-    id: "non-opinion-4",
+    id: "dis-4",
     type: "solution",
-    tag: "Brand reputation & calculated marketing advantages",
-    oneLiner: "Engaging in ethical practices and charitable initiatives is often a calculated marketing strategy aimed at protecting brand equity and boosting long-term sales.",
-    example: "Apparel brands publicizing organic fabric lines to attract premium consumers and defend market share."
+    tag: "Roof space, shading & structural constraints",
+    oneLiner: "Electricity generation is constrained by roof surface area, angle, and shading; properties with small, shaded roofs or urban apartment tenants cannot utilize rooftop solar.",
+    example: "High-density apartment dwellers and tenants without private roof access being effectively excluded from adopting personal solar energy."
   },
   {
-    id: "non-opinion-5",
+    id: "dis-5",
     type: "solution",
-    tag: "Civic cooperation & local operating permits",
-    oneLiner: "Firms supporting local neighborhood events or sports clubs do so to foster good civic relations and secure municipal operational permits, directly serving enterprise interests.",
-    example: "Supermarkets sponsoring local clean-up drives to maintain positive relations with surrounding communities."
+    tag: "Manufacturing chemicals & e-waste disposal",
+    oneLiner: "Fabricating silicon photovoltaic cells involves hazardous chemical solvents, while decommissioned solar panels create mounting electronic waste challenges.",
+    example: "Millions of aging first-generation solar panels reaching the end of their operational lifespans and requiring specialized heavy-metal recycling."
   }
 ];
 
 const TARGET_LEXIS = [
-  { word: "philanthropy", note: "corporate philanthropy and community development" },
-  { word: "viability", note: "commercial viability and financial solvency" },
-  { word: "stewardship", note: "environmental stewardship and emissions reduction" },
-  { word: "exploitation", note: "preventing exploitation of vulnerable labor" },
-  { word: "accountability", note: "corporate environmental and social accountability" },
-  { word: "remuneration", note: "fair and equitable worker remuneration" },
-  { word: "sustainable", note: "sustainable production and commerce" },
-  { word: "altruism", note: "pure altruism vs statutory compliance" },
-  { word: "degradation", note: "mitigating industrial ecological degradation" },
-  { word: "concession", note: "balanced academic concession on profit necessity" },
-  { word: "compliance", note: "full compliance with labor and emission codes" },
-  { word: "prosperity", note: "shared economic and societal prosperity" }
+  { word: "photovoltaic", note: "residential photovoltaic installations" },
+  { word: "intermittency", note: "power generation intermittency" },
+  { word: "decarbonisation", note: "accelerating residential decarbonisation" },
+  { word: "autonomy", note: "greater household energy autonomy" },
+  { word: "expenditure", note: "substantial upfront capital expenditure" },
+  { word: "inexhaustible", note: "virtually inexhaustible solar radiation" },
+  { word: "net metering", note: "net-metering feed-in tariffs" },
+  { word: "amortisation", note: "amortisation period of installation costs" },
+  { word: "subsidise", note: "government subsidized clean technology" },
+  { word: "footprint", note: "shrinking household ecological footprints" },
+  { word: "surplus", note: "exporting surplus daytime electricity" },
+  { word: "depletion", note: "counteracting fossil fuel depletion" }
 ];
 
 export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
@@ -185,9 +185,9 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 02 / 09 • Task Reveal &amp; Essay Format
         </span>
-        <h2 className="stage-title">Deconstruct the Corporate Social Responsibility Architecture &amp; One-Liner Points</h2>
+        <h2 className="stage-title">Deconstruct Household Solar Energy Architecture &amp; One-Liner Points</h2>
         <p className="stage-subtitle">
-          Essay Type: <strong>Opinion Essay (Agree or Disagree)</strong>. Master the mandatory 5-paragraph format: Opinion in Body 1 &amp; 2, Non-Opinion in Body 3.
+          Essay Type: <strong>Advantages &amp; Disadvantages Essay</strong>. Master the balanced 4-paragraph architecture: Advantages in Body 1, Disadvantages in Body 2.
         </p>
       </div>
 
@@ -198,7 +198,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to review the opinion prompt, formulate your balanced thesis, and lock in your core arguments."
+          instruction="Focus Timer: 3 minutes to review the solar prompt, identify key environmental and economic trade-offs, and lock in your core arguments."
         />
       </div>
 
@@ -268,7 +268,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 lineHeight: 1.5
               }}
             >
-              <strong>Examiner Requirement:</strong> Present a clear opinion in the introduction, develop two body paragraphs on your opinion side (environmental stewardship and worker/community welfare), examine the non-opinion counterpoint in body 3 (profit necessity), and restate your balanced opinion in the conclusion.
+              <strong>Examiner Requirement:</strong> Present a clear outline statement in the introduction, dedicate Body Paragraph 1 to primary advantages (clean renewable electricity and utility bill savings), dedicate Body Paragraph 2 to primary disadvantages (high upfront capital costs and weather intermittency), and deliver a balanced synthesis in the conclusion.
             </div>
           </div>
         </div>
@@ -326,7 +326,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   </motion.button>
                 )}
                 <span className="apple-badge neutral" style={{ fontSize: "0.82rem" }}>
-                  5-Paragraph Architecture
+                  4-Paragraph Architecture
                 </span>
               </div>
             </div>
@@ -356,7 +356,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                   color: "#1d4ed8"
                 }}
               >
-                ⚡ Essay Format: <strong>5-Paragraph Opinion Architecture (with Concession)</strong>
+                ⚡ Essay Format: <strong>Balanced 4-Paragraph Advantages &amp; Disadvantages Architecture</strong>
               </div>
 
               <div
@@ -574,7 +574,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 transition: "all 0.15s ease"
               }}
             >
-              🔵 Opinion Side (5)
+              🟢 Advantages (5)
             </button>
             <button
               onClick={() => setActiveTab("solution")}
@@ -591,7 +591,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                 transition: "all 0.15s ease"
               }}
             >
-              🟠 Non-Opinion Concession (5)
+              🔴 Disadvantages (5)
             </button>
           </div>
         </div>
@@ -612,7 +612,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
         >
           <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--slate-700)", flexShrink: 0 }}>
             <BookOpen size={15} color="var(--apple-blue)" />
-            <strong style={{ fontSize: "0.78rem" }}>Band 8.5/9 Corporate Ethics &amp; Economics Lexis:</strong>
+            <strong style={{ fontSize: "0.78rem" }}>Band 8.5/9 Clean Energy &amp; Technology Lexis:</strong>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
             {TARGET_LEXIS.map((lex) => (
@@ -676,7 +676,7 @@ export const Step2BrainstormT2: React.FC<Step2BrainstormProps> = ({
                         textTransform: "uppercase"
                       }}
                     >
-                      {isCause ? "🔵 Opinion Side" : "🟠 Non-Opinion Concession"} #{index + 1}
+                      {isCause ? "🟢 Advantage" : "🔴 Disadvantage"} #{index + 1}
                     </span>
                     <strong style={{ fontSize: "0.96rem", color: "#0f172a" }}>
                       {idea.tag}

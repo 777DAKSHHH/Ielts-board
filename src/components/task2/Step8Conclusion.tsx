@@ -7,27 +7,27 @@ import { tactilePress } from "../../motion";
 const CONCLUSION_VARIATIONS = [
   {
     id: "standard",
-    title: "Style 1: Standard Balanced Synthesis & Restatement",
+    title: "Style 1: Standard Balanced Synthesis & Recommendation",
     badge: "Band 8.5–9 • Recommended",
-    summary: "Acknowledges statutory regulatory compliance, recaps the profit and solvency pillars, and delivers an unequivocal restatement of the Disagree position.",
-    text: "In conclusion, although companies must operate within statutory environmental and employment codes, I firmly disagree that they possess social responsibilities beyond generating profit. The primary duty of commerce is economic viability, job preservation, and shareholder returns, leaving public welfare initiatives to governments financed through corporate taxation.",
-    breakdown: "Sentence 1: Sum-up of statutory compliance vs clear Disagree stance | Sentence 2: Restatement emphasizing economic solvency, jobs, and the government's tax-funded welfare mandate."
+    summary: "Recaps clean energy and financial savings, balances them against capital costs and weather dependency, and provides a forward-looking recommendation.",
+    text: "In conclusion, household solar energy presents compelling advantages by delivering clean, renewable electricity and lowering long-term domestic power bills. However, these merits are counterbalanced by the heavy initial capital investment required and the system's inherent weather dependency, suggesting that government subsidies and advancements in battery storage will remain critical for widespread residential adoption.",
+    breakdown: "Sentence 1: Recaps primary advantages (clean energy & bill reduction) | Sentence 2: Recaps primary disadvantages (upfront costs & weather intermittency) + Forward-looking recommendation."
   },
   {
     id: "academic",
-    title: "Style 2: Academic Analytical Synthesis & Restatement",
+    title: "Style 2: Academic Analytical Synthesis & Policy Outlook",
     badge: "Band 9 • Advanced Lexicon",
-    summary: "Elevated academic syntax contrasting statutory regulatory compliance with private shareholder obligations and the state's constitutional mandate.",
-    text: "To conclude, while commercial organizations are legally bound to observe anti-pollution and occupational safety standards, I completely reject the notion that enterprises hold broader social obligations. The fundamental purpose of business is to maximize shareholder equity and sustain employment, whereas social welfare administration resides strictly within the democratic jurisdiction of the state.",
-    breakdown: "Sentence 1: Concession on legal standards coupled with decisive rejection of broader social duties | Sentence 2: Analytical restatement contrasting private capital return with state welfare jurisdiction."
+    summary: "Elevated academic syntax contrasting residential decarbonisation and grid autonomy with capital barriers and intermittency constraints.",
+    text: "To conclude, the proliferation of domestic photovoltaic systems yields transformative environmental and economic benefits, notably the eradication of residential greenhouse emissions and reduced reliance on centralised utilities. Nonetheless, the substantial capital outlay required for installation and the inescapable intermittency of solar radiation represent formidable constraints that necessitate continued state subsidies and technological innovation.",
+    breakdown: "Sentence 1: Synthesis of ecological decarbonisation and grid autonomy | Sentence 2: Synthesis of capital barrier and intermittency with policy recommendation."
   },
   {
     id: "rapid-exam",
     title: "Style 3: Rapid 2-Sentence Exam Model",
     badge: "Rapid Timing • Under 45 Words",
-    summary: "High-speed, 42-word concise model affirming commercial primacy and state responsibility under exam time pressure.",
-    text: "In conclusion, while businesses must comply with statutory environmental laws, I firmly disagree that their role extends to social welfare. Their core duty is to remain profitable and protect jobs, leaving broader societal needs to state authorities funded by corporate taxes.",
-    breakdown: "Sentence 1: Rapid concession & explicit Disagree assertion | Sentence 2: Crisp restatement of commercial role vs state responsibility."
+    summary: "High-speed concise model balancing emissions reduction against initial setup expenses under strict exam time pressure.",
+    text: "In conclusion, while household solar power drastically curbs carbon emissions and utility bills, its substantial upfront cost and reliance on sunny weather remain key obstacles. Consequently, targeted government grants and cheaper batteries will determine its long-term feasibility.",
+    breakdown: "Sentence 1: Rapid 2-part trade-off synthesis | Sentence 2: Crisp conclusion with forward-looking recommendation."
   }
 ];
 
@@ -46,11 +46,11 @@ export const Step8ConclusionT2: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 08 / 09 • Sample Conclusion &amp; Restatement
+          Step 08 / 09 • Sample Conclusion &amp; Synthesis
         </span>
-        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Points + Restate Your Opinion</h2>
+        <h2 className="stage-title">Sample Conclusion: Sum-Up Main Points + Balanced Recommendation</h2>
         <p className="stage-subtitle">
-          Mandatory Conclusion Format: <strong>Sum-up all the main points + restate your opinion</strong>.
+          Mandatory Conclusion Format: <strong>Sum-up primary advantages and disadvantages + provide a balanced forward-looking perspective</strong>.
         </p>
       </div>
 

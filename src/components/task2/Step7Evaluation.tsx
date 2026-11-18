@@ -26,13 +26,13 @@ export const Step7EvaluationT2: React.FC = () => {
           className="apple-badge accent"
           style={{ marginBottom: "8px", background: "#ffedd5", color: "#c2410c" }}
         >
-          Step 07 / 09 • Student Idea Bank: Non-Opinion / Concession
+          Step 07 / 09 • Student Idea Bank: Disadvantages (Body Para 2)
         </span>
         <h2 className="stage-title">
-          Non-Opinion / Concession (Body 3) — Student Idea Bank
+          Disadvantages of Solar Energy (Body Paragraph 2) — Student Idea Bank
         </h2>
         <p className="stage-subtitle">
-          These are pragmatic economic arguments analyzing the necessity of profit generation, financial solvency, employment creation, and shareholder returns with relatable examples.
+          These are 5 pragmatic arguments examining the drawbacks and limitations of household solar adoption (high upfront capital costs, weather intermittency, expensive battery storage, roof space constraints, and electronic waste recycling).
         </p>
       </div>
 

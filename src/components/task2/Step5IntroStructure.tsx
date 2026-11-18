@@ -12,19 +12,19 @@ export const Step5IntroStructureT2: React.FC = () => {
   };
 
   const sentence1 =
-    "It is widely argued that commercial enterprises ought to shoulder social responsibilities extending beyond their primary objective of making money.";
+    "In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source.";
   const sentence2 =
-    "However, I strongly disagree with this view, as the fundamental purpose of any business is to maximize profit and guarantee economic survival, whereas social welfare remains the exclusive responsibility of government authorities.";
+    "While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.";
 
   return (
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 05 / 09 • Sample Introduction &amp; Opinion
+          Step 05 / 09 • Sample Introduction &amp; Outline
         </span>
-        <h2 className="stage-title">Sample Introduction: Paraphrase + Clear Opinion Statement</h2>
+        <h2 className="stage-title">Sample Introduction: Paraphrase + Clear Outline Statement</h2>
         <p className="stage-subtitle">
-          Mandatory Introduction Format: <strong>Sentence 1: Paraphrase the question prompt + Sentence 2: Deliver your clear opinion statement</strong>.
+          Mandatory Introduction Format: <strong>Sentence 1: Paraphrase the question prompt + Sentence 2: Deliver your clear outline statement</strong>.
         </p>
       </div>
 
@@ -45,7 +45,7 @@ export const Step5IntroStructureT2: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <BookOpen size={22} color="var(--apple-blue)" />
               <h4 style={{ fontSize: "1.2rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                Sample Introduction (2 Sentences • ~45 Words)
+                Sample Introduction (2 Sentences • ~51 Words)
               </h4>
             </div>
 
@@ -97,7 +97,7 @@ export const Step5IntroStructureT2: React.FC = () => {
                   Sentence 1 • Paraphrase
                 </span>
                 <span style={{ fontSize: "0.8rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                  (18 words)
+                  (20 words)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "1.12rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.55 }}>
@@ -105,11 +105,11 @@ export const Step5IntroStructureT2: React.FC = () => {
               </p>
             </div>
 
-            {/* Sentence 2: Explicit Opinion & Thesis Statement */}
+            {/* Sentence 2: Explicit Outline Statement */}
             <div
               style={{
                 background: "#ffffff",
-                border: "1.5px solid #bbf7d0",
+                border: "1.5px solid #fed7aa",
                 borderRadius: "14px",
                 padding: "16px 18px",
                 boxShadow: "var(--shadow-sm)"
@@ -120,17 +120,17 @@ export const Step5IntroStructureT2: React.FC = () => {
                   style={{
                     fontSize: "0.74rem",
                     fontWeight: 800,
-                    background: "#f0fdf4",
-                    color: "#166534",
+                    background: "#fff7ed",
+                    color: "#c2410c",
                     padding: "2px 8px",
                     borderRadius: "5px",
                     textTransform: "uppercase"
                   }}
                 >
-                  Sentence 2 • Clear Disagree Opinion Statement
+                  Sentence 2 • Balanced Outline Statement
                 </span>
                 <span style={{ fontSize: "0.8rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                  (28 words)
+                  (31 words)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "1.12rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.55 }}>
@@ -156,7 +156,7 @@ export const Step5IntroStructureT2: React.FC = () => {
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-600)", fontSize: "0.9rem", fontWeight: 600 }}>
-            <Clock size={16} /> Exactly 46 words • 2 sentences • Fast exam execution (~1.5 mins)
+            <Clock size={16} /> Exactly 51 words • 2 sentences • Fast exam execution (~1.5 mins)
           </div>
         </div>
 
@@ -175,9 +175,9 @@ export const Step5IntroStructureT2: React.FC = () => {
               <h5 style={{ fontSize: "1.02rem", fontWeight: 750, margin: 0 }}>One-Liner Intro Planning Points</h5>
             </div>
             <ul style={{ margin: "4px 0 0", paddingLeft: "18px", fontSize: "0.94rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
-              <li><strong>Paraphrase:</strong> Commercial enterprises inherently generate revenue, but many argue they must bear broader social obligations.</li>
-              <li><strong>Disagree Opinion:</strong> I strongly disagree with this assertion, as business must prioritize commercial solvency and profit.</li>
-              <li><strong>State Mandate:</strong> Social welfare and public infrastructure are strictly the democratic responsibility of governments funded by corporate taxes.</li>
+              <li><strong>Paraphrase:</strong> Many homeowners across the globe are adopting residential solar panels as a primary electricity source.</li>
+              <li><strong>Advantage Preview:</strong> Highlight green renewable energy and long-term utility bill savings.</li>
+              <li><strong>Disadvantage Preview:</strong> Contrast with heavy initial installation expenses and weather dependency.</li>
             </ul>
           </div>
 
@@ -185,21 +185,21 @@ export const Step5IntroStructureT2: React.FC = () => {
             icon={<CheckCircle2 size={18} />}
             badge="Sentence 1 Analysis"
             title="Question Paraphrase"
-            text="“It is widely argued that commercial enterprises ought to shoulder social responsibilities extending beyond their primary objective of making money.” Elegantly captures both components of the question prompt with advanced academic collocations."
+            text="“In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source.” Elegantly paraphrases the prompt's premise with advanced academic collocations."
           />
 
           <StructureCard
             icon={<Award size={18} />}
             badge="Sentence 2 Analysis"
-            title="Explicit Disagree Thesis Statement"
-            text="“However, I strongly disagree with this view, as the fundamental purpose of any business is to maximize profit and guarantee economic survival, whereas social welfare remains the exclusive responsibility of government authorities.” Directly establishes the core Disagree rationale and sets up Body 1 (commercial solvency) and Body 2 (fiduciary duty and government welfare mandate)."
+            title="Balanced Outline Statement"
+            text="“While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.” Clearly outlines both positive and negative dimensions, establishing an explicit roadmap for Body 1 (advantages) and Body 2 (disadvantages)."
           />
 
           <StructureCard
             icon={<CheckCircle2 size={18} />}
             badge="Band 9 Strategy"
-            title="Clear Position Throughout"
-            text="Declaring an unambiguous Disagree stance in the introduction and consistently supporting it with macroeconomic and fiduciary logic satisfies the Band 9 Task Achievement criterion for presenting a clear, sustained position throughout the essay."
+            title="Balanced Analytical Architecture"
+            text="Providing a balanced outline statement in the introduction and developing both advantages and disadvantages with equal rigor satisfies the Band 9 Task Achievement criterion for an Advantages and Disadvantages essay."
           />
         </div>
       </div>

@@ -223,7 +223,7 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
                   </div>
                   <div>
                     <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>English Nuance Lab (Words Often Misunderstood)</strong>
-                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>Episode 01: BELOW vs. UNDER vs. UNDERNEATH</div>
+                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>New Ep 02: RISE vs. RAISE vs. ARISE • Ep 01: BELOW vs. UNDER vs. UNDERNEATH</div>
                   </div>
                 </div>
                 <span style={{ fontSize: "0.74rem", background: "#dbeafe", color: "#1e40af", fontWeight: 750, padding: "3px 10px", borderRadius: "6px", border: "1px solid #bfdbfe" }}>
@@ -231,7 +231,7 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
                 </span>
               </div>
               <p style={{ fontSize: "0.86rem", color: "#475569", margin: "4px 0 0", lineHeight: 1.5 }}>
-                Interactive SmartBoard lesson: Ask students first about imaginary horizontal lines (below), 3D vertical shelter / abstract states (under), and hidden layers (underneath), then reveal definitive rules and practice drills.
+                Interactive SmartBoard lesson: Master critical Task 1 trends and Task 2 transitive traps (Rise vs. Raise vs. Arise), prepositions (Below vs. Under vs. Underneath), teacher diagnostic prompts, and student drills.
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#2563eb", fontSize: "0.88rem", fontWeight: 750, marginTop: "6px" }}>
                 <span>Launch Nuance Lab Page</span>
@@ -264,15 +264,15 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
                   </div>
                   <div>
                     <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>General Training Task 1 (Informal Letter Masterclass)</strong>
-                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>College Project Letter • Celebrating New Year in a Different Country</div>
+                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>Letter to a Friend • Recent Museum Visit (When, What, How Felt)</div>
                   </div>
                 </div>
                 <span style={{ fontSize: "0.74rem", background: "#fef3c7", color: "#92400e", fontWeight: 750, padding: "3px 10px", borderRadius: "6px", border: "1px solid #fde68a" }}>
-                  Informal Register (Bestu Varas)
+                  Informal Register (Week 21)
                 </span>
               </div>
               <p style={{ fontSize: "0.86rem", color: "#475569", margin: "4px 0 0", lineHeight: 1.5 }}>
-                Master the strict 5-paragraph letter architecture (Warm Opening + Prompt Bullet 1 + Prompt Bullet 2 + Prompt Bullet 3 + Warm Sign-off), authentic informal idioms, and Indian / Gujarati New Year cultural traditions.
+                Master the strict 5-paragraph letter architecture (Warm Greeting + Bullet 1 Timing &amp; Venue + Bullet 2 Aerospace Exhibits + Bullet 3 Emotional Reaction + Friendly Close), authentic informal idioms, and Band 9 conversational tone.
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#d97706", fontSize: "0.88rem", fontWeight: 750, marginTop: "6px" }}>
                 <span>Launch Dedicated Letter Page</span>

@@ -44,21 +44,78 @@ export interface GeneralTask1Data {
     term: string;
     definition: string;
     example: string;
-    category: "Festive Traditions" | "Cultural Significance" | "Personal Impressions" | "Informal Conversational";
+    category: "Museum Exhibits" | "Personal Impressions" | "Informal Conversational" | "Narrative Setting";
+  }[];
+  architectureRevision?: {
+    step: string;
+    stage: string;
+    badgeColor: string;
+    bgColor: string;
+    borderColor: string;
+    textColor: string;
+    summary: string;
   }[];
 }
 
 export const GENERAL_TASK1_DATA: GeneralTask1Data = {
-  id: "general-task1-new-year-friend-project",
+  id: "general-task1-recent-museum-visit-friend",
   taskType: "IELTS General Training • Writing Task 1",
   letterType: "Informal",
-  title: "Helping a Friend with a College Project on New Year Celebrations",
+  title: "Letter to a Friend About a Recent Museum Visit",
   questionText:
-    "You have had a friend who has asked for your help with a college project he/she is doing about celebrating New Year in a different country. Write a letter to your friend.\n\nIn your letter,\n• Say how important New Year is to people in your country\n• Describe how New Year is celebrated in your country\n• Explain what you like about New Year celebration in your country",
-  salutation: "Dear Alex,",
-  signoff: "Warm regards,",
-  senderName: "Devang",
-  wordCount: 195,
+    "WEEK 21\n\nWEDNESDAY (Informal)\nYou have recently visited a museum. Write a letter to your friend (him/her) about the museum you have visited. In your letter,\n• When and where you went\n• What you saw there\n• How you felt about it",
+  salutation: "Dear Sam,",
+  signoff: "Warmly,",
+  senderName: "Alex",
+  wordCount: 215,
+
+  architectureRevision: [
+    {
+      step: "1. Salutation & Opening",
+      stage: "Friendly Check-in & Energetic Hook (Para 1)",
+      badgeColor: "#9333ea",
+      bgColor: "#faf5ff",
+      borderColor: "#e9d5ff",
+      textColor: "#6b21a8",
+      summary: "Warm informal greeting ('Dear Sam,') + friendly catch-up inquiry + enthusiastic reason for dropping a quick line about the weekend excursion."
+    },
+    {
+      step: "2. Body Para 1 (Bullet 1)",
+      stage: "When & Where You Went",
+      badgeColor: "#2563eb",
+      bgColor: "#eff6ff",
+      borderColor: "#bfdbfe",
+      textColor: "#1d4ed8",
+      summary: "Point: Spontaneous trip last Saturday morning → Setting: National Science & Aerospace Museum in city center → Atmosphere: Arrived early to beat weekend crowds."
+    },
+    {
+      step: "3. Body Para 2 (Bullet 2)",
+      stage: "What You Saw There",
+      badgeColor: "#ea580c",
+      bgColor: "#fff7ed",
+      borderColor: "#fed7aa",
+      textColor: "#c2410c",
+      summary: "Centerpiece: Authentic Apollo lunar command module, genuine moon rocks & vintage suits → Interactive: Supersonic VR flight simulator & robotics wing."
+    },
+    {
+      step: "4. Body Para 3 (Bullet 3)",
+      stage: "How You Felt About It",
+      badgeColor: "#059669",
+      bgColor: "#ecfdf5",
+      borderColor: "#a7f3d0",
+      textColor: "#047857",
+      summary: "Personal Reaction: Completely spellbound; colossal spacecraft replicas gave goosebumps → Friend Connection: Knew friend would love the aeronautics exhibits."
+    },
+    {
+      step: "5. Closing & Sign-off",
+      stage: "Social Call to Action & Sign-off (Para 5)",
+      badgeColor: "#0f172a",
+      bgColor: "#f8fafc",
+      borderColor: "#cbd5e1",
+      textColor: "#0f172a",
+      summary: "Call to Action: Suggesting a joint museum visit next time in town + coffee catch-up → Informal Sign-off: 'Warmly,' + first name only ('Alex')."
+    }
+  ],
 
   pptFormatRules: [
     {
@@ -68,28 +125,28 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
     },
     {
       stage: "2. Opening (Paragraph 1)",
-      description: "Warm social opening & immediate acknowledgement of the college project request.",
-      specificRule: "Enquire warmly about their wellbeing and enthusiastically offer assistance: 'It was fantastic to hear from you... I would love to help with your college project...'"
+      description: "Warm conversational social opening & enthusiastic reason for writing.",
+      specificRule: "Enquire warmly about their life and set an energetic narrative hook: 'I hope you're having a brilliant week! I'm dropping you a quick line because I had the most incredible weekend...'"
     },
     {
       stage: "3. Body Para 1 (Bullet 1)",
-      description: "Say how important New Year is to people in your country (cultural & spiritual significance).",
-      specificRule: "Explain the deep-rooted cultural importance: renewal, spiritual fresh start, family bonding, and auspicious beginnings."
+      description: "When and where you went (time, setting, travel circumstance).",
+      specificRule: "Set a clear scene: specify the day/time, the exact name and location of the museum, and why you decided to go on a whim."
     },
     {
       stage: "4. Body Para 2 (Bullet 2)",
-      description: "Describe how New Year is celebrated in your country (decorations, rituals, food, greetings).",
-      specificRule: "Provide sensory, colorful details: thorough house cleaning, rangoli patterns, temple visits, blessings from elders ('Saal Mubarak'), and traditional festive sweets."
+      description: "What you saw there (sensory details, centerpiece artifacts, interactive exhibits).",
+      specificRule: "Provide vivid visual descriptions: historic spacecraft modules, lunar rock samples, flight simulators, or rare archival collections."
     },
     {
       stage: "5. Body Para 3 (Bullet 3)",
-      description: "Explain what you personally like about New Year celebration in your country.",
-      specificRule: "Highlight personal connection: the boundless warmth, forgiveness of past grudges, open-door hospitality, and sense of community harmony."
+      description: "How you felt about it (emotional reaction & sharing the excitement with your friend).",
+      specificRule: "Express genuine personal awe: goosebumps, feeling like stepping into a time machine, and eagerly insisting that you both visit together soon."
     },
     {
       stage: "6. Closing & Sign-off",
-      description: "Warm concluding offer + Informal sign-off with first name.",
-      specificRule: "Offer further project support: 'Let me know if you need photos or further details...' + 'Warm regards,' / 'Best wishes,' + First name only ('Devang')."
+      description: "Warm conversational closing invitation + Informal sign-off with first name.",
+      specificRule: "Suggest an upcoming meetup: 'Let me know when you're free next week...' + 'Warmly,' / 'Best,' + First name only ('Alex')."
     }
   ],
 
@@ -97,52 +154,52 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
     {
       id: "bullet-1",
       bulletNumber: 1,
-      promptText: "Say how important New Year is to people in your country",
+      promptText: "When and where you went",
       targetParagraph: "Body Paragraph 1",
-      linkerRule: "Natural transition establishing cultural context (e.g. 'To begin with', 'In my country')",
+      linkerRule: "Narrative temporal opener (e.g. 'Last Saturday morning', 'On a spontaneous whim')",
       explanation:
-        "Frame the celebration within Indian / Gujarati culture (Bestu Varas / Diwali season), highlighting how it symbolizes spiritual renewal, financial closure, and family unity across generations.",
+        "Establish the exact setting and timing of your museum visit, detailing how you arrived early to beat the weekend rush.",
       modelExcerpt:
-        "In India, and particularly in my home state of Gujarat, New Year—known locally as Bestu Varas—is celebrated right after Diwali and holds immense spiritual and cultural importance. It symbolizes a clean slate, marking a time when people close old financial accounts, forgive past grievances, and welcome prosperity and positivity into their lives. For families, it is by far the most anticipated time of the year.",
+        "Last Saturday morning, I decided on a whim to visit the newly renovated National Science and Aerospace Museum in the city center. It was a crisp, sunny autumn morning, and I arrived right as the grand doors opened at ten, which meant I practically had the ground floor galleries all to myself before the weekend crowds arrived.",
       keyCollocations: [
-        "spiritual and cultural importance",
-        "symbolizes a clean slate",
-        "forgive past grievances",
-        "welcome prosperity"
+        "decided on a whim",
+        "newly renovated museum",
+        "crisp sunny autumn morning",
+        "ground floor galleries"
       ]
     },
     {
       id: "bullet-2",
       bulletNumber: 2,
-      promptText: "Describe how New Year is celebrated in your country",
+      promptText: "What you saw there",
       targetParagraph: "Body Paragraph 2",
-      linkerRule: "Descriptive sequencing linkers (e.g. 'The festivities begin with', 'On the day itself', 'Furthermore')",
+      linkerRule: "Descriptive sequencing linkers (e.g. 'The centerpiece was', 'Further inside', 'Aside from that')",
       explanation:
-        "Walk your friend through authentic visual customs: cleaning and decorating homes with rangoli and diyas, donning new clothes, touching elders' feet for blessings, visiting neighbors, and relishing festive treats.",
+        "Highlight standout artifacts and interactive galleries, giving your friend sensory, vivid details of spacecraft replicas, lunar relics, and simulators.",
       modelExcerpt:
-        "The preparations start days beforehand with rigorous house cleaning and decorating front porches with intricate, colorful rangoli patterns and oil lamps. On New Year’s Day, we wake up at dawn, dress in vibrant traditional attire, and head to local temples for early morning prayers. Afterwards, we visit relatives and neighbors to exchange the traditional greeting of 'Saal Mubarak' (Happy New Year) and touch the feet of our elders to receive their blessings. The day is filled with bursting fireworks and sharing lavish homemade sweets such as kaju katli and ghughra.",
+        "The exhibitions were truly out of this world. The centerpiece was an authentic Apollo lunar command module, surrounded by genuine moon rock samples and vintage astronaut suits. Further inside, there was a breathtaking interactive robotics wing and a state-of-the-art virtual reality flight simulator, where you could actually experience piloting a supersonic jet through a turbulent storm.",
       keyCollocations: [
-        "intricate rangoli patterns",
-        "vibrant traditional attire",
-        "touch the feet of our elders",
-        "lavish homemade sweets"
+        "out of this world",
+        "authentic lunar command module",
+        "genuine moon rock samples",
+        "state-of-the-art flight simulator"
       ]
     },
     {
       id: "bullet-3",
       bulletNumber: 3,
-      promptText: "Explain what you like about New Year celebration in your country",
+      promptText: "How you felt about it",
       targetParagraph: "Body Paragraph 3",
-      linkerRule: "Personal reflection marker (e.g. 'What I love most about it is', 'The aspect I cherish the most')",
+      linkerRule: "Emotional reflection markers (e.g. 'Honestly, I was completely spellbound', 'It gave me goosebumps')",
       explanation:
-        "Express genuine heartfelt appreciation for the open-door hospitality, the spirit of universal reconciliation, and the joyous community vibe where everyone feels included.",
+        "Share your genuine enthusiasm and intellectual wonder, explaining why the experience resonated so deeply and why your friend would love it.",
       modelExcerpt:
-        "What I cherish most about our New Year is the sheer warmth and open-hearted hospitality. Front doors are kept wide open all day, and anyone can drop by without an appointment to celebrate and share food. There is no lingering bitterness—old disputes are dissolved with warm hugs, creating an infectious sense of harmony that brings the entire community together.",
+        "Honestly, I was completely spellbound the entire time. Standing beneath those colossal spacecraft replicas gave me goosebumps—it felt like stepping straight into a time machine. I couldn't stop thinking about how much you would have enjoyed the aeronautics section, and you know how rarely I get this excited about weekend excursions!",
       keyCollocations: [
-        "open-hearted hospitality",
-        "sheer warmth",
-        "drop by without an appointment",
-        "infectious sense of harmony"
+        "completely spellbound",
+        "gave me goosebumps",
+        "stepping into a time machine",
+        "colossal spacecraft replicas"
       ]
     }
   ],
@@ -150,135 +207,135 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
   paragraphs: [
     {
       id: "opening",
-      title: "Opening Paragraph: Friendly Social Opening & Project Acknowledgement",
-      purpose: "Warm social greeting + Enthusiastic response to your friend's project request",
-      text: "It was wonderful to hear from you! I hope everything is going well with your studies. I would be more than happy to help you with your college project on international New Year celebrations—it sounds like a fascinating topic!",
-      wordCount: 41,
-      ruleHighlight: "Informal tone: enthusiastic, supportive, and immediately addressing the friend's request."
+      title: "Opening Paragraph: Friendly Social Greeting & Hook",
+      purpose: "Warm social opening + Enthusiastic reason for dropping a letter",
+      text: "I hope you're having a brilliant week! It feels like ages since we last caught up properly. I'm dropping you a quick line because I had the most incredible weekend, and knowing how much you love history and science, I just had to tell you about it!",
+      wordCount: 47,
+      ruleHighlight: "Informal tone: warm conversational warmth, natural contractions ('I'm', 'you're'), and energetic hook."
     },
     {
       id: "body1",
-      title: "Body Paragraph 1: Importance of New Year (Bullet 1)",
-      purpose: "Say how important New Year is to people in your country",
+      title: "Body Paragraph 1: When & Where You Went (Bullet 1)",
+      purpose: "Detail the timing, setting, and spontaneous decision to visit",
       bulletRef: 1,
-      text: "In India, and particularly in my home state of Gujarat, New Year—known locally as Bestu Varas—is celebrated right after Diwali and holds immense spiritual and cultural importance. It symbolizes a clean slate, marking a time when people close old financial accounts, forgive past grievances, and welcome prosperity and positivity into their lives. For families, it is by far the most anticipated time of the year.",
-      wordCount: 68,
-      ruleHighlight: "Bullet 1 covered: clearly explains cultural significance, renewal, and spiritual weight."
+      text: "Last Saturday morning, I decided on a whim to visit the newly renovated National Science and Aerospace Museum in the city center. It was a crisp, sunny autumn morning, and I arrived right as the grand doors opened at ten, which meant I practically had the ground floor galleries all to myself before the weekend crowds arrived.",
+      wordCount: 57,
+      ruleHighlight: "Bullet 1 covered: specifies last Saturday morning, city center location, and opening atmosphere."
     },
     {
       id: "body2",
-      title: "Body Paragraph 2: Celebration Customs & Traditions (Bullet 2)",
-      purpose: "Describe how New Year is celebrated in your country",
+      title: "Body Paragraph 2: What You Saw (Bullet 2)",
+      purpose: "Vivid, sensory description of exhibits, lunar modules & flight simulators",
       bulletRef: 2,
-      text: "The preparations start days beforehand with rigorous house cleaning and decorating front porches with intricate, colorful rangoli patterns and oil lamps. On New Year’s Day, we wake up at dawn, dress in vibrant traditional attire, and head to local temples for early morning prayers. Afterwards, we visit relatives and neighbors to exchange the traditional greeting of 'Saal Mubarak' (Happy New Year) and touch the feet of our elders to receive their blessings. The day is filled with bursting fireworks and sharing lavish homemade sweets such as kaju katli and ghughra.",
-      wordCount: 92,
-      ruleHighlight: "Bullet 2 covered: rich sensory descriptions of decorations, rituals, greetings, and festive food."
+      text: "The exhibitions were truly out of this world. The centerpiece was an authentic Apollo lunar command module, surrounded by genuine moon rock samples and vintage astronaut suits. Further inside, there was a breathtaking interactive robotics wing and a state-of-the-art virtual reality flight simulator, where you could actually experience piloting a supersonic jet through a turbulent storm.",
+      wordCount: 57,
+      ruleHighlight: "Bullet 2 covered: rich descriptions of Apollo spacecraft, lunar rocks, and interactive VR flight simulators."
     },
     {
       id: "body3",
-      title: "Body Paragraph 3: Personal Highlight & Community Spirit (Bullet 3)",
-      purpose: "Explain what you like about New Year celebration in your country",
+      title: "Body Paragraph 3: Personal Emotional Impression (Bullet 3)",
+      purpose: "Express awe, emotional reaction, and enthusiastic friend connection",
       bulletRef: 3,
-      text: "What I cherish most about our New Year is the sheer warmth and open-hearted hospitality. Front doors are kept wide open all day, and anyone can drop by without an appointment to celebrate and share food. There is no lingering bitterness—old disputes are dissolved with warm hugs, creating an infectious sense of harmony that brings the entire community together.",
-      wordCount: 61,
-      ruleHighlight: "Bullet 3 covered: authentic personal reflection highlighting hospitality and community unity."
+      text: "Honestly, I was completely spellbound the entire time. Standing beneath those colossal spacecraft replicas gave me goosebumps—it felt like stepping straight into a time machine. I couldn't stop thinking about how much you would have enjoyed the aeronautics section, and you know how rarely I get this excited about weekend excursions!",
+      wordCount: 53,
+      ruleHighlight: "Bullet 3 covered: authentic informal idioms ('spellbound', 'gave me goosebumps') showing intense personal reaction."
     },
     {
       id: "closing",
-      title: "Closing Paragraph & Sign-off",
-      purpose: "Offer further help + Warm closing sign-off with first name",
-      text: "I really hope this gives you rich, authentic material for your project! Please let me know if you need any photographs or extra details. Best of luck with your presentation, and let's catch up soon!\n\nWarm regards,\nDevang",
-      wordCount: 42,
-      ruleHighlight: "Informal sign-off: friendly concluding offer + 'Warm regards,' + first name only."
+      title: "Closing Paragraph & Friendly Sign-off",
+      purpose: "Enthusiastic proposal to visit together + Informal closing sign-off",
+      text: "We definitely need to plan a visit together the next time you're in town. Let me know what your schedule looks like next week so we can grab a coffee and catch up properly.\n\nWarmly,\nAlex",
+      wordCount: 35,
+      ruleHighlight: "Informal sign-off: proactive invitation to meet up + 'Warmly,' + first name only ('Alex')."
     }
   ],
 
-  modelLetter: `Dear Alex,
+  modelLetter: `Dear Sam,
 
-It was wonderful to hear from you! I hope everything is going well with your studies. I would be more than happy to help you with your college project on international New Year celebrations—it sounds like a fascinating topic!
+I hope you're having a brilliant week! It feels like ages since we last caught up properly. I'm dropping you a quick line because I had the most incredible weekend, and knowing how much you love history and science, I just had to tell you about it!
 
-In India, and particularly in my home state of Gujarat, New Year—known locally as Bestu Varas—is celebrated right after Diwali and holds immense spiritual and cultural importance. It symbolizes a clean slate, marking a time when people close old financial accounts, forgive past grievances, and welcome prosperity and positivity into their lives. For families, it is by far the most anticipated time of the year.
+Last Saturday morning, I decided on a whim to visit the newly renovated National Science and Aerospace Museum in the city center. It was a crisp, sunny autumn morning, and I arrived right as the grand doors opened at ten, which meant I practically had the ground floor galleries all to myself before the weekend crowds arrived.
 
-The preparations start days beforehand with rigorous house cleaning and decorating front porches with intricate, colorful rangoli patterns and oil lamps. On New Year’s Day, we wake up at dawn, dress in vibrant traditional attire, and head to local temples for early morning prayers. Afterwards, we visit relatives and neighbors to exchange the traditional greeting of 'Saal Mubarak' (Happy New Year) and touch the feet of our elders to receive their blessings. The day is filled with bursting fireworks and sharing lavish homemade sweets such as kaju katli and ghughra.
+The exhibitions were truly out of this world. The centerpiece was an authentic Apollo lunar command module, surrounded by genuine moon rock samples and vintage astronaut suits. Further inside, there was a breathtaking interactive robotics wing and a state-of-the-art virtual reality flight simulator, where you could actually experience piloting a supersonic jet through a turbulent storm.
 
-What I cherish most about our New Year is the sheer warmth and open-hearted hospitality. Front doors are kept wide open all day, and anyone can drop by without an appointment to celebrate and share food. There is no lingering bitterness—old disputes are dissolved with warm hugs, creating an infectious sense of harmony that brings the entire community together.
+Honestly, I was completely spellbound the entire time. Standing beneath those colossal spacecraft replicas gave me goosebumps—it felt like stepping straight into a time machine. I couldn't stop thinking about how much you would have enjoyed the aeronautics section, and you know how rarely I get this excited about weekend excursions!
 
-I really hope this gives you rich, authentic material for your project! Please let me know if you need any photographs or extra details. Best of luck with your presentation, and let's catch up soon!
+We definitely need to plan a visit together the next time you're in town. Let me know what your schedule looks like next week so we can grab a coffee and catch up properly.
 
-Warm regards,
-Devang`,
+Warmly,
+Alex`,
 
   toneGuidelines: [
     {
-      rule: "Use natural conversational contractions and warmth",
-      doExample: "I'd be more than happy to help you with your project...",
-      dontExample: "I am writing this communication to render formal assistance regarding..."
+      rule: "Use natural conversational contractions and emotional idioms",
+      doExample: "I'm dropping you a quick line... / It gave me goosebumps!",
+      dontExample: "I am writing this correspondence to communicate the museum exhibits."
     },
     {
-      rule: "Keep salutation and sign-off informal",
-      doExample: "Dear Alex, ... Warm regards, Devang",
-      dontExample: "Dear Mr. Alex, ... Yours faithfully, D. Patel"
+      rule: "Keep salutation and sign-off warm and informal",
+      doExample: "Dear Sam, ... Warmly, Alex",
+      dontExample: "Dear Mr. Sam, ... Yours faithfully, D. Patel"
     },
     {
-      rule: "Engage your friend with active enthusiasm",
-      doExample: "It sounds like a fascinating topic! / What I cherish most is...",
-      dontExample: "The prompt necessitates a description of the festive occurrences."
+      rule: "Vivid, authentic sensory descriptions",
+      doExample: "authentic Apollo command module, genuine moon rocks, supersonic VR flight simulator...",
+      dontExample: "I saw some planes and historical objects."
     },
     {
-      rule: "Vivid, culturally authentic descriptions",
-      doExample: "intricate rangoli patterns, oil lamps, touching elders' feet for blessings...",
-      dontExample: "People do some decorations and eat food."
+      rule: "Engage your friend directly and suggest future plans",
+      doExample: "We definitely need to plan a visit together next time you're in town!",
+      dontExample: "The reader should consider visiting the facility."
     }
   ],
 
   vocabList: [
     {
-      term: "Bestu Varas",
-      definition: "The Gujarati New Year celebrated immediately following the day of Diwali.",
-      example: "Bestu Varas marks the start of the new fiscal and cultural calendar across Gujarat.",
-      category: "Festive Traditions"
-    },
-    {
-      term: "Clean Slate",
-      definition: "A fresh beginning with all previous debts, grievances, or mistakes forgiven.",
-      example: "The arrival of the New Year symbolizes a spiritual clean slate for families.",
-      category: "Cultural Significance"
-    },
-    {
-      term: "Saal Mubarak",
-      definition: "Traditional festive greeting in Gujarati meaning 'Happy and Blessed New Year'.",
-      example: "Neighbors warmly greet each other with hugs and exclaim 'Saal Mubarak!'.",
-      category: "Festive Traditions"
-    },
-    {
-      term: "Open-Hearted Hospitality",
-      definition: "Generous, welcoming, and warm treatment of guests without formality.",
-      example: "The open-hearted hospitality during New Year means anyone can visit without prior notice.",
+      term: "Out of this World",
+      definition: "Extremely impressive, enjoyable, or extraordinary.",
+      example: "The aerospace exhibitions were truly out of this world.",
       category: "Personal Impressions"
     },
     {
-      term: "Infectious Harmony",
-      definition: "A positive, joyful atmosphere that quickly spreads and influences everyone.",
-      example: "The festivities create an infectious harmony that dissolves past misunderstandings.",
+      term: "Decided on a Whim",
+      definition: "Made a sudden decision based on a spontaneous impulse rather than planning.",
+      example: "I woke up early on Saturday and decided on a whim to visit the museum.",
+      category: "Narrative Setting"
+    },
+    {
+      term: "Colossal Replicas",
+      definition: "Extremely large, exact copies or full-scale models of historic artifacts.",
+      example: "Standing beneath the colossal rocket replicas was an awe-inspiring sight.",
+      category: "Museum Exhibits"
+    },
+    {
+      term: "Gave Me Goosebumps",
+      definition: "Caused a physiological sensation of excitement, awe, or intense admiration.",
+      example: "Seeing the authentic lunar module up close gave me genuine goosebumps.",
       category: "Personal Impressions"
     },
     {
-      term: "Intricate Rangoli",
-      definition: "Detailed, colorful floor art created at house entrances using colored powders.",
-      example: "Front porches are adorned with intricate rangoli patterns to welcome prosperity.",
-      category: "Festive Traditions"
+      term: "Spellbound",
+      definition: "Holding one's complete attention as if under a magic spell; deeply fascinated.",
+      example: "I was completely spellbound wandering through the interactive planetary gallery.",
+      category: "Personal Impressions"
     },
     {
-      term: "Auspicious Beginnings",
-      definition: "Promising success, good fortune, and favorable outcomes for the future.",
-      example: "Families visit the temple at dawn to offer prayers for auspicious beginnings.",
-      category: "Cultural Significance"
+      term: "State-of-the-Art",
+      definition: "Using the most modern, sophisticated, and up-to-date technology available.",
+      example: "The simulator utilized state-of-the-art virtual reality headsets.",
+      category: "Museum Exhibits"
     },
     {
-      term: "Drop By Without an Appointment",
-      definition: "Informal, spontaneous visits demonstrating high social closeness.",
-      example: "During New Year, relatives and neighbors drop by without an appointment to celebrate.",
+      term: "Drop a Quick Line",
+      definition: "An informal idiom meaning to send a short friendly message or letter.",
+      example: "I'm dropping you a quick line before my work week kicks into high gear.",
       category: "Informal Conversational"
+    },
+    {
+      term: "Time Machine Effect",
+      definition: "An immersive feeling of being transported backward or forward in history.",
+      example: "The atmospheric archival lighting made it feel like stepping into a time machine.",
+      category: "Personal Impressions"
     }
   ]
 };

@@ -240,50 +240,58 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           {/* Active Component Title & Equipment Banner */}
           <div
             style={{
-              background: "#f8fafc",
+              background: "#ffffff",
               border: `1.5px solid ${activeHotspot.color}35`,
-              borderRadius: "12px",
-              padding: "10px 14px",
+              borderRadius: "14px",
+              padding: "12px 16px",
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "center"
+              alignItems: "center",
+              flexWrap: "wrap",
+              gap: "12px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.03)"
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", minWidth: 0, flex: "1 1 auto" }}>
               <span
                 style={{
-                  minWidth: "32px",
-                  height: "32px",
+                  padding: "5px 12px",
                   borderRadius: "8px",
                   background: activeHotspot.color,
                   color: "#ffffff",
-                  display: "flex",
+                  display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
                   fontWeight: 800,
-                  fontSize: "0.78rem"
+                  fontSize: "0.80rem",
+                  letterSpacing: "0.02em",
+                  whiteSpace: "nowrap",
+                  flexShrink: 0,
+                  boxShadow: `0 2px 6px ${activeHotspot.color}25`
                 }}
               >
                 {activeHotspot.number}
               </span>
-              <div>
-                <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase" }}>
-                  {activeHotspot.category || "Comparative Metric"} • 2002
+              <div style={{ minWidth: 0 }}>
+                <span style={{ fontSize: "0.70rem", fontWeight: 800, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                  {activeHotspot.category || "Comparative Trajectory"} • 1985–1990
                 </span>
-                <div style={{ fontSize: "0.98rem", fontWeight: 800, color: "#0f172a" }}>
+                <div style={{ fontSize: "1.02rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.3 }}>
                   {activeHotspot.name}
                 </div>
               </div>
             </div>
             <span
               style={{
-                fontSize: "0.72rem",
-                fontWeight: 800,
-                padding: "3px 8px",
-                borderRadius: "6px",
-                background: "#ffffff",
+                fontSize: "0.78rem",
+                fontWeight: 750,
+                padding: "4px 10px",
+                borderRadius: "8px",
+                background: "#f8fafc",
                 color: activeHotspot.color,
-                border: `1px solid ${activeHotspot.color}40`
+                border: `1.5px solid ${activeHotspot.color}35`,
+                whiteSpace: "nowrap",
+                flexShrink: 0
               }}
             >
               {activeHotspot.equipmentOrRole}

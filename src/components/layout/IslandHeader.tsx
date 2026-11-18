@@ -166,14 +166,14 @@ export const IslandHeader: React.FC<IslandHeaderProps> = ({
               {currentModule === "general1"
                 ? "General Training Task 1 (Letter)"
                 : currentModule === "confusedWords"
-                ? "English Nuance Lab • Episode 01"
+                ? "English Nuance Lab • Words Often Misunderstood"
                 : stepTitle}
             </div>
             <div style={{ fontSize: "0.74rem", color: "var(--slate-500)", fontWeight: 600 }}>
               {currentModule === "general1"
                 ? "Informal 5-Paragraph Architectural Rules"
                 : currentModule === "confusedWords"
-                ? "Below vs. Under vs. Underneath • Commonly Confused Words"
+                ? "Interactive Classroom Series • Target Lexical Distinctions"
                 : `Step ${currentStep} of ${totalSteps}`}
             </div>
           </div>

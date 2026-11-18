@@ -11,15 +11,13 @@ export const Step9SubmissionT2: React.FC<Step9SubmissionT2Props> = ({
   const [copied, setCopied] = useState(false);
   const [showEssay, setShowEssay] = useState(false);
 
-  const fullModelEssay = `It is widely argued that commercial enterprises ought to shoulder social responsibilities extending beyond their primary objective of making money. However, I strongly disagree with this view, as the fundamental purpose of any business is to maximize profit and guarantee economic survival, whereas social welfare remains the exclusive responsibility of government authorities.
+  const fullModelEssay = `In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source. While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.
 
-To begin with, the fundamental justification for rejecting corporate social obligations is that commercial viability remains the indispensable prerequisite for enterprise existence. The primary purpose of any private firm is to generate revenue, service operational expenses, and avoid insolvency. If a company fails to operate profitably, it inevitably collapses, precipitating mass unemployment, disrupted supply chains, and the immediate destruction of capital. For instance, small and medium-sized enterprises operating on razor-thin profit margins must prioritize revenue generation simply to meet payroll, pay rent, and service supplier invoices; compelling them to divert scarce financial resources toward broader social initiatives would jeopardize their very survival.
+On the one hand, the primary advantage of domestic solar power is its exceptional environmental sustainability. Unlike conventional electricity generated from fossil fuels, photovoltaic systems harness inexhaustible solar radiation without discharging greenhouse gases or airborne pollutants. Consequently, widespread household adoption drastically curtails domestic carbon footprints and contributes directly to mitigating global climate change. Furthermore, residential solar panels yield profound economic savings over time. Once the system is installed, families generate their own electricity, shielding themselves from escalating commercial utility tariffs and saving up to seventy percent on monthly power bills. Additionally, in jurisdictions with net-metering schemes, households can even sell surplus power back to the regional grid, turning their roofs into modest revenue streams.
 
-Furthermore, business managers bear a strict fiduciary responsibility to deliver financial returns to shareholders and pension funds whose capital is invested in the enterprise. Diverting corporate earnings toward discretionary social causes without shareholder consent represents a misallocation of private capital. Crucially, profitable corporations already make an immense societal contribution by providing millions of citizens with stable livelihoods and contributing substantial corporate taxes. It is the constitutional duty of elected governments—not private corporations—to utilize these tax revenues to build public healthcare, schools, and environmental infrastructure, as state authorities possess the democratic mandate and specialized competence to manage public welfare.
+On the other hand, the principal drawback of solar energy is the steep initial capital expenditure required for purchase and installation. High-efficiency solar panels, power inverters, mounting hardware, and professional labor demand an upfront investment often ranging between ten and twenty thousand dollars, making adoption prohibitive for lower-income households. Moreover, solar generation suffers from inherent weather dependency and seasonal intermittency. Solar panels produce minimal electricity during overcast days, heavy rainfall, or harsh winter seasons, and cannot generate power during night hours. To maintain continuous electricity supply, homeowners must either remain connected to the conventional grid or invest in expensive lithium-ion battery banks, which have limited lifespans and add substantial additional costs to the household budget.
 
-On the other hand, critics argue that businesses have a social responsibility because industrial production consumes public natural resources and generates environmental degradation. While it is undeniable that firms must not pollute local ecosystems or exploit vulnerable workers, adhering to emission standards and occupational safety regulations represents statutory compliance rather than voluntary social philanthropy. Enterprises must operate within the boundaries of the law, but expecting them to proactively solve complex societal challenges beyond legal compliance confuses the distinct roles of private enterprise and the state.
-
-In conclusion, although companies must operate within statutory environmental and employment codes, I firmly disagree that they possess social responsibilities beyond generating profit. The primary duty of commerce is economic viability, job preservation, and shareholder returns, leaving public welfare initiatives to governments financed through corporate taxation.`;
+In conclusion, household solar energy presents compelling advantages by delivering clean, renewable electricity and lowering long-term domestic power bills. However, these merits are counterbalanced by the heavy initial capital investment required and the system's inherent weather dependency, suggesting that government subsidies and advancements in battery storage will remain critical for widespread residential adoption.`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fullModelEssay);
@@ -37,7 +35,7 @@ In conclusion, although companies must operate within statutory environmental an
           </span>
           <h2 className="stage-title">Essay Structure &amp; Revision Cheat Sheet</h2>
           <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-            Extreme concise one-liner revision checks for your Band 9 Opinion response (5-Paragraph Architecture).
+            Extreme concise one-liner revision checks for your Band 9 Advantages &amp; Disadvantages response.
           </p>
         </div>
 
@@ -102,7 +100,7 @@ In conclusion, although companies must operate within statutory environmental an
         </div>
       </div>
 
-      {/* SECTION 1: 5-PARAGRAPH ARCHITECTURE (STRICT ONE-LINERS) */}
+      {/* SECTION 1: 4-PARAGRAPH BALANCED ARCHITECTURE (STRICT ONE-LINERS) */}
       <div
         style={{
           background: "#ffffff",
@@ -119,7 +117,7 @@ In conclusion, although companies must operate within statutory environmental an
         <div style={{ display: "flex", alignItems: "center", gap: "8px", borderBottom: "1px solid #f1f5f9", paddingBottom: "8px" }}>
           <Layers size={16} color="var(--apple-blue)" />
           <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-            5-Paragraph Opinion Structure (One-Liner Revision)
+            4-Paragraph Advantages &amp; Disadvantages Architecture (One-Liner Revision)
           </h3>
         </div>
 
@@ -130,10 +128,10 @@ In conclusion, although companies must operate within statutory environmental an
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#9333ea", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
                 1. INTRO
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#6b21a8" }}>Paraphrase Question + Disagree Thesis</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#6b21a8" }}>Paraphrase Question + Balanced Outline Statement</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#3b0764", lineHeight: 1.45 }}>
-              Paraphrase businesses making money vs social duty + declare firm disagreement, asserting that economic solvency is the sole corporate duty while social welfare belongs to government.
+              Paraphrase increasing residential solar adoption + introduce both core benefits (environmental sustainability and bill savings) and drawbacks (high upfront capital and weather intermittency).
             </p>
           </div>
 
@@ -141,38 +139,25 @@ In conclusion, although companies must operate within statutory environmental an
           <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#2563eb", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                2. BODY PARA 1 (OPINION - DISAGREE)
+                2. BODY PARA 1 (ADVANTAGES)
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#1d4ed8" }}>Commercial Solvency &amp; Survival Prerequisite</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#1d4ed8" }}>Clean Renewable Power &amp; Substantial Utility Bill Savings</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e3a8a", lineHeight: 1.45 }}>
-              <strong>Point:</strong> Primary purpose is financial survival and insolvency prevention → <strong>Evidence:</strong> Insolvent firms cause mass layoffs and destroy capital → <strong>Example:</strong> SMEs must prioritize revenue simply to meet rent and payroll.
+              <strong>Point:</strong> Harnesses inexhaustible sunlight with zero emissions → <strong>Evidence:</strong> Drastically curtails carbon footprints &amp; insulates against escalating utility rates → <strong>Example:</strong> Saving 60–80% on bills and earning feed-in net metering credits.
             </p>
           </div>
 
           {/* Body 2 */}
-          <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#2563eb", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                3. BODY PARA 2 (OPINION - DISAGREE)
-              </span>
-              <strong style={{ fontSize: "0.86rem", color: "#1d4ed8" }}>Fiduciary Duty &amp; Government Welfare Mandate</strong>
-            </div>
-            <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e3a8a", lineHeight: 1.45 }}>
-              <strong>Point:</strong> Executives owe fiduciary duty to shareholders/pensioners; corporate taxes fund state welfare → <strong>Evidence:</strong> State has the democratic mandate for public goods → <strong>Example:</strong> Corporate tax revenues financing healthcare and schools.
-            </p>
-          </div>
-
-          {/* Body 3 */}
           <div style={{ background: "#fff7ed", border: "1px solid #fed7aa", borderRadius: "10px", padding: "10px 14px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#ea580c", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                4. BODY PARA 3 (NON-OPINION - CONCESSION)
+                3. BODY PARA 2 (DISADVANTAGES)
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#c2410c" }}>Statutory Regulatory Compliance vs Voluntary Altruism</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#c2410c" }}>High Upfront Installation Capital &amp; Weather Intermittency</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#7c2d12", lineHeight: 1.45 }}>
-              <strong>Point:</strong> Acknowledge that firms must respect environmental thresholds and labor codes → <strong>Evidence:</strong> Obeying laws is mandatory statutory compliance, not voluntary philanthropy → <strong>Example:</strong> Installing smoke filters to meet legal safety codes.
+              <strong>Point:</strong> Hardware and installation require heavy capital ($12,000–$22,000) → <strong>Evidence:</strong> Generation stops at night and drops sharply during cloudy/winter days → <strong>Example:</strong> Costly lithium-ion batteries and prolonged payback periods.
             </p>
           </div>
 
@@ -180,12 +165,12 @@ In conclusion, although companies must operate within statutory environmental an
           <div style={{ background: "#f8fafc", border: "1px solid #cbd5e1", borderRadius: "10px", padding: "10px 14px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#0f172a", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                5. CONCLUSION
+                4. CONCLUSION
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Sum-Up Main Points + Restate Disagree Opinion</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Sum-Up Trade-Offs + Forward-Looking Policy Recommendation</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e293b", lineHeight: 1.45 }}>
-              Synthesize statutory compliance vs commercial viability, restating that commerce's core duty is profit and jobs, while public welfare belongs to tax-funded governments.
+              Weigh clean energy advantages against upfront cost and intermittency, concluding that continued government subsidies and better battery tech are essential for universal adoption.
             </p>
           </div>
         </div>
@@ -219,28 +204,28 @@ In conclusion, although companies must operate within statutory environmental an
               title: "Task Response",
               color: "#2563eb",
               bg: "#eff6ff",
-              rule: "Clear position presented in Intro and Conclusion, supported by 2 opinion paragraphs and 1 concession paragraph."
+              rule: "Equal, fully developed coverage of both advantages and disadvantages, reinforced by a balanced final synthesis."
             },
             {
               code: "CC",
               title: "Coherence & Cohesion",
               color: "#16a34a",
               bg: "#f0fdf4",
-              rule: "Seamless progression markers: 'To begin with... Furthermore... On the other hand... In conclusion...'."
+              rule: "Seamless comparative discourse markers: 'On the one hand... On the other hand... Furthermore... In conclusion...'."
             },
             {
               code: "LR",
               title: "Lexical Resource",
               color: "#9333ea",
               bg: "#faf5ff",
-              rule: "Natural Band 9 CSR & business lexis: 'philanthropy', 'viability', 'stewardship', 'exploitation', 'remuneration'."
+              rule: "Natural Band 9 energy lexis: 'photovoltaic', 'intermittency', 'decarbonisation', 'capital expenditure', 'net metering'."
             },
             {
               code: "GRA",
               title: "Grammatical Accuracy",
               color: "#d97706",
               bg: "#fffbeb",
-              rule: "Complex concessive clauses ('even though...', 'while...') and passive academic phrasing without error."
+              rule: "Complex concessive structures ('While this shift offers...', 'Although initial costs are high...') with zero errors."
             }
           ].map((chk) => (
             <div
@@ -296,7 +281,7 @@ In conclusion, although companies must operate within statutory environmental an
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <Sparkles size={16} color="var(--apple-blue)" />
             <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
-              Complete Band 9 Model Essay (365 Words • 5-Paragraph Opinion Architecture)
+              Complete Band 9 Model Essay (330 Words • 4-Paragraph Advantages &amp; Disadvantages Architecture)
             </strong>
             <span style={{ fontSize: "0.72rem", background: "#f1f5f9", color: "#475569", padding: "2px 8px", borderRadius: "6px" }}>
               {showEssay ? "Click to collapse" : "Click to view full text"}
@@ -321,19 +306,16 @@ In conclusion, although companies must operate within statutory environmental an
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong>1. Intro (Paraphrase + Disagree Opinion):</strong> It is widely argued that commercial enterprises ought to shoulder social responsibilities extending beyond their primary objective of making money. However, I strongly disagree with this view, as the fundamental purpose of any business is to maximize profit and guarantee economic survival, whereas social welfare remains the exclusive responsibility of government authorities.
+              <strong>1. Intro (Paraphrase + Balanced Outline Statement):</strong> In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source. While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>2. Body Para 1 (Opinion Side — Commercial Solvency &amp; Survival):</strong> To begin with, the fundamental justification for rejecting corporate social obligations is that commercial viability remains the indispensable prerequisite for enterprise existence. The primary purpose of any private firm is to generate revenue, service operational expenses, and avoid insolvency. If a company fails to operate profitably, it inevitably collapses, precipitating mass unemployment, disrupted supply chains, and the immediate destruction of capital. For instance, small and medium-sized enterprises operating on razor-thin profit margins must prioritize revenue generation simply to meet payroll, pay rent, and service supplier invoices; compelling them to divert scarce financial resources toward broader social initiatives would jeopardize their very survival.
+              <strong>2. Body Para 1 (Primary Advantages — Environmental Sustainability &amp; Utility Savings):</strong> On the one hand, the primary advantage of domestic solar power is its exceptional environmental sustainability. Unlike conventional electricity generated from fossil fuels, photovoltaic systems harness inexhaustible solar radiation without discharging greenhouse gases or airborne pollutants. Consequently, widespread household adoption drastically curtails domestic carbon footprints and contributes directly to mitigating global climate change. Furthermore, residential solar panels yield profound economic savings over time. Once the system is installed, families generate their own electricity, shielding themselves from escalating commercial utility tariffs and saving up to seventy percent on monthly power bills. Additionally, in jurisdictions with net-metering schemes, households can even sell surplus power back to the regional grid, turning their roofs into modest revenue streams.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>3. Body Para 2 (Opinion Side — Fiduciary Duty &amp; Government Social Mandate):</strong> Furthermore, business managers bear a strict fiduciary responsibility to deliver financial returns to shareholders and pension funds whose capital is invested in the enterprise. Diverting corporate earnings toward discretionary social causes without shareholder consent represents a misallocation of private capital. Crucially, profitable corporations already make an immense societal contribution by providing millions of citizens with stable livelihoods and contributing substantial corporate taxes. It is the constitutional duty of elected governments—not private corporations—to utilize these tax revenues to build public healthcare, schools, and environmental infrastructure, as state authorities possess the democratic mandate and specialized competence to manage public welfare.
+              <strong>3. Body Para 2 (Primary Disadvantages — Capital Expenditure &amp; Weather Intermittency):</strong> On the other hand, the principal drawback of solar energy is the steep initial capital expenditure required for purchase and installation. High-efficiency solar panels, power inverters, mounting hardware, and professional labor demand an upfront investment often ranging between ten and twenty thousand dollars, making adoption prohibitive for lower-income households. Moreover, solar generation suffers from inherent weather dependency and seasonal intermittency. Solar panels produce minimal electricity during overcast days, heavy rainfall, or harsh winter seasons, and cannot generate power during night hours. To maintain continuous electricity supply, homeowners must either remain connected to the conventional grid or invest in expensive lithium-ion battery banks, which have limited lifespans and add substantial additional costs to the household budget.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>4. Body Para 3 (Non-Opinion Side — Statutory Regulatory Compliance Concession):</strong> On the other hand, critics argue that businesses have a social responsibility because industrial production consumes public natural resources and generates environmental degradation. While it is undeniable that firms must not pollute local ecosystems or exploit vulnerable workers, adhering to emission standards and occupational safety regulations represents statutory compliance rather than voluntary social philanthropy. Enterprises must operate within the boundaries of the law, but expecting them to proactively solve complex societal challenges beyond legal compliance confuses the distinct roles of private enterprise and the state.
-            </p>
-            <p style={{ margin: 0 }}>
-              <strong>5. Conclusion (Sum-Up + Restate Disagree Opinion):</strong> In conclusion, although companies must operate within statutory environmental and employment codes, I firmly disagree that they possess social responsibilities beyond generating profit. The primary duty of commerce is economic viability, job preservation, and shareholder returns, leaving public welfare initiatives to governments financed through corporate taxation.
+              <strong>4. Conclusion (Sum-Up Trade-Offs + Forward-Looking Recommendation):</strong> In conclusion, household solar energy presents compelling advantages by delivering clean, renewable electricity and lowering long-term domestic power bills. However, these merits are counterbalanced by the heavy initial capital investment required and the system's inherent weather dependency, suggesting that government subsidies and advancements in battery storage will remain critical for widespread residential adoption.
             </p>
           </div>
         )}
@@ -387,7 +369,7 @@ In conclusion, although companies must operate within statutory environmental an
                 </div>
                 <div>
                   <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>English Nuance Lab (Words Often Misunderstood)</strong>
-                  <div style={{ fontSize: "0.78rem", color: "#64748b" }}>Episode 01: BELOW vs. UNDER vs. UNDERNEATH</div>
+                  <div style={{ fontSize: "0.78rem", color: "#64748b" }}>New Ep 02: RISE vs. RAISE vs. ARISE • Ep 01: BELOW vs. UNDER vs. UNDERNEATH</div>
                 </div>
               </div>
               <span style={{ fontSize: "0.74rem", background: "#dbeafe", color: "#1e40af", fontWeight: 750, padding: "3px 10px", borderRadius: "6px", border: "1px solid #bfdbfe" }}>
@@ -395,7 +377,7 @@ In conclusion, although companies must operate within statutory environmental an
               </span>
             </div>
             <p style={{ fontSize: "0.86rem", color: "#475569", margin: "4px 0 0", lineHeight: 1.5 }}>
-              Interactive SmartBoard lesson: Ask students first about imaginary horizontal lines (below), 3D vertical shelter / abstract states (under), and hidden layers (underneath), then reveal definitive rules and practice drills.
+              Interactive SmartBoard lesson: Master critical Task 1 trends and Task 2 transitive traps (Rise vs. Raise vs. Arise), prepositions (Below vs. Under vs. Underneath), teacher diagnostic prompts, and student drills.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#2563eb", fontSize: "0.88rem", fontWeight: 750, marginTop: "6px" }}>
               <span>Launch Nuance Lab Page</span>

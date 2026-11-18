@@ -26,10 +26,18 @@ export interface ConfusedWordItem {
 export interface PracticeQuizQuestion {
   id: number;
   sentence: string;
-  blankWord: "below" | "under" | "underneath";
-  options: ("below" | "under" | "underneath")[];
+  blankWord: string;
+  options: string[];
   explanation: string;
   ruleTag: string;
+}
+
+export interface MatrixRow {
+  feature: string;
+  wordValues?: Record<string, string>;
+  below?: string;
+  under?: string;
+  underneath?: string;
 }
 
 export interface ConfusedWordsSeriesData {
@@ -49,12 +57,7 @@ export interface ConfusedWordsSeriesData {
     }[];
   };
   words: ConfusedWordItem[];
-  matrixComparison: {
-    feature: string;
-    below: string;
-    under: string;
-    underneath: string;
-  }[];
+  matrixComparison: MatrixRow[];
   practiceDrills: PracticeQuizQuestion[];
 }
 
@@ -323,3 +326,335 @@ export const CONFUSED_WORDS_EPISODE_1: ConfusedWordsSeriesData = {
     }
   ]
 };
+
+/* ==========================================================================
+   EPISODE 02: RISE vs. RAISE vs. ARISE
+   The Transitive vs. Intransitive Trap in IELTS Writing & Speaking
+   ========================================================================== */
+export const CONFUSED_WORDS_EPISODE_2: ConfusedWordsSeriesData = {
+  seriesId: "episode-2",
+  episodeNumber: 2,
+  seriesTitle: "English Nuance Lab • Commonly Confused Words",
+  seriesSubtitle: "Master the subtle grammatical and semantic distinctions in IELTS Academic English.",
+  episodeTitle: "Rise vs. Raise vs. Arise",
+  targetWords: ["RISE", "RAISE", "ARISE"],
+
+  classroomPrompt: {
+    leadQuestion: "Classroom Challenge: Why is 'wheat exports raised to 25m' a critical Band 5 error, while 'governments raised taxes' is Band 9?",
+    subtext: "Before revealing the linguistic breakdown, challenge your students with these 3 questions to expose transitive vs. intransitive verb traps.",
+    discussionQuestions: [
+      {
+        id: 1,
+        question: "Can you spot the grammatical error: 'Between 1985 and 1988, the volume of Canadian grain raised dramatically'? What should it be, and why?",
+        hint: "Did an external person physically pick up the grain, or did the statistical figure climb on its own?"
+      },
+      {
+        id: 2,
+        question: "Why do we say 'Governments should raise taxes' and 'He raised a valid question', but NEVER 'Taxes raised last year'?",
+        hint: "Look for the direct object. Can 'raise' ever exist without an object receiving the action?"
+      },
+      {
+        id: 3,
+        question: "When do we use 'arise' instead of 'rise'? Can you say 'The sun arose' or 'Temperatures arose'?",
+        hint: "Think about concrete physical ascent versus abstract problems, conflicts, or opportunities coming into existence."
+      }
+    ]
+  },
+
+  words: [
+    {
+      word: "RISE",
+      pronunciation: "/raɪz/ • rose /rəʊz/, risen /ˈrɪz.ən/",
+      partOfSpeech: "Intransitive Verb (No Direct Object)",
+      themeColor: "#2563eb",
+      bgLight: "#eff6ff",
+      borderColor: "#bfdbfe",
+      coreConcept: "Autonomous Upward Movement, Statistical Growth & Natural Ascent",
+      visualMetaphor: "The Autonomous Hot Air Balloon",
+      visualMetaphorDetail:
+        "Picture a hot air balloon ascending into the dawn sky on its own. No rope is pulling it, and no person is pushing it upward. In English, when figures, temperatures, costs, or objects go up by themselves without a direct grammatical object receiving the action, you MUST use RISE.",
+      keyRule:
+        "Subject + RISE (+ Adverb / Prepositional Phrase). NEVER takes a direct object! (e.g. 'Exports rose sharply', NOT 'exports raised').",
+      usageDomains: [
+        {
+          domainTitle: "IELTS Task 1 Data & Trends",
+          description: "Describing line graphs, bar charts, and statistical climbs.",
+          examples: [
+            "Canadian wheat exports rose to an apex of 25 million tonnes in 1988.",
+            "The proportion of elderly citizens is projected to rise steadily over the next decade."
+          ]
+        },
+        {
+          domainTitle: "Natural Phenomena & Physical Elevation",
+          description: "Objects or elements ascending by natural or inherent forces.",
+          examples: [
+            "The sun rises in the east and sets in the west.",
+            "Floodwaters continued to rise throughout the stormy night."
+          ]
+        },
+        {
+          domainTitle: "Economic & Market Indicators",
+          description: "Prices, rates, inflation, or costs climbing autonomously.",
+          examples: [
+            "Consumer price indices rose by 3.8% during the fourth fiscal quarter.",
+            "If greenhouse emissions continue unabated, global mean temperatures will inevitably rise."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Rise to the occasion",
+          meaning: "To perform extraordinarily well when confronted with a difficult crisis."
+        },
+        {
+          phrase: "Rise through the ranks",
+          meaning: "To advance from junior entry-level positions to executive leadership."
+        },
+        {
+          phrase: "A meteoric rise",
+          meaning: "An exceptionally rapid ascension to success, prestige, or prominence."
+        }
+      ],
+      memoryHack:
+        "Remember the 'I' in RISE: 'I' do it by myself! (Intransitive = Internal force, no external direct object).",
+      commonPitfall:
+        "Writing 'The graph illustrates that sales raised by 15%'. Sales cannot raise anything; sales ROSE!",
+      sampleSentence:
+        "During the five-year reporting period, the number of hours worked by doctors rose steeply from 40 to 52 hours per week."
+    },
+    {
+      word: "RAISE",
+      pronunciation: "/reɪz/ • raised /reɪzd/, raised /reɪzd/",
+      partOfSpeech: "Transitive Verb (Requires a Direct Object)",
+      themeColor: "#059669",
+      bgLight: "#ecfdf5",
+      borderColor: "#a7f3d0",
+      coreConcept: "Actively Elevating, Increasing, or Cultivating Something Else",
+      visualMetaphor: "The Industrial Crane",
+      visualMetaphorDetail:
+        "Picture a heavy-duty industrial crane lifting a steel girder into the sky. The crane (Agent) performs the lifting action ON the girder (Object). You cannot simply 'raise' in a void—you must always raise SOMETHING. In IELTS essays, this is used when people, governments, or institutions actively increase or elevate something.",
+      keyRule:
+        "Subject + RAISE + DIRECT OBJECT. Must always take an object! (e.g. 'The government raised taxes', 'Students raised their hands').",
+      usageDomains: [
+        {
+          domainTitle: "Policy, Taxation & Fiscal Actions",
+          description: "Governments or institutions actively increasing rates, tariffs, or fees.",
+          examples: [
+            "The administration raised municipal taxes to finance residential solar subsidies.",
+            "Airlines raised international ticket fares to offset surging jet fuel costs."
+          ]
+        },
+        {
+          domainTitle: "Awareness, Standards & Dialogue",
+          description: "Bringing topics to public consciousness or demanding higher criteria.",
+          examples: [
+            "Media campaigns play an indispensable role in raising public awareness about climate change.",
+            "The recent investigative audit raised profound ethical questions about corporate accountability."
+          ]
+        },
+        {
+          domainTitle: "Nurturing, Funding & Upbringing",
+          description: "Collecting capital, fostering children, or breeding livestock.",
+          examples: [
+            "The humanitarian agency successfully raised £3.2 million for disaster relief.",
+            "Parents strive to raise conscientious children equipped for future challenges."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Raise the bar",
+          meaning: "To significantly elevate expectations, standards, or performance benchmarks."
+        },
+        {
+          phrase: "Raise eyebrows",
+          meaning: "To cause surprise, mild disapproval, or skepticism in observers."
+        },
+        {
+          phrase: "Raise red flags",
+          meaning: "To signal severe warning signs of imminent danger or irregularities."
+        }
+      ],
+      memoryHack:
+        "Remember the 'A' in RAISE: 'A'nother object is mandatory! (Transitive = Action transferred to an object).",
+      commonPitfall:
+        "Confusing passive with active voice: 'Taxes were raised by the state' is correct (passive), but never 'Taxes raised in 2024'.",
+      sampleSentence:
+        "To expedite national decarbonisation, policymakers must raise tariffs on carbon-intensive fossil fuel imports."
+    },
+    {
+      word: "ARISE",
+      pronunciation: "/əˈraɪz/ • arose /əˈrəʊz/, arisen /əˈrɪz.ən/",
+      partOfSpeech: "Intransitive Verb (No Direct Object)",
+      themeColor: "#d97706",
+      bgLight: "#fffbeb",
+      borderColor: "#fde68a",
+      coreConcept: "Coming into Existence, Emerging, or Occurring as a Result of Circumstances",
+      visualMetaphor: "Geothermal Steam Emerging from the Earth",
+      visualMetaphorDetail:
+        "Picture steam suddenly hissing and emerging out of fissures in volcanic rock. The steam was not lifted by a crane, nor is it a numerical bar chart going up. It is an abstract situation or challenge emerging into reality. In IELTS Task 2, ARISE is reserved for problems, dilemmas, disputes, and opportunities.",
+      keyRule:
+        "Subject (Abstract Noun) + ARISE. Almost exclusively used with abstract nouns: problems arise, disputes arise, opportunities arise. NO DIRECT OBJECT!",
+      usageDomains: [
+        {
+          domainTitle: "Problems, Conflicts & Complications",
+          description: "Obstacles or dilemmas emerging unexpectedly from an underlying situation.",
+          examples: [
+            "Severe logistical complications arose when the global supply chain fractured.",
+            "Fierce border disputes frequently arise when transboundary water reserves run low."
+          ]
+        },
+        {
+          domainTitle: "Questions, Doubts & Inquiries",
+          description: "Uncertainties surfacing during scholarly or legal investigations.",
+          examples: [
+            "Profound moral dilemmas arise when autonomous artificial intelligence directs warfare.",
+            "Should any legal ambiguities arise, the arbitration tribunal will intervene."
+          ]
+        },
+        {
+          domainTitle: "Opportunities & Fortuitous Openings",
+          description: "Favourable possibilities presenting themselves in new environments.",
+          examples: [
+            "Tremendous commercial opportunities arise as emerging markets pivot towards clean energy.",
+            "As digital infrastructure matures, unprecedented avenues for remote collaboration arise."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "As the need arises",
+          meaning: "Whenever a specific operational requirement or circumstance appears."
+        },
+        {
+          phrase: "Should the occasion arise",
+          meaning: "If the situation happens to present itself in due course."
+        },
+        {
+          phrase: "Arising out of / from",
+          meaning: "Stemming or resulting directly as a consequence of a prior event."
+        }
+      ],
+      memoryHack:
+        "Remember the 'A' + 'RISE' = 'A Real Issue Starts Emerging' (Abstract problems coming to life).",
+      commonPitfall:
+        "Never use 'arise' for physical heights or numerical data! Never write: 'Wheat exports arose to 25 million' ❌.",
+      sampleSentence:
+        "Substantial societal unrest may arise if rapid industrial automation displaces working-class labor without adequate retraining."
+    }
+  ],
+
+  matrixComparison: [
+    {
+      feature: "Grammatical Transitivity",
+      wordValues: {
+        RISE: "Intransitive (NEVER takes a direct object: S + V)",
+        RAISE: "Transitive (MUST take a direct object: S + V + O)",
+        ARISE: "Intransitive (NEVER takes a direct object: S + V)"
+      }
+    },
+    {
+      feature: "Core Semantic Meaning",
+      wordValues: {
+        RISE: "To ascend, go up, or increase autonomously",
+        RAISE: "To lift, elevate, or increase something else",
+        ARISE: "To come into existence, emerge, or occur"
+      }
+    },
+    {
+      feature: "Principal Forms (Base / Past / Participle)",
+      wordValues: {
+        RISE: "rise / rose / risen (Irregular)",
+        RAISE: "raise / raised / raised (Regular -ed)",
+        ARISE: "arise / arose / arisen (Irregular)"
+      }
+    },
+    {
+      feature: "Typical Subjects / Objects",
+      wordValues: {
+        RISE: "Subjects: Figures, data, prices, sun, tides, temperatures",
+        RAISE: "Objects: Taxes, funds, questions, children, hands, standards",
+        ARISE: "Subjects: Problems, disputes, complications, doubts, opportunities"
+      }
+    },
+    {
+      feature: "IELTS High-Band Application",
+      wordValues: {
+        RISE: "Task 1 Line Graphs: 'Exports rose dramatically from 19m to 25m.'",
+        RAISE: "Task 2 Solutions: 'Governments should raise taxes on polluters.'",
+        ARISE: "Task 2 Challenges: 'Serious complications arise when capital is scarce.'"
+      }
+    },
+    {
+      feature: "Critical Pitfall to Avoid",
+      wordValues: {
+        RISE: "Never say 'exports raised' ❌ (must be 'rose')",
+        RAISE: "Never omit the object: 'the prices raised' ❌ (must be 'were raised')",
+        ARISE: "Never use for numbers: 'numbers arose' ❌ (must be 'rose')"
+      }
+    }
+  ],
+
+  practiceDrills: [
+    {
+      id: 1,
+      sentence: "According to the bar chart, the proportion of female university graduates _____ significantly from 32% to 48% between 1995 and 2010.",
+      blankWord: "rose",
+      options: ["rose", "raised", "arose"],
+      explanation:
+        "Correct! We use the past tense 'rose' because statistical data increases autonomously without an external direct object.",
+      ruleTag: "Task 1 Data Trend"
+    },
+    {
+      id: 2,
+      sentence: "To mitigate urban gridlock, local authorities voted to _____ the tolls on major arterial highways during peak hours.",
+      blankWord: "raise",
+      options: ["rise", "raise", "arise"],
+      explanation:
+        "Correct! 'Raise' is a transitive verb that directly acts upon the object ('the tolls on major arterial highways').",
+      ruleTag: "Transitive Policy Action"
+    },
+    {
+      id: 3,
+      sentence: "Unforeseen complications may _____ if the government attempts to implement rapid decarbonisation without subsidising low-income households.",
+      blankWord: "arise",
+      options: ["rise", "raise", "arise"],
+      explanation:
+        "Correct! 'Arise' is the precise academic verb for problems, obstacles, or complications emerging into existence.",
+      ruleTag: "Abstract Problem Emerging"
+    },
+    {
+      id: 4,
+      sentence: "The educational documentary successfully _____ global awareness concerning the alarming volume of plastic waste in our oceans.",
+      blankWord: "raised",
+      options: ["rose", "raised", "arose"],
+      explanation:
+        "Correct! 'Raise awareness' is a classic high-band academic collocation where 'awareness' is the direct object of 'raised'.",
+      ruleTag: "Transitive Object"
+    },
+    {
+      id: 5,
+      sentence: "A heated legal dispute _____ between the patent holders and the pharmaceutical manufacturing conglomerate.",
+      blankWord: "arose",
+      options: ["rose", "raised", "arose"],
+      explanation:
+        "Correct! The past tense 'arose' is used when disputes, conflicts, or controversies come into being.",
+      ruleTag: "Abstract Conflict Occurring"
+    },
+    {
+      id: 6,
+      sentence: "If consumer demand for electric vehicles continues to accelerate, the market price of battery minerals will undoubtedly _____.",
+      blankWord: "rise",
+      options: ["rise", "raise", "arise"],
+      explanation:
+        "Correct! When prices or economic indicators climb on their own without a direct object, 'rise' is required.",
+      ruleTag: "Autonomous Price Movement"
+    }
+  ]
+};
+
+export const CONFUSED_WORDS_EPISODES: ConfusedWordsSeriesData[] = [
+  CONFUSED_WORDS_EPISODE_1,
+  CONFUSED_WORDS_EPISODE_2
+];
+

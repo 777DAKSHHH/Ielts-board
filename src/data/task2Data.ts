@@ -27,850 +27,603 @@ export type {
 };
 
 /* ==========================================================================
-   STUDENT IDEA BANK: OPINION SIDE (BODY PARA 1 & 2)
-   Primacy of Profit Generation, Economic Viability & Shareholder Duty (DISAGREE)
+   STUDENT IDEA BANK: ADVANTAGES OF SOLAR ENERGY (BODY PARA 1)
    ========================================================================== */
-export const OPINION_IDEA_BANK: IdeaBankItem[] = [
+export const ADVANTAGES_IDEA_BANK: IdeaBankItem[] = [
   {
-    id: "opinion-1",
-    badge: "Opinion 01 • Commercial Solvency",
-    title: "Financial survival and preventing enterprise bankruptcy",
+    id: "adv-1",
+    badge: "Advantage 01 • Clean Renewable Electricity",
+    title: "Zero greenhouse gas emissions and ecological decarbonisation",
     mainIdea:
-      "A company's foremost and non-negotiable duty is to remain commercially profitable; without steady cash flow and net profits, an enterprise collapses into insolvency.",
+      "Solar power harnesses inexhaustible sunlight to generate clean electricity, completely eliminating carbon dioxide emissions during domestic power production.",
     supportingReason:
-      "If a business fails financially, it cannot employ workers, pay suppliers, or generate tax revenue, making profit generation the essential prerequisite for all corporate existence.",
+      "Unlike coal-fired and natural gas power plants that drive global climate change and urban air pollution, residential photovoltaic systems produce zero toxic airborne emissions.",
     example:
-      "Small and medium-sized enterprises (SMEs) struggling with overhead must prioritize sales revenue simply to pay monthly wages, rent, and supplier invoices.",
+      "A standard 5kW rooftop solar installation offsets approximately four to five tonnes of carbon emissions annually, equivalent to planting over one hundred trees.",
     collocations: [
-      "commercial solvency",
-      "financial viability",
-      "insolvency prevention",
-      "operational overhead"
+      "zero greenhouse emissions",
+      "inexhaustible solar radiation",
+      "ecological decarbonisation",
+      "carbon footprint reduction"
     ]
   },
   {
-    id: "opinion-2",
-    badge: "Opinion 02 • Employment Creation",
-    title: "Job security and sustaining family livelihoods",
+    id: "adv-2",
+    badge: "Advantage 02 • Long-Term Utility Bill Savings",
+    title: "Substantial reduction in monthly household electricity expenses",
     mainIdea:
-      "Profitable corporations employ millions of citizens, which constitutes the most vital and direct economic contribution to modern society.",
+      "Generating on-site solar power shields homeowners from volatile utility tariffs and drastically reduces monthly electrical utility bills.",
     supportingReason:
-      "By focusing strictly on financial health, businesses guarantee dependable paychecks, career opportunities, and pension security for their workforce.",
+      "Once the initial setup is operational, the raw energy source (sunlight) is entirely free, allowing families to satisfy a majority of their daytime energy needs without purchasing grid electricity.",
     example:
-      "Large industrial corporations maintaining profitability during recessions, thereby preserving stable livelihoods for thousands of working households.",
+      "Homeowners in sunny climatic zones routinely save between 60% and 80% on their annual municipal utility bills after adopting rooftop photovoltaic panels.",
     collocations: [
-      "employment creation",
-      "job security",
-      "stable livelihoods",
-      "economic stability"
+      "utility bill reduction",
+      "volatile power tariffs",
+      "on-site power generation",
+      "long-term financial savings"
     ]
   },
   {
-    id: "opinion-3",
-    badge: "Opinion 03 • Government Welfare Mandate",
-    title: "Funding public welfare via corporate taxation rather than private charity",
+    id: "adv-3",
+    badge: "Advantage 03 • Energy Independence & Resilience",
+    title: "Grid autonomy and protection against catastrophic power blackouts",
     mainIdea:
-      "Social welfare, public healthcare, schools, and environmental infrastructure are the constitutional responsibility of elected governments, not private companies.",
+      "Equipping residences with solar panels and domestic battery storage grants households independence from unreliable centralised power grids.",
     supportingReason:
-      "Profitable firms already fulfill their civic duty by paying substantial corporate income taxes, providing the state with billions to finance public services democratically.",
+      "In regions prone to severe storms, heatwaves, or infrastructure failures, self-reliant solar homes maintain continuous power for refrigeration, lighting, and medical devices.",
     example:
-      "Corporate tax revenues collected from thriving commercial sectors enabling governments to finance universal healthcare and national highway networks.",
+      "Suburban and rural communities in hurricane-prone coastal regions utilizing standalone solar battery reserves during prolonged municipal grid blackouts.",
     collocations: [
-      "corporate taxation",
-      "public revenues",
-      "welfare systems",
-      "democratic mandate"
+      "energy independence",
+      "grid autonomy",
+      "decentralised energy systems",
+      "blackout resilience"
     ]
   },
   {
-    id: "opinion-4",
-    badge: "Opinion 04 • Shareholder & Investor Duty",
-    title: "Fiduciary responsibility to capital investors and pension funds",
+    id: "adv-4",
+    badge: "Advantage 04 • Revenue via Net-Metering",
+    title: "Earning grid credits and rebates by exporting surplus electricity",
     mainIdea:
-      "Corporate executives are legally bound fiduciaries entrusted with shareholder capital; diverting private funds to social causes breaches their fiduciary trust.",
+      "Many modern utility frameworks enable domestic solar producers to sell surplus midday electricity back into the municipal grid.",
     supportingReason:
-      "Millions of ordinary citizens and retirees depend on the dividends generated by corporate shares held in retirement pension funds, requiring executives to maximize profit.",
+      "Through bidirectional smart meters, homeowners receive utility bill credits or direct feed-in payments, transforming rooftops from cost centers into modest revenue streams.",
     example:
-      "Pension funds investing in publicly traded companies to guarantee dependable monthly disbursements for retired teachers, nurses, and factory workers.",
+      "Families generating surplus solar electricity during peak summer hours receiving substantial credits that offset winter heating bills.",
     collocations: [
-      "fiduciary responsibility",
-      "capital investors",
-      "shareholder returns",
-      "pension fund disbursements"
+      "net-metering schemes",
+      "feed-in tariffs",
+      "surplus electricity",
+      "bidirectional smart meters"
     ]
   },
   {
-    id: "opinion-5",
-    badge: "Opinion 05 • Efficient Capital Allocation",
-    title: "Specialized commercial efficiency vs inefficient social engineering",
+    id: "adv-5",
+    badge: "Advantage 05 • Minimal Maintenance & Longevity",
+    title: "Extremely low operating costs and 25–30 year operational lifespans",
     mainIdea:
-      "Corporate managers are trained in commerce, manufacturing, and logistics, not public welfare or social administration.",
+      "Photovoltaic panels contain no moving mechanical parts, resulting in negligible mechanical wear and remarkably low maintenance demands.",
     supportingReason:
-      "Forcing private enterprises to solve complex societal problems leads to misallocated resources, commercial distraction, and superficial greenwashing.",
+      "Aside from occasional cleaning to remove dust or leaves, modern solar arrays function reliably for several decades, supported by manufacturer performance warranties.",
     example:
-      "Corporations squandering capital on publicity-driven philanthropic campaigns rather than reinvesting in technological innovation and product quality.",
+      "Leading solar panel manufacturers guaranteeing 80% power output efficiency after twenty-five years of continuous exposure to outdoor elements.",
     collocations: [
-      "efficient capital allocation",
-      "commercial specialization",
-      "avoiding greenwashing",
-      "resource misallocation"
+      "negligible mechanical wear",
+      "minimal maintenance demands",
+      "operational longevity",
+      "performance warranties"
     ]
   }
 ];
 
 /* ==========================================================================
-   STUDENT IDEA BANK: NON-OPINION SIDE (BODY PARA 3)
-   Concession: Statutory Environmental & Labor Regulations (AGREE COUNTERPOINT)
+   STUDENT IDEA BANK: DISADVANTAGES OF SOLAR ENERGY (BODY PARA 2)
    ========================================================================== */
-export const NON_OPINION_IDEA_BANK: IdeaBankItem[] = [
+export const DISADVANTAGES_IDEA_BANK: IdeaBankItem[] = [
   {
-    id: "non-opinion-1",
-    badge: "Non-Opinion 01 • Environmental Compliance",
-    title: "Statutory environmental regulations and pollution limits",
+    id: "dis-1",
+    badge: "Disadvantage 01 • High Upfront Capital Costs",
+    title: "Prohibitive initial purchase and professional installation expenses",
     mainIdea:
-      "Opponents argue that industrial activities consume shared natural resources and produce waste, requiring businesses to minimize ecological damage.",
+      "The primary barrier to household solar adoption is the substantial capital expenditure required to purchase and install the complete photovoltaic system.",
     supportingReason:
-      "However, adhering to emission limits and waste management laws represents mandatory statutory compliance rather than voluntary social altruism.",
+      "Solar panels, high-grade inverters, electrical wiring, mounting brackets, and specialized installation labor create an upfront cost that is out of reach for many low- and middle-income families.",
     example:
-      "Manufacturing facilities installing industrial smoke filters and wastewater treatment plants to meet legal government environmental standards.",
+      "A typical residential solar setup often costs between $12,000 and $22,000 before government incentives, taking 7 to 10 years to reach financial break-even.",
     collocations: [
-      "statutory compliance",
-      "emission thresholds",
-      "environmental regulations",
-      "mandatory standards"
+      "high capital expenditure",
+      "prohibitive upfront cost",
+      "financial break-even period",
+      "economic barrier"
     ]
   },
   {
-    id: "non-opinion-2",
-    badge: "Non-Opinion 02 • Workplace Safety",
-    title: "Basic labor standards and occupational hazard prevention",
+    id: "dis-2",
+    badge: "Disadvantage 02 • Weather Dependency & Intermittency",
+    title: "Fluctuating generation and inability to produce power during darkness",
     mainIdea:
-      "Proponents of CSR assert that corporations have a moral duty to prioritize employee welfare over unrestrained profit extraction.",
+      "Solar energy is inherently intermittent, as electricity generation depends entirely on the availability and intensity of ambient sunlight.",
     supportingReason:
-      "While providing safe working environments is essential, it is strictly enforced by state labor laws and collective bargaining agreements.",
+      "Power output plummets during heavily overcast days, rainy seasons, and winter months, and ceases entirely at night when household lighting and heating demands peak.",
     example:
-      "Retail and factory employers complying with mandatory fire safety codes, minimum wage legislation, and maximum weekly working hours.",
+      "Households in northern European climates experiencing severe drops in solar power production during long, gloomy winter weeks.",
     collocations: [
-      "occupational safety",
-      "labor codes",
-      "workplace standards",
-      "regulatory compliance"
+      "weather dependency",
+      "intermittent generation",
+      "seasonal fluctuations",
+      "ambient sunlight intensity"
     ]
   },
   {
-    id: "non-opinion-3",
-    badge: "Non-Opinion 03 • Consumer Safety",
-    title: "Product integrity and non-hazardous consumer goods",
+    id: "dis-3",
+    badge: "Disadvantage 03 • Exorbitant Battery Storage Costs",
+    title: "Expensive storage units with limited operational lifespans",
     mainIdea:
-      "It is claimed that businesses must guarantee product safety and refrain from deceptive marketing practices.",
+      "To ensure round-the-clock electricity without relying on the public grid, homes require costly battery storage banks that degrade over time.",
     supportingReason:
-      "Ensuring non-toxic, safe merchandise is a fundamental commercial prerequisite enforced by consumer protection laws, not voluntary social philanthropy.",
+      "Modern lithium-ion batteries add thousands of dollars to the installation bill and generally need complete replacement every 10 to 12 years due to chemical wear.",
     example:
-      "Pharmaceutical and food producers adhering to rigorous government inspection and safety certification standards.",
+      "Adding a 10kWh domestic battery unit increasing overall installation expenditure by $7,000 to $10,000, significantly extending the system's payback period.",
     collocations: [
-      "product integrity",
-      "consumer protection",
-      "regulatory inspection",
-      "commercial prerequisite"
+      "battery storage units",
+      "chemical degradation",
+      "prolonged payback period",
+      "replacement expenditure"
     ]
   },
   {
-    id: "non-opinion-4",
-    badge: "Non-Opinion 04 • Corporate Reputation",
-    title: "Incidental brand reputation and avoiding consumer boycotts",
+    id: "dis-4",
+    badge: "Disadvantage 04 • Roof Space & Structural Constraints",
+    title: "Orientation, shading, and architectural limitations of dwellings",
     mainIdea:
-      "Some maintain that social initiatives help businesses build goodwill and attract ethical consumers.",
+      "Solar power generation is directly constrained by the available surface area, angle, and structural condition of a home's roof.",
     supportingReason:
-      "In reality, engaging in charitable causes is often a calculated marketing strategy aimed at protecting brand equity and boosting long-term profits.",
+      "Properties surrounded by tall trees, neighboring apartment complexes, or historic architecture with steep or shaded roofs cannot accommodate an efficient array.",
     example:
-      "Apparel brands publicizing organic fabric lines to attract premium customers and maintain market share.",
+      "Urban apartment dwellers and tenants who do not own individual roof space are virtually excluded from adopting personal rooftop solar systems.",
     collocations: [
-      "brand equity",
-      "calculated marketing",
-      "public relations",
-      "commercial self-interest"
+      "structural constraints",
+      "roof space availability",
+      "architectural limitations",
+      "unfavorable roof orientation"
     ]
   },
   {
-    id: "non-opinion-5",
-    badge: "Non-Opinion 05 • Local Community Relations",
-    title: "Civic cooperation and neighborly business relations",
+    id: "dis-5",
+    badge: "Disadvantage 05 • Manufacturing & E-Waste Concerns",
+    title: "Toxic chemical processing and future solar panel electronic waste",
     mainIdea:
-      "Firms operating in residential areas often support local sports clubs or festivals to maintain harmony with nearby residents.",
+      "While clean during operation, the manufacturing and disposal lifecycle of solar components carries significant ecological drawbacks.",
     supportingReason:
-      "Such community gestures help businesses secure local operational permits and goodwill, aligning directly with long-term commercial interests.",
+      "Fabricating silicon photovoltaic cells requires hazardous chemicals and energy-intensive processing, while decommissioned panels pose electronic waste hazards if not recycled.",
     example:
-      "Supermarkets sponsoring local neighborhood clean-up drives to strengthen community standing.",
+      "Millions of early-generation solar panels reaching the end of their operational lifecycle and threatening to overwhelm local electronic recycling centers.",
     collocations: [
-      "civic cooperation",
-      "community standing",
-      "operational permits",
-      "commercial alignment"
+      "hazardous chemical solvents",
+      "electronic waste accumulation",
+      "manufacturing lifecycle",
+      "end-of-life recycling challenges"
     ]
   }
 ];
 
-// Aliases for backward compatibility
-export const CAUSES_IDEA_BANK = OPINION_IDEA_BANK;
-export const SOLUTIONS_IDEA_BANK = NON_OPINION_IDEA_BANK;
+// Aliases for compatibility
+export const OPINION_IDEA_BANK = ADVANTAGES_IDEA_BANK;
+export const NON_OPINION_IDEA_BANK = DISADVANTAGES_IDEA_BANK;
+export const CAUSES_IDEA_BANK = ADVANTAGES_IDEA_BANK;
+export const SOLUTIONS_IDEA_BANK = DISADVANTAGES_IDEA_BANK;
 
 /* ==========================================================================
-   MASTER TASK 2 DATASET: CORPORATE SOCIAL RESPONSIBILITY
-   5-Paragraph Opinion Essay Architecture (DISAGREE POSITION)
+   MASTER TASK 2 DATASET: HOUSEHOLD SOLAR ENERGY
+   Advantages and Disadvantages Essay Architecture
    ========================================================================== */
 export const TASK2_DATA: Task2Data = {
-  id: "businesses-profit-social-responsibility-opinion",
+  id: "solar-energy-household-advantages-disadvantages",
 
-  taskType: "Opinion Essay (Agree or Disagree)",
+  taskType: "Advantages and Disadvantages Essay",
 
-  title: "IELTS Writing Task 2 — Corporate Social Responsibility",
+  title: "IELTS Writing Task 2 — Household Solar Energy",
 
   questionText:
-    "Apart from making money, businesses also have social responsibility.\n\n• To what extent do you agree or disagree?",
+    "Solar energy is becoming more and more popular as a source of household energy in many countries around the world.\n\n• What are the advantages and disadvantages of solar energy?",
 
   audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
 
   timingSeconds: 180,
 
   recommendedPosition:
-    "Firm Disagreement with Concession: While commercial entities must strictly abide by statutory environmental and labor regulations, I firmly disagree that businesses bear broader social responsibilities beyond generating revenue. The legitimate purpose of private enterprise is economic viability, job preservation, and shareholder returns, whereas societal welfare and public infrastructure are the constitutional responsibility of governments financed through corporate taxation.",
+    "A balanced assessment establishing that while domestic solar power offers profound environmental sustainability and significant long-term reductions in electricity bills, these benefits must be weighed against high initial capital expenditure and vulnerability to weather intermittency.",
 
   strongestArgument:
-    "The fundamental duty of a business is commercial solvency and wealth generation; democratic governments, funded by corporate taxes, are the rightful administrators of social welfare and public services.",
+    "Solar energy delivers inexhaustible, zero-emission green electricity and protects households from volatile utility tariffs, yet requires substantial upfront investment and depends heavily on sunny weather conditions.",
 
-  // 1. Sample introduction planning points (DISAGREE)
+  // 1. Sample introduction planning points
   introPlanningPoints: [
-    "Sentence 1 (Paraphrase): It is widely argued that commercial enterprises ought to shoulder social responsibilities extending beyond their primary objective of making money.",
-    "Sentence 2 (Opinion / Thesis): However, I strongly disagree with this view, as the fundamental purpose of any business is to maximize profit and guarantee economic survival, whereas social welfare remains the exclusive responsibility of government authorities."
+    "Sentence 1 (Paraphrase): In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source.",
+    "Sentence 2 (Outline Statement): While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions."
   ],
 
   sampleIntro:
-    "It is widely argued that commercial enterprises ought to shoulder social responsibilities extending beyond their primary objective of making money. However, I strongly disagree with this view, as the fundamental purpose of any business is to maximize profit and guarantee economic survival, whereas social welfare remains the exclusive responsibility of government authorities.",
+    "In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source. While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.",
 
   sampleConclusion:
-    "In conclusion, although companies must operate within statutory environmental and employment codes, I firmly disagree that they possess social responsibilities beyond generating profit. The primary duty of commerce is economic viability, job preservation, and shareholder returns, leaving public welfare initiatives to governments financed through corporate taxation.",
+    "In conclusion, household solar energy presents compelling advantages by delivering clean, renewable electricity and lowering long-term domestic power bills. However, these merits are counterbalanced by the heavy initial capital investment required and the system's inherent weather dependency, suggesting that government subsidies and advancements in battery storage will remain critical for widespread residential adoption.",
 
   // 2. Five-minute planning map
   fiveMinutePlanningMap: {
     causes: [
       {
-        id: "op1",
-        label: "Commercial solvency and avoiding enterprise bankruptcy",
-        note: "Profit is the fundamental prerequisite; without commercial viability, a firm collapses into insolvency and cannot employ anyone."
+        id: "adv1",
+        label: "Zero greenhouse gas emissions & decarbonisation",
+        note: "Harnesses inexhaustible sunlight without producing toxic air pollution or carbon emissions."
       },
       {
-        id: "op2",
-        label: "Employment creation and sustaining family livelihoods",
-        note: "Profitable businesses provide dependable salaries and career progression, which is their greatest direct societal contribution."
+        id: "adv2",
+        label: "Drastic long-term reduction in household electricity bills",
+        note: "Once installed, sunlight is free; families save 60–80% and are protected against utility tariff inflation."
       },
       {
-        id: "op3",
-        label: "Corporate tax revenues funding democratic public welfare",
-        note: "Businesses pay substantial corporate taxes; elected governments, not unelected executives, bear the mandate to administer social services."
+        id: "adv3",
+        label: "Grid independence & resilience against blackouts",
+        note: "Decentralized power paired with battery reserves ensures essential power during grid failures."
       },
       {
-        id: "op4",
-        label: "Fiduciary responsibility to shareholders and pensioners",
-        note: "Corporate leaders are legally bound to deliver returns to ordinary citizens and retirement pension funds who invested capital."
+        id: "adv4",
+        label: "Revenue generation through net-metering schemes",
+        note: "Surplus electricity generated at midday can be exported back to the grid for monetary credits."
       },
       {
-        id: "op5",
-        label: "Specialized commercial efficiency vs misallocated capital",
-        note: "Executives specialize in commerce and logistics; forcing them to manage social engineering produces inefficiency and greenwashing."
+        id: "adv5",
+        label: "Low operating maintenance & 25–30 year panel lifespan",
+        note: "No moving parts; reliable performance guaranteed for decades with minimal servicing."
       }
     ],
     solutions: [
       {
-        id: "nop1",
-        label: "Statutory environmental regulations and emission thresholds",
-        note: "Businesses must obey pollution limits, but this constitutes legal regulatory compliance rather than voluntary social altruism."
+        id: "dis1",
+        label: "Prohibitive upfront capital expenditure & installation fees",
+        note: "Panels, inverters, and professional labor cost $12,000–$22,000, creating a high barrier for low-income homes."
       },
       {
-        id: "nop2",
-        label: "Workplace safety and mandatory labor protection codes",
-        note: "Providing safe conditions and living wages is legally enforced by state labor standards, not charitable corporate goodwill."
+        id: "dis2",
+        label: "Weather dependency & seasonal intermittency",
+        note: "Power output drops sharply during overcast or winter days, and ceases completely during night hours."
       },
       {
-        id: "nop3",
-        label: "Consumer protection and product integrity standards",
-        note: "Selling non-hazardous goods is a commercial prerequisite mandated by consumer protection legislation."
+        id: "dis3",
+        label: "Exorbitant cost & finite lifespan of battery storage",
+        note: "Lithium-ion storage adds thousands to costs and requires replacement every 10–12 years."
       },
       {
-        id: "nop4",
-        label: "Brand reputation and calculated marketing advantages",
-        note: "Social initiatives are often strategic public relations tools designed to protect brand equity and long-term sales."
+        id: "dis4",
+        label: "Roof space, shading & structural constraints",
+        note: "Homes with shaded, small, or weak roofs, plus apartment dwellers, cannot install effective arrays."
       },
       {
-        id: "nop5",
-        label: "Local community relations and operating licenses",
-        note: "Community gestures secure neighborly cooperation and operational permits, serving enterprise commercial interests."
+        id: "dis5",
+        label: "Manufacturing chemical hazards & e-waste disposal",
+        note: "Silicon processing involves toxic chemicals; decommissioned panels pose recycling challenges."
       }
     ]
   },
 
-  causesIdeaBank: OPINION_IDEA_BANK,
-  solutionsIdeaBank: NON_OPINION_IDEA_BANK,
+  causesIdeaBank: ADVANTAGES_IDEA_BANK,
+  solutionsIdeaBank: DISADVANTAGES_IDEA_BANK,
 
-  // 3. Body paragraphs matching the MANDATORY 5-PARAGRAPH ARCHITECTURE (DISAGREE):
-  // Body 1: Opinion side (Commercial Solvency & Enterprise Survival)
-  // Body 2: Opinion side (Fiduciary Duty, Job Security & Public Tax Contribution)
-  // Body 3: Non-opinion side (Concession: Statutory Environmental & Labor Compliance)
+  // 3. Body paragraphs matching the MANDATORY 4-PARAGRAPH BALANCED ARCHITECTURE:
+  // Body 1: Advantages (Clean Renewable Power & Utility Bill Reduction)
+  // Body 2: Disadvantages (High Initial Outlay & Weather Intermittency)
   bodyParagraphs: [
     {
       paraNumber: 1,
-      side: "strong_opinion",
-      title: "Body Para 1: Opinion Side — Commercial Solvency & Survival",
-      theme: "The Non-Negotiable Prerequisite of Financial Profitability",
+      side: "advantages",
+      title: "Body Para 1: Primary Advantages — Clean Power & Bill Reduction",
+      theme: "Environmental Sustainability & Long-Term Economic Savings",
       mainReason:
-        "The primary justification for rejecting corporate social responsibility is that financial viability remains the indispensable prerequisite for enterprise survival.",
+        "The primary advantage of domestic solar energy is its remarkable ecological sustainability and ability to deliver substantial long-term electricity bill savings.",
       supportingReasons:
-        "If an enterprise fails to achieve profitability, it inevitably collapses into insolvency, precipitating mass unemployment, disrupted supply chains, and the destruction of invested capital.",
+        "Unlike fossil fuel generation, photovoltaic cells produce zero greenhouse gas emissions. Furthermore, on-site solar generation insulates families from escalating commercial utility tariffs and enables surplus energy sales via net-metering.",
       example:
-        "Small and medium-sized enterprises (SMEs) operating on narrow margins must prioritize revenue generation simply to meet payroll, service debt, and pay operational rent.",
+        "Rooftop solar installations routinely reducing household carbon emissions by four tonnes annually while cutting family electricity expenses by up to seventy percent.",
       band9Snippet:
-        "“To begin with, the fundamental justification for rejecting corporate social obligations is that commercial viability remains the indispensable prerequisite for enterprise existence.”",
+        "“On the one hand, the primary advantage of domestic solar power is its exceptional environmental sustainability, paired with substantial financial savings over time.”",
       alternativeReasons: [
         {
-          id: "opinion-profit-1",
-          badge: "Argument 01 • Economic Foundation",
-          title: "Commercial Solvency & Insolvency Prevention",
+          id: "adv-model-1",
+          badge: "Advantage Analysis • Band 9",
+          title: "Renewable Decarbonisation & Utility Autonomy",
           category: "standard",
           mainReason:
-            "A commercial entity exists fundamentally to generate financial returns and avoid bankruptcy.",
+            "Harnessing inexhaustible sunlight cuts household emissions and delivers long-term financial relief from escalating energy tariffs.",
           supportingReasons:
-            "An insolvent company cannot employ staff or produce tax revenues; profit generation must remain the uncompromised primary objective.",
+            "Photovoltaic panels generate clean electricity with no toxic emissions; moreover, net-metering schemes allow homeowners to sell surplus electricity back to utility suppliers.",
           example:
-            "Enterprises facing competitive market pressures must reinvest all earnings into operational efficiency rather than philanthropic projects.",
+            "Homeowners in sunny climatic regions cutting monthly utility expenses by 60% to 80% while shielding themselves from grid rate hikes.",
           band9Snippet:
-            "“First and foremost, commercial survival is the bedrock of corporate existence, since bankrupt firms cannot employ workers or pay taxes.”",
+            "“On the one hand, domestic solar systems drastically diminish household carbon footprints while sheltering families from volatile energy tariffs.”",
           modelParagraph:
-            "To begin with, the fundamental justification for rejecting corporate social obligations is that commercial viability remains the indispensable prerequisite for enterprise existence. The primary purpose of any private firm is to generate revenue, service operational expenses, and avoid insolvency. If a company fails to operate profitably, it inevitably collapses, precipitating mass unemployment, disrupted supply chains, and the immediate destruction of capital. For instance, small and medium-sized enterprises operating on razor-thin profit margins must prioritize revenue generation simply to meet payroll, pay rent, and service supplier invoices; compelling them to divert scarce financial resources toward broader social initiatives would jeopardize their very survival.",
+            "On the one hand, the primary advantage of domestic solar power is its exceptional environmental sustainability. Unlike conventional electricity generated from fossil fuels, photovoltaic systems harness inexhaustible solar radiation without discharging greenhouse gases or airborne pollutants. Consequently, widespread household adoption drastically curtails domestic carbon footprints and contributes directly to mitigating global climate change. Furthermore, residential solar panels yield profound economic savings over time. Once the system is installed, families generate their own electricity, shielding themselves from escalating commercial utility tariffs and saving up to seventy percent on monthly power bills. Additionally, in jurisdictions with net-metering schemes, households can even sell surplus power back to the regional grid, turning their roofs into modest revenue streams.",
           examinerNotes:
-            "Flawless academic cohesion: establishes economic survival as the foundational rationale, links lack of profit to insolvency and layoffs, and illustrates with SME operational realities."
+            "Clear topic sentence, cohesive progression from environmental benefits to domestic financial savings, and concrete real-world development with net-metering illustration."
         }
       ]
     },
     {
       paraNumber: 2,
-      side: "strong_opinion",
-      title: "Body Para 2: Opinion Side — Fiduciary Duty & State Welfare Mandate",
-      theme: "Shareholder Responsibility, Job Creation & Government Role",
+      side: "disadvantages",
+      title: "Body Para 2: Primary Disadvantages — Upfront Costs & Intermittency",
+      theme: "Steep Initial Capital Expenditure & Weather Dependency",
       mainReason:
-        "Furthermore, corporate executives bear a strict fiduciary duty to deliver returns to shareholders, while social welfare is the democratic responsibility of elected governments funded by corporate taxes.",
+        "On the other hand, the principal drawbacks of solar energy are the prohibitive upfront capital investment and the system's inherent weather dependency.",
       supportingReasons:
-        "Retirement pension funds rely on corporate dividends for retiree payouts; moreover, profitable firms already fulfill their societal role through employment and corporate tax revenues.",
+        "Purchasing panels, inverters, and battery storage units demands heavy upfront capital. Moreover, energy output plummets during cloudy days and ceases entirely at night, requiring backup power.",
       example:
-        "Corporate income taxes collected from thriving commercial sectors enabling national governments to finance universal healthcare, state schools, and public highways.",
+        "Residential installations often requiring $15,000 to $20,000 in upfront capital, while northern European homes experience sharp drops in generation during winter months.",
       band9Snippet:
-        "“Furthermore, business managers bear a strict fiduciary responsibility to deliver financial returns to shareholders and pension funds whose capital is invested in the enterprise.”",
+        "“On the other hand, the principal drawback of solar energy is the steep initial capital expenditure required for installation, coupled with its inherent weather dependency.”",
       alternativeReasons: [
         {
-          id: "opinion-fiduciary-1",
-          badge: "Argument 02 • Fiduciary & Civic Mandate",
-          title: "Shareholder Rights & Government Social Mandate",
+          id: "dis-model-1",
+          badge: "Disadvantage Analysis • Band 9",
+          title: "Capital Prohibitive Barrier & Intermittent Generation",
           category: "standard",
           mainReason:
-            "Diverting private investment capital toward social programs breaches fiduciary trust, while elected governments possess the legitimate mandate for public welfare.",
+            "High upfront hardware and battery expenses prevent widespread adoption, while solar intermittency poses energy reliability challenges.",
           supportingReasons:
-            "Businesses pay high taxes so that public authorities can administer social safety nets with democratic accountability.",
+            "Solar arrays require significant upfront capital that is out of reach for lower-income families; additionally, winter and nighttime hours necessitate costly battery storage or continued grid reliance.",
           example:
-            "Pension funds investing in profitable corporations to guarantee dependable monthly disbursements for retired citizens.",
+            "Adding a domestic lithium-ion battery bank adding $8,000 to total setup costs, considerably lengthening the system's financial payback period.",
           band9Snippet:
-            "“Moreover, public welfare administration falls within the constitutional remit of democratic governments financed by corporate tax revenues, not unelected corporate boards.”",
+            "“Nevertheless, high initial installation costs and fluctuating generation during overcast weather represent formidable obstacles for many families.”",
           modelParagraph:
-            "Furthermore, business managers bear a strict fiduciary responsibility to deliver financial returns to shareholders and pension funds whose capital is invested in the enterprise. Diverting corporate earnings toward discretionary social causes without shareholder consent represents a misallocation of private capital. Crucially, profitable corporations already make an immense societal contribution by providing millions of citizens with stable livelihoods and contributing substantial corporate taxes. It is the constitutional duty of elected governments—not private corporations—to utilize these tax revenues to build public healthcare, schools, and environmental infrastructure, as state authorities possess the democratic mandate and specialized competence to manage public welfare.",
+            "On the other hand, the principal drawback of solar energy is the steep initial capital expenditure required for purchase and installation. High-efficiency solar panels, power inverters, mounting hardware, and professional labor demand an upfront investment often ranging between ten and twenty thousand dollars, making adoption prohibitive for lower-income households. Moreover, solar generation suffers from inherent weather dependency and seasonal intermittency. Solar panels produce minimal electricity during overcast days, heavy rainfall, or harsh winter seasons, and cannot generate power during night hours. To maintain continuous electricity supply, homeowners must either remain connected to the conventional grid or invest in expensive lithium-ion battery banks, which have limited lifespans and add substantial additional costs to the household budget.",
           examinerNotes:
-            "Sophisticated legal and macroeconomic argumentation contrasting private fiduciary obligations with constitutional government welfare mandates."
-        }
-      ]
-    },
-    {
-      paraNumber: 3,
-      side: "non_opinion",
-      title: "Body Para 3: Non-Opinion Side — Statutory Environmental & Labor Compliance",
-      theme: "Legal Regulatory Compliance vs Voluntary Social Altruism",
-      mainReason:
-        "On the other hand, critics argue that businesses have a social responsibility because industrial production consumes public natural resources and generates pollution.",
-      supportingReasons:
-        "However, adhering to emission limits and labor standards represents mandatory statutory compliance rather than voluntary social philanthropy.",
-      example:
-        "Industrial factories installing emission filters and wastewater treatment equipment to comply with environmental laws.",
-      band9Snippet:
-        "“On the other hand, critics argue that businesses have a social responsibility because industrial production consumes public natural resources and generates environmental degradation.”",
-      alternativeReasons: [
-        {
-          id: "non-opinion-compliance-1",
-          badge: "Concession • Regulatory Compliance",
-          title: "Mandatory Statutory Codes vs Voluntary Philanthropy",
-          category: "standard",
-          mainReason:
-            "Operating ethically and avoiding ecological destruction is enforced by state laws rather than discretionary corporate benevolence.",
-          supportingReasons:
-            "Companies must obey labor codes and environmental regulations to retain operating licenses, which is legal compliance, not social responsibility.",
-          example:
-            "Enterprises complying with minimum wage legislation, fire safety regulations, and environmental disposal laws.",
-          band9Snippet:
-            "“Nevertheless, adhering to statutory environmental and labor regulations is a legal obligation rather than evidence of voluntary social responsibility.”",
-          modelParagraph:
-            "On the other hand, critics argue that businesses have a social responsibility because industrial production consumes public natural resources and generates environmental degradation. While it is undeniable that firms must not pollute local ecosystems or exploit vulnerable workers, adhering to emission standards and occupational safety regulations represents statutory compliance rather than voluntary social philanthropy. Enterprises must operate within the boundaries of the law, but expecting them to proactively solve complex societal challenges beyond legal compliance confuses the distinct roles of private enterprise and the state.",
-          examinerNotes:
-            "Balanced, nuanced concession: respects the environmental and ethical critique while clarifying the vital distinction between statutory legal compliance and voluntary social altruism."
+            "Exemplary paragraph coherence: transitions seamlessly from initial financial costs to technical intermittency and battery storage constraints."
         }
       ]
     }
   ],
 
-  // 4. Academic Vocabulary List (12 Genuine Band 8.5/9 Corporate Ethics & Economics Items)
+  // 4. Academic Vocabulary List (12 Genuine Band 8.5/9 Clean Tech & Environmental Items)
   vocabList: [
     {
-      word: "Philanthropy",
-      definition: "The practice of donating money, resources, or time to promote human welfare.",
-      phonetic: "/fɪˈlæn.θrə.pi/",
-      term: "Philanthropy",
-      meaning: "The practice of donating money, resources, or time to promote human welfare.",
-      example: "Corporate philanthropy should not merely serve as public relations but genuinely enrich community welfare.",
-      sampleSentence: "Corporate philanthropy should not merely serve as public relations but genuinely enrich community welfare.",
-      collocations: ["corporate philanthropy", "philanthropic initiatives", "strategic philanthropy"]
+      word: "Photovoltaic",
+      definition: "Relating to the production of electric current at the junction of two substances exposed to light.",
+      phonetic: "/ˌfəʊ.təʊ.vɒlˈteɪ.ɪk/",
+      term: "Photovoltaic",
+      meaning: "Relating to the direct conversion of light into electricity using semiconductor devices.",
+      example: "Rooftop photovoltaic panels convert ambient sunlight directly into household electricity.",
+      sampleSentence: "Rooftop photovoltaic panels convert ambient sunlight directly into household electricity.",
+      collocations: ["photovoltaic cells", "photovoltaic panels", "photovoltaic technology"]
     },
     {
-      word: "Viability",
-      definition: "The ability of an enterprise or plan to survive, succeed, and remain financially solvent.",
-      phonetic: "/ˌvaɪ.əˈbɪl.ə.ti/",
-      term: "Viability",
-      meaning: "The ability of an enterprise or plan to survive, succeed, and remain financially solvent.",
-      example: "Maintaining commercial viability is an essential prerequisite before a firm can fund social programs.",
-      sampleSentence: "Maintaining commercial viability is an essential prerequisite before a firm can fund social programs.",
-      collocations: ["commercial viability", "financial viability", "long-term viability"]
+      word: "Intermittency",
+      definition: "The quality of occurring at non-continuous intervals, stopping and starting irregularly.",
+      phonetic: "/ˌɪn.təˈmɪt.ən.si/",
+      term: "Intermittency",
+      meaning: "The unpredictable variation in power generation due to fluctuating sunlight or weather conditions.",
+      example: "The intermittency of solar radiation necessitates backup power systems or battery banks.",
+      sampleSentence: "The intermittency of solar radiation necessitates backup power systems or battery banks.",
+      collocations: ["power intermittency", "generation intermittency", "inherent intermittency"]
     },
     {
-      word: "Stewardship",
-      definition: "The responsible overseeing, management, and protection of environmental and social resources.",
-      phonetic: "/ˈstjuː.əd.ʃɪp/",
-      term: "Stewardship",
-      meaning: "The responsible overseeing, management, and protection of environmental and social resources.",
-      example: "Modern businesses must demonstrate environmental stewardship by curtailing industrial emissions.",
-      sampleSentence: "Modern businesses must demonstrate environmental stewardship by curtailing industrial emissions.",
-      collocations: ["environmental stewardship", "responsible stewardship", "corporate stewardship"]
+      word: "Decarbonisation",
+      definition: "The reduction or complete elimination of carbon dioxide emissions from an energy system.",
+      phonetic: "/diːˌkɑː.bən.aɪˈzeɪ.ʃən/",
+      term: "Decarbonisation",
+      meaning: "The transition towards energy sources that do not discharge greenhouse gas emissions.",
+      example: "Household solar adoption plays a pivotal role in national decarbonisation strategies.",
+      sampleSentence: "Household solar adoption plays a pivotal role in national decarbonisation strategies.",
+      collocations: ["rapid decarbonisation", "decarbonisation strategy", "economic decarbonisation"]
     },
     {
-      word: "Exploitation",
-      definition: "The unfair or abusive utilization of workers or natural resources for monetary gain.",
-      phonetic: "/ˌek.splɔɪˈteɪ.ʃən/",
-      term: "Exploitation",
-      meaning: "The unfair or abusive utilization of workers or natural resources for monetary gain.",
-      example: "Strict regulations are necessary to prevent the exploitation of low-wage factory workers in developing nations.",
-      sampleSentence: "Strict regulations are necessary to prevent the exploitation of low-wage factory workers in developing nations.",
-      collocations: ["labor exploitation", "resource exploitation", "prevent exploitation"]
+      word: "Autonomy",
+      definition: "The state of being independent, self-governing, and self-sufficient.",
+      phonetic: "/ɔːˈtɒn.ə.mi/",
+      term: "Autonomy",
+      meaning: "Energy independence from commercial power suppliers and centralised municipal grids.",
+      example: "Combining solar panels with home storage batteries provides complete energy autonomy.",
+      sampleSentence: "Combining solar panels with home storage batteries provides complete energy autonomy.",
+      collocations: ["energy autonomy", "household autonomy", "operational autonomy"]
     },
     {
-      word: "Accountability",
-      definition: "The obligation of an organization or individual to account for actions and accept responsibility.",
-      phonetic: "/əˌkaʊn.təˈbɪl.ə.ti/",
-      term: "Accountability",
-      meaning: "The obligation of an organization or individual to account for actions and accept responsibility.",
-      example: "Governments must enforce corporate accountability for chemical dumping and industrial pollution.",
-      sampleSentence: "Governments must enforce corporate accountability for chemical dumping and industrial pollution.",
-      collocations: ["corporate accountability", "hold accountable", "environmental accountability"]
+      word: "Capital Expenditure",
+      definition: "Funds used by a household or company to acquire, upgrade, and maintain physical assets.",
+      phonetic: "/ˈkæp.ɪ.təl ɪkˈspen.dɪ.tʃər/",
+      term: "Capital Expenditure",
+      meaning: "The substantial initial financial outlay required to purchase and install equipment.",
+      example: "High initial capital expenditure remains the chief impediment for prospective solar adopters.",
+      sampleSentence: "High initial capital expenditure remains the chief impediment for prospective solar adopters.",
+      collocations: ["initial capital expenditure", "heavy capital expenditure", "upfront expenditure"]
     },
     {
-      word: "Remuneration",
-      definition: "Payment, wages, or financial compensation received for work or services rendered.",
-      phonetic: "/rɪˌmjuː.nəˈreɪ.ʃən/",
-      term: "Remuneration",
-      meaning: "Payment, wages, or financial compensation received for work or services rendered.",
-      example: "Companies have a social duty to provide equitable remuneration that reflects rising living costs.",
-      sampleSentence: "Companies have a social duty to provide equitable remuneration that reflects rising living costs.",
-      collocations: ["equitable remuneration", "fair remuneration", "financial remuneration"]
+      word: "Inexhaustible",
+      definition: "Existing in unlimited quantities so that cannot be used up or exhausted.",
+      phonetic: "/ˌɪn.ɪɡˈzɔː.stə.bəl/",
+      term: "Inexhaustible",
+      meaning: "A natural energy source that will never deplete or run out over human timescales.",
+      example: "Solar radiation is an inexhaustible resource unlike finite petroleum and coal reserves.",
+      sampleSentence: "Solar radiation is an inexhaustible resource unlike finite petroleum and coal reserves.",
+      collocations: ["inexhaustible resource", "inexhaustible energy", "virtually inexhaustible"]
     },
     {
-      word: "Sustainable",
-      definition: "Capable of being maintained over time without depleting ecological resources or causing collapse.",
-      phonetic: "/səˈsteɪ.nə.bəl/",
-      term: "Sustainable",
-      meaning: "Capable of being maintained over time without depleting ecological resources or causing collapse.",
-      example: "Adopting sustainable production techniques ensures economic growth does not destroy biodiversity.",
-      sampleSentence: "Adopting sustainable production techniques ensures economic growth does not destroy biodiversity.",
-      collocations: ["sustainable practices", "sustainable commerce", "sustainable development"]
+      word: "Net Metering",
+      definition: "A billing mechanism that credits solar energy system owners for the electricity they export to the grid.",
+      phonetic: "/ˌnet ˈmiː.tər.ɪŋ/",
+      term: "Net Metering",
+      meaning: "A utility system allowing households to sell surplus daytime electricity back to the supplier.",
+      example: "Net metering policies incentivize homeowners by turning excess solar electricity into monetary credits.",
+      sampleSentence: "Net metering policies incentivize homeowners by turning excess solar electricity into monetary credits.",
+      collocations: ["net metering scheme", "net metering credits", "net metering framework"]
     },
     {
-      word: "Altruism",
-      definition: "Disinterested and selfless concern for the well-being of others without financial motive.",
-      phonetic: "/ˈæl.tru.ɪ.zəm/",
-      term: "Altruism",
-      meaning: "Disinterested and selfless concern for the well-being of others without financial motive.",
-      example: "Critics argue that corporations rarely act out of pure altruism, making statutory regulations indispensable.",
-      sampleSentence: "Critics argue that corporations rarely act out of pure altruism, making statutory regulations indispensable.",
-      collocations: ["pure altruism", "corporate altruism", "ethical altruism"]
+      word: "Amortisation",
+      definition: "The gradual reduction or recovery of the initial cost of an asset over its operational lifetime.",
+      phonetic: "/əˌmɔː.taɪˈzeɪ.ʃən/",
+      term: "Amortisation",
+      meaning: "The financial process of recovering upfront installation expenses through subsequent utility bill savings.",
+      example: "Through monthly bill reductions, the amortisation period for solar panels is typically eight years.",
+      sampleSentence: "Through monthly bill reductions, the amortisation period for solar panels is typically eight years.",
+      collocations: ["amortisation period", "cost amortisation", "rapid amortisation"]
     },
     {
-      word: "Degradation",
-      definition: "The process of deteriorating, decaying, or damaging the natural environment.",
-      phonetic: "/ˌdeɡ.rəˈdeɪ.ʃən/",
-      term: "Degradation",
-      meaning: "The process of deteriorating, decaying, or damaging the natural environment.",
-      example: "Unchecked industrial effluent causes severe ecological degradation in surrounding river basins.",
-      sampleSentence: "Unchecked industrial effluent causes severe ecological degradation in surrounding river basins.",
-      collocations: ["environmental degradation", "ecological degradation", "prevent degradation"]
+      word: "Subsidise",
+      definition: "To support financially, often through government grants, tax credits, or rebates.",
+      phonetic: "/ˈsʌb.sɪ.daɪz/",
+      term: "Subsidise",
+      meaning: "To provide state financial assistance to reduce the cost of clean technology for citizens.",
+      example: "Many governments subsidise solar installations to accelerate the transition away from fossil fuels.",
+      sampleSentence: "Many governments subsidise solar installations to accelerate the transition away from fossil fuels.",
+      collocations: ["heavily subsidise", "government subsidized", "subsidise installations"]
     },
     {
-      word: "Concession",
-      definition: "The rhetorical acknowledgment that an opposing perspective or argument has validity.",
-      phonetic: "/kənˈseʃ.ən/",
-      term: "Concession",
-      meaning: "The rhetorical acknowledgment that an opposing perspective or argument has validity.",
-      example: "Making a balanced concession regarding profit necessity strengthens an academic opinion essay.",
-      sampleSentence: "Making a balanced concession regarding profit necessity strengthens an academic opinion essay.",
-      collocations: ["academic concession", "valid concession", "make a concession"]
+      word: "Ecological Footprint",
+      definition: "The environmental impact of human activities measured in terms of resource consumption and waste.",
+      phonetic: "/ˌiː.kəˈlɒdʒ.ɪ.kəl ˈfʊt.prɪnt/",
+      term: "Ecological Footprint",
+      meaning: "The total measure of greenhouse emissions and environmental degradation caused by household living.",
+      example: "Switching from coal-derived power to solar energy significantly shrinks a family's ecological footprint.",
+      sampleSentence: "Switching from coal-derived power to solar energy significantly shrinks a family's ecological footprint.",
+      collocations: ["ecological footprint", "shrink ecological footprint", "household footprint"]
     },
     {
-      word: "Compliance",
-      definition: "The act of obeying and conforming to official rules, environmental laws, and labor codes.",
-      phonetic: "/kəmˈplaɪ.əns/",
-      term: "Compliance",
-      meaning: "The act of obeying and conforming to official rules, environmental laws, and labor codes.",
-      example: "Regulatory agencies inspect commercial facilities to ensure full compliance with emission standards.",
-      sampleSentence: "Regulatory agencies inspect commercial facilities to ensure full compliance with emission standards.",
-      collocations: ["regulatory compliance", "ensure compliance", "environmental compliance"]
+      word: "Surplus",
+      definition: "An amount of something left over when requirements have been satisfied; excess.",
+      phonetic: "/ˈsɜː.pləs/",
+      term: "Surplus",
+      meaning: "Extra electrical power produced by solar panels beyond immediate household consumption needs.",
+      example: "During sunny summer afternoons, household panels frequently generate a surplus of electricity.",
+      sampleSentence: "During sunny summer afternoons, household panels frequently generate a surplus of electricity.",
+      collocations: ["surplus electricity", "surplus energy", "generate a surplus"]
     },
     {
-      word: "Prosperity",
-      definition: "A successful, flourishing, and financially thriving condition of individuals or society.",
-      phonetic: "/prɒsˈper.ə.ti/",
-      term: "Prosperity",
-      meaning: "A successful, flourishing, and financially thriving condition of individuals or society.",
-      example: "True societal prosperity occurs when corporate profits directly improve the quality of human life.",
-      sampleSentence: "True societal prosperity occurs when corporate profits directly improve the quality of human life.",
-      collocations: ["societal prosperity", "economic prosperity", "shared prosperity"]
+      word: "Depletion",
+      definition: "Reduction in the number, quantity, or volume of a finite resource.",
+      phonetic: "/dɪˈpliː.ʃən/",
+      term: "Depletion",
+      meaning: "The progressive exhaustion of non-renewable fossil fuel reserves.",
+      example: "Transitioning to solar power helps counteract the progressive depletion of natural gas reserves.",
+      sampleSentence: "Transitioning to solar power helps counteract the progressive depletion of natural gas reserves.",
+      collocations: ["resource depletion", "fossil fuel depletion", "prevent depletion"]
     }
   ],
 
   vocabHunt: [
-    "philanthropy",
-    "viability",
-    "stewardship",
-    "exploitation",
-    "accountability",
-    "remuneration",
-    "sustainable",
-    "altruism",
-    "degradation",
-    "concession",
-    "compliance",
-    "prosperity"
+    "Photovoltaic",
+    "Intermittency",
+    "Decarbonisation",
+    "Autonomy",
+    "Expenditure",
+    "Inexhaustible",
+    "Net Metering",
+    "Amortisation",
+    "Subsidise",
+    "Ecological Footprint",
+    "Surplus",
+    "Depletion"
   ],
 
-  // 5. Power Expressions
   powerExpressions: [
     {
-      expression: "Corporate social responsibility (CSR)",
-      meaning: "A business model by which companies integrate social and environmental concerns in their operations",
-      example: "Corporate social responsibility requires firms to measure success beyond bottom-line revenue."
+      expression: "harness inexhaustible solar radiation",
+      meaning: "To capture unlimited energy emitted by the sun for electrical power generation.",
+      example: "Rooftop photovoltaic arrays harness inexhaustible solar radiation with zero greenhouse emissions."
     },
     {
-      expression: "Environmental, Social, and Governance (ESG)",
-      meaning: "A set of standards for a company's behavior that socially conscious investors use to screen investments",
-      example: "Institutional investors increasingly demand strict adherence to ESG metrics."
+      expression: "curtail household carbon footprints",
+      meaning: "To significantly diminish the volume of greenhouse gases produced by domestic living.",
+      example: "Widespread residential solar adoption drastically curtails household carbon footprints."
     },
     {
-      expression: "Indispensable prerequisite for solvency",
-      meaning: "An absolute condition necessary for an enterprise to avoid bankruptcy and stay afloat",
-      example: "Generating profit remains an indispensable prerequisite for enterprise solvency."
+      expression: "insulate against volatile energy tariffs",
+      meaning: "To protect family finances from unpredictable and escalating utility prices.",
+      example: "Generating electricity on-site insulates homeowners against volatile utility tariffs."
     },
     {
-      expression: "Exploitation of vulnerable labor",
-      meaning: "Underpaying or overworking vulnerable workers to inflate corporate profit margins",
-      example: "Global treaties aim to eradicate the exploitation of vulnerable labor across supply chains."
+      expression: "prohibitive initial capital expenditure",
+      meaning: "An extremely high upfront financial cost that prevents adoption by ordinary families.",
+      example: "The prohibitive initial capital expenditure remains a formidable barrier for lower-income households."
     },
     {
-      expression: "Fiduciary obligation to shareholders",
-      meaning: "The legal and ethical duty of directors to act in the best financial interests of investors",
-      example: "Corporate boards must balance their fiduciary obligation to shareholders with community welfare."
+      expression: "inherent weather dependency and intermittency",
+      meaning: "The unavoidable operational limitation of stopping or reducing generation during dark or cloudy conditions.",
+      example: "The inherent weather dependency and intermittency of solar cells requires expensive battery backups."
     }
   ],
 
-  // 6. Strategic Linker Groups for 5-Paragraph Architecture
-  strategicLinkers: [
-    {
-      id: "intro-linkers",
-      zone: "Zone 1: Introductory Discourse & Thesis",
-      title: "Introduction: Paraphrase & Clear Opinion Linkers",
-      themeColor: "#9333ea",
-      badge: "Intro Architecture",
-      badgeText: "Intro Architecture",
-      academicRole: "Establishes societal context, paraphrases the prompt, and delivers a decisive opinion.",
-      placementRule: "Sentence 1 introduces the debate; Sentence 2 articulates your clear agree/disagree thesis with concession",
-      zoneGroup: {
-        zoneName: "Introductory Discourse",
-        placementRule: "Paraphrase the prompt in Sentence 1 and present your clear position with an analytical concession in Sentence 2."
-      },
-      items: [
-        {
-          phrase: "It is widely argued that... However, I strongly disagree with this view...",
-          functionDesc: "Establishes the societal proposition and declares an unequivocal personal disagree stance.",
-          example: "It is widely argued that enterprises should bear social obligations beyond making money. However, I strongly disagree with this view, as economic solvency is their sole legitimate purpose."
-        },
-        {
-          phrase: "While companies must observe statutory regulations, the fundamental purpose of any business is to...",
-          functionDesc: "Nuanced thesis pairing a regulatory concession with a decisive disagree conviction.",
-          example: "While companies must observe statutory environmental codes, the fundamental purpose of any business is to maximize profit and guarantee economic survival."
-        }
-      ],
-      linkers: [
-        {
-          linker: "It is widely argued that",
-          functionNote: "Academic formula introducing the broad societal debate."
-        },
-        {
-          linker: "However, I strongly disagree that... whereas...",
-          functionNote: "Decisive Band 9 thesis pairing strong disagree opinion with a clear state welfare distinction."
-        }
-      ]
-    },
-    {
-      id: "body1-linkers",
-      zone: "Zone 2: Opinion Side 1 (Environmental Duty)",
-      title: "Body 1: Environmental Stewardship Linkers",
-      themeColor: "#2563eb",
-      badge: "Body 1: Opinion Side",
-      badgeText: "Body 1: Opinion Side",
-      academicRole: "Introduces the primary supporting argument: corporate environmental responsibility.",
-      placementRule: "Use to open the first supporting body paragraph establishing environmental duty",
-      zoneGroup: {
-        zoneName: "Pillar 1 Architecture",
-        placementRule: "Open with environmental duty, substantiate with resource consumption, and illustrate with green tech."
-      },
-      items: [
-        {
-          phrase: "To begin with, businesses bear a profound moral duty to...",
-          functionDesc: "Opens the first argument supporting corporate social responsibility.",
-          example: "To begin with, businesses bear a profound moral duty to minimize their environmental footprints."
-        },
-        {
-          phrase: "Given that industrial production inevitably exploits public goods...",
-          functionDesc: "Explains the foundational rationale for corporate environmental restitution.",
-          example: "Given that industrial production inevitably exploits public natural resources, firms must invest in green energy."
-        },
-        {
-          phrase: "A prime illustration is seen in / For instance...",
-          functionDesc: "Introduces concrete real-world corporate examples (e.g. data centers powered by solar energy).",
-          example: "For instance, tech conglomerates powering their global facilities with clean energy illustrate effective stewardship."
-        }
-      ],
-      linkers: [
-        {
-          linker: "To begin with / First and foremost",
-          functionNote: "Signals the opening pillar of the opinion side."
-        },
-        {
-          linker: "Given that industrial production inevitably...",
-          functionNote: "Provides rigorous logical justification for environmental accountability."
-        },
-        {
-          linker: "For instance / A clear illustration is",
-          functionNote: "Grounds the argument with verifiable real-world evidence."
-        }
-      ]
-    },
-    {
-      id: "body2-linkers",
-      zone: "Zone 3: Opinion Side 2 (Worker Welfare & Community)",
-      title: "Body 2: Labor & Community Welfare Linkers",
-      themeColor: "#059669",
-      badge: "Body 2: Opinion Side",
-      badgeText: "Body 2: Opinion Side",
-      academicRole: "Introduces the second supporting argument: workforce dignity and community reinvestment.",
-      placementRule: "Use to transition to the second supporting argument focusing on labor and society",
-      zoneGroup: {
-        zoneName: "Pillar 2 Architecture",
-        placementRule: "Progress from environmental duties to human workforce rights and community development."
-      },
-      items: [
-        {
-          phrase: "Furthermore / In addition to ecological duties...",
-          functionDesc: "Transitions smoothly to the human and social dimensions of corporate responsibility.",
-          example: "Furthermore, corporations possess an ethical obligation to foster the welfare of their workforce and local communities."
-        },
-        {
-          phrase: "Rather than treating labor as a disposable commodity, firms ought to...",
-          functionDesc: "Contrasts profit-maximizing exploitation with ethical human resource management.",
-          example: "Rather than treating labor as a disposable commodity, firms ought to reciprocate by providing fair remuneration and healthcare."
-        },
-        {
-          phrase: "Consequently / As a direct result...",
-          functionDesc: "Demonstrates how community reinvestment creates shared societal prosperity.",
-          example: "Consequently, reinvesting corporate revenues into municipal schools uplifts local living standards."
-        }
-      ],
-      linkers: [
-        {
-          linker: "Furthermore / In addition to this",
-          functionNote: "Transitions smoothly to the second opinion pillar."
-        },
-        {
-          linker: "Rather than treating labor as a disposable commodity",
-          functionNote: "Powerful rhetorical contrast highlighting human dignity."
-        },
-        {
-          linker: "Consequently / As a result",
-          functionNote: "Shows the positive social outcome of community reinvestment."
-        }
-      ]
-    },
-    {
-      id: "body3-linkers",
-      zone: "Zone 4: Non-Opinion Side (Economic Concession)",
-      title: "Body 3: Profit Necessity & Concession Linkers",
-      themeColor: "#ea580c",
-      badge: "Body 3: Non-Opinion Side",
-      badgeText: "Body 3: Non-Opinion Side",
-      academicRole: "Acknowledges the counter-perspective: profit generation is essential for survival and taxes.",
-      placementRule: "Use in Body 3 to acknowledge that profitability is necessary for solvency and employment",
-      zoneGroup: {
-        zoneName: "Pillar 3 Concession",
-        placementRule: "Respectfully validate the economic perspective without compromising your overall opinion."
-      },
-      items: [
-        {
-          phrase: "On the other hand / It is undeniable that...",
-          functionDesc: "Signals the transition to the non-opinion counter-argument.",
-          example: "On the other hand, it is undeniable that profit generation is the fundamental lifeblood of any commercial organization."
-        },
-        {
-          phrase: "Without financial viability and healthy profit margins, enterprises face...",
-          functionDesc: "Analyzes the catastrophic real-world consequences of corporate insolvency.",
-          example: "Without financial viability, enterprises face insolvency, resulting in mass layoffs and economic stagnation."
-        },
-        {
-          phrase: "Moreover, corporate taxation on net profits finances...",
-          functionDesc: "Highlights that profitability directly supports government public spending.",
-          example: "Moreover, corporate taxation on commercial profits directly finances national healthcare and public infrastructure."
-        }
-      ],
-      linkers: [
-        {
-          linker: "On the other hand / Admittedly",
-          functionNote: "Clear marker signaling a balanced academic concession."
-        },
-        {
-          linker: "Without commercial viability, enterprises face...",
-          functionNote: "Explains why financial solvency is a practical necessity."
-        },
-        {
-          linker: "Moreover / In addition",
-          functionNote: "Expands the concession to include corporate tax contributions."
-        }
-      ]
-    },
-    {
-      id: "conclusion-linkers",
-      zone: "Zone 5: Concluding Synthesis & Restated Position",
-      title: "Conclusion: Sum-Up & Restatement Linkers",
-      themeColor: "#0f766e",
-      badge: "Conclusion Synthesis",
-      badgeText: "Conclusion Synthesis",
-      academicRole: "Recaps the main arguments from both sides and firmly restates the opinion.",
-      placementRule: "Use in the final paragraph: Sentence 1 recaps both perspectives; Sentence 2 restates your firm opinion",
-      zoneGroup: {
-        zoneName: "Concluding Synthesis",
-        placementRule: "Synthesize profit necessity with social responsibility, then restate your firm opinion."
-      },
-      items: [
-        {
-          phrase: "In conclusion, while profit generation is unquestionably essential for...",
-          functionDesc: "Synthesizes the concession before delivering the decisive final verdict.",
-          example: "In conclusion, while generating profit is unquestionably essential for enterprise survival and employment, businesses cannot operate in ethical isolation."
-        },
-        {
-          phrase: "Therefore, I firmly believe that true corporate success requires...",
-          functionDesc: "Final authoritative restatement of the thesis.",
-          example: "Therefore, I firmly believe that true corporate success requires balancing financial gain with environmental stewardship and community welfare."
-        }
-      ],
-      linkers: [
-        {
-          linker: "In conclusion / To conclude",
-          functionNote: "Definitive signal of final analytical closure."
-        },
-        {
-          linker: "Therefore, I firmly believe that...",
-          functionNote: "Unequivocal restatement of the writer's thesis."
-        }
-      ]
-    }
-  ],
-
-  // 7. Brainstorm Cards (UNDER 5 STEPS: EXACTLY 4 CARDS, ACCURATE & CUT-TO-THE-CHASE)
+  // 7. Brainstorm Cards (EXACTLY 4 CARDS: 2 Advantages & 2 Disadvantages)
   brainstormCards: [
     {
       id: "card-1",
       stepNum: 1,
-      badge: "Opinion Side 01 • Ecological Duty",
-      title: "Environmental Stewardship",
-      question: "Why do commercial businesses have an ethical duty to protect the natural environment?",
-      thinkingLens: "Think about industrial pollution, resource extraction, and corporate carbon footprints.",
-      selfCheck: "Did you explain that businesses consume shared public goods like air and water, creating an obligation to prevent pollution?",
-      idea: "Industrial production exploits shared air, water, and minerals; corporations must invest in clean energy and zero-waste manufacturing to curb planetary degradation.",
-      promptInsight: "Industrial operations consume shared public resources; businesses must invest in clean energy and sustainable waste disposal.",
-      collocations: ["environmental stewardship", "ecological degradation", "clean energy"],
-      example: "Global tech firms running data centers entirely on solar power to minimize environmental harm."
+      badge: "Advantage 01 • Ecological Sustainability",
+      title: "Clean Renewable Electricity",
+      question: "How does domestic solar energy contribute to combating environmental degradation?",
+      thinkingLens: "Think about fossil fuel power stations, greenhouse gas emissions, and urban air quality.",
+      selfCheck: "Did you explain that photovoltaic cells harness inexhaustible sunlight with zero emissions?",
+      idea: "Photovoltaic systems convert infinite solar radiation into clean electricity without releasing greenhouse gases, dramatically curtailing domestic carbon footprints.",
+      promptInsight: "Solar energy is completely renewable and emission-free during operation, eliminating reliance on polluting coal and gas power plants.",
+      collocations: ["zero emissions", "inexhaustible solar radiation", "carbon footprint reduction"],
+      example: "A typical 5kW rooftop array preventing four to five tonnes of carbon dioxide from entering the atmosphere each year."
     },
     {
       id: "card-2",
       stepNum: 2,
-      badge: "Opinion Side 02 • Human Welfare",
-      title: "Employee Welfare & Community Support",
-      question: "How should corporations treat their workers and the local communities where they operate?",
-      thinkingLens: "Focus on fair living wages, workplace safety, and funding local schools and hospitals.",
-      selfCheck: "Did you emphasize that labor is not a disposable commodity and deserves fair remuneration?",
-      idea: "Companies rely on human labor and public infrastructure; they must reciprocate with living wages, health coverage, and local educational funding.",
-      promptInsight: "Corporations rely on human labor and public infrastructure; they must provide fair remuneration and reinvest in local schools.",
-      collocations: ["fair remuneration", "human dignity", "community reinvestment"],
-      example: "Multinational companies paying above-minimum wages and building vocational training clinics in local towns."
+      badge: "Advantage 02 • Household Economic Relief",
+      title: "Utility Bill Savings & Net Metering",
+      question: "What financial benefits do homeowners experience after adopting solar energy?",
+      thinkingLens: "Consider monthly power bills, inflation of utility tariffs, and selling excess electricity.",
+      selfCheck: "Did you highlight ongoing monthly bill reductions and the potential to earn credits via net metering?",
+      idea: "On-site power generation shields families from escalating commercial electricity prices, reducing utility bills by up to 80% and allowing surplus power sales.",
+      promptInsight: "Once installed, sunlight is free, saving families substantial money over 25–30 years and providing revenue through feed-in tariffs.",
+      collocations: ["utility bill reduction", "net metering credits", "volatile electricity tariffs"],
+      example: "Families in sunny regions receiving monthly utility credits by feeding surplus daytime electricity back into the grid."
     },
     {
       id: "card-3",
       stepNum: 3,
-      badge: "Non-Opinion Side • Concession",
-      title: "The Primacy of Profit Generation",
-      question: "Why is making money an indispensable prerequisite before a business can help society?",
-      thinkingLens: "Consider commercial solvency, bankruptcy prevention, job creation, and tax payments.",
-      selfCheck: "Did you explain that insolvent companies cannot employ staff, pay taxes, or fund charities?",
-      idea: "Profit is the fundamental lifeblood of enterprise; without financial solvency, firms face bankruptcy, triggering mass layoffs and eliminating tax revenues.",
-      promptInsight: "Without profit, businesses go bankrupt, destroying jobs and eliminating the tax revenues that fund public services.",
-      collocations: ["commercial solvency", "financial viability", "corporate taxation"],
-      example: "Small businesses operating on tight margins must prioritize sales simply to meet payroll and avoid closure."
+      badge: "Disadvantage 01 • Financial Barriers",
+      title: "High Upfront Capital Investment",
+      question: "Why is the initial cost of solar energy a major obstacle for ordinary families?",
+      thinkingLens: "Consider purchasing panels, inverters, battery storage units, and professional installation labor.",
+      selfCheck: "Did you explain that the high initial outlay makes solar energy unaffordable for lower-income households?",
+      idea: "Purchasing high-efficiency photovoltaic panels and inverters demands a substantial upfront capital expenditure ($12,000–$20,000) with a multi-year payback period.",
+      promptInsight: "The heavy initial equipment and installation cost creates a steep financial barrier, making solar inaccessible without subsidies or loans.",
+      collocations: ["high capital expenditure", "upfront installation costs", "financial payback period"],
+      example: "Low- and middle-income families unable to afford the initial $15,000 hardware investment despite long-term savings."
     },
     {
       id: "card-4",
       stepNum: 4,
-      badge: "Synthesis & Conclusion",
-      title: "Balancing Profit with Social Purpose",
-      question: "How should an essay conclude by harmonizing profitability with social responsibility?",
-      thinkingLens: "Combine the necessity of financial health with the ethical imperative of community and environmental care.",
-      selfCheck: "Did you sum up both sides and clearly restate your Disagree opinion that commerce's primary duty is economic solvency?",
-      idea: "While businesses must obey statutory environmental codes, their sole core responsibility is economic viability and job creation, leaving public welfare to the state.",
-      promptInsight: "Conclude by acknowledging statutory legal compliance while firmly restating that private firms do not bear social obligations beyond generating profit.",
-      collocations: ["commercial solvency", "corporate taxation", "fiduciary responsibility"],
-      example: "State safety nets financed democratically by corporate income taxes rather than discretionary private corporate charity."
+      badge: "Disadvantage 02 • Intermittency & Storage",
+      title: "Weather Dependency & Nighttime Limitations",
+      question: "What technical challenges arise from the intermittent nature of solar radiation?",
+      thinkingLens: "Think about nighttime hours, overcast skies, winter seasons, and battery degradation.",
+      selfCheck: "Did you mention that solar cannot generate power at night or during heavy cloud cover without expensive batteries?",
+      idea: "Solar power is strictly weather-dependent; output drops drastically during overcast winter periods and ceases at night, requiring backup grid power or costly batteries.",
+      promptInsight: "Because generation varies with weather and stops at night, homes must invest in expensive battery storage or remain tethered to the traditional grid.",
+      collocations: ["weather dependency", "power intermittency", "battery storage expenditure"],
+      example: "Homes in cloudy northern climates experiencing 70% drops in electricity output during winter months."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "It is widely argued that",
-      "I strongly disagree that",
-      "Indispensable prerequisite for solvency",
-      "Statutory regulatory compliance"
+      "On the one hand, a primary advantage of",
+      "On the other hand, the principal drawback of",
+      "Inherent weather dependency and intermittency",
+      "Substantial initial capital expenditure"
     ],
     aTier: [
-      "To begin with",
       "Furthermore",
-      "On the other hand",
+      "Consequently",
+      "Nevertheless",
       "A prime illustration is"
     ],
     bTier: [
       "Additionally",
-      "Consequently",
+      "In contrast",
       "In conclusion",
       "Therefore"
     ]
@@ -878,173 +631,173 @@ export const TASK2_DATA: Task2Data = {
 
   fluidVocab: [
     {
-      word: "Philanthropy",
-      pos: "noun",
-      meaning: "The practice of donating money, time, and resources to advance human welfare.",
-      naturalCollocation: "corporate philanthropy and community development",
-      organicExample: "Corporate philanthropy should not be viewed as mere publicity, but as an ethical obligation to uplift society.",
-      mechanicalPitfall: "Avoid simplistic phrases like 'giving money away'; philanthropy implies structured social enrichment.",
-      examinerInsight: "Demonstrates sophisticated understanding of modern corporate citizenship."
+      word: "Photovoltaic",
+      pos: "adjective",
+      meaning: "Relating to the direct conversion of light into electricity using semiconducting materials.",
+      naturalCollocation: "residential photovoltaic installations",
+      organicExample: "The rapid adoption of residential photovoltaic systems has transformed suburban rooftops into micro-generators.",
+      mechanicalPitfall: "Avoid overusing 'solar stuff'; photovoltaic is the precise academic and technological term.",
+      examinerInsight: "Demonstrates technical and scientific precision rewarded in Band 9 Lexical Resource."
     },
     {
-      word: "Viability",
+      word: "Intermittency",
       pos: "noun",
-      meaning: "The capacity of a business or enterprise to remain solvent, operational, and financially sound.",
-      naturalCollocation: "commercial viability and financial solvency",
-      organicExample: "Maintaining commercial viability is the foundational prerequisite before a company can fund charitable causes.",
-      mechanicalPitfall: "Do not confuse with 'ability'; viability specifically relates to economic survival.",
-      examinerInsight: "Precise business terminology celebrated in Band 9 task response."
+      meaning: "The irregular or fluctuating nature of power generation dependent on ambient weather conditions.",
+      naturalCollocation: "power generation intermittency",
+      organicExample: "Addressing the intermittency of solar energy requires significant investment in domestic battery storage.",
+      mechanicalPitfall: "Do not say 'the stopping and starting of sun'; intermittency captures this phenomenon accurately.",
+      examinerInsight: "Precise energy economics vocabulary signaling advanced band mastery."
     },
     {
-      word: "Stewardship",
+      word: "Decarbonisation",
       pos: "noun",
-      meaning: "The ethical responsibility to manage, oversee, and safeguard shared natural resources.",
-      naturalCollocation: "rigorous environmental stewardship",
-      organicExample: "Industrial manufacturers must demonstrate ecological stewardship by neutralizing factory waste.",
-      mechanicalPitfall: "Avoid 'taking care of nature'; stewardship conveys professional, institutional responsibility.",
-      examinerInsight: "Elevated environmental and economic vocabulary signaling Band 9 Lexical Resource."
+      meaning: "The systemic process of reducing and eliminating carbon emissions from domestic and industrial activities.",
+      naturalCollocation: "accelerating residential decarbonisation",
+      organicExample: "Decentralised household solar power accelerates national decarbonisation goals by replacing coal-fired power.",
+      mechanicalPitfall: "Avoid 'stopping bad gas'; decarbonisation encapsulates policy and environmental strategy.",
+      examinerInsight: "Key environmental policy term highly respected by Cambridge examiners."
     },
     {
-      word: "Exploitation",
+      word: "Autonomy",
       pos: "noun",
-      meaning: "The act of taking unfair advantage of vulnerable workers or environments for financial gain.",
-      naturalCollocation: "exploitation of vulnerable labor",
-      organicExample: "Maximizing short-term profit through the exploitation of factory laborers violates basic human rights.",
-      mechanicalPitfall: "Do not use 'bad treatment'; exploitation identifies systemic unfair enrichment.",
-      examinerInsight: "Directly articulates the ethical critique of uncurbed capitalism."
+      meaning: "Self-reliance and independence from centralised external utility grids.",
+      naturalCollocation: "greater household energy autonomy",
+      organicExample: "Combining solar panels with smart storage batteries affords homeowners complete energy autonomy.",
+      mechanicalPitfall: "Avoid simplistic 'living alone without electric companies'; autonomy conveys self-sufficiency.",
+      examinerInsight: "Sophisticated formal vocabulary applicable to macroeconomic and technological contexts."
     },
     {
-      word: "Remuneration",
+      word: "Expenditure",
       pos: "noun",
-      meaning: "Payment or financial compensation given for employment, labor, or services.",
-      naturalCollocation: "fair and equitable remuneration",
-      organicExample: "Socially responsible firms provide equitable remuneration that comfortably exceeds the local cost of living.",
-      mechanicalPitfall: "Avoid overusing 'salary' or 'pay'; remuneration encompasses comprehensive worker compensation.",
-      examinerInsight: "Formal academic diction favored by Cambridge examiners."
+      meaning: "The spending of substantial financial funds on capital assets or infrastructure.",
+      naturalCollocation: "substantial upfront capital expenditure",
+      organicExample: "The heavy capital expenditure required for solar installation deters many working-class families.",
+      mechanicalPitfall: "Do not overuse 'cost' or 'spending money'; capital expenditure reflects long-term asset acquisition.",
+      examinerInsight: "Formal financial and economic diction expected in top-tier essays."
     },
     {
-      word: "Accountability",
-      pos: "noun",
-      meaning: "The obligation to accept responsibility and answer for the societal consequences of corporate actions.",
-      naturalCollocation: "corporate social and environmental accountability",
-      organicExample: "Statutory regulations are vital to enforce corporate accountability for industrial contamination.",
-      mechanicalPitfall: "Avoid saying 'responsible things'; accountability denotes legal and ethical liability.",
-      examinerInsight: "Key conceptual term in political, legal, and economic discourse."
+      word: "Inexhaustible",
+      pos: "adjective",
+      meaning: "Incapable of being depleted or used up, existing in unlimited quantities.",
+      naturalCollocation: "virtually inexhaustible solar radiation",
+      organicExample: "Solar energy represents an inexhaustible resource that will outlast finite fossil fuel reserves.",
+      mechanicalPitfall: "Avoid 'sun that never dies'; inexhaustible is the standard academic adjective.",
+      examinerInsight: "Elevated stylistic descriptor contrasting renewable resources with finite hydrocarbons."
     }
   ],
 
   consequences: [
     {
       type: "positive",
-      title: "Opinion 01: Environmental Stewardship",
+      title: "Advantage 01: Zero-Emission Electricity",
       category: "standard",
-      desc: "Businesses utilize public natural resources; they bear an ethical duty to reduce greenhouse emissions and invest in clean energy.",
-      example: "Global tech corporations running facilities entirely on renewable solar power.",
-      level: "Core Opinion Pillar",
-      simpleTakeaway: "Businesses must protect the environment since they extract public natural resources.",
-      collocation: "environmental stewardship and emissions reduction"
+      desc: "Harnessing ambient sunlight releases zero greenhouse gases or airborne pollutants during operation.",
+      example: "Rooftop solar systems preventing 4–5 tonnes of carbon emissions per household every year.",
+      level: "Core Advantage",
+      simpleTakeaway: "Solar power produces clean, green electricity without polluting the atmosphere.",
+      collocation: "zero greenhouse emissions"
     },
     {
       type: "positive",
-      title: "Opinion 02: Employee Welfare & Living Wages",
+      title: "Advantage 02: Long-Term Bill Reduction",
       category: "standard",
-      desc: "Employees generate corporate wealth; companies must respect human dignity by providing living wages, health coverage, and safe conditions.",
-      example: "Employers guaranteeing above-minimum living wages and comprehensive family health benefits.",
-      level: "Core Opinion Pillar",
-      simpleTakeaway: "Companies must provide fair wages and healthcare rather than exploiting workers.",
-      collocation: "fair remuneration and worker welfare"
+      desc: "Generating power on-site eliminates expensive monthly utility bills and cushions families against tariff inflation.",
+      example: "Households in sunny regions slashing their annual electricity bills by 60% to 80%.",
+      level: "Core Advantage",
+      simpleTakeaway: "Once installed, sunlight is free, saving families substantial money on electricity.",
+      collocation: "long-term utility bill savings"
     },
     {
       type: "positive",
-      title: "Opinion 03: Community Reinvestment",
+      title: "Advantage 03: Energy Independence & Resilience",
       category: "standard",
-      desc: "Corporations rely on municipal infrastructure and educated citizens, creating a moral duty to fund local schools, clinics, and parks.",
-      example: "Multinational companies funding STEM laboratories in underprivileged local school districts.",
-      level: "Core Opinion Pillar",
-      simpleTakeaway: "Businesses should reinvest a portion of revenue to support local schools and hospitals.",
-      collocation: "local community reinvestment"
+      desc: "Decentralized home power protects residents from municipal grid blackouts caused by severe weather or overloads.",
+      example: "Rural communities sustaining essential refrigeration and lighting during storm-induced grid outages.",
+      level: "Core Advantage",
+      simpleTakeaway: "Homes with solar and batteries maintain power even when the main grid fails.",
+      collocation: "energy autonomy and resilience"
     },
     {
       type: "positive",
-      title: "Opinion 04: Brand Loyalty & Long-Term Longevity",
+      title: "Advantage 04: Net-Metering Financial Credits",
       category: "additional",
-      desc: "Socially conscious consumers and institutional investors increasingly support ethical companies, making CSR a driver of commercial success.",
-      example: "Brands with transparent fair-trade supply chains earning strong customer retention and higher enterprise valuation.",
+      desc: "Homeowners can export excess midday electricity back into the public grid in exchange for utility credits or rebates.",
+      example: "Domestic solar owners receiving credit statements from utility companies for surplus exported power.",
       level: "Strategic Advantage",
-      simpleTakeaway: "Ethical behavior builds lasting customer loyalty and protects brand reputation.",
-      collocation: "sustainable commercial longevity"
+      simpleTakeaway: "Extra electricity produced during the day can be sold back to the power company.",
+      collocation: "net-metering feed-in credits"
     }
   ],
 
   evaluationArguments: [
     {
-      title: "Non-Opinion 01: Financial Solvency & Preventing Bankruptcy",
+      title: "Disadvantage 01: High Upfront Installation Costs",
       category: "standard",
       reason:
-        "Profit generation is the primary prerequisite for corporate survival; without cash flow and net profits, a firm collapses into bankruptcy.",
+        "Purchasing high-efficiency solar panels, power inverters, and hiring licensed electrical technicians demands large upfront capital.",
       development:
-        "An insolvent enterprise cannot employ workers, pay suppliers, or fund philanthropic programs; financial health must precede social commitments.",
+        "The initial outlay often ranges from $12,000 to $22,000, creating an insurmountable barrier for low- and middle-income families.",
       example:
-        "Small businesses operating on narrow profit margins focusing on revenue to cover rent and payroll.",
+        "Working families unable to finance the upfront equipment cost despite potential long-term savings.",
       type: "counterpoint",
-      level: "Core Concession",
-      simpleTakeaway: "Companies must make a profit to stay afloat; bankrupt firms cannot help anyone.",
-      collocation: "commercial solvency and viability"
+      level: "Core Disadvantage",
+      simpleTakeaway: "Solar panels are very expensive to buy and install initially.",
+      collocation: "high upfront capital expenditure"
     },
     {
-      title: "Non-Opinion 02: Job Creation & Economic Security",
+      title: "Disadvantage 02: Weather Intermittency & Night Limitations",
       category: "standard",
       reason:
-        "Profitable enterprises employ millions of citizens, providing stable livelihoods that represent a massive direct contribution to society.",
+        "Solar generation depends completely on the intensity of ambient sunlight, producing zero electricity during nighttime hours.",
       development:
-        "Maintaining profitability protects workers from sudden layoffs and guarantees consistent family incomes during economic downturns.",
+        "Overcast days, persistent cloud cover, and short winter days cause electricity generation to plummet dramatically.",
       example:
-        "Major industrial employers sustaining the economies of entire townships by keeping factories open and payrolls active.",
+        "Northern European homes producing 70% less solar electricity during cloudy winter months.",
       type: "counterpoint",
-      level: "Core Concession",
-      simpleTakeaway: "Profitable businesses support society directly by providing millions of stable jobs.",
-      collocation: "employment creation and job security"
+      level: "Core Disadvantage",
+      simpleTakeaway: "Panels do not generate electricity at night and produce much less on cloudy or winter days.",
+      collocation: "weather dependency and intermittency"
     },
     {
-      title: "Non-Opinion 03: Corporate Tax Revenues for Public Infrastructure",
+      title: "Disadvantage 03: Expensive Battery Storage Replacement",
       category: "standard",
       reason:
-        "Taxes paid on corporate profits fund national public services, including highways, emergency healthcare, and state education.",
+        "To achieve 24/7 reliability, homes must purchase lithium-ion battery banks, which are costly and degrade after 10–12 years.",
       development:
-        "Higher business profits directly expand the public treasury, enabling democratic governments to finance essential social safety nets.",
+        "Adding battery storage adds $7,000 to $10,000 to the total bill, significantly lengthening the financial payback period.",
       example:
-        "Government budgets utilizing corporate tax revenues to build state-of-the-art hospitals and public transit systems.",
+        "Homeowners facing expensive replacement costs when battery storage units lose chemical efficiency after a decade.",
       type: "counterpoint",
-      level: "Core Concession",
-      simpleTakeaway: "Corporate profits generate taxes that governments use to build schools and hospitals.",
-      collocation: "corporate tax contributions"
+      level: "Core Disadvantage",
+      simpleTakeaway: "Batteries to store daytime power are expensive and must be replaced every decade.",
+      collocation: "battery storage expenditure"
     },
     {
-      title: "Non-Opinion 04: Funding Technological Innovation & R&D",
+      title: "Disadvantage 04: Roof Space & Architectural Constraints",
       category: "additional",
       reason:
-        "Retained corporate profits fund expensive research and development that invents green technologies and life-saving medical treatments.",
+        "Solar generation requires ample unshaded roof space with optimal geographical orientation toward the sun.",
       development:
-        "Without substantial profit margins, corporations cannot shoulder the massive financial risks required to pioneer scientific breakthroughs.",
+        "Properties with small, shaded, or fragile roofs—as well as high-density apartments—cannot accommodate functional solar arrays.",
       example:
-        "Biotech and automotive firms investing billions in vaccine research and electric vehicle battery development.",
+        "Apartment dwellers and tenants without private roof access being unable to adopt solar energy.",
       type: "counterpoint",
-      level: "Innovation Concession",
-      simpleTakeaway: "Profits fund the high-risk research needed to develop new medicines and technologies.",
-      collocation: "research and development investment"
+      level: "Structural Constraint",
+      simpleTakeaway: "Many homes do not have large or sunny enough roofs to install panels.",
+      collocation: "roof space and shading constraints"
     }
   ],
 
   facultyAngles: [
     {
-      title: "Business Ethics & Corporate Citizenship (Opinion Perspective)",
+      title: "Environmental Science & Renewable Engineering (Advantages)",
       development:
-        "Analyzes corporate social responsibility (CSR), environmental stewardship, fair worker remuneration, community enrichment, and supply chain transparency."
+        "Analyzes zero-emission power generation, lifecycle decarbonisation, infinite solar radiation, and reduced dependence on polluting fossil fuel power grids."
     },
     {
-      title: "Macroeconomics & Shareholder Theory (Non-Opinion Concession)",
+      title: "Energy Economics & Infrastructure Realities (Disadvantages)",
       development:
-        "Examines Milton Friedman's shareholder theory, commercial solvency, job creation, corporate tax revenue generation, and research & development funding."
+        "Examines high initial capital expenditure, payback periods, solar intermittency, battery chemical storage limitations, and architectural roof constraints."
     }
   ]
 };
