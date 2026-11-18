@@ -369,15 +369,15 @@ In conclusion, household solar energy presents compelling advantages by deliveri
                 </div>
                 <div>
                   <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>English Nuance Lab (Words Often Misunderstood)</strong>
-                  <div style={{ fontSize: "0.78rem", color: "#64748b" }}>New Ep 02: RISE vs. RAISE vs. ARISE • Ep 01: BELOW vs. UNDER vs. UNDERNEATH</div>
+                  <div style={{ fontSize: "0.78rem", color: "#64748b" }}>Complete 5-Episode Series • Ep 01 to Ep 05 • Affect / Effect • Comprise / Compose • Specially / Especially</div>
                 </div>
               </div>
               <span style={{ fontSize: "0.74rem", background: "#dbeafe", color: "#1e40af", fontWeight: 750, padding: "3px 10px", borderRadius: "6px", border: "1px solid #bfdbfe" }}>
-                Classroom Reveal Mode
+                5 Episodes Active
               </span>
             </div>
             <p style={{ fontSize: "0.86rem", color: "#475569", margin: "4px 0 0", lineHeight: 1.5 }}>
-              Interactive SmartBoard lesson: Master critical Task 1 trends and Task 2 transitive traps (Rise vs. Raise vs. Arise), prepositions (Below vs. Under vs. Underneath), teacher diagnostic prompts, and student drills.
+              Interactive SmartBoard lesson: Master classic vocabulary traps including Prepositions (Below/Under), Transitive Verbs (Rise/Raise), Influence (Affect/Effect), Part-Whole (Comprise/Compose), and Custom Purpose (Specially/Especially).
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#2563eb", fontSize: "0.88rem", fontWeight: 750, marginTop: "6px" }}>
               <span>Launch Nuance Lab Page</span>

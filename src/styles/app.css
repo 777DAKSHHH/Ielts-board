@@ -3,6 +3,14 @@
    Solid Opaque Architecture • Tactile Touch Precision • Smartboard Ready
    ========================================================================== */
 
+/* Smartboard 60fps Hardware Acceleration & Low-Latency Touch */
+html, body {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
 .app-stage-container {
   display: flex;
   flex-direction: column;
@@ -11,6 +19,7 @@
   position: relative;
   overflow: hidden;
   background-color: var(--bg-canvas);
+  transform: translateZ(0);
 }
 
 /* Master Header Bar (100% Opaque Solid Surface) */
@@ -356,26 +365,28 @@
   transform: translateY(-1px);
 }
 
-/* Chromatic Glass Card Styling */
+/* Chromatic Glass Card Styling (Hardware Accelerated) */
 .chromatic-glass-card {
-  background: rgba(255, 255, 255, 0.92) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
   box-shadow: 
     0 8px 24px -2px rgba(15, 23, 42, 0.06),
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.95) !important;
+  transform: translateZ(0);
 }
 
 /* Chromatic Glass Badge Tag */
 .chromatic-glass-badge {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(203, 213, 225, 0.8);
   box-shadow: 
     0 2px 6px -1px rgba(15, 23, 42, 0.04),
     inset 0 1px 0.5px 0 rgba(255, 255, 255, 0.9);
+  transform: translateZ(0);
 }
 
 /* Liquid Glass Orb Keyframe Rotations & Pulses */
@@ -394,7 +405,7 @@
     opacity: 0.85;
   }
   50% {
-    transform: scale(1.06);
+    transform: scale(1.04);
     opacity: 1;
   }
 }
@@ -412,9 +423,19 @@
 
 .orb-rotate-anim {
   animation: orbRotateCaustics 20s linear infinite;
+  will-change: transform;
 }
 
 .orb-pulse-anim {
   animation: orbPulseBreathe 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Smartboard 60fps Accessibility & Battery-Friendly Mode */
+@media (prefers-reduced-motion: reduce) {
+  .orb-rotate-anim,
+  .orb-pulse-anim {
+    animation: none !important;
+  }
 }
 

@@ -38,8 +38,8 @@ export const ConfusedWordsPage: React.FC<ConfusedWordsPageProps> = ({
   onNavigateModule,
   returnModule = "task1"
 }) => {
-  // Episode Selection (Defaults to latest Episode 2: Rise vs. Raise vs. Arise)
-  const [selectedEpisodeIndex, setSelectedEpisodeIndex] = useState<number>(1);
+  // Episode Selection (Defaults to newest episode in series)
+  const [selectedEpisodeIndex, setSelectedEpisodeIndex] = useState<number>(CONFUSED_WORDS_EPISODES.length - 1);
   const data = CONFUSED_WORDS_EPISODES[selectedEpisodeIndex] || CONFUSED_WORDS_EPISODES[0];
 
   // Classroom teaching mode: Teacher asks first, then reveals!

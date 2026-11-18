@@ -653,8 +653,966 @@ export const CONFUSED_WORDS_EPISODE_2: ConfusedWordsSeriesData = {
   ]
 };
 
+/* ==========================================================================
+   EPISODE 03: AFFECT vs. EFFECT vs. IMPACT
+   The Action Verb vs. The Noun Outcome vs. The Forceful Collision
+   ========================================================================== */
+export const CONFUSED_WORDS_EPISODE_3: ConfusedWordsSeriesData = {
+  seriesId: "episode-3",
+  episodeNumber: 3,
+  seriesTitle: "English Nuance Lab • Commonly Confused Words",
+  seriesSubtitle: "Master the fundamental divide between action verbs, noun results, and dramatic transformations.",
+  episodeTitle: "Affect vs. Effect vs. Impact",
+  targetWords: ["AFFECT", "EFFECT", "IMPACT"],
+
+  classroomPrompt: {
+    leadQuestion: "Classroom Challenge: Why is 'The policy had a major affect on crime' a Band 5 error, while 'The policy affected crime' is Band 9?",
+    subtext: "Before revealing the linguistic breakdown, challenge your students with these 3 questions to expose the most famous verb-vs-noun trap in the English language.",
+    discussionQuestions: [
+      {
+        id: 1,
+        question: "Can you feel the arrow leaving the bow versus hitting the target? Which one is AFFECT, and which one is EFFECT?",
+        hint: "A is for Action / Arrow (the active verb); E is for End Result / Echo (the noun consequence)."
+      },
+      {
+        id: 2,
+        question: "Did you know that 'effect' CAN be a verb and 'affect' CAN be a noun? When does a high-band academic writer use them?",
+        hint: "To 'effect change' = to bring a reform into existence; psychological 'affect' = visible facial emotion."
+      },
+      {
+        id: 3,
+        question: "When does 'impact' become preferable to 'effect', and why do some examiners warn against overusing 'impact' as a verb?",
+        hint: "Reserve 'impact' for massive, seismic, or explosive disruptions rather than subtle, gradual influences."
+      }
+    ]
+  },
+
+  words: [
+    {
+      word: "AFFECT",
+      pronunciation: "/əˈfekt/",
+      partOfSpeech: "Verb (Action of Influencing)",
+      themeColor: "#2563eb",
+      bgLight: "#eff6ff",
+      borderColor: "#bfdbfe",
+      coreConcept: "To Influence, Alter, or Produce a Change IN Something",
+      visualMetaphor: "The Flying Arrow in Motion",
+      visualMetaphorDetail:
+        "Picture an arrow whistling through the air to hit a target. The arrow is actively doing something to the target. AFFECT is the active verb. It always acts upon an object: 'A affects B'. Whenever you are describing an action that causes a modification, you MUST use AFFECT.",
+      keyRule:
+        "Subject + AFFECT + Object. Active verb meaning 'to influence or produce a change in'. (Rare formal noun: psychological facial display of emotion).",
+      usageDomains: [
+        {
+          domainTitle: "Academic & Environmental Influence",
+          description: "Describing natural phenomena, climates, and ecological shifts.",
+          examples: [
+            "Rising ocean temperatures directly affect coral reef survival and marine biodiversity.",
+            "Deforestation severely affects the hydrological cycle across the Amazon basin."
+          ]
+        },
+        {
+          domainTitle: "Socio-Economic & Policy Impact",
+          description: "Analyzing governmental decisions, taxation, and demographic welfare.",
+          examples: [
+            "Escalating interest rates disproportionately affect younger first-time home buyers.",
+            "Subsidies on green technology positively affect household energy consumption habits."
+          ]
+        },
+        {
+          domainTitle: "Emotional & Psychological Resonance",
+          description: "Touching feelings, inspiring empathy, or inducing stress.",
+          examples: [
+            "The poignant documentary deeply affected audience members and inspired donations.",
+            "Chronic workplace stress adversely affects sleep quality and mental well-being."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Adversely affect",
+          meaning: "To exert a noticeably harmful, disruptive, or detrimental influence."
+        },
+        {
+          phrase: "Directly affect",
+          meaning: "To influence without intermediate intermediaries or buffers."
+        },
+        {
+          phrase: "Flat affect",
+          meaning: "(Psychiatric diagnostic term) A total absence or dampening of emotional facial expression."
+        }
+      ],
+      memoryHack:
+        "Remember the 'A' in AFFECT: 'A' = 'Action / Arrow' (The active verb starting with A).",
+      commonPitfall:
+        "Writing 'It had a big affect on me' ❌. 'Affect' is the action verb, NEVER the noun aftermath!",
+      sampleSentence:
+        "Severe geopolitical turbulence continues to affect international energy markets and commodity pricing."
+    },
+    {
+      word: "EFFECT",
+      pronunciation: "/ɪˈfekt/",
+      partOfSpeech: "Noun (The Consequence, Result or Echo)",
+      themeColor: "#059669",
+      bgLight: "#ecfdf5",
+      borderColor: "#a7f3d0",
+      coreConcept: "The Result, Consequence, Outcome, or Echo of an Action",
+      visualMetaphor: "The Target Dent & Water Ripples",
+      visualMetaphorDetail:
+        "Picture the dent left in the shield after the arrow strikes it, or the concentric ripples spreading outward in a pond after a pebble drops. EFFECT is the NOUN. It is the tangible aftermath that exists because an action took place. You feel an effect, measure an effect, or observe an effect.",
+      keyRule:
+        "Noun meaning 'a result or consequence'. (Rare formal academic verb: 'to effect change' = to bring about or accomplish a systemic reform).",
+      usageDomains: [
+        {
+          domainTitle: "Scientific & Climatological Phenomena",
+          description: "Natural laws, scientific reactions, and atmospheric outcomes.",
+          examples: [
+            "The greenhouse effect traps solar radiation within the troposphere, warming the planet.",
+            "Researchers evaluated the therapeutic effects of the clinical trial over six months."
+          ]
+        },
+        {
+          domainTitle: "Secondary Consequences & Chain Reactions",
+          description: "Systemic aftermath, collateral results, and economic repercussions.",
+          examples: [
+            "The ripple effects of the microchip shortage paralyzed automobile production lines.",
+            "Excessive screen usage produces detrimental side effects on adolescent attention spans."
+          ]
+        },
+        {
+          domainTitle: "Legal & Regulatory Operational Status",
+          description: "Laws, treaties, or mandates officially becoming active and enforceable.",
+          examples: [
+            "The revised municipal building regulations will come into effect next January.",
+            "The carbon taxation legislation remains in full legal effect across member states."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Take effect",
+          meaning: "To become legally operational, enforceable, or biochemically active."
+        },
+        {
+          phrase: "In effect",
+          meaning: "For all practical purposes; virtually or in reality."
+        },
+        {
+          phrase: "To that effect",
+          meaning: "Indicating that the general meaning or message was similar."
+        }
+      ],
+      memoryHack:
+        "Remember the 'E' in EFFECT: 'E' = 'End Result / Echo / Event' (The noun outcome starting with E).",
+      commonPitfall:
+        "Writing 'Smoking effects your health' ❌. (Must be: 'Smoking affects your health' or 'Smoking has adverse effects on your health').",
+      sampleSentence:
+        "Urban green corridors produce a measurable cooling effect, counteracting the heat island phenomenon."
+    },
+    {
+      word: "IMPACT",
+      pronunciation: "Noun: /ˈɪm.pækt/ • Verb: /ɪmˈpækt/",
+      partOfSpeech: "Noun & Verb (Forceful Collision or Seismic Consequence)",
+      themeColor: "#d97706",
+      bgLight: "#fffbeb",
+      borderColor: "#fde68a",
+      coreConcept: "A Powerful Physical Collision, or a Striking, High-Magnitude Transformation",
+      visualMetaphor: "The Meteorite Crater & Seismic Wave",
+      visualMetaphorDetail:
+        "Picture a massive meteorite slamming into the earth, carving a vast crater and sending shockwaves for hundreds of kilometers. Unlike a gentle or subtle 'effect', an IMPACT represents dramatic weight, seismic transformation, or physical collision. In IELTS essays, reserve IMPACT for changes that are profound, transformative, or disruptive.",
+      keyRule:
+        "Noun: 'have an impact on...' / Verb: 'impact...'. Best reserved for high-magnitude, transformative shifts rather than minor variations.",
+      usageDomains: [
+        {
+          domainTitle: "Transformative Technological Shifts",
+          description: "Revolutionary breakthroughs that fundamentally disrupt society or industry.",
+          examples: [
+            "The proliferation of artificial intelligence has had a transformative impact on education.",
+            "Mobile internet connectivity made an indelible impact on financial inclusion in rural Africa."
+          ]
+        },
+        {
+          domainTitle: "Physical Collisions & Ballistics",
+          description: "Heavy kinetic forces, crashes, and structural shock absorption.",
+          examples: [
+            "Modern vehicle chassis are designed to absorb the crushing impact of a head-on collision.",
+            "Seismic engineers installed hydraulic dampers to lessen the impact of earthquake tremors."
+          ]
+        },
+        {
+          domainTitle: "High-Stakes Ecological Disruption",
+          description: "Large-scale habitat destruction, global warming, and environmental audits.",
+          examples: [
+            "Commercial trawling leaves an catastrophic impact on seabed coral habitats.",
+            "Developers must complete a thorough environmental impact assessment before breaking ground."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Cushion the impact",
+          meaning: "To soften or mitigate the painful blow of a financial or emotional shock."
+        },
+        {
+          phrase: "Environmental impact assessment",
+          meaning: "A rigorous formal survey measuring ecological disruption prior to major construction."
+        },
+        {
+          phrase: "High-impact initiative",
+          meaning: "A targeted strategy engineered to generate extraordinary, widespread results."
+        }
+      ],
+      memoryHack:
+        "IMPACT sounds like 'Compact / Crash' = High-voltage force, heavy collision, and seismic change.",
+      commonPitfall:
+        "Overusing 'impacted' for trivial everyday things: 'The rain impacted my morning walk' (Too dramatic! Say 'affected my walk').",
+      sampleSentence:
+        "Decentralized solar installations exert a profound positive impact on rural electrification and energy equity."
+    }
+  ],
+
+  matrixComparison: [
+    {
+      feature: "Grammatical Part of Speech",
+      wordValues: {
+        AFFECT: "Verb (Action: to produce a change or influence)",
+        EFFECT: "Noun (Result: the outcome or consequence of an action)",
+        IMPACT: "Noun & Verb (Forceful collision or profound disruption)"
+      }
+    },
+    {
+      feature: "Physical Visual Metaphor",
+      wordValues: {
+        AFFECT: "The flying arrow whistling toward the target (Action)",
+        EFFECT: "The dent in the shield / ripples in the pond (Result)",
+        IMPACT: "The meteorite crater / seismic shockwave (Force)"
+      }
+    },
+    {
+      feature: "Relative Scale of Intensity",
+      wordValues: {
+        AFFECT: "Standard neutral influence (can be subtle, mild, or strong)",
+        EFFECT: "Standard outcome or measured result (neutral)",
+        IMPACT: "High-magnitude, striking, or transformative disruption"
+      }
+    },
+    {
+      feature: "Standard IELTS Collocations",
+      wordValues: {
+        AFFECT: "adversely affect, directly affect, disproportionately affect",
+        EFFECT: "greenhouse effect, take effect, side effect, domino effect",
+        IMPACT: "profound impact, environmental impact, cushion the impact"
+      }
+    },
+    {
+      feature: "Fatal Band 5 Blunder",
+      wordValues: {
+        AFFECT: "Using as a noun: 'It had a bad affect' ❌ (Must be 'effect')",
+        EFFECT: "Using as a verb: 'It effected my score' ❌ (Must be 'affected')",
+        IMPACT: "Overdramatizing tiny daily matters: 'The soup impacted me' ❌"
+      }
+    }
+  ],
+
+  practiceDrills: [
+    {
+      id: 1,
+      sentence: "Prolonged atmospheric exposure to microplastics can severely _____ human metabolic and endocrine health.",
+      blankWord: "affect",
+      options: ["affect", "effect", "impact"],
+      explanation:
+        "Correct! We need the active verb 'affect' because microplastics are performing the action of harming human health.",
+      ruleTag: "Action Verb (Influence)"
+    },
+    {
+      id: 2,
+      sentence: "The newly ratified international carbon tariff treaty will officially come into _____ on the first of January.",
+      blankWord: "effect",
+      options: ["affect", "effect", "impact"],
+      explanation:
+        "Correct! 'Come into effect' is a formal idiomatic collocation where 'effect' serves as the noun meaning legal operation.",
+      ruleTag: "Legal Operation Noun"
+    },
+    {
+      id: 3,
+      sentence: "The sudden eruption of the underwater volcano had an explosive _____ on trans-Pacific maritime shipping routes.",
+      blankWord: "impact",
+      options: ["affect", "effect", "impact"],
+      explanation:
+        "Correct! 'Impact' conveys the dramatic, seismic, and high-magnitude disruption caused by the natural disaster.",
+      ruleTag: "High-Magnitude Disruption"
+    },
+    {
+      id: 4,
+      sentence: "Educational researchers are striving to determine whether mandatory smartphone bans produce any measurable _____ on exam performance.",
+      blankWord: "effect",
+      options: ["affect", "effect", "impact"],
+      explanation:
+        "Correct! We need the noun 'effect' modified by 'any measurable' to denote the tangible outcome or result.",
+      ruleTag: "Measurable Outcome Noun"
+    },
+    {
+      id: 5,
+      sentence: "Unseasonal spring frosts can disastrously _____ stone fruit orchards across the agricultural heartland.",
+      blankWord: "affect",
+      options: ["affect", "effect", "impact"],
+      explanation:
+        "Correct! 'Disastrously affect' uses the active verb following the modal auxiliary 'can'.",
+      ruleTag: "Active Modal Verb"
+    },
+    {
+      id: 6,
+      sentence: "Modern reinforced concrete sea walls are engineered specifically to withstand the violent physical _____ of typhoon waves.",
+      blankWord: "impact",
+      options: ["affect", "effect", "impact"],
+      explanation:
+        "Correct! 'Physical impact' refers to the violent, kinetic collision force exerted by ocean storm surges.",
+      ruleTag: "Physical Kinetic Force"
+    }
+  ]
+};
+
+/* ==========================================================================
+   EPISODE 04: COMPRISE vs. COMPOSE vs. CONSIST OF
+   The Parts vs. The Whole Architectural Puzzle in IELTS Writing
+   ========================================================================== */
+export const CONFUSED_WORDS_EPISODE_4: ConfusedWordsSeriesData = {
+  seriesId: "episode-4",
+  episodeNumber: 4,
+  seriesTitle: "English Nuance Lab • Commonly Confused Words",
+  seriesSubtitle: "Master the architectural logic of parts versus wholes in Task 1 data & Task 2 structure.",
+  episodeTitle: "Comprise vs. Compose vs. Consist of",
+  targetWords: ["COMPRISE", "COMPOSE", "CONSIST OF"],
+
+  classroomPrompt: {
+    leadQuestion: "Classroom Challenge: Why is 'The United Kingdom comprises of four countries' a grammatical error in Academic English?",
+    subtext: "Before revealing the linguistic breakdown, challenge your students with these 3 questions to untangle the classic 'parts vs. whole' architecture.",
+    discussionQuestions: [
+      {
+        id: 1,
+        question: "Which word starts with the PARTS and builds up to the WHOLE, and which starts with the WHOLE containing the parts?",
+        hint: "The parts compose the whole; the whole comprises the parts."
+      },
+      {
+        id: 2,
+        question: "Can you EVER use 'consist' in the passive voice? Why is 'The solar panel is consisted of silicon cells' a fatal error?",
+        hint: "'Consist' is strictly intransitive! It can never take the passive voice ('is consisted of' ❌)."
+      },
+      {
+        id: 3,
+        question: "Why do native speakers and editors argue endlessly over 'comprise of'? What is the strict Band 9 rule?",
+        hint: "'Comprise' already means 'to embrace or contain'. Adding 'of' is redundant in active voice!"
+      }
+    ]
+  },
+
+  words: [
+    {
+      word: "COMPRISE",
+      pronunciation: "/kəmˈpraɪz/",
+      partOfSpeech: "Transitive Verb (The Whole Contains the Parts)",
+      themeColor: "#2563eb",
+      bgLight: "#eff6ff",
+      borderColor: "#bfdbfe",
+      coreConcept: "The Whole Contains, Includes, or Embraces the Constituent Parts",
+      visualMetaphor: "The Shipping Container Holding Cargo",
+      visualMetaphorDetail:
+        "Picture a massive intermodal shipping container. The container (the whole) COMPRISES all fifty crates inside it. You say: 'The container comprises fifty crates'. NO 'OF'! The whole embraces the parts. In formal academic English, active 'comprise' NEVER takes the preposition 'of'.",
+      keyRule:
+        "The Whole + COMPRISE + The Parts. In active voice, NEVER add 'of' (e.g. 'The collection comprises 500 artifacts', NOT 'comprises of').",
+      usageDomains: [
+        {
+          domainTitle: "IELTS Task 1 Data Charts",
+          description: "Describing pie charts, segmented bar charts, and data groupings.",
+          examples: [
+            "The regional transport network comprises four primary suburban railway lines.",
+            "The surveyed population comprises three distinct demographic cohorts."
+          ]
+        },
+        {
+          domainTitle: "National & Political Jurisdictions",
+          description: "Territorial boundaries, provinces, cantons, and federations.",
+          examples: [
+            "The Swiss Confederation comprises twenty-six sovereign cantons.",
+            "The European economic zone comprises both EU member states and EEA signatories."
+          ]
+        },
+        {
+          domainTitle: "Institutional & Board Membership",
+          description: "Committees, advisory councils, and specialized research bodies.",
+          examples: [
+            "The ethics committee comprises senior jurists, bioethicists, and patient advocates.",
+            "The doctoral research consortium comprises scholars from nine international universities."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Comprise entirely",
+          meaning: "To be constituted exclusively of the specified components without outside elements."
+        },
+        {
+          phrase: "Substantially comprise",
+          meaning: "To have a predominant majority of its makeup formed by certain materials."
+        },
+        {
+          phrase: "Comprise diverse elements",
+          meaning: "To embrace a wide, varied spectrum of constituent items."
+        }
+      ],
+      memoryHack:
+        "COMPRISE = 'COMPass / COMPrehend / Container' (The big outer container holds the parts).",
+      commonPitfall:
+        "Writing 'The committee comprises of five members' ❌. Drop the 'of'! ('The committee comprises five members').",
+      sampleSentence:
+        "The IELTS General Training examination comprises three distinct sections evaluating practical linguistic competence."
+    },
+    {
+      word: "COMPOSE",
+      pronunciation: "/kəmˈpəʊz/",
+      partOfSpeech: "Verb (Parts Build the Whole)",
+      themeColor: "#059669",
+      bgLight: "#ecfdf5",
+      borderColor: "#a7f3d0",
+      coreConcept: "The Parts Make Up, Form, or Constitute the Whole Entity",
+      visualMetaphor: "Lego Bricks Snapping Together",
+      visualMetaphorDetail:
+        "Picture individual Lego bricks snapping together to construct a fortress. The individual bricks (the parts) COMPOSE the fortress. Or in the passive: 'The fortress IS COMPOSED OF bricks'. When you start with the pieces that form the larger entity, you use COMPOSE.",
+      keyRule:
+        "Parts + COMPOSE + Whole (Active) OR Whole + IS COMPOSED OF + Parts (Passive with 'of').",
+      usageDomains: [
+        {
+          domainTitle: "Chemical & Material Composition",
+          description: "Molecules, elements, alloys, and composite hardware.",
+          examples: [
+            "Silicon wafers and silver conductive paste compose the core photovoltaic cell.",
+            "The outer fuselage is composed of lightweight carbon-fiber composites."
+          ]
+        },
+        {
+          domainTitle: "Demographic Proportions (Task 1)",
+          description: "Reporting percentages, workforce shares, and demographic slices.",
+          examples: [
+            "Women currently compose over forty percent of the engineering faculty.",
+            "Service sector employment is composed primarily of retail and hospitality jobs."
+          ]
+        },
+        {
+          domainTitle: "Artistic, Literary & Musical Creation",
+          description: "Writing symphonies, crafting poetry, or drafting essays.",
+          examples: [
+            "Ludwig van Beethoven composed his Ninth Symphony while profoundly deaf.",
+            "Candidates must carefully compose a coherent introductory paragraph under time pressure."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Compose yourself",
+          meaning: "To regain emotional equilibrium, calm one's nerves, and steady one's composure."
+        },
+        {
+          phrase: "Composed of",
+          meaning: "Formed or constituted by specified individual ingredients or members."
+        },
+        {
+          phrase: "Carefully composed",
+          meaning: "Crafted with deliberate stylistic intention, balance, and precision."
+        }
+      ],
+      memoryHack:
+        "COMPOSE = 'CONSTRUCT / Put together' (The building blocks assemble the castle).",
+      commonPitfall:
+        "Forgetting the passive auxiliary: Writing 'The essay composed of four paragraphs' ❌ (Must be: 'is composed of').",
+      sampleSentence:
+        "Lithium, nickel, and cobalt compose the rechargeable battery cells utilized in modern electric automobiles."
+    },
+    {
+      word: "CONSIST OF",
+      pronunciation: "/kənˈsɪst ɒv/",
+      partOfSpeech: "Intransitive Verb (Always Paired with 'of')",
+      themeColor: "#d97706",
+      bgLight: "#fffbeb",
+      borderColor: "#fde68a",
+      coreConcept: "To Have Something as Its Ingredients, Constituents, or Fundamental Character",
+      visualMetaphor: "The Recipe List on a Glass Jar",
+      visualMetaphorDetail:
+        "Picture a glass jar with an ingredients label listing flour, sugar, and cocoa. The recipe CONSISTS OF these items. Notice two non-negotiable rules: it ALWAYS requires the preposition 'of', but it can NEVER be put into the passive voice ('is consisted of' does not exist in English!).",
+      keyRule:
+        "The Whole + CONSISTS OF + The Parts. Always needs 'of'. NEVER passive (No 'is consisted of'!).",
+      usageDomains: [
+        {
+          domainTitle: "Structural Essay & Exam Architecture",
+          description: "Outlining document sections, stages, and curriculum breakdowns.",
+          examples: [
+            "A Band 9 IELTS essay consists of four systematically sequenced paragraphs.",
+            "The residential solar setup consists of rooftop panels, an inverter, and a backup battery."
+          ]
+        },
+        {
+          domainTitle: "Anatomy & Biological Structures",
+          description: "Organs, biological systems, and anatomical structures.",
+          examples: [
+            "The adult human skeleton consists of two hundred and six distinct bones.",
+            "The nervous system consists of the brain, spinal cord, and peripheral nerves."
+          ]
+        },
+        {
+          domainTitle: "Diets, Menus & Formulations",
+          description: "Culinary recipes, nutritional regimes, and dietary components.",
+          examples: [
+            "The traditional Mediterranean diet consists largely of olive oil, legumes, and fresh seafood.",
+            "The atmospheric air mixture consists predominantly of nitrogen and oxygen."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Consist in",
+          meaning: "(Special formal academic idiom) To have as an essential, inherent, or defining truth ('Happiness consists in contentment')."
+        },
+        {
+          phrase: "Consist largely of",
+          meaning: "To have the overwhelming majority of its substance formed by specified ingredients."
+        },
+        {
+          phrase: "Consist essentially of",
+          meaning: "To contain at its core only the vital elements mentioned."
+        }
+      ],
+      memoryHack:
+        "CONSIST OF = 'CONtains LIST OF' (The jar lists its contents with OF).",
+      commonPitfall:
+        "Writing 'The solar array is consisted of twenty panels' ❌. (Must be: 'The solar array consists of twenty panels').",
+      sampleSentence:
+        "The comprehensive renewable energy package consists of solar generation, heat pumps, and triple-glazed insulation."
+    }
+  ],
+
+  matrixComparison: [
+    {
+      feature: "Structural Direction",
+      wordValues: {
+        COMPRISE: "Whole → Parts: The whole comprises the constituent parts",
+        COMPOSE: "Parts → Whole: The parts compose the whole (Active)",
+        "CONSIST OF": "Whole → Parts: The whole consists of the constituent parts"
+      }
+    },
+    {
+      feature: "Preposition 'of' Requirement",
+      wordValues: {
+        COMPRISE: "NEVER takes 'of' in active voice! (No 'comprises of')",
+        COMPOSE: "Takes 'of' ONLY in passive construction: 'is composed of'",
+        "CONSIST OF": "ALWAYS mandatory: 'consists of' (never bare 'consists')"
+      }
+    },
+    {
+      feature: "Passive Voice Permitted?",
+      wordValues: {
+        COMPRISE: "Disputed in formal editing (Prefer active 'comprises')",
+        COMPOSE: "Standard academic norm: 'is composed of' ✓",
+        "CONSIST OF": "STRICTLY IMPOSSIBLE! ❌ Never write 'is consisted of'"
+      }
+    },
+    {
+      feature: "Task 1 Line / Pie Chart Model",
+      wordValues: {
+        COMPRISE: "“The pie chart comprises five primary expenditure categories.”",
+        COMPOSE: "“Manufacturing and logistics compose over 50% of the bar chart.”",
+        "CONSIST OF": "“The household budget consists of housing, transport, and food.”"
+      }
+    },
+    {
+      feature: "Critical Pitfall to Avoid",
+      wordValues: {
+        COMPRISE: "Writing 'comprises of' ❌ (redundant preposition)",
+        COMPOSE: "Omitting auxiliary 'is' in passive: 'the team composed of' ❌",
+        "CONSIST OF": "Turning into passive: 'the system is consisted of' ❌"
+      }
+    }
+  ],
+
+  practiceDrills: [
+    {
+      id: 1,
+      sentence: "The United Nations Security Council currently _____ five permanent members and ten rotating non-permanent members.",
+      blankWord: "comprises",
+      options: ["comprises", "composes", "consists of"],
+      explanation:
+        "Correct! 'The Council' is the whole entity containing the parts without needing the preposition 'of'.",
+      ruleTag: "Whole Contains Parts (No 'of')"
+    },
+    {
+      id: 2,
+      sentence: "Atmospheric dry air _____ approximately 78% nitrogen, 21% oxygen, and trace noble gases.",
+      blankWord: "consists of",
+      options: ["comprises", "composes", "consists of"],
+      explanation:
+        "Correct! 'Consists of' naturally specifies the constituent recipe ingredients of the physical gas mixture.",
+      ruleTag: "Mixture Ingredients (Always 'of')"
+    },
+    {
+      id: 3,
+      sentence: "Advanced aerospace fuselages are predominantly _____ ultra-lightweight titanium and carbon composites.",
+      blankWord: "composed of",
+      options: ["comprised", "composed of", "consisted of"],
+      explanation:
+        "Correct! Passive 'are composed of' is the grammatical standard for material structure.",
+      ruleTag: "Passive Material Composition"
+    },
+    {
+      id: 4,
+      sentence: "Skilled blue-collar artisans _____ the predominant share of the regional industrial workforce.",
+      blankWord: "compose",
+      options: ["comprise", "compose", "consist of"],
+      explanation:
+        "Correct! The parts (artisans) build or make up the whole (the workforce) in active voice.",
+      ruleTag: "Parts Build Whole (Active)"
+    },
+    {
+      id: 5,
+      sentence: "The complete Task 2 preparation curriculum _____ intensive lexis, grammar checkpoints, and full-length model essays.",
+      blankWord: "consists of",
+      options: ["comprises of", "composed", "consists of"],
+      explanation:
+        "Correct! 'Consists of' is standard; 'comprises of' is grammatically incorrect in academic prose.",
+      ruleTag: "Curriculum Contents"
+    },
+    {
+      id: 6,
+      sentence: "The newly inaugurated medical research campus _____ four specialized surgical laboratories and an oncology ward.",
+      blankWord: "comprises",
+      options: ["comprises", "composes", "is consisted of"],
+      explanation:
+        "Correct! 'The campus' (the whole) comprises the four labs and oncology ward without 'of'.",
+      ruleTag: "Whole Embraces Facilities"
+    }
+  ]
+};
+
+/* ==========================================================================
+   EPISODE 05: SPECIALLY vs. ESPECIALLY vs. PARTICULARLY
+   Bespoke Custom Crafting vs. Category Spotlighting vs. Academic Emphasis
+   ========================================================================== */
+export const CONFUSED_WORDS_EPISODE_5: ConfusedWordsSeriesData = {
+  seriesId: "episode-5",
+  episodeNumber: 5,
+  seriesTitle: "English Nuance Lab • Commonly Confused Words",
+  seriesSubtitle: "Master bespoke custom purpose versus spotlight emphasis in advanced writing & speaking.",
+  episodeTitle: "Specially vs. Especially vs. Particularly",
+  targetWords: ["SPECIALLY", "ESPECIALLY", "PARTICULARLY"],
+
+  classroomPrompt: {
+    leadQuestion: "Classroom Challenge: Why is 'This wheelchair was especially built for mountain trails' a subtle lexical error?",
+    subtext: "Before revealing the linguistic breakdown, challenge your students with these 3 questions to master the bespoke purpose vs spotlight emphasis trap.",
+    discussionQuestions: [
+      {
+        id: 1,
+        question: "Which one means 'custom-tailored for a specific individual purpose', and which means 'above all others'?",
+        hint: "Specially = Specific bespoke design; Especially = Exceptional spotlight."
+      },
+      {
+        id: 2,
+        question: "Can you spot the difference: 'I love all tropical fruit, especially mangoes' vs 'This mango dessert was specially prepared for the VIP'?",
+        hint: "One singles out a favorite item; the other describes custom culinary preparation."
+      },
+      {
+        id: 3,
+        question: "When is 'Particularly' the ideal academic substitute for 'Especially', and when can it be used as a sentence adverb?",
+        hint: "'Particularly in rural areas...' / 'She was not particularly keen on the proposal.'"
+      }
+    ]
+  },
+
+  words: [
+    {
+      word: "SPECIALLY",
+      pronunciation: "/ˈspeʃ.əl.i/",
+      partOfSpeech: "Adverb (Bespoke Purpose & Custom Creation)",
+      themeColor: "#2563eb",
+      bgLight: "#eff6ff",
+      borderColor: "#bfdbfe",
+      coreConcept: "For a Specific Purpose, Custom-Built, Tailor-Made, or Exclusively Designed",
+      visualMetaphor: "The Savile Row Tailor's Measuring Tape",
+      visualMetaphorDetail:
+        "Picture a master tailor cutting bespoke fabric measured precisely for one person, or an engineer crafting a custom tool for a specific task. When something is created, trained, adapted, or designed for one designated function, you MUST use SPECIALLY.",
+      keyRule:
+        "Used with past participles (specially designed, specially built, specially trained, specially commissioned) to denote custom bespoke purpose.",
+      usageDomains: [
+        {
+          domainTitle: "Custom Hardware & Engineering",
+          description: "Equipment, machinery, or architecture built for a designated purpose.",
+          examples: [
+            "The lunar rover was specially designed to navigate powdery extraterrestrial regolith.",
+            "Ramps were specially constructed to allow wheelchair access into the historical auditorium."
+          ]
+        },
+        {
+          domainTitle: "Specialized Professional Training",
+          description: "Personnel, service dogs, or teams prepared for specific crises.",
+          examples: [
+            "The search-and-rescue team is specially trained for sub-zero alpine operations.",
+            "These medical detection dogs are specially conditioned to identify diabetic fluctuations."
+          ]
+        },
+        {
+          domainTitle: "Dedicated Provisions & Formulations",
+          description: "Recipes, medicines, and curricula engineered for unique audiences.",
+          examples: [
+            "A quiet contemplation room was specially provided for neurodivergent students.",
+            "Modern solar inverters use specially formulated heat-dissipation silicon gels."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Specially crafted",
+          meaning: "Made with bespoke artisanal skill for a single designated recipient or task."
+        },
+        {
+          phrase: "Specially adapted",
+          meaning: "Modified mechanically or biologically to suit extreme environmental constraints."
+        },
+        {
+          phrase: "Specially commissioned",
+          meaning: "Formally contracted by an institution to produce a unique piece of work."
+        }
+      ],
+      memoryHack:
+        "SPECIALLY starts with 'SPEC' = 'SPECific purpose / SPECification' (Bespoke custom build).",
+      commonPitfall:
+        "Writing 'A suit especially tailored for the wedding' ❌. Tailoring is a custom bespoke build (SPECIALLY!).",
+      sampleSentence:
+        "Modern electric vehicles utilize specially formulated tire compounds to handle heavier battery weights."
+    },
+    {
+      word: "ESPECIALLY",
+      pronunciation: "/ɪˈspeʃ.əl.i/",
+      partOfSpeech: "Adverb (Spotlight Emphasis & Superlative Degree)",
+      themeColor: "#059669",
+      bgLight: "#ecfdf5",
+      borderColor: "#a7f3d0",
+      coreConcept: "Particularly, Above All Others, To an Exceptional Extent, or In Particular",
+      visualMetaphor: "The Stage Spotlight on the Lead Actor",
+      visualMetaphorDetail:
+        "Picture a theatre stage where five actors are performing, but a bright golden spotlight illuminates one person above the rest. ESPECIALLY singles out one standout member from a wider category. It answers: 'Which one in particular?'.",
+      keyRule:
+        "Used to single out one person, item, or circumstance above all others ('in particular'). Also intensifies adjectives ('especially difficult').",
+      usageDomains: [
+        {
+          domainTitle: "Singling Out from Categories",
+          description: "Highlighting a prime example from a wider demographic or geographical group.",
+          examples: [
+            "Air pollution plagues major metropolises, especially during stifling summer heatwaves.",
+            "Household debt has surged rapidly, especially among younger families with mortgages."
+          ]
+        },
+        {
+          domainTitle: "Intensifying Adjectives & Conditions",
+          description: "Denoting an exceptional degree of difficulty, importance, or urgency.",
+          examples: [
+            "Writing Task 2 essays under strict exam conditions is especially challenging for ESL learners.",
+            "Early morning commutes are especially treacherous following overnight freezing rain."
+          ]
+        },
+        {
+          domainTitle: "Target Policy Beneficiaries",
+          description: "Highlighting demographic groups most in need of governmental assistance.",
+          examples: [
+            "Subsidies for residential solar are imperative, especially for households in rural agrarian regions.",
+            "Preventative healthcare outreach is especially vital for marginalized immigrant communities."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Especially true",
+          meaning: "Applicable to an extraordinarily high or undeniable degree in this instance."
+        },
+        {
+          phrase: "Especially notable",
+          meaning: "Deserving prominent, exceptional attention or recognition above peers."
+        },
+        {
+          phrase: "Especially vulnerable",
+          meaning: "Exposed to heightened risk or acute danger compared to the general baseline."
+        }
+      ],
+      memoryHack:
+        "ESPECIALLY starts with 'E' = 'EXCEPTIONAL / EXTRA spotlight' (Singling out from the crowd).",
+      commonPitfall:
+        "Starting a standalone sentence with 'Especially, ...' ❌. (In formal academic English, write 'In particular, ...').",
+      sampleSentence:
+        "Transitioning to green energy infrastructure is critical, especially for industrial cities dependent on coal."
+    },
+    {
+      word: "PARTICULARLY",
+      pronunciation: "/pəˈtɪk.jə.lə.li/",
+      partOfSpeech: "Adverb (Academic Precision & Notable Degree)",
+      themeColor: "#d97706",
+      bgLight: "#fffbeb",
+      borderColor: "#fde68a",
+      coreConcept: "Specifically, Unusually, or With Distinct Academic Focus",
+      visualMetaphor: "The Scientist's Magnifying Glass",
+      visualMetaphorDetail:
+        "Picture a scientist holding a magnifying glass over a microscope slide, scrutinizing one specific cell with focused precision. PARTICULARLY is the elevated, formal academic counterpart to 'especially'. It also functions naturally in negative qualifications ('not particularly keen').",
+      keyRule:
+        "Formal academic adverb functioning both to intensify ('particularly acute') and to modify negative states ('not particularly effective').",
+      usageDomains: [
+        {
+          domainTitle: "Formal Academic Stance",
+          description: "Writing formal essays, dissertations, and research evaluations.",
+          examples: [
+            "The economic fallout was particularly acute among small and medium-sized enterprises.",
+            "The historical correlation between literacy rates and economic growth is particularly pronounced."
+          ]
+        },
+        {
+          domainTitle: "Negative Qualifications & Understatement",
+          description: "Expressing polite restraint or modest enthusiasm.",
+          examples: [
+            "The initial prototype was not particularly durable under extreme weather trials.",
+            "The municipal council was not particularly receptive to the proposed commercial rezoning."
+          ]
+        },
+        {
+          domainTitle: "Prepositional Geographical Scopes",
+          description: "Targeting specific regions, demographics, or sectors in academic analyses.",
+          examples: [
+            "Particularly in developing economies, infrastructure bottlenecks impede solar adoption.",
+            "Youth unemployment remains high, particularly among humanities and liberal arts graduates."
+          ]
+        }
+      ],
+      abstractIdioms: [
+        {
+          phrase: "Particularly noteworthy",
+          meaning: "Deserving explicit academic citation and critical scholarly analysis."
+        },
+        {
+          phrase: "Not particularly keen",
+          meaning: "A polite academic understatement meaning distinctly unenthusiastic or skeptical."
+        },
+        {
+          phrase: "Particularly pronounced",
+          meaning: "Noticeably visible, prominent, or distinct in a statistical distribution."
+        }
+      ],
+      memoryHack:
+        "PARTICULARLY = 'PARTICULAR / Precise microscope' (Formal scholarly focus).",
+      commonPitfall:
+        "Misspelling or slurring syllables: 'particly' ❌. Pronounce all five syllables: /pə-TIK-yuh-luh-lee/.",
+      sampleSentence:
+        "The disparity between rural and urban educational funding is particularly glaring in remote mountain provinces."
+    }
+  ],
+
+  matrixComparison: [
+    {
+      feature: "Core Functional Purpose",
+      wordValues: {
+        SPECIALLY: "Bespoke custom creation for a specific single purpose",
+        ESPECIALLY: "Singling out one item from a group / intense degree",
+        PARTICULARLY: "Formal academic focus or notable specific degree"
+      }
+    },
+    {
+      feature: "Typical Collocations",
+      wordValues: {
+        SPECIALLY: "specially designed, specially trained, specially formulated",
+        ESPECIALLY: "especially important, especially true, especially vulnerable",
+        PARTICULARLY: "particularly acute, particularly pronounced, not particularly"
+      }
+    },
+    {
+      feature: "Means 'Custom-Built / Tailor-Made'?",
+      wordValues: {
+        SPECIALLY: "YES! 100% (e.g. 'specially adapted wheelchair')",
+        ESPECIALLY: "NO! ❌ (Never use for custom tailoring/building)",
+        PARTICULARLY: "NO! ❌ (Never use for custom tailoring/building)"
+      }
+    },
+    {
+      feature: "Works in Negative 'Not Very' Contexts?",
+      wordValues: {
+        SPECIALLY: "NO ❌ (Never 'not specially keen')",
+        ESPECIALLY: "Rare / informal ('not especially keen')",
+        PARTICULARLY: "YES! Standard: 'not particularly effective' ✓"
+      }
+    },
+    {
+      feature: "Band 9 IELTS Sample Test",
+      wordValues: {
+        SPECIALLY: "“The software was specially designed to analyze IELTS syntax.”",
+        ESPECIALLY: "“Renewable energy, especially solar, requires initial subsidies.”",
+        PARTICULARLY: "“This wage disparity is particularly stark among young graduates.”"
+      }
+    }
+  ],
+
+  practiceDrills: [
+    {
+      id: 1,
+      sentence: "The software engineers developed a proprietary neural network _____ configured to detect fraudulent financial transactions.",
+      blankWord: "specially",
+      options: ["specially", "especially", "particularly"],
+      explanation:
+        "Correct! The algorithm was custom-built and tailor-made for that single designated function ('specially configured').",
+      ruleTag: "Custom Bespoke Purpose"
+    },
+    {
+      id: 2,
+      sentence: "Accelerating sea level rise threatens coastal infrastructure globally, _____ low-lying deltaic agrarian regions.",
+      blankWord: "especially",
+      options: ["specially", "especially", "particularly"],
+      explanation:
+        "Correct! 'Especially' singles out the most vulnerable delta regions from the global category.",
+      ruleTag: "Category Spotlight Emphasis"
+    },
+    {
+      id: 3,
+      sentence: "The senior examiner noted that the candidate's mastery of complex grammatical structures was _____ impressive.",
+      blankWord: "particularly",
+      options: ["specially", "especially", "particularly"],
+      explanation:
+        "Correct! 'Particularly impressive' is the elevated academic intensification adverb of choice.",
+      ruleTag: "Formal Academic Degree"
+    },
+    {
+      id: 4,
+      sentence: "These guide dogs are _____ trained over two years to assist visually impaired individuals navigate busy metropolitan transit networks.",
+      blankWord: "specially",
+      options: ["specially", "especially", "particularly"],
+      explanation:
+        "Correct! Training for a specific designated vocation requires 'specially' ('specially trained').",
+      ruleTag: "Dedicated Custom Training"
+    },
+    {
+      id: 5,
+      sentence: "Consumer advocates found the airline's automated refund policy to be not _____ helpful during peak holiday flight cancellations.",
+      blankWord: "particularly",
+      options: ["specially", "especially", "particularly"],
+      explanation:
+        "Correct! 'Not particularly helpful' is a standard formal understatement modifying negative utility.",
+      ruleTag: "Negative Understatement"
+    },
+    {
+      id: 6,
+      sentence: "Escalating commercial mortgage interest rates penalize all businesses, _____ small independent retailers operating on razor-thin margins.",
+      blankWord: "especially",
+      options: ["specially", "especially", "particularly"],
+      explanation:
+        "Correct! 'Especially' singles out small independent retailers as the most acutely impacted group.",
+      ruleTag: "Singling Out Beneficiaries"
+    }
+  ]
+};
+
 export const CONFUSED_WORDS_EPISODES: ConfusedWordsSeriesData[] = [
   CONFUSED_WORDS_EPISODE_1,
-  CONFUSED_WORDS_EPISODE_2
+  CONFUSED_WORDS_EPISODE_2,
+  CONFUSED_WORDS_EPISODE_3,
+  CONFUSED_WORDS_EPISODE_4,
+  CONFUSED_WORDS_EPISODE_5
 ];
+
 
