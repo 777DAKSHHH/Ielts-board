@@ -44,7 +44,7 @@ export interface GeneralTask1Data {
     term: string;
     definition: string;
     example: string;
-    category: "Museum Exhibits" | "Personal Impressions" | "Informal Conversational" | "Narrative Setting";
+    category: "Professional Etiquette" | "Internship & Learning" | "Corporate Operations" | "Formal Correspondence";
   }[];
   architectureRevision?: {
     step: string;
@@ -58,95 +58,95 @@ export interface GeneralTask1Data {
 }
 
 export const GENERAL_TASK1_DATA: GeneralTask1Data = {
-  id: "general-task1-recent-museum-visit-friend",
+  id: "general-task1-internship-organisation-manager",
   taskType: "IELTS General Training • Writing Task 1",
-  letterType: "Informal",
-  title: "Letter to a Friend About a Recent Museum Visit",
+  letterType: "Formal",
+  title: "Formal Internship Letter to Organisation Manager",
   questionText:
-    "WEEK 21\n\nWEDNESDAY (Informal)\nYou have recently visited a museum. Write a letter to your friend (him/her) about the museum you have visited. In your letter,\n• When and where you went\n• What you saw there\n• How you felt about it",
-  salutation: "Dear Sam,",
-  signoff: "Warmly,",
-  senderName: "Alex",
-  wordCount: 215,
+    "FRIDAY (Formal)\n\nYou are a student and are going to spend three months doing an internship in an organisation. Write a letter to the manager of the organisation. In your letter,\n• Thank him/her for the opportunity / acceptance into the company\n• Explain what you hope to learn from this internship\n• Inquire about preparatory materials and confirm arrival details",
+  salutation: "Dear Mr. Pritam,",
+  signoff: "Yours sincerely,",
+  senderName: "Arpit",
+  wordCount: 222,
 
   architectureRevision: [
     {
       step: "1. Salutation & Opening",
-      stage: "Friendly Check-in & Energetic Hook (Para 1)",
-      badgeColor: "#9333ea",
-      bgColor: "#faf5ff",
-      borderColor: "#e9d5ff",
-      textColor: "#6b21a8",
-      summary: "Warm informal greeting ('Dear Sam,') + friendly catch-up inquiry + enthusiastic reason for dropping a quick line about the weekend excursion."
-    },
-    {
-      step: "2. Body Para 1 (Bullet 1)",
-      stage: "When & Where You Went",
-      badgeColor: "#2563eb",
+      stage: "Formal Greeting & Acceptance Statement (Para 1)",
+      badgeColor: "#1e3a8a",
       bgColor: "#eff6ff",
       borderColor: "#bfdbfe",
       textColor: "#1d4ed8",
-      summary: "Point: Spontaneous trip last Saturday morning → Setting: National Science & Aerospace Museum in city center → Atmosphere: Arrived early to beat weekend crowds."
+      summary: "Formal salutation ('Dear Mr. Pritam,') + unambiguous statement of purpose confirming acceptance of the three-month internship offer commencing July 1st."
     },
     {
-      step: "3. Body Para 2 (Bullet 2)",
-      stage: "What You Saw There",
-      badgeColor: "#ea580c",
-      bgColor: "#fff7ed",
-      borderColor: "#fed7aa",
-      textColor: "#c2410c",
-      summary: "Centerpiece: Authentic Apollo lunar command module, genuine moon rocks & vintage suits → Interactive: Supersonic VR flight simulator & robotics wing."
-    },
-    {
-      step: "4. Body Para 3 (Bullet 3)",
-      stage: "How You Felt About It",
-      badgeColor: "#059669",
+      step: "2. Body Para 1 (Bullet 1)",
+      stage: "Thanking the Manager & Organisational Admiration",
+      badgeColor: "#047857",
       bgColor: "#ecfdf5",
       borderColor: "#a7f3d0",
       textColor: "#047857",
-      summary: "Personal Reaction: Completely spellbound; colossal spacecraft replicas gave goosebumps → Friend Connection: Knew friend would love the aeronautics exhibits."
+      summary: "Gratitude: Sincere appreciation to the manager and selection committee → Alignment: Respect for the company's pioneering sustainable logistics and market reputation."
+    },
+    {
+      step: "3. Body Para 2 (Bullet 2)",
+      stage: "Learning Objectives & Professional Development",
+      badgeColor: "#d97706",
+      bgColor: "#fffbeb",
+      borderColor: "#fde68a",
+      textColor: "#b45309",
+      summary: "Core Goals: Bridging theoretical university coursework in business analytics with practical project management, risk analysis, and live client deliverables."
+    },
+    {
+      step: "4. Body Para 3 (Bullet 3)",
+      stage: "Preparatory Inquiries & Onboarding Logistics",
+      badgeColor: "#4338ca",
+      bgColor: "#eef2ff",
+      borderColor: "#c7d2fe",
+      textColor: "#3730a3",
+      summary: "Readiness: Inquiring about recommended pre-reading, internal software tools, compliance forms, or documentation to review prior to the first day."
     },
     {
       step: "5. Closing & Sign-off",
-      stage: "Social Call to Action & Sign-off (Para 5)",
+      stage: "Reiterated Thanks & Formal Sign-off (Para 5)",
       badgeColor: "#0f172a",
       bgColor: "#f8fafc",
       borderColor: "#cbd5e1",
       textColor: "#0f172a",
-      summary: "Call to Action: Suggesting a joint museum visit next time in town + coffee catch-up → Informal Sign-off: 'Warmly,' + first name only ('Alex')."
+      summary: "Courteous close looking forward to joining the team + strict formal complimentary close: 'Yours sincerely,' followed by name ('Arpit')."
     }
   ],
 
   pptFormatRules: [
     {
       stage: "1. Salutation",
-      description: "Informal friendly greeting using first name only (Dear [First Name],)",
-      specificRule: "Never use formal 'Dear Mr. Smith' or 'Dear Sir/Madam' when writing to a personal friend."
+      description: "Formal salutation using title and surname / name (Dear Mr. [Name],)",
+      specificRule: "When writing to a named manager in a formal letter, use 'Dear Mr. Pritam,' followed by a comma. Never use informal greetings ('Hi Pritam')."
     },
     {
       stage: "2. Opening (Paragraph 1)",
-      description: "Warm conversational social opening & enthusiastic reason for writing.",
-      specificRule: "Enquire warmly about their life and set an energetic narrative hook: 'I hope you're having a brilliant week! I'm dropping you a quick line because I had the most incredible weekend...'"
+      description: "Clear, courteous statement of purpose and formal acceptance.",
+      specificRule: "State the objective of the letter immediately without conversational filler: 'I am writing to express my sincere appreciation for offering me the three-month internship position... and to formally confirm my acceptance.'"
     },
     {
       stage: "3. Body Para 1 (Bullet 1)",
-      description: "When and where you went (time, setting, travel circumstance).",
-      specificRule: "Set a clear scene: specify the day/time, the exact name and location of the museum, and why you decided to go on a whim."
+      description: "Express heartfelt gratitude to the manager and company.",
+      specificRule: "Articulate specific admiration for the organisation: mention their industry leadership, groundbreaking projects, or reputation to demonstrate genuine alignment."
     },
     {
       stage: "4. Body Para 2 (Bullet 2)",
-      description: "What you saw there (sensory details, centerpiece artifacts, interactive exhibits).",
-      specificRule: "Provide vivid visual descriptions: historic spacecraft modules, lunar rock samples, flight simulators, or rare archival collections."
+      description: "Detail specific skills, insights, and professional competencies you hope to gain.",
+      specificRule: "Contrast theoretical academic knowledge with real-world application: project management, client negotiations, data analytics, and cross-functional team collaboration."
     },
     {
       stage: "5. Body Para 3 (Bullet 3)",
-      description: "How you felt about it (emotional reaction & sharing the excitement with your friend).",
-      specificRule: "Express genuine personal awe: goosebumps, feeling like stepping into a time machine, and eagerly insisting that you both visit together soon."
+      description: "Proactively ask about onboarding preparations and first-day expectations.",
+      specificRule: "Demonstrate initiative by asking for recommended software tutorials, compliance documentation, or reading material to study before starting."
     },
     {
       stage: "6. Closing & Sign-off",
-      description: "Warm conversational closing invitation + Informal sign-off with first name.",
-      specificRule: "Suggest an upcoming meetup: 'Let me know when you're free next week...' + 'Warmly,' / 'Best,' + First name only ('Alex')."
+      description: "Formal call-to-action & 'Yours sincerely,' + Sender Name.",
+      specificRule: "Because the letter addresses a named manager ('Dear Mr. Pritam,'), close strictly with 'Yours sincerely,' followed by your name ('Arpit'). Contractions ('I'm', 'can't') are strictly prohibited."
     }
   ],
 
@@ -154,52 +154,55 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
     {
       id: "bullet-1",
       bulletNumber: 1,
-      promptText: "When and where you went",
+      promptText: "Thank him/her for the opportunity / acceptance into the company",
       targetParagraph: "Body Paragraph 1",
-      linkerRule: "Narrative temporal opener (e.g. 'Last Saturday morning', 'On a spontaneous whim')",
+      linkerRule: "Formal gratitude marker (e.g. 'First and foremost, I would like to extend my sincere gratitude...')",
       explanation:
-        "Establish the exact setting and timing of your museum visit, detailing how you arrived early to beat the weekend rush.",
+        "Express dignified, professional thanks to the manager and selection committee for granting you the internship, highlighting your respect for the firm's reputation.",
       modelExcerpt:
-        "Last Saturday morning, I decided on a whim to visit the newly renovated National Science and Aerospace Museum in the city center. It was a crisp, sunny autumn morning, and I arrived right as the grand doors opened at ten, which meant I practically had the ground floor galleries all to myself before the weekend crowds arrived.",
+        "First and foremost, I would like to extend my sincere gratitude to you and the selection committee for granting me this invaluable opportunity. Having followed your company’s groundbreaking work in sustainable supply chain logistics, I feel immensely privileged to be invited to join such an esteemed and innovative organization.",
       keyCollocations: [
-        "decided on a whim",
-        "newly renovated museum",
-        "crisp sunny autumn morning",
-        "ground floor galleries"
+        "extend my sincere gratitude",
+        "selection committee",
+        "invaluable opportunity",
+        "groundbreaking work",
+        "esteemed and innovative organization"
       ]
     },
     {
       id: "bullet-2",
       bulletNumber: 2,
-      promptText: "What you saw there",
+      promptText: "Explain what you hope to learn from this internship",
       targetParagraph: "Body Paragraph 2",
-      linkerRule: "Descriptive sequencing linkers (e.g. 'The centerpiece was', 'Further inside', 'Aside from that')",
+      linkerRule: "Educational objective linkers (e.g. 'During this three-month placement, I hope to gain...', 'While my university studies have provided...')",
       explanation:
-        "Highlight standout artifacts and interactive galleries, giving your friend sensory, vivid details of spacecraft replicas, lunar relics, and simulators.",
+        "Explain how the internship will bridge the gap between academic theory and practical corporate execution, focusing on hands-on project management and data analysis.",
       modelExcerpt:
-        "The exhibitions were truly out of this world. The centerpiece was an authentic Apollo lunar command module, surrounded by genuine moon rock samples and vintage astronaut suits. Further inside, there was a breathtaking interactive robotics wing and a state-of-the-art virtual reality flight simulator, where you could actually experience piloting a supersonic jet through a turbulent storm.",
+        "During this three-month placement, I hope to gain comprehensive hands-on exposure to commercial project management and data-driven risk assessment. While my university coursework in business analytics has provided me with a rigorous theoretical foundation, I am eager to observe how seasoned industry professionals navigate complex client briefs and streamline operational workflows under real-market constraints.",
       keyCollocations: [
-        "out of this world",
-        "authentic lunar command module",
-        "genuine moon rock samples",
-        "state-of-the-art flight simulator"
+        "hands-on exposure",
+        "data-driven risk assessment",
+        "rigorous theoretical foundation",
+        "seasoned industry professionals",
+        "streamline operational workflows"
       ]
     },
     {
       id: "bullet-3",
       bulletNumber: 3,
-      promptText: "How you felt about it",
+      promptText: "Inquire about preparatory materials and confirm arrival details",
       targetParagraph: "Body Paragraph 3",
-      linkerRule: "Emotional reflection markers (e.g. 'Honestly, I was completely spellbound', 'It gave me goosebumps')",
+      linkerRule: "Proactive preparatory markers (e.g. 'In preparation for my commencement date,...', 'Furthermore, please inform me of...')",
       explanation:
-        "Share your genuine enthusiasm and intellectual wonder, explaining why the experience resonated so deeply and why your friend would love it.",
+        "Demonstrate high professional initiative by asking for background documentation, software platforms to install, or administrative compliance forms required prior to day one.",
       modelExcerpt:
-        "Honestly, I was completely spellbound the entire time. Standing beneath those colossal spacecraft replicas gave me goosebumps—it felt like stepping straight into a time machine. I couldn't stop thinking about how much you would have enjoyed the aeronautics section, and you know how rarely I get this excited about weekend excursions!",
+        "In preparation for my commencement date, I would be grateful if you could advise me on any preliminary background reading, internal software platforms, or procedural documentation I should review in advance. Furthermore, please inform me of any administrative compliance forms or security clearances required prior to my first morning at the office.",
       keyCollocations: [
-        "completely spellbound",
-        "gave me goosebumps",
-        "stepping into a time machine",
-        "colossal spacecraft replicas"
+        "in preparation for my commencement date",
+        "preliminary background reading",
+        "procedural documentation",
+        "administrative compliance forms",
+        "security clearances"
       ]
     }
   ],
@@ -207,135 +210,135 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
   paragraphs: [
     {
       id: "opening",
-      title: "Opening Paragraph: Friendly Social Greeting & Hook",
-      purpose: "Warm social opening + Enthusiastic reason for dropping a letter",
-      text: "I hope you're having a brilliant week! It feels like ages since we last caught up properly. I'm dropping you a quick line because I had the most incredible weekend, and knowing how much you love history and science, I just had to tell you about it!",
-      wordCount: 47,
-      ruleHighlight: "Informal tone: warm conversational warmth, natural contractions ('I'm', 'you're'), and energetic hook."
+      title: "Opening Paragraph: Formal Salutation & Acceptance Statement",
+      purpose: "Formal statement of appreciation and official confirmation of internship acceptance",
+      text: "I am writing to express my sincere appreciation for offering me the three-month internship position at Apex Global Solutions, scheduled to commence on Monday, 7th July. I am truly delighted to have been selected for this placement and wish to formally confirm my acceptance of the offer.",
+      wordCount: 45,
+      ruleHighlight: "Strict formal register: unambiguous purpose statement, exact starting date, zero informal contractions ('I am' instead of 'I'm')."
     },
     {
       id: "body1",
-      title: "Body Paragraph 1: When & Where You Went (Bullet 1)",
-      purpose: "Detail the timing, setting, and spontaneous decision to visit",
+      title: "Body Paragraph 1: Gratitude for the Opportunity (Bullet 1)",
+      purpose: "Express gratitude to the manager and selection committee while acknowledging firm prestige",
       bulletRef: 1,
-      text: "Last Saturday morning, I decided on a whim to visit the newly renovated National Science and Aerospace Museum in the city center. It was a crisp, sunny autumn morning, and I arrived right as the grand doors opened at ten, which meant I practically had the ground floor galleries all to myself before the weekend crowds arrived.",
-      wordCount: 57,
-      ruleHighlight: "Bullet 1 covered: specifies last Saturday morning, city center location, and opening atmosphere."
+      text: "First and foremost, I would like to extend my sincere gratitude to you and the selection committee for granting me this invaluable opportunity. Having followed your company’s groundbreaking work in sustainable supply chain logistics, I feel immensely privileged to be invited to join such an esteemed and innovative organization.",
+      wordCount: 48,
+      ruleHighlight: "Bullet 1 fully covered: formal expressions of gratitude combined with specific institutional admiration."
     },
     {
       id: "body2",
-      title: "Body Paragraph 2: What You Saw (Bullet 2)",
-      purpose: "Vivid, sensory description of exhibits, lunar modules & flight simulators",
+      title: "Body Paragraph 2: Learning Objectives & Career Growth (Bullet 2)",
+      purpose: "Bridge academic coursework with hands-on corporate project management and practical skills",
       bulletRef: 2,
-      text: "The exhibitions were truly out of this world. The centerpiece was an authentic Apollo lunar command module, surrounded by genuine moon rock samples and vintage astronaut suits. Further inside, there was a breathtaking interactive robotics wing and a state-of-the-art virtual reality flight simulator, where you could actually experience piloting a supersonic jet through a turbulent storm.",
-      wordCount: 57,
-      ruleHighlight: "Bullet 2 covered: rich descriptions of Apollo spacecraft, lunar rocks, and interactive VR flight simulators."
+      text: "During this three-month placement, I hope to gain comprehensive hands-on exposure to commercial project management and data-driven risk assessment. While my university coursework in business analytics has provided me with a rigorous theoretical foundation, I am eager to observe how seasoned industry professionals navigate complex client briefs and streamline operational workflows under real-market constraints.",
+      wordCount: 56,
+      ruleHighlight: "Bullet 2 fully covered: sophisticated contrast between theoretical knowledge and practical workplace competencies."
     },
     {
       id: "body3",
-      title: "Body Paragraph 3: Personal Emotional Impression (Bullet 3)",
-      purpose: "Express awe, emotional reaction, and enthusiastic friend connection",
+      title: "Body Paragraph 3: Preparation & Administrative Inquiries (Bullet 3)",
+      purpose: "Demonstrate initiative by asking for pre-reading, software access, and documentation",
       bulletRef: 3,
-      text: "Honestly, I was completely spellbound the entire time. Standing beneath those colossal spacecraft replicas gave me goosebumps—it felt like stepping straight into a time machine. I couldn't stop thinking about how much you would have enjoyed the aeronautics section, and you know how rarely I get this excited about weekend excursions!",
-      wordCount: 53,
-      ruleHighlight: "Bullet 3 covered: authentic informal idioms ('spellbound', 'gave me goosebumps') showing intense personal reaction."
+      text: "In preparation for my commencement date, I would be grateful if you could advise me on any preliminary background reading, internal software platforms, or procedural documentation I should review in advance. Furthermore, please inform me of any administrative compliance forms or security clearances required prior to my first morning at the office.",
+      wordCount: 51,
+      ruleHighlight: "Bullet 3 fully covered: proactive professional courtesy showing readiness and structured preparation."
     },
     {
       id: "closing",
-      title: "Closing Paragraph & Friendly Sign-off",
-      purpose: "Enthusiastic proposal to visit together + Informal closing sign-off",
-      text: "We definitely need to plan a visit together the next time you're in town. Let me know what your schedule looks like next week so we can grab a coffee and catch up properly.\n\nWarmly,\nAlex",
-      wordCount: 35,
-      ruleHighlight: "Informal sign-off: proactive invitation to meet up + 'Warmly,' + first name only ('Alex')."
+      title: "Closing Paragraph & Formal Sign-off",
+      purpose: "Reiterate thanks, express anticipation, and provide formal closing sign-off",
+      text: "Thank you once again for your time, consideration, and this exceptional professional opportunity. I look forward to contributing positively to your team in July.\n\nYours sincerely,\nArpit",
+      wordCount: 29,
+      ruleHighlight: "Formal sign-off: 'Yours sincerely,' followed by sender name ('Arpit') matching the named salutation 'Dear Mr. Pritam,'."
     }
   ],
 
-  modelLetter: `Dear Sam,
+  modelLetter: `Dear Mr. Pritam,
 
-I hope you're having a brilliant week! It feels like ages since we last caught up properly. I'm dropping you a quick line because I had the most incredible weekend, and knowing how much you love history and science, I just had to tell you about it!
+I am writing to express my sincere appreciation for offering me the three-month internship position at Apex Global Solutions, scheduled to commence on Monday, 7th July. I am truly delighted to have been selected for this placement and wish to formally confirm my acceptance of the offer.
 
-Last Saturday morning, I decided on a whim to visit the newly renovated National Science and Aerospace Museum in the city center. It was a crisp, sunny autumn morning, and I arrived right as the grand doors opened at ten, which meant I practically had the ground floor galleries all to myself before the weekend crowds arrived.
+First and foremost, I would like to extend my sincere gratitude to you and the selection committee for granting me this invaluable opportunity. Having followed your company’s groundbreaking work in sustainable supply chain logistics, I feel immensely privileged to be invited to join such an esteemed and innovative organization.
 
-The exhibitions were truly out of this world. The centerpiece was an authentic Apollo lunar command module, surrounded by genuine moon rock samples and vintage astronaut suits. Further inside, there was a breathtaking interactive robotics wing and a state-of-the-art virtual reality flight simulator, where you could actually experience piloting a supersonic jet through a turbulent storm.
+During this three-month placement, I hope to gain comprehensive hands-on exposure to commercial project management and data-driven risk assessment. While my university coursework in business analytics has provided me with a rigorous theoretical foundation, I am eager to observe how seasoned industry professionals navigate complex client briefs and streamline operational workflows under real-market constraints.
 
-Honestly, I was completely spellbound the entire time. Standing beneath those colossal spacecraft replicas gave me goosebumps—it felt like stepping straight into a time machine. I couldn't stop thinking about how much you would have enjoyed the aeronautics section, and you know how rarely I get this excited about weekend excursions!
+In preparation for my commencement date, I would be grateful if you could advise me on any preliminary background reading, internal software platforms, or procedural documentation I should review in advance. Furthermore, please inform me of any administrative compliance forms or security clearances required prior to my first morning at the office.
 
-We definitely need to plan a visit together the next time you're in town. Let me know what your schedule looks like next week so we can grab a coffee and catch up properly.
+Thank you once again for your time, consideration, and this exceptional professional opportunity. I look forward to contributing positively to your team in July.
 
-Warmly,
-Alex`,
+Yours sincerely,
+Arpit`,
 
   toneGuidelines: [
     {
-      rule: "Use natural conversational contractions and emotional idioms",
-      doExample: "I'm dropping you a quick line... / It gave me goosebumps!",
-      dontExample: "I am writing this correspondence to communicate the museum exhibits."
+      rule: "Maintain strict formal vocabulary and eliminate all contractions",
+      doExample: "I am writing to express my sincere appreciation... / I would be grateful if...",
+      dontExample: "I'm super thrilled to get this job! / Drop me a quick email with the stuff to read."
     },
     {
-      rule: "Keep salutation and sign-off warm and informal",
-      doExample: "Dear Sam, ... Warmly, Alex",
-      dontExample: "Dear Mr. Sam, ... Yours faithfully, D. Patel"
+      rule: "Salutation and sign-off alignment for named individuals",
+      doExample: "Dear Mr. Pritam, ... Yours sincerely, Arpit",
+      dontExample: "Dear Pritam (informal first-name only), ... Best regards, Arpit OR Dear Sir, ... Yours sincerely, Arpit (mismatched salutation)"
     },
     {
-      rule: "Vivid, authentic sensory descriptions",
-      doExample: "authentic Apollo command module, genuine moon rocks, supersonic VR flight simulator...",
-      dontExample: "I saw some planes and historical objects."
+      rule: "Express professional humility and proactive readiness",
+      doExample: "I hope to gain comprehensive hands-on exposure under seasoned mentorship...",
+      dontExample: "I plan to teach your staff how to use modern analytics tools."
     },
     {
-      rule: "Engage your friend directly and suggest future plans",
-      doExample: "We definitely need to plan a visit together next time you're in town!",
-      dontExample: "The reader should consider visiting the facility."
+      rule: "Concrete and task-focused inquiries for onboarding",
+      doExample: "advise me on preliminary background reading, internal software platforms, or compliance forms...",
+      dontExample: "What should I wear and when do we get lunch breaks?"
     }
   ],
 
   vocabList: [
     {
-      term: "Out of this World",
-      definition: "Extremely impressive, enjoyable, or extraordinary.",
-      example: "The aerospace exhibitions were truly out of this world.",
-      category: "Personal Impressions"
+      term: "Extend My Sincere Gratitude",
+      definition: "A formal and respectful phrase used to express profound appreciation.",
+      example: "I would like to extend my sincere gratitude to the committee for this opportunity.",
+      category: "Professional Etiquette"
     },
     {
-      term: "Decided on a Whim",
-      definition: "Made a sudden decision based on a spontaneous impulse rather than planning.",
-      example: "I woke up early on Saturday and decided on a whim to visit the museum.",
-      category: "Narrative Setting"
+      term: "Invaluable Opportunity",
+      definition: "An occasion or placement offering benefits so great that they cannot be measured.",
+      example: "Securing this three-month placement represents an invaluable opportunity for my career.",
+      category: "Internship & Learning"
     },
     {
-      term: "Colossal Replicas",
-      definition: "Extremely large, exact copies or full-scale models of historic artifacts.",
-      example: "Standing beneath the colossal rocket replicas was an awe-inspiring sight.",
-      category: "Museum Exhibits"
+      term: "Hands-on Exposure",
+      definition: "Direct, practical experience and involvement in real workplace operations.",
+      example: "I look forward to gaining hands-on exposure to commercial risk modeling.",
+      category: "Internship & Learning"
     },
     {
-      term: "Gave Me Goosebumps",
-      definition: "Caused a physiological sensation of excitement, awe, or intense admiration.",
-      example: "Seeing the authentic lunar module up close gave me genuine goosebumps.",
-      category: "Personal Impressions"
+      term: "Rigorous Theoretical Foundation",
+      definition: "A thorough, structured academic understanding of principles and theories.",
+      example: "My university coursework has provided me with a rigorous theoretical foundation.",
+      category: "Internship & Learning"
     },
     {
-      term: "Spellbound",
-      definition: "Holding one's complete attention as if under a magic spell; deeply fascinated.",
-      example: "I was completely spellbound wandering through the interactive planetary gallery.",
-      category: "Personal Impressions"
+      term: "Seasoned Industry Professionals",
+      definition: "Highly experienced, skilled practitioners in a specialized field.",
+      example: "I am eager to learn alongside seasoned industry professionals at your headquarters.",
+      category: "Corporate Operations"
     },
     {
-      term: "State-of-the-Art",
-      definition: "Using the most modern, sophisticated, and up-to-date technology available.",
-      example: "The simulator utilized state-of-the-art virtual reality headsets.",
-      category: "Museum Exhibits"
+      term: "Streamline Operational Workflows",
+      definition: "To make business systems and organizational procedures faster, simpler, and more efficient.",
+      example: "The logistics department works tirelessly to streamline operational workflows.",
+      category: "Corporate Operations"
     },
     {
-      term: "Drop a Quick Line",
-      definition: "An informal idiom meaning to send a short friendly message or letter.",
-      example: "I'm dropping you a quick line before my work week kicks into high gear.",
-      category: "Informal Conversational"
+      term: "Preliminary Background Reading",
+      definition: "Introductory texts, research, or briefs studied prior to beginning a project.",
+      example: "Please recommend any preliminary background reading that would accelerate my onboarding.",
+      category: "Corporate Operations"
     },
     {
-      term: "Time Machine Effect",
-      definition: "An immersive feeling of being transported backward or forward in history.",
-      example: "The atmospheric archival lighting made it feel like stepping into a time machine.",
-      category: "Personal Impressions"
+      term: "Administrative Compliance",
+      definition: "Adherence to official policies, regulatory rules, and documentation standards.",
+      example: "I will submit all required administrative compliance forms well before day one.",
+      category: "Formal Correspondence"
     }
   ]
 };

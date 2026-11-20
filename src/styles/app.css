@@ -26,8 +26,8 @@ html, body {
 .island-header {
   position: absolute;
   top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50% !important;
+  transform: translateX(-50%) !important;
   width: min(98vw, 1640px);
   height: var(--header-height);
   z-index: 50;
@@ -39,6 +39,7 @@ html, body {
   border: 1.5px solid var(--border-subtle);
   border-radius: var(--touch-radius);
   box-shadow: var(--shadow-md);
+  box-sizing: border-box;
 }
 
 /* Center Stage Viewport */
@@ -47,6 +48,8 @@ html, body {
   position: relative;
   margin-top: calc(var(--header-height) + 14px);
   margin-bottom: calc(var(--dock-height) + 16px);
+  height: calc(100vh - var(--header-height) - var(--dock-height) - 30px);
+  max-height: calc(100vh - var(--header-height) - var(--dock-height) - 30px);
   width: 100%;
   max-width: 1660px;
   margin-left: auto;
@@ -57,12 +60,13 @@ html, body {
   justify-content: center;
   overflow: hidden;
   min-height: 0;
+  box-sizing: border-box;
 }
 
 .stage-viewport.standalone-mode {
   margin-bottom: 12px;
-  height: calc(100vh - var(--header-height) - 36px);
-  max-height: calc(100vh - var(--header-height) - 36px);
+  height: calc(100vh - var(--header-height) - 26px);
+  max-height: calc(100vh - var(--header-height) - 26px);
 }
 
 /* Standalone Full-Page Container & Scrollbar Architecture */
@@ -114,17 +118,19 @@ html, body {
   border: 1.5px solid var(--border-subtle);
   border-radius: var(--card-radius);
   box-shadow: var(--shadow-sm);
-  padding: clamp(16px, 2.2vw, 26px) clamp(18px, 2.6vw, 30px);
+  padding: clamp(16px, 2.2vw, 24px) clamp(18px, 2.6vw, 28px);
+  padding-bottom: 24px;
   overflow-y: auto;
   position: relative;
+  box-sizing: border-box;
 }
 
 /* Bottom Touch Dock (100% Opaque Solid Surface) */
 .touch-dock {
   position: absolute;
   bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50% !important;
+  transform: translateX(-50%) !important;
   width: min(94vw, 1020px);
   height: var(--dock-height);
   z-index: 50;
@@ -136,6 +142,7 @@ html, body {
   border: 1.5px solid var(--border-subtle);
   border-radius: var(--touch-radius);
   box-shadow: var(--shadow-dock);
+  box-sizing: border-box;
 }
 
 /* Smartboard Stage Typography */
@@ -240,61 +247,21 @@ html, body {
    Smartboard Anti-Glare Safe • Hardware-Accelerated 60fps • Apple visionOS Clarity
    ========================================================================== */
 
-/* Topographic Terrain Fluid Waves */
-@keyframes topoWaveSlow {
-  0%, 100% {
-    transform: translateY(0px) scaleY(1);
-  }
-  50% {
-    transform: translateY(-9px) scaleY(1.025);
-  }
+/* Topographic Background Container — Senses Smartboard Zero-Lag Hardware Compositing */
+.topographic-bg-canvas {
+  contain: strict;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
-@keyframes topoWaveReverse {
-  0%, 100% {
-    transform: translateY(0px) scaleY(1);
-  }
-  50% {
-    transform: translateY(9px) scaleY(0.975);
-  }
-}
-
-@keyframes topoPulseAmbient {
-  0%, 100% {
-    opacity: 0.45;
-  }
-  50% {
-    opacity: 0.75;
-  }
-}
-
-.topographic-bg-canvas .topo-path-1,
-.topographic-bg-canvas .topo-path-3,
-.topographic-bg-canvas .topo-path-5,
-.topographic-bg-canvas .topo-path-7 {
-  animation: topoWaveSlow 24s ease-in-out infinite;
-  transform-origin: center;
-}
-
-.topographic-bg-canvas .topo-path-2,
-.topographic-bg-canvas .topo-path-4,
-.topographic-bg-canvas .topo-path-6,
-.topographic-bg-canvas .topo-path-8 {
-  animation: topoWaveReverse 28s ease-in-out infinite;
-  transform-origin: center;
-}
-
-/* Liquid Glass Surface (ReactDrops inspired, High-contrast Smartboard safe) */
+/* Senses Smartboard Anti-Glare Solid Surfaces (Zero-Blur, 60fps Locked GPU Rendering) */
 .liquid-glass-surface {
-  background: rgba(255, 255, 255, 0.90) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
-  box-shadow: 
-    0 12px 36px -4px rgba(15, 23, 42, 0.08),
-    0 4px 12px -2px rgba(15, 23, 42, 0.04),
-    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 -1px 1px 0 rgba(203, 213, 225, 0.25) !important;
+  background: #ffffff !important;
+  border: 1.5px solid var(--border-subtle) !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* Fluid Bubble Switcher Container */
@@ -302,12 +269,12 @@ html, body {
   display: inline-flex;
   align-items: center;
   position: relative;
-  background: rgba(241, 245, 249, 0.85);
-  border: 1.5px solid rgba(226, 232, 240, 0.9);
+  background: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
   border-radius: 12px;
   padding: 3px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* Liquid Bubble Tab Button */
@@ -322,13 +289,14 @@ html, body {
   border: none;
   background: transparent;
   cursor: pointer;
-  transition: color 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.12s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   user-select: none;
   white-space: nowrap;
+  touch-action: manipulation !important;
 }
 
 /* The Sliding Liquid Capsule indicator */
@@ -344,49 +312,59 @@ html, body {
   pointer-events: none;
 }
 
-/* Tactile Frosted Action Buttons */
+/* Tactile Solid Action Buttons */
 .liquid-action-btn {
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(226, 232, 240, 0.9) !important;
-  box-shadow: 
-    0 2px 6px rgba(15, 23, 42, 0.05),
-    inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1.5px solid var(--border-default) !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+  transition: transform 0.1s ease, background 0.1s ease !important;
+  touch-action: manipulation !important;
 }
 
 .liquid-action-btn:hover {
-  background: #ffffff !important;
-  border-color: rgba(148, 163, 184, 0.8) !important;
-  box-shadow: 
-    0 6px 16px -2px rgba(15, 23, 42, 0.1),
-    inset 0 1px 1.5px rgba(255, 255, 255, 1) !important;
+  background: #f8fafc !important;
+  border-color: #94a3b8 !important;
   transform: translateY(-1px);
 }
 
-/* Chromatic Glass Card Styling (Hardware Accelerated) */
+/* Chromatic Glass Card Styling (High-Performance Solid Surface for Class Smartboards) */
 .chromatic-glass-card {
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 255, 255, 0.8) !important;
-  box-shadow: 
-    0 8px 24px -2px rgba(15, 23, 42, 0.06),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95) !important;
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1.5px solid var(--border-subtle) !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05) !important;
   transform: translateZ(0);
+  contain: content;
 }
 
 /* Chromatic Glass Badge Tag */
 .chromatic-glass-badge {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(203, 213, 225, 0.8);
-  box-shadow: 
-    0 2px 6px -1px rgba(15, 23, 42, 0.04),
-    inset 0 1px 0.5px 0 rgba(255, 255, 255, 0.9);
+  background: #f8fafc !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--border-subtle);
   transform: translateZ(0);
+}
+
+/* Individual Stage Scroller Spine & Presenter Dock Feed */
+.individual-stage-scroller-track {
+  contain: content;
+  transform: translateZ(0);
+  touch-action: pan-y !important;
+  overscroll-behavior-y: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.presenter-dock-feed {
+  contain: content;
+  transform: translateZ(0);
+  touch-action: pan-y !important;
+  overscroll-behavior-y: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+  scroll-behavior: smooth;
 }
 
 /* Liquid Glass Orb Keyframe Rotations & Pulses */
@@ -438,4 +416,51 @@ html, body {
     animation: none !important;
   }
 }
+
+/* Smart Board Custom Scroller & 3-Column Split Grid */
+.custom-smart-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  touch-action: pan-y;
+}
+
+.custom-smart-scroller::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-smart-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-smart-scroller::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.custom-smart-scroller::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.stage-split-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.35fr) 210px minmax(320px, 1.25fr);
+  gap: 14px;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .stage-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.active-stage-card-glow {
+  box-shadow: 0 0 0 2px var(--stage-color, #2563eb), 0 8px 24px rgba(37, 99, 235, 0.12) !important;
+}
+
 

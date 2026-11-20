@@ -8,7 +8,7 @@ interface TopographicBackgroundProps {
 
 export const TopographicBackground: React.FC<TopographicBackgroundProps> = ({
   className = "",
-  opacity = 0.55
+  opacity = 0.45
 }) => {
   return (
     <div
@@ -22,7 +22,10 @@ export const TopographicBackground: React.FC<TopographicBackgroundProps> = ({
         pointerEvents: "none",
         zIndex: 0,
         overflow: "hidden",
-        opacity
+        opacity,
+        contain: "strict",
+        transform: "translate3d(0, 0, 0)",
+        backfaceVisibility: "hidden"
       }}
       aria-hidden="true"
     >
@@ -34,25 +37,36 @@ export const TopographicBackground: React.FC<TopographicBackgroundProps> = ({
         style={{
           width: "100%",
           height: "100%",
-          display: "block"
+          display: "block",
+          transform: "translateZ(0)"
         }}
       >
         <defs>
           <linearGradient id="topo-blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.45" />
-            <stop offset="50%" stopColor="#6366f1" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.45" />
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
+            <stop offset="50%" stopColor="#6366f1" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.4" />
           </linearGradient>
 
           <linearGradient id="topo-cyan-grad" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.35" />
+            <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.3" />
             <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.15" />
           </linearGradient>
 
-          <filter id="topo-blur" x="-10%" y="-10%" width="120%" height="120%">
-            <feGaussianBlur stdDeviation="1.5" />
-          </filter>
+          <radialGradient id="topo-ambient-1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.04" />
+            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
+          </radialGradient>
+
+          <radialGradient id="topo-ambient-2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#6366f1" stopOpacity="0.035" />
+            <stop offset="100%" stopColor="#6366f1" stopOpacity="0" />
+          </radialGradient>
         </defs>
+
+        {/* Ambient Radial Highlights (Zero-lag Gradient, No SVG Filters) */}
+        <circle cx="850" cy="220" r="300" fill="url(#topo-ambient-1)" />
+        <circle cx="350" cy="650" r="320" fill="url(#topo-ambient-2)" />
 
         {/* Outer Terrain Iso-Lines */}
         <g stroke="url(#topo-blue-grad)" strokeWidth="1.2" strokeLinecap="round" opacity="0.6">
@@ -101,13 +115,7 @@ export const TopographicBackground: React.FC<TopographicBackgroundProps> = ({
             className="topo-path topo-path-9"
           />
         </g>
-
-        {/* Subtle Ambient Radial Lighting Glows */}
-        <circle cx="850" cy="220" r="280" fill="#3b82f6" opacity="0.04" filter="url(#topo-blur)" />
-        <circle cx="350" cy="650" r="320" fill="#6366f1" opacity="0.035" filter="url(#topo-blur)" />
-        <circle cx="1350" cy="500" r="260" fill="#06b6d4" opacity="0.04" filter="url(#topo-blur)" />
       </svg>
     </div>
   );
 };
-

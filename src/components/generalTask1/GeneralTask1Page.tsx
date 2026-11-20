@@ -36,6 +36,14 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
 
   const getCategoryBadgeStyle = (category: string) => {
     switch (category) {
+      case "Professional Etiquette":
+        return { bg: "#eff6ff", color: "#1e40af" };
+      case "Internship & Learning":
+        return { bg: "#f0fdf4", color: "#166534" };
+      case "Corporate Operations":
+        return { bg: "#fef3c7", color: "#92400e" };
+      case "Formal Correspondence":
+        return { bg: "#fdf4ff", color: "#86198f" };
       case "Festive Traditions":
         return { bg: "#fef3c7", color: "#92400e" };
       case "Cultural Significance":
@@ -317,7 +325,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <Layers size={16} color="#2563eb" />
                 <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                  5-Paragraph Informal Letter Architecture (One-Liner Revision)
+                  5-Paragraph {data.letterType} Letter Architecture (One-Liner Revision)
                 </h3>
               </div>
               <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#eff6ff", color: "#1e40af", padding: "3px 8px", borderRadius: "6px" }}>
@@ -492,7 +500,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   marginBottom: "4px"
                 }}
               >
-                ✦ Complementary Closure + First Name (Warm Informal Sign-off)
+                ✦ Complementary Closure &amp; Full Name ({data.letterType === "Informal" ? "Warm Informal Sign-off" : "Strict Formal Sign-off"})
               </div>
               <div style={{ fontFamily: "Georgia, serif", fontSize: "1.05rem", color: "#1e293b", lineHeight: 1.6 }}>
                 <div>{data.signoff}</div>
@@ -561,16 +569,16 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
 
               <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.82rem", color: "#1e3a8a", lineHeight: 1.5 }}>
                 <div>
-                  <strong>Task Achievement:</strong> Fully addresses all three prompt bullets (when &amp; where you went, what you saw, how you felt about it) with rich aerospace museum details.
+                  <strong>Task Achievement:</strong> Fully addresses all three prompt bullets (thanking the manager, detailing learning objectives, and proactively requesting onboarding preparation) with impeccable formal corporate decorum.
                 </div>
                 <div>
-                  <strong>Coherence &amp; Cohesion:</strong> Seamless conversational transitions with natural paragraphing and informal discourse markers.
+                  <strong>Coherence &amp; Cohesion:</strong> Seamless logical progression with distinct paragraphing, formal transitional linkers, and zero informal conversational filler.
                 </div>
                 <div>
-                  <strong>Lexical Resource:</strong> Vivid descriptive collocations ('out of this world', 'authentic lunar command module', 'genuine moon rock samples', 'state-of-the-art flight simulator', 'completely spellbound', 'gave me goosebumps').
+                  <strong>Lexical Resource:</strong> Advanced professional collocations ('extend my sincere gratitude', 'invaluable opportunity', 'hands-on exposure', 'rigorous theoretical foundation', 'seasoned industry professionals', 'streamline operational workflows').
                 </div>
                 <div>
-                  <strong>Grammatical Range:</strong> Natural informal structures: conversational exclamation, friendly enthusiasm, relative clauses, and compound-complex sentences.
+                  <strong>Grammatical Range &amp; Accuracy:</strong> Complex sentence architecture, modal politeness ('I would be grateful if you could advise me'), and strict elimination of contractions ('I am writing', 'I would like').
                 </div>
               </div>
             </div>
@@ -813,7 +821,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   Recipient &amp; Relationship
                 </strong>
                 <p style={{ fontSize: "0.82rem", color: "#1e3a8a", margin: 0, lineHeight: 1.4 }}>
-                  Personal friend (Sam). Highly conversational, warm, and engaging informal tone sharing an exciting weekend experience.
+                  Organisation Manager (Mr. Pritam). Strict formal register: respectful courtesy, precise business objectives, and formal sign-off.
                 </p>
               </div>
 
@@ -822,7 +830,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   Subject &amp; Setting
                 </strong>
                 <p style={{ fontSize: "0.82rem", color: "#78350f", margin: 0, lineHeight: 1.4 }}>
-                  Recent visit to the National Science and Aerospace Museum: arrival timing, Apollo command module, VR flight simulators, and spellbound reactions.
+                  Upcoming three-month student internship: confirming acceptance, expressing gratitude, specifying learning goals, and requesting onboarding materials.
                 </p>
               </div>
 
@@ -831,7 +839,7 @@ export const GeneralTask1Page: React.FC<GeneralTask1PageProps> = ({
                   Tone &amp; PPT Requirements
                 </strong>
                 <p style={{ fontSize: "0.82rem", color: "#14532d", margin: 0, lineHeight: 1.4 }}>
-                  Enthusiastic opening hook, strict 5-paragraph letter architecture addressing all 3 bullets, vivid sensory descriptions, and warm proposal to visit together.
+                  Direct formal purpose statement, strict 5-paragraph letter architecture addressing all 3 bullets, advanced professional collocations, and zero contractions.
                 </p>
               </div>
             </div>

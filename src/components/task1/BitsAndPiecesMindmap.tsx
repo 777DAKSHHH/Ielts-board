@@ -9,7 +9,9 @@ import {
   TrendingUp,
   BarChart2,
   Eye,
-  ArrowRight
+  ArrowRight,
+  Flame,
+  Filter
 } from "lucide-react";
 
 interface MindmapPiece {
@@ -35,157 +37,149 @@ interface MindmapBranch {
 const MINDMAP_BRANCHES: MindmapBranch[] = [
   {
     id: "parameters",
-    title: "Piece 1: Introduction & Data Parameters",
+    title: "Piece 1: Introduction & Process Scope",
     badge: "Intro Anchor",
     color: "#2563eb",
     borderColor: "#bfdbfe",
     bgLight: "#eff6ff",
     icon: <BookOpen size={18} color="#2563eb" />,
     summary:
-      "A Band 9 introduction paraphrases the line graph parameters: three regions (Australia, Canada, European Community), wheat export volumes in millions of tonnes, tracked across the six-year period from 1985 to 1990.",
+      "A Band 9 introduction paraphrases the process diagram parameters: the 7 sequential stages involved in manufacturing refined sugar from raw sugarcane, spanning from initial agricultural cultivation to final industrial drying and cooling.",
     tableCorrelation:
-      "Captures the line graph: 3 distinct areas, 6 annual time points (1985–1990), with Y-axis scaled from 0 to 30 million tonnes.",
+      "Captures the manufacturing journey: raw plant inputs (sugarcane), 7 sequential transformations, and refined consumer sugar crystals.",
     pieces: [
       {
-        label: "Visual Graphic & Scope",
-        value: "Multi-Line Graph",
+        label: "Graphic Type & Reporting Verb",
+        value: "Process Diagram",
         detail:
-          "Tracks volume changes and comparative trajectories in agricultural wheat exports across six years.",
+          "Delineates an ordered industrial manufacturing procedure with clear sequential progression.",
         band9Application:
-          "“The line graph illustrates the volume of wheat exported by three different areas—Australia, Canada, and the European Community—between 1985 and 1990, measured in millions of tonnes.”"
+          "“The process diagram delineates the seven sequential stages involved in the manufacture of refined sugar from raw sugarcane...”"
       },
       {
-        label: "Target Regions",
-        value: "3 Areas (Canada, EC, Australia)",
+        label: "Commodity & Material Span",
+        value: "Sugarcane to Refined Sugar",
         detail:
-          "Canada (initial #1), European Community (growing to #1), and Australia (declining to #3).",
+          "Accurately names the agricultural raw material and the refined crystallized food product.",
         band9Application:
-          "“...three major agricultural exporters: Australia, Canada, and the European Community.”"
+          "“...spanning from initial field cultivation to final drying and cooling.”"
       },
       {
-        label: "Timeframe & Units",
-        value: "1985–1990 • Millions of Tonnes",
+        label: "Structural Architecture",
+        value: "7 Linear Stages",
         detail:
-          "A historical six-year timeframe requiring past simple and past perfect comparative tenses.",
+          "Specifies the exact number of stages without repeating colloquial vocabulary from the prompt.",
         band9Application:
-          "“...over a six-year timeframe spanning from 1985 through 1990, expressed in millions of tonnes.”"
+          "“...a multi-stage manufacturing procedure consisting of seven ordered phases.”"
       }
     ]
   },
   {
     id: "overview",
-    title: "Piece 2: Macro Qualitative Overview (Zero Numbers)",
+    title: "Piece 2: Macro Qualitative Overview (2-Sentence Synthesis)",
     badge: "Overview Engine",
     color: "#059669",
     borderColor: "#a7f3d0",
     bgLight: "#ecfdf5",
     icon: <Layers size={18} color="#059669" />,
     summary:
-      "Synthesizes overarching trajectories without raw numerical data: 1) European Community experienced sustained growth to finish as the market leader; 2) Australia underwent a steady downward trajectory to finish lowest; 3) Canada exhibited marked volatility with the overall apex and a plunge before returning to its baseline.",
+      "Synthesizes the linear sequence from start to finish, stating total stage count and contrasting the agricultural harvesting phase (machine vs manual) against chemical/thermal industrial processing.",
     tableCorrelation:
-      "Contrasts the expanding region (EC) against the contracting region (Australia) and the volatile oscillating region (Canada).",
+      "Divides the 7 stages into Phase 1 (Agricultural & Mechanical Extraction) and Phase 2 (Chemical Purification, Evaporation, Separation, Drying).",
     pieces: [
       {
-        label: "Pillar 1: European Community Growth",
-        value: "Upward Trajectory to Dominant Leader",
+        label: "Pillar 1: Linear Span & Culmination",
+        value: "Cultivation to Dry Sugar",
         detail:
-          "Sustained expansion over the second half of the period allowed the EC to surpass both competitors by 1990.",
+          "Explicitly states the starting point (field growing) and concluding outcome (dry refined sugar crystals).",
         band9Application:
-          "“Overall, the European Community witnessed sustained upward growth over the period to become the dominant wheat exporter by 1990...”"
+          "“Overall, the manufacturing process is a linear sequence comprising seven distinct stages, beginning with agricultural cultivation and harvesting and culminating in the industrial refinement and drying of pure sugar crystals.”"
       },
       {
-        label: "Pillar 2: Australian Contraction",
-        value: "Steady Downward Trajectory to Lowest Rank",
+        label: "Pillar 2: Natural Bifurcation & Dual Harvesting",
+        value: "Agricultural vs Chemical Split",
         detail:
-          "Australia declined steadily after 1986, finishing in the lowest position among the three areas.",
+          "Contrasts early mechanical/manual farming operations with advanced chemical filtration and thermal evaporation.",
         band9Application:
-          "“...whereas Australia underwent a steady downward trajectory to finish in the lowest position.”"
-      },
-      {
-        label: "Pillar 3: Canadian Volatility",
-        value: "Overall Apex, Dramatic Plunge & Baseline Return",
-        detail:
-          "Canada experienced the most erratic pattern, registering the graph's highest peak before plummeting and returning to its starting point.",
-        band9Application:
-          "“In contrast, Canada exhibited marked volatility throughout the six-year span, registering both the overall peak and a dramatic plunge before returning to its starting level.”"
+          "“Notably, while the initial stages involve agricultural harvesting (performed either mechanically or manually) and mechanical juice extraction, the subsequent phases rely on chemical purification, thermal evaporation, and centrifugal separation.”"
       }
     ]
   },
   {
-    id: "body1-canada-australia",
-    title: "Piece 3: Body 1 — Canada & Australia Analysis",
-    badge: "Volatile vs Declining",
-    color: "#0f172a",
-    borderColor: "#cbd5e1",
-    bgLight: "#f8fafc",
-    icon: <TrendingUp size={18} color="#0f172a" />,
+    id: "body1-agricultural",
+    title: "Piece 3: Body 1 — Agricultural & Extraction Flow (Stages 1–3)",
+    badge: "Field to Juice",
+    color: "#16a34a",
+    borderColor: "#bbf7d0",
+    bgLight: "#f0fdf4",
+    icon: <TrendingUp size={18} color="#16a34a" />,
     summary:
-      "Reports Canada's opening lead (19m tonnes in 1985), climb to the 1988 global apex (25m tonnes), steep slump to 14m in 1989, and recovery to 19m in 1990; contrasted with Australia's brief rise to 16m in 1986, followed by steady decline to 11m in 1989–90.",
+      "Covers the 12–18 month growing cycle in fields, the dual mechanised vs manual harvesting methods, and crushing raw stalks through rotating cylindrical rollers to extract liquid juice.",
     tableCorrelation:
-      "Covers Canada's rollercoaster trajectory and Australia's 4-year decline down to the lowest rank.",
+      "Covers Stages 1, 2, and 3: raw crop cultivation, reaping, and physical juice extraction.",
     pieces: [
       {
-        label: "1. Canada Starting Lead & 1988 Apex",
-        value: "19m (1985) → 25m (1988 Peak)",
+        label: "1. Stage 1: Maturation Cycle",
+        value: "12–18 Months Growing",
         detail:
-          "Started as leader at 19 million tonnes, dipped slightly to 17m in 1986, then surged to the highest point on the whole graph at 25m tonnes in 1988.",
+          "Sugarcanes are planted and mature in agricultural fields over a 12 to 18-month duration.",
         band9Application:
-          "“In 1985, Canada was the leading wheat exporter at 19 million tonnes. Following a minor dip to 17 million tonnes in 1986, Canadian shipments surged rapidly to reach the highest point on the entire graph at 25 million tonnes in 1988.”"
+          "“To begin with, sugarcanes are grown in agricultural fields over a maturation period lasting between 12 and 18 months.”"
       },
       {
-        label: "2. Canada 1989 Slump & Baseline Rebound",
-        value: "14m (1989) → 19m (1990 Rebound)",
+        label: "2. Stage 2: Dual Harvesting Methods",
+        value: "Combine Machine vs Manual Sickle",
         detail:
-          "Plunged by 11m tonnes in 1989, then recovered by 5m tonnes to end at exactly the same level as it started.",
+          "Candidate must report both automated combine vehicles and agricultural laborers cutting stalks by hand.",
         band9Application:
-          "“However, this was immediately followed by a steep plunge to 14 million tonnes in 1989, after which exports rebounded back to their initial level of 19 million tonnes in 1990.”"
+          "“Once fully grown, the canes are harvested using one of two methods: either mechanically utilizing combine harvesters or manually by agricultural laborers cutting the stalks with hand blades.”"
       },
       {
-        label: "3. Australia Peak & Steady Decline",
-        value: "15m (1985) → 16m (1986) → 11m (1989–90)",
+        label: "3. Stage 3: Roller Crushing & Juice Extraction",
+        value: "Rotating Cylindrical Rollers",
         detail:
-          "Began at 15m, peaked briefly at 16m, and then diminished continuously to level off at 11m tonnes across the final two years.",
+          "Harvested stalks pass through heavy mechanical rollers that crush the fiber to express liquid juice.",
         band9Application:
-          "“In contrast, Australia commenced at 15 million tonnes and rose slightly to a peak of 16 million tonnes in 1986. Thereafter, Australian wheat exports steadily declined over the subsequent three years to 11 million tonnes in 1989, where they remained unchanged through 1990...”"
+          "“Following the harvest, the raw stalks are fed through heavy rotating rollers in a crushing mill, which compress the plant material to extract raw liquid juice.”"
       }
     ]
   },
   {
-    id: "body2-ec",
-    title: "Piece 4: Body 2 — European Community Ascent",
-    badge: "Market Leader",
-    color: "#0284c7",
-    borderColor: "#bae6fd",
-    bgLight: "#f0f9ff",
-    icon: <Sparkles size={18} color="#0284c7" />,
+    id: "body2-refinement",
+    title: "Piece 4: Body 2 — Chemical & Thermal Refining (Stages 4–7)",
+    badge: "Juice to Crystals",
+    color: "#ea580c",
+    borderColor: "#fed7aa",
+    bgLight: "#fff7ed",
+    icon: <Flame size={18} color="#ea580c" />,
     summary:
-      "Details the European Community's opening in second place at 17m tonnes in 1985, dip to a period low of 14m in 1986, two-year plateau at 15m (1987–88), and final two-year surge to 21m tonnes in 1990, overtaking both competitors.",
+      "Details limestone filtration to remove impurities, thermal evaporation into thick syrup, high-speed centrifugal separation of solid crystals, and final drying and cooling drum.",
     tableCorrelation:
-      "Tracks the European Community from second position down to 14m, through its 15m plateau, and up to its 21m apex as the market leader.",
+      "Covers Stages 4, 5, 6, and 7: chemical purification, boiling into syrup, centrifuge crystal extraction, and final refined sugar packaging.",
     pieces: [
       {
-        label: "1. Initial Dip to Period Trough",
-        value: "17m (1985) → 14m (1986 Trough)",
+        label: "1. Stage 4: Limestone Purification",
+        value: "Limestone Filter Funnel",
         detail:
-          "Started in second position, then dropped to its lowest recorded figure across the entire period.",
+          "Raw extracted juice is filtered through limestone to eliminate sediment, debris, and impurities.",
         band9Application:
-          "“Wheat exports from the European Community started in second place at 17 million tonnes in 1985 before declining to a period low of 14 million tonnes in 1986.”"
+          "“In the subsequent phase, the extracted juice is poured through a limestone filter in order to purify it and eliminate unwanted particulates.”"
       },
       {
-        label: "2. Two-Year Stability Plateau",
-        value: "15m tonnes (1987 & 1988)",
+        label: "2. Stage 5: Thermal Evaporation into Syrup",
+        value: "Evaporator Chamber Over Heat",
         detail:
-          "Stabilized after a modest recovery, holding steady at 15m tonnes across both consecutive years.",
+          "Clarified liquid is boiled over heat, evaporating moisture and condensing the juice into thick syrup.",
         band9Application:
-          "“The figures then plateaued at 15 million tonnes between 1987 and 1988.”"
+          "“Thereafter, the clarified liquid is transferred to an evaporator vat where it is heated over an open heat source; during this boiling phase, water evaporates, transforming the juice into a thick syrup.”"
       },
       {
-        label: "3. Rapid Ascent & Overtaking Competitors",
-        value: "19m (1989) → 21m (1990 Apex)",
+        label: "3. Stages 6 & 7: Centrifuge & Cylinder Drying",
+        value: "Centrifugal Separation & Drying Drum",
         detail:
-          "Leaped to 19m tonnes in 1989, matching Canada, and rose further to 21m in 1990 to finish as the undisputed leader.",
+          "Syrup is spun rapidly to separate crystals; crystals are cooled and dried to produce consumer-ready refined sugar.",
         band9Application:
-          "“Over the final two years, the European Community experienced a significant expansion, with export volumes climbing sharply to 19 million tonnes in 1989 and reaching an apex of 21 million tonnes in 1990. By doing so, the European Community overtook both Canada and Australia to become the top exporter.”"
+          "“Next, this syrup is introduced into a high-speed centrifuge, which spins rapidly to separate solid sugar crystals from the remaining liquid. Finally, in the culminating stage, the damp crystals are fed into a cylindrical container for drying and cooling, yielding finished refined sugar ready for commercial distribution.”"
       }
     ]
   }

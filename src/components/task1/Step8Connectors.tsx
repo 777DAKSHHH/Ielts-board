@@ -18,11 +18,11 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
         <div>
           <span className="apple-badge success" style={{ marginBottom: "8px" }}>
-            Step 08 / 08 • Academic Transitions &amp; Comparative Cohesion
+            Step 08 / 08 • Process Transitions &amp; Sequential Cohesion
           </span>
-          <h2 className="stage-title">Discourse Connectors &amp; Cohesive Flow for Wheat Exports</h2>
+          <h2 className="stage-title">Sequential Connectors &amp; Cohesive Flow for Sugarcane Manufacturing</h2>
           <p className="stage-subtitle">
-            Master academic discourse markers to establish seamless logical transitions across line graph parameters: European Community upward growth, Canadian dramatic fluctuations and 1988 apex, and Australia's steady downward trajectory.
+            Master chronological sequence markers and passive voice linkers to establish seamless logical transitions across the 7 manufacturing stages: agricultural cultivation, dual harvesting, mechanical crushing, limestone purification, thermal evaporation, centrifugal separation, and drum drying.
           </p>
         </div>
 
@@ -90,14 +90,14 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
               <span
                 style={{
                   fontSize: "0.70rem",
-                  background: "#d97706",
+                  background: "#2563eb",
                   color: "#ffffff",
                   padding: "2px 6px",
                   borderRadius: "5px",
                   fontWeight: 750
                 }}
               >
-                Informal
+                Formal
               </span>
             </button>
           )}
@@ -259,22 +259,22 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "#fef3c7", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Mail size={20} color="#d97706" />
+                  <div style={{ width: "36px", height: "36px", borderRadius: "10px", background: "#eff6ff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <Mail size={20} color="#2563eb" />
                   </div>
                   <div>
-                    <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>General Training Task 1 (Informal Letter Masterclass)</strong>
-                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>Letter to a Friend • Recent Museum Visit (When, What, How Felt)</div>
+                    <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>General Training Task 1 (Formal Letter Masterclass)</strong>
+                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>Letter to Organisation Manager • 3-Month Student Internship (Friday)</div>
                   </div>
                 </div>
-                <span style={{ fontSize: "0.74rem", background: "#fef3c7", color: "#92400e", fontWeight: 750, padding: "3px 10px", borderRadius: "6px", border: "1px solid #fde68a" }}>
-                  Informal Register (Week 21)
+                <span style={{ fontSize: "0.74rem", background: "#eff6ff", color: "#1e40af", fontWeight: 750, padding: "3px 10px", borderRadius: "6px", border: "1px solid #bfdbfe" }}>
+                  Formal Register
                 </span>
               </div>
               <p style={{ fontSize: "0.86rem", color: "#475569", margin: "4px 0 0", lineHeight: 1.5 }}>
-                Master the strict 5-paragraph letter architecture (Warm Greeting + Bullet 1 Timing &amp; Venue + Bullet 2 Aerospace Exhibits + Bullet 3 Emotional Reaction + Friendly Close), authentic informal idioms, and Band 9 conversational tone.
+                Master the strict 5-paragraph formal architecture (Formal Salutation 'Dear Mr. Pritam,' + Bullet 1 Manager Gratitude + Bullet 2 Learning Objectives + Bullet 3 Onboarding Prep + Formal Close 'Yours sincerely,' Arpit), advanced professional collocations, and zero contractions.
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#d97706", fontSize: "0.88rem", fontWeight: 750, marginTop: "6px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#2563eb", fontSize: "0.88rem", fontWeight: 750, marginTop: "6px" }}>
                 <span>Launch Dedicated Letter Page</span>
                 <ArrowRight size={16} />
               </div>

@@ -30,9 +30,9 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
         <span className="apple-badge accent chromatic-glass-badge" style={{ marginBottom: "8px" }}>
           Step 01 / 08 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: Wheat Exports Across Three Regions (1985–1990)</h2>
+        <h2 className="stage-title">Listen First: The Process of Making Sugar from Sugarcane</h2>
         <p className="stage-subtitle">
-          Play the briefing before revealing the line graph. Deduce which region achieved the overall apex of 25 million tonnes, which area underwent steady upward growth to finish as the market leader, and which nation experienced continuous decline to finish lowest.
+          Play the briefing before revealing the manufacturing diagram. Deduce how many sequential stages exist, how sugarcane is harvested in two distinct ways, which chemical filter is utilized, and how solid sugar crystals are separated from liquid syrup.
         </p>
       </div>
 
@@ -60,7 +60,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
                   Cryptic Audio Briefing
                 </h4>
                 <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", marginTop: "2px" }}>
-                  Multi-Line Graph • Wheat Exports (1985–1990) • Millions of Tonnes
+                  Manufacturing Process Diagram • 7 Sequential Stages • Cambridge Academic IELTS
                 </p>
               </div>
             </div>
@@ -105,7 +105,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "16px", color: "var(--slate-700)", lineHeight: 1.55 }}>
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify which country started as the leading exporter at 19 million tonnes, which region surged to 21 million tonnes to finish first, and which country steadily fell from 16 to 11 million tonnes.
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify how long the canes grow before harvesting, what two distinct methods are used to reap the crop, how juice is extracted and purified, and which machine separates sugar crystals from syrup.
           </div>
         </div>
 
@@ -127,10 +127,10 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           {[
-            "Which nation achieved the overall apex of the entire graph at 25 million tonnes in 1988?",
-            "Which region experienced steady upward expansion over the final two years to emerge as the top exporter at 21 million tonnes in 1990?",
-            "How did Canada's export figure in 1990 compare to its initial volume in 1985 (Zero net change: 19 million tonnes)?",
-            "Which country underwent a continuous downward trajectory after 1986, ultimately finishing lowest at 11 million tonnes?"
+            "How many sequential stages are depicted from raw crop to finished sugar (7 distinct linear stages)?",
+            "What two different methods are shown for harvesting the mature sugarcane (mechanised combine harvester vs manual hand sickle)?",
+            "What specific filter medium is utilized to purify the raw extracted juice (limestone filter)?",
+            "Which industrial machine utilizes rapid rotational spinning to separate sugar crystals from liquid syrup (centrifuge)?"
           ].map((question, index) => (
             <div key={question} style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "15px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
               <span className="apple-badge neutral" style={{ minWidth: "32px", justifyContent: "center", fontWeight: 800 }}>{index + 1}</span>
@@ -150,7 +150,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             className="apple-touch-btn primary"
             style={{ minHeight: "52px", gap: "8px", marginTop: "auto", fontSize: "1.02rem", fontWeight: 700 }}
           >
-            <Sparkles size={18} /> {revealed ? "Continue to Line Graph Analysis" : "Reveal Task & Line Graph"}
+            <Sparkles size={18} /> {revealed ? "Continue to 7-Stage Process Analysis" : "Reveal Task & Process Diagram"}
           </motion.button>
 
           {revealed && (
@@ -159,7 +159,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
               animate={{ opacity: 1, y: 0 }}
               style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "14px", padding: "14px 16px", color: "#1e3a8a", fontSize: "0.9rem", lineHeight: 1.5 }}
             >
-              The full task prompt and interactive SmartBoard Line Graph Engine are revealed in Step 02.
+              The full Cambridge IELTS prompt and interactive 7-Stage Process Diagram Engine are revealed in Step 02.
             </motion.div>
           )}
         </div>
