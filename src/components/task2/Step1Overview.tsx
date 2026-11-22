@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { SunMedium, ArrowRight, BookOpen, Scale } from "lucide-react";
+import { Wind, ArrowRight, BookOpen, Scale } from "lucide-react";
 import { TASK2_DATA } from "../../data/task2Data";
 import { tactilePress } from "../../motion";
 
@@ -16,9 +16,9 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 01 / 09 • Question Briefing &amp; Topic Overview
         </span>
-        <h2 className="stage-title">IELTS Writing Task 2 — Household Solar Energy</h2>
+        <h2 className="stage-title">IELTS Writing Task 2 — Car-Free Days vs. Other Ways to Reduce Air Pollution</h2>
         <p className="stage-subtitle">
-          Examine the prompt, identify the Advantages &amp; Disadvantages essay task, and master the balanced 4-paragraph analytical architecture.
+          Examine the prompt, identify the Discussion with Opinion essay task, and master the balanced 4-paragraph analytical architecture.
         </p>
       </div>
 
@@ -43,21 +43,21 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
                   width: "44px",
                   height: "44px",
                   borderRadius: "12px",
-                  background: "#ea580c",
+                  background: "#0284c7",
                   color: "#ffffff",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center"
                 }}
               >
-                <SunMedium size={24} />
+                <Wind size={24} />
               </div>
               <div>
-                <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#ea580c", textTransform: "uppercase" }}>
+                <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#0284c7", textTransform: "uppercase" }}>
                   Task 2 Essay Type
                 </span>
                 <h4 style={{ fontSize: "1.15rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                  Advantages &amp; Disadvantages Essay
+                  Discussion with Opinion Essay
                 </h4>
               </div>
             </div>
@@ -96,11 +96,11 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               Official Exam Prompt
             </span>
             <p style={{ margin: 0, fontSize: "1.18rem", fontWeight: 750, color: "#0f172a", lineHeight: 1.5 }}>
-              “Solar energy is becoming more and more popular as a source of household energy in many countries around the world.”
+              “Some people believe that car-free days are effective to reduce air pollution. However, others argue that there are other ways that are more effective.”
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "6px", marginTop: "4px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "1.05rem", fontWeight: 750, color: "#ea580c" }}>
-                <span>•</span> <span>What are the advantages and disadvantages of solar energy?</span>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "1.05rem", fontWeight: 750, color: "#0284c7" }}>
+                <span>•</span> <span>Discuss both the views and give your opinion.</span>
               </div>
             </div>
           </div>
@@ -108,8 +108,8 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
           {/* Format Panel Overview */}
           <div
             style={{
-              background: "#fff7ed",
-              border: "1.5px solid #fed7aa",
+              background: "#f0f9ff",
+              border: "1.5px solid #bae6fd",
               borderRadius: "16px",
               padding: "18px 20px",
               display: "flex",
@@ -118,16 +118,16 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <BookOpen size={16} color="#c2410c" />
-              <strong style={{ fontSize: "0.92rem", color: "#9a3412", textTransform: "uppercase" }}>
+              <BookOpen size={16} color="#0369a1" />
+              <strong style={{ fontSize: "0.92rem", color: "#075985", textTransform: "uppercase" }}>
                 Mandatory Essay Format Architecture
               </strong>
             </div>
             <ul style={{ margin: "4px 0 0", paddingLeft: "20px", fontSize: "0.9rem", color: "#1e293b", lineHeight: 1.65 }}>
-              <li><strong>INTRO:</strong> Paraphrase the prompt + Outline statement (introducing both benefits &amp; drawbacks)</li>
-              <li><strong>BODY PARA 1 (ADVANTAGES):</strong> Clean renewable electricity (zero emissions) + Substantial long-term utility bill savings &amp; net-metering</li>
-              <li><strong>BODY PARA 2 (DISADVANTAGES):</strong> High upfront capital expenditure &amp; installation fees + Weather intermittency &amp; costly battery storage</li>
-              <li><strong>CONCLUSION:</strong> Sum-up key advantages &amp; disadvantages + Balanced future recommendation / forward-looking insight</li>
+              <li><strong>INTRO:</strong> Paraphrase prompt + State clear thesis balancing both views and giving your opinion</li>
+              <li><strong>BODY PARA 1 (VIEW 1):</strong> Merits of car-free days (immediate drop in toxic emissions &amp; civic awareness shift)</li>
+              <li><strong>BODY PARA 2 (VIEW 2 &amp; OPINION):</strong> Why alternative ways are more effective (electrified mass transit, EV incentives, congestion fees)</li>
+              <li><strong>CONCLUSION:</strong> Synthesize both perspectives + Reaffirm your clear personal recommendation</li>
             </ul>
           </div>
 
@@ -144,9 +144,9 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               fontWeight: 750,
               width: "100%",
               borderRadius: "14px",
-              background: "linear-gradient(135deg, #ea580c, #c2410c)",
+              background: "linear-gradient(135deg, #0284c7, #0369a1)",
               border: "none",
-              boxShadow: "0 8px 20px -4px rgba(234, 88, 12, 0.35)",
+              boxShadow: "0 8px 20px -4px rgba(2, 132, 199, 0.35)",
               cursor: "pointer"
             }}
           >

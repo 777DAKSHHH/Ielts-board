@@ -12,9 +12,9 @@ export const Step5IntroStructureT2: React.FC = () => {
   };
 
   const sentence1 =
-    "In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source.";
+    "It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist.";
   const sentence2 =
-    "While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.";
+    "While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions.";
 
   return (
     <div className="stage-card-wrapper">
@@ -22,9 +22,9 @@ export const Step5IntroStructureT2: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 05 / 09 • Sample Introduction &amp; Outline
         </span>
-        <h2 className="stage-title">Sample Introduction: Paraphrase + Clear Outline Statement</h2>
+        <h2 className="stage-title">Sample Introduction: Paraphrase + Balanced Thesis Statement</h2>
         <p className="stage-subtitle">
-          Mandatory Introduction Format: <strong>Sentence 1: Paraphrase the question prompt + Sentence 2: Deliver your clear outline statement</strong>.
+          Mandatory Introduction Format: <strong>Sentence 1: Paraphrase the question prompt + Sentence 2: Deliver your balanced thesis statement &amp; opinion</strong>.
         </p>
       </div>
 
@@ -45,7 +45,7 @@ export const Step5IntroStructureT2: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <BookOpen size={22} color="var(--apple-blue)" />
               <h4 style={{ fontSize: "1.2rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                Sample Introduction (2 Sentences • ~51 Words)
+                Sample Introduction (2 Sentences • ~62 Words)
               </h4>
             </div>
 
@@ -97,7 +97,7 @@ export const Step5IntroStructureT2: React.FC = () => {
                   Sentence 1 • Paraphrase
                 </span>
                 <span style={{ fontSize: "0.8rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                  (20 words)
+                  (24 words)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "1.12rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.55 }}>
@@ -127,10 +127,10 @@ export const Step5IntroStructureT2: React.FC = () => {
                     textTransform: "uppercase"
                   }}
                 >
-                  Sentence 2 • Balanced Outline Statement
+                  Sentence 2 • Balanced Thesis &amp; Opinion
                 </span>
                 <span style={{ fontSize: "0.8rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                  (31 words)
+                  (38 words)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "1.12rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.55 }}>
@@ -156,7 +156,7 @@ export const Step5IntroStructureT2: React.FC = () => {
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-600)", fontSize: "0.9rem", fontWeight: 600 }}>
-            <Clock size={16} /> Exactly 51 words • 2 sentences • Fast exam execution (~1.5 mins)
+            <Clock size={16} /> Exactly 62 words • 2 sentences • Fast exam execution (~1.5 mins)
           </div>
         </div>
 
@@ -175,9 +175,9 @@ export const Step5IntroStructureT2: React.FC = () => {
               <h5 style={{ fontSize: "1.02rem", fontWeight: 750, margin: 0 }}>One-Liner Intro Planning Points</h5>
             </div>
             <ul style={{ margin: "4px 0 0", paddingLeft: "18px", fontSize: "0.94rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
-              <li><strong>Paraphrase:</strong> Many homeowners across the globe are adopting residential solar panels as a primary electricity source.</li>
-              <li><strong>Advantage Preview:</strong> Highlight green renewable energy and long-term utility bill savings.</li>
-              <li><strong>Disadvantage Preview:</strong> Contrast with heavy initial installation expenses and weather dependency.</li>
+              <li><strong>Paraphrase:</strong> It is argued that car-free days reduce air pollution, while others advocate for more effective alternative strategies.</li>
+              <li><strong>View 1 Acknowledgment:</strong> Recognize immediate emissions reduction and the stimulation of civic awareness.</li>
+              <li><strong>View 2 &amp; Opinion Thesis:</strong> Argue that systemic measures (electrified mass transit and industrial emission caps) represent far more effective long-term solutions.</li>
             </ul>
           </div>
 
@@ -185,21 +185,21 @@ export const Step5IntroStructureT2: React.FC = () => {
             icon={<CheckCircle2 size={18} />}
             badge="Sentence 1 Analysis"
             title="Question Paraphrase"
-            text="“In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source.” Elegantly paraphrases the prompt's premise with advanced academic collocations."
+            text="“It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist.” Accurately and fluently captures both prompt perspectives using advanced academic lexis."
           />
 
           <StructureCard
             icon={<Award size={18} />}
             badge="Sentence 2 Analysis"
-            title="Balanced Outline Statement"
-            text="“While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.” Clearly outlines both positive and negative dimensions, establishing an explicit roadmap for Body 1 (advantages) and Body 2 (disadvantages)."
+            title="Balanced Thesis Statement with Opinion"
+            text="“While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions.” Concedes the genuine benefits of car-free days before establishing a clear, authoritative personal opinion."
           />
 
           <StructureCard
             icon={<CheckCircle2 size={18} />}
             badge="Band 9 Strategy"
-            title="Balanced Analytical Architecture"
-            text="Providing a balanced outline statement in the introduction and developing both advantages and disadvantages with equal rigor satisfies the Band 9 Task Achievement criterion for an Advantages and Disadvantages essay."
+            title="Discussion with Opinion Architecture"
+            text="In a 'Discuss both views and give your opinion' task, presenting a clear thesis in the introduction and maintaining that position throughout ensures a Band 9 Task Achievement rating."
           />
         </div>
       </div>

@@ -27,283 +27,283 @@ export type {
 };
 
 /* ==========================================================================
-   STUDENT IDEA BANK: ADVANTAGES OF SOLAR ENERGY (BODY PARA 1)
+   STUDENT IDEA BANK: VIEW 1 — CAR-FREE DAYS ARE EFFECTIVE (BODY PARA 1)
    ========================================================================== */
 export const ADVANTAGES_IDEA_BANK: IdeaBankItem[] = [
   {
     id: "adv-1",
-    badge: "Advantage 01 • Clean Renewable Electricity",
-    title: "Zero greenhouse gas emissions and ecological decarbonisation",
+    badge: "View 1 Argument 01 • Immediate Emission Reductions",
+    title: "Dramatic, instantaneous drop in urban tailpipe exhaust fumes",
     mainIdea:
-      "Solar power harnesses inexhaustible sunlight to generate clean electricity, completely eliminating carbon dioxide emissions during domestic power production.",
+      "Temporarily prohibiting private motor vehicles produces an immediate, measurable reduction in hazardous airborne pollutants across dense metropolitan centers.",
     supportingReason:
-      "Unlike coal-fired and natural gas power plants that drive global climate change and urban air pollution, residential photovoltaic systems produce zero toxic airborne emissions.",
+      "Internal combustion engines release significant volumes of nitrogen dioxide, carbon monoxide, and particulate matter (PM2.5); clearing roadways for a designated day instantly purges these toxic emissions from city air.",
     example:
-      "A standard 5kW rooftop solar installation offsets approximately four to five tonnes of carbon emissions annually, equivalent to planting over one hundred trees.",
+      "During annual car-free days in Paris and Brussels, municipal air monitoring stations routinely record drops of 30% to 50% in localized nitrogen dioxide concentrations.",
     collocations: [
-      "zero greenhouse emissions",
-      "inexhaustible solar radiation",
-      "ecological decarbonisation",
-      "carbon footprint reduction"
+      "curb emissions",
+      "toxic airborne pollutants",
+      "tailpipe exhaust fumes",
+      "measurable reduction"
     ]
   },
   {
     id: "adv-2",
-    badge: "Advantage 02 • Long-Term Utility Bill Savings",
-    title: "Substantial reduction in monthly household electricity expenses",
+    badge: "View 1 Argument 02 • Fostering Civic Environmental Awareness",
+    title: "Transforming public psychology regarding automobile dependency",
     mainIdea:
-      "Generating on-site solar power shields homeowners from volatile utility tariffs and drastically reduces monthly electrical utility bills.",
+      "Car-free events serve as powerful educational catalysts that challenge the deeply ingrained assumption that private cars are indispensable for daily life.",
     supportingReason:
-      "Once the initial setup is operational, the raw energy source (sunlight) is entirely free, allowing families to satisfy a majority of their daytime energy needs without purchasing grid electricity.",
+      "Experiencing quiet, clear-aired streets encourages citizens to recognize the magnitude of vehicular pollution and prompts thoughtful reflection on personal commuting habits.",
     example:
-      "Homeowners in sunny climatic zones routinely save between 60% and 80% on their annual municipal utility bills after adopting rooftop photovoltaic panels.",
+      "Citywide awareness campaigns held on car-free Sundays prompting families to rethink daily school runs and experiment with shared transit options.",
     collocations: [
-      "utility bill reduction",
-      "volatile power tariffs",
-      "on-site power generation",
-      "long-term financial savings"
+      "foster awareness",
+      "automobile dependency",
+      "civic consciousness",
+      "educational catalyst"
     ]
   },
   {
     id: "adv-3",
-    badge: "Advantage 03 • Energy Independence & Resilience",
-    title: "Grid autonomy and protection against catastrophic power blackouts",
+    badge: "View 1 Argument 03 • Promoting Active & Green Transportation",
+    title: "Encouraging regular walking, cycling, and public transit use",
     mainIdea:
-      "Equipping residences with solar panels and domestic battery storage grants households independence from unreliable centralised power grids.",
+      "When major avenues are reserved exclusively for pedestrians and non-motorized travel, residents actively engage with alternative commuting options.",
     supportingReason:
-      "In regions prone to severe storms, heatwaves, or infrastructure failures, self-reliant solar homes maintain continuous power for refrigeration, lighting, and medical devices.",
+      "Removing the danger and stress of vehicular traffic creates an inviting environment for cycling and walking, building user confidence that persists well beyond the event.",
     example:
-      "Suburban and rural communities in hurricane-prone coastal regions utilizing standalone solar battery reserves during prolonged municipal grid blackouts.",
+      "Bogotá's weekly 'Ciclovía' program transforming over 120 kilometers of thoroughfares into safe cycleways, significantly elevating regular bicycle adoption.",
     collocations: [
-      "energy independence",
-      "grid autonomy",
-      "decentralised energy systems",
-      "blackout resilience"
+      "active transportation",
+      "non-motorized travel",
+      "pedestrianised thoroughfares",
+      "alternative commuting"
     ]
   },
   {
     id: "adv-4",
-    badge: "Advantage 04 • Revenue via Net-Metering",
-    title: "Earning grid credits and rebates by exporting surplus electricity",
+    badge: "View 1 Argument 04 • Testing Ground for Permanent Pedestrianisation",
+    title: "Empirical proof of concept for ambitious urban design reforms",
     mainIdea:
-      "Many modern utility frameworks enable domestic solar producers to sell surplus midday electricity back into the municipal grid.",
+      "Designated car-free intervals allow municipal town planners to observe traffic redistribution and assess the viability of permanent pedestrian zones.",
     supportingReason:
-      "Through bidirectional smart meters, homeowners receive utility bill credits or direct feed-in payments, transforming rooftops from cost centers into modest revenue streams.",
+      "Real-world street closures provide urban authorities with concrete logistical data, disproving fears that banning cars inevitably causes commercial decline or gridlock.",
     example:
-      "Families generating surplus solar electricity during peak summer hours receiving substantial credits that offset winter heating bills.",
+      "Successful temporary weekend closures in central London and Ljubljana serving as direct blueprints for subsequent permanent pedestrianisation schemes.",
     collocations: [
-      "net-metering schemes",
-      "feed-in tariffs",
-      "surplus electricity",
-      "bidirectional smart meters"
+      "pedestrianised zone",
+      "viable alternative",
+      "urban design reforms",
+      "empirical proof"
     ]
   },
   {
     id: "adv-5",
-    badge: "Advantage 05 • Minimal Maintenance & Longevity",
-    title: "Extremely low operating costs and 25–30 year operational lifespans",
+    badge: "View 1 Argument 05 • Public Health & Community Reclamation",
+    title: "Mitigating acoustic stress and creating vibrant recreational space",
     mainIdea:
-      "Photovoltaic panels contain no moving mechanical parts, resulting in negligible mechanical wear and remarkably low maintenance demands.",
+      "Beyond improving ambient air quality, eliminating automobiles restores urban space for community recreation, physical activity, and social interaction.",
     supportingReason:
-      "Aside from occasional cleaning to remove dust or leaves, modern solar arrays function reliably for several decades, supported by manufacturer performance warranties.",
+      "Excessive traffic noise is a proven source of cardiovascular stress; temporary vehicle bans substitute vehicular noise and congestion with lively, walkable public domains.",
     example:
-      "Leading solar panel manufacturers guaranteeing 80% power output efficiency after twenty-five years of continuous exposure to outdoor elements.",
+      "Metropolitan centers reporting marked increases in outdoor physical activity and reductions in respiratory hospital admissions during car-free weekends.",
     collocations: [
-      "negligible mechanical wear",
-      "minimal maintenance demands",
-      "operational longevity",
-      "performance warranties"
+      "recreational space",
+      "acoustic stress",
+      "mitigate the impact",
+      "community wellbeing"
     ]
   }
 ];
 
 /* ==========================================================================
-   STUDENT IDEA BANK: DISADVANTAGES OF SOLAR ENERGY (BODY PARA 2)
+   STUDENT IDEA BANK: VIEW 2 — OTHER WAYS ARE MORE EFFECTIVE (BODY PARA 2)
    ========================================================================== */
 export const DISADVANTAGES_IDEA_BANK: IdeaBankItem[] = [
   {
     id: "dis-1",
-    badge: "Disadvantage 01 • High Upfront Capital Costs",
-    title: "Prohibitive initial purchase and professional installation expenses",
+    badge: "View 2 Argument 01 • The Flaw of Transient Measures",
+    title: "Fleeting symbolic impact versus immediate emissions rebound",
     mainIdea:
-      "The primary barrier to household solar adoption is the substantial capital expenditure required to purchase and install the complete photovoltaic system.",
+      "Car-free days are fundamentally transient interventions that fail to generate lasting reductions in annual atmospheric pollution levels.",
     supportingReason:
-      "Solar panels, high-grade inverters, electrical wiring, mounting brackets, and specialized installation labor create an upfront cost that is out of reach for many low- and middle-income families.",
+      "Because vehicle bans occur only once a month or annually, motorists simply postpone trips or resume driving immediately the next day, resulting in complete emissions rebounds.",
     example:
-      "A typical residential solar setup often costs between $12,000 and $22,000 before government incentives, taking 7 to 10 years to reach financial break-even.",
+      "Air quality measurements in European capitals demonstrating that ambient pollution levels return to baseline highs within twelve hours of car-free days concluding.",
     collocations: [
-      "high capital expenditure",
-      "prohibitive upfront cost",
-      "financial break-even period",
-      "economic barrier"
+      "short-term measure",
+      "transient nature",
+      "emissions rebound",
+      "symbolic intervention"
     ]
   },
   {
     id: "dis-2",
-    badge: "Disadvantage 02 • Weather Dependency & Intermittency",
-    title: "Fluctuating generation and inability to produce power during darkness",
+    badge: "View 2 Argument 02 • High-Capacity Clean Public Transit",
+    title: "Investing in comprehensive electric rail and bus infrastructure",
     mainIdea:
-      "Solar energy is inherently intermittent, as electricity generation depends entirely on the availability and intensity of ambient sunlight.",
+      "The most potent permanent method to curb urban emissions is constructing extensive, reliable, and affordable zero-emission public transit networks.",
     supportingReason:
-      "Power output plummets during heavily overcast days, rainy seasons, and winter months, and ceases entirely at night when household lighting and heating demands peak.",
+      "Motorists cannot abandon private vehicles unless practical alternatives exist; electrified metros and rapid buses remove thousands of cars from roads continuously year-round.",
     example:
-      "Households in northern European climates experiencing severe drops in solar power production during long, gloomy winter weeks.",
+      "Cities like Tokyo and Zurich, where world-class rail networks achieve over 70% public transit modal share and maintain remarkably low per-capita transport emissions.",
     collocations: [
-      "weather dependency",
-      "intermittent generation",
-      "seasonal fluctuations",
-      "ambient sunlight intensity"
+      "public transit infrastructure",
+      "sustainable alternative",
+      "electrified rail networks",
+      "modal shift"
     ]
   },
   {
     id: "dis-3",
-    badge: "Disadvantage 03 • Exorbitant Battery Storage Costs",
-    title: "Expensive storage units with limited operational lifespans",
+    badge: "View 2 Argument 03 • Accelerated Electric Vehicle Transition",
+    title: "Government subsidies and mandates replacing combustion engines",
     mainIdea:
-      "To ensure round-the-clock electricity without relying on the public grid, homes require costly battery storage banks that degrade over time.",
+      "Transitioning the entire vehicular fleet to electric and zero-emission vehicles eliminates tailpipe pollution without restricting citizen mobility.",
     supportingReason:
-      "Modern lithium-ion batteries add thousands of dollars to the installation bill and generally need complete replacement every 10 to 12 years due to chemical wear.",
+      "Providing purchasing subsidies, building widespread charging infrastructure, and setting phased bans on internal combustion engines permanently cuts vehicular emissions.",
     example:
-      "Adding a 10kWh domestic battery unit increasing overall installation expenditure by $7,000 to $10,000, significantly extending the system's payback period.",
+      "Norway achieving an 85% electric vehicle market share through tax exemptions and toll discounts, slashing national urban exhaust pollution permanently.",
     collocations: [
-      "battery storage units",
-      "chemical degradation",
-      "prolonged payback period",
-      "replacement expenditure"
+      "subsidise electric vehicles",
+      "combustion engine phase-out",
+      "zero-emission mobility",
+      "charging infrastructure"
     ]
   },
   {
     id: "dis-4",
-    badge: "Disadvantage 04 • Roof Space & Structural Constraints",
-    title: "Orientation, shading, and architectural limitations of dwellings",
+    badge: "View 2 Argument 04 • Continuous Economic Deterrents",
+    title: "Congestion pricing zones and ultra-low emission standards",
     mainIdea:
-      "Solar power generation is directly constrained by the available surface area, angle, and structural condition of a home's roof.",
+      "Enacting continuous monetary disincentives for high-polluting vehicles discourages non-essential urban driving every single day of the year.",
     supportingReason:
-      "Properties surrounded by tall trees, neighboring apartment complexes, or historic architecture with steep or shaded roofs cannot accommodate an efficient array.",
+      "Daily congestion charges and clean-air zone fees make private driving financially disadvantageous while generating steady municipal revenue to fund green public transport.",
     example:
-      "Urban apartment dwellers and tenants who do not own individual roof space are virtually excluded from adopting personal rooftop solar systems.",
+      "London's Ultra Low Emission Zone (ULEZ) cutting roadside nitrogen dioxide pollution by 46% over five years by imposing continuous daily levies on polluting vehicles.",
     collocations: [
-      "structural constraints",
-      "roof space availability",
-      "architectural limitations",
-      "unfavorable roof orientation"
+      "congestion pricing",
+      "effective deterrent",
+      "stringent regulations",
+      "continuous disincentive"
     ]
   },
   {
     id: "dis-5",
-    badge: "Disadvantage 05 • Manufacturing & E-Waste Concerns",
-    title: "Toxic chemical processing and future solar panel electronic waste",
+    badge: "View 2 Argument 05 • Industrial Controls & Urban Planning",
+    title: "Stringent factory emission caps and mixed-use urban development",
     mainIdea:
-      "While clean during operation, the manufacturing and disposal lifecycle of solar components carries significant ecological drawbacks.",
+      "Addressing non-transport pollution sources and restructuring cities to reduce commuting distances provides far greater cumulative ecological benefits.",
     supportingReason:
-      "Fabricating silicon photovoltaic cells requires hazardous chemicals and energy-intensive processing, while decommissioned panels pose electronic waste hazards if not recycled.",
+      "Industrial manufacturing, thermal power generation, and urban sprawl generate the bulk of regional particulates; enforcing factory emission scrubbers and 15-minute city designs tackles root causes.",
     example:
-      "Millions of early-generation solar panels reaching the end of their operational lifecycle and threatening to overwhelm local electronic recycling centers.",
+      "Relocating heavy coal-fired manufacturing plants away from urban basins and mandating industrial particulate filters dramatically improving regional air indices.",
     collocations: [
-      "hazardous chemical solvents",
-      "electronic waste accumulation",
-      "manufacturing lifecycle",
-      "end-of-life recycling challenges"
+      "stringent regulatory standards",
+      "systemic reform",
+      "industrial emission caps",
+      "urban sprawl reduction"
     ]
   }
 ];
 
-// Aliases for compatibility
+// Aliases for layout compatibility
 export const OPINION_IDEA_BANK = ADVANTAGES_IDEA_BANK;
 export const NON_OPINION_IDEA_BANK = DISADVANTAGES_IDEA_BANK;
 export const CAUSES_IDEA_BANK = ADVANTAGES_IDEA_BANK;
 export const SOLUTIONS_IDEA_BANK = DISADVANTAGES_IDEA_BANK;
 
 /* ==========================================================================
-   MASTER TASK 2 DATASET: HOUSEHOLD SOLAR ENERGY
-   Advantages and Disadvantages Essay Architecture
+   MASTER TASK 2 DATASET: CAR-FREE DAYS VS ALTERNATIVE WAYS
+   Discussion with Opinion Essay Architecture
    ========================================================================== */
 export const TASK2_DATA: Task2Data = {
-  id: "solar-energy-household-advantages-disadvantages",
+  id: "car-free-days-vs-alternative-measures-air-pollution",
 
-  taskType: "Advantages and Disadvantages Essay",
+  taskType: "Discussion with Opinion Essay",
 
-  title: "IELTS Writing Task 2 — Household Solar Energy",
+  title: "IELTS Writing Task 2 — Car-Free Days vs. Other Ways to Reduce Air Pollution",
 
   questionText:
-    "Solar energy is becoming more and more popular as a source of household energy in many countries around the world.\n\n• What are the advantages and disadvantages of solar energy?",
+    "Some people believe that car-free days are effective to reduce air pollution. However, others argue that there are other ways that are more effective.\n\n• Discuss both the views and give your opinion.",
 
   audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
 
   timingSeconds: 180,
 
   recommendedPosition:
-    "A balanced assessment establishing that while domestic solar power offers profound environmental sustainability and significant long-term reductions in electricity bills, these benefits must be weighed against high initial capital expenditure and vulnerability to weather intermittency.",
+    "A nuanced, balanced perspective establishing that while car-free days are effective in generating immediate, short-term emission drops and raising public environmental awareness, they are fundamentally insufficient on their own. Truly lasting air quality improvements require systemic interventions, principally expanding green public transit and enforcing strict regulatory controls on vehicular and industrial emissions.",
 
   strongestArgument:
-    "Solar energy delivers inexhaustible, zero-emission green electricity and protects households from volatile utility tariffs, yet requires substantial upfront investment and depends heavily on sunny weather conditions.",
+    "Car-free days raise public consciousness and provide instantaneous localized relief from toxic exhaust, but only comprehensive infrastructural investments—such as electrified public transit networks and congestion pricing—can permanently eradicate urban air pollution.",
 
   // 1. Sample introduction planning points
   introPlanningPoints: [
-    "Sentence 1 (Paraphrase): In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source.",
-    "Sentence 2 (Outline Statement): While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions."
+    "Sentence 1 (Paraphrase): It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist.",
+    "Sentence 2 (Thesis / Opinion): While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions."
   ],
 
   sampleIntro:
-    "In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source. While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.",
+    "It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist. While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions.",
 
   sampleConclusion:
-    "In conclusion, household solar energy presents compelling advantages by delivering clean, renewable electricity and lowering long-term domestic power bills. However, these merits are counterbalanced by the heavy initial capital investment required and the system's inherent weather dependency, suggesting that government subsidies and advancements in battery storage will remain critical for widespread residential adoption.",
+    "In conclusion, while car-free days provide valuable short-term benefits by temporarily reducing vehicular exhaust and encouraging public mindfulness, they are fundamentally insufficient as a standalone policy. In my view, achieving lasting air quality improvements requires permanent systemic solutions, primarily heavy investment in zero-emission public transit networks and the rigorous enforcement of stringent vehicle emission standards.",
 
   // 2. Five-minute planning map
   fiveMinutePlanningMap: {
     causes: [
       {
-        id: "adv1",
-        label: "Zero greenhouse gas emissions & decarbonisation",
-        note: "Harnesses inexhaustible sunlight without producing toxic air pollution or carbon emissions."
+        id: "view1-1",
+        label: "Immediate, measurable drop in tailpipe emissions",
+        note: "Halting motor traffic instantly purges toxic nitrogen dioxide and particulate matter from congested streets."
       },
       {
-        id: "adv2",
-        label: "Drastic long-term reduction in household electricity bills",
-        note: "Once installed, sunlight is free; families save 60–80% and are protected against utility tariff inflation."
+        id: "view1-2",
+        label: "Fostering civic environmental awareness",
+        note: "Highlights reliance on automobiles and prompts citizens to rethink personal commuting habits."
       },
       {
-        id: "adv3",
-        label: "Grid independence & resilience against blackouts",
-        note: "Decentralized power paired with battery reserves ensures essential power during grid failures."
+        id: "view1-3",
+        label: "Promoting active walking and cycling",
+        note: "Safe, pedestrianised streets build user confidence and encourage regular adoption of non-motorized travel."
       },
       {
-        id: "adv4",
-        label: "Revenue generation through net-metering schemes",
-        note: "Surplus electricity generated at midday can be exported back to the grid for monetary credits."
+        id: "view1-4",
+        label: "Viable trial for permanent pedestrian zones",
+        note: "Gives urban planners empirical data proving that core street pedestrianisation does not cause economic ruin."
       },
       {
-        id: "adv5",
-        label: "Low operating maintenance & 25–30 year panel lifespan",
-        note: "No moving parts; reliable performance guaranteed for decades with minimal servicing."
+        id: "view1-5",
+        label: "Acoustic relief and community health revitalization",
+        note: "Reduces traffic noise stress and reclaims streets as vibrant communal recreational spaces."
       }
     ],
     solutions: [
       {
-        id: "dis1",
-        label: "Prohibitive upfront capital expenditure & installation fees",
-        note: "Panels, inverters, and professional labor cost $12,000–$22,000, creating a high barrier for low-income homes."
+        id: "view2-1",
+        label: "Transient nature & inevitable emissions rebound",
+        note: "One-day bans are merely symbolic; drivers postpone trips and pollution returns to peak levels the next day."
       },
       {
-        id: "dis2",
-        label: "Weather dependency & seasonal intermittency",
-        note: "Power output drops sharply during overcast or winter days, and ceases completely during night hours."
+        id: "view2-2",
+        label: "High-capacity electrified public transit",
+        note: "Affordable, modern metros and electric buses provide continuous, year-round alternatives for daily commuters."
       },
       {
-        id: "dis3",
-        label: "Exorbitant cost & finite lifespan of battery storage",
-        note: "Lithium-ion storage adds thousands to costs and requires replacement every 10–12 years."
+        id: "view2-3",
+        label: "Accelerated electric vehicle transition",
+        note: "Government subsidies and charging networks permanently replace internal combustion engines."
       },
       {
-        id: "dis4",
-        label: "Roof space, shading & structural constraints",
-        note: "Homes with shaded, small, or weak roofs, plus apartment dwellers, cannot install effective arrays."
+        id: "view2-4",
+        label: "Continuous economic deterrents (Congestion charges / ULEZ)",
+        note: "Daily levies discourage non-essential urban driving every day and generate funding for green infrastructure."
       },
       {
-        id: "dis5",
-        label: "Manufacturing chemical hazards & e-waste disposal",
-        note: "Silicon processing involves toxic chemicals; decommissioned panels pose recycling challenges."
+        id: "view2-5",
+        label: "Industrial emission caps & 15-minute city planning",
+        note: "Regulating factories and designing self-sufficient neighborhoods addresses root pollution sources permanently."
       }
     ]
   },
@@ -312,308 +312,309 @@ export const TASK2_DATA: Task2Data = {
   solutionsIdeaBank: DISADVANTAGES_IDEA_BANK,
 
   // 3. Body paragraphs matching the MANDATORY 4-PARAGRAPH BALANCED ARCHITECTURE:
-  // Body 1: Advantages (Clean Renewable Power & Utility Bill Reduction)
-  // Body 2: Disadvantages (High Initial Outlay & Weather Intermittency)
+  // Body 1: View 1 (Car-free days are effective: immediate emissions reduction & awareness)
+  // Body 2: View 2 & Author's Opinion (Alternative systemic measures are more effective)
   bodyParagraphs: [
     {
       paraNumber: 1,
       side: "advantages",
-      title: "Body Para 1: Primary Advantages — Clean Power & Bill Reduction",
-      theme: "Environmental Sustainability & Long-Term Economic Savings",
+      title: "Body Para 1: View 1 — Car-Free Days Are Effective",
+      theme: "Immediate Toxic Exhaust Reduction & Civic Awareness",
       mainReason:
-        "The primary advantage of domestic solar energy is its remarkable ecological sustainability and ability to deliver substantial long-term electricity bill savings.",
+        "Proponents of car-free days emphasize their ability to generate immediate, measurable improvements in air quality while altering public attitudes toward private car dependency.",
       supportingReasons:
-        "Unlike fossil fuel generation, photovoltaic cells produce zero greenhouse gas emissions. Furthermore, on-site solar generation insulates families from escalating commercial utility tariffs and enables surplus energy sales via net-metering.",
+        "Restricting motor traffic removes the primary source of urban nitrogen dioxide and fine particulate matter (PM2.5). Furthermore, walking along car-free thoroughfares offers urbanites firsthand experience of a cleaner living environment, encouraging shifts toward active travel.",
       example:
-        "Rooftop solar installations routinely reducing household carbon emissions by four tonnes annually while cutting family electricity expenses by up to seventy percent.",
+        "Annual car-free initiatives in cities like Paris and Bogota recording up to a 50% drop in localized air pollution and inspiring thousands of commuters to adopt daily cycling.",
       band9Snippet:
-        "“On the one hand, the primary advantage of domestic solar power is its exceptional environmental sustainability, paired with substantial financial savings over time.”",
+        "“On the one hand, proponents of car-free days highlight their immediate environmental and civic benefits, noting that temporary vehicle bans produce sharp reductions in harmful exhaust fumes while fostering ecological consciousness.”",
       alternativeReasons: [
         {
-          id: "adv-model-1",
-          badge: "Advantage Analysis • Band 9",
-          title: "Renewable Decarbonisation & Utility Autonomy",
+          id: "view1-model-1",
+          badge: "View 1 Analysis • Band 9",
+          title: "Immediate Exhaust Relief & Behavioral Catalyst",
           category: "standard",
           mainReason:
-            "Harnessing inexhaustible sunlight cuts household emissions and delivers long-term financial relief from escalating energy tariffs.",
+            "Car-free days produce an immediate drop in toxic emissions and prompt urban citizens to rethink vehicular dependency.",
           supportingReasons:
-            "Photovoltaic panels generate clean electricity with no toxic emissions; moreover, net-metering schemes allow homeowners to sell surplus electricity back to utility suppliers.",
+            "Restricting private vehicles eliminates the main contributor to nitrogen dioxide and particulates. Additionally, pedestrianising major avenues allows residents to experience active transport modes like cycling in a safe environment.",
           example:
-            "Homeowners in sunny climatic regions cutting monthly utility expenses by 60% to 80% while shielding themselves from grid rate hikes.",
+            "Paris recording a 30% to 50% decline in nitrogen dioxide levels along major boulevards during designated car-free events.",
           band9Snippet:
-            "“On the one hand, domestic solar systems drastically diminish household carbon footprints while sheltering families from volatile energy tariffs.”",
+            "“On the one hand, advocates maintain that car-free days yield immediate, tangible ecological relief while serving as an indispensable catalyst for public awareness.”",
           modelParagraph:
-            "On the one hand, the primary advantage of domestic solar power is its exceptional environmental sustainability. Unlike conventional electricity generated from fossil fuels, photovoltaic systems harness inexhaustible solar radiation without discharging greenhouse gases or airborne pollutants. Consequently, widespread household adoption drastically curtails domestic carbon footprints and contributes directly to mitigating global climate change. Furthermore, residential solar panels yield profound economic savings over time. Once the system is installed, families generate their own electricity, shielding themselves from escalating commercial utility tariffs and saving up to seventy percent on monthly power bills. Additionally, in jurisdictions with net-metering schemes, households can even sell surplus power back to the regional grid, turning their roofs into modest revenue streams.",
+            "On the one hand, proponents of car-free days highlight their immediate environmental and civic benefits. Restricting private vehicular access to city centers, even for a single day, produces a dramatic and measurable reduction in toxic tailpipe emissions, such as nitrogen dioxide and fine particulate matter. In major metropolises like Paris and Bogota, annual car-free events have demonstrated sharp, observable drops in atmospheric pollutants, affording urban residents cleaner air and quieter streets. Furthermore, such initiatives serve a vital psychological function by fostering public awareness regarding automobile dependency. When urbanites experience pedestrianised boulevards firsthand, they are encouraged to consider active transportation modes like cycling and walking, which can stimulate long-term behavioural changes toward sustainable living.",
           examinerNotes:
-            "Clear topic sentence, cohesive progression from environmental benefits to domestic financial savings, and concrete real-world development with net-metering illustration."
+            "Exemplary paragraph development: begins with a clear topic sentence, explains the chemical/physical relief, expands into the psychological/civic dimension, and cites verifiable global examples."
         }
       ]
     },
     {
       paraNumber: 2,
       side: "disadvantages",
-      title: "Body Para 2: Primary Disadvantages — Upfront Costs & Intermittency",
-      theme: "Steep Initial Capital Expenditure & Weather Dependency",
+      title: "Body Para 2: View 2 & Author's Opinion — Alternative Measures Are More Effective",
+      theme: "Systemic Infrastructure, Electric Mobility & Economic Deterrents",
       mainReason:
-        "On the other hand, the principal drawbacks of solar energy are the prohibitive upfront capital investment and the system's inherent weather dependency.",
+        "Conversely, critics argue—and I concur—that alternative measures are vastly more effective because car-free days are transient and fail to address the systemic causes of air pollution.",
       supportingReasons:
-        "Purchasing panels, inverters, and battery storage units demands heavy upfront capital. Moreover, energy output plummets during cloudy days and ceases entirely at night, requiring backup power.",
+        "One-day closures merely postpone vehicle usage without diminishing overall transport demand. In contrast, comprehensive public transit infrastructure, electric vehicle subsidies, congestion pricing, and industrial regulations achieve continuous, permanent emission reductions.",
       example:
-        "Residential installations often requiring $15,000 to $20,000 in upfront capital, while northern European homes experience sharp drops in generation during winter months.",
+        "London's Ultra Low Emission Zone (ULEZ) achieving a sustained 46% reduction in roadside emissions, and Zurich's comprehensive rail network maintaining consistently pristine air quality year-round.",
       band9Snippet:
-        "“On the other hand, the principal drawback of solar energy is the steep initial capital expenditure required for installation, coupled with its inherent weather dependency.”",
+        "“On the other hand, critics argue—and I agree—that car-free days are merely symbolic, and that long-term efficacy lies in permanent infrastructural solutions such as expanding electrified transit and enacting continuous congestion pricing.”",
       alternativeReasons: [
         {
-          id: "dis-model-1",
-          badge: "Disadvantage Analysis • Band 9",
-          title: "Capital Prohibitive Barrier & Intermittent Generation",
+          id: "view2-model-1",
+          badge: "View 2 Analysis • Band 9",
+          title: "Systemic Infrastructure & Continuous Policy Deterrents",
           category: "standard",
           mainReason:
-            "High upfront hardware and battery expenses prevent widespread adoption, while solar intermittency poses energy reliability challenges.",
+            "Car-free days are fleeting interventions; permanent pollution reduction requires expanding electrified mass transit and implementing continuous regulatory deterrents.",
           supportingReasons:
-            "Solar arrays require significant upfront capital that is out of reach for lower-income families; additionally, winter and nighttime hours necessitate costly battery storage or continued grid reliance.",
+            "Because temporary bans do not change daily commuting needs, emissions rebound immediately the next morning. Conversely, affordable electric public transit and congestion charges permanently discourage car usage.",
           example:
-            "Adding a domestic lithium-ion battery bank adding $8,000 to total setup costs, considerably lengthening the system's financial payback period.",
+            "Tokyo and Zurich where high-capacity electric rail networks capture the vast majority of commuter traffic, drastically curbing per-capita urban emissions permanently.",
           band9Snippet:
-            "“Nevertheless, high initial installation costs and fluctuating generation during overcast weather represent formidable obstacles for many families.”",
+            "“Nevertheless, I side with those who contend that alternative, permanent interventions are far more potent than occasional car-free events.”",
           modelParagraph:
-            "On the other hand, the principal drawback of solar energy is the steep initial capital expenditure required for purchase and installation. High-efficiency solar panels, power inverters, mounting hardware, and professional labor demand an upfront investment often ranging between ten and twenty thousand dollars, making adoption prohibitive for lower-income households. Moreover, solar generation suffers from inherent weather dependency and seasonal intermittency. Solar panels produce minimal electricity during overcast days, heavy rainfall, or harsh winter seasons, and cannot generate power during night hours. To maintain continuous electricity supply, homeowners must either remain connected to the conventional grid or invest in expensive lithium-ion battery banks, which have limited lifespans and add substantial additional costs to the household budget.",
+            "On the other hand, critics argue that car-free days are merely symbolic and that alternative structural measures possess greater long-term efficacy. Because vehicle bans are transient, traffic congestion and emissions inevitably rebound the very next day, failing to deliver permanent ecological improvement. Instead, the most impactful way to curb air pollution is by developing comprehensive, affordable public transit infrastructure. When municipal governments invest heavily in electrified bus fleets and extensive underground metro networks, commuters are provided with viable daily alternatives to private car ownership. Additionally, governments can implement continuous economic deterrents, such as congestion charges and low-emission zones, alongside stringent regulatory standards on industrial output and fossil-fuel vehicles. These permanent policies address the root causes of pollution continuously rather than intermittently.",
           examinerNotes:
-            "Exemplary paragraph coherence: transitions seamlessly from initial financial costs to technical intermittency and battery storage constraints."
+            "Demonstrates masterly cohesion and critical nuance: logically contrasts temporary bans with permanent infrastructure, integrates the author's opinion naturally, and outlines concrete policy alternatives."
         }
       ]
     }
   ],
 
-  // 4. Academic Vocabulary List (12 Genuine Band 8.5/9 Clean Tech & Environmental Items)
+  // 4. Academic Vocabulary List (12 Genuine Band 8.5/9 Items with Pure, Original Dictionary Meanings)
   vocabList: [
     {
-      word: "Photovoltaic",
-      definition: "Relating to the production of electric current at the junction of two substances exposed to light.",
-      phonetic: "/ˌfəʊ.təʊ.vɒlˈteɪ.ɪk/",
-      term: "Photovoltaic",
-      meaning: "Relating to the direct conversion of light into electricity using semiconductor devices.",
-      example: "Rooftop photovoltaic panels convert ambient sunlight directly into household electricity.",
-      sampleSentence: "Rooftop photovoltaic panels convert ambient sunlight directly into household electricity.",
-      collocations: ["photovoltaic cells", "photovoltaic panels", "photovoltaic technology"]
+      word: "Mitigate",
+      definition: "To make something less severe, harmful, painful, or serious; to alleviate or moderate.",
+      phonetic: "/ˈmɪt.ɪ.ɡeɪt/",
+      term: "Mitigate",
+      meaning: "To make something less severe, harmful, painful, or serious; to alleviate or moderate.",
+      example: "Government subsidies can help mitigate the financial cost of transitioning to clean technology.",
+      sampleSentence: "Government subsidies can help mitigate the financial cost of transitioning to clean technology.",
+      collocations: ["mitigate the impact", "mitigate risks", "mitigate the effects"]
     },
     {
-      word: "Intermittency",
-      definition: "The quality of occurring at non-continuous intervals, stopping and starting irregularly.",
-      phonetic: "/ˌɪn.təˈmɪt.ən.si/",
-      term: "Intermittency",
-      meaning: "The unpredictable variation in power generation due to fluctuating sunlight or weather conditions.",
-      example: "The intermittency of solar radiation necessitates backup power systems or battery banks.",
-      sampleSentence: "The intermittency of solar radiation necessitates backup power systems or battery banks.",
-      collocations: ["power intermittency", "generation intermittency", "inherent intermittency"]
+      word: "Transient",
+      definition: "Lasting only for a short time; temporary, fleeting, or impermanent.",
+      phonetic: "/ˈtræn.zi.ənt/",
+      term: "Transient",
+      meaning: "Lasting only for a short time; temporary, fleeting, or impermanent.",
+      example: "The economic relief provided by the seasonal grant proved to be merely transient.",
+      sampleSentence: "The economic relief provided by the seasonal grant proved to be merely transient.",
+      collocations: ["transient nature", "transient effect", "transient phenomenon"]
     },
     {
-      word: "Decarbonisation",
-      definition: "The reduction or complete elimination of carbon dioxide emissions from an energy system.",
-      phonetic: "/diːˌkɑː.bən.aɪˈzeɪ.ʃən/",
-      term: "Decarbonisation",
-      meaning: "The transition towards energy sources that do not discharge greenhouse gas emissions.",
-      example: "Household solar adoption plays a pivotal role in national decarbonisation strategies.",
-      sampleSentence: "Household solar adoption plays a pivotal role in national decarbonisation strategies.",
-      collocations: ["rapid decarbonisation", "decarbonisation strategy", "economic decarbonisation"]
+      word: "Pedestrianise",
+      definition: "To convert a street or area into a zone designated exclusively for the use of people walking, with vehicles prohibited.",
+      phonetic: "/pəˈdes.tri.ə.naɪz/",
+      term: "Pedestrianise",
+      meaning: "To convert a street or area into a zone designated exclusively for the use of people walking, with vehicles prohibited.",
+      example: "Many European capitals have chosen to pedestrianise historic city centers to protect architectural heritage.",
+      sampleSentence: "Many European capitals have chosen to pedestrianise historic city centers to protect architectural heritage.",
+      collocations: ["pedestrianise the center", "fully pedestrianised zone", "pedestrianise streets"]
     },
     {
-      word: "Autonomy",
-      definition: "The state of being independent, self-governing, and self-sufficient.",
-      phonetic: "/ɔːˈtɒn.ə.mi/",
-      term: "Autonomy",
-      meaning: "Energy independence from commercial power suppliers and centralised municipal grids.",
-      example: "Combining solar panels with home storage batteries provides complete energy autonomy.",
-      sampleSentence: "Combining solar panels with home storage batteries provides complete energy autonomy.",
-      collocations: ["energy autonomy", "household autonomy", "operational autonomy"]
+      word: "Infrastructure",
+      definition: "The basic physical and organizational structures and facilities (e.g. buildings, roads, power supplies) needed for the operation of a society or enterprise.",
+      phonetic: "/ˈɪn.frəˌstrʌk.tʃər/",
+      term: "Infrastructure",
+      meaning: "The basic physical and organizational structures and facilities (e.g. buildings, roads, power supplies) needed for the operation of a society or enterprise.",
+      example: "A thriving modern economy requires continuous investment in transportation and communication infrastructure.",
+      sampleSentence: "A thriving modern economy requires continuous investment in transportation and communication infrastructure.",
+      collocations: ["transport infrastructure", "critical infrastructure", "infrastructure investment"]
     },
     {
-      word: "Capital Expenditure",
-      definition: "Funds used by a household or company to acquire, upgrade, and maintain physical assets.",
-      phonetic: "/ˈkæp.ɪ.təl ɪkˈspen.dɪ.tʃər/",
-      term: "Capital Expenditure",
-      meaning: "The substantial initial financial outlay required to purchase and install equipment.",
-      example: "High initial capital expenditure remains the chief impediment for prospective solar adopters.",
-      sampleSentence: "High initial capital expenditure remains the chief impediment for prospective solar adopters.",
-      collocations: ["initial capital expenditure", "heavy capital expenditure", "upfront expenditure"]
+      word: "Stringent",
+      definition: "(Of regulations, requirements, or conditions) extremely strict, precise, and rigorously enforced.",
+      phonetic: "/ˈstrɪn.dʒənt/",
+      term: "Stringent",
+      meaning: "(Of regulations, requirements, or conditions) extremely strict, precise, and rigorously enforced.",
+      example: "Pharmaceutical laboratories must adhere to stringent hygiene and testing protocols.",
+      sampleSentence: "Pharmaceutical laboratories must adhere to stringent hygiene and testing protocols.",
+      collocations: ["stringent regulations", "stringent standards", "stringent measures"]
     },
     {
-      word: "Inexhaustible",
-      definition: "Existing in unlimited quantities so that cannot be used up or exhausted.",
-      phonetic: "/ˌɪn.ɪɡˈzɔː.stə.bəl/",
-      term: "Inexhaustible",
-      meaning: "A natural energy source that will never deplete or run out over human timescales.",
-      example: "Solar radiation is an inexhaustible resource unlike finite petroleum and coal reserves.",
-      sampleSentence: "Solar radiation is an inexhaustible resource unlike finite petroleum and coal reserves.",
-      collocations: ["inexhaustible resource", "inexhaustible energy", "virtually inexhaustible"]
+      word: "Deterrent",
+      definition: "A thing that discourages or is intended to discourage someone from doing something by creating fear of consequences or costs.",
+      phonetic: "/dɪˈter.ənt/",
+      term: "Deterrent",
+      meaning: "A thing that discourages or is intended to discourage someone from doing something by creating fear of consequences or costs.",
+      example: "Heavy monetary fines serve as an effective deterrent against unlawful waste dumping.",
+      sampleSentence: "Heavy monetary fines serve as an effective deterrent against unlawful waste dumping.",
+      collocations: ["effective deterrent", "financial deterrent", "act as a deterrent"]
     },
     {
-      word: "Net Metering",
-      definition: "A billing mechanism that credits solar energy system owners for the electricity they export to the grid.",
-      phonetic: "/ˌnet ˈmiː.tər.ɪŋ/",
-      term: "Net Metering",
-      meaning: "A utility system allowing households to sell surplus daytime electricity back to the supplier.",
-      example: "Net metering policies incentivize homeowners by turning excess solar electricity into monetary credits.",
-      sampleSentence: "Net metering policies incentivize homeowners by turning excess solar electricity into monetary credits.",
-      collocations: ["net metering scheme", "net metering credits", "net metering framework"]
+      word: "Viable",
+      definition: "Capable of working successfully; feasible, practical, and able to be sustained.",
+      phonetic: "/ˈvaɪ.ə.bəl/",
+      term: "Viable",
+      meaning: "Capable of working successfully; feasible, practical, and able to be sustained.",
+      example: "Before committing significant funds, the committee evaluated whether the proposal was economically viable.",
+      sampleSentence: "Before committing significant funds, the committee evaluated whether the proposal was economically viable.",
+      collocations: ["viable alternative", "commercially viable", "economically viable"]
     },
     {
-      word: "Amortisation",
-      definition: "The gradual reduction or recovery of the initial cost of an asset over its operational lifetime.",
-      phonetic: "/əˌmɔː.taɪˈzeɪ.ʃən/",
-      term: "Amortisation",
-      meaning: "The financial process of recovering upfront installation expenses through subsequent utility bill savings.",
-      example: "Through monthly bill reductions, the amortisation period for solar panels is typically eight years.",
-      sampleSentence: "Through monthly bill reductions, the amortisation period for solar panels is typically eight years.",
-      collocations: ["amortisation period", "cost amortisation", "rapid amortisation"]
+      word: "Congestion",
+      definition: "A state of excessive overcrowding, obstruction, or clogging, especially in roads and traffic networks.",
+      phonetic: "/kənˈdʒes.tʃən/",
+      term: "Congestion",
+      meaning: "A state of excessive overcrowding, obstruction, or clogging, especially in roads and traffic networks.",
+      example: "Rapid urban population growth has led to severe traffic congestion during peak morning hours.",
+      sampleSentence: "Rapid urban population growth has led to severe traffic congestion during peak morning hours.",
+      collocations: ["traffic congestion", "chronic congestion", "congestion charge"]
+    },
+    {
+      word: "Incentivise",
+      definition: "To motivate or encourage someone to perform an action by offering rewards, advantages, or favorable conditions.",
+      phonetic: "/ɪnˈsen.tɪ.vaɪz/",
+      term: "Incentivise",
+      meaning: "To motivate or encourage someone to perform an action by offering rewards, advantages, or favorable conditions.",
+      example: "Tax rebates are frequently utilized to incentivise commercial investment in renewable technologies.",
+      sampleSentence: "Tax rebates are frequently utilized to incentivise commercial investment in renewable technologies.",
+      collocations: ["incentivise consumers", "strongly incentivise", "incentivise behavior"]
+    },
+    {
+      word: "Proliferation",
+      definition: "A rapid and substantial increase in the number, spread, or quantity of something.",
+      phonetic: "/prəˌlɪf.əˈreɪ.ʃən/",
+      term: "Proliferation",
+      meaning: "A rapid and substantial increase in the number, spread, or quantity of something.",
+      example: "The proliferation of digital technologies has fundamentally transformed communication across the globe.",
+      sampleSentence: "The proliferation of digital technologies has fundamentally transformed communication across the globe.",
+      collocations: ["rapid proliferation", "proliferation of technology", "prevent the proliferation"]
+    },
+    {
+      word: "Systemic",
+      definition: "Relating to or affecting an entire system as a whole, rather than isolated or individual components.",
+      phonetic: "/sɪˈstem.ɪk/",
+      term: "Systemic",
+      meaning: "Relating to or affecting an entire system as a whole, rather than isolated or individual components.",
+      example: "Addressing socioeconomic inequality requires systemic legislative reform rather than isolated charitable programs.",
+      sampleSentence: "Addressing socioeconomic inequality requires systemic legislative reform rather than isolated charitable programs.",
+      collocations: ["systemic reform", "systemic change", "systemic failure"]
     },
     {
       word: "Subsidise",
-      definition: "To support financially, often through government grants, tax credits, or rebates.",
+      definition: "To support an organization, activity, or product financially, typically through government funds, to keep prices low or encourage adoption.",
       phonetic: "/ˈsʌb.sɪ.daɪz/",
       term: "Subsidise",
-      meaning: "To provide state financial assistance to reduce the cost of clean technology for citizens.",
-      example: "Many governments subsidise solar installations to accelerate the transition away from fossil fuels.",
-      sampleSentence: "Many governments subsidise solar installations to accelerate the transition away from fossil fuels.",
-      collocations: ["heavily subsidise", "government subsidized", "subsidise installations"]
-    },
-    {
-      word: "Ecological Footprint",
-      definition: "The environmental impact of human activities measured in terms of resource consumption and waste.",
-      phonetic: "/ˌiː.kəˈlɒdʒ.ɪ.kəl ˈfʊt.prɪnt/",
-      term: "Ecological Footprint",
-      meaning: "The total measure of greenhouse emissions and environmental degradation caused by household living.",
-      example: "Switching from coal-derived power to solar energy significantly shrinks a family's ecological footprint.",
-      sampleSentence: "Switching from coal-derived power to solar energy significantly shrinks a family's ecological footprint.",
-      collocations: ["ecological footprint", "shrink ecological footprint", "household footprint"]
-    },
-    {
-      word: "Surplus",
-      definition: "An amount of something left over when requirements have been satisfied; excess.",
-      phonetic: "/ˈsɜː.pləs/",
-      term: "Surplus",
-      meaning: "Extra electrical power produced by solar panels beyond immediate household consumption needs.",
-      example: "During sunny summer afternoons, household panels frequently generate a surplus of electricity.",
-      sampleSentence: "During sunny summer afternoons, household panels frequently generate a surplus of electricity.",
-      collocations: ["surplus electricity", "surplus energy", "generate a surplus"]
-    },
-    {
-      word: "Depletion",
-      definition: "Reduction in the number, quantity, or volume of a finite resource.",
-      phonetic: "/dɪˈpliː.ʃən/",
-      term: "Depletion",
-      meaning: "The progressive exhaustion of non-renewable fossil fuel reserves.",
-      example: "Transitioning to solar power helps counteract the progressive depletion of natural gas reserves.",
-      sampleSentence: "Transitioning to solar power helps counteract the progressive depletion of natural gas reserves.",
-      collocations: ["resource depletion", "fossil fuel depletion", "prevent depletion"]
+      meaning: "To support an organization, activity, or product financially, typically through government funds, to keep prices low or encourage adoption.",
+      example: "Many municipal governments subsidise public transit to keep fares affordable for lower-income commuters.",
+      sampleSentence: "Many municipal governments subsidise public transit to keep fares affordable for lower-income commuters.",
+      collocations: ["heavily subsidise", "subsidise public transit", "government subsidized"]
     }
   ],
 
   vocabHunt: [
-    "Photovoltaic",
-    "Intermittency",
-    "Decarbonisation",
-    "Autonomy",
-    "Expenditure",
-    "Inexhaustible",
-    "Net Metering",
-    "Amortisation",
-    "Subsidise",
-    "Ecological Footprint",
-    "Surplus",
-    "Depletion"
+    "Mitigate",
+    "Transient",
+    "Pedestrianise",
+    "Infrastructure",
+    "Stringent",
+    "Deterrent",
+    "Viable",
+    "Congestion",
+    "Incentivise",
+    "Proliferation",
+    "Systemic",
+    "Subsidise"
   ],
 
+  // 5. Academic Power Expressions with PURE, ORIGINAL DICTIONARY MEANINGS
   powerExpressions: [
     {
-      expression: "harness inexhaustible solar radiation",
-      meaning: "To capture unlimited energy emitted by the sun for electrical power generation.",
-      example: "Rooftop photovoltaic arrays harness inexhaustible solar radiation with zero greenhouse emissions."
+      expression: "curb emissions",
+      meaning: "To restrain, check, or limit the release of gases or waste products into the environment.",
+      example: "International climate treaties mandate that member nations take decisive steps to curb emissions."
     },
     {
-      expression: "curtail household carbon footprints",
-      meaning: "To significantly diminish the volume of greenhouse gases produced by domestic living.",
-      example: "Widespread residential solar adoption drastically curtails household carbon footprints."
+      expression: "foster awareness",
+      meaning: "To encourage the development, recognition, or understanding of an idea, issue, or reality.",
+      example: "Educational workshops aim to foster awareness among young citizens regarding civic responsibilities."
     },
     {
-      expression: "insulate against volatile energy tariffs",
-      meaning: "To protect family finances from unpredictable and escalating utility prices.",
-      example: "Generating electricity on-site insulates homeowners against volatile utility tariffs."
+      expression: "short-term measure",
+      meaning: "An action, policy, or step designed to address an immediate concern rather than providing a permanent remedy.",
+      example: "Emergency food rations served as a short-term measure until regular supply lines could be re-established."
     },
     {
-      expression: "prohibitive initial capital expenditure",
-      meaning: "An extremely high upfront financial cost that prevents adoption by ordinary families.",
-      example: "The prohibitive initial capital expenditure remains a formidable barrier for lower-income households."
+      expression: "sustainable alternative",
+      meaning: "A substitute method, product, or approach that can be maintained over a long duration without depleting resources or causing lasting harm.",
+      example: "Electric buses and high-speed rail offer a sustainable alternative to private passenger automobiles."
     },
     {
-      expression: "inherent weather dependency and intermittency",
-      meaning: "The unavoidable operational limitation of stopping or reducing generation during dark or cloudy conditions.",
-      example: "The inherent weather dependency and intermittency of solar cells requires expensive battery backups."
+      expression: "stringent regulatory standards",
+      meaning: "Rigorous, legally binding rules and criteria that mandate strict compliance and adherence.",
+      example: "The industrial chemical facility operates under stringent regulatory standards to prevent ecological contamination."
     }
   ],
 
-  // 7. Brainstorm Cards (EXACTLY 4 CARDS: 2 Advantages & 2 Disadvantages)
+  // 6. Brainstorm Cards (EXACTLY 4 CARDS: 2 for View 1 & 2 for View 2)
   brainstormCards: [
     {
       id: "card-1",
       stepNum: 1,
-      badge: "Advantage 01 • Ecological Sustainability",
-      title: "Clean Renewable Electricity",
-      question: "How does domestic solar energy contribute to combating environmental degradation?",
-      thinkingLens: "Think about fossil fuel power stations, greenhouse gas emissions, and urban air quality.",
-      selfCheck: "Did you explain that photovoltaic cells harness inexhaustible sunlight with zero emissions?",
-      idea: "Photovoltaic systems convert infinite solar radiation into clean electricity without releasing greenhouse gases, dramatically curtailing domestic carbon footprints.",
-      promptInsight: "Solar energy is completely renewable and emission-free during operation, eliminating reliance on polluting coal and gas power plants.",
-      collocations: ["zero emissions", "inexhaustible solar radiation", "carbon footprint reduction"],
-      example: "A typical 5kW rooftop array preventing four to five tonnes of carbon dioxide from entering the atmosphere each year."
+      badge: "View 1 • Direct Impact",
+      title: "Immediate Air Quality Relief",
+      question: "How do car-free days produce an immediate reduction in urban air pollution?",
+      thinkingLens: "Think about vehicular exhaust, nitrogen dioxide, carbon monoxide, and particulate matter in dense centers.",
+      selfCheck: "Did you explain that stopping private vehicles instantly purges harmful tailpipe emissions from congested streets?",
+      idea: "Prohibiting motor vehicles halts the continuous discharge of toxic tailpipe emissions, resulting in immediate, measurable drops in urban airborne pollutants.",
+      promptInsight: "Vehicular exhaust is the predominant source of toxic air in city centers; removing traffic delivers instant atmospheric cleansing.",
+      collocations: ["curb emissions", "toxic airborne pollutants", "tailpipe emissions"],
+      example: "Paris and Brussels recording drops of up to 40% in nitrogen dioxide concentrations during designated car-free events."
     },
     {
       id: "card-2",
       stepNum: 2,
-      badge: "Advantage 02 • Household Economic Relief",
-      title: "Utility Bill Savings & Net Metering",
-      question: "What financial benefits do homeowners experience after adopting solar energy?",
-      thinkingLens: "Consider monthly power bills, inflation of utility tariffs, and selling excess electricity.",
-      selfCheck: "Did you highlight ongoing monthly bill reductions and the potential to earn credits via net metering?",
-      idea: "On-site power generation shields families from escalating commercial electricity prices, reducing utility bills by up to 80% and allowing surplus power sales.",
-      promptInsight: "Once installed, sunlight is free, saving families substantial money over 25–30 years and providing revenue through feed-in tariffs.",
-      collocations: ["utility bill reduction", "net metering credits", "volatile electricity tariffs"],
-      example: "Families in sunny regions receiving monthly utility credits by feeding surplus daytime electricity back into the grid."
+      badge: "View 1 • Civic Mindset",
+      title: "Fostering Environmental Awareness",
+      question: "How do car-free days influence public behavior and attitudes toward personal transport?",
+      thinkingLens: "Consider how experiencing quiet, walkable streets challenges private vehicle dependency.",
+      selfCheck: "Did you highlight that experiencing pedestrianised streets encourages citizens to adopt cycling, walking, or shared transit?",
+      idea: "Car-free days act as educational catalysts, allowing residents to experience walkable urban environments and encouraging long-term shifts toward active travel.",
+      promptInsight: "Experiencing car-free avenues disproves the belief that private cars are indispensable, fostering receptivity to green commuting.",
+      collocations: ["foster awareness", "automobile dependency", "pedestrianised streets"],
+      example: "Bogotá's weekly Ciclovía program inspiring thousands of daily commuters to switch permanently to bicycle commuting."
     },
     {
       id: "card-3",
       stepNum: 3,
-      badge: "Disadvantage 01 • Financial Barriers",
-      title: "High Upfront Capital Investment",
-      question: "Why is the initial cost of solar energy a major obstacle for ordinary families?",
-      thinkingLens: "Consider purchasing panels, inverters, battery storage units, and professional installation labor.",
-      selfCheck: "Did you explain that the high initial outlay makes solar energy unaffordable for lower-income households?",
-      idea: "Purchasing high-efficiency photovoltaic panels and inverters demands a substantial upfront capital expenditure ($12,000–$20,000) with a multi-year payback period.",
-      promptInsight: "The heavy initial equipment and installation cost creates a steep financial barrier, making solar inaccessible without subsidies or loans.",
-      collocations: ["high capital expenditure", "upfront installation costs", "financial payback period"],
-      example: "Low- and middle-income families unable to afford the initial $15,000 hardware investment despite long-term savings."
+      badge: "View 2 • Structural Limitation",
+      title: "The Transient Flaw & Emissions Rebound",
+      question: "Why do critics argue that temporary car-free days fail to solve air pollution permanently?",
+      thinkingLens: "Consider what happens the day after a car-free event: do driving habits and pollution levels remain low, or rebound?",
+      selfCheck: "Did you explain that temporary bans are merely symbolic because emissions resume immediately once restrictions lift?",
+      idea: "Car-free days are transient measures; because daily commuting demands remain unchanged, vehicular emissions rebound to peak levels immediately the next day.",
+      promptInsight: "Occasional one-day restrictions cannot alter the structural dependency on cars without year-round infrastructure.",
+      collocations: ["transient nature", "short-term measure", "emissions rebound"],
+      example: "Pollution monitoring indicating that urban air quality returns to baseline toxicity within hours of car-free events concluding."
     },
     {
       id: "card-4",
       stepNum: 4,
-      badge: "Disadvantage 02 • Intermittency & Storage",
-      title: "Weather Dependency & Nighttime Limitations",
-      question: "What technical challenges arise from the intermittent nature of solar radiation?",
-      thinkingLens: "Think about nighttime hours, overcast skies, winter seasons, and battery degradation.",
-      selfCheck: "Did you mention that solar cannot generate power at night or during heavy cloud cover without expensive batteries?",
-      idea: "Solar power is strictly weather-dependent; output drops drastically during overcast winter periods and ceases at night, requiring backup grid power or costly batteries.",
-      promptInsight: "Because generation varies with weather and stops at night, homes must invest in expensive battery storage or remain tethered to the traditional grid.",
-      collocations: ["weather dependency", "power intermittency", "battery storage expenditure"],
-      example: "Homes in cloudy northern climates experiencing 70% drops in electricity output during winter months."
+      badge: "View 2 • Systemic Alternatives",
+      title: "Infrastructural & Policy Solutions",
+      question: "What permanent measures are vastly more effective in reducing urban air pollution continuously?",
+      thinkingLens: "Think about public transit networks, electric vehicle adoption, congestion charges, and industrial regulations.",
+      selfCheck: "Did you emphasize that investing in electrified transit and enforcing strict vehicle standards delivers permanent, year-round pollution cuts?",
+      idea: "Developing comprehensive electric public transit networks, incentivising zero-emission vehicles, and enacting congestion pricing address pollution root causes permanently.",
+      promptInsight: "Sustainable air purification requires permanent systemic alternatives that allow citizens to commute cleanly every single day.",
+      collocations: ["sustainable alternative", "public transit infrastructure", "stringent regulations"],
+      example: "London's Ultra Low Emission Zone (ULEZ) achieving sustained 46% roadside pollution reductions through continuous enforcement."
     }
   ],
 
   connectorsTier: {
     sTier: [
-      "On the one hand, a primary advantage of",
-      "On the other hand, the principal drawback of",
-      "Inherent weather dependency and intermittency",
-      "Substantial initial capital expenditure"
+      "On the one hand, proponents argue that",
+      "On the other hand, it is widely contended that",
+      "A primary justification for this view is that",
+      "In contrast to transient interventions"
     ],
     aTier: [
       "Furthermore",
@@ -623,7 +624,7 @@ export const TASK2_DATA: Task2Data = {
     ],
     bTier: [
       "Additionally",
-      "In contrast",
+      "In my perspective",
       "In conclusion",
       "Therefore"
     ]
@@ -631,173 +632,173 @@ export const TASK2_DATA: Task2Data = {
 
   fluidVocab: [
     {
-      word: "Photovoltaic",
+      word: "Mitigate",
+      pos: "verb",
+      meaning: "To make something less severe, harmful, painful, or serious; to alleviate or moderate.",
+      naturalCollocation: "mitigate the impact of environmental damage",
+      organicExample: "Transitioning to electrified transit systems serves to mitigate the impact of urban pollution on respiratory health.",
+      mechanicalPitfall: "Do not confuse with 'militate' (which means to act as a powerful factor against something).",
+      examinerInsight: "A core Band 9 academic verb that demonstrates precise nuance in policy and scientific argumentation."
+    },
+    {
+      word: "Transient",
       pos: "adjective",
-      meaning: "Relating to the direct conversion of light into electricity using semiconducting materials.",
-      naturalCollocation: "residential photovoltaic installations",
-      organicExample: "The rapid adoption of residential photovoltaic systems has transformed suburban rooftops into micro-generators.",
-      mechanicalPitfall: "Avoid overusing 'solar stuff'; photovoltaic is the precise academic and technological term.",
-      examinerInsight: "Demonstrates technical and scientific precision rewarded in Band 9 Lexical Resource."
+      meaning: "Lasting only for a short time; temporary, fleeting, or impermanent.",
+      naturalCollocation: "merely a transient effect",
+      organicExample: "While car-free events demonstrate clean air in the short term, their overall ecological impact remains transient.",
+      mechanicalPitfall: "Avoid using 'short' or 'momentary' when discussing policy duration; transient captures impermanence perfectly.",
+      examinerInsight: "Elevated stylistic descriptor contrasting temporary symbolic gestures with enduring structural reforms."
     },
     {
-      word: "Intermittency",
+      word: "Pedestrianise",
+      pos: "verb",
+      meaning: "To convert a street or area into a zone designated exclusively for the use of people walking, with vehicles prohibited.",
+      naturalCollocation: "pedestrianise metropolitan city centers",
+      organicExample: "Municipal councils that choose to pedestrianise shopping districts frequently experience higher retail activity and lower emissions.",
+      mechanicalPitfall: "Avoid wordy constructions like 'make streets only for walking people'; pedestrianise is the precise urban planning term.",
+      examinerInsight: "Demonstrates domain-specific lexical mastery rewarded under Band 9 Lexical Resource."
+    },
+    {
+      word: "Infrastructure",
       pos: "noun",
-      meaning: "The irregular or fluctuating nature of power generation dependent on ambient weather conditions.",
-      naturalCollocation: "power generation intermittency",
-      organicExample: "Addressing the intermittency of solar energy requires significant investment in domestic battery storage.",
-      mechanicalPitfall: "Do not say 'the stopping and starting of sun'; intermittency captures this phenomenon accurately.",
-      examinerInsight: "Precise energy economics vocabulary signaling advanced band mastery."
+      meaning: "The basic physical and organizational structures and facilities needed for the operation of a society or enterprise.",
+      naturalCollocation: "sustainable public transit infrastructure",
+      organicExample: "Substantial capital investment in railway and subway infrastructure is essential to reduce vehicular congestion.",
+      mechanicalPitfall: "Infrastructure is an uncountable noun in this context; avoid saying 'infrastructures'.",
+      examinerInsight: "Indispensable civic and economic terminology expected in high-scoring public policy essays."
     },
     {
-      word: "Decarbonisation",
-      pos: "noun",
-      meaning: "The systemic process of reducing and eliminating carbon emissions from domestic and industrial activities.",
-      naturalCollocation: "accelerating residential decarbonisation",
-      organicExample: "Decentralised household solar power accelerates national decarbonisation goals by replacing coal-fired power.",
-      mechanicalPitfall: "Avoid 'stopping bad gas'; decarbonisation encapsulates policy and environmental strategy.",
-      examinerInsight: "Key environmental policy term highly respected by Cambridge examiners."
-    },
-    {
-      word: "Autonomy",
-      pos: "noun",
-      meaning: "Self-reliance and independence from centralised external utility grids.",
-      naturalCollocation: "greater household energy autonomy",
-      organicExample: "Combining solar panels with smart storage batteries affords homeowners complete energy autonomy.",
-      mechanicalPitfall: "Avoid simplistic 'living alone without electric companies'; autonomy conveys self-sufficiency.",
-      examinerInsight: "Sophisticated formal vocabulary applicable to macroeconomic and technological contexts."
-    },
-    {
-      word: "Expenditure",
-      pos: "noun",
-      meaning: "The spending of substantial financial funds on capital assets or infrastructure.",
-      naturalCollocation: "substantial upfront capital expenditure",
-      organicExample: "The heavy capital expenditure required for solar installation deters many working-class families.",
-      mechanicalPitfall: "Do not overuse 'cost' or 'spending money'; capital expenditure reflects long-term asset acquisition.",
-      examinerInsight: "Formal financial and economic diction expected in top-tier essays."
-    },
-    {
-      word: "Inexhaustible",
+      word: "Stringent",
       pos: "adjective",
-      meaning: "Incapable of being depleted or used up, existing in unlimited quantities.",
-      naturalCollocation: "virtually inexhaustible solar radiation",
-      organicExample: "Solar energy represents an inexhaustible resource that will outlast finite fossil fuel reserves.",
-      mechanicalPitfall: "Avoid 'sun that never dies'; inexhaustible is the standard academic adjective.",
-      examinerInsight: "Elevated stylistic descriptor contrasting renewable resources with finite hydrocarbons."
+      meaning: "(Of regulations, requirements, or conditions) extremely strict, precise, and rigorously enforced.",
+      naturalCollocation: "stringent environmental regulations",
+      organicExample: "Enforcing stringent emission limits on industrial manufacturing plants tackles pollution at its institutional source.",
+      mechanicalPitfall: "Avoid generic adjectives like 'hard' or 'tight' rules; stringent accurately connotes rigorous formal oversight.",
+      examinerInsight: "A high-utility formal academic adjective indicating sophisticated command of evaluative vocabulary."
+    },
+    {
+      word: "Deterrent",
+      pos: "noun",
+      meaning: "A thing that discourages or is intended to discourage someone from doing something by creating fear of consequences or costs.",
+      naturalCollocation: "act as an effective financial deterrent",
+      organicExample: "Daily urban congestion charges act as an effective financial deterrent against unnecessary private automobile trips.",
+      mechanicalPitfall: "Ensure correct prepositional pairing: something acts as a deterrent 'to' or 'against' an action.",
+      examinerInsight: "Precise behavioral economics term that enhances task response depth in problem-solution discussions."
     }
   ],
 
   consequences: [
     {
       type: "positive",
-      title: "Advantage 01: Zero-Emission Electricity",
+      title: "View 1 Merits 01: Instantaneous Exhaust Reduction",
       category: "standard",
-      desc: "Harnessing ambient sunlight releases zero greenhouse gases or airborne pollutants during operation.",
-      example: "Rooftop solar systems preventing 4–5 tonnes of carbon emissions per household every year.",
-      level: "Core Advantage",
-      simpleTakeaway: "Solar power produces clean, green electricity without polluting the atmosphere.",
-      collocation: "zero greenhouse emissions"
+      desc: "Halting motor vehicle traffic instantly purges toxic nitrogen dioxide and particulate matter from congested street corridors.",
+      example: "European capitals recording up to 50% drops in localized air pollution during annual car-free events.",
+      level: "View 1 Core Argument",
+      simpleTakeaway: "Stopping cars for a day immediately clears the air of toxic exhaust fumes.",
+      collocation: "curb emissions"
     },
     {
       type: "positive",
-      title: "Advantage 02: Long-Term Bill Reduction",
+      title: "View 1 Merits 02: Civic Mindset & Lifestyle Shift",
       category: "standard",
-      desc: "Generating power on-site eliminates expensive monthly utility bills and cushions families against tariff inflation.",
-      example: "Households in sunny regions slashing their annual electricity bills by 60% to 80%.",
-      level: "Core Advantage",
-      simpleTakeaway: "Once installed, sunlight is free, saving families substantial money on electricity.",
-      collocation: "long-term utility bill savings"
+      desc: "Experiencing car-free streets challenges private vehicle dependency and prompts reflection on commuting choices.",
+      example: "Citizens testing bicycles or walking and discovering that active travel is feasible for short daily trips.",
+      level: "View 1 Core Argument",
+      simpleTakeaway: "Walking on open streets encourages people to rethink their reliance on private automobiles.",
+      collocation: "foster awareness"
     },
     {
       type: "positive",
-      title: "Advantage 03: Energy Independence & Resilience",
+      title: "View 1 Merits 03: Active Commuting Confidence",
       category: "standard",
-      desc: "Decentralized home power protects residents from municipal grid blackouts caused by severe weather or overloads.",
-      example: "Rural communities sustaining essential refrigeration and lighting during storm-induced grid outages.",
-      level: "Core Advantage",
-      simpleTakeaway: "Homes with solar and batteries maintain power even when the main grid fails.",
-      collocation: "energy autonomy and resilience"
+      desc: "Safe, traffic-free streets encourage families and workers to try cycling and public transport without road danger.",
+      example: "Bogotá's weekly Ciclovía program engaging over a million citizens in regular non-motorized travel.",
+      level: "View 1 Core Argument",
+      simpleTakeaway: "People feel safe trying bicycles and walking when roads are closed to cars.",
+      collocation: "sustainable alternative"
     },
     {
       type: "positive",
-      title: "Advantage 04: Net-Metering Financial Credits",
+      title: "View 1 Merits 04: Empirical Urban Planning Testing",
       category: "additional",
-      desc: "Homeowners can export excess midday electricity back into the public grid in exchange for utility credits or rebates.",
-      example: "Domestic solar owners receiving credit statements from utility companies for surplus exported power.",
-      level: "Strategic Advantage",
-      simpleTakeaway: "Extra electricity produced during the day can be sold back to the power company.",
-      collocation: "net-metering feed-in credits"
+      desc: "Provides municipal planners with real-world data proving that pedestrianising key districts does not cause commercial gridlock.",
+      example: "Weekend street closures in Ljubljana serving as the direct blueprint for permanent pedestrian zones.",
+      level: "View 1 Strategic Argument",
+      simpleTakeaway: "Temporary closures prove to city councils that permanent pedestrian streets can work.",
+      collocation: "pedestrianised streets"
     }
   ],
 
   evaluationArguments: [
     {
-      title: "Disadvantage 01: High Upfront Installation Costs",
+      title: "View 2 Counterpoint 01: The Flaw of Transient Measures",
       category: "standard",
       reason:
-        "Purchasing high-efficiency solar panels, power inverters, and hiring licensed electrical technicians demands large upfront capital.",
+        "One-off car-free days fail to alter daily commuting demands; motorists simply defer trips, causing pollution to rebound immediately.",
       development:
-        "The initial outlay often ranges from $12,000 to $22,000, creating an insurmountable barrier for low- and middle-income families.",
+        "Because the intervention is temporary, annual atmospheric pollution averages remain virtually unchanged.",
       example:
-        "Working families unable to finance the upfront equipment cost despite potential long-term savings.",
+        "Air monitoring data showing particulate levels returning to standard hazardous highs within twelve hours of car-free events.",
       type: "counterpoint",
-      level: "Core Disadvantage",
-      simpleTakeaway: "Solar panels are very expensive to buy and install initially.",
-      collocation: "high upfront capital expenditure"
+      level: "View 2 Core Counterpoint",
+      simpleTakeaway: "A single car-free day is only temporary; pollution rebounds completely the very next morning.",
+      collocation: "short-term measure"
     },
     {
-      title: "Disadvantage 02: Weather Intermittency & Night Limitations",
+      title: "View 2 Alternative 02: Electrified Public Transit Investment",
       category: "standard",
       reason:
-        "Solar generation depends completely on the intensity of ambient sunlight, producing zero electricity during nighttime hours.",
+        "Expanding high-capacity electric bus and metro rail networks provides a permanent, year-round alternative to driving.",
       development:
-        "Overcast days, persistent cloud cover, and short winter days cause electricity generation to plummet dramatically.",
+        "When public transit is rapid, reliable, and subsidized, thousands of commuters willingly abandon private automobiles every day.",
       example:
-        "Northern European homes producing 70% less solar electricity during cloudy winter months.",
+        "Tokyo and Zurich achieving vast public transit ridership and maintaining permanently low per-capita emissions.",
       type: "counterpoint",
-      level: "Core Disadvantage",
-      simpleTakeaway: "Panels do not generate electricity at night and produce much less on cloudy or winter days.",
-      collocation: "weather dependency and intermittency"
+      level: "View 2 Superior Solution",
+      simpleTakeaway: "Investing in fast, clean subways and electric buses gives people a real alternative to driving every day.",
+      collocation: "public transit infrastructure"
     },
     {
-      title: "Disadvantage 03: Expensive Battery Storage Replacement",
+      title: "View 2 Alternative 03: Electric Vehicle Transition Mandates",
       category: "standard",
       reason:
-        "To achieve 24/7 reliability, homes must purchase lithium-ion battery banks, which are costly and degrade after 10–12 years.",
+        "Government subsidies and internal combustion bans transition the entire vehicle fleet to zero-emission technology permanently.",
       development:
-        "Adding battery storage adds $7,000 to $10,000 to the total bill, significantly lengthening the financial payback period.",
+        "Electric vehicles eliminate tailpipe exhaust completely without forcing citizens to sacrifice personal mobility.",
       example:
-        "Homeowners facing expensive replacement costs when battery storage units lose chemical efficiency after a decade.",
+        "Norway achieving over 80% electric vehicle sales through progressive tax relief, permanently slashing urban air toxicity.",
       type: "counterpoint",
-      level: "Core Disadvantage",
-      simpleTakeaway: "Batteries to store daytime power are expensive and must be replaced every decade.",
-      collocation: "battery storage expenditure"
+      level: "View 2 Superior Solution",
+      simpleTakeaway: "Subsidising electric cars and phasing out petrol vehicles removes tailpipe emissions permanently.",
+      collocation: "subsidise clean technology"
     },
     {
-      title: "Disadvantage 04: Roof Space & Architectural Constraints",
+      title: "View 2 Alternative 04: Congestion Pricing & Industrial Caps",
       category: "additional",
       reason:
-        "Solar generation requires ample unshaded roof space with optimal geographical orientation toward the sun.",
+        "Continuous economic deterrents and strict industrial emission standards tackle pollution at its institutional source 365 days a year.",
       development:
-        "Properties with small, shaded, or fragile roofs—as well as high-density apartments—cannot accommodate functional solar arrays.",
+        "Daily congestion charges deter unnecessary driving continuously, while factory scrubbers address non-vehicular smog.",
       example:
-        "Apartment dwellers and tenants without private roof access being unable to adopt solar energy.",
+        "London's Ultra Low Emission Zone (ULEZ) achieving sustained 46% roadside nitrogen dioxide reductions.",
       type: "counterpoint",
-      level: "Structural Constraint",
-      simpleTakeaway: "Many homes do not have large or sunny enough roofs to install panels.",
-      collocation: "roof space and shading constraints"
+      level: "View 2 Superior Solution",
+      simpleTakeaway: "Daily congestion fees and strict factory regulations curb pollution continuously all year round.",
+      collocation: "stringent regulatory standards"
     }
   ],
 
   facultyAngles: [
     {
-      title: "Environmental Science & Renewable Engineering (Advantages)",
+      title: "Urban Planning & Transport Ecology (View 1 Perspective)",
       development:
-        "Analyzes zero-emission power generation, lifecycle decarbonisation, infinite solar radiation, and reduced dependence on polluting fossil fuel power grids."
+        "Examines how temporary vehicle closures create immediate air quality improvements, reduce urban acoustic stress, and serve as educational catalysts to break private automobile dependency."
     },
     {
-      title: "Energy Economics & Infrastructure Realities (Disadvantages)",
+      title: "Environmental Economics & Public Policy (View 2 Perspective)",
       development:
-        "Examines high initial capital expenditure, payback periods, solar intermittency, battery chemical storage limitations, and architectural roof constraints."
+        "Analyzes the transient limitations of symbolic one-day bans, contrasting them with systemic capital investments in electrified mass transit, congestion pricing deterrents, and strict industrial regulations."
     }
   ]
 };

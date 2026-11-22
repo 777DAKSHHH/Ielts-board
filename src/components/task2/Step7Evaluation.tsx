@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Lightbulb, CircleCheck, Copy, Check, ShieldCheck, Sparkles } from "lucide-react";
-import { SOLUTIONS_IDEA_BANK } from "../../data/task2Data";
+import { DISADVANTAGES_IDEA_BANK } from "../../data/task2Data";
 
 export const Step7EvaluationT2: React.FC = () => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
-  const solutions = SOLUTIONS_IDEA_BANK;
+  const solutions = DISADVANTAGES_IDEA_BANK;
 
   const filteredSolutions = activeFilter === "all"
     ? solutions
@@ -26,13 +26,13 @@ export const Step7EvaluationT2: React.FC = () => {
           className="apple-badge accent"
           style={{ marginBottom: "8px", background: "#ffedd5", color: "#c2410c" }}
         >
-          Step 07 / 09 • Student Idea Bank: Disadvantages (Body Para 2)
+          Step 07 / 09 • Student Idea Bank: View 2 &amp; Opinion (Body Para 2)
         </span>
         <h2 className="stage-title">
-          Disadvantages of Solar Energy (Body Paragraph 2) — Student Idea Bank
+          View 2: Alternative Ways Are More Effective (Body Paragraph 2) — Student Idea Bank
         </h2>
         <p className="stage-subtitle">
-          These are 5 pragmatic arguments examining the drawbacks and limitations of household solar adoption (high upfront capital costs, weather intermittency, expensive battery storage, roof space constraints, and electronic waste recycling).
+          These are 5 pragmatic arguments examining why alternative systemic measures are more effective (transient nature &amp; emissions rebound, high-capacity electrified public transit, accelerated EV transition, continuous congestion charges, and industrial emission caps).
         </p>
       </div>
 
@@ -89,17 +89,17 @@ export const Step7EvaluationT2: React.FC = () => {
                 transition: "all 0.12s ease"
               }}
             >
-              Concession {idx + 1}
+              Argument {idx + 1}
             </button>
           ))}
         </div>
 
         <span style={{ fontSize: "0.74rem", color: "#64748b", fontWeight: 700 }}>
-          Structured: Core Economic Reality + Concrete Relatable Example
+          Structured: Core Strategic Argument + Concrete Global Precedent
         </span>
       </div>
 
-      {/* ALL 5 STUDENT CONCESSION IDEAS IN A CLEAN HIGH-READABILITY SMART BOARD GRID */}
+      {/* ALL 5 STUDENT VIEW 2 ARGUMENTS IN A CLEAN HIGH-READABILITY SMART BOARD GRID */}
       <div
         style={{
           display: "grid",
@@ -158,7 +158,7 @@ export const Step7EvaluationT2: React.FC = () => {
                     alignItems: "center",
                     gap: "4px"
                   }}
-                  title="Copy this concession idea"
+                  title="Copy this view 2 argument"
                 >
                   {isCopied ? <Check size={12} color="#166534" /> : <Copy size={12} />}
                   <span>{isCopied ? "Copied" : "Copy"}</span>
@@ -170,12 +170,12 @@ export const Step7EvaluationT2: React.FC = () => {
                 {solution.title}
               </h4>
 
-              {/* Core Economic Reality / Relatable Explanation */}
+              {/* Main Argument / Relatable Explanation */}
               <div style={{ background: "#fff7ed", border: "1px solid #fed7aa", borderRadius: "10px", padding: "12px 14px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "4px" }}>
                   <Lightbulb size={13} color="#ea580c" />
                   <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#c2410c", textTransform: "uppercase" }}>
-                    Economic Reality &amp; Justification
+                    Main Strategic Solution &amp; Logic
                   </span>
                 </div>
                 <p style={{ margin: 0, fontSize: "0.88rem", fontWeight: 650, color: "#0f172a", lineHeight: 1.5 }}>
@@ -183,11 +183,11 @@ export const Step7EvaluationT2: React.FC = () => {
                 </p>
               </div>
 
-              {/* Relatable Concrete Example */}
+              {/* Concrete Example */}
               <div
                 style={{
                   background: "#f0fdf4",
-                  border: "1px solid #86efac",
+                  border: "1px solid #bbf7d0",
                   borderRadius: "10px",
                   padding: "12px 14px",
                   marginTop: "auto"
@@ -196,10 +196,10 @@ export const Step7EvaluationT2: React.FC = () => {
                 <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "4px" }}>
                   <CircleCheck size={13} color="#16a34a" />
                   <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#15803d", textTransform: "uppercase" }}>
-                    Relatable Student Example
+                    Concrete Real-World Precedent
                   </span>
                 </div>
-                <p style={{ margin: 0, fontSize: "0.85rem", color: "#14532d", lineHeight: 1.5, fontWeight: 600 }}>
+                <p style={{ margin: 0, fontSize: "0.85rem", color: "#166534", lineHeight: 1.5, fontWeight: 600 }}>
                   {solution.example}
                 </p>
               </div>

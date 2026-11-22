@@ -11,13 +11,13 @@ export const Step9SubmissionT2: React.FC<Step9SubmissionT2Props> = ({
   const [copied, setCopied] = useState(false);
   const [showEssay, setShowEssay] = useState(false);
 
-  const fullModelEssay = `In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source. While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.
+  const fullModelEssay = `It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist. While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions.
 
-On the one hand, the primary advantage of domestic solar power is its exceptional environmental sustainability. Unlike conventional electricity generated from fossil fuels, photovoltaic systems harness inexhaustible solar radiation without discharging greenhouse gases or airborne pollutants. Consequently, widespread household adoption drastically curtails domestic carbon footprints and contributes directly to mitigating global climate change. Furthermore, residential solar panels yield profound economic savings over time. Once the system is installed, families generate their own electricity, shielding themselves from escalating commercial utility tariffs and saving up to seventy percent on monthly power bills. Additionally, in jurisdictions with net-metering schemes, households can even sell surplus power back to the regional grid, turning their roofs into modest revenue streams.
+On the one hand, proponents of car-free days highlight their immediate environmental and civic benefits. Restricting private vehicular access to city centers, even for a single day, produces a dramatic and measurable reduction in toxic tailpipe emissions, such as nitrogen dioxide and fine particulate matter. In major metropolises like Paris and Bogota, annual car-free events have demonstrated sharp, observable drops in atmospheric pollutants, affording urban residents cleaner air and quieter streets. Furthermore, such initiatives serve a vital psychological function by fostering public awareness regarding automobile dependency. When urbanites experience pedestrianised boulevards firsthand, they are encouraged to consider active transportation modes like cycling and walking, which can stimulate long-term behavioural changes toward sustainable living.
 
-On the other hand, the principal drawback of solar energy is the steep initial capital expenditure required for purchase and installation. High-efficiency solar panels, power inverters, mounting hardware, and professional labor demand an upfront investment often ranging between ten and twenty thousand dollars, making adoption prohibitive for lower-income households. Moreover, solar generation suffers from inherent weather dependency and seasonal intermittency. Solar panels produce minimal electricity during overcast days, heavy rainfall, or harsh winter seasons, and cannot generate power during night hours. To maintain continuous electricity supply, homeowners must either remain connected to the conventional grid or invest in expensive lithium-ion battery banks, which have limited lifespans and add substantial additional costs to the household budget.
+On the other hand, critics argue that car-free days are merely symbolic and that alternative structural measures possess greater long-term efficacy. Because vehicle bans are transient, traffic congestion and emissions inevitably rebound the very next day, failing to deliver permanent ecological improvement. Instead, the most impactful way to curb air pollution is by developing comprehensive, affordable public transit infrastructure. When municipal governments invest heavily in electrified bus fleets and extensive underground metro networks, commuters are provided with viable daily alternatives to private car ownership. Additionally, governments can implement continuous economic deterrents, such as congestion charges and low-emission zones, alongside stringent regulatory standards on industrial output and fossil-fuel vehicles. These permanent policies address the root causes of pollution continuously rather than intermittently.
 
-In conclusion, household solar energy presents compelling advantages by delivering clean, renewable electricity and lowering long-term domestic power bills. However, these merits are counterbalanced by the heavy initial capital investment required and the system's inherent weather dependency, suggesting that government subsidies and advancements in battery storage will remain critical for widespread residential adoption.`;
+In conclusion, while car-free days provide valuable short-term benefits by temporarily reducing vehicular exhaust and encouraging public mindfulness, they are fundamentally insufficient as a standalone policy. In my view, achieving lasting air quality improvements requires permanent systemic solutions, primarily heavy investment in zero-emission public transit networks and the rigorous enforcement of stringent vehicle emission standards.`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fullModelEssay);
@@ -35,7 +35,7 @@ In conclusion, household solar energy presents compelling advantages by deliveri
           </span>
           <h2 className="stage-title">Essay Structure &amp; Revision Cheat Sheet</h2>
           <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-            Extreme concise one-liner revision checks for your Band 9 Advantages &amp; Disadvantages response.
+            Extreme concise one-liner revision checks for your Band 9 Discussion with Opinion response.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ In conclusion, household solar energy presents compelling advantages by deliveri
         <div style={{ display: "flex", alignItems: "center", gap: "8px", borderBottom: "1px solid #f1f5f9", paddingBottom: "8px" }}>
           <Layers size={16} color="var(--apple-blue)" />
           <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-            4-Paragraph Advantages &amp; Disadvantages Architecture (One-Liner Revision)
+            4-Paragraph Discussion with Opinion Architecture (One-Liner Revision)
           </h3>
         </div>
 
@@ -128,10 +128,10 @@ In conclusion, household solar energy presents compelling advantages by deliveri
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#9333ea", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
                 1. INTRO
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#6b21a8" }}>Paraphrase Question + Balanced Outline Statement</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#6b21a8" }}>Paraphrase Question + Balanced Thesis Statement &amp; Opinion</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#3b0764", lineHeight: 1.45 }}>
-              Paraphrase increasing residential solar adoption + introduce both core benefits (environmental sustainability and bill savings) and drawbacks (high upfront capital and weather intermittency).
+              Paraphrase car-free days vs alternative measures + introduce temporary relief/awareness vs systemic solutions, giving clear personal opinion.
             </p>
           </div>
 
@@ -139,12 +139,12 @@ In conclusion, household solar energy presents compelling advantages by deliveri
           <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#2563eb", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                2. BODY PARA 1 (ADVANTAGES)
+                2. BODY PARA 1 (VIEW 1: CAR-FREE DAYS)
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#1d4ed8" }}>Clean Renewable Power &amp; Substantial Utility Bill Savings</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#1d4ed8" }}>Immediate Exhaust Reduction &amp; Civic Environmental Awareness</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e3a8a", lineHeight: 1.45 }}>
-              <strong>Point:</strong> Harnesses inexhaustible sunlight with zero emissions → <strong>Evidence:</strong> Drastically curtails carbon footprints &amp; insulates against escalating utility rates → <strong>Example:</strong> Saving 60–80% on bills and earning feed-in net metering credits.
+              <strong>Point:</strong> Restricting private cars instantly purges toxic tailpipe emissions → <strong>Evidence:</strong> Paris/Bogota car-free days record 30–50% drops in nitrogen dioxide → <strong>Example:</strong> Pedestrianised avenues foster active cycling/walking habits.
             </p>
           </div>
 
@@ -152,12 +152,12 @@ In conclusion, household solar energy presents compelling advantages by deliveri
           <div style={{ background: "#fff7ed", border: "1px solid #fed7aa", borderRadius: "10px", padding: "10px 14px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#ea580c", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                3. BODY PARA 2 (DISADVANTAGES)
+                3. BODY PARA 2 (VIEW 2 &amp; OPINION: SYSTEMIC ALTERNATIVES)
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#c2410c" }}>High Upfront Installation Capital &amp; Weather Intermittency</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#c2410c" }}>Electrified Mass Transit, Economic Deterrents &amp; Industrial Caps</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#7c2d12", lineHeight: 1.45 }}>
-              <strong>Point:</strong> Hardware and installation require heavy capital ($12,000–$22,000) → <strong>Evidence:</strong> Generation stops at night and drops sharply during cloudy/winter days → <strong>Example:</strong> Costly lithium-ion batteries and prolonged payback periods.
+              <strong>Point:</strong> Car-free days are transient with next-day emission rebounds → <strong>Evidence:</strong> Electric transit networks &amp; congestion charges provide continuous deterrence → <strong>Example:</strong> Tokyo/Zurich electric rail and London's ULEZ 46% drop.
             </p>
           </div>
 
@@ -167,10 +167,10 @@ In conclusion, household solar energy presents compelling advantages by deliveri
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#0f172a", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
                 4. CONCLUSION
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Sum-Up Trade-Offs + Forward-Looking Policy Recommendation</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Sum-Up Both Views + Re-affirm Clear Personal Opinion</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e293b", lineHeight: 1.45 }}>
-              Weigh clean energy advantages against upfront cost and intermittency, concluding that continued government subsidies and better battery tech are essential for universal adoption.
+              Concede that car-free days offer valuable short-term awareness and exhaust relief, but firmly reaffirm that long-term efficacy requires permanent clean transit and strict regulations.
             </p>
           </div>
         </div>
@@ -204,28 +204,28 @@ In conclusion, household solar energy presents compelling advantages by deliveri
               title: "Task Response",
               color: "#2563eb",
               bg: "#eff6ff",
-              rule: "Equal, fully developed coverage of both advantages and disadvantages, reinforced by a balanced final synthesis."
+              rule: "Equal, nuanced evaluation of both perspectives with an unambiguous, consistently maintained personal opinion throughout."
             },
             {
               code: "CC",
               title: "Coherence & Cohesion",
               color: "#16a34a",
               bg: "#f0fdf4",
-              rule: "Seamless comparative discourse markers: 'On the one hand... On the other hand... Furthermore... In conclusion...'."
+              rule: "Flawless discourse progression: 'It is often argued... While... On the one hand... On the other hand... In conclusion...'."
             },
             {
               code: "LR",
               title: "Lexical Resource",
               color: "#9333ea",
               bg: "#faf5ff",
-              rule: "Natural Band 9 energy lexis: 'photovoltaic', 'intermittency', 'decarbonisation', 'capital expenditure', 'net metering'."
+              rule: "Authentic Band 9 mobility & environmental lexis: 'transient', 'pedestrianise', 'mitigate', 'infrastructure', 'subsidise', 'stringent regulatory standards'."
             },
             {
               code: "GRA",
               title: "Grammatical Accuracy",
               color: "#d97706",
               bg: "#fffbeb",
-              rule: "Complex concessive structures ('While this shift offers...', 'Although initial costs are high...') with zero errors."
+              rule: "Sophisticated concessive and compound-complex structures ('While temporary vehicle bans can foster...', 'Because vehicle bans are transient...') with flawless syntax."
             }
           ].map((chk) => (
             <div
@@ -281,7 +281,7 @@ In conclusion, household solar energy presents compelling advantages by deliveri
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <Sparkles size={16} color="var(--apple-blue)" />
             <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
-              Complete Band 9 Model Essay (330 Words • 4-Paragraph Advantages &amp; Disadvantages Architecture)
+              Complete Band 9 Model Essay (335 Words • 4-Paragraph Discussion with Opinion Architecture)
             </strong>
             <span style={{ fontSize: "0.72rem", background: "#f1f5f9", color: "#475569", padding: "2px 8px", borderRadius: "6px" }}>
               {showEssay ? "Click to collapse" : "Click to view full text"}
@@ -306,16 +306,16 @@ In conclusion, household solar energy presents compelling advantages by deliveri
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong>1. Intro (Paraphrase + Balanced Outline Statement):</strong> In recent times, an increasing number of households worldwide have embraced solar energy as a primary domestic power source. While this shift offers substantial environmental sustainability and long-term utility bill savings, it is accompanied by distinct drawbacks, most notably high upfront installation costs and dependency on weather conditions.
+              <strong>1. Intro (Paraphrase + Balanced Thesis Statement &amp; Opinion):</strong> It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist. While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>2. Body Para 1 (Primary Advantages — Environmental Sustainability &amp; Utility Savings):</strong> On the one hand, the primary advantage of domestic solar power is its exceptional environmental sustainability. Unlike conventional electricity generated from fossil fuels, photovoltaic systems harness inexhaustible solar radiation without discharging greenhouse gases or airborne pollutants. Consequently, widespread household adoption drastically curtails domestic carbon footprints and contributes directly to mitigating global climate change. Furthermore, residential solar panels yield profound economic savings over time. Once the system is installed, families generate their own electricity, shielding themselves from escalating commercial utility tariffs and saving up to seventy percent on monthly power bills. Additionally, in jurisdictions with net-metering schemes, households can even sell surplus power back to the regional grid, turning their roofs into modest revenue streams.
+              <strong>2. Body Para 1 (View 1: Car-Free Days Are Effective — Immediate Relief &amp; Civic Awareness):</strong> On the one hand, proponents of car-free days highlight their immediate environmental and civic benefits. Restricting private vehicular access to city centers, even for a single day, produces a dramatic and measurable reduction in toxic tailpipe emissions, such as nitrogen dioxide and fine particulate matter. In major metropolises like Paris and Bogota, annual car-free events have demonstrated sharp, observable drops in atmospheric pollutants, affording urban residents cleaner air and quieter streets. Furthermore, such initiatives serve a vital psychological function by fostering public awareness regarding automobile dependency. When urbanites experience pedestrianised boulevards firsthand, they are encouraged to consider active transportation modes like cycling and walking, which can stimulate long-term behavioural changes toward sustainable living.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>3. Body Para 2 (Primary Disadvantages — Capital Expenditure &amp; Weather Intermittency):</strong> On the other hand, the principal drawback of solar energy is the steep initial capital expenditure required for purchase and installation. High-efficiency solar panels, power inverters, mounting hardware, and professional labor demand an upfront investment often ranging between ten and twenty thousand dollars, making adoption prohibitive for lower-income households. Moreover, solar generation suffers from inherent weather dependency and seasonal intermittency. Solar panels produce minimal electricity during overcast days, heavy rainfall, or harsh winter seasons, and cannot generate power during night hours. To maintain continuous electricity supply, homeowners must either remain connected to the conventional grid or invest in expensive lithium-ion battery banks, which have limited lifespans and add substantial additional costs to the household budget.
+              <strong>3. Body Para 2 (View 2 &amp; Opinion: Alternative Measures Are More Effective — Transit &amp; Regulations):</strong> On the other hand, critics argue that car-free days are merely symbolic and that alternative structural measures possess greater long-term efficacy. Because vehicle bans are transient, traffic congestion and emissions inevitably rebound the very next day, failing to deliver permanent ecological improvement. Instead, the most impactful way to curb air pollution is by developing comprehensive, affordable public transit infrastructure. When municipal governments invest heavily in electrified bus fleets and extensive underground metro networks, commuters are provided with viable daily alternatives to private car ownership. Additionally, governments can implement continuous economic deterrents, such as congestion charges and low-emission zones, alongside stringent regulatory standards on industrial output and fossil-fuel vehicles. These permanent policies address the root causes of pollution continuously rather than intermittently.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>4. Conclusion (Sum-Up Trade-Offs + Forward-Looking Recommendation):</strong> In conclusion, household solar energy presents compelling advantages by delivering clean, renewable electricity and lowering long-term domestic power bills. However, these merits are counterbalanced by the heavy initial capital investment required and the system's inherent weather dependency, suggesting that government subsidies and advancements in battery storage will remain critical for widespread residential adoption.
+              <strong>4. Conclusion (Sum-Up Both Views + Re-affirm Clear Personal Opinion):</strong> In conclusion, while car-free days provide valuable short-term benefits by temporarily reducing vehicular exhaust and encouraging public mindfulness, they are fundamentally insufficient as a standalone policy. In my view, achieving lasting air quality improvements requires permanent systemic solutions, primarily heavy investment in zero-emission public transit networks and the rigorous enforcement of stringent vehicle emission standards.
             </p>
           </div>
         )}

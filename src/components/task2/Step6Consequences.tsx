@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Lightbulb, CircleCheck, Copy, Check, AlertOctagon, Sparkles } from "lucide-react";
-import { CAUSES_IDEA_BANK } from "../../data/task2Data";
+import { ADVANTAGES_IDEA_BANK } from "../../data/task2Data";
 
 export const Step6ConsequencesT2: React.FC = () => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("all");
 
-  const causes = CAUSES_IDEA_BANK;
+  const causes = ADVANTAGES_IDEA_BANK;
 
   const filteredCauses = activeFilter === "all"
     ? causes
@@ -26,13 +26,13 @@ export const Step6ConsequencesT2: React.FC = () => {
           className="apple-badge accent"
           style={{ marginBottom: "8px", background: "#eff6ff", color: "#1e40af" }}
         >
-          Step 06 / 09 • Student Idea Bank: Advantages (Body Para 1)
+          Step 06 / 09 • Student Idea Bank: View 1 (Body Para 1)
         </span>
         <h2 className="stage-title">
-          Advantages of Solar Energy (Body Paragraph 1) — Student Idea Bank
+          View 1: Car-Free Days Are Effective (Body Paragraph 1) — Student Idea Bank
         </h2>
         <p className="stage-subtitle">
-          These are 5 compelling arguments exploring the environmental and financial benefits of domestic solar power (clean renewable electricity, reduced power bills, grid autonomy, net-metering rebates, and low maintenance).
+          These are 5 compelling arguments exploring the immediate environmental and civic benefits of car-free days (immediate tailpipe emission drop, fostering civic awareness, promoting active walking/cycling, empirical pedestrianisation testing, and acoustic stress relief).
         </p>
       </div>
 
@@ -158,7 +158,7 @@ export const Step6ConsequencesT2: React.FC = () => {
                     alignItems: "center",
                     gap: "4px"
                   }}
-                  title="Copy this opinion argument"
+                  title="Copy this view 1 argument"
                 >
                   {isCopied ? <Check size={12} color="#166534" /> : <Copy size={12} />}
                   <span>{isCopied ? "Copied" : "Copy"}</span>
