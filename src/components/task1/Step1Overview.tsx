@@ -30,9 +30,9 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
         <span className="apple-badge accent chromatic-glass-badge" style={{ marginBottom: "8px" }}>
           Step 01 / 08 • Cryptic Audio Guess
         </span>
-        <h2 className="stage-title">Listen First: The Process of Making Sugar from Sugarcane</h2>
+        <h2 className="stage-title">Listen First: Auckland Shopping Complex Survey Results</h2>
         <p className="stage-subtitle">
-          Play the briefing before revealing the manufacturing diagram. Deduce how many sequential stages exist, how sugarcane is harvested in two distinct ways, which chemical filter is utilized, and how solid sugar crystals are separated from liquid syrup.
+          Play the briefing before revealing the survey charts. Deduce which component achieved the highest overall approval, how men and women differed regarding dining facilities, and which metric had an identical rating.
         </p>
       </div>
 
@@ -60,7 +60,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
                   Cryptic Audio Briefing
                 </h4>
                 <p style={{ fontSize: "0.85rem", color: "var(--slate-500)", marginTop: "2px" }}>
-                  Manufacturing Process Diagram • 7 Sequential Stages • Cambridge Academic IELTS
+                  Mixed Survey Charts • 2 Tables &amp; 1 Pie Chart • Cambridge Academic IELTS
                 </p>
               </div>
             </div>
@@ -105,7 +105,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "16px", color: "var(--slate-700)", lineHeight: 1.55 }}>
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify how long the canes grow before harvesting, what two distinct methods are used to reap the crop, how juice is extracted and purified, and which machine separates sugar crystals from syrup.
+            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify which aspect of the shopping complex earned the highest overall approval rating (design at 79%), which gender was twice as enthusiastic about shops (females at 34% vs 17%), and why restaurants showed a dramatic 4x difference in dissatisfaction (females 21% vs males 5%).
           </div>
         </div>
 
@@ -127,10 +127,10 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
           </div>
 
           {[
-            "How many sequential stages are depicted from raw crop to finished sugar (7 distinct linear stages)?",
-            "What two different methods are shown for harvesting the mature sugarcane (mechanised combine harvester vs manual hand sickle)?",
-            "What specific filter medium is utilized to purify the raw extracted juice (limestone filter)?",
-            "Which industrial machine utilizes rapid rotational spinning to separate sugar crystals from liquid syrup (centrifuge)?"
+            "Which evaluated facility secured the highest overall satisfaction rating across all survey respondents (complex design at 79%)?",
+            "How did male and female ratings differ for the retail shops (females were twice as likely to be 'very satisfied' at 34% vs 17%)?",
+            "What dramatic contrast appeared in dining amenities (male dissatisfaction was only 5%, while female dissatisfaction quadrupled to 21%)?",
+            "In which specific survey rating did male and female respondents register exactly identical figures (retail dissatisfaction at exactly 20%)?"
           ].map((question, index) => (
             <div key={question} style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "15px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
               <span className="apple-badge neutral" style={{ minWidth: "32px", justifyContent: "center", fontWeight: 800 }}>{index + 1}</span>
@@ -150,7 +150,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             className="apple-touch-btn primary"
             style={{ minHeight: "52px", gap: "8px", marginTop: "auto", fontSize: "1.02rem", fontWeight: 700 }}
           >
-            <Sparkles size={18} /> {revealed ? "Continue to 7-Stage Process Analysis" : "Reveal Task & Process Diagram"}
+            <Sparkles size={18} /> {revealed ? "Continue to Survey Matrix Analysis" : "Reveal Task & Survey Matrix"}
           </motion.button>
 
           {revealed && (
@@ -159,7 +159,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
               animate={{ opacity: 1, y: 0 }}
               style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "14px", padding: "14px 16px", color: "#1e3a8a", fontSize: "0.9rem", lineHeight: 1.5 }}
             >
-              The full Cambridge IELTS prompt and interactive 7-Stage Process Diagram Engine are revealed in Step 02.
+              The full Cambridge IELTS prompt and interactive Survey Matrix Smartboard are revealed in Step 02.
             </motion.div>
           )}
         </div>

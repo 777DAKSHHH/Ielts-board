@@ -446,7 +446,7 @@ html, body {
 
 .stage-split-grid {
   display: grid;
-  grid-template-columns: minmax(320px, 1.35fr) 210px minmax(320px, 1.25fr);
+  grid-template-columns: minmax(300px, 1.25fr) 220px minmax(320px, 1.35fr);
   gap: 14px;
   align-items: stretch;
   width: 100%;

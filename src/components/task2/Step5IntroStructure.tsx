@@ -12,9 +12,9 @@ export const Step5IntroStructureT2: React.FC = () => {
   };
 
   const sentence1 =
-    "It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist.";
+    "In contemporary society, manufactured single-use items have become exceptionally ubiquitous across domestic and commercial sectors.";
   const sentence2 =
-    "While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions.";
+    "While this disposable culture inflicts severe environmental degradation, notably acute landfill saturation and marine contamination, viable solutions exist, including statutory product bans, fiscal deterrents, and state subsidies for biodegradable alternatives.";
 
   return (
     <div className="stage-card-wrapper">
@@ -22,9 +22,9 @@ export const Step5IntroStructureT2: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 05 / 09 • Sample Introduction &amp; Outline
         </span>
-        <h2 className="stage-title">Sample Introduction: Paraphrase + Balanced Thesis Statement</h2>
+        <h2 className="stage-title">Sample Introduction: Paraphrase + Direct Problem &amp; Solution Outline</h2>
         <p className="stage-subtitle">
-          Mandatory Introduction Format: <strong>Sentence 1: Paraphrase the question prompt + Sentence 2: Deliver your balanced thesis statement &amp; opinion</strong>.
+          Mandatory Introduction Format: <strong>Sentence 1: Paraphrase the question prompt + Sentence 2: Deliver your clear thesis outlining both primary problems and targeted solutions</strong>.
         </p>
       </div>
 
@@ -45,7 +45,7 @@ export const Step5IntroStructureT2: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <BookOpen size={22} color="var(--apple-blue)" />
               <h4 style={{ fontSize: "1.2rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                Sample Introduction (2 Sentences • ~62 Words)
+                Sample Introduction (2 Sentences • ~49 Words)
               </h4>
             </div>
 
@@ -97,7 +97,7 @@ export const Step5IntroStructureT2: React.FC = () => {
                   Sentence 1 • Paraphrase
                 </span>
                 <span style={{ fontSize: "0.8rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                  (24 words)
+                  (15 words)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "1.12rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.55 }}>
@@ -127,10 +127,10 @@ export const Step5IntroStructureT2: React.FC = () => {
                     textTransform: "uppercase"
                   }}
                 >
-                  Sentence 2 • Balanced Thesis &amp; Opinion
+                  Sentence 2 • Direct Problem &amp; Solution Thesis
                 </span>
                 <span style={{ fontSize: "0.8rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                  (38 words)
+                  (34 words)
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: "1.12rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.55 }}>
@@ -156,7 +156,7 @@ export const Step5IntroStructureT2: React.FC = () => {
           </div>
 
           <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-600)", fontSize: "0.9rem", fontWeight: 600 }}>
-            <Clock size={16} /> Exactly 62 words • 2 sentences • Fast exam execution (~1.5 mins)
+            <Clock size={16} /> Exactly 49 words • 2 sentences • Fast exam execution (~1.5 mins)
           </div>
         </div>
 
@@ -175,9 +175,9 @@ export const Step5IntroStructureT2: React.FC = () => {
               <h5 style={{ fontSize: "1.02rem", fontWeight: 750, margin: 0 }}>One-Liner Intro Planning Points</h5>
             </div>
             <ul style={{ margin: "4px 0 0", paddingLeft: "18px", fontSize: "0.94rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
-              <li><strong>Paraphrase:</strong> It is argued that car-free days reduce air pollution, while others advocate for more effective alternative strategies.</li>
-              <li><strong>View 1 Acknowledgment:</strong> Recognize immediate emissions reduction and the stimulation of civic awareness.</li>
-              <li><strong>View 2 &amp; Opinion Thesis:</strong> Argue that systemic measures (electrified mass transit and industrial emission caps) represent far more effective long-term solutions.</li>
+              <li><strong>Paraphrase:</strong> Single-use disposable products have become extraordinarily common and omnipresent in modern society.</li>
+              <li><strong>Problems Preview:</strong> Highlight acute landfill capacity saturation and catastrophic marine plastic pollution.</li>
+              <li><strong>Solutions Preview:</strong> Introduce statutory bans, fiscal levies on disposables, and subsidies for compostable packaging alternatives.</li>
             </ul>
           </div>
 
@@ -185,21 +185,21 @@ export const Step5IntroStructureT2: React.FC = () => {
             icon={<CheckCircle2 size={18} />}
             badge="Sentence 1 Analysis"
             title="Question Paraphrase"
-            text="“It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist.” Accurately and fluently captures both prompt perspectives using advanced academic lexis."
+            text="“In contemporary society, manufactured single-use items have become exceptionally ubiquitous across domestic and commercial sectors.” Accurately transforms 'single-use products are very common' into high-register academic prose."
           />
 
           <StructureCard
             icon={<Award size={18} />}
             badge="Sentence 2 Analysis"
-            title="Balanced Thesis Statement with Opinion"
-            text="“While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions.” Concedes the genuine benefits of car-free days before establishing a clear, authoritative personal opinion."
+            title="Direct Problem &amp; Solution Thesis"
+            text="“While this disposable culture inflicts severe environmental degradation, notably acute landfill saturation and marine contamination, viable solutions exist, including statutory product bans, fiscal deterrents, and state subsidies for biodegradable alternatives.” Establishes an explicit, balanced roadmap directly previewing Body 1 (Problems) and Body 2 (Solutions)."
           />
 
           <StructureCard
             icon={<CheckCircle2 size={18} />}
             badge="Band 9 Strategy"
-            title="Discussion with Opinion Architecture"
-            text="In a 'Discuss both views and give your opinion' task, presenting a clear thesis in the introduction and maintaining that position throughout ensures a Band 9 Task Achievement rating."
+            title="Problems &amp; Solutions Architecture"
+            text="In a Problems and Solutions prompt, providing a precise dual thesis statement answering both question prompts in the introduction guarantees top marks for Task Achievement."
           />
         </div>
       </div>

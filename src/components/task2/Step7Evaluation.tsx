@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Lightbulb, CircleCheck, Copy, Check, ShieldCheck, Sparkles } from "lucide-react";
+import { CircleCheck, Copy, Check, Lightbulb, ShieldCheck, Sparkles } from "lucide-react";
 import { DISADVANTAGES_IDEA_BANK } from "../../data/task2Data";
 
 export const Step7EvaluationT2: React.FC = () => {
@@ -24,15 +24,15 @@ export const Step7EvaluationT2: React.FC = () => {
       <div style={{ marginBottom: "16px" }}>
         <span
           className="apple-badge accent"
-          style={{ marginBottom: "8px", background: "#ffedd5", color: "#c2410c" }}
+          style={{ marginBottom: "8px", background: "#f0fdf4", color: "#166534" }}
         >
-          Step 07 / 09 • Student Idea Bank: View 2 &amp; Opinion (Body Para 2)
+          Step 07 / 09 • Student Idea Bank: Possible Solutions (Body Para 2)
         </span>
         <h2 className="stage-title">
-          View 2: Alternative Ways Are More Effective (Body Paragraph 2) — Student Idea Bank
+          Possible Solutions to Single-Use Waste (Body Paragraph 2) — Student Idea Bank
         </h2>
         <p className="stage-subtitle">
-          These are 5 pragmatic arguments examining why alternative systemic measures are more effective (transient nature &amp; emissions rebound, high-capacity electrified public transit, accelerated EV transition, continuous congestion charges, and industrial emission caps).
+          These are 5 pragmatic solutions examining how to curb single-use consumption (statutory product bans &amp; plastic taxes, subsidising organic biodegradable packaging, Extended Producer Responsibility (EPR), deposit-return schemes, and normalizing reusables).
         </p>
       </div>
 
@@ -53,14 +53,14 @@ export const Step7EvaluationT2: React.FC = () => {
       >
         <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
           <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#475569", display: "flex", alignItems: "center", gap: "4px" }}>
-            <ShieldCheck size={14} color="#ea580c" /> Quick Jump:
+            <ShieldCheck size={14} color="#16a34a" /> Quick Jump:
           </span>
           <button
             type="button"
             onClick={() => setActiveFilter("all")}
             style={{
-              border: activeFilter === "all" ? "1.5px solid #ea580c" : "1px solid #e2e8f0",
-              background: activeFilter === "all" ? "#ea580c" : "#f8fafc",
+              border: activeFilter === "all" ? "1.5px solid #16a34a" : "1px solid #e2e8f0",
+              background: activeFilter === "all" ? "#16a34a" : "#f8fafc",
               color: activeFilter === "all" ? "#ffffff" : "#475569",
               padding: "4px 10px",
               borderRadius: "7px",
@@ -70,7 +70,7 @@ export const Step7EvaluationT2: React.FC = () => {
               transition: "all 0.12s ease"
             }}
           >
-            All 5 Arguments
+            All 5 Solutions
           </button>
           {solutions.map((s, idx) => (
             <button
@@ -78,8 +78,8 @@ export const Step7EvaluationT2: React.FC = () => {
               type="button"
               onClick={() => setActiveFilter(s.id)}
               style={{
-                border: activeFilter === s.id ? "1.5px solid #ea580c" : "1px solid #e2e8f0",
-                background: activeFilter === s.id ? "#ea580c" : "#f8fafc",
+                border: activeFilter === s.id ? "1.5px solid #16a34a" : "1px solid #e2e8f0",
+                background: activeFilter === s.id ? "#16a34a" : "#f8fafc",
                 color: activeFilter === s.id ? "#ffffff" : "#475569",
                 padding: "4px 10px",
                 borderRadius: "7px",
@@ -89,17 +89,17 @@ export const Step7EvaluationT2: React.FC = () => {
                 transition: "all 0.12s ease"
               }}
             >
-              Argument {idx + 1}
+              Solution {idx + 1}
             </button>
           ))}
         </div>
 
         <span style={{ fontSize: "0.74rem", color: "#64748b", fontWeight: 700 }}>
-          Structured: Core Strategic Argument + Concrete Global Precedent
+          Structured: Core Strategic Policy + Concrete Global Precedent
         </span>
       </div>
 
-      {/* ALL 5 STUDENT VIEW 2 ARGUMENTS IN A CLEAN HIGH-READABILITY SMART BOARD GRID */}
+      {/* ALL 5 STUDENT SOLUTION ARGUMENTS IN A CLEAN SMART BOARD GRID */}
       <div
         style={{
           display: "grid",
@@ -117,10 +117,10 @@ export const Step7EvaluationT2: React.FC = () => {
               key={solution.id}
               style={{
                 background: "#ffffff",
-                border: "1.5px solid #fed7aa",
+                border: "1.5px solid #bbf7d0",
                 borderRadius: "16px",
                 padding: "18px",
-                boxShadow: "0 2px 8px rgba(234, 88, 12, 0.04)",
+                boxShadow: "0 2px 8px rgba(22, 163, 74, 0.04)",
                 display: "flex",
                 flexDirection: "column",
                 gap: "12px",
@@ -131,8 +131,8 @@ export const Step7EvaluationT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px" }}>
                 <span
                   style={{
-                    background: "#ffedd5",
-                    color: "#c2410c",
+                    background: "#f0fdf4",
+                    color: "#15803d",
                     fontSize: "0.74rem",
                     fontWeight: 800,
                     padding: "3px 9px",
@@ -158,7 +158,7 @@ export const Step7EvaluationT2: React.FC = () => {
                     alignItems: "center",
                     gap: "4px"
                   }}
-                  title="Copy this view 2 argument"
+                  title="Copy this solution argument"
                 >
                   {isCopied ? <Check size={12} color="#166534" /> : <Copy size={12} />}
                   <span>{isCopied ? "Copied" : "Copy"}</span>
@@ -170,12 +170,12 @@ export const Step7EvaluationT2: React.FC = () => {
                 {solution.title}
               </h4>
 
-              {/* Main Argument / Relatable Explanation */}
-              <div style={{ background: "#fff7ed", border: "1px solid #fed7aa", borderRadius: "10px", padding: "12px 14px" }}>
+              {/* Main Argument / Explanation */}
+              <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "12px 14px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "4px" }}>
-                  <Lightbulb size={13} color="#ea580c" />
-                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#c2410c", textTransform: "uppercase" }}>
-                    Main Strategic Solution &amp; Logic
+                  <Lightbulb size={13} color="#16a34a" />
+                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#166534", textTransform: "uppercase" }}>
+                    Solution Mechanism &amp; Policy Logic
                   </span>
                 </div>
                 <p style={{ margin: 0, fontSize: "0.88rem", fontWeight: 650, color: "#0f172a", lineHeight: 1.5 }}>
@@ -186,20 +186,20 @@ export const Step7EvaluationT2: React.FC = () => {
               {/* Concrete Example */}
               <div
                 style={{
-                  background: "#f0fdf4",
-                  border: "1px solid #bbf7d0",
+                  background: "#f8fafc",
+                  border: "1px solid #e2e8f0",
                   borderRadius: "10px",
                   padding: "12px 14px",
                   marginTop: "auto"
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "4px" }}>
-                  <CircleCheck size={13} color="#16a34a" />
-                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#15803d", textTransform: "uppercase" }}>
+                  <CircleCheck size={13} color="#0284c7" />
+                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#0369a1", textTransform: "uppercase" }}>
                     Concrete Real-World Precedent
                   </span>
                 </div>
-                <p style={{ margin: 0, fontSize: "0.85rem", color: "#166534", lineHeight: 1.5, fontWeight: 600 }}>
+                <p style={{ margin: 0, fontSize: "0.85rem", color: "#334155", lineHeight: 1.5, fontWeight: 600 }}>
                   {solution.example}
                 </p>
               </div>

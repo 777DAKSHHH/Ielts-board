@@ -32,14 +32,14 @@ export const Step4IntroOverview: React.FC = () => (
       <span className="apple-badge accent chromatic-glass-badge" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction &amp; Macro Overview</span>
       <h2 className="stage-title">Build the Introduction and Macro Overview</h2>
       <p className="stage-subtitle">
-        Paraphrase the process diagram parameters (7 sequential stages, raw sugarcane to refined sugar crystals, field cultivation to drying), and formulate a Band 9 macro overview highlighting the total stage count, starting/culminating steps, and the dual bifurcation between agricultural and chemical processing.
+        Paraphrase the survey graphic parameters (two tables and one pie chart, Auckland New Zealand shopping complex, four satisfaction tiers), and formulate a Band 9 macro overview highlighting dominant overall positive reception and the stark dining gender divergence.
       </p>
     </div>
 
     <div className="stage-grid-2col">
       <QuoteCard
         icon={<BookOpen size={20} color="var(--slate-800)" />}
-        title="1. Sample Introduction (Process Scope Paraphrase)"
+        title="1. Sample Introduction (Multi-Graphic Scope Paraphrase)"
         text={TASK1_DATA.sampleIntro}
         badge="Accurate Scope"
       />
@@ -47,7 +47,7 @@ export const Step4IntroOverview: React.FC = () => (
         icon={<Sparkles size={20} color="var(--slate-800)" />}
         title="2. Sample Macro Overview (Qualitative Synthesis)"
         text={TASK1_DATA.sampleOverview}
-        badge="Start-to-Finish Synthesis"
+        badge="Zero-Number Synthesis"
       />
     </div>
 
@@ -58,25 +58,25 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Compass size={18} color="var(--apple-blue)" />
           <h4 style={{ fontSize: "1rem", fontWeight: 750, color: "#0f172a", margin: 0 }}>
-            4-Element Introduction Architecture for Process Diagrams
+            4-Element Introduction Architecture for Multi-Graphic Surveys
           </h4>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-            <span><strong>Graphic Type &amp; Reporting Verb:</strong> <em>“The process diagram delineates...”</em> (accurately identifies visual representation and ordered flow).</span>
+            <span><strong>Graphic Types &amp; Reporting Verb:</strong> <em>“The two tables and accompanying pie chart delineate...”</em> (accurately identifies multiple visual formats).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-            <span><strong>Total Sequential Stages:</strong> <em>“...the seven sequential stages involved in...”</em> (explicitly counts all steps from 1 to 7).</span>
+            <span><strong>Subject &amp; Geographic Location:</strong> <em>“...the results of a visitor satisfaction survey regarding a newly opened shopping complex in Auckland, New Zealand...”</em> (names facility and city).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>3</span>
-            <span><strong>Transformation Scope:</strong> <em>“...the manufacture of refined sugar from raw sugarcane...”</em> (captures raw input to finished commercial commodity).</span>
+            <span><strong>Evaluated Domains:</strong> <em>“...evaluating visitor sentiment across retail shops, dining establishments, and overall architectural design...”</em> (specifies all 3 measured areas).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center", background: "#dbeafe", color: "#1e40af", fontWeight: 800 }}>4</span>
-            <span><strong>Boundary Markers:</strong> <em>“...spanning from initial field cultivation to final drying and cooling.”</em> (establishes opening and concluding operations).</span>
+            <span><strong>Measurement Scale:</strong> <em>“...expressed in percentage terms across four distinct sentiment classifications.”</em> (establishes percentages and 4 satisfaction tiers).</span>
           </div>
         </div>
       </div>
@@ -92,15 +92,15 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 1 — Linear Sequence Span:</strong> Overall, the manufacturing process is a linear sequence comprising seven distinct stages, beginning with agricultural cultivation and harvesting and culminating in the industrial drying and cooling of pure sugar crystals.</span>
+            <span><strong>Pillar 1 — Dominant Overall Positive Reception:</strong> Overall, the shopping complex garnered predominantly positive feedback across all evaluated domains, with architectural design receiving the highest aggregate approval.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 2 — Dual Harvesting &amp; Process Bifurcation:</strong> Notably, while the opening stages involve agricultural harvesting (performed either mechanically or manually) and mechanical juice extraction, the remaining phases rely on chemical filtration, thermal evaporation, and centrifugal separation.</span>
+            <span><strong>Pillar 2 — Key Gender Divergence:</strong> Notably, while dissatisfaction with retail shops was identical between genders, dining facilities revealed a pronounced disparity, as females were considerably more critical than males.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Examiner Anchor:</strong> Highlighting both the total number of stages and the two-phase structural division (agricultural harvesting vs industrial refining) guarantees Band 9 in Task Achievement (TA).</span>
+            <span><strong>Examiner Anchor:</strong> Highlighting both the overarching favorable trend and the sharp dining disparity between sexes (without citing raw numbers) guarantees Band 9 in Task Achievement (TA).</span>
           </div>
         </div>
       </div>

@@ -8,7 +8,6 @@ import {
   CheckCircle2,
   TrendingUp,
   Award,
-  Flame,
   Filter
 } from "lucide-react";
 import { tactilePress } from "../../motion";
@@ -29,59 +28,58 @@ const FLASHCARDS: FlashcardItem[] = [
     id: 1,
     category: "Card 1: Macro Qualitative Overview (Zero Numbers Rule)",
     badgeColor: "#059669",
-    question: "What are the core overarching features that must be highlighted in the overview for this Sugarcane Process Diagram?",
-    answerTitle: "Linear Sequence, Start to Finish & Dual Bifurcation",
+    question: "What are the core overarching features that must be highlighted in the overview for this Auckland Shopping Complex Survey?",
+    answerTitle: "Overall Positive Approval, Design Dominance & Stark Dining Gender Disparity",
     bulletPoints: [
-      "Pillar 1 (Sequence & Span): The manufacturing procedure is a linear multi-stage sequence consisting of seven distinct stages, beginning with crop cultivation and ending with refined sugar crystals.",
-      "Pillar 2 (Dual Harvest & Bifurcation): The initial stages involve agricultural field operations—notably dual harvesting (conducted either mechanically or manually)—and juice extraction, whereas subsequent phases rely on chemical purification, thermal evaporation, and centrifugal separation.",
-      "Golden Rule: Never focus on tiny procedural steps in the overview; synthesize the overall journey and primary grouping."
+      "Pillar 1 (General High Approval): Visitors viewed the complex predominantly positively across all three evaluated sectors, with complex architectural design achieving the highest cumulative approval (79% favorable).",
+      "Pillar 2 (Gender Divergence in Dining): While both male and female cohorts exhibited identical dissatisfaction with retail shops (20%), attitudes toward dining facilities diverged sharply, with female dissatisfaction exceeding the male rate by more than four times.",
+      "Golden Rule: Never list raw numbers or individual percentages in the overview; synthesize overarching tendencies and primary contrasts."
     ],
     band9Phrase:
-      "“Overall, the manufacturing process is a linear sequence comprising seven distinct stages, beginning with agricultural cultivation and harvesting and culminating in the industrial drying and cooling of pure sugar crystals. Notably, while the opening stages involve agricultural harvesting (performed either mechanically or manually) and mechanical juice extraction, the remaining phases rely on chemical filtration, thermal evaporation, and centrifugal separation.”"
+      "“Overall, the shopping complex garnered predominantly positive feedback across all evaluated domains, with architectural design receiving the highest aggregate approval. Notably, while dissatisfaction with retail shops was identical between genders, dining facilities revealed a pronounced disparity, as females were considerably more critical than males.”"
   },
   {
     id: 2,
-    category: "Card 2: Agricultural & Extraction Flow (Body 1)",
+    category: "Card 2: Retail Shops Proportions & Parity (Body 1A)",
     badgeColor: "#16a34a",
-    question: "How do you systematically deconstruct Stages 1, 2, and 3 in Body Paragraph 1?",
-    answerTitle: "Maturation (12–18m), Dual Reaping (Combine vs Sickle) & Roller Crushing",
+    question: "How do you systematically report and contrast male and female responses for retail shops in Table 1?",
+    answerTitle: "Enthusiasm Doubling (34% vs 17%) & Dissatisfaction Parity (20%)",
     bulletPoints: [
-      "Stage 1 (Growing): Canes are cultivated in agricultural fields over a 12 to 18-month maturation timeframe.",
-      "Stage 2 (Harvesting): Fully mature crops are reaped using two distinct methods: either mechanically by combine vehicles or manually by agricultural laborers using hand sickles.",
-      "Stage 3 (Crushing): Cut stalks are fed through heavy rotating rollers in a crushing mill, expressing raw liquid juice.",
-      "Examiner Tip: Always explicitly highlight the alternative dual harvesting method—failing to mention both mechanical and manual harvesting costs marks in Task Achievement."
+      "Male Ratings: 45% satisfied and 17% very satisfied, yielding a solid 62% combined positive evaluation.",
+      "Female Ratings: 37% satisfied, but extreme enthusiasm was exactly double that of men (34% vs 17%), yielding 71% total positive rating.",
+      "The Unifying Similarity: Despite divergent enthusiasm, both genders registered an identical 20% dissatisfaction rate.",
+      "Neutrality Contrast: 18% of men offered no comment compared to just 9% of women."
     ],
     band9Phrase:
-      "“To begin with, sugarcanes are grown in agricultural fields over a maturation period lasting between 12 and 18 months. Once fully grown, the canes are harvested using one of two methods: either mechanically utilizing combine harvesters or manually by agricultural laborers cutting the stalks with hand blades. Following the harvest, the raw stalks are fed through heavy rotating rollers in a crushing mill, which compress the plant material to extract raw liquid juice.”"
+      "“In retail shops, 45% of male visitors were satisfied alongside 17% who were very satisfied. By comparison, female shoppers demonstrated considerably higher enthusiasm, with 34% describing themselves as very satisfied—exactly double the male proportion—while dissatisfaction rates for both sexes were identical at 20%.”"
   },
   {
     id: 3,
-    category: "Card 3: Refining, Evaporation & Separation (Body 2)",
+    category: "Card 3: Restaurants & Dining Contrast (Body 1B)",
     badgeColor: "#ea580c",
-    question: "How do you link Stages 4, 5, 6, and 7 in Body Paragraph 2?",
-    answerTitle: "Limestone Filtration, Evaporation into Syrup, Centrifuge Spin & Drum Drying",
+    question: "How do you frame the dramatic contrast between men and women in Table 2 (Restaurants)?",
+    answerTitle: "Peak Male Approval (80%) vs Quadruple Female Dissatisfaction (21% vs 5%)",
     bulletPoints: [
-      "Stage 4 (Purifying): Raw liquid juice is poured through a limestone filter to catch particulates and eliminate impurities.",
-      "Stage 5 (Evaporator): Filtered juice is heated over a flame in an evaporator vat; water evaporates, turning the liquid into thick syrup.",
-      "Stage 6 (Centrifuge): Viscous syrup is introduced into a high-speed centrifuge, which spins rapidly to separate solid sugar crystals from liquid syrup.",
-      "Stage 7 (Drying & Cooling): Damp crystals enter a cylindrical container for drying and cooling, resulting in the final refined sugar product ready for packaging."
+      "Peak Male Contentment: Men registered the highest positive feedback in the entire survey, with 55% satisfied and 25% very satisfied (80% total approval), while dissatisfaction was minuscule at 5%.",
+      "Stark Female Displeasure: In sharp contrast, female dissatisfaction stood at 21%, more than fourfold higher than that of males.",
+      "Neutrality Cohort: Female patrons also displayed higher neutrality (20% no comment vs 15% for males)."
     ],
     band9Phrase:
-      "“In the subsequent phase, the extracted juice is poured through a limestone filter in order to purify it and eliminate unwanted particulates. Thereafter, the clarified liquid is transferred to an evaporator vat where it is heated over an open heat source; during this boiling phase, water evaporates, transforming the juice into a thick syrup. Next, this syrup is introduced into a high-speed centrifuge, which spins rapidly to separate solid sugar crystals from the remaining liquid. Finally, in the culminating stage, the damp crystals are fed into a cylindrical container for drying and cooling, yielding finished refined sugar ready for commercial distribution.”"
+      "“Regarding dining establishments, male visitors expressed overwhelming contentment, with 55% satisfied and 25% very satisfied, whereas dissatisfaction was negligible at just 5%. In sharp contrast, female dissatisfaction stood at 21%, more than fourfold higher than that of their male counterparts.”"
   },
   {
     id: 4,
-    category: "Card 4: Passive Voice Mastery in Processes",
+    category: "Card 4: Complex Architectural Design (Body 2)",
     badgeColor: "#7c3aed",
-    question: "Why is the passive voice mandatory in process diagrams, and how should you vary your sentence structures?",
-    answerTitle: "Present Simple Passive & Varied Participial Structures",
+    question: "How do you deconstruct the single pie chart for overall design without repeating tabular language?",
+    answerTitle: "Proportional Fractions (Nearly Two-Thirds) & Cumulative Synthesis (79%)",
     bulletPoints: [
-      "Agent Irrelevance: In manufacturing processes, who performs the action (e.g. factory workers, machines) is less important than what happens to the product itself.",
-      "Core Formula: Subject + is/are + Past Participle ('canes are grown', 'canes are harvested', 'stalks are crushed', 'juice is purified', 'liquid is heated', 'crystals are separated', 'sugar is dried').",
-      "Band 9 Syntactic Variety: Avoid repetitive 'Then it is... Then it is...'; use prepositional phrases ('Following extraction,...'), relative clauses ('...into a centrifuge, which spins rapidly to separate...'), and purpose clauses ('...in order to eliminate unwanted particulates')."
+      "Dominant Majority: 62% satisfied represents nearly two-thirds (~5/8) of all respondents, forming the single largest cohort in the survey.",
+      "Cumulative Synthesis: Adding 17% very satisfied brings total positive approval to 79%.",
+      "Minority Opposition & Indifference: Dissatisfaction and neutral non-responses accounted for only 10% and 11% respectively."
     ],
     band9Phrase:
-      "“Following the harvest, the raw stalks are fed through heavy rotating rollers in a crushing mill, which compress the plant material to extract raw liquid juice.”"
+      "“Regarding the complex's design, the pie chart indicates widespread acclaim, with nearly two-thirds of respondents (62%) reporting satisfaction. An additional 17% were very satisfied, bringing total positive sentiment to 79%, whereas negative appraisals and neutral responses were marginal at 10% and 11% respectively.”"
   }
 ];
 
@@ -132,7 +130,7 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Sparkles size={18} color="#2563eb" />
           <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>
-            Pedagogical Flashcards: Sugarcane Manufacturing Process
+            Pedagogical Flashcards: Auckland Shopping Complex Survey
           </strong>
           <span
             style={{
@@ -255,7 +253,7 @@ export const BitsAndPiecesFlashcards: React.FC = () => {
               {card.question}
             </h2>
             <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "12px", padding: "12px 16px", color: "#475569", fontSize: "0.86rem" }}>
-              💡 <em>Think through: What passive verbs are required? How do you connect the stages? Tap above to reveal examiner breakdown.</em>
+              💡 <em>Think through: What proportion markers and comparative structures are required? How do you synthesize the data? Tap above to reveal examiner breakdown.</em>
             </div>
           </div>
         ) : (

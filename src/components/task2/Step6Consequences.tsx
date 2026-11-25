@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Lightbulb, CircleCheck, Copy, Check, AlertOctagon, Sparkles } from "lucide-react";
+import { AlertOctagon, CircleCheck, Copy, Check, Lightbulb, Sparkles } from "lucide-react";
 import { ADVANTAGES_IDEA_BANK } from "../../data/task2Data";
 
 export const Step6ConsequencesT2: React.FC = () => {
@@ -24,15 +24,15 @@ export const Step6ConsequencesT2: React.FC = () => {
       <div style={{ marginBottom: "16px" }}>
         <span
           className="apple-badge accent"
-          style={{ marginBottom: "8px", background: "#eff6ff", color: "#1e40af" }}
+          style={{ marginBottom: "8px", background: "#fef2f2", color: "#991b1b" }}
         >
-          Step 06 / 09 • Student Idea Bank: View 1 (Body Para 1)
+          Step 06 / 09 • Student Idea Bank: Problems Caused (Body Para 1)
         </span>
         <h2 className="stage-title">
-          View 1: Car-Free Days Are Effective (Body Paragraph 1) — Student Idea Bank
+          Problems Caused by Single-Use Products (Body Paragraph 1) — Student Idea Bank
         </h2>
         <p className="stage-subtitle">
-          These are 5 compelling arguments exploring the immediate environmental and civic benefits of car-free days (immediate tailpipe emission drop, fostering civic awareness, promoting active walking/cycling, empirical pedestrianisation testing, and acoustic stress relief).
+          These are 5 compelling arguments exploring the severe ecological impacts of single-use items (landfill saturation, marine microplastic toxicity, petrochemical depletion, urban drainage clogging, and chemical leaching into groundwater).
         </p>
       </div>
 
@@ -53,14 +53,14 @@ export const Step6ConsequencesT2: React.FC = () => {
       >
         <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
           <span style={{ fontSize: "0.78rem", fontWeight: 800, color: "#475569", display: "flex", alignItems: "center", gap: "4px" }}>
-            <AlertOctagon size={14} color="#2563eb" /> Quick Jump:
+            <AlertOctagon size={14} color="#dc2626" /> Quick Jump:
           </span>
           <button
             type="button"
             onClick={() => setActiveFilter("all")}
             style={{
-              border: activeFilter === "all" ? "1.5px solid #2563eb" : "1px solid #e2e8f0",
-              background: activeFilter === "all" ? "#2563eb" : "#f8fafc",
+              border: activeFilter === "all" ? "1.5px solid #dc2626" : "1px solid #e2e8f0",
+              background: activeFilter === "all" ? "#dc2626" : "#f8fafc",
               color: activeFilter === "all" ? "#ffffff" : "#475569",
               padding: "4px 10px",
               borderRadius: "7px",
@@ -70,7 +70,7 @@ export const Step6ConsequencesT2: React.FC = () => {
               transition: "all 0.12s ease"
             }}
           >
-            All 5 Arguments
+            All 5 Problems
           </button>
           {causes.map((c, idx) => (
             <button
@@ -78,8 +78,8 @@ export const Step6ConsequencesT2: React.FC = () => {
               type="button"
               onClick={() => setActiveFilter(c.id)}
               style={{
-                border: activeFilter === c.id ? "1.5px solid #2563eb" : "1px solid #e2e8f0",
-                background: activeFilter === c.id ? "#2563eb" : "#f8fafc",
+                border: activeFilter === c.id ? "1.5px solid #dc2626" : "1px solid #e2e8f0",
+                background: activeFilter === c.id ? "#dc2626" : "#f8fafc",
                 color: activeFilter === c.id ? "#ffffff" : "#475569",
                 padding: "4px 10px",
                 borderRadius: "7px",
@@ -89,17 +89,17 @@ export const Step6ConsequencesT2: React.FC = () => {
                 transition: "all 0.12s ease"
               }}
             >
-              Argument {idx + 1}
+              Problem {idx + 1}
             </button>
           ))}
         </div>
 
         <span style={{ fontSize: "0.74rem", color: "#64748b", fontWeight: 700 }}>
-          Structured: Main Argument + Concrete Relatable Example
+          Structured: Core Ecological Dilemma + Concrete Global Precedent
         </span>
       </div>
 
-      {/* ALL 5 STUDENT OPINION ARGUMENTS IN A CLEAN HIGH-READABILITY SMART BOARD GRID */}
+      {/* ALL 5 STUDENT PROBLEM ARGUMENTS IN A CLEAN SMART BOARD GRID */}
       <div
         style={{
           display: "grid",
@@ -117,10 +117,10 @@ export const Step6ConsequencesT2: React.FC = () => {
               key={cause.id}
               style={{
                 background: "#ffffff",
-                border: "1.5px solid #bfdbfe",
+                border: "1.5px solid #fecaca",
                 borderRadius: "16px",
                 padding: "18px",
-                boxShadow: "0 2px 8px rgba(37, 99, 235, 0.04)",
+                boxShadow: "0 2px 8px rgba(220, 38, 38, 0.04)",
                 display: "flex",
                 flexDirection: "column",
                 gap: "12px",
@@ -131,8 +131,8 @@ export const Step6ConsequencesT2: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "8px" }}>
                 <span
                   style={{
-                    background: "#eff6ff",
-                    color: "#1d4ed8",
+                    background: "#fef2f2",
+                    color: "#b91c1c",
                     fontSize: "0.74rem",
                     fontWeight: 800,
                     padding: "3px 9px",
@@ -158,7 +158,7 @@ export const Step6ConsequencesT2: React.FC = () => {
                     alignItems: "center",
                     gap: "4px"
                   }}
-                  title="Copy this view 1 argument"
+                  title="Copy this problem argument"
                 >
                   {isCopied ? <Check size={12} color="#166534" /> : <Copy size={12} />}
                   <span>{isCopied ? "Copied" : "Copy"}</span>
@@ -170,12 +170,12 @@ export const Step6ConsequencesT2: React.FC = () => {
                 {cause.title}
               </h4>
 
-              {/* Main Argument / Relatable Explanation */}
-              <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "12px 14px" }}>
+              {/* Main Argument / Explanation */}
+              <div style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "10px", padding: "12px 14px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "4px" }}>
-                  <Lightbulb size={13} color="#2563eb" />
-                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#1e40af", textTransform: "uppercase" }}>
-                    Main Argument &amp; Explanation
+                  <Lightbulb size={13} color="#dc2626" />
+                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#991b1b", textTransform: "uppercase" }}>
+                    Problem Analysis &amp; Causal Chain
                   </span>
                 </div>
                 <p style={{ margin: 0, fontSize: "0.88rem", fontWeight: 650, color: "#0f172a", lineHeight: 1.5 }}>
@@ -183,7 +183,7 @@ export const Step6ConsequencesT2: React.FC = () => {
                 </p>
               </div>
 
-              {/* Relatable Concrete Example */}
+              {/* Concrete Example */}
               <div
                 style={{
                   background: "#fff1f2",
@@ -196,7 +196,7 @@ export const Step6ConsequencesT2: React.FC = () => {
                 <div style={{ display: "flex", alignItems: "center", gap: "5px", marginBottom: "4px" }}>
                   <CircleCheck size={13} color="#e11d48" />
                   <span style={{ fontSize: "0.7rem", fontWeight: 800, color: "#9f1239", textTransform: "uppercase" }}>
-                    Relatable Student Example
+                    Concrete Environmental Example
                   </span>
                 </div>
                 <p style={{ margin: 0, fontSize: "0.85rem", color: "#881337", lineHeight: 1.5, fontWeight: 600 }}>

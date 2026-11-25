@@ -44,7 +44,14 @@ export interface GeneralTask1Data {
     term: string;
     definition: string;
     example: string;
-    category: "Professional Etiquette" | "Internship & Learning" | "Corporate Operations" | "Formal Correspondence";
+    category:
+      | "Professional Etiquette"
+      | "Internship & Learning"
+      | "Corporate Operations"
+      | "Formal Correspondence"
+      | "Festive Traditions"
+      | "Cultural Significance"
+      | "Personal Impressions";
   }[];
   architectureRevision?: {
     step: string;
@@ -58,95 +65,95 @@ export interface GeneralTask1Data {
 }
 
 export const GENERAL_TASK1_DATA: GeneralTask1Data = {
-  id: "general-task1-internship-organisation-manager",
+  id: "general-task1-world-food-festival-offer",
   taskType: "IELTS General Training • Writing Task 1",
-  letterType: "Formal",
-  title: "Formal Internship Letter to Organisation Manager",
+  letterType: "Semi-Formal",
+  title: "Semi-Formal Letter to Town Club Event Organiser",
   questionText:
-    "FRIDAY (Formal)\n\nYou are a student and are going to spend three months doing an internship in an organisation. Write a letter to the manager of the organisation. In your letter,\n• Thank him/her for the opportunity / acceptance into the company\n• Explain what you hope to learn from this internship\n• Inquire about preparatory materials and confirm arrival details",
+    "WEDNESDAY (Semi Formal)\n\nYou have heard of the local town club organising an event to celebrate popular food from around the world. Write a letter to the event organiser. In your letter,\n• Offer to make a popular dish from your country\n• Describe what this dish is\n• Explain why it should be included in the event",
   salutation: "Dear Mr. Pritam,",
-  signoff: "Yours sincerely,",
+  signoff: "Warm regards,",
   senderName: "Arpit",
-  wordCount: 222,
+  wordCount: 295,
 
   architectureRevision: [
     {
       step: "1. Salutation & Opening",
-      stage: "Formal Greeting & Acceptance Statement (Para 1)",
+      stage: "Semi-Formal Greeting & Event Commendation (Para 1)",
       badgeColor: "#1e3a8a",
       bgColor: "#eff6ff",
       borderColor: "#bfdbfe",
       textColor: "#1d4ed8",
-      summary: "Formal salutation ('Dear Mr. Pritam,') + unambiguous statement of purpose confirming acceptance of the three-month internship offer commencing July 1st."
+      summary: "Polite salutation ('Dear Mr. Pritam,') + enthusiastic statement of purpose offering to volunteer culinary skills for the town club's international food celebration."
     },
     {
       step: "2. Body Para 1 (Bullet 1)",
-      stage: "Thanking the Manager & Organisational Admiration",
+      stage: "The National Dish Offer: Royal Dum Biryani",
       badgeColor: "#047857",
       bgColor: "#ecfdf5",
       borderColor: "#a7f3d0",
       textColor: "#047857",
-      summary: "Gratitude: Sincere appreciation to the manager and selection committee → Alignment: Respect for the company's pioneering sustainable logistics and market reputation."
+      summary: "Proposing Indian Dum Biryani → Establishing its iconic cultural stature as the centerpiece of Indian hospitality, festivals, and communal banquets."
     },
     {
       step: "3. Body Para 2 (Bullet 2)",
-      stage: "Learning Objectives & Professional Development",
+      stage: "Sensory Description & Traditional 'Dum' Methodology",
       badgeColor: "#d97706",
       bgColor: "#fffbeb",
       borderColor: "#fde68a",
       textColor: "#b45309",
-      summary: "Core Goals: Bridging theoretical university coursework in business analytics with practical project management, risk analysis, and live client deliverables."
+      summary: "Elaborating on aged basmati rice, aromatic spices (cardamom, saffron, cinnamon), layered marinated ingredients, and the sealed-steam slow-cooking technique."
     },
     {
       step: "4. Body Para 3 (Bullet 3)",
-      stage: "Preparatory Inquiries & Onboarding Logistics",
+      stage: "Strategic Justification for Event Inclusion",
       badgeColor: "#4338ca",
       bgColor: "#eef2ff",
       borderColor: "#c7d2fe",
       textColor: "#3730a3",
-      summary: "Readiness: Inquiring about recommended pre-reading, internal software tools, compliance forms, or documentation to review prior to the first day."
+      summary: "Highlighting universal flavor appeal, dietary versatility (vegetarian crowd-pleaser), scalable batch serving, and embodiment of multicultural fellowship."
     },
     {
       step: "5. Closing & Sign-off",
-      stage: "Reiterated Thanks & Formal Sign-off (Para 5)",
+      stage: "Logistical Readiness & Semi-Formal Sign-off",
       badgeColor: "#0f172a",
       bgColor: "#f8fafc",
       borderColor: "#cbd5e1",
       textColor: "#0f172a",
-      summary: "Courteous close looking forward to joining the team + strict formal complimentary close: 'Yours sincerely,' followed by name ('Arpit')."
+      summary: "Proactive willingness to manage ingredients and equipment + respectful closing sign-off ('Warm regards,\nArpit')."
     }
   ],
 
   pptFormatRules: [
     {
       stage: "1. Salutation",
-      description: "Formal salutation using title and surname / name (Dear Mr. [Name],)",
-      specificRule: "When writing to a named manager in a formal letter, use 'Dear Mr. Pritam,' followed by a comma. Never use informal greetings ('Hi Pritam')."
+      description: "Semi-formal salutation using title and surname (Dear Mr. [Surname],)",
+      specificRule: "When writing to an event organizer you do not know intimately, use 'Dear Mr. Pritam,' followed by a comma. Avoid overly casual greetings ('Hi Pritam') or cold formal formulas ('Dear Sir/Madam')."
     },
     {
       stage: "2. Opening (Paragraph 1)",
-      description: "Clear, courteous statement of purpose and formal acceptance.",
-      specificRule: "State the objective of the letter immediately without conversational filler: 'I am writing to express my sincere appreciation for offering me the three-month internship position... and to formally confirm my acceptance.'"
+      description: "Courteous statement of purpose acknowledging the upcoming club event.",
+      specificRule: "State why you are writing immediately: 'I am writing to you after learning about the upcoming international food festival organized by the town club... and would love to enthusiastically volunteer my culinary services...'"
     },
     {
       stage: "3. Body Para 1 (Bullet 1)",
-      description: "Express heartfelt gratitude to the manager and company.",
-      specificRule: "Articulate specific admiration for the organisation: mention their industry leadership, groundbreaking projects, or reputation to demonstrate genuine alignment."
+      description: "Explicitly name the chosen dish and establish its cultural prestige.",
+      specificRule: "Connect the dish to your homeland's celebratory culture: explain that Dum Biryani is the undisputed centerpiece of festive gatherings and community banquets in India."
     },
     {
       stage: "4. Body Para 2 (Bullet 2)",
-      description: "Detail specific skills, insights, and professional competencies you hope to gain.",
-      specificRule: "Contrast theoretical academic knowledge with real-world application: project management, client negotiations, data analytics, and cross-functional team collaboration."
+      description: "Sensory depiction of ingredients, aromatics, and cooking methodology.",
+      specificRule: "Detail specific culinary elements: aged basmati rice, whole spices (saffron, cardamom, cinnamon), the sealed-steam 'dum' slow-cooking technique, and accompaniments like cooling mint raita."
     },
     {
       stage: "5. Body Para 3 (Bullet 3)",
-      description: "Proactively ask about onboarding preparations and first-day expectations.",
-      specificRule: "Demonstrate initiative by asking for recommended software tutorials, compliance documentation, or reading material to study before starting."
+      description: "Persuasive justification for why the event needs this dish.",
+      specificRule: "Provide three solid reasons: universal crowd appeal across age groups, ease of scalable batch serving, and perfect harmony with the festival's multicultural ethos."
     },
     {
       stage: "6. Closing & Sign-off",
-      description: "Formal call-to-action & 'Yours sincerely,' + Sender Name.",
-      specificRule: "Because the letter addresses a named manager ('Dear Mr. Pritam,'), close strictly with 'Yours sincerely,' followed by your name ('Arpit'). Contractions ('I'm', 'can't') are strictly prohibited."
+      description: "Practical logistics offer + warm semi-formal sign-off.",
+      specificRule: "Offer to handle ingredients and cookware independently, invite logistical discussion, and close with 'Warm regards,' followed by your name ('Arpit')."
     }
   ],
 
@@ -154,55 +161,55 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
     {
       id: "bullet-1",
       bulletNumber: 1,
-      promptText: "Thank him/her for the opportunity / acceptance into the company",
+      promptText: "Offer to make a popular dish from your country",
       targetParagraph: "Body Paragraph 1",
-      linkerRule: "Formal gratitude marker (e.g. 'First and foremost, I would like to extend my sincere gratitude...')",
+      linkerRule: "Enthusiastic offer markers (e.g. 'Specifically, I would like to offer to prepare...', 'In my home country,...')",
       explanation:
-        "Express dignified, professional thanks to the manager and selection committee for granting you the internship, highlighting your respect for the firm's reputation.",
+        "Name the specific traditional dish with pride, stating its cultural significance as a hallmark celebratory food in your native culture.",
       modelExcerpt:
-        "First and foremost, I would like to extend my sincere gratitude to you and the selection committee for granting me this invaluable opportunity. Having followed your company’s groundbreaking work in sustainable supply chain logistics, I feel immensely privileged to be invited to join such an esteemed and innovative organization.",
+        "Specifically, I would like to offer to cook a classic Indian Dum Biryani. In my home country, biryani is regarded as the undisputed pinnacle of celebratory cuisine, served at weddings, major festivals, and landmark community feasts. Offering this beloved national dish would allow attendees to experience a genuinely iconic culinary masterpiece that represents centuries of rich gastronomic heritage.",
       keyCollocations: [
-        "extend my sincere gratitude",
-        "selection committee",
-        "invaluable opportunity",
-        "groundbreaking work",
-        "esteemed and innovative organization"
+        "offer to cook a classic",
+        "undisputed pinnacle of celebratory cuisine",
+        "landmark community feasts",
+        "beloved national dish",
+        "rich gastronomic heritage"
       ]
     },
     {
       id: "bullet-2",
       bulletNumber: 2,
-      promptText: "Explain what you hope to learn from this internship",
+      promptText: "Describe what this dish is",
       targetParagraph: "Body Paragraph 2",
-      linkerRule: "Educational objective linkers (e.g. 'During this three-month placement, I hope to gain...', 'While my university studies have provided...')",
+      linkerRule: "Sensory and procedural transition linkers (e.g. 'For those unfamiliar with the recipe,...', 'Crucially, the pot is sealed...')",
       explanation:
-        "Explain how the internship will bridge the gap between academic theory and practical corporate execution, focusing on hands-on project management and data analysis.",
+        "Provide a mouth-watering description of the ingredients, whole aromatic spices, and traditional cooking technique (such as steam-sealing) along with classic accompaniments.",
       modelExcerpt:
-        "During this three-month placement, I hope to gain comprehensive hands-on exposure to commercial project management and data-driven risk assessment. While my university coursework in business analytics has provided me with a rigorous theoretical foundation, I am eager to observe how seasoned industry professionals navigate complex client briefs and streamline operational workflows under real-market constraints.",
+        "For those unfamiliar with the recipe, Dum Biryani is a sumptuous, multi-layered rice delicacy consisting of aged, long-grain basmati rice and richly spiced marinated vegetables and cottage cheese. The ingredients are infused with fragrant whole spices—such as black cardamom, star anise, cinnamon quills, and saffron-soaked milk. Crucially, the pot is sealed with dough and slow-cooked over gentle embers—a traditional technique known as 'dum'—allowing the trapped steam to marry the flavors without scorching the ingredients. I will also serve it alongside a refreshing, cooling cucumber-mint raita.",
       keyCollocations: [
-        "hands-on exposure",
-        "data-driven risk assessment",
-        "rigorous theoretical foundation",
-        "seasoned industry professionals",
-        "streamline operational workflows"
+        "sumptuous multi-layered rice delicacy",
+        "aged long-grain basmati rice",
+        "fragrant whole spices",
+        "sealed with dough and slow-cooked",
+        "cooling cucumber-mint raita"
       ]
     },
     {
       id: "bullet-3",
       bulletNumber: 3,
-      promptText: "Inquire about preparatory materials and confirm arrival details",
+      promptText: "Explain why it should be included in the event",
       targetParagraph: "Body Paragraph 3",
-      linkerRule: "Proactive preparatory markers (e.g. 'In preparation for my commencement date,...', 'Furthermore, please inform me of...')",
+      linkerRule: "Persuasive argumentation linkers (e.g. 'There are several compelling reasons why...', 'Firstly,... Furthermore,... Most importantly,...')",
       explanation:
-        "Demonstrate high professional initiative by asking for background documentation, software platforms to install, or administrative compliance forms required prior to day one.",
+        "Give persuasive practical and cultural arguments: widespread crowd appeal, suitability for large crowds, inclusive dietary profile, and thematic alignment with international unity.",
       modelExcerpt:
-        "In preparation for my commencement date, I would be grateful if you could advise me on any preliminary background reading, internal software platforms, or procedural documentation I should review in advance. Furthermore, please inform me of any administrative compliance forms or security clearances required prior to my first morning at the office.",
+        "There are several compelling reasons why Biryani would be an ideal addition to the town club's international lineup. Firstly, its harmonious balance of warmth and fragrance has proven universal appeal, making it an undeniable crowd-pleaser across all age groups. Furthermore, it is naturally wholesome, substantial, and easily prepared in large portions to feed substantial gatherings. Most importantly, biryani epitomizes the spirit of communal sharing and cultural exchange, which aligns seamlessly with the central vision of your world food event.",
       keyCollocations: [
-        "in preparation for my commencement date",
-        "preliminary background reading",
-        "procedural documentation",
-        "administrative compliance forms",
-        "security clearances"
+        "ideal addition to the international lineup",
+        "harmonious balance of warmth and fragrance",
+        "undeniable crowd-pleaser",
+        "communal sharing and cultural exchange",
+        "aligns seamlessly with the central vision"
       ]
     }
   ],
@@ -210,134 +217,134 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
   paragraphs: [
     {
       id: "opening",
-      title: "Opening Paragraph: Formal Salutation & Acceptance Statement",
-      purpose: "Formal statement of appreciation and official confirmation of internship acceptance",
-      text: "I am writing to express my sincere appreciation for offering me the three-month internship position at Apex Global Solutions, scheduled to commence on Monday, 7th July. I am truly delighted to have been selected for this placement and wish to formally confirm my acceptance of the offer.",
+      title: "Opening Paragraph: Semi-Formal Salutation & Purpose of Writing",
+      purpose: "Warm greeting acknowledging the event and offering voluntary culinary participation",
+      text: "I am writing to you after learning about the upcoming international food festival organized by the town club. As a long-standing local resident with deep roots in India, I would love to enthusiastically volunteer my culinary services and prepare an authentic national dish for the celebration.",
       wordCount: 45,
-      ruleHighlight: "Strict formal register: unambiguous purpose statement, exact starting date, zero informal contractions ('I am' instead of 'I'm')."
+      ruleHighlight: "Polite semi-formal register: establishes personal connection, acknowledges club event, and clearly states intention to volunteer."
     },
     {
       id: "body1",
-      title: "Body Paragraph 1: Gratitude for the Opportunity (Bullet 1)",
-      purpose: "Express gratitude to the manager and selection committee while acknowledging firm prestige",
+      title: "Body Paragraph 1: The Dish Offer & Cultural Prestige (Bullet 1)",
+      purpose: "Propose Indian Dum Biryani and explain its preeminent status in Indian festive culture",
       bulletRef: 1,
-      text: "First and foremost, I would like to extend my sincere gratitude to you and the selection committee for granting me this invaluable opportunity. Having followed your company’s groundbreaking work in sustainable supply chain logistics, I feel immensely privileged to be invited to join such an esteemed and innovative organization.",
-      wordCount: 48,
-      ruleHighlight: "Bullet 1 fully covered: formal expressions of gratitude combined with specific institutional admiration."
+      text: "Specifically, I would like to offer to cook a classic Indian Dum Biryani. In my home country, biryani is regarded as the undisputed pinnacle of celebratory cuisine, served at weddings, major festivals, and landmark community feasts. Offering this beloved national dish would allow attendees to experience a genuinely iconic culinary masterpiece that represents centuries of rich gastronomic heritage.",
+      wordCount: 59,
+      ruleHighlight: "Bullet 1 thoroughly covered: names the dish with pride and explains its celebratory cultural weight."
     },
     {
       id: "body2",
-      title: "Body Paragraph 2: Learning Objectives & Career Growth (Bullet 2)",
-      purpose: "Bridge academic coursework with hands-on corporate project management and practical skills",
+      title: "Body Paragraph 2: Dish Description & Culinary Technique (Bullet 2)",
+      purpose: "Vivid description of ingredients, whole aromatic spices, and traditional sealed 'dum' cooking",
       bulletRef: 2,
-      text: "During this three-month placement, I hope to gain comprehensive hands-on exposure to commercial project management and data-driven risk assessment. While my university coursework in business analytics has provided me with a rigorous theoretical foundation, I am eager to observe how seasoned industry professionals navigate complex client briefs and streamline operational workflows under real-market constraints.",
-      wordCount: 56,
-      ruleHighlight: "Bullet 2 fully covered: sophisticated contrast between theoretical knowledge and practical workplace competencies."
+      text: "For those unfamiliar with the recipe, Dum Biryani is a sumptuous, multi-layered rice delicacy consisting of aged, long-grain basmati rice and richly spiced marinated vegetables and cottage cheese. The ingredients are infused with fragrant whole spices—such as black cardamom, star anise, cinnamon quills, and saffron-soaked milk. Crucially, the pot is sealed with dough and slow-cooked over gentle embers—a traditional technique known as 'dum'—allowing the trapped steam to marry the flavors without scorching the ingredients. I will also serve it alongside a refreshing, cooling cucumber-mint raita.",
+      wordCount: 88,
+      ruleHighlight: "Bullet 2 thoroughly covered: rich sensory vocabulary describing aromatics, layered ingredients, and traditional preparation."
     },
     {
       id: "body3",
-      title: "Body Paragraph 3: Preparation & Administrative Inquiries (Bullet 3)",
-      purpose: "Demonstrate initiative by asking for pre-reading, software access, and documentation",
+      title: "Body Paragraph 3: Justification for Event Inclusion (Bullet 3)",
+      purpose: "Persuade the organizer with universal appeal, crowd scalability, and cultural harmony",
       bulletRef: 3,
-      text: "In preparation for my commencement date, I would be grateful if you could advise me on any preliminary background reading, internal software platforms, or procedural documentation I should review in advance. Furthermore, please inform me of any administrative compliance forms or security clearances required prior to my first morning at the office.",
-      wordCount: 51,
-      ruleHighlight: "Bullet 3 fully covered: proactive professional courtesy showing readiness and structured preparation."
+      text: "There are several compelling reasons why Biryani would be an ideal addition to the town club's international lineup. Firstly, its harmonious balance of warmth and fragrance has proven universal appeal, making it an undeniable crowd-pleaser across all age groups. Furthermore, it is naturally wholesome, substantial, and easily prepared in large portions to feed substantial gatherings. Most importantly, biryani epitomizes the spirit of communal sharing and cultural exchange, which aligns seamlessly with the central vision of your world food event.",
+      wordCount: 78,
+      ruleHighlight: "Bullet 3 thoroughly covered: presents 3 layered justifications covering taste, logistics, and philosophical alignment."
     },
     {
       id: "closing",
-      title: "Closing Paragraph & Formal Sign-off",
-      purpose: "Reiterate thanks, express anticipation, and provide formal closing sign-off",
-      text: "Thank you once again for your time, consideration, and this exceptional professional opportunity. I look forward to contributing positively to your team in July.\n\nYours sincerely,\nArpit",
-      wordCount: 29,
-      ruleHighlight: "Formal sign-off: 'Yours sincerely,' followed by sender name ('Arpit') matching the named salutation 'Dear Mr. Pritam,'."
+      title: "Closing Paragraph & Semi-Formal Sign-off",
+      purpose: "Offer logistical independence, invite coordination, and conclude with warm sign-off",
+      text: "I am happy to bring my own cookware and manage all ingredient sourcing independently. Please let me know your thoughts on this proposal, as well as any relevant logistical arrangements regarding kitchen space or serving stations.\n\nWarm regards,\nArpit",
+      wordCount: 39,
+      ruleHighlight: "Courteous closing: demonstrates initiative by handling logistics, invites reply, and finishes with 'Warm regards,' matching the semi-formal register."
     }
   ],
 
   modelLetter: `Dear Mr. Pritam,
 
-I am writing to express my sincere appreciation for offering me the three-month internship position at Apex Global Solutions, scheduled to commence on Monday, 7th July. I am truly delighted to have been selected for this placement and wish to formally confirm my acceptance of the offer.
+I am writing to you after learning about the upcoming international food festival organized by the town club. As a long-standing local resident with deep roots in India, I would love to enthusiastically volunteer my culinary services and prepare an authentic national dish for the celebration.
 
-First and foremost, I would like to extend my sincere gratitude to you and the selection committee for granting me this invaluable opportunity. Having followed your company’s groundbreaking work in sustainable supply chain logistics, I feel immensely privileged to be invited to join such an esteemed and innovative organization.
+Specifically, I would like to offer to cook a classic Indian Dum Biryani. In my home country, biryani is regarded as the undisputed pinnacle of celebratory cuisine, served at weddings, major festivals, and landmark community feasts. Offering this beloved national dish would allow attendees to experience a genuinely iconic culinary masterpiece that represents centuries of rich gastronomic heritage.
 
-During this three-month placement, I hope to gain comprehensive hands-on exposure to commercial project management and data-driven risk assessment. While my university coursework in business analytics has provided me with a rigorous theoretical foundation, I am eager to observe how seasoned industry professionals navigate complex client briefs and streamline operational workflows under real-market constraints.
+For those unfamiliar with the recipe, Dum Biryani is a sumptuous, multi-layered rice delicacy consisting of aged, long-grain basmati rice and richly spiced marinated vegetables and cottage cheese. The ingredients are infused with fragrant whole spices—such as black cardamom, star anise, cinnamon quills, and saffron-soaked milk. Crucially, the pot is sealed with dough and slow-cooked over gentle embers—a traditional technique known as 'dum'—allowing the trapped steam to marry the flavors without scorching the ingredients. I will also serve it alongside a refreshing, cooling cucumber-mint raita.
 
-In preparation for my commencement date, I would be grateful if you could advise me on any preliminary background reading, internal software platforms, or procedural documentation I should review in advance. Furthermore, please inform me of any administrative compliance forms or security clearances required prior to my first morning at the office.
+There are several compelling reasons why Biryani would be an ideal addition to the town club's international lineup. Firstly, its harmonious balance of warmth and fragrance has proven universal appeal, making it an undeniable crowd-pleaser across all age groups. Furthermore, it is naturally wholesome, substantial, and easily prepared in large portions to feed substantial gatherings. Most importantly, biryani epitomizes the spirit of communal sharing and cultural exchange, which aligns seamlessly with the central vision of your world food event.
 
-Thank you once again for your time, consideration, and this exceptional professional opportunity. I look forward to contributing positively to your team in July.
+I am happy to bring my own cookware and manage all ingredient sourcing independently. Please let me know your thoughts on this proposal, as well as any relevant logistical arrangements regarding kitchen space or serving stations.
 
-Yours sincerely,
+Warm regards,
 Arpit`,
 
   toneGuidelines: [
     {
-      rule: "Maintain strict formal vocabulary and eliminate all contractions",
-      doExample: "I am writing to express my sincere appreciation... / I would be grateful if...",
-      dontExample: "I'm super thrilled to get this job! / Drop me a quick email with the stuff to read."
+      rule: "Adopt a courteous, engaging semi-formal register without overly colloquial slang",
+      doExample: "I would love to enthusiastically volunteer my culinary services... / Please let me know your thoughts on this proposal...",
+      dontExample: "Hey man, I can whip up some rice for your food fest! / Hit me up with the details."
     },
     {
-      rule: "Salutation and sign-off alignment for named individuals",
-      doExample: "Dear Mr. Pritam, ... Yours sincerely, Arpit",
-      dontExample: "Dear Pritam (informal first-name only), ... Best regards, Arpit OR Dear Sir, ... Yours sincerely, Arpit (mismatched salutation)"
+      rule: "Salutation and sign-off alignment for semi-formal correspondence",
+      doExample: "Dear Mr. Pritam, ... Warm regards, Arpit (or With best regards, Arpit)",
+      dontExample: "Hey buddy! ... Cheers, Arpit OR Dear Sir/Madam, ... Yours faithfully, Arpit (overly formal for a local town club organiser)"
     },
     {
-      rule: "Express professional humility and proactive readiness",
-      doExample: "I hope to gain comprehensive hands-on exposure under seasoned mentorship...",
-      dontExample: "I plan to teach your staff how to use modern analytics tools."
+      rule: "Sensory descriptive vocabulary for the dish",
+      doExample: "aged long-grain basmati rice infused with fragrant whole spices and slow-cooked under sealed steam...",
+      dontExample: "It is basically cooked rice with some vegetables and masala mixed together."
     },
     {
-      rule: "Concrete and task-focused inquiries for onboarding",
-      doExample: "advise me on preliminary background reading, internal software platforms, or compliance forms...",
-      dontExample: "What should I wear and when do we get lunch breaks?"
+      rule: "Clear, proactive justification for the event organizer",
+      doExample: "emphasize crowd appeal, ease of communal serving, vegetarian inclusivity, and cultural resonance...",
+      dontExample: "You should have it because Indian food is my favorite."
     }
   ],
 
   vocabList: [
     {
-      term: "Extend My Sincere Gratitude",
-      definition: "A formal and respectful phrase used to express profound appreciation.",
-      example: "I would like to extend my sincere gratitude to the committee for this opportunity.",
-      category: "Professional Etiquette"
+      term: "Culinary Heritage",
+      definition: "The traditions, customs, ingredients, and cooking techniques passed down through generations within a particular culture or country.",
+      example: "Preparing this authentic recipe honors centuries of rich culinary heritage.",
+      category: "Cultural Significance"
     },
     {
-      term: "Invaluable Opportunity",
-      definition: "An occasion or placement offering benefits so great that they cannot be measured.",
-      example: "Securing this three-month placement represents an invaluable opportunity for my career.",
-      category: "Internship & Learning"
+      term: "Aromatic Spices",
+      definition: "Plant substances with a pleasant, distinctive, and noticeable smell used to add flavor to food.",
+      example: "The basmati rice is infused with fragrant aromatic spices including cardamom and cinnamon.",
+      category: "Festive Traditions"
     },
     {
-      term: "Hands-on Exposure",
-      definition: "Direct, practical experience and involvement in real workplace operations.",
-      example: "I look forward to gaining hands-on exposure to commercial risk modeling.",
-      category: "Internship & Learning"
+      term: "Slow-cooked",
+      definition: "Cooked slowly over a low heat for a long period of time to develop rich flavors and tender textures.",
+      example: "The biryani is slow-cooked in a sealed vessel to ensure the flavors meld harmoniously.",
+      category: "Festive Traditions"
     },
     {
-      term: "Rigorous Theoretical Foundation",
-      definition: "A thorough, structured academic understanding of principles and theories.",
-      example: "My university coursework has provided me with a rigorous theoretical foundation.",
-      category: "Internship & Learning"
+      term: "Communal Gathering",
+      definition: "An assembly of people from a community coming together to share experiences or celebrate.",
+      example: "Food plays a central and unifying role at every communal gathering in my culture.",
+      category: "Cultural Significance"
     },
     {
-      term: "Seasoned Industry Professionals",
-      definition: "Highly experienced, skilled practitioners in a specialized field.",
-      example: "I am eager to learn alongside seasoned industry professionals at your headquarters.",
-      category: "Corporate Operations"
+      term: "Universal Appeal",
+      definition: "The quality of being attractive, interesting, or pleasing to everyone regardless of background.",
+      example: "The balanced warmth and aromatic profile give this national delicacy universal appeal.",
+      category: "Personal Impressions"
     },
     {
-      term: "Streamline Operational Workflows",
-      definition: "To make business systems and organizational procedures faster, simpler, and more efficient.",
-      example: "The logistics department works tirelessly to streamline operational workflows.",
-      category: "Corporate Operations"
+      term: "Crowd-pleaser",
+      definition: "Something or someone that is very popular and that everyone enjoys.",
+      example: "Its mouthwatering aroma makes the dish an undeniable crowd-pleaser for festival visitors.",
+      category: "Personal Impressions"
     },
     {
-      term: "Preliminary Background Reading",
-      definition: "Introductory texts, research, or briefs studied prior to beginning a project.",
-      example: "Please recommend any preliminary background reading that would accelerate my onboarding.",
-      category: "Corporate Operations"
+      term: "Logistical Arrangements",
+      definition: "Practical plans and preparations needed to organize a complex event or activity successfully.",
+      example: "Please advise me regarding any specific logistical arrangements for burner stoves or serving counters.",
+      category: "Formal Correspondence"
     },
     {
-      term: "Administrative Compliance",
-      definition: "Adherence to official policies, regulatory rules, and documentation standards.",
-      example: "I will submit all required administrative compliance forms well before day one.",
+      term: "Enthusiastically Volunteer",
+      definition: "To offer to do something willingly and with eagerness or intense interest.",
+      example: "I would like to enthusiastically volunteer my culinary assistance for the weekend event.",
       category: "Formal Correspondence"
     }
   ]

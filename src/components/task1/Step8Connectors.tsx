@@ -18,11 +18,11 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
         <div>
           <span className="apple-badge success" style={{ marginBottom: "8px" }}>
-            Step 08 / 08 • Process Transitions &amp; Sequential Cohesion
+            Step 08 / 08 • Survey Transitions &amp; Multi-Graphic Cohesion
           </span>
-          <h2 className="stage-title">Sequential Connectors &amp; Cohesive Flow for Sugarcane Manufacturing</h2>
+          <h2 className="stage-title">Comparative Connectors &amp; Cohesive Flow for Auckland Survey</h2>
           <p className="stage-subtitle">
-            Master chronological sequence markers and passive voice linkers to establish seamless logical transitions across the 7 manufacturing stages: agricultural cultivation, dual harvesting, mechanical crushing, limestone purification, thermal evaporation, centrifugal separation, and drum drying.
+            Master comparative transition markers, proportion linkers, and contrast signposts to establish seamless logical cohesion across tables and pie charts: comparing retail shops, contrasting dining gender disparity, and synthesizing complex design ratings.
           </p>
         </div>
 

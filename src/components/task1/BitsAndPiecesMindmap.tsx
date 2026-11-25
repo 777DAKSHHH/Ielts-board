@@ -10,8 +10,10 @@ import {
   BarChart2,
   Eye,
   ArrowRight,
-  Flame,
-  Filter
+  Filter,
+  ShoppingBag,
+  Utensils,
+  PieChart as PieIcon
 } from "lucide-react";
 
 interface MindmapPiece {
@@ -37,40 +39,40 @@ interface MindmapBranch {
 const MINDMAP_BRANCHES: MindmapBranch[] = [
   {
     id: "parameters",
-    title: "Piece 1: Introduction & Process Scope",
+    title: "Piece 1: Introduction & Survey Scope",
     badge: "Intro Anchor",
     color: "#2563eb",
     borderColor: "#bfdbfe",
     bgLight: "#eff6ff",
     icon: <BookOpen size={18} color="#2563eb" />,
     summary:
-      "A Band 9 introduction paraphrases the process diagram parameters: the 7 sequential stages involved in manufacturing refined sugar from raw sugarcane, spanning from initial agricultural cultivation to final industrial drying and cooling.",
+      "A Band 9 introduction paraphrases the multi-graphic parameters: two tables and a pie chart delineating visitor satisfaction percentages regarding shops, restaurants, and overall architectural design at a newly opened shopping complex in Auckland, New Zealand.",
     tableCorrelation:
-      "Captures the manufacturing journey: raw plant inputs (sugarcane), 7 sequential transformations, and refined consumer sugar crystals.",
+      "Captures data format (2 tables + 1 pie chart), geographic location (Auckland, New Zealand), and 3 evaluated domains (Retail, Dining, Architectural Design).",
     pieces: [
       {
-        label: "Graphic Type & Reporting Verb",
-        value: "Process Diagram",
+        label: "Graphic Types & Reporting Verbs",
+        value: "Tables & Pie Chart",
         detail:
-          "Delineates an ordered industrial manufacturing procedure with clear sequential progression.",
+          "Delineates multi-graphic visual representations illustrating discrete customer satisfaction tiers.",
         band9Application:
-          "“The process diagram delineates the seven sequential stages involved in the manufacture of refined sugar from raw sugarcane...”"
+          "“The two tables and accompanying pie chart delineate the results of a visitor satisfaction survey regarding a newly opened shopping complex in Auckland, New Zealand...”"
       },
       {
-        label: "Commodity & Material Span",
-        value: "Sugarcane to Refined Sugar",
+        label: "Subject & Geographic Scope",
+        value: "Auckland Complex",
         detail:
-          "Accurately names the agricultural raw material and the refined crystallized food product.",
+          "Accurately names the retail and entertainment facility along with its specific geographic setting.",
         band9Application:
-          "“...spanning from initial field cultivation to final drying and cooling.”"
+          "“...evaluating visitor sentiment across retail shops, dining establishments, and overall architectural design...”"
       },
       {
-        label: "Structural Architecture",
-        value: "7 Linear Stages",
+        label: "Measurement Scale & Sentiment Tiers",
+        value: "4 Sentiment Tiers (%)",
         detail:
-          "Specifies the exact number of stages without repeating colloquial vocabulary from the prompt.",
+          "Specifies the 4 sentiment categories: very satisfied, satisfied, dissatisfied, and no comment.",
         band9Application:
-          "“...a multi-stage manufacturing procedure consisting of seven ordered phases.”"
+          "“...expressed in percentage terms across four distinct sentiment classifications.”"
       }
     ]
   },
@@ -83,103 +85,103 @@ const MINDMAP_BRANCHES: MindmapBranch[] = [
     bgLight: "#ecfdf5",
     icon: <Layers size={18} color="#059669" />,
     summary:
-      "Synthesizes the linear sequence from start to finish, stating total stage count and contrasting the agricultural harvesting phase (machine vs manual) against chemical/thermal industrial processing.",
+      "Synthesizes overarching patterns: predominant positive approval across all three sectors (with design reaching 79% combined approval), contrasted against the striking gender disparity in restaurant dissatisfaction (females 4x higher than males).",
     tableCorrelation:
-      "Divides the 7 stages into Phase 1 (Agricultural & Mechanical Extraction) and Phase 2 (Chemical Purification, Evaporation, Separation, Drying).",
+      "Synthesizes overarching positive sentiment across retail and dining tables and design pie chart, while highlighting key gender contrasts.",
     pieces: [
       {
-        label: "Pillar 1: Linear Span & Culmination",
-        value: "Cultivation to Dry Sugar",
+        label: "Pillar 1: Predominant Overall Approval",
+        value: "Dominant Satisfaction",
         detail:
-          "Explicitly states the starting point (field growing) and concluding outcome (dry refined sugar crystals).",
+          "Explicitly captures that the vast majority of visitors rated the complex favorably, with design registering the peak positive aggregate.",
         band9Application:
-          "“Overall, the manufacturing process is a linear sequence comprising seven distinct stages, beginning with agricultural cultivation and harvesting and culminating in the industrial refinement and drying of pure sugar crystals.”"
+          "“Overall, the shopping complex garnered predominantly positive feedback across all evaluated domains, with architectural design receiving the highest aggregate approval.”"
       },
       {
-        label: "Pillar 2: Natural Bifurcation & Dual Harvesting",
-        value: "Agricultural vs Chemical Split",
+        label: "Pillar 2: Divergence & Gender Disparity",
+        value: "Equal Shops vs Divergent Dining",
         detail:
-          "Contrasts early mechanical/manual farming operations with advanced chemical filtration and thermal evaporation.",
+          "Contrasts identical 20% shop dissatisfaction with dramatic restaurant divergence where female dissatisfaction exceeds males fourfold.",
         band9Application:
-          "“Notably, while the initial stages involve agricultural harvesting (performed either mechanically or manually) and mechanical juice extraction, the subsequent phases rely on chemical purification, thermal evaporation, and centrifugal separation.”"
+          "“Notably, while dissatisfaction with retail shops was identical between genders, dining facilities revealed a pronounced disparity, as females were considerably more critical than males.”"
       }
     ]
   },
   {
-    id: "body1-agricultural",
-    title: "Piece 3: Body 1 — Agricultural & Extraction Flow (Stages 1–3)",
-    badge: "Field to Juice",
+    id: "body1-tables",
+    title: "Piece 3: Body 1 — Retail Shops & Dining Gender Disparity (Tables 1 & 2)",
+    badge: "Tables Breakdown",
     color: "#16a34a",
     borderColor: "#bbf7d0",
     bgLight: "#f0fdf4",
-    icon: <TrendingUp size={18} color="#16a34a" />,
+    icon: <ShoppingBag size={18} color="#16a34a" />,
     summary:
-      "Covers the 12–18 month growing cycle in fields, the dual mechanised vs manual harvesting methods, and crushing raw stalks through rotating cylindrical rollers to extract liquid juice.",
+      "Compares male vs female ratings in Table 1 (Shops) and Table 2 (Restaurants). Highlights female extreme satisfaction doubling males in retail (34% vs 17%), equal 20% dissatisfaction, and the dramatic 21% female dining dissatisfaction versus 5% for males.",
     tableCorrelation:
-      "Covers Stages 1, 2, and 3: raw crop cultivation, reaping, and physical juice extraction.",
+      "Covers Table 1 (Shops) and Table 2 (Restaurants) with precise gender comparisons and proportion ratios.",
     pieces: [
       {
-        label: "1. Stage 1: Maturation Cycle",
-        value: "12–18 Months Growing",
+        label: "1. Retail Shops: Double Female Extreme Satisfaction",
+        value: "34% vs 17% Very Satisfied",
         detail:
-          "Sugarcanes are planted and mature in agricultural fields over a 12 to 18-month duration.",
+          "Female shoppers were twice as likely as males to be very satisfied (34% vs 17%), while 45% of men and 37% of women reported being satisfied.",
         band9Application:
-          "“To begin with, sugarcanes are grown in agricultural fields over a maturation period lasting between 12 and 18 months.”"
+          "“In retail shops, 45% of male visitors were satisfied alongside 17% who were very satisfied. By comparison, female shoppers demonstrated considerably higher enthusiasm, with 34% describing themselves as very satisfied—exactly double the male proportion...”"
       },
       {
-        label: "2. Stage 2: Dual Harvesting Methods",
-        value: "Combine Machine vs Manual Sickle",
+        label: "2. Retail Shops: Identical Dissatisfaction",
+        value: "20% Parity for Both Sexes",
         detail:
-          "Candidate must report both automated combine vehicles and agricultural laborers cutting stalks by hand.",
+          "Despite enthusiasm differences, both male and female cohorts registered identical 20% dissatisfaction rates, while male neutrality (18%) doubled females (9%).",
         band9Application:
-          "“Once fully grown, the canes are harvested using one of two methods: either mechanically utilizing combine harvesters or manually by agricultural laborers cutting the stalks with hand blades.”"
+          "“...while dissatisfaction rates for both sexes were identical at 20%.”"
       },
       {
-        label: "3. Stage 3: Roller Crushing & Juice Extraction",
-        value: "Rotating Cylindrical Rollers",
+        label: "3. Dining Establishments: Stark Disparity",
+        value: "80% Male Approval vs 21% Female Dissat",
         detail:
-          "Harvested stalks pass through heavy mechanical rollers that crush the fiber to express liquid juice.",
+          "Men registered peak satisfaction (55% satisfied + 25% very satisfied = 80%) with only 5% dissatisfaction; female dissatisfaction was quadruple at 21%.",
         band9Application:
-          "“Following the harvest, the raw stalks are fed through heavy rotating rollers in a crushing mill, which compress the plant material to extract raw liquid juice.”"
+          "“Regarding dining establishments, male visitors expressed overwhelming contentment, with 55% satisfied and 25% very satisfied, whereas dissatisfaction was negligible at just 5%. In sharp contrast, female dissatisfaction stood at 21%, more than fourfold higher than that of their male counterparts.”"
       }
     ]
   },
   {
-    id: "body2-refinement",
-    title: "Piece 4: Body 2 — Chemical & Thermal Refining (Stages 4–7)",
-    badge: "Juice to Crystals",
+    id: "body2-design",
+    title: "Piece 4: Body 2 — Complex Architectural Design & Neutrality (Pie Chart)",
+    badge: "Pie Chart Deep Dive",
     color: "#ea580c",
     borderColor: "#fed7aa",
     bgLight: "#fff7ed",
-    icon: <Flame size={18} color="#ea580c" />,
+    icon: <PieIcon size={18} color="#ea580c" />,
     summary:
-      "Details limestone filtration to remove impurities, thermal evaporation into thick syrup, high-speed centrifugal separation of solid crystals, and final drying and cooling drum.",
+      "Details the pie chart proportions: satisfied (62%), very satisfied (17%), bringing total positive sentiment to nearly four-fifths (79%), with minority dissatisfaction (10%) and indifference (11%).",
     tableCorrelation:
-      "Covers Stages 4, 5, 6, and 7: chemical purification, boiling into syrup, centrifuge crystal extraction, and final refined sugar packaging.",
+      "Covers the Design pie chart, reporting proportions as fractions, percentages, and cumulative sums.",
     pieces: [
       {
-        label: "1. Stage 4: Limestone Purification",
-        value: "Limestone Filter Funnel",
+        label: "1. Dominant Majority Approval",
+        value: "62% Satisfied (~5/8)",
         detail:
-          "Raw extracted juice is filtered through limestone to eliminate sediment, debris, and impurities.",
+          "Nearly two-thirds of all respondents reported being satisfied with the layout and aesthetic design of the shopping center.",
         band9Application:
-          "“In the subsequent phase, the extracted juice is poured through a limestone filter in order to purify it and eliminate unwanted particulates.”"
+          "“Regarding the complex's design, the pie chart indicates widespread acclaim, with nearly two-thirds of respondents (62%) reporting satisfaction.”"
       },
       {
-        label: "2. Stage 5: Thermal Evaporation into Syrup",
-        value: "Evaporator Chamber Over Heat",
+        label: "2. Cumulative Positive Reception",
+        value: "79% Aggregate Favorable",
         detail:
-          "Clarified liquid is boiled over heat, evaporating moisture and condensing the juice into thick syrup.",
+          "An additional 17% declared themselves very satisfied, establishing a commanding 79% overall positive reception.",
         band9Application:
-          "“Thereafter, the clarified liquid is transferred to an evaporator vat where it is heated over an open heat source; during this boiling phase, water evaporates, transforming the juice into a thick syrup.”"
+          "“An additional 17% were very satisfied, bringing total positive sentiment to 79%...”"
       },
       {
-        label: "3. Stages 6 & 7: Centrifuge & Cylinder Drying",
-        value: "Centrifugal Separation & Drying Drum",
+        label: "3. Marginal Criticism & Neutrality",
+        value: "10% Dissat • 11% No Comment",
         detail:
-          "Syrup is spun rapidly to separate crystals; crystals are cooled and dried to produce consumer-ready refined sugar.",
+          "Only one in ten visitors was dissatisfied, mirroring the 11% proportion who offered no comment.",
         band9Application:
-          "“Next, this syrup is introduced into a high-speed centrifuge, which spins rapidly to separate solid sugar crystals from the remaining liquid. Finally, in the culminating stage, the damp crystals are fed into a cylindrical container for drying and cooling, yielding finished refined sugar ready for commercial distribution.”"
+          "“...whereas negative appraisals and neutral responses were marginal at 10% and 11% respectively.”"
       }
     ]
   }

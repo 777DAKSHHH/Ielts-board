@@ -56,10 +56,7 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
           <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
             Step 04 / 09 • Lexical Resource &amp; Cohesion
           </span>
-          <h2 className="stage-title">Academic Power Expressions &amp; Fluid Cohesion</h2>
-          <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-            Master collocations, deploy discourse linkers with exact paragraph placement, and integrate Band 9 vocabulary that dissolves like sugar in water.
-          </p>
+          <h2 className="stage-title" style={{ marginBottom: 0 }}>Academic Power Expressions &amp; Fluid Cohesion</h2>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>

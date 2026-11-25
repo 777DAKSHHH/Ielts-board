@@ -13,11 +13,8 @@ export const Step3Vocab: React.FC<Step3VocabProps> = ({ onSpeak, accent, setAcce
   <div className="stage-card-wrapper">
     <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "16px" }}>
       <div>
-        <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 03 / 08 • Process Lexical Resource</span>
-        <h2 className="stage-title">Sugarcane Manufacturing &amp; Sequential Lexicon</h2>
-        <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-          Essential Band 9 collocations for manufacturing processes: linear sequence, maturation cycle, mechanised harvester, manual reaping, cylindrical rollers, limestone filtration, thermal evaporation, and centrifugal separation.
-        </p>
+        <span className="apple-badge accent" style={{ marginBottom: "8px" }}>Step 03 / 08 • Survey Lexical Resource</span>
+        <h2 className="stage-title" style={{ marginBottom: 0 }}>Survey Analysis &amp; Academic Proportion Lexicon</h2>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "6px", background: "var(--slate-100)", padding: "6px 10px", borderRadius: "12px" }}>
         <Globe size={15} color="var(--slate-600)" />
@@ -29,7 +26,7 @@ export const Step3Vocab: React.FC<Step3VocabProps> = ({ onSpeak, accent, setAcce
       </div>
     </div>
     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "14px", color: "var(--slate-700)" }}>
-      <BookOpen size={18} /> <strong>{TASK1_DATA.vocabList.length} high-impact manufacturing, passive voice &amp; sequential collocations</strong>
+      <BookOpen size={18} /> <strong>{TASK1_DATA.vocabList.length} high-impact survey, proportion &amp; comparative collocations</strong>
     </div>
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "18px", overflowY: "auto", paddingRight: "4px" }}>
       {TASK1_DATA.vocabList.map((vocab, index) => <VocabCard key={vocab.word} vocab={vocab} onSpeak={onSpeak} index={index} />)}

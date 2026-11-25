@@ -57,8 +57,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   // Default to side-by-side split view for zero-scroll on smart boards
   const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("stage-1");
-  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("stage-1");
+  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("shops-male");
+  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("shops-male");
   const [dockTab, setDockTab] = useState<"category" | "prompt" | "hotspots">("category");
 
   // Normal view refs for smooth auto-scrolling
@@ -185,7 +185,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
             <Layers size={15} color="#0284c7" />
             <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#0f172a" }}>
-              Stage Scroller
+              Survey Scroller
             </span>
           </div>
           <span
@@ -198,55 +198,57 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               borderRadius: "4px"
             }}
           >
-            7 Stages
+            7 Features
           </span>
         </div>
 
         {/* Quick Phase Jump Badges */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
           <button
             type="button"
-            onClick={() => handleSelectComponent("stage-1")}
+            onClick={() => handleSelectComponent("shops-male")}
             style={{
-              padding: "4px 6px",
-              borderRadius: "6px",
-              fontSize: "0.68rem",
+              padding: "5px 6px",
+              borderRadius: "8px",
+              fontSize: "0.72rem",
               fontWeight: 750,
-              border: selectedHotspotId === "stage-1" || selectedHotspotId === "stage-2" || selectedHotspotId === "stage-3"
-                ? "1.5px solid #16a34a"
+              border: selectedHotspotId.startsWith("shops") || selectedHotspotId.startsWith("restaurants")
+                ? "1.5px solid #2563eb"
                 : "1px solid #e2e8f0",
-              background: selectedHotspotId === "stage-1" || selectedHotspotId === "stage-2" || selectedHotspotId === "stage-3"
-                ? "#f0fdf4"
+              background: selectedHotspotId.startsWith("shops") || selectedHotspotId.startsWith("restaurants")
+                ? "#eff6ff"
                 : "#f8fafc",
-              color: selectedHotspotId === "stage-1" || selectedHotspotId === "stage-2" || selectedHotspotId === "stage-3"
-                ? "#166534"
+              color: selectedHotspotId.startsWith("shops") || selectedHotspotId.startsWith("restaurants")
+                ? "#1e40af"
                 : "#475569",
-              cursor: "pointer"
+              cursor: "pointer",
+              textAlign: "center"
             }}
           >
-            Phase 1 (1–3)
+            Tables (Shops/Dining)
           </button>
           <button
             type="button"
-            onClick={() => handleSelectComponent("stage-4")}
+            onClick={() => handleSelectComponent("design-satisfied")}
             style={{
-              padding: "4px 6px",
-              borderRadius: "6px",
-              fontSize: "0.68rem",
+              padding: "5px 6px",
+              borderRadius: "8px",
+              fontSize: "0.72rem",
               fontWeight: 750,
-              border: selectedHotspotId === "stage-4" || selectedHotspotId === "stage-5" || selectedHotspotId === "stage-6" || selectedHotspotId === "stage-7"
-                ? "1.5px solid #ea580c"
+              border: selectedHotspotId.startsWith("design")
+                ? "1.5px solid #059669"
                 : "1px solid #e2e8f0",
-              background: selectedHotspotId === "stage-4" || selectedHotspotId === "stage-5" || selectedHotspotId === "stage-6" || selectedHotspotId === "stage-7"
-                ? "#fff7ed"
+              background: selectedHotspotId.startsWith("design")
+                ? "#ecfdf5"
                 : "#f8fafc",
-              color: selectedHotspotId === "stage-4" || selectedHotspotId === "stage-5" || selectedHotspotId === "stage-6" || selectedHotspotId === "stage-7"
-                ? "#c2410c"
+              color: selectedHotspotId.startsWith("design")
+                ? "#065f46"
                 : "#475569",
-              cursor: "pointer"
+              cursor: "pointer",
+              textAlign: "center"
             }}
           >
-            Phase 2 (4–7)
+            Pie Chart (Design)
           </button>
         </div>
 
@@ -263,26 +265,18 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             paddingRight: "2px"
           }}
         >
-          {STAGE_HOTSPOTS.map((st, idx) => {
+          {STAGE_HOTSPOTS.map((st) => {
             const isSelected = selectedHotspotId === st.id;
-            const stageShortTitles = [
-              "Growing",
-              "Harvesting",
-              "Crushing",
-              "Purifying",
-              "Evaporator",
-              "Centrifuge",
-              "Drying & Cooling"
-            ];
-            const stageSubtitles = [
-              "12–18m Field",
-              "Dual Method",
-              "Roller Mill",
-              "Limestone Filter",
-              "Thermal Syrup",
-              "Rotational Spin",
-              "Refined Sugar"
-            ];
+            const shortTitles: Record<string, { title: string; subtitle: string }> = {
+              "shops-male": { title: "Shops: Male", subtitle: "62% Positive (45% + 17%)" },
+              "shops-female": { title: "Shops: Female", subtitle: "71% Positive (34% V.Sat)" },
+              "restaurants-male": { title: "Dining: Male", subtitle: "80% Positive (Peak)" },
+              "restaurants-female": { title: "Dining: Female", subtitle: "21% Dissat (4x Male)" },
+              "design-satisfied": { title: "Design: Satisfied", subtitle: "62% Dominant Plurality" },
+              "design-very-satisfied": { title: "Design: V.Sat", subtitle: "17% (Total 79% Appr)" },
+              "design-dissatisfied-no-comment": { title: "Design: Other", subtitle: "10% Dissat • 11% Neutral" }
+            };
+            const itemMeta = shortTitles[st.id] || { title: st.name, subtitle: st.equipmentOrRole };
 
             return (
               <div
@@ -293,7 +287,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 onClick={() => handleSelectComponent(st.id)}
                 style={{
                   position: "relative",
-                  padding: "8px 9px",
+                  padding: "8px 10px",
                   borderRadius: "10px",
                   background: isSelected ? `${st.color}14` : "#f8fafc",
                   border: isSelected ? `2px solid ${st.color}` : "1px solid #e2e8f0",
@@ -305,15 +299,15 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   gap: "8px"
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", minWidth: 0 }}>
-                  {/* Number Badge */}
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", minWidth: 0, flex: 1 }}>
+                  {/* Clean Number Badge */}
                   <span
                     style={{
-                      width: "25px",
-                      height: "25px",
+                      width: "26px",
+                      height: "26px",
                       borderRadius: "7px",
-                      background: st.color,
-                      color: "#ffffff",
+                      background: isSelected ? st.color : `${st.color}18`,
+                      color: isSelected ? "#ffffff" : st.color,
                       fontSize: "0.72rem",
                       fontWeight: 800,
                       display: "flex",
@@ -322,11 +316,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       flexShrink: 0
                     }}
                   >
-                    {st.number.replace("Stage ", "")}
+                    {st.number}
                   </span>
 
                   {/* Title & Tag */}
-                  <div style={{ minWidth: 0 }}>
+                  <div style={{ minWidth: 0, flex: 1 }}>
                     <div
                       style={{
                         fontSize: "0.78rem",
@@ -337,7 +331,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                         textOverflow: "ellipsis"
                       }}
                     >
-                      {stageShortTitles[idx]}
+                      {itemMeta.title}
                     </div>
                     <div
                       style={{
@@ -348,7 +342,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                         textOverflow: "ellipsis"
                       }}
                     >
-                      {stageSubtitles[idx]}
+                      {itemMeta.subtitle}
                     </div>
                   </div>
                 </div>
@@ -425,16 +419,16 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 color: activeHotspot.color
               }}
             >
-              {activeHotspot.category || activeHotspot.number}
+              {activeHotspot.category || `Feature ${activeHotspot.number}`}
             </span>
           </div>
 
           {/* 3 Dock Tabs */}
           <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "3px", borderRadius: "8px" }}>
             {[
-              { id: "category", label: "🎯 Stage Feed & Auto-Scroll" },
-              { id: "prompt", label: "📝 Prompt Parameters" },
-              { id: "hotspots", label: "⭐ All Stages" }
+              { id: "category", label: "🎯 Feature Feed" },
+              { id: "prompt", label: "📝 Parameters" },
+              { id: "hotspots", label: "⭐ All 7 Metrics" }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -479,13 +473,13 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       fontSize: "0.72rem",
                       fontWeight: 750,
                       border: isSelected ? `1.5px solid ${st.color}` : "1px solid #e2e8f0",
-                      background: isSelected ? `${st.color}18` : "#f8fafc",
-                      color: isSelected ? st.color : "#475569",
+                      background: isSelected ? st.color : "#f8fafc",
+                      color: isSelected ? "#ffffff" : "#475569",
                       cursor: "pointer",
                       transition: "all 0.15s ease"
                     }}
                   >
-                    {st.number.replace("Stage ", "S")}
+                    {st.number}
                   </button>
                 );
               })}
@@ -527,23 +521,24 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     }}
                   >
                     {/* Card Header */}
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "8px" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                         <span
                           style={{
-                            padding: "4px 10px",
-                            borderRadius: "7px",
+                            padding: "3px 8px",
+                            borderRadius: "6px",
                             background: st.color,
                             color: "#ffffff",
-                            fontSize: "0.78rem",
-                            fontWeight: 800
+                            fontSize: "0.72rem",
+                            fontWeight: 800,
+                            letterSpacing: "0.02em"
                           }}
                         >
-                          {st.number}
+                          Feature {st.number}
                         </span>
                         <div>
-                          <div style={{ fontSize: "0.68rem", fontWeight: 750, color: "#64748b", textTransform: "uppercase" }}>
-                            {st.box === "phase-1" ? "Phase 1: Agricultural & Extraction" : "Phase 2: Chemical & Refining"}
+                          <div style={{ fontSize: "0.66rem", fontWeight: 750, color: "#64748b", textTransform: "uppercase" }}>
+                            {st.category || (st.box === "phase-1" ? "Tables 1 & 2: Retail & Dining" : "Pie Chart: Complex Design")}
                           </div>
                           <div style={{ fontSize: "0.95rem", fontWeight: 800, color: "#0f172a" }}>
                             {st.name}
@@ -554,30 +549,32 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                         {isActive && (
                           <span
                             style={{
-                              fontSize: "0.68rem",
+                              fontSize: "0.66rem",
                               fontWeight: 800,
-                              padding: "2px 8px",
+                              padding: "2px 7px",
                               borderRadius: "5px",
                               background: `${st.color}18`,
                               color: st.color,
-                              border: `1px solid ${st.color}40`
+                              border: `1px solid ${st.color}40`,
+                              whiteSpace: "nowrap"
                             }}
                           >
-                            ★ ACTIVE ON SMART BOARD
+                            ★ ACTIVE
                           </span>
                         )}
                         <span
                           style={{
-                            fontSize: "0.74rem",
+                            fontSize: "0.70rem",
                             fontWeight: 750,
-                            padding: "3px 9px",
-                            borderRadius: "6px",
-                            background: "#f8fafc",
-                            color: st.color,
-                            border: `1px solid ${st.color}35`
+                            padding: "2px 8px",
+                            borderRadius: "5px",
+                            background: "#f1f5f9",
+                            color: "#475569",
+                            border: "1px solid #e2e8f0",
+                            whiteSpace: "nowrap"
                           }}
                         >
-                          {st.equipmentOrRole}
+                          {st.box === "phase-1" ? "Survey Table" : "Pie Chart"}
                         </span>
                       </div>
                     </div>
@@ -706,19 +703,19 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "0.78rem" }}>
               <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
                 <span style={{ color: "#64748b" }}>Format:</span>
-                <strong style={{ display: "block", color: "#0f172a" }}>Process Diagram (7 Stages)</strong>
+                <strong style={{ display: "block", color: "#0f172a" }}>Multi-Graphic (2 Tables + 1 Pie Chart)</strong>
               </div>
               <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-                <span style={{ color: "#64748b" }}>Raw Material:</span>
-                <strong style={{ display: "block", color: "#0f172a" }}>Sugarcane (12–18m Growth)</strong>
+                <span style={{ color: "#64748b" }}>Subject &amp; Location:</span>
+                <strong style={{ display: "block", color: "#0f172a" }}>New Shopping Complex, Auckland</strong>
               </div>
               <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-                <span style={{ color: "#64748b" }}>End Product:</span>
-                <strong style={{ display: "block", color: "#0f172a" }}>Refined Dry Sugar Crystals</strong>
+                <span style={{ color: "#64748b" }}>Rating Tiers:</span>
+                <strong style={{ display: "block", color: "#0f172a" }}>4 Scales (% Terms)</strong>
               </div>
               <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
                 <span style={{ color: "#64748b" }}>Bifurcation:</span>
-                <strong style={{ display: "block", color: "#0f172a" }}>Agricultural (1–3) vs Chemical (4–7)</strong>
+                <strong style={{ display: "block", color: "#0f172a" }}>Tables (Shops/Dining) vs Pie (Design)</strong>
               </div>
             </div>
           </div>
@@ -726,7 +723,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
 
         {/* Dock Content: Tab 3 - All Stages Directory */}
         {dockTab === "hotspots" && (
-          <div className="custom-smart-scroller" style={{ display: "flex", flexDirection: "column", gap: "6px", flex: 1, overflowY: "auto" }}>
+          <div className="custom-smart-scroller" style={{ display: "flex", flexDirection: "column", gap: "8px", flex: 1, overflowY: "auto" }}>
             {STAGE_HOTSPOTS.map((h) => {
               const isMatch = selectedHotspotId === h.id;
               return (
@@ -734,51 +731,59 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   key={h.id}
                   onClick={() => handleSelectComponent(h.id)}
                   style={{
-                    background: isMatch ? "#eff6ff" : "#f8fafc",
-                    border: isMatch ? `1.5px solid ${h.color}` : "1px solid #e2e8f0",
-                    borderRadius: "10px",
-                    padding: "7px 10px",
+                    background: isMatch ? `${h.color}10` : "#ffffff",
+                    border: isMatch ? `2px solid ${h.color}` : "1px solid #e2e8f0",
+                    borderRadius: "12px",
+                    padding: "10px 12px",
                     cursor: "pointer",
                     fontSize: "0.8rem",
                     transition: "all 0.15s ease",
                     display: "flex",
                     justifyContent: "space-between",
-                    alignItems: "center"
+                    alignItems: "center",
+                    gap: "10px"
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0, flex: 1 }}>
                     <span
                       style={{
-                        width: "30px",
-                        height: "24px",
-                        borderRadius: "6px",
+                        width: "28px",
+                        height: "28px",
+                        borderRadius: "7px",
                         background: h.color,
                         color: "#ffffff",
-                        fontSize: "0.68rem",
+                        fontSize: "0.72rem",
                         fontWeight: 800,
                         display: "flex",
                         alignItems: "center",
-                        justifyContent: "center"
+                        justifyContent: "center",
+                        flexShrink: 0
                       }}
                     >
-                      {h.number.replace("Stage ", "")}
+                      {h.number}
                     </span>
-                    <div>
-                      <strong style={{ color: "#0f172a", fontSize: "0.82rem" }}>{h.name}</strong>
-                      <div style={{ fontSize: "0.72rem", color: "#64748b" }}>{h.equipmentOrRole}</div>
+                    <div style={{ minWidth: 0, flex: 1 }}>
+                      <strong style={{ color: "#0f172a", fontSize: "0.84rem", display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                        {h.name}
+                      </strong>
+                      <div style={{ fontSize: "0.72rem", color: "#64748b", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                        {h.equipmentOrRole}
+                      </div>
                     </div>
                   </div>
                   <span
                     style={{
-                      fontSize: "0.7rem",
+                      fontSize: "0.68rem",
                       fontWeight: 750,
-                      padding: "2px 6px",
-                      borderRadius: "4px",
+                      padding: "2px 8px",
+                      borderRadius: "5px",
                       background: `${h.color}15`,
-                      color: h.color
+                      color: h.color,
+                      whiteSpace: "nowrap",
+                      flexShrink: 0
                     }}
                   >
-                    {h.box.toUpperCase()}
+                    {h.category || (h.box === "phase-1" ? "Tables" : "Pie Chart")}
                   </span>
                 </div>
               );
@@ -794,11 +799,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Process Diagram Deconstruction &amp; Brainstorm
+          Step 02 / 08 • Survey Matrix Deconstruction &amp; Brainstorm
         </span>
-        <h2 className="stage-title">Deconstruct Process Diagram: Making Sugar from Sugarcane</h2>
+        <h2 className="stage-title">Deconstruct Auckland Shopping Complex Survey: Tables &amp; Pie Chart</h2>
         <p className="stage-subtitle">
-          Analyze the 7 sequential stages from raw field cultivation to refined crystalline sugar. Identify key features: field maturation (12–18 months), dual harvesting (combine harvester vs manual hand sickle), mechanical roller crushing, limestone purification, thermal evaporation, and centrifugal separation.
+          Analyze visitor satisfaction across retail shops, dining establishments, and architectural design in Auckland, New Zealand. Identify key features: 79% design approval, double female enthusiasm in shops (34% vs 17%), 4x female dining dissatisfaction (21% vs 5%), and equal 20% shop dissatisfaction.
         </p>
       </div>
 
@@ -810,7 +815,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to deconstruct the 7 sugarcane processing stages: field maturation (12–18m), dual harvesting, roller crushing, limestone filtration, thermal evaporation, centrifugal separation, and final drying."
+          instruction="Focus Timer: 3 minutes to deconstruct the Auckland shopping complex survey: examine male vs female ratings across shops and restaurants, and analyze overall visitor sentiment toward architectural design."
         />
       </div>
 
@@ -1082,7 +1087,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={TASK1_DATA.imageFileName.startsWith('/') ? TASK1_DATA.imageFileName : '/' + TASK1_DATA.imageFileName}
-                  alt="IELTS Academic Task 1 Making Sugar from Sugarcane Process Diagram"
+                  alt="IELTS Academic Task 1 Auckland Shopping Complex Survey Tables and Pie Chart"
                   style={{
                     maxHeight: "560px",
                     maxWidth: "100%",
@@ -1093,7 +1098,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   }}
                 />
                 <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
-                  Official Cambridge IELTS Academic Question Diagram • The Process of Making Sugar from Sugarcane (7 Stages)
+                  Official Cambridge IELTS Academic Question Diagram • Survey of a New Shopping Complex in Auckland, New Zealand
                 </div>
               </div>
             )}
@@ -1156,7 +1161,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <Sparkles size={17} color="#2563eb" />
                 <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  7-Stage Manufacturing Process Inspector
+                  Auckland Shopping Complex Survey Inspector
                 </h4>
               </div>
               <div className="custom-smart-scroller" style={{ display: "flex", flexDirection: "column", gap: "8px", maxHeight: "240px", overflowY: "auto" }}>
@@ -1178,39 +1183,42 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                         transition: "all 0.15s ease"
                       }}
                     >
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0, flex: 1 }}>
                         <span
                           style={{
-                            width: "32px",
-                            height: "24px",
-                            borderRadius: "6px",
+                            width: "28px",
+                            height: "28px",
+                            borderRadius: "7px",
                             background: h.color,
                             color: "#ffffff",
-                            fontSize: "0.7rem",
+                            fontSize: "0.72rem",
                             fontWeight: 800,
                             display: "flex",
                             alignItems: "center",
-                            justifyContent: "center"
+                            justifyContent: "center",
+                            flexShrink: 0
                           }}
                         >
-                          {h.number.replace("Stage ", "")}
+                          {h.number}
                         </span>
-                        <div>
-                          <strong style={{ fontSize: "0.85rem", color: "#0f172a" }}>{h.name}</strong>
-                          <div style={{ fontSize: "0.74rem", color: "#64748b" }}>{h.equipmentOrRole}</div>
+                        <div style={{ minWidth: 0, flex: 1 }}>
+                          <strong style={{ fontSize: "0.85rem", color: "#0f172a", display: "block", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{h.name}</strong>
+                          <div style={{ fontSize: "0.74rem", color: "#64748b", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{h.equipmentOrRole}</div>
                         </div>
                       </div>
                       <span
                         style={{
-                          fontSize: "0.74rem",
-                          fontWeight: 800,
+                          fontSize: "0.72rem",
+                          fontWeight: 750,
                           padding: "2px 8px",
-                          borderRadius: "6px",
+                          borderRadius: "5px",
                           background: `${h.color}15`,
-                          color: h.color
+                          color: h.color,
+                          whiteSpace: "nowrap",
+                          flexShrink: 0
                         }}
                       >
-                        {h.box.toUpperCase()}
+                        {h.category || (h.box === "phase-1" ? "Tables" : "Pie Chart")}
                       </span>
                     </div>
                   );
@@ -1266,7 +1274,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     Enlarged Presentation Mode
                   </span>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                    The Process of Making Sugar from Sugarcane (7 Stages)
+                    Auckland Shopping Complex Survey • Tables &amp; Pie Chart
                   </h3>
                 </div>
                 <button

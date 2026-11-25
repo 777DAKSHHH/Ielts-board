@@ -4,27 +4,27 @@ import { CheckCircle2, Award, Copy, Check } from "lucide-react";
 const CONCLUSION_VARIATIONS = [
   {
     id: "standard",
-    title: "Style 1: Standard Balanced Synthesis & Clear Opinion",
+    title: "Style 1: Standard Balanced Synthesis & Policy Outlook",
     badge: "Band 8.5–9 • Recommended",
-    summary: "Recaps the immediate awareness benefits of car-free days, contrasts them with systemic transit and regulatory solutions, and reaffirms the author's opinion.",
-    text: "In conclusion, while car-free days provide valuable short-term benefits by temporarily reducing vehicular exhaust and encouraging public mindfulness, they are fundamentally insufficient as a standalone policy. In my view, achieving lasting air quality improvements requires permanent systemic solutions, primarily heavy investment in zero-emission public transit networks and the rigorous enforcement of stringent vehicle emission standards.",
-    breakdown: "Sentence 1: Synthesis conceding short-term merits of car-free days | Sentence 2: Firm personal opinion emphasizing systemic mass transit and strict regulatory enforcement."
+    summary: "Recaps landfill saturation and marine contamination, pairs them with statutory bans, taxes, and compostable subsidies, and provides a forward-looking outlook.",
+    text: "In conclusion, the widespread prevalence of single-use items poses grave ecological threats, chiefly the overwhelming of municipal landfills and the pervasive contamination of aquatic ecosystems. Nevertheless, through decisive government intervention—including strict legislative bans, targeted packaging taxes, and the subsidisation of biodegradable materials—societies can effectively reverse this disposable trend and transition toward a sustainable circular economy.",
+    breakdown: "Sentence 1: Synthesis of primary problems (landfill exhaustion & marine contamination) | Sentence 2: Targeted remedies (legislative bans, packaging taxes, and biodegradable subsidies) with circular economy outlook."
   },
   {
     id: "academic",
-    title: "Style 2: Academic Analytical Synthesis & Policy Outlook",
+    title: "Style 2: Academic Analytical Synthesis & Industrial Reform",
     badge: "Band 9 • Advanced Lexicon",
-    summary: "Elevated academic syntax contrasting transient civic interventions with enduring infrastructural decarbonisation and continuous economic deterrents.",
-    text: "To conclude, although designated vehicle-free days serve as commendable educational catalysts that momentarily purge urban centers of toxic pollutants, their transitory nature renders them incapable of resolving atmospheric degradation. I firmly contend that long-term atmospheric restoration hinges upon systemic infrastructural reform, namely the proliferation of electrified public transit alongside continuous congestion levies and rigorous industrial emission caps.",
-    breakdown: "Sentence 1: Analytical concession of educational impact vs. transient limitation | Sentence 2: Authoritative personal stance championing systemic infrastructural and regulatory measures."
+    summary: "Elevated academic syntax contrasting transient disposable convenience with irreversible ecological degradation, highlighting corporate EPR and material science.",
+    text: "To conclude, while disposable commodities afford fleeting consumer convenience, their unchecked proliferation inflicts profound biosphere degradation through persistent solid waste accumulation and toxic marine bioaccumulation. Resolving this crisis necessitates systemic regulatory reform, namely statutory prohibitions on non-essential polymers alongside the strict enforcement of Extended Producer Responsibility to mandate corporate circularity.",
+    breakdown: "Sentence 1: Philosophical contrast between convenience and biosphere damage | Sentence 2: High-level policy mandate combining prohibitions and Extended Producer Responsibility."
   },
   {
     id: "rapid-exam",
     title: "Style 3: Rapid 2-Sentence Exam Model",
     badge: "Rapid Timing • Under 45 Words",
-    summary: "High-speed concise model balancing temporary awareness against continuous transit investment under strict exam time pressure.",
-    text: "In conclusion, although car-free days briefly curb toxic emissions and raise public awareness, they cannot solve urban air pollution permanently. In my view, sustained improvement requires continuous measures, especially expanding clean public transit and subsidising electric vehicles.",
-    breakdown: "Sentence 1: Rapid concession of temporary relief and awareness | Sentence 2: Crisp, definitive opinion favoring continuous transit and electric mobility."
+    summary: "High-speed concise model balancing pollution problems against legislative and material solutions under strict exam time pressure.",
+    text: "In conclusion, single-use products severely pollute landfills and oceans with non-biodegradable waste. To solve this dilemma, governments must ban unnecessary plastics, impose packaging taxes, and support compostable alternatives.",
+    breakdown: "Sentence 1: Rapid 2-part problem synthesis | Sentence 2: Crisp conclusion with 3 actionable policy solutions."
   }
 ];
 
@@ -45,9 +45,9 @@ export const Step8ConclusionT2: React.FC = () => {
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 08 / 09 • Sample Conclusion &amp; Synthesis
         </span>
-        <h2 className="stage-title">Sample Conclusion: Sum-Up Both Views + Clear Final Opinion</h2>
+        <h2 className="stage-title">Sample Conclusion: Sum-Up Problems + Reaffirm Solutions</h2>
         <p className="stage-subtitle">
-          Mandatory Conclusion Format: <strong>Sum-up View 1 (car-free days) and View 2 (systemic alternatives) + re-affirm your definitive personal opinion</strong>.
+          Mandatory Conclusion Format: <strong>Synthesize core problems (landfills &amp; oceans) + reiterate actionable solutions (bans, taxes, subsidies) with a circular economy perspective</strong>.
         </p>
       </div>
 
@@ -178,18 +178,18 @@ export const Step8ConclusionT2: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <Award size={18} color="var(--apple-blue)" />
               <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                2-Element Discussion with Opinion Conclusion Architecture
+                2-Element Problems &amp; Solutions Conclusion Architecture
               </h4>
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-                <span><strong>Sum-Up Both Perspectives:</strong> Concede that car-free days provide acute short-term emissions drops and heighten civic environmental consciousness.</span>
+                <span><strong>Sum-Up Primary Problems:</strong> Concisely synthesize the primary dilemmas (acute landfill saturation and pervasive marine contamination).</span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-                <span><strong>Re-affirm Definitive Opinion:</strong> Restate clearly that permanent eradication of urban air pollution necessitates systemic interventions—principally electrified public transit networks, EV transition subsidies, and stringent industrial emission caps.</span>
+                <span><strong>Re-affirm Strategic Solutions:</strong> Reiterate targeted policy and industrial remedies (statutory bans, single-use taxes, and subsidies for compostable packaging) with a forward-looking circular economy outlook.</span>
               </div>
             </div>
           </div>
@@ -212,8 +212,8 @@ export const Step8ConclusionT2: React.FC = () => {
               </h4>
             </div>
             <ul style={{ margin: 0, paddingLeft: "18px", fontSize: "0.86rem", color: "#14532d", lineHeight: 1.55 }}>
-              <li><strong>Never introduce new arguments:</strong> All evidence must come directly from Body 1 and Body 2.</li>
-              <li><strong>Ensure opinion consistency:</strong> The opinion here must match the thesis in your introduction 100%.</li>
+              <li><strong>Never introduce new arguments:</strong> All ideas must directly reflect points developed in Body 1 and Body 2.</li>
+              <li><strong>Balance both dimensions:</strong> Address both problems and solutions in the summary rather than only one.</li>
               <li><strong>Aim for 40–55 words:</strong> Keep it concise to ensure completion within the 40-minute time limit.</li>
             </ul>
           </div>

@@ -11,13 +11,13 @@ export const Step9SubmissionT2: React.FC<Step9SubmissionT2Props> = ({
   const [copied, setCopied] = useState(false);
   const [showEssay, setShowEssay] = useState(false);
 
-  const fullModelEssay = `It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist. While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions.
+  const fullModelEssay = `In contemporary society, manufactured single-use items have become exceptionally ubiquitous across domestic and commercial sectors. While this disposable culture inflicts severe environmental degradation, notably acute landfill saturation and marine contamination, viable solutions exist, including statutory product bans, fiscal deterrents, and state subsidies for biodegradable alternatives.
 
-On the one hand, proponents of car-free days highlight their immediate environmental and civic benefits. Restricting private vehicular access to city centers, even for a single day, produces a dramatic and measurable reduction in toxic tailpipe emissions, such as nitrogen dioxide and fine particulate matter. In major metropolises like Paris and Bogota, annual car-free events have demonstrated sharp, observable drops in atmospheric pollutants, affording urban residents cleaner air and quieter streets. Furthermore, such initiatives serve a vital psychological function by fostering public awareness regarding automobile dependency. When urbanites experience pedestrianised boulevards firsthand, they are encouraged to consider active transportation modes like cycling and walking, which can stimulate long-term behavioural changes toward sustainable living.
+To begin with, the unchecked dominance of single-use commodities triggers immense ecological crises, most notably acute landfill exhaustion and pervasive marine pollution. Because petroleum-based plastics are engineered for durability rather than biodegradability, they linger in landfills for centuries, overwhelming municipal waste management infrastructure worldwide. Furthermore, a substantial percentage of lightweight disposable containers inevitably escapes waste streams and migrates into aquatic environments. In oceans, marine wildlife routinely ingests discarded plastic fragments, suffering fatal internal blockages and starvation. Over time, these polymers fragment into toxic microplastics, which absorb industrial carcinogens and bioaccumulate through marine trophic levels, ultimately posing severe endocrine and oncological risks to human consumers.
 
-On the other hand, critics argue that car-free days are merely symbolic and that alternative structural measures possess greater long-term efficacy. Because vehicle bans are transient, traffic congestion and emissions inevitably rebound the very next day, failing to deliver permanent ecological improvement. Instead, the most impactful way to curb air pollution is by developing comprehensive, affordable public transit infrastructure. When municipal governments invest heavily in electrified bus fleets and extensive underground metro networks, commuters are provided with viable daily alternatives to private car ownership. Additionally, governments can implement continuous economic deterrents, such as congestion charges and low-emission zones, alongside stringent regulatory standards on industrial output and fossil-fuel vehicles. These permanent policies address the root causes of pollution continuously rather than intermittently.
+Nevertheless, this environmental dilemma can be effectively resolved through a coordinated approach combining legislative deterrents, material innovation, and corporate accountability. Firstly, national governments must institute statutory bans on unnecessary single-use items, accompanied by substantial fiscal levies on remaining disposable packaging. As evidenced by jurisdictions like Ireland, implementing plastic taxes rapidly curtails consumer reliance on disposables by making reusable alternatives economically advantageous. Secondly, authorities should provide research subsidies and tax breaks to companies developing fully compostable materials derived from seaweed, cornstarch, or agricultural residues. Finally, enforcing stringent Extended Producer Responsibility mandates would require manufacturers to cover the full financial cost of collecting and recycling their packaging, compelling multinational corporations to transition toward sustainable, circular product designs.
 
-In conclusion, while car-free days provide valuable short-term benefits by temporarily reducing vehicular exhaust and encouraging public mindfulness, they are fundamentally insufficient as a standalone policy. In my view, achieving lasting air quality improvements requires permanent systemic solutions, primarily heavy investment in zero-emission public transit networks and the rigorous enforcement of stringent vehicle emission standards.`;
+In conclusion, the widespread prevalence of single-use items poses grave ecological threats, chiefly the overwhelming of municipal landfills and the pervasive contamination of aquatic ecosystems. Nevertheless, through decisive government intervention—including strict legislative bans, targeted packaging taxes, and the subsidisation of biodegradable materials—societies can effectively reverse this disposable trend and transition toward a sustainable circular economy.`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fullModelEssay);
@@ -35,7 +35,7 @@ In conclusion, while car-free days provide valuable short-term benefits by tempo
           </span>
           <h2 className="stage-title">Essay Structure &amp; Revision Cheat Sheet</h2>
           <p className="stage-subtitle" style={{ marginBottom: 0 }}>
-            Extreme concise one-liner revision checks for your Band 9 Discussion with Opinion response.
+            Extreme concise one-liner revision checks for your Band 9 Problems and Solutions response.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ In conclusion, while car-free days provide valuable short-term benefits by tempo
         </div>
       </div>
 
-      {/* SECTION 1: 4-PARAGRAPH BALANCED ARCHITECTURE (STRICT ONE-LINERS) */}
+      {/* SECTION 1: 4-PARAGRAPH PROBLEMS & SOLUTIONS ARCHITECTURE (STRICT ONE-LINERS) */}
       <div
         style={{
           background: "#ffffff",
@@ -117,7 +117,7 @@ In conclusion, while car-free days provide valuable short-term benefits by tempo
         <div style={{ display: "flex", alignItems: "center", gap: "8px", borderBottom: "1px solid #f1f5f9", paddingBottom: "8px" }}>
           <Layers size={16} color="var(--apple-blue)" />
           <h3 style={{ fontSize: "1rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-            4-Paragraph Discussion with Opinion Architecture (One-Liner Revision)
+            4-Paragraph Problems and Solutions Architecture (One-Liner Revision)
           </h3>
         </div>
 
@@ -128,36 +128,36 @@ In conclusion, while car-free days provide valuable short-term benefits by tempo
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#9333ea", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
                 1. INTRO
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#6b21a8" }}>Paraphrase Question + Balanced Thesis Statement &amp; Opinion</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#6b21a8" }}>Paraphrase Question + Direct Problem &amp; Solution Thesis</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#3b0764", lineHeight: 1.45 }}>
-              Paraphrase car-free days vs alternative measures + introduce temporary relief/awareness vs systemic solutions, giving clear personal opinion.
+              Paraphrase the ubiquity of single-use products + introduce the dual threat (landfill saturation &amp; marine poisoning) alongside solutions (statutory bans, plastic taxes, and biodegradable subsidies).
             </p>
           </div>
 
           {/* Body 1 */}
-          <div style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "10px", padding: "10px 14px" }}>
+          <div style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "10px", padding: "10px 14px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#2563eb", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                2. BODY PARA 1 (VIEW 1: CAR-FREE DAYS)
+              <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#dc2626", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
+                2. BODY PARA 1 (THE PROBLEMS)
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#1d4ed8" }}>Immediate Exhaust Reduction &amp; Civic Environmental Awareness</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#b91c1c" }}>Landfill Exhaustion, Non-Biodegradable Persistence &amp; Marine Microplastics</strong>
             </div>
-            <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e3a8a", lineHeight: 1.45 }}>
-              <strong>Point:</strong> Restricting private cars instantly purges toxic tailpipe emissions → <strong>Evidence:</strong> Paris/Bogota car-free days record 30–50% drops in nitrogen dioxide → <strong>Example:</strong> Pedestrianised avenues foster active cycling/walking habits.
+            <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#7f1d1d", lineHeight: 1.45 }}>
+              <strong>Point:</strong> Synthetic polymers resist biodegradation for centuries → <strong>Evidence:</strong> Overwhelms municipal landfills and escapes into oceans → <strong>Impact:</strong> Ingested by marine wildlife and bioaccumulates up the food chain to humans.
             </p>
           </div>
 
           {/* Body 2 */}
-          <div style={{ background: "#fff7ed", border: "1px solid #fed7aa", borderRadius: "10px", padding: "10px 14px" }}>
+          <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "10px 14px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#ea580c", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                3. BODY PARA 2 (VIEW 2 &amp; OPINION: SYSTEMIC ALTERNATIVES)
+              <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#16a34a", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
+                3. BODY PARA 2 (THE SOLUTIONS)
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#c2410c" }}>Electrified Mass Transit, Economic Deterrents &amp; Industrial Caps</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#15803d" }}>Statutory Prohibitions, Plastic Taxes, Subsidies &amp; Corporate EPR</strong>
             </div>
-            <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#7c2d12", lineHeight: 1.45 }}>
-              <strong>Point:</strong> Car-free days are transient with next-day emission rebounds → <strong>Evidence:</strong> Electric transit networks &amp; congestion charges provide continuous deterrence → <strong>Example:</strong> Tokyo/Zurich electric rail and London's ULEZ 46% drop.
+            <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#14532d", lineHeight: 1.45 }}>
+              <strong>Point:</strong> Legislative bans and fees swiftly alter consumer demand → <strong>Evidence:</strong> Ireland's plastic bag tax cut usage by 90% → <strong>Action:</strong> Subsidising seaweed/cornstarch packaging and enforcing Extended Producer Responsibility mandates.
             </p>
           </div>
 
@@ -167,10 +167,10 @@ In conclusion, while car-free days provide valuable short-term benefits by tempo
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#0f172a", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
                 4. CONCLUSION
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Sum-Up Both Views + Re-affirm Clear Personal Opinion</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Sum-Up Primary Problems + Reaffirm Multi-Tiered Solutions</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e293b", lineHeight: 1.45 }}>
-              Concede that car-free days offer valuable short-term awareness and exhaust relief, but firmly reaffirm that long-term efficacy requires permanent clean transit and strict regulations.
+              Reiterate the dual ecological crisis of overflowing dumps and contaminated oceans, concluding that proactive bans, fiscal packaging taxes, and compostable innovation can transition society toward a circular economy.
             </p>
           </div>
         </div>
@@ -204,28 +204,28 @@ In conclusion, while car-free days provide valuable short-term benefits by tempo
               title: "Task Response",
               color: "#2563eb",
               bg: "#eff6ff",
-              rule: "Equal, nuanced evaluation of both perspectives with an unambiguous, consistently maintained personal opinion throughout."
+              rule: "Equal, fully developed coverage of both questions (problems & solutions) with logical causal chains and specific policy examples."
             },
             {
               code: "CC",
               title: "Coherence & Cohesion",
               color: "#16a34a",
               bg: "#f0fdf4",
-              rule: "Flawless discourse progression: 'It is often argued... While... On the one hand... On the other hand... In conclusion...'."
+              rule: "Seamless progression markers: 'In contemporary society... To begin with... Furthermore... Over time... Nevertheless... Firstly... Secondly... Finally... In conclusion...'."
             },
             {
               code: "LR",
               title: "Lexical Resource",
               color: "#9333ea",
               bg: "#faf5ff",
-              rule: "Authentic Band 9 mobility & environmental lexis: 'transient', 'pedestrianise', 'mitigate', 'infrastructure', 'subsidise', 'stringent regulatory standards'."
+              rule: "Authentic Band 9 environmental lexis: 'ubiquitous', 'biodegradability', 'trophic levels', 'statutory bans', 'fiscal deterrent', 'extended producer responsibility'."
             },
             {
               code: "GRA",
               title: "Grammatical Accuracy",
               color: "#d97706",
               bg: "#fffbeb",
-              rule: "Sophisticated concessive and compound-complex structures ('While temporary vehicle bans can foster...', 'Because vehicle bans are transient...') with flawless syntax."
+              rule: "Complex conditional and causal structures ('Because petroleum-based plastics are engineered for...', 'As evidenced by...') with flawless syntax."
             }
           ].map((chk) => (
             <div
@@ -281,7 +281,7 @@ In conclusion, while car-free days provide valuable short-term benefits by tempo
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <Sparkles size={16} color="var(--apple-blue)" />
             <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
-              Complete Band 9 Model Essay (335 Words • 4-Paragraph Discussion with Opinion Architecture)
+              Complete Band 9 Model Essay (335 Words • 4-Paragraph Problems and Solutions Architecture)
             </strong>
             <span style={{ fontSize: "0.72rem", background: "#f1f5f9", color: "#475569", padding: "2px 8px", borderRadius: "6px" }}>
               {showEssay ? "Click to collapse" : "Click to view full text"}
@@ -306,16 +306,16 @@ In conclusion, while car-free days provide valuable short-term benefits by tempo
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong>1. Intro (Paraphrase + Balanced Thesis Statement &amp; Opinion):</strong> It is often argued that designating car-free days serves as an effective strategy to combat urban air pollution, whereas others contend that more impactful alternatives exist. While temporary vehicle bans can foster environmental awareness and offer immediate short-term relief from exhaust emissions, I believe that systemic measures, such as expanding green public transit and enforcing strict industrial regulations, represent far more effective long-term solutions.
+              <strong>1. Intro (Paraphrase + Direct Dual Thesis):</strong> In contemporary society, manufactured single-use items have become exceptionally ubiquitous across domestic and commercial sectors. While this disposable culture inflicts severe environmental degradation, notably acute landfill saturation and marine contamination, viable solutions exist, including statutory product bans, fiscal deterrents, and state subsidies for biodegradable alternatives.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>2. Body Para 1 (View 1: Car-Free Days Are Effective — Immediate Relief &amp; Civic Awareness):</strong> On the one hand, proponents of car-free days highlight their immediate environmental and civic benefits. Restricting private vehicular access to city centers, even for a single day, produces a dramatic and measurable reduction in toxic tailpipe emissions, such as nitrogen dioxide and fine particulate matter. In major metropolises like Paris and Bogota, annual car-free events have demonstrated sharp, observable drops in atmospheric pollutants, affording urban residents cleaner air and quieter streets. Furthermore, such initiatives serve a vital psychological function by fostering public awareness regarding automobile dependency. When urbanites experience pedestrianised boulevards firsthand, they are encouraged to consider active transportation modes like cycling and walking, which can stimulate long-term behavioural changes toward sustainable living.
+              <strong>2. Body Para 1 (The Problems — Landfill Saturation &amp; Marine Toxicity):</strong> To begin with, the unchecked dominance of single-use commodities triggers immense ecological crises, most notably acute landfill exhaustion and pervasive marine pollution. Because petroleum-based plastics are engineered for durability rather than biodegradability, they linger in landfills for centuries, overwhelming municipal waste management infrastructure worldwide. Furthermore, a substantial percentage of lightweight disposable containers inevitably escapes waste streams and migrates into aquatic environments. In oceans, marine wildlife routinely ingests discarded plastic fragments, suffering fatal internal blockages and starvation. Over time, these polymers fragment into toxic microplastics, which absorb industrial carcinogens and bioaccumulate through marine trophic levels, ultimately posing severe endocrine and oncological risks to human consumers.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>3. Body Para 2 (View 2 &amp; Opinion: Alternative Measures Are More Effective — Transit &amp; Regulations):</strong> On the other hand, critics argue that car-free days are merely symbolic and that alternative structural measures possess greater long-term efficacy. Because vehicle bans are transient, traffic congestion and emissions inevitably rebound the very next day, failing to deliver permanent ecological improvement. Instead, the most impactful way to curb air pollution is by developing comprehensive, affordable public transit infrastructure. When municipal governments invest heavily in electrified bus fleets and extensive underground metro networks, commuters are provided with viable daily alternatives to private car ownership. Additionally, governments can implement continuous economic deterrents, such as congestion charges and low-emission zones, alongside stringent regulatory standards on industrial output and fossil-fuel vehicles. These permanent policies address the root causes of pollution continuously rather than intermittently.
+              <strong>3. Body Para 2 (The Solutions — Statutory Bans, Taxes, Subsidies &amp; EPR):</strong> Nevertheless, this environmental dilemma can be effectively resolved through a coordinated approach combining legislative deterrents, material innovation, and corporate accountability. Firstly, national governments must institute statutory bans on unnecessary single-use items, accompanied by substantial fiscal levies on remaining disposable packaging. As evidenced by jurisdictions like Ireland, implementing plastic taxes rapidly curtails consumer reliance on disposables by making reusable alternatives economically advantageous. Secondly, authorities should provide research subsidies and tax breaks to companies developing fully compostable materials derived from seaweed, cornstarch, or agricultural residues. Finally, enforcing stringent Extended Producer Responsibility mandates would require manufacturers to cover the full financial cost of collecting and recycling their packaging, compelling multinational corporations to transition toward sustainable, circular product designs.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>4. Conclusion (Sum-Up Both Views + Re-affirm Clear Personal Opinion):</strong> In conclusion, while car-free days provide valuable short-term benefits by temporarily reducing vehicular exhaust and encouraging public mindfulness, they are fundamentally insufficient as a standalone policy. In my view, achieving lasting air quality improvements requires permanent systemic solutions, primarily heavy investment in zero-emission public transit networks and the rigorous enforcement of stringent vehicle emission standards.
+              <strong>4. Conclusion (Synthesize Dilemma + Reaffirm Circular Future):</strong> In conclusion, the widespread prevalence of single-use items poses grave ecological threats, chiefly the overwhelming of municipal landfills and the pervasive contamination of aquatic ecosystems. Nevertheless, through decisive government intervention—including strict legislative bans, targeted packaging taxes, and the subsidisation of biodegradable materials—societies can effectively reverse this disposable trend and transition toward a sustainable circular economy.
             </p>
           </div>
         )}

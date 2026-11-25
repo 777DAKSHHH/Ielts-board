@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2, TrendingUp, ShieldCheck, Sparkles, Award, Layers } from "lucide-react";
+import { CheckCircle2, TrendingUp, ShieldCheck, Sparkles, Award, Layers, ShoppingBag, Utensils } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step6FlowBreakdown: React.FC = () => {
@@ -9,18 +9,18 @@ export const Step6FlowBreakdown: React.FC = () => {
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 06 / 08 • Body 1 — Agricultural &amp; Extraction Flow
+          Step 06 / 08 • Body 1 — Retail Shops &amp; Dining Establishments
         </span>
-        <h2 className="stage-title">Deconstructing Body Paragraph 1: Field Cultivation to Raw Juice</h2>
+        <h2 className="stage-title">Deconstructing Body Paragraph 1: Comparative Tabular Analysis</h2>
         <p className="stage-subtitle">
-          Examine the chronological and passive voice progression: opening with sugarcane cultivation in fields (12–18 months), moving to the essential dual harvest comparison (mechanised combine harvester vs manual hand sickle), and concluding with mechanical roller crushing to extract raw liquid juice.
+          Examine the comparative progression across Tables 1 and 2: opening with retail shops (double female extreme enthusiasm alongside identical 20% dissatisfaction), progressing to dining facilities (peak 80% male approval contrasted with fourfold female dissatisfaction at 21%).
         </p>
       </div>
 
       <div className="stage-grid-2col">
         {/* Left Column: 3 Analytical Process Stage Clusters */}
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-          {/* Cluster 1: Stage 1 Field Growing */}
+          {/* Cluster 1: Retail Shops Gender Comparison */}
           <div
             style={{
               background: "var(--slate-50)",
@@ -34,33 +34,33 @@ export const Step6FlowBreakdown: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#16a34a" }} />
+                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#2563eb" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  1. Stage 1: Agricultural Cultivation (12–18 Months)
+                  1. Retail Shops: Double Female Extreme Enthusiasm
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f0fdf4", color: "#166534", fontWeight: 800 }}>
-                Initial Maturation
+              <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#eff6ff", color: "#1e40af", fontWeight: 800 }}>
+                Enthusiasm Doubling
               </span>
             </div>
 
             <div style={{ background: "#ffffff", borderRadius: "10px", padding: "12px", border: "1px solid var(--border-subtle)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontSize: "0.85rem", fontWeight: 600, color: "var(--slate-700)" }}>
-                  Field Parameters:
+                  Very Satisfied Metric:
                 </span>
-                <span style={{ fontSize: "0.95rem", fontWeight: 800, color: "#16a34a" }}>
-                  Sugarcane Seedlings → 12–18 Month Growth
+                <span style={{ fontSize: "0.95rem", fontWeight: 800, color: "#2563eb" }}>
+                  Females 34% vs Males 17% (2x)
                 </span>
               </div>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Analytical Role:</strong> Establishes the initial biological phase. Sugarcanes are planted in agricultural fields and require an extended growing duration of 12 to 18 months before reaching harvestable maturity.
+              <strong>Analytical Role:</strong> Highlights gender divergence in enthusiasm. 45% of men were satisfied and 17% very satisfied (62% total), whereas female shoppers were twice as likely to express extreme satisfaction (34% vs 17%, with 37% satisfied).
             </p>
           </div>
 
-          {/* Cluster 2: Stage 2 Dual Harvesting Methods */}
+          {/* Cluster 2: Retail Dissatisfaction Parity */}
           <div
             style={{
               background: "var(--slate-50)",
@@ -76,20 +76,20 @@ export const Step6FlowBreakdown: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#059669" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  2. Stage 2: Dual Harvesting (Machine vs Hand Sickle)
+                  2. Retail Dissatisfaction: Exact Gender Parity (20%)
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#ecfdf5", color: "#065f46", fontWeight: 800 }}>
-                Examiner Must-Report
+                Identical Rate
               </span>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Key Phrasing:</strong> <em>“Once fully grown, the canes are harvested using one of two methods: either mechanically utilizing combine harvesters or manually by agricultural laborers cutting the stalks with hand blades.”</em>
+              <strong>Key Phrasing:</strong> <em>“...while dissatisfaction rates for both sexes were identical at 20%.”</em> Examiner tip: Grouping identical figures is a hallmark of Band 9 synthesizing efficiency.
             </p>
           </div>
 
-          {/* Cluster 3: Stage 3 Mechanical Roller Crushing */}
+          {/* Cluster 3: Dining Facilities Disparity */}
           <div
             style={{
               background: "var(--slate-50)",
@@ -105,16 +105,16 @@ export const Step6FlowBreakdown: React.FC = () => {
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#0284c7" }} />
                 <h4 style={{ fontSize: "1.05rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                  3. Stage 3: Cylindrical Rollers &amp; Juice Extraction
+                  3. Dining: 80% Male Approval vs Quadruple Female Dissatisfaction
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.72rem", background: "#f0f9ff", color: "#0369a1", fontWeight: 800 }}>
-                Liquid Extraction
+                Sharp Contrast
               </span>
             </div>
 
             <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.45 }}>
-              <strong>Mechanical Function:</strong> Harvested stalks enter a crushing mill equipped with heavy rotating cylindrical rollers that squeeze out the raw liquid juice while discarding dry fibrous bagasse.
+              <strong>Stark Contrast:</strong> Male visitors expressed overwhelming contentment (55% satisfied + 25% very satisfied = 80%) with a negligible 5% dissatisfaction, whereas female dissatisfaction reached 21% (more than four times higher).
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ export const Step6FlowBreakdown: React.FC = () => {
                 </h4>
               </div>
               <span className="apple-badge neutral" style={{ fontSize: "0.75rem", fontWeight: 750, background: "#f0fdf4", color: "#166534" }}>
-                Stages 1 to 3
+                Tables 1 &amp; 2
               </span>
             </div>
 
@@ -186,22 +186,22 @@ export const Step6FlowBreakdown: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <ShieldCheck size={18} color="#16a34a" />
               <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                Band 9 Sequential Flow Blueprint for Body 1
+                Band 9 Comparative Architecture for Body 1
               </h4>
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.85rem" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>1</span>
-                <span><strong>Temporal Process Opener &amp; Maturation:</strong> <em>“To begin with, sugarcanes are grown in agricultural fields over a maturation period lasting between 12 and 18 months.”</em></span>
+                <span><strong>Retail Base Sentence &amp; Gender Disparity:</strong> <em>“In retail shops, 45% of male visitors were satisfied alongside 17% who were very satisfied. By comparison, female shoppers demonstrated considerably higher enthusiasm, with 34% describing themselves as very satisfied—exactly double the male proportion...”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>2</span>
-                <span><strong>Correlative Harvesting Comparison:</strong> <em>“Once fully grown, the canes are harvested using one of two methods: either mechanically utilizing combine harvesters or manually by agricultural laborers cutting the stalks with hand blades.”</em></span>
+                <span><strong>Similarity Anchor (Shared 20%):</strong> <em>“...while dissatisfaction rates for both sexes were identical at 20%.”</em></span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "22px", textAlign: "center" }}>3</span>
-                <span><strong>Mechanical Extraction Transition:</strong> <em>“Following the harvest, the raw stalks are fed through heavy rotating rollers in a crushing mill, which compress the plant material to extract raw liquid juice.”</em></span>
+                <span><strong>Dining Contrast &amp; Multiplicative Ratio:</strong> <em>“Regarding dining establishments, male visitors expressed overwhelming contentment, with 55% satisfied and 25% very satisfied, whereas dissatisfaction was negligible at just 5%. In sharp contrast, female dissatisfaction stood at 21%, more than fourfold higher than that of their male counterparts.”</em></span>
               </div>
             </div>
           </div>
