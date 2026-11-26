@@ -8,7 +8,10 @@ import {
   CheckCircle2,
   TrendingUp,
   Award,
-  Filter
+  Filter,
+  Car,
+  Home,
+  Compass
 } from "lucide-react";
 import { tactilePress } from "../../motion";
 
@@ -28,264 +31,207 @@ const FLASHCARDS: FlashcardItem[] = [
     id: 1,
     category: "Card 1: Macro Qualitative Overview (Zero Numbers Rule)",
     badgeColor: "#059669",
-    question: "What are the core overarching features that must be highlighted in the overview for this Auckland Shopping Complex Survey?",
-    answerTitle: "Overall Positive Approval, Design Dominance & Stark Dining Gender Disparity",
+    question: "What overarching transformations must be emphasized in a Band 9 overview for the Islip development maps?",
+    answerTitle: "Infrastructural Modernization, Circumscribing Bypass & Expansion at Expense of Green Space",
     bulletPoints: [
-      "Pillar 1 (General High Approval): Visitors viewed the complex predominantly positively across all three evaluated sectors, with complex architectural design achieving the highest cumulative approval (79% favorable).",
-      "Pillar 2 (Gender Divergence in Dining): While both male and female cohorts exhibited identical dissatisfaction with retail shops (20%), attitudes toward dining facilities diverged sharply, with female dissatisfaction exceeding the male rate by more than four times.",
-      "Golden Rule: Never list raw numbers or individual percentages in the overview; synthesize overarching tendencies and primary contrasts."
+      "Pillar 1 (Transport Modernization): The town shifts from a traffic-bisected rural settlement into a pedestrianised core enclosed by an outer dual carriageway bypass.",
+      "Pillar 2 (Land-Use & Expansion): Substantial residential and commercial growth occurs to the north and east at the direct expense of rural countryside and municipal parkland.",
+      "Golden Rule: Never report minor micro-details in the overview; synthesize systemic spatial shifts and macro civic trade-offs."
     ],
     band9Phrase:
-      "“Overall, the shopping complex garnered predominantly positive feedback across all evaluated domains, with architectural design receiving the highest aggregate approval. Notably, while dissatisfaction with retail shops was identical between genders, dining facilities revealed a pronounced disparity, as females were considerably more critical than males.”"
+      "“Overall, the town centre is slated to undergo extensive infrastructural modernization, transitioning from a traffic-bisected settlement into a predominantly pedestrianised commercial and residential hub. The most prominent changes involve the construction of a perimeter dual carriageway encircling the central core, alongside substantial residential and commercial expansion to the north and east at the expense of open countryside and recreational parkland.”"
   },
   {
     id: 2,
-    category: "Card 2: Retail Shops Proportions & Parity (Body 1A)",
-    badgeColor: "#16a34a",
-    question: "How do you systematically report and contrast male and female responses for retail shops in Table 1?",
-    answerTitle: "Enthusiasm Doubling (34% vs 17%) & Dissatisfaction Parity (20%)",
+    category: "Card 2: Transport Infrastructure & Bypass Dynamics (Body 1A)",
+    badgeColor: "#2563eb",
+    question: "How do you accurately describe the perimeter dual carriageway and central pedestrianisation?",
+    answerTitle: "Circumscription of Central Core & Conversion to Foot Traffic",
     bulletPoints: [
-      "Male Ratings: 45% satisfied and 17% very satisfied, yielding a solid 62% combined positive evaluation.",
-      "Female Ratings: 37% satisfied, but extreme enthusiasm was exactly double that of men (34% vs 17%), yielding 71% total positive rating.",
-      "The Unifying Similarity: Despite divergent enthusiasm, both genders registered an identical 20% dissatisfaction rate.",
-      "Neutrality Contrast: 18% of men offered no comment compared to just 9% of women."
+      "Bypass Function: A new dual carriageway completely circumscribes the town core, linking western and eastern roads to divert through-traffic.",
+      "Pedestrianisation: The central east-west main road is closed to vehicular traffic and redesignated as 'Pedestrians only'.",
+      "Key Prepositions: 'encircling the urban core', 'circumscribing the perimeter', 'bisecting the settlement', 'diverting traffic around'."
     ],
     band9Phrase:
-      "“In retail shops, 45% of male visitors were satisfied alongside 17% who were very satisfied. By comparison, female shoppers demonstrated considerably higher enthusiasm, with 34% describing themselves as very satisfied—exactly double the male proportion—while dissatisfaction rates for both sexes were identical at 20%.”"
+      "“Regarding transport infrastructure and the northern sector, the current main road bisecting the town centre will be converted into a pedestrianised thoroughfare. To accommodate through vehicular traffic, a new dual carriageway will be constructed to circumscribe the entire urban core, linking the western and eastern access roads.”"
   },
   {
     id: 3,
-    category: "Card 3: Restaurants & Dining Contrast (Body 1B)",
-    badgeColor: "#ea580c",
-    question: "How do you frame the dramatic contrast between men and women in Table 2 (Restaurants)?",
-    answerTitle: "Peak Male Approval (80%) vs Quadruple Female Dissatisfaction (21% vs 5%)",
+    category: "Card 3: Northern Commercial Hub & Countryside Expansion (Body 1B)",
+    badgeColor: "#7c3aed",
+    question: "How do you frame the demolition of the northern shops and development of greenfield land?",
+    answerTitle: "Complete Demolition for Tripartite Complex & Greenfield Housing",
     bulletPoints: [
-      "Peak Male Contentment: Men registered the highest positive feedback in the entire survey, with 55% satisfied and 25% very satisfied (80% total approval), while dissatisfaction was minuscule at 5%.",
-      "Stark Female Displeasure: In sharp contrast, female dissatisfaction stood at 21%, more than fourfold higher than that of males.",
-      "Neutrality Cohort: Female patrons also displayed higher neutrality (20% no comment vs 15% for males)."
+      "Commercial Replacement: The existing northern row of shops is completely demolished to construct a tripartite complex: bus station, shopping centre, and car park.",
+      "Greenfield Housing: Open countryside to the north-east is converted into a new housing development with a dedicated road feeder from the dual carriageway.",
+      "Lexical Resource: 'completely demolished', 'make way for', 'tripartite transit and retail complex', 'erected on what is currently open countryside'."
     ],
     band9Phrase:
-      "“Regarding dining establishments, male visitors expressed overwhelming contentment, with 55% satisfied and 25% very satisfied, whereas dissatisfaction was negligible at just 5%. In sharp contrast, female dissatisfaction stood at 21%, more than fourfold higher than that of their male counterparts.”"
+      "“Furthermore, the northern row of shops will be completely demolished to make way for a newly built bus station, shopping centre, and car park. North-east of this complex, on what is currently open countryside, a new housing development will be erected with dedicated road access.”"
   },
   {
     id: 4,
-    category: "Card 4: Complex Architectural Design (Body 2)",
-    badgeColor: "#7c3aed",
-    question: "How do you deconstruct the single pie chart for overall design without repeating tabular language?",
-    answerTitle: "Proportional Fractions (Nearly Two-Thirds) & Cumulative Synthesis (79%)",
+    category: "Card 4: Southern Retention, Park Diminution & School Access (Body 2)",
+    badgeColor: "#ea580c",
+    question: "How do you structure Body Paragraph 2 to balance retention with major south-eastern changes?",
+    answerTitle: "Southern Retail Retention, Parkland Compression & Direct Bypass Feeder",
     bulletPoints: [
-      "Dominant Majority: 62% satisfied represents nearly two-thirds (~5/8) of all respondents, forming the single largest cohort in the survey.",
-      "Cumulative Synthesis: Adding 17% very satisfied brings total positive approval to 79%.",
-      "Minority Opposition & Indifference: Dissatisfaction and neutral non-responses accounted for only 10% and 11% respectively."
+      "Structural Retention: Southern shops remain intact, now enjoying direct frontage onto the peaceful pedestrian street; existing central housing is also preserved.",
+      "Park Diminution: A second new housing estate is erected east of the central houses, resulting in a marked diminution of the park.",
+      "School Reconfiguration: The school in the south-west is retained, but its access road is reconnected directly to the southern arc of the dual carriageway."
     ],
     band9Phrase:
-      "“Regarding the complex's design, the pie chart indicates widespread acclaim, with nearly two-thirds of respondents (62%) reporting satisfaction. An additional 17% were very satisfied, bringing total positive sentiment to 79%, whereas negative appraisals and neutral responses were marginal at 10% and 11% respectively.”"
+      "“Turning to the southern zone, the existing row of shops will be preserved intact alongside the residential neighborhood immediately to its south. In contrast, the south-eastern sector will undergo noticeable reconfiguration: a second new housing estate will be built, leading to a substantial diminution of the adjacent parkland. Finally, the school in the south-west will be retained, but its existing curved access route will be connected directly to the southern arc of the dual carriageway.”"
   }
 ];
 
 export const BitsAndPiecesFlashcards: React.FC = () => {
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
 
-  const card = FLASHCARDS[currentIdx];
+  const card = FLASHCARDS[currentIndex];
 
   const handleNext = () => {
     setIsFlipped(false);
-    setCurrentIdx((prev) => (prev + 1) % FLASHCARDS.length);
+    setCurrentIndex((prev) => (prev + 1) % FLASHCARDS.length);
   };
 
   const handlePrev = () => {
     setIsFlipped(false);
-    setCurrentIdx((prev) => (prev - 1 + FLASHCARDS.length) % FLASHCARDS.length);
-  };
-
-  const handleFlip = () => {
-    setIsFlipped((prev) => !prev);
+    setCurrentIndex((prev) => (prev - 1 + FLASHCARDS.length) % FLASHCARDS.length);
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "16px",
-        width: "100%",
-        fontFamily: "system-ui, -apple-system, sans-serif"
-      }}
-    >
-      {/* Top Controller Strip */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "10px",
-          background: "#f8fafc",
-          border: "1px solid #e2e8f0",
-          borderRadius: "14px",
-          padding: "10px 16px"
-        }}
-      >
+    <div style={{ display: "flex", flexDirection: "column", gap: "16px", width: "100%", maxWidth: "800px", margin: "0 auto" }}>
+      {/* Flashcard Header Controls */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <Sparkles size={18} color="#2563eb" />
-          <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>
-            Pedagogical Flashcards: Auckland Shopping Complex Survey
-          </strong>
           <span
             style={{
               fontSize: "0.74rem",
               fontWeight: 800,
-              background: card.badgeColor,
-              color: "#ffffff",
-              padding: "2px 8px",
+              background: `${card.badgeColor}15`,
+              color: card.badgeColor,
+              padding: "3px 10px",
               borderRadius: "6px"
             }}
           >
-            Card {card.id} of {FLASHCARDS.length}
+            {card.category}
+          </span>
+          <span style={{ fontSize: "0.78rem", color: "#64748b", fontWeight: 700 }}>
+            Card {currentIndex + 1} of {FLASHCARDS.length}
           </span>
         </div>
 
-        {/* Prev / Next & Flip Buttons */}
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        <div style={{ display: "flex", gap: "6px" }}>
           <button
             type="button"
             onClick={handlePrev}
             style={{
               padding: "6px 12px",
               borderRadius: "8px",
+              border: "1px solid #e2e8f0",
               background: "#ffffff",
-              border: "1px solid #cbd5e1",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "4px",
               fontSize: "0.78rem",
-              fontWeight: 750,
+              fontWeight: 700,
               color: "#0f172a"
             }}
           >
-            <ChevronLeft size={16} />
-            <span>Prev</span>
+            <ChevronLeft size={16} /> Prev
           </button>
-
-          <button
-            type="button"
-            onClick={handleFlip}
-            style={{
-              padding: "6px 14px",
-              borderRadius: "8px",
-              background: "#2563eb",
-              border: "none",
-              color: "#ffffff",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              gap: "6px",
-              fontSize: "0.78rem",
-              fontWeight: 750,
-              boxShadow: "0 2px 8px rgba(37, 99, 235, 0.25)"
-            }}
-          >
-            <RotateCw size={14} />
-            <span>{isFlipped ? "Show Prompt Question" : "Reveal Band 9 Deconstruction"}</span>
-          </button>
-
           <button
             type="button"
             onClick={handleNext}
             style={{
               padding: "6px 12px",
               borderRadius: "8px",
+              border: "1px solid #e2e8f0",
               background: "#ffffff",
-              border: "1px solid #cbd5e1",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               gap: "4px",
               fontSize: "0.78rem",
-              fontWeight: 750,
+              fontWeight: 700,
               color: "#0f172a"
             }}
           >
-            <span>Next</span>
-            <ChevronRight size={16} />
+            Next <ChevronRight size={16} />
           </button>
         </div>
       </div>
 
-      {/* The Flashcard Body */}
-      <motion.div
-        key={`${card.id}-${isFlipped}`}
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.2 }}
-        onClick={handleFlip}
+      {/* Interactive Flip Card */}
+      <div
+        onClick={() => setIsFlipped(!isFlipped)}
         style={{
           background: "#ffffff",
           border: `2px solid ${card.badgeColor}`,
           borderRadius: "20px",
-          padding: "26px 30px",
-          minHeight: "320px",
-          boxShadow: "0 6px 20px rgba(0,0,0,0.04)",
-          cursor: "pointer",
+          padding: "26px",
+          minHeight: "340px",
           display: "flex",
           flexDirection: "column",
-          gap: "14px"
+          justifyContent: "space-between",
+          cursor: "pointer",
+          boxShadow: `0 8px 24px ${card.badgeColor}18`,
+          transition: "all 0.2s ease"
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ fontSize: "0.74rem", fontWeight: 800, color: card.badgeColor, textTransform: "uppercase" }}>
-            {card.category}
-          </span>
-          <span style={{ fontSize: "0.72rem", color: "#64748b", fontStyle: "italic" }}>
-            Tap card anywhere to {isFlipped ? "flip to question" : "flip to answer"} ↻
-          </span>
-        </div>
-
         {!isFlipped ? (
-          /* FRONT OF CARD: QUESTION */
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", margin: "auto 0" }}>
-            <span style={{ fontSize: "0.82rem", fontWeight: 750, color: "#64748b" }}>
-              CRITICAL EXAM QUESTION:
+          /* FRONT OF CARD (Question) */
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px", height: "100%", justifyContent: "center", textAlign: "center" }}>
+            <span style={{ fontSize: "0.75rem", fontWeight: 800, color: card.badgeColor, textTransform: "uppercase" }}>
+              Examiner Challenge Question
             </span>
-            <h2 style={{ fontSize: "1.35rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.45, margin: 0 }}>
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", lineHeight: 1.45 }}>
               {card.question}
-            </h2>
-            <div style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "12px", padding: "12px 16px", color: "#475569", fontSize: "0.86rem" }}>
-              💡 <em>Think through: What proportion markers and comparative structures are required? How do you synthesize the data? Tap above to reveal examiner breakdown.</em>
+            </h3>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", color: "#64748b", fontSize: "0.82rem", marginTop: "16px" }}>
+              <RotateCw size={15} /> Click anywhere to reveal the Band 9 Strategy
             </div>
           </div>
         ) : (
-          /* BACK OF CARD: ANSWER BREAKDOWN */
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <CheckCircle2 size={20} color={card.badgeColor} />
-              <h3 style={{ fontSize: "1.15rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
+          /* BACK OF CARD (Answer) */
+          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <strong style={{ fontSize: "1rem", color: card.badgeColor }}>
                 {card.answerTitle}
-              </h3>
+              </strong>
+              <span style={{ fontSize: "0.72rem", color: "#64748b" }}>Click to flip back</span>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               {card.bulletPoints.map((pt, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.86rem", color: "#334155", lineHeight: 1.45 }}>
-                  <span style={{ color: card.badgeColor, fontWeight: 800 }}>•</span>
+                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "0.85rem", color: "#334155", lineHeight: 1.45 }}>
+                  <CheckCircle2 size={16} color={card.badgeColor} style={{ flexShrink: 0, marginTop: "2px" }} />
                   <span>{pt}</span>
                 </div>
               ))}
             </div>
 
-            <div style={{ background: "#f8fafc", border: "1px solid #cbd5e1", borderLeft: `3.5px solid ${card.badgeColor}`, borderRadius: "10px", padding: "10px 14px", marginTop: "4px" }}>
-              <span style={{ fontSize: "0.7rem", fontWeight: 800, color: card.badgeColor, textTransform: "uppercase" }}>
-                Band 9 Model Implementation:
-              </span>
-              <p style={{ fontSize: "0.86rem", color: "#0f172a", fontStyle: "italic", margin: "3px 0 0", lineHeight: 1.45 }}>
-                {card.band9Phrase}
-              </p>
+            <div
+              style={{
+                background: "#f8fafc",
+                border: "1px solid #e2e8f0",
+                borderRadius: "10px",
+                padding: "10px 14px",
+                fontSize: "0.84rem",
+                fontStyle: "italic",
+                color: "#0f172a",
+                lineHeight: 1.5,
+                marginTop: "6px"
+              }}
+            >
+              {card.band9Phrase}
             </div>
           </div>
         )}
-      </motion.div>
+      </div>
     </div>
   );
 };

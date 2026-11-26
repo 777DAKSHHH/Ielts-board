@@ -32,16 +32,16 @@ export const Step4IntroOverview: React.FC = () => (
       <span className="apple-badge accent chromatic-glass-badge" style={{ marginBottom: "8px" }}>Step 04 / 08 • Sample Introduction &amp; Macro Overview</span>
       <h2 className="stage-title">Build the Introduction and Macro Overview</h2>
       <p className="stage-subtitle">
-        Paraphrase the survey graphic parameters (two tables and one pie chart, Auckland New Zealand shopping complex, four satisfaction tiers), and formulate a Band 9 macro overview highlighting dominant overall positive reception and the stark dining gender divergence.
+        Paraphrase the map parameters (Islip town centre, current layout vs planned development, strictly zero &lsquo;provided&rsquo;), and formulate a Band 9 macro overview highlighting extensive infrastructural modernization, outer circumscribing bypass, pedestrianised core, and green space diminution.
       </p>
     </div>
 
     <div className="stage-grid-2col">
       <QuoteCard
         icon={<BookOpen size={20} color="var(--slate-800)" />}
-        title="1. Sample Introduction (Multi-Graphic Scope Paraphrase)"
+        title="1. Sample Introduction (Comparative Maps Scope Paraphrase)"
         text={TASK1_DATA.sampleIntro}
-        badge="Accurate Scope"
+        badge="Zero 'Provided'"
       />
       <QuoteCard
         icon={<Sparkles size={20} color="var(--slate-800)" />}
@@ -58,25 +58,25 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <Compass size={18} color="var(--apple-blue)" />
           <h4 style={{ fontSize: "1rem", fontWeight: 750, color: "#0f172a", margin: 0 }}>
-            4-Element Introduction Architecture for Multi-Graphic Surveys
+            4-Element Introduction Architecture for Comparative Maps
           </h4>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-            <span><strong>Graphic Types &amp; Reporting Verb:</strong> <em>“The two tables and accompanying pie chart delineate...”</em> (accurately identifies multiple visual formats).</span>
+            <span><strong>Graphic Identifier &amp; Reporting Verb:</strong> <em>“The maps illustrate...”</em> (accurately introduces cartographic visuals and avoids the mechanical banned word &lsquo;provided&rsquo;).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-            <span><strong>Subject &amp; Geographic Location:</strong> <em>“...the results of a visitor satisfaction survey regarding a newly opened shopping complex in Auckland, New Zealand...”</em> (names facility and city).</span>
+            <span><strong>Subject &amp; Setting:</strong> <em>“...the town centre of Islip...”</em> (identifies the small town settlement core).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>3</span>
-            <span><strong>Evaluated Domains:</strong> <em>“...evaluating visitor sentiment across retail shops, dining establishments, and overall architectural design...”</em> (specifies all 3 measured areas).</span>
+            <span><strong>Temporal Relationship:</strong> <em>“...the current layout alongside proposed transformations...”</em> (establishes present baseline vs future masterplan).</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center", background: "#dbeafe", color: "#1e40af", fontWeight: 800 }}>4</span>
-            <span><strong>Measurement Scale:</strong> <em>“...expressed in percentage terms across four distinct sentiment classifications.”</em> (establishes percentages and 4 satisfaction tiers).</span>
+            <span><strong>Development Scope:</strong> <em>“...for its future redevelopment.”</em> (captures urban regeneration and restructuring).</span>
           </div>
         </div>
       </div>
@@ -92,15 +92,11 @@ export const Step4IntroOverview: React.FC = () => (
         <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 1 — Dominant Overall Positive Reception:</strong> Overall, the shopping complex garnered predominantly positive feedback across all evaluated domains, with architectural design receiving the highest aggregate approval.</span>
+            <span><strong>Pillar 1 — Transport &amp; Civic Shift:</strong> Overall, the town centre will transition from a traffic-bisected settlement into a pedestrianised core enclosed by an outer dual carriageway bypass.</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
             <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Pillar 2 — Key Gender Divergence:</strong> Notably, while dissatisfaction with retail shops was identical between genders, dining facilities revealed a pronounced disparity, as females were considerably more critical than males.</span>
-          </div>
-          <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
-            <CheckCircle2 size={16} color="#16a34a" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <span><strong>Examiner Anchor:</strong> Highlighting both the overarching favorable trend and the sharp dining disparity between sexes (without citing raw numbers) guarantees Band 9 in Task Achievement (TA).</span>
+            <span><strong>Pillar 2 — Expansion &amp; Green Space Trade-off:</strong> The core changes involve extensive commercial and residential expansion into the northern countryside and south-eastern sector at the expense of recreational parkland.</span>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ import {
   AlertTriangle,
   Layers
 } from "lucide-react";
-import { TASK2_DATA } from "../../data/task2Data";
+import { TASK2_DATA, USEFUL_LINKERS_BY_FUNCTION } from "../../data/task2Data";
 import { VocabCard } from "../common/VocabCard";
 
 interface Step4VocabProps {
@@ -420,6 +420,59 @@ export const Step4VocabT2: React.FC<Step4VocabProps> = ({ onSpeak, accent, setAc
               <p style={{ fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.5, margin: 0 }}>
                 Position discourse markers purposefully across the paragraph structure to open core arguments, unpack causal logic, bridge from problem to solution, and ground ideas with verified precedents.
               </p>
+            </div>
+          </div>
+
+          {/* 7 Functional Discourse Categories (Curriculum Bank) */}
+          <div
+            style={{
+              background: "#ffffff",
+              border: "1.5px solid #fed7aa",
+              borderRadius: "18px",
+              padding: "16px 20px",
+              boxShadow: "var(--shadow-sm)"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
+              <Sparkles size={18} color="#c2410c" />
+              <h4 style={{ fontSize: "1rem", fontWeight: 800, color: "#9a3412", margin: 0 }}>
+                Essential Linkers by Functional Purpose (Problems &amp; Solutions Bank)
+              </h4>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "12px" }}>
+              {USEFUL_LINKERS_BY_FUNCTION.map((cat, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: "#fffaf5",
+                    border: "1px solid #ffedd5",
+                    borderRadius: "12px",
+                    padding: "12px 14px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "6px"
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "0.74rem",
+                      fontWeight: 800,
+                      color: "#c2410c",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.03em"
+                    }}
+                  >
+                    ✦ {cat.purpose}
+                  </span>
+                  <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "0.84rem", color: "#334155", lineHeight: 1.5 }}>
+                    {cat.expressions.map((exp, eIdx) => (
+                      <li key={eIdx} style={{ marginBottom: "3px" }}>
+                        <span style={{ fontWeight: 650, color: "#0f172a" }}>{exp}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
 

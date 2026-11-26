@@ -4,15 +4,15 @@ import { CheckCircle2, Award, Copy, Check } from "lucide-react";
 const CONCLUSION_VARIATIONS = [
   {
     id: "standard",
-    title: "Style 1: Standard Balanced Synthesis & Policy Outlook",
-    badge: "Band 8.5–9 • Recommended",
-    summary: "Recaps landfill saturation and marine contamination, pairs them with statutory bans, taxes, and compostable subsidies, and provides a forward-looking outlook.",
-    text: "In conclusion, the widespread prevalence of single-use items poses grave ecological threats, chiefly the overwhelming of municipal landfills and the pervasive contamination of aquatic ecosystems. Nevertheless, through decisive government intervention—including strict legislative bans, targeted packaging taxes, and the subsidisation of biodegradable materials—societies can effectively reverse this disposable trend and transition toward a sustainable circular economy.",
-    breakdown: "Sentence 1: Synthesis of primary problems (landfill exhaustion & marine contamination) | Sentence 2: Targeted remedies (legislative bans, packaging taxes, and biodegradable subsidies) with circular economy outlook."
+    title: "Style 1: Official Sample Conclusion (43 Words)",
+    badge: "Band 9 • Exact Curriculum Model",
+    summary: "Restates the problems (environmental contamination + strain on infrastructure) and restates the solutions (charges/taxes + reusables + corporate accountability).",
+    text: "In conclusion, the proliferation of single-use goods has led to widespread environmental contamination and placed severe pressure on waste infrastructure. However, this issue can be mitigated through targeted charges, support for reusable products and corporate accountability for packaging waste.",
+    breakdown: "Sentence 1 — Restate the problems: Environmental contamination + strain on infrastructure | Sentence 2 — Restate the solutions: Charges/taxes + promotion of reusables + corporate accountability"
   },
   {
     id: "academic",
-    title: "Style 2: Academic Analytical Synthesis & Industrial Reform",
+    title: "Style 2: Academic Analytical Synthesis & Circular Reform",
     badge: "Band 9 • Advanced Lexicon",
     summary: "Elevated academic syntax contrasting transient disposable convenience with irreversible ecological degradation, highlighting corporate EPR and material science.",
     text: "To conclude, while disposable commodities afford fleeting consumer convenience, their unchecked proliferation inflicts profound biosphere degradation through persistent solid waste accumulation and toxic marine bioaccumulation. Resolving this crisis necessitates systemic regulatory reform, namely statutory prohibitions on non-essential polymers alongside the strict enforcement of Extended Producer Responsibility to mandate corporate circularity.",
@@ -47,7 +47,7 @@ export const Step8ConclusionT2: React.FC = () => {
         </span>
         <h2 className="stage-title">Sample Conclusion: Sum-Up Problems + Reaffirm Solutions</h2>
         <p className="stage-subtitle">
-          Mandatory Conclusion Format: <strong>Synthesize core problems (landfills &amp; oceans) + reiterate actionable solutions (bans, taxes, subsidies) with a circular economy perspective</strong>.
+          Mandatory Conclusion Format: <strong>Synthesize core problems (landfills &amp; oceans) + reiterate actionable solutions (charges, reusables, corporate accountability)</strong>.
         </p>
       </div>
 
@@ -161,8 +161,38 @@ export const Step8ConclusionT2: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Golden Rules & Formula Check */}
+        {/* Right Column: Golden Rules & Teaching Recommendation */}
         <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {/* Teaching Recommendation Card */}
+          <div
+            style={{
+              background: "#eff6ff",
+              border: "1.5px solid #bfdbfe",
+              borderRadius: "18px",
+              padding: "18px 20px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "8px"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <Award size={18} color="#2563eb" />
+              <h4 style={{ fontSize: "0.96rem", fontWeight: 800, color: "#1e3a8a", margin: 0 }}>
+                Faculty Teaching Recommendation
+              </h4>
+            </div>
+            <p style={{ margin: 0, fontSize: "0.85rem", color: "#1e40af", lineHeight: 1.5 }}>
+              Encourage students to focus on:
+            </p>
+            <ul style={{ margin: 0, paddingLeft: "18px", fontSize: "0.85rem", color: "#1e40af", lineHeight: 1.5 }}>
+              <li><strong>2 clear problems in Body 1</strong></li>
+              <li><strong>2 well-developed solutions in Body 2</strong></li>
+            </ul>
+            <p style={{ margin: "4px 0 0", fontSize: "0.82rem", color: "#2563eb", fontStyle: "italic" }}>
+              ✦ This ensures depth and fully elaborated causal chains rather than superficial listing.
+            </p>
+          </div>
+
           <div
             style={{
               background: "#ffffff",
@@ -185,11 +215,11 @@ export const Step8ConclusionT2: React.FC = () => {
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", fontSize: "0.88rem" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>1</span>
-                <span><strong>Sum-Up Primary Problems:</strong> Concisely synthesize the primary dilemmas (acute landfill saturation and pervasive marine contamination).</span>
+                <span><strong>Sentence 1 — Restate Problems:</strong> Environmental contamination + strain on infrastructure.</span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "8px", color: "var(--slate-700)" }}>
                 <span className="apple-badge neutral" style={{ minWidth: "24px", textAlign: "center" }}>2</span>
-                <span><strong>Re-affirm Strategic Solutions:</strong> Reiterate targeted policy and industrial remedies (statutory bans, single-use taxes, and subsidies for compostable packaging) with a forward-looking circular economy outlook.</span>
+                <span><strong>Sentence 2 — Restate Solutions:</strong> Targeted charges/taxes + promotion of reusables + corporate accountability.</span>
               </div>
             </div>
           </div>

@@ -12,9 +12,9 @@ export const Step5IntroStructureT2: React.FC = () => {
   };
 
   const sentence1 =
-    "In contemporary society, manufactured single-use items have become exceptionally ubiquitous across domestic and commercial sectors.";
+    "The widespread use of single-use products has become a prominent feature of modern consumer society.";
   const sentence2 =
-    "While this disposable culture inflicts severe environmental degradation, notably acute landfill saturation and marine contamination, viable solutions exist, including statutory product bans, fiscal deterrents, and state subsidies for biodegradable alternatives.";
+    "However, this trend contributes to environmental pollution, excessive resource consumption and growing waste-management challenges. These problems can be addressed through stricter government regulations, greater corporate responsibility and a shift towards reusable alternatives.";
 
   return (
     <div className="stage-card-wrapper">
@@ -45,7 +45,7 @@ export const Step5IntroStructureT2: React.FC = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <BookOpen size={22} color="var(--apple-blue)" />
               <h4 style={{ fontSize: "1.2rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
-                Sample Introduction (2 Sentences • ~49 Words)
+                Sample Introduction (3 Sentences • 52 Words)
               </h4>
             </div>
 
@@ -70,165 +70,122 @@ export const Step5IntroStructureT2: React.FC = () => {
             </button>
           </div>
 
-          {/* Explicitly Split 2-Sentence Display */}
+          {/* Explicitly Split 2-Element Display */}
           <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-            {/* Sentence 1: Paraphrase */}
+            {/* Element 1: Paraphrase */}
             <div
               style={{
                 background: "#ffffff",
                 border: "1.5px solid #bfdbfe",
                 borderRadius: "14px",
                 padding: "16px 18px",
-                boxShadow: "var(--shadow-sm)"
+                display: "flex",
+                flexDirection: "column",
+                gap: "6px"
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "6px" }}>
-                <span
-                  style={{
-                    fontSize: "0.74rem",
-                    fontWeight: 800,
-                    background: "#eff6ff",
-                    color: "#1e40af",
-                    padding: "2px 8px",
-                    borderRadius: "5px",
-                    textTransform: "uppercase"
-                  }}
-                >
-                  Sentence 1 • Paraphrase
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <span className="apple-badge neutral" style={{ background: "#dbeafe", color: "#1e40af", fontSize: "0.74rem", fontWeight: 800 }}>
+                  Sentence 1 • Paraphrase Prompt
                 </span>
-                <span style={{ fontSize: "0.8rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                  (15 words)
-                </span>
+                <span style={{ fontSize: "0.74rem", color: "var(--slate-500)", fontWeight: 700 }}>~15 Words</span>
               </div>
-              <p style={{ margin: 0, fontSize: "1.12rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.55 }}>
+              <p style={{ margin: 0, fontSize: "1.05rem", color: "var(--slate-900)", lineHeight: 1.6, fontWeight: 650 }}>
                 “{sentence1}”
               </p>
+              <span style={{ fontSize: "0.78rem", color: "var(--slate-500)" }}>
+                Restates “single-use products are very common” as “widespread use of single-use products has become a prominent feature of modern consumer society”.
+              </span>
             </div>
 
-            {/* Sentence 2: Explicit Outline Statement */}
+            {/* Element 2: Direct Thesis & Outline */}
             <div
               style={{
                 background: "#ffffff",
-                border: "1.5px solid #fed7aa",
+                border: "1.5px solid #bbf7d0",
                 borderRadius: "14px",
                 padding: "16px 18px",
-                boxShadow: "var(--shadow-sm)"
+                display: "flex",
+                flexDirection: "column",
+                gap: "6px"
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "6px" }}>
-                <span
-                  style={{
-                    fontSize: "0.74rem",
-                    fontWeight: 800,
-                    background: "#fff7ed",
-                    color: "#c2410c",
-                    padding: "2px 8px",
-                    borderRadius: "5px",
-                    textTransform: "uppercase"
-                  }}
-                >
-                  Sentence 2 • Direct Problem &amp; Solution Thesis
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <span className="apple-badge neutral" style={{ background: "#dcfce7", color: "#166534", fontSize: "0.74rem", fontWeight: 800 }}>
+                  Sentences 2 &amp; 3 • Direct Outline (Problems &amp; Solutions)
                 </span>
-                <span style={{ fontSize: "0.8rem", color: "var(--slate-500)", fontWeight: 600 }}>
-                  (34 words)
-                </span>
+                <span style={{ fontSize: "0.74rem", color: "var(--slate-500)", fontWeight: 700 }}>~37 Words</span>
               </div>
-              <p style={{ margin: 0, fontSize: "1.12rem", fontWeight: 650, color: "var(--slate-900)", lineHeight: 1.55 }}>
+              <p style={{ margin: 0, fontSize: "1.05rem", color: "var(--slate-900)", lineHeight: 1.6, fontWeight: 650 }}>
                 “{sentence2}”
               </p>
+              <span style={{ fontSize: "0.78rem", color: "var(--slate-500)" }}>
+                Directly flags the problems (pollution, resource consumption, waste management) and maps the solutions (regulations, corporate responsibility, reusables).
+              </span>
             </div>
-          </div>
-
-          {/* Unified Full Intro Text Box */}
-          <div
-            style={{
-              background: "#ffffff",
-              border: "1px dashed var(--border-default)",
-              borderRadius: "12px",
-              padding: "14px 16px",
-              fontSize: "0.98rem",
-              lineHeight: 1.6,
-              color: "var(--slate-700)"
-            }}
-          >
-            <strong style={{ color: "var(--slate-900)" }}>Full Combined Introduction:</strong>{" "}
-            {TASK2_DATA.sampleIntro}
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--slate-600)", fontSize: "0.9rem", fontWeight: 600 }}>
-            <Clock size={16} /> Exactly 49 words • 2 sentences • Fast exam execution (~1.5 mins)
           </div>
         </div>
 
-        {/* Right Column: Breakdown & One-Liner Planning Points */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-          <div
-            style={{
-              background: "#eff6ff",
-              border: "1.5px solid #bfdbfe",
-              borderRadius: "16px",
-              padding: "16px 18px"
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--apple-blue)", marginBottom: "6px" }}>
-              <Award size={18} />
-              <h5 style={{ fontSize: "1.02rem", fontWeight: 750, margin: 0 }}>One-Liner Intro Planning Points</h5>
-            </div>
-            <ul style={{ margin: "4px 0 0", paddingLeft: "18px", fontSize: "0.94rem", color: "var(--slate-800)", lineHeight: 1.6 }}>
-              <li><strong>Paraphrase:</strong> Single-use disposable products have become extraordinarily common and omnipresent in modern society.</li>
-              <li><strong>Problems Preview:</strong> Highlight acute landfill capacity saturation and catastrophic marine plastic pollution.</li>
-              <li><strong>Solutions Preview:</strong> Introduce statutory bans, fiscal levies on disposables, and subsidies for compostable packaging alternatives.</li>
-            </ul>
+        {/* Right Column: 4-Point Introduction Checklist */}
+        <div
+          style={{
+            background: "#ffffff",
+            border: "1.5px solid var(--border-default)",
+            borderRadius: "20px",
+            padding: "24px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "14px",
+            boxShadow: "var(--shadow-sm)"
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <Award size={22} color="var(--apple-blue)" />
+            <h4 style={{ fontSize: "1.15rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>
+              Band 9 Introduction Architecture Rules
+            </h4>
           </div>
 
-          <StructureCard
-            icon={<CheckCircle2 size={18} />}
-            badge="Sentence 1 Analysis"
-            title="Question Paraphrase"
-            text="“In contemporary society, manufactured single-use items have become exceptionally ubiquitous across domestic and commercial sectors.” Accurately transforms 'single-use products are very common' into high-register academic prose."
-          />
-
-          <StructureCard
-            icon={<Award size={18} />}
-            badge="Sentence 2 Analysis"
-            title="Direct Problem &amp; Solution Thesis"
-            text="“While this disposable culture inflicts severe environmental degradation, notably acute landfill saturation and marine contamination, viable solutions exist, including statutory product bans, fiscal deterrents, and state subsidies for biodegradable alternatives.” Establishes an explicit, balanced roadmap directly previewing Body 1 (Problems) and Body 2 (Solutions)."
-          />
-
-          <StructureCard
-            icon={<CheckCircle2 size={18} />}
-            badge="Band 9 Strategy"
-            title="Problems &amp; Solutions Architecture"
-            text="In a Problems and Solutions prompt, providing a precise dual thesis statement answering both question prompts in the introduction guarantees top marks for Task Achievement."
-          />
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            {[
+              {
+                title: "1. Paraphrase with Sophisticated Synonyms",
+                desc: "Transform 'common' into 'a prominent feature of modern consumer society' and 'single-use products' into 'widespread use of single-use products'."
+              },
+              {
+                title: "2. Clear 2-Part Thesis Statement",
+                desc: "Explicitly mention both the core problem areas (environmental pollution & resource consumption) and the core solution angles (regulations & reusable alternatives)."
+              },
+              {
+                title: "3. Multi-Stakeholder Approach",
+                desc: "Name the key responsible parties: governments (stricter regulations), businesses (corporate responsibility), and consumers (shift to reusables)."
+              },
+              {
+                title: "4. Rapid 3-Minute Execution",
+                desc: "Keep the introduction focused (around 50 words) so you preserve 32+ minutes for rigorous body paragraph development and evaluation."
+              }
+            ].map((rule) => (
+              <div
+                key={rule.title}
+                style={{
+                  background: "var(--slate-50)",
+                  border: "1px solid var(--border-subtle)",
+                  borderRadius: "12px",
+                  padding: "12px 14px"
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "3px" }}>
+                  <CheckCircle2 size={16} color="#16a34a" />
+                  <strong style={{ fontSize: "0.90rem", color: "var(--slate-900)" }}>{rule.title}</strong>
+                </div>
+                <p style={{ margin: 0, fontSize: "0.82rem", color: "var(--slate-600)", lineHeight: 1.45, paddingLeft: "24px" }}>
+                  {rule.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 };
-
-const StructureCard: React.FC<{ icon: React.ReactNode; badge: string; title: string; text: string }> = ({
-  icon,
-  badge,
-  title,
-  text
-}) => (
-  <div
-    style={{
-      background: "#fff",
-      border: "1.5px solid var(--border-subtle)",
-      borderRadius: "14px",
-      padding: "14px 18px",
-      boxShadow: "var(--shadow-sm)"
-    }}
-  >
-    <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "#059669", marginBottom: "4px" }}>
-      {icon}
-      <span style={{ fontSize: "0.74rem", fontWeight: 800, background: "#ecfdf5", color: "#065f46", padding: "1px 6px", borderRadius: "4px" }}>
-        {badge}
-      </span>
-      <h5 style={{ fontSize: "0.96rem", fontWeight: 750, color: "var(--slate-900)", margin: 0 }}>{title}</h5>
-    </div>
-    <p style={{ fontSize: "0.88rem", color: "var(--slate-700)", lineHeight: 1.5, margin: 0 }}>{text}</p>
-  </div>
-);

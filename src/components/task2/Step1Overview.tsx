@@ -124,10 +124,10 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               }}
             >
               <span style={{ fontSize: "0.74rem", fontWeight: 800, color: "#991b1b", textTransform: "uppercase" }}>
-                Body Paragraph 1 • The Problems
+                Body Paragraph 1 • Problem 1 &amp; Targeted Solution
               </span>
               <p style={{ margin: 0, fontSize: "0.88rem", color: "#7f1d1d", lineHeight: 1.45 }}>
-                Examine landfill saturation and non-biodegradable persistence lasting centuries, alongside marine contamination and toxic microplastics entering aquatic trophic chains.
+                Examine Problem 1 (non-biodegradable plastics persisting for centuries, contaminating waterways and harming wildlife) → Direct Solution (statutory restrictions &amp; fiscal levies on disposables) + Real-world Example (plastic bag charges).
               </p>
             </div>
 
@@ -143,10 +143,10 @@ export const Step1OverviewT2: React.FC<Step1OverviewProps> = ({ onUnlockBypass }
               }}
             >
               <span style={{ fontSize: "0.74rem", fontWeight: 800, color: "#166534", textTransform: "uppercase" }}>
-                Body Paragraph 2 • The Solutions
+                Body Paragraph 2 • Problem 2 &amp; Targeted Solution
               </span>
               <p style={{ margin: 0, fontSize: "0.88rem", color: "#14532d", lineHeight: 1.45 }}>
-                Present concrete strategic solutions: statutory product bans, fiscal levies on disposables, subsidies for compostable seaweed/cornstarch packaging, and corporate Extended Producer Responsibility (EPR).
+                Examine Problem 2 (excessive resource depletion, carbon emissions &amp; municipal waste infrastructure strain) → Direct Solution (Extended Producer Responsibility &amp; normalizing durable reusables) + Real-world Example (deposit-return schemes &amp; refillables).
               </p>
             </div>
           </div>

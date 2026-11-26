@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, BookOpen, CheckCircle2, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, Mail, Sparkles, Compass } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 interface Step8ConnectorsProps {
@@ -18,11 +18,11 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
         <div>
           <span className="apple-badge success" style={{ marginBottom: "8px" }}>
-            Step 08 / 08 • Survey Transitions &amp; Multi-Graphic Cohesion
+            Step 08 / 08 • Spatial Prepositions &amp; Cartographic Cohesion
           </span>
-          <h2 className="stage-title">Comparative Connectors &amp; Cohesive Flow for Auckland Survey</h2>
+          <h2 className="stage-title">Spatial Connectors &amp; Cohesive Flow for Islip Development Maps</h2>
           <p className="stage-subtitle">
-            Master comparative transition markers, proportion linkers, and contrast signposts to establish seamless logical cohesion across tables and pie charts: comparing retail shops, contrasting dining gender disparity, and synthesizing complex design ratings.
+            Master spatial prepositions, directional signposts, and transformation linkers to establish seamless logical cohesion across comparative maps: detailing the circumscribing dual carriageway bypass, central pedestrianisation, northern commercial overhaul, and southern amenity reorganisation.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
               }}
             >
               <Mail size={16} color="#60a5fa" />
-              <span>General Task 1 (Letter)</span>
+              <span>General Task 1 (Letter to Pritam)</span>
               <span
                 style={{
                   fontSize: "0.70rem",
@@ -97,7 +97,7 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
                   fontWeight: 750
                 }}
               >
-                Formal
+                Informal
               </span>
             </button>
           )}
@@ -143,7 +143,7 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
                 </strong>
               </div>
               <span className="apple-badge neutral" style={{ background: "#eff6ff", color: "#1d4ed8", fontWeight: 750, fontSize: "0.72rem" }}>
-                Dual Chart Transition
+                Map Transition Marker
               </span>
             </div>
 
@@ -170,7 +170,7 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
         ))}
       </div>
 
-      {/* Prominent Launch Pad for General Task 1 & Cambridge Solutions */}
+      {/* Prominent Launch Pad for General Task 1 & Nuance Lab */}
       <div
         style={{
           marginTop: "16px",
@@ -190,7 +190,7 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
               Specialist Modules &amp; Academic Reading Solutions
             </h3>
             <p style={{ fontSize: "0.85rem", color: "#64748b", margin: 0 }}>
-              Launch dedicated full-screen pages for letter writing rules or Cambridge 7 Test 2 reading answer keys.
+              Launch dedicated full-screen pages for letter writing rules or English nuance lab episodes.
             </p>
           </div>
           <span style={{ fontSize: "0.76rem", fontWeight: 800, background: "#e2e8f0", color: "#475569", padding: "4px 10px", borderRadius: "8px" }}>
@@ -263,16 +263,16 @@ export const Step8Connectors: React.FC<Step8ConnectorsProps> = ({
                     <Mail size={20} color="#2563eb" />
                   </div>
                   <div>
-                    <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>General Training Task 1 (Formal Letter Masterclass)</strong>
-                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>Letter to Organisation Manager • 3-Month Student Internship (Friday)</div>
+                    <strong style={{ fontSize: "1.05rem", color: "#0f172a" }}>General Training Task 1 (Informal Letter Masterclass)</strong>
+                    <div style={{ fontSize: "0.78rem", color: "#64748b" }}>Letter to Friend Pritam • Job Recommendation &amp; Study Abroad Reunion</div>
                   </div>
                 </div>
                 <span style={{ fontSize: "0.74rem", background: "#eff6ff", color: "#1e40af", fontWeight: 750, padding: "3px 10px", borderRadius: "6px", border: "1px solid #bfdbfe" }}>
-                  Formal Register
+                  Informal Register
                 </span>
               </div>
               <p style={{ fontSize: "0.86rem", color: "#475569", margin: "4px 0 0", lineHeight: 1.5 }}>
-                Master the strict 5-paragraph formal architecture (Formal Salutation 'Dear Mr. Pritam,' + Bullet 1 Manager Gratitude + Bullet 2 Learning Objectives + Bullet 3 Onboarding Prep + Formal Close 'Yours sincerely,' Arpit), advanced professional collocations, and zero contractions.
+                Master the strict 5-paragraph informal architecture (Warm Salutation &lsquo;Dear Pritam,&rsquo; + Bullet 1 Job Details &amp; Operations Role + Bullet 2 Why Job Is Suitable + Bullet 3 How to Apply &amp; Referral + Friendly Close &lsquo;Warm wishes,&rsquo; Arpit), natural idioms, and authentic Oxford collocations.
               </p>
               <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#2563eb", fontSize: "0.88rem", fontWeight: 750, marginTop: "6px" }}>
                 <span>Launch Dedicated Letter Page</span>

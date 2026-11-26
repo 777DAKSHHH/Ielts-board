@@ -19,7 +19,11 @@ import {
   ShieldCheck,
   LayoutGrid,
   Eye,
-  Info
+  Info,
+  Car,
+  Home,
+  TreePine,
+  GraduationCap
 } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 import { TouchTimer } from "../common/TouchTimer";
@@ -27,11 +31,7 @@ import {
   SmartBoardTableMatrix,
   DiagramViewMode,
   HotspotDefinition,
-  STAGE_HOTSPOTS,
-  MACRO_HOTSPOTS,
-  TABLE_CELL_HOTSPOTS,
-  CATEGORY_HOTSPOTS,
-  ALL_HOTSPOTS
+  STAGE_HOTSPOTS
 } from "./SmartBoardGraphSvg";
 import { BitsAndPiecesMindmap } from "./BitsAndPiecesMindmap";
 import { BitsAndPiecesFlashcards } from "./BitsAndPiecesFlashcards";
@@ -57,8 +57,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   // Default to side-by-side split view for zero-scroll on smart boards
   const [stageLayout, setStageLayout] = useState<"split" | "full_width">("split");
   const [isEnlarged, setIsEnlarged] = useState(false);
-  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("shops-male");
-  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("shops-male");
+  const [selectedHotspotId, setSelectedHotspotId] = useState<string>("ring-road");
+  const [highlightMode, setHighlightMode] = useState<DiagramViewMode>("ring-road");
   const [dockTab, setDockTab] = useState<"category" | "prompt" | "hotspots">("category");
 
   // Normal view refs for smooth auto-scrolling
@@ -125,35 +125,41 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         scrollToTargetElement(modalScrollerSpineRef.current, modalSpineEl);
       }
     }
-  }, [selectedHotspotId, isEnlarged, dockTab]);
+  }, [selectedHotspotId, isEnlarged]);
+
+  const handleSelectComponent = (id: string) => {
+    setSelectedHotspotId(id);
+    setHighlightMode(id);
+  };
 
   const handleSelectViewMode = (
     mode: "smartboard_table" | "mindmap" | "flashcards" | "original_image"
   ) => {
     setViewMode(mode);
+    if (mode !== "smartboard_table") {
+      setStageLayout("full_width");
+    }
   };
 
   const openFullscreen = () => {
     setIsEnlarged(true);
   };
 
-  // Synchronized active component data (from Smartboard Table Hotspots)
-  const activeHotspot: HotspotDefinition =
-    ALL_HOTSPOTS.find((h) => h.id === selectedHotspotId) || STAGE_HOTSPOTS[0];
+  const selectedStage =
+    STAGE_HOTSPOTS.find((s) => s.id === selectedHotspotId) || STAGE_HOTSPOTS[0];
 
-  const handleSelectComponent = (id: string) => {
-    setSelectedHotspotId(id);
-    setHighlightMode(id as DiagramViewMode);
-    if (dockTab !== "category") {
-      setDockTab("category");
-    }
+  const shortTitles: Record<string, { title: string; subtitle: string }> = {
+    "ring-road": { title: "Dual Carriageway", subtitle: "Perimeter Bypass Ring" },
+    "pedestrian-thoroughfare": { title: "Pedestrian Street", subtitle: "Main Road Repurposed" },
+    "northern-commercial": { title: "Commercial Hub", subtitle: "Bus Station, Mall & Car Park" },
+    "northeast-housing": { title: "NE New Housing", subtitle: "Countryside Expansion" },
+    "southern-shops-retention": { title: "Southern Shops", subtitle: "Preserved Along Mall" },
+    "park-housing-reconfiguration": { title: "Park & Housing", subtitle: "Park Downsized • Homes Added" },
+    "school-access": { title: "School & Access", subtitle: "Preserved with Bypass Link" }
   };
 
-  // ==========================================
-  // 1. INDIVIDUAL STAGE SCROLLER SPINE
-  // Placed directly between Visualizer & Presenter Dock
-  // ==========================================
-  const renderStageScroller = (inModal = false) => {
+  // Reusable Component: Stage Scroller Column
+  const renderStageScroller = (inModal: boolean) => {
     const currentSpineRef = inModal ? modalScrollerSpineRef : scrollerSpineRef;
     const currentStageRefs = inModal ? modalSpineStageRefs : spineStageRefs;
 
@@ -161,41 +167,32 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       <div
         style={{
           background: "#ffffff",
-          border: "1.5px solid var(--border-subtle, #cbd5e1)",
-          borderRadius: "20px",
-          padding: "14px 10px",
-          boxShadow: "0 4px 16px rgba(0,0,0,0.04)",
+          border: "1.5px solid var(--border-subtle)",
+          borderRadius: "18px",
+          padding: "14px",
+          boxShadow: "var(--shadow-sm)",
           display: "flex",
           flexDirection: "column",
           gap: "10px",
           height: "100%",
-          minHeight: inModal ? "auto" : "400px"
+          maxHeight: inModal ? "680px" : "600px",
+          minWidth: 0
         }}
       >
-        {/* Scroller Spine Header */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            paddingBottom: "8px",
-            borderBottom: "1.5px solid #f1f5f9"
-          }}
-        >
+        {/* Scroller Header */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <Layers size={15} color="#0284c7" />
-            <span style={{ fontSize: "0.82rem", fontWeight: 800, color: "#0f172a" }}>
-              Survey Scroller
-            </span>
+            <Layers size={16} color="#2563eb" />
+            <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Map Scroller</strong>
           </div>
           <span
             style={{
-              fontSize: "0.68rem",
-              fontWeight: 800,
+              fontSize: "0.70rem",
               background: "#eff6ff",
-              color: "#0284c7",
-              padding: "2px 6px",
-              borderRadius: "4px"
+              color: "#1e40af",
+              fontWeight: 800,
+              padding: "2px 7px",
+              borderRadius: "5px"
             }}
           >
             7 Features
@@ -206,49 +203,49 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
           <button
             type="button"
-            onClick={() => handleSelectComponent("shops-male")}
+            onClick={() => handleSelectComponent("ring-road")}
             style={{
               padding: "5px 6px",
               borderRadius: "8px",
               fontSize: "0.72rem",
               fontWeight: 750,
-              border: selectedHotspotId.startsWith("shops") || selectedHotspotId.startsWith("restaurants")
+              border: ["ring-road", "pedestrian-thoroughfare", "northern-commercial", "northeast-housing"].includes(selectedHotspotId)
                 ? "1.5px solid #2563eb"
                 : "1px solid #e2e8f0",
-              background: selectedHotspotId.startsWith("shops") || selectedHotspotId.startsWith("restaurants")
+              background: ["ring-road", "pedestrian-thoroughfare", "northern-commercial", "northeast-housing"].includes(selectedHotspotId)
                 ? "#eff6ff"
                 : "#f8fafc",
-              color: selectedHotspotId.startsWith("shops") || selectedHotspotId.startsWith("restaurants")
+              color: ["ring-road", "pedestrian-thoroughfare", "northern-commercial", "northeast-housing"].includes(selectedHotspotId)
                 ? "#1e40af"
                 : "#475569",
               cursor: "pointer",
               textAlign: "center"
             }}
           >
-            Tables (Shops/Dining)
+            Phase 1 (1–4: North)
           </button>
           <button
             type="button"
-            onClick={() => handleSelectComponent("design-satisfied")}
+            onClick={() => handleSelectComponent("southern-shops-retention")}
             style={{
               padding: "5px 6px",
               borderRadius: "8px",
               fontSize: "0.72rem",
               fontWeight: 750,
-              border: selectedHotspotId.startsWith("design")
+              border: ["southern-shops-retention", "park-housing-reconfiguration", "school-access"].includes(selectedHotspotId)
                 ? "1.5px solid #059669"
                 : "1px solid #e2e8f0",
-              background: selectedHotspotId.startsWith("design")
+              background: ["southern-shops-retention", "park-housing-reconfiguration", "school-access"].includes(selectedHotspotId)
                 ? "#ecfdf5"
                 : "#f8fafc",
-              color: selectedHotspotId.startsWith("design")
+              color: ["southern-shops-retention", "park-housing-reconfiguration", "school-access"].includes(selectedHotspotId)
                 ? "#065f46"
                 : "#475569",
               cursor: "pointer",
               textAlign: "center"
             }}
           >
-            Pie Chart (Design)
+            Phase 2 (5–7: South)
           </button>
         </div>
 
@@ -267,15 +264,6 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
         >
           {STAGE_HOTSPOTS.map((st) => {
             const isSelected = selectedHotspotId === st.id;
-            const shortTitles: Record<string, { title: string; subtitle: string }> = {
-              "shops-male": { title: "Shops: Male", subtitle: "62% Positive (45% + 17%)" },
-              "shops-female": { title: "Shops: Female", subtitle: "71% Positive (34% V.Sat)" },
-              "restaurants-male": { title: "Dining: Male", subtitle: "80% Positive (Peak)" },
-              "restaurants-female": { title: "Dining: Female", subtitle: "21% Dissat (4x Male)" },
-              "design-satisfied": { title: "Design: Satisfied", subtitle: "62% Dominant Plurality" },
-              "design-very-satisfied": { title: "Design: V.Sat", subtitle: "17% (Total 79% Appr)" },
-              "design-dissatisfied-no-comment": { title: "Design: Other", subtitle: "10% Dissat • 11% Neutral" }
-            };
             const itemMeta = shortTitles[st.id] || { title: st.name, subtitle: st.equipmentOrRole };
 
             return (
@@ -303,13 +291,13 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   {/* Clean Number Badge */}
                   <span
                     style={{
-                      width: "26px",
-                      height: "26px",
-                      borderRadius: "7px",
+                      width: "30px",
+                      height: "30px",
+                      borderRadius: "8px",
                       background: isSelected ? st.color : `${st.color}18`,
                       color: isSelected ? "#ffffff" : st.color,
-                      fontSize: "0.72rem",
-                      fontWeight: 800,
+                      fontSize: "0.76rem",
+                      fontWeight: 850,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -319,7 +307,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     {st.number}
                   </span>
 
-                  {/* Title & Tag */}
+                  {/* Title & Subtitle */}
                   <div style={{ minWidth: 0, flex: 1 }}>
                     <div
                       style={{
@@ -360,7 +348,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     <ArrowRight size={14} />
                   </div>
                 ) : (
-                  <ChevronRight size={13} color="#94a3b8" style={{ flexShrink: 0 }} />
+                  <ChevronRight size={14} color="#cbd5e1" style={{ flexShrink: 0 }} />
                 )}
               </div>
             );
@@ -370,131 +358,142 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
     );
   };
 
-  // ==========================================
-  // 2. SMART BOARD PRESENTER DOCK WITH AUTO-SCROLL
-  // ==========================================
-  const renderPresenterDock = (inModal = false) => {
-    const currentFeedRef = inModal ? modalDockFeedRef : dockFeedRef;
+  // Reusable Component: Smart Board Presenter Dock (Right Column)
+  const renderPresenterDock = (inModal: boolean) => {
+    const currentDockRef = inModal ? modalDockFeedRef : dockFeedRef;
     const currentStageRefs = inModal ? modalStageCardRefs : stageCardRefs;
 
     return (
       <div
         style={{
           background: "#ffffff",
-          border: "1.5px solid var(--border-subtle, #cbd5e1)",
-          borderRadius: "20px",
-          padding: inModal ? "18px 22px" : "16px 18px",
-          boxShadow: "0 4px 16px rgba(0,0,0,0.04)",
+          border: "1.5px solid var(--border-subtle)",
+          borderRadius: "18px",
+          padding: "16px",
+          boxShadow: "var(--shadow-sm)",
           display: "flex",
           flexDirection: "column",
           gap: "12px",
           height: "100%",
-          minHeight: inModal ? "auto" : "400px"
+          maxHeight: inModal ? "680px" : "600px",
+          minWidth: 0
         }}
       >
-        {/* Dock Tabs Header */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "8px",
-            borderBottom: "1.5px solid #f1f5f9",
-            paddingBottom: "10px"
-          }}
-        >
+        {/* Dock Header with Tabs */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
             <Sparkles size={16} color="#2563eb" />
-            <span style={{ fontSize: "0.85rem", fontWeight: 800, color: "#0f172a" }}>
-              Smart Board Presenter Dock
-            </span>
+            <strong style={{ fontSize: "0.90rem", color: "#0f172a" }}>Smart Board Presenter Dock</strong>
             <span
               style={{
-                fontSize: "0.7rem",
+                fontSize: "0.68rem",
                 fontWeight: 800,
-                padding: "2px 7px",
-                borderRadius: "5px",
-                background: `${activeHotspot.color}15`,
-                color: activeHotspot.color
+                background: `${selectedStage.color}15`,
+                color: selectedStage.color,
+                padding: "2px 6px",
+                borderRadius: "4px"
               }}
             >
-              {activeHotspot.category || `Feature ${activeHotspot.number}`}
+              Feature {selectedStage.number}
             </span>
           </div>
 
-          {/* 3 Dock Tabs */}
-          <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "3px", borderRadius: "8px" }}>
-            {[
-              { id: "category", label: "🎯 Feature Feed" },
-              { id: "prompt", label: "📝 Parameters" },
-              { id: "hotspots", label: "⭐ All 7 Metrics" }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setDockTab(tab.id as any)}
-                style={{
-                  padding: "5px 10px",
-                  borderRadius: "6px",
-                  fontSize: "0.74rem",
-                  fontWeight: 750,
-                  border: "none",
-                  background: dockTab === tab.id ? "#ffffff" : "transparent",
-                  color: dockTab === tab.id ? "#0f172a" : "#64748b",
-                  boxShadow: dockTab === tab.id ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
-                  cursor: "pointer"
-                }}
-              >
-                {tab.label}
-              </button>
-            ))}
+          <div style={{ display: "flex", gap: "4px", background: "#f1f5f9", padding: "2px", borderRadius: "8px" }}>
+            <button
+              type="button"
+              onClick={() => setDockTab("category")}
+              style={{
+                padding: "3px 8px",
+                borderRadius: "6px",
+                fontSize: "0.72rem",
+                fontWeight: 750,
+                border: "none",
+                background: dockTab === "category" ? "#ffffff" : "transparent",
+                color: dockTab === "category" ? "#0f172a" : "#64748b",
+                boxShadow: dockTab === "category" ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+                cursor: "pointer"
+              }}
+            >
+              🎯 Feature Feed &amp; Auto-Scroll
+            </button>
+            <button
+              type="button"
+              onClick={() => setDockTab("prompt")}
+              style={{
+                padding: "3px 8px",
+                borderRadius: "6px",
+                fontSize: "0.72rem",
+                fontWeight: 750,
+                border: "none",
+                background: dockTab === "prompt" ? "#ffffff" : "transparent",
+                color: dockTab === "prompt" ? "#0f172a" : "#64748b",
+                boxShadow: dockTab === "prompt" ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+                cursor: "pointer"
+              }}
+            >
+              📝 Prompt Parameters
+            </button>
+            <button
+              type="button"
+              onClick={() => setDockTab("hotspots")}
+              style={{
+                padding: "3px 8px",
+                borderRadius: "6px",
+                fontSize: "0.72rem",
+                fontWeight: 750,
+                border: "none",
+                background: dockTab === "hotspots" ? "#ffffff" : "transparent",
+                color: dockTab === "hotspots" ? "#0f172a" : "#64748b",
+                boxShadow: dockTab === "hotspots" ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
+                cursor: "pointer"
+              }}
+            >
+              ⭐ All 7 Features
+            </button>
           </div>
         </div>
 
-        {/* Dock Content: Tab 1 - Auto-Scrolling Stage Feed */}
+        {/* Dock Content: Tab 1 - Continuous Feature Feed with Auto-Scroll */}
         {dockTab === "category" && (
           <div style={{ display: "flex", flexDirection: "column", gap: "10px", flex: 1, minHeight: 0 }}>
-            {/* Quick Stage Jump Buttons */}
-            <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
-              <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#0284c7", marginRight: "2px", textTransform: "uppercase" }}>
+            {/* Quick Feature Jump Badges Strip */}
+            <div style={{ display: "flex", alignItems: "center", gap: "4px", overflowX: "auto", paddingBottom: "2px" }}>
+              <span style={{ fontSize: "0.68rem", fontWeight: 750, color: "#64748b", textTransform: "uppercase", marginRight: "4px" }}>
                 Quick Jump:
               </span>
-              {STAGE_HOTSPOTS.map((st) => {
-                const isSelected = selectedHotspotId === st.id;
-                return (
-                  <button
-                    key={st.id}
-                    type="button"
-                    onClick={() => handleSelectComponent(st.id)}
-                    style={{
-                      padding: "3px 8px",
-                      borderRadius: "6px",
-                      fontSize: "0.72rem",
-                      fontWeight: 750,
-                      border: isSelected ? `1.5px solid ${st.color}` : "1px solid #e2e8f0",
-                      background: isSelected ? st.color : "#f8fafc",
-                      color: isSelected ? "#ffffff" : "#475569",
-                      cursor: "pointer",
-                      transition: "all 0.15s ease"
-                    }}
-                  >
-                    {st.number}
-                  </button>
-                );
-              })}
+              {STAGE_HOTSPOTS.map((st) => (
+                <button
+                  key={st.id}
+                  type="button"
+                  onClick={() => handleSelectComponent(st.id)}
+                  style={{
+                    padding: "2px 7px",
+                    borderRadius: "5px",
+                    fontSize: "0.68rem",
+                    fontWeight: 800,
+                    border: selectedHotspotId === st.id ? `1.5px solid ${st.color}` : "1px solid #e2e8f0",
+                    background: selectedHotspotId === st.id ? st.color : "#f8fafc",
+                    color: selectedHotspotId === st.id ? "#ffffff" : "#475569",
+                    cursor: "pointer",
+                    whiteSpace: "nowrap",
+                    transition: "all 0.15s ease"
+                  }}
+                >
+                  F{st.number}
+                </button>
+              ))}
             </div>
 
-            {/* Auto-Scrollable Feed of all 7 Stage Deep Dives */}
+            {/* Scrollable Container with All 7 Feature Cards */}
             <div
-              ref={currentFeedRef}
+              ref={currentDockRef}
               className="custom-smart-scroller"
               style={{
-                overflowY: "auto",
-                maxHeight: inModal ? "calc(88vh - 200px)" : "440px",
                 display: "flex",
                 flexDirection: "column",
                 gap: "14px",
+                overflowY: "auto",
+                flex: 1,
                 paddingRight: "4px"
               }}
             >
@@ -538,7 +537,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                         </span>
                         <div>
                           <div style={{ fontSize: "0.66rem", fontWeight: 750, color: "#64748b", textTransform: "uppercase" }}>
-                            {st.category || (st.box === "phase-1" ? "Tables 1 & 2: Retail & Dining" : "Pie Chart: Complex Design")}
+                            {st.category}
                           </div>
                           <div style={{ fontSize: "0.95rem", fontWeight: 800, color: "#0f172a" }}>
                             {st.name}
@@ -559,7 +558,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                               whiteSpace: "nowrap"
                             }}
                           >
-                            ★ ACTIVE
+                            ★ ACTIVE ON SMART BOARD
                           </span>
                         )}
                         <span
@@ -574,103 +573,94 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                             whiteSpace: "nowrap"
                           }}
                         >
-                          {st.box === "phase-1" ? "Survey Table" : "Pie Chart"}
+                          {st.equipmentOrRole}
                         </span>
                       </div>
                     </div>
 
-                    {/* 4 Parameter Metric Stat Cards */}
+                    {/* Band 9 Model Sentence */}
+                    <div
+                      style={{
+                        background: `${st.color}08`,
+                        border: `1px solid ${st.color}25`,
+                        borderRadius: "10px",
+                        padding: "10px 12px",
+                        fontSize: "0.86rem",
+                        color: "#0f172a",
+                        lineHeight: 1.5,
+                        fontStyle: "italic"
+                      }}
+                    >
+                      {st.band9Phrase}
+                    </div>
+
+                    {/* Parameter Metrics Grid */}
                     {st.parameterMetrics && (
-                      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(110px, 1fr))", gap: "6px" }}>
-                        {st.parameterMetrics.map((pm, pidx) => (
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px" }}>
+                        {st.parameterMetrics.map((met, idx) => (
                           <div
-                            key={pidx}
+                            key={idx}
                             style={{
                               background: "#f8fafc",
                               border: "1px solid #e2e8f0",
-                              padding: "6px 8px",
                               borderRadius: "8px",
-                              textAlign: "center"
+                              padding: "6px 8px"
                             }}
                           >
-                            <div style={{ fontSize: "0.64rem", color: "#64748b", fontWeight: 700 }}>
-                              {pm.label}
-                            </div>
-                            <div style={{ fontSize: "0.78rem", fontWeight: 800, color: "#0f172a", marginTop: "1px" }}>
-                              {pm.value}
-                            </div>
+                            <span style={{ fontSize: "0.66rem", color: "#64748b", display: "block" }}>
+                              {met.label}
+                            </span>
+                            <strong style={{ fontSize: "0.78rem", color: "#0f172a" }}>
+                              {met.value}
+                            </strong>
                           </div>
                         ))}
                       </div>
                     )}
 
-                    {/* Operational Mechanics Description */}
-                    <div
-                      style={{
-                        background: "#ffffff",
-                        border: "1px solid #e2e8f0",
-                        borderRadius: "8px",
-                        padding: "8px 10px",
-                        fontSize: "0.80rem",
-                        color: "#334155",
-                        lineHeight: 1.45
-                      }}
-                    >
-                      <strong style={{ color: "#0f172a", display: "block", marginBottom: "2px" }}>
-                        Analytical Insight:
-                      </strong>
-                      {st.description}
-                    </div>
-
-                    {/* Band 9 Analytical Sentence Box */}
-                    <div
-                      style={{
-                        background: "#f8fafc",
-                        border: "1px solid #cbd5e1",
-                        borderLeft: `3.5px solid ${st.color}`,
-                        borderRadius: "8px",
-                        padding: "8px 10px",
-                        fontSize: "0.82rem",
-                        lineHeight: 1.5,
-                        color: "#1e293b"
-                      }}
-                    >
+                    {/* Examiner Focus / Transformation Dynamics */}
+                    {st.examinerFocus && (
                       <div
                         style={{
-                          fontSize: "0.68rem",
-                          fontWeight: 800,
-                          color: st.color,
-                          marginBottom: "2px"
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "6px",
+                          background: "#fffbeb",
+                          border: "1px solid #fef3c7",
+                          borderRadius: "8px",
+                          padding: "8px 10px",
+                          fontSize: "0.76rem",
+                          color: "#92400e"
                         }}
                       >
-                        ★ BAND 9 MODEL SENTENCE:
+                        <ShieldCheck size={14} color="#b45309" style={{ flexShrink: 0, marginTop: "1px" }} />
+                        <div>
+                          <strong>Examiner Focus:</strong> {st.examinerFocus}
+                        </div>
                       </div>
-                      <em>{st.band9Phrase}</em>
-                    </div>
+                    )}
 
-                    {/* Grammar & Examiner Anchor */}
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        gap: "6px",
-                        flexWrap: "wrap",
-                        background: "#f1f5f9",
-                        padding: "5px 8px",
-                        borderRadius: "6px",
-                        fontSize: "0.72rem"
-                      }}
-                    >
-                      <span style={{ color: "#475569" }}>
-                        <strong>Grammar:</strong> {st.grammaticalFocus}
-                      </span>
-                      {st.examinerFocus && (
-                        <span style={{ color: "#0369a1", fontWeight: 750 }}>
-                          {st.examinerFocus}
-                        </span>
-                      )}
-                    </div>
+                    {/* Grammatical Focus */}
+                    {st.grammaticalFocus && (
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: "6px",
+                          background: "#f0fdf4",
+                          border: "1px solid #dcfce7",
+                          borderRadius: "8px",
+                          padding: "8px 10px",
+                          fontSize: "0.76rem",
+                          color: "#166534"
+                        }}
+                      >
+                        <CheckCircle2 size={14} color="#16a34a" style={{ flexShrink: 0, marginTop: "1px" }} />
+                        <div>
+                          <strong>Grammar Architecture:</strong> {st.grammaticalFocus}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -703,19 +693,19 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "0.78rem" }}>
               <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
                 <span style={{ color: "#64748b" }}>Format:</span>
-                <strong style={{ display: "block", color: "#0f172a" }}>Multi-Graphic (2 Tables + 1 Pie Chart)</strong>
+                <strong style={{ display: "block", color: "#0f172a" }}>Comparative Town Maps (Now vs Planned)</strong>
               </div>
               <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
                 <span style={{ color: "#64748b" }}>Subject &amp; Location:</span>
-                <strong style={{ display: "block", color: "#0f172a" }}>New Shopping Complex, Auckland</strong>
+                <strong style={{ display: "block", color: "#0f172a" }}>Islip Town Centre</strong>
               </div>
               <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
-                <span style={{ color: "#64748b" }}>Rating Tiers:</span>
-                <strong style={{ display: "block", color: "#0f172a" }}>4 Scales (% Terms)</strong>
+                <span style={{ color: "#64748b" }}>Key Infrastructure:</span>
+                <strong style={{ display: "block", color: "#0f172a" }}>Dual Carriageway &amp; Pedestrianisation</strong>
               </div>
               <div style={{ background: "#f1f5f9", padding: "8px 10px", borderRadius: "8px" }}>
                 <span style={{ color: "#64748b" }}>Bifurcation:</span>
-                <strong style={{ display: "block", color: "#0f172a" }}>Tables (Shops/Dining) vs Pie (Design)</strong>
+                <strong style={{ display: "block", color: "#0f172a" }}>Transport &amp; North Zone vs South Zone &amp; Amenities</strong>
               </div>
             </div>
           </div>
@@ -783,7 +773,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                       flexShrink: 0
                     }}
                   >
-                    {h.category || (h.box === "phase-1" ? "Tables" : "Pie Chart")}
+                    {h.box === "phase-1" ? "Phase 1: North" : "Phase 2: South"}
                   </span>
                 </div>
               );
@@ -799,11 +789,11 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {/* Step Header */}
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 02 / 08 • Survey Matrix Deconstruction &amp; Brainstorm
+          Step 02 / 08 • Development Maps Deconstruction &amp; Brainstorm
         </span>
-        <h2 className="stage-title">Deconstruct Auckland Shopping Complex Survey: Tables &amp; Pie Chart</h2>
+        <h2 className="stage-title">Deconstruct Development Maps: Islip Town Centre (Now vs Planned)</h2>
         <p className="stage-subtitle">
-          Analyze visitor satisfaction across retail shops, dining establishments, and architectural design in Auckland, New Zealand. Identify key features: 79% design approval, double female enthusiasm in shops (34% vs 17%), 4x female dining dissatisfaction (21% vs 5%), and equal 20% shop dissatisfaction.
+          Analyze the 7 transformation features from the current road-bisected rural layout to the planned modern bypass and pedestrian core. Key features: perimeter dual carriageway circumscription, central main road pedestrianisation, bus station/shopping centre/car park commercial hub, north-eastern countryside residential expansion, southern retail retention, parkland diminution with new SE housing, and direct school bypass link.
         </p>
       </div>
 
@@ -815,7 +805,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           isFinished={isFinished}
           onToggle={onTimerToggle}
           onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to deconstruct the Auckland shopping complex survey: examine male vs female ratings across shops and restaurants, and analyze overall visitor sentiment toward architectural design."
+          instruction="Focus Timer: 3 minutes to deconstruct the 7 Islip development features: perimeter ring bypass, central pedestrianisation, northern commercial tripartite complex, north-east countryside housing, southern retail preservation, parkland diminution for new housing, and south-western school bypass access."
         />
       </div>
 
@@ -855,7 +845,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             }}
           >
             <Table size={14} />
-            <span>Interactive Process Engine</span>
+            <span>Interactive Map Engine</span>
           </button>
 
           <button
@@ -1000,7 +990,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
       {stageLayout === "split" && viewMode === "smartboard_table" ? (
         /* ZERO-SCROLL 3-COLUMN SPLIT VIEW: Visualizer (Left) | Individual Scroller Spine (Middle) | Presenter Dock (Right) */
         <div className="stage-split-grid">
-          {/* Left Column: 7-Stage Process Visualizer */}
+          {/* Left Column: Islip Map Visualizer */}
           <div
             style={{
               background: "#ffffff",
@@ -1015,16 +1005,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
           >
             <SmartBoardTableMatrix
               highlightMode={highlightMode}
-              onHighlightModeChange={(mode: DiagramViewMode) => {
-                setHighlightMode(mode);
-                if (mode !== "all" && mode !== "both") {
-                  setSelectedHotspotId(mode);
-                }
-              }}
-              selectedCohortId={selectedHotspotId}
-              onSelectCohort={(id) => handleSelectComponent(id)}
-              showInternalToolbar={true}
-              showDeepDiveCard={false}
+              onSelectHotspot={(id) => handleSelectComponent(id)}
+              inModal={false}
             />
           </div>
 
@@ -1055,16 +1037,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
             {viewMode === "smartboard_table" && (
               <SmartBoardTableMatrix
                 highlightMode={highlightMode}
-                onHighlightModeChange={(mode: DiagramViewMode) => {
-                  setHighlightMode(mode);
-                  if (mode !== "all" && mode !== "both") {
-                    setSelectedHotspotId(mode);
-                  }
-                }}
-                selectedCohortId={selectedHotspotId}
-                onSelectCohort={(id) => handleSelectComponent(id)}
-                showInternalToolbar={true}
-                showDeepDiveCard={true}
+                onSelectHotspot={(id) => handleSelectComponent(id)}
+                inModal={false}
               />
             )}
 
@@ -1087,7 +1061,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               >
                 <img
                   src={TASK1_DATA.imageFileName.startsWith('/') ? TASK1_DATA.imageFileName : '/' + TASK1_DATA.imageFileName}
-                  alt="IELTS Academic Task 1 Auckland Shopping Complex Survey Tables and Pie Chart"
+                  alt="IELTS Academic Task 1 Islip Town Centre Development Maps"
                   style={{
                     maxHeight: "560px",
                     maxWidth: "100%",
@@ -1098,7 +1072,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                   }}
                 />
                 <div style={{ marginTop: "12px", color: "var(--slate-600)", fontSize: "0.82rem", fontWeight: 600 }}>
-                  Official Cambridge IELTS Academic Question Diagram • Survey of a New Shopping Complex in Auckland, New Zealand
+                  Official Cambridge IELTS Academic Question Diagram • Centre of a Small Town Called Islip: Now vs Planned Development
                 </div>
               </div>
             )}
@@ -1145,7 +1119,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               </div>
             </div>
 
-            {/* Strategic 7-Stage Process Inspector */}
+            {/* Strategic 7-Feature Inspector */}
             <div
               style={{
                 background: "#ffffff",
@@ -1161,7 +1135,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <Sparkles size={17} color="#2563eb" />
                 <h4 style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  Auckland Shopping Complex Survey Inspector
+                  Islip Development Maps Feature Inspector
                 </h4>
               </div>
               <div className="custom-smart-scroller" style={{ display: "flex", flexDirection: "column", gap: "8px", maxHeight: "240px", overflowY: "auto" }}>
@@ -1218,7 +1192,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                           flexShrink: 0
                         }}
                       >
-                        {h.category || (h.box === "phase-1" ? "Tables" : "Pie Chart")}
+                        {h.box === "phase-1" ? "Phase 1: North" : "Phase 2: South"}
                       </span>
                     </div>
                   );
@@ -1274,7 +1248,7 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                     Enlarged Presentation Mode
                   </span>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#0f172a", margin: 0 }}>
-                    Auckland Shopping Complex Survey • Tables &amp; Pie Chart
+                    Islip Town Centre Development Maps • Now vs Planned Development
                   </h3>
                 </div>
                 <button
@@ -1300,16 +1274,8 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
                 <div style={{ background: "#ffffff", borderRadius: "18px", border: "1.5px solid #e2e8f0", padding: "16px" }}>
                   <SmartBoardTableMatrix
                     highlightMode={highlightMode}
-                    onHighlightModeChange={(mode: DiagramViewMode) => {
-                      setHighlightMode(mode);
-                      if (mode !== "all" && mode !== "both") {
-                        setSelectedHotspotId(mode);
-                      }
-                    }}
-                    selectedCohortId={selectedHotspotId}
-                    onSelectCohort={(id) => handleSelectComponent(id)}
-                    showInternalToolbar={true}
-                    showDeepDiveCard={false}
+                    onSelectHotspot={(id) => handleSelectComponent(id)}
+                    inModal={true}
                   />
                 </div>
                 <div>{renderStageScroller(true)}</div>

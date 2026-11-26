@@ -61,31 +61,31 @@ export const SPENDING_YEARS: SchoolSpendingYearData[] = [];
 export const SPENDING_HOTSPOTS: SpendingHotspot[] = [];
 
 // ==========================================
-// MASTER TASK 1 DATA OBJECT (AUCKLAND SHOPPING COMPLEX SURVEY)
-// Mixed Chart: Two Tables (Shops & Restaurants) + One Pie Chart (Design)
+// MASTER TASK 1 DATA OBJECT (ISLIP TOWN CENTRE DEVELOPMENT MAPS)
+// Maps: Current Layout vs Planned Development
 // ==========================================
 
 export const TASK1_DATA: Task1Data = {
-  id: "auckland-shopping-complex-survey",
-  taskType: "IELTS Academic Writing Task 1 • Mixed Chart (Two Tables & Pie Chart)",
-  title: "Survey Results of a New Shopping Complex in Auckland, New Zealand",
+  id: "task1-islip-town-centre-development-maps",
+  taskType: "IELTS Academic Writing Task 1 • Development Maps (Now vs Planned Future Layout)",
+  title: "Centre of a Small Town Called Islip: Current Layout vs Planned Development",
   companyName: "Cambridge IELTS Academic Writing Task 1",
-  unit: "Percentage (%) of Survey Respondents",
+  unit: "Urban Infrastructure, Zoning & Amenities",
   questionText:
-    "The tables and piechart show in percentage terms the results of a survey of a new shopping complex in Auckland, NewZealand.\n\nSummarize the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
-  imageFileName: "materials/auckland_shopping_complex_survey.jpg",
-  hdImageFileName: "materials/auckland_shopping_complex_survey.jpg",
-  scanImageFileName: "materials/auckland_shopping_complex_survey.jpg",
+    "The maps below show the centre of a small town called Islip as it is now, and plans for its development.\n\nSummarize the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+  imageFileName: "materials/islip_town_centre_maps.jpg",
+  hdImageFileName: "materials/islip_town_centre_maps.jpg",
+  scanImageFileName: "materials/islip_town_centre_maps.jpg",
   audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
   audioClueText:
-    "The survey evaluates public satisfaction with shops, restaurants, and architectural design at a new shopping complex in Auckland, New Zealand. Across all three categories, positive ratings heavily outweigh dissatisfaction. The complex's design achieved the highest aggregate approval at 79%, with nearly two-thirds of visitors reporting they were satisfied. While male and female shoppers shared an identical 20% dissatisfaction rate regarding retail shops, women were twice as likely to be very satisfied. In contrast, restaurants generated a sharp gender divide: men reported 80% satisfaction and only 5% dissatisfaction, whereas female dissatisfaction was over four times higher at 21%.",
+    "The two comparative maps depict the town centre of Islip at present and its proposed future redevelopment. Currently, a straight east-west main road bisects the settlement, bordered by shops on both sides, with countryside to the north, central housing, a south-western school, and a south-eastern park. Under the planned development, vehicular thoroughfare will be routed around an outer dual carriageway that completely circumscribes the town. The central road will be pedestrianised. The northern row of shops will be demolished and replaced by a bus station, shopping centre, and car park, with new housing erected in the north-east countryside. South of the pedestrian street, the southern shops and residential zone remain, while an additional housing development reduces the park's size, and the school is linked directly to the new dual carriageway.",
   timingSeconds: 1200,
 
   sampleIntro:
-    "The two tables and accompanying pie chart illustrate the percentage breakdown of customer feedback from a survey assessing shops, restaurants, and overall architectural design at a newly opened shopping complex in Auckland, New Zealand, with the former two categories distinguished by gender.",
+    "The maps illustrate the current layout of the town centre of Islip alongside the proposed transformations for its future redevelopment.",
 
   sampleOverview:
-    "Overall, visitor feedback across all three evaluated criteria was predominantly favorable, with the majority of respondents expressing satisfaction. Notably, the complex's design achieved the highest overall level of customer approval, while dining amenities elicited the starkest gender divide, with men reporting significantly greater contentment than women.",
+    "Overall, the town centre is slated to undergo extensive infrastructural modernization, transitioning from a traffic-bisected settlement into a predominantly pedestrianised commercial and residential hub. The most prominent changes involve the construction of a perimeter dual carriageway encircling the central core, alongside substantial residential and commercial expansion to the north and east at the expense of open countryside and recreational parkland.",
 
   formats: [],
   countries: [],
@@ -93,363 +93,370 @@ export const TASK1_DATA: Task1Data = {
   diagramData: {
     hotspots: [
       {
-        id: "shops-male",
-        title: "Shops: Male Shoppers",
-        zone: "Table 1 • Shops (Male)",
-        normalState: "17% Very Satisfied | 45% Satisfied (62% Positive)",
-        elNinoState: "20% Dissatisfied | 18% No Comment",
-        contrastKey: "Lower extreme satisfaction than females (17% vs 34%), but identical dissatisfaction (20%).",
+        id: "ring-road",
+        title: "Perimeter Dual Carriageway",
+        zone: "Transport Infrastructure • Outer Ring",
+        normalState: "At present: No bypass exists; through-traffic travels straight through the central main road.",
+        elNinoState: "Planned: A full perimeter dual carriageway encircles the entire town core, linking western and eastern arteries.",
+        contrastKey: "Diverts through-traffic around the town, bypassing the central core entirely.",
         band9Sentence:
-          "“For retail shops, 45% of men reported being satisfied alongside 17% who were very satisfied, yielding an overall positive rating of 62%.”"
+          "“To accommodate through vehicular traffic, a newly constructed dual carriageway will completely circumscribe the central town, connecting the incoming roads from the east and west.”"
       },
       {
-        id: "shops-female",
-        title: "Shops: Female Shoppers",
-        zone: "Table 1 • Shops (Female)",
-        normalState: "34% Very Satisfied | 37% Satisfied (71% Positive)",
-        elNinoState: "20% Dissatisfied | 9% No Comment",
-        contrastKey: "Extreme satisfaction was exactly double the male rate (34% vs 17%).",
+        id: "pedestrian-thoroughfare",
+        title: "Central Main Road Pedestrianisation",
+        zone: "Central Core • East-West Axis",
+        normalState: "At present: A standard vehicular main road running east-west with shops on both flanks.",
+        elNinoState: "Planned: Designated as 'Pedestrians only', closed entirely to motor vehicles.",
+        contrastKey: "Transformation from a vehicular main road into an exclusive pedestrian precinct.",
         band9Sentence:
-          "“Female shoppers were notably more enthusiastic, with 34% describing themselves as very satisfied—exactly double the male figure of 17%—while an identical 20% expressed dissatisfaction.”"
+          "“The existing main road running through the heart of the town will be entirely pedestrianised, prohibiting vehicular access in favour of foot traffic.”"
       },
       {
-        id: "restaurants-male",
-        title: "Restaurants: Male Shoppers",
-        zone: "Table 2 • Restaurants (Male)",
-        normalState: "25% Very Satisfied | 55% Satisfied (80% Peak Positive)",
-        elNinoState: "5% Dissatisfied (Lowest) | 15% No Comment",
-        contrastKey: "Overwhelming approval (80%) and negligible dissatisfaction (5%).",
+        id: "northern-commercial",
+        title: "Northern Commercial Hub",
+        zone: "Northern Sector • Former Shops & Countryside",
+        normalState: "At present: A strip of roadside shops bordering open countryside to the north.",
+        elNinoState: "Planned: Northern shops demolished; replaced by a bus station, shopping centre, and car park.",
+        contrastKey: "Demolition of local roadside shops in favour of an integrated multi-modal transit and retail complex.",
         band9Sentence:
-          "“Male visitors expressed overwhelming contentment with dining facilities, with 55% satisfied and 25% very satisfied, whereas dissatisfaction was negligible at a mere 5%.”"
+          "“The northern row of shops will be completely demolished to make way for a comprehensive commercial and transit complex, comprising a bus station, a shopping centre, and an adjacent car park.”"
       },
       {
-        id: "restaurants-female",
-        title: "Restaurants: Female Shoppers",
-        zone: "Table 2 • Restaurants (Female)",
-        normalState: "27% Very Satisfied | 32% Satisfied (59% Positive)",
-        elNinoState: "21% Dissatisfied (Over 4x Male Rate) | 20% No Comment",
-        contrastKey: "Female dissatisfaction (21%) was more than quadruple the male rate (5%).",
+        id: "northeast-housing",
+        title: "North-Eastern Residential Expansion",
+        zone: "North-East Sector • Rural Countryside",
+        normalState: "At present: Undeveloped open countryside north of the central shops.",
+        elNinoState: "Planned: A newly constructed residential estate ('New housing') with dedicated road access from the dual carriageway.",
+        contrastKey: "Conversion of rural greenfield countryside into an urban residential neighborhood.",
         band9Sentence:
-          "“In sharp contrast, female dissatisfaction with dining establishments stood at 21%, more than fourfold higher than the corresponding figure for males.”"
+          "“Further east in what is currently open countryside, a new residential development is planned, accessible via a branch road leading from the northern perimeter bypass.”"
       },
       {
-        id: "design-satisfied",
-        title: "Design: Satisfied",
-        zone: "Pie Chart • Dominant Wedge",
-        normalState: "62% Satisfied",
-        elNinoState: "Forms nearly two-thirds of all surveyed visitors",
-        contrastKey: "Single largest individual category across the entire survey.",
+        id: "southern-shops-retention",
+        title: "Southern Retail Row Retention",
+        zone: "Central Sector • South of Pedestrian Zone",
+        normalState: "At present: A row of shops along the southern perimeter of the main road.",
+        elNinoState: "Planned: Fully preserved in its original location, facing the newly pedestrianised precinct.",
+        contrastKey: "Stability and preservation contrasting with the complete demolition of the northern retail row.",
         band9Sentence:
-          "“Regarding the shopping complex's design, the pie chart indicates widespread acclaim, with nearly two-thirds of respondents (62%) reporting they were satisfied.”"
+          "“Unlike their northern counterparts, the shops along the southern side of the central thoroughfare will remain intact, bordering the newly pedestrianised strip.”"
       },
       {
-        id: "design-very-satisfied",
-        title: "Design: Very Satisfied",
-        zone: "Pie Chart • Top Right Wedge",
-        normalState: "17% Very Satisfied",
-        elNinoState: "Combined design approval reaches 79%",
-        contrastKey: "Brings overall design satisfaction to nearly four-fifths of visitors.",
+        id: "park-housing-reconfiguration",
+        title: "Parkland Diminution & South-East Housing",
+        zone: "South-Eastern Quadrant • Amenities",
+        normalState: "At present: A large rectangular park accessed via a branch road off the main road.",
+        elNinoState: "Planned: Park size significantly reduced to make space for a second new housing estate.",
+        contrastKey: "Substantial diminution of public green space to facilitate residential capacity.",
         band9Sentence:
-          "“An additional 17% described the design as very satisfying, elevating the aggregate positive rating to nearly four-fifths (79%).”"
+          "“In the south-eastern quadrant, the recreational park will undergo a noticeable diminution in size to accommodate an additional residential estate directly to its west.”"
       },
       {
-        id: "design-dissatisfied-no-comment",
-        title: "Design: Dissatisfied & No Comment",
-        zone: "Pie Chart • Minor Slices",
-        normalState: "10% Dissatisfied | 11% No Comment",
-        elNinoState: "Only 21% non-positive responses",
-        contrastKey: "Dissatisfied visitors represented exactly one-tenth of the total.",
+        id: "school-access",
+        title: "South-Western School & Direct Bypass Access",
+        zone: "South-Western Quadrant • Educational Facility",
+        normalState: "At present: School situated at the end of a curved cul-de-sac branching from the main road.",
+        elNinoState: "Planned: School building preserved, with its access road reconfigured to connect directly to the southern dual carriageway.",
+        contrastKey: "Retention of educational infrastructure with upgraded direct connection to the outer ring road.",
         band9Sentence:
-          "“Conversely, adverse and indifferent reactions were minimal, with dissatisfied patrons constituting exactly a tenth (10%), closely mirrored by 11% who gave no comment.”"
+          "“The school situated in the south-western corner will be preserved, but its access road will be reconfigured to connect directly into the southern arc of the dual carriageway.”"
       }
     ],
     comparisonsSummary: {
-      overall_approval: "All three categories enjoyed strong public approval, with positive ratings consistently between 59% and 80%.",
-      highest_category: "The complex's architectural design achieved the highest overall approval rating at 79% (62% satisfied, 17% very satisfied).",
-      gender_divergence: "Restaurants showed the largest gender divide: male dissatisfaction was only 5%, whereas female dissatisfaction was over four times higher at 21%.",
-      retail_commonality: "An identical 20% of both male and female shoppers were dissatisfied with the shops, though twice as many women were very satisfied (34% vs 17%)."
+      transport_reorganisation: "Through vehicular traffic will be diverted away from the centre onto an encircling dual carriageway, allowing the main street to become fully pedestrianised.",
+      commercial_overhaul: "The northern shops will be completely demolished and replaced by a multi-modal hub (bus station, shopping centre, and car park), whereas southern shops remain preserved.",
+      residential_growth: "Two new housing estates will be built: one in the north-east countryside and one in the south-east adjacent to a downsized park.",
+      amenity_impact: "While the school is retained with modernized ring-road access, the park will suffer a noticeable loss of area to accommodate new residential housing."
     }
   },
 
   graphData: {
     hotspots: [],
     comparisonsSummary: {
-      bifurcation: "Body 1 covers the two gender-split tables (Shops and Restaurants), while Body 2 examines the overall design pie chart and synthesizes holistic comparisons."
+      bifurcation: "Body 1 details the perimeter dual carriageway, central pedestrianisation, and northern commercial and residential development; Body 2 details the southern zone, highlighting shop retention, school preservation with new access, new housing, and park diminution."
     }
   },
 
   vocabList: [
     {
-      word: "Predominantly",
-      term: "Predominantly",
-      phonetic: "/prɪˈdɒm.ɪ.nənt.li/",
-      meaning: "Mainly, mostly, or for the most part; to a greater extent than others.",
-      definition: "Mainly, mostly, or for the most part; to a greater extent than others.",
-      example: "Public sentiment toward the new shopping complex was predominantly favorable.",
-      sampleSentence: "Public sentiment toward the new shopping complex was predominantly favorable.",
-      collocations: ["predominantly positive", "predominantly favorable", "predominantly satisfied"]
+      word: "Pedestrianise",
+      term: "Pedestrianise",
+      pos: "verb",
+      phonetic: "/pəˈdes.tri.ə.naɪz/",
+      meaning: "To make a street or part of a town into an area where vehicles are not allowed.",
+      definition: "To make a street or part of a town into an area where vehicles are not allowed.",
+      example: "The central main road will be pedestrianised to create a vehicle-free shopping zone.",
+      sampleSentence: "The central main road will be pedestrianised to create a vehicle-free shopping zone.",
+      collocations: ["pedestrianise a street", "fully pedestrianised", "pedestrianised zone"]
     },
     {
-      word: "Disparity",
-      term: "Disparity",
-      phonetic: "/dɪˈspær.ə.ti/",
-      meaning: "A noticeable and usually significant difference or inequality between two or more things.",
-      definition: "A noticeable and usually significant difference or inequality between two or more things.",
-      example: "A pronounced disparity was evident between male and female satisfaction in restaurants.",
-      sampleSentence: "A pronounced disparity was evident between male and female satisfaction in restaurants.",
-      collocations: ["pronounced disparity", "gender disparity", "significant disparity"]
+      word: "Circumscribe",
+      term: "Circumscribe",
+      pos: "verb",
+      phonetic: "/ˈsɜː.kəm.skraɪb/",
+      meaning: "To draw a line around something; to encircle or delimit within boundaries.",
+      definition: "To draw a line around something; to encircle or delimit within boundaries.",
+      example: "A new perimeter dual carriageway will circumscribe the town centre, routing traffic away from the core.",
+      sampleSentence: "A new perimeter dual carriageway will circumscribe the town centre, routing traffic away from the core.",
+      collocations: ["circumscribe the town", "circumscribe the perimeter", "narrowly circumscribed"]
     },
     {
-      word: "Aggregate",
-      term: "Aggregate",
-      phonetic: "/ˈæɡ.rɪ.ɡət/",
-      meaning: "Formed or calculated by the combination of many separate units or items; total.",
-      definition: "Formed or calculated by the combination of many separate units or items; total.",
-      example: "The aggregate approval rating for the complex's design reached nearly four-fifths.",
-      sampleSentence: "The aggregate approval rating for the complex's design reached nearly four-fifths.",
-      collocations: ["aggregate approval", "aggregate percentage", "in the aggregate"]
+      word: "Demolish",
+      term: "Demolish",
+      pos: "verb",
+      phonetic: "/dɪˈmɒl.ɪʃ/",
+      meaning: "To pull or knock down a building or other structure.",
+      definition: "To pull or knock down a building or other structure.",
+      example: "The northern row of shops will be demolished to make way for a modern bus station and shopping centre.",
+      sampleSentence: "The northern row of shops will be demolished to make way for a modern bus station and shopping centre.",
+      collocations: ["completely demolished", "demolish existing buildings", "slated to be demolished"]
     },
     {
-      word: "Disproportionate",
-      term: "Disproportionate",
-      phonetic: "/ˌdɪs.prəˈpɔː.ʃən.ət/",
-      meaning: "Too large or too small in comparison for something else, or out of proper proportion.",
-      definition: "Too large or too small in comparison for something else, or out of proper proportion.",
-      example: "A disproportionate share of male shoppers expressed satisfaction with dining options.",
-      sampleSentence: "A disproportionate share of male shoppers expressed satisfaction with dining options.",
-      collocations: ["disproportionate share", "disproportionate number", "disproportionately high"]
+      word: "Reconfigure",
+      term: "Reconfigure",
+      pos: "verb",
+      phonetic: "/ˌriː.kənˈfɪɡ.ər/",
+      meaning: "To arrange or set up something in a different way or configuration.",
+      definition: "To arrange or set up something in a different way or configuration.",
+      example: "The local road network will be substantially reconfigured to connect with the new bypass.",
+      sampleSentence: "The local road network will be substantially reconfigured to connect with the new bypass.",
+      collocations: ["substantially reconfigure", "reconfigure the layout", "reconfigure road access"]
     },
     {
-      word: "Divergence",
-      term: "Divergence",
-      phonetic: "/daɪˈvɜː.dʒəns/",
-      meaning: "A situation in which two or more things become different, separate, or distinct.",
-      definition: "A situation in which two or more things become different, separate, or distinct.",
-      example: "Dining amenities elicited the starkest divergence between male and female opinions.",
-      sampleSentence: "Dining amenities elicited the starkest divergence between male and female opinions.",
-      collocations: ["stark divergence", "gender divergence", "divergence of opinion"]
+      word: "Erect",
+      term: "Erect",
+      pos: "verb",
+      phonetic: "/ɪˈrekt/",
+      meaning: "To build something; to put up a structure or building.",
+      definition: "To build something; to put up a structure or building.",
+      example: "New housing complexes will be erected in both the north-eastern and south-eastern quadrants.",
+      sampleSentence: "New housing complexes will be erected in both the north-eastern and south-eastern quadrants.",
+      collocations: ["erect new buildings", "erect housing", "newly erected"]
     },
     {
-      word: "Fourfold",
-      term: "Fourfold",
-      phonetic: "/ˈfɔː.fəʊld/",
-      meaning: "Four times as great or as numerous; by a factor of four.",
-      definition: "Four times as great or as numerous; by a factor of four.",
-      example: "Female dissatisfaction with the restaurants was more than fourfold higher than that of males.",
-      sampleSentence: "Female dissatisfaction with the restaurants was more than fourfold higher than that of males.",
-      collocations: ["fourfold increase", "fourfold higher", "increase fourfold"]
+      word: "Diminution",
+      term: "Diminution",
+      pos: "noun",
+      phonetic: "/ˌdɪm.ɪˈnjuː.ʃən/",
+      meaning: "A reduction in the size, extent, or importance of something.",
+      definition: "A reduction in the size, extent, or importance of something.",
+      example: "The construction of new residential units will cause a significant diminution of the town park.",
+      sampleSentence: "The construction of new residential units will cause a significant diminution of the town park.",
+      collocations: ["significant diminution", "diminution of parkland", "marked diminution"]
     },
     {
-      word: "Plurality",
-      term: "Plurality",
-      phonetic: "/plʊəˈræl.ə.ti/",
-      meaning: "A large number of people or things, or the largest individual share in a group without being an absolute majority.",
-      definition: "A large number of people or things, or the largest individual share in a group without being an absolute majority.",
-      example: "A vast plurality of respondents reported being satisfied with the retail shops.",
-      sampleSentence: "A vast plurality of respondents reported being satisfied with the retail shops.",
-      collocations: ["command a plurality", "substantial plurality", "relative plurality"]
+      word: "Bypass",
+      term: "Bypass",
+      pos: "noun",
+      phonetic: "/ˈbaɪ.pɑːs/",
+      meaning: "A road that passes around a town or city to enable traffic to avoid the centre.",
+      definition: "A road that passes around a town or city to enable traffic to avoid the centre.",
+      example: "The dual carriageway will serve as an outer bypass, carrying through-traffic around Islip.",
+      sampleSentence: "The dual carriageway will serve as an outer bypass, carrying through-traffic around Islip.",
+      collocations: ["outer bypass", "perimeter bypass", "traffic bypass"]
     },
     {
-      word: "Marginal",
-      term: "Marginal",
-      phonetic: "/ˈmɑː.dʒɪ.nəl/",
-      meaning: "Very small in amount or degree; situated at the edge or margin; of secondary importance.",
-      definition: "Very small in amount or degree; situated at the edge or margin; of secondary importance.",
-      example: "Dissatisfaction with the shopping complex design remained strictly marginal at only ten percent.",
-      sampleSentence: "Dissatisfaction with the shopping complex design remained strictly marginal at only ten percent.",
-      collocations: ["marginal proportion", "strictly marginal", "marginal difference"]
+      word: "Preserve",
+      term: "Preserve",
+      pos: "verb",
+      phonetic: "/prɪˈzɜːv/",
+      meaning: "To keep something in its original state or in good condition; to protect from harm or destruction.",
+      definition: "To keep something in its original state or in good condition; to protect from harm or destruction.",
+      example: "The southern retail shops and primary school will be preserved during the redevelopment.",
+      sampleSentence: "The southern retail shops and primary school will be preserved during the redevelopment.",
+      collocations: ["preserved intact", "preserve existing buildings", "carefully preserved"]
     },
     {
-      word: "Negligible",
-      term: "Negligible",
-      phonetic: "/ˈneɡ.lɪ.dʒə.bəl/",
-      meaning: "So small or unimportant as to be not worth considering; insignificant.",
-      definition: "So small or unimportant as to be not worth considering; insignificant.",
-      example: "Male dissatisfaction with the dining facilities was negligible at a mere five percent.",
-      sampleSentence: "Male dissatisfaction with the dining facilities was negligible at a mere five percent.",
-      collocations: ["negligible proportion", "negligible amount", "almost negligible"]
+      word: "Infrastructure",
+      term: "Infrastructure",
+      pos: "noun",
+      phonetic: "/ˈɪn.frəˌstrʌk.tʃər/",
+      meaning: "The basic physical and organizational structures and facilities needed for the operation of a society or enterprise.",
+      definition: "The basic physical and organizational structures and facilities needed for the operation of a society or enterprise.",
+      example: "The proposed redevelopment will modernize the town's transport and civic infrastructure.",
+      sampleSentence: "The proposed redevelopment will modernize the town's transport and civic infrastructure.",
+      collocations: ["transport infrastructure", "civic infrastructure", "modern infrastructure"]
     },
     {
-      word: "Constituent",
-      term: "Constituent",
-      phonetic: "/kənˈstɪtʃ.u.ənt/",
-      meaning: "Being a part of a whole; forming an element or component of a group or total.",
-      definition: "Being a part of a whole; forming an element or component of a group or total.",
-      example: "Satisfied patrons formed the single largest constituent segment of the design pie chart.",
-      sampleSentence: "Satisfied patrons formed the single largest constituent segment of the design pie chart.",
-      collocations: ["constituent segment", "constituent elements", "constituent cohort"]
+      word: "Dual carriageway",
+      term: "Dual carriageway",
+      pos: "noun",
+      phonetic: "/ˌdʒuː.əl ˈkær.ɪdʒ.weɪ/",
+      meaning: "A road with a dividing strip between the traffic in opposite directions and two or more lanes in each direction.",
+      definition: "A road with a dividing strip between the traffic in opposite directions and two or more lanes in each direction.",
+      example: "A ring dual carriageway will loop around the perimeter of the town centre.",
+      sampleSentence: "A ring dual carriageway will loop around the perimeter of the town centre.",
+      collocations: ["perimeter dual carriageway", "encircling dual carriageway", "connect to a dual carriageway"]
     },
     {
-      word: "Enthusiastic",
-      term: "Enthusiastic",
-      phonetic: "/ɪnˌθjuː.ziˈæs.tɪk/",
-      meaning: "Showing intense and eager enjoyment, interest, or approval.",
-      definition: "Showing intense and eager enjoyment, interest, or approval.",
-      example: "Female shoppers were notably more enthusiastic about retail stores than their male peers.",
-      sampleSentence: "Female shoppers were notably more enthusiastic about retail stores than their male peers.",
-      collocations: ["enthusiastic response", "notably enthusiastic", "highly enthusiastic"]
+      word: "Quadrant",
+      term: "Quadrant",
+      pos: "noun",
+      phonetic: "/ˈkwɒd.rənt/",
+      meaning: "Any of the four parts into which a plane is divided by two perpendicular lines, or a quarter of an area.",
+      definition: "Any of the four parts into which a plane is divided by two perpendicular lines, or a quarter of an area.",
+      example: "New housing will be erected in both the north-eastern and south-eastern quadrants of the town.",
+      sampleSentence: "New housing will be erected in both the north-eastern and south-eastern quadrants of the town.",
+      collocations: ["north-eastern quadrant", "south-eastern quadrant", "in each quadrant"]
     },
     {
-      word: "Mirror",
-      term: "Mirror",
-      phonetic: "/ˈmɪr.ər/",
-      meaning: "To correspond closely to; to reflect or resemble something accurately.",
-      definition: "To correspond closely to; to reflect or resemble something accurately.",
-      example: "The proportion of undecided respondents mirrored the dissatisfied cohort at eleven percent.",
-      sampleSentence: "The proportion of undecided respondents mirrored the dissatisfied cohort at eleven percent.",
-      collocations: ["closely mirror", "mirror the trend", "mirror each other"]
+      word: "Thoroughfare",
+      term: "Thoroughfare",
+      pos: "noun",
+      phonetic: "/ˈθʌr.ə.feər/",
+      meaning: "A main road in a town or city that connects two places and allows through traffic.",
+      definition: "A main road in a town or city that connects two places and allows through traffic.",
+      example: "The former central thoroughfare will be restricted exclusively to pedestrians.",
+      sampleSentence: "The former central thoroughfare will be restricted exclusively to pedestrians.",
+      collocations: ["central thoroughfare", "major thoroughfare", "pedestrianised thoroughfare"]
     }
   ],
 
   vocabHunt: [
-    "predominantly",
-    "disparity",
-    "aggregate",
-    "disproportionate",
-    "divergence",
-    "fourfold",
-    "plurality",
-    "marginal",
-    "negligible",
-    "constituent",
-    "enthusiastic",
-    "mirror"
+    "pedestrianise",
+    "circumscribe",
+    "demolish",
+    "reconfigure",
+    "erect",
+    "diminution",
+    "bypass",
+    "preserve",
+    "infrastructure",
+    "dual carriageway",
+    "quadrant",
+    "thoroughfare"
   ],
 
   bp1: {
-    title: "Body 1: Gender Breakdown in Shops & Restaurants (Tables 1 & 2)",
-    focus: "Contrast male and female satisfaction levels across retail stores and dining amenities.",
+    title: "Body 1: Transport Infrastructure & Northern Zone Redevelopment",
+    focus: "Detail the perimeter ring road, the conversion of the central road to a pedestrian street, and the complete transformation of the northern sector.",
     points: [
-      "Retail Shops: Female shoppers were twice as likely to be 'very satisfied' (34% vs 17% for men), while 45% of men were 'satisfied' compared to 37% of women.",
-      "Combined positive sentiment for shops reached 71% for females and 62% for males.",
-      "An identical 20% of both men and women expressed dissatisfaction with retail shops, whereas twice as many men gave no comment (18% vs 9%).",
-      "Restaurants: Men reported overwhelming satisfaction with dining facilities (55% satisfied, 25% very satisfied, totaling 80%), with only 5% dissatisfied.",
-      "In contrast, only 59% of women viewed restaurants favorably (32% satisfied, 27% very satisfied), while female dissatisfaction was more than fourfold higher at 21%."
+      "Perimeter Bypass: A new dual carriageway encircles the entire town core, linking the western and eastern entry points to route through-traffic away from the centre.",
+      "Pedestrianisation: The central east-west main road is converted into a pedestrianised thoroughfare ('Pedestrians only').",
+      "Northern Commercial Hub: The existing northern row of shops is completely demolished to make way for a bus station, shopping centre, and car park.",
+      "North-East Expansion: On previously open countryside to the north-east, a new residential development ('New housing') is erected with direct access to the dual carriageway."
     ]
   },
 
   bp2: {
-    title: "Body 2: Complex Design & Holistic Comparison (Pie Chart)",
-    focus: "Detail the overall distribution of visitor sentiment regarding architectural design and make cross-category comparisons.",
+    title: "Body 2: Southern Zone Amenities, Housing Expansion & Parkland Diminution",
+    focus: "Analyze the southern section: preservation of southern shops and existing housing, introduction of new housing, reduction of parkland, and school access reconfiguration.",
     points: [
-      "The pie chart illustrates that design achieved the highest overall approval among all three areas.",
-      "Nearly two-thirds of visitors (62%) reported being satisfied with the design, while an additional 17% were very satisfied, producing an aggregate positive rating of 79%.",
-      "Negative and neutral reactions were minor: exactly one-tenth (10%) of visitors expressed dissatisfaction, closely mirrored by 11% who gave no comment.",
-      "Holistic comparison: Design was the most uniformly approved feature, whereas restaurants generated the sharpest gender conflict."
+      "Retail Retention: The southern row of shops remains intact and unchanged, bordering the new pedestrian area.",
+      "South-Western School: The school remains in the south-west, with its access road reconfigured to connect directly to the southern loop of the dual carriageway.",
+      "South-Eastern Housing: An additional residential estate ('New housing') is constructed in the south-east adjacent to the existing housing.",
+      "Parkland Diminution: The park is substantially reduced in size to accommodate the new southern housing and the dual carriageway arc."
     ]
   },
 
   processingGroups: [
     {
-      title: "1. Retail Shops Comparison (Table 1)",
+      title: "1. Transport Infrastructure & Traffic Flow",
       items: [
-        "Females showed double the extreme satisfaction of males (34% vs 17%)",
-        "Males favored moderate satisfaction (45% vs 37%)",
-        "Total positive sentiment: Females 71% vs Males 62%",
-        "Identical dissatisfaction: Exactly 20% for both genders",
-        "No comment: Males 18% vs Females 9%"
+        "Construction of an encircling dual carriageway forming a complete perimeter bypass",
+        "Diversion of through-traffic away from the settlement core",
+        "Full pedestrianisation of the central east-west main road",
+        "Direct road access provided to the bus station and car park from the dual carriageway"
       ]
     },
     {
-      title: "2. Dining Amenities Disparity (Table 2)",
+      title: "2. Northern Commercial & Civic Overhaul",
       items: [
-        "Male approval peaked at 80% (55% satisfied, 25% very satisfied)",
-        "Female approval was notably lower at 59% (32% satisfied, 27% very satisfied)",
-        "Male dissatisfaction was negligible at only 5%",
-        "Female dissatisfaction quadrupled the male figure, reaching 21%",
-        "Undecided / No comment: Females 20% vs Males 15%"
+        "Complete demolition of the northern row of retail shops",
+        "Erection of an integrated commercial hub: bus station, shopping centre, and car park",
+        "Invasion of former northern countryside by residential and transport developments",
+        "Addition of new housing in the north-eastern quadrant"
       ]
     },
     {
-      title: "3. Architectural Design Distribution (Pie Chart)",
+      title: "3. Southern Amenities & Reorganisation",
       items: [
-        "Satisfied cohort formed the dominant majority at 62% (~five-eighths)",
-        "Very satisfied cohort contributed an additional 17%",
-        "Combined design approval reached nearly four-fifths (79%)",
-        "Dissatisfied visitors accounted for exactly one-tenth (10%)",
-        "No comment cohort mirrored dissatisfaction at 11%"
+        "Preservation of the southern row of shops and existing central-south housing",
+        "Retention of the south-western school with direct dual carriageway access",
+        "Substantial diminution and compression of the south-eastern park",
+        "Construction of a new housing sector between the retained houses and downsized park"
       ]
     },
     {
-      title: "4. Holistic Syntheses & Contrasts",
+      title: "4. Holistic Transformation Syntheses",
       items: [
-        "Highest individual category positive: Men in restaurants (80%)",
-        "Highest overall component approval: Complex design (79%)",
-        "Lowest category dissatisfaction: Men in restaurants (5%)",
-        "Highest category dissatisfaction: Women in restaurants (21%)",
-        "Equal metric: Discontent with shops stood at exactly 20% for both sexes"
+        "Macro Shift: From a rural road-bisected village to a modern pedestrianised commercial centre",
+        "Land Use: Trade-off between open green space/countryside and expanded residential capacity",
+        "Commercial contrast: Northern shops demolished vs southern shops fully retained",
+        "Connectivity: Every zone connected efficiently to the new perimeter dual carriageway"
       ]
     }
   ],
 
   connectors: [
     {
-      phrase: "In terms of retail facilities,...",
-      purpose: "Table 1 Opener & Sector Marker",
-      example: "In terms of retail facilities, female patrons demonstrated significantly higher extreme satisfaction than males."
+      phrase: "In terms of transport infrastructure,...",
+      purpose: "Body 1 Opener & Sector Marker",
+      example: "In terms of transport infrastructure, the former central thoroughfare will be pedestrianised."
     },
     {
-      phrase: "Conversely,... / In sharp contrast,...",
-      purpose: "Gender Disparity & Direct Contrast",
-      example: "In sharp contrast, female dissatisfaction with dining establishments stood at 21%, more than fourfold higher than that of males."
+      phrase: "To accommodate through traffic,...",
+      purpose: "Causal / Functional Transport Linker",
+      example: "To accommodate through traffic, a new dual carriageway will completely circumscribe the central town."
     },
     {
-      phrase: "An identical proportion of both genders...",
-      purpose: "Equivalence & Similarity Connector",
-      example: "An identical proportion of both genders (20%) registered dissatisfaction with retail shops."
+      phrase: "In place of the former northern shops,...",
+      purpose: "Replacement & Redevelopment Marker",
+      example: "In place of the former northern shops, a newly built bus station, shopping centre, and car park will be constructed."
     },
     {
-      phrase: "Turning to the architectural design,...",
-      purpose: "Pie Chart Transition Marker",
-      example: "Turning to the architectural design of the shopping center, the pie chart indicates widespread public satisfaction."
+      phrase: "Turning to the southern sector,...",
+      purpose: "Body 2 Directional Transition",
+      example: "Turning to the southern sector, the existing row of shops will remain entirely intact."
     },
     {
-      phrase: "Nearly two-thirds of all visitors (62%)...",
-      purpose: "Proportional Fraction Synthesis",
-      example: "Nearly two-thirds of all visitors (62%) reported being satisfied with the complex's design."
+      phrase: "In sharp contrast to...",
+      purpose: "Spatial / Structural Direct Contrast",
+      example: "In sharp contrast to the complete demolition to the north, the southern shops will be preserved."
     },
     {
-      phrase: "Representing an aggregate approval rating of...",
-      purpose: "Cumulative Percentage Calculation",
-      example: "...representing an aggregate approval rating of nearly four-fifths (79%)."
+      phrase: "Directly adjacent to...",
+      purpose: "Spatial Proximity Linker",
+      example: "Directly adjacent to the retained housing, a new residential estate will be erected."
     },
     {
-      phrase: "Closely mirrored by...",
-      purpose: "Symmetrical Proportion Linker",
-      example: "...with dissatisfied respondents accounting for exactly one-tenth (10%), closely mirrored by the 11% who gave no comment."
+      phrase: "Resulting in a marked diminution of...",
+      purpose: "Consequence / Area Reduction Connector",
+      example: "...resulting in a marked diminution of the municipal park."
     }
   ],
 
   modelReport: {
-    wordCount: 215,
+    wordCount: 254,
     paragraphs: [
       {
         id: "intro",
-        title: "Introduction: Graphic Scope, Subjects & Survey Location",
-        text: "The two tables and accompanying pie chart illustrate the percentage breakdown of customer feedback from a survey assessing shops, restaurants, and overall architectural design at a newly opened shopping complex in Auckland, New Zealand, with the former two categories distinguished by gender.",
-        wordCount: 39,
-        badges: ["Paraphrase", "Tables & Pie Chart", "Auckland Shopping Complex", "Gender Split in Shops & Dining"]
+        title: "Introduction: Graphic Scope, Map Subjects & Planned Redevelopment",
+        text: "The maps illustrate the current layout of the town centre of Islip alongside the proposed transformations for its future redevelopment.",
+        wordCount: 20,
+        badges: ["Paraphrase", "Current Layout vs Future Redevelopment", "Islip Town Centre", "Zero 'Provided'"]
       },
       {
         id: "overview",
-        title: "Macro Overview: 2-Sentence Qualitative Synthesis (General Approval, Design Peak & Dining Disparity)",
-        text: "Overall, visitor feedback across all three evaluated criteria was predominantly favorable, with the majority of respondents expressing satisfaction. Notably, the complex's design achieved the highest overall level of customer approval, while dining amenities elicited the starkest gender divide, with men reporting significantly greater contentment than women.",
-        wordCount: 47,
-        badges: ["Overall Favorable", "Design Peak Approval", "Restaurant Gender Divide", "Zero Raw Numbers"]
+        title: "Macro Overview: 2-Sentence Qualitative Synthesis (Circumscribing Bypass, Pedestrianisation & Expansion)",
+        text: "Overall, the town centre is slated to undergo extensive infrastructural modernization, transitioning from a traffic-bisected settlement into a predominantly pedestrianised commercial and residential hub. The most prominent changes involve the construction of a perimeter dual carriageway encircling the central core, alongside substantial residential and commercial expansion to the north and east at the expense of open countryside and recreational parkland.",
+        wordCount: 63,
+        badges: ["Extensive Modernization", "Encircling Dual Carriageway", "Pedestrianised Hub", "Countryside & Park Reduction"]
       },
       {
         id: "body1",
-        title: "Body Paragraph 1: Gender Breakdown in Shops & Restaurants (Tables 1 & 2)",
-        text: "Examining the retail facilities, female patrons were notably more enthusiastic, with 34% describing themselves as very satisfied—exactly double the male figure of 17%. Conversely, 45% of men were satisfied, compared to 37% of women, bringing total positive sentiment to 71% for females and 62% for males. An identical proportion of both genders (20%) registered dissatisfaction, whereas twice as many men offered no comment compared to women (18% versus 9%). In terms of restaurants, a pronounced gender disparity emerged. Men expressed overwhelming contentment, with 55% satisfied and 25% very satisfied (totaling 80%), while a mere 5% reported dissatisfaction. In contrast, only 59% of female visitors responded favorably (32% satisfied and 27% very satisfied), while their dissatisfaction rate was over fourfold higher at 21%, with the remaining 20% withholding comment.",
-        wordCount: 131,
-        badges: ["Shops Gender Comparison", "34% vs 17% Very Satisfied", "Equal 20% Dissatisfaction", "Restaurants Disparity", "80% Men vs 59% Women Positive", "5% vs 21% Dissatisfied"]
+        title: "Body Paragraph 1: Transport Infrastructure & Northern Sector Transformation",
+        text: "Regarding transport infrastructure and the northern sector, the current main road bisecting the town centre will be converted into a pedestrianised thoroughfare. To accommodate through vehicular traffic, a new dual carriageway will be constructed to circumscribe the entire urban core, linking the western and eastern access roads. Furthermore, the northern row of shops will be completely demolished to make way for a newly built bus station, shopping centre, and car park. North-east of this complex, on what is currently open countryside, a new housing development will be erected with dedicated road access.",
+        wordCount: 94,
+        badges: ["Main Road Pedestrianised", "Dual Carriageway Bypass", "Northern Shops Demolished", "Bus Station, Shopping Centre & Car Park", "North-East Housing in Countryside"]
       },
       {
         id: "body2",
-        title: "Body Paragraph 2: Architectural Design Distribution & Holistic Comparisons (Pie Chart)",
-        text: "Turning to the architectural design of the shopping center, the pie chart reveals widespread public satisfaction across the entire surveyed cohort. Nearly two-thirds of all visitors (62%) reported being satisfied, with an additional 17% claiming to be very satisfied, representing an aggregate approval rating of nearly four-fifths (79%). Unfavorable and neutral evaluations remained minimal, with dissatisfied respondents accounting for exactly one-tenth (10%) of the total, closely mirrored by the 11% who made no comment.",
-        wordCount: 71,
-        badges: ["Design Pie Chart", "62% Satisfied", "17% Very Satisfied", "79% Aggregate Approval", "10% Dissatisfied vs 11% No Comment"]
+        title: "Body Paragraph 2: Southern Sector Amenities, Housing Expansion & Park Diminution",
+        text: "Turning to the southern zone, the existing row of shops will be preserved intact alongside the residential neighborhood immediately to its south. In contrast, the south-eastern sector will undergo noticeable reconfiguration: a second new housing estate will be built, leading to a substantial diminution of the adjacent parkland. Finally, the school in the south-west will be retained, but its existing curved access route will be connected directly to the southern arc of the dual carriageway.",
+        wordCount: 77,
+        badges: ["Southern Shops Preserved", "South-East Housing Added", "Parkland Diminution", "School Retained with Bypass Link"]
       }
     ]
   }

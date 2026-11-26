@@ -1,47 +1,47 @@
 import React, { useState } from "react";
-import { CheckCircle2, Split, TrendingUp, Calendar, Layers, Sparkles, Filter, ShoppingBag, Utensils, PieChart as PieIcon } from "lucide-react";
+import { CheckCircle2, Split, Layers, Sparkles, Compass, Car, Home, TreePine } from "lucide-react";
 import { TASK1_DATA } from "../../data/task1Data";
 
 export const Step5Bifurcation: React.FC = () => {
-  const [selectedStrategy, setSelectedStrategy] = useState<"domain" | "polarity">("domain");
+  const [selectedStrategy, setSelectedStrategy] = useState<"spatial" | "functional">("spatial");
 
   return (
     <div className="stage-card-wrapper">
       <div>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
-          Step 05 / 08 • Structural Grouping Strategy
+          Step 05 / 08 • Spatial Grouping Strategy
         </span>
-        <h2 className="stage-title">Bifurcation Tactics: How to Group Tables &amp; Pie Chart</h2>
+        <h2 className="stage-title">Bifurcation Tactics: How to Group Development Maps</h2>
         <p className="stage-subtitle">
-          With two tables (gender breakdown for shops and restaurants) and one pie chart (overall architectural design), choosing a logical two-body paragraph grouping guarantees coherent flow and structured comparisons.
+          With two comparative maps depicting complex urban transformations across transport, commerce, housing, and amenities, choosing a structured two-body paragraph strategy guarantees clarity and logical geographical flow.
         </p>
       </div>
 
       {/* Strategy Switcher */}
       <div style={{ display: "flex", gap: "12px", marginBottom: "8px" }}>
         <button
-          onClick={() => setSelectedStrategy("domain")}
+          onClick={() => setSelectedStrategy("spatial")}
           style={{
             flex: 1,
             padding: "14px 18px",
             borderRadius: "14px",
-            border: selectedStrategy === "domain" ? "2px solid #16a34a" : "1.5px solid var(--border-subtle)",
-            background: selectedStrategy === "domain" ? "#f0fdf4" : "#ffffff",
+            border: selectedStrategy === "spatial" ? "2px solid #16a34a" : "1.5px solid var(--border-subtle)",
+            background: selectedStrategy === "spatial" ? "#f0fdf4" : "#ffffff",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             cursor: "pointer",
-            boxShadow: selectedStrategy === "domain" ? "var(--shadow-sm)" : "none"
+            boxShadow: selectedStrategy === "spatial" ? "var(--shadow-sm)" : "none"
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Layers size={20} color={selectedStrategy === "domain" ? "#16a34a" : "var(--slate-600)"} />
+            <Compass size={20} color={selectedStrategy === "spatial" ? "#16a34a" : "var(--slate-600)"} />
             <div style={{ textAlign: "left" }}>
               <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)", display: "block" }}>
-                Strategy A: Component-by-Component Bifurcation (Recommended Band 9)
+                Strategy A: Spatial Bifurcation (North vs South Zone — Recommended Band 9)
               </strong>
               <span style={{ fontSize: "0.78rem", color: "var(--slate-600)" }}>
-                Body 1: Tables 1 &amp; 2 (Shops &amp; Dining Genders) • Body 2: Pie Chart (Complex Architectural Design)
+                Body 1: Transport Bypass &amp; Northern Zone • Body 2: Southern Zone Amenities &amp; Parkland
               </span>
             </div>
           </div>
@@ -51,28 +51,28 @@ export const Step5Bifurcation: React.FC = () => {
         </button>
 
         <button
-          onClick={() => setSelectedStrategy("polarity")}
+          onClick={() => setSelectedStrategy("functional")}
           style={{
             flex: 1,
             padding: "14px 18px",
             borderRadius: "14px",
-            border: selectedStrategy === "polarity" ? "2px solid #ea580c" : "1.5px solid var(--border-subtle)",
-            background: selectedStrategy === "polarity" ? "#fff7ed" : "#ffffff",
+            border: selectedStrategy === "functional" ? "2px solid #ea580c" : "1.5px solid var(--border-subtle)",
+            background: selectedStrategy === "functional" ? "#fff7ed" : "#ffffff",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             cursor: "pointer",
-            boxShadow: selectedStrategy === "polarity" ? "var(--shadow-sm)" : "none"
+            boxShadow: selectedStrategy === "functional" ? "var(--shadow-sm)" : "none"
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Split size={20} color={selectedStrategy === "polarity" ? "#ea580c" : "var(--slate-600)"} />
+            <Split size={20} color={selectedStrategy === "functional" ? "#ea580c" : "var(--slate-600)"} />
             <div style={{ textAlign: "left" }}>
               <strong style={{ fontSize: "0.95rem", color: "var(--slate-900)", display: "block" }}>
-                Strategy B: Sentiment Polarity Grouping (Alternative Approach)
+                Strategy B: Functional Grouping (Infrastructure &amp; Commerce vs Housing &amp; Recreation)
               </strong>
               <span style={{ fontSize: "0.78rem", color: "var(--slate-600)" }}>
-                Body 1: Positive Ratings (Very Satisfied &amp; Satisfied) • Body 2: Dissatisfaction &amp; Neutrality
+                Body 1: Dual Carriageway, Pedestrian Mall &amp; Commercial Hub • Body 2: Housing Expansion &amp; Park Loss
               </span>
             </div>
           </div>
@@ -83,7 +83,7 @@ export const Step5Bifurcation: React.FC = () => {
       </div>
 
       {/* Selected Strategy Deep Dive Grid */}
-      {selectedStrategy === "domain" ? (
+      {selectedStrategy === "spatial" ? (
         <div className="stage-grid-2col">
           {/* Body 1 Column */}
           <div
@@ -100,34 +100,34 @@ export const Step5Bifurcation: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#16a34a" }} />
+                <Car size={18} color="#2563eb" />
                 <h4 style={{ fontSize: "1.08rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  Body 1: Tables 1 &amp; 2 — Retail Shops &amp; Dining Gender Breakdown
+                  Body 1: Transport Infrastructure &amp; Northern Zone
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ background: "#f0fdf4", color: "#166534", fontWeight: 750 }}>
-                105 Words
+              <span className="apple-badge neutral" style={{ background: "#eff6ff", color: "#1e40af", fontWeight: 750 }}>
+                94 Words
               </span>
             </div>
 
             <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.5 }}>
-              Compares male and female responses across retail shops (double extreme satisfaction among women: 34% vs 17%, equal 20% dissatisfaction) and dining establishments (80% male approval vs 21% female dissatisfaction).
+              Groups all modifications along the northern sector: the encircling dual carriageway bypass, the pedestrianisation of the central main road, the demolition of northern shops for a transit and commercial complex, and new countryside housing.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>1. Retail Shops (Table 1):</strong> 45% male / 37% female satisfied; women had double the very satisfied rate (34% vs 17%); identical 20% dissatisfaction.
+                <strong style={{ color: "var(--slate-900)" }}>1. Perimeter Dual Carriageway:</strong> Circumscribes the town core, connecting eastern and western entry points to divert through-traffic.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>2. Dining Male Peak (Table 2):</strong> 55% satisfied + 25% very satisfied = 80% total positive feedback, with a negligible 5% dissatisfaction.
+                <strong style={{ color: "var(--slate-900)" }}>2. Pedestrian Thoroughfare:</strong> Central main road closed to vehicular traffic and designated &lsquo;Pedestrians only&rsquo;.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>3. Dining Female Contrast:</strong> 21% of women were dissatisfied (more than four times the male rate), with 20% offering no comment.
+                <strong style={{ color: "var(--slate-900)" }}>3. Commercial Hub &amp; NE Housing:</strong> Northern shops demolished for a bus station, shopping centre, and car park; new housing erected in the countryside.
               </div>
             </div>
 
-            <div style={{ marginTop: "auto", background: "#f8fafc", padding: "12px 14px", borderRadius: "12px", fontSize: "0.83rem", color: "#1e293b", fontStyle: "italic", borderLeft: "3px solid #16a34a" }}>
-              “In retail shops, 45% of male visitors were satisfied alongside 17% who were very satisfied. By comparison, female shoppers demonstrated considerably higher enthusiasm, with 34% describing themselves as very satisfied—exactly double the male proportion—while dissatisfaction rates for both sexes were identical at 20%...”
+            <div style={{ marginTop: "auto", background: "#f8fafc", padding: "12px 14px", borderRadius: "12px", fontSize: "0.83rem", color: "#1e293b", fontStyle: "italic", borderLeft: "3px solid #2563eb" }}>
+              “Regarding transport infrastructure and the northern sector, the current main road bisecting the town centre will be converted into a pedestrianised thoroughfare. To accommodate through vehicular traffic, a new dual carriageway will be constructed to circumscribe the entire urban core...”
             </div>
           </div>
 
@@ -146,54 +146,54 @@ export const Step5Bifurcation: React.FC = () => {
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <span style={{ width: "12px", height: "12px", borderRadius: "50%", background: "#ea580c" }} />
+                <Home size={18} color="#16a34a" />
                 <h4 style={{ fontSize: "1.08rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                  Body 2: Pie Chart — Complex Architectural Design Reception
+                  Body 2: Southern Sector Amenities &amp; Parkland Diminution
                 </h4>
               </div>
-              <span className="apple-badge neutral" style={{ background: "#fff7ed", color: "#9a3412", fontWeight: 750 }}>
-                58 Words
+              <span className="apple-badge neutral" style={{ background: "#f0fdf4", color: "#166534", fontWeight: 750 }}>
+                77 Words
               </span>
             </div>
 
             <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", margin: 0, lineHeight: 1.5 }}>
-              Deconstructs the pie chart for complex design, highlighting nearly two-thirds satisfaction (62%), cumulative 79% positive approval, and marginal negative/neutral shares.
+              Groups all features in the southern half: retention of the southern shop row, preservation of existing residential housing, construction of a second new housing estate, diminution of parkland, and school access reconfiguration.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>1. Plurality Satisfied:</strong> Nearly two-thirds (62%) of respondents expressed satisfaction with the architectural layout.
+                <strong style={{ color: "var(--slate-900)" }}>1. Southern Retail Preservation:</strong> Southern row of shops preserved intact, fronting onto the new pedestrianised walkway.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>2. Cumulative Acclaim:</strong> Adding 17% very satisfied brings total positive approval to 79%.
+                <strong style={{ color: "var(--slate-900)" }}>2. SE Housing &amp; Park Reduction:</strong> New residential estate erected east of existing housing, substantially reducing the park in size.
               </div>
               <div style={{ background: "var(--slate-50)", padding: "10px 12px", borderRadius: "10px", border: "1px solid var(--border-subtle)", fontSize: "0.84rem" }}>
-                <strong style={{ color: "var(--slate-900)" }}>3. Low Disapproval &amp; Neutrality:</strong> Only 10% were dissatisfied, while 11% made no comment.
+                <strong style={{ color: "var(--slate-900)" }}>3. South-Western School:</strong> Building preserved, but access road reconfigured to connect directly into the southern loop of the dual carriageway.
               </div>
             </div>
 
-            <div style={{ marginTop: "auto", background: "#f8fafc", padding: "12px 14px", borderRadius: "12px", fontSize: "0.83rem", color: "#1e293b", fontStyle: "italic", borderLeft: "3px solid #ea580c" }}>
-              “Regarding the complex's design, the pie chart indicates widespread acclaim, with nearly two-thirds of respondents (62%) reporting satisfaction. An additional 17% were very satisfied, bringing total positive sentiment to 79%, whereas negative appraisals and neutral responses were marginal at 10% and 11% respectively.”
+            <div style={{ marginTop: "auto", background: "#f8fafc", padding: "12px 14px", borderRadius: "12px", fontSize: "0.83rem", color: "#1e293b", fontStyle: "italic", borderLeft: "3px solid #16a34a" }}>
+              “Turning to the southern zone, the existing row of shops will be preserved intact alongside the residential neighborhood immediately to its south. In contrast, the south-eastern sector will undergo noticeable reconfiguration...”
             </div>
           </div>
         </div>
       ) : (
-        /* Alternative Polarity Strategy */
+        /* Alternative Strategy: Functional Grouping */
         <div className="stage-grid-2col">
-          <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "22px", display: "flex", flexDirection: "column", gap: "12px" }}>
+          <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "22px", display: "flex", flexDirection: "column", gap: "14px" }}>
             <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-              Group 1: Positive Approval Across All Sectors (Satisfied &amp; Very Satisfied)
+              Body 1: Civic &amp; Commercial Infrastructure
             </h4>
-            <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", lineHeight: 1.5 }}>
-              Groups all favorable metrics: 79% design approval, 80% male restaurant approval, 71% female shop approval, and 62% male shop approval, establishing the dominant welcoming reception.
+            <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", lineHeight: 1.5 }}>
+              Groups all transit and commercial features together: the circumscribing dual carriageway bypass, the pedestrianisation of the main road, the new bus station, shopping centre, car park, and school feeder road.
             </p>
           </div>
-          <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "22px", display: "flex", flexDirection: "column", gap: "12px" }}>
+          <div style={{ background: "#ffffff", border: "1.5px solid var(--border-subtle)", borderRadius: "18px", padding: "22px", display: "flex", flexDirection: "column", gap: "14px" }}>
             <h4 style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-              Group 2: Critical &amp; Neutral Sentiment (Dissatisfaction &amp; No Comment)
+              Body 2: Residential Zones &amp; Recreational Green Space
             </h4>
-            <p style={{ fontSize: "0.86rem", color: "var(--slate-600)", lineHeight: 1.5 }}>
-              Examines areas of friction and apathy: the shared 20% shop dissatisfaction, the 4x dining dissatisfaction disparity (21% female vs 5% male), and the modest 10% design dissatisfaction.
+            <p style={{ fontSize: "0.85rem", color: "var(--slate-600)", lineHeight: 1.5 }}>
+              Groups all housing developments and natural environments: preserved southern housing, new north-east countryside housing, new south-east park housing, and the corresponding shrinkage of parkland.
             </p>
           </div>
         </div>

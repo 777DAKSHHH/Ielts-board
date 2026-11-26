@@ -51,7 +51,8 @@ export interface GeneralTask1Data {
       | "Formal Correspondence"
       | "Festive Traditions"
       | "Cultural Significance"
-      | "Personal Impressions";
+      | "Personal Impressions"
+      | "Informal Conversational";
   }[];
   architectureRevision?: {
     step: string;
@@ -65,95 +66,95 @@ export interface GeneralTask1Data {
 }
 
 export const GENERAL_TASK1_DATA: GeneralTask1Data = {
-  id: "general-task1-world-food-festival-offer",
+  id: "general-task1-friend-job-recommendation",
   taskType: "IELTS General Training • Writing Task 1",
-  letterType: "Semi-Formal",
-  title: "Semi-Formal Letter to Town Club Event Organiser",
+  letterType: "Informal",
+  title: "Informal Letter: Helping a Study-Abroad Friend Find a Job",
   questionText:
-    "WEDNESDAY (Semi Formal)\n\nYou have heard of the local town club organising an event to celebrate popular food from around the world. Write a letter to the event organiser. In your letter,\n• Offer to make a popular dish from your country\n• Describe what this dish is\n• Explain why it should be included in the event",
-  salutation: "Dear Mr. Pritam,",
-  signoff: "Warm regards,",
+    "THURSDAY (Informal)\n\nA friend you made while you were studying abroad has written to ask you for help in finding a job in your country. You have heard about a job in a local company that might be suitable for him/her. Write a letter to this friend. In your letter,\n• Tell your friend about the job and what sort of work it involves\n• Say why you think the job would be suitable for him/her\n• Explain how to apply for the job",
+  salutation: "Dear Pritam,",
+  signoff: "Warm wishes,",
   senderName: "Arpit",
-  wordCount: 295,
+  wordCount: 268,
 
   architectureRevision: [
     {
       step: "1. Salutation & Opening",
-      stage: "Semi-Formal Greeting & Event Commendation (Para 1)",
+      stage: "Affectionate Greeting & Reconnection (Para 1)",
       badgeColor: "#1e3a8a",
       bgColor: "#eff6ff",
       borderColor: "#bfdbfe",
       textColor: "#1d4ed8",
-      summary: "Polite salutation ('Dear Mr. Pritam,') + enthusiastic statement of purpose offering to volunteer culinary skills for the town club's international food celebration."
+      summary: "Warm greeting to Pritam ('Dear Pritam,') + enthusiasm about catching up, reminiscing about shared university memories abroad, and excited announcement of an ideal local opening."
     },
     {
       step: "2. Body Para 1 (Bullet 1)",
-      stage: "The National Dish Offer: Royal Dum Biryani",
+      stage: "The Role & Daily Core Responsibilities",
       badgeColor: "#047857",
       bgColor: "#ecfdf5",
       borderColor: "#a7f3d0",
       textColor: "#047857",
-      summary: "Proposing Indian Dum Biryani → Establishing its iconic cultural stature as the centerpiece of Indian hospitality, festivals, and communal banquets."
+      summary: "Detailing the position: International Client Coordinator at a prominent regional tech firm → Outlining daily tasks like cross-border liaising, bilingual communication, and client onboarding."
     },
     {
       step: "3. Body Para 2 (Bullet 2)",
-      stage: "Sensory Description & Traditional 'Dum' Methodology",
+      stage: "Personal Suitability & Competitive Edge",
       badgeColor: "#d97706",
       bgColor: "#fffbeb",
       borderColor: "#fde68a",
       textColor: "#b45309",
-      summary: "Elaborating on aged basmati rice, aromatic spices (cardamom, saffron, cinnamon), layered marinated ingredients, and the sealed-steam slow-cooking technique."
+      summary: "Connecting Pritam's unique background: his international master's degree, multicultural adaptability, bilingual fluency, and problem-solving flair make him a tailor-made fit."
     },
     {
       step: "4. Body Para 3 (Bullet 3)",
-      stage: "Strategic Justification for Event Inclusion",
+      stage: "Application Blueprint & Insider Referral",
       badgeColor: "#4338ca",
       bgColor: "#eef2ff",
       borderColor: "#c7d2fe",
       textColor: "#3730a3",
-      summary: "Highlighting universal flavor appeal, dietary versatility (vegetarian crowd-pleaser), scalable batch serving, and embodiment of multicultural fellowship."
+      summary: "Actionable roadmap: tailoring his CV and cover letter, applying directly via the company careers portal, and Arpit offering to submit a personal internal employee recommendation."
     },
     {
       step: "5. Closing & Sign-off",
-      stage: "Logistical Readiness & Semi-Formal Sign-off",
+      stage: "Hospitable Invitation & Warm Sign-off",
       badgeColor: "#0f172a",
       bgColor: "#f8fafc",
       borderColor: "#cbd5e1",
       textColor: "#0f172a",
-      summary: "Proactive willingness to manage ingredients and equipment + respectful closing sign-off ('Warm regards,\nArpit')."
+      summary: "Generous hospitality offer (staying at Arpit's place during interviews) + affectionate sign-off ('Warm wishes,\nArpit')."
     }
   ],
 
   pptFormatRules: [
     {
       stage: "1. Salutation",
-      description: "Semi-formal salutation using title and surname (Dear Mr. [Surname],)",
-      specificRule: "When writing to an event organizer you do not know intimately, use 'Dear Mr. Pritam,' followed by a comma. Avoid overly casual greetings ('Hi Pritam') or cold formal formulas ('Dear Sir/Madam')."
+      description: "Informal first-name greeting (Dear [First Name],)",
+      specificRule: "When writing to a close friend from university, use 'Dear Pritam,' followed by a comma. Do not use formal titles like 'Mr.' or stiff corporate formulas."
     },
     {
       stage: "2. Opening (Paragraph 1)",
-      description: "Courteous statement of purpose acknowledging the upcoming club event.",
-      specificRule: "State why you are writing immediately: 'I am writing to you after learning about the upcoming international food festival organized by the town club... and would love to enthusiastically volunteer my culinary services...'"
+      description: "Warm, natural reconnection and enthusiastic statement of purpose.",
+      specificRule: "Acknowledge his previous correspondence, briefly reference your shared study-abroad bond, and excitedly introduce the job news: 'It was fantastic to hear from you... you'll be thrilled to know that an ideal opening just came up...'"
     },
     {
       stage: "3. Body Para 1 (Bullet 1)",
-      description: "Explicitly name the chosen dish and establish its cultural prestige.",
-      specificRule: "Connect the dish to your homeland's celebratory culture: explain that Dum Biryani is the undisputed centerpiece of festive gatherings and community banquets in India."
+      description: "Specific details about the company, job title, and daily tasks.",
+      specificRule: "Specify the exact position (e.g. International Client Coordinator at Apex Solutions) and explain what the work actually entails: coordinating global accounts, managing partner communications, and preparing project briefs."
     },
     {
       stage: "4. Body Para 2 (Bullet 2)",
-      description: "Sensory depiction of ingredients, aromatics, and cooking methodology.",
-      specificRule: "Detail specific culinary elements: aged basmati rice, whole spices (saffron, cardamom, cinnamon), the sealed-steam 'dum' slow-cooking technique, and accompaniments like cooling mint raita."
+      description: "Explicit reasons why this specific friend is uniquely qualified.",
+      specificRule: "Highlight personal attributes: his overseas academic training, bilingual linguistic fluency, exceptional interpersonal diplomacy, and proven teamwork."
     },
     {
       stage: "5. Body Para 3 (Bullet 3)",
-      description: "Persuasive justification for why the event needs this dish.",
-      specificRule: "Provide three solid reasons: universal crowd appeal across age groups, ease of scalable batch serving, and perfect harmony with the festival's multicultural ethos."
+      description: "Clear, helpful application instructions plus an internal referral offer.",
+      specificRule: "Provide actionable guidance: submit via the online portal by next Friday, customize the portfolio, and promise to speak directly with the hiring manager."
     },
     {
       stage: "6. Closing & Sign-off",
-      description: "Practical logistics offer + warm semi-formal sign-off.",
-      specificRule: "Offer to handle ingredients and cookware independently, invite logistical discussion, and close with 'Warm regards,' followed by your name ('Arpit')."
+      description: "Warm closing offer of hospitality and informal sign-off.",
+      specificRule: "Offer him a place to stay when visiting for the interview and conclude warmly with 'Warm wishes,' or 'All the best,' followed by 'Arpit'."
     }
   ],
 
@@ -161,55 +162,55 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
     {
       id: "bullet-1",
       bulletNumber: 1,
-      promptText: "Offer to make a popular dish from your country",
+      promptText: "Tell your friend about the job and what sort of work it involves",
       targetParagraph: "Body Paragraph 1",
-      linkerRule: "Enthusiastic offer markers (e.g. 'Specifically, I would like to offer to prepare...', 'In my home country,...')",
+      linkerRule: "Informal informational markers (e.g. 'The position is for an...', 'Basically, your main responsibilities would involve...')",
       explanation:
-        "Name the specific traditional dish with pride, stating its cultural significance as a hallmark celebratory food in your native culture.",
+        "Introduce the company and describe the daily operational tasks, clarifying that the role demands international communication and project handling.",
       modelExcerpt:
-        "Specifically, I would like to offer to cook a classic Indian Dum Biryani. In my home country, biryani is regarded as the undisputed pinnacle of celebratory cuisine, served at weddings, major festivals, and landmark community feasts. Offering this beloved national dish would allow attendees to experience a genuinely iconic culinary masterpiece that represents centuries of rich gastronomic heritage.",
+        "The position is for an International Client Coordinator at Apex Digital, a fast-growing tech consultancy based right here in the city. Essentially, the role involves liaising between local software development teams and overseas corporate clients. You would be responsible for managing day-to-day client communications, scheduling international product demos, and ensuring project deliverables align seamlessly with customer specifications.",
       keyCollocations: [
-        "offer to cook a classic",
-        "undisputed pinnacle of celebratory cuisine",
-        "landmark community feasts",
-        "beloved national dish",
-        "rich gastronomic heritage"
+        "fast-growing tech consultancy",
+        "liaising between local development teams",
+        "overseas corporate clients",
+        "day-to-day client communications",
+        "project deliverables"
       ]
     },
     {
       id: "bullet-2",
       bulletNumber: 2,
-      promptText: "Describe what this dish is",
+      promptText: "Say why you think the job would be suitable for him/her",
       targetParagraph: "Body Paragraph 2",
-      linkerRule: "Sensory and procedural transition linkers (e.g. 'For those unfamiliar with the recipe,...', 'Crucially, the pot is sealed...')",
+      linkerRule: "Complimentary reasoning linkers (e.g. 'Knowing your background,...', 'What makes this a tailor-made fit is...')",
       explanation:
-        "Provide a mouth-watering description of the ingredients, whole aromatic spices, and traditional cooking technique (such as steam-sealing) along with classic accompaniments.",
+        "Explain how the friend's educational credentials, linguistic skills, and multicultural background make him an ideal candidate.",
       modelExcerpt:
-        "For those unfamiliar with the recipe, Dum Biryani is a sumptuous, multi-layered rice delicacy consisting of aged, long-grain basmati rice and richly spiced marinated vegetables and cottage cheese. The ingredients are infused with fragrant whole spices—such as black cardamom, star anise, cinnamon quills, and saffron-soaked milk. Crucially, the pot is sealed with dough and slow-cooked over gentle embers—a traditional technique known as 'dum'—allowing the trapped steam to marry the flavors without scorching the ingredients. I will also serve it alongside a refreshing, cooling cucumber-mint raita.",
+        "The moment I saw the job brief, I immediately thought of you because your background makes you a tailor-made fit. Given our postgraduate studies in international business, you already have a deep grasp of cross-cultural negotiations. Furthermore, your bilingual fluency and charismatic presentation skills are precisely what their management is looking for to spearhead global accounts.",
       keyCollocations: [
-        "sumptuous multi-layered rice delicacy",
-        "aged long-grain basmati rice",
-        "fragrant whole spices",
-        "sealed with dough and slow-cooked",
-        "cooling cucumber-mint raita"
+        "tailor-made fit",
+        "postgraduate studies in international business",
+        "cross-cultural negotiations",
+        "bilingual fluency",
+        "spearhead global accounts"
       ]
     },
     {
       id: "bullet-3",
       bulletNumber: 3,
-      promptText: "Explain why it should be included in the event",
+      promptText: "Explain how to apply for the job",
       targetParagraph: "Body Paragraph 3",
-      linkerRule: "Persuasive argumentation linkers (e.g. 'There are several compelling reasons why...', 'Firstly,... Furthermore,... Most importantly,...')",
+      linkerRule: "Actionable instructional linkers (e.g. 'As for the application process,...', 'Make sure to highlight...')",
       explanation:
-        "Give persuasive practical and cultural arguments: widespread crowd appeal, suitability for large crowds, inclusive dietary profile, and thematic alignment with international unity.",
+        "Provide direct steps: deadlines, portal submission, CV tailoring, and offering to provide an internal referral.",
       modelExcerpt:
-        "There are several compelling reasons why Biryani would be an ideal addition to the town club's international lineup. Firstly, its harmonious balance of warmth and fragrance has proven universal appeal, making it an undeniable crowd-pleaser across all age groups. Furthermore, it is naturally wholesome, substantial, and easily prepared in large portions to feed substantial gatherings. Most importantly, biryani epitomizes the spirit of communal sharing and cultural exchange, which aligns seamlessly with the central vision of your world food event.",
+        "To apply, you need to head over to their official careers portal and submit your updated CV alongside a tailored cover letter before the 15th of next month. Be sure to highlight our overseas group capstone project, as they value proven collaborative problem-solving. More importantly, my cousin works in their human resources division, so send me your resume beforehand and I will happily put in a glowing recommendation for you.",
       keyCollocations: [
-        "ideal addition to the international lineup",
-        "harmonious balance of warmth and fragrance",
-        "undeniable crowd-pleaser",
-        "communal sharing and cultural exchange",
-        "aligns seamlessly with the central vision"
+        "official careers portal",
+        "tailored cover letter",
+        "overseas capstone project",
+        "collaborative problem-solving",
+        "put in a glowing recommendation"
       ]
     }
   ],
@@ -217,135 +218,135 @@ export const GENERAL_TASK1_DATA: GeneralTask1Data = {
   paragraphs: [
     {
       id: "opening",
-      title: "Opening Paragraph: Semi-Formal Salutation & Purpose of Writing",
-      purpose: "Warm greeting acknowledging the event and offering voluntary culinary participation",
-      text: "I am writing to you after learning about the upcoming international food festival organized by the town club. As a long-standing local resident with deep roots in India, I would love to enthusiastically volunteer my culinary services and prepare an authentic national dish for the celebration.",
-      wordCount: 45,
-      ruleHighlight: "Polite semi-formal register: establishes personal connection, acknowledges club event, and clearly states intention to volunteer."
+      title: "Opening Paragraph: Warm Reconnection & Exciting News",
+      purpose: "Catch up affectionately, acknowledge his search, and introduce the promising local vacancy",
+      text: "It was wonderful to receive your email last week, and it brought back so many great memories of our study sessions and late-night coffee runs during our semester abroad. I was thrilled to hear that you are planning to relocate to my home country, and you will be pleased to know that I have tracked down an opening that seems ideal for you.",
+      wordCount: 65,
+      ruleHighlight: "Engaging informal opening: personal warmth, shared memories, and natural introduction of the job opportunity."
     },
     {
       id: "body1",
-      title: "Body Paragraph 1: The Dish Offer & Cultural Prestige (Bullet 1)",
-      purpose: "Propose Indian Dum Biryani and explain its preeminent status in Indian festive culture",
+      title: "Body Paragraph 1: The Vacancy & Scope of Work (Bullet 1)",
+      purpose: "Name the company, job title, and clarify daily operational responsibilities",
       bulletRef: 1,
-      text: "Specifically, I would like to offer to cook a classic Indian Dum Biryani. In my home country, biryani is regarded as the undisputed pinnacle of celebratory cuisine, served at weddings, major festivals, and landmark community feasts. Offering this beloved national dish would allow attendees to experience a genuinely iconic culinary masterpiece that represents centuries of rich gastronomic heritage.",
-      wordCount: 59,
-      ruleHighlight: "Bullet 1 thoroughly covered: names the dish with pride and explains its celebratory cultural weight."
+      text: "The position is for an International Client Coordinator at Apex Digital, a fast-growing tech consultancy based right here in the city. Essentially, the role involves liaising between local software development teams and overseas corporate clients. You would be responsible for managing day-to-day client communications, scheduling international product demos, and ensuring project deliverables align seamlessly with customer specifications.",
+      wordCount: 56,
+      ruleHighlight: "Bullet 1 fully addressed: clear explanation of company profile and tangible day-to-day duties."
     },
     {
       id: "body2",
-      title: "Body Paragraph 2: Dish Description & Culinary Technique (Bullet 2)",
-      purpose: "Vivid description of ingredients, whole aromatic spices, and traditional sealed 'dum' cooking",
+      title: "Body Paragraph 2: Why Pritam Is the Ideal Match (Bullet 2)",
+      purpose: "Link his academic qualifications, linguistic prowess, and personality to the job requirements",
       bulletRef: 2,
-      text: "For those unfamiliar with the recipe, Dum Biryani is a sumptuous, multi-layered rice delicacy consisting of aged, long-grain basmati rice and richly spiced marinated vegetables and cottage cheese. The ingredients are infused with fragrant whole spices—such as black cardamom, star anise, cinnamon quills, and saffron-soaked milk. Crucially, the pot is sealed with dough and slow-cooked over gentle embers—a traditional technique known as 'dum'—allowing the trapped steam to marry the flavors without scorching the ingredients. I will also serve it alongside a refreshing, cooling cucumber-mint raita.",
-      wordCount: 88,
-      ruleHighlight: "Bullet 2 thoroughly covered: rich sensory vocabulary describing aromatics, layered ingredients, and traditional preparation."
+      text: "The moment I saw the job brief, I immediately thought of you because your background makes you a tailor-made fit. Given our postgraduate studies in international business, you already have a deep grasp of cross-cultural negotiations. Furthermore, your bilingual fluency and charismatic presentation skills are precisely what their management is looking for to spearhead global accounts.",
+      wordCount: 56,
+      ruleHighlight: "Bullet 2 fully addressed: highlights relevant academic foundation, cross-cultural competence, and bilingual skills."
     },
     {
       id: "body3",
-      title: "Body Paragraph 3: Justification for Event Inclusion (Bullet 3)",
-      purpose: "Persuade the organizer with universal appeal, crowd scalability, and cultural harmony",
+      title: "Body Paragraph 3: Step-by-Step Application & Referral (Bullet 3)",
+      purpose: "Give clear application deadlines, website steps, and offer an employee referral",
       bulletRef: 3,
-      text: "There are several compelling reasons why Biryani would be an ideal addition to the town club's international lineup. Firstly, its harmonious balance of warmth and fragrance has proven universal appeal, making it an undeniable crowd-pleaser across all age groups. Furthermore, it is naturally wholesome, substantial, and easily prepared in large portions to feed substantial gatherings. Most importantly, biryani epitomizes the spirit of communal sharing and cultural exchange, which aligns seamlessly with the central vision of your world food event.",
-      wordCount: 78,
-      ruleHighlight: "Bullet 3 thoroughly covered: presents 3 layered justifications covering taste, logistics, and philosophical alignment."
+      text: "To apply, you need to head over to their official careers portal and submit your updated CV alongside a tailored cover letter before the 15th of next month. Be sure to highlight our overseas group capstone project, as they value proven collaborative problem-solving. More importantly, my cousin works in their human resources division, so send me your resume beforehand and I will happily put in a glowing recommendation for you.",
+      wordCount: 71,
+      ruleHighlight: "Bullet 3 fully addressed: specific deadline, portal instructions, CV tips, and generous personal referral."
     },
     {
       id: "closing",
-      title: "Closing Paragraph & Semi-Formal Sign-off",
-      purpose: "Offer logistical independence, invite coordination, and conclude with warm sign-off",
-      text: "I am happy to bring my own cookware and manage all ingredient sourcing independently. Please let me know your thoughts on this proposal, as well as any relevant logistical arrangements regarding kitchen space or serving stations.\n\nWarm regards,\nArpit",
-      wordCount: 39,
-      ruleHighlight: "Courteous closing: demonstrates initiative by handling logistics, invites reply, and finishes with 'Warm regards,' matching the semi-formal register."
+      title: "Closing Paragraph & Hospitality Offer",
+      purpose: "Extend hospitality for interview visits, encourage him, and sign off warmly",
+      text: "If you are invited for an in-person interview, my spare bedroom is completely yours for as long as you need. Keep me posted on your progress, and let me know if you want to jump on a quick video call to polish your resume.\n\nWarm wishes,\nArpit",
+      wordCount: 47,
+      ruleHighlight: "Affectionate closing: hospitality offer, offer of ongoing support, and warm informal sign-off."
     }
   ],
 
-  modelLetter: `Dear Mr. Pritam,
+  modelLetter: `Dear Pritam,
 
-I am writing to you after learning about the upcoming international food festival organized by the town club. As a long-standing local resident with deep roots in India, I would love to enthusiastically volunteer my culinary services and prepare an authentic national dish for the celebration.
+It was wonderful to receive your email last week, and it brought back so many great memories of our study sessions and late-night coffee runs during our semester abroad. I was thrilled to hear that you are planning to relocate to my home country, and you will be pleased to know that I have tracked down an opening that seems ideal for you.
 
-Specifically, I would like to offer to cook a classic Indian Dum Biryani. In my home country, biryani is regarded as the undisputed pinnacle of celebratory cuisine, served at weddings, major festivals, and landmark community feasts. Offering this beloved national dish would allow attendees to experience a genuinely iconic culinary masterpiece that represents centuries of rich gastronomic heritage.
+The position is for an International Client Coordinator at Apex Digital, a fast-growing tech consultancy based right here in the city. Essentially, the role involves liaising between local software development teams and overseas corporate clients. You would be responsible for managing day-to-day client communications, scheduling international product demos, and ensuring project deliverables align seamlessly with customer specifications.
 
-For those unfamiliar with the recipe, Dum Biryani is a sumptuous, multi-layered rice delicacy consisting of aged, long-grain basmati rice and richly spiced marinated vegetables and cottage cheese. The ingredients are infused with fragrant whole spices—such as black cardamom, star anise, cinnamon quills, and saffron-soaked milk. Crucially, the pot is sealed with dough and slow-cooked over gentle embers—a traditional technique known as 'dum'—allowing the trapped steam to marry the flavors without scorching the ingredients. I will also serve it alongside a refreshing, cooling cucumber-mint raita.
+The moment I saw the job brief, I immediately thought of you because your background makes you a tailor-made fit. Given our postgraduate studies in international business, you already have a deep grasp of cross-cultural negotiations. Furthermore, your bilingual fluency and charismatic presentation skills are precisely what their management is looking for to spearhead global accounts.
 
-There are several compelling reasons why Biryani would be an ideal addition to the town club's international lineup. Firstly, its harmonious balance of warmth and fragrance has proven universal appeal, making it an undeniable crowd-pleaser across all age groups. Furthermore, it is naturally wholesome, substantial, and easily prepared in large portions to feed substantial gatherings. Most importantly, biryani epitomizes the spirit of communal sharing and cultural exchange, which aligns seamlessly with the central vision of your world food event.
+To apply, you need to head over to their official careers portal and submit your updated CV alongside a tailored cover letter before the 15th of next month. Be sure to highlight our overseas group capstone project, as they value proven collaborative problem-solving. More importantly, my cousin works in their human resources division, so send me your resume beforehand and I will happily put in a glowing recommendation for you.
 
-I am happy to bring my own cookware and manage all ingredient sourcing independently. Please let me know your thoughts on this proposal, as well as any relevant logistical arrangements regarding kitchen space or serving stations.
+If you are invited for an in-person interview, my spare bedroom is completely yours for as long as you need. Keep me posted on your progress, and let me know if you want to jump on a quick video call to polish your resume.
 
-Warm regards,
+Warm wishes,
 Arpit`,
 
   toneGuidelines: [
     {
-      rule: "Adopt a courteous, engaging semi-formal register without overly colloquial slang",
-      doExample: "I would love to enthusiastically volunteer my culinary services... / Please let me know your thoughts on this proposal...",
-      dontExample: "Hey man, I can whip up some rice for your food fest! / Hit me up with the details."
+      rule: "Adopt a natural, warm, and encouraging informal conversational tone",
+      doExample: "It was wonderful to hear from you... you'll be pleased to know that I've found an opening...",
+      dontExample: "With reference to your formal inquiry dated 12th instant regarding employment opportunities..."
     },
     {
-      rule: "Salutation and sign-off alignment for semi-formal correspondence",
-      doExample: "Dear Mr. Pritam, ... Warm regards, Arpit (or With best regards, Arpit)",
-      dontExample: "Hey buddy! ... Cheers, Arpit OR Dear Sir/Madam, ... Yours faithfully, Arpit (overly formal for a local town club organiser)"
+      rule: "Use natural contractions and friendly expressions suitable for friends",
+      doExample: "I'd love to help, you'll be thrilled, don't worry about staying in a hotel...",
+      dontExample: "I shall endeavor to assist you with utmost priority."
     },
     {
-      rule: "Sensory descriptive vocabulary for the dish",
-      doExample: "aged long-grain basmati rice infused with fragrant whole spices and slow-cooked under sealed steam...",
-      dontExample: "It is basically cooked rice with some vegetables and masala mixed together."
+      rule: "Reference shared personal history naturally",
+      doExample: "Reminiscing about our late-night study sessions and campus group projects...",
+      dontExample: "As documented in our previous institutional curriculum..."
     },
     {
-      rule: "Clear, proactive justification for the event organizer",
-      doExample: "emphasize crowd appeal, ease of communal serving, vegetarian inclusivity, and cultural resonance...",
-      dontExample: "You should have it because Indian food is my favorite."
+      rule: "Provide practical, encouraging application advice",
+      doExample: "Send me your CV and I'll put in a glowing recommendation with the HR team...",
+      dontExample: "Candidates must adhere to statutory employment protocols."
     }
   ],
 
   vocabList: [
     {
-      term: "Culinary Heritage",
-      definition: "The traditions, customs, ingredients, and cooking techniques passed down through generations within a particular culture or country.",
-      example: "Preparing this authentic recipe honors centuries of rich culinary heritage.",
-      category: "Cultural Significance"
+      term: "Liaise",
+      definition: "To work closely with someone and exchange information with them.",
+      example: "In this role, you will liaise directly between overseas clients and engineering leads.",
+      category: "Corporate Operations"
     },
     {
-      term: "Aromatic Spices",
-      definition: "Plant substances with a pleasant, distinctive, and noticeable smell used to add flavor to food.",
-      example: "The basmati rice is infused with fragrant aromatic spices including cardamom and cinnamon.",
-      category: "Festive Traditions"
-    },
-    {
-      term: "Slow-cooked",
-      definition: "Cooked slowly over a low heat for a long period of time to develop rich flavors and tender textures.",
-      example: "The biryani is slow-cooked in a sealed vessel to ensure the flavors meld harmoniously.",
-      category: "Festive Traditions"
-    },
-    {
-      term: "Communal Gathering",
-      definition: "An assembly of people from a community coming together to share experiences or celebrate.",
-      example: "Food plays a central and unifying role at every communal gathering in my culture.",
-      category: "Cultural Significance"
-    },
-    {
-      term: "Universal Appeal",
-      definition: "The quality of being attractive, interesting, or pleasing to everyone regardless of background.",
-      example: "The balanced warmth and aromatic profile give this national delicacy universal appeal.",
+      term: "Tailor-made fit",
+      definition: "Specially designed or extremely well-suited for a particular person, purpose, or situation.",
+      example: "Your background in cross-border commerce makes you a tailor-made fit for this position.",
       category: "Personal Impressions"
     },
     {
-      term: "Crowd-pleaser",
-      definition: "Something or someone that is very popular and that everyone enjoys.",
-      example: "Its mouthwatering aroma makes the dish an undeniable crowd-pleaser for festival visitors.",
-      category: "Personal Impressions"
+      term: "Spearhead",
+      definition: "To lead or be the driving force behind an attack, campaign, project, or activity.",
+      example: "The firm is looking for a dynamic coordinator to spearhead global customer outreach.",
+      category: "Corporate Operations"
     },
     {
-      term: "Logistical Arrangements",
-      definition: "Practical plans and preparations needed to organize a complex event or activity successfully.",
-      example: "Please advise me regarding any specific logistical arrangements for burner stoves or serving counters.",
-      category: "Formal Correspondence"
+      term: "Put in a glowing recommendation",
+      definition: "To speak highly of someone to an employer to improve their chances of getting hired.",
+      example: "I will gladly put in a glowing recommendation with the hiring manager on your behalf.",
+      category: "Informal Conversational"
     },
     {
-      term: "Enthusiastically Volunteer",
-      definition: "To offer to do something willingly and with eagerness or intense interest.",
-      example: "I would like to enthusiastically volunteer my culinary assistance for the weekend event.",
-      category: "Formal Correspondence"
+      term: "Collaborative problem-solving",
+      definition: "The capacity of a group to work together to solve problems by sharing knowledge and skills.",
+      example: "The consultancy heavily prioritizes candidates with proven collaborative problem-solving skills.",
+      category: "Internship & Learning"
+    },
+    {
+      term: "Bilingual fluency",
+      definition: "The ability to speak, read, and write in two languages easily and accurately.",
+      example: "Your bilingual fluency will give you an immediate edge over other local applicants.",
+      category: "Internship & Learning"
+    },
+    {
+      term: "Project deliverables",
+      definition: "The tangible goods, services, or reports that must be provided upon the completion of a project phase.",
+      example: "You will be tracking milestones to make sure project deliverables are dispatched on schedule.",
+      category: "Corporate Operations"
+    },
+    {
+      term: "Keep me posted",
+      definition: "An informal phrase meaning to continue to inform someone about the latest news or developments.",
+      example: "Good luck with the initial screening, and please keep me posted on how it goes!",
+      category: "Informal Conversational"
     }
   ]
 };

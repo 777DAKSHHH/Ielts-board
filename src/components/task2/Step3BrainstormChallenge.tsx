@@ -616,7 +616,7 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
 
               const fullyExplored = itemSide === 2;
               const lensReached = itemSide === 1;
-              const isPositive = index < 2;
+              const isProblem = index < 2;
 
               return (
                 <button
@@ -628,15 +628,15 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
                     borderRadius: "14px",
                     border:
                       index === active
-                        ? isPositive
-                          ? "2px solid #16a34a"
-                          : "2px solid #dc2626"
+                        ? isProblem
+                          ? "2px solid #dc2626"
+                          : "2px solid #16a34a"
                         : "1px solid var(--border-subtle)",
                     background:
                       index === active
-                        ? isPositive
-                          ? "#f0fdf4"
-                          : "#fef2f2"
+                        ? isProblem
+                          ? "#fef2f2"
+                          : "#f0fdf4"
                         : "#fff",
                     color: "var(--slate-800)",
                     fontWeight: index === active ? 700 : 550,
@@ -678,11 +678,11 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
                           fontWeight: 800,
                           padding: "2px 6px",
                           borderRadius: "4px",
-                          background: isPositive ? "#dcfce7" : "#fee2e2",
-                          color: isPositive ? "#15803d" : "#991b1b"
+                          background: isProblem ? "#fee2e2" : "#dcfce7",
+                          color: isProblem ? "#991b1b" : "#15803d"
                         }}
                       >
-                        {isPositive ? "POSITIVE ASPECT" : "NEGATIVE ASPECT"}
+                        {isProblem ? `PROBLEM 0${index + 1}` : `SOLUTION 0${index - 1}`}
                       </span>
                     </div>
 
@@ -699,38 +699,65 @@ export const Step3BrainstormChallengeT2: React.FC = () => {
             })}
           </div>
 
-          {/* Strongest Classroom Discussion Question Card */}
-          {TASK2_DATA.classroomDiscussion && (
-            <div
-              style={{
-                marginTop: "16px",
-                background: "#ffffff",
-                border: "1.5px solid #bfdbfe",
-                borderRadius: "14px",
-                padding: "14px",
-                boxShadow: "0 2px 6px rgba(0,0,0,0.04)"
-              }}
-            >
-              <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--apple-blue)", marginBottom: "6px" }}>
-                <Lightbulb size={16} />
-                <strong style={{ fontSize: "0.85rem" }}>Classroom Discussion Question:</strong>
-              </div>
-              <p style={{ fontSize: "0.84rem", fontWeight: 700, color: "var(--slate-900)", margin: "0 0 8px", lineHeight: 1.45 }}>
-                “{TASK2_DATA.classroomDiscussion.question}”
-              </p>
-              <div style={{ fontSize: "0.78rem", color: "var(--slate-600)", lineHeight: 1.45 }}>
-                <strong>Follow-up prompts:</strong>
-                <ul style={{ margin: "4px 0 0", paddingLeft: "16px" }}>
-                  {TASK2_DATA.classroomDiscussion.followUps.map((fu, idx) => (
-                    <li key={idx} style={{ marginBottom: "2px" }}>{fu}</li>
-                  ))}
-                </ul>
-              </div>
-              <div style={{ marginTop: "8px", paddingTop: "8px", borderTop: "1px dashed var(--border-subtle)", fontSize: "0.75rem", color: "var(--slate-500)", fontStyle: "italic" }}>
-                ✦ {TASK2_DATA.classroomDiscussion.pedagogicalInsight}
+          {/* Five-Minute Classroom Challenge */}
+          <div
+            style={{
+              marginTop: "16px",
+              background: "#ffffff",
+              border: "1.5px solid #fed7aa",
+              borderRadius: "14px",
+              padding: "14px",
+              boxShadow: "0 2px 6px rgba(0,0,0,0.04)"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#c2410c", marginBottom: "8px" }}>
+              <Target size={16} />
+              <strong style={{ fontSize: "0.85rem" }}>Five-Minute Classroom Challenge:</strong>
+            </div>
+            <ol style={{ margin: 0, paddingLeft: "16px", fontSize: "0.78rem", color: "#334155", lineHeight: 1.45 }}>
+              <li style={{ marginBottom: "6px" }}>
+                <strong>Name three single-use products</strong> commonly used in daily life.
+              </li>
+              <li style={{ marginBottom: "6px" }}>
+                <strong>What makes plastic so difficult</strong> to manage once discarded?
+              </li>
+              <li style={{ marginBottom: "6px" }}>
+                <strong>Give one reason</strong> why businesses prefer disposable packaging over reusable containers.
+              </li>
+              <li style={{ marginBottom: "6px" }}>
+                <strong>Suggest one policy</strong> that could encourage people to carry reusable cups or bottles.
+              </li>
+            </ol>
+          </div>
+
+          {/* Key Classroom Discussion Question */}
+          <div
+            style={{
+              marginTop: "12px",
+              background: "#ffffff",
+              border: "1.5px solid #bfdbfe",
+              borderRadius: "14px",
+              padding: "14px",
+              boxShadow: "0 2px 6px rgba(0,0,0,0.04)"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "var(--apple-blue)", marginBottom: "6px" }}>
+              <Lightbulb size={16} />
+              <strong style={{ fontSize: "0.85rem" }}>Key Discussion Question:</strong>
+            </div>
+            <p style={{ fontSize: "0.84rem", fontWeight: 750, color: "var(--slate-900)", margin: "0 0 8px", lineHeight: 1.45 }}>
+              “If reusable products are environmentally better, why do so many consumers continue choosing disposable ones?”
+            </p>
+            <div style={{ fontSize: "0.76rem", color: "var(--slate-600)", lineHeight: 1.45 }}>
+              <strong>Prompting factors to explore:</strong>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px", marginTop: "4px" }}>
+                <span style={{ background: "#f8fafc", padding: "3px 6px", borderRadius: "5px", border: "1px solid #e2e8f0" }}>• Convenience</span>
+                <span style={{ background: "#f8fafc", padding: "3px 6px", borderRadius: "5px", border: "1px solid #e2e8f0" }}>• Affordability</span>
+                <span style={{ background: "#f8fafc", padding: "3px 6px", borderRadius: "5px", border: "1px solid #e2e8f0" }}>• Lack of alternatives</span>
+                <span style={{ background: "#f8fafc", padding: "3px 6px", borderRadius: "5px", border: "1px solid #e2e8f0" }}>• Established habits</span>
               </div>
             </div>
-          )}
+          </div>
         </aside>
       </div>
     </div>

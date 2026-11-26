@@ -6,56 +6,56 @@ export const TASK1_STEPS: StepDefinition[] = [
     stepNumber: 1,
     title: "Cryptic Audio Guess",
     badge: "Step 01 / 08 • Cryptic Audio Guess",
-    description: "Listen First: Auckland Shopping Complex Survey Results Briefing"
+    description: "Listen First: Islip Town Centre Redevelopment Briefing"
   },
   {
     id: "task1-step2",
     stepNumber: 2,
-    title: "Task Prompt & Survey Matrix Smartboard",
-    badge: "Step 02 / 08 • Prompt & Mixed Survey Matrix",
-    description: "Interactive Scanned Diagram & Data Matrix (Shops, Restaurants by Gender & Complex Design Pie Chart)"
+    title: "Task Prompt & Development Maps Smartboard",
+    badge: "Step 02 / 08 • Prompt & Comparative Maps",
+    description: "Interactive Scanned Maps & Hotspots (Current Layout vs Planned Future Development)"
   },
   {
     id: "task1-step3",
     stepNumber: 3,
-    title: "Survey & Proportion Lexicon",
-    badge: "Step 03 / 08 • Academic Proportion & Comparison Lexicon",
-    description: "Predominantly, Disparity, Aggregate, Disproportionate, Divergence, Fourfold, Plurality, Marginal"
+    title: "Urban Planning & Map Transformation Lexicon",
+    badge: "Step 03 / 08 • Academic Transformation Lexicon",
+    description: "Pedestrianise, Circumscribe, Demolish, Reconfigure, Erect, Diminution, Bypass, Preserve"
   },
   {
     id: "task1-step4",
     stepNumber: 4,
     title: "Sample Introduction & Macro Overview",
     badge: "Step 04 / 08 • Sample Introduction & Macro Overview",
-    description: "Graphic Scope Paraphrase & 2-Sentence Qualitative Overview (Zero Raw Numbers, Overall Approval, Design Peak & Dining Disparity)"
+    description: "Map Scope Paraphrase & 2-Sentence Qualitative Overview (Zero 'Provided', Perimeter Bypass, Pedestrianised Hub & Green Space Reduction)"
   },
   {
     id: "task1-step5",
     stepNumber: 5,
-    title: "Data Bifurcation & Grouping Strategy",
-    badge: "Step 05 / 08 • Structural Grouping Strategy",
-    description: "Grouping Tactics: Body 1 Gender-Split Tables (Shops & Restaurants) vs Body 2 Holistic Design (Pie Chart & Comparisons)"
+    title: "Spatial Bifurcation & Grouping Strategy",
+    badge: "Step 05 / 08 • Spatial Grouping Strategy",
+    description: "Grouping Tactics: Body 1 Transport Infrastructure & Northern Zone vs Body 2 Southern Zone & Amenities"
   },
   {
     id: "task1-step6",
     stepNumber: 6,
-    title: "Body 1: Shops & Restaurants Gender Disparity",
-    badge: "Step 06 / 08 • Body 1 — Retail & Dining Breakdown",
-    description: "Double Female Extreme Satisfaction in Shops (34% vs 17%) and Quadruple Female Dissatisfaction in Restaurants (21% vs 5%)"
+    title: "Body 1: Transport & Northern Zone Overhaul",
+    badge: "Step 06 / 08 • Body 1 — Transport & Northern Sector",
+    description: "Dual Carriageway Circumscription, Main Road Pedestrianisation, Bus Station, Shopping Centre, Car Park & NE Housing"
   },
   {
     id: "task1-step7",
     stepNumber: 7,
     title: "Body 2 & Complete Band 9 Model",
     badge: "Step 07 / 08 • Body 2 & Full Model Report",
-    description: "Design Pie Chart (62% Satisfied, 17% Very Satisfied = 79% Total Approval) and Full 215-Word Model Response"
+    description: "Southern Shops Retention, Parkland Diminution, SE Housing, School Bypass Connection & Full 254-Word Model Report"
   },
   {
     id: "task1-step8",
     stepNumber: 8,
-    title: "Comparative Connectors & Extension",
-    badge: "Step 08 / 08 • Comparison Transitions & Connectors",
-    description: "Disparity Markers, Proportion Syntheses, English Nuance Lab, and General Training Task 1 Masterclass"
+    title: "Spatial Connectors & Extension",
+    badge: "Step 08 / 08 • Spatial Prepositions & Connectors",
+    description: "Directional Signposts, Spatial Prepositions, English Nuance Lab, and General Training Task 1 Masterclass"
   }
 ];
 

@@ -124,6 +124,29 @@ export interface BodyParaStructure {
   alternativeReasons?: MainReasonOption[];
 }
 
+export interface CauseAndEffectChain {
+  id: string;
+  title: string;
+  subtitle: string;
+  steps: string[];
+}
+
+export interface FacultyDeeperItem {
+  name: string;
+  development: string;
+}
+
+export interface FunctionalLinkerCategory {
+  purpose: string;
+  expressions: string[];
+}
+
+export interface ClassroomChallengeData {
+  questions: string[];
+  discussionQuestion: string;
+  discussionContext: string;
+}
+
 export interface Task2Data {
   id: string;
   taskType: string;
@@ -170,4 +193,28 @@ export interface Task2Data {
   connectorsTier: ConnectorsTier;
   strategicLinkers?: StrategicLinkerGroup[];
   fluidVocab?: FluidVocabItem[];
+
+  // Extended Curriculum Fields
+  causeAndEffectChains?: CauseAndEffectChain[];
+  facultyDeeperProblems?: FacultyDeeperItem[];
+  facultyDeeperSolutions?: FacultyDeeperItem[];
+  linearVsCircularModel?: {
+    title: string;
+    linear: string;
+    circular: string;
+    coreArgument: string;
+  };
+  usefulLinkersByFunction?: FunctionalLinkerCategory[];
+  smartboardBrainstormMap?: {
+    title: string;
+    problems: string[];
+    solutions: string[];
+    centralMessage: string;
+  };
+  fiveMinuteClassroomChallenge?: ClassroomChallengeData;
+  teachingRecommendation?: {
+    bestProblems: string;
+    bestSolutions: string;
+    recyclingVsReducingDistinction: string;
+  };
 }

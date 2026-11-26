@@ -11,13 +11,13 @@ export const Step9SubmissionT2: React.FC<Step9SubmissionT2Props> = ({
   const [copied, setCopied] = useState(false);
   const [showEssay, setShowEssay] = useState(false);
 
-  const fullModelEssay = `In contemporary society, manufactured single-use items have become exceptionally ubiquitous across domestic and commercial sectors. While this disposable culture inflicts severe environmental degradation, notably acute landfill saturation and marine contamination, viable solutions exist, including statutory product bans, fiscal deterrents, and state subsidies for biodegradable alternatives.
+  const fullModelEssay = `Single-use products have become an integral part of modern life, offering unparalleled convenience in daily consumption. However, their pervasive use creates serious environmental and financial challenges. This essay will examine the primary problems associated with disposable goods, including plastic pollution and resource depletion, before proposing viable solutions such as government regulation and reusable alternatives.
 
-To begin with, the unchecked dominance of single-use commodities triggers immense ecological crises, most notably acute landfill exhaustion and pervasive marine pollution. Because petroleum-based plastics are engineered for durability rather than biodegradability, they linger in landfills for centuries, overwhelming municipal waste management infrastructure worldwide. Furthermore, a substantial percentage of lightweight disposable containers inevitably escapes waste streams and migrates into aquatic environments. In oceans, marine wildlife routinely ingests discarded plastic fragments, suffering fatal internal blockages and starvation. Over time, these polymers fragment into toxic microplastics, which absorb industrial carcinogens and bioaccumulate through marine trophic levels, ultimately posing severe endocrine and oncological risks to human consumers.
+The primary concern associated with disposable goods is their severe contribution to environmental degradation. Because most single-use items are manufactured from non-biodegradable plastics, they persist in the natural environment for centuries. When discarded carelessly, these materials accumulate in rivers and oceans, posing a grave threat to marine ecosystems. Marine animals frequently ingest plastic fragments or become entangled in discarded packaging, leading to injury and death. Furthermore, the manufacturing process itself accelerates resource depletion and generates substantial carbon emissions, while municipal waste-management systems struggle to cope with the sheer volume of discarded packaging. Consequently, single-use products generate an unsustainable burden for local authorities and the environment alike.
 
-Nevertheless, this environmental dilemma can be effectively resolved through a coordinated approach combining legislative deterrents, material innovation, and corporate accountability. Firstly, national governments must institute statutory bans on unnecessary single-use items, accompanied by substantial fiscal levies on remaining disposable packaging. As evidenced by jurisdictions like Ireland, implementing plastic taxes rapidly curtails consumer reliance on disposables by making reusable alternatives economically advantageous. Secondly, authorities should provide research subsidies and tax breaks to companies developing fully compostable materials derived from seaweed, cornstarch, or agricultural residues. Finally, enforcing stringent Extended Producer Responsibility mandates would require manufacturers to cover the full financial cost of collecting and recycling their packaging, compelling multinational corporations to transition toward sustainable, circular product designs.
+To mitigate this crisis, governments and businesses must implement coordinated and decisive measures. Firstly, state authorities should impose restrictions or fiscal charges on unnecessary disposable products, as financial disincentives effectively shift consumer behaviour towards reusable alternatives. For example, plastic-bag levies have dramatically reduced bag consumption in numerous countries. Secondly, manufacturers should be held accountable through Extended Producer Responsibility policies, which require companies to contribute to the collection and recycling of their packaging. Finally, educational campaigns should promote durable alternatives, encouraging consumers to adopt reusable bottles, cups and shopping bags in their daily routines. Combined, these approaches address the problem from both the production and consumption sides, fostering a transition towards a circular economy.
 
-In conclusion, the widespread prevalence of single-use items poses grave ecological threats, chiefly the overwhelming of municipal landfills and the pervasive contamination of aquatic ecosystems. Nevertheless, through decisive government intervention—including strict legislative bans, targeted packaging taxes, and the subsidisation of biodegradable materials—societies can effectively reverse this disposable trend and transition toward a sustainable circular economy.`;
+In conclusion, the proliferation of single-use goods has led to widespread environmental contamination and placed severe pressure on waste infrastructure. However, this issue can be mitigated through targeted charges, support for reusable products and corporate accountability for packaging waste.`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(fullModelEssay);
@@ -128,10 +128,10 @@ In conclusion, the widespread prevalence of single-use items poses grave ecologi
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#9333ea", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
                 1. INTRO
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#6b21a8" }}>Paraphrase Question + Direct Problem &amp; Solution Thesis</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#6b21a8" }}>Paraphrase Question + Direct Problem &amp; Solution Thesis (52 Words)</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#3b0764", lineHeight: 1.45 }}>
-              Paraphrase the ubiquity of single-use products + introduce the dual threat (landfill saturation &amp; marine poisoning) alongside solutions (statutory bans, plastic taxes, and biodegradable subsidies).
+              Acknowledge that single-use products offer unparalleled convenience in modern consumption + contrast with serious environmental and financial challenges + outline problems (plastic pollution &amp; resource depletion) before proposing solutions (regulation &amp; reusables).
             </p>
           </div>
 
@@ -139,12 +139,12 @@ In conclusion, the widespread prevalence of single-use items poses grave ecologi
           <div style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "10px", padding: "10px 14px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#dc2626", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                2. BODY PARA 1 (THE PROBLEMS)
+                2. BODY PARA 1 (PAIRED ARCHITECTURE)
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#b91c1c" }}>Landfill Exhaustion, Non-Biodegradable Persistence &amp; Marine Microplastics</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#b91c1c" }}>State Problem 1 → Targeted Solution + Concrete Example</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#7f1d1d", lineHeight: 1.45 }}>
-              <strong>Point:</strong> Synthetic polymers resist biodegradation for centuries → <strong>Evidence:</strong> Overwhelms municipal landfills and escapes into oceans → <strong>Impact:</strong> Ingested by marine wildlife and bioaccumulates up the food chain to humans.
+              <strong>State Problem 1:</strong> Non-biodegradable synthetic polymers persist for centuries and accumulate in marine ecosystems → <strong>Direct Solution:</strong> Impose statutory product restrictions and targeted fiscal levies → <strong>Example:</strong> Plastic bag levies drastically cutting single-use consumption.
             </p>
           </div>
 
@@ -152,12 +152,12 @@ In conclusion, the widespread prevalence of single-use items poses grave ecologi
           <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: "10px", padding: "10px 14px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#16a34a", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
-                3. BODY PARA 2 (THE SOLUTIONS)
+                3. BODY PARA 2 (PAIRED ARCHITECTURE)
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#15803d" }}>Statutory Prohibitions, Plastic Taxes, Subsidies &amp; Corporate EPR</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#15803d" }}>State Problem 2 → Targeted Solution + Concrete Example</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#14532d", lineHeight: 1.45 }}>
-              <strong>Point:</strong> Legislative bans and fees swiftly alter consumer demand → <strong>Evidence:</strong> Ireland's plastic bag tax cut usage by 90% → <strong>Action:</strong> Subsidising seaweed/cornstarch packaging and enforcing Extended Producer Responsibility mandates.
+              <strong>State Problem 2:</strong> Accelerated raw material depletion and overwhelming municipal waste-management strain → <strong>Direct Solution:</strong> Enforce Extended Producer Responsibility (EPR) mandates and promote durable alternatives → <strong>Example:</strong> Deposit-return schemes and reusable containers in schools and workplaces.
             </p>
           </div>
 
@@ -167,10 +167,10 @@ In conclusion, the widespread prevalence of single-use items poses grave ecologi
               <span style={{ fontSize: "0.72rem", fontWeight: 800, background: "#0f172a", color: "#ffffff", padding: "2px 7px", borderRadius: "4px" }}>
                 4. CONCLUSION
               </span>
-              <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Sum-Up Primary Problems + Reaffirm Multi-Tiered Solutions</strong>
+              <strong style={{ fontSize: "0.86rem", color: "#0f172a" }}>Restate Problems + Reiterate Solutions (43 Words)</strong>
             </div>
             <p style={{ margin: "4px 0 0", fontSize: "0.86rem", color: "#1e293b", lineHeight: 1.45 }}>
-              Reiterate the dual ecological crisis of overflowing dumps and contaminated oceans, concluding that proactive bans, fiscal packaging taxes, and compostable innovation can transition society toward a circular economy.
+              Reiterate widespread contamination and infrastructure strain, then affirm that targeted charges, reusable products, and corporate accountability offer an actionable resolution.
             </p>
           </div>
         </div>
@@ -281,7 +281,7 @@ In conclusion, the widespread prevalence of single-use items poses grave ecologi
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <Sparkles size={16} color="var(--apple-blue)" />
             <strong style={{ fontSize: "0.92rem", color: "#0f172a" }}>
-              Complete Band 9 Model Essay (335 Words • 4-Paragraph Problems and Solutions Architecture)
+              Complete Band 9 Model Essay (319 Words • 4-Paragraph Problems and Solutions Architecture)
             </strong>
             <span style={{ fontSize: "0.72rem", background: "#f1f5f9", color: "#475569", padding: "2px 8px", borderRadius: "6px" }}>
               {showEssay ? "Click to collapse" : "Click to view full text"}
@@ -306,16 +306,16 @@ In conclusion, the widespread prevalence of single-use items poses grave ecologi
             }}
           >
             <p style={{ margin: 0 }}>
-              <strong>1. Intro (Paraphrase + Direct Dual Thesis):</strong> In contemporary society, manufactured single-use items have become exceptionally ubiquitous across domestic and commercial sectors. While this disposable culture inflicts severe environmental degradation, notably acute landfill saturation and marine contamination, viable solutions exist, including statutory product bans, fiscal deterrents, and state subsidies for biodegradable alternatives.
+              <strong>1. Intro (52 Words):</strong> Single-use products have become an integral part of modern life, offering unparalleled convenience in daily consumption. However, their pervasive use creates serious environmental and financial challenges. This essay will examine the primary problems associated with disposable goods, including plastic pollution and resource depletion, before proposing viable solutions such as government regulation and reusable alternatives.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>2. Body Para 1 (The Problems — Landfill Saturation &amp; Marine Toxicity):</strong> To begin with, the unchecked dominance of single-use commodities triggers immense ecological crises, most notably acute landfill exhaustion and pervasive marine pollution. Because petroleum-based plastics are engineered for durability rather than biodegradability, they linger in landfills for centuries, overwhelming municipal waste management infrastructure worldwide. Furthermore, a substantial percentage of lightweight disposable containers inevitably escapes waste streams and migrates into aquatic environments. In oceans, marine wildlife routinely ingests discarded plastic fragments, suffering fatal internal blockages and starvation. Over time, these polymers fragment into toxic microplastics, which absorb industrial carcinogens and bioaccumulate through marine trophic levels, ultimately posing severe endocrine and oncological risks to human consumers.
+              <strong>2. Body Para 1 — Problems (106 Words):</strong> The primary concern associated with disposable goods is their severe contribution to environmental degradation. Because most single-use items are manufactured from non-biodegradable plastics, they persist in the natural environment for centuries. When discarded carelessly, these materials accumulate in rivers and oceans, posing a grave threat to marine ecosystems. Marine animals frequently ingest plastic fragments or become entangled in discarded packaging, leading to injury and death. Furthermore, the manufacturing process itself accelerates resource depletion and generates substantial carbon emissions, while municipal waste-management systems struggle to cope with the sheer volume of discarded packaging. Consequently, single-use products generate an unsustainable burden for local authorities and the environment alike.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>3. Body Para 2 (The Solutions — Statutory Bans, Taxes, Subsidies &amp; EPR):</strong> Nevertheless, this environmental dilemma can be effectively resolved through a coordinated approach combining legislative deterrents, material innovation, and corporate accountability. Firstly, national governments must institute statutory bans on unnecessary single-use items, accompanied by substantial fiscal levies on remaining disposable packaging. As evidenced by jurisdictions like Ireland, implementing plastic taxes rapidly curtails consumer reliance on disposables by making reusable alternatives economically advantageous. Secondly, authorities should provide research subsidies and tax breaks to companies developing fully compostable materials derived from seaweed, cornstarch, or agricultural residues. Finally, enforcing stringent Extended Producer Responsibility mandates would require manufacturers to cover the full financial cost of collecting and recycling their packaging, compelling multinational corporations to transition toward sustainable, circular product designs.
+              <strong>3. Body Para 2 — Solutions (118 Words):</strong> To mitigate this crisis, governments and businesses must implement coordinated and decisive measures. Firstly, state authorities should impose restrictions or fiscal charges on unnecessary disposable products, as financial disincentives effectively shift consumer behaviour towards reusable alternatives. For example, plastic-bag levies have dramatically reduced bag consumption in numerous countries. Secondly, manufacturers should be held accountable through Extended Producer Responsibility policies, which require companies to contribute to the collection and recycling of their packaging. Finally, educational campaigns should promote durable alternatives, encouraging consumers to adopt reusable bottles, cups and shopping bags in their daily routines. Combined, these approaches address the problem from both the production and consumption sides, fostering a transition towards a circular economy.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>4. Conclusion (Synthesize Dilemma + Reaffirm Circular Future):</strong> In conclusion, the widespread prevalence of single-use items poses grave ecological threats, chiefly the overwhelming of municipal landfills and the pervasive contamination of aquatic ecosystems. Nevertheless, through decisive government intervention—including strict legislative bans, targeted packaging taxes, and the subsidisation of biodegradable materials—societies can effectively reverse this disposable trend and transition toward a sustainable circular economy.
+              <strong>4. Conclusion (43 Words):</strong> In conclusion, the proliferation of single-use goods has led to widespread environmental contamination and placed severe pressure on waste infrastructure. However, this issue can be mitigated through targeted charges, support for reusable products and corporate accountability for packaging waste.
             </p>
           </div>
         )}
