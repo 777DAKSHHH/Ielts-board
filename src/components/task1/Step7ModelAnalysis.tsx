@@ -14,52 +14,74 @@ export const Step7ModelAnalysis: React.FC = () => {
         </span>
         <h2 className="stage-title">Town Development Map Analysis &amp; Complete Band 9 Model Report</h2>
         <p className="stage-subtitle">
-          Master essential spatial transition frameworks for comparative development maps, alongside the complete {modelReport?.wordCount || 254}-word Band 9 model response organized across four balanced paragraphs.
+          Authentic, high-register linkers and cohesive phrasing for town development maps to achieve natural flow without sounding mechanical, alongside the complete {modelReport?.wordCount || 254}-word Band 9 model response organized across four balanced paragraphs.
         </p>
       </div>
 
-      {/* 4 Grammatical Processing Groups */}
-      <div className="stage-grid-2col" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "14px" }}>
-        {TASK1_DATA.processingGroups.map((group, idx) => (
-          <div
-            key={group.title}
-            style={{
-              background: "var(--slate-50)",
-              border: "1.5px solid var(--border-subtle)",
-              borderRadius: "18px",
-              padding: "18px"
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
-              <Layers
-                size={17}
-                color={idx === 0 ? "#0284c7" : idx === 1 ? "#0f172a" : idx === 2 ? "#64748b" : "#10b981"}
-              />
-              <h4 style={{ fontSize: "0.92rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
-                {group.title}
-              </h4>
+      {/* Authentic Linkers & Phrases Bank (Anti-Mechanical Toolkit) */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <Compass size={18} color="var(--apple-blue)" />
+          <strong style={{ fontSize: "0.95rem", color: "#0f172a" }}>
+            Authentic Cartographic Linkers &amp; Phrasing Bank (Anti-Mechanical Toolkit)
+          </strong>
+        </div>
+
+        <div className="stage-grid-2col" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "14px" }}>
+          {TASK1_DATA.processingGroups.map((group, idx) => (
+            <div
+              key={group.title}
+              style={{
+                background: "var(--slate-50)",
+                border: "1.5px solid var(--border-subtle)",
+                borderRadius: "18px",
+                padding: "18px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+                <Layers
+                  size={17}
+                  color={idx === 0 ? "#0284c7" : idx === 1 ? "#7c3aed" : idx === 2 ? "#d97706" : "#10b981"}
+                />
+                <h4 style={{ fontSize: "0.90rem", fontWeight: 800, color: "var(--slate-900)", margin: 0 }}>
+                  {group.title}
+                </h4>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                {group.items.map((item) => {
+                  const [phrase, note] = item.split(" — ");
+                  return (
+                    <div
+                      key={item}
+                      style={{
+                        background: "#ffffff",
+                        border: "1px solid var(--border-subtle)",
+                        borderRadius: "10px",
+                        padding: "10px 12px",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "3px",
+                        boxShadow: "0 1px 3px rgba(0,0,0,0.02)"
+                      }}
+                    >
+                      <strong style={{ color: "#0f172a", fontSize: "0.85rem", lineHeight: 1.4 }}>
+                        {phrase}
+                      </strong>
+                      {note && (
+                        <span style={{ color: "#64748b", fontSize: "0.74rem", lineHeight: 1.35 }}>
+                          ↳ {note}
+                        </span>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-              {group.items.map((item) => (
-                <div
-                  key={item}
-                  style={{
-                    background: "#ffffff",
-                    border: "1px solid var(--border-subtle)",
-                    borderRadius: "10px",
-                    padding: "9px 11px",
-                    fontWeight: 600,
-                    color: "var(--slate-800)",
-                    fontSize: "0.82rem",
-                    lineHeight: 1.4
-                  }}
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Full Band 9 Model Report Box */}

@@ -76,7 +76,7 @@ export const TASK1_DATA: Task1Data = {
   imageFileName: "materials/islip_town_centre_maps.jpg",
   hdImageFileName: "materials/islip_town_centre_maps.jpg",
   scanImageFileName: "materials/islip_town_centre_maps.jpg",
-  audioUrl: "materials/Taxation_and_Public_Services_Briefing.m4a",
+  audioUrl: "materials/Redesigning_High_Streets_for_Growing_Towns.mp4",
   audioClueText:
     "The two comparative maps depict the town centre of Islip at present and its proposed future redevelopment. Currently, a straight east-west main road bisects the settlement, bordered by shops on both sides, with countryside to the north, central housing, a south-western school, and a south-eastern park. Under the planned development, vehicular thoroughfare will be routed around an outer dual carriageway that completely circumscribes the town. The central road will be pedestrianised. The northern row of shops will be demolished and replaced by a bus station, shopping centre, and car park, with new housing erected in the north-east countryside. South of the pedestrian street, the southern shops and residential zone remain, while an additional housing development reduces the park's size, and the school is linked directly to the new dual carriageway.",
   timingSeconds: 1200,
@@ -352,39 +352,39 @@ export const TASK1_DATA: Task1Data = {
 
   processingGroups: [
     {
-      title: "1. Transport Infrastructure & Traffic Flow",
+      title: "1. Directional & Sector Transitions (Natural Zone Shifts)",
       items: [
-        "Construction of an encircling dual carriageway forming a complete perimeter bypass",
-        "Diversion of through-traffic away from the settlement core",
-        "Full pedestrianisation of the central east-west main road",
-        "Direct road access provided to the bus station and car park from the dual carriageway"
+        "“Regarding transport infrastructure and the northern sector,...” — Natural topic & quadrant opener that avoids mechanical 'Firstly'",
+        "“Turning to the southern zone,...” — Fluent paragraph transition that seamlessly shifts geographical focus",
+        "“Further east in what is currently open countryside,...” — Locational clause embedding the baseline rural state",
+        "“Directly adjacent to the retained residential area,...” — Spatial proximity linker referencing existing landmarks"
       ]
     },
     {
-      title: "2. Northern Commercial & Civic Overhaul",
+      title: "2. Transformation & Redevelopment Verbs (Non-Mechanical)",
       items: [
-        "Complete demolition of the northern row of retail shops",
-        "Erection of an integrated commercial hub: bus station, shopping centre, and car park",
-        "Invasion of former northern countryside by residential and transport developments",
-        "Addition of new housing in the north-eastern quadrant"
+        "“...will be completely demolished to make way for [new complex]” — Pairs passive demolition with purposeful replacement",
+        "“...is slated for complete pedestrianisation, prohibiting motor traffic in favour of footfall” — Formal planning syntax",
+        "“...will undergo noticeable reconfiguration, leading to a substantial diminution of the park” — Nominalized academic phrasing",
+        "“...will remain structurally intact, now opening directly onto the pedestrian precinct” — Details preservation rather than 'nothing changes'"
       ]
     },
     {
-      title: "3. Southern Amenities & Reorganisation",
+      title: "3. Infrastructure & Bypass Purpose Clauses (Engineering Logic)",
       items: [
-        "Preservation of the southern row of shops and existing central-south housing",
-        "Retention of the south-western school with direct dual carriageway access",
-        "Substantial diminution and compression of the south-eastern park",
-        "Construction of a new housing sector between the retained houses and downsized park"
+        "“To accommodate through vehicular traffic, a new bypass will circumscribe...” — Preposed purpose infinitive establishing intent",
+        "“...forming an integrated transit and commercial complex comprising [facilities]” — Tripartite facility integration clause",
+        "“...accessible via a dedicated branch road leading from the northern perimeter bypass” — Participial connectivity modifier",
+        "“...will be reconfigured to connect directly into the southern arc of the dual carriageway” — Upgraded access road transition"
       ]
     },
     {
-      title: "4. Holistic Transformation Syntheses",
+      title: "4. Contrastive Nuance & Civic Trade-offs (Avoids 'On the other hand')",
       items: [
-        "Macro Shift: From a rural road-bisected village to a modern pedestrianised commercial centre",
-        "Land Use: Trade-off between open green space/countryside and expanded residential capacity",
-        "Commercial contrast: Northern shops demolished vs southern shops fully retained",
-        "Connectivity: Every zone connected efficiently to the new perimeter dual carriageway"
+        "“Unlike their northern counterparts, which will be levelled,...” — Authentic dependent contrast clause",
+        "“In sharp contrast to the demolished northern retail strip,...” — High-register cartographic contrast opener",
+        "“...at the direct expense of recreational parkland and open countryside” — Synthesizes civic trade-offs without robotic connectors",
+        "“...transitioning from a traffic-bisected settlement into a pedestrian-exclusive core” — Overarching transformation synthesis"
       ]
     }
   ],

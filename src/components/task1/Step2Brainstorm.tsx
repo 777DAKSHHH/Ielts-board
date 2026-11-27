@@ -787,26 +787,13 @@ export const Step2Brainstorm: React.FC<Step2BrainstormProps> = ({
   return (
     <div className="stage-card-wrapper" style={{ width: "100%", minWidth: 0 }}>
       {/* Step Header */}
-      <div>
+      <div style={{ marginBottom: "14px" }}>
         <span className="apple-badge accent" style={{ marginBottom: "8px" }}>
           Step 02 / 08 • Development Maps Deconstruction &amp; Brainstorm
         </span>
-        <h2 className="stage-title">Deconstruct Development Maps: Islip Town Centre (Now vs Planned)</h2>
-        <p className="stage-subtitle">
-          Analyze the 7 transformation features from the current road-bisected rural layout to the planned modern bypass and pedestrian core. Key features: perimeter dual carriageway circumscription, central main road pedestrianisation, bus station/shopping centre/car park commercial hub, north-eastern countryside residential expansion, southern retail retention, parkland diminution with new SE housing, and direct school bypass link.
-        </p>
-      </div>
-
-      {/* Focus Timer */}
-      <div style={{ marginBottom: "12px" }}>
-        <TouchTimer
-          formattedTime={formattedTime}
-          isRunning={isRunning}
-          isFinished={isFinished}
-          onToggle={onTimerToggle}
-          onReset={onTimerReset}
-          instruction="Focus Timer: 3 minutes to deconstruct the 7 Islip development features: perimeter ring bypass, central pedestrianisation, northern commercial tripartite complex, north-east countryside housing, southern retail preservation, parkland diminution for new housing, and south-western school bypass access."
-        />
+        <h2 className="stage-title" style={{ marginBottom: 0 }}>
+          Deconstruct Development Maps: Islip Town Centre (Now vs Planned)
+        </h2>
       </div>
 
       {/* SMART BOARD VIEW SWITCHER & CONTROL STRIP */}

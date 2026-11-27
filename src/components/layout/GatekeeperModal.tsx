@@ -81,7 +81,7 @@ export const GatekeeperModal: React.FC<GatekeeperModalProps> = ({
           IELTS Smartboard OS
         </h2>
         <p style={{ color: "var(--slate-600)", fontSize: "0.95rem", marginBottom: "26px", lineHeight: 1.5 }}>
-          Enter teacher Roman numeral access key to initialize classroom workstation.
+          Enter teacher access key to initialize classroom workstation.
         </p>
 
         <form onSubmit={handleSubmit}>

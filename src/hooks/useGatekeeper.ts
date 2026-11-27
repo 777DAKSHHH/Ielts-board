@@ -17,7 +17,7 @@ export function useGatekeeper() {
       return true;
     }
 
-    setErrorMsg("Incorrect Roman numeral access code. Please verify.");
+    setErrorMsg("Incorrect access code. Please verify.");
     return false;
   };
 

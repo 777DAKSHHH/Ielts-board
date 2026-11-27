@@ -57,6 +57,7 @@ export interface HotspotDefinition {
   equipmentOrRole: string;
   color: string;
   pin: { left: string; top: string };
+  nowPin?: { left: string; top: string };
   highlight: { x: string; y: string; w: string; h: string };
   beforeHighlight?: { x: string; y: string; w: string; h: string; label: string };
   description: string;
@@ -75,9 +76,10 @@ export const STAGE_HOTSPOTS: HotspotDefinition[] = [
     name: "Perimeter Dual Carriageway (Outer Ring)",
     equipmentOrRole: "Circumscribes Town Centre • Carries Through-Traffic",
     color: "#2563eb",
-    pin: { left: "28%", top: "84%" },
-    highlight: { x: "16%", y: "62%", w: "68%", h: "29%" },
-    beforeHighlight: { x: "16%", y: "34.5%", w: "68%", h: "4%", label: "Main Road (Bisected Settlement)" },
+    pin: { left: "10.1%", top: "79.3%" },
+    nowPin: { left: "50.0%", top: "18.2%" },
+    highlight: { x: "13.9%", y: "55.1%", w: "72.1%", h: "39.8%" },
+    beforeHighlight: { x: "2.6%", y: "16.2%", w: "94.7%", h: "4.0%", label: "Main Road (Bisected Settlement)" },
     description:
       "A newly constructed dual carriageway loops completely around the town centre, linking incoming traffic from the east and west without bisecting the settlement.",
     band9Phrase:
@@ -99,9 +101,10 @@ export const STAGE_HOTSPOTS: HotspotDefinition[] = [
     name: "Central Pedestrian Thoroughfare",
     equipmentOrRole: "Converted from Main Road • 'Pedestrians Only'",
     color: "#059669",
-    pin: { left: "47%", top: "76%" },
-    highlight: { x: "34%", y: "74%", w: "37%", h: "4%" },
-    beforeHighlight: { x: "34%", y: "34.5%", w: "37%", h: "4%", label: "Main Road (Two-Way Traffic)" },
+    pin: { left: "50.0%", top: "71.9%" },
+    nowPin: { left: "50.0%", top: "18.2%" },
+    highlight: { x: "24.3%", y: "70.2%", w: "52.0%", h: "3.4%" },
+    beforeHighlight: { x: "22.4%", y: "16.2%", w: "55.3%", h: "4.0%", label: "Main Road (Two-Way Traffic)" },
     description:
       "The current east-west main road bisecting the town centre is fully closed to vehicular traffic and designated as an exclusive pedestrian mall.",
     band9Phrase:
@@ -123,9 +126,10 @@ export const STAGE_HOTSPOTS: HotspotDefinition[] = [
     name: "Northern Commercial Hub & Transit Complex",
     equipmentOrRole: "Bus Station + Shopping Centre + Car Park",
     color: "#7c3aed",
-    pin: { left: "47%", top: "71%" },
-    highlight: { x: "34%", y: "66%", w: "24%", h: "8%" },
-    beforeHighlight: { x: "30%", y: "31%", w: "43%", h: "4%", label: "Northern Shops (To Be Demolished)" },
+    pin: { left: "44.7%", top: "64.5%" },
+    nowPin: { left: "50.0%", top: "14.1%" },
+    highlight: { x: "24.3%", y: "60.0%", w: "39.5%", h: "9.0%" },
+    beforeHighlight: { x: "22.4%", y: "12.5%", w: "55.3%", h: "3.2%", label: "Northern Shops (To Be Demolished)" },
     description:
       "The entire northern strip of roadside shops is completely demolished to construct a tripartite commercial hub consisting of a bus station, shopping centre, and car park.",
     band9Phrase:
@@ -147,9 +151,10 @@ export const STAGE_HOTSPOTS: HotspotDefinition[] = [
     name: "North-Eastern Residential Expansion",
     equipmentOrRole: "Erected on Former Open Countryside",
     color: "#d97706",
-    pin: { left: "63%", top: "71%" },
-    highlight: { x: "58%", y: "65%", w: "13%", h: "9%" },
-    beforeHighlight: { x: "44%", y: "27.5%", w: "25%", h: "4.5%", label: "Open Rural Countryside" },
+    pin: { left: "70.7%", top: "64.5%" },
+    nowPin: { left: "50.0%", top: "9.5%" },
+    highlight: { x: "65.1%", y: "60.0%", w: "11.2%", h: "9.0%" },
+    beforeHighlight: { x: "23.7%", y: "7.5%", w: "52.6%", h: "4.0%", label: "Open Rural Countryside" },
     description:
       "A new housing development is erected in what is currently open rural countryside north-east of the town centre, connected via a dedicated branch road from the dual carriageway.",
     band9Phrase:
@@ -171,9 +176,10 @@ export const STAGE_HOTSPOTS: HotspotDefinition[] = [
     name: "Southern Shops Retention",
     equipmentOrRole: "Preserved Intact Along Pedestrian Precinct",
     color: "#0284c7",
-    pin: { left: "50%", top: "79%" },
-    highlight: { x: "34%", y: "77%", w: "37%", h: "4%" },
-    beforeHighlight: { x: "34%", y: "37%", w: "37%", h: "4%", label: "Southern Shops (Preserved)" },
+    pin: { left: "50.0%", top: "75.8%" },
+    nowPin: { left: "50.0%", top: "22.3%" },
+    highlight: { x: "24.3%", y: "74.2%", w: "52.0%", h: "3.2%" },
+    beforeHighlight: { x: "22.4%", y: "20.7%", w: "55.3%", h: "3.2%", label: "Southern Shops (Preserved)" },
     description:
       "In sharp contrast to the demolished northern shops, the southern row of shops remains intact, now opening directly onto the quiet pedestrian street.",
     band9Phrase:
@@ -195,9 +201,10 @@ export const STAGE_HOTSPOTS: HotspotDefinition[] = [
     name: "Parkland Diminution & SE Housing",
     equipmentOrRole: "Park Substantially Reduced • New Housing Added",
     color: "#dc2626",
-    pin: { left: "63%", top: "84%" },
-    highlight: { x: "53%", y: "81%", w: "18%", h: "7%" },
-    beforeHighlight: { x: "61%", y: "43%", w: "13%", h: "7%", label: "Original Expansive Park" },
+    pin: { left: "63.2%", top: "83.0%" },
+    nowPin: { left: "80.0%", top: "34.8%" },
+    highlight: { x: "50.7%", y: "78.5%", w: "25.7%", h: "9.0%" },
+    beforeHighlight: { x: "70.4%", y: "27.5%", w: "19.1%", h: "14.5%", label: "Original Expansive Park" },
     description:
       "The large recreational park in the south-east is considerably reduced in area to provide land for a second new housing development between the existing houses and the park.",
     band9Phrase:
@@ -219,9 +226,10 @@ export const STAGE_HOTSPOTS: HotspotDefinition[] = [
     name: "South-Western School & Direct Bypass Link",
     equipmentOrRole: "School Preserved • Linked to Dual Carriageway",
     color: "#0d9488",
-    pin: { left: "36%", top: "93%" },
-    highlight: { x: "31%", y: "90%", w: "10%", h: "5%" },
-    beforeHighlight: { x: "30%", y: "50%", w: "11%", h: "5%", label: "School via Curved Cul-de-sac" },
+    pin: { left: "27.6%", top: "93.0%" },
+    nowPin: { left: "20.8%", top: "42.0%" },
+    highlight: { x: "21.1%", y: "87.5%", w: "13.2%", h: "8.0%" },
+    beforeHighlight: { x: "14.5%", y: "36.0%", w: "12.5%", h: "8.5%", label: "School via Curved Cul-de-sac" },
     description:
       "The school situated in the south-west is preserved, but its previous dead-end access road is modified into a direct feeder linking straight to the southern arc of the dual carriageway.",
     band9Phrase:
@@ -396,7 +404,7 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardMapVisualizerProps> = ({
           <div
             style={{
               position: "relative",
-              maxWidth: "540px",
+              maxWidth: inModal ? "680px" : "500px",
               width: "100%",
               transform: `scale(${zoomLevel})`,
               transformOrigin: "center center",
@@ -417,7 +425,45 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardMapVisualizerProps> = ({
               }}
             />
 
-            {/* Interactive Pulsing Hotspot Pins */}
+            {/* Clickable Touch Zones for all 7 features across both Now and Planned maps */}
+            {STAGE_HOTSPOTS.map((stage) => (
+              <React.Fragment key={`hitbox-${stage.id}`}>
+                {/* Now Map Hitbox */}
+                {stage.beforeHighlight && (
+                  <div
+                    onClick={() => handleSelect(stage.id)}
+                    title={`Click to analyze original layout: ${stage.beforeHighlight.label}`}
+                    style={{
+                      position: "absolute",
+                      left: stage.beforeHighlight.x,
+                      top: stage.beforeHighlight.y,
+                      width: stage.beforeHighlight.w,
+                      height: stage.beforeHighlight.h,
+                      cursor: "pointer",
+                      zIndex: 11
+                    }}
+                  />
+                )}
+                {/* Planned Map Hitbox */}
+                {stage.highlight && (
+                  <div
+                    onClick={() => handleSelect(stage.id)}
+                    title={`Click to analyze planned redevelopment: ${stage.name}`}
+                    style={{
+                      position: "absolute",
+                      left: stage.highlight.x,
+                      top: stage.highlight.y,
+                      width: stage.highlight.w,
+                      height: stage.highlight.h,
+                      cursor: "pointer",
+                      zIndex: 11
+                    }}
+                  />
+                )}
+              </React.Fragment>
+            ))}
+
+            {/* Interactive Pulsing Hotspot Pins (Planned Development Map) */}
             {STAGE_HOTSPOTS.map((stage) => {
               const isActive = activeId === stage.id;
               return (
@@ -431,23 +477,23 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardMapVisualizerProps> = ({
                     left: stage.pin.left,
                     top: stage.pin.top,
                     transform: "translate(-50%, -50%)",
-                    width: isActive ? "32px" : "26px",
-                    height: isActive ? "32px" : "26px",
+                    width: isActive ? "34px" : "26px",
+                    height: isActive ? "34px" : "26px",
                     borderRadius: "50%",
                     background: stage.color,
                     color: "#ffffff",
                     border: "2.5px solid #ffffff",
                     boxShadow: isActive
-                      ? `0 0 0 5px ${stage.color}45, 0 4px 12px rgba(0,0,0,0.3)`
+                      ? `0 0 0 5px ${stage.color}45, 0 4px 14px rgba(0,0,0,0.35)`
                       : "0 2px 8px rgba(0,0,0,0.25)",
                     cursor: "pointer",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     fontWeight: 850,
-                    fontSize: isActive ? "0.80rem" : "0.70rem",
+                    fontSize: isActive ? "0.82rem" : "0.70rem",
                     transition: "all 0.18s cubic-bezier(0.16, 1, 0.3, 1)",
-                    zIndex: isActive ? 20 : 10
+                    zIndex: isActive ? 22 : 14
                   }}
                 >
                   {stage.number}
@@ -455,36 +501,70 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardMapVisualizerProps> = ({
               );
             })}
 
-            {/* Active Before Highlight Bounding Box (On Top 'Now' Map) */}
+            {/* Active Before Hotspot Pin Indicator (On Left 'Now' Map) */}
+            {activeHotspot && activeHotspot.nowPin && (
+              <div
+                onClick={() => handleSelect(activeHotspot.id)}
+                title={`Original layout baseline: ${activeHotspot.beforeHighlight?.label || activeHotspot.name}`}
+                style={{
+                  position: "absolute",
+                  left: activeHotspot.nowPin.left,
+                  top: activeHotspot.nowPin.top,
+                  transform: "translate(-50%, -50%)",
+                  padding: "2px 7px",
+                  borderRadius: "6px",
+                  background: "#0f172a",
+                  color: "#ffffff",
+                  border: `2px solid ${activeHotspot.color}`,
+                  boxShadow: `0 0 0 4px ${activeHotspot.color}35, 0 4px 10px rgba(0,0,0,0.3)`,
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  fontWeight: 850,
+                  fontSize: "0.68rem",
+                  transition: "all 0.2s ease",
+                  zIndex: 22
+                }}
+              >
+                <span>NOW</span>
+                <span style={{ color: activeHotspot.color, fontWeight: 900 }}>#{activeHotspot.number}</span>
+              </div>
+            )}
+
+            {/* Active Before Highlight Bounding Box (On Left 'Now' Map) */}
             {activeHotspot && activeHotspot.beforeHighlight && (
               <div
+                onClick={() => handleSelect(activeHotspot.id)}
                 style={{
                   position: "absolute",
                   left: activeHotspot.beforeHighlight.x,
                   top: activeHotspot.beforeHighlight.y,
                   width: activeHotspot.beforeHighlight.w,
                   height: activeHotspot.beforeHighlight.h,
-                  border: `2px dashed ${activeHotspot.color}`,
-                  borderRadius: "6px",
-                  background: `${activeHotspot.color}18`,
-                  pointerEvents: "none",
+                  border: `2.5px dashed ${activeHotspot.color}`,
+                  borderRadius: "8px",
+                  background: `${activeHotspot.color}20`,
+                  boxShadow: `0 0 0 2px ${activeHotspot.color}25, 0 4px 16px rgba(0,0,0,0.12)`,
+                  cursor: "pointer",
                   transition: "all 0.2s ease",
-                  zIndex: 15
+                  zIndex: 16
                 }}
               >
                 <span
                   style={{
                     position: "absolute",
-                    top: "-17px",
+                    top: "-19px",
                     left: "2px",
                     background: "#0f172a",
                     color: "#ffffff",
-                    fontSize: "0.58rem",
+                    fontSize: "0.60rem",
                     fontWeight: 800,
-                    padding: "1px 5px",
+                    padding: "1px 6px",
                     borderRadius: "4px",
                     whiteSpace: "nowrap",
-                    boxShadow: "0 2px 6px rgba(0,0,0,0.25)"
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                    border: "1px solid rgba(255,255,255,0.2)"
                   }}
                 >
                   BEFORE: {activeHotspot.beforeHighlight.label}
@@ -492,9 +572,10 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardMapVisualizerProps> = ({
               </div>
             )}
 
-            {/* Active Highlight Bounding Box (On Bottom 'Planned' Map) */}
+            {/* Active Highlight Bounding Box (On Right 'Planned' Map) */}
             {activeHotspot && activeHotspot.highlight && (
               <div
+                onClick={() => handleSelect(activeHotspot.id)}
                 style={{
                   position: "absolute",
                   left: activeHotspot.highlight.x,
@@ -503,25 +584,27 @@ export const SmartBoardTableMatrix: React.FC<SmartBoardMapVisualizerProps> = ({
                   height: activeHotspot.highlight.h,
                   border: `2.5px dashed ${activeHotspot.color}`,
                   borderRadius: "8px",
-                  background: `${activeHotspot.color}15`,
-                  pointerEvents: "none",
+                  background: `${activeHotspot.color}18`,
+                  boxShadow: `0 0 0 2px ${activeHotspot.color}30, 0 4px 16px rgba(0,0,0,0.12)`,
+                  cursor: "pointer",
                   transition: "all 0.2s ease",
-                  zIndex: 15
+                  zIndex: 16
                 }}
               >
                 <span
                   style={{
                     position: "absolute",
-                    top: "-17px",
+                    top: "-19px",
                     left: "2px",
                     background: activeHotspot.color,
                     color: "#ffffff",
-                    fontSize: "0.58rem",
+                    fontSize: "0.60rem",
                     fontWeight: 800,
-                    padding: "1px 5px",
+                    padding: "1px 6px",
                     borderRadius: "4px",
                     whiteSpace: "nowrap",
-                    boxShadow: "0 2px 6px rgba(0,0,0,0.25)"
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                    border: "1px solid rgba(255,255,255,0.35)"
                   }}
                 >
                   AFTER: {activeHotspot.name}

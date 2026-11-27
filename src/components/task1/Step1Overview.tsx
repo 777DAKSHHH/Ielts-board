@@ -36,7 +36,7 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
         </p>
       </div>
 
-      <div className="stage-grid-2col">
+      <div style={{ maxWidth: "760px", margin: "0 auto", width: "100%" }}>
         <div
           className="chromatic-glass-card"
           style={{
@@ -74,7 +74,10 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             onEnded={() => setOrbState("idle")}
             style={{ width: "100%", height: "54px", borderRadius: "14px", outline: "none" }}
           >
-            <source src={TASK1_DATA.audioUrl} />
+            <source src={`/${TASK1_DATA.audioUrl}`} type="audio/mp4" />
+            <source src="/materials/Redesigning_High_Streets_for_Growing_Towns.mp4" type="audio/mp4" />
+            <source src="/materials/Redesigning_High_Streets_for_Growing_Towns.m4a" type="audio/mp4" />
+            <source src="/materials/Redesigning_High_Streets_for_Growing_Towns.wav" type="audio/wav" />
             Your browser does not support audio playback.
           </audio>
 
@@ -104,64 +107,14 @@ export const Step1Overview: React.FC<Step1OverviewProps> = ({ onSpeak, accent, s
             </div>
           </div>
 
-          <div style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "16px", color: "var(--slate-700)", lineHeight: 1.55 }}>
-            <strong style={{ color: "var(--slate-900)" }}>Focus Prompt:</strong> Listen attentively to the briefing. Identify the primary transport upgrade (a dual carriageway bypass circumscribing the core), the repurposing of the central road (pedestrianisation), the northern commercial overhaul (demolition of shops for a bus station, shopping centre, car park, and north-east housing), and the green space trade-off (park downsized for new residential units).
-          </div>
-        </div>
-
-        <div
-          style={{
-            background: "#ffffff",
-            border: "1px solid var(--border-default)",
-            borderRadius: "20px",
-            padding: "26px",
-            display: "flex",
-            flexDirection: "column",
-            gap: "16px",
-            boxShadow: "var(--shadow-sm)"
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Lightbulb size={22} color="var(--slate-800)" />
-            <h4 style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--slate-900)" }}>Student Deduction Board</h4>
-          </div>
-
-          {[
-            "How will through-traffic be diverted away from the centre of Islip (a new perimeter dual carriageway completely encircling the town core)?",
-            "What major transformation is planned for the existing east-west main road (full pedestrianisation as a 'pedestrians only' street)?",
-            "What will happen to the current row of shops north of the main road (completely demolished and replaced by a bus station, shopping centre, and car park)?",
-            "What significant trade-off occurs in the south-eastern quadrant (the municipal park is substantially reduced in size to accommodate a new residential housing estate)?"
-          ].map((question, index) => (
-            <div key={question} style={{ background: "var(--slate-50)", border: "1px solid var(--border-subtle)", borderRadius: "14px", padding: "15px", display: "flex", gap: "12px", alignItems: "flex-start" }}>
-              <span className="apple-badge neutral" style={{ minWidth: "32px", justifyContent: "center", fontWeight: 800 }}>{index + 1}</span>
-              <span style={{ fontSize: "0.95rem", color: "var(--slate-800)", lineHeight: 1.45 }}>{question}</span>
-            </div>
-          ))}
-
           <motion.button
             whileTap={tactilePress}
-            onClick={() => {
-              if (!revealed) {
-                setRevealed(true);
-                return;
-              }
-              onContinue();
-            }}
+            onClick={onContinue}
             className="apple-touch-btn primary"
-            style={{ minHeight: "52px", gap: "8px", marginTop: "auto", fontSize: "1.02rem", fontWeight: 700 }}
+            style={{ minHeight: "52px", gap: "8px", marginTop: "8px", fontSize: "1.02rem", fontWeight: 700 }}
           >
-            <Sparkles size={18} /> {revealed ? "Continue to Map Deconstruction" : "Reveal Task & Development Maps"}
+            <Sparkles size={18} /> Continue to Map Deconstruction (Step 02)
           </motion.button>
-
-          {revealed && (
-            <motion.div
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              style={{ background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: "14px", padding: "14px 16px", color: "#1e3a8a", fontSize: "0.9rem", lineHeight: 1.5 }}
-            >
-              The full Cambridge IELTS map prompt and interactive Development Maps Smartboard are revealed in Step 02.
-            </motion.div>
-          )}
         </div>
       </div>
     </div>
